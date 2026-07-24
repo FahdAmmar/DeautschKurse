@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الألمانية A2 — الدرس الخامس: الروتين اليومي والأفعال</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Mada:wght@300;400;500;600;700;900&family=Inconsolata:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════
+   DESIGN DIRECTION: Urban Morning Rhythm
+   Deep navy-to-black with electric sunrise accents —
+   saffron, electric coral, and cool teal.
+   Think: Berlin 6 AM, the city just waking up,
+   a coffee shop with neon signs flickering on.
+   Typography: bold Syne headlines + legible Mada body
+══════════════════════════════════════════════════ */
+:root {
+  /* Base palette — dark urban */
+  --bg:      #080a12;
+  --bg2:     #0d1020;
+  --bg3:     #141828;
+  --bg4:     #1c2238;
+  --card:    #0b0e1c;
+
+  --border:  rgba(255,200,80,0.07);
+  --border2: rgba(255,200,80,0.18);
+
+  /* Sunrise accent system */
+  --sun:     #ffb830;   /* saffron */
+  --sun2:    #ffd470;   /* pale gold */
+  --sun-d:   rgba(255,184,48,0.1);
+  --sun-d2:  rgba(255,184,48,0.18);
+
+  --coral:   #ff5c4d;   /* electric coral */
+  --coral2:  #ff8070;
+  --coral-d: rgba(255,92,77,0.1);
+
+  --teal:    #00c8a0;   /* cool teal */
+  --teal2:   #50e0c0;
+  --teal-d:  rgba(0,200,160,0.1);
+
+  --sky:     #4090ff;   /* electric blue */
+  --sky-d:   rgba(64,144,255,0.1);
+
+  --lilac:   #b080ff;
+  --lilac-d: rgba(176,128,255,0.1);
+
+  --text:    #e8eaf8;
+  --text2:   #7880a8;
+  --text3:   #3a4068;
+
+  --r:  16px;
+  --rs: 10px;
+  --sh: 0 8px 48px rgba(0,0,0,0.7);
+}
+
+[data-theme="light"] {
+  --bg:      #f4f6ff;
+  --bg2:     #eaecf8;
+  --bg3:     #dde0f0;
+  --bg4:     #cdd2e8;
+  --card:    #ffffff;
+  --border:  rgba(60,80,180,0.08);
+  --border2: rgba(60,80,180,0.18);
+  --sun:     #c07800;
+  --sun2:    #e09820;
+  --sun-d:   rgba(192,120,0,0.08);
+  --sun-d2:  rgba(192,120,0,0.14);
+  --coral:   #d03020;
+  --coral2:  #e05040;
+  --coral-d: rgba(208,48,32,0.08);
+  --teal:    #008060;
+  --teal2:   #00a880;
+  --teal-d:  rgba(0,128,96,0.08);
+  --sky:     #1060d0;
+  --sky-d:   rgba(16,96,208,0.08);
+  --lilac:   #7040c0;
+  --lilac-d: rgba(112,64,192,0.08);
+  --text:    #080a1c;
+  --text2:   #404880;
+  --text3:   #9098c0;
+  --sh: 0 4px 24px rgba(0,0,0,0.1);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: 'Mada', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  direction: rtl;
+  overflow-x: hidden;
+  transition: background .4s, color .4s;
+}
+
+/* Dot-grid background */
+body::before {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image: radial-gradient(rgba(255,184,48,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Sunrise glow at top */
+body::after {
+  content:'';
+  position:fixed; top:0; left:0; right:0; height:400px;
+  background: radial-gradient(ellipse 70% 100% at 50% -20%,
+    rgba(255,184,48,0.08) 0%,
+    rgba(255,92,77,0.04) 40%,
+    transparent 70%);
+  pointer-events:none; z-index:0;
+}
+
+/* ── Progress bar ── */
+#spb {
+  position:fixed; top:0; left:0; right:0; height:3px;
+  background: linear-gradient(90deg, var(--coral), var(--sun), var(--teal));
+  transform-origin:right; transform:scaleX(0);
+  z-index:1001; transition:transform .08s;
+}
+
+/* ══ NAV ══ */
+nav {
+  position:sticky; top:0; z-index:100;
+  background: rgba(8,10,18,.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border2);
+  padding: 0 2rem; height:64px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+[data-theme="light"] nav { background: rgba(244,246,255,.94); }
+
+.nav-brand { display:flex; align-items:center; gap:.75rem; font-family:'Syne',sans-serif; font-weight:800; font-size:.95rem; }
+.nav-chip {
+  background: var(--sun-d); border:1px solid var(--border2);
+  color:var(--sun); font-size:.68rem; font-weight:700;
+  padding:3px 10px; border-radius:20px; letter-spacing:.06em;
+  font-family:'Syne',sans-serif;
+}
+.nav-links { display:flex; gap:1.5rem; list-style:none; }
+.nav-links a { font-size:.82rem; color:var(--text2); text-decoration:none; font-weight:600; transition:color .2s; }
+.nav-links a:hover { color:var(--sun); }
+.tbtn {
+  width:36px; height:36px; border-radius:50%;
+  border:1px solid var(--border2); background:var(--bg3);
+  color:var(--text2); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; font-size:1rem;
+  transition:all .2s;
+}
+.tbtn:hover { background:var(--bg4); color:var(--text); }
+
+/* ══ HERO ══ */
+.hero {
+  position:relative; z-index:1;
+  padding: 5rem 2rem 3.5rem;
+  max-width:900px; margin:0 auto; text-align:center;
+}
+
+/* Animated city skyline SVG */
+.skyline { width:100%; max-width:500px; height:80px; margin:0 auto 2rem; display:block; }
+
+.hero-badge {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--sun-d); border:1px solid rgba(255,184,48,.3);
+  color:var(--sun2); padding:5px 18px; border-radius:30px;
+  font-size:.78rem; font-weight:700; font-family:'Syne',sans-serif;
+  margin-bottom:1.5rem; letter-spacing:.06em;
+  animation: fadeUp .6s ease both;
+}
+.hero h1 {
+  font-family:'Syne',sans-serif;
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-weight:800; line-height:1.12;
+  margin-bottom:1rem;
+  animation: fadeUp .7s ease .1s both;
+}
+.hero h1 .acc {
+  background: linear-gradient(135deg, var(--sun), var(--coral), var(--teal));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-p {
+  color:var(--text2); font-size:1.05rem; line-height:1.9;
+  max-width:650px; margin:0 auto 2.5rem;
+  animation: fadeUp .7s ease .2s both;
+}
+.hero-pills {
+  display:flex; justify-content:center; gap:.75rem; flex-wrap:wrap;
+  animation: fadeUp .7s ease .3s both;
+}
+.pill { display:flex; align-items:center; gap:.4rem; padding:7px 16px; border-radius:30px; font-size:.82rem; font-weight:600; border:1px solid; }
+.psun   { background:var(--sun-d);   color:var(--sun2);   border-color:rgba(255,184,48,.3); }
+.pcoral { background:var(--coral-d); color:var(--coral2); border-color:rgba(255,92,77,.3); }
+.pteal  { background:var(--teal-d);  color:var(--teal2);  border-color:rgba(0,200,160,.3); }
+.psky   { background:var(--sky-d);   color:var(--sky);    border-color:rgba(64,144,255,.3); }
+.plilac { background:var(--lilac-d); color:var(--lilac);  border-color:rgba(176,128,255,.3); }
+
+/* ══ MAIN ══ */
+main {
+  position:relative; z-index:1;
+  max-width:960px; margin:0 auto;
+  padding:1rem 2rem 4rem;
+  display:flex; flex-direction:column; gap:3rem;
+}
+
+/* Section header */
+.sh { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
+.si {
+  width:48px; height:48px; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem; flex-shrink:0;
+}
+.si-sun   { background:var(--sun-d);   border:1px solid rgba(255,184,48,.2); }
+.si-coral { background:var(--coral-d); border:1px solid rgba(255,92,77,.2); }
+.si-teal  { background:var(--teal-d);  border:1px solid rgba(0,200,160,.2); }
+.si-sky   { background:var(--sky-d);   border:1px solid rgba(64,144,255,.2); }
+.si-lilac { background:var(--lilac-d); border:1px solid rgba(176,128,255,.2); }
+.sm h2 { font-family:'Syne',sans-serif; font-size:1.25rem; font-weight:800; }
+.sm p  { font-size:.83rem; color:var(--text2); margin-top:2px; }
+
+/* Card */
+.card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r); padding:1.75rem;
+  transition:border-color .25s, box-shadow .25s;
+  animation: fadeUp .65s ease both;
+}
+.card:hover { border-color:var(--border2); box-shadow:var(--sh); }
+/* Quiz card — no animation to avoid pointer-events interference */
+.card.quiz-card { animation:none; }
+.opts { display:grid; grid-template-columns:1fr 1fr; gap:.55rem; position:relative; z-index:5; }
+
+/* Tip */
+.tip {
+  display:flex; gap:1rem; align-items:flex-start;
+  padding:1.1rem 1.3rem; border-radius:var(--rs); margin:1rem 0;
+}
+.tip.sun   { background:var(--sun-d);   border:1px solid rgba(255,184,48,.2); }
+.tip.coral { background:var(--coral-d); border:1px solid rgba(255,92,77,.2); }
+.tip.teal  { background:var(--teal-d);  border:1px solid rgba(0,200,160,.2); }
+.tip.sky   { background:var(--sky-d);   border:1px solid rgba(64,144,255,.2); }
+.tip.lilac { background:var(--lilac-d); border:1px solid rgba(176,128,255,.2); }
+.tpic { font-size:1.3rem; flex-shrink:0; margin-top:2px; }
+.tip h4 { font-family:'Syne',sans-serif; font-size:.88rem; font-weight:700; margin-bottom:4px; }
+.tip.sun h4   { color:var(--sun2); }   .tip.coral h4 { color:var(--coral2); }
+.tip.teal h4  { color:var(--teal2); }  .tip.sky h4   { color:var(--sky); }
+.tip.lilac h4 { color:var(--lilac); }
+.tip p { font-size:.85rem; color:var(--text2); line-height:1.8; }
+
+/* Inline code */
+.de {
+  font-family:'Inconsolata',monospace;
+  background:var(--bg3); border:1px solid var(--border2);
+  padding:2px 8px; border-radius:5px;
+  font-size:.87em; color:var(--sun2);
+  direction:ltr; display:inline-block;
+}
+
+/* Table */
+.tw { overflow-x:auto; margin-top:.75rem; }
+table { width:100%; border-collapse:collapse; font-size:.9rem; }
+th { background:var(--bg3); color:var(--text2); padding:10px 14px; text-align:right; font-weight:700; font-size:.78rem; border-bottom:1px solid var(--border2); letter-spacing:.04em; font-family:'Syne',sans-serif; }
+td { padding:10px 14px; border-bottom:1px solid var(--border); }
+tr:last-child td { border-bottom:none; }
+tr:hover td { background:var(--bg2); }
+.tde { font-family:'Inconsolata',monospace; color:var(--sun2); font-weight:600; direction:ltr; text-align:left; }
+.tex { color:var(--text2); font-size:.82rem; direction:ltr; text-align:left; }
+.tcoral { font-family:'Inconsolata',monospace; color:var(--coral2); font-weight:600; direction:ltr; text-align:left; }
+.tteal  { font-family:'Inconsolata',monospace; color:var(--teal2);  font-weight:600; direction:ltr; text-align:left; }
+
+/* ══ DAILY TIMELINE ══ */
+.timeline {
+  position:relative;
+  padding-right:2.5rem;
+}
+.timeline::before {
+  content:'';
+  position:absolute; right:20px; top:0; bottom:0; width:2px;
+  background: linear-gradient(to bottom, var(--coral), var(--sun), var(--teal));
+  opacity:.3;
+}
+.tl-item {
+  display:flex; flex-direction:row-reverse; gap:1.5rem;
+  padding:1rem 0; align-items:flex-start;
+  animation: fadeUp .5s ease both;
+}
+.tl-dot {
+  width:44px; height:44px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem; flex-shrink:0;
+  position:relative; z-index:1;
+}
+.tl-dot.morning { background:var(--sun-d);   border:2px solid var(--sun);   }
+.tl-dot.noon    { background:var(--coral-d); border:2px solid var(--coral); }
+.tl-dot.evening { background:var(--teal-d);  border:2px solid var(--teal);  }
+.tl-dot.night   { background:var(--lilac-d); border:2px solid var(--lilac); }
+.tl-body { flex:1; }
+.tl-time {
+  font-family:'Inconsolata',monospace;
+  font-size:.75rem; font-weight:700; color:var(--text3);
+  letter-spacing:.08em; display:block; margin-bottom:3px;
+}
+.tl-de {
+  font-family:'Inconsolata',monospace;
+  color:var(--sun2); font-size:1rem; font-weight:600;
+  display:block; direction:ltr; margin-bottom:3px;
+}
+.tl-ar { font-size:.9rem; color:var(--text2); display:block; margin-bottom:3px; }
+.tl-note { font-size:.78rem; color:var(--text3); font-style:italic; direction:ltr; }
+
+/* ══ VERB CONJUGATION CARDS ══ */
+.verb-tabs {
+  display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1.2rem;
+}
+.vtab {
+  padding:7px 16px; border-radius:20px;
+  background:var(--bg3); border:1px solid var(--border2);
+  color:var(--text2); font-family:'Inconsolata',monospace;
+  font-size:.85rem; font-weight:600; cursor:pointer;
+  transition:all .2s; direction:ltr;
+}
+.vtab:hover { border-color:var(--sun); color:var(--sun2); }
+.vtab.active { background:var(--sun-d); border-color:var(--sun); color:var(--sun2); }
+
+.conj-display {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1.4rem;
+  transition:all .3s;
+}
+.verb-headline {
+  display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem;
+  padding-bottom:1rem; border-bottom:1px solid var(--border2);
+}
+.verb-de {
+  font-family:'Syne',sans-serif; font-size:1.8rem;
+  font-weight:800; color:var(--sun); direction:ltr;
+}
+.verb-meaning { font-size:.9rem; color:var(--text2); }
+.verb-type {
+  font-family:'Inconsolata',monospace; font-size:.72rem;
+  font-weight:700; padding:3px 10px; border-radius:20px;
+  letter-spacing:.05em;
+}
+.vt-regular { background:var(--teal-d); color:var(--teal2); border:1px solid rgba(0,200,160,.2); }
+.vt-irregular { background:var(--coral-d); color:var(--coral2); border:1px solid rgba(255,92,77,.2); }
+.vt-sep { background:var(--lilac-d); color:var(--lilac); border:1px solid rgba(176,128,255,.2); }
+
+.conj-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:.5rem;
+}
+.conj-row {
+  display:flex; align-items:center; gap:.75rem;
+  background:var(--bg3); border-radius:8px; padding:.6rem .9rem;
+  cursor:pointer; transition:all .2s;
+}
+.conj-row:hover { border-color:var(--sun); background:var(--sun-d); }
+.conj-pron {
+  font-family:'Inconsolata',monospace; font-size:.82rem;
+  color:var(--text2); direction:ltr; flex-shrink:0; width:40px;
+}
+.conj-form {
+  font-family:'Inconsolata',monospace; font-size:1rem;
+  color:var(--sun2); font-weight:700; direction:ltr; flex:1;
+}
+.conj-ar { font-size:.78rem; color:var(--text3); }
+
+/* ══ SEPARABLE VERBS ══ */
+.sep-verb-demo {
+  background:var(--bg2); border:1px solid var(--border2);
+  border-radius:var(--rs); padding:1.2rem;
+  font-family:'Inconsolata',monospace;
+  font-size:1.1rem; direction:ltr; line-height:2.2;
+  text-align:center;
+  margin:1rem 0;
+}
+.sep-prefix { color:var(--coral2); font-weight:700; }
+.sep-base   { color:var(--sun2);   font-weight:700; }
+.sep-arrow  { color:var(--text3);  font-size:.85rem; margin:0 1rem; }
+
+/* ══ ROUTINE BUILDER GAME ══ */
+.routine-builder {
+  background:var(--bg2); border:1px solid var(--border2);
+  border-radius:var(--rs); padding:1.4rem;
+}
+.rb-title {
+  font-family:'Syne',sans-serif; font-size:.9rem;
+  font-weight:800; color:var(--sun2); margin-bottom:1rem;
+}
+.activity-pool {
+  display:flex; flex-wrap:wrap; gap:.5rem;
+  margin-bottom:1.2rem;
+}
+.act-chip {
+  padding:7px 14px; border-radius:20px;
+  background:var(--bg3); border:1px solid var(--border2);
+  font-family:'Inconsolata',monospace;
+  color:var(--text); font-size:.82rem; cursor:pointer;
+  transition:all .22s; direction:ltr; user-select:none;
+}
+.act-chip:hover:not(.used) { border-color:var(--sun); background:var(--sun-d); color:var(--sun2); transform:translateY(-2px); }
+.act-chip.used { opacity:.3; cursor:default; transform:none; }
+.routine-slots {
+  display:flex; flex-direction:column; gap:.5rem;
+  min-height:100px;
+}
+.routine-slot {
+  display:flex; align-items:center; gap:1rem;
+  background:var(--bg3); border:1px dashed var(--border2);
+  border-radius:8px; padding:.7rem 1rem;
+  transition:all .2s;
+}
+.slot-time {
+  font-family:'Inconsolata',monospace; font-size:.78rem;
+  color:var(--text3); flex-shrink:0; width:50px;
+}
+.slot-content {
+  font-family:'Inconsolata',monospace; font-size:.88rem;
+  color:var(--sun2); direction:ltr; flex:1;
+}
+.slot-del {
+  color:var(--coral); cursor:pointer; font-size:.9rem;
+  transition:transform .2s; padding:0 .3rem;
+}
+.slot-del:hover { transform:scale(1.3); }
+.rb-phrase {
+  background:var(--bg3); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1rem;
+  font-family:'Inconsolata',monospace; direction:ltr;
+  color:var(--teal2); font-size:.9rem; line-height:1.8;
+  min-height:60px; margin-top:.8rem;
+}
+
+/* ══ DIALOGUE ══ */
+.conv { display:flex; flex-direction:column; gap:1.1rem; }
+.msg { display:flex; gap:1rem; align-items:flex-start; }
+.msg.l { flex-direction:row-reverse; }
+.av { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; }
+.msg.r .av { background:var(--sun-d);  border:1px solid rgba(255,184,48,.25); }
+.msg.l .av { background:var(--teal-d); border:1px solid rgba(0,200,160,.25); }
+.bw { flex:1; max-width:80%; }
+.msg.r .bw { text-align:right; }
+.bub { display:inline-block; padding:11px 16px; border-radius:14px; font-size:.92rem; line-height:1.78; max-width:100%; }
+.msg.r .bub { background:var(--sun-d2); border:1px solid rgba(255,184,48,.2); border-radius:14px 4px 14px 14px; }
+.msg.l .bub { background:var(--bg3); border:1px solid var(--border); border-radius:4px 14px 14px 14px; }
+.dl { color:var(--sun2); font-weight:700; display:block; font-size:.95rem; margin-bottom:3px; direction:ltr; font-family:'Inconsolata',monospace; }
+.who { font-size:.72rem; color:var(--text3); margin-top:4px; display:block; }
+
+/* ══ QUIZ ══ */
+.qblock { background:var(--bg2); border:1px solid var(--border); border-radius:var(--rs); padding:1.2rem 1.4rem; margin-bottom:1rem; }
+.qlabel { font-family:'Syne',sans-serif; font-size:.68rem; color:var(--text3); font-weight:700; letter-spacing:.08em; display:block; margin-bottom:.5rem; }
+.qtext { font-weight:600; font-size:.95rem; margin-bottom:.9rem; }
+.qde { color:var(--sun2); font-family:'Inconsolata',monospace; }
+
+.opt { padding:9px 14px; border-radius:8px; border:1px solid var(--border2); background:var(--bg3); color:var(--text); cursor:pointer; font-family:'Mada',sans-serif; font-size:.87rem; font-weight:500; transition:all .2s; text-align:center; width:100%; display:block; outline:none; appearance:none; -webkit-appearance:none; pointer-events:auto; position:relative; z-index:10; }
+.opt:hover:not(:disabled) { border-color:var(--sun); background:var(--sun-d); }
+.opt.correct { border-color:var(--teal)!important; background:var(--teal-d)!important; color:var(--teal2)!important; }
+.opt.wrong   { border-color:var(--coral)!important; background:var(--coral-d)!important; color:var(--coral2)!important; }
+.opt:disabled { cursor:not-allowed; opacity:0.65; pointer-events:none; }
+.qfb { font-size:.82rem; padding:8px 12px; border-radius:6px; margin-top:8px; display:none; }
+.qfb.show { display:block; }
+.qfb.ok  { background:var(--teal-d);  color:var(--teal2);  border:1px solid rgba(0,200,160,.2); }
+.qfb.err { background:var(--coral-d); color:var(--coral2); border:1px solid rgba(255,92,77,.2); }
+
+/* Result */
+.result-wrap {
+  background:linear-gradient(135deg, var(--sun-d), var(--teal-d));
+  border:1px solid var(--border2); border-radius:var(--r);
+  padding:2rem; text-align:center; display:none; margin-top:1.5rem;
+}
+.r-score { font-family:'Syne',sans-serif; font-size:4.5rem; font-weight:800; color:var(--sun); line-height:1; margin-bottom:.5rem; }
+.r-msg { color:var(--text2); margin-bottom:1.5rem; }
+.r-btn { display:inline-flex; align-items:center; gap:.5rem; background:var(--sun); color:#080a12; border:none; padding:11px 30px; border-radius:30px; font-family:'Syne',sans-serif; font-size:.95rem; font-weight:800; cursor:pointer; transition:all .25s; }
+.r-btn:hover { background:var(--sun2); transform:translateY(-2px); }
+
+/* Homework */
+.hw-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(175px,1fr)); gap:.75rem; margin-bottom:1.2rem; }
+.hw-item { background:var(--bg2); border:1px solid var(--border); border-radius:var(--rs); padding:.9rem; }
+.hw-item strong { display:block; margin-bottom:3px; color:var(--sun2); font-family:'Syne',sans-serif; font-size:.85rem; }
+.hw-item span { color:var(--text2); font-size:.78rem; }
+
+/* Footer */
+footer { position:relative; z-index:1; text-align:center; padding:2.5rem 2rem; color:var(--text3); font-size:.82rem; border-top:1px solid var(--border); }
+
+/* Animations */
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px);} to{opacity:1;transform:translateY(0);} }
+.a1{animation-delay:.05s;} .a2{animation-delay:.15s;} .a3{animation-delay:.25s;} .a4{animation-delay:.35s;}
+
+@media(max-width:700px){
+  nav{padding:0 1rem;} .nav-links{display:none;}
+  main{padding:1rem 1rem 3rem;} .hero{padding:3rem 1rem 2rem;}
+  .conj-grid{grid-template-columns:1fr;} .opts{grid-template-columns:1fr;}
+  .sep-verb-demo{font-size:.88rem;}
+}
+</style>
+</head>
+<body>
+
+<div id="spb"></div>
+
+<nav>
+  <div class="nav-brand">
+    <span>🇩🇪</span>
+    <span>الألمانية للعرب</span>
+    <span class="nav-chip">الدرس 5 / A2</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#routine">الروتين</a></li>
+    <li><a href="#verbs">الأفعال</a></li>
+    <li><a href="#separable">الأفعال المنفصلة</a></li>
+    <li><a href="#game">العبة</a></li>
+    <li><a href="#quiz">الاختبار</a></li>
+  </ul>
+  <button class="tbtn" onclick="toggleTheme()">☀</button>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+
+  <!-- City Skyline SVG -->
+  <svg class="skyline" viewBox="0 0 500 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Sun rising -->
+    <circle cx="250" cy="85" r="55" fill="url(#sunGrad)" opacity=".4"/>
+    <!-- Buildings -->
+    <rect x="20" y="40" width="30" height="40" fill="var(--bg3)" opacity=".8"/>
+    <rect x="25" y="30" width="6" height="12" fill="var(--bg3)" opacity=".8"/>
+    <rect x="55" y="20" width="40" height="60" fill="var(--bg4)" opacity=".9"/>
+    <rect x="68" y="12" width="8" height="10" fill="var(--bg4)" opacity=".9"/>
+    <rect x="100" y="35" width="25" height="45" fill="var(--bg3)" opacity=".8"/>
+    <rect x="130" y="15" width="50" height="65" fill="var(--bg4)" opacity=".95"/>
+    <rect x="152" y="5" width="6" height="12" fill="var(--coral)" opacity=".6"/>
+    <rect x="185" y="28" width="35" height="52" fill="var(--bg3)" opacity=".8"/>
+    <!-- Center tall building -->
+    <rect x="225" y="5" width="50" height="75" fill="var(--bg4)" opacity=".95"/>
+    <rect x="235" y="18" width="8" height="8" fill="var(--sun)" opacity=".3"/>
+    <rect x="248" y="18" width="8" height="8" fill="var(--sun)" opacity=".3"/>
+    <rect x="261" y="18" width="8" height="8" fill="var(--sun)" opacity=".3"/>
+    <rect x="235" y="32" width="8" height="8" fill="var(--teal)" opacity=".25"/>
+    <rect x="248" y="32" width="8" height="8" fill="var(--teal)" opacity=".25"/>
+    <rect x="261" y="32" width="8" height="8" fill="var(--teal)" opacity=".25"/>
+    <rect x="280" y="22" width="40" height="58" fill="var(--bg3)" opacity=".85"/>
+    <rect x="325" y="10" width="55" height="70" fill="var(--bg4)" opacity=".9"/>
+    <rect x="385" y="30" width="30" height="50" fill="var(--bg3)" opacity=".8"/>
+    <rect x="420" y="18" width="45" height="62" fill="var(--bg4)" opacity=".85"/>
+    <rect x="470" y="38" width="30" height="42" fill="var(--bg3)" opacity=".75"/>
+    <!-- Ground line -->
+    <line x1="0" y1="80" x2="500" y2="80" stroke="var(--border2)" stroke-width="1"/>
+    <defs>
+      <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="var(--sun)" stop-opacity=".9"/>
+        <stop offset="60%" stop-color="var(--coral)" stop-opacity=".4"/>
+        <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+  </svg>
+
+  <div class="hero-badge">⏰ الدرس الخامس — الروتين اليومي والأفعال</div>
+  <h1>يومك بالكامل<br><span class="acc">بالألمانية!</span> ☀️</h1>
+  <p class="hero-p">من لحظة الاستيقاظ حتى النوم — ستتعلم تصريف الأفعال الشائعة، الأفعال المنفصلة، وكيف تحكي عن يومك بالألمانية بطلاقة!</p>
+  <div class="hero-pills">
+    <div class="pill psun">⏰ الروتين اليومي</div>
+    <div class="pill pcoral">🔤 تصريف الأفعال</div>
+    <div class="pill pteal">✂️ الأفعال المنفصلة</div>
+    <div class="pill psky">💬 حوار يومي</div>
+    <div class="pill plilac">🎮 بناء الجدول</div>
+  </div>
+</div>
+
+<main>
+
+<!-- ══════════════ SECTION 1: DAILY ROUTINE TIMELINE ══════════════ -->
+<section id="routine">
+  <div class="sh">
+    <div class="si si-sun">⏰</div>
+    <div class="sm">
+      <h2>الروتين اليومي — Tagesablauf</h2>
+      <p>يوم كامل بالألمانية — من الفجر حتى منتصف الليل</p>
+    </div>
+  </div>
+
+  <div class="card a1">
+    <div class="tip sun" style="margin-bottom:1.5rem;">
+      <div class="tpic">🌅</div>
+      <div>
+        <h4>ظروف الوقت في الجملة</h4>
+        <p>في الألمانية، إذا بدأت الجملة بظرف زمني، يُعكس ترتيب الفعل والفاعل. هذا يُسمى قاعدة الموضع الثاني (Verb Second). مثال: <span class="de">Ich stehe um 7 Uhr auf.</span> ← عادية. أما <span class="de">Um 7 Uhr stehe ich auf.</span> ← الفعل يأتي ثانياً مباشرةً بعد الظرف!</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-item a1">
+        <div class="tl-dot morning">☀️</div>
+        <div class="tl-body">
+          <span class="tl-time">06:00 UHR — MORGEN</span>
+          <span class="tl-de">Ich stehe auf.</span>
+          <span class="tl-ar">أستيقظ. (فعل منفصل: aufstehen)</span>
+          <span class="tl-note">Um sechs Uhr stehe ich auf.</span>
+        </div>
+      </div>
+
+      <div class="tl-item a2">
+        <div class="tl-dot morning">🚿</div>
+        <div class="tl-body">
+          <span class="tl-time">06:15 UHR</span>
+          <span class="tl-de">Ich dusche mich.</span>
+          <span class="tl-ar">أستحم. (فعل انعكاسي)</span>
+          <span class="tl-note">Ich dusche mich jeden Morgen.</span>
+        </div>
+      </div>
+
+      <div class="tl-item a3">
+        <div class="tl-dot morning">🪥</div>
+        <div class="tl-body">
+          <span class="tl-time">06:25 UHR</span>
+          <span class="tl-de">Ich putze mir die Zähne.</span>
+          <span class="tl-ar">أنظّف أسناني.</span>
+          <span class="tl-note">Ich putze mir zweimal täglich die Zähne.</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot morning">👔</div>
+        <div class="tl-body">
+          <span class="tl-time">06:35 UHR</span>
+          <span class="tl-de">Ich ziehe mich an.</span>
+          <span class="tl-ar">أرتدي ملابسي. (فعل منفصل: anziehen)</span>
+          <span class="tl-note">Ich ziehe mich schnell an.</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot morning">☕</div>
+        <div class="tl-body">
+          <span class="tl-time">07:00 UHR</span>
+          <span class="tl-de">Ich frühstücke.</span>
+          <span class="tl-ar">أتناول الفطور.</span>
+          <span class="tl-note">Ich frühstücke mit meiner Familie.</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot morning">🚌</div>
+        <div class="tl-body">
+          <span class="tl-time">07:45 UHR</span>
+          <span class="tl-de">Ich fahre zur Arbeit.</span>
+          <span class="tl-ar">أذهب إلى العمل.</span>
+          <span class="tl-note">Ich fahre mit dem Bus zur Arbeit.</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot noon">💼</div>
+        <div class="tl-body">
+          <span class="tl-time">08:00–12:00 UHR</span>
+          <span class="tl-de">Ich arbeite.</span>
+          <span class="tl-ar">أعمل.</span>
+          <span class="tl-note">Ich arbeite von 8 bis 17 Uhr.</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot noon">🥙</div>
+        <div class="tl-body">
+          <span class="tl-time">12:30 UHR — MITTAG</span>
+          <span class="tl-de">Ich esse zu Mittag.</span>
+          <span class="tl-ar">أتناول الغداء.</span>
+          <span class="tl-note">In der Mittagspause esse ich in der Kantine.</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot evening">🏃</div>
+        <div class="tl-body">
+          <span class="tl-time">17:30 UHR — NACHMITTAG</span>
+          <span class="tl-de">Ich mache Sport.</span>
+          <span class="tl-ar">أمارس الرياضة.</span>
+          <span class="tl-note">Manchmal gehe ich laufen.</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot evening">🍽️</div>
+        <div class="tl-body">
+          <span class="tl-time">19:00 UHR — ABEND</span>
+          <span class="tl-de">Ich koche und esse zu Abend.</span>
+          <span class="tl-ar">أطبخ وأتناول العشاء.</span>
+          <span class="tl-note">Ich koche gern — heute Nudeln!</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot evening">📺</div>
+        <div class="tl-body">
+          <span class="tl-time">20:00 UHR</span>
+          <span class="tl-de">Ich schaue fern.</span>
+          <span class="tl-ar">أشاهد التلفاز. (فعل منفصل: fernsehen)</span>
+          <span class="tl-note">Ich schaue eine Stunde fern.</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot night">📖</div>
+        <div class="tl-body">
+          <span class="tl-time">21:00 UHR — NACHT</span>
+          <span class="tl-de">Ich lese ein Buch.</span>
+          <span class="tl-ar">أقرأ كتاباً.</span>
+          <span class="tl-note">Ich lese gern vor dem Schlafen.</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot night">😴</div>
+        <div class="tl-body">
+          <span class="tl-time">22:30 UHR</span>
+          <span class="tl-de">Ich gehe schlafen.</span>
+          <span class="tl-ar">أذهب للنوم.</span>
+          <span class="tl-note">Gute Nacht!</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 2: VERB CONJUGATION ══════════════ -->
+<section id="verbs">
+  <div class="sh">
+    <div class="si si-coral">🔤</div>
+    <div class="sm">
+      <h2>تصريف الأفعال — Konjugation</h2>
+      <p>اضغط على أي فعل لتشاهد تصريفه الكامل واسمعه</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div class="tip coral" style="margin-bottom:1.2rem;">
+      <div class="tpic">📌</div>
+      <div>
+        <h4>مفتاح التصريف الألماني</h4>
+        <p>كل الأفعال الألمانية تنتهي في صيغة المصدر بـ <span class="de">-en</span> (أو -n أحياناً). لتصريف الفعل نحذف الـ <span class="de">-en</span> ونضيف النهاية المناسبة للضمير. الأفعال الشاذة تغير حرف علّتها في صيغتَي المفرد (du / er/sie/es).</p>
+      </div>
+    </div>
+
+    <div class="verb-tabs" id="verb-tabs">
+      <div class="vtab active" onclick="showVerb('machen')">machen</div>
+      <div class="vtab" onclick="showVerb('fahren')">fahren</div>
+      <div class="vtab" onclick="showVerb('schlafen')">schlafen</div>
+      <div class="vtab" onclick="showVerb('lesen')">lesen</div>
+      <div class="vtab" onclick="showVerb('essen')">essen</div>
+      <div class="vtab" onclick="showVerb('gehen')">gehen</div>
+      <div class="vtab" onclick="showVerb('haben')">haben</div>
+      <div class="vtab" onclick="showVerb('sein')">sein</div>
+    </div>
+
+    <div class="conj-display" id="conj-display">
+      <!-- filled by JS -->
+    </div>
+  </div>
+
+  <!-- Verb Patterns Table -->
+  <div class="card a3" style="margin-top:1rem;">
+    <h3 style="font-family:'Syne',sans-serif;font-size:.95rem;font-weight:800;color:var(--sun2);margin-bottom:1rem;">📋 أنماط التصريف — جدول مقارنة</h3>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr>
+            <th>الضمير</th>
+            <th>نهاية المنتظم</th>
+            <th>machen (يصنع)</th>
+            <th>fahren (يركب/يسوق)</th>
+            <th>lesen (يقرأ)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ich</td><td class="tde">-e</td><td class="tde">mache</td><td class="tde">fahre</td><td class="tde">lese</td></tr>
+          <tr><td>du</td><td class="tde">-st</td><td class="tde">machst</td><td class="tcoral">fährst ⚠️</td><td class="tcoral">liest ⚠️</td></tr>
+          <tr><td>er/sie/es</td><td class="tde">-t</td><td class="tde">macht</td><td class="tcoral">fährt ⚠️</td><td class="tcoral">liest ⚠️</td></tr>
+          <tr><td>wir</td><td class="tde">-en</td><td class="tde">machen</td><td class="tde">fahren</td><td class="tde">lesen</td></tr>
+          <tr><td>ihr</td><td class="tde">-t</td><td class="tde">macht</td><td class="tde">fahrt</td><td class="tde">lest</td></tr>
+          <tr><td>sie/Sie</td><td class="tde">-en</td><td class="tde">machen</td><td class="tde">fahren</td><td class="tde">lesen</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip teal" style="margin-top:1rem;">
+      <div class="tpic">⚡</div>
+      <div>
+        <h4>الأفعال الشاذة — تغيير حرف العلة</h4>
+        <p>كثير من الأفعال الشائعة في الألمانية تغيّر حرف العلة في صيغتَي <span class="de">du</span> و<span class="de">er/sie/es</span>. الأنماط الرئيسية: <strong>a → ä</strong> (fahren←fährt، schlafen←schläft)، <strong>e → ie</strong> (lesen←liest، sehen←sieht)، <strong>e → i</strong> (essen←isst، geben←gibt). هذه الأفعال لا بد من حفظها!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 3: SEPARABLE VERBS ══════════════ -->
+<section id="separable">
+  <div class="sh">
+    <div class="si si-teal">✂️</div>
+    <div class="sm">
+      <h2>الأفعال المنفصلة — Trennbare Verben</h2>
+      <p>الأفعال التي تنقسم في الجملة — ظاهرة مميزة في الألمانية!</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div class="tip lilac" style="margin-bottom:1.2rem;">
+      <div class="tpic">🔑</div>
+      <div>
+        <h4>ما هو الفعل المنفصل؟</h4>
+        <p>بعض الأفعال الألمانية تتكون من <strong>بادئة</strong> + <strong>فعل أساسي</strong>. في الجملة الرئيسية، تُفصل البادئة وتُرسل إلى نهاية الجملة! مثال: <span class="de">aufstehen</span> (يستيقظ) = <span class="de">auf</span> (بادئة) + <span class="de">stehen</span> (يقف). في الجملة: <span class="de">Ich stehe um 7 Uhr <strong>auf</strong>.</span> لاحظ كيف ذهبت البادئة للنهاية!</p>
+      </div>
+    </div>
+
+    <!-- Visual demonstration -->
+    <div class="sep-verb-demo" id="sep-demo">
+      <div style="margin-bottom:.5rem;color:var(--text2);font-size:.85rem;">المصدر:</div>
+      <div><span class="sep-prefix">auf</span><span class="sep-base">stehen</span> <span style="color:var(--text2);font-size:.9rem;">= يستيقظ</span></div>
+      <div style="color:var(--text3);margin:.4rem 0;">↓ في الجملة:</div>
+      <div>Ich <span class="sep-base">stehe</span> um 7 Uhr <span class="sep-prefix">auf</span>.</div>
+    </div>
+
+    <div class="tw" style="margin-bottom:1.2rem;">
+      <table>
+        <thead>
+          <tr><th>الفعل المنفصل</th><th>المعنى</th><th>البادئة</th><th>مثال في جملة</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tde">aufstehen</td>
+            <td>يستيقظ / ينهض</td>
+            <td><span style="color:var(--coral2);font-family:'Inconsolata',monospace;">auf-</span></td>
+            <td class="tex">Ich stehe um 6 Uhr <strong style="color:var(--coral2);">auf</strong>.</td>
+          </tr>
+          <tr>
+            <td class="tde">anziehen</td>
+            <td>يرتدي</td>
+            <td><span style="color:var(--coral2);font-family:'Inconsolata',monospace;">an-</span></td>
+            <td class="tex">Er zieht sich schnell <strong style="color:var(--coral2);">an</strong>.</td>
+          </tr>
+          <tr>
+            <td class="tde">fernsehen</td>
+            <td>يشاهد التلفاز</td>
+            <td><span style="color:var(--coral2);font-family:'Inconsolata',monospace;">fern-</span></td>
+            <td class="tex">Wir sehen abends <strong style="color:var(--coral2);">fern</strong>.</td>
+          </tr>
+          <tr>
+            <td class="tde">einkaufen</td>
+            <td>يتسوق</td>
+            <td><span style="color:var(--coral2);font-family:'Inconsolata',monospace;">ein-</span></td>
+            <td class="tex">Sie kauft jeden Samstag <strong style="color:var(--coral2);">ein</strong>.</td>
+          </tr>
+          <tr>
+            <td class="tde">aufmachen</td>
+            <td>يفتح</td>
+            <td><span style="color:var(--coral2);font-family:'Inconsolata',monospace;">auf-</span></td>
+            <td class="tex">Er macht das Fenster <strong style="color:var(--coral2);">auf</strong>.</td>
+          </tr>
+          <tr>
+            <td class="tde">zumachen</td>
+            <td>يغلق</td>
+            <td><span style="color:var(--coral2);font-family:'Inconsolata',monospace;">zu-</span></td>
+            <td class="tex">Mach bitte die Tür <strong style="color:var(--coral2);">zu</strong>!</td>
+          </tr>
+          <tr>
+            <td class="tde">ankommen</td>
+            <td>يصل</td>
+            <td><span style="color:var(--coral2);font-family:'Inconsolata',monospace;">an-</span></td>
+            <td class="tex">Der Zug kommt um 14 Uhr <strong style="color:var(--coral2);">an</strong>.</td>
+          </tr>
+          <tr>
+            <td class="tde">abfahren</td>
+            <td>يغادر / يقلع</td>
+            <td><span style="color:var(--coral2);font-family:'Inconsolata',monospace;">ab-</span></td>
+            <td class="tex">Das Bus fährt um 8 Uhr <strong style="color:var(--coral2);">ab</strong>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip coral">
+      <div class="tpic">⚠️</div>
+      <div>
+        <h4>قاعدة ذهبية للأفعال المنفصلة</h4>
+        <p>تنفصل البادئة فقط في الجملة الرئيسية (الحاضر والماضي البسيط). في جملة الفعل المساعد أو جملة الـ dass، يبقى الفعل موحداً في النهاية. مثال: <span class="de">Ich muss früh aufstehen.</span> (يجب أن أستيقظ مبكراً) — لاحظ أن aufstehen بقي موحداً!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 4: ROUTINE BUILDER GAME ══════════════ -->
+<section id="game">
+  <div class="sh">
+    <div class="si si-lilac">🎮</div>
+    <div class="sm">
+      <h2>ابنِ يومك بالألمانية!</h2>
+      <p>اختر الأنشطة ورتّبها لبناء جملك الخاصة</p>
+    </div>
+  </div>
+
+  <div class="card a4">
+    <div class="routine-builder">
+      <div class="rb-title">🌅 اضغط على أي نشاط لإضافته لجدولك اليومي:</div>
+      <div class="activity-pool" id="activity-pool">
+        <div class="act-chip" onclick="addActivity(this,'aufstehen','أستيقظ')">aufstehen</div>
+        <div class="act-chip" onclick="addActivity(this,'duschen','أستحم')">duschen</div>
+        <div class="act-chip" onclick="addActivity(this,'frühstücken','أتناول الفطور')">frühstücken</div>
+        <div class="act-chip" onclick="addActivity(this,'arbeiten','أعمل')">arbeiten</div>
+        <div class="act-chip" onclick="addActivity(this,'Kaffee trinken','أشرب القهوة')">Kaffee trinken</div>
+        <div class="act-chip" onclick="addActivity(this,'zu Mittag essen','أتناول الغداء')">zu Mittag essen</div>
+        <div class="act-chip" onclick="addActivity(this,'Sport machen','أمارس الرياضة')">Sport machen</div>
+        <div class="act-chip" onclick="addActivity(this,'fernsehen','أشاهد التلفاز')">fernsehen</div>
+        <div class="act-chip" onclick="addActivity(this,'kochen','أطبخ')">kochen</div>
+        <div class="act-chip" onclick="addActivity(this,'lesen','أقرأ')">lesen</div>
+        <div class="act-chip" onclick="addActivity(this,'einkaufen','أتسوق')">einkaufen</div>
+        <div class="act-chip" onclick="addActivity(this,'schlafen gehen','أذهب للنوم')">schlafen gehen</div>
+      </div>
+
+      <div class="routine-slots" id="routine-slots">
+        <div style="color:var(--text3);font-size:.83rem;text-align:center;padding:1rem;">
+          اضغط على الأنشطة أعلاه لبناء يومك 👆
+        </div>
+      </div>
+
+      <div class="rb-phrase" id="rb-phrase" style="display:none;"></div>
+
+      <div style="margin-top:.8rem;display:flex;gap:.5rem;">
+        <button onclick="clearRoutine()" style="padding:7px 16px;border-radius:8px;border:1px solid var(--border2);background:var(--bg3);color:var(--text2);cursor:pointer;font-family:'Mada',sans-serif;font-size:.82rem;font-weight:600;transition:all .2s;" onmouseover="this.style.borderColor='var(--coral)'" onmouseout="this.style.borderColor='var(--border2)'">↺ مسح الكل</button>
+        <button onclick="speakRoutine()" style="padding:7px 16px;border-radius:8px;border:1px solid rgba(0,200,160,.3);background:var(--teal-d);color:var(--teal2);cursor:pointer;font-family:'Mada',sans-serif;font-size:.82rem;font-weight:600;transition:all .2s;">🔊 استمع للجمل</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 5: DIALOGUE ══════════════ -->
+<section>
+  <div class="sh">
+    <div class="si si-sky">💬</div>
+    <div class="sm">
+      <h2>حوار: كيف كان يومك؟</h2>
+      <p>أحمد وزميلته Lena يتحدثان عن روتينهما اليومي</p>
+    </div>
+  </div>
+
+  <div class="card a4">
+    <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);">
+      <span style="font-size:1.3rem;">🏢</span>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-size:.9rem;font-weight:800;">في المكتب — بعد ظهر الاثنين</div>
+        <div style="font-size:.78rem;color:var(--text2);">أحمد ولينا يتبادلان أحاديث الروتين</div>
+      </div>
+    </div>
+
+    <div class="conv">
+
+      <div class="msg l">
+        <div class="av">👩‍💻</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Hallo Ahmad! Wie war dein Wochenende?</span>مرحباً أحمد! كيف كانت عطلة نهاية الأسبوع؟</div>
+          <span class="who" style="text-align:left;">Lena</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Es war super! Am Samstag bin ich früh aufgestanden und habe Sport gemacht. Und du?</span>كانت رائعة! يوم السبت استيقظت مبكراً ومارست الرياضة. وأنتِ؟</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩‍💻</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ich habe eingekauft und dann einen Film geschaut. Stehst du immer so früh auf?</span>ذهبت للتسوق ثم شاهدت فيلماً. هل تستيقظ دائماً مبكراً هكذا؟</div>
+          <span class="who" style="text-align:left;">Lena</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ja, meistens. Ich stehe um 6 Uhr auf, dusche mich, frühstücke und fahre dann mit dem Fahrrad zur Arbeit. Was machst du morgens?</span>نعم، في الغالب. أستيقظ الساعة 6، أستحم، آكل الفطور ثم أذهب للعمل بالدراجة. ماذا تفعلين صباحاً؟</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩‍💻</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ich stehe um halb sieben auf, trinke schnell einen Kaffee und fahre mit der U-Bahn. Ich bin kein Morgenmensch!</span>أستيقظ الساعة السادسة والنصف، أشرب قهوة سريعاً وأركب المترو. أنا لست شخصاً صباحياً!</div>
+          <span class="who" style="text-align:left;">Lena</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Haha! Ich auch nicht wirklich, aber ich schlafe abends früh — meistens um 22 Uhr. Was machst du abends nach der Arbeit?</span>هاها! أنا أيضاً لست كذلك حقاً، لكنني أنام مبكراً مساءً — عادةً الساعة 10. ماذا تفعلين مساءً بعد العمل؟</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩‍💻</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Meistens koche ich, sehe fern oder lese. Manchmal treffe ich Freunde. Morgen gehe ich zum Sport — willst du mitkommen?</span>في الغالب أطبخ، أشاهد التلفاز أو أقرأ. أحياناً ألتقي بأصدقاء. غداً سأذهب للرياضة — هل تريد أن تأتي معي؟</div>
+          <span class="who" style="text-align:left;">Lena</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ja, gerne! Um wie viel Uhr? Ich muss um 18 Uhr zu Hause sein.</span>نعم، بكل سرور! في أي ساعة؟ يجب أن أكون في البيت الساعة 6 مساءً.</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+      <h4 style="font-family:'Syne',sans-serif;font-size:.88rem;font-weight:800;color:var(--sun2);margin-bottom:.8rem;">🔑 تعابير مفيدة من الحوار:</h4>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;font-size:.8rem;align-items:center;">
+        <span class="de">meistens</span><span style="color:var(--text2)"> في الغالب</span> &nbsp;·&nbsp;
+        <span class="de">manchmal</span><span style="color:var(--text2)"> أحياناً</span> &nbsp;·&nbsp;
+        <span class="de">Ich bin kein Morgenmensch.</span><span style="color:var(--text2)"> لست شخصاً صباحياً</span> &nbsp;·&nbsp;
+        <span class="de">Willst du mitkommen?</span><span style="color:var(--text2)"> هل تريد القدوم معي؟</span> &nbsp;·&nbsp;
+        <span class="de">Ich muss ... sein.</span><span style="color:var(--text2)"> يجب أن أكون...</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 6: QUIZ ══════════════ -->
+<section id="quiz">
+  <div class="sh">
+    <div class="si si-sun">🎯</div>
+    <div class="sm">
+      <h2>اختبر نفسك!</h2>
+      <p>8 أسئلة على الأفعال والروتين اليومي</p>
+    </div>
+  </div>
+
+  <div class="card quiz-card">
+
+    <div class="qblock" id="q1">
+      <span class="qlabel">السؤال 1 / 8</span>
+      <div class="qtext">ما هو تصريف <span class="qde">fahren</span> مع ضمير <span class="qde">er</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q1\',\'w\')">fahrt</button>
+        <button class="opt" type="button" onclick="ans(this,\'q1\',\'c\')">fährt</button>
+        <button class="opt" type="button" onclick="ans(this,\'q1\',\'w\')">fahren</button>
+        <button class="opt" type="button" onclick="ans(this,\'q1\',\'w\')">fähre</button>
+      </div>
+      <div class="qfb" id="fb-q1"></div>
+    </div>
+
+    <div class="qblock" id="q2">
+      <span class="qlabel">السؤال 2 / 8</span>
+      <div class="qtext">أين تذهب بادئة الفعل المنفصل في الجملة الرئيسية؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q2\',\'w\')">تبقى مع الفعل في البداية</button>
+        <button class="opt" type="button" onclick="ans(this,\'q2\',\'c\')">تذهب إلى نهاية الجملة</button>
+        <button class="opt" type="button" onclick="ans(this,\'q2\',\'w\')">تُحذف تماماً</button>
+        <button class="opt" type="button" onclick="ans(this,\'q2\',\'w\')">تأتي بعد الفاعل مباشرةً</button>
+      </div>
+      <div class="qfb" id="fb-q2"></div>
+    </div>
+
+    <div class="qblock" id="q3">
+      <span class="qlabel">السؤال 3 / 8</span>
+      <div class="qtext">أكمل الجملة: <span class="qde">Ich ___ um 7 Uhr auf.</span> (aufstehen)</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q3\',\'w\')">aufstehe</button>
+        <button class="opt" type="button" onclick="ans(this,\'q3\',\'c\')">stehe</button>
+        <button class="opt" type="button" onclick="ans(this,\'q3\',\'w\')">stehen</button>
+        <button class="opt" type="button" onclick="ans(this,\'q3\',\'w\')">aufstehen</button>
+      </div>
+      <div class="qfb" id="fb-q3"></div>
+    </div>
+
+    <div class="qblock" id="q4">
+      <span class="qlabel">السؤال 4 / 8</span>
+      <div class="qtext">ماذا تعني كلمة <span class="qde">meistens</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q4\',\'w\')">أحياناً</button>
+        <button class="opt" type="button" onclick="ans(this,\'q4\',\'w\')">أبداً</button>
+        <button class="opt" type="button" onclick="ans(this,\'q4\',\'c\')">في الغالب / عادةً</button>
+        <button class="opt" type="button" onclick="ans(this,\'q4\',\'w\')">دائماً</button>
+      </div>
+      <div class="qfb" id="fb-q4"></div>
+    </div>
+
+    <div class="qblock" id="q5">
+      <span class="qlabel">السؤال 5 / 8</span>
+      <div class="qtext">ما تصريف <span class="qde">essen</span> مع <span class="qde">du</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q5\',\'w\')">essst</button>
+        <button class="opt" type="button" onclick="ans(this,\'q5\',\'w\')">esst</button>
+        <button class="opt" type="button" onclick="ans(this,\'q5\',\'c\')">isst</button>
+        <button class="opt" type="button" onclick="ans(this,\'q5\',\'w\')">essen</button>
+      </div>
+      <div class="qfb" id="fb-q5"></div>
+    </div>
+
+    <div class="qblock" id="q6">
+      <span class="qlabel">السؤال 6 / 8</span>
+      <div class="qtext">ما معنى <span class="qde">fernsehen</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q6\',\'w\')">يرى بعيداً</button>
+        <button class="opt" type="button" onclick="ans(this,\'q6\',\'c\')">يشاهد التلفاز</button>
+        <button class="opt" type="button" onclick="ans(this,\'q6\',\'w\')">يسافر بعيداً</button>
+        <button class="opt" type="button" onclick="ans(this,\'q6\',\'w\')">يقرأ بعيون</button>
+      </div>
+      <div class="qfb" id="fb-q6"></div>
+    </div>
+
+    <div class="qblock" id="q7">
+      <span class="qlabel">السؤال 7 / 8</span>
+      <div class="qtext">أي الجمل صحيح لقاعدة الموضع الثاني؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q7\',\'c\')">Um 8 Uhr fahre ich zur Arbeit.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q7\',\'w\')">Um 8 Uhr ich fahre zur Arbeit.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q7\',\'w\')">Um 8 Uhr zur Arbeit ich fahre.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q7\',\'w\')">Ich um 8 Uhr fahre zur Arbeit.</button>
+      </div>
+      <div class="qfb" id="fb-q7"></div>
+    </div>
+
+    <div class="qblock" id="q8">
+      <span class="qlabel">السؤال 8 / 8</span>
+      <div class="qtext">كيف تقول "أنا لست شخصاً صباحياً"؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q8\',\'w\')">Ich bin ein Morgenmensch.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q8\',\'w\')">Ich stehe nicht früh auf.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q8\',\'c\')">Ich bin kein Morgenmensch.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q8\',\'w\')">Ich mag den Morgen nicht.</button>
+      </div>
+      <div class="qfb" id="fb-q8"></div>
+    </div>
+
+    <div class="result-wrap" id="result-wrap">
+      <div class="r-score" id="r-score">0/8</div>
+      <div class="r-msg" id="r-msg"></div>
+      <button class="r-btn" onclick="resetQuiz()">🔄 أعد التدريب</button>
+    </div>
+  </div>
+</section>
+
+<!-- HOMEWORK -->
+<section>
+  <div class="sh">
+    <div class="si si-teal">📝</div>
+    <div class="sm"><h2>واجب الدرس الخامس</h2><p>طبّق الأفعال والروتين في حياتك الحقيقية</p></div>
+  </div>
+  <div class="card">
+    <div class="hw-grid">
+      <div class="hw-item"><strong>✅ روتينك اليومي</strong><span>اكتب 8 جمل عن يومك من الاستيقاظ للنوم بالألمانية</span></div>
+      <div class="hw-item"><strong>✅ الأفعال المنفصلة</strong><span>استخدم 5 أفعال منفصلة في جمل صحيحة</span></div>
+      <div class="hw-item"><strong>✅ تصريف الأفعال</strong><span>صرّف فعلَي (schlafen) و(lesen) مع كل الضمائر</span></div>
+      <div class="hw-item"><strong>✅ قاعدة الموضع الثاني</strong><span>أعد كتابة 3 جمل تبدأ بظرف زمني مثل: Morgens...</span></div>
+    </div>
+    <div class="tip teal">
+      <div class="tpic">🚀</div>
+      <div>
+        <h4>الدرس السادس القادم</h4>
+        <p>سنتعلم <strong>المواصلات والاتجاهات</strong> — كيف تسأل عن الطريق، تفهم خريطة المترو الألماني، وتصف موقعاً بدقة! <span class="de">Bis zum nächsten Mal!</span> ⏰</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>🇩🇪 الألمانية للعرب &nbsp;·&nbsp; المستوى A2 &nbsp;·&nbsp; الدرس 5 من 12</p>
+  <p style="margin-top:.5rem;">الروتين اليومي · تصريف الأفعال · الأفعال المنفصلة</p>
+</footer>
+
+<script>
+// ── Theme ──
+let dark = true;
+const root = document.documentElement;
+const tbtn = document.querySelector('.tbtn');
+function applyTheme(d) { dark=d; root.setAttribute('data-theme',d?'dark':'light'); tbtn.textContent=d?'☀':'🌙'; }
+function toggleTheme() { applyTheme(!dark); }
+const sys = window.matchMedia('(prefers-color-scheme: dark)');
+applyTheme(sys.matches);
+sys.addEventListener('change', e => applyTheme(e.matches));
+
+// ── Scroll progress ──
+const spb = document.getElementById('spb');
+window.addEventListener('scroll', () => {
+  const h = document.body.scrollHeight - window.innerHeight;
+  spb.style.transform = `scaleX(${window.scrollY / h})`;
+});
+
+// ── Speech ──
+function speak(t) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(t);
+  u.lang = 'de-DE'; u.rate = 0.82;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+
+// ── Verb Conjugation Data ──
+const verbs = {
+  machen: {
+    de: 'machen', ar: 'يفعل / يصنع', type: 'regular',
+    forms: [
+      ['ich','mache','أفعل / أصنع'],
+      ['du','machst','تفعل'],
+      ['er/sie/es','macht','يفعل'],
+      ['wir','machen','نفعل'],
+      ['ihr','macht','تفعلون'],
+      ['sie/Sie','machen','يفعلون / حضرتك']
+    ],
+    example: 'Ich mache Sport jeden Morgen.'
+  },
+  fahren: {
+    de: 'fahren', ar: 'يسافر / يسوق / يركب', type: 'irregular',
+    forms: [
+      ['ich','fahre','أسافر / أركب'],
+      ['du','fährst ⚠️','تسافر'],
+      ['er/sie/es','fährt ⚠️','يسافر'],
+      ['wir','fahren','نسافر'],
+      ['ihr','fahrt','تسافرون'],
+      ['sie/Sie','fahren','يسافرون']
+    ],
+    example: 'Er fährt jeden Tag mit dem Bus.'
+  },
+  schlafen: {
+    de: 'schlafen', ar: 'ينام', type: 'irregular',
+    forms: [
+      ['ich','schlafe','أنام'],
+      ['du','schläfst ⚠️','تنام'],
+      ['er/sie/es','schläft ⚠️','ينام'],
+      ['wir','schlafen','ننام'],
+      ['ihr','schlaft','تنامون'],
+      ['sie/Sie','schlafen','ينامون']
+    ],
+    example: 'Ich schlafe um 22 Uhr.'
+  },
+  lesen: {
+    de: 'lesen', ar: 'يقرأ', type: 'irregular',
+    forms: [
+      ['ich','lese','أقرأ'],
+      ['du','liest ⚠️','تقرأ'],
+      ['er/sie/es','liest ⚠️','يقرأ'],
+      ['wir','lesen','نقرأ'],
+      ['ihr','lest','تقرأون'],
+      ['sie/Sie','lesen','يقرأون']
+    ],
+    example: 'Sie liest jeden Abend ein Buch.'
+  },
+  essen: {
+    de: 'essen', ar: 'يأكل', type: 'irregular',
+    forms: [
+      ['ich','esse','آكل'],
+      ['du','isst ⚠️','تأكل'],
+      ['er/sie/es','isst ⚠️','يأكل'],
+      ['wir','essen','نأكل'],
+      ['ihr','esst','تأكلون'],
+      ['sie/Sie','essen','يأكلون']
+    ],
+    example: 'Wir essen zusammen zu Abend.'
+  },
+  gehen: {
+    de: 'gehen', ar: 'يذهب / يمشي', type: 'regular',
+    forms: [
+      ['ich','gehe','أذهب'],
+      ['du','gehst','تذهب'],
+      ['er/sie/es','geht','يذهب'],
+      ['wir','gehen','نذهب'],
+      ['ihr','geht','تذهبون'],
+      ['sie/Sie','gehen','يذهبون']
+    ],
+    example: 'Ich gehe um 7 Uhr zur Arbeit.'
+  },
+  haben: {
+    de: 'haben', ar: 'يملك / عنده', type: 'irregular',
+    forms: [
+      ['ich','habe','عندي / أملك'],
+      ['du','hast ⚠️','عندك'],
+      ['er/sie/es','hat ⚠️','عنده'],
+      ['wir','haben','عندنا'],
+      ['ihr','habt','عندكم'],
+      ['sie/Sie','haben','عندهم']
+    ],
+    example: 'Hast du Zeit morgen?'
+  },
+  sein: {
+    de: 'sein', ar: 'يكون / هو', type: 'irregular',
+    forms: [
+      ['ich','bin','أنا أكون'],
+      ['du','bist ⚠️','أنت تكون'],
+      ['er/sie/es','ist ⚠️','هو/هي يكون'],
+      ['wir','sind','نحن نكون'],
+      ['ihr','seid ⚠️','أنتم تكونون'],
+      ['sie/Sie','sind','هم يكونون']
+    ],
+    example: 'Er ist sehr müde heute.'
+  }
+};
+
+function showVerb(key) {
+  // Update tabs
+  document.querySelectorAll('.vtab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+
+  const v = verbs[key];
+  const typeClass = v.type === 'regular' ? 'vt-regular' : (v.type === 'separable' ? 'vt-sep' : 'vt-irregular');
+  const typeLabel = v.type === 'regular' ? 'منتظم' : (v.type === 'separable' ? 'منفصل' : 'شاذ ⚠️');
+
+  const html = `
+    <div class="verb-headline">
+      <div class="verb-de" onclick="speak('${v.de}')" style="cursor:pointer" title="استمع">${v.de} 🔊</div>
+      <div>
+        <div class="verb-meaning">${v.ar}</div>
+        <span class="verb-type ${typeClass}">${typeLabel}</span>
+      </div>
+    </div>
+    <div class="conj-grid">
+      ${v.forms.map(([pron, form, arMean]) => `
+        <div class="conj-row" onclick="speak('${form.replace(' ⚠️','')}')" title="استمع">
+          <span class="conj-pron">${pron}</span>
+          <span class="conj-form">${form}</span>
+          <span class="conj-ar">${arMean}</span>
+        </div>
+      `).join('')}
+    </div>
+    <div style="margin-top:1rem;padding:.8rem 1rem;background:var(--bg3);border-radius:8px;font-family:'Inconsolata',monospace;font-size:.88rem;color:var(--teal2);direction:ltr;cursor:pointer" onclick="speak('${v.example}')">
+      💬 ${v.example} 🔊
+    </div>
+  `;
+  document.getElementById('conj-display').innerHTML = html;
+}
+showVerb('machen'); // init
+
+// ── Routine Builder ──
+let routine = [];
+const times = ['6:00','7:00','8:00','9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00'];
+
+function addActivity(el, verb, arMean) {
+  if (el.classList.contains('used')) return;
+  el.classList.add('used');
+
+  const time = times[routine.length] || (routine.length + 6) + ':00';
+  routine.push({ verb, arMean, time });
+  renderRoutine();
+}
+
+function renderRoutine() {
+  const sl = document.getElementById('routine-slots');
+  const ph = document.getElementById('rb-phrase');
+  sl.innerHTML = '';
+
+  if (routine.length === 0) {
+    sl.innerHTML = '<div style="color:var(--text3);font-size:.83rem;text-align:center;padding:1rem;">اضغط على الأنشطة أعلاه لبناء يومك 👆</div>';
+    ph.style.display = 'none';
+    return;
+  }
+
+  routine.forEach((act, idx) => {
+    const row = document.createElement('div');
+    row.className = 'routine-slot';
+    row.innerHTML = `
+      <span class="slot-time">${act.time}</span>
+      <span class="slot-content">Ich ${buildVerbForm(act.verb)}.</span>
+      <span style="color:var(--text3);font-size:.78rem;">${act.arMean}</span>
+      <span class="slot-del" onclick="removeActivity(${idx})">✕</span>
+    `;
+    sl.appendChild(row);
+  });
+
+  // Build full paragraph
+  ph.style.display = 'block';
+  ph.innerHTML = routine.map(a =>
+    `Um ${a.time} Uhr ${buildVerbForm(a.verb)}.`
+  ).join('<br>');
+}
+
+function buildVerbForm(verb) {
+  // Simple ich-form mapping for common verbs
+  const ichForms = {
+    'aufstehen': 'stehe auf',
+    'duschen': 'dusche mich',
+    'frühstücken': 'frühstücke',
+    'arbeiten': 'arbeite',
+    'Kaffee trinken': 'trinke Kaffee',
+    'zu Mittag essen': 'esse zu Mittag',
+    'Sport machen': 'mache Sport',
+    'fernsehen': 'sehe fern',
+    'kochen': 'koche',
+    'lesen': 'lese',
+    'einkaufen': 'kaufe ein',
+    'schlafen gehen': 'gehe schlafen'
+  };
+  return ichForms[verb] || verb;
+}
+
+function removeActivity(idx) {
+  const verb = routine[idx].verb;
+  routine.splice(idx, 1);
+  // Re-enable chip
+  document.querySelectorAll('.act-chip').forEach(el => {
+    if (el.getAttribute('onclick').includes(`'${verb}'`)) {
+      el.classList.remove('used');
+    }
+  });
+  renderRoutine();
+}
+
+function clearRoutine() {
+  routine = [];
+  document.querySelectorAll('.act-chip').forEach(el => el.classList.remove('used'));
+  renderRoutine();
+}
+
+function speakRoutine() {
+  if (routine.length === 0) return;
+  const sentences = routine.map(a => `Um ${a.time} Uhr ${buildVerbForm(a.verb)}.`).join(' ');
+  speak(sentences);
+}
+
+// ── Quiz ──
+const fb_c = {
+  q1: '✅ ممتاز! fahren شاذ — في du و er تتحول a إلى ä: fährt. لاحظ اختلاف du (fährst) و er (fährt).',
+  q2: '✅ صحيح تماماً! البادئة تنفصل وتذهب لنهاية الجملة. مثال: Ich stehe um 7 Uhr AUF.',
+  q3: '✅ رائع! مع الأفعال المنفصلة، في الجملة الرئيسية نضع الفعل الأساسي فقط في المكان الثاني والبادئة في النهاية.',
+  q4: '✅ صحيح! meistens = في الغالب / عادةً. مقارنة: immer=دائماً، manchmal=أحياناً، nie=أبداً.',
+  q5: '✅ ممتاز! essen شاذ e→i: isst (للـ du و er/sie/es). هذا من أكثر الأخطاء شيوعاً!',
+  q6: '✅ بالضبط! fernsehen = يشاهد التلفاز. fern = بعيد، sehen = يرى. الألمانية تحب تركيب الكلمات!',
+  q7: '✅ رائع! قاعدة الموضع الثاني: إذا بدأت بظرف، الفعل يأتي ثانياً والفاعل ثالثاً: Um 8 Uhr FAHRE ICH.',
+  q8: '✅ صحيح! "kein Morgenmensch" = "ليس شخصاً صباحياً". kein = النفي للاسم (مقابل nicht للأفعال والصفات).',
+};
+const fb_w = {
+  q1: '❌ fahren شاذ في صيغة er: a → ä → fährt. fahrt هي صيغة ihr (أنتم). تذكر: الشاذ يتغير في du و er فقط!',
+  q2: '❌ البادئة تذهب لنهاية الجملة. هذا هو أهم قانون في الأفعال المنفصلة. مثال: Ich stehe auf.',
+  q3: '❌ في الجملة الرئيسية لا يمكن كتابة الفعل المنفصل كاملاً في البداية. نكتب الأساس ونرسل البادئة للنهاية.',
+  q4: '❌ meistens = في الغالب. manchmal = أحياناً، immer = دائماً، nie = أبداً. هذه الكلمات مهمة جداً!',
+  q5: '❌ essen شاذ: e → i. مع du و er/sie/es نقول isst. عدم مضاعفة الـ s خطأ شائع!',
+  q6: '❌ fernsehen = يشاهد التلفاز. وهو فعل منفصل: Ich sehe fern (البادئة fern في النهاية).',
+  q7: '❌ قاعدة الموضع الثاني تقول: الفعل دائماً في المكان الثاني. إذا بدأ بظرف، الفاعل يجيء بعد الفعل.',
+  q8: '❌ الصحيح: "Ich bin kein Morgenmensch." — كلمة kein تنفي الاسم. bin ein = مثبت، bin kein = منفي.',
+};
+
+let answers = {};
+function ans(btn, qid, r) {
+  if (answers[qid]) return;
+  answers[qid] = r;
+  document.querySelectorAll(`#${qid} .opt`).forEach(b => b.disabled = true);
+  btn.classList.add(r === 'c' ? 'correct' : 'wrong');
+  const fb = document.getElementById('fb-' + qid);
+  fb.textContent = r === 'c' ? fb_c[qid] : fb_w[qid];
+  fb.className = 'qfb show ' + (r === 'c' ? 'ok' : 'err');
+  if (Object.keys(answers).length === 8) showResult();
+}
+function showResult() {
+  const s = Object.values(answers).filter(v => v === 'c').length;
+  const msgs = ['حاول مجدداً! 💪','بداية جيدة، راجع الأفعال 📖','تقدم ملحوظ! 🌟','جيد جداً! 🏆','ممتاز! مستواك رائع 🎉','رائع جداً! 🌟🌟','شبه مثالي! 🥈','مثالي تقريباً! 🥇','نجم الدرس الخامس! ⭐⭐'];
+  document.getElementById('r-score').textContent = s + '/8';
+  document.getElementById('r-msg').textContent = msgs[s] || '';
+  const rb = document.getElementById('result-wrap');
+  rb.style.display = 'block';
+  rb.scrollIntoView({ behavior:'smooth', block:'center' });
+}
+function resetQuiz() {
+  answers = {};
+  document.querySelectorAll('.opt').forEach(b => {
+    b.disabled = false;
+    b.className = 'opt';
+  });
+  document.querySelectorAll('.qfb').forEach(f => { f.className = 'qfb'; });
+  document.getElementById('result-wrap').style.display = 'none';
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-kurs-lesson-05-alltag" data-category="a2-kurs" data-title="الروتين اليومي والأفعال" data-root="../../" defer></script>
+</body>
+</html>

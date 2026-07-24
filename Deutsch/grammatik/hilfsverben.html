@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hilfsverben – الأفعال المساعدة في الألمانية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-primary: #0f1117;
+  --bg-secondary: #161b27;
+  --bg-tertiary: #1e2535;
+  --bg-card: #1a2035;
+  --bg-hover: #222a3e;
+  --border: #2a3550;
+  --border-light: #334066;
+  --text-primary: #e8eaf2;
+  --text-secondary: #9aa5c0;
+  --text-muted: #6b7a99;
+  --accent-haben: #4f9cf9;
+  --accent-sein: #56d1a8;
+  --accent-werden: #f0875a;
+  --accent-modal: #c084fc;
+  --accent-haben-bg: rgba(79,156,249,0.08);
+  --accent-sein-bg: rgba(86,209,168,0.08);
+  --accent-werden-bg: rgba(240,135,90,0.08);
+  --accent-modal-bg: rgba(192,132,252,0.08);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-arabic: 'Cairo', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --nav-width: 260px;
+  --header-h: 64px;
+}
+[data-theme="light"] {
+  --bg-primary: #f5f6fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #eef0f8;
+  --bg-card: #ffffff;
+  --bg-hover: #f0f2fc;
+  --border: #dde1f0;
+  --border-light: #c8ceea;
+  --text-primary: #111827;
+  --text-secondary: #4b5875;
+  --text-muted: #7a85a0;
+  --accent-haben: #1d6fd8;
+  --accent-sein: #0e9b72;
+  --accent-werden: #c2540a;
+  --accent-modal: #7c3aed;
+  --accent-haben-bg: rgba(29,111,216,0.07);
+  --accent-sein-bg: rgba(14,155,114,0.07);
+  --accent-werden-bg: rgba(194,84,10,0.07);
+  --accent-modal-bg: rgba(124,58,237,0.07);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:var(--font-body);
+  background:var(--bg-primary);
+  color:var(--text-primary);
+  line-height:1.6;
+  transition:background .3s,color .3s;
+  overflow-x:hidden;
+}
+.arabic{font-family:var(--font-arabic);direction:rtl;text-align:right}
+/* SCROLL PROGRESS */
+#scroll-progress{
+  position:fixed;top:0;left:0;height:3px;
+  background:linear-gradient(90deg,var(--accent-haben),var(--accent-sein),var(--accent-werden),var(--accent-modal));
+  z-index:1000;width:0%;transition:width .1s;
+}
+/* HEADER */
+header{
+  position:fixed;top:3px;left:0;right:0;height:var(--header-h);
+  background:var(--bg-secondary);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;z-index:900;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.header-brand{display:flex;align-items:center;gap:12px}
+.header-brand .logo{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent-haben),var(--accent-sein));
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:700;color:#fff;
+  box-shadow:var(--shadow-sm);
+}
+.header-brand h1{font-size:1.1rem;font-weight:700;letter-spacing:-.02em}
+.header-brand span{font-size:.8rem;color:var(--text-muted);display:block;font-family:var(--font-arabic)}
+.header-right{display:flex;align-items:center;gap:8px}
+.theme-btn{
+  width:40px;height:40px;border-radius:10px;
+  border:1px solid var(--border);
+  background:var(--bg-tertiary);
+  color:var(--text-secondary);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;transition:all .2s;
+}
+.theme-btn:hover{border-color:var(--border-light);color:var(--text-primary);background:var(--bg-hover)}
+.menu-btn{
+  display:none;width:40px;height:40px;border-radius:10px;
+  border:1px solid var(--border);background:var(--bg-tertiary);
+  color:var(--text-secondary);cursor:pointer;
+  align-items:center;justify-content:center;font-size:18px;
+  transition:all .2s;
+}
+/* LAYOUT */
+.layout{display:flex;margin-top:calc(var(--header-h) + 3px);min-height:calc(100vh - var(--header-h) - 3px)}
+/* SIDEBAR */
+nav.sidebar{
+  width:var(--nav-width);min-width:var(--nav-width);
+  height:calc(100vh - var(--header-h) - 3px);
+  position:sticky;top:calc(var(--header-h) + 3px);
+  overflow-y:auto;overflow-x:hidden;
+  border-right:1px solid var(--border);
+  background:var(--bg-secondary);
+  padding:20px 0;
+  transition:transform .3s;
+  scrollbar-width:thin;scrollbar-color:var(--border) transparent;
+}
+nav.sidebar::-webkit-scrollbar{width:4px}
+nav.sidebar::-webkit-scrollbar-track{background:transparent}
+nav.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.nav-section{padding:0 12px;margin-bottom:8px}
+.nav-label{
+  font-size:.65rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--text-muted);
+  padding:0 12px;margin-bottom:6px;
+}
+.nav-link{
+  display:flex;align-items:center;gap:10px;
+  padding:8px 12px;border-radius:8px;
+  text-decoration:none;color:var(--text-secondary);
+  font-size:.85rem;font-weight:500;transition:all .15s;
+  cursor:pointer;
+}
+.nav-link:hover{background:var(--bg-hover);color:var(--text-primary)}
+.nav-link.active{background:var(--accent-haben-bg);color:var(--accent-haben)}
+.nav-link.active.sein{background:var(--accent-sein-bg);color:var(--accent-sein)}
+.nav-link.active.werden{background:var(--accent-werden-bg);color:var(--accent-werden)}
+.nav-link.active.modal{background:var(--accent-modal-bg);color:var(--accent-modal)}
+.nav-dot{
+  width:8px;height:8px;border-radius:50%;flex-shrink:0;
+  background:var(--text-muted);transition:background .2s;
+}
+.nav-link.active .nav-dot{background:currentColor}
+/* MAIN CONTENT */
+main{flex:1;overflow-x:hidden;padding:40px 48px;max-width:1100px}
+@media(max-width:1300px){main{padding:32px 32px}}
+@media(max-width:900px){
+  nav.sidebar{
+    position:fixed;left:0;top:calc(var(--header-h)+3px);
+    height:calc(100vh - var(--header-h) - 3px);
+    z-index:800;transform:translateX(-100%);
+  }
+  nav.sidebar.open{transform:translateX(0)}
+  main{padding:24px 16px;max-width:100%}
+  .menu-btn{display:flex}
+  .layout{display:block}
+}
+/* HERO SECTION */
+.hero{
+  margin-bottom:48px;
+  background:var(--bg-secondary);
+  border:1px solid var(--border);
+  border-radius:var(--radius-xl);
+  padding:40px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(79,156,249,.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 12px;border-radius:20px;
+  background:var(--accent-haben-bg);border:1px solid rgba(79,156,249,.25);
+  color:var(--accent-haben);font-size:.75rem;font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;
+}
+.hero h2{
+  font-size:clamp(1.8rem,4vw,2.6rem);
+  font-weight:800;letter-spacing:-.03em;
+  line-height:1.15;margin-bottom:12px;
+}
+.hero h2 span{
+  background:linear-gradient(135deg,var(--accent-haben),var(--accent-sein));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-sub{
+  font-size:1rem;color:var(--text-secondary);max-width:600px;
+  margin-bottom:6px;
+}
+.hero-sub-ar{
+  font-family:var(--font-arabic);direction:rtl;
+  font-size:1rem;color:var(--text-muted);margin-bottom:24px;
+}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.pill{
+  padding:5px 14px;border-radius:20px;font-size:.8rem;font-weight:600;
+  border:1px solid;
+}
+.pill-haben{background:var(--accent-haben-bg);border-color:rgba(79,156,249,.3);color:var(--accent-haben)}
+.pill-sein{background:var(--accent-sein-bg);border-color:rgba(86,209,168,.3);color:var(--accent-sein)}
+.pill-werden{background:var(--accent-werden-bg);border-color:rgba(240,135,90,.3);color:var(--accent-werden)}
+.pill-modal{background:var(--accent-modal-bg);border-color:rgba(192,132,252,.3);color:var(--accent-modal)}
+/* SECTION HEADERS */
+.section-wrap{margin-bottom:56px;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.section-wrap.visible{opacity:1;transform:none}
+.section-header{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  margin-bottom:28px;padding-bottom:16px;
+  border-bottom:1px solid var(--border);
+}
+.section-title-block{}
+.section-eyebrow{
+  font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:6px;
+}
+.section-h2{
+  font-size:clamp(1.4rem,3vw,1.9rem);
+  font-weight:800;letter-spacing:-.02em;
+}
+.section-ar{
+  font-family:var(--font-arabic);font-size:.95rem;
+  color:var(--text-muted);margin-top:4px;
+}
+.section-tag{
+  flex-shrink:0;padding:4px 12px;border-radius:20px;
+  font-size:.75rem;font-weight:700;border:1px solid;
+  font-family:var(--font-mono);
+}
+/* HAVE color themes */
+.c-haben{color:var(--accent-haben)}
+.c-sein{color:var(--accent-sein)}
+.c-werden{color:var(--accent-werden)}
+.c-modal{color:var(--accent-modal)}
+.t-haben .section-eyebrow,.t-haben .section-tag{color:var(--accent-haben);border-color:rgba(79,156,249,.3);background:var(--accent-haben-bg)}
+.t-sein .section-eyebrow,.t-sein .section-tag{color:var(--accent-sein);border-color:rgba(86,209,168,.3);background:var(--accent-sein-bg)}
+.t-werden .section-eyebrow,.t-werden .section-tag{color:var(--accent-werden);border-color:rgba(240,135,90,.3);background:var(--accent-werden-bg)}
+.t-modal .section-eyebrow,.t-modal .section-tag{color:var(--accent-modal);border-color:rgba(192,132,252,.3);background:var(--accent-modal-bg)}
+/* INFO BOX */
+.info-box{
+  border-radius:var(--radius-md);
+  padding:18px 22px;margin-bottom:24px;
+  border-left:3px solid;
+}
+.info-box.haben{background:var(--accent-haben-bg);border-color:var(--accent-haben)}
+.info-box.sein{background:var(--accent-sein-bg);border-color:var(--accent-sein)}
+.info-box.werden{background:var(--accent-werden-bg);border-color:var(--accent-werden)}
+.info-box.modal{background:var(--accent-modal-bg);border-color:var(--accent-modal)}
+.info-box p{color:var(--text-secondary);font-size:.9rem;line-height:1.7}
+.info-box .info-title{font-weight:700;margin-bottom:4px;font-size:.9rem}
+.info-box .ar{font-family:var(--font-arabic);font-size:.9rem;margin-top:4px;color:var(--text-muted)}
+/* CONJUGATION TABLE */
+.conj-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px;margin-bottom:28px;
+}
+.conj-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  transition:border-color .2s,box-shadow .2s;
+}
+.conj-card:hover{border-color:var(--border-light);box-shadow:var(--shadow-md)}
+.conj-header{
+  padding:12px 16px;
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.haben .conj-header{background:var(--accent-haben-bg);color:var(--accent-haben);border-bottom:1px solid rgba(79,156,249,.15)}
+.sein .conj-header{background:var(--accent-sein-bg);color:var(--accent-sein);border-bottom:1px solid rgba(86,209,168,.15)}
+.werden .conj-header{background:var(--accent-werden-bg);color:var(--accent-werden);border-bottom:1px solid rgba(240,135,90,.15)}
+.modal-card .conj-header{background:var(--accent-modal-bg);color:var(--accent-modal);border-bottom:1px solid rgba(192,132,252,.15)}
+.conj-rows{padding:8px 0}
+.conj-row{
+  display:grid;grid-template-columns:90px 1fr;
+  padding:7px 16px;font-size:.88rem;
+  transition:background .15s;align-items:center;
+}
+.conj-row:hover{background:var(--bg-hover)}
+.conj-pronoun{color:var(--text-muted);font-weight:500;font-size:.82rem}
+.conj-form{font-weight:700;font-family:var(--font-mono);font-size:.9rem;letter-spacing:.02em}
+.haben .conj-form{color:var(--accent-haben)}
+.sein .conj-form{color:var(--accent-sein)}
+.werden .conj-form{color:var(--accent-werden)}
+.modal-card .conj-form{color:var(--accent-modal)}
+/* SENTENCE CARDS */
+.sentence-list{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.sent-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  padding:16px 18px;
+  transition:border-color .2s,box-shadow .2s,transform .15s;
+  position:relative;
+}
+.sent-card:hover{
+  border-color:var(--border-light);
+  box-shadow:var(--shadow-md);
+  transform:translateY(-1px);
+}
+.sent-top{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:12px;margin-bottom:8px;
+}
+.sent-de{
+  font-size:1.02rem;font-weight:600;
+  line-height:1.5;flex:1;letter-spacing:-.01em;
+}
+.sent-actions{display:flex;gap:6px;flex-shrink:0}
+.btn-tts,.btn-copy{
+  width:32px;height:32px;border-radius:8px;
+  border:1px solid var(--border);
+  background:var(--bg-tertiary);
+  color:var(--text-muted);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;transition:all .2s;flex-shrink:0;
+}
+.btn-tts:hover{border-color:var(--accent-haben);color:var(--accent-haben);background:var(--accent-haben-bg)}
+.btn-copy:hover{border-color:var(--accent-sein);color:var(--accent-sein);background:var(--accent-sein-bg)}
+.btn-tts.playing{border-color:var(--accent-haben);color:var(--accent-haben);background:var(--accent-haben-bg);animation:pulse .8s infinite}
+.btn-copy.copied{border-color:var(--accent-sein);color:var(--accent-sein);background:var(--accent-sein-bg)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.sent-en{font-size:.85rem;color:var(--text-secondary);margin-bottom:5px}
+.sent-ar{
+  font-family:var(--font-arabic);direction:rtl;text-align:right;
+  font-size:.9rem;color:var(--text-muted);
+}
+.sent-num{
+  position:absolute;left:-10px;top:50%;transform:translateY(-50%);
+  width:20px;height:20px;border-radius:50%;
+  background:var(--bg-tertiary);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;font-weight:700;color:var(--text-muted);
+  font-family:var(--font-mono);
+}
+@media(max-width:600px){.sent-num{display:none}}
+/* USES GRID */
+.uses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:28px}
+.use-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:18px;
+  transition:all .2s;
+}
+.use-card:hover{border-color:var(--border-light);box-shadow:var(--shadow-sm);transform:translateY(-1px)}
+.use-icon{font-size:1.5rem;margin-bottom:10px}
+.use-title{font-weight:700;font-size:.9rem;margin-bottom:4px}
+.use-desc{font-size:.82rem;color:var(--text-secondary);line-height:1.6;margin-bottom:6px}
+.use-ar{font-family:var(--font-arabic);font-size:.82rem;color:var(--text-muted)}
+/* HIGHLIGHT RULE */
+.highlight{
+  display:inline-block;padding:0 4px;border-radius:4px;
+  font-weight:700;font-family:var(--font-mono);font-size:.95em;
+}
+.hl-haben{background:var(--accent-haben-bg);color:var(--accent-haben)}
+.hl-sein{background:var(--accent-sein-bg);color:var(--accent-sein)}
+.hl-werden{background:var(--accent-werden-bg);color:var(--accent-werden)}
+.hl-modal{background:var(--accent-modal-bg);color:var(--accent-modal)}
+/* EXERCISE */
+.exercise-section{
+  background:var(--bg-secondary);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:28px;margin-bottom:16px;
+}
+.exercise-title{
+  font-weight:700;font-size:1rem;margin-bottom:4px;
+  display:flex;align-items:center;gap:8px;
+}
+.exercise-title-ar{
+  font-family:var(--font-arabic);font-size:.9rem;
+  color:var(--text-muted);margin-bottom:16px;
+}
+.ex-item{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:14px 16px;
+  margin-bottom:10px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.ex-de{font-size:.92rem;flex:1;font-weight:500;min-width:180px}
+.ex-blank{
+  display:inline-block;width:80px;height:28px;
+  border:none;border-bottom:2px solid var(--border-light);
+  background:transparent;color:var(--text-primary);
+  font-size:.92rem;font-family:var(--font-body);
+  text-align:center;outline:none;transition:border-color .2s;
+  font-weight:700;
+}
+.ex-blank:focus{border-color:var(--accent-haben)}
+.ex-blank.correct{border-color:var(--accent-sein);color:var(--accent-sein)}
+.ex-blank.wrong{border-color:var(--accent-werden);color:var(--accent-werden)}
+.ex-trans{font-size:.78rem;color:var(--text-muted);width:100%;margin-top:4px}
+.ex-trans-ar{font-family:var(--font-arabic);font-size:.82rem;color:var(--text-muted);direction:rtl;text-align:right}
+.btn-check{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 22px;border-radius:10px;
+  background:var(--accent-haben);border:none;
+  color:#fff;font-weight:700;font-size:.88rem;
+  cursor:pointer;transition:all .2s;margin-top:8px;
+}
+.btn-check:hover{opacity:.88;transform:translateY(-1px)}
+.ex-result{
+  display:none;margin-top:12px;padding:10px 14px;
+  border-radius:8px;font-size:.88rem;font-weight:600;
+  text-align:center;
+}
+/* COMPARISON TABLE */
+.comp-table{
+  width:100%;border-collapse:separate;border-spacing:0;
+  border:1px solid var(--border);border-radius:var(--radius-md);
+  overflow:hidden;margin-bottom:28px;font-size:.88rem;
+}
+.comp-table th{
+  background:var(--bg-tertiary);padding:11px 14px;
+  text-align:left;font-weight:700;font-size:.8rem;
+  color:var(--text-secondary);letter-spacing:.04em;text-transform:uppercase;
+  border-bottom:1px solid var(--border);
+}
+.comp-table td{
+  padding:11px 14px;border-bottom:1px solid var(--border);
+  color:var(--text-primary);vertical-align:top;line-height:1.6;
+}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr:hover td{background:var(--bg-hover)}
+.comp-table .de{font-family:var(--font-mono);font-weight:700;font-size:.9rem}
+.comp-table .ar{font-family:var(--font-arabic);font-size:.88rem}
+/* TOAST */
+#toast{
+  position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(100px);
+  background:var(--bg-tertiary);border:1px solid var(--border-light);
+  color:var(--text-primary);padding:10px 20px;border-radius:10px;
+  font-size:.85rem;font-weight:600;z-index:9999;
+  box-shadow:var(--shadow-lg);
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+  pointer-events:none;
+}
+#toast.show{transform:translateX(-50%) translateY(0)}
+/* OVERLAY */
+#overlay{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);
+  z-index:700;backdrop-filter:blur(2px);
+}
+#overlay.visible{display:block}
+/* DIVIDER */
+.divider{height:1px;background:var(--border);margin:32px 0}
+/* FOOTER */
+footer{
+  text-align:center;padding:32px;
+  color:var(--text-muted);font-size:.8rem;
+  border-top:1px solid var(--border);
+}
+footer .ar{font-family:var(--font-arabic)}
+/* ANIMATIONS */
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.fade-in{animation:fadeIn .4s ease both}
+/* RESPONSIVE */
+@media(max-width:600px){
+  .conj-grid{grid-template-columns:1fr}
+  .uses-grid{grid-template-columns:1fr 1fr}
+  .hero{padding:24px}
+  .section-header{flex-direction:column;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<div id="toast">✅ تم النسخ</div>
+<div id="overlay" onclick="closeSidebar()"></div>
+
+<header>
+  <div class="header-brand">
+    <div class="logo">H</div>
+    <div>
+      <h1>Hilfsverben</h1>
+      <span>الأفعال المساعدة الألمانية · A1–B1</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="menu-btn" onclick="toggleSidebar()" aria-label="القائمة">☰</button>
+    <button class="theme-btn" onclick="toggleTheme()" id="theme-btn" aria-label="تبديل المظهر">🌙</button>
+  </div>
+</header>
+
+<div class="layout">
+<nav class="sidebar" id="sidebar" aria-label="التنقل">
+  <div class="nav-label">المحتوى</div>
+  <div class="nav-section">
+    <a class="nav-link active" href="#overview" onclick="closeSidebar()"><span class="nav-dot"></span>نظرة عامة</a>
+    <a class="nav-link haben" href="#haben" onclick="closeSidebar()"><span class="nav-dot"></span>haben</a>
+    <a class="nav-link sein" href="#sein" onclick="closeSidebar()"><span class="nav-dot"></span>sein</a>
+    <a class="nav-link werden" href="#werden" onclick="closeSidebar()"><span class="nav-dot"></span>werden</a>
+  </div>
+  <div class="nav-label" style="margin-top:8px">الأفعال الناقصة</div>
+  <div class="nav-section">
+    <a class="nav-link modal" href="#modal-intro" onclick="closeSidebar()"><span class="nav-dot"></span>مقدمة Modalverben</a>
+    <a class="nav-link modal" href="#koennen" onclick="closeSidebar()"><span class="nav-dot"></span>können</a>
+    <a class="nav-link modal" href="#muessen" onclick="closeSidebar()"><span class="nav-dot"></span>müssen</a>
+    <a class="nav-link modal" href="#sollen" onclick="closeSidebar()"><span class="nav-dot"></span>sollen</a>
+    <a class="nav-link modal" href="#duerfen" onclick="closeSidebar()"><span class="nav-dot"></span>dürfen</a>
+    <a class="nav-link modal" href="#wollen" onclick="closeSidebar()"><span class="nav-dot"></span>wollen</a>
+    <a class="nav-link modal" href="#moegen" onclick="closeSidebar()"><span class="nav-dot"></span>mögen / möchten</a>
+  </div>
+  <div class="nav-label" style="margin-top:8px">تدريبات</div>
+  <div class="nav-section">
+    <a class="nav-link" href="#exercises" onclick="closeSidebar()"><span class="nav-dot"></span>تمارين تطبيقية</a>
+    <a class="nav-link" href="#comparison" onclick="closeSidebar()"><span class="nav-dot"></span>جدول المقارنة</a>
+  </div>
+</nav>
+
+<main id="main-content">
+<!-- HERO -->
+<section id="overview" class="section-wrap visible">
+<div class="hero">
+  <div class="hero-badge">📚 Grammatik · A1–B1</div>
+  <h2>الأفعال المساعدة<br><span>في اللغة الألمانية</span></h2>
+  <p class="hero-sub">A complete guide to all German auxiliary verbs — conjugation, usage, and examples in three languages.</p>
+  <p class="hero-sub-ar arabic">دليل شامل لجميع الأفعال المساعدة في الألمانية — الإسناد، الاستخدامات، وأمثلة موفرة بثلاث لغات مع أزرار الاستماع والنسخ</p>
+  <div class="hero-pills">
+    <span class="pill pill-haben">haben ·  لديه</span>
+    <span class="pill pill-sein">sein · يكون</span>
+    <span class="pill pill-werden">werden · سيصبح</span>
+    <span class="pill pill-modal">Modalverben · الأفعال الناقصة</span>
+  </div>
+</div>
+
+<div class="uses-grid">
+  <div class="use-card">
+    <div class="use-icon">🔵</div>
+    <div class="use-title c-haben">haben</div>
+    <div class="use-desc">Used to form the Perfekt tense. Also means "to have" as a main verb.</div>
+    <div class="use-ar arabic">يُستخدم لتكوين زمن الماضي التام، ويعني أيضاً "يمتلك"</div>
+  </div>
+  <div class="use-card">
+    <div class="use-icon">🟢</div>
+    <div class="use-title c-sein">sein</div>
+    <div class="use-desc">Used in Perfekt for motion/state verbs. Also means "to be".</div>
+    <div class="use-ar arabic">يُستخدم مع أفعال الحركة والحالة، ويعني "يكون"</div>
+  </div>
+  <div class="use-card">
+    <div class="use-icon">🟠</div>
+    <div class="use-title c-werden">werden</div>
+    <div class="use-desc">Forms the Futur I &amp; II tenses and the Passive voice.</div>
+    <div class="use-ar arabic">يُكوّن المستقبل والمبني للمجهول، ويعني "يصبح"</div>
+  </div>
+  <div class="use-card">
+    <div class="use-icon">🟣</div>
+    <div class="use-title c-modal">Modalverben</div>
+    <div class="use-desc">6 modal verbs expressing ability, obligation, permission, and desire.</div>
+    <div class="use-ar arabic">٦ أفعال ناقصة للقدرة والالتزام والإذن والرغبة</div>
+  </div>
+</div>
+</section>
+<!-- ================== HABEN ================== -->
+<section id="haben" class="section-wrap t-haben">
+<div class="section-header">
+  <div class="section-title-block">
+    <div class="section-eyebrow">Hilfsverb 1</div>
+    <h2 class="section-h2">haben — <span class="c-haben">لديه / يمتلك</span></h2>
+    <div class="section-ar arabic">الفعل المساعد الأول: haben</div>
+  </div>
+  <span class="section-tag">haben</span>
+</div>
+
+<div class="info-box haben">
+  <div class="info-title c-haben">📌 متى نستخدم haben؟</div>
+  <p>Used to form <strong>Perfekt</strong> with most transitive verbs and verbs of mental activity. Also used as a standalone verb meaning "to have".</p>
+  <div class="ar arabic">يُستخدم مع معظم الأفعال المتعدية وأفعال النشاط الذهني لتكوين زمن الماضي التام (Perfekt)، ويُستخدم أيضاً فعلاً مستقلاً بمعنى "يمتلك".</div>
+</div>
+
+<div class="conj-grid">
+  <div class="conj-card haben">
+    <div class="conj-header">Präsens <span style="opacity:.6;font-style:italic">المضارع</span></div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">habe</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">hast</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">hat</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">haben</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">habt</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">haben</span></div>
+    </div>
+  </div>
+  <div class="conj-card haben">
+    <div class="conj-header">Präteritum <span style="opacity:.6;font-style:italic">الماضي البسيط</span></div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">hatte</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">hattest</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">hatte</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">hatten</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">hattet</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">hatten</span></div>
+    </div>
+  </div>
+  <div class="conj-card haben">
+    <div class="conj-header">Perfekt <span style="opacity:.6;font-style:italic">الماضي التام</span></div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">habe gehabt</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">hast gehabt</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">hat gehabt</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">haben gehabt</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">habt gehabt</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">haben gehabt</span></div>
+    </div>
+  </div>
+</div>
+
+<h3 style="font-size:1rem;font-weight:700;margin-bottom:14px;color:var(--text-secondary)">📝 جمل تطبيقية مع <span class="hl-haben">haben</span></h3>
+<div class="sentence-list" id="haben-sentences">
+  <!-- sentences injected by JS -->
+</div>
+</section>
+<!-- ================== SEIN ================== -->
+<section id="sein" class="section-wrap t-sein">
+<div class="section-header">
+  <div class="section-title-block">
+    <div class="section-eyebrow">Hilfsverb 2</div>
+    <h2 class="section-h2">sein — <span class="c-sein">يكون / هو</span></h2>
+    <div class="section-ar arabic">الفعل المساعد الثاني: sein</div>
+  </div>
+  <span class="section-tag">sein</span>
+</div>
+
+<div class="info-box sein">
+  <div class="info-title c-sein">📌 متى نستخدم sein؟</div>
+  <p>Used with verbs of <strong>motion</strong> (fahren, gehen, fliegen), <strong>change of state</strong> (werden, sterben, einschlafen), and the verbs <em>sein, bleiben, passieren</em>.</p>
+  <div class="ar arabic">يُستخدم مع أفعال الحركة (السفر، المشي، الطيران) وأفعال تغيير الحالة (يصبح، يموت، ينام) والأفعال sein وbleiben وpassieren.</div>
+</div>
+
+<div class="conj-grid">
+  <div class="conj-card sein">
+    <div class="conj-header">Präsens <span style="opacity:.6;font-style:italic">المضارع</span></div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">bin</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">bist</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">ist</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">sind</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">seid</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">sind</span></div>
+    </div>
+  </div>
+  <div class="conj-card sein">
+    <div class="conj-header">Präteritum <span style="opacity:.6;font-style:italic">الماضي البسيط</span></div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">war</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">warst</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">war</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">waren</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">wart</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">waren</span></div>
+    </div>
+  </div>
+  <div class="conj-card sein">
+    <div class="conj-header">Perfekt <span style="opacity:.6;font-style:italic">الماضي التام</span></div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">bin gewesen</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">bist gewesen</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">ist gewesen</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">sind gewesen</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">seid gewesen</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">sind gewesen</span></div>
+    </div>
+  </div>
+</div>
+
+<h3 style="font-size:1rem;font-weight:700;margin-bottom:14px;color:var(--text-secondary)">📝 جمل تطبيقية مع <span class="hl-sein">sein</span></h3>
+<div class="sentence-list" id="sein-sentences"></div>
+</section>
+<!-- ================== WERDEN ================== -->
+<section id="werden" class="section-wrap t-werden">
+<div class="section-header">
+  <div class="section-title-block">
+    <div class="section-eyebrow">Hilfsverb 3</div>
+    <h2 class="section-h2">werden — <span class="c-werden">يصبح / سوف</span></h2>
+    <div class="section-ar arabic">الفعل المساعد الثالث: werden</div>
+  </div>
+  <span class="section-tag">werden</span>
+</div>
+
+<div class="info-box werden">
+  <div class="info-title c-werden">📌 ثلاثة استخدامات رئيسية لـ werden</div>
+  <p><strong>1. Vollverb:</strong> Means "to become" (standalone verb).<br>
+  <strong>2. Futur I:</strong> werden + Infinitiv → future tense.<br>
+  <strong>3. Passiv:</strong> werden + Partizip II → passive voice.</p>
+  <div class="ar arabic">١. فعل مستقل بمعنى "يصبح" · ٢. المستقبل (werden + مصدر) · ٣. المبني للمجهول (werden + تصريف ثالث)</div>
+</div>
+
+<div class="conj-grid">
+  <div class="conj-card werden">
+    <div class="conj-header">Präsens <span style="opacity:.6;font-style:italic">المضارع</span></div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">werde</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">wirst</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">wird</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">werden</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">werdet</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">werden</span></div>
+    </div>
+  </div>
+  <div class="conj-card werden">
+    <div class="conj-header">Präteritum <span style="opacity:.6;font-style:italic">الماضي البسيط</span></div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">wurde</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">wurdest</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">wurde</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">wurden</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">wurdet</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">wurden</span></div>
+    </div>
+  </div>
+  <div class="conj-card werden">
+    <div class="conj-header">Futur I <span style="opacity:.6;font-style:italic">المستقبل</span></div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">werde ... V</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">wirst ... V</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">wird ... V</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">werden ... V</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">werdet ... V</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">werden ... V</span></div>
+    </div>
+  </div>
+</div>
+
+<h3 style="font-size:1rem;font-weight:700;margin-bottom:14px;color:var(--text-secondary)">📝 جمل تطبيقية مع <span class="hl-werden">werden</span></h3>
+<div class="sentence-list" id="werden-sentences"></div>
+</section>
+<!-- ================== MODAL INTRO ================== -->
+<section id="modal-intro" class="section-wrap t-modal">
+<div class="section-header">
+  <div class="section-title-block">
+    <div class="section-eyebrow">Modalverben</div>
+    <h2 class="section-h2">الأفعال الناقصة — <span class="c-modal">Modalverben</span></h2>
+    <div class="section-ar arabic">ستة أفعال ناقصة تعبّر عن القدرة والالتزام والإذن والرغبة</div>
+  </div>
+  <span class="section-tag">Modal</span>
+</div>
+
+<div class="info-box modal">
+  <div class="info-title c-modal">🔑 قاعدة الأفعال الناقصة</div>
+  <p><strong>Structure:</strong> Conjugated modal + infinitive at the END of the sentence.<br>
+  <em>Ich kann Deutsch <strong>sprechen</strong>.</em> — The infinitive goes to the end!</p>
+  <div class="ar arabic">القاعدة: الفعل الناقص مُصرَّف في الموضع الثاني، والفعل الأصلي (المصدر) يذهب إلى نهاية الجملة.</div>
+</div>
+
+<div class="comp-table" style="margin-bottom:28px">
+  <table class="comp-table" style="width:100%">
+    <thead><tr>
+      <th>Verb</th><th>المعنى</th><th>English</th><th>مثال</th>
+    </tr></thead>
+    <tbody>
+      <tr><td class="de c-modal">können</td><td class="ar arabic" style="text-align:right">يستطيع / يمكنه</td><td>can / be able to</td><td class="de">Ich kann schwimmen.</td></tr>
+      <tr><td class="de c-modal">müssen</td><td class="ar arabic" style="text-align:right">يجب عليه (إلزام)</td><td>must / have to</td><td class="de">Er muss arbeiten.</td></tr>
+      <tr><td class="de c-modal">sollen</td><td class="ar arabic" style="text-align:right">يُفترض به / يُطلب منه</td><td>should / be supposed to</td><td class="de">Du sollst pünktlich sein.</td></tr>
+      <tr><td class="de c-modal">dürfen</td><td class="ar arabic" style="text-align:right">يُسمح له / مسموح</td><td>may / be allowed to</td><td class="de">Hier darf man nicht rauchen.</td></tr>
+      <tr><td class="de c-modal">wollen</td><td class="ar arabic" style="text-align:right">يريد / يرغب</td><td>want to</td><td class="de">Wir wollen reisen.</td></tr>
+      <tr><td class="de c-modal">mögen / möchten</td><td class="ar arabic" style="text-align:right">يحب / يودّ</td><td>like / would like to</td><td class="de">Ich möchte Kaffee.</td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+<!-- ================== KÖNNEN ================== -->
+<section id="koennen" class="section-wrap t-modal">
+<div class="section-header">
+  <div class="section-title-block">
+    <div class="section-eyebrow">Modalverb 1</div>
+    <h2 class="section-h2">können — <span class="c-modal">يستطيع / can</span></h2>
+    <div class="section-ar arabic">التعبير عن القدرة والإمكانية</div>
+  </div>
+  <span class="section-tag">können</span>
+</div>
+<div class="conj-grid">
+  <div class="conj-card modal-card">
+    <div class="conj-header">Präsens</div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">kann</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">kannst</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">kann</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">können</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">könnt</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">können</span></div>
+    </div>
+  </div>
+  <div class="conj-card modal-card">
+    <div class="conj-header">Präteritum</div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">konnte</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">konntest</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">konnte</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">konnten</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">konntet</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">konnten</span></div>
+    </div>
+  </div>
+</div>
+<div class="sentence-list" id="koennen-sentences"></div>
+</section>
+
+<!-- ================== MÜSSEN ================== -->
+<section id="muessen" class="section-wrap t-modal">
+<div class="section-header">
+  <div class="section-title-block">
+    <div class="section-eyebrow">Modalverb 2</div>
+    <h2 class="section-h2">müssen — <span class="c-modal">يجب / must</span></h2>
+    <div class="section-ar arabic">التعبير عن الإلزام والضرورة</div>
+  </div>
+  <span class="section-tag">müssen</span>
+</div>
+<div class="info-box modal">
+  <div class="info-title c-modal">⚠️ müssen vs. sollen</div>
+  <p><strong>müssen</strong> = internal necessity / I feel I have to. &nbsp;|&nbsp; <strong>sollen</strong> = external demand / someone told me to.</p>
+  <div class="ar arabic">müssen: ضرورة داخلية (أشعر أنني يجب) · sollen: طلب خارجي (طُلب مني)</div>
+</div>
+<div class="conj-grid">
+  <div class="conj-card modal-card">
+    <div class="conj-header">Präsens</div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">muss</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">musst</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">muss</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">müssen</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">müsst</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">müssen</span></div>
+    </div>
+  </div>
+  <div class="conj-card modal-card">
+    <div class="conj-header">Präteritum</div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">musste</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">musstest</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">musste</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">mussten</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">musstet</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">mussten</span></div>
+    </div>
+  </div>
+</div>
+<div class="sentence-list" id="muessen-sentences"></div>
+</section>
+
+<!-- ================== SOLLEN ================== -->
+<section id="sollen" class="section-wrap t-modal">
+<div class="section-header">
+  <div class="section-title-block">
+    <div class="section-eyebrow">Modalverb 3</div>
+    <h2 class="section-h2">sollen — <span class="c-modal">يُفترض / should</span></h2>
+    <div class="section-ar arabic">طلب خارجي أو واجب اجتماعي</div>
+  </div>
+  <span class="section-tag">sollen</span>
+</div>
+<div class="conj-grid">
+  <div class="conj-card modal-card">
+    <div class="conj-header">Präsens</div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">soll</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">sollst</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">soll</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">sollen</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">sollt</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">sollen</span></div>
+    </div>
+  </div>
+  <div class="conj-card modal-card">
+    <div class="conj-header">Präteritum</div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">sollte</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">solltest</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">sollte</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">sollten</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">solltet</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">sollten</span></div>
+    </div>
+  </div>
+</div>
+<div class="sentence-list" id="sollen-sentences"></div>
+</section>
+
+<!-- ================== DÜRFEN ================== -->
+<section id="duerfen" class="section-wrap t-modal">
+<div class="section-header">
+  <div class="section-title-block">
+    <div class="section-eyebrow">Modalverb 4</div>
+    <h2 class="section-h2">dürfen — <span class="c-modal">يُسمح / may</span></h2>
+    <div class="section-ar arabic">الإذن والسماح والمنع</div>
+  </div>
+  <span class="section-tag">dürfen</span>
+</div>
+<div class="info-box modal">
+  <div class="info-title c-modal">🚦 dürfen للمنع</div>
+  <p><strong>nicht dürfen</strong> = NOT allowed (prohibition). &nbsp;|&nbsp; <em>nicht müssen</em> = don't have to (not obligatory).</p>
+  <div class="ar arabic">nicht dürfen = ممنوع (حظر) · nicht müssen = لست مضطراً (غير إلزامي)</div>
+</div>
+<div class="conj-grid">
+  <div class="conj-card modal-card">
+    <div class="conj-header">Präsens</div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">darf</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">darfst</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">darf</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">dürfen</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">dürft</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">dürfen</span></div>
+    </div>
+  </div>
+  <div class="conj-card modal-card">
+    <div class="conj-header">Präteritum</div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">durfte</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">durftest</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">durfte</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">durften</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">durftet</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">durften</span></div>
+    </div>
+  </div>
+</div>
+<div class="sentence-list" id="duerfen-sentences"></div>
+</section>
+
+<!-- ================== WOLLEN ================== -->
+<section id="wollen" class="section-wrap t-modal">
+<div class="section-header">
+  <div class="section-title-block">
+    <div class="section-eyebrow">Modalverb 5</div>
+    <h2 class="section-h2">wollen — <span class="c-modal">يريد / want to</span></h2>
+    <div class="section-ar arabic">الرغبة القوية والنية</div>
+  </div>
+  <span class="section-tag">wollen</span>
+</div>
+<div class="conj-grid">
+  <div class="conj-card modal-card">
+    <div class="conj-header">Präsens</div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">will</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">willst</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">will</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">wollen</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">wollt</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">wollen</span></div>
+    </div>
+  </div>
+  <div class="conj-card modal-card">
+    <div class="conj-header">Präteritum</div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">wollte</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">wolltest</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">wollte</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">wollten</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">wolltet</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">wollten</span></div>
+    </div>
+  </div>
+</div>
+<div class="sentence-list" id="wollen-sentences"></div>
+</section>
+
+<!-- ================== MÖGEN / MÖCHTEN ================== -->
+<section id="moegen" class="section-wrap t-modal">
+<div class="section-header">
+  <div class="section-title-block">
+    <div class="section-eyebrow">Modalverb 6</div>
+    <h2 class="section-h2">mögen / möchten — <span class="c-modal">يحب / يودّ</span></h2>
+    <div class="section-ar arabic">الإعجاب والرغبة المؤدبة</div>
+  </div>
+  <span class="section-tag">mögen</span>
+</div>
+<div class="info-box modal">
+  <div class="info-title c-modal">💡 mögen vs. möchten</div>
+  <p><strong>mögen</strong> = like (general preference). &nbsp;|&nbsp; <strong>möchten</strong> = would like (polite request) — used more in daily speech. <em>möchten</em> has no Präteritum; use <em>wollte</em> instead.</p>
+  <div class="ar arabic">mögen: يحب (تفضيل عام) · möchten: يودّ (طلب مؤدب في الحديث اليومي). لا يوجد لـ möchten ماضٍ مستقل؛ نستخدم wollte بدلاً منها.</div>
+</div>
+<div class="conj-grid">
+  <div class="conj-card modal-card">
+    <div class="conj-header">mögen – Präsens</div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">mag</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">magst</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">mag</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">mögen</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">mögt</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">mögen</span></div>
+    </div>
+  </div>
+  <div class="conj-card modal-card">
+    <div class="conj-header">möchten – Präsens</div>
+    <div class="conj-rows">
+      <div class="conj-row"><span class="conj-pronoun">ich</span><span class="conj-form">möchte</span></div>
+      <div class="conj-row"><span class="conj-pronoun">du</span><span class="conj-form">möchtest</span></div>
+      <div class="conj-row"><span class="conj-pronoun">er/sie/es</span><span class="conj-form">möchte</span></div>
+      <div class="conj-row"><span class="conj-pronoun">wir</span><span class="conj-form">möchten</span></div>
+      <div class="conj-row"><span class="conj-pronoun">ihr</span><span class="conj-form">möchtet</span></div>
+      <div class="conj-row"><span class="conj-pronoun">sie/Sie</span><span class="conj-form">möchten</span></div>
+    </div>
+  </div>
+</div>
+<div class="sentence-list" id="moegen-sentences"></div>
+</section>
+<!-- ================== EXERCISES ================== -->
+<section id="exercises" class="section-wrap">
+<div class="section-header">
+  <div class="section-title-block">
+    <div class="section-eyebrow">Übungen</div>
+    <h2 class="section-h2">تمارين تطبيقية 📝</h2>
+    <div class="section-ar arabic">اختبر معلوماتك بهذه التمارين التفاعلية</div>
+  </div>
+  <span class="section-tag" style="color:var(--accent-haben);border-color:rgba(79,156,249,.3);background:var(--accent-haben-bg)">Interactive</span>
+</div>
+
+<div class="exercise-section" id="ex1">
+  <div class="exercise-title">🔵 تمرين ١: haben أو sein؟ <span style="font-size:.8rem;font-weight:400;color:var(--text-muted)">(Fill in haben/sein in Perfekt)</span></div>
+  <div class="exercise-title-ar arabic">اختر الفعل المساعد الصحيح لتكوين الماضي التام</div>
+
+  <div class="ex-item" data-answer="habe">
+    <div class="ex-de">Ich <input class="ex-blank" data-ans="habe" placeholder="___"> ein Buch gelesen.</div>
+    <div class="ex-trans">I read a book. / <span class="arabic">لقد قرأت كتاباً.</span></div>
+  </div>
+  <div class="ex-item" data-answer="bin">
+    <div class="ex-de">Ich <input class="ex-blank" data-ans="bin" placeholder="___"> nach Berlin gefahren.</div>
+    <div class="ex-trans">I went to Berlin. / <span class="arabic">سافرت إلى برلين.</span></div>
+  </div>
+  <div class="ex-item" data-answer="hat">
+    <div class="ex-de">Er <input class="ex-blank" data-ans="hat" placeholder="___"> Pizza gegessen.</div>
+    <div class="ex-trans">He ate pizza. / <span class="arabic">أكل بيتزا.</span></div>
+  </div>
+  <div class="ex-item" data-answer="ist">
+    <div class="ex-de">Maria <input class="ex-blank" data-ans="ist" placeholder="___"> um 9 Uhr aufgestanden.</div>
+    <div class="ex-trans">Maria got up at 9. / <span class="arabic">استيقظت ماريا في الساعة 9.</span></div>
+  </div>
+  <div class="ex-item" data-answer="haben">
+    <div class="ex-de">Wir <input class="ex-blank" data-ans="haben" placeholder="___"> Deutsch gelernt.</div>
+    <div class="ex-trans">We studied German. / <span class="arabic">تعلمنا الألمانية.</span></div>
+  </div>
+  <div class="ex-item" data-answer="sind">
+    <div class="ex-de">Die Kinder <input class="ex-blank" data-ans="sind" placeholder="___"> in den Park gegangen.</div>
+    <div class="ex-trans">The children went to the park. / <span class="arabic">ذهب الأطفال إلى الحديقة.</span></div>
+  </div>
+  <div class="ex-item" data-answer="haben">
+    <div class="ex-de">Sie (pl.) <input class="ex-blank" data-ans="haben" placeholder="___"> Musik gehört.</div>
+    <div class="ex-trans">They listened to music. / <span class="arabic">استمعوا للموسيقى.</span></div>
+  </div>
+  <div class="ex-item" data-answer="ist">
+    <div class="ex-de">Der Zug <input class="ex-blank" data-ans="ist" placeholder="___"> pünktlich angekommen.</div>
+    <div class="ex-trans">The train arrived on time. / <span class="arabic">وصل القطار في الموعد.</span></div>
+  </div>
+  <button class="btn-check" onclick="checkEx('ex1')">✅ تحقق من الإجابات</button>
+  <div class="ex-result" id="ex1-result"></div>
+</div>
+
+<div class="exercise-section" id="ex2">
+  <div class="exercise-title">🟠 تمرين ٢: werden للمستقبل <span style="font-size:.8rem;font-weight:400;color:var(--text-muted)">(Conjugate werden correctly)</span></div>
+  <div class="exercise-title-ar arabic">صرّف الفعل werden بشكل صحيح</div>
+
+  <div class="ex-item">
+    <div class="ex-de">Morgen <input class="ex-blank" data-ans="wird" placeholder="___"> es regnen.</div>
+    <div class="ex-trans">Tomorrow it will rain. / <span class="arabic">غداً ستمطر.</span></div>
+  </div>
+  <div class="ex-item">
+    <div class="ex-de">Ich <input class="ex-blank" data-ans="werde" placeholder="___"> Arzt.</div>
+    <div class="ex-trans">I will become a doctor. / <span class="arabic">سأصبح طبيباً.</span></div>
+  </div>
+  <div class="ex-item">
+    <div class="ex-de">Wir <input class="ex-blank" data-ans="werden" placeholder="___"> nächstes Jahr heiraten.</div>
+    <div class="ex-trans">We will get married next year. / <span class="arabic">سنتزوج العام القادم.</span></div>
+  </div>
+  <div class="ex-item">
+    <div class="ex-de">Du <input class="ex-blank" data-ans="wirst" placeholder="___"> das verstehen.</div>
+    <div class="ex-trans">You will understand this. / <span class="arabic">ستفهم هذا.</span></div>
+  </div>
+  <div class="ex-item">
+    <div class="ex-de">Das Auto <input class="ex-blank" data-ans="wird" placeholder="___"> repariert. (Passiv)</div>
+    <div class="ex-trans">The car is being repaired. / <span class="arabic">يتم إصلاح السيارة.</span></div>
+  </div>
+  <button class="btn-check" onclick="checkEx('ex2')">✅ تحقق من الإجابات</button>
+  <div class="ex-result" id="ex2-result"></div>
+</div>
+
+<div class="exercise-section" id="ex3">
+  <div class="exercise-title">🟣 تمرين ٣: الأفعال الناقصة <span style="font-size:.8rem;font-weight:400;color:var(--text-muted)">(Choose the correct Modalverb)</span></div>
+  <div class="exercise-title-ar arabic">اختر الفعل الناقص المناسب للسياق</div>
+
+  <div class="ex-item">
+    <div class="ex-de">Ich <input class="ex-blank" data-ans="kann" placeholder="___"> gut Klavier spielen.</div>
+    <div class="ex-trans">I can play the piano well. / <span class="arabic">أستطيع العزف على البيانو جيداً.</span></div>
+  </div>
+  <div class="ex-item">
+    <div class="ex-de">Du <input class="ex-blank" data-ans="musst" placeholder="___"> mehr schlafen!</div>
+    <div class="ex-trans">You must sleep more! / <span class="arabic">يجب عليك النوم أكثر!</span></div>
+  </div>
+  <div class="ex-item">
+    <div class="ex-de">Hier <input class="ex-blank" data-ans="darf" placeholder="___"> man nicht rauchen.</div>
+    <div class="ex-trans">One may not smoke here. / <span class="arabic">لا يُسمح بالتدخين هنا.</span></div>
+  </div>
+  <div class="ex-item">
+    <div class="ex-de">Er <input class="ex-blank" data-ans="will" placeholder="___"> Fußballspieler werden.</div>
+    <div class="ex-trans">He wants to become a football player. / <span class="arabic">يريد أن يصبح لاعب كرة قدم.</span></div>
+  </div>
+  <div class="ex-item">
+    <div class="ex-de">Ich <input class="ex-blank" data-ans="möchte" placeholder="___"> ein Glas Wasser, bitte.</div>
+    <div class="ex-trans">I would like a glass of water, please. / <span class="arabic">أودّ كوباً من الماء، من فضلك.</span></div>
+  </div>
+  <div class="ex-item">
+    <div class="ex-de">Der Arzt sagt, ich <input class="ex-blank" data-ans="soll" placeholder="___"> Sport machen.</div>
+    <div class="ex-trans">The doctor says I should exercise. / <span class="arabic">قال الطبيب يجب عليّ ممارسة الرياضة.</span></div>
+  </div>
+  <button class="btn-check" onclick="checkEx('ex3')">✅ تحقق من الإجابات</button>
+  <div class="ex-result" id="ex3-result"></div>
+</div>
+</section>
+
+<!-- ================== COMPARISON TABLE ================== -->
+<section id="comparison" class="section-wrap">
+<div class="section-header">
+  <div class="section-title-block">
+    <div class="section-eyebrow">Zusammenfassung</div>
+    <h2 class="section-h2">جدول المقارنة الشامل</h2>
+    <div class="section-ar arabic">ملخص كل الأفعال المساعدة في جدول واحد</div>
+  </div>
+  <span class="section-tag" style="color:var(--accent-haben);border-color:rgba(79,156,249,.3);background:var(--accent-haben-bg)">Summary</span>
+</div>
+
+<div style="overflow-x:auto;margin-bottom:28px">
+<table class="comp-table">
+  <thead><tr>
+    <th>Verb</th><th>المعنى</th><th>Präsens (ich)</th><th>Präteritum (ich)</th><th>Hauptfunktion</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td class="de" style="color:var(--accent-haben)">haben</td>
+      <td class="ar arabic" style="text-align:right">يمتلك / لديه</td>
+      <td class="de">habe</td><td class="de">hatte</td>
+      <td style="font-size:.82rem">Perfekt (meiste Verben) · يمتلك</td>
+    </tr>
+    <tr>
+      <td class="de" style="color:var(--accent-sein)">sein</td>
+      <td class="ar arabic" style="text-align:right">يكون / هو</td>
+      <td class="de">bin</td><td class="de">war</td>
+      <td style="font-size:.82rem">Perfekt (Bewegung/Zustand) · يكون</td>
+    </tr>
+    <tr>
+      <td class="de" style="color:var(--accent-werden)">werden</td>
+      <td class="ar arabic" style="text-align:right">يصبح / سوف</td>
+      <td class="de">werde</td><td class="de">wurde</td>
+      <td style="font-size:.82rem">Futur I+II · Passiv · يصبح</td>
+    </tr>
+    <tr>
+      <td class="de" style="color:var(--accent-modal)">können</td>
+      <td class="ar arabic" style="text-align:right">يستطيع</td>
+      <td class="de">kann</td><td class="de">konnte</td>
+      <td style="font-size:.82rem">Fähigkeit / Möglichkeit · قدرة</td>
+    </tr>
+    <tr>
+      <td class="de" style="color:var(--accent-modal)">müssen</td>
+      <td class="ar arabic" style="text-align:right">يجب (إلزام ذاتي)</td>
+      <td class="de">muss</td><td class="de">musste</td>
+      <td style="font-size:.82rem">innere Notwendigkeit · ضرورة داخلية</td>
+    </tr>
+    <tr>
+      <td class="de" style="color:var(--accent-modal)">sollen</td>
+      <td class="ar arabic" style="text-align:right">يُفترض به (طلب)</td>
+      <td class="de">soll</td><td class="de">sollte</td>
+      <td style="font-size:.82rem">äußere Aufforderung · طلب خارجي</td>
+    </tr>
+    <tr>
+      <td class="de" style="color:var(--accent-modal)">dürfen</td>
+      <td class="ar arabic" style="text-align:right">يُسمح له</td>
+      <td class="de">darf</td><td class="de">durfte</td>
+      <td style="font-size:.82rem">Erlaubnis / Verbot · إذن / منع</td>
+    </tr>
+    <tr>
+      <td class="de" style="color:var(--accent-modal)">wollen</td>
+      <td class="ar arabic" style="text-align:right">يريد</td>
+      <td class="de">will</td><td class="de">wollte</td>
+      <td style="font-size:.82rem">eigener Wille / Absicht · إرادة ونية</td>
+    </tr>
+    <tr>
+      <td class="de" style="color:var(--accent-modal)">mögen</td>
+      <td class="ar arabic" style="text-align:right">يحب</td>
+      <td class="de">mag</td><td class="de">mochte</td>
+      <td style="font-size:.82rem">Vorliebe (general) · تفضيل</td>
+    </tr>
+    <tr>
+      <td class="de" style="color:var(--accent-modal)">möchten</td>
+      <td class="ar arabic" style="text-align:right">يودّ (مؤدب)</td>
+      <td class="de">möchte</td><td class="de">— (wollte)</td>
+      <td style="font-size:.82rem">höflicher Wunsch · رغبة مؤدبة</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</section>
+
+<footer>
+  <p>Hilfsverben &amp; Modalverben · الأفعال المساعدة الألمانية</p>
+  <p class="ar arabic" style="margin-top:6px">أعدّ لمتعلمي اللغة الألمانية · CEFR A1–B1</p>
+</footer>
+</main>
+</div>
+<script>
+// ======================== SENTENCE DATA ========================
+const SENTENCES = {
+  haben: [
+    {de:"Ich habe ein neues Buch.",en:"I have a new book.",ar:"لدي كتاب جديد."},
+    {de:"Er hat viel Geld.",en:"He has a lot of money.",ar:"لديه الكثير من المال."},
+    {de:"Wir haben einen Hund.",en:"We have a dog.",ar:"لدينا كلب."},
+    {de:"Hast du Zeit für mich?",en:"Do you have time for me?",ar:"هل لديك وقت لي؟"},
+    {de:"Ich habe Hunger.",en:"I am hungry.",ar:"أنا جائع."},
+    {de:"Sie hat Fieber.",en:"She has a fever.",ar:"لديها حمى."},
+    {de:"Wir haben heute keinen Unterricht.",en:"We have no class today.",ar:"ليس لدينا درس اليوم."},
+    {de:"Ich habe die Hausaufgaben gemacht.",en:"I have done the homework.",ar:"لقد أنجزت الواجبات المنزلية."},
+    {de:"Er hat das Buch gelesen.",en:"He has read the book.",ar:"لقد قرأ الكتاب."},
+    {de:"Wir haben gestern Pizza gegessen.",en:"We ate pizza yesterday.",ar:"أكلنا بيتزا أمس."},
+    {de:"Hast du das schon gewusst?",en:"Did you already know that?",ar:"هل كنت تعرف ذلك من قبل؟"},
+    {de:"Sie haben lange gewartet.",en:"They waited a long time.",ar:"انتظروا طويلاً."},
+    {de:"Ich hatte früher ein Fahrrad.",en:"I used to have a bicycle.",ar:"كان لديّ دراجة في السابق."},
+    {de:"Er hatte keine Angst.",en:"He had no fear.",ar:"لم يكن خائفاً."},
+    {de:"Habt ihr Spaß gehabt?",en:"Did you all have fun?",ar:"هل استمتعتم؟"}
+  ],
+  sein: [
+    {de:"Ich bin Lehrer.",en:"I am a teacher.",ar:"أنا مدرّس."},
+    {de:"Er ist sehr müde.",en:"He is very tired.",ar:"هو متعب جداً."},
+    {de:"Wir sind aus Deutschland.",en:"We are from Germany.",ar:"نحن من ألمانيا."},
+    {de:"Bist du verheiratet?",en:"Are you married?",ar:"هل أنت متزوج؟"},
+    {de:"Das ist sehr interessant.",en:"That is very interesting.",ar:"هذا مثير للاهتمام جداً."},
+    {de:"Sie sind meine Freunde.",en:"They are my friends.",ar:"هم أصدقائي."},
+    {de:"Ich bin nach Hause gegangen.",en:"I went home.",ar:"لقد ذهبت إلى البيت."},
+    {de:"Er ist heute früh aufgestanden.",en:"He got up early today.",ar:"استيقظ مبكراً اليوم."},
+    {de:"Wir sind mit dem Zug gefahren.",en:"We traveled by train.",ar:"سافرنا بالقطار."},
+    {de:"Sie ist in Berlin geblieben.",en:"She stayed in Berlin.",ar:"بقيت في برلين."},
+    {de:"Das Kind ist eingeschlafen.",en:"The child fell asleep.",ar:"نام الطفل."},
+    {de:"War das Wetter gut?",en:"Was the weather good?",ar:"هل كان الطقس جيداً؟"},
+    {de:"Wir waren gestern im Kino.",en:"We were at the cinema yesterday.",ar:"كنا في السينما أمس."},
+    {de:"Ich war noch nie in Japan.",en:"I have never been to Japan.",ar:"لم أذهب إلى اليابان قط."},
+    {de:"Seid ihr pünktlich gekommen?",en:"Did you all arrive on time?",ar:"هل وصلتم في الموعد؟"}
+  ],
+  werden: [
+    {de:"Er wird Arzt.",en:"He is becoming a doctor.",ar:"إنه يصبح طبيباً."},
+    {de:"Es wird dunkel.",en:"It is getting dark.",ar:"يصبح الجو مظلماً."},
+    {de:"Ich werde das morgen erledigen.",en:"I will get that done tomorrow.",ar:"سأنهي ذلك غداً."},
+    {de:"Es wird morgen regnen.",en:"It will rain tomorrow.",ar:"ستمطر غداً."},
+    {de:"Du wirst das verstehen.",en:"You will understand this.",ar:"ستفهم هذا."},
+    {de:"Wir werden nächstes Jahr heiraten.",en:"We will get married next year.",ar:"سنتزوج العام القادم."},
+    {de:"Das Auto wird repariert.",en:"The car is being repaired.",ar:"يتم إصلاح السيارة."},
+    {de:"Das Fenster wird geöffnet.",en:"The window is being opened.",ar:"يتم فتح النافذة."},
+    {de:"Die Briefe werden geschrieben.",en:"The letters are being written.",ar:"تتم كتابة الرسائل."},
+    {de:"Er wurde gestern operiert.",en:"He was operated on yesterday.",ar:"أُجريت له عملية أمس."},
+    {de:"Das Haus wird gebaut.",en:"The house is being built.",ar:"يتم بناء المنزل."},
+    {de:"Ich werde älter.",en:"I am getting older.",ar:"أنا أكبر سناً."},
+    {de:"Sie wird Lehrerin werden.",en:"She will become a teacher.",ar:"ستصبح مدرّسة."},
+    {de:"Es wurde kalt.",en:"It became cold.",ar:"أصبح الجو بارداً."},
+    {de:"Die Hausaufgaben wurden gemacht.",en:"The homework was done.",ar:"تم إنجاز الواجبات المنزلية."}
+  ],
+  koennen: [
+    {de:"Ich kann Deutsch sprechen.",en:"I can speak German.",ar:"أستطيع التحدث بالألمانية."},
+    {de:"Kannst du mir helfen?",en:"Can you help me?",ar:"هل تستطيع مساعدتي؟"},
+    {de:"Er kann gut kochen.",en:"He can cook well.",ar:"يستطيع الطبخ جيداً."},
+    {de:"Wir können morgen kommen.",en:"We can come tomorrow.",ar:"يمكننا المجيء غداً."},
+    {de:"Sie kann sehr schnell laufen.",en:"She can run very fast.",ar:"تستطيع الركض بسرعة كبيرة."},
+    {de:"Kann ich Ihnen helfen?",en:"Can I help you?",ar:"هل يمكنني مساعدتك؟"},
+    {de:"Kinder können sehr viel lernen.",en:"Children can learn a great deal.",ar:"يستطيع الأطفال تعلم الكثير."},
+    {de:"Ich konnte gestern nicht kommen.",en:"I could not come yesterday.",ar:"لم أستطع المجيء أمس."},
+    {de:"Kannst du das bitte wiederholen?",en:"Can you please repeat that?",ar:"هل يمكنك تكرار ذلك من فضلك؟"},
+    {de:"Hier kann man gut essen.",en:"One can eat well here.",ar:"يمكن للمرء أن يأكل جيداً هنا."}
+  ],
+  muessen: [
+    {de:"Ich muss früh aufstehen.",en:"I have to get up early.",ar:"يجب عليّ الاستيقاظ مبكراً."},
+    {de:"Du musst mehr Wasser trinken.",en:"You must drink more water.",ar:"يجب عليك شرب المزيد من الماء."},
+    {de:"Er muss zum Arzt gehen.",en:"He has to go to the doctor.",ar:"يجب عليه الذهاب إلى الطبيب."},
+    {de:"Wir müssen die Hausaufgaben machen.",en:"We have to do the homework.",ar:"يجب علينا إنجاز الواجبات."},
+    {de:"Muss ich das wirklich machen?",en:"Do I really have to do this?",ar:"هل يجب عليّ حقاً فعل هذا؟"},
+    {de:"Sie muss jetzt gehen.",en:"She has to leave now.",ar:"يجب عليها المغادرة الآن."},
+    {de:"Ich musste lange warten.",en:"I had to wait a long time.",ar:"كان عليّ الانتظار طويلاً."},
+    {de:"Ihr müsst leiser sein.",en:"You all must be quieter.",ar:"يجب عليكم التهدئة."},
+    {de:"Das muss ein Fehler sein.",en:"That must be a mistake.",ar:"لا بد أن هذا خطأ."},
+    {de:"Kinder müssen zur Schule gehen.",en:"Children must go to school.",ar:"يجب على الأطفال الذهاب للمدرسة."}
+  ],
+  sollen: [
+    {de:"Du sollst pünktlich sein.",en:"You should be punctual.",ar:"يجب أن تكون في الموعد."},
+    {de:"Er soll mehr lernen.",en:"He should study more.",ar:"يُفترض به أن يدرس أكثر."},
+    {de:"Was soll ich jetzt tun?",en:"What am I supposed to do now?",ar:"ماذا يُفترض بي أن أفعل الآن؟"},
+    {de:"Sie soll den Brief schreiben.",en:"She is supposed to write the letter.",ar:"يُفترض بها كتابة الرسالة."},
+    {de:"Ich soll um 8 Uhr da sein.",en:"I am supposed to be there at 8.",ar:"يُفترض بي أن أكون هناك في الساعة 8."},
+    {de:"Wir sollen heute nach Hause kommen.",en:"We are supposed to come home today.",ar:"يُفترض بنا العودة إلى البيت اليوم."},
+    {de:"Ihr sollt nicht lügen.",en:"You shall not lie.",ar:"لا يجوز لكم الكذب."},
+    {de:"Er sollte eigentlich schon hier sein.",en:"He was actually supposed to be here.",ar:"كان يُفترض به أن يكون هنا بالفعل."},
+    {de:"Soll ich das Fenster öffnen?",en:"Shall I open the window?",ar:"هل أفتح النافذة؟"},
+    {de:"Das soll sehr lecker sein.",en:"That is supposed to be very tasty.",ar:"يُقال إن ذلك لذيذ جداً."}
+  ],
+  duerfen: [
+    {de:"Darf ich reinkommen?",en:"May I come in?",ar:"هل يُسمح لي بالدخول؟"},
+    {de:"Hier darf man nicht rauchen.",en:"Smoking is not allowed here.",ar:"لا يُسمح بالتدخين هنا."},
+    {de:"Kinder dürfen nicht allein reisen.",en:"Children may not travel alone.",ar:"لا يُسمح للأطفال السفر وحدهم."},
+    {de:"Darf ich Sie etwas fragen?",en:"May I ask you something?",ar:"هل يُسمح لي بسؤالك شيئاً؟"},
+    {de:"Du darfst hier parken.",en:"You may park here.",ar:"يُسمح لك بالوقوف هنا."},
+    {de:"Er darf das Krankenhaus verlassen.",en:"He is allowed to leave the hospital.",ar:"يُسمح له بمغادرة المستشفى."},
+    {de:"Wir dürfen hier nicht fotografieren.",en:"We are not allowed to take photos here.",ar:"لا يُسمح لنا بالتصوير هنا."},
+    {de:"Darf ich die Musik lauter machen?",en:"May I turn the music up?",ar:"هل يُسمح لي برفع صوت الموسيقى؟"},
+    {de:"Als Kind durfte ich nicht fernsehen.",en:"As a child I wasn't allowed to watch TV.",ar:"حين كنت طفلاً لم يُسمح لي بمشاهدة التلفاز."},
+    {de:"Du darfst das nicht vergessen!",en:"You must not forget that!",ar:"يجب ألا تنسى ذلك!"}
+  ],
+  wollen: [
+    {de:"Ich will Arzt werden.",en:"I want to become a doctor.",ar:"أريد أن أصبح طبيباً."},
+    {de:"Wir wollen nach Deutschland reisen.",en:"We want to travel to Germany.",ar:"نريد السفر إلى ألمانيا."},
+    {de:"Was willst du essen?",en:"What do you want to eat?",ar:"ماذا تريد أن تأكل؟"},
+    {de:"Er will nicht aufhören.",en:"He doesn't want to stop.",ar:"لا يريد التوقف."},
+    {de:"Willst du mitkommen?",en:"Do you want to come along?",ar:"هل تريد المجيء معنا؟"},
+    {de:"Sie will eine neue Sprache lernen.",en:"She wants to learn a new language.",ar:"تريد تعلم لغة جديدة."},
+    {de:"Ich wollte früher Pilot werden.",en:"I wanted to become a pilot before.",ar:"أردت في السابق أن أصبح طياراً."},
+    {de:"Wir wollen ein Haus kaufen.",en:"We want to buy a house.",ar:"نريد شراء منزل."},
+    {de:"Wollt ihr mit uns ins Kino?",en:"Do you all want to come to the cinema with us?",ar:"هل تريدون الذهاب معنا إلى السينما؟"},
+    {de:"Er will immer das letzte Wort haben.",en:"He always wants to have the last word.",ar:"يريد دائماً أن تكون له الكلمة الأخيرة."}
+  ],
+  moegen: [
+    {de:"Ich mag Schokolade sehr.",en:"I like chocolate very much.",ar:"أحب الشوكولاتة كثيراً."},
+    {de:"Magst du klassische Musik?",en:"Do you like classical music?",ar:"هل تحب الموسيقى الكلاسيكية؟"},
+    {de:"Ich möchte einen Kaffee, bitte.",en:"I would like a coffee, please.",ar:"أودّ قهوة من فضلك."},
+    {de:"Möchten Sie etwas trinken?",en:"Would you like something to drink?",ar:"هل تودّ شرب شيء ما؟"},
+    {de:"Er mag keine Tomaten.",en:"He doesn't like tomatoes.",ar:"هو لا يحب الطماطم."},
+    {de:"Wir möchten einen Tisch für zwei.",en:"We would like a table for two.",ar:"نودّ طاولة لشخصين."},
+    {de:"Sie mag Tiere sehr gern.",en:"She likes animals very much.",ar:"تحب الحيوانات كثيراً."},
+    {de:"Ich mag es, wenn es ruhig ist.",en:"I like it when it is quiet.",ar:"أحب الهدوء."},
+    {de:"Möchtest du mitessen?",en:"Would you like to eat with us?",ar:"هل تودّ تناول الطعام معنا؟"},
+    {de:"Kinder mögen meistens Süßigkeiten.",en:"Children usually like sweets.",ar:"عادةً ما يحب الأطفال الحلوى."}
+  ]
+};
+// ======================== RENDER SENTENCES ========================
+function buildSentences(data, containerId, colorClass) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = '';
+  data.forEach((s, i) => {
+    const card = document.createElement('div');
+    card.className = 'sent-card fade-in';
+    card.style.animationDelay = (i * 0.04) + 's';
+    card.innerHTML = `
+      <span class="sent-num">${i+1}</span>
+      <div class="sent-top">
+        <div class="sent-de">${s.de}</div>
+        <div class="sent-actions">
+          <button class="btn-tts" title="استمع" aria-label="استمع" onclick="speak(this,'${s.de.replace(/'/g,"\\'")}')">🔊</button>
+          <button class="btn-copy" title="نسخ" aria-label="نسخ" onclick="copyText(this,'${s.de.replace(/'/g,"\\'")}')">📋</button>
+        </div>
+      </div>
+      <div class="sent-en">${s.en}</div>
+      <div class="sent-ar arabic">${s.ar}</div>
+    `;
+    container.appendChild(card);
+  });
+}
+buildSentences(SENTENCES.haben, 'haben-sentences', 'haben');
+buildSentences(SENTENCES.sein, 'sein-sentences', 'sein');
+buildSentences(SENTENCES.werden, 'werden-sentences', 'werden');
+buildSentences(SENTENCES.koennen, 'koennen-sentences', 'modal');
+buildSentences(SENTENCES.muessen, 'muessen-sentences', 'modal');
+buildSentences(SENTENCES.sollen, 'sollen-sentences', 'modal');
+buildSentences(SENTENCES.duerfen, 'duerfen-sentences', 'modal');
+buildSentences(SENTENCES.wollen, 'wollen-sentences', 'modal');
+buildSentences(SENTENCES.moegen, 'moegen-sentences', 'modal');
+
+// ======================== TTS ========================
+let activeTTS = null;
+function speak(btn, text) {
+  if (!window.speechSynthesis) { showToast('TTS غير مدعوم في هذا المتصفح'); return; }
+  if (activeTTS) { window.speechSynthesis.cancel(); if (activeTTS === btn) { activeTTS.classList.remove('playing'); activeTTS = null; return; } }
+  activeTTS = btn;
+  btn.classList.add('playing');
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'de-DE';
+  utter.rate = 0.82;
+  utter.pitch = 1;
+  const voices = window.speechSynthesis.getVoices();
+  const deVoice = voices.find(v => v.lang.startsWith('de') && v.localService) || voices.find(v => v.lang.startsWith('de'));
+  if (deVoice) utter.voice = deVoice;
+  utter.onend = () => { btn.classList.remove('playing'); activeTTS = null; };
+  utter.onerror = () => { btn.classList.remove('playing'); activeTTS = null; };
+  window.speechSynthesis.speak(utter);
+}
+if (window.speechSynthesis) window.speechSynthesis.onvoiceschanged = () => {};
+
+// ======================== COPY ========================
+function copyText(btn, text) {
+  const fallback = () => {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try { document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).catch(fallback);
+  } else { fallback(); }
+  btn.classList.add('copied');
+  btn.textContent = '✅';
+  showToast('تم النسخ!');
+  setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋'; }, 2000);
+}
+
+// ======================== TOAST ========================
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+// ======================== EXERCISES ========================
+function checkEx(id) {
+  const section = document.getElementById(id);
+  const blanks = section.querySelectorAll('.ex-blank');
+  let correct = 0;
+  blanks.forEach(b => {
+    const val = b.value.trim().toLowerCase();
+    const ans = b.dataset.ans.toLowerCase();
+    if (val === ans) { b.classList.add('correct'); b.classList.remove('wrong'); correct++; }
+    else { b.classList.add('wrong'); b.classList.remove('correct'); }
+  });
+  const result = document.getElementById(id + '-result');
+  const pct = Math.round((correct / blanks.length) * 100);
+  result.style.display = 'block';
+  if (pct === 100) {
+    result.style.background = 'var(--accent-sein-bg)';
+    result.style.color = 'var(--accent-sein)';
+    result.style.border = '1px solid rgba(86,209,168,.3)';
+    result.textContent = `🎉 ممتاز! ${correct}/${blanks.length} إجابات صحيحة — Ausgezeichnet!`;
+  } else if (pct >= 60) {
+    result.style.background = 'var(--accent-haben-bg)';
+    result.style.color = 'var(--accent-haben)';
+    result.style.border = '1px solid rgba(79,156,249,.3)';
+    result.textContent = `✅ جيد! ${correct}/${blanks.length} إجابات صحيحة — Gut gemacht!`;
+  } else {
+    result.style.background = 'var(--accent-werden-bg)';
+    result.style.color = 'var(--accent-werden)';
+    result.style.border = '1px solid rgba(240,135,90,.3)';
+    result.textContent = `💪 حاول مجدداً! ${correct}/${blanks.length} صحيح — Versuch es nochmal!`;
+  }
+}
+
+// ======================== SCROLL PROGRESS ========================
+window.addEventListener('scroll', () => {
+  const el = document.getElementById('scroll-progress');
+  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  el.style.width = Math.min(pct, 100) + '%';
+  updateActiveNav();
+}, {passive:true});
+
+// ======================== INTERSECTION OBSERVER ========================
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.07 });
+document.querySelectorAll('.section-wrap').forEach(s => observer.observe(s));
+
+// ======================== ACTIVE NAV ========================
+const sections = ['overview','haben','sein','werden','modal-intro','koennen','muessen','sollen','duerfen','wollen','moegen','exercises','comparison'];
+function updateActiveNav() {
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top < 100) current = id;
+  });
+  document.querySelectorAll('.nav-link').forEach(a => {
+    a.classList.remove('active','sein','werden','modal');
+    const href = a.getAttribute('href');
+    if (href === '#' + current) {
+      a.classList.add('active');
+      if (['haben'].includes(current)) {}
+      else if (['sein'].includes(current)) a.classList.add('sein');
+      else if (['werden'].includes(current)) a.classList.add('werden');
+      else if (['modal-intro','koennen','muessen','sollen','duerfen','wollen','moegen'].includes(current)) a.classList.add('modal');
+    }
+  });
+}
+
+// ======================== THEME ========================
+const themeBtn = document.getElementById('theme-btn');
+function setTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  localStorage.setItem('theme', t);
+  themeBtn.textContent = t === 'light' ? '🌙' : '☀️';
+}
+function toggleTheme() {
+  const cur = document.documentElement.getAttribute('data-theme');
+  setTheme(cur === 'light' ? 'dark' : 'light');
+}
+const saved = localStorage.getItem('theme');
+if (saved) setTheme(saved);
+else if (window.matchMedia('(prefers-color-scheme: light)').matches) setTheme('light');
+else setTheme('dark');
+
+// ======================== MOBILE SIDEBAR ========================
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('visible');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('visible');
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-hilfsverben" data-category="grammatik" data-title="Hilfsverben — الأفعال المساعدة" data-root="../../" defer></script>
+</body>
+</html>

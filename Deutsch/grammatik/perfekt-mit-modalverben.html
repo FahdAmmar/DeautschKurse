@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfekt mit Modalverben – Teil 2 | Deutsch A2</title>
+<meta name="description" content="تعلم زمن Perfekt مع الأفعال المساعدة الألمانية – الجزء الثاني A2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Palette – warm teal/emerald with amber accent */
+  --ink:        #0e1f1a;
+  --ink-2:      #2d4a42;
+  --ink-3:      #5a7a72;
+  --ink-4:      #8fa8a0;
+  --paper:      #f2f7f5;
+  --paper-2:    #ffffff;
+  --paper-3:    #e8f4f0;
+
+  --teal:       #0d6e5a;
+  --teal-2:     #0f8f74;
+  --teal-light: #d4efe8;
+  --amber:      #c47f17;
+  --amber-light:#fdf3dc;
+  --rose:       #c0392b;
+  --rose-light: #fdf0ee;
+  --indigo:     #2c3e87;
+  --indigo-light:#eef0fb;
+  --violet:     #6b21a8;
+  --violet-light:#f5f0ff;
+  --green:      #1a7a3a;
+  --green-light:#edfaf2;
+
+  /* Haben/Sein split colors */
+  --haben-color:  #0d6e5a;
+  --haben-bg:     #d4efe8;
+  --sein-color:   #2c3e87;
+  --sein-bg:      #eef0fb;
+
+  /* UI */
+  --border:     #cde0da;
+  --border-2:   #a8cfc6;
+  --shadow-sm:  0 2px 8px rgba(13,30,26,.08);
+  --shadow-md:  0 5px 20px rgba(13,30,26,.12);
+  --shadow-lg:  0 10px 40px rgba(13,30,26,.16);
+  --radius-s:   6px;
+  --radius-m:   12px;
+  --radius-l:   20px;
+  --radius-xl:  28px;
+  --tr:         .25s cubic-bezier(.4,0,.2,1);
+
+  --f-display: 'Playfair Display', Georgia, serif;
+  --f-body:    'Inter', system-ui, sans-serif;
+  --f-mono:    'IBM Plex Mono', monospace;
+  --f-ar:      'Noto Sans Arabic', Arial, sans-serif;
+}
+
+/* DARK MODE */
+[data-theme="dark"] {
+  --ink:        #dff0ea;
+  --ink-2:      #a8cfc6;
+  --ink-3:      #6fa89e;
+  --ink-4:      #3d7068;
+  --paper:      #080f0d;
+  --paper-2:    #0f1f1a;
+  --paper-3:    #152820;
+
+  --teal:       #2fd4aa;
+  --teal-2:     #52e0bc;
+  --teal-light: #0a2820;
+  --amber:      #f0aa30;
+  --amber-light:#221600;
+  --rose:       #f08070;
+  --rose-light: #220808;
+  --indigo:     #7b92f0;
+  --indigo-light:#0a0e22;
+  --violet:     #c084fc;
+  --violet-light:#160828;
+  --green:      #4ade80;
+  --green-light:#051a0e;
+
+  --haben-color:  #2fd4aa;
+  --haben-bg:     #0a2820;
+  --sein-color:   #7b92f0;
+  --sein-bg:      #0a0e22;
+
+  --border:     #1a3a32;
+  --border-2:   #2a5048;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--f-body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+  transition: background var(--tr), color var(--tr);
+}
+
+/* ============================================================
+   STICKY HEADER
+   ============================================================ */
+.site-header {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--ink);
+  box-shadow: var(--shadow-md);
+}
+.header-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 62px; gap: 12px;
+}
+.brand { display: flex; flex-direction: column; gap: 1px; }
+.brand-main {
+  font-family: var(--f-display);
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--teal-2); letter-spacing: .02em;
+  white-space: nowrap;
+}
+.brand-sub {
+  font-size: .68rem; color: rgba(255,255,255,.5);
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.header-badge {
+  background: var(--teal); color: white;
+  font-size: .7rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px;
+  letter-spacing: .06em; white-space: nowrap;
+}
+.controls { display: flex; gap: 8px; align-items: center; }
+.btn-ctrl {
+  border: 1.5px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
+  color: white; border-radius: var(--radius-s);
+  padding: 6px 13px; font-size: .78rem; font-weight: 500;
+  font-family: var(--f-body); cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
+  transition: all var(--tr); white-space: nowrap;
+}
+.btn-ctrl:hover { background: rgba(255,255,255,.18); }
+.btn-ctrl.print {
+  background: var(--amber); border-color: var(--amber);
+  color: #1a1000; font-weight: 700;
+}
+.btn-ctrl.print:hover { filter: brightness(1.1); }
+
+/* ============================================================
+   QUICK NAV BAR
+   ============================================================ */
+.quick-nav {
+  background: var(--paper-2);
+  border-bottom: 2px solid var(--border);
+  position: sticky; top: 62px; z-index: 150;
+  overflow-x: auto; scrollbar-width: none;
+}
+.quick-nav::-webkit-scrollbar { display: none; }
+.quick-nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 24px;
+  display: flex; gap: 4px; align-items: center;
+  height: 50px;
+}
+.qn-btn {
+  padding: 5px 15px; border-radius: 20px;
+  border: 1.5px solid transparent;
+  background: transparent; cursor: pointer;
+  font-size: .8rem; font-weight: 600;
+  font-family: var(--f-body);
+  color: var(--ink-3); white-space: nowrap;
+  transition: all var(--tr);
+}
+.qn-btn:hover, .qn-btn.active {
+  background: var(--teal); color: white;
+}
+
+/* ============================================================
+   PART RIBBON (connecting to Part 1)
+   ============================================================ */
+.part-ribbon {
+  background: linear-gradient(90deg, var(--teal) 0%, var(--teal-2) 100%);
+  color: white; text-align: center;
+  padding: 10px 24px;
+  font-size: .82rem; letter-spacing: .04em;
+  display: flex; justify-content: center; align-items: center; gap: 12px;
+  flex-wrap: wrap;
+}
+.ribbon-link {
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.3);
+  color: white; text-decoration: none;
+  padding: 3px 12px; border-radius: 20px;
+  font-size: .75rem; font-weight: 600;
+  transition: background var(--tr);
+}
+.ribbon-link:hover { background: rgba(255,255,255,.32); }
+
+/* ============================================================
+   MAIN LAYOUT
+   ============================================================ */
+.main { max-width: 1200px; margin: 0 auto; padding: 44px 24px 90px; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  background: linear-gradient(140deg, var(--ink) 0%, #152e26 60%, #0d3d5a 100%);
+  border-radius: var(--radius-xl);
+  padding: 60px 40px;
+  color: white;
+  text-align: center;
+  margin-bottom: 52px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 20% 80%, rgba(13,110,90,.4) 0%, transparent 55%),
+              radial-gradient(ellipse at 80% 20%, rgba(196,127,23,.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-part-badge {
+  display: inline-block;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 20px; padding: 4px 16px;
+  font-size: .72rem; letter-spacing: .18em;
+  text-transform: uppercase; color: rgba(255,255,255,.7);
+  margin-bottom: 18px;
+}
+.hero-title {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 5.5vw, 3.6rem);
+  font-weight: 900; line-height: 1.12;
+  margin-bottom: 10px; position: relative;
+}
+.hero-title .accent { color: var(--amber); }
+.hero-title .teal   { color: var(--teal-2); }
+.hero-subtitle-ar {
+  font-family: var(--f-ar);
+  font-size: 1.05rem; color: rgba(255,255,255,.7);
+  direction: rtl; margin-bottom: 22px;
+}
+.hero-desc {
+  font-size: .92rem; color: rgba(255,255,255,.6);
+  max-width: 540px; margin: 0 auto 30px; line-height: 1.75;
+}
+.hero-tags {
+  display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+}
+.hero-tag {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 20px; padding: 4px 14px;
+  font-size: .75rem; color: rgba(255,255,255,.82);
+}
+
+/* ============================================================
+   FORMULA BUILDER (key visual element)
+   ============================================================ */
+.formula-section {
+  background: var(--paper-2);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-l);
+  padding: 36px;
+  margin-bottom: 52px;
+  box-shadow: var(--shadow-sm);
+}
+.formula-section h2 {
+  font-family: var(--f-display);
+  font-size: 1.45rem; color: var(--ink);
+  margin-bottom: 8px;
+  display: flex; align-items: center; gap: 10px;
+}
+.formula-desc-ar {
+  font-family: var(--f-ar);
+  font-size: .9rem; color: var(--ink-3);
+  direction: rtl; text-align: right;
+  margin-bottom: 28px; padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* The visual formula block */
+.formula-box {
+  background: var(--paper-3);
+  border: 1.5px solid var(--border-2);
+  border-radius: var(--radius-m);
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+.formula-row {
+  display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap; margin-bottom: 16px;
+}
+.formula-row:last-child { margin-bottom: 0; }
+.f-label {
+  font-size: .7rem; text-transform: uppercase;
+  letter-spacing: .12em; color: var(--ink-4);
+  min-width: 90px; font-weight: 600;
+}
+.f-piece {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 9px 18px; border-radius: var(--radius-s);
+  font-family: var(--f-mono); font-weight: 600; font-size: .95rem;
+  white-space: nowrap;
+}
+.f-piece.subj   { background: var(--amber-light); color: var(--amber); border: 1.5px solid rgba(196,127,23,.3); }
+.f-piece.haben  { background: var(--haben-bg);    color: var(--haben-color); border: 1.5px solid rgba(13,110,90,.3); }
+.f-piece.sein   { background: var(--sein-bg);     color: var(--sein-color);  border: 1.5px solid rgba(44,62,135,.3); }
+.f-piece.pp2    { background: var(--violet-light);color: var(--violet); border: 1.5px solid rgba(107,33,168,.3); }
+.f-piece.modal  { background: var(--rose-light);  color: var(--rose); border: 1.5px solid rgba(192,57,43,.3); }
+.f-plus {
+  font-size: 1.2rem; color: var(--ink-4); font-weight: 300;
+}
+.f-arrow {
+  font-size: .85rem; color: var(--ink-4); padding: 0 4px;
+}
+.f-example {
+  background: var(--paper-2); border: 1px solid var(--border);
+  border-radius: var(--radius-s);
+  padding: 8px 16px; font-family: var(--f-mono);
+  font-size: .88rem; color: var(--ink-2);
+}
+.f-pos-label {
+  font-size: .68rem; color: var(--ink-4);
+  text-align: center; margin-top: 4px;
+  display: block;
+}
+
+.formula-note {
+  background: var(--amber-light);
+  border: 1px solid rgba(196,127,23,.3);
+  border-left: 4px solid var(--amber);
+  border-radius: var(--radius-s);
+  padding: 14px 18px;
+}
+.formula-note-title {
+  font-size: .75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--amber); margin-bottom: 6px;
+}
+[data-theme="dark"] .formula-note-title { color: var(--amber); }
+
+/* ============================================================
+   HABEN / SEIN SPLIT PANELS
+   ============================================================ */
+.auxiliary-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px; margin-bottom: 52px;
+}
+@media (max-width: 680px) { .auxiliary-grid { grid-template-columns: 1fr; } }
+
+.aux-panel {
+  border-radius: var(--radius-l);
+  border: 2px solid;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.aux-panel.haben { border-color: var(--haben-color); }
+.aux-panel.sein  { border-color: var(--sein-color); }
+
+.aux-header {
+  padding: 20px 24px;
+  display: flex; align-items: center; gap: 14px;
+}
+.aux-panel.haben .aux-header { background: var(--haben-color); }
+.aux-panel.sein  .aux-header { background: var(--sein-color); }
+
+.aux-icon { font-size: 1.6rem; }
+.aux-title-wrap { display: flex; flex-direction: column; gap: 2px; }
+.aux-title { font-family: var(--f-mono); font-size: 1.3rem; font-weight: 700; color: white; }
+.aux-subtitle { font-size: .72rem; color: rgba(255,255,255,.7); letter-spacing: .08em; text-transform: uppercase; }
+.aux-ar { font-family: var(--f-ar); font-size: .88rem; color: rgba(255,255,255,.8); direction: rtl; margin-top: 3px; }
+
+.aux-body {
+  background: var(--paper-2);
+  padding: 20px 24px;
+}
+.aux-rule {
+  font-size: .88rem; color: var(--ink-2);
+  margin-bottom: 12px; line-height: 1.65;
+}
+.aux-rule-ar {
+  font-family: var(--f-ar); font-size: .85rem;
+  color: var(--ink-3); direction: rtl; text-align: right;
+  margin-bottom: 16px; padding-bottom: 14px;
+  border-bottom: 1px dashed var(--border);
+}
+.verb-chips {
+  display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px;
+}
+.verb-chip {
+  font-family: var(--f-mono); font-size: .8rem; font-weight: 600;
+  padding: 3px 12px; border-radius: 20px; border: 1.5px solid;
+}
+.aux-panel.haben .verb-chip { color: var(--haben-color); border-color: var(--haben-color); background: var(--haben-bg); }
+.aux-panel.sein  .verb-chip { color: var(--sein-color);  border-color: var(--sein-color);  background: var(--sein-bg); }
+
+/* ============================================================
+   VERB CARDS (one per modal verb)
+   ============================================================ */
+.verb-card {
+  background: var(--paper-2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-l);
+  margin-bottom: 44px;
+  box-shadow: var(--shadow-sm);
+  scroll-margin-top: 125px;
+  overflow: hidden;
+}
+
+.vc-header {
+  padding: 24px 32px;
+  display: flex; align-items: flex-start;
+  justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+/* Per-verb accent strips */
+.vc-konnen .vc-header { background: linear-gradient(135deg,#0d5266,#0a8ea0); }
+.vc-wollen .vc-header { background: linear-gradient(135deg,#7b2d00,#c0392b); }
+.vc-sollen .vc-header { background: linear-gradient(135deg,#145a32,#27ae60); }
+.vc-mussen .vc-header { background: linear-gradient(135deg,#4a235a,#8e44ad); }
+.vc-durfen .vc-header { background: linear-gradient(135deg,#154360,#1a7fc1); }
+.vc-mogen  .vc-header { background: linear-gradient(135deg,#7e5109,#d35400); }
+
+.vc-left { display: flex; flex-direction: column; gap: 4px; }
+.vc-infinitiv { font-family: var(--f-display); font-size: 1.9rem; font-weight: 700; color: white; }
+.vc-en    { font-size: .78rem; color: rgba(255,255,255,.65); letter-spacing: .06em; text-transform: uppercase; }
+.vc-ar    { font-family: var(--f-ar); font-size: .95rem; color: rgba(255,255,255,.82); direction: rtl; margin-top: 2px; }
+
+.vc-right { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+.vc-forms-label { font-size: .65rem; text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.5); }
+.vc-forms-box {
+  display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end;
+}
+.form-badge {
+  padding: 5px 14px; border-radius: var(--radius-s);
+  font-family: var(--f-mono); font-size: .88rem; font-weight: 600;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+  color: white;
+}
+.form-badge span { opacity: .65; font-weight: 400; font-size: .75rem; display: block; }
+
+.vc-body { padding: 28px 32px; }
+
+/* ============================================================
+   PERFEKT CONJUGATION TABLE
+   ============================================================ */
+.sec-label {
+  font-size: .7rem; text-transform: uppercase;
+  letter-spacing: .16em; color: var(--ink-4);
+  margin: 24px 0 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.sec-label::after { content:''; flex:1; height:1px; background: var(--border); }
+
+.conj-table {
+  width: 100%; border-collapse: collapse;
+  font-size: .9rem; margin-bottom: 24px;
+}
+.conj-table th {
+  background: var(--paper-3);
+  color: var(--ink-4); font-size: .68rem;
+  font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; padding: 9px 14px;
+  text-align: left; border-bottom: 2px solid var(--border);
+}
+.conj-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.conj-table tr:last-child td { border-bottom: none; }
+.conj-table tr:hover td { background: var(--paper-3); }
+
+.pronoun { color: var(--ink-4); font-size: .85rem; }
+.form-haben { font-family: var(--f-mono); font-weight: 700; color: var(--haben-color); }
+.form-sein  { font-family: var(--f-mono); font-weight: 700; color: var(--sein-color); }
+.form-pp    { font-family: var(--f-mono); font-weight: 600; color: var(--violet); }
+.form-modal { font-family: var(--f-mono); font-weight: 700; color: var(--rose); }
+.cell-ar    { font-family: var(--f-ar); font-size: .82rem; color: var(--ink-3); direction: rtl; }
+
+/* full sentence cell */
+.full-sent { font-family: var(--f-mono); font-size: .82rem; color: var(--ink-2); line-height: 1.5; }
+.full-sent .h  { color: var(--haben-color); font-weight: 700; }
+.full-sent .p  { color: var(--violet); font-weight: 600; }
+.full-sent .m  { color: var(--rose); font-weight: 700; }
+
+/* ============================================================
+   WORD ORDER VISUALIZER
+   ============================================================ */
+.word-order {
+  background: var(--paper-3);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-m);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+.wo-title {
+  font-size: .72rem; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--ink-4);
+  margin-bottom: 14px; font-weight: 700;
+}
+.wo-row {
+  display: flex; align-items: flex-start;
+  gap: 6px; flex-wrap: nowrap;
+  margin-bottom: 12px;
+  font-family: var(--f-mono); font-size: .85rem;
+}
+.wo-row:last-child { margin-bottom: 0; }
+.wo-cell {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 3px;
+  min-width: fit-content;
+}
+.wo-word {
+  padding: 7px 12px; border-radius: var(--radius-s);
+  font-weight: 600; white-space: nowrap;
+}
+.wo-pos {
+  font-size: .62rem; color: var(--ink-4);
+  text-align: center; letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.wo-plus { color: var(--ink-4); padding: 10px 2px; font-size: .8rem; }
+
+.wo-subj  .wo-word { background: var(--amber-light);   color: var(--amber);  border: 1.5px solid rgba(196,127,23,.3); }
+.wo-verb  .wo-word { background: var(--haben-bg);       color: var(--haben-color); border: 1.5px solid rgba(13,110,90,.3); }
+.wo-adv   .wo-word { background: var(--paper-2);        color: var(--ink-2);  border: 1.5px solid var(--border); }
+.wo-neg   .wo-word { background: var(--rose-light);     color: var(--rose);   border: 1.5px solid rgba(192,57,43,.3); }
+.wo-pp    .wo-word { background: var(--violet-light);   color: var(--violet); border: 1.5px solid rgba(107,33,168,.3); }
+.wo-modal .wo-word { background: var(--rose-light);     color: var(--rose);   border: 1.5px solid rgba(192,57,43,.3); }
+.wo-inf   .wo-word { background: var(--indigo-light);   color: var(--indigo); border: 1.5px solid rgba(44,62,135,.3); }
+.wo-obj   .wo-word { background: var(--paper-2);        color: var(--ink-2);  border: 1.5px solid var(--border); }
+
+/* ============================================================
+   EXAMPLE CARDS
+   ============================================================ */
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(295px,1fr));
+  gap: 14px; margin-bottom: 28px;
+}
+.ex-card {
+  background: var(--paper-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  padding: 15px 18px;
+  transition: all var(--tr);
+}
+.ex-card:hover { box-shadow: var(--shadow-sm); transform: translateY(-1px); }
+.ex-de { font-size: .96rem; font-weight: 500; color: var(--ink); margin-bottom: 5px; line-height: 1.55; }
+.ex-de .h  { color: var(--haben-color); font-weight: 700; }
+.ex-de .s  { color: var(--sein-color);  font-weight: 700; }
+.ex-de .pp { color: var(--violet);      font-weight: 700; }
+.ex-de .m  { color: var(--rose);        font-weight: 700; }
+.ex-ar { font-family: var(--f-ar); font-size: .86rem; color: var(--ink-3); direction: rtl; text-align: right; margin-bottom: 10px; }
+.ex-actions { display: flex; gap: 7px; }
+.btn-s, .btn-c {
+  border: 1px solid var(--border-2);
+  background: transparent; border-radius: 20px;
+  padding: 3px 10px; font-size: .7rem;
+  cursor: pointer; color: var(--ink-3);
+  font-family: var(--f-body);
+  display: inline-flex; align-items: center; gap: 5px;
+  transition: all var(--tr);
+}
+.btn-s:hover { background: var(--teal); color: white; border-color: var(--teal); }
+.btn-c:hover { background: var(--green); color: white; border-color: var(--green); }
+.btn-c.ok    { background: var(--green); color: white; border-color: var(--green); }
+
+/* ============================================================
+   GRAMMAR NOTE
+   ============================================================ */
+.g-note {
+  background: var(--amber-light);
+  border-left: 4px solid var(--amber);
+  border-radius: var(--radius-s);
+  padding: 14px 18px; margin-bottom: 20px;
+}
+.g-note-title { font-size: .73rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--amber); margin-bottom: 6px; }
+.g-note p, .g-note .ar { font-size: .88rem; color: var(--ink-2); margin-bottom: 4px; }
+.g-note .ar { font-family: var(--f-ar); direction: rtl; text-align: right; color: var(--ink-3); }
+
+/* ============================================================
+   EXERCISE BLOCK
+   ============================================================ */
+.ex-block {
+  background: var(--indigo-light);
+  border: 1.5px solid rgba(44,62,135,.18);
+  border-radius: var(--radius-l);
+  padding: 26px 30px;
+  margin-top: 24px;
+}
+[data-theme="dark"] .ex-block { border-color: rgba(123,146,240,.2); }
+
+.ex-block-title {
+  font-family: var(--f-display);
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--indigo); margin-bottom: 5px;
+  display: flex; align-items: center; gap: 8px;
+}
+[data-theme="dark"] .ex-block-title { color: var(--indigo); }
+.ex-block-ar {
+  font-family: var(--f-ar); font-size: .86rem;
+  color: var(--ink-3); direction: rtl; text-align: right;
+  margin-bottom: 18px; padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.ex-item {
+  display: flex; gap: 13px; align-items: flex-start;
+  padding: 13px 15px; border-radius: var(--radius-m);
+  background: var(--paper-2); border: 1px solid var(--border);
+  margin-bottom: 12px; transition: all var(--tr);
+}
+.ex-item:hover { box-shadow: var(--shadow-sm); }
+.ex-num {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--indigo); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .75rem; font-weight: 700; flex-shrink: 0;
+}
+.ex-content { flex: 1; }
+.ex-sent { font-size: .94rem; color: var(--ink); margin-bottom: 4px; line-height: 1.55; }
+.blank {
+  display: inline-block; min-width: 100px;
+  border-bottom: 2px solid var(--indigo);
+  margin: 0 4px; text-align: center;
+  color: var(--indigo); font-family: var(--f-mono); font-weight: 700;
+  font-size: .9rem;
+}
+.ex-sent-ar { font-family: var(--f-ar); font-size: .8rem; color: var(--ink-4); direction: rtl; text-align: right; }
+
+.ans-box {
+  margin-top: 9px; padding: 11px 14px;
+  background: var(--green-light);
+  border: 1px solid rgba(26,122,58,.25);
+  border-radius: var(--radius-s);
+}
+.ans-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .1em; color: var(--green); font-weight: 700; margin-bottom: 4px; }
+.ans-de { font-family: var(--f-mono); font-size: .92rem; font-weight: 700; color: var(--green); }
+[data-theme="dark"] .ans-de { color: var(--green); }
+.ans-why { font-size: .8rem; color: var(--ink-2); margin-top: 5px; line-height: 1.55; }
+.ans-why-ar { font-family: var(--f-ar); font-size: .8rem; color: var(--ink-3); direction: rtl; text-align: right; margin-top: 3px; }
+
+/* ============================================================
+   COMPARISON TABLE (Präteritum vs Perfekt)
+   ============================================================ */
+.compare-section {
+  background: var(--paper-2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-l);
+  padding: 36px;
+  margin-bottom: 52px;
+  box-shadow: var(--shadow-sm);
+}
+.compare-section h2 {
+  font-family: var(--f-display);
+  font-size: 1.5rem; margin-bottom: 8px;
+  display: flex; align-items: center; gap: 10px;
+}
+.compare-table {
+  width: 100%; border-collapse: collapse;
+  font-size: .88rem; margin-top: 20px;
+}
+.compare-table th {
+  padding: 11px 16px; text-align: left;
+  font-size: .72rem; text-transform: uppercase;
+  letter-spacing: .1em; font-weight: 700;
+  border-bottom: 2px solid var(--border);
+}
+.compare-table th:nth-child(2) { color: var(--teal);   background: var(--teal-light); }
+.compare-table th:nth-child(3) { color: var(--indigo); background: var(--indigo-light); }
+.compare-table td {
+  padding: 11px 16px; border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table tr:hover td { background: var(--paper-3); }
+.prät-cell { font-family: var(--f-mono); font-weight: 600; color: var(--teal); }
+.perf-cell { font-family: var(--f-mono); font-weight: 600; color: var(--indigo); }
+
+/* ============================================================
+   VOCAB TABLE
+   ============================================================ */
+.vocab-section {
+  background: var(--violet-light);
+  border: 1.5px solid rgba(107,33,168,.15);
+  border-radius: var(--radius-l);
+  padding: 32px;
+  margin-bottom: 52px;
+}
+[data-theme="dark"] .vocab-section { border-color: rgba(192,132,252,.15); }
+.vocab-section h2 { font-family: var(--f-display); font-size: 1.45rem; margin-bottom: 8px; color: var(--violet); display: flex; align-items: center; gap: 10px; }
+.vocab-table { width: 100%; border-collapse: collapse; font-size: .88rem; margin-top: 20px; }
+.vocab-table th { background: var(--ink); color: white; padding: 10px 15px; text-align: left; font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; }
+.vocab-table th:first-child { border-radius: var(--radius-s) 0 0 0; }
+.vocab-table th:last-child  { border-radius: 0 var(--radius-s) 0 0; }
+.vocab-table td { padding: 10px 15px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.vocab-table tr:last-child td { border-bottom: none; }
+.vocab-table tr:hover td { background: var(--paper-3); }
+.vb-inf  { font-family: var(--f-mono); font-weight: 700; color: var(--violet); font-size: .95rem; }
+.vb-pp   { font-family: var(--f-mono); color: var(--violet); }
+.vb-modal{ font-family: var(--f-mono); color: var(--rose);  }
+.vb-en   { color: var(--ink-2); }
+.vb-ar   { font-family: var(--f-ar); direction: rtl; text-align: right; color: var(--ink-3); font-size: .9rem; }
+.badge-h { display: inline-block; background: var(--haben-bg); color: var(--haben-color); font-size: .7rem; font-weight: 700; padding: 2px 9px; border-radius: 10px; border: 1px solid rgba(13,110,90,.3); }
+.badge-s { display: inline-block; background: var(--sein-bg);  color: var(--sein-color);  font-size: .7rem; font-weight: 700; padding: 2px 9px; border-radius: 10px; border: 1px solid rgba(44,62,135,.3); }
+
+/* ============================================================
+   MIXED QUIZ
+   ============================================================ */
+.quiz-section {
+  background: var(--rose-light);
+  border: 1.5px solid rgba(192,57,43,.15);
+  border-radius: var(--radius-l);
+  padding: 32px;
+  margin-bottom: 52px;
+}
+[data-theme="dark"] .quiz-section { border-color: rgba(240,128,112,.15); }
+.quiz-section h2 { font-family: var(--f-display); font-size: 1.45rem; color: var(--rose); margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+[data-theme="dark"] .quiz-section h2 { color: var(--rose); }
+.quiz-type-badge {
+  display: inline-block; font-size: .7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em;
+  background: var(--rose); color: white;
+  padding: 2px 10px; border-radius: 10px; margin-bottom: 20px;
+}
+
+/* ============================================================
+   CHECKLIST
+   ============================================================ */
+.revision-section {
+  background: var(--paper-2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-l);
+  padding: 36px; margin-bottom: 52px;
+  box-shadow: var(--shadow-sm);
+}
+.revision-section h2 { font-family: var(--f-display); font-size: 1.45rem; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+.checklist { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 10px; }
+.checklist li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 11px 15px;
+  background: var(--paper-3); border-radius: var(--radius-m);
+  border: 1px solid var(--border);
+  font-size: .86rem; color: var(--ink-2);
+  transition: all var(--tr); cursor: pointer;
+}
+.checklist li:hover { border-color: var(--amber); }
+.checklist li input { accent-color: var(--green); width: 15px; height: 15px; flex-shrink: 0; margin-top: 2px; }
+.exam-tips { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 13px; margin-top: 24px; }
+.tip-card { background: var(--amber-light); border: 1px solid rgba(196,127,23,.2); border-radius: var(--radius-m); padding: 15px 17px; }
+.tip-n { font-family: var(--f-mono); font-size: .7rem; font-weight: 700; color: var(--amber); margin-bottom: 5px; }
+.tip-t { font-size: .85rem; color: var(--ink-2); line-height: 1.6; }
+.tip-a { font-family: var(--f-ar); font-size: .8rem; color: var(--ink-3); direction: rtl; text-align: right; margin-top: 5px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,.5);
+  text-align: center; padding: 26px 24px;
+  font-size: .8rem;
+}
+footer strong { color: var(--teal-2); }
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  @page { size: A4 portrait; margin: 18mm 16mm; }
+  html, body { font-size: 10.5pt; background: white !important; color: black !important; }
+  .site-header, .quick-nav, .controls, .btn-s, .btn-c, .part-ribbon { display: none !important; }
+  .main { max-width: 100%; padding: 0; }
+  .hero { background: #0e1f1a !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; border-radius: 8px; padding: 28px; margin-bottom: 20px; }
+  .verb-card { break-inside: avoid; margin-bottom: 24px; }
+  .ex-block  { break-inside: avoid; }
+  .conj-table, .compare-table, .vocab-table { break-inside: avoid; }
+  .vc-header { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .ans-box   { display: block !important; }
+  .examples-grid { grid-template-columns: 1fr 1fr; }
+  .auxiliary-grid { grid-template-columns: 1fr 1fr; }
+  .aux-header { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero { padding: 40px 20px; }
+  .formula-section, .vc-body, .compare-section, .vocab-section, .quiz-section, .revision-section { padding: 22px 18px; }
+  .vc-header { padding: 18px 20px; }
+  .vc-infinitiv { font-size: 1.5rem; }
+  .formula-box { padding: 18px 16px; }
+  .word-order { padding: 15px 14px; }
+  .wo-row { gap: 4px; }
+  .wo-word { padding: 5px 9px; font-size: .78rem; }
+  .examples-grid { grid-template-columns: 1fr; }
+  .header-inner { height: auto; padding: 10px 16px; flex-wrap: wrap; }
+  .header-badge { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-main">Perfekt mit Modalverben</span>
+      <span class="brand-sub">Modalverben – الجزء الثاني</span>
+    </div>
+    <span class="header-badge">TEIL 2 · A2</span>
+    <div class="controls">
+      <button class="btn-ctrl" id="themeBtn" onclick="toggleTheme()">
+        <span id="themeIcon">🌙</span><span id="themeLabel">Dunkel</span>
+      </button>
+      <button class="btn-ctrl print" onclick="window.print()">🖨️ Drucken</button>
+    </div>
+  </div>
+</header>
+
+<!-- QUICK NAV -->
+<nav class="quick-nav" aria-label="Schnellnavigation">
+  <div class="quick-nav-inner">
+    <button class="qn-btn" onclick="go('formula')">📐 Formel</button>
+    <button class="qn-btn" onclick="go('konnen')">können</button>
+    <button class="qn-btn" onclick="go('wollen')">wollen</button>
+    <button class="qn-btn" onclick="go('sollen')">sollen</button>
+    <button class="qn-btn" onclick="go('mussen')">müssen</button>
+    <button class="qn-btn" onclick="go('durfen')">dürfen</button>
+    <button class="qn-btn" onclick="go('mogen')">mögen</button>
+    <button class="qn-btn" onclick="go('compare')">⚖️ Vergleich</button>
+    <button class="qn-btn" onclick="go('quiz')">🎯 Quiz</button>
+    <button class="qn-btn" onclick="go('vocab')">📚 Vokabeln</button>
+  </div>
+</nav>
+
+<!-- RIBBON -->
+<div class="part-ribbon">
+  <span>هذا هو الجزء الثاني من سلسلة الأفعال المساعدة الألمانية</span>
+  <span style="opacity:.5">|</span>
+  <span>Teil 2 von 2 – Perfekt mit Modalverben</span>
+</div>
+
+<!-- ===================== MAIN ===================== -->
+<main class="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-part-badge">Teil 2 · الجزء الثاني · Niveau A2</div>
+    <h1 class="hero-title">
+      <span class="accent">Perfekt</span> mit<br>
+      <span class="teal">Modalverben</span>
+    </h1>
+    <p class="hero-subtitle-ar">زمن المضارع التام مع الأفعال المساعدة</p>
+    <p class="hero-desc">
+      In Teil 1 haben wir das Präteritum gelernt. Jetzt lernen wir das Perfekt mit Modalverben – eine sehr wichtige Struktur für die gesprochene Sprache!
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">haben / sein + Partizip II + Infinitiv</span>
+      <span class="hero-tag">6 Modalverben</span>
+      <span class="hero-tag">Wortstellung im Satz</span>
+      <span class="hero-tag">🔊 Aussprache</span>
+      <span class="hero-tag">أمثلة + تمارين محلولة</span>
+    </div>
+  </section>
+
+  <!-- ===================== FORMULA SECTION ===================== -->
+  <section class="formula-section" id="sec-formula">
+    <h2>📐 Die Perfekt-Formel – معادلة Perfekt</h2>
+    <p class="formula-desc-ar">قبل أن نبدأ بكل فعل مساعد، يجب أن نفهم المعادلة الأساسية لبناء جملة Perfekt مع الأفعال المساعدة. هذه المعادلة تختلف عن Perfekt العادي!</p>
+
+    <!-- NORMAL PERFEKT -->
+    <div class="sec-label">Perfekt العادي – بدون فعل مساعد</div>
+    <div class="formula-box">
+      <div class="formula-row">
+        <span class="f-label">الصيغة العادية</span>
+        <div class="wo-cell">
+          <span class="f-piece subj">Subjekt</span>
+          <span class="f-pos-label">الفاعل</span>
+        </div>
+        <span class="f-plus">+</span>
+        <div class="wo-cell">
+          <span class="f-piece haben">haben / sein</span>
+          <span class="f-pos-label">المساعد (Pos. 2)</span>
+        </div>
+        <span class="f-plus">+</span>
+        <div class="wo-cell">
+          <span class="f-piece pp2">Partizip II</span>
+          <span class="f-pos-label">آخر الجملة</span>
+        </div>
+      </div>
+      <div class="formula-row">
+        <span class="f-label">مثال</span>
+        <div class="f-example">Ich <span style="color:var(--haben-color);font-weight:700;">habe</span> viel <span style="color:var(--violet);font-weight:700;">gearbeitet</span>.</div>
+        <span class="f-arrow">→</span>
+        <span style="font-size:.85rem; color:var(--ink-3);">عملت كثيراً.</span>
+      </div>
+    </div>
+
+    <!-- PERFEKT MIT MODALVERB -->
+    <div class="sec-label">Perfekt مع فعل مساعد – الصيغة الخاصة ⭐</div>
+    <div class="formula-box" style="border-color: var(--amber); border-width: 2px;">
+      <div class="formula-row">
+        <span class="f-label">الصيغة الخاصة</span>
+        <div class="wo-cell">
+          <span class="f-piece subj">Subjekt</span>
+          <span class="f-pos-label">الفاعل</span>
+        </div>
+        <span class="f-plus">+</span>
+        <div class="wo-cell">
+          <span class="f-piece haben">haben</span>
+          <span class="f-pos-label">دائماً haben (Pos. 2)</span>
+        </div>
+        <span class="f-plus">+</span>
+        <div class="wo-cell">
+          <span class="f-piece pp2">Infinitiv</span>
+          <span class="f-pos-label">الفعل الرئيسي</span>
+        </div>
+        <span class="f-plus">+</span>
+        <div class="wo-cell">
+          <span class="f-piece modal">Infinitiv Modal</span>
+          <span class="f-pos-label">الفعل المساعد (آخر الجملة!)</span>
+        </div>
+      </div>
+      <div class="formula-row">
+        <span class="f-label">مثال</span>
+        <div class="f-example">Ich <span style="color:var(--haben-color);font-weight:700;">habe</span> viel <span style="color:var(--violet);font-weight:700;">arbeiten</span> <span style="color:var(--rose);font-weight:700;">müssen</span>.</div>
+        <span class="f-arrow">→</span>
+        <span style="font-size:.85rem; color:var(--ink-3);">كان يجب عليّ أن أعمل كثيراً.</span>
+      </div>
+    </div>
+
+    <div class="formula-note">
+      <div class="formula-note-title">⭐ القاعدة الذهبية – Die goldene Regel</div>
+      <p style="font-size:.9rem; color:var(--ink-2); margin-bottom:8px;">
+        في Perfekt مع المساعدات: نستخدم دائماً <strong>haben</strong> (وليس sein أبداً!) + <strong>Infinitiv</strong> (وليس Partizip II!) + <strong>Infinitiv des Modalverbs</strong> في آخر الجملة.
+      </p>
+      <p class="ar" style="font-size:.87rem; color:var(--ink-3); direction:rtl; text-align:right;">
+        هذا يُسمى <strong>Ersatzinfinitiv</strong> (بديل المصدر) — وهو من أهم الفروق بين Perfekt العادي وPerfekt مع الأفعال المساعدة!
+      </p>
+    </div>
+  </section>
+
+  <!-- HABEN vs SEIN PANELS -->
+  <div class="auxiliary-grid" style="margin-bottom:0;">
+    <div class="aux-panel haben">
+      <div class="aux-header">
+        <span class="aux-icon">✅</span>
+        <div class="aux-title-wrap">
+          <span class="aux-title">haben</span>
+          <span class="aux-subtitle">يُستخدم مع الأفعال المساعدة</span>
+          <span class="aux-ar">يُستخدم دائماً مع الأفعال المساعدة في Perfekt</span>
+        </div>
+      </div>
+      <div class="aux-body">
+        <p class="aux-rule">All 6 Modalverben form their Perfekt <strong>exclusively</strong> with <em>haben</em> — never with <em>sein</em>.</p>
+        <p class="aux-rule-ar">جميع الأفعال المساعدة الستة تبني Perfekt مع <strong>haben</strong> فقط — لا استثناء!</p>
+        <div class="verb-chips">
+          <span class="verb-chip">haben + ... + können</span>
+          <span class="verb-chip">haben + ... + wollen</span>
+          <span class="verb-chip">haben + ... + sollen</span>
+          <span class="verb-chip">haben + ... + müssen</span>
+          <span class="verb-chip">haben + ... + dürfen</span>
+          <span class="verb-chip">haben + ... + mögen</span>
+        </div>
+      </div>
+    </div>
+    <div class="aux-panel sein">
+      <div class="aux-header">
+        <span class="aux-icon">❌</span>
+        <div class="aux-title-wrap">
+          <span class="aux-title">sein</span>
+          <span class="aux-subtitle">لا يُستخدم مع الأفعال المساعدة</span>
+          <span class="aux-ar">لا تبني الأفعال المساعدة Perfekt مع sein أبداً</span>
+        </div>
+      </div>
+      <div class="aux-body">
+        <p class="aux-rule">Even for verbs of movement used with modals — do NOT use <em>sein</em>! Always <em>haben</em>.</p>
+        <p class="aux-rule-ar">حتى لو كان الفعل الرئيسي فعل حركة (gehen, kommen...) مع فعل مساعد — نستخدم <strong>haben</strong> وليس sein!</p>
+        <div class="verb-chips">
+          <span class="verb-chip">✗ Ich bin kommen müssen</span>
+          <span class="verb-chip">✓ Ich habe kommen müssen</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom:52px;"></div>
+
+  <!-- ===================== KÖNNEN ===================== -->
+  <article class="verb-card vc-konnen" id="sec-konnen">
+    <div class="vc-header">
+      <div class="vc-left">
+        <span class="vc-infinitiv">können</span>
+        <span class="vc-en">to be able to / can</span>
+        <span class="vc-ar">يستطيع – قادر على</span>
+      </div>
+      <div class="vc-right">
+        <span class="vc-forms-label">Perfekt-Formen</span>
+        <div class="vc-forms-box">
+          <div class="form-badge">gekonnt<span>Partizip II (allein)</span></div>
+          <div class="form-badge">können<span>Ersatzinfinitiv</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="vc-body">
+
+      <!-- Wortstellung -->
+      <div class="sec-label">ترتيب الكلمات – Wortstellung im Perfekt</div>
+      <div class="word-order">
+        <div class="wo-title">🔍 تحليل الجملة: "Ich habe das nicht machen können."</div>
+        <div class="wo-row">
+          <div class="wo-cell wo-subj"><div class="wo-word">Ich</div><div class="wo-pos">Subjekt (1)</div></div>
+          <span class="wo-plus">→</span>
+          <div class="wo-cell wo-verb"><div class="wo-word">habe</div><div class="wo-pos">haben (2)</div></div>
+          <span class="wo-plus">→</span>
+          <div class="wo-cell wo-obj"><div class="wo-word">das</div><div class="wo-pos">Objekt (3)</div></div>
+          <span class="wo-plus">→</span>
+          <div class="wo-cell wo-neg"><div class="wo-word">nicht</div><div class="wo-pos">Negation (4)</div></div>
+          <span class="wo-plus">→</span>
+          <div class="wo-cell wo-inf"><div class="wo-word">machen</div><div class="wo-pos">Infinitiv (5)</div></div>
+          <span class="wo-plus">→</span>
+          <div class="wo-cell wo-modal"><div class="wo-word">können</div><div class="wo-pos">Modal-Inf. (Ende)</div></div>
+        </div>
+      </div>
+
+      <!-- Conjugation Table -->
+      <div class="sec-label">التصريف الكامل – Vollständige Konjugation</div>
+      <table class="conj-table">
+        <thead>
+          <tr><th>Pronomen</th><th>haben</th><th>Infinitiv</th><th>Modal-Inf.</th><th>Vollsatz (Beispiel)</th><th>بالعربية</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pronoun">ich</td>
+            <td class="form-haben">habe</td>
+            <td class="form-pp">gehen</td>
+            <td class="form-modal">können</td>
+            <td class="full-sent">Ich <span class="h">habe</span> nicht <span class="p">gehen</span> <span class="m">können</span>.</td>
+            <td class="cell-ar">لم أستطع الذهاب.</td>
+          </tr>
+          <tr>
+            <td class="pronoun">du</td>
+            <td class="form-haben">hast</td>
+            <td class="form-pp">schlafen</td>
+            <td class="form-modal">können</td>
+            <td class="full-sent">Du <span class="h">hast</span> gut <span class="p">schlafen</span> <span class="m">können</span>.</td>
+            <td class="cell-ar">استطعت النوم جيداً.</td>
+          </tr>
+          <tr>
+            <td class="pronoun">er/sie/es</td>
+            <td class="form-haben">hat</td>
+            <td class="form-pp">kommen</td>
+            <td class="form-modal">können</td>
+            <td class="full-sent">Er <span class="h">hat</span> nicht <span class="p">kommen</span> <span class="m">können</span>.</td>
+            <td class="cell-ar">لم يستطع المجيء.</td>
+          </tr>
+          <tr>
+            <td class="pronoun">wir</td>
+            <td class="form-haben">haben</td>
+            <td class="form-pp">helfen</td>
+            <td class="form-modal">können</td>
+            <td class="full-sent">Wir <span class="h">haben</span> dir <span class="p">helfen</span> <span class="m">können</span>.</td>
+            <td class="cell-ar">استطعنا مساعدتك.</td>
+          </tr>
+          <tr>
+            <td class="pronoun">ihr</td>
+            <td class="form-haben">habt</td>
+            <td class="form-pp">spielen</td>
+            <td class="form-modal">können</td>
+            <td class="full-sent">Ihr <span class="h">habt</span> nicht <span class="p">spielen</span> <span class="m">können</span>.</td>
+            <td class="cell-ar">لم تستطيعوا اللعب.</td>
+          </tr>
+          <tr>
+            <td class="pronoun">sie/Sie</td>
+            <td class="form-haben">haben</td>
+            <td class="form-pp">sprechen</td>
+            <td class="form-modal">können</td>
+            <td class="full-sent">Sie <span class="h">haben</span> Deutsch <span class="p">sprechen</span> <span class="m">können</span>.</td>
+            <td class="cell-ar">استطاعوا التحدث بالألمانية.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="g-note">
+        <div class="g-note-title">💡 Ersatzinfinitiv – بديل Partizip II</div>
+        <p>When a modal verb is used with another infinitive in Perfekt, the Partizip II form (<em>gekonnt</em>) is replaced by the infinitive (<em>können</em>). This is called <strong>Ersatzinfinitiv</strong>.</p>
+        <p class="ar">عندما يوجد فعل آخر مع الفعل المساعد في Perfekt، لا نستخدم Partizip II (gekonnt) بل نستخدم المصدر (können) مرة أخرى. هذا يسمى "Ersatzinfinitiv" أي بديل المصدر.</p>
+      </div>
+
+      <div class="sec-label">أمثلة كاملة – Beispielsätze</div>
+      <div class="examples-grid">
+        <div class="ex-card">
+          <div class="ex-de">Ich <span class="h">habe</span> das Wort nicht <span class="pp">aussprechen</span> <span class="m">können</span>.</div>
+          <div class="ex-ar">لم أستطع نطق الكلمة.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Ich habe das Wort nicht aussprechen können.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Ich habe das Wort nicht aussprechen können.')">📋 Kopieren</button>
+          </div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-de">Er <span class="h">hat</span> gestern nicht <span class="pp">kommen</span> <span class="m">können</span>.</div>
+          <div class="ex-ar">لم يستطع المجيء أمس.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Er hat gestern nicht kommen können.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Er hat gestern nicht kommen können.')">📋 Kopieren</button>
+          </div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-de">Wir <span class="h">haben</span> leider nicht <span class="pp">helfen</span> <span class="m">können</span>.</div>
+          <div class="ex-ar">لم نستطع للأسف المساعدة.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Wir haben leider nicht helfen können.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Wir haben leider nicht helfen können.')">📋 Kopieren</button>
+          </div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-de">Sie <span class="h">hat</span> sehr gut <span class="pp">singen</span> <span class="m">können</span>.</div>
+          <div class="ex-ar">كانت تستطيع الغناء جيداً جداً.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Sie hat sehr gut singen können.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Sie hat sehr gut singen können.')">📋 Kopieren</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-block-title">✏️ Übung – können im Perfekt</div>
+        <div class="ex-block-ar">حوّل الجمل التالية من Präteritum إلى Perfekt:</div>
+        <div class="ex-item">
+          <div class="ex-num">1</div>
+          <div class="ex-content">
+            <div class="ex-sent">Präteritum: Ich <em>konnte</em> nicht schlafen. → Perfekt: Ich <span class="blank">habe nicht schlafen können</span>.</div>
+            <div class="ex-sent-ar">لم أستطع النوم. (حوّلها إلى Perfekt)</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة الكاملة</div>
+              <div class="ans-de">Ich habe nicht schlafen können.</div>
+              <div class="ans-why">haben (ich→habe) + schlafen (Infinitiv) + können (Ersatzinfinitiv am Ende)</div>
+              <div class="ans-why-ar">habe + الفعل الرئيسي (schlafen) + können في نهاية الجملة</div>
+            </div>
+          </div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-num">2</div>
+          <div class="ex-content">
+            <div class="ex-sent">Präteritum: Wir <em>konnten</em> nicht kommen. → Perfekt: Wir <span class="blank">haben nicht kommen können</span>.</div>
+            <div class="ex-sent-ar">لم نستطع المجيء.</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة</div>
+              <div class="ans-de">Wir haben nicht kommen können.</div>
+              <div class="ans-why-ar">haben (wir→haben) + kommen (Infinitiv) + können (آخر الجملة)</div>
+            </div>
+          </div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-num">3</div>
+          <div class="ex-content">
+            <div class="ex-sent">Präteritum: Sie <em>konnte</em> gut Deutsch sprechen. → Perfekt: Sie <span class="blank">hat gut Deutsch sprechen können</span>.</div>
+            <div class="ex-sent-ar">كانت تستطيع التحدث بالألمانية جيداً.</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة</div>
+              <div class="ans-de">Sie hat gut Deutsch sprechen können.</div>
+              <div class="ans-why-ar">hat + sprechen (Infinitiv) + können (بديل Partizip II)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== WOLLEN ===================== -->
+  <article class="verb-card vc-wollen" id="sec-wollen">
+    <div class="vc-header">
+      <div class="vc-left">
+        <span class="vc-infinitiv">wollen</span>
+        <span class="vc-en">to want to</span>
+        <span class="vc-ar">يريد – يرغب في</span>
+      </div>
+      <div class="vc-right">
+        <span class="vc-forms-label">Perfekt-Formen</span>
+        <div class="vc-forms-box">
+          <div class="form-badge">gewollt<span>Partizip II (allein)</span></div>
+          <div class="form-badge">wollen<span>Ersatzinfinitiv</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="vc-body">
+      <div class="sec-label">أمثلة وجدول – Beispiele &amp; Konjugation</div>
+      <table class="conj-table">
+        <thead>
+          <tr><th>Pronomen</th><th>haben</th><th>Inf.</th><th>Modal-Inf.</th><th>Vollsatz</th><th>عربي</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="pronoun">ich</td><td class="form-haben">habe</td><td class="form-pp">gehen</td><td class="form-modal">wollen</td><td class="full-sent">Ich <span class="h">habe</span> ins Kino <span class="p">gehen</span> <span class="m">wollen</span>.</td><td class="cell-ar">أردت الذهاب إلى السينما.</td></tr>
+          <tr><td class="pronoun">du</td><td class="form-haben">hast</td><td class="form-pp">bleiben</td><td class="form-modal">wollen</td><td class="full-sent">Du <span class="h">hast</span> zu Hause <span class="p">bleiben</span> <span class="m">wollen</span>.</td><td class="cell-ar">أردت البقاء في البيت.</td></tr>
+          <tr><td class="pronoun">er/sie/es</td><td class="form-haben">hat</td><td class="form-pp">arbeiten</td><td class="form-modal">wollen</td><td class="full-sent">Er <span class="h">hat</span> mehr <span class="p">arbeiten</span> <span class="m">wollen</span>.</td><td class="cell-ar">أراد العمل أكثر.</td></tr>
+          <tr><td class="pronoun">wir</td><td class="form-haben">haben</td><td class="form-pp">studieren</td><td class="form-modal">wollen</td><td class="full-sent">Wir <span class="h">haben</span> in Berlin <span class="p">studieren</span> <span class="m">wollen</span>.</td><td class="cell-ar">أردنا الدراسة في برلين.</td></tr>
+          <tr><td class="pronoun">ihr</td><td class="form-haben">habt</td><td class="form-pp">kommen</td><td class="form-modal">wollen</td><td class="full-sent">Ihr <span class="h">habt</span> nicht <span class="p">kommen</span> <span class="m">wollen</span>.</td><td class="cell-ar">لم تريدوا المجيء.</td></tr>
+          <tr><td class="pronoun">sie/Sie</td><td class="form-haben">haben</td><td class="form-pp">sprechen</td><td class="form-modal">wollen</td><td class="full-sent">Sie <span class="h">haben</span> nicht mit mir <span class="p">sprechen</span> <span class="m">wollen</span>.</td><td class="cell-ar">لم يريدوا التحدث معي.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="examples-grid">
+        <div class="ex-card">
+          <div class="ex-de">Als Kind <span class="h">hat</span> er Arzt <span class="pp">werden</span> <span class="m">wollen</span>.</div>
+          <div class="ex-ar">عندما كان طفلاً، أراد أن يصبح طبيباً.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Als Kind hat er Arzt werden wollen.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Als Kind hat er Arzt werden wollen.')">📋 Kopieren</button>
+          </div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-de">Wir <span class="h">haben</span> ins Kino <span class="pp">gehen</span> <span class="m">wollen</span>, aber es war geschlossen.</div>
+          <div class="ex-ar">أردنا الذهاب إلى السينما، لكنها كانت مغلقة.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Wir haben ins Kino gehen wollen, aber es war geschlossen.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Wir haben ins Kino gehen wollen, aber es war geschlossen.')">📋 Kopieren</button>
+          </div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-de">Sie <span class="h">hat</span> nie <span class="pp">aufgeben</span> <span class="m">wollen</span>.</div>
+          <div class="ex-ar">لم ترد أبداً الاستسلام.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Sie hat nie aufgeben wollen.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Sie hat nie aufgeben wollen.')">📋 Kopieren</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-block-title">✏️ Übung – wollen im Perfekt</div>
+        <div class="ex-block-ar">أكمل الجمل بصيغة Perfekt الصحيحة:</div>
+        <div class="ex-item">
+          <div class="ex-num">1</div>
+          <div class="ex-content">
+            <div class="ex-sent">Er <span class="blank">hat nach Hause gehen wollen</span>. (er / nach Hause gehen / wollen)</div>
+            <div class="ex-sent-ar">أراد الذهاب إلى البيت.</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة</div>
+              <div class="ans-de">Er hat nach Hause gehen wollen.</div>
+              <div class="ans-why-ar">er → hat + gehen (Inf.) + wollen (آخر الجملة)</div>
+            </div>
+          </div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-num">2</div>
+          <div class="ex-content">
+            <div class="ex-sent">Ich <span class="blank">habe viel arbeiten wollen</span>. (ich / viel arbeiten / wollen)</div>
+            <div class="ex-sent-ar">أردت أن أعمل كثيراً.</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة</div>
+              <div class="ans-de">Ich habe viel arbeiten wollen.</div>
+              <div class="ans-why-ar">ich → habe + arbeiten (Inf.) + wollen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== SOLLEN ===================== -->
+  <article class="verb-card vc-sollen" id="sec-sollen">
+    <div class="vc-header">
+      <div class="vc-left">
+        <span class="vc-infinitiv">sollen</span>
+        <span class="vc-en">shall / supposed to</span>
+        <span class="vc-ar">من المفروض – يُفترض به</span>
+      </div>
+      <div class="vc-right">
+        <span class="vc-forms-label">Perfekt-Formen</span>
+        <div class="vc-forms-box">
+          <div class="form-badge">gesollt<span>Partizip II (allein)</span></div>
+          <div class="form-badge">sollen<span>Ersatzinfinitiv</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="vc-body">
+      <table class="conj-table">
+        <thead>
+          <tr><th>Pronomen</th><th>haben</th><th>Inf.</th><th>Modal-Inf.</th><th>Vollsatz</th><th>عربي</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="pronoun">ich</td><td class="form-haben">habe</td><td class="form-pp">gehen</td><td class="form-modal">sollen</td><td class="full-sent">Ich <span class="h">habe</span> zum Arzt <span class="p">gehen</span> <span class="m">sollen</span>.</td><td class="cell-ar">كان يُفترض بي الذهاب للطبيب.</td></tr>
+          <tr><td class="pronoun">du</td><td class="form-haben">hast</td><td class="form-pp">bleiben</td><td class="form-modal">sollen</td><td class="full-sent">Du <span class="h">hast</span> zu Hause <span class="p">bleiben</span> <span class="m">sollen</span>.</td><td class="cell-ar">كان يُفترض بك البقاء في البيت.</td></tr>
+          <tr><td class="pronoun">er/sie/es</td><td class="form-haben">hat</td><td class="form-pp">helfen</td><td class="form-modal">sollen</td><td class="full-sent">Er <span class="h">hat</span> dir <span class="p">helfen</span> <span class="m">sollen</span>.</td><td class="cell-ar">كان من المفروض أن يساعدك.</td></tr>
+          <tr><td class="pronoun">wir</td><td class="form-haben">haben</td><td class="form-pp">kommen</td><td class="form-modal">sollen</td><td class="full-sent">Wir <span class="h">haben</span> früher <span class="p">kommen</span> <span class="m">sollen</span>.</td><td class="cell-ar">كان يُفترض بنا المجيء مبكراً.</td></tr>
+          <tr><td class="pronoun">ihr</td><td class="form-haben">habt</td><td class="form-pp">aufräumen</td><td class="form-modal">sollen</td><td class="full-sent">Ihr <span class="h">habt</span> euer Zimmer <span class="p">aufräumen</span> <span class="m">sollen</span>.</td><td class="cell-ar">كان يُفترض بكم ترتيب غرفتكم.</td></tr>
+          <tr><td class="pronoun">sie/Sie</td><td class="form-haben">haben</td><td class="form-pp">pünktlich sein</td><td class="form-modal">sollen</td><td class="full-sent">Sie <span class="h">haben</span> pünktlich <span class="p">kommen</span> <span class="m">sollen</span>.</td><td class="cell-ar">كان يُفترض بهم المجيء في الوقت.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="examples-grid">
+        <div class="ex-card">
+          <div class="ex-de">Er <span class="h">hat</span> gestern dir <span class="pp">helfen</span> <span class="m">sollen</span>.</div>
+          <div class="ex-ar">كان من المفروض أن يساعدك أمس.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Er hat gestern dir helfen sollen.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Er hat gestern dir helfen sollen.')">📋 Kopieren</button>
+          </div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-de">Ich <span class="h">habe</span> die Hausaufgaben <span class="pp">fertig machen</span> <span class="m">sollen</span>.</div>
+          <div class="ex-ar">كان يُفترض بي إنهاء الواجب.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Ich habe die Hausaufgaben fertig machen sollen.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Ich habe die Hausaufgaben fertig machen sollen.')">📋 Kopieren</button>
+          </div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-de">Sie <span class="h">hat</span> pünktlich zu Hause <span class="pp">sein</span> <span class="m">sollen</span>.</div>
+          <div class="ex-ar">كان يُفترض بها أن تكون في البيت في الوقت.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Sie hat pünktlich zu Hause sein sollen.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Sie hat pünktlich zu Hause sein sollen.')">📋 Kopieren</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-block-title">✏️ Übung – sollen im Perfekt</div>
+        <div class="ex-block-ar">حوّل إلى Perfekt:</div>
+        <div class="ex-item">
+          <div class="ex-num">1</div>
+          <div class="ex-content">
+            <div class="ex-sent">Ihr <span class="blank">habt euer Zimmer aufräumen sollen</span>.</div>
+            <div class="ex-sent-ar">كان يُفترض بكم ترتيب غرفتكم.</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة</div>
+              <div class="ans-de">Ihr habt euer Zimmer aufräumen sollen.</div>
+              <div class="ans-why-ar">ihr → habt + aufräumen (Inf.) + sollen (نهاية الجملة)</div>
+            </div>
+          </div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-num">2</div>
+          <div class="ex-content">
+            <div class="ex-sent">Du <span class="blank">hast deine Hausaufgaben fertig machen sollen</span>.</div>
+            <div class="ex-sent-ar">كان يُفترض بك إنهاء واجبك.</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة</div>
+              <div class="ans-de">Du hast deine Hausaufgaben fertig machen sollen.</div>
+              <div class="ans-why-ar">du → hast + machen (Inf.) + sollen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== MÜSSEN ===================== -->
+  <article class="verb-card vc-mussen" id="sec-mussen">
+    <div class="vc-header">
+      <div class="vc-left">
+        <span class="vc-infinitiv">müssen</span>
+        <span class="vc-en">must / have to</span>
+        <span class="vc-ar">يجب – مضطر أن</span>
+      </div>
+      <div class="vc-right">
+        <span class="vc-forms-label">Perfekt-Formen</span>
+        <div class="vc-forms-box">
+          <div class="form-badge">gemusst<span>Partizip II (allein)</span></div>
+          <div class="form-badge">müssen<span>Ersatzinfinitiv</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="vc-body">
+      <table class="conj-table">
+        <thead>
+          <tr><th>Pronomen</th><th>haben</th><th>Inf.</th><th>Modal-Inf.</th><th>Vollsatz</th><th>عربي</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="pronoun">ich</td><td class="form-haben">habe</td><td class="form-pp">arbeiten</td><td class="form-modal">müssen</td><td class="full-sent">Ich <span class="h">habe</span> bis 21 Uhr <span class="p">arbeiten</span> <span class="m">müssen</span>.</td><td class="cell-ar">اضطررت للعمل حتى 9 مساءً.</td></tr>
+          <tr><td class="pronoun">du</td><td class="form-haben">hast</td><td class="form-pp">warten</td><td class="form-modal">müssen</td><td class="full-sent">Du <span class="h">hast</span> lange <span class="p">warten</span> <span class="m">müssen</span>.</td><td class="cell-ar">اضطررت للانتظار طويلاً.</td></tr>
+          <tr><td class="pronoun">er/sie/es</td><td class="form-haben">hat</td><td class="form-pp">schreiben</td><td class="form-modal">müssen</td><td class="full-sent">Sie <span class="h">hat</span> viel <span class="p">schreiben</span> <span class="m">müssen</span>.</td><td class="cell-ar">اضطرت للكتابة كثيراً.</td></tr>
+          <tr><td class="pronoun">wir</td><td class="form-haben">haben</td><td class="form-pp">gehen</td><td class="form-modal">müssen</td><td class="full-sent">Wir <span class="h">haben</span> früh aufstehen <span class="m">müssen</span>.</td><td class="cell-ar">اضطررنا للاستيقاظ مبكراً.</td></tr>
+          <tr><td class="pronoun">ihr</td><td class="form-haben">habt</td><td class="form-pp">lernen</td><td class="form-modal">müssen</td><td class="full-sent">Ihr <span class="h">habt</span> viel <span class="p">lernen</span> <span class="m">müssen</span>.</td><td class="cell-ar">اضطررتم لتعلم الكثير.</td></tr>
+          <tr><td class="pronoun">sie/Sie</td><td class="form-haben">haben</td><td class="form-pp">heiraten</td><td class="form-modal">müssen</td><td class="full-sent">Sie <span class="h">haben</span> jung <span class="p">heiraten</span> <span class="m">müssen</span>.</td><td class="cell-ar">اضطروا للزواج وهم صغار.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="examples-grid">
+        <div class="ex-card">
+          <div class="ex-de">Ich <span class="h">habe</span> gestern bis 21 Uhr <span class="pp">arbeiten</span> <span class="m">müssen</span>.</div>
+          <div class="ex-ar">اضطررت للعمل حتى الساعة 9 مساءً أمس.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Ich habe gestern bis 21 Uhr arbeiten müssen.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Ich habe gestern bis 21 Uhr arbeiten müssen.')">📋 Kopieren</button>
+          </div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-de">Meine Oma <span class="h">hat</span> sehr jung <span class="pp">heiraten</span> <span class="m">müssen</span>.</div>
+          <div class="ex-ar">اضطرت جدتي للزواج وهي صغيرة جداً.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Meine Oma hat sehr jung heiraten müssen.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Meine Oma hat sehr jung heiraten müssen.')">📋 Kopieren</button>
+          </div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-de">Ihr <span class="h">habt</span> zur Uni <span class="pp">gehen</span> <span class="m">müssen</span>.</div>
+          <div class="ex-ar">اضطررتم للذهاب إلى الجامعة.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Ihr habt zur Uni gehen müssen.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Ihr habt zur Uni gehen müssen.')">📋 Kopieren</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-block-title">✏️ Übung – müssen im Perfekt</div>
+        <div class="ex-block-ar">حوّل إلى Perfekt:</div>
+        <div class="ex-item">
+          <div class="ex-num">1</div>
+          <div class="ex-content">
+            <div class="ex-sent">Ich <em>musste</em> gestern bis 21 Uhr arbeiten. → Ich <span class="blank">habe gestern bis 21 Uhr arbeiten müssen</span>.</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة</div>
+              <div class="ans-de">Ich habe gestern bis 21 Uhr arbeiten müssen.</div>
+              <div class="ans-why-ar">habe + arbeiten (Inf.) + müssen (نهاية الجملة)</div>
+            </div>
+          </div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-num">2</div>
+          <div class="ex-content">
+            <div class="ex-sent">Ihr <em>musstet</em> zur Uni gehen. → Ihr <span class="blank">habt zur Uni gehen müssen</span>.</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة</div>
+              <div class="ans-de">Ihr habt zur Uni gehen müssen.</div>
+              <div class="ans-why-ar">habt + gehen (Inf.) + müssen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== DÜRFEN ===================== -->
+  <article class="verb-card vc-durfen" id="sec-durfen">
+    <div class="vc-header">
+      <div class="vc-left">
+        <span class="vc-infinitiv">dürfen</span>
+        <span class="vc-en">may / to be allowed to</span>
+        <span class="vc-ar">مسموح له – مُباح له</span>
+      </div>
+      <div class="vc-right">
+        <span class="vc-forms-label">Perfekt-Formen</span>
+        <div class="vc-forms-box">
+          <div class="form-badge">gedurft<span>Partizip II (allein)</span></div>
+          <div class="form-badge">dürfen<span>Ersatzinfinitiv</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="vc-body">
+      <table class="conj-table">
+        <thead>
+          <tr><th>Pronomen</th><th>haben</th><th>Inf.</th><th>Modal-Inf.</th><th>Vollsatz</th><th>عربي</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="pronoun">ich</td><td class="form-haben">habe</td><td class="form-pp">ausgehen</td><td class="form-modal">dürfen</td><td class="full-sent">Ich <span class="h">habe</span> nicht allein <span class="p">ausgehen</span> <span class="m">dürfen</span>.</td><td class="cell-ar">لم يُسمح لي الخروج وحدي.</td></tr>
+          <tr><td class="pronoun">du</td><td class="form-haben">hast</td><td class="form-pp">spielen</td><td class="form-modal">dürfen</td><td class="full-sent">Du <span class="h">hast</span> draußen <span class="p">spielen</span> <span class="m">dürfen</span>.</td><td class="cell-ar">كان مسموحاً لك اللعب في الخارج.</td></tr>
+          <tr><td class="pronoun">er/sie/es</td><td class="form-haben">hat</td><td class="form-pp">bleiben</td><td class="form-modal">dürfen</td><td class="full-sent">Er <span class="h">hat</span> in Italien <span class="p">bleiben</span> <span class="m">dürfen</span>.</td><td class="cell-ar">كان مسموحاً له البقاء في إيطاليا.</td></tr>
+          <tr><td class="pronoun">wir</td><td class="form-haben">haben</td><td class="form-pp">kommen</td><td class="form-modal">dürfen</td><td class="full-sent">Wir <span class="h">haben</span> früher nach Hause <span class="p">gehen</span> <span class="m">dürfen</span>.</td><td class="cell-ar">سُمح لنا العودة للبيت مبكراً.</td></tr>
+          <tr><td class="pronoun">ihr</td><td class="form-haben">habt</td><td class="form-pp">spielen</td><td class="form-modal">dürfen</td><td class="full-sent">Ihr <span class="h">habt</span> am Computer nicht <span class="p">spielen</span> <span class="m">dürfen</span>.</td><td class="cell-ar">لم يُسمح لكم اللعب على الكمبيوتر.</td></tr>
+          <tr><td class="pronoun">sie/Sie</td><td class="form-haben">haben</td><td class="form-pp">bleiben</td><td class="form-modal">dürfen</td><td class="full-sent">Sie <span class="h">haben</span> in Italien <span class="p">bleiben</span> <span class="m">dürfen</span>.</td><td class="cell-ar">كان مسموحاً لهم البقاء في إيطاليا.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="examples-grid">
+        <div class="ex-card">
+          <div class="ex-de">Als Kind <span class="h">habe</span> ich nicht allein <span class="pp">ausgehen</span> <span class="m">dürfen</span>.</div>
+          <div class="ex-ar">عندما كنت طفلاً، لم يُسمح لي الخروج وحدي.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Als Kind habe ich nicht allein ausgehen dürfen.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Als Kind habe ich nicht allein ausgehen dürfen.')">📋 Kopieren</button>
+          </div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-de">Die Kinder <span class="h">haben</span> gestern am Computer nicht <span class="pp">spielen</span> <span class="m">dürfen</span>.</div>
+          <div class="ex-ar">لم يُسمح للأطفال اللعب على الكمبيوتر أمس.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Die Kinder haben gestern am Computer nicht spielen dürfen.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Die Kinder haben gestern am Computer nicht spielen dürfen.')">📋 Kopieren</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-block-title">✏️ Übung – dürfen im Perfekt</div>
+        <div class="ex-block-ar">حوّل إلى Perfekt:</div>
+        <div class="ex-item">
+          <div class="ex-num">1</div>
+          <div class="ex-content">
+            <div class="ex-sent">Als Kind <em>durfte</em> ich nicht allein ausgehen. → Als Kind <span class="blank">habe ich nicht allein ausgehen dürfen</span>.</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة</div>
+              <div class="ans-de">Als Kind habe ich nicht allein ausgehen dürfen.</div>
+              <div class="ans-why-ar">habe + ausgehen (Inf.) + dürfen (آخر الجملة)</div>
+            </div>
+          </div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-num">2</div>
+          <div class="ex-content">
+            <div class="ex-sent">Die Kinder <em>durften</em> nicht spielen. → Die Kinder <span class="blank">haben nicht spielen dürfen</span>.</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة</div>
+              <div class="ans-de">Die Kinder haben nicht spielen dürfen.</div>
+              <div class="ans-why-ar">haben (هم) + spielen (Inf.) + dürfen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== MÖGEN ===================== -->
+  <article class="verb-card vc-mogen" id="sec-mogen">
+    <div class="vc-header">
+      <div class="vc-left">
+        <span class="vc-infinitiv">mögen</span>
+        <span class="vc-en">to like</span>
+        <span class="vc-ar">يحب – يعجبه</span>
+      </div>
+      <div class="vc-right">
+        <span class="vc-forms-label">Perfekt-Formen</span>
+        <div class="vc-forms-box">
+          <div class="form-badge">gemocht<span>Partizip II (allein)</span></div>
+          <div class="form-badge">mögen<span>Ersatzinfinitiv</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="vc-body">
+
+      <div class="g-note" style="margin-bottom:20px;">
+        <div class="g-note-title">💡 mögen – ملاحظة خاصة</div>
+        <p>mögen in the meaning "to like" often appears <strong>without</strong> a second infinitive. In that case: <em>Ich habe ihn nicht gemocht.</em> (Partizip II = gemocht)</p>
+        <p class="ar">عندما يُستخدم mögen بمعنى "يحب/يعجبه" بدون فعل آخر، نستخدم Partizip II = <strong>gemocht</strong> وليس Ersatzinfinitiv!</p>
+      </div>
+
+      <table class="conj-table">
+        <thead>
+          <tr><th>Pronomen</th><th>haben</th><th>Partizip II</th><th>Vollsatz (ohne Inf.)</th><th>عربي</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="pronoun">ich</td><td class="form-haben">habe</td><td class="form-modal">gemocht</td><td class="full-sent">Ich <span class="h">habe</span> Schokolade immer <span class="m">gemocht</span>.</td><td class="cell-ar">لطالما أحببت الشوكولاتة.</td></tr>
+          <tr><td class="pronoun">du</td><td class="form-haben">hast</td><td class="form-modal">gemocht</td><td class="full-sent">Du <span class="h">hast</span> ihn nicht <span class="m">gemocht</span>.</td><td class="cell-ar">لم تكن تحبه.</td></tr>
+          <tr><td class="pronoun">er/sie/es</td><td class="form-haben">hat</td><td class="form-modal">gemocht</td><td class="full-sent">Sie <span class="h">hat</span> keinen Tee <span class="m">gemocht</span>.</td><td class="cell-ar">لم تكن تحب الشاي.</td></tr>
+          <tr><td class="pronoun">wir</td><td class="form-haben">haben</td><td class="form-modal">gemocht</td><td class="full-sent">Wir <span class="h">haben</span> das nicht <span class="m">gemocht</span>.</td><td class="cell-ar">لم نكن نحب ذلك.</td></tr>
+          <tr><td class="pronoun">ihr</td><td class="form-haben">habt</td><td class="form-modal">gemocht</td><td class="full-sent">Ihr <span class="h">habt</span> ihn nie <span class="m">gemocht</span>.</td><td class="cell-ar">لم تكونوا تحبونه أبداً.</td></tr>
+          <tr><td class="pronoun">sie/Sie</td><td class="form-haben">haben</td><td class="form-modal">gemocht</td><td class="full-sent">Sie <span class="h">haben</span> keinen Brokkoli <span class="m">gemocht</span>.</td><td class="cell-ar">لم يكونوا يحبون البروكلي.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="examples-grid">
+        <div class="ex-card">
+          <div class="ex-de">Ich <span class="h">habe</span> das nicht <span class="m">gemocht</span>.</div>
+          <div class="ex-ar">لم أكن أحب ذلك.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Ich habe das nicht gemocht.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Ich habe das nicht gemocht.')">📋 Kopieren</button>
+          </div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-de">Sie <span class="h">haben</span> keinen Tee <span class="m">gemocht</span>.</div>
+          <div class="ex-ar">لم يكونوا يحبون الشاي.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Sie haben keinen Tee gemocht.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Sie haben keinen Tee gemocht.')">📋 Kopieren</button>
+          </div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-de">Als Kind <span class="h">habe</span> ich keinen Brokkoli <span class="m">gemocht</span>.</div>
+          <div class="ex-ar">عندما كنت طفلاً، لم أكن أحب البروكلي.</div>
+          <div class="ex-actions">
+            <button class="btn-s" onclick="speak('Als Kind habe ich keinen Brokkoli gemocht.')">🔊 Hören</button>
+            <button class="btn-c" onclick="cp(this,'Als Kind habe ich keinen Brokkoli gemocht.')">📋 Kopieren</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ex-block">
+        <div class="ex-block-title">✏️ Übung – mögen im Perfekt</div>
+        <div class="ex-block-ar">أكمل بالشكل الصحيح (gemocht):</div>
+        <div class="ex-item">
+          <div class="ex-num">1</div>
+          <div class="ex-content">
+            <div class="ex-sent">Sie (Plural) <span class="blank">haben ihn nicht gemocht</span>.</div>
+            <div class="ex-sent-ar">لم يكونوا يحبونه.</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة</div>
+              <div class="ans-de">Sie haben ihn nicht gemocht.</div>
+              <div class="ans-why-ar">بدون Ersatzinfinitiv هنا! haben + gemocht (Partizip II) لأنه لا يوجد فعل ثانٍ</div>
+            </div>
+          </div>
+        </div>
+        <div class="ex-item">
+          <div class="ex-num">2</div>
+          <div class="ex-content">
+            <div class="ex-sent">Als Kind <span class="blank">habe ich keinen Brokkoli gemocht</span>.</div>
+            <div class="ex-sent-ar">عندما كنت طفلاً، لم أحب البروكلي.</div>
+            <div class="ans-box">
+              <div class="ans-label">✓ الإجابة</div>
+              <div class="ans-de">Als Kind habe ich keinen Brokkoli gemocht.</div>
+              <div class="ans-why-ar">habe + gemocht (Partizip II) — لا يوجد Ersatzinfinitiv</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===================== COMPARISON TABLE ===================== -->
+  <section class="compare-section" id="sec-compare">
+    <h2>⚖️ Präteritum vs. Perfekt – المقارنة الشاملة</h2>
+    <p style="color:var(--ink-3); font-size:.9rem; margin-bottom:4px;">كلا الزمنين يعبران عن الماضي — ولكن متى نستخدم أيهما؟</p>
+    <p class="ar" style="font-family:var(--f-ar); font-size:.88rem; color:var(--ink-3); direction:rtl; text-align:right; margin-bottom:0;">
+      الفرق الأساسي: <strong>Präteritum</strong> شائع في الكتابة والسرد، و<strong>Perfekt</strong> أكثر شيوعاً في الحديث اليومي — خاصة مع غير الأفعال المساعدة.
+    </p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>الفعل</th>
+          <th>🕐 Präteritum (Teil 1)</th>
+          <th>✅ Perfekt (Teil 2)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>können</strong></td><td class="prät-cell">Ich konnte nicht kommen.</td><td class="perf-cell">Ich habe nicht kommen können.</td></tr>
+        <tr><td><strong>wollen</strong></td><td class="prät-cell">Wir wollten ins Kino gehen.</td><td class="perf-cell">Wir haben ins Kino gehen wollen.</td></tr>
+        <tr><td><strong>sollen</strong></td><td class="prät-cell">Er sollte dir helfen.</td><td class="perf-cell">Er hat dir helfen sollen.</td></tr>
+        <tr><td><strong>müssen</strong></td><td class="prät-cell">Ich musste arbeiten.</td><td class="perf-cell">Ich habe arbeiten müssen.</td></tr>
+        <tr><td><strong>dürfen</strong></td><td class="prät-cell">Als Kind durfte ich nicht ausgehen.</td><td class="perf-cell">Als Kind habe ich nicht ausgehen dürfen.</td></tr>
+        <tr><td><strong>mögen</strong></td><td class="prät-cell">Ich mochte das nicht essen.</td><td class="perf-cell">Ich habe das nicht gemocht. <em style="font-size:.78rem; color:var(--ink-4)">(kein Ersatzinfinitiv!)</em></td></tr>
+      </tbody>
+    </table>
+
+    <div class="g-note" style="margin-top:20px;">
+      <div class="g-note-title">📌 متى نستخدم أيهما؟</div>
+      <p style="font-size:.88rem; color:var(--ink-2);">In practice, <strong>Präteritum</strong> is preferred for modal verbs even in spoken language (<em>Ich konnte nicht</em> sounds more natural than <em>Ich habe nicht kommen können</em>). The Perfekt with modals is grammatically correct but feels more formal or literary.</p>
+      <p class="ar" style="font-size:.86rem; color:var(--ink-3); direction:rtl; text-align:right;">في الاستخدام العملي: Präteritum مع الأفعال المساعدة أكثر شيوعاً حتى في الحديث اليومي (أبسط وأسهل). Perfekt مع المساعدات صحيح نحوياً لكنه يبدو أكثر رسمية.</p>
+    </div>
+  </section>
+
+  <!-- ===================== MIXED QUIZ ===================== -->
+  <section class="quiz-section" id="sec-quiz">
+    <h2>🎯 Gemischtes Quiz – اختبار شامل مختلط</h2>
+    <span class="quiz-type-badge">Perfekt + Modalverben</span>
+    <p class="ar" style="font-family:var(--f-ar); font-size:.88rem; color:var(--ink-3); direction:rtl; text-align:right; margin-bottom:22px;">
+      حوّل الجمل التالية من Präteritum إلى Perfekt أو أكمل الفراغ بالشكل الصحيح:
+    </p>
+
+    <div class="ex-item">
+      <div class="ex-num">1</div>
+      <div class="ex-content">
+        <div class="ex-sent">Leider <em>konnten</em> sie nicht zur Party kommen. → Leider <span class="blank">haben sie nicht zur Party kommen können</span>.</div>
+        <div class="ex-sent-ar">للأسف لم يستطيعوا الحضور إلى الحفلة.</div>
+        <div class="ans-box">
+          <div class="ans-label">✓ الإجابة الكاملة</div>
+          <div class="ans-de">Leider haben sie nicht zur Party kommen können.</div>
+          <div class="ans-why">haben (sie=Plural) + kommen (Inf.) + können (Ersatzinfinitiv, Ende)</div>
+          <div class="ans-why-ar">haben + kommen (Infinitiv) + können في نهاية الجملة</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">2</div>
+      <div class="ex-content">
+        <div class="ex-sent">Ich <em>durfte</em> nicht allein durch den Park gehen. → Ich <span class="blank">habe nicht allein durch den Park gehen dürfen</span>.</div>
+        <div class="ex-sent-ar">لم يُسمح لي المشي وحدي في الحديقة.</div>
+        <div class="ans-box">
+          <div class="ans-label">✓ الإجابة</div>
+          <div class="ans-de">Ich habe nicht allein durch den Park gehen dürfen.</div>
+          <div class="ans-why-ar">habe + gehen (Inf.) + dürfen (آخر الجملة)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">3</div>
+      <div class="ex-content">
+        <div class="ex-sent">Mit 8 Jahren <em>wollte</em> ich Lehrerin werden. → Mit 8 Jahren <span class="blank">habe ich Lehrerin werden wollen</span>.</div>
+        <div class="ex-sent-ar">في سن 8 سنوات، أردت أن أصبح معلمة.</div>
+        <div class="ans-box">
+          <div class="ans-label">✓ الإجابة</div>
+          <div class="ans-de">Mit 8 Jahren habe ich Lehrerin werden wollen.</div>
+          <div class="ans-why-ar">habe + werden (Inf.) + wollen</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">4</div>
+      <div class="ex-content">
+        <div class="ex-sent">Meine Oma <em>musste</em> sehr jung heiraten. → Meine Oma <span class="blank">hat sehr jung heiraten müssen</span>.</div>
+        <div class="ex-sent-ar">اضطرت جدتي للزواج وهي صغيرة جداً.</div>
+        <div class="ans-box">
+          <div class="ans-label">✓ الإجابة</div>
+          <div class="ans-de">Meine Oma hat sehr jung heiraten müssen.</div>
+          <div class="ans-why-ar">hat (هي) + heiraten (Inf.) + müssen</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">5</div>
+      <div class="ex-content">
+        <div class="ex-sent">Als Kind <em>mochte</em> ich keinen Brokkoli. → Als Kind <span class="blank">habe ich keinen Brokkoli gemocht</span>.</div>
+        <div class="ex-sent-ar">عندما كنت طفلاً، لم أحب البروكلي.</div>
+        <div class="ans-box">
+          <div class="ans-label">✓ الإجابة – ⚠️ انتبه!</div>
+          <div class="ans-de">Als Kind habe ich keinen Brokkoli gemocht.</div>
+          <div class="ans-why">⚠️ Kein Ersatzinfinitiv hier! mögen ohne zweites Verb → Partizip II (gemocht)</div>
+          <div class="ans-why-ar">⚠️ هنا لا Ersatzinfinitiv! mögen بدون فعل ثانٍ → نستخدم Partizip II = gemocht</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ex-item">
+      <div class="ex-num">6</div>
+      <div class="ex-content">
+        <div class="ex-sent">Er <em>sollte</em> gestern dir helfen. → Er <span class="blank">hat dir gestern helfen sollen</span>.</div>
+        <div class="ex-sent-ar">كان من المفروض أن يساعدك أمس.</div>
+        <div class="ans-box">
+          <div class="ans-label">✓ الإجابة</div>
+          <div class="ans-de">Er hat dir gestern helfen sollen.</div>
+          <div class="ans-why-ar">hat (er) + helfen (Inf.) + sollen (آخر الجملة)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VOCAB TABLE ===================== -->
+  <section class="vocab-section" id="sec-vocab">
+    <h2>📚 Vokabeltabelle – جدول الأفعال الكامل</h2>
+    <p style="color:var(--ink-3); font-size:.88rem;">جميع الأفعال المساعدة بصيغ Infinitiv، Präteritum، Partizip II، وErsatzinfinitiv</p>
+    <table class="vocab-table">
+      <thead>
+        <tr>
+          <th>Infinitiv</th>
+          <th>Präteritum (ich)</th>
+          <th>Partizip II</th>
+          <th>Ersatzinfinitiv</th>
+          <th>haben/sein</th>
+          <th>Englisch</th>
+          <th>عربي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="vb-inf">können</span></td>
+          <td class="vb-modal">konnte</td>
+          <td><span class="vb-pp">gekonnt</span></td>
+          <td class="vb-modal">können</td>
+          <td><span class="badge-h">haben</span></td>
+          <td class="vb-en">can / be able to</td>
+          <td class="vb-ar">يستطيع</td>
+        </tr>
+        <tr>
+          <td><span class="vb-inf">wollen</span></td>
+          <td class="vb-modal">wollte</td>
+          <td><span class="vb-pp">gewollt</span></td>
+          <td class="vb-modal">wollen</td>
+          <td><span class="badge-h">haben</span></td>
+          <td class="vb-en">want to</td>
+          <td class="vb-ar">يريد</td>
+        </tr>
+        <tr>
+          <td><span class="vb-inf">sollen</span></td>
+          <td class="vb-modal">sollte</td>
+          <td><span class="vb-pp">gesollt</span></td>
+          <td class="vb-modal">sollen</td>
+          <td><span class="badge-h">haben</span></td>
+          <td class="vb-en">shall / supposed to</td>
+          <td class="vb-ar">يُفترض به</td>
+        </tr>
+        <tr>
+          <td><span class="vb-inf">müssen</span></td>
+          <td class="vb-modal">musste</td>
+          <td><span class="vb-pp">gemusst</span></td>
+          <td class="vb-modal">müssen</td>
+          <td><span class="badge-h">haben</span></td>
+          <td class="vb-en">must / have to</td>
+          <td class="vb-ar">يجب</td>
+        </tr>
+        <tr>
+          <td><span class="vb-inf">dürfen</span></td>
+          <td class="vb-modal">durfte</td>
+          <td><span class="vb-pp">gedurft</span></td>
+          <td class="vb-modal">dürfen</td>
+          <td><span class="badge-h">haben</span></td>
+          <td class="vb-en">may / be allowed to</td>
+          <td class="vb-ar">مسموح له</td>
+        </tr>
+        <tr>
+          <td><span class="vb-inf">mögen</span></td>
+          <td class="vb-modal">mochte</td>
+          <td><span class="vb-pp">gemocht ⭐</span></td>
+          <td class="vb-modal">mögen</td>
+          <td><span class="badge-h">haben</span></td>
+          <td class="vb-en">to like</td>
+          <td class="vb-ar">يحب</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:.78rem; color:var(--ink-4); margin-top:12px;">⭐ mögen: يستخدم Partizip II (gemocht) عندما لا يوجد فعل آخر في الجملة</p>
+  </section>
+
+  <!-- ===================== REVISION ===================== -->
+  <section class="revision-section">
+    <h2>✅ Lerncheckliste – قائمة المراجعة النهائية</h2>
+    <ul class="checklist">
+      <li><label><input type="checkbox"> أعرف أن Perfekt مع الأفعال المساعدة يستخدم دائماً haben.</label></li>
+      <li><label><input type="checkbox"> أفهم مفهوم Ersatzinfinitiv وأطبقه صحيحاً.</label></li>
+      <li><label><input type="checkbox"> أتذكر أن الفعل المساعد يأتي دائماً في آخر الجملة.</label></li>
+      <li><label><input type="checkbox"> أعرف الفرق: mögen + فعل = mögen (Ersatzinf.)، mögen بدون فعل = gemocht.</label></li>
+      <li><label><input type="checkbox"> أستطيع تصريف haben لجميع الضمائر: habe/hast/hat/haben/habt/haben.</label></li>
+      <li><label><input type="checkbox"> أعرف متى أستخدم Präteritum ومتى أستخدم Perfekt مع المساعدات.</label></li>
+      <li><label><input type="checkbox"> أحفظ Partizip II لكل فعل: gekonnt / gewollt / gesollt / gemusst / gedurft / gemocht.</label></li>
+      <li><label><input type="checkbox"> أستطيع تحليل جملة Perfekt وأعرف موضع كل كلمة.</label></li>
+    </ul>
+
+    <div class="sec-label" style="margin-top:28px;">نصائح نهائية – Abschlusstipps</div>
+    <div class="exam-tips">
+      <div class="tip-card">
+        <div class="tip-n">TIP 01 – Wortstellung</div>
+        <p class="tip-t">The modal infinitive ALWAYS goes to the very end: Subjekt + haben + [rest] + Infinitiv + Modalverb.</p>
+        <p class="tip-a">الفعل المساعد يذهب دائماً إلى آخر الجملة — بعد الفعل الرئيسي!</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-n">TIP 02 – haben immer!</div>
+        <p class="tip-t">Never use <em>sein</em> with modal verbs in Perfekt — not even for motion verbs.</p>
+        <p class="tip-a">لا تستخدم sein أبداً مع المساعدات حتى مع أفعال الحركة.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-n">TIP 03 – mögen Ausnahme</div>
+        <p class="tip-t">mögen without a second verb uses Partizip II (gemocht), not Ersatzinfinitiv.</p>
+        <p class="tip-a">mögen بدون فعل ثانٍ = gemocht وليس mögen!</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-n">TIP 04 – في الحديث اليومي</div>
+        <p class="tip-t">In everyday speech, Präteritum of modals (konnte, wollte...) is often preferred over Perfekt.</p>
+        <p class="tip-a">Präteritum مع المساعدات أسهل وأكثر طبيعية في الحديث اليومي.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-n">TIP 05 – التدريب اليومي</div>
+        <p class="tip-t">Practice by converting Präteritum sentences to Perfekt daily — 5 sentences per verb.</p>
+        <p class="tip-a">تدرب يومياً بتحويل جمل Präteritum إلى Perfekt — 5 جمل لكل فعل.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-n">TIP 06 – الاستماع</div>
+        <p class="tip-t">Listen to German podcasts or shows — notice how modals in past tense sound in natural speech.</p>
+        <p class="tip-a">استمع إلى محادثات ألمانية طبيعية للتعرف على كيفية استخدام المساعدات في الماضي.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>Perfekt mit Modalverben · <strong>زمن المضارع التام مع الأفعال المساعدة</strong></p>
+  <p style="margin-top:5px; font-size:.74rem;">Teil 2 von 2 · Niveau A2 · الجزء الثاني من سلسلة الأفعال المساعدة</p>
+</footer>
+
+<!-- ===================== JAVASCRIPT ===================== -->
+<script>
+/* THEME */
+function toggleTheme() {
+  const html = document.documentElement;
+  const dark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', dark ? 'light' : 'dark');
+  localStorage.setItem('pref-theme', dark ? 'light' : 'dark');
+  document.getElementById('themeIcon').textContent  = dark ? '🌙' : '☀️';
+  document.getElementById('themeLabel').textContent = dark ? 'Dunkel' : 'Hell';
+}
+(function() {
+  const t = localStorage.getItem('pref-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', t);
+  if (t === 'dark') {
+    document.getElementById('themeIcon').textContent  = '☀️';
+    document.getElementById('themeLabel').textContent = 'Hell';
+  }
+})();
+
+/* SPEAK */
+function speak(text) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'de-DE'; u.rate = 0.86; u.pitch = 1;
+  const voices = window.speechSynthesis.getVoices();
+  const gv = voices.find(v => v.lang === 'de-DE') || voices.find(v => v.lang.startsWith('de'));
+  if (gv) u.voice = gv;
+  window.speechSynthesis.speak(u);
+}
+window.speechSynthesis.onvoiceschanged = function() {};
+
+/* COPY */
+function cp(btn, text) {
+  const copy = () => {
+    btn.textContent = '✓ Kopiert!';
+    btn.classList.add('ok');
+    setTimeout(() => { btn.textContent = '📋 Kopieren'; btn.classList.remove('ok'); }, 2000);
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(copy);
+  } else {
+    const el = document.createElement('textarea');
+    el.value = text; document.body.appendChild(el);
+    el.select(); document.execCommand('copy');
+    document.body.removeChild(el); copy();
+  }
+}
+
+/* SCROLL */
+function go(id) {
+  const el = document.getElementById('sec-' + id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('.qn-btn').forEach(b => b.classList.remove('active'));
+  if (event && event.target) event.target.classList.add('active');
+}
+
+/* CHECKLIST persistence */
+document.querySelectorAll('.checklist input[type="checkbox"]').forEach((cb, i) => {
+  const k = 'p2_check_' + i;
+  cb.checked = localStorage.getItem(k) === 'true';
+  cb.addEventListener('change', () => localStorage.setItem(k, cb.checked));
+});
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-perfekt-mit-modalverben" data-category="grammatik" data-title="Perfekt mit Modalverben — الجزء الثاني" data-root="../../" defer></script>
+</body>
+</html>

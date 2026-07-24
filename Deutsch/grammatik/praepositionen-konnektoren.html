@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>حروف الجر وأدوات الربط في اللغة الألمانية | Präpositionen &amp; Konnektoren | Deutsch mit Mira</title>
+<meta name="description" content="مرجع تفاعلي شامل لحروف الجر وأدوات الربط في اللغة الألمانية مع أمثلة، نطق، نسخ، وترجمة ثلاثية اللغة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root{
+  --font-ar: 'Tajawal', sans-serif;
+  --font-display: 'Sora', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --ease: cubic-bezier(.4,0,.2,1);
+  --dur: .25s;
+  --maxw: 1280px;
+
+  --akk:#BD6A42; --akk-soft:#F7E9DF;
+  --dat:#4F8A6A; --dat-soft:#E4F1E9;
+  --gen:#8A6BB0; --gen-soft:#ECE5F5;
+  --wec:#3F8FA3; --wec-soft:#E2F1F4;
+  --pos0:#3D5FA8; --pos0-soft:#E8EDF8;
+  --posend:#B5793C; --posend-soft:#F6ECDC;
+  --pos1:#5C7BAE; --pos1-soft:#EAF0F8;
+  --twopart:#A1567B; --twopart-soft:#F6E6ED;
+}
+
+[data-theme="light"], :root{
+  --bg:#FAF8F4;
+  --surface:#FFFFFF;
+  --surface-2:#F2EEE6;
+  --surface-3:#ECE6DA;
+  --ink:#232220;
+  --ink-soft:#6E6A63;
+  --ink-faint:#A9A49B;
+  --border:#E6E1D6;
+  --accent:#3D5FA8;
+  --accent-soft:#E8EDF8;
+  --accent-ink:#2A4378;
+  --shadow-1: 0 1px 2px rgba(35,34,32,.05), 0 1px 10px rgba(35,34,32,.04);
+  --shadow-2: 0 10px 30px rgba(35,34,32,.10);
+  --code-bg:#F4F1EA;
+}
+
+[data-theme="dark"]{
+  --bg:#1B1C22;
+  --surface:#22242C;
+  --surface-2:#2A2D37;
+  --surface-3:#313542;
+  --ink:#EDEBE6;
+  --ink-soft:#A6A3A0;
+  --ink-faint:#76747A;
+  --border:#383B47;
+  --accent:#8AAAEF;
+  --accent-soft:#28365A;
+  --accent-ink:#C7D7F9;
+  --shadow-1: 0 1px 2px rgba(0,0,0,.35);
+  --shadow-2: 0 14px 36px rgba(0,0,0,.5);
+  --code-bg:#272A33;
+
+  --akk:#E08F63; --akk-soft:#3A2C24;
+  --dat:#7FBE9A; --dat-soft:#233A2F;
+  --gen:#B89AE0; --gen-soft:#322B45;
+  --wec:#7ECBDF; --wec-soft:#1F3A42;
+  --pos0:#8AAAEF; --pos0-soft:#243352;
+  --posend:#E0B273; --posend-soft:#3A301E;
+  --pos1:#9DB8E6; --pos1-soft:#28344A;
+  --twopart:#E0A0C0; --twopart-soft:#3A2A33;
+}
+
+/* ============================================================
+   RESET / BASE
+   ============================================================ */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
+}
+body{
+  font-family:var(--font-ar), sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.85;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  transition:background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+img,svg{display:block; max-width:100%;}
+a{color:var(--accent); text-decoration:none;}
+button{font:inherit; cursor:pointer; border:none; background:none; color:inherit;}
+ul{list-style:none;}
+
+.ltr{direction:ltr; text-align:left; unicode-bidi:isolate;}
+.de{font-family:var(--font-display), var(--font-body), sans-serif;}
+.body-en{font-family:var(--font-body), sans-serif;}
+.mono{font-family:var(--font-mono), monospace;}
+
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px;}
+
+.skip-link{
+  position:absolute; right:-9999px; top:0; z-index:200;
+  background:var(--accent); color:#fff; padding:.6rem 1rem; border-radius:0 0 var(--radius-sm) var(--radius-sm);
+  font-weight:700;
+}
+.skip-link:focus{right:1rem;}
+
+/* ============================================================
+   SCROLL PROGRESS BAR
+   ============================================================ */
+.progress-track{
+  position:fixed; top:0; left:0; right:0; height:3px; z-index:1000;
+  background:transparent;
+}
+.progress-bar{
+  height:100%; width:0%;
+  background:linear-gradient(90deg, var(--accent), var(--wec));
+  transition:width .12s linear;
+}
+
+/* ============================================================
+   TOPBAR
+   ============================================================ */
+.topbar{
+  position:sticky; top:0; z-index:100;
+  background:color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter:blur(14px) saturate(140%);
+  border-bottom:1px solid var(--border);
+}
+.topbar-inner{
+  max-width:var(--maxw); margin:0 auto;
+  display:flex; align-items:center; gap:1rem;
+  padding:.7rem clamp(1rem,3vw,2rem);
+}
+.brand{
+  display:flex; align-items:center; gap:.6rem; flex-shrink:0;
+}
+.brand-mark{
+  width:38px; height:38px; border-radius:11px;
+  background:linear-gradient(135deg, var(--accent), var(--wec));
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-family:var(--font-display); font-weight:800; font-size:1.05rem;
+  box-shadow:var(--shadow-1);
+  flex-shrink:0;
+}
+.brand-text{display:flex; flex-direction:column; line-height:1.2;}
+.brand-title{font-family:var(--font-ar); font-weight:800; font-size:.95rem; color:var(--ink);}
+.brand-sub{font-family:var(--font-display); font-size:.68rem; color:var(--ink-faint); letter-spacing:.06em; direction:ltr;}
+
+.topnav{
+  flex:1; display:flex; gap:.35rem; overflow-x:auto; scrollbar-width:none;
+  padding:.15rem 0;
+  -ms-overflow-style:none;
+}
+.topnav::-webkit-scrollbar{display:none;}
+.topnav a{
+  flex-shrink:0; font-size:.82rem; font-weight:600; color:var(--ink-soft);
+  padding:.5rem .85rem; border-radius:var(--radius-pill);
+  border:1px solid transparent;
+  transition:all var(--dur) var(--ease);
+  white-space:nowrap;
+}
+.topnav a:hover{color:var(--ink); background:var(--surface-2);}
+.topnav a.active{color:var(--accent-ink); background:var(--accent-soft); border-color:var(--accent);}
+
+.top-actions{display:flex; align-items:center; gap:.4rem; flex-shrink:0;}
+.icon-action{
+  width:38px; height:38px; border-radius:11px;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--border); background:var(--surface);
+  color:var(--ink-soft);
+  transition:all var(--dur) var(--ease);
+}
+.icon-action:hover{color:var(--accent); border-color:var(--accent); transform:translateY(-1px); box-shadow:var(--shadow-1);}
+.icon-action svg{width:18px; height:18px;}
+.icon-action .moon{display:none;}
+[data-theme="dark"] .icon-action .sun{display:none;}
+[data-theme="dark"] .icon-action .moon{display:block;}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+main{max-width:var(--maxw); margin:0 auto; padding:0 clamp(1rem,3vw,2rem) clamp(3rem,6vw,5rem);}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(1.5rem,4vw,2.5rem);
+  display:grid; gap:clamp(1.5rem,4vw,2.5rem);
+}
+.hero-eyebrow{
+  display:inline-flex; align-items:center; gap:.5rem;
+  font-family:var(--font-mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft);
+  padding:.4rem .9rem; border-radius:var(--radius-pill);
+  width:fit-content; direction:ltr;
+}
+.hero h1{
+  font-family:var(--font-ar); font-weight:800;
+  font-size:clamp(1.9rem, 4.6vw, 3.4rem);
+  line-height:1.25; letter-spacing:-.01em;
+  max-width:18ch;
+}
+.hero h1 .hl{color:var(--accent);}
+.hero p.lead{
+  font-size:clamp(1rem, 1.6vw, 1.15rem); color:var(--ink-soft);
+  max-width:62ch; line-height:1.9;
+}
+.hero-de-sample{
+  font-family:var(--font-display); direction:ltr; text-align:left;
+  font-size:clamp(.85rem, 1.4vw, 1rem); color:var(--ink-faint);
+  margin-top:.25rem;
+}
+
+.stat-row{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(130px,1fr));
+  gap:.85rem;
+}
+.stat-card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:1rem 1.1rem; box-shadow:var(--shadow-1);
+}
+.stat-num{font-family:var(--font-display); font-size:1.7rem; font-weight:800; color:var(--ink); direction:ltr;}
+.stat-label{font-size:.8rem; color:var(--ink-soft); margin-top:.2rem;}
+
+/* satzbau / structure legend */
+.satzbau{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+  padding:clamp(1.1rem,2.5vw,1.6rem); box-shadow:var(--shadow-1);
+}
+.satzbau-title{font-weight:800; font-size:1rem; margin-bottom:.85rem;}
+.satzbau-track{
+  display:flex; gap:.4rem; flex-wrap:wrap; direction:ltr;
+}
+.satzbau-track .seg{
+  flex:1; min-width:78px; text-align:center;
+  padding:.6rem .4rem; border-radius:var(--radius-sm);
+  background:var(--surface-2); border:1px solid var(--border);
+}
+.satzbau-track .seg .num{font-family:var(--font-mono); font-weight:700; font-size:.78rem; color:var(--ink-soft);}
+.satzbau-track .seg .lbl{font-size:.74rem; color:var(--ink); font-weight:600; margin-top:.15rem;}
+
+.legend-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:.6rem; margin-top:1rem;
+}
+.legend-item{
+  display:flex; align-items:center; gap:.55rem;
+  font-size:.82rem; color:var(--ink-soft);
+}
+.legend-dot{width:13px; height:13px; border-radius:4px; flex-shrink:0;}
+
+/* ============================================================
+   SEARCH
+   ============================================================ */
+.search-wrap{position:relative; max-width:420px;}
+.search-wrap svg{position:absolute; inset-inline-start:.9rem; top:50%; transform:translateY(-50%); width:18px; height:18px; color:var(--ink-faint); pointer-events:none;}
+#searchInput{
+  width:100%; padding:.75rem 1rem .75rem 1rem; padding-inline-start:2.6rem;
+  border:1px solid var(--border); border-radius:var(--radius-pill);
+  background:var(--surface); color:var(--ink);
+  font-family:var(--font-ar); font-size:.92rem;
+  transition:border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+#searchInput:focus{border-color:var(--accent); box-shadow:0 0 0 4px var(--accent-soft);}
+#searchInput::placeholder{color:var(--ink-faint);}
+.search-meta{font-size:.78rem; color:var(--ink-faint); margin-top:.5rem;}
+
+/* ============================================================
+   CATEGORY SECTIONS
+   ============================================================ */
+.category{
+  padding:clamp(2.4rem,5vw,3.6rem) 0; border-top:1px solid var(--border);
+}
+.category:first-of-type{border-top:none;}
+.category-head{
+  display:grid; gap:1.1rem; margin-bottom:1.8rem;
+}
+.cat-kicker{
+  display:flex; align-items:center; gap:.7rem; flex-wrap:wrap;
+}
+.cat-index{
+  font-family:var(--font-mono); font-size:.78rem; color:var(--ink-faint);
+  border:1px solid var(--border); border-radius:var(--radius-pill);
+  padding:.25rem .7rem; direction:ltr;
+}
+.cat-titles h2{
+  font-family:var(--font-ar); font-weight:800; font-size:clamp(1.35rem,2.6vw,1.95rem);
+  line-height:1.4;
+}
+.cat-titles .de-title{
+  font-family:var(--font-display); direction:ltr; text-align:left; color:var(--ink-soft);
+  font-size:clamp(.95rem,1.6vw,1.15rem); font-weight:600; margin-top:.25rem;
+}
+.cat-desc{color:var(--ink-soft); max-width:70ch; font-size:.96rem; line-height:1.9;}
+
+.chip-row{display:flex; flex-wrap:wrap; gap:.6rem;}
+.chip{
+  display:inline-flex; align-items:center; gap:.45rem;
+  border:1px solid var(--border); background:var(--surface);
+  border-radius:var(--radius-pill); padding:.4rem .8rem;
+  font-size:.82rem; box-shadow:var(--shadow-1);
+}
+.chip .chip-l{color:var(--ink-soft); direction:ltr;}
+.chip .chip-r{font-family:var(--font-mono); font-weight:700; direction:ltr;}
+.chip .arrow{color:var(--ink-faint);}
+
+/* category accent application */
+.category[data-accent="akk"] .chip .chip-r, .category[data-accent="akk"] .cat-index{color:var(--akk); border-color:var(--akk);}
+.category[data-accent="dat"] .chip .chip-r, .category[data-accent="dat"] .cat-index{color:var(--dat); border-color:var(--dat);}
+.category[data-accent="gen"] .chip .chip-r, .category[data-accent="gen"] .cat-index{color:var(--gen); border-color:var(--gen);}
+.category[data-accent="wec"] .chip .chip-r, .category[data-accent="wec"] .cat-index{color:var(--wec); border-color:var(--wec);}
+.category[data-accent="pos0"] .chip .chip-r, .category[data-accent="pos0"] .cat-index{color:var(--pos0); border-color:var(--pos0);}
+.category[data-accent="posend"] .chip .chip-r, .category[data-accent="posend"] .cat-index{color:var(--posend); border-color:var(--posend);}
+.category[data-accent="pos1"] .chip .chip-r, .category[data-accent="pos1"] .cat-index{color:var(--pos1); border-color:var(--pos1);}
+.category[data-accent="twopart"] .chip .chip-r, .category[data-accent="twopart"] .cat-index{color:var(--twopart); border-color:var(--twopart);}
+
+/* ============================================================
+   ITEM CARDS
+   ============================================================ */
+.items-grid{display:grid; gap:1.1rem;}
+.item-card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+  padding:clamp(1.1rem,2.5vw,1.5rem); box-shadow:var(--shadow-1);
+  border-inline-start:4px solid var(--accent);
+  transition:box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.item-card:hover{box-shadow:var(--shadow-2); transform:translateY(-2px);}
+.category[data-accent="akk"] .item-card{border-inline-start-color:var(--akk);}
+.category[data-accent="dat"] .item-card{border-inline-start-color:var(--dat);}
+.category[data-accent="gen"] .item-card{border-inline-start-color:var(--gen);}
+.category[data-accent="wec"] .item-card{border-inline-start-color:var(--wec);}
+.category[data-accent="pos0"] .item-card{border-inline-start-color:var(--pos0);}
+.category[data-accent="posend"] .item-card{border-inline-start-color:var(--posend);}
+.category[data-accent="pos1"] .item-card{border-inline-start-color:var(--pos1);}
+.category[data-accent="twopart"] .item-card{border-inline-start-color:var(--twopart);}
+
+.item-head{
+  display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between;
+  gap:.9rem; padding-bottom:.9rem; margin-bottom:.9rem; border-bottom:1px dashed var(--border);
+}
+.item-word{
+  font-family:var(--font-display); font-weight:800;
+  font-size:clamp(1.25rem,2.4vw,1.65rem); direction:ltr; text-align:left; color:var(--ink);
+}
+.item-word .pos-tag{
+  font-family:var(--font-mono); font-size:.66rem; font-weight:600; color:var(--ink-faint);
+  border:1px solid var(--border); border-radius:var(--radius-sm);
+  padding:.15rem .4rem; margin-inline-start:.5rem; vertical-align:middle;
+}
+.item-meanings{display:flex; flex-direction:column; gap:.25rem; text-align:end; min-width:160px;}
+.item-meanings .en{direction:ltr; text-align:left; color:var(--ink-soft); font-size:.88rem; font-family:var(--font-body);}
+.item-meanings .ar{color:var(--ink); font-weight:700; font-size:.95rem;}
+
+/* ============================================================
+   EXAMPLES
+   ============================================================ */
+.examples-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:.9rem;
+}
+.example{
+  background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:.9rem 1rem; display:flex; flex-direction:column; gap:.55rem;
+}
+.ex-note{
+  font-family:var(--font-mono); font-size:.64rem; font-weight:700; color:var(--accent);
+  text-transform:uppercase; letter-spacing:.06em; direction:ltr; text-align:left;
+}
+.ex-de-row{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:.6rem;
+}
+.ex-de{
+  font-family:var(--font-display); direction:ltr; text-align:left;
+  font-size:1.02rem; font-weight:600; color:var(--ink); line-height:1.6;
+  flex:1;
+}
+.ex-actions{display:flex; gap:.35rem; flex-shrink:0;}
+.icon-btn{
+  width:32px; height:32px; border-radius:9px;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--border); background:var(--surface);
+  color:var(--ink-soft); transition:all var(--dur) var(--ease);
+}
+.icon-btn svg{width:15px; height:15px;}
+.icon-btn:hover{color:var(--accent); border-color:var(--accent); background:var(--accent-soft);}
+.icon-btn.playing{color:var(--dat); border-color:var(--dat); background:var(--dat-soft);}
+.icon-btn.copied{color:var(--dat); border-color:var(--dat); background:var(--dat-soft);}
+
+.ex-tr{display:flex; align-items:flex-start; gap:.5rem;}
+.ex-tr .tag{
+  font-family:var(--font-mono); font-size:.62rem; font-weight:700; letter-spacing:.05em;
+  border-radius:5px; padding:.12rem .4rem; flex-shrink:0; margin-top:.15rem; direction:ltr;
+}
+.ex-tr.en .tag{background:var(--accent-soft); color:var(--accent-ink);}
+.ex-tr.ar .tag{background:var(--surface-3); color:var(--ink-soft);}
+.ex-tr.en p{direction:ltr; text-align:left; font-family:var(--font-body); font-size:.88rem; color:var(--ink-soft); line-height:1.6;}
+.ex-tr.ar p{font-size:.92rem; color:var(--ink); line-height:1.85;}
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+.toast{
+  position:fixed; bottom:1.5rem; inset-inline:0; display:flex; justify-content:center; z-index:1000;
+  pointer-events:none;
+}
+.toast-inner{
+  background:var(--ink); color:var(--bg); font-size:.86rem; font-weight:600;
+  padding:.7rem 1.3rem; border-radius:var(--radius-pill); box-shadow:var(--shadow-2);
+  transform:translateY(20px); opacity:0; transition:all .3s var(--ease);
+}
+.toast.show .toast-inner{transform:translateY(0); opacity:1;}
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+.to-top{
+  position:fixed; bottom:1.5rem; inset-inline-end:1.5rem; z-index:90;
+  width:46px; height:46px; border-radius:50%;
+  background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-2);
+  display:flex; align-items:center; justify-content:center; color:var(--ink-soft);
+  opacity:0; transform:translateY(10px); pointer-events:none;
+  transition:all var(--dur) var(--ease);
+}
+.to-top.visible{opacity:1; transform:translateY(0); pointer-events:auto;}
+.to-top:hover{color:var(--accent); border-color:var(--accent);}
+.to-top svg{width:20px; height:20px;}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{
+  border-top:1px solid var(--border); padding:clamp(2rem,4vw,3rem) 0; margin-top:1rem;
+  display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center;
+  color:var(--ink-faint); font-size:.85rem;
+}
+footer .ltr{direction:ltr;}
+
+/* ============================================================
+   REVEAL ANIMATION
+   ============================================================ */
+.reveal{opacity:0; transform:translateY(14px); transition:opacity .55s var(--ease), transform .55s var(--ease);}
+.reveal.visible{opacity:1; transform:translateY(0);}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:720px){
+  .brand-sub{display:none;}
+  .item-head{flex-direction:column;}
+  .item-meanings{text-align:start; min-width:0;}
+  .satzbau-track{flex-direction:column;}
+  .satzbau-track .seg{min-width:0;}
+}
+
+/* ============================================================
+   PRINT — A4 OPTIMIZED
+   ============================================================ */
+@page{ size:A4; margin:13mm 11mm; }
+@media print{
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+  html,body{ background:#fff !important; color:#1d1d1d !important; font-size:8.8pt; line-height:1.55; }
+  .no-print, .topbar, .progress-track, .toast, .to-top, .satzbau, .stat-row, .hero-eyebrow, .search-wrap, .search-meta{ display:none !important; }
+  main{ max-width:100%; padding:0; margin:0; }
+  .hero{ padding:0 0 6mm 0; gap:3mm; }
+  .hero h1{ font-size:15pt; max-width:none; }
+  .hero p.lead{ font-size:8.5pt; max-width:none; }
+  .hero-de-sample{ font-size:8pt; }
+  .legend-grid{ grid-template-columns:repeat(4,1fr); gap:1.5mm 3mm; margin-top:2mm; }
+  .legend-item{ font-size:7.3pt; }
+  .legend-dot{ width:8px; height:8px; }
+  .category{ padding:3mm 0; border-top:1px solid #ddd; break-inside:avoid-page; }
+  .category-head{ margin-bottom:2.5mm; gap:1.5mm; }
+  .cat-titles h2{ font-size:11.5pt; }
+  .cat-titles .de-title{ font-size:8pt; }
+  .cat-desc{ font-size:7.6pt; max-width:none; }
+  .chip{ font-size:6.8pt; padding:.5mm 2mm; box-shadow:none; }
+  .cat-index{ font-size:6.8pt; padding:.5mm 2mm; }
+  .items-grid{ display:grid; grid-template-columns:1fr; gap:2mm; }
+  .item-card{ box-shadow:none; border:1px solid #ddd; border-inline-start-width:2.5px; padding:2.2mm 3mm; break-inside:avoid; transform:none !important; }
+  .item-head{ padding-bottom:1mm; margin-bottom:1mm; }
+  .item-word{ font-size:10pt; }
+  .item-meanings .ar{ font-size:8pt; }
+  .item-meanings .en{ font-size:7.5pt; }
+  .examples-grid{ grid-template-columns:1fr 1fr; gap:1.8mm; }
+  .example{ background:#f7f6f3 !important; border:1px solid #e3e0d8; padding:1.8mm 2.2mm; gap:2mm; break-inside:avoid; }
+  .ex-de{ font-size:8.4pt; }
+  .ex-note{ font-size:5.4pt; }
+  .ex-tr.en p{ font-size:7.3pt; }
+  .ex-tr.ar p{ font-size:7.8pt; }
+  .ex-tr .tag{ font-size:5.6pt; }
+  .icon-btn{ width:18px; height:18px; border:none; }
+  .icon-btn svg{ width:9px; height:9px; }
+  footer{ font-size:7pt; padding:3mm 0 0; margin-top:2mm; }
+  .reveal{ opacity:1 !important; transform:none !important; }
+  a{ color:inherit; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطّى إلى المحتوى الرئيسي</a>
+<div class="progress-track no-print" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+
+<header class="topbar no-print">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">DM</div>
+      <div class="brand-text">
+        <span class="brand-title">حروف الجر وأدوات الربط</span>
+        <span class="brand-sub">Deutsch mit Mira · A1–B1 Grammatik</span>
+      </div>
+    </div>
+    <nav class="topnav" id="topnav" aria-label="التنقل بين الأقسام"></nav>
+    <div class="top-actions">
+      <button class="icon-action" id="printBtn" aria-label="طباعة الصفحة بصيغة A4" title="طباعة (A4)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      </button>
+      <button class="icon-action" id="themeToggle" aria-label="تبديل المظهر بين الفاتح والداكن" aria-pressed="false" title="تبديل المظهر">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <span class="hero-eyebrow">German Grammar Reference · A1–B1</span>
+    <div>
+      <h1>المرجع الشامل لـ <span class="hl">حروف الجر</span> و<span class="hl">أدوات الربط</span> في اللغة الألمانية</h1>
+      <p class="lead">
+        دليل تفاعلي يجمع جميع حروف الجر (Präpositionen) وأدوات الربط (Konnektoren) في اللغة الألمانية، مصنّفة حسب الحالة النحوية وموضع الفعل في الجملة، مع أمثلة حقيقية مترجمة إلى الإنجليزية والعربية. لكل جملة زر للنطق الصوتي بالألمانية وزر لنسخها فورًا. الصفحة مهيّأة أيضًا للطباعة على ورق A4 كمرجع مطبوع.
+      </p>
+      <p class="hero-de-sample">»Übung macht den Meister« — التدريب يصنع المعلّم.</p>
+    </div>
+
+    <div class="stat-row reveal">
+      <div class="stat-card"><div class="stat-num" id="statCats">0</div><div class="stat-label">أقسام نحوية</div></div>
+      <div class="stat-card"><div class="stat-num" id="statItems">0</div><div class="stat-label">حرف جر / أداة ربط</div></div>
+      <div class="stat-card"><div class="stat-num" id="statEx">0</div><div class="stat-label">جملة مثال مترجمة</div></div>
+      <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">لغات: DE · EN · AR</div></div>
+    </div>
+
+    <div class="satzbau no-print reveal" aria-labelledby="satzbauTitle">
+      <div class="satzbau-title" id="satzbauTitle">🧩 خريطة بناء الجملة الألمانية (Satzbauplan) — المرجع لكل قسم أدناه</div>
+      <div class="satzbau-track">
+        <div class="seg"><div class="num">Pos. 0</div><div class="lbl">Konnektor</div></div>
+        <div class="seg"><div class="num">Pos. 1</div><div class="lbl">Subjekt / Element</div></div>
+        <div class="seg"><div class="num">Pos. 2</div><div class="lbl">Verb</div></div>
+        <div class="seg"><div class="num">Mittelfeld</div><div class="lbl">Präp. + Nomen / Objekte</div></div>
+        <div class="seg"><div class="num">Satzende</div><div class="lbl">Verb (Nebensatz / Partizip)</div></div>
+      </div>
+      <div class="legend-grid">
+        <div class="legend-item"><span class="legend-dot" style="background:var(--akk)"></span>Akkusativ-Präpositionen</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--dat)"></span>Dativ-Präpositionen</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--gen)"></span>Genitiv-Präpositionen</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--wec)"></span>Wechselpräpositionen</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--pos0)"></span>Konnektoren Position 0</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--twopart)"></span>Zweiteilige Konnektoren</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--posend)"></span>Konnektoren mit Verb am Ende</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--pos1)"></span>Konnektoren Position 1</div>
+      </div>
+    </div>
+
+    <div class="no-print">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" id="searchInput" placeholder="ابحث عن حرف جر أو أداة ربط أو كلمة في الأمثلة…" aria-label="بحث">
+      </div>
+      <div class="search-meta" id="searchMeta"></div>
+    </div>
+  </section>
+
+  <div id="categoriesRoot"></div>
+
+  <footer>
+    <div>© Deutsch mit Mira — مرجع تعليمي للغة الألمانية لمتعلمي A1–B1</div>
+    <div class="ltr">Präpositionen &amp; Konnektoren · Reference v1.0</div>
+  </footer>
+</main>
+
+<button class="to-top no-print" id="toTop" aria-label="العودة إلى الأعلى">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="toast no-print" id="toast" role="status" aria-live="polite"><div class="toast-inner" id="toastInner"></div></div>
+
+<script>
+/* ============================================================
+   ICONS
+   ============================================================ */
+const ICON_SPEAK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
+const ICON_COPY  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+const ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+function esc(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+function attr(s){
+  return esc(s).replace(/\n/g,' ');
+}
+
+function renderChips(chips){
+  return chips.map(c => `<span class="chip"><span class="chip-l">${esc(c.l)}</span><span class="arrow">${c.l && c.r ? '→' : ''}</span><span class="chip-r">${esc(c.r)}</span></span>`).join('');
+}
+
+function renderExample(ex){
+  return `
+  <div class="example">
+    ${ex.note ? `<div class="ex-note">${esc(ex.note)}</div>` : ''}
+    <div class="ex-de-row">
+      <p class="ex-de" lang="de">${esc(ex.de)}</p>
+      <div class="ex-actions no-print">
+        <button class="icon-btn" data-speak="${attr(ex.de)}" aria-label="نطق الجملة بالألمانية بصوت عالي">${ICON_SPEAK}</button>
+        <button class="icon-btn" data-copy="${attr(ex.de)}" aria-label="نسخ الجملة الألمانية">${ICON_COPY}</button>
+      </div>
+    </div>
+    <div class="ex-tr en"><span class="tag">EN</span><p lang="en">${esc(ex.en)}</p></div>
+    <div class="ex-tr ar"><span class="tag">AR</span><p lang="ar">${esc(ex.ar)}</p></div>
+  </div>`;
+}
+
+function renderItem(item){
+  return `
+  <article class="item-card reveal">
+    <div class="item-head">
+      <div class="item-word">${esc(item.word)}<span class="pos-tag">${esc(item.tag)}</span></div>
+      <div class="item-meanings">
+        <span class="en">${esc(item.en)}</span>
+        <span class="ar">${esc(item.ar)}</span>
+      </div>
+    </div>
+    <div class="examples-grid">
+      ${item.examples.map(renderExample).join('')}
+    </div>
+  </article>`;
+}
+
+function renderCategory(cat, idx){
+  return `
+  <section class="category" id="${cat.id}" data-accent="${cat.accent}" aria-labelledby="${cat.id}-h">
+    <div class="category-head reveal">
+      <div class="cat-kicker">
+        <span class="cat-index mono">${String(idx+1).padStart(2,'0')} / ${TOTAL_CATS}</span>
+        <span class="chip-row">${renderChips(cat.chips)}</span>
+      </div>
+      <div class="cat-titles">
+        <h2 id="${cat.id}-h">${esc(cat.title_ar)}</h2>
+        <div class="de-title">${esc(cat.title_de)}</div>
+      </div>
+      <p class="cat-desc">${esc(cat.desc)}</p>
+    </div>
+    <div class="items-grid">
+      ${cat.items.map(renderItem).join('')}
+    </div>
+  </section>`;
+}
+
+/* ============================================================
+   DATA
+   ============================================================ */
+let TOTAL_CATS = 0;
+const DATA = [
+  {
+    id:"akkusativ", accent:"akk",
+    title_ar:"حروف الجر مع حالة النصب (Akkusativ)",
+    title_de:"Präpositionen mit Akkusativ",
+    desc:"هذه حروف الجر تتبعها دائمًا حالة النصب (Akkusativ)، أي أن أداة التعريف المذكر «der» تتحول إلى «den»، بينما تبقى المؤنث والمحايد والجمع دون تغيير.",
+    chips:[{l:"der",r:"den"},{l:"die",r:"die"},{l:"das",r:"das"},{l:"die (Pl.)",r:"die"}],
+    items:[
+      { word:"durch", tag:"+Akk.", en:"through, by means of", ar:"خلال، عبر، بواسطة",
+        examples:[
+          {de:"Wir gehen durch den Park.", en:"We are walking through the park.", ar:"نحن نمشي عبر الحديقة."},
+          {de:"Ich habe die Nachricht durch einen Freund bekommen.", en:"I got the message through a friend.", ar:"حصلتُ على الرسالة عن طريق صديق."}
+        ]},
+      { word:"für", tag:"+Akk.", en:"for", ar:"من أجل، لـ",
+        examples:[
+          {de:"Das Geschenk ist für meine Mutter.", en:"The gift is for my mother.", ar:"الهدية من أجل أمي."},
+          {de:"Er arbeitet für eine große Firma.", en:"He works for a big company.", ar:"يعمل لدى شركة كبيرة."}
+        ]},
+      { word:"gegen", tag:"+Akk.", en:"against, around (time)", ar:"ضد، حوالي",
+        examples:[
+          {de:"Das Auto ist gegen die Wand gefahren.", en:"The car crashed into the wall.", ar:"اصطدمت السيارة بالحائط."},
+          {de:"Wir treffen uns gegen acht Uhr.", en:"We are meeting around eight o'clock.", ar:"سنلتقي حوالي الساعة الثامنة."}
+        ]},
+      { word:"ohne", tag:"+Akk.", en:"without", ar:"بدون",
+        examples:[
+          {de:"Ich trinke meinen Kaffee ohne Zucker.", en:"I drink my coffee without sugar.", ar:"أشرب قهوتي بدون سكر."},
+          {de:"Sie ist ohne ihren Bruder gekommen.", en:"She came without her brother.", ar:"أتت بدون أخيها."}
+        ]},
+      { word:"um", tag:"+Akk.", en:"around, at (time)", ar:"حول، في الساعة",
+        examples:[
+          {de:"Die Kinder sitzen um den Tisch.", en:"The children are sitting around the table.", ar:"يجلس الأطفال حول الطاولة."},
+          {de:"Der Unterricht beginnt um neun Uhr.", en:"The lesson starts at nine o'clock.", ar:"يبدأ الدرس في الساعة التاسعة."}
+        ]},
+      { word:"bis", tag:"+Akk.", en:"until, to, by", ar:"حتى، إلى",
+        examples:[
+          {de:"Ich bleibe bis Freitag in Berlin.", en:"I am staying in Berlin until Friday.", ar:"سأبقى في برلين حتى يوم الجمعة."},
+          {de:"Der Zug fährt bis München.", en:"The train goes to Munich.", ar:"يسير القطار حتى ميونخ."}
+        ]},
+      { word:"entlang", tag:"+Akk.", en:"along", ar:"بطول، على طول",
+        examples:[
+          {de:"Wir spazieren den Fluss entlang.", en:"We are walking along the river.", ar:"نتمشّى على طول النهر."},
+          {de:"Das Auto fährt die Straße entlang.", en:"The car is driving along the street.", ar:"تسير السيارة على طول الشارع."}
+        ]}
+    ]
+  },
+  {
+    id:"dativ", accent:"dat",
+    title_ar:"حروف الجر مع حالة الجر (Dativ)",
+    title_de:"Präpositionen mit Dativ",
+    desc:"هذه حروف الجر تتبعها دائمًا حالة الجر (Dativ): «der» تصبح «dem»، و«die» تصبح «der»، و«das» تصبح «dem»، وفي الجمع «die» تصبح «den».",
+    chips:[{l:"der",r:"dem"},{l:"die",r:"der"},{l:"das",r:"dem"},{l:"die (Pl.)",r:"den"}],
+    items:[
+      { word:"aus", tag:"+Dat.", en:"from, out of, made of", ar:"من، مصنوع من",
+        examples:[
+          {de:"Sie kommt aus Spanien.", en:"She comes from Spain.", ar:"هي من إسبانيا."},
+          {de:"Der Tisch ist aus Holz.", en:"The table is made of wood.", ar:"الطاولة مصنوعة من الخشب."}
+        ]},
+      { word:"bei", tag:"+Dat.", en:"at, near, with", ar:"عند، لدى، بجانب",
+        examples:[
+          {de:"Ich wohne bei meinen Eltern.", en:"I live with my parents.", ar:"أعيش عند والديّ."},
+          {de:"Er arbeitet bei einer Bank.", en:"He works at a bank.", ar:"يعمل لدى بنك."}
+        ]},
+      { word:"mit", tag:"+Dat.", en:"with, by means of", ar:"مع، بواسطة",
+        examples:[
+          {de:"Ich fahre mit dem Bus zur Arbeit.", en:"I go to work by bus.", ar:"أذهب إلى العمل بالحافلة."},
+          {de:"Sie spricht mit ihrer Freundin.", en:"She is talking with her friend.", ar:"تتحدث مع صديقتها."}
+        ]},
+      { word:"nach", tag:"+Dat.", en:"after, to, according to", ar:"بعد، إلى، حسب",
+        examples:[
+          {de:"Nach der Schule gehe ich nach Hause.", en:"After school I go home.", ar:"بعد المدرسة أذهب إلى المنزل."},
+          {de:"Nach meiner Meinung ist das richtig.", en:"In my opinion, that is correct.", ar:"في رأيي هذا صحيح."}
+        ]},
+      { word:"seit", tag:"+Dat.", en:"since, for (duration)", ar:"منذ",
+        examples:[
+          {de:"Ich lerne seit zwei Jahren Deutsch.", en:"I have been learning German for two years.", ar:"أتعلم الألمانية منذ سنتين."},
+          {de:"Seit dem Unfall geht es ihm besser.", en:"Since the accident, he has been doing better.", ar:"منذ الحادث، حالته أفضل."}
+        ]},
+      { word:"von", tag:"+Dat.", en:"from, of, by", ar:"من، بواسطة",
+        examples:[
+          {de:"Das ist ein Geschenk von meiner Schwester.", en:"This is a gift from my sister.", ar:"هذه هدية من أختي."},
+          {de:"Der Roman wurde von einem berühmten Autor geschrieben.", en:"The novel was written by a famous author.", ar:"كُتبت الرواية بواسطة كاتب مشهور."}
+        ]},
+      { word:"zu", tag:"+Dat.", en:"to, at", ar:"إلى",
+        examples:[
+          {de:"Wir gehen heute zu meiner Oma.", en:"We are going to my grandma's today.", ar:"سنذهب اليوم إلى جدتي."},
+          {de:"Ich bin müde, ich gehe zu Bett.", en:"I am tired, I am going to bed.", ar:"أنا متعب، سأذهب إلى السرير."}
+        ]},
+      { word:"gegenüber", tag:"+Dat.", en:"opposite, towards", ar:"مقابل، تجاه",
+        examples:[
+          {de:"Die Bäckerei liegt gegenüber dem Bahnhof.", en:"The bakery is located opposite the train station.", ar:"يقع المخبز مقابل المحطة."},
+          {de:"Er ist sehr höflich gegenüber seinen Kollegen.", en:"He is very polite towards his colleagues.", ar:"هو مهذب جدًا تجاه زملائه."}
+        ]},
+      { word:"außer", tag:"+Dat.", en:"except, apart from", ar:"بإستثناء، عدا",
+        examples:[
+          {de:"Alle waren da, außer meinem Bruder.", en:"Everyone was there except my brother.", ar:"كان الجميع هناك إلا أخي."},
+          {de:"Außer Tee trinke ich nichts.", en:"Apart from tea, I do not drink anything.", ar:"عدا الشاي، لا أشرب شيئًا آخر."}
+        ]}
+    ]
+  },
+  {
+    id:"wechsel", accent:"wec",
+    title_ar:"حروف الجر المتغيّرة (Wechselpräpositionen)",
+    title_de:"Wechselpräpositionen: Dativ oder Akkusativ",
+    desc:"تستخدم هذه الحروف مع حالة الجر (Dativ) عند الإجابة على سؤال «أين؟ Wo?» (موضع ثابت)، ومع حالة النصب (Akkusativ) عند الإجابة على سؤال «إلى أين؟ Wohin?» (حركة واتجاه).",
+    chips:[{l:"Wo? (Ort)",r:"Dativ"},{l:"Wohin? (Richtung)",r:"Akkusativ"}],
+    items:[
+      { word:"an", tag:"Dat./Akk.", en:"at, on (vertical surface)", ar:"على، عند (سطح عمودي)",
+        examples:[
+          {de:"Das Bild hängt an der Wand.", en:"The picture is hanging on the wall.", ar:"الصورة معلّقة على الحائط.", note:"Wo? → Dativ"},
+          {de:"Ich hänge das Bild an die Wand.", en:"I am hanging the picture on the wall.", ar:"أعلّق الصورة على الحائط.", note:"Wohin? → Akkusativ"}
+        ]},
+      { word:"auf", tag:"Dat./Akk.", en:"on, onto (horizontal surface)", ar:"على، فوق (سطح أفقي)",
+        examples:[
+          {de:"Das Buch liegt auf dem Tisch.", en:"The book is lying on the table.", ar:"الكتاب على الطاولة.", note:"Wo? → Dativ"},
+          {de:"Ich lege das Buch auf den Tisch.", en:"I am putting the book on the table.", ar:"أضع الكتاب على الطاولة.", note:"Wohin? → Akkusativ"}
+        ]},
+      { word:"hinter", tag:"Dat./Akk.", en:"behind", ar:"خلف",
+        examples:[
+          {de:"Der Garten ist hinter dem Haus.", en:"The garden is behind the house.", ar:"الحديقة خلف المنزل.", note:"Wo? → Dativ"},
+          {de:"Die Katze läuft hinter das Haus.", en:"The cat is running behind the house.", ar:"تجري القطة خلف المنزل.", note:"Wohin? → Akkusativ"}
+        ]},
+      { word:"in", tag:"Dat./Akk.", en:"in, into", ar:"في، إلى داخل",
+        examples:[
+          {de:"Die Kinder spielen im Garten.", en:"The children are playing in the garden.", ar:"يلعب الأطفال في الحديقة.", note:"Wo? → Dativ (in + dem = im)"},
+          {de:"Die Kinder gehen in den Garten.", en:"The children are going into the garden.", ar:"يذهب الأطفال إلى الحديقة.", note:"Wohin? → Akkusativ"}
+        ]},
+      { word:"neben", tag:"Dat./Akk.", en:"next to, beside", ar:"بجانب، إلى جانب",
+        examples:[
+          {de:"Der Stuhl steht neben dem Schreibtisch.", en:"The chair is standing next to the desk.", ar:"الكرسي بجانب المكتب.", note:"Wo? → Dativ"},
+          {de:"Stell den Stuhl neben den Schreibtisch.", en:"Put the chair next to the desk.", ar:"ضع الكرسي بجانب المكتب.", note:"Wohin? → Akkusativ"}
+        ]},
+      { word:"über", tag:"Dat./Akk.", en:"over, above, about", ar:"فوق، عبر، حول (موضوع)",
+        examples:[
+          {de:"Die Lampe hängt über dem Tisch.", en:"The lamp is hanging above the table.", ar:"المصباح معلّق فوق الطاولة.", note:"Wo? → Dativ"},
+          {de:"Häng die Lampe über den Tisch.", en:"Hang the lamp above the table.", ar:"علّق المصباح فوق الطاولة.", note:"Wohin? → Akkusativ"}
+        ]},
+      { word:"unter", tag:"Dat./Akk.", en:"under, below", ar:"تحت",
+        examples:[
+          {de:"Die Schuhe stehen unter dem Bett.", en:"The shoes are under the bed.", ar:"الأحذية تحت السرير.", note:"Wo? → Dativ"},
+          {de:"Ich stelle die Schuhe unter das Bett.", en:"I am putting the shoes under the bed.", ar:"أضع الأحذية تحت السرير.", note:"Wohin? → Akkusativ"}
+        ]},
+      { word:"vor", tag:"Dat./Akk.", en:"in front of, before", ar:"أمام، قبل",
+        examples:[
+          {de:"Das Auto steht vor dem Haus.", en:"The car is parked in front of the house.", ar:"السيارة أمام المنزل.", note:"Wo? → Dativ"},
+          {de:"Er stellt das Auto vor das Haus.", en:"He is parking the car in front of the house.", ar:"يضع السيارة أمام المنزل.", note:"Wohin? → Akkusativ"}
+        ]},
+      { word:"zwischen", tag:"Dat./Akk.", en:"between", ar:"بين",
+        examples:[
+          {de:"Die Apotheke liegt zwischen der Bank und dem Supermarkt.", en:"The pharmacy is between the bank and the supermarket.", ar:"تقع الصيدلية بين البنك والسوبرماركت.", note:"Wo? → Dativ"},
+          {de:"Stell den Tisch zwischen das Sofa und den Schrank.", en:"Put the table between the sofa and the wardrobe.", ar:"ضع الطاولة بين الأريكة والخزانة.", note:"Wohin? → Akkusativ"}
+        ]}
+    ]
+  },
+  {
+    id:"genitiv", accent:"gen",
+    title_ar:"حروف الجر مع حالة الإضافة (Genitiv)",
+    title_de:"Präpositionen mit Genitiv",
+    desc:"هذه الحروف تُستخدم غالبًا في اللغة الرسمية والمكتوبة، وتتبعها حالة الإضافة (Genitiv): «der/das» تصبح «des»، و«die» (مفرد وجمع) تصبح «der».",
+    chips:[{l:"der",r:"des"},{l:"die",r:"der"},{l:"das",r:"des"},{l:"die (Pl.)",r:"der"}],
+    items:[
+      { word:"während", tag:"+Gen.", en:"during, while", ar:"خلال، أثناء",
+        examples:[
+          {de:"Während des Unterrichts darf man nicht telefonieren.", en:"During class, you are not allowed to use the phone.", ar:"أثناء الدرس لا يجوز استخدام الهاتف."},
+          {de:"Während der Ferien haben wir Spanien besucht.", en:"During the holidays we visited Spain.", ar:"خلال العطلة زرنا إسبانيا."}
+        ]},
+      { word:"trotz", tag:"+Gen.", en:"despite, in spite of", ar:"بالرغم من، على الرغم من",
+        examples:[
+          {de:"Trotz des Regens sind wir spazieren gegangen.", en:"Despite the rain, we went for a walk.", ar:"بالرغم من المطر، خرجنا للتمشية."},
+          {de:"Trotz seiner Krankheit ging er zur Arbeit.", en:"Despite his illness, he went to work.", ar:"بالرغم من مرضه ذهب إلى العمل."}
+        ]},
+      { word:"wegen", tag:"+Gen.", en:"because of, due to", ar:"بسبب",
+        examples:[
+          {de:"Wegen des schlechten Wetters bleiben wir heute zu Hause.", en:"Because of the bad weather, we are staying home today.", ar:"بسبب سوء الأحوال الجوية سنبقى في المنزل اليوم."},
+          {de:"Er ist wegen einer Erkältung nicht zur Schule gegangen.", en:"He did not go to school because of a cold.", ar:"لم يذهب إلى المدرسة بسبب نزلة برد."}
+        ]},
+      { word:"statt / anstatt", tag:"+Gen.", en:"instead of", ar:"بدلاً من",
+        examples:[
+          {de:"Statt eines Kaffees trinke ich heute einen Tee.", en:"Instead of a coffee, I will have a tea today.", ar:"بدلاً من القهوة، سأشرب شايًا اليوم."},
+          {de:"Anstatt zu arbeiten, hat er den ganzen Tag geschlafen.", en:"Instead of working, he slept all day.", ar:"بدلاً من العمل، نام طوال اليوم."}
+        ]},
+      { word:"innerhalb", tag:"+Gen.", en:"within, inside of", ar:"خلال، ضمن، داخل",
+        examples:[
+          {de:"Innerhalb einer Woche bekommen Sie eine Antwort.", en:"Within a week you will get an answer.", ar:"في غضون أسبوع ستحصل على رد."},
+          {de:"Innerhalb des Gebäudes ist Rauchen verboten.", en:"Smoking is forbidden inside the building.", ar:"التدخين ممنوع داخل المبنى."}
+        ]},
+      { word:"außerhalb", tag:"+Gen.", en:"outside of", ar:"خارج",
+        examples:[
+          {de:"Außerhalb der Stadt ist die Luft viel besser.", en:"Outside the city, the air is much better.", ar:"خارج المدينة الهواء أفضل بكثير."},
+          {de:"Das Geschäft hat außerhalb der Öffnungszeiten geschlossen.", en:"The store is closed outside of opening hours.", ar:"المتجر مغلق خارج ساعات العمل."}
+        ]},
+      { word:"aufgrund", tag:"+Gen.", en:"due to, on the basis of", ar:"بناءً على، بسبب",
+        examples:[
+          {de:"Aufgrund des Streiks fahren heute keine Züge.", en:"Due to the strike, no trains are running today.", ar:"بسبب الإضراب لا تعمل القطارات اليوم."},
+          {de:"Aufgrund seiner Erfahrung wurde er sofort eingestellt.", en:"Due to his experience, he was hired immediately.", ar:"بفضل خبرته تم تعيينه فورًا."}
+        ]},
+      { word:"laut", tag:"+Gen.", en:"according to", ar:"وفقًا لـ، حسب",
+        examples:[
+          {de:"Laut des Wetterberichts wird es morgen regnen.", en:"According to the weather report, it will rain tomorrow.", ar:"وفقًا للنشرة الجوية سيكون هناك مطر غدًا."},
+          {de:"Laut des Zeugen hat der Fahrer die Ampel überfahren.", en:"According to the witness, the driver ran the red light.", ar:"حسب الشاهد، تجاوز السائق الإشارة الحمراء."}
+        ]}
+    ]
+  },
+  {
+    id:"koordinierend", accent:"pos0",
+    title_ar:"أدوات الربط في الموضع صفر (Position 0)",
+    title_de:"Koordinierende Konjunktionen",
+    desc:"هذه الأدوات (المعروفة اختصارًا بـ ADUSO) تربط بين جملتين رئيسيتين مستقلتين تمامًا، ولا تُغيّر ترتيب الكلمات في الجملة التالية لها — يبقى الفعل المُصرَّف في موضعه الثاني (Position 2) كالعادة.",
+    chips:[{l:"Position",r:"0"},{l:"Wortstellung",r:"bleibt gleich"},{l:"Verbindet",r:"Hauptsatz + Hauptsatz"}],
+    items:[
+      { word:"und", tag:"Pos. 0", en:"and", ar:"و",
+        examples:[
+          {de:"Ich kaufe Brot und Milch.", en:"I am buying bread and milk.", ar:"أشتري خبزًا وحليبًا."},
+          {de:"Er liest ein Buch, und sie hört Musik.", en:"He is reading a book, and she is listening to music.", ar:"هو يقرأ كتابًا وهي تستمع إلى الموسيقى."}
+        ]},
+      { word:"oder", tag:"Pos. 0", en:"or", ar:"أو",
+        examples:[
+          {de:"Möchtest du Kaffee oder Tee?", en:"Would you like coffee or tea?", ar:"هل تريد قهوة أم شايًا؟"},
+          {de:"Wir können ins Kino gehen, oder wir bleiben zu Hause.", en:"We can go to the cinema, or we stay home.", ar:"يمكننا الذهاب إلى السينما أو نبقى في المنزل."}
+        ]},
+      { word:"aber", tag:"Pos. 0", en:"but", ar:"لكن، لكنّ",
+        examples:[
+          {de:"Ich möchte schlafen, aber ich muss noch arbeiten.", en:"I want to sleep, but I still have to work.", ar:"أريد أن أنام، لكن يجب أن أعمل."},
+          {de:"Das Kleid ist schön, aber zu teuer.", en:"The dress is beautiful, but too expensive.", ar:"الفستان جميل، لكنه غالٍ جدًا."}
+        ]},
+      { word:"denn", tag:"Pos. 0", en:"because, for", ar:"لأن (تربط جملتين رئيسيتين)",
+        examples:[
+          {de:"Ich bleibe zu Hause, denn ich bin krank.", en:"I am staying home, because I am sick.", ar:"سأبقى في المنزل لأنني مريض."},
+          {de:"Er kauft einen Regenschirm, denn es regnet stark.", en:"He is buying an umbrella, because it is raining heavily.", ar:"يشتري شمسية لأن المطر شديد."}
+        ]},
+      { word:"sondern", tag:"Pos. 0", en:"but rather (after negation)", ar:"بل",
+        examples:[
+          {de:"Das ist kein Hund, sondern eine Katze.", en:"That is not a dog, but a cat.", ar:"هذا ليس كلبًا، بل قطة."},
+          {de:"Ich trinke keinen Kaffee, sondern Tee.", en:"I do not drink coffee, but tea.", ar:"لا أشرب القهوة، بل الشاي."}
+        ]}
+    ]
+  },
+  {
+    id:"zweiteilig", accent:"twopart",
+    title_ar:"أدوات الربط ذات الجزأين (Zweiteilige Konnektoren)",
+    title_de:"Zweiteilige Konnektoren",
+    desc:"تتكوّن هذه الأدوات من جزأين يظهران معًا في الجملة لربط كلمتين أو جملتين متكافئتين في المعنى، ولكل أداة قواعد ترتيب كلمات خاصة بها قد تتضمن انقلاب الفعل والفاعل.",
+    chips:[{l:"Teile",r:"2"},{l:"Verbindet",r:"Satzteile / Sätze"}],
+    items:[
+      { word:"nicht nur … sondern auch", tag:"zweiteilig", en:"not only … but also", ar:"ليس فقط … بل أيضًا",
+        examples:[
+          {de:"Sie spricht nicht nur Deutsch, sondern auch Französisch.", en:"She speaks not only German, but also French.", ar:"هي لا تتحدث الألمانية فقط، بل الفرنسية أيضًا."},
+          {de:"Er ist nicht nur intelligent, sondern auch sehr fleißig.", en:"He is not only intelligent, but also very hardworking.", ar:"هو ليس ذكيًا فقط، بل مجتهد جدًا أيضًا."}
+        ]},
+      { word:"sowohl … als auch", tag:"zweiteilig", en:"both … and", ar:"كلا … و، سواء … أو",
+        examples:[
+          {de:"Sowohl meine Schwester als auch mein Bruder studieren in Berlin.", en:"Both my sister and my brother study in Berlin.", ar:"كلا أختي وأخي يدرسان في برلين."},
+          {de:"Das Hotel bietet sowohl Frühstück als auch Abendessen an.", en:"The hotel offers both breakfast and dinner.", ar:"يقدّم الفندق كلاً من الفطور والعشاء."}
+        ]},
+      { word:"entweder … oder", tag:"zweiteilig", en:"either … or", ar:"إما … أو",
+        examples:[
+          {de:"Entweder gehen wir ins Kino, oder wir bleiben zu Hause.", en:"Either we go to the cinema, or we stay home.", ar:"إما أن نذهب إلى السينما أو نبقى في المنزل."},
+          {de:"Du kannst entweder mit dem Bus oder mit dem Zug fahren.", en:"You can travel either by bus or by train.", ar:"يمكنك الذهاب إما بالحافلة أو بالقطار."}
+        ]},
+      { word:"weder … noch", tag:"zweiteilig", en:"neither … nor", ar:"لا … ولا",
+        examples:[
+          {de:"Er trinkt weder Alkohol noch Kaffee.", en:"He drinks neither alcohol nor coffee.", ar:"هو لا يشرب الكحول ولا القهوة."},
+          {de:"Weder meine Eltern noch meine Geschwister wussten davon.", en:"Neither my parents nor my siblings knew about it.", ar:"لا والداي ولا أشقائي كانوا يعلمون بذلك."}
+        ]},
+      { word:"zwar … aber", tag:"zweiteilig", en:"admittedly … but", ar:"صحيح أنّ … لكن",
+        examples:[
+          {de:"Das Auto ist zwar teuer, aber sehr zuverlässig.", en:"The car is admittedly expensive, but very reliable.", ar:"السيارة غالية فعلاً، لكنها موثوقة جدًا."},
+          {de:"Ich habe zwar wenig Zeit, aber ich helfe dir gern.", en:"I admittedly have little time, but I am happy to help you.", ar:"وقتي قليل فعلاً، لكنني سأساعدك بسرور."}
+        ]},
+      { word:"je … desto", tag:"zweiteilig", en:"the … the (comparative)", ar:"كلما … كلما",
+        examples:[
+          {de:"Je mehr du übst, desto besser wirst du.", en:"The more you practice, the better you become.", ar:"كلما تدربت أكثر، كلما أصبحت أفضل."},
+          {de:"Je früher wir abfahren, desto schneller kommen wir an.", en:"The earlier we leave, the faster we arrive.", ar:"كلما غادرنا أبكر، كلما وصلنا أسرع."}
+        ]}
+    ]
+  },
+  {
+    id:"nebensatz", accent:"posend",
+    title_ar:"أدوات ربط الجملة الفرعية (Nebensatz – الفعل في النهاية)",
+    title_de:"Subordinierende Konjunktionen",
+    desc:"تُدخل هذه الأدوات جملة فرعية (Nebensatz)، وتُلزم الفعل المُصرَّف بالانتقال إلى آخر الجملة الفرعية. تُكتب فاصلة قبل أداة الربط مباشرة، ويمكن أن تأتي الجملة الفرعية في بداية الجملة الكاملة أيضًا.",
+    chips:[{l:"Verb",r:"am Satzende"},{l:"Komma",r:"vor dem Konnektor"}],
+    items:[
+      { word:"weil", tag:"Nebensatz", en:"because", ar:"لأن",
+        examples:[
+          {de:"Ich lerne Deutsch, weil ich in Deutschland studieren möchte.", en:"I am learning German because I want to study in Germany.", ar:"أتعلم الألمانية لأنني أريد الدراسة في ألمانيا."},
+          {de:"Sie ist müde, weil sie wenig geschlafen hat.", en:"She is tired because she did not sleep much.", ar:"هي متعبة لأنها لم تنم كثيرًا."}
+        ]},
+      { word:"da", tag:"Nebensatz", en:"since, as (formal)", ar:"بما أن، حيث أن",
+        examples:[
+          {de:"Da es regnet, nehmen wir den Schirm mit.", en:"Since it is raining, we are taking the umbrella.", ar:"بما أن المطر ينهمر، سنأخذ الشمسية."},
+          {de:"Da ich keine Zeit hatte, konnte ich nicht kommen.", en:"Since I had no time, I could not come.", ar:"بما أنه لم يكن لدي وقت، لم أستطع الحضور."}
+        ]},
+      { word:"dass", tag:"Nebensatz", en:"that", ar:"أن، بأن",
+        examples:[
+          {de:"Ich glaube, dass er recht hat.", en:"I believe that he is right.", ar:"أعتقد أنه على حق."},
+          {de:"Es ist wichtig, dass du pünktlich kommst.", en:"It is important that you come on time.", ar:"من المهم أن تأتي في الوقت المحدد."}
+        ]},
+      { word:"obwohl", tag:"Nebensatz", en:"although", ar:"مع أن، بالرغم من أن",
+        examples:[
+          {de:"Obwohl es kalt ist, geht er ohne Jacke raus.", en:"Although it is cold, he is going out without a jacket.", ar:"مع أن الجو بارد، يخرج بدون جاكيت."},
+          {de:"Sie hat die Prüfung bestanden, obwohl sie nicht viel gelernt hat.", en:"She passed the exam, although she did not study much.", ar:"نجحت في الامتحان مع أنها لم تدرس كثيرًا."}
+        ]},
+      { word:"wenn", tag:"Nebensatz", en:"if, when (conditional / repeated)", ar:"إذا، عندما (متكرر)",
+        examples:[
+          {de:"Wenn ich Zeit habe, besuche ich dich.", en:"If I have time, I will visit you.", ar:"إذا كان لدي وقت، سأزورك."},
+          {de:"Immer wenn es regnet, bleibe ich zu Hause.", en:"Whenever it rains, I stay home.", ar:"كلما أمطرت السماء، أبقى في المنزل."}
+        ]},
+      { word:"als", tag:"Nebensatz", en:"when (single past event)", ar:"عندما (لحدث واحد في الماضي)",
+        examples:[
+          {de:"Als ich klein war, wohnte ich in Kairo.", en:"When I was little, I lived in Cairo.", ar:"عندما كنت صغيرًا، كنت أعيش في القاهرة."},
+          {de:"Als das Telefon klingelte, war ich gerade unter der Dusche.", en:"When the phone rang, I was just in the shower.", ar:"عندما رنّ الهاتف، كنت في الحمام."}
+        ]},
+      { word:"während", tag:"Nebensatz", en:"while (temporal)", ar:"بينما، في حين أن",
+        examples:[
+          {de:"Während ich kochte, hat er den Tisch gedeckt.", en:"While I was cooking, he set the table.", ar:"بينما كنت أطبخ، جهّز هو الطاولة."},
+          {de:"Während sie schläft, arbeite ich noch.", en:"While she is sleeping, I am still working.", ar:"بينما هي نائمة، ما زلت أعمل."}
+        ]},
+      { word:"bevor", tag:"Nebensatz", en:"before", ar:"قبل أن",
+        examples:[
+          {de:"Bevor ich schlafen gehe, putze ich mir die Zähne.", en:"Before I go to sleep, I brush my teeth.", ar:"قبل أن أنام، أنظف أسناني."},
+          {de:"Wasch deine Hände, bevor du isst.", en:"Wash your hands before you eat.", ar:"اغسل يديك قبل أن تأكل."}
+        ]},
+      { word:"nachdem", tag:"Nebensatz", en:"after", ar:"بعد أن",
+        examples:[
+          {de:"Nachdem ich gegessen hatte, ging ich spazieren.", en:"After I had eaten, I went for a walk.", ar:"بعد أن أكلت، خرجت للتمشية."},
+          {de:"Nachdem er die Arbeit beendet hat, fährt er nach Hause.", en:"After he finishes the work, he drives home.", ar:"بعد أن ينهي العمل، يذهب إلى المنزل."}
+        ]},
+      { word:"bis", tag:"Nebensatz", en:"until (conjunction)", ar:"حتى (أداة ربط)",
+        examples:[
+          {de:"Wir warten hier, bis der Bus kommt.", en:"We will wait here until the bus comes.", ar:"سننتظر هنا حتى يأتي الباص."},
+          {de:"Ich arbeite, bis ich fertig bin.", en:"I will work until I am done.", ar:"سأعمل حتى أنتهي."}
+        ]},
+      { word:"damit", tag:"Nebensatz", en:"so that (purpose)", ar:"لكي، حتى (للغرض)",
+        examples:[
+          {de:"Ich spreche langsam, damit du mich verstehst.", en:"I speak slowly so that you understand me.", ar:"أتحدث ببطء لكي تفهمني."},
+          {de:"Sie lernt jeden Tag, damit sie die Prüfung besteht.", en:"She studies every day so that she passes the exam.", ar:"تدرس كل يوم لكي تنجح في الامتحان."}
+        ]},
+      { word:"sodass", tag:"Nebensatz", en:"so that (result)", ar:"بحيث، لذلك (للنتيجة)",
+        examples:[
+          {de:"Es regnete so stark, dass wir zu Hause blieben.", en:"It rained so heavily that we stayed home.", ar:"كان المطر غزيرًا جدًا بحيث بقينا في المنزل."},
+          {de:"Er hat lange gearbeitet, sodass er sehr müde war.", en:"He worked for a long time, so that he was very tired.", ar:"عمل لفترة طويلة، بحيث أصبح متعبًا جدًا."}
+        ]},
+      { word:"ob", tag:"Nebensatz", en:"whether, if (indirect question)", ar:"هل، إن (في الأسئلة غير المباشرة)",
+        examples:[
+          {de:"Ich weiß nicht, ob er heute kommt.", en:"I do not know whether he is coming today.", ar:"لا أعرف إن كان سيأتي اليوم."},
+          {de:"Sie fragt, ob ich ihr helfen kann.", en:"She is asking whether I can help her.", ar:"تسأل إن كان يمكنني مساعدتها."}
+        ]},
+      { word:"falls", tag:"Nebensatz", en:"in case", ar:"في حال، إذا",
+        examples:[
+          {de:"Falls es regnet, nehmen wir den Schirm mit.", en:"In case it rains, we will take the umbrella.", ar:"في حال أمطرت السماء، سنأخذ الشمسية."},
+          {de:"Ruf mich an, falls du Hilfe brauchst.", en:"Call me in case you need help.", ar:"اتصل بي في حال احتجت إلى المساعدة."}
+        ]}
+    ]
+  },
+  {
+    id:"adverbial", accent:"pos1",
+    title_ar:"أدوات الربط الظرفية (Position 1 – انقلاب الفعل والفاعل)",
+    title_de:"Adverbiale Konnektoren (Konjunktionaladverbien)",
+    desc:"هذه الكلمات تربط بين جملتين من حيث المعنى، وتحتل الموضع الأول (Position 1) في الجملة الثانية، فينتقل الفعل المُصرَّف إلى الموضع الثاني (Position 2) ويأتي الفاعل بعده مباشرة — وهو ما يُعرف بالانقلاب (Inversion).",
+    chips:[{l:"Position 1",r:"Konnektor"},{l:"Position 2",r:"Verb (Inversion)"}],
+    items:[
+      { word:"deshalb / deswegen / daher", tag:"Pos. 1", en:"therefore, that is why", ar:"لذلك، لهذا السبب",
+        examples:[
+          {de:"Es regnet stark, deshalb bleiben wir zu Hause.", en:"It is raining heavily, that is why we are staying home.", ar:"المطر غزير، لذلك سنبقى في المنزل."},
+          {de:"Ich war krank, deswegen konnte ich nicht zur Arbeit kommen.", en:"I was sick, that is why I could not come to work.", ar:"كنت مريضًا، لذلك لم أتمكن من الحضور إلى العمل."}
+        ]},
+      { word:"trotzdem", tag:"Pos. 1", en:"nevertheless, despite that", ar:"مع ذلك، رغم ذلك",
+        examples:[
+          {de:"Er war müde, trotzdem ist er joggen gegangen.", en:"He was tired, nevertheless he went jogging.", ar:"كان متعبًا، ومع ذلك ذهب للجري."},
+          {de:"Das Wetter war schlecht, trotzdem hatten wir einen schönen Tag.", en:"The weather was bad, nevertheless we had a nice day.", ar:"كان الطقس سيئًا، ورغم ذلك كان يومنا جميلاً."}
+        ]},
+      { word:"außerdem", tag:"Pos. 1", en:"besides, in addition", ar:"بالإضافة إلى ذلك",
+        examples:[
+          {de:"Die Wohnung ist günstig, außerdem liegt sie zentral.", en:"The apartment is affordable, besides it is centrally located.", ar:"الشقة رخيصة، وبالإضافة إلى ذلك تقع في مكان مركزي."},
+          {de:"Ich habe keine Zeit, außerdem bin ich auch müde.", en:"I have no time, besides I am also tired.", ar:"لا وقت لدي، بالإضافة إلى أنني متعب أيضًا."}
+        ]},
+      { word:"dann", tag:"Pos. 1", en:"then", ar:"ثم، بعد ذلك",
+        examples:[
+          {de:"Zuerst frühstücke ich, dann gehe ich zur Arbeit.", en:"First I have breakfast, then I go to work.", ar:"أولاً أتناول الفطور، ثم أذهب إلى العمل."},
+          {de:"Mach deine Hausaufgaben, dann kannst du fernsehen.", en:"Do your homework, then you can watch TV.", ar:"اعمل واجبك، ثم يمكنك مشاهدة التلفاز."}
+        ]},
+      { word:"also", tag:"Pos. 1", en:"so, therefore", ar:"إذن، لذا",
+        examples:[
+          {de:"Du hast keine Zeit, also gehe ich allein.", en:"You do not have time, so I will go alone.", ar:"لا وقت لديك، لذا سأذهب بمفردي."},
+          {de:"Es ist schon spät, also sollten wir gehen.", en:"It is already late, so we should go.", ar:"الوقت متأخر، إذن يجب أن نذهب."}
+        ]},
+      { word:"sonst", tag:"Pos. 1", en:"otherwise", ar:"وإلا، غير ذلك",
+        examples:[
+          {de:"Beeil dich, sonst verpassen wir den Zug.", en:"Hurry up, otherwise we will miss the train.", ar:"استعجل، وإلا سنفوّت القطار."},
+          {de:"Nimm einen Regenschirm mit, sonst wirst du nass.", en:"Take an umbrella, otherwise you will get wet.", ar:"خذ شمسية معك، وإلا ستتبلل."}
+        ]},
+      { word:"allerdings", tag:"Pos. 1", en:"however, though", ar:"مع ذلك، لكن",
+        examples:[
+          {de:"Das Restaurant ist gut, allerdings etwas teuer.", en:"The restaurant is good, however a bit expensive.", ar:"المطعم جيد، لكنه غالٍ نوعًا ما."},
+          {de:"Ich komme gerne, allerdings erst um neun Uhr.", en:"I would love to come, however not until nine o'clock.", ar:"سأحضر بسرور، لكن فقط بعد الساعة التاسعة."}
+        ]},
+      { word:"dagegen", tag:"Pos. 1", en:"on the other hand, in contrast", ar:"في المقابل، على العكس",
+        examples:[
+          {de:"Mein Bruder mag Fußball, ich dagegen interessiere mich für Musik.", en:"My brother likes football, I, on the other hand, am interested in music.", ar:"أخي يحب كرة القدم، أما أنا فأهتم بالموسيقى."},
+          {de:"Im Sommer ist es hier sehr heiß, im Winter dagegen sehr kalt.", en:"In summer it is very hot here, in winter on the other hand very cold.", ar:"في الصيف يكون الجو حارًا جدًا هنا، أما في الشتاء فبارد جدًا."}
+        ]},
+      { word:"schließlich", tag:"Pos. 1", en:"finally, after all", ar:"في النهاية، أخيرًا",
+        examples:[
+          {de:"Wir haben lange gesucht und schließlich das Hotel gefunden.", en:"We searched for a long time and finally found the hotel.", ar:"بحثنا طويلاً وأخيرًا وجدنا الفندق."},
+          {de:"Du solltest ihm helfen, schließlich ist er dein Bruder.", en:"You should help him, after all he is your brother.", ar:"يجب أن تساعده، فهو أخوك في النهاية."}
+        ]},
+      { word:"stattdessen", tag:"Pos. 1", en:"instead", ar:"بدلاً من ذلك",
+        examples:[
+          {de:"Er wollte nicht ins Kino gehen, stattdessen sind wir zu Hause geblieben.", en:"He did not want to go to the cinema, instead we stayed home.", ar:"لم يرغب بالذهاب إلى السينما، وبدلاً من ذلك بقينا في المنزل."},
+          {de:"Ich habe keinen Kaffee mehr, stattdessen mache ich uns Tee.", en:"I have no more coffee, instead I will make us tea.", ar:"لم يتبق لدي قهوة، وبدلاً من ذلك سأحضّر لنا شايًا."}
+        ]}
+    ]
+  }
+];
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+TOTAL_CATS = DATA.length;
+
+const NAV_LABELS = {
+  akkusativ:"Akkusativ",
+  dativ:"Dativ",
+  wechsel:"Wechsel-Präp.",
+  genitiv:"Genitiv",
+  koordinierend:"Position 0",
+  zweiteilig:"Zweiteilig",
+  nebensatz:"Nebensatz",
+  adverbial:"Position 1"
+};
+
+const navEl  = document.getElementById('topnav');
+const rootEl = document.getElementById('categoriesRoot');
+
+let totalItems = 0, totalExamples = 0, navHtml = '', sectionsHtml = '';
+DATA.forEach((cat, idx) => {
+  totalItems += cat.items.length;
+  cat.items.forEach(it => totalExamples += it.examples.length);
+  navHtml += `<a href="#${cat.id}" data-target="${cat.id}" class="ltr">${esc(NAV_LABELS[cat.id] || cat.id)}</a>`;
+  sectionsHtml += renderCategory(cat, idx);
+});
+
+navEl.innerHTML = navHtml;
+rootEl.innerHTML = sectionsHtml;
+
+document.getElementById('statCats').textContent = DATA.length;
+document.getElementById('statItems').textContent = totalItems;
+document.getElementById('statEx').textContent = totalExamples;
+
+/* ============================================================
+   THEME
+   ============================================================ */
+const docEl = document.documentElement;
+const themeToggle = document.getElementById('themeToggle');
+
+function getPreferredTheme(){
+  const saved = localStorage.getItem('theme');
+  if(saved === 'light' || saved === 'dark') return saved;
+  if(typeof window.matchMedia === 'function'){
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  return 'light';
+}
+function applyTheme(t){
+  docEl.setAttribute('data-theme', t);
+  localStorage.setItem('theme', t);
+  themeToggle.setAttribute('aria-pressed', String(t === 'dark'));
+}
+applyTheme(getPreferredTheme());
+themeToggle.addEventListener('click', () => {
+  applyTheme(docEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+});
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+/* ============================================================
+   TOAST
+   ============================================================ */
+let toastTimer = null;
+function showToast(msg){
+  const toast = document.getElementById('toast');
+  const inner = document.getElementById('toastInner');
+  inner.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
+/* ============================================================
+   TEXT-TO-SPEECH (de-DE)
+   ============================================================ */
+if('speechSynthesis' in window){
+  window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+}
+function speakGerman(text, btn){
+  if(!('speechSynthesis' in window)){
+    showToast('النطق الصوتي غير مدعوم في هذا المتصفح');
+    return;
+  }
+  window.speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'de-DE';
+  utter.rate = 0.82;
+  utter.pitch = 1;
+  const voices = window.speechSynthesis.getVoices();
+  const deVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('de'));
+  if(deVoice) utter.voice = deVoice;
+  if(btn){
+    btn.classList.add('playing');
+    utter.onend = () => btn.classList.remove('playing');
+    utter.onerror = () => btn.classList.remove('playing');
+  }
+  window.speechSynthesis.speak(utter);
+}
+
+/* ============================================================
+   COPY TO CLIPBOARD (layered fallback)
+   ============================================================ */
+async function copyText(text, btn){
+  let ok = false;
+  try{
+    if(navigator.clipboard && window.isSecureContext){
+      await navigator.clipboard.writeText(text);
+      ok = true;
+    }
+  }catch(e){ ok = false; }
+  if(!ok){
+    try{
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly','');
+      ta.style.position = 'fixed';
+      ta.style.top = '-9999px';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+    }catch(e){ ok = false; }
+  }
+  if(ok){
+    showToast('تم نسخ الجملة ✓');
+    if(btn){
+      const original = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = ICON_CHECK;
+      setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = original; }, 1400);
+    }
+  } else {
+    showToast('تعذّر النسخ، حاول مرة أخرى');
+  }
+  return ok;
+}
+
+/* ============================================================
+   EVENT DELEGATION — speak & copy buttons
+   ============================================================ */
+rootEl.addEventListener('click', (e) => {
+  const speakBtn = e.target.closest('[data-speak]');
+  if(speakBtn){ speakGerman(speakBtn.getAttribute('data-speak'), speakBtn); return; }
+  const copyBtn = e.target.closest('[data-copy]');
+  if(copyBtn){ copyText(copyBtn.getAttribute('data-copy'), copyBtn); return; }
+});
+
+/* ============================================================
+   SCROLL PROGRESS + BACK TO TOP
+   ============================================================ */
+const progressBar = document.getElementById('progressBar');
+const toTopBtn = document.getElementById('toTop');
+function updateScrollUI(){
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = pct + '%';
+  if(scrollTop > 420) toTopBtn.classList.add('visible'); else toTopBtn.classList.remove('visible');
+}
+window.addEventListener('scroll', updateScrollUI, {passive:true});
+updateScrollUI();
+toTopBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+/* ============================================================
+   ACTIVE NAV LINK ON SCROLL
+   ============================================================ */
+const navLinks = Array.from(document.querySelectorAll('.topnav a'));
+const navMap = {};
+navLinks.forEach(a => navMap[a.dataset.target] = a);
+
+const sectionObserver = (typeof IntersectionObserver !== 'undefined') ? new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      navLinks.forEach(a => a.classList.remove('active'));
+      const link = navMap[entry.target.id];
+      if(link){
+        link.classList.add('active');
+        link.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'});
+      }
+    }
+  });
+}, {rootMargin:'-35% 0px -55% 0px', threshold:0}) : null;
+
+if(sectionObserver){
+  document.querySelectorAll('.category').forEach(s => sectionObserver.observe(s));
+}
+
+/* ============================================================
+   REVEAL-ON-SCROLL
+   ============================================================ */
+if(typeof IntersectionObserver !== 'undefined'){
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+}else{
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}
+
+/* ============================================================
+   SEARCH / FILTER
+   ============================================================ */
+const searchInput = document.getElementById('searchInput');
+const searchMeta = document.getElementById('searchMeta');
+function normalize(s){
+  return s.toLowerCase()
+    .replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss')
+    .replace(/Ä/g,'a').replace(/Ö/g,'o').replace(/Ü/g,'u');
+}
+searchInput.addEventListener('input', () => {
+  const q = normalize(searchInput.value.trim());
+  let visibleItems = 0;
+  document.querySelectorAll('.category').forEach(cat => {
+    let catHasVisible = false;
+    cat.querySelectorAll('.item-card').forEach(card => {
+      const text = normalize(card.textContent);
+      const match = !q || text.includes(q);
+      card.style.display = match ? '' : 'none';
+      if(match){ catHasVisible = true; visibleItems++; }
+    });
+    cat.style.display = catHasVisible ? '' : 'none';
+  });
+  searchMeta.textContent = q ? ('تم العثور على ' + visibleItems + ' نتيجة') : '';
+});
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-praepositionen-konnektoren" data-category="grammatik" data-title="حروف الجر وأدوات الربط" data-root="../../" defer></script>
+</body>
+</html>

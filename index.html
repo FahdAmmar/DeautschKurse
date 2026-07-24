@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>أكاديمية الألمانية — منصة موحّدة لتعلّم الألمانية من A1 إلى A2</title>
+<meta name="description" content="٥٢ درسًا تفاعليًا في اللغة الألمانية: أبجدية، قواعد، مفردات مصورة، وقصص محادثة — منظّمة في مسار تعليمي واحد مع تتبّع تقدّمك ووضع ليلي أنيق.">
+<meta name="theme-color" content="#0B0E14">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="أكاديمية الألمانية — منصة موحّدة لتعلّم الألمانية">
+<meta property="og:description" content="٥٢ درسًا تفاعليًا من المستوى A1 إلى A2، منظّمة في مسار تعليمي واحد.">
+<meta property="og:locale" content="ar_AR">
+
+<!-- أيقونة الموقع: بوصلة برونزية مضمّنة كـ SVG — بلا أي طلب شبكة إضافي -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C7A54C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='22' height='22' x='1' y='1' rx='6' fill='%230B0E14' stroke='none'/%3E%3Ccircle cx='12' cy='12' r='7.5'/%3E%3Cpath d='m14.6 9.4-1.8 5.2-5.2 1.8 1.8-5.2z'/%3E%3C/svg%3E">
+
+<!-- سياسة أمان محتوى أساسية: نسمح فقط بمصادرنا وخطوط Google -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; base-uri 'self'">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!--
+  سكربت تهيئة السمة مُحمَّل من ملف خارجي (لا سكربت مضمّن) حتى يبقى متوافقًا
+  مع سياسة أمان المحتوى الصارمة أعلاه (script-src 'self' بدون unsafe-inline).
+  كونه غير مؤجَّل (لا defer)، فهو يُنفَّذ ويوقف الرسم قبل ظهور المحتوى،
+  فيمنع "وميض السمة الخاطئة" (FOUC) تمامًا كما لو كان مضمّنًا.
+-->
+<script src="assets/js/theme-init.js"></script>
+
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">تخطَّ إلى المحتوى الرئيسي</a>
+
+<!-- ==========================================================================
+     الرأس الثابت: العلامة، التنقّل، البحث السريع، تبديل السمة، قائمة الجوال
+========================================================================== -->
+<header class="c-header">
+  <div class="container c-header__bar">
+    <a href="#main" class="c-brand" aria-label="أكاديمية الألمانية — الصفحة الرئيسية">
+      <svg class="c-brand__mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9.2"/>
+        <path d="m15 8.6-2.1 6.3-6.3 2.1 2.1-6.3z"/>
+      </svg>
+      <span class="c-brand__name">أكاديمية <b>الألمانية</b></span>
+    </a>
+
+    <nav class="c-nav" aria-label="التنقل الرئيسي">
+      <a href="#sec-a1">الأساسيات</a>
+      <a href="#sec-a2-kurs">مسار A2</a>
+      <a href="#sec-grammatik">القواعد</a>
+      <a href="#sec-wortschatz">المفردات</a>
+      <a href="#sec-stories">القصص</a>
+    </nav>
+
+    <div class="c-header__actions">
+      <button type="button" class="icon-btn" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.2A8.5 8.5 0 1 1 9.8 4a7 7 0 0 0 10.2 10.2Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+      </button>
+      <button type="button" class="icon-btn menu-btn" id="menuOpen" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- قائمة الجوال المنبثقة -->
+<div class="c-mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="c-mobile-menu__top">
+    <span class="c-brand__name">أكاديمية <b>الألمانية</b></span>
+    <button type="button" class="icon-btn" id="menuClose" aria-label="إغلاق القائمة">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <nav aria-label="التنقل — الجوال">
+    <a href="#sec-a1">الأساسيات A1</a>
+    <a href="#sec-a2-kurs">مسار A2</a>
+    <a href="#sec-a2">أدلة A2</a>
+    <a href="#sec-grammatik">القواعد</a>
+    <a href="#sec-family-verben">عائلات الأفعال</a>
+    <a href="#sec-wortschatz">المفردات</a>
+    <a href="#sec-stories">القصص</a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- ========================================================================
+       البطل (Hero)
+  ========================================================================= -->
+  <section class="c-hero">
+    <div class="c-hero__grid" aria-hidden="true"></div>
+    <div class="container">
+      <div class="c-hero__inner">
+        <span class="eyebrow c-hero__eyebrow">٥٢ درسًا · ٧ مسارات · A1–A2</span>
+        <h1 class="h-display">أطلسك الشخصي إلى <em>اللغة الألمانية</em></h1>
+        <p class="lead">
+          كل درس هنا صُمِّم بعناية مستقلة وشخصية خاصة به — من بوصلات حروف الجر التفاعلية
+          إلى دفاتر القواعد الليلية. هذه الصفحة هي قاعدة الانطلاق التي تجمعها كلها
+          في مسار واحد واضح، مع تتبّع تقدّمك خطوة بخطوة.
+        </p>
+        <div class="c-hero__actions">
+          <a href="#sec-a1" class="btn btn-primary">
+            ابدأ من الأساسيات
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#sec-a2-kurs" class="btn btn-ghost">تصفّح مسار A2 الكامل</a>
+        </div>
+
+        <div class="c-stats" role="group" aria-label="إحصاءات المنصة">
+          <div class="c-stats__item"><div class="c-stats__num mono" id="statTotal">52</div><div class="c-stats__label">درسًا تفاعليًا</div></div>
+          <div class="c-stats__item"><div class="c-stats__num mono" id="statCategories">7</div><div class="c-stats__label">مسارات مصنّفة</div></div>
+          <div class="c-stats__item"><div class="c-stats__num mono">2</div><div class="c-stats__label">مستويان: A1 · A2</div></div>
+          <div class="c-stats__item"><div class="c-stats__num mono">∞</div><div class="c-stats__label">مرات إعادة المراجعة</div></div>
+        </div>
+
+        <!-- لوحة التقدّم: تُحدَّث تلقائيًا من التخزين المحلي في المتصفح -->
+        <div class="c-progress-panel">
+          <div class="c-progress-panel__text">
+            <h3>تقدّمك في المسار</h3>
+            <p>
+              أكملت <span id="progressDone" class="mono">0 من أصل 52</span> —
+              يُحفَظ تقدّمك محليًا في متصفحك هذا فقط.
+              <button type="button" id="resetProgress" class="c-progress-panel__reset">إعادة تعيين</button>
+            </p>
+            <a href="#" id="continueLearning" class="c-card__go c-progress-panel__continue" target="_blank" rel="noopener noreferrer" hidden>
+              أكمل من حيث توقفت: <span class="continue-title"></span>
+            </a>
+          </div>
+          <div class="c-progress-bar-track">
+            <div class="c-progress-bar-fill" id="progressFill"></div>
+          </div>
+          <div class="c-stats__num mono c-progress-panel__pct" id="progressPct">0%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       شريط البحث والفلاتر — ثابت أعلى الشاشة أثناء التمرير عبر الأقسام
+  ========================================================================= -->
+  <div class="container">
+    <div class="c-toolbar">
+      <div class="c-toolbar__inner">
+        <label class="c-search">
+          <span class="sr-only">ابحث عن درس بالاسم أو الموضوع</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-3.6-3.6"/></svg>
+          <input type="search" id="searchInput" placeholder="ابحث عن درس: مثلاً «Dativ» أو «المطبخ» أو «Perfekt»…" autocomplete="off">
+        </label>
+        <div class="c-chips" id="categoryChips" role="group" aria-label="تصفية حسب القسم"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       حاوية الأقسام والدروس — تُرسَم بالكامل من main.js عبر catalog.js
+  ========================================================================= -->
+  <div class="container">
+    <div id="lessonSections"></div>
+
+    <div class="c-empty" id="emptyState">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-3.6-3.6"/></svg>
+      <p>لا توجد دروس مطابقة لبحثك. جرّب كلمة أخرى أو اختر «الكل».</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ==========================================================================
+     تذييل الصفحة
+========================================================================== -->
+<footer class="c-footer">
+  <div class="container c-footer__grid">
+    <div class="c-footer__brand">
+      <a href="#main" class="c-brand" aria-label="أكاديمية الألمانية">
+        <svg class="c-brand__mark c-brand__mark--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9.2"/><path d="m15 8.6-2.1 6.3-6.3 2.1 2.1-6.3z"/>
+        </svg>
+        <span class="c-brand__name">أكاديمية <b>الألمانية</b></span>
+      </a>
+      <p>منصة تجمع مكتبة من الدروس التفاعلية المستقلة في مسار تعليمي واحد ومنظّم، من الأبجدية حتى قصص المحادثة اليومية.</p>
+    </div>
+    <div class="c-footer__cols">
+      <div>
+        <h4>المسارات</h4>
+        <ul>
+          <li><a href="#sec-a1">الأساسيات A1</a></li>
+          <li><a href="#sec-a2-kurs">مسار A2 الكامل</a></li>
+          <li><a href="#sec-grammatik">مرجع القواعد</a></li>
+          <li><a href="#sec-wortschatz">المفردات المصورة</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>المزيد</h4>
+        <ul>
+          <li><a href="#sec-family-verben">عائلات الأفعال</a></li>
+          <li><a href="#sec-stories">قصص ومحادثات</a></li>
+          <li><a href="#sec-a2">أدلة A2 الشاملة</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container c-footer__bottom">
+    <span>أكاديمية الألمانية — منصة تعليمية غير رسمية لتنظيم دروس شخصية.</span>
+    <span class="mono">Deutsch Akademie · A1–A2</span>
+  </div>
+</footer>
+
+<button type="button" class="c-back-top" id="backToTop" aria-label="العودة إلى أعلى الصفحة">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg>
+</button>
+
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

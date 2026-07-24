@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأفعال الانعكاسية — Reflexive Verben A2 — طباعة A4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   CSS VARIABLES — THEMES
+═══════════════════════════════════════════════ */
+:root {
+  --bg-base:#0d0f14; --bg-surface:#13161d; --bg-card:#191d27; --bg-card-hover:#1e2330;
+  --bg-elevated:#222736; --border:rgba(255,255,255,0.08); --border-strong:rgba(255,255,255,0.14);
+  --text-primary:#edf0f7; --text-secondary:#8e97b0; --text-muted:#5a627a;
+  --blue:#4f8ef7; --blue-dim:rgba(79,142,247,0.15); --blue-glow:rgba(79,142,247,0.28);
+  --green:#3ecf8e; --green-dim:rgba(62,207,142,0.14);
+  --purple:#a78bfa; --purple-dim:rgba(167,139,250,0.14);
+  --amber:#f59e0b; --amber-dim:rgba(245,158,11,0.14);
+  --teal:#2dd4bf; --teal-dim:rgba(45,212,191,0.14);
+  --rose:#fb7185; --rose-dim:rgba(251,113,133,0.14);
+  --r:10px; --rlg:16px;
+  --tr:0.22s cubic-bezier(0.4,0,0.2,1);
+  --shadow:0 4px 24px rgba(0,0,0,0.45);
+}
+[data-theme="light"] {
+  --bg-base:#f5f7fb; --bg-surface:#ffffff; --bg-card:#ffffff; --bg-card-hover:#f0f3fa;
+  --bg-elevated:#e8edf5; --border:rgba(0,0,0,0.08); --border-strong:rgba(0,0,0,0.14);
+  --text-primary:#1a1e2e; --text-secondary:#4a5270; --text-muted:#8e97b0;
+  --blue:#2563eb; --blue-dim:rgba(37,99,235,0.1); --blue-glow:rgba(37,99,235,0.22);
+  --green:#059669; --green-dim:rgba(5,150,105,0.1);
+  --purple:#7c3aed; --purple-dim:rgba(124,58,237,0.1);
+  --amber:#d97706; --amber-dim:rgba(217,119,6,0.12);
+  --teal:#0d9488; --teal-dim:rgba(13,148,136,0.1);
+  --rose:#e11d48; --rose-dim:rgba(225,29,72,0.1);
+  --shadow:0 4px 24px rgba(0,0,0,0.1);
+}
+
+/* ═══════════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.7;
+  transition: background 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════════
+   SCROLL PROGRESS
+═══════════════════════════════════════════════ */
+#progress-bar {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: linear-gradient(90deg, var(--blue), var(--purple), var(--teal));
+  z-index: 1000; transition: width .1s linear; border-radius: 0 2px 2px 0;
+}
+
+/* ═══════════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════════ */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(13,15,20,0.9);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+  padding: 0 clamp(1rem,4vw,3rem);
+  transition: background 0.4s ease;
+}
+[data-theme="light"] nav { background: rgba(245,247,251,0.92); }
+.nav-inner {
+  max-width: 960px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 58px; gap: 1rem;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: .55rem;
+  font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 700;
+  color: var(--text-primary); text-decoration: none; white-space: nowrap;
+}
+.nav-brand .badge {
+  background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-glow);
+  font-family: 'DM Sans', sans-serif; font-size: .68rem; font-weight: 700;
+  padding: .13rem .45rem; border-radius: 999px; letter-spacing: .04em;
+}
+.nav-right { display: flex; align-items: center; gap: .6rem; }
+.print-btn {
+  display: inline-flex; align-items: center; gap: .35rem;
+  padding: .38rem .8rem; border-radius: 7px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated); color: var(--text-secondary);
+  font-size: .79rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+  transition: all var(--tr);
+}
+.print-btn:hover { color: var(--text-primary); border-color: var(--blue-glow); background: var(--blue-dim); }
+#theme-toggle {
+  width: 36px; height: 36px; border-radius: 7px;
+  border: 1px solid var(--border-strong); background: var(--bg-elevated);
+  color: var(--text-secondary); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; transition: all var(--tr);
+}
+#theme-toggle:hover { color: var(--text-primary); background: var(--bg-card-hover); }
+
+/* ═══════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════ */
+.hero {
+  padding: clamp(2.5rem,7vw,4.5rem) clamp(1rem,4vw,3rem);
+  text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(79,142,247,.16), transparent),
+              radial-gradient(ellipse 40% 40% at 80% 80%, rgba(167,139,250,.09), transparent);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--bg-card); border: 1px solid var(--border-strong);
+  border-radius: 999px; padding: .28rem .95rem;
+  font-size: .78rem; font-weight: 500; color: var(--text-secondary);
+  margin-bottom: 1.4rem; animation: fadeUp .6s ease both;
+}
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem,5vw,3.2rem);
+  font-weight: 700; line-height: 1.15; margin-bottom: .9rem;
+  animation: fadeUp .6s .1s ease both;
+}
+.hero h1 em { font-style: italic; color: var(--blue); }
+.hero .subtitle {
+  font-size: clamp(.9rem,2.5vw,1.05rem); color: var(--text-secondary);
+  max-width: 580px; margin: 0 auto 1.8rem;
+  animation: fadeUp .6s .2s ease both;
+}
+.hero-stats {
+  display: flex; align-items: center; justify-content: center;
+  gap: clamp(.6rem,2vw,1.5rem); flex-wrap: wrap;
+  animation: fadeUp .6s .3s ease both;
+}
+.stat-pill {
+  display: flex; align-items: center; gap: .38rem;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 999px; padding: .38rem .95rem;
+  font-size: .78rem; font-weight: 500; color: var(--text-secondary);
+}
+.stat-pill .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+/* ═══════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════ */
+main { max-width: 960px; margin: 0 auto; padding: 0 clamp(1rem,4vw,2.5rem) 4rem; }
+.section { margin-bottom: 3.5rem; }
+.section-header { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.5rem; }
+.section-icon {
+  width: 42px; height: 42px; border-radius: var(--r);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+}
+.section-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.1rem,3vw,1.5rem); font-weight: 700;
+}
+.section-header p { font-size: .85rem; color: var(--text-secondary); margin-top: .12rem; }
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+  margin: 2.5rem 0;
+}
+
+/* ═══════════════════════════════════════════════
+   CARDS
+═══════════════════════════════════════════════ */
+.concept-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--rlg); padding: clamp(1.1rem,3vw,1.75rem);
+  transition: border-color var(--tr), box-shadow var(--tr);
+}
+.concept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem; margin-bottom: 1.3rem; }
+.mini-card {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 1.05rem 1.2rem;
+}
+.mini-card h4 { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: .4rem; }
+.mini-card p { font-size: .89rem; color: var(--text-secondary); line-height: 1.6; }
+.mini-card code { font-family: 'JetBrains Mono', monospace; color: var(--blue); font-size: .82rem; }
+
+/* ═══════════════════════════════════════════════
+   RULE BOX
+═══════════════════════════════════════════════ */
+.rule-box {
+  background: var(--blue-dim); border: 1px solid var(--blue-glow);
+  border-radius: var(--r); padding: .95rem 1.25rem;
+  margin: 1.1rem 0; display: flex; gap: .8rem; align-items: flex-start;
+}
+.rule-box .ri { font-size: 1rem; flex-shrink: 0; margin-top: .15rem; }
+.rule-box p { font-size: .87rem; color: var(--text-primary); line-height: 1.65; }
+.rule-box strong { color: var(--blue); }
+.rule-box.green { background: var(--green-dim); border-color: rgba(62,207,142,.28); }
+.rule-box.green strong { color: var(--green); }
+.rule-box.purple { background: var(--purple-dim); border-color: rgba(167,139,250,.28); }
+.rule-box.purple strong { color: var(--purple); }
+.rule-box.amber { background: var(--amber-dim); border-color: rgba(245,158,11,.28); }
+.rule-box.amber strong { color: var(--amber); }
+
+/* ═══════════════════════════════════════════════
+   PRONOUN TABLE
+═══════════════════════════════════════════════ */
+.table-wrapper { overflow-x: auto; border-radius: var(--rlg); border: 1px solid var(--border); }
+.pronoun-table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+.pronoun-table thead { background: var(--bg-elevated); }
+.pronoun-table th {
+  padding: .8rem 1rem; text-align: center; font-weight: 700;
+  font-size: .73rem; letter-spacing: .05em; text-transform: uppercase;
+  border-bottom: 1px solid var(--border-strong); white-space: nowrap;
+}
+.pronoun-table th:first-child { text-align: right; }
+.pronoun-table td {
+  padding: .7rem 1rem; text-align: center;
+  border-bottom: 1px solid var(--border); transition: background var(--tr);
+}
+.pronoun-table td:first-child { text-align: right; font-weight: 500; }
+.pronoun-table tr:last-child td { border-bottom: none; }
+.pronoun-table tbody tr:hover td { background: var(--bg-card-hover); }
+.th-akk { color: var(--green); } .th-dat { color: var(--purple); } .th-nom { color: var(--blue); }
+.pron-akk {
+  display: inline-block; background: var(--green-dim); color: var(--green);
+  border: 1px solid rgba(62,207,142,.22); border-radius: 5px;
+  padding: .15rem .55rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: .8rem;
+}
+.pron-dat {
+  display: inline-block; background: var(--purple-dim); color: var(--purple);
+  border: 1px solid rgba(167,139,250,.22); border-radius: 5px;
+  padding: .15rem .55rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: .8rem;
+}
+.same-badge { font-size: .68rem; color: var(--text-muted); }
+
+/* ═══════════════════════════════════════════════
+   COMPARE GRID
+═══════════════════════════════════════════════ */
+.compare-grid {
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  border-radius: var(--rlg); overflow: hidden; border: 1px solid var(--border);
+}
+.compare-col { background: var(--bg-card); padding: 1.35rem; }
+.compare-col h3 { font-family: 'Fraunces', serif; font-size: .95rem; font-weight: 700; margin-bottom: .3rem; }
+.compare-rule { font-size: .78rem; color: var(--text-secondary); margin-bottom: .9rem; padding-bottom: .65rem; border-bottom: 1px solid var(--border); }
+.compare-divider {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-elevated); padding: 0 .9rem;
+  font-size: 1.1rem; color: var(--text-muted);
+}
+.compare-example {
+  font-family: 'JetBrains Mono', monospace; font-size: .82rem;
+  background: var(--bg-elevated); border-radius: 6px;
+  padding: .55rem .85rem; margin-bottom: .5rem;
+  border: 1px solid var(--border);
+}
+.compare-example .tx { font-size: .72rem; color: var(--text-muted); margin-top: .2rem; font-family: 'DM Sans', sans-serif; }
+
+/* ═══════════════════════════════════════════════
+   VERB BLOCK — replaces tabbed panels
+═══════════════════════════════════════════════ */
+.verb-block {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--rlg); margin-bottom: 1.75rem;
+  overflow: hidden; transition: border-color var(--tr);
+}
+.verb-block:hover { border-color: var(--border-strong); }
+.verb-block-header {
+  padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: .65rem;
+  background: var(--bg-elevated);
+}
+.verb-title {
+  font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700;
+}
+.verb-title small {
+  font-family: 'DM Sans', sans-serif; font-size: .85rem;
+  font-weight: 400; color: var(--text-secondary);
+}
+.verb-chips { display: flex; align-items: center; gap: .45rem; flex-wrap: wrap; }
+.meaning-chip {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 999px; padding: .25rem .8rem;
+  font-size: .75rem; color: var(--text-secondary);
+}
+.prep-chip {
+  background: var(--amber-dim); border: 1px solid rgba(245,158,11,.22);
+  border-radius: 999px; padding: .25rem .8rem;
+  font-size: .75rem; font-weight: 700; color: var(--amber);
+}
+.verb-block-body { padding: 1.35rem 1.5rem; }
+
+/* ═══════════════════════════════════════════════
+   CONJUGATION BOX
+═══════════════════════════════════════════════ */
+.conj-box {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--r); overflow: hidden; margin-bottom: 1.25rem;
+}
+.conj-title {
+  padding: .55rem .95rem; font-size: .7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted);
+  background: var(--bg-elevated); border-bottom: 1px solid var(--border);
+}
+.conj-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.conj-item {
+  padding: .6rem .95rem; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: .42rem;
+  cursor: pointer; transition: background var(--tr);
+}
+.conj-item:hover { background: var(--bg-card-hover); }
+.conj-item:nth-child(odd) { border-right: 1px solid var(--border); }
+.conj-item:nth-last-child(-n+2) { border-bottom: none; }
+.conj-pron { font-size: .75rem; color: var(--text-muted); min-width: 55px; font-style: italic; }
+.conj-verb { font-family: 'JetBrains Mono', monospace; font-size: .85rem; font-weight: 500; color: var(--text-primary); }
+.conj-refl { color: var(--teal); font-weight: 700; }
+.conj-play {
+  margin-left: auto; width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid transparent; background: transparent;
+  color: var(--text-muted); cursor: pointer; font-size: .75rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--tr); flex-shrink: 0;
+}
+.conj-play:hover { background: var(--blue-dim); border-color: var(--blue-glow); color: var(--blue); }
+
+/* ═══════════════════════════════════════════════
+   SENTENCES — listed below each verb (no tabs)
+═══════════════════════════════════════════════ */
+.sentences-list { display: flex; flex-direction: column; gap: .55rem; }
+.sentence-item {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: var(--r); padding: .85rem 1.1rem;
+  cursor: pointer; display: flex; align-items: flex-start; gap: .8rem;
+  transition: all var(--tr);
+}
+.sentence-item:hover { border-color: var(--border-strong); background: var(--bg-card-hover); }
+.sentence-item.copied { border-color: var(--green) !important; background: var(--green-dim) !important; }
+.s-badge {
+  flex-shrink: 0; margin-top: .18rem;
+  font-size: .63rem; font-weight: 700; letter-spacing: .05em;
+  padding: .15rem .5rem; border-radius: 999px; text-transform: uppercase;
+  white-space: nowrap;
+}
+.s-badge.akk { background: var(--green-dim); color: var(--green); border: 1px solid rgba(62,207,142,.2); }
+.s-badge.dat { background: var(--purple-dim); color: var(--purple); border: 1px solid rgba(167,139,250,.2); }
+.s-badge.perf { background: var(--blue-dim); color: var(--blue); border: 1px solid var(--blue-glow); }
+.s-badge.compare { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(245,158,11,.2); }
+.s-content { flex: 1; min-width: 0; }
+.s-de {
+  font-family: 'Fraunces', serif; font-size: .97rem; font-weight: 500;
+  color: var(--text-primary); line-height: 1.45; direction: ltr; text-align: left;
+}
+.s-ar { font-size: .82rem; color: var(--text-secondary); margin-top: .22rem; direction: rtl; }
+.s-actions {
+  display: flex; align-items: center; gap: .38rem; margin-top: .4rem; flex-wrap: wrap;
+}
+.btn-action {
+  display: inline-flex; align-items: center; gap: .25rem;
+  padding: .22rem .55rem; border-radius: 5px;
+  border: 1px solid var(--border); background: var(--bg-elevated);
+  color: var(--text-secondary); font-size: .71rem; font-weight: 500;
+  cursor: pointer; transition: all var(--tr); white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+}
+.btn-action:hover { color: var(--text-primary); border-color: var(--border-strong); }
+.btn-action.play:hover { color: var(--blue); border-color: var(--blue-glow); background: var(--blue-dim); }
+.btn-action.copy:hover { color: var(--green); border-color: rgba(62,207,142,.3); background: var(--green-dim); }
+
+/* ═══════════════════════════════════════════════
+   HIGHLIGHTS
+═══════════════════════════════════════════════ */
+.hl-akk { color: var(--green); font-weight: 700; }
+.hl-dat { color: var(--purple); font-weight: 700; }
+.hl-refl { color: var(--teal); font-weight: 700; }
+.hl-prep { color: var(--amber); font-weight: 600; }
+.hl-verb { color: var(--blue); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════
+   SUMMARY TABLE
+═══════════════════════════════════════════════ */
+.sum-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+.sum-table thead { background: var(--bg-elevated); }
+.sum-table th {
+  padding: .75rem .9rem; font-size: .71rem; font-weight: 700;
+  letter-spacing: .05em; text-transform: uppercase;
+  border-bottom: 1px solid var(--border-strong);
+}
+.sum-table th:first-child { text-align: right; }
+.sum-table th:nth-child(2) { text-align: right; }
+.sum-table td { padding: .65rem .9rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.sum-table td:first-child { font-family: 'JetBrains Mono', monospace; font-size: .82rem; font-weight: 600; }
+.sum-table td:nth-child(2) { text-align: right; }
+.sum-table td:nth-child(4) { color: var(--amber); font-weight: 600; font-size: .82rem; }
+.sum-table td:nth-child(5) { font-family: 'JetBrains Mono', monospace; font-size: .78rem; color: var(--text-secondary); direction: ltr; }
+.sum-table tr:last-child td { border-bottom: none; }
+.sum-table tbody tr:hover td { background: var(--bg-card-hover); }
+
+/* ═══════════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════════ */
+#toast {
+  position: fixed; bottom: 1.8rem; left: 50%;
+  transform: translateX(-50%) translateY(18px);
+  background: var(--bg-elevated); border: 1px solid var(--border-strong);
+  border-radius: var(--r); padding: .6rem 1.2rem;
+  font-size: .82rem; color: var(--text-primary);
+  z-index: 9999; opacity: 0; transition: all .3s ease;
+  box-shadow: var(--shadow); white-space: nowrap; pointer-events: none;
+}
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ═══════════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════════ */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+footer {
+  text-align: center; padding: 2rem 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted); font-size: .78rem; line-height: 1.8;
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media (max-width: 680px) {
+  .compare-grid { grid-template-columns: 1fr; }
+  .compare-divider { display: none; }
+  .compare-col:first-child { border-bottom: 1px solid var(--border); }
+  .conj-grid { grid-template-columns: 1fr; }
+  .conj-item:nth-child(odd) { border-right: none; }
+  .conj-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .conj-item:last-child { border-bottom: none; }
+  .verb-block-header { flex-direction: column; align-items: flex-start; }
+  .s-de { font-size: .9rem; }
+}
+@media (max-width: 440px) {
+  .hero h1 { font-size: 1.6rem; }
+  .sentence-item { flex-direction: column; gap: .5rem; }
+  .s-badge { align-self: flex-start; }
+}
+
+/* ═══════════════════════════════════════════════
+   ★★★ PRINT — A4 OPTIMIZED ★★★
+═══════════════════════════════════════════════ */
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  @page {
+    size: A4 portrait;
+    margin: 14mm 13mm 14mm 13mm;
+  }
+
+  /* Force light theme for print */
+  :root {
+    --bg-base: #ffffff !important;
+    --bg-surface: #ffffff !important;
+    --bg-card: #ffffff !important;
+    --bg-card-hover: #f5f7fb !important;
+    --bg-elevated: #f0f3fa !important;
+    --border: #dde1ec !important;
+    --border-strong: #c5cbe0 !important;
+    --text-primary: #1a1e2e !important;
+    --text-secondary: #4a5270 !important;
+    --text-muted: #8e97b0 !important;
+    --blue: #2563eb !important;
+    --blue-dim: #eff4ff !important;
+    --blue-glow: #bfcfff !important;
+    --green: #059669 !important;
+    --green-dim: #ecfdf5 !important;
+    --purple: #7c3aed !important;
+    --purple-dim: #f5f3ff !important;
+    --amber: #b45309 !important;
+    --amber-dim: #fffbeb !important;
+    --teal: #0d9488 !important;
+    --teal-dim: #f0fdfa !important;
+    --shadow: none !important;
+  }
+
+  html, body { background: #fff !important; color: #1a1e2e !important; }
+
+  /* Hide screen-only elements */
+  #progress-bar, nav, .hero-eyebrow, .hero-stats, footer,
+  .s-actions, .conj-play, #toast { display: none !important; }
+
+  /* Hero — compact print header */
+  .hero {
+    padding: 4mm 0 6mm !important;
+    page-break-after: avoid;
+    background: none !important;
+  }
+  .hero::before { display: none !important; }
+  .hero h1 { font-size: 20pt !important; margin-bottom: 3mm !important; }
+  .hero .subtitle { font-size: 9.5pt !important; color: #4a5270 !important; }
+
+  /* Main container */
+  main { max-width: 100% !important; padding: 0 !important; }
+
+  /* Sections */
+  .section {
+    margin-bottom: 6mm !important;
+    page-break-inside: avoid;
+  }
+  .section-header { margin-bottom: 4mm !important; }
+  .section-icon { width: 30px !important; height: 30px !important; font-size: 1rem !important; }
+  .section-header h2 { font-size: 13pt !important; }
+  .section-header p { font-size: 8pt !important; }
+  .section-divider { margin: 4mm 0 !important; background: #c5cbe0 !important; }
+
+  /* Cards */
+  .concept-card {
+    border: 1px solid #c5cbe0 !important;
+    padding: 5mm !important;
+    border-radius: 6px !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+  .concept-grid { gap: 3mm !important; margin-bottom: 4mm !important; }
+  .mini-card { padding: 4mm !important; border: 1px solid #dde1ec !important; border-radius: 5px !important; }
+  .mini-card h4 { font-size: 7.5pt !important; margin-bottom: 2mm !important; }
+  .mini-card p { font-size: 8.5pt !important; }
+
+  /* Rule boxes */
+  .rule-box {
+    padding: 3.5mm 5mm !important;
+    margin: 3mm 0 !important;
+    border-radius: 5px !important;
+    page-break-inside: avoid;
+  }
+  .rule-box p { font-size: 8.5pt !important; }
+
+  /* Compare grid */
+  .compare-grid {
+    grid-template-columns: 1fr auto 1fr !important;
+    border: 1px solid #c5cbe0 !important;
+    border-radius: 6px !important;
+  }
+  .compare-col { padding: 4.5mm !important; background: #fff !important; }
+  .compare-col h3 { font-size: 9.5pt !important; }
+  .compare-rule { font-size: 7.5pt !important; }
+  .compare-example { padding: 3mm 4mm !important; font-size: 8.5pt !important; margin-bottom: 2.5mm !important; }
+  .compare-example .tx { font-size: 7pt !important; }
+
+  /* Verb blocks */
+  .verb-block {
+    border: 1.5px solid #c5cbe0 !important;
+    border-radius: 8px !important;
+    margin-bottom: 6mm !important;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+  .verb-block-header {
+    padding: 3.5mm 5mm !important;
+    background: #f0f3fa !important;
+    border-bottom: 1px solid #c5cbe0 !important;
+  }
+  .verb-title { font-size: 12pt !important; }
+  .verb-title small { font-size: 8.5pt !important; }
+  .meaning-chip, .prep-chip { font-size: 7pt !important; padding: .12rem .5rem !important; }
+  .verb-block-body { padding: 4mm 5mm !important; }
+
+  /* Conjugation */
+  .conj-box {
+    margin-bottom: 4mm !important;
+    border: 1px solid #dde1ec !important;
+    border-radius: 5px !important;
+  }
+  .conj-title { font-size: 7pt !important; padding: 2mm 4mm !important; background: #f0f3fa !important; }
+  .conj-item { padding: 2.5mm 4mm !important; }
+  .conj-item:hover { background: none !important; }
+  .conj-pron { font-size: 7.5pt !important; min-width: 44px !important; }
+  .conj-verb { font-size: 8.5pt !important; }
+
+  /* Sentence items */
+  .sentences-list { gap: 2mm !important; }
+  .sentence-item {
+    padding: 3mm 4mm !important;
+    border: 1px solid #dde1ec !important;
+    border-radius: 5px !important;
+    background: #fafbfe !important;
+    gap: 4mm !important;
+    page-break-inside: avoid;
+  }
+  .sentence-item:hover { background: #fafbfe !important; border-color: #dde1ec !important; }
+  .s-badge { font-size: 6.5pt !important; padding: .1rem .4rem !important; }
+  .s-de { font-size: 9pt !important; }
+  .s-ar { font-size: 7.5pt !important; margin-top: 1mm !important; }
+
+  /* Summary table */
+  .table-wrapper { border: 1px solid #c5cbe0 !important; border-radius: 5px !important; }
+  .sum-table th { font-size: 7pt !important; padding: 2.5mm 3mm !important; }
+  .sum-table td { font-size: 8pt !important; padding: 2.5mm 3mm !important; }
+
+  /* Pronoun table */
+  .pronoun-table th { font-size: 7pt !important; padding: 2.5mm 3mm !important; }
+  .pronoun-table td { font-size: 8pt !important; padding: 2.5mm 3mm !important; }
+  .pron-akk, .pron-dat { font-size: 7.5pt !important; padding: .1rem .4rem !important; }
+
+  /* Page break helpers */
+  .page-break-before { page-break-before: always !important; }
+  .avoid-break { page-break-inside: avoid !important; }
+
+  /* Reduce radial gradient decorations */
+  [style*="radial-gradient"] { background: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<div id="toast">✓ تم النسخ!</div>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#">🇩🇪 Reflexive Verben <span class="badge">A2</span></a>
+    <div class="nav-right">
+      <button class="print-btn" onclick="window.print()">🖨️ طباعة A4</button>
+      <button id="theme-toggle" aria-label="تبديل الوضع">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-eyebrow">📘 Deutsch mit Mira · المستوى A2</div>
+  <h1>الأفعال <em>الانعكاسية</em><br>Reflexive Verben</h1>
+  <p class="subtitle">شرح شامل بالتصريف الكامل والأمثلة التطبيقية — انقر على أي جملة للاستماع أو النسخ الفوري</p>
+  <div class="hero-stats">
+    <div class="stat-pill"><span class="dot" style="background:var(--green)"></span>Akkusativ-Pronomen</div>
+    <div class="stat-pill"><span class="dot" style="background:var(--purple)"></span>Dativ-Pronomen</div>
+    <div class="stat-pill"><span class="dot" style="background:var(--blue)"></span>8 أفعال · 48 جملة</div>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1 — INTRO
+══════════════════════════════════════════════ -->
+<section id="intro" class="section reveal">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--blue-dim);color:var(--blue)">💡</div>
+    <div><h2>ما هي الأفعال الانعكاسية؟</h2><p>Was sind reflexive Verben?</p></div>
+  </div>
+  <div class="concept-card">
+    <div class="concept-grid">
+      <div class="mini-card">
+        <h4>التعريف</h4>
+        <p>الأفعال الانعكاسية هي أفعال يعود فيها الفعل على الفاعل نفسه — أي أن الشخص يفعل الشيء <strong>لنفسه</strong>، وليس لشخص آخر.</p>
+      </div>
+      <div class="mini-card">
+        <h4>البنية الأساسية</h4>
+        <p><code>Subjekt + Verb + Reflexivpronomen</code><br>فاعل + فعل + ضمير انعكاسي</p>
+      </div>
+      <div class="mini-card">
+        <h4>الفرق عن العربية</h4>
+        <p>لا نقول في الألمانية «يغسل <em>نفسه</em>» كلمةً مستقلة — بل نستخدم ضمائر انعكاسية خاصة تتغير بحسب الحالة الإعرابية.</p>
+      </div>
+    </div>
+    <div class="rule-box">
+      <span class="ri">🔑</span>
+      <p>المفتاح: هذه الأفعال تحتاج دائماً إلى <strong>ضمير انعكاسي (Reflexivpronomen)</strong> يُصرَّف في حالة <strong>Akkusativ</strong> أو <strong>Dativ</strong> تبعاً لبنية الجملة — وهذا هو جوهر هذا الدرس.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 2 — PRONOUNS TABLE
+══════════════════════════════════════════════ -->
+<section id="pronouns" class="section reveal">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--green-dim);color:var(--green)">📊</div>
+    <div><h2>جدول الضمائر الانعكاسية</h2><p>Reflexivpronomen — Akkusativ & Dativ</p></div>
+  </div>
+  <div class="concept-card">
+    <div class="rule-box amber" style="margin-top:0">
+      <span class="ri">⚠️</span>
+      <p><strong>الملاحظة الذهبية:</strong> الضمائر الانعكاسية مطابقة في كلا الحالتين لكل الضمائر <em>ما عدا</em> <strong>ich</strong> (mich ↔ mir) و<strong>du</strong> (dich ↔ dir). هذا هو الفرق الوحيد الذي عليك حفظه!</p>
+    </div>
+    <div class="table-wrapper" style="margin-top:1.2rem">
+      <table class="pronoun-table">
+        <thead>
+          <tr>
+            <th>الضمير الشخصي</th>
+            <th class="th-nom">Nominativ<br><small style="text-transform:none;letter-spacing:0;font-weight:400">المبتدأ</small></th>
+            <th class="th-akk">Reflexiv (Akk)<br><small style="text-transform:none;letter-spacing:0;font-weight:400">المفعول به</small></th>
+            <th class="th-dat">Reflexiv (Dat)<br><small style="text-transform:none;letter-spacing:0;font-weight:400">المفعول غير المباشر</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>أنا</td><td style="color:var(--blue);font-weight:700">ich</td><td><span class="pron-akk">mich</span></td><td><span class="pron-dat">mir</span></td></tr>
+          <tr><td>أنت</td><td style="color:var(--blue);font-weight:700">du</td><td><span class="pron-akk">dich</span></td><td><span class="pron-dat">dir</span></td></tr>
+          <tr><td>هو / هي / هو (محايد)</td><td style="color:var(--blue);font-weight:700">er / sie / es</td><td><span class="pron-akk">sich</span></td><td><span class="pron-dat">sich</span> <span class="same-badge">← نفس الشكل</span></td></tr>
+          <tr><td>نحن</td><td style="color:var(--blue);font-weight:700">wir</td><td><span class="pron-akk">uns</span></td><td><span class="pron-dat">uns</span> <span class="same-badge">← نفس الشكل</span></td></tr>
+          <tr><td>أنتم</td><td style="color:var(--blue);font-weight:700">ihr</td><td><span class="pron-akk">euch</span></td><td><span class="pron-dat">euch</span> <span class="same-badge">← نفس الشكل</span></td></tr>
+          <tr><td>هم / أنتم (تعظيم)</td><td style="color:var(--blue);font-weight:700">sie / Sie</td><td><span class="pron-akk">sich</span></td><td><span class="pron-dat">sich</span> <span class="same-badge">← نفس الشكل</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 3 — THE TWO RULES
+══════════════════════════════════════════════ -->
+<section id="rules" class="section reveal">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--teal-dim);color:var(--teal)">📐</div>
+    <div><h2>قاعدتا الاختيار — Akkusativ أم Dativ؟</h2><p>السؤال الفاصل الوحيد</p></div>
+  </div>
+  <div class="concept-card">
+    <p style="color:var(--text-secondary);margin-bottom:1.1rem;font-size:.92rem">الاختيار بين الـ Akkusativ والـ Dativ للضمير الانعكاسي لا يعتمد على الفعل نفسه، بل على <strong style="color:var(--text-primary)">بنية الجملة</strong> — هل هناك مفعول به آخر أم لا؟</p>
+    <div class="compare-grid">
+      <div class="compare-col">
+        <h3 style="color:var(--green)">✦ القاعدة الأولى — Akkusativ</h3>
+        <div class="compare-rule">لا يوجد مفعول به آخر في الجملة. الضمير الانعكاسي <em>هو</em> المفعول به الوحيد.</div>
+        <div class="compare-example" onclick="speakText('Ich wasche mich.');copyText('Ich wasche mich.')">
+          Ich wasche <span class="hl-refl">mich</span>.
+          <div class="tx">أنا أغتسل — لا يوجد شيء آخر مفعول به</div>
+        </div>
+        <div class="compare-example" onclick="speakText('Sie kämmt sich.');copyText('Sie kämmt sich.')">
+          Sie kämmt <span class="hl-refl">sich</span>.
+          <div class="tx">هي تمشط (نفسها بشكل عام)</div>
+        </div>
+        <div class="compare-example" onclick="speakText('Ich ziehe mich an.');copyText('Ich ziehe mich an.')">
+          Ich ziehe <span class="hl-refl">mich</span> an.
+          <div class="tx">أنا أرتدي ملابسي</div>
+        </div>
+      </div>
+      <div class="compare-divider">↔</div>
+      <div class="compare-col">
+        <h3 style="color:var(--purple)">◆ القاعدة الثانية — Dativ</h3>
+        <div class="compare-rule">يوجد مفعول به آخر (Akkusativobjekt). الضمير الانعكاسي يصبح المفعول غير المباشر.</div>
+        <div class="compare-example" onclick="speakText('Ich wasche mir die Hände.');copyText('Ich wasche mir die Hände.')" style="background:var(--purple-dim);border-color:rgba(167,139,250,.25)">
+          Ich wasche <span class="hl-dat">mir</span> <span class="hl-akk">die Hände</span>.
+          <div class="tx">أنا أغسل يديّ — (die Hände) هو المفعول به المباشر</div>
+        </div>
+        <div class="compare-example" onclick="speakText('Sie kämmt sich die Haare.');copyText('Sie kämmt sich die Haare.')" style="background:var(--purple-dim);border-color:rgba(167,139,250,.25)">
+          Sie kämmt <span class="hl-dat">sich</span> <span class="hl-akk">die Haare</span>.
+          <div class="tx">هي تمشط شعرها — (die Haare) هو المفعول</div>
+        </div>
+        <div class="compare-example" onclick="speakText('Ich ziehe mir einen Mantel an.');copyText('Ich ziehe mir einen Mantel an.')" style="background:var(--purple-dim);border-color:rgba(167,139,250,.25)">
+          Ich ziehe <span class="hl-dat">mir</span> <span class="hl-akk">einen Mantel</span> an.
+          <div class="tx">أنا أرتدي معطفاً — (einen Mantel) هو المفعول</div>
+        </div>
+      </div>
+    </div>
+    <div class="rule-box" style="margin-top:1.2rem">
+      <span class="ri">🎯</span>
+      <p><strong>الاختبار السريع:</strong> اسأل نفسك — <em>«هل يوجد شيء آخر مفعول به في الجملة؟»</em> إذا <strong>لا → Akkusativ</strong>. إذا <strong>نعم → الضمير الانعكاسي ينتقل إلى Dativ</strong>. والفرق الملحوظ فقط في <em>ich</em> و<em>du</em>.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 4 — VERBS (all in vertical layout, no tabs)
+══════════════════════════════════════════════ -->
+<section id="verbs" class="section reveal">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--teal-dim);color:var(--teal)">📚</div>
+    <div><h2>الأفعال الانعكاسية الأساسية</h2><p>تصريف كامل + جمل تطبيقية — انقر للاستماع والنسخ</p></div>
+  </div>
+
+  <!-- ────────── 1. sich waschen ────────── -->
+  <div class="verb-block avoid-break">
+    <div class="verb-block-header">
+      <div class="verb-title">sich waschen <small>— يغتسل / يغسل</small></div>
+      <div class="verb-chips"><span class="meaning-chip">🧼 Akk + Dat</span></div>
+    </div>
+    <div class="verb-block-body">
+      <div class="rule-box green" style="margin-top:0">
+        <span class="ri">💡</span>
+        <p>النموذج المثالي لكلا القاعدتين: <strong>sich waschen (Akk)</strong> = يغتسل عموماً، و<strong>sich die Hände waschen (Dat)</strong> = يغسل يديه تحديداً. لاحظ الفعل الشاذ: <em>ich wasche → er wäscht / du wäschst</em>.</p>
+      </div>
+      <div class="conj-box">
+        <div class="conj-title">التصريف الكامل — Präsens (المضارع)</div>
+        <div class="conj-grid">
+          <div class="conj-item" onclick="speakText('ich wasche mich')"><span class="conj-pron">ich</span><span class="conj-verb">wasche <span class="conj-refl">mich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ich wasche mich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('wir waschen uns')"><span class="conj-pron">wir</span><span class="conj-verb">waschen <span class="conj-refl">uns</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('wir waschen uns')">▶</button></div>
+          <div class="conj-item" onclick="speakText('du wäschst dich')"><span class="conj-pron">du</span><span class="conj-verb">wäschst <span class="conj-refl">dich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('du wäschst dich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('ihr wascht euch')"><span class="conj-pron">ihr</span><span class="conj-verb">wascht <span class="conj-refl">euch</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ihr wascht euch')">▶</button></div>
+          <div class="conj-item" onclick="speakText('er wäscht sich')"><span class="conj-pron">er/sie/es</span><span class="conj-verb">wäscht <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('er wäscht sich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('sie waschen sich')"><span class="conj-pron">sie/Sie</span><span class="conj-verb">waschen <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('sie waschen sich')">▶</button></div>
+        </div>
+      </div>
+      <div class="sentences-list">
+        <div class="sentence-item akk" onclick="handleCard(this,'Ich wasche mich jeden Morgen.')"><span class="s-badge akk">Akkusativ</span><div class="s-content"><div class="s-de">Ich wasche <span class="hl-refl">mich</span> jeden Morgen.</div><div class="s-ar">أنا أغتسل كل صباح.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich wasche mich jeden Morgen.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich wasche mich jeden Morgen.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item dat" onclick="handleCard(this,'Ich wasche mir die Hände vor dem Essen.')"><span class="s-badge dat">Dativ</span><div class="s-content"><div class="s-de">Ich wasche <span class="hl-dat">mir</span> <span class="hl-akk">die Hände</span> vor dem Essen.</div><div class="s-ar">أنا أغسل يديّ قبل الأكل.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich wasche mir die Hände vor dem Essen.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich wasche mir die Hände vor dem Essen.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Er wäscht sich nach dem Sport.')"><span class="s-badge akk">Akkusativ</span><div class="s-content"><div class="s-de">Er wäscht <span class="hl-refl">sich</span> nach dem Sport.</div><div class="s-ar">هو يغتسل بعد الرياضة.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Er wäscht sich nach dem Sport.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Er wäscht sich nach dem Sport.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item dat" onclick="handleCard(this,'Sie wäscht sich das Gesicht mit kaltem Wasser.')"><span class="s-badge dat">Dativ</span><div class="s-content"><div class="s-de">Sie wäscht <span class="hl-dat">sich</span> <span class="hl-akk">das Gesicht</span> mit kaltem Wasser.</div><div class="s-ar">هي تغسل وجهها بالماء البارد.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Sie wäscht sich das Gesicht mit kaltem Wasser.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Sie wäscht sich das Gesicht mit kaltem Wasser.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item" onclick="handleCard(this,'Ich habe mich schon gewaschen.')"><span class="s-badge perf">Perfekt</span><div class="s-content"><div class="s-de">Ich habe <span class="hl-refl">mich</span> schon gewaschen.</div><div class="s-ar">لقد اغتسلت بالفعل. (ماضٍ)</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich habe mich schon gewaschen.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich habe mich schon gewaschen.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item dat" onclick="handleCard(this,'Er wäscht sich die Haare täglich.')"><span class="s-badge dat">Dativ</span><div class="s-content"><div class="s-de">Er wäscht <span class="hl-dat">sich</span> <span class="hl-akk">die Haare</span> täglich.</div><div class="s-ar">هو يغسل شعره يومياً.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Er wäscht sich die Haare täglich.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Er wäscht sich die Haare täglich.')">⧉ نسخ</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── 2. sich ärgern ────────── -->
+  <div class="verb-block avoid-break">
+    <div class="verb-block-header">
+      <div class="verb-title">sich ärgern <small>— يتضايق / يغضب</small></div>
+      <div class="verb-chips"><span class="meaning-chip">😤 Akk فقط</span><span class="prep-chip">über + Akk</span></div>
+    </div>
+    <div class="verb-block-body">
+      <div class="rule-box amber" style="margin-top:0">
+        <span class="ri">🔗</span>
+        <p>يأتي غالباً مع <strong>über + Akkusativ</strong> للإشارة إلى سبب الغضب. هذا الفعل لا يستخدم الـ Dativ أبداً.</p>
+      </div>
+      <div class="conj-box">
+        <div class="conj-title">التصريف الكامل — Präsens</div>
+        <div class="conj-grid">
+          <div class="conj-item" onclick="speakText('ich ärgere mich')"><span class="conj-pron">ich</span><span class="conj-verb">ärgere <span class="conj-refl">mich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ich ärgere mich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('wir ärgern uns')"><span class="conj-pron">wir</span><span class="conj-verb">ärgern <span class="conj-refl">uns</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('wir ärgern uns')">▶</button></div>
+          <div class="conj-item" onclick="speakText('du ärgerst dich')"><span class="conj-pron">du</span><span class="conj-verb">ärgerst <span class="conj-refl">dich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('du ärgerst dich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('ihr ärgert euch')"><span class="conj-pron">ihr</span><span class="conj-verb">ärgert <span class="conj-refl">euch</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ihr ärgert euch')">▶</button></div>
+          <div class="conj-item" onclick="speakText('er ärgert sich')"><span class="conj-pron">er/sie/es</span><span class="conj-verb">ärgert <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('er ärgert sich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('sie ärgern sich')"><span class="conj-pron">sie/Sie</span><span class="conj-verb">ärgern <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('sie ärgern sich')">▶</button></div>
+        </div>
+      </div>
+      <div class="sentences-list">
+        <div class="sentence-item akk" onclick="handleCard(this,'Ich ärgere mich über den Lärm.')"><span class="s-badge akk">über + Akk</span><div class="s-content"><div class="s-de">Ich ärgere <span class="hl-refl">mich</span> über <span class="hl-prep">den Lärm</span>.</div><div class="s-ar">أنا أتضايق من الضوضاء.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich ärgere mich über den Lärm.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich ärgere mich über den Lärm.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Er ärgert sich über seine Fehler.')"><span class="s-badge akk">über + Akk</span><div class="s-content"><div class="s-de">Er ärgert <span class="hl-refl">sich</span> über <span class="hl-prep">seine Fehler</span>.</div><div class="s-ar">هو يغضب من أخطائه.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Er ärgert sich über seine Fehler.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Er ärgert sich über seine Fehler.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Warum ärgerst du dich so?')"><span class="s-badge akk">Akkusativ</span><div class="s-content"><div class="s-de">Warum ärgerst du <span class="hl-refl">dich</span> so?</div><div class="s-ar">لماذا تتضايق هكذا؟</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Warum ärgerst du dich so?')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Warum ärgerst du dich so?')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Wir ärgern uns über das schlechte Wetter.')"><span class="s-badge akk">über + Akk</span><div class="s-content"><div class="s-de">Wir ärgern <span class="hl-refl">uns</span> über <span class="hl-prep">das schlechte Wetter</span>.</div><div class="s-ar">نحن نتضايق من الطقس السيئ.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Wir ärgern uns über das schlechte Wetter.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Wir ärgern uns über das schlechte Wetter.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item" onclick="handleCard(this,'Ich habe mich sehr geärgert.')"><span class="s-badge perf">Perfekt</span><div class="s-content"><div class="s-de">Ich habe <span class="hl-refl">mich</span> sehr geärgert.</div><div class="s-ar">لقد تضايقت جداً. (ماضٍ)</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich habe mich sehr geärgert.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich habe mich sehr geärgert.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Sie ärgert sich über die langen Wartezeiten.')"><span class="s-badge akk">über + Akk</span><div class="s-content"><div class="s-de">Sie ärgert <span class="hl-refl">sich</span> über <span class="hl-prep">die langen Wartezeiten</span>.</div><div class="s-ar">هي تتضايق من أوقات الانتظار الطويلة.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Sie ärgert sich über die langen Wartezeiten.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Sie ärgert sich über die langen Wartezeiten.')">⧉ نسخ</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── 3. sich erinnern ────────── -->
+  <div class="verb-block avoid-break">
+    <div class="verb-block-header">
+      <div class="verb-title">sich erinnern <small>— يتذكر</small></div>
+      <div class="verb-chips"><span class="meaning-chip">🧠 Akk فقط</span><span class="prep-chip">an + Akk</span></div>
+    </div>
+    <div class="verb-block-body">
+      <div class="rule-box green" style="margin-top:0">
+        <span class="ri">💡</span>
+        <p>يأتي دائماً مع <strong>an + Akkusativ</strong>. المثال من المنهج: <em>Ich erinnere mich <strong>an meine Kindheit</strong></em> = أنا أتذكر طفولتي.</p>
+      </div>
+      <div class="conj-box">
+        <div class="conj-title">التصريف الكامل — Präsens</div>
+        <div class="conj-grid">
+          <div class="conj-item" onclick="speakText('ich erinnere mich')"><span class="conj-pron">ich</span><span class="conj-verb">erinnere <span class="conj-refl">mich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ich erinnere mich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('wir erinnern uns')"><span class="conj-pron">wir</span><span class="conj-verb">erinnern <span class="conj-refl">uns</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('wir erinnern uns')">▶</button></div>
+          <div class="conj-item" onclick="speakText('du erinnerst dich')"><span class="conj-pron">du</span><span class="conj-verb">erinnerst <span class="conj-refl">dich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('du erinnerst dich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('ihr erinnert euch')"><span class="conj-pron">ihr</span><span class="conj-verb">erinnert <span class="conj-refl">euch</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ihr erinnert euch')">▶</button></div>
+          <div class="conj-item" onclick="speakText('er erinnert sich')"><span class="conj-pron">er/sie/es</span><span class="conj-verb">erinnert <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('er erinnert sich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('sie erinnern sich')"><span class="conj-pron">sie/Sie</span><span class="conj-verb">erinnern <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('sie erinnern sich')">▶</button></div>
+        </div>
+      </div>
+      <div class="sentences-list">
+        <div class="sentence-item akk" onclick="handleCard(this,'Ich erinnere mich an meine Kindheit.')"><span class="s-badge akk">an + Akk</span><div class="s-content"><div class="s-de">Ich erinnere <span class="hl-refl">mich</span> an <span class="hl-prep">meine Kindheit</span>.</div><div class="s-ar">أنا أتذكر طفولتي.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich erinnere mich an meine Kindheit.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich erinnere mich an meine Kindheit.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Kannst du dich an seinen Namen erinnern?')"><span class="s-badge akk">an + Akk</span><div class="s-content"><div class="s-de">Kannst du <span class="hl-refl">dich</span> an <span class="hl-prep">seinen Namen</span> erinnern?</div><div class="s-ar">هل تتذكر اسمه؟</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Kannst du dich an seinen Namen erinnern?')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Kannst du dich an seinen Namen erinnern?')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Er erinnert sich nicht an den Termin.')"><span class="s-badge akk">an + Akk</span><div class="s-content"><div class="s-de">Er erinnert <span class="hl-refl">sich</span> nicht an <span class="hl-prep">den Termin</span>.</div><div class="s-ar">هو لا يتذكر الموعد.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Er erinnert sich nicht an den Termin.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Er erinnert sich nicht an den Termin.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Wir erinnern uns gerne an unsere Reise.')"><span class="s-badge akk">an + Akk</span><div class="s-content"><div class="s-de">Wir erinnern <span class="hl-refl">uns</span> gerne an <span class="hl-prep">unsere Reise</span>.</div><div class="s-ar">نحن نتذكر بسعادة رحلتنا.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Wir erinnern uns gerne an unsere Reise.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Wir erinnern uns gerne an unsere Reise.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item" onclick="handleCard(this,'Ich habe mich an alles erinnert.')"><span class="s-badge perf">Perfekt</span><div class="s-content"><div class="s-de">Ich habe <span class="hl-refl">mich</span> an alles erinnert.</div><div class="s-ar">لقد تذكرت كل شيء. (ماضٍ)</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich habe mich an alles erinnert.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich habe mich an alles erinnert.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Erinnerst du dich noch an die Schulzeit?')"><span class="s-badge akk">an + Akk</span><div class="s-content"><div class="s-de">Erinnerst du <span class="hl-refl">dich</span> noch an <span class="hl-prep">die Schulzeit</span>?</div><div class="s-ar">هل لا تزال تتذكر أيام الدراسة؟</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Erinnerst du dich noch an die Schulzeit?')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Erinnerst du dich noch an die Schulzeit?')">⧉ نسخ</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── 4. sich beeilen ────────── -->
+  <div class="verb-block avoid-break">
+    <div class="verb-block-header">
+      <div class="verb-title">sich beeilen <small>— يتسرع / يسارع</small></div>
+      <div class="verb-chips"><span class="meaning-chip">⚡ Akk فقط — لا Dativ</span></div>
+    </div>
+    <div class="verb-block-body">
+      <div class="rule-box green" style="margin-top:0">
+        <span class="ri">💡</span>
+        <p>فعل بسيط لا يأتي إلا مع <strong>Akkusativ</strong>. المثال الأساسي من المنهج: <em>Ich muss <strong>mich</strong> beeilen</em> = يجب أن أتسرع.</p>
+      </div>
+      <div class="conj-box">
+        <div class="conj-title">التصريف الكامل — Präsens</div>
+        <div class="conj-grid">
+          <div class="conj-item" onclick="speakText('ich beeile mich')"><span class="conj-pron">ich</span><span class="conj-verb">beeile <span class="conj-refl">mich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ich beeile mich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('wir beeilen uns')"><span class="conj-pron">wir</span><span class="conj-verb">beeilen <span class="conj-refl">uns</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('wir beeilen uns')">▶</button></div>
+          <div class="conj-item" onclick="speakText('du beeilst dich')"><span class="conj-pron">du</span><span class="conj-verb">beeilst <span class="conj-refl">dich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('du beeilst dich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('ihr beeilt euch')"><span class="conj-pron">ihr</span><span class="conj-verb">beeilt <span class="conj-refl">euch</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ihr beeilt euch')">▶</button></div>
+          <div class="conj-item" onclick="speakText('er beeilt sich')"><span class="conj-pron">er/sie/es</span><span class="conj-verb">beeilt <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('er beeilt sich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('sie beeilen sich')"><span class="conj-pron">sie/Sie</span><span class="conj-verb">beeilen <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('sie beeilen sich')">▶</button></div>
+        </div>
+      </div>
+      <div class="sentences-list">
+        <div class="sentence-item akk" onclick="handleCard(this,'Ich muss mich beeilen.')"><span class="s-badge akk">Akkusativ</span><div class="s-content"><div class="s-de">Ich muss <span class="hl-refl">mich</span> beeilen.</div><div class="s-ar">يجب أن أتسرع.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich muss mich beeilen.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich muss mich beeilen.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Beeile dich, wir sind spät!')"><span class="s-badge akk">Imperativ</span><div class="s-content"><div class="s-de">Beeile <span class="hl-refl">dich</span>, wir sind spät!</div><div class="s-ar">أسرع، نحن متأخرون!</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Beeile dich, wir sind spät!')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Beeile dich, wir sind spät!')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Er beeilt sich, um den Zug nicht zu verpassen.')"><span class="s-badge akk">Akkusativ</span><div class="s-content"><div class="s-de">Er beeilt <span class="hl-refl">sich</span>, um den Zug nicht zu verpassen.</div><div class="s-ar">هو يسرع لكيلا يفوته القطار.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Er beeilt sich, um den Zug nicht zu verpassen.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Er beeilt sich, um den Zug nicht zu verpassen.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Wir müssen uns wirklich beeilen.')"><span class="s-badge akk">Akkusativ</span><div class="s-content"><div class="s-de">Wir müssen <span class="hl-refl">uns</span> wirklich beeilen.</div><div class="s-ar">يجب أن نتسرع فعلاً.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Wir müssen uns wirklich beeilen.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Wir müssen uns wirklich beeilen.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item" onclick="handleCard(this,'Ich habe mich sehr beeilt.')"><span class="s-badge perf">Perfekt</span><div class="s-content"><div class="s-de">Ich habe <span class="hl-refl">mich</span> sehr beeilt.</div><div class="s-ar">لقد أسرعت جداً. (ماضٍ)</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich habe mich sehr beeilt.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich habe mich sehr beeilt.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Könnt ihr euch bitte beeilen?')"><span class="s-badge akk">Akkusativ</span><div class="s-content"><div class="s-de">Könnt ihr <span class="hl-refl">euch</span> bitte beeilen?</div><div class="s-ar">هل يمكنكم التسرع من فضلكم؟</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Könnt ihr euch bitte beeilen?')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Könnt ihr euch bitte beeilen?')">⧉ نسخ</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── 5. sich bewerben ────────── -->
+  <div class="verb-block avoid-break">
+    <div class="verb-block-header">
+      <div class="verb-title">sich bewerben <small>— يتقدم بطلب</small></div>
+      <div class="verb-chips"><span class="meaning-chip">📋 Akk فقط</span><span class="prep-chip">um + Akk</span></div>
+    </div>
+    <div class="verb-block-body">
+      <div class="rule-box amber" style="margin-top:0">
+        <span class="ri">🔗</span>
+        <p>يأتي مع <strong>um + Akkusativ</strong>. فعل شاذ: <em>du bewirbst / er bewirbt</em>. صيغة الماضي (Perfekt): <em>Ich habe mich um eine Stelle <strong>beworben</strong></em>.</p>
+      </div>
+      <div class="conj-box">
+        <div class="conj-title">التصريف الكامل — Präsens (فعل شاذ)</div>
+        <div class="conj-grid">
+          <div class="conj-item" onclick="speakText('ich bewerbe mich')"><span class="conj-pron">ich</span><span class="conj-verb">bewerbe <span class="conj-refl">mich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ich bewerbe mich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('wir bewerben uns')"><span class="conj-pron">wir</span><span class="conj-verb">bewerben <span class="conj-refl">uns</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('wir bewerben uns')">▶</button></div>
+          <div class="conj-item" onclick="speakText('du bewirbst dich')"><span class="conj-pron">du</span><span class="conj-verb">bewirbst <span class="conj-refl">dich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('du bewirbst dich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('ihr bewerbt euch')"><span class="conj-pron">ihr</span><span class="conj-verb">bewerbt <span class="conj-refl">euch</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ihr bewerbt euch')">▶</button></div>
+          <div class="conj-item" onclick="speakText('er bewirbt sich')"><span class="conj-pron">er/sie/es</span><span class="conj-verb">bewirbt <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('er bewirbt sich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('sie bewerben sich')"><span class="conj-pron">sie/Sie</span><span class="conj-verb">bewerben <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('sie bewerben sich')">▶</button></div>
+        </div>
+      </div>
+      <div class="sentences-list">
+        <div class="sentence-item akk" onclick="handleCard(this,'Ich bewerbe mich um eine Stelle.')"><span class="s-badge akk">um + Akk</span><div class="s-content"><div class="s-de">Ich bewerbe <span class="hl-refl">mich</span> um <span class="hl-prep">eine Stelle</span>.</div><div class="s-ar">أنا أتقدم لوظيفة.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich bewerbe mich um eine Stelle.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich bewerbe mich um eine Stelle.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item" onclick="handleCard(this,'Ich habe mich um eine Stelle beworben.')"><span class="s-badge perf">Perfekt</span><div class="s-content"><div class="s-de">Ich habe <span class="hl-refl">mich</span> um <span class="hl-prep">eine Stelle</span> beworben.</div><div class="s-ar">لقد تقدمت لوظيفة. (ماضٍ)</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich habe mich um eine Stelle beworben.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich habe mich um eine Stelle beworben.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Er bewirbt sich um den Job bei Siemens.')"><span class="s-badge akk">um + Akk</span><div class="s-content"><div class="s-de">Er bewirbt <span class="hl-refl">sich</span> um <span class="hl-prep">den Job bei Siemens</span>.</div><div class="s-ar">هو يتقدم لوظيفة في سيمنس.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Er bewirbt sich um den Job bei Siemens.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Er bewirbt sich um den Job bei Siemens.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Wir bewerben uns um einen Studienplatz.')"><span class="s-badge akk">um + Akk</span><div class="s-content"><div class="s-de">Wir bewerben <span class="hl-refl">uns</span> um <span class="hl-prep">einen Studienplatz</span>.</div><div class="s-ar">نحن نتقدم لمقعد دراسي.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Wir bewerben uns um einen Studienplatz.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Wir bewerben uns um einen Studienplatz.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Sie möchte sich um die Stelle als Lehrerin bewerben.')"><span class="s-badge akk">um + Akk</span><div class="s-content"><div class="s-de">Sie möchte <span class="hl-refl">sich</span> um <span class="hl-prep">die Stelle als Lehrerin</span> bewerben.</div><div class="s-ar">هي تريد التقدم لوظيفة مدرسة.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Sie möchte sich um die Stelle als Lehrerin bewerben.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Sie möchte sich um die Stelle als Lehrerin bewerben.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item" onclick="handleCard(this,'Haben Sie sich schon beworben?')"><span class="s-badge perf">Perfekt</span><div class="s-content"><div class="s-de">Haben Sie <span class="hl-refl">sich</span> schon beworben?</div><div class="s-ar">هل تقدمتم بالفعل؟</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Haben Sie sich schon beworben?')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Haben Sie sich schon beworben?')">⧉ نسخ</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── 6. sich verlassen ────────── -->
+  <div class="verb-block avoid-break">
+    <div class="verb-block-header">
+      <div class="verb-title">sich verlassen auf <small>— يعتمد على / يثق بـ</small></div>
+      <div class="verb-chips"><span class="meaning-chip">🤝 Akk فقط</span><span class="prep-chip">auf + Akk</span></div>
+    </div>
+    <div class="verb-block-body">
+      <div class="rule-box green" style="margin-top:0">
+        <span class="ri">💡</span>
+        <p>يأتي مع <strong>auf + Akkusativ</strong>. مثال المنهج: <em>Du kannst <strong>dich</strong> auf mich verlassen</em> = يمكنك الاعتماد عليّ. وأيضاً: <em>Ich habe mich auf sie verlassen</em> (Perfekt).</p>
+      </div>
+      <div class="conj-box">
+        <div class="conj-title">التصريف الكامل — Präsens (فعل شاذ: verlässt)</div>
+        <div class="conj-grid">
+          <div class="conj-item" onclick="speakText('ich verlasse mich')"><span class="conj-pron">ich</span><span class="conj-verb">verlasse <span class="conj-refl">mich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ich verlasse mich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('wir verlassen uns')"><span class="conj-pron">wir</span><span class="conj-verb">verlassen <span class="conj-refl">uns</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('wir verlassen uns')">▶</button></div>
+          <div class="conj-item" onclick="speakText('du verlässt dich')"><span class="conj-pron">du</span><span class="conj-verb">verlässt <span class="conj-refl">dich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('du verlässt dich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('ihr verlasst euch')"><span class="conj-pron">ihr</span><span class="conj-verb">verlasst <span class="conj-refl">euch</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ihr verlasst euch')">▶</button></div>
+          <div class="conj-item" onclick="speakText('er verlässt sich')"><span class="conj-pron">er/sie/es</span><span class="conj-verb">verlässt <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('er verlässt sich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('sie verlassen sich')"><span class="conj-pron">sie/Sie</span><span class="conj-verb">verlassen <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('sie verlassen sich')">▶</button></div>
+        </div>
+      </div>
+      <div class="sentences-list">
+        <div class="sentence-item akk" onclick="handleCard(this,'Ich verlasse mich auf dich.')"><span class="s-badge akk">auf + Akk</span><div class="s-content"><div class="s-de">Ich verlasse <span class="hl-refl">mich</span> auf <span class="hl-prep">dich</span>.</div><div class="s-ar">أنا أعتمد عليك.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich verlasse mich auf dich.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich verlasse mich auf dich.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Du kannst dich auf mich verlassen.')"><span class="s-badge akk">auf + Akk</span><div class="s-content"><div class="s-de">Du kannst <span class="hl-refl">dich</span> auf <span class="hl-prep">mich</span> verlassen.</div><div class="s-ar">يمكنك الاعتماد عليّ.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Du kannst dich auf mich verlassen.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Du kannst dich auf mich verlassen.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item" onclick="handleCard(this,'Ich habe mich auf sie verlassen.')"><span class="s-badge perf">Perfekt</span><div class="s-content"><div class="s-de">Ich habe <span class="hl-refl">mich</span> auf <span class="hl-prep">sie</span> verlassen.</div><div class="s-ar">لقد اعتمدت عليها. (ماضٍ)</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich habe mich auf sie verlassen.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich habe mich auf sie verlassen.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Man kann sich auf ihn verlassen.')"><span class="s-badge akk">auf + Akk</span><div class="s-content"><div class="s-de">Man kann <span class="hl-refl">sich</span> auf <span class="hl-prep">ihn</span> verlassen.</div><div class="s-ar">يمكن الاعتماد عليه.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Man kann sich auf ihn verlassen.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Man kann sich auf ihn verlassen.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Wir verlassen uns aufeinander.')"><span class="s-badge akk">auf + Akk</span><div class="s-content"><div class="s-de">Wir verlassen <span class="hl-refl">uns</span> aufeinander.</div><div class="s-ar">نحن نعتمد على بعضنا البعض.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Wir verlassen uns aufeinander.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Wir verlassen uns aufeinander.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Kannst du dich wirklich auf das System verlassen?')"><span class="s-badge akk">auf + Akk</span><div class="s-content"><div class="s-de">Kannst du <span class="hl-refl">dich</span> wirklich auf <span class="hl-prep">das System</span> verlassen?</div><div class="s-ar">هل يمكنك فعلاً الاعتماد على النظام؟</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Kannst du dich wirklich auf das System verlassen?')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Kannst du dich wirklich auf das System verlassen?')">⧉ نسخ</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── 7. sich anziehen ────────── -->
+  <div class="verb-block avoid-break">
+    <div class="verb-block-header">
+      <div class="verb-title">sich anziehen <small>— يرتدي ملابسه</small></div>
+      <div class="verb-chips"><span class="meaning-chip">👔 Akk + Dat</span><span class="meaning-chip" style="background:var(--teal-dim);color:var(--teal);border-color:rgba(45,212,191,.2)">Trennbar ✂️</span></div>
+    </div>
+    <div class="verb-block-body">
+      <div class="rule-box" style="margin-top:0">
+        <span class="ri">✂️</span>
+        <p>فعل منفصل (Trennbares Verb): <em>an</em> تنتقل لنهاية الجملة. مثال الـ Akkusativ: <em>Ich ziehe <strong>mich</strong> an</em>. ومثال الـ Dativ: <em>Ich ziehe <strong>mir</strong> einen Mantel an</em>.</p>
+      </div>
+      <div class="conj-box">
+        <div class="conj-title">التصريف الكامل — Präsens (البادئة an تنفصل)</div>
+        <div class="conj-grid">
+          <div class="conj-item" onclick="speakText('ich ziehe mich an')"><span class="conj-pron">ich</span><span class="conj-verb">ziehe <span class="conj-refl">mich</span> an</span><button class="conj-play" onclick="event.stopPropagation();speakText('ich ziehe mich an')">▶</button></div>
+          <div class="conj-item" onclick="speakText('wir ziehen uns an')"><span class="conj-pron">wir</span><span class="conj-verb">ziehen <span class="conj-refl">uns</span> an</span><button class="conj-play" onclick="event.stopPropagation();speakText('wir ziehen uns an')">▶</button></div>
+          <div class="conj-item" onclick="speakText('du ziehst dich an')"><span class="conj-pron">du</span><span class="conj-verb">ziehst <span class="conj-refl">dich</span> an</span><button class="conj-play" onclick="event.stopPropagation();speakText('du ziehst dich an')">▶</button></div>
+          <div class="conj-item" onclick="speakText('ihr zieht euch an')"><span class="conj-pron">ihr</span><span class="conj-verb">zieht <span class="conj-refl">euch</span> an</span><button class="conj-play" onclick="event.stopPropagation();speakText('ihr zieht euch an')">▶</button></div>
+          <div class="conj-item" onclick="speakText('er zieht sich an')"><span class="conj-pron">er/sie/es</span><span class="conj-verb">zieht <span class="conj-refl">sich</span> an</span><button class="conj-play" onclick="event.stopPropagation();speakText('er zieht sich an')">▶</button></div>
+          <div class="conj-item" onclick="speakText('sie ziehen sich an')"><span class="conj-pron">sie/Sie</span><span class="conj-verb">ziehen <span class="conj-refl">sich</span> an</span><button class="conj-play" onclick="event.stopPropagation();speakText('sie ziehen sich an')">▶</button></div>
+        </div>
+      </div>
+      <div class="sentences-list">
+        <div class="sentence-item akk" onclick="handleCard(this,'Ich ziehe mich schnell an.')"><span class="s-badge akk">Akkusativ</span><div class="s-content"><div class="s-de">Ich ziehe <span class="hl-refl">mich</span> schnell an.</div><div class="s-ar">أنا أرتدي ملابسي بسرعة.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich ziehe mich schnell an.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich ziehe mich schnell an.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item dat" onclick="handleCard(this,'Ich ziehe mir einen Mantel an.')"><span class="s-badge dat">Dativ</span><div class="s-content"><div class="s-de">Ich ziehe <span class="hl-dat">mir</span> <span class="hl-akk">einen Mantel</span> an.</div><div class="s-ar">أنا أرتدي معطفاً.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich ziehe mir einen Mantel an.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich ziehe mir einen Mantel an.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Du ziehst dich um.')"><span class="s-badge akk">Akkusativ</span><div class="s-content"><div class="s-de">Du ziehst <span class="hl-refl">dich</span> um.</div><div class="s-ar">أنت تغير ملابسك. (sich umziehen)</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Du ziehst dich um.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Du ziehst dich um.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item dat" onclick="handleCard(this,'Du ziehst dir Socken um.')"><span class="s-badge dat">Dativ</span><div class="s-content"><div class="s-de">Du ziehst <span class="hl-dat">dir</span> <span class="hl-akk">Socken</span> um.</div><div class="s-ar">أنت تغير جواربك.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Du ziehst dir Socken um.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Du ziehst dir Socken um.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item" onclick="handleCard(this,'Ich habe mich für die Party schön angezogen.')"><span class="s-badge perf">Perfekt</span><div class="s-content"><div class="s-de">Ich habe <span class="hl-refl">mich</span> für die Party schön angezogen.</div><div class="s-ar">لقد تأنقت للحفلة. (ماضٍ)</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich habe mich für die Party schön angezogen.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich habe mich für die Party schön angezogen.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item dat" onclick="handleCard(this,'Er zieht sich einen warmen Pullover an.')"><span class="s-badge dat">Dativ</span><div class="s-content"><div class="s-de">Er zieht <span class="hl-dat">sich</span> <span class="hl-akk">einen warmen Pullover</span> an.</div><div class="s-ar">هو يرتدي بلوزة دافئة.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Er zieht sich einen warmen Pullover an.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Er zieht sich einen warmen Pullover an.')">⧉ نسخ</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── 8. sich kämmen ────────── -->
+  <div class="verb-block avoid-break">
+    <div class="verb-block-header">
+      <div class="verb-title">sich kämmen <small>— يمشط شعره</small></div>
+      <div class="verb-chips"><span class="meaning-chip">💇 Akk + Dat</span></div>
+    </div>
+    <div class="verb-block-body">
+      <div class="rule-box green" style="margin-top:0">
+        <span class="ri">💡</span>
+        <p>من المنهج مباشرة: <em>Sie kämmt <strong>sich</strong></em> (Akk — عموماً) مقابل <em>Sie kämmt <strong>sich</strong> <span style="color:var(--green)">die Haare</span></em> (Dat — المفعول به هو الشعر). المثالان المثاليان لتوضيح الفرق.</p>
+      </div>
+      <div class="conj-box">
+        <div class="conj-title">التصريف الكامل — Präsens</div>
+        <div class="conj-grid">
+          <div class="conj-item" onclick="speakText('ich kämme mich')"><span class="conj-pron">ich</span><span class="conj-verb">kämme <span class="conj-refl">mich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ich kämme mich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('wir kämmen uns')"><span class="conj-pron">wir</span><span class="conj-verb">kämmen <span class="conj-refl">uns</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('wir kämmen uns')">▶</button></div>
+          <div class="conj-item" onclick="speakText('du kämmst dich')"><span class="conj-pron">du</span><span class="conj-verb">kämmst <span class="conj-refl">dich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('du kämmst dich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('ihr kämmt euch')"><span class="conj-pron">ihr</span><span class="conj-verb">kämmt <span class="conj-refl">euch</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('ihr kämmt euch')">▶</button></div>
+          <div class="conj-item" onclick="speakText('sie kämmt sich')"><span class="conj-pron">er/sie/es</span><span class="conj-verb">kämmt <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('sie kämmt sich')">▶</button></div>
+          <div class="conj-item" onclick="speakText('sie kämmen sich')"><span class="conj-pron">sie/Sie</span><span class="conj-verb">kämmen <span class="conj-refl">sich</span></span><button class="conj-play" onclick="event.stopPropagation();speakText('sie kämmen sich')">▶</button></div>
+        </div>
+      </div>
+      <div class="sentences-list">
+        <div class="sentence-item akk" onclick="handleCard(this,'Sie kämmt sich vor dem Spiegel.')"><span class="s-badge akk">Akkusativ</span><div class="s-content"><div class="s-de">Sie kämmt <span class="hl-refl">sich</span> vor dem Spiegel.</div><div class="s-ar">هي تمشط شعرها أمام المرآة.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Sie kämmt sich vor dem Spiegel.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Sie kämmt sich vor dem Spiegel.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item dat" onclick="handleCard(this,'Sie kämmt sich die Haare.')"><span class="s-badge dat">Dativ</span><div class="s-content"><div class="s-de">Sie kämmt <span class="hl-dat">sich</span> <span class="hl-akk">die Haare</span>.</div><div class="s-ar">هي تمشط شعرها (تحديداً).</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Sie kämmt sich die Haare.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Sie kämmt sich die Haare.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item akk" onclick="handleCard(this,'Ich kämme mich jeden Morgen.')"><span class="s-badge akk">Akkusativ</span><div class="s-content"><div class="s-de">Ich kämme <span class="hl-refl">mich</span> jeden Morgen.</div><div class="s-ar">أنا أمشط شعري كل صباح.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Ich kämme mich jeden Morgen.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Ich kämme mich jeden Morgen.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item dat" onclick="handleCard(this,'Er kämmt sich das Haar nach hinten.')"><span class="s-badge dat">Dativ</span><div class="s-content"><div class="s-de">Er kämmt <span class="hl-dat">sich</span> <span class="hl-akk">das Haar</span> nach hinten.</div><div class="s-ar">هو يمشط شعره للخلف.</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Er kämmt sich das Haar nach hinten.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Er kämmt sich das Haar nach hinten.')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item" onclick="handleCard(this,'Hast du dich schon gekämmt?')"><span class="s-badge perf">Perfekt</span><div class="s-content"><div class="s-de">Hast du <span class="hl-refl">dich</span> schon gekämmt?</div><div class="s-ar">هل مشطت شعرك بالفعل؟</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Hast du dich schon gekämmt?')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Hast du dich schon gekämmt?')">⧉ نسخ</button></div></div></div>
+        <div class="sentence-item" onclick="handleCard(this,'Die Mutter kämmt dem Kind die Haare.')"><span class="s-badge compare">مقارنة</span><div class="s-content"><div class="s-de">Die Mutter kämmt <span class="hl-dat">dem Kind</span> <span class="hl-akk">die Haare</span>.</div><div class="s-ar">الأم تمشط شعر الطفل. (بدون sich)</div><div class="s-actions"><button class="btn-action play" onclick="event.stopPropagation();speakText('Die Mutter kämmt dem Kind die Haare.')">▶ استمع</button><button class="btn-action copy" onclick="event.stopPropagation();copyText('Die Mutter kämmt dem Kind die Haare.')">⧉ نسخ</button></div></div></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 5 — SUMMARY TABLE
+══════════════════════════════════════════════ -->
+<section id="summary" class="section reveal">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--rose-dim);color:var(--rose)">📋</div>
+    <div><h2>جدول المراجعة الشامل</h2><p>جميع الأفعال دفعة واحدة</p></div>
+  </div>
+  <div class="concept-card">
+    <div class="table-wrapper">
+      <table class="sum-table">
+        <thead>
+          <tr>
+            <th style="text-align:right">الفعل الانعكاسي</th>
+            <th style="text-align:right">المعنى</th>
+            <th style="text-align:center">الحالة</th>
+            <th style="text-align:right">حرف الجر</th>
+            <th style="text-align:left">مثال (ich)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>sich waschen</td><td style="text-align:right">يغتسل / يغسل</td><td style="text-align:center"><span class="pron-akk">Akk</span> / <span class="pron-dat">Dat</span></td><td>—</td><td>mich / mir</td></tr>
+          <tr><td>sich ärgern</td><td style="text-align:right">يتضايق / يغضب</td><td style="text-align:center"><span class="pron-akk">Akk</span></td><td>über + Akk</td><td>mich</td></tr>
+          <tr><td>sich erinnern</td><td style="text-align:right">يتذكر</td><td style="text-align:center"><span class="pron-akk">Akk</span></td><td>an + Akk</td><td>mich</td></tr>
+          <tr><td>sich beeilen</td><td style="text-align:right">يتسرع / يسارع</td><td style="text-align:center"><span class="pron-akk">Akk</span></td><td>—</td><td>mich</td></tr>
+          <tr><td>sich bewerben</td><td style="text-align:right">يتقدم بطلب</td><td style="text-align:center"><span class="pron-akk">Akk</span></td><td>um + Akk</td><td>mich</td></tr>
+          <tr><td>sich verlassen</td><td style="text-align:right">يعتمد على</td><td style="text-align:center"><span class="pron-akk">Akk</span></td><td>auf + Akk</td><td>mich</td></tr>
+          <tr><td>sich anziehen ✂️</td><td style="text-align:right">يرتدي ملابسه</td><td style="text-align:center"><span class="pron-akk">Akk</span> / <span class="pron-dat">Dat</span></td><td>—</td><td>mich / mir</td></tr>
+          <tr><td>sich kämmen</td><td style="text-align:right">يمشط شعره</td><td style="text-align:center"><span class="pron-akk">Akk</span> / <span class="pron-dat">Dat</span></td><td>—</td><td>mich / mir</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rule-box" style="margin-top:1.2rem">
+      <span class="ri">🎓</span>
+      <p><strong>الخلاصة النهائية:</strong> الغالبية العظمى من الأفعال الانعكاسية تستخدم <strong>Akkusativ</strong> دائماً. أما الأفعال التي تستخدم كلا الحالتين (waschen / anziehen / kämmen) فتنتقل إلى <strong>Dativ</strong> فقط حين يكون في الجملة مفعول به مباشر آخر — والفرق الملحوظ محصور في <em>ich</em> و<em>du</em> فقط.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Deutsch mit Mira · Reflexive Verben A2</p>
+  <p style="margin-top:.3rem;color:var(--text-muted)">انقر على أي جملة للاستماع والنسخ · Web Speech API (de-DE)</p>
+</footer>
+
+<script>
+/* ── Theme ── */
+const root = document.documentElement;
+const btn = document.getElementById('theme-toggle');
+function getT() {
+  return localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : 'dark');
+}
+function setT(t) {
+  root.setAttribute('data-theme', t);
+  btn.textContent = t === 'dark' ? '🌙' : '☀️';
+  localStorage.setItem('theme', t);
+}
+btn.addEventListener('click', () => setT(getT() === 'dark' ? 'light' : 'dark'));
+setT(getT());
+
+/* ── Scroll progress ── */
+const bar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  bar.style.width = (window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100) + '%';
+}, { passive: true });
+
+/* ── Reveal ── */
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) e.target.classList.add('visible');
+}), { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+/* ── TTS ── */
+function speakText(t) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(t);
+  u.lang = 'de-DE'; u.rate = 0.82; u.pitch = 1;
+  const vs = window.speechSynthesis.getVoices();
+  const dv = vs.find(v => v.lang.startsWith('de'));
+  if (dv) u.voice = dv;
+  window.speechSynthesis.speak(u);
+}
+if (window.speechSynthesis) window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+
+/* ── Copy ── */
+const toast = document.getElementById('toast');
+let tt;
+function showToast(m) {
+  toast.textContent = m;
+  toast.classList.add('show');
+  clearTimeout(tt);
+  tt = setTimeout(() => toast.classList.remove('show'), 2000);
+}
+function copyText(t) {
+  if (navigator.clipboard && navigator.clipboard.writeText)
+    navigator.clipboard.writeText(t).then(() => showToast('✓ تم نسخ الجملة!')).catch(() => fb(t));
+  else fb(t);
+}
+function fb(t) {
+  const a = document.createElement('textarea');
+  a.value = t; a.style.cssText = 'position:fixed;opacity:0;left:-9999px';
+  document.body.appendChild(a); a.focus(); a.select();
+  try { document.execCommand('copy'); showToast('✓ تم نسخ الجملة!'); } catch { showToast('اضغط مطولاً للنسخ'); }
+  document.body.removeChild(a);
+}
+
+/* ── Card handler ── */
+function handleCard(card, text) {
+  speakText(text); copyText(text);
+  card.classList.add('copied');
+  setTimeout(() => card.classList.remove('copied'), 1100);
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-reflexive-verben-print" data-category="grammatik" data-title="الأفعال الانعكاسية — نسخة للطباعة" data-root="../../" defer></script>
+</body>
+</html>

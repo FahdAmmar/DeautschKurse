@@ -1,0 +1,2678 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الدليل الشامل · زمن الـ Perfekt — الحديث عن الماضي | ألمانية A2</title>
+<meta name="description" content="الدليل الشامل لزمن الـ Perfekt في اللغة الألمانية: القاعدة، تكوين Partizip II بكل فئاته، haben أم sein، ترتيب الكلمات، النفي، الأسئلة، أكثر من ٧٠ فعلًا أساسيًا، أمثلة صوتية تفاعلية، وتمارين فورية بخمسة أنواع.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   0. RESET + BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+body { margin: 0; overflow-x: hidden; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+a { color: inherit; }
+
+/* ==========================================================================
+   1. DESIGN TOKENS
+   ========================================================================== */
+:root {
+  color-scheme: light;
+  --bg: #F5F7F9;
+  --bg-alt: #ECEFF3;
+  --surface: #FFFFFF;
+  --surface-glass: rgba(255,255,255,.66);
+  --surface-glass-border: rgba(255,255,255,.5);
+  --ink: #17212B;
+  --ink-soft: #4B5766;
+  --ink-faint: #85909C;
+  --border: #E1E5EA;
+  --border-strong: #CBD2DA;
+
+  --teal: #146770;
+  --teal-ink: #0D4A51;
+  --teal-soft: #E1EFF0;
+  --teal-glow: rgba(20,103,112,.22);
+
+  --amber: #B87A1F;
+  --amber-ink: #8C5C15;
+  --amber-soft: #FBF0DD;
+  --amber-glow: rgba(184,122,31,.22);
+
+  --success: #2E7D4F;
+  --success-soft: #E4F5EA;
+  --danger: #B84A38;
+  --danger-soft: #FBEAE6;
+
+  --shadow-sm: 0 1px 2px rgba(23,33,43,.06), 0 1px 1px rgba(23,33,43,.04);
+  --shadow-md: 0 8px 24px -8px rgba(23,33,43,.16), 0 2px 8px -2px rgba(23,33,43,.08);
+  --shadow-lg: 0 24px 60px -20px rgba(23,33,43,.28), 0 8px 20px -8px rgba(23,33,43,.12);
+  --shadow-glow-teal: 0 8px 30px -6px var(--teal-glow);
+  --shadow-glow-amber: 0 8px 30px -6px var(--amber-glow);
+
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+
+  --font-ar-display: 'Reem Kufi', 'Segoe UI', sans-serif;
+  --font-ar-body: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-de-display: 'Fraunces', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --nav-h: 72px;
+  --ease: cubic-bezier(.22,.9,.32,1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #101720;
+  --bg-alt: #0B1119;
+  --surface: #1A2430;
+  --surface-glass: rgba(26,36,48,.62);
+  --surface-glass-border: rgba(255,255,255,.08);
+  --ink: #ECF1F5;
+  --ink-soft: #A9B4C0;
+  --ink-faint: #6B7684;
+  --border: #2A3644;
+  --border-strong: #384454;
+
+  --teal: #4FC2CC;
+  --teal-ink: #8CE0E6;
+  --teal-soft: rgba(79,194,204,.13);
+  --teal-glow: rgba(79,194,204,.28);
+
+  --amber: #F0B255;
+  --amber-ink: #F7CD8C;
+  --amber-soft: rgba(240,178,85,.13);
+  --amber-glow: rgba(240,178,85,.24);
+
+  --success: #5FCB8C;
+  --success-soft: rgba(95,203,140,.14);
+  --danger: #E2836E;
+  --danger-soft: rgba(226,131,110,.14);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3);
+  --shadow-md: 0 8px 24px -8px rgba(0,0,0,.5);
+  --shadow-lg: 0 24px 60px -20px rgba(0,0,0,.6);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ar-body);
+  line-height: 1.75;
+  transition: background-color .5s var(--ease), color .5s var(--ease);
+}
+
+.de, [lang="de"] { font-family: var(--font-de-display); direction: ltr; unicode-bidi: isolate; }
+.mono { font-family: var(--font-mono); direction: ltr; unicode-bidi: isolate; }
+
+h1, h2, h3 { font-family: var(--font-ar-display); font-weight: 700; line-height: 1.3; margin: 0; }
+p { margin: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection { background: var(--teal); color: #fff; }
+
+/* Decorative dashed "railway" divider used throughout as the site's signature motif */
+.rail-rule {
+  height: 2px;
+  background-image: repeating-linear-gradient(to left, var(--border-strong) 0 10px, transparent 10px 18px);
+  margin: 0;
+  border: none;
+}
+
+/* ==========================================================================
+   2. LAYOUT SHELL
+   ========================================================================== */
+.container { max-width: 1120px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); }
+.section { padding-block: clamp(56px, 8vw, 108px); position: relative; }
+.section-head { max-width: 720px; margin-bottom: clamp(28px, 5vw, 48px); }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: .78rem; letter-spacing: .06em;
+  color: var(--teal); background: var(--teal-soft);
+  padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
+}
+.section-title { font-size: clamp(1.5rem, 3.6vw, 2.35rem); }
+.section-sub { color: var(--ink-soft); font-size: clamp(.98rem, 1.6vw, 1.1rem); margin-top: 12px; max-width: 60ch; }
+
+/* reveal-on-scroll */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(1){transition-delay:.03s} .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.09s}
+.reveal-stagger.is-visible > *:nth-child(3){transition-delay:.15s} .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.21s}
+.reveal-stagger.is-visible > *:nth-child(5){transition-delay:.27s} .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.33s}
+
+/* ==========================================================================
+   3. HEADER / NAV
+   ========================================================================== */
+.site-header {
+  position: sticky; top: 0; z-index: 100; height: var(--nav-h);
+  display: flex; align-items: center;
+  background: var(--surface-glass); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--surface-glass-border);
+  transition: background-color .5s var(--ease), border-color .5s var(--ease);
+}
+.header-inner { display: flex; align-items: center; gap: 18px; width: 100%; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; white-space: nowrap; }
+.brand-mark {
+  width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0;
+  background: linear-gradient(155deg, var(--teal) 0%, var(--teal-ink) 100%);
+  display: flex; align-items: center; justify-content: center; color: #fff;
+  box-shadow: var(--shadow-glow-teal);
+}
+.brand-text { font-family: var(--font-ar-display); font-size: 1.05rem; }
+.brand-text small { display: block; font-family: var(--font-ar-body); font-weight: 400; font-size: .68rem; color: var(--ink-faint); }
+
+.progress-ring-wrap { position: relative; width: 44px; height: 44px; flex-shrink: 0; }
+.progress-ring-wrap svg { transform: rotate(-90deg); }
+.progress-ring-track { fill: none; stroke: var(--border); stroke-width: 4; }
+.progress-ring-bar { fill: none; stroke: var(--teal); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset .6s var(--ease); }
+.progress-ring-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: .62rem; font-weight: 600; }
+
+.main-nav { display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; flex: 1; -webkit-overflow-scrolling: touch; }
+.main-nav::-webkit-scrollbar { display: none; }
+.nav-link {
+  flex-shrink: 0; padding: 8px 14px; border-radius: 999px; font-size: .88rem; font-weight: 500;
+  color: var(--ink-soft); background: transparent; border: 1px solid transparent; cursor: pointer;
+  transition: background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+}
+.nav-link:hover { background: var(--bg-alt); color: var(--ink); }
+.nav-link.active { background: var(--teal-soft); color: var(--teal); border-color: transparent; }
+
+.header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.icon-btn {
+  width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: transform .2s var(--ease), background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.icon-btn:hover { color: var(--teal); border-color: var(--teal); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.icon-btn:active { transform: translateY(0) scale(.94); }
+.icon-btn svg { width: 19px; height: 19px; }
+.icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+
+.nav-toggle { display: none; }
+.search-box { position: relative; display: none; }
+.search-box input {
+  width: 0; opacity: 0; padding: 0; border: none; background: var(--surface);
+  color: var(--ink); border-radius: 12px; transition: width .3s var(--ease), opacity .3s var(--ease), padding .3s var(--ease);
+  font-family: var(--font-ar-body); font-size: .88rem;
+}
+.search-box.open input { width: 190px; opacity: 1; padding: 9px 14px; border: 1px solid var(--border); }
+.search-box.open { display: flex; }
+
+@media (min-width: 861px){ .search-box { display: flex; align-items: center; } }
+
+@media (max-width: 860px) {
+  .main-nav { position: fixed; inset-inline: 0; top: var(--nav-h); background: var(--surface); flex-direction: column; align-items: stretch;
+    padding: 10px 16px 20px; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md);
+    transform: translateY(-12px); opacity: 0; pointer-events: none; transition: transform .3s var(--ease), opacity .3s var(--ease); max-height: 70vh; overflow-y: auto; }
+  .main-nav.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .nav-link { text-align: center; padding: 12px; }
+  .nav-toggle { display: flex; }
+  .search-box.mobile { display: flex; width: 100%; margin-top: 8px; }
+  .search-box.mobile input { width: 100%; opacity: 1; padding: 10px 14px; border: 1px solid var(--border); }
+}
+
+/* ==========================================================================
+   4. HERO — signature "Satzklammer" (verb-bracket) visual
+   ========================================================================== */
+.hero { position: relative; padding-block: clamp(48px, 9vw, 96px) clamp(64px, 9vw, 110px); overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; inset: -20% -10% auto -10%; height: 620px; z-index: -2;
+  background:
+    radial-gradient(560px 360px at 15% 20%, var(--teal-glow), transparent 70%),
+    radial-gradient(520px 340px at 85% 10%, var(--amber-glow), transparent 70%);
+  filter: blur(10px);
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5;
+  background-image: repeating-linear-gradient(to left, var(--border) 0 2px, transparent 2px 26px);
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px, 5vw, 56px); align-items: center; }
+@media (max-width: 940px){ .hero-grid { grid-template-columns: 1fr; } }
+
+.level-badge {
+  display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: .82rem;
+  background: var(--surface); border: 1px solid var(--border); padding: 7px 8px 7px 16px; border-radius: 999px;
+  box-shadow: var(--shadow-sm); margin-bottom: 22px;
+}
+.level-badge b { background: var(--teal); color: #fff; padding: 3px 11px; border-radius: 999px; font-weight: 600; }
+
+.hero-title { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.01em; }
+.hero-title .de { color: var(--teal); font-style: italic; font-weight: 500; }
+.hero-lead { margin-top: 20px; font-size: clamp(1.02rem, 1.7vw, 1.2rem); color: var(--ink-soft); max-width: 56ch; }
+
+.hero-ctas { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 9px; padding: 13px 24px; border-radius: 14px;
+  font-weight: 600; font-size: .96rem; cursor: pointer; border: 1px solid transparent;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), background-color .25s var(--ease), border-color .25s var(--ease);
+}
+.btn:active { transform: scale(.97); }
+.btn-primary { background: linear-gradient(155deg, var(--teal) 0%, var(--teal-ink) 100%); color: #fff; box-shadow: var(--shadow-glow-teal); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 34px -8px var(--teal-glow); }
+.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--border); }
+.btn-ghost:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-3px); }
+
+/* --- Satzklammer bracket sentence component (signature element, reused everywhere) --- */
+.klammer-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg);
+  padding: clamp(20px, 3vw, 30px); box-shadow: var(--shadow-lg);
+  transform: perspective(900px) rotateY(-4deg) rotateX(2deg);
+  transition: transform .5s var(--ease);
+}
+.klammer-card:hover { transform: perspective(900px) rotateY(0deg) rotateX(0deg); }
+.klammer-label { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .74rem; color: var(--ink-faint); margin-bottom: 16px; }
+.klammer-sentence { direction: ltr; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-family: var(--font-de-display); font-size: clamp(1.15rem, 2.4vw, 1.55rem); }
+.k-word { cursor: pointer; border-radius: 8px; padding: 2px 3px; transition: background-color .2s, color .2s; }
+.k-word:hover { background: var(--bg-alt); }
+.k-word.speaking { background: var(--teal); color: #fff; }
+.klammer-frame {
+  display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px 10px;
+  border: 2px dashed var(--border-strong); border-radius: 16px; padding: 8px 16px; position: relative;
+}
+.klammer-frame::before { content: "⌐"; position: absolute; top: -13px; right: 10px; font-family: var(--font-mono); font-size: .7rem; color: var(--ink-faint); background: var(--surface); padding: 0 6px; }
+.k-verb1 { background: var(--teal); color: #fff; border-radius: 8px; padding: 3px 10px; font-weight: 600; }
+.k-verb2 { background: var(--amber); color: #2b1c05; border-radius: 8px; padding: 3px 10px; font-weight: 600; }
+.klammer-translation { margin-top: 14px; font-family: var(--font-ar-body); color: var(--ink-soft); font-size: .92rem; padding-top: 14px; border-top: 1px dashed var(--border); }
+.klammer-speak-all { margin-top: 14px; }
+
+/* ==========================================================================
+   5. GENERIC CARDS / GRIDS
+   ========================================================================== */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 760px){ .grid-2 { grid-template-columns: 1fr; } }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 940px){ .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px){ .grid-3 { grid-template-columns: 1fr; } }
+
+.info-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+  padding: 22px; box-shadow: var(--shadow-sm); transition: box-shadow .3s var(--ease), transform .3s var(--ease), border-color .3s var(--ease);
+}
+.info-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--border-strong); }
+.info-card h3 { font-size: 1.08rem; margin-bottom: 10px; display: flex; align-items: center; gap: 9px; }
+.info-card h3 .icon-chip { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.info-card p, .info-card li { color: var(--ink-soft); font-size: .95rem; }
+
+.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: .78rem; padding: 4px 11px; border-radius: 999px; }
+.chip-teal { background: var(--teal-soft); color: var(--teal-ink); }
+.chip-amber { background: var(--amber-soft); color: var(--amber-ink); }
+
+/* ==========================================================================
+   6. ACCORDION (formation rules)
+   ========================================================================== */
+.accordion-item { border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); margin-bottom: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
+.accordion-trigger {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 18px 22px; background: none; border: none; cursor: pointer; text-align: right; color: var(--ink);
+}
+.accordion-trigger:hover { background: var(--bg-alt); }
+.accordion-trigger .chevron { transition: transform .35s var(--ease); flex-shrink: 0; color: var(--ink-faint); }
+.accordion-item.open .chevron { transform: rotate(180deg); }
+.accordion-title { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.accordion-title .tag { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); }
+.accordion-panel { max-height: 0; overflow: hidden; transition: max-height .45s var(--ease); }
+.accordion-item.open .accordion-panel { max-height: 900px; }
+.accordion-body { padding: 0 22px 22px; color: var(--ink-soft); font-size: .95rem; }
+.formation-example-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: var(--bg-alt); border-radius: 10px; padding: 10px 14px; margin-top: 8px; }
+.formation-arrow { color: var(--ink-faint); }
+
+/* ==========================================================================
+   7. HABEN / SEIN FLOW DIAGRAM
+   ========================================================================== */
+.flow-wrap { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.flow-node {
+  background: var(--surface); border: 1.5px solid var(--border-strong); border-radius: var(--r-md);
+  padding: 16px 26px; text-align: center; font-weight: 600; box-shadow: var(--shadow-sm); max-width: 320px;
+}
+.flow-connector { width: 2px; height: 34px; background: repeating-linear-gradient(to bottom, var(--border-strong) 0 6px, transparent 6px 11px); }
+.flow-branches { display: flex; gap: clamp(16px, 5vw, 60px); width: 100%; justify-content: center; margin-top: 0; flex-wrap: wrap; }
+.flow-branch { display: flex; flex-direction: column; align-items: center; max-width: 320px; }
+.flow-branch-label {
+  font-family: var(--font-mono); font-size: .82rem; padding: 8px 18px; border-radius: 999px; margin-bottom: 10px; cursor: pointer;
+  border: none; transition: transform .2s var(--ease);
+}
+.flow-branch-label:hover { transform: translateY(-2px); }
+.flow-branch.sein .flow-branch-label { background: var(--teal); color: #fff; }
+.flow-branch.haben .flow-branch-label { background: var(--amber); color: #2b1c05; }
+.flow-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 16px 18px;
+  box-shadow: var(--shadow-sm); font-size: .9rem; color: var(--ink-soft); width: 100%;
+}
+.flow-card ul { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.flow-card li { display: flex; align-items: center; gap: 8px; }
+.flow-example-box { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border); font-family: var(--font-de-display); direction: ltr; font-size: 1.02rem; min-height: 28px; }
+
+/* ==========================================================================
+   8. VOCABULARY — 3D FLIP CARDS
+   ========================================================================== */
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+.flip-card { perspective: 1200px; height: 190px; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer;
+  transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1);
+  border-radius: var(--r-md);
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-face {
+  position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden;
+  border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; padding: 16px; box-shadow: var(--shadow-sm);
+}
+.flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
+.flip-front .de { font-size: 1.5rem; font-weight: 600; }
+.flip-front .aux-tag { position: absolute; top: 10px; left: 10px; }
+.flip-back { background: var(--teal); color: #fff; transform: rotateY(180deg); gap: 6px; }
+.flip-back .partizip { font-family: var(--font-de-display); font-size: 1.28rem; font-weight: 600; }
+.flip-back .meaning { font-size: .92rem; opacity: .92; }
+.flip-hint { font-family: var(--font-mono); font-size: .68rem; color: var(--ink-faint); margin-top: 10px; }
+.speak-dot {
+  position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
+  color: var(--teal); transition: transform .2s, background-color .2s;
+}
+.speak-dot:hover { transform: scale(1.1); background: var(--teal-soft); }
+.flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
+.speak-dot .icon { width: 15px; height: 15px; }
+.speak-dot.speaking { animation: pulse-ring 1s var(--ease) infinite; }
+@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 var(--teal-glow)} 70%{box-shadow:0 0 0 10px transparent} 100%{box-shadow:0 0 0 0 transparent} }
+
+/* ==========================================================================
+   9. EXAMPLES LIST
+   ========================================================================== */
+.examples-list { display: flex; flex-direction: column; gap: 18px; }
+
+/* ==========================================================================
+   10. MISTAKES — wrong vs right
+   ========================================================================== */
+.mistake-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+@media (max-width: 640px){ .mistake-card { grid-template-columns: 1fr; } }
+.mistake-side { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.mistake-wrong { background: var(--danger-soft); }
+.mistake-right { background: var(--success-soft); }
+.mistake-tag { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .82rem; }
+.mistake-wrong .mistake-tag { color: var(--danger); }
+.mistake-right .mistake-tag { color: var(--success); }
+.mistake-sentence { font-family: var(--font-de-display); direction: ltr; font-size: 1.05rem; }
+.mistake-note { grid-column: 1 / -1; padding: 12px 20px; font-size: .88rem; color: var(--ink-soft); border-top: 1px dashed var(--border); background: var(--surface); }
+
+/* ==========================================================================
+   11. PRONUNCIATION TIP CARDS
+   ========================================================================== */
+.tip-card { display: flex; gap: 14px; align-items: flex-start; }
+.tip-card .icon-chip { background: var(--amber-soft); color: var(--amber-ink); }
+
+/* ==========================================================================
+   12. EXERCISES
+   ========================================================================== */
+.exercise-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+.exercise-tabs { display: flex; overflow-x: auto; border-bottom: 1px solid var(--border); scrollbar-width: none; }
+.exercise-tabs::-webkit-scrollbar { display: none; }
+.exercise-tab {
+  flex-shrink: 0; padding: 16px 20px; background: none; border: none; cursor: pointer; font-weight: 600; font-size: .92rem;
+  color: var(--ink-faint); border-bottom: 3px solid transparent; display: flex; align-items: center; gap: 8px;
+  transition: color .25s, border-color .25s;
+}
+.exercise-tab:hover { color: var(--ink); }
+.exercise-tab.active { color: var(--teal); border-color: var(--teal); }
+.exercise-tab .count { font-family: var(--font-mono); font-size: .7rem; background: var(--bg-alt); padding: 1px 7px; border-radius: 999px; }
+.exercise-panels { padding: clamp(20px, 4vw, 34px); }
+.exercise-panel { display: none; }
+.exercise-panel.active { display: block; animation: fadeSlide .4s var(--ease); }
+@keyframes fadeSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+.q-block { border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 20px; margin-bottom: 16px; background: var(--bg-alt); }
+.q-prompt { font-family: var(--font-de-display); direction: ltr; font-size: 1.08rem; margin-bottom: 14px; }
+.q-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.opt-btn {
+  font-family: var(--font-de-display); direction: ltr; padding: 9px 20px; border-radius: 10px; border: 1.5px solid var(--border-strong);
+  background: var(--surface); cursor: pointer; font-size: 1rem; transition: all .2s var(--ease);
+}
+.opt-btn:hover:not(:disabled) { border-color: var(--teal); color: var(--teal); }
+.opt-btn.correct { background: var(--success-soft); border-color: var(--success); color: var(--success); }
+.opt-btn.wrong { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
+.opt-btn:disabled { cursor: default; }
+.q-feedback { margin-top: 12px; font-size: .88rem; color: var(--ink-soft); display: none; padding-top: 10px; border-top: 1px dashed var(--border); }
+.q-feedback.show { display: block; }
+
+.fill-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.fill-row input {
+  font-family: var(--font-de-display); direction: ltr; text-align: left; font-size: 1.05rem; padding: 9px 14px;
+  border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink); width: 200px; max-width: 100%;
+}
+.fill-row input:focus { border-color: var(--teal); }
+.fill-check { border: none; background: var(--teal); color: #fff; padding: 9px 18px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+.fill-result { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+
+.builder-pool, .builder-answer { display: flex; flex-wrap: wrap; gap: 10px; min-height: 52px; align-items: center; }
+.builder-answer { border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: 10px 14px; margin-bottom: 14px; background: var(--surface); }
+.builder-pool { padding: 10px 0; }
+.chip-word {
+  font-family: var(--font-de-display); direction: ltr; padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong);
+  background: var(--surface); cursor: pointer; font-size: 1rem; transition: all .2s var(--ease); box-shadow: var(--shadow-sm);
+}
+.chip-word:hover { transform: translateY(-2px); border-color: var(--teal); }
+.chip-word.used { opacity: .3; pointer-events: none; }
+.builder-actions { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.builder-actions .btn { padding: 9px 18px; font-size: .88rem; }
+
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 3vw, 40px); }
+.match-col { display: flex; flex-direction: column; gap: 10px; }
+.match-item {
+  font-family: var(--font-de-display); direction: ltr; padding: 12px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong);
+  background: var(--surface); cursor: pointer; transition: all .2s var(--ease); text-align: center;
+}
+.match-item:hover:not(.matched) { border-color: var(--teal); transform: scale(1.02); }
+.match-item.selected { border-color: var(--teal); background: var(--teal-soft); }
+.match-item.matched { border-color: var(--success); background: var(--success-soft); color: var(--success); pointer-events: none; }
+.match-item.shake { animation: shake .4s; border-color: var(--danger); background: var(--danger-soft); }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+
+.score-bar-wrap { display: flex; align-items: center; gap: 16px; padding: 18px clamp(20px, 4vw, 34px); border-top: 1px solid var(--border); background: var(--bg-alt); flex-wrap: wrap; }
+.score-track { flex: 1; min-width: 140px; height: 10px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.score-fill { height: 100%; background: linear-gradient(to left, var(--teal), var(--amber)); border-radius: 999px; width: 0%; transition: width .5s var(--ease); }
+.score-label { font-family: var(--font-mono); font-size: .82rem; white-space: nowrap; }
+
+/* ==========================================================================
+   12b. CATEGORY TABS (vocab, examples filters)
+   ========================================================================== */
+.cat-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.cat-tab {
+  font-family: var(--font-ar-body); font-size: .88rem; font-weight: 600; padding: 9px 18px; border-radius: 999px;
+  border: 1.5px solid var(--border); background: var(--surface); color: var(--ink-soft); cursor: pointer;
+  transition: all .25s var(--ease); display: flex; align-items: center; gap: 8px;
+}
+.cat-tab:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+.cat-tab.active { background: linear-gradient(155deg, var(--teal) 0%, var(--teal-ink) 100%); border-color: transparent; color: #fff; box-shadow: var(--shadow-glow-teal); }
+.cat-tab .cat-count { font-family: var(--font-mono); font-size: .68rem; background: rgba(255,255,255,.25); padding: 1px 7px; border-radius: 999px; }
+.cat-tab:not(.active) .cat-count { background: var(--bg-alt); }
+.vocab-panel { display: none; }
+.vocab-panel.active { display: block; animation: fadeSlide .4s var(--ease); }
+
+/* ==========================================================================
+   12c. VERB CHIPS (haben/sein categorisation lists)
+   ========================================================================== */
+.verb-chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 20px; }
+.verb-chip {
+  display: inline-flex; align-items: baseline; gap: 7px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 7px 13px; font-size: .88rem; cursor: pointer; transition: all .2s var(--ease);
+}
+.verb-chip:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.verb-chip .vc-de { font-family: var(--font-de-display); direction: ltr; font-weight: 600; }
+.verb-chip .vc-ar { color: var(--ink-faint); font-size: .82rem; }
+.category-label { font-weight: 700; font-size: .92rem; margin: 18px 0 4px; display: flex; align-items: center; gap: 8px; }
+
+/* ==========================================================================
+   12d-0. TENSE TIMELINE (intro)
+   ========================================================================== */
+.mini-timeline { display: flex; align-items: flex-start; justify-content: space-between; gap: 4px; padding: 30px clamp(6px, 3vw, 26px) 6px; overflow-x: auto; }
+.mt-item { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 92px; flex: 1; position: relative; }
+.mt-item:not(:last-child)::after { content:""; position: absolute; top: 9px; right: -50%; width: 100%; height: 2px; background: repeating-linear-gradient(to left, var(--border-strong) 0 6px, transparent 6px 11px); z-index: 0; }
+.mt-top { font-size: .78rem; color: var(--ink-soft); margin-bottom: 8px; min-height: 32px; }
+.mt-dot { width: 20px; height: 20px; border-radius: 50%; border: 3px solid var(--border-strong); background: var(--surface); z-index: 1; }
+.mt-dot.now { border-color: var(--teal); background: var(--teal); box-shadow: var(--shadow-glow-teal); }
+.mt-dot.done { border-color: var(--amber); background: var(--amber-soft); }
+.mt-bottom { margin-top: 8px; font-size: .8rem; font-weight: 600; }
+.mt-bottom.hl { color: var(--amber-ink); }
+
+/* ==========================================================================
+   12d. STAT BARS (80/20 haben vs sein usage)
+   ========================================================================== */
+.stat-block { margin: 8px 0 18px; }
+.stat-row-label { display: flex; justify-content: space-between; font-size: .88rem; font-weight: 600; margin-bottom: 6px; }
+.stat-track { height: 12px; background: var(--bg-alt); border-radius: 999px; overflow: hidden; margin-bottom: 18px; }
+.stat-fill { height: 100%; border-radius: 999px; width: 0%; transition: width 1.1s var(--ease); }
+.stat-fill.haben { background: linear-gradient(to left, var(--amber), var(--amber-ink)); }
+.stat-fill.sein { background: linear-gradient(to left, var(--teal), var(--teal-ink)); }
+.stat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 10px; }
+@media (max-width: 620px){ .stat-cards { grid-template-columns: 1fr; } }
+.stat-card { border-radius: var(--r-md); padding: 20px; text-align: center; }
+.stat-card.haben { background: var(--amber-soft); border: 1px solid var(--amber); }
+.stat-card.sein { background: var(--teal-soft); border: 1px solid var(--teal); }
+.stat-card .stat-pct { font-family: var(--font-mono); font-size: 2.2rem; font-weight: 700; }
+.stat-card.haben .stat-pct { color: var(--amber-ink); }
+.stat-card.sein .stat-pct { color: var(--teal-ink); }
+.stat-card .stat-desc { font-size: .85rem; color: var(--ink-soft); margin-top: 4px; }
+
+/* ==========================================================================
+   12e. CONJUGATION TABLES (haben / sein präsens)
+   ========================================================================== */
+.conj-table-wrap { overflow-x: auto; }
+.conj-table { width: 100%; border-collapse: collapse; font-size: .92rem; min-width: 320px; }
+.conj-table th { background: var(--bg-alt); color: var(--ink-soft); padding: 10px 14px; text-align: right; font-weight: 600; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
+.conj-table td { padding: 10px 14px; border-top: 1px solid var(--border); }
+.conj-table .cj-pronoun { font-family: var(--font-de-display); direction: ltr; color: var(--ink-soft); }
+.conj-table .cj-verb { font-family: var(--font-de-display); direction: ltr; font-weight: 700; }
+.conj-table tr:hover td { background: var(--bg-alt); }
+
+/* ==========================================================================
+   12f. WORD-ORDER VISUAL + TABLE
+   ========================================================================== */
+.wordorder-visual { display: flex; gap: 10px; flex-wrap: wrap; padding: 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-sm); }
+.wo-block { flex: 1; min-width: 118px; border-radius: var(--r-sm); padding: 14px 12px; text-align: center; position: relative; border: 1px solid var(--border); }
+.wo-block.pos1 { background: rgba(167,139,250,.1); border-color: rgba(167,139,250,.4); }
+.wo-block.pos2 { background: var(--teal-soft); border-color: var(--teal); }
+.wo-block.mid { background: var(--bg-alt); border-style: dashed; }
+.wo-block.end { background: var(--amber-soft); border-color: var(--amber); }
+.wo-block-label { font-family: var(--font-mono); font-size: .62rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-faint); margin-bottom: 6px; }
+.wo-block-word { font-family: var(--font-de-display); direction: ltr; font-weight: 600; font-size: 1.05rem; cursor: pointer; }
+.wo-block-ar { font-size: .74rem; color: var(--ink-faint); margin-top: 4px; }
+.wo-pin { position: absolute; top: -11px; right: 50%; transform: translateX(50%); background: var(--teal); color: #fff; font-size: .6rem; padding: 2px 9px; border-radius: 999px; font-weight: 700; white-space: nowrap; }
+.wo-table-wrap { overflow-x: auto; margin-top: 20px; }
+.wo-table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: .88rem; }
+.wo-table th { background: var(--bg-alt); padding: 9px 12px; font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-faint); border: 1px solid var(--border); white-space: nowrap; }
+.wo-table td { padding: 12px; border: 1px solid var(--border); font-family: var(--font-de-display); direction: ltr; }
+.wo-table td.wo-td-pos2 { background: var(--teal-soft); color: var(--teal-ink); font-weight: 700; text-align: center; }
+.wo-table td.wo-td-end { background: var(--amber-soft); color: var(--amber-ink); font-weight: 700; text-align: center; }
+.wo-table td.wo-td-ar { font-family: var(--font-ar-body); direction: rtl; color: var(--ink-soft); font-size: .85rem; }
+
+/* ==========================================================================
+   12g. NEGATION COMPARE CARDS
+   ========================================================================== */
+.neg-pair { border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; margin-bottom: 14px; box-shadow: var(--shadow-sm); }
+.neg-pos-row, .neg-neg-row { display: flex; align-items: center; gap: 14px; padding: 14px 18px; flex-wrap: wrap; }
+.neg-pos-row { background: var(--success-soft); }
+.neg-neg-row { background: var(--danger-soft); border-top: 1px dashed var(--border); }
+.neg-tag { font-family: var(--font-mono); font-size: .68rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; flex-shrink: 0; }
+.neg-pos-row .neg-tag { background: var(--success); color: #fff; }
+.neg-neg-row .neg-tag { background: var(--danger); color: #fff; }
+.neg-sentence-wrap { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 200px; }
+.neg-word { cursor: pointer; }
+.neg-word.negator { font-weight: 800; }
+.neg-ar { font-size: .82rem; color: var(--ink-soft); }
+
+/* ==========================================================================
+   12h. QUESTION BOXES
+   ========================================================================== */
+.question-formula { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; padding: 16px; background: var(--bg-alt); border-radius: var(--r-md); margin-bottom: 18px; font-family: var(--font-mono); font-size: .84rem; }
+.qf-part { padding: 7px 14px; border-radius: 8px; font-weight: 600; }
+.qf-part.qf-w { background: var(--amber-soft); color: var(--amber-ink); }
+.qf-part.qf-aux { background: var(--teal-soft); color: var(--teal-ink); }
+.qf-part.qf-subj { background: rgba(167,139,250,.16); color: #6b4fc2; }
+:root[data-theme="dark"] .qf-part.qf-subj { color: #c9b6ff; }
+.qf-part.qf-pp { background: var(--amber-soft); color: var(--amber-ink); }
+.q-item-row { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-top: 1px dashed var(--border); flex-wrap: wrap; }
+.q-item-row:first-child { border-top: none; }
+.q-item-badge { font-family: var(--font-mono); font-size: .7rem; font-weight: 700; background: var(--teal-soft); color: var(--teal-ink); padding: 4px 10px; border-radius: 999px; flex-shrink: 0; }
+.q-item-sentence { flex: 1; min-width: 180px; font-family: var(--font-de-display); direction: ltr; font-size: 1.05rem; }
+.q-item-ar { width: 100%; font-size: .85rem; color: var(--ink-soft); }
+.wword-chip { font-family: var(--font-de-display); direction: ltr; }
+
+/* ==========================================================================
+   13. AUDIO DOCK
+   ========================================================================== */
+.audio-dock {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(140%); z-index: 200;
+  background: var(--surface-glass); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border: 1px solid var(--surface-glass-border); box-shadow: var(--shadow-lg); border-radius: 999px;
+  padding: 8px 10px 8px 18px; display: flex; align-items: center; gap: 12px; max-width: min(92vw, 560px);
+  transition: transform .45s var(--ease);
+}
+.audio-dock.visible { transform: translateX(-50%) translateY(0); }
+.audio-dock-text { font-family: var(--font-de-display); direction: ltr; font-size: .92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px; }
+.audio-dock-controls { display: flex; align-items: center; gap: 4px; }
+.audio-dock .icon-btn { width: 34px; height: 34px; border-radius: 50%; }
+.audio-dock input[type="range"] { width: 70px; accent-color: var(--teal); }
+.audio-dock-voice { font-family: var(--font-mono); font-size: .64rem; color: var(--ink-faint); display: none; }
+@media (min-width: 620px){ .audio-dock-voice { display: block; } }
+
+/* ==========================================================================
+   14. SUMMARY / ACHIEVEMENTS
+   ========================================================================== */
+.summary-list { display: flex; flex-direction: column; gap: 12px; }
+.summary-list li { display: flex; gap: 12px; align-items: flex-start; }
+.summary-list .icon-chip { background: var(--teal-soft); color: var(--teal); flex-shrink: 0; }
+.badges-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; margin-top: 30px; }
+.badge {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 12px; text-align: center;
+  filter: grayscale(1) opacity(.5); transition: filter .5s var(--ease), transform .5s var(--ease);
+}
+.badge.unlocked { filter: none; opacity: 1; }
+.badge.pop { animation: badgePop .6s var(--ease); }
+@keyframes badgePop { 0%{transform:scale(.7) rotate(-8deg)} 60%{transform:scale(1.12) rotate(4deg)} 100%{transform:scale(1) rotate(0)} }
+.badge-icon { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(155deg, var(--teal), var(--amber)); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: #fff; }
+.badge-name { font-size: .82rem; font-weight: 600; }
+
+/* ==========================================================================
+   15. TOAST
+   ========================================================================== */
+.toast-wrap { position: fixed; top: calc(var(--nav-h) + 14px); left: 50%; transform: translateX(-50%); z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+.toast {
+  background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-size: .88rem; box-shadow: var(--shadow-lg);
+  display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(-14px); transition: all .4s var(--ease); white-space: nowrap;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   16. FOOTER + FLOATING CONTROLS
+   ========================================================================== */
+.site-footer { border-top: 1px solid var(--border); padding-block: 36px; margin-top: 30px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--ink-faint); font-size: .86rem; }
+.footer-actions { display: flex; gap: 10px; }
+
+.back-to-top {
+  position: fixed; bottom: 20px; inset-inline-end: 20px; z-index: 190; width: 46px; height: 46px; border-radius: 50%;
+  background: var(--teal); color: #fff; border: none; display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-glow-teal); cursor: pointer; opacity: 0; transform: translateY(20px) scale(.8); pointer-events: none;
+  transition: all .35s var(--ease);
+}
+.back-to-top.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.back-to-top:hover { transform: translateY(-4px) scale(1.05); }
+
+mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius: 4px; padding: 0 2px; }
+
+/* ==========================================================================
+   17. PRINT
+   ========================================================================== */
+@media print {
+  .site-header, .audio-dock, .back-to-top, .nav-toggle, .exercise-tabs, .score-bar-wrap, .btn, .icon-btn, .toast-wrap, .cat-tabs { display: none !important; }
+  body { background: #fff; color: #000; }
+  .section { padding-block: 20px; break-inside: avoid; }
+  .klammer-card { box-shadow: none; transform: none; display: block !important; }
+  .exercise-panel { display: block !important; }
+  .vocab-panel { display: block !important; margin-bottom: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================= ICON SPRITE ============================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><g stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/></g></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+<symbol id="i-speaker" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.3 5.7a9 9 0 0 1 0 12.6"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+<symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 4v6h6"/><path d="M4.6 15a8 8 0 1 0 1.5-9.4L4 9"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><polyline points="6,9 6,3 18,3 18,9"/><rect x="4" y="9" width="16" height="8" rx="1.2"/><rect x="8" y="14" width="8" height="6"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5"/><path d="M15 4h5v5"/><path d="M20 15v5h-5"/><path d="M9 20H4v-5"/></symbol>
+<symbol id="i-compress" viewBox="0 0 24 24"><path d="M9 4v5H4"/><path d="M15 4v5h5"/><path d="M20 20v-5h-5"/><path d="M4 20v-5h5"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="5,13 9,17 19,7"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></symbol>
+<symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 13.5 7 21l5-2.5L17 21l-2-7.5"/><path d="M12 6.5l.9 1.9 2.1.3-1.5 1.4.3 2.1-1.8-1-1.8 1 .3-2.1-1.5-1.4 2.1-.3z"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2zM20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2z"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5a2.6 2.6 0 0 1 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></symbol>
+<symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 5.5 19 5.5a2 2 0 0 1 2 2L21 18"/></symbol>
+</defs>
+</svg>
+
+<!-- ============================= TOASTS ============================= -->
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<!-- ============================= HEADER ============================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="icon-btn nav-toggle" id="navToggle" aria-label="فتح قائمة الأقسام" aria-expanded="false">
+      <svg class="icon"><use href="#i-menu"/></svg>
+    </button>
+
+    <div class="brand">
+      <span class="brand-mark"><svg class="icon" style="width:20px;height:20px"><use href="#i-compass"/></svg></span>
+      <span class="brand-text">ألمانية A2<small>الدليل الشامل · Perfekt</small></span>
+    </div>
+
+    <nav class="main-nav" id="mainNav" aria-label="أقسام الدرس">
+      <button class="nav-link" data-target="#intro">المقدّمة</button>
+      <button class="nav-link" data-target="#rule">القاعدة</button>
+      <button class="nav-link" data-target="#formation">التكوين</button>
+      <button class="nav-link" data-target="#habensein">haben أم sein</button>
+      <button class="nav-link" data-target="#wordorder">ترتيب الكلمات</button>
+      <button class="nav-link" data-target="#vocab">المفردات</button>
+      <button class="nav-link" data-target="#examples">أمثلة</button>
+      <button class="nav-link" data-target="#negation">النفي</button>
+      <button class="nav-link" data-target="#questions">الأسئلة</button>
+      <button class="nav-link" data-target="#prateritum">Präteritum</button>
+      <button class="nav-link" data-target="#mistakes">أخطاء شائعة</button>
+      <button class="nav-link" data-target="#pronunciation">النطق</button>
+      <button class="nav-link" data-target="#exercises">التمارين</button>
+      <button class="nav-link" data-target="#summary">الخلاصة</button>
+      <div class="search-box mobile">
+        <input type="search" id="searchInputMobile" placeholder="ابحث في الدرس…" aria-label="ابحث في الدرس">
+      </div>
+    </nav>
+
+    <div class="header-controls">
+      <div class="search-box" id="searchBoxDesktop">
+        <input type="search" id="searchInputDesktop" placeholder="ابحث في الدرس…" aria-label="ابحث في الدرس">
+      </div>
+      <button class="icon-btn" id="searchToggle" aria-label="بحث">
+        <svg class="icon"><use href="#i-search"/></svg>
+      </button>
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري">
+        <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+        <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+      </button>
+      <button class="icon-btn" id="fullscreenToggle" aria-label="ملء الشاشة">
+        <svg class="icon" id="fsIcon"><use href="#i-expand"/></svg>
+      </button>
+      <div class="progress-ring-wrap" title="تقدّمك في الدرس">
+        <svg width="44" height="44">
+          <circle class="progress-ring-track" cx="22" cy="22" r="18"/>
+          <circle class="progress-ring-bar" id="progressRingBar" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="113"/>
+        </svg>
+        <span class="progress-ring-label" id="progressRingLabel">٠٪</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="mainContent">
+
+<!-- ============================= HERO ============================= -->
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="reveal is-visible">
+      <span class="level-badge"><b>A2</b> الدليل الشامل من مسار «الماضي في الألمانية»</span>
+      <h1 class="hero-title">الحديث عن الماضي: زمن <span class="de">das Perfekt</span></h1>
+      <p class="hero-lead">في المستوى A1 تعلّمت التحدث عن الحاضر. في هذا الدليل الشامل ستتقن زمن الـ Perfekt بكل تفاصيله: القاعدة، تكوين Partizip II بجميع فئاته، الاختيار بين haben وsein، ترتيب الكلمات، النفي، صياغة الأسئلة، وأكثر من ٧٠ فعلًا أساسيًا — بأمثلة صوتية حقيقية وتمارين تفاعلية فورية.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" data-scroll="#rule">
+          <svg class="icon" style="width:18px;height:18px"><use href="#i-play"/></svg>
+          ابدأ الدرس
+        </button>
+        <button class="btn btn-ghost" data-scroll="#vocab">
+          <svg class="icon" style="width:18px;height:18px"><use href="#i-cards"/></svg>
+          المفردات مباشرة
+        </button>
+      </div>
+    </div>
+
+    <div class="reveal is-visible" style="transition-delay:.15s">
+      <div class="klammer-card">
+        <div class="klammer-label">
+          <svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-target"/></svg>
+          إطار الجملة · <span class="mono">Satzklammer</span>
+        </div>
+        <div class="klammer-sentence" id="heroKlammer" dir="ltr"></div>
+        <p class="klammer-translation">لعبتُ كرة القدم أمس. — لاحظ أن الفعلين <span class="mono">habe</span> و<span class="mono">gespielt</span> «يُطبقان» على الجملة من طرفيها، تمامًا كإطار الصورة.</p>
+        <button class="btn btn-ghost klammer-speak-all" data-speak-group="#heroKlammer">
+          <svg class="icon" style="width:16px;height:16px"><use href="#i-speaker"/></svg>
+          استمع للجملة كاملة
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= INTRO ============================= -->
+<section class="section" id="intro">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>لماذا هذا الدرس</span>
+      <h2 class="section-title">لماذا نحتاج زمن الـ Perfekt؟</h2>
+      <p class="section-sub">لأن الألمان يستخدمونه في كل حديث يومي تقريبًا عن الماضي — أكثر بكثير من الأزمنة الأخرى.</p>
+    </div>
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip chip-teal" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-chat"/></svg></span>لغة المحادثة</h3>
+        <p>في الحديث اليومي والرسائل، يستخدم الألمان الـ <span class="de mono">Perfekt</span> للتعبير عن أي حدث ماضٍ تقريبًا، بدلًا من زمن الماضي البسيط الذي يظهر غالبًا في الكتابة الأدبية فقط.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-target"/></svg></span>قاعدة واحدة، استخدام واسع</h3>
+        <p>بمجرد إتقان تركيب واحد ثابت — فعل مساعد + <span class="mono">Partizip II</span> — ستتمكن من الحديث عن كل ما فعلته أمس، الأسبوع الماضي، أو في طفولتك.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--success-soft);color:var(--success)"><svg class="icon" style="width:18px;height:18px"><use href="#i-star"/></svg></span>أساس لما بعده</h3>
+        <p>هذا التركيب هو حجر الأساس لدروس A2 القادمة: القصص، السيرة الذاتية، ورواية الأحداث بالترتيب الزمني.</p>
+      </div>
+    </div>
+
+    <div class="info-card reveal" style="margin-top:26px;padding-top:6px">
+      <h3 style="padding:16px 4px 0"><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>موقع الـ Perfekt على خط الزمن</h3>
+      <div class="mini-timeline" id="tenseTimeline"></div>
+    </div>
+
+    <div class="grid-2 reveal" style="margin-top:22px;align-items:stretch">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>نسبة استخدام الفعلين المساعدين</h3>
+        <p style="margin-bottom:14px">في أي جملة Perfekt عشوائية، الاحتمال الأكبر أن الفعل المساعد هو <span class="de mono">haben</span> — استخدمه كتخمين افتراضي إن ترددت.</p>
+        <div class="stat-block">
+          <div class="stat-row-label"><span style="color:var(--amber-ink)">haben — أغلب الأفعال</span><span style="color:var(--amber-ink)">٪٨٠</span></div>
+          <div class="stat-track"><div class="stat-fill haben" id="statHaben"></div></div>
+          <div class="stat-row-label"><span style="color:var(--teal-ink)">sein — الحركة وتغيّر الحالة</span><span style="color:var(--teal-ink)">٪٢٠</span></div>
+          <div class="stat-track"><div class="stat-fill sein" id="statSein"></div></div>
+        </div>
+      </div>
+      <div class="stat-cards" style="align-self:center">
+        <div class="stat-card haben"><div class="stat-pct">٪٨٠</div><div class="stat-desc">haben — المتعدية والانعكاسية والمساعدة</div></div>
+        <div class="stat-card sein"><div class="stat-pct">٪٢٠</div><div class="stat-desc">sein — الحركة والتغيّر وأفعال استثنائية</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= RULE / SATZKLAMMER ============================= -->
+<section class="section" id="rule">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>القاعدة الأساسية</span>
+      <h2 class="section-title">بناء الجملة: إطارٌ يُطبق حول المعنى</h2>
+      <p class="section-sub">كل جملة في زمن الـ Perfekt تُبنى من ثلاث قطع فقط. انقر على أي كلمة لسماع نطقها.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="klammer-card" style="transform:none">
+        <div class="klammer-label"><svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-target"/></svg>انقر لتفكيك الجملة</div>
+        <div class="klammer-sentence" id="ruleKlammer" dir="ltr"></div>
+      </div>
+    </div>
+
+    <div class="grid-3 reveal-stagger reveal" style="margin-top:26px">
+      <div class="info-card">
+        <span class="chip chip-teal" style="margin-bottom:10px">الموضع ١</span>
+        <h3>الفاعل</h3>
+        <p>يأتي أولًا في الجملة الخبرية العادية — <span class="de">Ich</span>، <span class="de">Wir</span>، <span class="de">Sie</span>…</p>
+      </div>
+      <div class="info-card" style="border-color:var(--teal)">
+        <span class="chip chip-teal" style="margin-bottom:10px">الموضع ٢ — القوس الأول</span>
+        <h3>الفعل المساعد</h3>
+        <p><span class="de mono">habe / hast / hat / haben</span> أو <span class="de mono">bin / bist / ist / sind</span> — مُصرَّف حسب الفاعل، ويحتل دائمًا الموضع الثاني.</p>
+      </div>
+      <div class="info-card" style="border-color:var(--amber)">
+        <span class="chip chip-amber" style="margin-bottom:10px">النهاية — القوس الثاني</span>
+        <h3>Partizip II</h3>
+        <p>الفعل الرئيسي في صيغته الثابتة (لا يتغيّر مع الفاعل)، ويُدفع دائمًا إلى آخر الجملة.</p>
+      </div>
+    </div>
+
+    <div class="info-card reveal" style="margin-top:20px; display:flex; gap:14px; align-items:flex-start; border-inline-start:4px solid var(--teal)">
+      <svg class="icon" style="width:22px;height:22px;color:var(--teal);flex-shrink:0"><use href="#i-bulb"/></svg>
+      <p><b>لماذا التسمية «إطار الجملة»؟</b> لأن كل ما بين الفعلين — المفعول به، الظرف، أي تفاصيل — يقع «داخل» الإطار، بينما طرفا الإطار (الفعل المساعد والـ Partizip II) ثابتان في مكانيهما دائمًا. هذا يختلف جذريًا عن ترتيب الجملة الإنجليزية أو العربية، لذا خذ وقتك لتستوعبه بصريًا قبل الانتقال للأمام.</p>
+    </div>
+
+    <h3 class="reveal" style="margin-top:36px;margin-bottom:16px">تصريف الفعلين المساعدين في المضارع</h3>
+    <div class="grid-2 reveal-stagger reveal">
+      <div class="info-card" style="border-color:var(--amber)">
+        <h3 style="margin-bottom:12px"><span class="chip chip-amber">haben</span> — يملك / لديه</h3>
+        <div class="conj-table-wrap">
+          <table class="conj-table">
+            <thead><tr><th>الضمير</th><th>haben</th><th>المعنى</th></tr></thead>
+            <tbody id="conjHabenBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="info-card" style="border-color:var(--teal)">
+        <h3 style="margin-bottom:12px"><span class="chip chip-teal">sein</span> — يكون</h3>
+        <div class="conj-table-wrap">
+          <table class="conj-table">
+            <thead><tr><th>الضمير</th><th>sein</th><th>المعنى</th></tr></thead>
+            <tbody id="conjSeinBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= FORMATION (accordion) ============================= -->
+<section class="section" id="formation">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-book"/></svg>خطوة بخطوة</span>
+      <h2 class="section-title">كيف نُكوّن Partizip II؟</h2>
+      <p class="section-sub">خمس فئات تغطي كل الأفعال التي ستحتاجها في A2. انقر على كل بطاقة لتوسيعها — ثم تدرّب عليها كاملةً في قسم المفردات.</p>
+    </div>
+    <div id="accordionRoot" class="reveal"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= HABEN / SEIN ============================= -->
+<section class="section" id="habensein">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>القرار الأهم</span>
+      <h2 class="section-title"><span class="de mono">haben</span> أم <span class="de mono">sein</span>؟</h2>
+      <p class="section-sub">سؤال واحد يحدد اختيارك في ٩٥٪ من الحالات. انقر على أحد الفرعين لرؤية أمثلة حية.</p>
+    </div>
+
+    <div class="flow-wrap reveal">
+      <div class="flow-node">هل الفعل يدلّ على <b>حركة/انتقال</b> أو <b>تغيّر حالة</b>؟</div>
+      <div class="flow-connector"></div>
+      <div class="flow-branches">
+        <div class="flow-branch sein">
+          <button class="flow-branch-label" data-flow="sein">نعم ← sein</button>
+          <div class="flow-card">
+            <ul>
+              <li><svg class="icon" style="width:14px;height:14px;color:var(--teal)"><use href="#i-check"/></svg>أفعال الحركة: <span class="de">gehen, fahren, kommen</span></li>
+              <li><svg class="icon" style="width:14px;height:14px;color:var(--teal)"><use href="#i-check"/></svg>تغيّر الحالة: <span class="de">aufwachen, werden</span></li>
+              <li><svg class="icon" style="width:14px;height:14px;color:var(--teal)"><use href="#i-check"/></svg>استثناءان مهمّان: <span class="de">sein, bleiben</span></li>
+            </ul>
+            <div class="flow-example-box" id="flowExampleSein"></div>
+          </div>
+        </div>
+        <div class="flow-branch haben">
+          <button class="flow-branch-label" data-flow="haben">لا ← haben</button>
+          <div class="flow-card">
+            <ul>
+              <li><svg class="icon" style="width:14px;height:14px;color:var(--amber)"><use href="#i-check"/></svg>غالبية الأفعال الأخرى</li>
+              <li><svg class="icon" style="width:14px;height:14px;color:var(--amber)"><use href="#i-check"/></svg>كل فعل له مفعول به مباشر</li>
+              <li><svg class="icon" style="width:14px;height:14px;color:var(--amber)"><use href="#i-check"/></svg>كل الأفعال الانعكاسية</li>
+            </ul>
+            <div class="flow-example-box" id="flowExampleHaben"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card reveal" style="margin-top:26px; display:flex; gap:14px; align-items:flex-start; border-inline-start:4px solid var(--amber)">
+      <svg class="icon" style="width:22px;height:22px;color:var(--amber-ink);flex-shrink:0"><use href="#i-bulb"/></svg>
+      <div>
+        <p><b>استثناء fahren: نفس الفعل، مساعد مختلف.</b> إذا لم يكن هناك مفعول به مباشر فالفعل يدلّ على حركة الفاعل نفسه → <span class="de mono">sein</span>. أما إن ظهر مفعول به مباشر (أنت تقود شيئًا آخر) فالفعل صار متعديًا → <span class="de mono">haben</span>.</p>
+        <div class="grid-2" style="margin-top:12px;gap:12px">
+          <div class="klammer-card" style="transform:none;padding:14px 16px">
+            <div class="klammer-label" style="margin-bottom:8px"><span class="chip chip-teal">sein — بدون مفعول به</span></div>
+            <div class="klammer-sentence" id="fahrenSeinEx" dir="ltr" style="font-size:1.05rem"></div>
+            <p class="klammer-translation" id="fahrenSeinExAr" style="margin-top:8px;padding-top:8px"></p>
+          </div>
+          <div class="klammer-card" style="transform:none;padding:14px 16px">
+            <div class="klammer-label" style="margin-bottom:8px"><span class="chip chip-amber">haben — مع مفعول به</span></div>
+            <div class="klammer-sentence" id="fahrenHabenEx" dir="ltr" style="font-size:1.05rem"></div>
+            <p class="klammer-translation" id="fahrenHabenExAr" style="margin-top:8px;padding-top:8px"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="reveal" style="margin-top:38px;margin-bottom:6px">التصنيف الكامل لأفعال <span class="de mono">sein</span></h3>
+    <p class="section-sub reveal" style="margin-top:0;margin-bottom:6px">احفظ هذه الفئات الثلاث وستكون قادرًا على تحديد كل تقريبًا فعل يستخدم <span class="de mono">sein</span>. انقر على أي فعل لسماع نطقه.</p>
+    <div class="reveal" id="seinCategoriesRoot"></div>
+
+    <h3 class="reveal" style="margin-top:38px;margin-bottom:6px">متى نستخدم <span class="de mono">haben</span> بالتحديد؟</h3>
+    <p class="section-sub reveal" style="margin-top:0;margin-bottom:14px">أربع حالات تغطي كل ما تبقّى من الأفعال — وهي الغالبية العظمى.</p>
+    <div class="grid-2 reveal-stagger reveal" id="habenRulesGrid"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= WORD ORDER ============================= -->
+<section class="section" id="wordorder">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>القاعدة الذهبية</span>
+      <h2 class="section-title">ترتيب الكلمات في الجملة</h2>
+      <p class="section-sub">الفعل المساعد يحتل دائمًا الموضع الثاني — مهما كان ما يبدأ به الجملة. والـ Partizip II يبقى دائمًا في النهاية.</p>
+    </div>
+
+    <div class="wordorder-visual reveal" id="wordOrderVisual"></div>
+
+    <div class="wo-table-wrap reveal">
+      <table class="wo-table">
+        <thead>
+          <tr><th>الموضع الأول</th><th>الموضع الثاني (الفعل المساعد)</th><th>المتممات</th><th>نهاية الجملة (Partizip II)</th><th>المعنى</th></tr>
+        </thead>
+        <tbody id="wordOrderTableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="info-card reveal" style="margin-top:22px; display:flex; gap:14px; align-items:flex-start; border-inline-start:4px solid var(--success)">
+      <svg class="icon" style="width:22px;height:22px;color:var(--success);flex-shrink:0"><use href="#i-check"/></svg>
+      <p><b>القاعدة الذهبية:</b> حتى لو بدأت الجملة بظرف زمان أو مكان بدلًا من الفاعل، يبقى الفعل المساعد ثابتًا في الموضع الثاني، وينتقل الفاعل إلى الموضع الذي يليه مباشرة. مثال: <span class="de mono" data-speak="Gestern habe ich viel gelernt">Gestern habe ich viel gelernt</span> — «أمس» تعلّم الكثير، لكن <span class="mono">habe</span> بقي في الموضع الثاني و<span class="mono">gelernt</span> في النهاية.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= VOCAB ============================= -->
+<section class="section" id="vocab">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-cards"/></svg><span id="vocabTotalCount">٧٨</span> فعلًا أساسيًا</span>
+      <h2 class="section-title">المفردات الأساسية — بحسب فئة التكوين</h2>
+      <p class="section-sub">نفس الفئات الخمس التي تعلّمتها في قسم «التكوين» — انقر على تبويب لتتدرّب على أفعاله، ثم انقر على البطاقة لقلبها ورؤية صيغة Partizip II، أو على أيقونة السماعة لسماع النطق مباشرة.</p>
+    </div>
+    <div class="cat-tabs reveal" id="vocabTabs"></div>
+    <div id="vocabPanelsRoot"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= EXAMPLES ============================= -->
+<section class="section" id="examples">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>تطبيق عملي</span>
+      <h2 class="section-title">أمثلة من الحياة اليومية</h2>
+      <p class="section-sub">كل مثال مبني بنفس إطار الجملة الذي تعلمته. صفِّ الأمثلة حسب النوع، استمع، ثم حاول تكرار الجملة بصوت عالٍ.</p>
+    </div>
+    <div class="cat-tabs reveal" id="examplesTabs"></div>
+    <div class="examples-list" id="examplesList"></div>
+
+    <h3 class="reveal" style="margin-top:40px;margin-bottom:16px">مقارنة سريعة: المصدر ← المضارع ← Perfekt</h3>
+    <div class="wo-table-wrap reveal">
+      <table class="wo-table">
+        <thead><tr><th>Infinitiv (المصدر)</th><th>Präsens (المضارع)</th><th>Perfekt (الماضي)</th></tr></thead>
+        <tbody id="compareTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= NEGATION ============================= -->
+<section class="section" id="negation">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>النفي في الماضي</span>
+      <h2 class="section-title">كيف ننفي جملة Perfekt؟</h2>
+      <p class="section-sub">أداتان فقط: <span class="de mono">nicht</span> لنفي الفعل نفسه، و<span class="de mono">kein-</span> لنفي اسم نكرة. كلتاهما تقفان قريبًا من الـ Partizip II في نهاية الجملة.</p>
+    </div>
+
+    <div class="grid-2 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--danger-soft);color:var(--danger)"><svg class="icon" style="width:18px;height:18px"><use href="#i-x"/></svg></span><span class="de mono">nicht</span> — نفي الفعل</h3>
+        <p style="margin-bottom:14px">توضع <span class="de mono">nicht</span> غالبًا مباشرة قبل الـ <span class="mono">Partizip II</span>، أي قرب نهاية الجملة تمامًا.</p>
+        <div id="negNichtRoot"></div>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-x"/></svg></span><span class="de mono">kein-</span> — نفي اسم نكرة</h3>
+        <p style="margin-bottom:14px">تحل <span class="de mono">kein-</span> محل <span class="de mono">nicht</span> عندما يكون الاسم المنفي مسبوقًا بـ <span class="mono">ein-</span> أو بلا أداة تعريف على الإطلاق.</p>
+        <div id="negKeinRoot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= QUESTIONS ============================= -->
+<section class="section" id="questions">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>الاستفهام</span>
+      <h2 class="section-title">صياغة الأسئلة في Perfekt</h2>
+      <p class="section-sub">نوعان من الأسئلة: أسئلة نعم/لا، وأسئلة بأداة استفهام (W-Fragen). في كلا النوعين يبقى الـ Partizip II في نهاية الجملة.</p>
+    </div>
+
+    <div class="grid-2 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip chip-teal" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-check"/></svg></span>أسئلة نعم/لا</h3>
+        <p style="margin-bottom:10px">الفعل المساعد ينتقل إلى بداية الجملة (الموضع الأول)، ولا حاجة لأداة استفهام.</p>
+        <div class="question-formula">
+          <span class="qf-part qf-aux">haben/sein</span><span>+</span><span class="qf-part qf-subj">الفاعل</span><span>+</span><span class="qf-part qf-pp">Partizip II ?</span>
+        </div>
+        <div id="questionsYesNoRoot"></div>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-target"/></svg></span>أسئلة بأداة استفهام (W-Frage)</h3>
+        <p style="margin-bottom:10px">أداة الاستفهام تحتل الموضع الأول، والفعل المساعد يبقى في الموضع الثاني كالمعتاد.</p>
+        <div class="question-formula">
+          <span class="qf-part qf-w">W-Wort</span><span>+</span><span class="qf-part qf-aux">haben/sein</span><span>+</span><span class="qf-part qf-pp">... Partizip II ?</span>
+        </div>
+        <div id="questionsWRoot"></div>
+      </div>
+    </div>
+
+    <h3 class="reveal" style="margin-top:32px;margin-bottom:10px">أدوات الاستفهام الأكثر شيوعًا</h3>
+    <div class="verb-chip-row reveal" id="wwordsRoot"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= PRÄTERITUM NOTE ============================= -->
+<section class="section" id="prateritum">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-book"/></svg>ملاحظة مهمة</span>
+      <h2 class="section-title">متى لا نستخدم Perfekt؟ — <span class="de mono">Präteritum</span></h2>
+      <p class="section-sub">بعض الأفعال شائعة جدًا في صيغة الماضي البسيط <span class="de mono">Präteritum</span> حتى في الكلام المحكي، لأنها أخفّ نطقًا. وهي الزمن المهيمن في الكتابة الرسمية والأدبية.</p>
+    </div>
+
+    <div class="grid-2 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip chip-teal" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-chat"/></svg></span>في المحادثة اليومية</h3>
+        <p style="margin-bottom:10px">هذه الأفعال الأربعة تُستخدم بصيغة Präteritum حتى في الحديث الشفهي:</p>
+        <div id="prateritumSpokenRoot"></div>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-book"/></svg></span>في الكتابة والأدب</h3>
+        <p style="margin-bottom:10px">الأخبار، الروايات، القصص، والتقارير الرسمية تُفضّل Präteritum دائمًا:</p>
+        <ul style="display:flex;flex-direction:column;gap:10px">
+          <li><b>📰 الأخبار والجرائد:</b> <span class="de" data-speak="Die Regierung entschied.">Die Regierung entschied…</span></li>
+          <li><b>📚 الروايات:</b> <span class="de" data-speak="Es war einmal.">Es war einmal…</span></li>
+          <li><b>📖 القصص:</b> <span class="de" data-speak="Der König sprach.">Der König sprach…</span></li>
+          <li><b>🗞️ التقارير الرسمية:</b> <span class="de" data-speak="Das Ereignis fand statt.">Das Ereignis fand statt…</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wo-table-wrap reveal" style="margin-top:24px">
+      <table class="wo-table">
+        <thead><tr><th></th><th>Perfekt</th><th>Präteritum</th></tr></thead>
+        <tbody>
+          <tr><td class="wo-td-ar">الاستخدام الأساسي</td><td class="wo-td-ar">المحادثات اليومية</td><td class="wo-td-ar">الكتابة الرسمية والأدبية</td></tr>
+          <tr><td class="wo-td-ar">التركيب</td><td>haben/sein + Partizip II</td><td>فعل واحد مصرَّف</td></tr>
+          <tr><td class="wo-td-ar">مثال (كان)</td><td data-speak="Ich bin krank gewesen.">Ich bin krank gewesen</td><td data-speak="Ich war krank.">Ich war krank</td></tr>
+          <tr><td class="wo-td-ar">مثال (ذهب)</td><td data-speak="Ich bin gegangen.">Ich bin gegangen</td><td data-speak="Ich ging.">Ich ging</td></tr>
+          <tr><td class="wo-td-ar">شيوعه في جنوب ألمانيا والنمسا وسويسرا</td><td class="wo-td-ar">✅ الأكثر استخدامًا</td><td class="wo-td-ar">نادر في الكلام</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= MISTAKES ============================= -->
+<section class="section" id="mistakes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>تجنّب الفخاخ الشائعة</span>
+      <h2 class="section-title">أخطاء يقع فيها معظم المتعلمين</h2>
+      <p class="section-sub">قارن كل خطأ بصورته الصحيحة، واقرأ التفسير المختصر تحته.</p>
+    </div>
+    <div class="reveal-stagger reveal" id="mistakesList" style="display:flex;flex-direction:column;gap:16px"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= PRONUNCIATION ============================= -->
+<section class="section" id="pronunciation">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-speaker"/></svg>نطق أصيل</span>
+      <h2 class="section-title">نصائح النطق وأسرار المتحدث الأصلي</h2>
+    </div>
+    <div class="grid-2 reveal-stagger reveal">
+      <div class="info-card tip-card">
+        <span class="icon-chip"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div>
+          <h3 style="margin-bottom:6px">نبرة الـ <span class="mono">ge-</span></h3>
+          <p>بادئة <span class="de mono">ge-</span> لا تُنبر أبدًا؛ النبرة تقع على المقطع الذي يليها: <span class="de" data-speak="gespielt">geSPIELT</span>، <span class="de" data-speak="gemacht">geMACHT</span>. انقر لسماع الفرق.</p>
+        </div>
+      </div>
+      <div class="info-card tip-card">
+        <span class="icon-chip"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div>
+          <h3 style="margin-bottom:6px">في الحديث اليومي</h3>
+          <p>يختصر الألمان <span class="de mono">ich habe</span> غالبًا إلى <span class="de mono" data-speak="ich hab">ich hab'</span> في الكلام غير الرسمي — لكن في الكتابة استخدم دائمًا الصيغة الكاملة.</p>
+        </div>
+      </div>
+      <div class="info-card tip-card">
+        <span class="icon-chip"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div>
+          <h3 style="margin-bottom:6px">صوت الـ <span class="mono">ch</span></h3>
+          <p>في <span class="de" data-speak="gesprochen">gesprochen</span> الصوت خلفي وخشن (بعد حروف a, o, u)، بينما في <span class="de" data-speak="gesprächig">-ich</span> يكون أمامي وناعم. استمع للفرق بنفسك.</p>
+        </div>
+      </div>
+      <div class="info-card tip-card">
+        <span class="icon-chip"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div>
+          <h3 style="margin-bottom:6px">نبرة أفعال <span class="mono">-ieren</span></h3>
+          <p>عكس القاعدة المعتادة تمامًا: في هذه الأفعال تقع النبرة دائمًا على المقطع الأخير <span class="mono">-ier</span>: <span class="de" data-speak="studiert">studIERT</span>، <span class="de" data-speak="telefoniert">telefonIERT</span>. انقر لتسمع الفرق مقارنةً بـ <span class="mono">ge-</span>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= EXERCISES ============================= -->
+<section class="section" id="exercises">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>وقت التطبيق</span>
+      <h2 class="section-title">تمارين تفاعلية فورية</h2>
+      <p class="section-sub">خمسة أنواع من التمارين، مع تصحيح لحظي وتفسير لكل إجابة.</p>
+    </div>
+
+    <div class="exercise-shell reveal">
+      <div class="exercise-tabs" role="tablist">
+        <button class="exercise-tab active" data-panel="panelMcq" role="tab">haben أم sein؟ <span class="count" id="countMcq">٠/٨</span></button>
+        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل Partizip II <span class="count" id="countFill">٠/٨</span></button>
+        <button class="exercise-tab" data-panel="panelBuilder" role="tab">رتّب الجملة <span class="count" id="countBuilder">٠/٥</span></button>
+        <button class="exercise-tab" data-panel="panelMatch" role="tab">طابق الأزواج <span class="count" id="countMatch">٠/٨</span></button>
+        <button class="exercise-tab" data-panel="panelNeg" role="tab">النفي والأسئلة <span class="count" id="countNeg">٠/٥</span></button>
+      </div>
+      <div class="exercise-panels">
+        <div class="exercise-panel active" id="panelMcq"></div>
+        <div class="exercise-panel" id="panelFill"></div>
+        <div class="exercise-panel" id="panelBuilder"></div>
+        <div class="exercise-panel" id="panelMatch"></div>
+        <div class="exercise-panel" id="panelNeg"></div>
+      </div>
+      <div class="score-bar-wrap">
+        <span class="score-label">إتقانك للتمارين</span>
+        <div class="score-track"><div class="score-fill" id="scoreFill"></div></div>
+        <span class="score-label mono" id="scoreLabel">٠٪</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= SUMMARY ============================= -->
+<section class="section" id="summary">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-star"/></svg>ملخّص الدرس</span>
+      <h2 class="section-title">ما الذي أتقنته اليوم؟</h2>
+    </div>
+
+    <div class="grid-2 reveal">
+      <ul class="summary-list info-card">
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>زمن الـ <span class="de mono">Perfekt</span> يُبنى من فعل مساعد (<span class="de mono">haben/sein</span>) في الموضع الثاني + <span class="mono">Partizip II</span> في نهاية الجملة، مهما بدأت به الجملة.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>الأفعال الضعيفة: <span class="mono">ge + جذر + t</span>. الأفعال القوية: <span class="mono">ge + جذر (متغيّر أحيانًا) + en</span>.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>لا بادئة <span class="mono">ge-</span> مع أفعال <span class="mono">-ieren</span> أو الأفعال ذات البادئة غير المنفصلة (be-, ver-, er-, ent-, zer-, emp-, miss-).</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>استخدم <span class="de mono">sein</span> مع أفعال الحركة (بلا مفعول به) وتغيّر الحالة والاستثناءات، و<span class="de mono">haben</span> لكل ما عداها (٪٨٠ من الأفعال تقريبًا).</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>النفي: <span class="de mono">nicht</span> لنفي الفعل، و<span class="de mono">kein-</span> لنفي اسم نكرة — كلاهما يقترب من نهاية الجملة.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>الأسئلة: الفعل المساعد ينتقل للموضع الأول في أسئلة نعم/لا، ويبقى في الموضع الثاني بعد أداة الاستفهام في أسئلة W-Frage.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>بعض الأفعال (<span class="de mono">sein, haben, werden</span> والأفعال الشكلية) تُفضَّل بصيغة <span class="de mono">Präteritum</span> حتى في الكلام المحكي.</p></li>
+      </ul>
+
+      <div class="info-card" style="display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;background:linear-gradient(155deg, var(--teal-soft), var(--amber-soft))">
+        <svg class="icon" style="width:40px;height:40px;margin:0 auto;color:var(--teal)"><use href="#i-compass"/></svg>
+        <h3 style="justify-content:center">الدرس القادم</h3>
+        <p>الأفعال الانعكاسية وروتين اليوم — قريبًا في الدرس الثاني من مسار A2.</p>
+        <button class="btn btn-ghost" disabled style="align-self:center;opacity:.6;cursor:not-allowed">الدرس ٢ (قريبًا)</button>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px;text-align:center" class="reveal">إنجازاتك في هذا الدرس</h3>
+    <div class="badges-row reveal" id="badgesRow"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>الدرس ١ · مسار الألمانية A2 — صُمم للتعلّم النشط والاستماع الفوري.</span>
+    <div class="footer-actions">
+      <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس"><svg class="icon"><use href="#i-printer"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================= FLOATING CONTROLS ============================= -->
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى">
+  <svg class="icon" style="width:20px;height:20px;stroke:#fff"><use href="#i-up"/></svg>
+</button>
+
+<div class="audio-dock" id="audioDock">
+  <div class="audio-dock-controls">
+    <button class="icon-btn" id="dockPlayPause" aria-label="تشغيل/إيقاف مؤقت"><svg class="icon" id="dockPlayIcon"><use href="#i-pause"/></svg></button>
+    <button class="icon-btn" id="dockReplay" aria-label="إعادة"><svg class="icon"><use href="#i-replay"/></svg></button>
+  </div>
+  <span class="audio-dock-text" id="dockText" dir="ltr">…</span>
+  <input type="range" id="dockSpeed" min="0.6" max="1.3" step="0.05" value="0.95" aria-label="سرعة النطق">
+  <span class="audio-dock-voice" id="dockVoice">…</span>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ==========================================================================
+   DATA — single source of truth for all generated content
+   ========================================================================== */
+const VOCAB_CATEGORIES = [
+  { key:"weak", label:"ضعيفة (منتظمة)", pattern:"ge + جذر + t", verbs:[
+    {de:"machen", partizip:"gemacht", aux:"haben", ar:"يفعل / يصنع"},
+    {de:"spielen", partizip:"gespielt", aux:"haben", ar:"يلعب"},
+    {de:"lernen", partizip:"gelernt", aux:"haben", ar:"يتعلّم"},
+    {de:"kaufen", partizip:"gekauft", aux:"haben", ar:"يشتري"},
+    {de:"kochen", partizip:"gekocht", aux:"haben", ar:"يطبخ"},
+    {de:"fragen", partizip:"gefragt", aux:"haben", ar:"يسأل"},
+    {de:"wohnen", partizip:"gewohnt", aux:"haben", ar:"يسكن"},
+    {de:"hören", partizip:"gehört", aux:"haben", ar:"يسمع / يستمع"},
+    {de:"sagen", partizip:"gesagt", aux:"haben", ar:"يقول"},
+    {de:"tanzen", partizip:"getanzt", aux:"haben", ar:"يرقص"},
+    {de:"arbeiten", partizip:"gearbeitet", aux:"haben", ar:"يعمل (جذر+et لسهولة النطق)"},
+    {de:"warten", partizip:"gewartet", aux:"haben", ar:"ينتظر (جذر+et)"}
+  ]},
+  { key:"strong", label:"شاذة (غير منتظمة)", pattern:"ge + جذر (قد يتغيّر) + en", verbs:[
+    {de:"essen", partizip:"gegessen", aux:"haben", ar:"يأكل"},
+    {de:"trinken", partizip:"getrunken", aux:"haben", ar:"يشرب"},
+    {de:"sehen", partizip:"gesehen", aux:"haben", ar:"يرى / يشاهد"},
+    {de:"lesen", partizip:"gelesen", aux:"haben", ar:"يقرأ"},
+    {de:"schreiben", partizip:"geschrieben", aux:"haben", ar:"يكتب"},
+    {de:"sprechen", partizip:"gesprochen", aux:"haben", ar:"يتكلم"},
+    {de:"finden", partizip:"gefunden", aux:"haben", ar:"يجد"},
+    {de:"nehmen", partizip:"genommen", aux:"haben", ar:"يأخذ"},
+    {de:"helfen", partizip:"geholfen", aux:"haben", ar:"يساعد"},
+    {de:"geben", partizip:"gegeben", aux:"haben", ar:"يعطي"},
+    {de:"singen", partizip:"gesungen", aux:"haben", ar:"يغني"},
+    {de:"treffen", partizip:"getroffen", aux:"haben", ar:"يقابل / يلتقي"},
+    {de:"schlafen", partizip:"geschlafen", aux:"haben", ar:"ينام"},
+    {de:"halten", partizip:"gehalten", aux:"haben", ar:"يمسك / يلقي (خطابًا)"},
+    {de:"gewinnen", partizip:"gewonnen", aux:"haben", ar:"يفوز"},
+    {de:"lassen", partizip:"gelassen", aux:"haben", ar:"يترك"},
+    {de:"bieten", partizip:"geboten", aux:"haben", ar:"يعرض"},
+    {de:"riechen", partizip:"gerochen", aux:"haben", ar:"يشم / تفوح رائحته"},
+    {de:"schweigen", partizip:"geschwiegen", aux:"haben", ar:"يصمت"},
+    {de:"schließen", partizip:"geschlossen", aux:"haben", ar:"يغلق"},
+    {de:"bringen", partizip:"gebracht", aux:"haben", ar:"يُحضر (فعل مختلط)"},
+    {de:"denken", partizip:"gedacht", aux:"haben", ar:"يفكر (فعل مختلط)"},
+    {de:"wissen", partizip:"gewusst", aux:"haben", ar:"يعرف / يعلم (فعل مختلط)"},
+    {de:"gehen", partizip:"gegangen", aux:"sein", ar:"يذهب"},
+    {de:"fahren", partizip:"gefahren", aux:"sein", ar:"يسافر / يقود"},
+    {de:"kommen", partizip:"gekommen", aux:"sein", ar:"يأتي"},
+    {de:"fliegen", partizip:"geflogen", aux:"sein", ar:"يطير"},
+    {de:"laufen", partizip:"gelaufen", aux:"sein", ar:"يجري / يمشي"},
+    {de:"schwimmen", partizip:"geschwommen", aux:"sein", ar:"يسبح"},
+    {de:"bleiben", partizip:"geblieben", aux:"sein", ar:"يبقى"},
+    {de:"sein", partizip:"gewesen", aux:"sein", ar:"يكون"},
+    {de:"werden", partizip:"geworden", aux:"sein", ar:"يصبح"},
+    {de:"sterben", partizip:"gestorben", aux:"sein", ar:"يموت"},
+    {de:"wachsen", partizip:"gewachsen", aux:"sein", ar:"ينمو"},
+    {de:"fallen", partizip:"gefallen", aux:"sein", ar:"يسقط"}
+  ]},
+  { key:"ieren", label:"أفعال -ieren", pattern:"بدون ge- + جذر + iert", verbs:[
+    {de:"telefonieren", partizip:"telefoniert", aux:"haben", ar:"يتصل هاتفيًا"},
+    {de:"studieren", partizip:"studiert", aux:"haben", ar:"يدرس (جامعيًا)"},
+    {de:"fotografieren", partizip:"fotografiert", aux:"haben", ar:"يصوّر"},
+    {de:"reparieren", partizip:"repariert", aux:"haben", ar:"يصلح"},
+    {de:"trainieren", partizip:"trainiert", aux:"haben", ar:"يتدرّب"},
+    {de:"organisieren", partizip:"organisiert", aux:"haben", ar:"ينظّم"},
+    {de:"reservieren", partizip:"reserviert", aux:"haben", ar:"يحجز"},
+    {de:"passieren", partizip:"passiert", aux:"sein", ar:"يحدث (استثناء: مع sein!)"}
+  ]},
+  { key:"untrennbar", label:"غير منفصلة", pattern:"بدون ge- + جذر + t/en", verbs:[
+    {de:"besuchen", partizip:"besucht", aux:"haben", ar:"يزور"},
+    {de:"verstehen", partizip:"verstanden", aux:"haben", ar:"يفهم"},
+    {de:"erzählen", partizip:"erzählt", aux:"haben", ar:"يحكي"},
+    {de:"verkaufen", partizip:"verkauft", aux:"haben", ar:"يبيع"},
+    {de:"vergessen", partizip:"vergessen", aux:"haben", ar:"ينسى"},
+    {de:"erklären", partizip:"erklärt", aux:"haben", ar:"يشرح"},
+    {de:"bezahlen", partizip:"bezahlt", aux:"haben", ar:"يدفع"},
+    {de:"beantworten", partizip:"beantwortet", aux:"haben", ar:"يجيب على"},
+    {de:"empfehlen", partizip:"empfohlen", aux:"haben", ar:"يوصي بـ"},
+    {de:"entscheiden", partizip:"entschieden", aux:"haben", ar:"يقرر"},
+    {de:"verschwinden", partizip:"verschwunden", aux:"sein", ar:"يختفي (استثناء: مع sein!)"},
+    {de:"begegnen", partizip:"begegnet", aux:"sein", ar:"يقابل (صدفة) (استثناء: مع sein!)"}
+  ]},
+  { key:"trennbar", label:"منفصلة", pattern:"بادئة + ge + جذر + t/en", verbs:[
+    {de:"aufstehen", partizip:"aufgestanden", aux:"sein", ar:"يستيقظ / ينهض"},
+    {de:"aufmachen", partizip:"aufgemacht", aux:"haben", ar:"يفتح"},
+    {de:"einkaufen", partizip:"eingekauft", aux:"haben", ar:"يتسوّق"},
+    {de:"anrufen", partizip:"angerufen", aux:"haben", ar:"يتصل بـ"},
+    {de:"mitnehmen", partizip:"mitgenommen", aux:"haben", ar:"يأخذ معه"},
+    {de:"fernsehen", partizip:"ferngesehen", aux:"haben", ar:"يشاهد التلفاز"},
+    {de:"abfahren", partizip:"abgefahren", aux:"sein", ar:"ينطلق (قطار/حافلة)"},
+    {de:"ankommen", partizip:"angekommen", aux:"sein", ar:"يصل"},
+    {de:"einschlafen", partizip:"eingeschlafen", aux:"sein", ar:"ينام (يغفو)"},
+    {de:"aufwachen", partizip:"aufgewacht", aux:"sein", ar:"يستيقظ"},
+    {de:"zurückkommen", partizip:"zurückgekommen", aux:"sein", ar:"يعود"}
+  ]}
+];
+const VOCAB = VOCAB_CATEGORIES.flatMap(c => c.verbs);
+
+const EXAMPLES = [
+  {tag:"haben", subject:"Ich", v1:"habe", mid:"gestern Fußball", v2:"gespielt", ar:"لعبتُ كرة القدم أمس."},
+  {tag:"sein", subject:"Wir", v1:"sind", mid:"ins Kino", v2:"gegangen", ar:"ذهبنا إلى السينما."},
+  {tag:"haben", subject:"Er", v1:"hat", mid:"einen Kaffee", v2:"getrunken", ar:"شرب فنجان قهوة."},
+  {tag:"sein", subject:"Sie", v1:"ist", mid:"nach Berlin", v2:"gefahren", ar:"سافرت إلى برلين."},
+  {tag:"trennbar", subject:"Ich", v1:"bin", mid:"um sieben Uhr", v2:"aufgestanden", ar:"استيقظتُ (نهضتُ) في الساعة السابعة."},
+  {tag:"trennbar", subject:"Wir", v1:"haben", mid:"in der Stadt", v2:"eingekauft", ar:"تسوّقنا في المدينة."},
+  {tag:"haben", subject:"Ich", v1:"habe", mid:"heute viel", v2:"gearbeitet", ar:"عملتُ كثيرًا اليوم."},
+  {tag:"haben", subject:"Wir", v1:"haben", mid:"einen interessanten Film", v2:"gesehen", ar:"شاهدنا فيلمًا مثيرًا للاهتمام."},
+  {tag:"haben", subject:"Sie", v1:"hat", mid:"einen langen Brief", v2:"geschrieben", ar:"كتبت رسالة طويلة."},
+  {tag:"trennbar", subject:"Er", v1:"hat", mid:"seinen Freund", v2:"angerufen", ar:"اتصل بصديقه."},
+  {tag:"haben", subject:"Du", v1:"hast", mid:"an der Universität", v2:"studiert", ar:"درستَ في الجامعة (بدون ge- لأنه فعل -ieren)."},
+  {tag:"haben", subject:"Wir", v1:"haben", mid:"viel Spaß", v2:"gehabt", ar:"استمتعنا كثيرًا."},
+  {tag:"sein", subject:"Wir", v1:"sind", mid:"nach Spanien", v2:"geflogen", ar:"طرنا إلى إسبانيا."},
+  {tag:"sein", subject:"Sie", v1:"ist", mid:"Ärztin", v2:"geworden", ar:"أصبحت طبيبة (تغيّر حالة)."},
+  {tag:"sein", subject:"Das Kind", v1:"ist", mid:"schnell", v2:"gewachsen", ar:"نما الطفل بسرعة."},
+  {tag:"sein", subject:"Ich", v1:"bin", mid:"zu Hause", v2:"geblieben", ar:"بقيتُ في البيت (استثناء)."},
+  {tag:"neg", subject:"Ich", v1:"habe", mid:"nicht", v2:"geschlafen", ar:"لم أنم."},
+  {tag:"neg", subject:"Er", v1:"ist", mid:"nicht nach Hause", v2:"gegangen", ar:"لم يذهب إلى البيت."},
+  {tag:"neg", subject:"Ich", v1:"habe", mid:"keine Zeit", v2:"gehabt", ar:"لم يكن لديّ وقت."},
+  {tag:"neg", subject:"Wir", v1:"haben", mid:"das Spiel nicht", v2:"gewonnen", ar:"لم نفز باللعبة."},
+  {tag:"haben", subject:"Ich", v1:"habe", mid:"meine Oma", v2:"besucht", ar:"زرتُ جدتي (بادئة غير منفصلة)."},
+  {tag:"haben", subject:"Er", v1:"hat", mid:"sein Auto", v2:"verkauft", ar:"باع سيارته (بادئة غير منفصلة)."}
+];
+const EXAMPLE_TAGS = [
+  {key:"all", label:"الكل"}, {key:"haben", label:"haben"}, {key:"sein", label:"sein"},
+  {key:"trennbar", label:"الأفعال المنفصلة"}, {key:"neg", label:"النفي"}
+];
+
+const MISTAKES = [
+  {wrong:"Ich habe gegangen.", right:"Ich bin gegangen.", note:"الفعل «gehen» فعل حركة، لذا يأخذ «sein» وليس «haben»."},
+  {wrong:"Ich habe gespielen.", right:"Ich habe gespielt.", note:"الأفعال الضعيفة تنتهي بـ «-t» في الـ Partizip II، وليس «-en»."},
+  {wrong:"Ich habe gestern gegessen Pizza.", right:"Ich habe gestern Pizza gegessen.", note:"الـ Partizip II يجب أن يبقى في آخر الجملة دائمًا — لا شيء يأتي بعده."},
+  {wrong:"Ich habe gestudiert.", right:"Ich habe studiert.", note:"الأفعال المنتهية بـ «-ieren» لا تأخذ بادئة «ge-» أبدًا."},
+  {wrong:"Ich habe aufgestehen.", right:"Ich bin aufgestanden.", note:"فعل منفصل + حركة: البادئة «ge-» تدخل بين الجزأين، والفعل المساعد هو «sein»."},
+  {wrong:"Ich habe kein gegessen.", right:"Ich habe nicht gegessen.", note:"«nicht» تنفي الفعل نفسه، بينما «kein-» تُستخدم فقط لنفي اسم نكرة يأتي بعدها مباشرة — ولا يوجد اسم هنا لتنفيه."},
+  {wrong:"Ich bin studiert.", right:"Ich habe studiert.", note:"كل أفعال «-ieren» تقريبًا تأخذ «haben» (باستثناء «passieren» وأشباهه)، وليس «sein»، رغم أن بعضها يبدو شبيهًا بأفعال الحركة."}
+];
+
+const MCQ = [
+  {parts:["Ich ", "___", " ins Kino gegangen."], options:["bin","habe"], correct:"bin", why:"«gehen» فعل حركة، فيأخذ «sein»."},
+  {parts:["Wir ", "___", " Pizza gegessen."], options:["haben","sind"], correct:"haben", why:"«essen» له مفعول به مباشر (Pizza)، فيأخذ «haben»."},
+  {parts:["Er ", "___", " nach Hause gefahren."], options:["ist","hat"], correct:"ist", why:"«fahren» فعل حركة نحو مكان، فيأخذ «sein»."},
+  {parts:["Sie ", "___", " das Buch gelesen."], options:["hat","ist"], correct:"hat", why:"«lesen» له مفعول به مباشر، فيأخذ «haben»."},
+  {parts:["Ich ", "___", " gestern krank gewesen."], options:["bin","habe"], correct:"bin", why:"فعل «sein» نفسه استثناء ثابت يأخذ «sein» كمساعد."},
+  {parts:["Sie ", "___", " Ärztin geworden."], options:["ist","hat"], correct:"ist", why:"«werden» فعل تغيّر حالة، فيأخذ «sein» دائمًا."},
+  {parts:["Ich ", "___", " mit dir telefoniert."], options:["habe","bin"], correct:"habe", why:"أفعال «-ieren» تقريبًا كلها تأخذ «haben»، حتى لو بدت شبيهة بأفعال أخرى."},
+  {parts:["Die Kinder ", "___", " im See geschwommen."], options:["sind","haben"], correct:"sind", why:"«schwimmen» فعل حركة، فيأخذ «sein»."}
+];
+
+const FILL = [
+  {inf:"machen", correct:"gemacht", hint:"فعل ضعيف عادي"},
+  {inf:"trinken", correct:"getrunken", hint:"فعل قوي، تغيّر في الجذر"},
+  {inf:"kommen", correct:"gekommen", hint:"فعل حركة"},
+  {inf:"studieren", correct:"studiert", hint:"بدون بادئة ge- لأنه ينتهي بـ -ieren"},
+  {inf:"aufstehen", correct:"aufgestanden", hint:"فعل منفصل: ge- تدخل في المنتصف"},
+  {inf:"schreiben", correct:"geschrieben", hint:"فعل قوي، تغيّر الجذر بالكامل"},
+  {inf:"verkaufen", correct:"verkauft", hint:"بادئة ver- غير منفصلة: بدون ge-"},
+  {inf:"anrufen", correct:"angerufen", hint:"فعل منفصل: an + ge + ruf + en"}
+];
+
+const BUILDER = [
+  {words:["gespielt","Ich","Fußball","habe"], correct:["Ich","habe","Fußball","gespielt"], ar:"لعبتُ كرة القدم."},
+  {words:["gegangen","Wir","sind","ins Kino"], correct:["Wir","sind","ins Kino","gegangen"], ar:"ذهبنا إلى السينما."},
+  {words:["Pizza","gegessen","hat","Er"], correct:["Er","hat","Pizza","gegessen"], ar:"أكل بيتزا."},
+  {words:["Brief","geschrieben","hat","einen","Sie"], correct:["Sie","hat","einen","Brief","geschrieben"], ar:"كتبت رسالة."},
+  {words:["nicht","gegangen","Er","ist","nach Hause"], correct:["Er","ist","nach Hause","nicht","gegangen"], ar:"لم يذهب إلى البيت."}
+];
+
+const MATCH_VOCAB = [
+  {de:"machen", partizip:"gemacht"}, {de:"gehen", partizip:"gegangen"}, {de:"essen", partizip:"gegessen"},
+  {de:"fahren", partizip:"gefahren"}, {de:"trinken", partizip:"getrunken"}, {de:"kommen", partizip:"gekommen"},
+  {de:"schreiben", partizip:"geschrieben"}, {de:"aufstehen", partizip:"aufgestanden"}
+];
+
+const NEGQUIZ = [
+  {parts:["Ich habe ", "___", " geschlafen."], options:["nicht","kein","keine","nein"], correct:"nicht", why:"لنفي الفعل نفسه (وليس اسمًا بعده) نستخدم «nicht»."},
+  {parts:["Ich habe ", "___", " Zeit gehabt."], options:["nicht","kein","keine","nichts"], correct:"keine", why:"«Zeit» اسم مؤنث نكرة بلا أداة تعريف، فتُنفى بـ «keine»."},
+  {parts:["", "___", " hast du gegessen?"], options:["Wer","Was","Wann","Wie"], correct:"Was", why:"«ماذا» تُترجم إلى «was» — أداة الاستفهام عن الأشياء."},
+  {parts:["", "___", " bist du geflogen?"], options:["Wohin","Wo","Wann","Wer"], correct:"Wohin", why:"«wohin» تسأل عن الوجهة (إلى أين)، بينما «wo» تسأل عن مكان ثابت."},
+  {parts:["", "___", " du gestern gearbeitet?"], options:["Hast","Habe","Bist","Sind"], correct:"Hast", why:"في أسئلة نعم/لا مع «du» ينتقل الفعل المساعد المصرَّف (hast) إلى بداية الجملة مباشرة."}
+];
+
+const CONJ_HABEN = [
+  {p:"ich", v:"habe", ar:"أنا لديّ"}, {p:"du", v:"hast", ar:"أنت لديك"}, {p:"er/sie/es", v:"hat", ar:"هو/هي لديه"},
+  {p:"wir", v:"haben", ar:"نحن لدينا"}, {p:"ihr", v:"habt", ar:"أنتم لديكم"}, {p:"sie/Sie", v:"haben", ar:"هم/حضرتك لديهم"}
+];
+const CONJ_SEIN = [
+  {p:"ich", v:"bin", ar:"أنا أكون"}, {p:"du", v:"bist", ar:"أنت تكون"}, {p:"er/sie/es", v:"ist", ar:"هو/هي يكون"},
+  {p:"wir", v:"sind", ar:"نحن نكون"}, {p:"ihr", v:"seid", ar:"أنتم تكونون"}, {p:"sie/Sie", v:"sind", ar:"هم/حضرتك يكونون"}
+];
+
+const HABEN_RULES = [
+  {title:"أفعال متعدية (تأخذ Akkusativ)", desc:"كل فعل يأخذ مفعولًا به مباشرًا في حالة الاكوزاتيف يستخدم haben.", examples:"kaufen, machen, essen, schreiben, lesen, sehen"},
+  {title:"أفعال انعكاسية (Reflexivverben)", desc:"الأفعال التي تأتي مع ضمير انعكاسي.", examples:"sich treffen, sich waschen, sich freuen, sich erinnern"},
+  {title:"أفعال الوضع والحالة الثابتة", desc:"أفعال تعبّر عن حالة ثابتة وليس حركة أو تغيّرًا.", examples:"liegen, stehen, sitzen, hängen"},
+  {title:"الأفعال الشكلية والمساعدة", desc:"كل الأفعال الشكلية (Modalverben) تستخدم haben في الـ Perfekt.", examples:"können, müssen, dürfen, sollen, wollen, mögen"}
+];
+
+const SEIN_CATEGORIES = [
+  {label:"🚶 أفعال الحركة والانتقال المكاني (بلا مفعول به)", verbs:[
+    {de:"gehen", ar:"ذهب"}, {de:"kommen", ar:"جاء"}, {de:"fahren", ar:"سافر/قاد"}, {de:"fliegen", ar:"طار"},
+    {de:"laufen", ar:"جرى/مشى"}, {de:"reisen", ar:"سافر"}, {de:"schwimmen", ar:"سبح"}, {de:"springen", ar:"قفز"},
+    {de:"klettern", ar:"تسلّق"}, {de:"wandern", ar:"تنزّه"}
+  ]},
+  {label:"🌱 أفعال تغيّر الحالة", verbs:[
+    {de:"aufwachen", ar:"صحا"}, {de:"einschlafen", ar:"نام/غفا"}, {de:"aufstehen", ar:"نهض"}, {de:"werden", ar:"أصبح"},
+    {de:"wachsen", ar:"نما"}, {de:"sterben", ar:"مات"}, {de:"schmelzen", ar:"ذاب"}, {de:"explodieren", ar:"انفجر"}
+  ]},
+  {label:"🔒 أفعال استثنائية يجب حفظها", verbs:[
+    {de:"sein", ar:"كان"}, {de:"bleiben", ar:"بقي"}, {de:"passieren", ar:"حدث"}, {de:"gelingen", ar:"نجح"},
+    {de:"geschehen", ar:"وقع/حدث"}, {de:"begegnen", ar:"قابل (صدفة)"}, {de:"verschwinden", ar:"اختفى"}
+  ]}
+];
+
+const WORDORDER_VISUAL = {pos1:{word:"Ich", ar:"الفاعل"}, pos2:{word:"habe", ar:"الفعل المساعد"}, mid:[{word:"heute", ar:"اليوم"},{word:"Pizza", ar:"بيتزا"}], end:{word:"gegessen.", ar:"Partizip II"}};
+const WORDORDER_TABLE = [
+  {p1:"Ich", aux:"habe", mid:"gestern", end:"gearbeitet.", ar:"عملتُ أمس"},
+  {p1:"Er", aux:"ist", mid:"nach Hamburg", end:"gefahren.", ar:"ذهب إلى هامبورغ"},
+  {p1:"Gestern", aux:"haben", mid:"wir einen Film", end:"gesehen.", ar:"أمس شاهدنا فيلمًا (التقديم)"},
+  {p1:"Im Sommer", aux:"bin", mid:"ich nach Italien", end:"geflogen.", ar:"في الصيف طرتُ إلى إيطاليا"},
+  {p1:"Sie", aux:"hat", mid:"das Buch schnell", end:"gelesen.", ar:"قرأت الكتاب بسرعة"}
+];
+
+const NEGATION_NICHT = [
+  {pos:{subject:"Ich", v1:"habe", mid:"", v2:"geschlafen"}, neg:{subject:"Ich", v1:"habe", mid:"nicht", v2:"geschlafen"}, arPos:"نمتُ.", arNeg:"لم أنم."},
+  {pos:{subject:"Er", v1:"ist", mid:"", v2:"gegangen"}, neg:{subject:"Er", v1:"ist", mid:"nicht", v2:"gegangen"}, arPos:"ذهب.", arNeg:"لم يذهب."},
+  {pos:{subject:"Wir", v1:"haben", mid:"das", v2:"verstanden"}, neg:{subject:"Wir", v1:"haben", mid:"das nicht", v2:"verstanden"}, arPos:"فهمنا ذلك.", arNeg:"لم نفهم ذلك."}
+];
+const NEGATION_KEIN = [
+  {pos:{subject:"Ich", v1:"habe", mid:"ein Buch", v2:"gelesen"}, neg:{subject:"Ich", v1:"habe", mid:"kein Buch", v2:"gelesen"}, arPos:"قرأتُ كتابًا.", arNeg:"لم أقرأ أي كتاب."},
+  {pos:{subject:"Sie", v1:"hat", mid:"Kaffee", v2:"getrunken"}, neg:{subject:"Sie", v1:"hat", mid:"keinen Kaffee", v2:"getrunken"}, arPos:"شربت قهوة.", arNeg:"لم تشرب قهوة."},
+  {pos:{subject:"Er", v1:"hat", mid:"Freunde", v2:"besucht"}, neg:{subject:"Er", v1:"hat", mid:"keine Freunde", v2:"besucht"}, arPos:"زار أصدقاء.", arNeg:"لم يزر أي أصدقاء."}
+];
+
+const QUESTIONS_YESNO = [
+  {v1:"Hast", subject:"du", mid:"", v2:"geschlafen", ar:"هل نمتَ؟"},
+  {v1:"Bist", subject:"du", mid:"nach Hause", v2:"gegangen", ar:"هل ذهبتَ إلى البيت؟"},
+  {v1:"Habt", subject:"ihr", mid:"den Film", v2:"gesehen", ar:"هل شاهدتم الفيلم؟"}
+];
+const QUESTIONS_W = [
+  {w:"Was", v1:"hast", subject:"du", mid:"", v2:"gemacht", ar:"ماذا فعلتَ؟"},
+  {w:"Wohin", v1:"bist", subject:"du", mid:"", v2:"geflogen", ar:"إلى أين طرتَ؟"},
+  {w:"Wann", v1:"hat", subject:"er", mid:"", v2:"angerufen", ar:"متى اتصل؟"},
+  {w:"Warum", v1:"bist", subject:"du", mid:"so früh", v2:"aufgestanden", ar:"لماذا استيقظتَ مبكرًا؟"}
+];
+const WWORDS = [
+  {de:"was", ar:"ماذا"}, {de:"wer", ar:"من"}, {de:"wann", ar:"متى"}, {de:"wo", ar:"أين"},
+  {de:"wohin", ar:"إلى أين"}, {de:"woher", ar:"من أين"}, {de:"warum", ar:"لماذا"}, {de:"wie", ar:"كيف"},
+  {de:"wie lange", ar:"كم من الوقت"}, {de:"wie oft", ar:"كم مرة"}, {de:"mit wem", ar:"مع من"}, {de:"wen", ar:"من (مفعول به)"}
+];
+
+const TENSE_TIMELINE = [
+  {top:"الماضي البعيد<br><small>Präteritum</small>", dot:"", bottom:"كان يعمل هنا", hl:false},
+  {top:"حدث انتهى ✓<br><small>Perfekt</small>", dot:"done", bottom:"أكلتُ، ذهبتُ، فعلتُ", hl:true},
+  {top:"حدث انتهى ✓<br><small>Perfekt</small>", dot:"done", bottom:"قابلتُ، كتبتُ", hl:true},
+  {top:"الآن", dot:"now", bottom:"JETZT", hl:true},
+  {top:"المستقبل<br><small>Futur</small>", dot:"", bottom:"سيذهب", hl:false}
+];
+
+const PRATERITUM_SPOKEN = [
+  {verb:"sein", form:"war / waren", ex:"Ich war gestern krank.", ar:"كنتُ مريضًا أمس."},
+  {verb:"haben", form:"hatte / hatten", ex:"Er hatte Hunger.", ar:"كان جائعًا."},
+  {verb:"werden", form:"wurde / wurden", ex:"Es wurde kalt.", ar:"أصبح الجو باردًا."},
+  {verb:"Modalverben", form:"konnte, musste…", ex:"Ich konnte nicht kommen.", ar:"لم أستطع المجيء."}
+];
+
+const COMPARE_TABLE = [
+  {inf:"kaufen", pra:"ich kaufe", perf:"ich habe gekauft"},
+  {inf:"gehen", pra:"ich gehe", perf:"ich bin gegangen"},
+  {inf:"schreiben", pra:"er schreibt", perf:"er hat geschrieben"},
+  {inf:"aufstehen", pra:"sie steht auf", perf:"sie ist aufgestanden"},
+  {inf:"studieren", pra:"wir studieren", perf:"wir haben studiert"}
+];
+
+/* ==========================================================================
+   THEME
+   ========================================================================== */
+const root = document.documentElement;
+function applyTheme(mode){
+  root.setAttribute('data-theme', mode);
+  try{ localStorage.setItem('lesson-theme', mode); }catch(e){}
+}
+(function initTheme(){
+  let stored = null;
+  try{ stored = localStorage.getItem('lesson-theme'); }catch(e){}
+  if(stored){ applyTheme(stored); }
+  else{
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
+})();
+document.getElementById('themeToggle').addEventListener('click', function(){
+  const current = root.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+/* ==========================================================================
+   SPEECH SYNTHESIS MANAGER
+   ========================================================================== */
+const Speech = (function(){
+  let voices = [];
+  let currentVoice = null;
+  let currentUtterance = null;
+  let currentEl = null;
+  let rate = 0.95;
+
+  function refreshVoices(){
+    voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+    const de = voices.filter(v => /^de/i.test(v.lang));
+    const pool = de.length ? de : voices;
+    if(pool.length){
+      pool.sort((a,b)=>{
+        const score = v => (/de-de/i.test(v.lang)?3:0) + (/google/i.test(v.name)?2:0) + (/natural|enhanced|premium|online/i.test(v.name)?2:0) + (v.default?1:0);
+        return score(b) - score(a);
+      });
+      currentVoice = pool[0];
+    }
+    const label = document.getElementById('dockVoice');
+    if(label) label.textContent = currentVoice ? currentVoice.name.replace('Microsoft ','').replace('Google ','') : 'صوت افتراضي';
+  }
+  if(window.speechSynthesis){
+    refreshVoices();
+    window.speechSynthesis.onvoiceschanged = refreshVoices;
+  }
+
+  function clearHighlights(){
+    document.querySelectorAll('.k-word.speaking, .speak-dot.speaking').forEach(el => el.classList.remove('speaking'));
+  }
+
+  function speak(text, opts){
+    opts = opts || {};
+    if(!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    clearHighlights();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'de-DE';
+    if(currentVoice) utter.voice = currentVoice;
+    utter.rate = rate;
+    currentUtterance = utter;
+    currentEl = opts.el || null;
+
+    utter.onstart = function(){
+      showDock(text);
+      if(opts.el) opts.el.classList.add('speaking');
+      setDockPlaying(true);
+    };
+    utter.onend = function(){
+      clearHighlights();
+      setDockPlaying(false);
+      hideDockDelayed();
+    };
+    utter.onerror = function(){ setDockPlaying(false); };
+
+    if(opts.wordEls && opts.wordEls.length){
+      utter.onboundary = function(e){
+        if(e.name !== 'word') return;
+        clearHighlights();
+        let acc = 0, idx = -1;
+        for(let i=0;i<opts.wordEls.length;i++){
+          const w = opts.wordEls[i].dataset.plain || opts.wordEls[i].textContent;
+          if(e.charIndex >= acc && e.charIndex < acc + w.length + 1){ idx = i; break; }
+          acc += w.length + 1;
+        }
+        if(idx >= 0) opts.wordEls[idx].classList.add('speaking');
+      };
+    }
+    window.speechSynthesis.speak(utter);
+  }
+
+  function togglePause(){
+    if(!window.speechSynthesis) return;
+    if(window.speechSynthesis.speaking && !window.speechSynthesis.paused){
+      window.speechSynthesis.pause();
+      setDockPlaying(false);
+    } else if(window.speechSynthesis.paused){
+      window.speechSynthesis.resume();
+      setDockPlaying(true);
+    }
+  }
+  function replay(){
+    if(currentUtterance) speak(currentUtterance.text, {el: currentEl});
+  }
+  function setRate(r){ rate = r; }
+
+  let dockTimeout = null;
+  function showDock(text){
+    clearTimeout(dockTimeout);
+    const dock = document.getElementById('audioDock');
+    document.getElementById('dockText').textContent = text;
+    dock.classList.add('visible');
+  }
+  function hideDockDelayed(){
+    dockTimeout = setTimeout(()=> document.getElementById('audioDock').classList.remove('visible'), 2600);
+  }
+  function setDockPlaying(playing){
+    const icon = document.getElementById('dockPlayIcon');
+    icon.innerHTML = '<use href="#' + (playing ? 'i-pause' : 'i-play') + '"/>';
+  }
+
+  return { speak, togglePause, replay, setRate };
+})();
+
+document.getElementById('dockPlayPause').addEventListener('click', Speech.togglePause);
+document.getElementById('dockReplay').addEventListener('click', Speech.replay);
+document.getElementById('dockSpeed').addEventListener('input', function(e){ Speech.setRate(parseFloat(e.target.value)); });
+
+/* ==========================================================================
+   KLAMMER (bracket sentence) COMPONENT
+   ========================================================================== */
+function buildKlammer(container, data){
+  container.innerHTML = '';
+  const subjectSpan = wordSpan(data.subject);
+  const frame = document.createElement('span');
+  frame.className = 'klammer-frame';
+  const v1 = wordSpan(data.v1); v1.classList.add('k-verb1');
+  const v2 = wordSpan(data.v2); v2.classList.add('k-verb2');
+  frame.appendChild(v1);
+  if(data.mid){
+    data.mid.split(' ').forEach(w => frame.appendChild(wordSpan(w)));
+  }
+  frame.appendChild(v2);
+  const period = document.createElement('span');
+  period.textContent = '.';
+  container.appendChild(subjectSpan);
+  container.appendChild(frame);
+  container.appendChild(period);
+
+  const allWords = [subjectSpan, v1, ...(data.mid ? data.mid.split(' ').map((_,i)=>frame.children[i+1]) : []), v2];
+  const fullText = [data.subject, data.v1, data.mid, data.v2].filter(Boolean).join(' ') + '.';
+  container.dataset.fulltext = fullText;
+  container.dataset.words = 'ready';
+  container._wordEls = allWords;
+}
+function wordSpan(word){
+  const s = document.createElement('span');
+  s.className = 'k-word de';
+  s.textContent = word;
+  s.dataset.plain = word;
+  s.tabIndex = 0;
+  s.setAttribute('role','button');
+  s.setAttribute('aria-label', 'استمع لكلمة ' + word);
+  s.addEventListener('click', () => Speech.speak(word, {el: s}));
+  s.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); s.click(); } });
+  return s;
+}
+
+buildKlammer(document.getElementById('heroKlammer'), {subject:"Ich", v1:"habe", mid:"gestern Fußball", v2:"gespielt"});
+buildKlammer(document.getElementById('ruleKlammer'), {subject:"Ich", v1:"habe", mid:"gestern Fußball", v2:"gespielt"});
+
+document.querySelectorAll('[data-speak-group]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const el = document.querySelector(btn.dataset.speakGroup);
+    if(el && el.dataset.fulltext) Speech.speak(el.dataset.fulltext, {wordEls: el._wordEls});
+  });
+});
+
+/* ==========================================================================
+   SHARED HELPER: make any element a click-to-speak control
+   (used for single words, sentences, and the vocab speaker dots so the
+   accessibility wiring — cursor, role, tabindex, keydown — lives in one place)
+   ========================================================================== */
+function makeSpeakable(el, text, opts){
+  opts = opts || {};
+  el.style.cursor = 'pointer';
+  if(!el.getAttribute('role')) el.setAttribute('role','button');
+  if(!el.hasAttribute('tabindex')) el.tabIndex = 0;
+  if(!el.getAttribute('aria-label')) el.setAttribute('aria-label', 'استمع لـ ' + text);
+  el.addEventListener('click', () => Speech.speak(text, Object.assign({el}, opts)));
+  el.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); el.click(); } });
+}
+
+/* ==========================================================================
+   SINGLE-WORD SPEAK ELEMENTS  ([data-speak]) already present in static HTML
+   ========================================================================== */
+document.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+
+/* ==========================================================================
+   ACCORDION — Partizip II formation rules
+   ========================================================================== */
+const FORMATION = [
+  {tag:"الفئة ١", title:"أفعال ضعيفة (منتظمة)", pattern:"ge + جذر + t", examples:[["spielen","gespielt"],["machen","gemacht"],["lernen","gelernt"],["arbeiten","gearbeitet"]],
+   body:"الجذر لا يتغيّر أبدًا. فقط أضف «ge-» في البداية و«-t» في النهاية. لاحظ أن «arbeiten» و«warten» يأخذان «-et» بدلًا من «-t» فقط لتسهيل النطق (الجذر ينتهي بـ t/d)."},
+  {tag:"الفئة ٢", title:"أفعال شاذة (غير منتظمة)", pattern:"ge + جذر (قد يتغيّر) + en", examples:[["fahren","gefahren"],["sehen","gesehen"],["essen","gegessen"],["trinken","getrunken"]],
+   body:"هذه الأفعال تُحفظ فرديًا لأن حرف العلة في الجذر قد يتغيّر (مثل essen → gegessen). لا توجد قاعدة ثابتة لتغيّر الحرف، لكن النهاية «-en» والبادئة «ge-» ثابتتان. ملاحظة: أفعال مثل bringen وdenken وwissen «مختلطة» — تتغيّر جذورها كالشاذة لكنها تنتهي بـ «-t» كالضعيفة (gebracht, gedacht, gewusst)."},
+  {tag:"الفئة ٣", title:"أفعال -ieren", pattern:"بدون ge- + جذر + iert", examples:[["studieren","studiert"],["telefonieren","telefoniert"],["organisieren","organisiert"],["reservieren","reserviert"]],
+   body:"كل الأفعال المنتهية بـ «-ieren» (أصل لاتيني/فرنسي) لا تأخذ بادئة «ge-» أبدًا، وتنتهي دائمًا بـ «-iert». النبرة تقع على المقطع الأخير «-ier» بدلًا من المقطع الأول كالمعتاد. استثناء وحيد يستحق الانتباه: «passieren» (يحدث) يأخذ «sein» وليس «haben»."},
+  {tag:"الفئة ٤", title:"أفعال غير منفصلة", pattern:"بدون ge- + جذر + t/en", examples:[["besuchen","besucht"],["verstehen","verstanden"],["erzählen","erzählt"],["vergessen","vergessen"]],
+   body:"الأفعال ببادئة غير منفصلة (be-, ver-, er-, ent-, ge-, zer-, emp-, miss-) لا تأخذ «ge-» أبدًا لأن البادئة نفسها تُغني عنها. أغلبها يستخدم «haben»، لكن «verschwinden» (يختفي) و«begegnen» (يقابل صدفة) استثناءان يأخذان «sein»."},
+  {tag:"الفئة ٥", title:"أفعال منفصلة", pattern:"بادئة + ge + جذر + t/en", examples:[["aufstehen","aufgestanden"],["einkaufen","eingekauft"],["anrufen","angerufen"],["fernsehen","ferngesehen"]],
+   body:"البادئة (auf-, ein-, an-…) تبقى منفصلة عن بقية الكلمة، وتدخل «ge-» بينها وبين الجذر مباشرة، ثم تُكتب الكلمة كاملة متصلة في الـ Partizip II. الفعل المساعد يعتمد على معنى الفعل الأصلي: aufstehen (حركة) ← sein، لكن aufmachen (فتح) ← haben."}
+];
+const accordionRoot = document.getElementById('accordionRoot');
+FORMATION.forEach((cat, idx) => {
+  const item = document.createElement('div');
+  item.className = 'accordion-item' + (idx === 0 ? ' open' : '');
+  item.innerHTML = `
+    <button class="accordion-trigger" aria-expanded="${idx===0}">
+      <span class="accordion-title"><span class="tag mono">${cat.tag}</span> ${cat.title}</span>
+      <span style="display:flex;align-items:center;gap:10px">
+        <span class="chip chip-teal mono">${cat.pattern}</span>
+        <svg class="icon chevron"><use href="#i-chevron"/></svg>
+      </span>
+    </button>
+    <div class="accordion-panel">
+      <div class="accordion-body">
+        <p>${cat.body}</p>
+        ${cat.examples.map(([inf,part]) => `
+          <div class="formation-example-row">
+            <span class="de" data-speak="${inf}" style="cursor:pointer;font-weight:600">${inf}</span>
+            <span class="formation-arrow">←</span>
+            <span class="de mono" data-speak="${part}" style="cursor:pointer;color:var(--teal);font-weight:600">${part}</span>
+            <svg class="icon" style="width:14px;height:14px;color:var(--ink-faint)"><use href="#i-speaker"/></svg>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  accordionRoot.appendChild(item);
+  const trigger = item.querySelector('.accordion-trigger');
+  trigger.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    item.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', String(!isOpen));
+  });
+  item.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+});
+
+/* ==========================================================================
+   HABEN / SEIN FLOW EXAMPLES
+   ========================================================================== */
+const flowExamples = {
+  sein: {subject:"Sie", v1:"ist", mid:"nach Hause", v2:"gegangen"},
+  haben: {subject:"Wir", v1:"haben", mid:"das Auto", v2:"gewaschen"}
+};
+document.querySelectorAll('[data-flow]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.dataset.flow;
+    const target = document.getElementById(key === 'sein' ? 'flowExampleSein' : 'flowExampleHaben');
+    buildKlammer(target, flowExamples[key]);
+    target._wordEls && Speech.speak(target.dataset.fulltext, {wordEls: target._wordEls});
+  });
+});
+// pre-render both so the section isn't empty before interaction
+buildKlammer(document.getElementById('flowExampleSein'), flowExamples.sein);
+buildKlammer(document.getElementById('flowExampleHaben'), flowExamples.haben);
+
+/* ==========================================================================
+   CONJUGATION TABLES (haben / sein)
+   ========================================================================== */
+function renderConjTable(bodyId, rows){
+  const body = document.getElementById(bodyId);
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    const pTd = document.createElement('td'); pTd.className = 'cj-pronoun'; pTd.textContent = r.p;
+    const vTd = document.createElement('td'); vTd.className = 'cj-verb'; vTd.textContent = r.v;
+    makeSpeakable(vTd, r.p + ' ' + r.v);
+    const aTd = document.createElement('td'); aTd.textContent = r.ar;
+    tr.append(pTd, vTd, aTd);
+    body.appendChild(tr);
+  });
+}
+renderConjTable('conjHabenBody', CONJ_HABEN);
+renderConjTable('conjSeinBody', CONJ_SEIN);
+
+/* ==========================================================================
+   TENSE TIMELINE (intro)
+   ========================================================================== */
+const tenseTimelineEl = document.getElementById('tenseTimeline');
+TENSE_TIMELINE.forEach(item => {
+  const el = document.createElement('div');
+  el.className = 'mt-item';
+  el.innerHTML = `<div class="mt-top">${item.top}</div><div class="mt-dot ${item.dot}"></div><div class="mt-bottom ${item.hl ? 'hl' : ''}">${item.bottom}</div>`;
+  tenseTimelineEl.appendChild(el);
+});
+
+/* ==========================================================================
+   80/20 STAT BARS
+   ========================================================================== */
+requestAnimationFrame(() => requestAnimationFrame(() => {
+  const sh = document.getElementById('statHaben'); if(sh) sh.style.width = '80%';
+  const ss = document.getElementById('statSein'); if(ss) ss.style.width = '20%';
+}));
+
+/* ==========================================================================
+   FAHREN EXCEPTION EXAMPLES
+   ========================================================================== */
+buildKlammer(document.getElementById('fahrenSeinEx'), {subject:"Ich", v1:"bin", mid:"nach Berlin", v2:"gefahren"});
+document.getElementById('fahrenSeinExAr').textContent = 'سافرتُ إلى برلين (بلا مفعول به مباشر — حركة الفاعل نفسه).';
+buildKlammer(document.getElementById('fahrenHabenEx'), {subject:"Ich", v1:"habe", mid:"das Auto", v2:"gefahren"});
+document.getElementById('fahrenHabenExAr').textContent = 'قدتُ السيارة (مع مفعول به مباشر — الفعل صار متعديًا).';
+
+/* ==========================================================================
+   SEIN VERB CATEGORIES (chips)
+   ========================================================================== */
+const seinCategoriesRoot = document.getElementById('seinCategoriesRoot');
+SEIN_CATEGORIES.forEach(cat => {
+  const label = document.createElement('div');
+  label.className = 'category-label';
+  label.textContent = cat.label;
+  seinCategoriesRoot.appendChild(label);
+  const row = document.createElement('div');
+  row.className = 'verb-chip-row';
+  cat.verbs.forEach(v => {
+    const chip = document.createElement('span');
+    chip.className = 'verb-chip';
+    chip.innerHTML = `<span class="vc-de">${v.de}</span><span class="vc-ar">${v.ar}</span>`;
+    makeSpeakable(chip, v.de);
+    row.appendChild(chip);
+  });
+  seinCategoriesRoot.appendChild(row);
+});
+
+/* ==========================================================================
+   HABEN USAGE RULES
+   ========================================================================== */
+const habenRulesGrid = document.getElementById('habenRulesGrid');
+HABEN_RULES.forEach(rule => {
+  const card = document.createElement('div');
+  card.className = 'info-card';
+  const exChips = rule.examples.split(', ').map(w => `<span class="chip chip-amber mono" style="cursor:pointer" data-w="${w}">${w}</span>`).join(' ');
+  card.innerHTML = `<h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-check"/></svg></span>${rule.title}</h3><p style="margin-bottom:10px">${rule.desc}</p><div style="display:flex;flex-wrap:wrap;gap:6px">${exChips}</div>`;
+  card.querySelectorAll('[data-w]').forEach(chip => makeSpeakable(chip, chip.dataset.w));
+  habenRulesGrid.appendChild(card);
+});
+
+/* ==========================================================================
+   WORD ORDER — visual + table
+   ========================================================================== */
+(function renderWordOrder(){
+  const visual = document.getElementById('wordOrderVisual');
+  const wv = WORDORDER_VISUAL;
+  const pos1 = document.createElement('div'); pos1.className = 'wo-block pos1';
+  pos1.innerHTML = `<div class="wo-block-label">الموضع ١</div><div class="wo-block-word">${wv.pos1.word}</div><div class="wo-block-ar">${wv.pos1.ar}</div>`;
+  const pos2 = document.createElement('div'); pos2.className = 'wo-block pos2';
+  pos2.innerHTML = `<div class="wo-pin">ثابت دائمًا</div><div class="wo-block-label">الموضع ٢</div><div class="wo-block-word">${wv.pos2.word}</div><div class="wo-block-ar">${wv.pos2.ar}</div>`;
+  visual.append(pos1, pos2);
+  wv.mid.forEach(m => {
+    const b = document.createElement('div'); b.className = 'wo-block mid';
+    b.innerHTML = `<div class="wo-block-label">تفاصيل</div><div class="wo-block-word">${m.word}</div><div class="wo-block-ar">${m.ar}</div>`;
+    visual.appendChild(b);
+  });
+  const end = document.createElement('div'); end.className = 'wo-block end';
+  end.innerHTML = `<div class="wo-pin" style="background:var(--amber);color:#2b1c05">ثابت دائمًا</div><div class="wo-block-label">النهاية</div><div class="wo-block-word">${wv.end.word}</div><div class="wo-block-ar">${wv.end.ar}</div>`;
+  visual.appendChild(end);
+  visual.querySelectorAll('.wo-block-word').forEach(w => makeSpeakable(w, w.textContent.replace(/[.,]$/,'')));
+
+  const tbody = document.getElementById('wordOrderTableBody');
+  WORDORDER_TABLE.forEach(row => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${row.p1}</td><td class="wo-td-pos2">${row.aux}</td><td>${row.mid}</td><td class="wo-td-end">${row.end}</td><td class="wo-td-ar">${row.ar}</td>`;
+    tr.querySelectorAll('td:not(.wo-td-ar)').forEach(td => { td.style.cursor = 'pointer'; makeSpeakable(td, td.textContent); });
+    tbody.appendChild(tr);
+  });
+})();
+
+/* ==========================================================================
+   NEGATION — nicht / kein
+   ========================================================================== */
+function appendNegWords(el, data, markNegator){
+  const words = [data.subject, data.v1, ...(data.mid ? data.mid.split(' ') : []), data.v2];
+  words.forEach((w, i) => {
+    const span = document.createElement('span');
+    span.className = 'neg-word de';
+    if(markNegator && /^(nicht|kein)/.test(w)) span.classList.add('negator');
+    span.textContent = w + (i < words.length - 1 ? ' ' : '');
+    makeSpeakable(span, w);
+    el.appendChild(span);
+  });
+  el.appendChild(document.createTextNode('.'));
+}
+function renderNegSection(rootId, items){
+  const root = document.getElementById(rootId);
+  items.forEach(item => {
+    const pair = document.createElement('div'); pair.className = 'neg-pair';
+    const posRow = document.createElement('div'); posRow.className = 'neg-pos-row';
+    const posTag = document.createElement('span'); posTag.className = 'neg-tag'; posTag.textContent = '✓ مثبت';
+    const posWrap = document.createElement('div'); posWrap.className = 'neg-sentence-wrap';
+    const posSent = document.createElement('div'); posSent.dir = 'ltr';
+    appendNegWords(posSent, item.pos, false);
+    const posAr = document.createElement('div'); posAr.className = 'neg-ar'; posAr.textContent = item.arPos;
+    posWrap.append(posSent, posAr);
+    posRow.append(posTag, posWrap);
+
+    const negRow = document.createElement('div'); negRow.className = 'neg-neg-row';
+    const negTag = document.createElement('span'); negTag.className = 'neg-tag'; negTag.textContent = '✗ منفي';
+    const negWrap = document.createElement('div'); negWrap.className = 'neg-sentence-wrap';
+    const negSent = document.createElement('div'); negSent.dir = 'ltr';
+    appendNegWords(negSent, item.neg, true);
+    const negAr = document.createElement('div'); negAr.className = 'neg-ar'; negAr.textContent = item.arNeg;
+    negWrap.append(negSent, negAr);
+    negRow.append(negTag, negWrap);
+
+    pair.append(posRow, negRow);
+    root.appendChild(pair);
+  });
+}
+renderNegSection('negNichtRoot', NEGATION_NICHT);
+renderNegSection('negKeinRoot', NEGATION_KEIN);
+
+/* ==========================================================================
+   QUESTIONS — Ja/Nein & W-Fragen
+   ========================================================================== */
+function renderYesNoQuestions(){
+  const root = document.getElementById('questionsYesNoRoot');
+  QUESTIONS_YESNO.forEach((q, i) => {
+    const words = [q.v1, q.subject, ...(q.mid ? q.mid.split(' ') : []), q.v2];
+    const row = document.createElement('div'); row.className = 'q-item-row';
+    const badge = document.createElement('span'); badge.className = 'q-item-badge'; badge.textContent = 'س' + toAr(i + 1);
+    makeSpeakable(badge, words.join(' ') + '?');
+    const sent = document.createElement('div'); sent.className = 'q-item-sentence'; sent.dir = 'ltr';
+    words.forEach(w => { const s = document.createElement('span'); s.className = 'de'; s.textContent = w + ' '; makeSpeakable(s, w); sent.appendChild(s); });
+    sent.appendChild(document.createTextNode('?'));
+    const ar = document.createElement('div'); ar.className = 'q-item-ar'; ar.textContent = q.ar;
+    row.append(badge, sent, ar);
+    root.appendChild(row);
+  });
+}
+function renderWQuestions(){
+  const root = document.getElementById('questionsWRoot');
+  QUESTIONS_W.forEach((q, i) => {
+    const words = [q.w, q.v1, q.subject, ...(q.mid ? q.mid.split(' ') : []), q.v2];
+    const row = document.createElement('div'); row.className = 'q-item-row';
+    const badge = document.createElement('span'); badge.className = 'q-item-badge'; badge.style.background = 'var(--amber-soft)'; badge.style.color = 'var(--amber-ink)'; badge.textContent = 'س' + toAr(i + 1);
+    makeSpeakable(badge, words.join(' ') + '?');
+    const sent = document.createElement('div'); sent.className = 'q-item-sentence'; sent.dir = 'ltr';
+    words.forEach((w, wi) => { const s = document.createElement('span'); s.className = 'de'; if(wi === 0) s.style.fontWeight = '700'; s.style.color = wi === 0 ? 'var(--amber-ink)' : ''; s.textContent = w + ' '; makeSpeakable(s, w); sent.appendChild(s); });
+    sent.appendChild(document.createTextNode('?'));
+    const ar = document.createElement('div'); ar.className = 'q-item-ar'; ar.textContent = q.ar;
+    row.append(badge, sent, ar);
+    root.appendChild(row);
+  });
+}
+renderYesNoQuestions();
+renderWQuestions();
+
+const wwordsRoot = document.getElementById('wwordsRoot');
+WWORDS.forEach(w => {
+  const chip = document.createElement('span'); chip.className = 'verb-chip';
+  chip.innerHTML = `<span class="vc-de wword-chip">${w.de}</span><span class="vc-ar">${w.ar}</span>`;
+  makeSpeakable(chip, w.de);
+  wwordsRoot.appendChild(chip);
+});
+
+/* ==========================================================================
+   PRÄTERITUM — spoken-context verbs
+   ========================================================================== */
+const prateritumSpokenRoot = document.getElementById('prateritumSpokenRoot');
+PRATERITUM_SPOKEN.forEach(item => {
+  const row = document.createElement('div');
+  row.className = 'formation-example-row';
+  row.style.justifyContent = 'space-between';
+  row.innerHTML = `<div><span class="chip chip-teal mono">${item.verb}</span> <span class="formation-arrow">←</span> <span class="mono">${item.form}</span></div><div style="text-align:left"><span class="de" style="cursor:pointer;font-weight:600" data-w="${item.ex}">${item.ex}</span><div style="font-size:.78rem;color:var(--ink-faint)">${item.ar}</div></div>`;
+  row.querySelectorAll('[data-w]').forEach(el => makeSpeakable(el, el.dataset.w));
+  prateritumSpokenRoot.appendChild(row);
+});
+
+/* ==========================================================================
+   VOCAB — tabbed categories of 3D flip cards (78 verbs total)
+   ========================================================================== */
+let flippedCount = 0;
+const flippedSet = new Set();
+let globalCardIndex = 0;
+
+function buildFlipCard(v){
+  const i = globalCardIndex++;
+  const card = document.createElement('div');
+  card.className = 'flip-card';
+  card.innerHTML = `
+    <div class="flip-card-inner" tabindex="0" role="button" aria-label="بطاقة ${v.de}, انقر للقلب">
+      <div class="flip-face flip-front">
+        <span class="chip ${v.aux==='sein'?'chip-teal':'chip-amber'} aux-tag mono">${v.aux}</span>
+        <span class="de">${v.de}</span>
+        <span class="flip-hint">انقر للقلب</span>
+        <span class="speak-dot" data-word="${v.de}" aria-label="استمع لـ ${v.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+      </div>
+      <div class="flip-face flip-back">
+        <span class="partizip mono">${v.partizip}</span>
+        <span class="meaning">${v.ar}</span>
+        <span class="speak-dot" data-word="${v.partizip}" aria-label="استمع لـ ${v.partizip}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+      </div>
+    </div>`;
+  const inner = card.querySelector('.flip-card-inner');
+  inner.addEventListener('click', (e) => {
+    if(e.target.closest('.speak-dot')) return;
+    card.classList.toggle('flipped');
+    if(!flippedSet.has(i)){ flippedSet.add(i); flippedCount++; checkVocabAchievement(); }
+    updateProgress();
+  });
+  inner.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); inner.click(); } });
+  card.querySelectorAll('.speak-dot').forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dot.classList.add('speaking');
+      Speech.speak(dot.dataset.word, {el: dot});
+      setTimeout(()=>dot.classList.remove('speaking'), 900);
+    });
+  });
+  return card;
+}
+
+const vocabTabsEl = document.getElementById('vocabTabs');
+const vocabPanelsRoot = document.getElementById('vocabPanelsRoot');
+document.getElementById('vocabTotalCount').textContent = toAr(VOCAB.length);
+VOCAB_CATEGORIES.forEach((cat, ci) => {
+  const tab = document.createElement('button');
+  tab.className = 'cat-tab' + (ci === 0 ? ' active' : '');
+  tab.dataset.panel = 'vocabPanel-' + cat.key;
+  tab.innerHTML = `${cat.label} <span class="cat-count">${toAr(cat.verbs.length)}</span>`;
+  vocabTabsEl.appendChild(tab);
+
+  const panel = document.createElement('div');
+  panel.className = 'vocab-panel' + (ci === 0 ? ' active' : '');
+  panel.id = 'vocabPanel-' + cat.key;
+  const patternNote = document.createElement('p');
+  patternNote.className = 'section-sub';
+  patternNote.style.marginTop = '0';
+  patternNote.style.marginBottom = '14px';
+  patternNote.innerHTML = `الصيغة: <span class="chip chip-teal mono">${cat.pattern}</span>`;
+  panel.appendChild(patternNote);
+  const grid = document.createElement('div');
+  grid.className = 'vocab-grid';
+  cat.verbs.forEach(v => grid.appendChild(buildFlipCard(v)));
+  panel.appendChild(grid);
+  vocabPanelsRoot.appendChild(panel);
+
+  tab.addEventListener('click', () => {
+    vocabTabsEl.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    vocabPanelsRoot.querySelectorAll('.vocab-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    panel.classList.add('active');
+  });
+});
+function checkVocabAchievement(){ if(flippedSet.size >= VOCAB.length) unlockBadge('vocab'); }
+
+/* ==========================================================================
+   EXAMPLES LIST — filterable by tag
+   ========================================================================== */
+const examplesList = document.getElementById('examplesList');
+const examplesTabsEl = document.getElementById('examplesTabs');
+EXAMPLES.forEach(ex => {
+  const wrap = document.createElement('div');
+  wrap.className = 'klammer-card reveal';
+  wrap.dataset.tag = ex.tag;
+  wrap.style.transform = 'none';
+  wrap.innerHTML = `
+    <div class="klammer-label"><svg class="icon" style="width:15px;height:15px;color:var(--teal)"><use href="#i-target"/></svg>مثال</div>
+    <div class="klammer-sentence" dir="ltr"></div>
+    <p class="klammer-translation"></p>
+    <button class="btn btn-ghost klammer-speak-all" style="padding:9px 16px;font-size:.85rem">
+      <svg class="icon" style="width:15px;height:15px"><use href="#i-speaker"/></svg> استمع
+    </button>`;
+  const sentEl = wrap.querySelector('.klammer-sentence');
+  buildKlammer(sentEl, {subject: ex.subject, v1: ex.v1, mid: ex.mid, v2: ex.v2});
+  wrap.querySelector('.klammer-translation').textContent = ex.ar;
+  wrap.querySelector('.klammer-speak-all').addEventListener('click', () => Speech.speak(sentEl.dataset.fulltext, {wordEls: sentEl._wordEls}));
+  examplesList.appendChild(wrap);
+});
+EXAMPLE_TAGS.forEach((t, ti) => {
+  const count = t.key === 'all' ? EXAMPLES.length : EXAMPLES.filter(e => e.tag === t.key).length;
+  const tab = document.createElement('button');
+  tab.className = 'cat-tab' + (ti === 0 ? ' active' : '');
+  tab.dataset.tag = t.key;
+  tab.innerHTML = `${t.label} <span class="cat-count">${toAr(count)}</span>`;
+  tab.addEventListener('click', () => {
+    examplesTabsEl.querySelectorAll('.cat-tab').forEach(x => x.classList.remove('active'));
+    tab.classList.add('active');
+    examplesList.querySelectorAll('.klammer-card').forEach(card => {
+      card.style.display = (t.key === 'all' || card.dataset.tag === t.key) ? '' : 'none';
+    });
+  });
+  examplesTabsEl.appendChild(tab);
+});
+
+/* ==========================================================================
+   COMPARE TABLE (Infinitiv / Präsens / Perfekt)
+   ========================================================================== */
+const compareTableBody = document.getElementById('compareTableBody');
+COMPARE_TABLE.forEach(row => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td data-speak="${row.inf}" style="cursor:pointer">${row.inf}</td><td data-speak="${row.pra}" style="cursor:pointer">${row.pra}</td><td class="wo-td-pos2" data-speak="${row.perf}" style="cursor:pointer">${row.perf}</td>`;
+  tr.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  compareTableBody.appendChild(tr);
+});
+
+/* ==========================================================================
+   MISTAKES LIST
+   ========================================================================== */
+const mistakesList = document.getElementById('mistakesList');
+MISTAKES.forEach(m => {
+  const card = document.createElement('div');
+  card.className = 'mistake-card';
+  card.innerHTML = `
+    <div class="mistake-side mistake-wrong">
+      <span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-x"/></svg> خطأ شائع</span>
+      <span class="mistake-sentence">${m.wrong}</span>
+    </div>
+    <div class="mistake-side mistake-right">
+      <span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg> الصحيح</span>
+      <span class="mistake-sentence de" data-speak="${m.right.replace(/"/g,'')}" style="cursor:pointer">${m.right}</span>
+    </div>
+    <div class="mistake-note">${m.note}</div>`;
+  const speakEl = card.querySelector('[data-speak]');
+  makeSpeakable(speakEl, speakEl.dataset.speak);
+  mistakesList.appendChild(card);
+});
+
+/* ==========================================================================
+   EXERCISES — state
+   ========================================================================== */
+const exState = { mcq: 0, fill: 0, builder: 0, match: 0, neg: 0 };
+const exTotals = { mcq: MCQ.length, fill: FILL.length, builder: BUILDER.length, match: MATCH_VOCAB.length, neg: NEGQUIZ.length };
+
+function updateExerciseCounters(){
+  document.getElementById('countMcq').textContent = toAr(exState.mcq) + '/' + toAr(exTotals.mcq);
+  document.getElementById('countFill').textContent = toAr(exState.fill) + '/' + toAr(exTotals.fill);
+  document.getElementById('countBuilder').textContent = toAr(exState.builder) + '/' + toAr(exTotals.builder);
+  document.getElementById('countMatch').textContent = toAr(exState.match) + '/' + toAr(exTotals.match);
+  document.getElementById('countNeg').textContent = toAr(exState.neg) + '/' + toAr(exTotals.neg);
+  const total = exTotals.mcq + exTotals.fill + exTotals.builder + exTotals.match + exTotals.neg;
+  const done = exState.mcq + exState.fill + exState.builder + exState.match + exState.neg;
+  const pct = Math.round((done/total)*100);
+  document.getElementById('scoreFill').style.width = pct + '%';
+  document.getElementById('scoreLabel').textContent = toAr(pct) + '٪';
+  if(pct === 100) unlockBadge('champion');
+  if(pct >= 20) checkAnyPerfect();
+  updateProgress();
+}
+function toAr(n){ return String(n).replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]); }
+
+/* Tabs */
+document.querySelectorAll('.exercise-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.exercise-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.exercise-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+/* --- MCQ (choice-based exercises: reused for haben/sein AND negation/questions) --- */
+const perfectFlags = { mcq: true, neg: true };
+function renderChoiceExercise(panelEl, data, stateKey){
+  data.forEach((q) => {
+    const block = document.createElement('div');
+    block.className = 'q-block';
+    block.innerHTML = `
+      <div class="q-prompt de">${q.parts[0]}<b class="mono" style="color:var(--ink-faint)">[ ___ ]</b>${q.parts[2]}</div>
+      <div class="q-options"></div>
+      <div class="q-feedback"></div>`;
+    const optsWrap = block.querySelector('.q-options');
+    const feedback = block.querySelector('.q-feedback');
+    q.options.forEach(opt => {
+      const b = document.createElement('button');
+      b.className = 'opt-btn';
+      b.textContent = opt;
+      b.addEventListener('click', () => {
+        const correct = opt === q.correct;
+        optsWrap.querySelectorAll('.opt-btn').forEach(o => o.disabled = true);
+        b.classList.add(correct ? 'correct' : 'wrong');
+        if(!correct){ perfectFlags[stateKey] = false; optsWrap.querySelectorAll('.opt-btn').forEach(o=>{ if(o.textContent===q.correct) o.classList.add('correct'); }); }
+        feedback.textContent = q.why;
+        feedback.classList.add('show');
+        exState[stateKey]++;
+        updateExerciseCounters();
+      });
+      optsWrap.appendChild(b);
+    });
+    panelEl.appendChild(block);
+  });
+}
+const panelMcq = document.getElementById('panelMcq');
+renderChoiceExercise(panelMcq, MCQ, 'mcq');
+
+/* --- FILL --- */
+const panelFill = document.getElementById('panelFill');
+let fillPerfect = true;
+FILL.forEach(q => {
+  const block = document.createElement('div');
+  block.className = 'q-block';
+  block.innerHTML = `
+    <div class="q-prompt">اكتب صيغة <span class="mono">Partizip II</span> للفعل: <span class="de" style="font-weight:700" data-speak="${q.inf}">${q.inf}</span></div>
+    <div class="fill-row">
+      <input type="text" placeholder="…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل صيغة Partizip II لكلمة ${q.inf}">
+      <button class="fill-check">تحقّق</button>
+      <span class="fill-result"></span>
+    </div>
+    <div class="q-feedback">💡 ${q.hint}</div>`;
+  const input = block.querySelector('input');
+  const result = block.querySelector('.fill-result');
+  const feedback = block.querySelector('.q-feedback');
+  const check = block.querySelector('.fill-check');
+  let answered = false;
+  function doCheck(){
+    if(answered) return;
+    const val = input.value.trim().toLowerCase().replace(/ß/g,'ss');
+    const correct = val === q.correct.toLowerCase().replace(/ß/g,'ss');
+    answered = true;
+    input.disabled = true; check.disabled = true;
+    if(correct){
+      result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--success)"><use href="#i-check"/></svg>';
+      input.style.borderColor = 'var(--success)';
+    } else {
+      result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--danger)"><use href="#i-x"/></svg>';
+      input.style.borderColor = 'var(--danger)';
+      fillPerfect = false;
+      input.value = q.correct;
+    }
+    feedback.classList.add('show');
+    exState.fill++;
+    updateExerciseCounters();
+  }
+  check.addEventListener('click', doCheck);
+  input.addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); doCheck(); } });
+  const fillSpeakEl = block.querySelector('[data-speak]');
+  makeSpeakable(fillSpeakEl, fillSpeakEl.dataset.speak);
+  panelFill.appendChild(block);
+});
+
+/* --- BUILDER --- */
+const panelBuilder = document.getElementById('panelBuilder');
+let builderPerfect = true;
+BUILDER.forEach((q, qi) => {
+  const block = document.createElement('div');
+  block.className = 'q-block';
+  const shuffled = [...q.words].sort(() => Math.random() - 0.5);
+  block.innerHTML = `
+    <div class="q-prompt">رتّب الكلمات لتكوين جملة صحيحة (${q.ar})</div>
+    <div class="builder-answer"></div>
+    <div class="builder-pool"></div>
+    <div class="builder-actions">
+      <button class="btn btn-ghost btn-reset" style="padding:8px 16px;font-size:.85rem">إعادة الترتيب</button>
+      <button class="btn btn-primary btn-check" style="padding:8px 16px;font-size:.85rem">تحقّق</button>
+    </div>
+    <div class="q-feedback"></div>`;
+  const answerWrap = block.querySelector('.builder-answer');
+  const poolWrap = block.querySelector('.builder-pool');
+  const feedback = block.querySelector('.q-feedback');
+  let answer = [];
+
+  function renderPool(){
+    poolWrap.innerHTML = '';
+    shuffled.forEach((w, wi) => {
+      const chip = document.createElement('button');
+      chip.className = 'chip-word de';
+      chip.textContent = w;
+      chip.dataset.idx = wi;
+      if(answer.some(a => a.idx === wi)) chip.classList.add('used');
+      chip.addEventListener('click', () => {
+        if(chip.classList.contains('used')) return;
+        answer.push({idx: wi, word: w});
+        renderAll();
+      });
+      poolWrap.appendChild(chip);
+    });
+  }
+  function renderAnswer(){
+    answerWrap.innerHTML = '';
+    if(!answer.length){
+      answerWrap.innerHTML = '<span style="color:var(--ink-faint);font-size:.85rem">انقر على الكلمات أدناه بالترتيب الصحيح…</span>';
+    }
+    answer.forEach((a, ai) => {
+      const chip = document.createElement('button');
+      chip.className = 'chip-word de';
+      chip.style.background = 'var(--teal-soft)';
+      chip.style.borderColor = 'var(--teal)';
+      chip.textContent = a.word;
+      chip.addEventListener('click', () => { answer.splice(ai,1); renderAll(); });
+      answerWrap.appendChild(chip);
+    });
+  }
+  function renderAll(){ renderPool(); renderAnswer(); }
+  renderAll();
+
+  block.querySelector('.btn-reset').addEventListener('click', () => { answer = []; feedback.classList.remove('show'); renderAll(); });
+  block.querySelector('.btn-check').addEventListener('click', function(){
+    const built = answer.map(a=>a.word);
+    const isCorrect = JSON.stringify(built) === JSON.stringify(q.correct);
+    feedback.textContent = isCorrect ? '✔ صحيح تمامًا! الجملة الصحيحة: ' + q.correct.join(' ') + '.' : '✘ ليس تمامًا. الترتيب الصحيح: ' + q.correct.join(' ') + '.';
+    feedback.classList.add('show');
+    if(!isCorrect) builderPerfect = false;
+    Speech.speak(q.correct.join(' ') + '.', {});
+    if(!block.dataset.counted){ block.dataset.counted = '1'; exState.builder++; updateExerciseCounters(); }
+  });
+  panelBuilder.appendChild(block);
+});
+
+/* --- MATCH --- */
+const panelMatch = document.getElementById('panelMatch');
+(function initMatch(){
+  const pairs = MATCH_VOCAB;
+  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على فعل من العمود الأيمن، ثم صيغة Partizip II المطابقة له من العمود الأيسر.</div>
+    <div class="match-grid"><div class="match-col" id="matchLeft"></div><div class="match-col" id="matchRight"></div></div>`;
+  const left = document.getElementById('matchLeft');
+  const right = document.getElementById('matchRight');
+  const shuffledRight = [...pairs].sort(() => Math.random() - 0.5);
+  let selectedLeft = null, selectedRight = null, matched = 0;
+
+  pairs.forEach(p => {
+    const el = document.createElement('button');
+    el.className = 'match-item de';
+    el.textContent = p.de;
+    el.dataset.key = p.de;
+    el.addEventListener('click', () => {
+      if(el.classList.contains('matched')) return;
+      left.querySelectorAll('.match-item').forEach(i=>i.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedLeft = el;
+      tryMatch();
+    });
+    left.appendChild(el);
+  });
+  shuffledRight.forEach(p => {
+    const el = document.createElement('button');
+    el.className = 'match-item de mono';
+    el.textContent = p.partizip;
+    el.dataset.key = p.de;
+    el.addEventListener('click', () => {
+      if(el.classList.contains('matched')) return;
+      right.querySelectorAll('.match-item').forEach(i=>i.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedRight = el;
+      tryMatch();
+    });
+    right.appendChild(el);
+  });
+
+  function tryMatch(){
+    if(!selectedLeft || !selectedRight) return;
+    if(selectedLeft.dataset.key === selectedRight.dataset.key){
+      selectedLeft.classList.add('matched'); selectedRight.classList.add('matched');
+      selectedLeft.classList.remove('selected'); selectedRight.classList.remove('selected');
+      Speech.speak(selectedLeft.textContent + ' — ' + selectedRight.textContent, {});
+      matched++; exState.match = matched; updateExerciseCounters();
+      selectedLeft = null; selectedRight = null;
+    } else {
+      [selectedLeft, selectedRight].forEach(el => { el.classList.add('shake'); setTimeout(()=>el.classList.remove('shake','selected'), 400); });
+      setTimeout(()=>{ selectedLeft = null; selectedRight = null; }, 420);
+    }
+  }
+})();
+
+/* --- NEGATION & QUESTIONS QUIZ (reuses the same choice-exercise renderer) --- */
+const panelNeg = document.getElementById('panelNeg');
+renderChoiceExercise(panelNeg, NEGQUIZ, 'neg');
+
+function checkAnyPerfect(){
+  const anyDone = exState.mcq === exTotals.mcq || exState.fill === exTotals.fill || exState.builder === exTotals.builder || exState.match === exTotals.match || exState.neg === exTotals.neg;
+  if(exState.mcq === exTotals.mcq && perfectFlags.mcq) unlockBadge('sharp');
+  if(exState.neg === exTotals.neg && perfectFlags.neg) unlockBadge('sharp');
+  if(exState.match === exTotals.match) unlockBadge('sharp');
+}
+
+/* ==========================================================================
+   BADGES / ACHIEVEMENTS
+   ========================================================================== */
+const BADGES = [
+  {id:'explorer', name:'مستكشف الدليل', icon:'i-compass'},
+  {id:'vocab', name:'حافظ المفردات', icon:'i-cards'},
+  {id:'sharp', name:'حادّ التفكير', icon:'i-target'},
+  {id:'champion', name:'بطل Perfekt الشامل', icon:'i-medal'}
+];
+let unlockedBadges = {};
+try{ unlockedBadges = JSON.parse(localStorage.getItem('perfekt-guide-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
+
+const badgesRow = document.getElementById('badgesRow');
+BADGES.forEach(b => {
+  const el = document.createElement('div');
+  el.className = 'badge' + (unlockedBadges[b.id] ? ' unlocked' : '');
+  el.id = 'badge-' + b.id;
+  el.innerHTML = `<div class="badge-icon"><svg class="icon" style="stroke:#fff;width:22px;height:22px"><use href="#${b.icon}"/></svg></div><div class="badge-name">${b.name}</div>`;
+  badgesRow.appendChild(el);
+});
+function unlockBadge(id){
+  if(unlockedBadges[id]) return;
+  unlockedBadges[id] = true;
+  try{ localStorage.setItem('perfekt-guide-badges', JSON.stringify(unlockedBadges)); }catch(e){}
+  const el = document.getElementById('badge-' + id);
+  if(el){ el.classList.add('unlocked','pop'); setTimeout(()=>el.classList.remove('pop'), 650); }
+  const badge = BADGES.find(b=>b.id===id);
+  if(badge) showToast('🎉 إنجاز جديد: ' + badge.name);
+}
+
+function showToast(msg){
+  const wrap = document.getElementById('toastWrap');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.textContent = msg;
+  wrap.appendChild(t);
+  requestAnimationFrame(()=>t.classList.add('show'));
+  setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.remove(), 400); }, 3200);
+}
+
+/* ==========================================================================
+   SCROLL REVEAL
+   ========================================================================== */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('is-visible'); } });
+}, {threshold: .15});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ==========================================================================
+   SECTION NAV: active-link highlight + click-to-scroll + progress
+   ========================================================================== */
+const sections = ['#hero','#intro','#rule','#formation','#habensein','#wordorder','#vocab','#examples','#negation','#questions','#prateritum','#mistakes','#pronunciation','#exercises','#summary'].map(s => document.querySelector(s)).filter(Boolean);
+const visitedSections = new Set();
+const navLinks = document.querySelectorAll('.nav-link');
+
+function setActiveNav(id){
+  navLinks.forEach(l => l.classList.toggle('active', l.dataset.target === id));
+}
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      setActiveNav('#' + entry.target.id);
+      visitedSections.add(entry.target.id);
+      if(visitedSections.size === sections.length) unlockBadge('explorer');
+      updateProgress();
+    }
+  });
+}, {rootMargin: '-40% 0px -50% 0px'});
+sections.forEach(s => sectionObserver.observe(s));
+
+document.querySelectorAll('[data-target], [data-scroll]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.target || btn.dataset.scroll;
+    const el = document.querySelector(target);
+    if(el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
+    document.getElementById('mainNav').classList.remove('open');
+    document.getElementById('navToggle').setAttribute('aria-expanded','false');
+  });
+});
+
+function updateProgress(){
+  const sectionWeight = 0.4, exerciseWeight = 0.6;
+  const sectionPct = visitedSections.size / sections.length;
+  const exTotal = exTotals.mcq + exTotals.fill + exTotals.builder + exTotals.match + exTotals.neg;
+  const exDone = exState.mcq + exState.fill + exState.builder + exState.match + exState.neg;
+  const exPct = exTotal ? exDone / exTotal : 0;
+  const overall = Math.round((sectionPct*sectionWeight + exPct*exerciseWeight) * 100);
+  const circumference = 113;
+  const offset = circumference - (overall/100)*circumference;
+  document.getElementById('progressRingBar').style.strokeDashoffset = offset;
+  document.getElementById('progressRingLabel').textContent = toAr(overall) + '٪';
+}
+updateProgress();
+updateExerciseCounters();
+
+/* ==========================================================================
+   MOBILE NAV TOGGLE
+   ========================================================================== */
+const navToggle = document.getElementById('navToggle');
+const mainNav = document.getElementById('mainNav');
+navToggle.addEventListener('click', () => {
+  const open = mainNav.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(open));
+});
+
+/* ==========================================================================
+   SEARCH
+   ========================================================================== */
+function runSearch(query){
+  if(!query || query.trim().length < 2) return;
+  const q = query.trim().toLowerCase();
+  document.querySelectorAll('mark.hl').forEach(m => { m.replaceWith(document.createTextNode(m.textContent)); });
+  const walker = document.createTreeWalker(document.getElementById('mainContent'), NodeFilter.SHOW_TEXT, null);
+  let found = null;
+  const nodes = [];
+  let n;
+  while(n = walker.nextNode()){ nodes.push(n); }
+  for(const node of nodes){
+    const text = node.nodeValue;
+    const idx = text.toLowerCase().indexOf(q);
+    if(idx > -1 && node.parentElement && !node.parentElement.closest('script,style')){
+      const before = text.slice(0, idx), match = text.slice(idx, idx+q.length), after = text.slice(idx+q.length);
+      const mark = document.createElement('mark');
+      mark.className = 'hl';
+      mark.textContent = match;
+      const frag = document.createDocumentFragment();
+      frag.appendChild(document.createTextNode(before));
+      frag.appendChild(mark);
+      frag.appendChild(document.createTextNode(after));
+      node.parentElement.replaceChild(frag, node);
+      if(!found) found = mark;
+    }
+  }
+  if(found){ found.scrollIntoView({behavior:'smooth', block:'center'}); }
+  else{ showToast('لم يتم العثور على «' + query + '» في هذا الدرس'); }
+}
+document.getElementById('searchToggle').addEventListener('click', () => {
+  document.getElementById('searchBoxDesktop').classList.toggle('open');
+  document.getElementById('searchInputDesktop').focus();
+});
+['searchInputDesktop','searchInputMobile'].forEach(id => {
+  document.getElementById(id).addEventListener('keydown', e => { if(e.key === 'Enter'){ runSearch(e.target.value); } });
+});
+
+/* ==========================================================================
+   FULLSCREEN
+   ========================================================================== */
+document.getElementById('fullscreenToggle').addEventListener('click', () => {
+  if(!document.fullscreenElement){ document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+  else{ document.exitFullscreen && document.exitFullscreen(); }
+});
+document.addEventListener('fullscreenchange', () => {
+  document.getElementById('fsIcon').innerHTML = '<use href="#' + (document.fullscreenElement ? 'i-compress' : 'i-expand') + '"/>';
+});
+
+/* ==========================================================================
+   PRINT
+   ========================================================================== */
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+/* ==========================================================================
+   BACK TO TOP
+   ========================================================================== */
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 640);
+}, {passive: true});
+backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-guide-01-perfekt" data-category="a2" data-title="الدليل الشامل · زمن الـ Perfekt" data-root="../../" defer></script>
+</body>
+</html>

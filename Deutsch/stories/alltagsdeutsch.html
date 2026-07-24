@@ -1,0 +1,2944 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alltagsdeutsch — محادثات الألمانية اليومية</title>
+<meta name="description" content="منصة تفاعلية لتعلم المحادثات الألمانية اليومية مع الترجمة والنطق الصوتي">
+
+<style>
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  /* Light theme */
+  --bg: #FAF8F4;
+  --bg-elevated: #FFFFFF;
+  --bg-subtle: #F2EEE6;
+  --surface-border: rgba(26, 29, 35, 0.08);
+  --text-primary: #1A1D23;
+  --text-secondary: #5A5F6B;
+  --text-tertiary: #8B8F99;
+  --accent: #E8542E;
+  --accent-soft: rgba(232, 84, 46, 0.12);
+  --accent-contrast: #FFFFFF;
+  --accent-2: #2D6A4F;
+  --accent-2-soft: rgba(45, 106, 79, 0.12);
+  --bubble-de: #FFFFFF;
+  --bubble-other: #F2EEE6;
+  --shadow-sm: 0 1px 2px rgba(26,29,35,0.04), 0 1px 1px rgba(26,29,35,0.03);
+  --shadow-md: 0 4px 16px rgba(26,29,35,0.06), 0 1px 3px rgba(26,29,35,0.04);
+  --shadow-lg: 0 12px 32px rgba(26,29,35,0.10), 0 4px 8px rgba(26,29,35,0.04);
+  --code-bg: #1A1D23;
+  --code-text: #F2EEE6;
+  --flag-black: #1A1D23;
+  --flag-red: #E8542E;
+  --flag-gold: #E0A526;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --bg: #15171C;
+  --bg-elevated: #1E2128;
+  --bg-subtle: #232730;
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --text-primary: #F2EEE6;
+  --text-secondary: #A8ACB8;
+  --text-tertiary: #6B6F7B;
+  --accent: #FF6B45;
+  --accent-soft: rgba(255, 107, 69, 0.16);
+  --accent-contrast: #15171C;
+  --accent-2: #4FA888;
+  --accent-2-soft: rgba(79, 168, 136, 0.16);
+  --bubble-de: #262A33;
+  --bubble-other: #1A1D23;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.32), 0 1px 3px rgba(0,0,0,0.2);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.45), 0 4px 10px rgba(0,0,0,0.25);
+  --code-bg: #0F1115;
+  --code-text: #E8E5DE;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", "SF Pro Display", -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.65;
+  transition: background 0.4s var(--ease), color 0.4s var(--ease);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ============================================
+   SCROLL PROGRESS BAR
+   ============================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: transparent;
+  z-index: 1000;
+}
+.scroll-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--flag-gold));
+  transition: width 0.1s linear;
+  border-radius: 0 0 4px 4px;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem clamp(1rem, 4vw, 2.5rem);
+  background: color-mix(in srgb, var(--bg) 75%, transparent);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid var(--surface-border);
+  transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 800;
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, var(--accent), var(--flag-gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  font-family: Georgia, serif;
+}
+
+.brand-text small {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 2px;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.25s var(--ease);
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--text-primary);
+  background: var(--bg-subtle);
+}
+
+.nav-links a.active {
+  color: var(--accent-contrast);
+  background: var(--accent);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--surface-border);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  transform: rotate(20deg) scale(1.06);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+.theme-toggle svg { width: 20px; height: 20px; }
+.theme-toggle .sun { display: none; }
+[data-theme="dark"] .theme-toggle .sun { display: block; }
+[data-theme="dark"] .theme-toggle .moon { display: none; }
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  padding: clamp(3.5rem, 10vw, 7rem) clamp(1rem, 4vw, 2.5rem) clamp(2.5rem, 6vw, 4rem);
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+@media (max-width: 880px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-visual { order: -1; }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.4rem;
+  animation: fadeUp 0.7s var(--ease) both;
+}
+.eyebrow .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: 1.25rem;
+  animation: fadeUp 0.7s 0.08s var(--ease) both;
+}
+.hero h1 .accent-text {
+  background: linear-gradient(135deg, var(--accent), var(--flag-gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p.lead {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: var(--text-secondary);
+  max-width: 56ch;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.7s 0.16s var(--ease) both;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 4vw, 2.75rem);
+  animation: fadeUp 0.7s 0.24s var(--ease) both;
+}
+.hero-stat .num {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+.hero-stat .num span.unit {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+}
+.hero-stat .label {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  margin-top: 0.2rem;
+}
+
+/* Hero visual: phone-style chat mockup */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  animation: fadeUp 0.8s 0.2s var(--ease) both;
+}
+
+.phone-mock {
+  width: min(320px, 90%);
+  background: var(--bg-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: 28px;
+  box-shadow: var(--shadow-lg);
+  padding: 1.1rem;
+  position: relative;
+  transform: rotate(-2deg);
+  transition: transform 0.5s var(--ease);
+}
+.phone-mock:hover { transform: rotate(0deg); }
+
+.phone-mock .phone-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--surface-border);
+  margin-bottom: 0.85rem;
+}
+.phone-mock .phone-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-2), #5fc9a8);
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-weight:700; font-size:0.95rem;
+}
+.phone-mock .phone-title { font-weight: 700; font-size: 0.92rem; }
+.phone-mock .phone-sub { font-size: 0.75rem; color: var(--text-tertiary); }
+
+.mock-bubble {
+  max-width: 86%;
+  padding: 0.65rem 0.95rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 0.6rem;
+  font-size: 0.86rem;
+  box-shadow: var(--shadow-sm);
+  animation: bubblePop 0.5s var(--ease) both;
+}
+.mock-bubble.left { background: var(--bubble-other); border-bottom-left-radius: 4px; }
+.mock-bubble.right { background: var(--bubble-de); margin-right: 0; margin-left: auto; border-bottom-right-radius: 4px; box-shadow: var(--shadow-md); border: 1px solid var(--surface-border); }
+.mock-bubble strong { display:block; font-size:0.95rem; margin-bottom:0.15rem; }
+.mock-bubble .mock-meta { font-size: 0.7rem; color: var(--text-tertiary); margin-top: 0.3rem; }
+
+@keyframes bubblePop {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.mock-bubble:nth-child(2) { animation-delay: 0.15s; }
+.mock-bubble:nth-child(3) { animation-delay: 0.3s; }
+.mock-bubble:nth-child(4) { animation-delay: 0.45s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.4); }
+}
+
+/* ============================================
+   SECTION SHELL
+   ============================================ */
+.section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 4vw, 2.5rem);
+}
+
+.section-head {
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  max-width: 70ch;
+}
+.section-head .eyebrow { margin-bottom: 0.9rem; }
+.section-head h2 {
+  font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.6rem;
+}
+.section-head p {
+  color: var(--text-secondary);
+  font-size: clamp(0.95rem, 2vw, 1.06rem);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   HOW IT WORKS — STEP CARDS
+   ============================================ */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.1rem;
+}
+.step-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+.step-icon {
+  width: 46px; height: 46px;
+  border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.step-icon.icon-1 { background: var(--accent-soft); color: var(--accent); }
+.step-icon.icon-2 { background: var(--accent-2-soft); color: var(--accent-2); }
+.step-icon.icon-3 { background: rgba(224,165,38,0.16); color: var(--flag-gold); }
+.step-icon.icon-4 { background: var(--accent-soft); color: var(--accent); }
+
+.step-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; letter-spacing: -0.01em; }
+.step-card p { font-size: 0.9rem; color: var(--text-secondary); }
+.step-card .step-num {
+  position: absolute;
+  top: 1.1rem; left: 1.3rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+}
+
+/* ============================================
+   FILTER / CONTROL BAR
+   ============================================ */
+.control-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+.filter-pill {
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid var(--surface-border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.filter-pill:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+.filter-pill.active {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   CONVERSATION SCENES
+   ============================================ */
+.scenes {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.scene-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+.scene-card:hover { box-shadow: var(--shadow-lg); }
+
+.scene-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem clamp(1.1rem, 3vw, 1.75rem);
+  border-bottom: 1px solid var(--surface-border);
+  background: var(--bg-subtle);
+  flex-wrap: wrap;
+}
+.scene-icon {
+  width: 50px; height: 50px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.45rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+.scene-icon.family { background: linear-gradient(135deg, #FFD9CC, #FFB8A1); }
+.scene-icon.friends { background: linear-gradient(135deg, #CFEFE0, #9FE0C5); }
+.scene-icon.work { background: linear-gradient(135deg, #FCE7B6, #F8D17E); }
+.scene-icon.health { background: linear-gradient(135deg, #D0E8FF, #A3CFFF); }
+.scene-icon.daily { background: linear-gradient(135deg, #E8D5FF, #D0ACFF); }
+[data-theme="dark"] .scene-icon.family { background: linear-gradient(135deg, #5a3025, #7a3f2e); }
+[data-theme="dark"] .scene-icon.friends { background: linear-gradient(135deg, #1f4438, #275a48); }
+[data-theme="dark"] .scene-icon.work { background: linear-gradient(135deg, #5a4717, #6f5a1e); }
+[data-theme="dark"] .scene-icon.health { background: linear-gradient(135deg, #1a3550, #234669); }
+[data-theme="dark"] .scene-icon.daily { background: linear-gradient(135deg, #3a2558, #4e3070); }
+
+.scene-title-wrap { flex: 1; min-width: 160px; }
+.scene-title-wrap h3 {
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.scene-title-wrap .scene-meta {
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  margin-top: 0.15rem;
+}
+.scene-tag {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--accent-soft);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.dialogue {
+  padding: clamp(1.1rem, 3vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+/* Individual conversation line */
+.line {
+  display: flex;
+  flex-direction: column;
+  max-width: 84%;
+  animation: lineIn 0.5s var(--ease) both;
+}
+.line.them { align-self: flex-start; align-items: flex-start; }
+.line.you { align-self: flex-end; align-items: flex-end; }
+
+@keyframes lineIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.speaker-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  margin-bottom: 0.3rem;
+  padding: 0 0.3rem;
+}
+
+.bubble {
+  position: relative;
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1.15rem;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.line.them .bubble {
+  background: var(--bubble-other);
+  border-bottom-left-radius: 6px;
+}
+.line.you .bubble {
+  background: var(--bubble-de);
+  border: 1px solid var(--surface-border);
+  border-bottom-right-radius: 6px;
+}
+.bubble:hover { box-shadow: var(--shadow-md); }
+
+.bubble .de-text { line-height: 1.5; direction: ltr; text-align: left; unicode-bidi: isolate; }
+
+/* Translation panel */
+.translations {
+  margin-top: 0.6rem;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.4s var(--ease);
+  width: 100%;
+}
+.translations.open { grid-template-rows: 1fr; }
+.translations-inner { overflow: hidden; }
+
+.translation-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+.translation-row .flag-chip {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+  letter-spacing: 0.04em;
+}
+.translation-row.en .flag-chip { background: var(--accent-2-soft); color: var(--accent-2); }
+.translation-row.ar .flag-chip { background: rgba(224,165,38,0.18); color: var(--flag-gold); }
+.translation-row.ar { direction: rtl; text-align: right; font-weight: 600; }
+.translation-row.en { direction: ltr; text-align: left; }
+
+/* Action toolbar under each bubble */
+.bubble-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+.act-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--surface-border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s var(--ease);
+  font-family: inherit;
+}
+.act-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+.act-btn:active { transform: translateY(0) scale(0.97); }
+.act-btn.playing {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-color: var(--accent);
+}
+.act-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+.act-btn.copied {
+  background: var(--accent-2);
+  color: #fff;
+  border-color: var(--accent-2);
+}
+
+/* Waveform mini animation while "playing" */
+.wave {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 12px;
+}
+.wave span {
+  display: block;
+  width: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  height: 4px;
+  animation: none;
+}
+.act-btn.playing .wave span {
+  animation: waveBounce 0.9s ease-in-out infinite;
+}
+.wave span:nth-child(1) { animation-delay: 0s; }
+.wave span:nth-child(2) { animation-delay: 0.15s; }
+.wave span:nth-child(3) { animation-delay: 0.3s; }
+.wave span:nth-child(4) { animation-delay: 0.45s; }
+
+@keyframes waveBounce {
+  0%, 100% { height: 4px; }
+  50% { height: 12px; }
+}
+
+/* ============================================
+   VOCAB CALLOUTS
+   ============================================ */
+.vocab-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0 clamp(1.1rem, 3vw, 1.75rem) clamp(1.1rem, 3vw, 1.75rem);
+}
+.vocab-chip {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-subtle);
+  border: 1px solid var(--surface-border);
+  min-width: 120px;
+}
+.vocab-chip .vc-de { font-weight: 700; font-size: 0.92rem; direction: ltr; text-align: left; }
+.vocab-chip .vc-tr { font-size: 0.78rem; color: var(--text-tertiary); margin-top: 0.1rem; }
+
+/* ============================================
+   GRAMMAR / EXPLANATION SECTION
+   ============================================ */
+.compare-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--shadow-sm);
+}
+table.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-elevated);
+  min-width: 560px;
+  direction: rtl;
+}
+table.compare-table th, table.compare-table td {
+  padding: 0.9rem 1.1rem;
+  text-align: right;
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--surface-border);
+}
+table.compare-table th {
+  background: var(--bg-subtle);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+table.compare-table td.de-cell { direction: ltr; text-align: left; font-weight: 600; }
+table.compare-table tbody tr:last-child td { border-bottom: none; }
+table.compare-table tbody tr {
+  transition: background 0.2s var(--ease);
+}
+table.compare-table tbody tr:hover { background: var(--bg-subtle); }
+
+/* ============================================
+   CODE / PHRASE PATTERN BLOCKS
+   ============================================ */
+.pattern-block {
+  background: var(--code-bg);
+  color: var(--code-text);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin: 1.2rem 0;
+}
+.pattern-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1.1rem;
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.pattern-head .ph-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(242,238,230,0.6);
+  font-family: "Inter", sans-serif;
+}
+.pattern-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 7px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: rgba(242,238,230,0.85);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  font-family: "Inter", sans-serif;
+}
+.pattern-copy-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+.pattern-copy-btn.copied { background: var(--accent-2); color: #fff; border-color: var(--accent-2); }
+.pattern-body {
+  padding: 1.1rem 1.3rem;
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
+  font-size: 0.92rem;
+  line-height: 1.9;
+  direction: ltr;
+  text-align: left;
+  overflow-x: auto;
+}
+.pattern-body .tok-verb { color: #FF8A65; }
+.pattern-body .tok-noun { color: #80CBC4; }
+.pattern-body .tok-slot { color: #FFD54F; }
+.pattern-body .tok-comment { color: rgba(242,238,230,0.4); font-style: italic; }
+.pattern-body .line-out { margin-bottom: 0.4rem; }
+
+/* ============================================
+   ROADMAP / TIMELINE
+   ============================================ */
+.timeline {
+  position: relative;
+  padding: 1rem 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  right: 22px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent-2), var(--flag-gold));
+  opacity: 0.35;
+}
+@media (min-width: 760px) {
+  .timeline::before { right: 50%; }
+}
+.timeline-item {
+  position: relative;
+  padding: 0 0 2.4rem 0;
+  padding-right: 56px;
+  display: flex;
+}
+@media (min-width: 760px) {
+  .timeline-item { width: 50%; padding-right: 0; padding-left: 0; }
+  .timeline-item:nth-child(odd) { padding-right: calc(50% + 36px); justify-content: flex-end; text-align: right; }
+  .timeline-item:nth-child(even) { margin-right: 50%; padding-left: calc(0% + 36px); text-align: left; align-self: flex-start; }
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot {
+  position: absolute;
+  right: 14px;
+  top: 4px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--accent);
+  box-shadow: var(--shadow-sm);
+  z-index: 2;
+}
+@media (min-width: 760px) {
+  .timeline-item:nth-child(odd) .timeline-dot { right: -9px; }
+  .timeline-item:nth-child(even) .timeline-dot { right: auto; left: -9px; }
+}
+.timeline-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.3rem;
+  box-shadow: var(--shadow-sm);
+  max-width: 420px;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.timeline-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.timeline-card .tl-week { font-size: 0.75rem; font-weight: 800; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem; }
+.timeline-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+.timeline-card p { font-size: 0.88rem; color: var(--text-secondary); }
+
+/* ============================================
+   FAQ ACCORDION
+   ============================================ */
+.faq-list { display: flex; flex-direction: column; gap: 0.7rem; }
+.faq-item {
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  overflow: hidden;
+  transition: border-color 0.3s var(--ease);
+}
+.faq-item[open] { border-color: var(--accent); box-shadow: var(--shadow-sm); }
+.faq-item summary {
+  padding: 1.1rem 1.4rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.98rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary .faq-icon {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+  font-size: 1rem;
+}
+.faq-item[open] summary .faq-icon { transform: rotate(45deg); background: var(--accent); color: #fff; }
+.faq-item .faq-body {
+  padding: 0 1.4rem 1.2rem;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  animation: fadeUp 0.35s var(--ease) both;
+}
+
+/* ============================================
+   FOOTER / CTA
+   ============================================ */
+.cta-band {
+  margin: clamp(2rem, 6vw, 4rem) auto;
+  max-width: 1280px;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 5vw, 3rem);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--accent), #ff8a5e 60%, var(--flag-gold));
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.cta-band h2 { font-size: clamp(1.5rem, 4.5vw, 2.4rem); font-weight: 800; margin-bottom: 0.7rem; letter-spacing: -0.02em; }
+.cta-band p { opacity: 0.92; max-width: 50ch; margin: 0 auto 1.6rem; font-size: clamp(0.95rem, 2vw, 1.05rem); }
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.9rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+.cta-button:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 32px rgba(0,0,0,0.24); }
+
+footer {
+  text-align: center;
+  padding: 2.5rem clamp(1rem, 4vw, 2.5rem) 3rem;
+  color: var(--text-tertiary);
+  font-size: 0.85rem;
+}
+footer .footer-flags { font-size: 1.4rem; margin-bottom: 0.6rem; letter-spacing: 0.3rem; }
+
+/* ============================================
+   FOCUS STATES / ACCESSIBILITY
+   ============================================ */
+a:focus-visible, button:focus-visible, summary:focus-visible, .filter-pill:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--text-primary);
+  color: var(--bg);
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s var(--ease);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .line { max-width: 92%; }
+  .hero-stats { gap: 1.4rem; }
+  .vocab-chip { min-width: 100px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scrollBar"></div></div>
+
+<!-- ============================================
+     NAVIGATION
+     ============================================ -->
+<header class="navbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">Ä</span>
+    <span class="brand-text">
+      Alltagsdeutsch
+      <small>محادثات الألمانية اليومية</small>
+    </span>
+  </div>
+
+  <nav aria-label="التنقل الرئيسي">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="active">الرئيسية</a></li>
+      <li><a href="#how-it-works">كيف تعمل</a></li>
+      <li><a href="#conversations">المحادثات</a></li>
+      <li><a href="#patterns">قوالب الجمل</a></li>
+      <li><a href="#grammar">القواعد</a></li>
+      <li><a href="#roadmap">خطة التعلم</a></li>
+      <li><a href="#faq">الأسئلة الشائعة</a></li>
+    </ul>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="تبديل المظهر الفاتح/الداكن">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero" id="hero">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> منصة محادثة تفاعلية</span>
+      <h1>تعلّم الألمانية من <span class="accent-text">قلب الحياة اليومية</span></h1>
+      <p class="lead">
+        محادثات حقيقية في 6 سياقات يومية — العائلة، الأصدقاء، العمل، الطبيب، المطعم، والمواصلات. استمع للنطق الصحيح، اقرأ الترجمة بالإنجليزية والعربية، وانسخ أي جملة بضغطة واحدة. لا تبويبات، فقط ألمانية حية.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">6<span class="unit">مواضيع</span></div>
+          <div class="label">عائلة، أصدقاء، عمل، طبيب، مطعم، تسوق…</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">2<span class="unit">لغة</span></div>
+          <div class="label">ترجمة فورية EN / AR</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">A1<span class="unit">–B1</span></div>
+          <div class="label">مستوى المحتوى</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="phone-mock">
+        <div class="phone-header">
+          <div class="phone-avatar">👨‍👩‍👧</div>
+          <div>
+            <div class="phone-title">Familie Müller</div>
+            <div class="phone-sub">محادثة عائلية — Frühstück</div>
+          </div>
+        </div>
+        <div class="mock-bubble left">
+          <strong>Mama</strong>
+          Guten Morgen! Hast du gut geschlafen?
+          <div class="mock-meta">صباح الخير! هل نمت جيدًا؟</div>
+        </div>
+        <div class="mock-bubble right">
+          <strong>Lukas</strong>
+          Ja, danke! Was gibt es zum Frühstück?
+          <div class="mock-meta">نعم، شكرًا! ما هو الإفطار؟</div>
+        </div>
+        <div class="mock-bubble left">
+          <strong>Mama</strong>
+          Es gibt frisches Brot und Marmelade.
+          <div class="mock-meta">يوجد خبز طازج ومربى.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     HOW IT WORKS
+     ============================================ -->
+<section class="section" id="how-it-works">
+  <div class="section-head reveal">
+    <span class="eyebrow">دليل الاستخدام</span>
+    <h2>كل أداة تحتاجها تحت كل جملة</h2>
+    <p>صُممت كل محادثة لتمنحك تجربة استماع، قراءة، وفهم متكاملة — بدون التنقل بين صفحات أو تبويبات.</p>
+  </div>
+
+  <div class="steps-grid">
+    <div class="step-card reveal">
+      <span class="step-num">01</span>
+      <div class="step-icon icon-1" aria-hidden="true">🔊</div>
+      <h3>استمع بنطق ألماني</h3>
+      <p>اضغط زر التشغيل لسماع الجملة بصوت ألماني واضح باستخدام محرك النطق في متصفحك.</p>
+    </div>
+    <div class="step-card reveal">
+      <span class="step-num">02</span>
+      <div class="step-icon icon-2" aria-hidden="true">🌐</div>
+      <h3>اعرض الترجمة</h3>
+      <p>اضغط "ترجم" لإظهار الترجمة الإنجليزية والعربية أسفل كل جملة مباشرة.</p>
+    </div>
+    <div class="step-card reveal">
+      <span class="step-num">03</span>
+      <div class="step-icon icon-3" aria-hidden="true">📋</div>
+      <h3>نسخ بضغطة واحدة</h3>
+      <p>انسخ النص الألماني فورًا لاستخدامه في دفاتر ملاحظاتك أو تطبيقات أخرى.</p>
+    </div>
+    <div class="step-card reveal">
+      <span class="step-num">04</span>
+      <div class="step-icon icon-4" aria-hidden="true">🎯</div>
+      <h3>تصفية حسب السياق</h3>
+      <p>اختر بين محادثات العائلة، الأصدقاء، أو العمل لتتدرب على المفردات المناسبة لكل بيئة.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CONVERSATIONS
+     ============================================ -->
+<section class="section" id="conversations">
+  <div class="section-head reveal">
+    <span class="eyebrow">المحادثات اليومية</span>
+    <h2>حوارات من الحياة الواقعية</h2>
+    <p>اختر السياق، استمع لكل سطر، واطّلع على الترجمة الفورية. كل محادثة مصممة لتعكس أسلوب الحديث الطبيعي بين الألمان — من البيت إلى العيادة إلى القطار.</p>
+  </div>
+
+  <div class="control-bar" role="group" aria-label="تصفية المحادثات حسب الفئة">
+    <button class="filter-pill active" data-filter="all">🌍 الكل</button>
+    <button class="filter-pill" data-filter="family">👨‍👩‍👧 العائلة</button>
+    <button class="filter-pill" data-filter="friends">🧑‍🤝‍🧑 الأصدقاء</button>
+    <button class="filter-pill" data-filter="work">💼 العمل</button>
+    <button class="filter-pill" data-filter="health">🏥 الصحة</button>
+    <button class="filter-pill" data-filter="daily">🛍️ الحياة اليومية</button>
+  </div>
+
+  <div class="scenes" id="scenesContainer">
+
+    <!-- ===================== SCENE 1: FAMILY ===================== -->
+    <article class="scene-card reveal" data-category="family">
+      <div class="scene-header">
+        <div class="scene-icon family" aria-hidden="true">👨‍👩‍👧</div>
+        <div class="scene-title-wrap">
+          <h3>في المطبخ — العشاء العائلي</h3>
+          <div class="scene-meta">Beim Abendessen · أم وابن يتحدثان عن يومهما</div>
+        </div>
+        <span class="scene-tag">A1–A2 · عائلة</span>
+      </div>
+      <div class="dialogue">
+
+        <div class="line them">
+          <span class="speaker-tag">Mama</span>
+          <div class="bubble">
+            <p class="de-text">Wie war dein Tag in der Schule, Lukas?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Wie war dein Tag in der Schule, Lukas?" aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Wie war dein Tag in der Schule, Lukas?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>How was your day at school, Lukas?</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>كيف كان يومك في المدرسة، لوكاس؟</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Lukas</span>
+          <div class="bubble">
+            <p class="de-text">Ganz gut, danke! Wir hatten heute eine Mathearbeit.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ganz gut, danke! Wir hatten heute eine Mathearbeit." aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ganz gut, danke! Wir hatten heute eine Mathearbeit." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>Pretty good, thanks! We had a math test today.</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>بخير جدًا، شكرًا! كان لدينا اختبار في الرياضيات اليوم.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Mama</span>
+          <div class="bubble">
+            <p class="de-text">Oh, war sie schwer? Glaubst du, du hast es gut gemacht?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Oh, war sie schwer? Glaubst du, du hast es gut gemacht?" aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Oh, war sie schwer? Glaubst du, du hast es gut gemacht?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>Oh, was it hard? Do you think you did well?</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>أوه، هل كان صعبًا؟ هل تعتقد أنك أحسنت؟</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Lukas</span>
+          <div class="bubble">
+            <p class="de-text">Es war okay. Ich denke, ich habe die meisten Aufgaben richtig gelöst.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Es war okay. Ich denke, ich habe die meisten Aufgaben richtig gelöst." aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Es war okay. Ich denke, ich habe die meisten Aufgaben richtig gelöst." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>It was okay. I think I solved most of the tasks correctly.</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>كان جيدًا. أعتقد أنني حللت معظم المسائل بشكل صحيح.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Mama</span>
+          <div class="bubble">
+            <p class="de-text">Das freut mich sehr! Jetzt komm, das Essen wird kalt.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Das freut mich sehr! Jetzt komm, das Essen wird kalt." aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Das freut mich sehr! Jetzt komm, das Essen wird kalt." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>That makes me very happy! Now come on, the food is getting cold.</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>هذا يسعدني جدًا! تعال الآن، الطعام يبرد.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="vocab-strip">
+        <div class="vocab-chip"><span class="vc-de">der Tag</span><span class="vc-tr">اليوم</span></div>
+        <div class="vocab-chip"><span class="vc-de">die Mathearbeit</span><span class="vc-tr">اختبار الرياضيات</span></div>
+        <div class="vocab-chip"><span class="vc-de">schwer</span><span class="vc-tr">صعب / ثقيل</span></div>
+        <div class="vocab-chip"><span class="vc-de">die Aufgabe</span><span class="vc-tr">المهمة / السؤال</span></div>
+        <div class="vocab-chip"><span class="vc-de">kalt werden</span><span class="vc-tr">يبرد (يصبح باردًا)</span></div>
+      </div>
+    </article>
+
+    <!-- ===================== SCENE 2: FRIENDS ===================== -->
+    <article class="scene-card reveal" data-category="friends">
+      <div class="scene-header">
+        <div class="scene-icon friends" aria-hidden="true">🧑‍🤝‍🧑</div>
+        <div class="scene-title-wrap">
+          <h3>تخطيط لقاء — مع الأصدقاء</h3>
+          <div class="scene-meta">Pläne für das Wochenende · صديقان يخططان لنهاية الأسبوع</div>
+        </div>
+        <span class="scene-tag">A2 · أصدقاء</span>
+      </div>
+      <div class="dialogue">
+
+        <div class="line them">
+          <span class="speaker-tag">Anna</span>
+          <div class="bubble">
+            <p class="de-text">Hey! Hast du schon Pläne für das Wochenende?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Hey! Hast du schon Pläne für das Wochenende?" aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Hey! Hast du schon Pläne für das Wochenende?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>Hey! Do you already have plans for the weekend?</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>مرحبًا! هل لديك خطط لعطلة نهاية الأسبوع؟</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Tom</span>
+          <div class="bubble">
+            <p class="de-text">Noch nicht wirklich. Hast du eine Idee?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Noch nicht wirklich. Hast du eine Idee?" aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Noch nicht wirklich. Hast du eine Idee?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>Not really yet. Do you have an idea?</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>ليس بالفعل. هل لديك فكرة؟</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Anna</span>
+          <div class="bubble">
+            <p class="de-text">Wollen wir am Samstag wandern gehen? Das Wetter soll gut werden.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Wollen wir am Samstag wandern gehen? Das Wetter soll gut werden." aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Wollen wir am Samstag wandern gehen? Das Wetter soll gut werden." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>Shall we go hiking on Saturday? The weather is supposed to be nice.</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>هل نذهب للمشي في الجبال يوم السبت؟ يُقال إن الطقس سيكون جميلاً.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Tom</span>
+          <div class="bubble">
+            <p class="de-text">Klingt super! Um wie viel Uhr treffen wir uns?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Klingt super! Um wie viel Uhr treffen wir uns?" aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Klingt super! Um wie viel Uhr treffen wir uns?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>Sounds great! What time shall we meet?</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>يبدو رائعًا! في أي ساعة سنلتقي؟</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Anna</span>
+          <div class="bubble">
+            <p class="de-text">Sagen wir um neun Uhr am Bahnhof. Ich bringe etwas zu trinken mit.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Sagen wir um neun Uhr am Bahnhof. Ich bringe etwas zu trinken mit." aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Sagen wir um neun Uhr am Bahnhof. Ich bringe etwas zu trinken mit." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>Let's say nine o'clock at the train station. I'll bring something to drink.</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>لنقل الساعة التاسعة عند محطة القطار. سأجلب شيئًا للشرب.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="vocab-strip">
+        <div class="vocab-chip"><span class="vc-de">die Pläne</span><span class="vc-tr">الخطط</span></div>
+        <div class="vocab-chip"><span class="vc-de">wandern gehen</span><span class="vc-tr">الذهاب للمشي/التنزه</span></div>
+        <div class="vocab-chip"><span class="vc-de">das Wetter</span><span class="vc-tr">الطقس</span></div>
+        <div class="vocab-chip"><span class="vc-de">sich treffen</span><span class="vc-tr">يتقابلون</span></div>
+        <div class="vocab-chip"><span class="vc-de">der Bahnhof</span><span class="vc-tr">محطة القطار</span></div>
+      </div>
+    </article>
+
+    <!-- ===================== SCENE 3: WORK ===================== -->
+    <article class="scene-card reveal" data-category="work">
+      <div class="scene-header">
+        <div class="scene-icon work" aria-hidden="true">💼</div>
+        <div class="scene-title-wrap">
+          <h3>اجتماع صباحي — في العمل</h3>
+          <div class="scene-meta">Im Büro · مناقشة قصيرة بين زميلين عن مشروع</div>
+        </div>
+        <span class="scene-tag">B1 · عمل</span>
+      </div>
+      <div class="dialogue">
+
+        <div class="line them">
+          <span class="speaker-tag">Frau Weber</span>
+          <div class="bubble">
+            <p class="de-text">Guten Morgen, Herr Schmidt. Haben Sie den Bericht schon fertiggestellt?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Guten Morgen, Herr Schmidt. Haben Sie den Bericht schon fertiggestellt?" aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Guten Morgen, Herr Schmidt. Haben Sie den Bericht schon fertiggestellt?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>Good morning, Mr. Schmidt. Have you finished the report yet?</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>صباح الخير، سيد شميت. هل أنهيت التقرير بعد؟</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Herr Schmidt</span>
+          <div class="bubble">
+            <p class="de-text">Fast. Ich brauche noch etwa eine Stunde, um die Zahlen zu überprüfen.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Fast. Ich brauche noch etwa eine Stunde, um die Zahlen zu überprüfen." aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Fast. Ich brauche noch etwa eine Stunde, um die Zahlen zu überprüfen." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>Almost. I still need about an hour to check the numbers.</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>تقريبًا. أحتاج إلى ساعة أخرى تقريبًا لمراجعة الأرقام.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Frau Weber</span>
+          <div class="bubble">
+            <p class="de-text">Kein Problem. Die Besprechung beginnt erst um elf Uhr.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Kein Problem. Die Besprechung beginnt erst um elf Uhr." aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Kein Problem. Die Besprechung beginnt erst um elf Uhr." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>No problem. The meeting doesn't start until eleven o'clock.</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>لا مشكلة. الاجتماع لن يبدأ إلا في الساعة الحادية عشرة.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Herr Schmidt</span>
+          <div class="bubble">
+            <p class="de-text">Perfekt, das reicht mir völlig. Ich schicke Ihnen die Datei per E-Mail.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Perfekt, das reicht mir völlig. Ich schicke Ihnen die Datei per E-Mail." aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Perfekt, das reicht mir völlig. Ich schicke Ihnen die Datei per E-Mail." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>Perfect, that's completely enough for me. I'll send you the file by email.</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>ممتاز، هذا يكفيني تمامًا. سأرسل لك الملف عبر البريد الإلكتروني.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Frau Weber</span>
+          <div class="bubble">
+            <p class="de-text">Vielen Dank für Ihre Mühe. Bis später dann!</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Vielen Dank für Ihre Mühe. Bis später dann!" aria-label="استمع للنطق">
+                <span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span class="btn-label">استمع</span>
+              </button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Vielen Dank für Ihre Mühe. Bis später dann!" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations">
+              <div class="translations-inner">
+                <div class="translation-row en"><span class="flag-chip">EN</span><span>Thank you very much for your effort. See you later then!</span></div>
+                <div class="translation-row ar"><span class="flag-chip">AR</span><span>شكرًا جزيلاً على جهدك. أراك لاحقًا!</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="vocab-strip">
+        <div class="vocab-chip"><span class="vc-de">der Bericht</span><span class="vc-tr">التقرير</span></div>
+        <div class="vocab-chip"><span class="vc-de">fertigstellen</span><span class="vc-tr">إنهاء / إتمام</span></div>
+        <div class="vocab-chip"><span class="vc-de">überprüfen</span><span class="vc-tr">مراجعة / فحص</span></div>
+        <div class="vocab-chip"><span class="vc-de">die Besprechung</span><span class="vc-tr">الاجتماع</span></div>
+        <div class="vocab-chip"><span class="vc-de">die Mühe</span><span class="vc-tr">الجهد / المجهود</span></div>
+      </div>
+    </article>
+
+    <!-- ===================== SCENE 4: HEALTH / DOCTOR ===================== -->
+    <article class="scene-card reveal" data-category="health">
+      <div class="scene-header">
+        <div class="scene-icon health" aria-hidden="true">🏥</div>
+        <div class="scene-title-wrap">
+          <h3>عند الطبيب — حجز موعد</h3>
+          <div class="scene-meta">Beim Arzt · مريض يصف أعراضه للطبيب</div>
+        </div>
+        <span class="scene-tag">A2 · صحة</span>
+      </div>
+      <div class="dialogue">
+
+        <div class="line them">
+          <span class="speaker-tag">Rezeptionistin</span>
+          <div class="bubble">
+            <p class="de-text">Guten Tag! Was kann ich für Sie tun?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Guten Tag! Was kann ich für Sie tun?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Guten Tag! Was kann ich für Sie tun?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Good day! What can I do for you?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>مرحبًا! كيف يمكنني مساعدتك؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Patient</span>
+          <div class="bubble">
+            <p class="de-text">Ich fühle mich seit zwei Tagen nicht gut. Ich habe Kopfschmerzen und Fieber.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ich fühle mich seit zwei Tagen nicht gut. Ich habe Kopfschmerzen und Fieber." aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ich fühle mich seit zwei Tagen nicht gut. Ich habe Kopfschmerzen und Fieber." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>I haven't been feeling well for two days. I have a headache and a fever.</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>أشعر بتعب منذ يومين. لدي صداع وحمى.</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Arzt</span>
+          <div class="bubble">
+            <p class="de-text">Haben Sie auch Halsschmerzen oder Husten?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Haben Sie auch Halsschmerzen oder Husten?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Haben Sie auch Halsschmerzen oder Husten?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Do you also have a sore throat or a cough?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>هل لديك أيضًا ألم في الحلق أو سعال؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Patient</span>
+          <div class="bubble">
+            <p class="de-text">Ja, ein bisschen Husten auch. Und ich bin sehr müde.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ja, ein bisschen Husten auch. Und ich bin sehr müde." aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ja, ein bisschen Husten auch. Und ich bin sehr müde." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Yes, a bit of cough too. And I'm very tired.</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>نعم، سعال بسيط أيضًا. وأنا متعب جدًا.</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Arzt</span>
+          <div class="bubble">
+            <p class="de-text">Das klingt wie eine Erkältung. Ich verschreibe Ihnen etwas gegen die Symptome. Bitte ruhen Sie sich aus.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Das klingt wie eine Erkältung. Ich verschreibe Ihnen etwas gegen die Symptome. Bitte ruhen Sie sich aus." aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Das klingt wie eine Erkältung. Ich verschreibe Ihnen etwas gegen die Symptome. Bitte ruhen Sie sich aus." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>That sounds like a cold. I'll prescribe you something for the symptoms. Please get some rest.</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>يبدو أنها نزلة برد. سأصف لك دواءً للأعراض. أرجو أن ترتاح.</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Patient</span>
+          <div class="bubble">
+            <p class="de-text">Vielen Dank, Herr Doktor. Muss ich wiederkommen?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Vielen Dank, Herr Doktor. Muss ich wiederkommen?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Vielen Dank, Herr Doktor. Muss ich wiederkommen?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Thank you very much, Doctor. Do I need to come back?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>شكرًا جزيلاً يا دكتور. هل يجب أن أعود؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="vocab-strip">
+        <div class="vocab-chip"><span class="vc-de">die Kopfschmerzen</span><span class="vc-tr">الصداع</span></div>
+        <div class="vocab-chip"><span class="vc-de">das Fieber</span><span class="vc-tr">الحمى</span></div>
+        <div class="vocab-chip"><span class="vc-de">der Husten</span><span class="vc-tr">السعال</span></div>
+        <div class="vocab-chip"><span class="vc-de">die Erkältung</span><span class="vc-tr">نزلة البرد</span></div>
+        <div class="vocab-chip"><span class="vc-de">verschreiben</span><span class="vc-tr">يصف (دواءً)</span></div>
+        <div class="vocab-chip"><span class="vc-de">sich ausruhen</span><span class="vc-tr">يستريح</span></div>
+      </div>
+    </article>
+
+    <!-- ===================== SCENE 5: RESTAURANT ===================== -->
+    <article class="scene-card reveal" data-category="daily">
+      <div class="scene-header">
+        <div class="scene-icon daily" aria-hidden="true">🍽️</div>
+        <div class="scene-title-wrap">
+          <h3>في المطعم — الطلب والدفع</h3>
+          <div class="scene-meta">Im Restaurant · زبون ونادل في مطعم ألماني</div>
+        </div>
+        <span class="scene-tag">A2 · حياة يومية</span>
+      </div>
+      <div class="dialogue">
+
+        <div class="line them">
+          <span class="speaker-tag">Kellner</span>
+          <div class="bubble">
+            <p class="de-text">Guten Abend! Haben Sie schon gewählt, oder brauchen Sie noch einen Moment?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Guten Abend! Haben Sie schon gewählt, oder brauchen Sie noch einen Moment?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Guten Abend! Haben Sie schon gewählt, oder brauchen Sie noch einen Moment?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Good evening! Have you already chosen, or do you need a moment?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>مساء الخير! هل اخترتم أم تحتاجون لحظة؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Gast</span>
+          <div class="bubble">
+            <p class="de-text">Ja, ich nehme die Rindersuppe als Vorspeise und das Schnitzel als Hauptgericht.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ja, ich nehme die Rindersuppe als Vorspeise und das Schnitzel als Hauptgericht." aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ja, ich nehme die Rindersuppe als Vorspeise und das Schnitzel als Hauptgericht." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Yes, I'll have the beef soup as a starter and the schnitzel as the main course.</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>نعم، سآخذ حساء اللحم كمقبلات وشنيتسل كطبق رئيسي.</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Kellner</span>
+          <div class="bubble">
+            <p class="de-text">Sehr gerne. Und was möchten Sie trinken?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Sehr gerne. Und was möchten Sie trinken?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Sehr gerne. Und was möchten Sie trinken?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>With pleasure. And what would you like to drink?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>بكل سرور. وماذا تحب أن تشرب؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Gast</span>
+          <div class="bubble">
+            <p class="de-text">Ein Glas Mineralwasser, bitte. Und können Sie mir sagen, ob das Schnitzel glutenfrei ist?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ein Glas Mineralwasser, bitte. Und können Sie mir sagen, ob das Schnitzel glutenfrei ist?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ein Glas Mineralwasser, bitte. Und können Sie mir sagen, ob das Schnitzel glutenfrei ist?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>A glass of sparkling water, please. And can you tell me whether the schnitzel is gluten-free?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>كوب ماء معدني من فضلك. وهل يمكنك إخباري إن كان الشنيتسل خالٍ من الجلوتين؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Kellner</span>
+          <div class="bubble">
+            <p class="de-text">Ich frage kurz in der Küche nach. Einen Moment bitte!</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ich frage kurz in der Küche nach. Einen Moment bitte!" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ich frage kurz in der Küche nach. Einen Moment bitte!" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>I'll quickly ask in the kitchen. One moment please!</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>سأسأل في المطبخ بسرعة. لحظة من فضلك!</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Gast</span>
+          <div class="bubble">
+            <p class="de-text">Entschuldigung, wir möchten bitte zahlen. Kann ich mit Karte bezahlen?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Entschuldigung, wir möchten bitte zahlen. Kann ich mit Karte bezahlen?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Entschuldigung, wir möchten bitte zahlen. Kann ich mit Karte bezahlen?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Excuse me, we'd like to pay please. Can I pay by card?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>معذرة، نريد الدفع من فضلك. هل يمكنني الدفع ببطاقة؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="vocab-strip">
+        <div class="vocab-chip"><span class="vc-de">die Vorspeise</span><span class="vc-tr">المقبلات</span></div>
+        <div class="vocab-chip"><span class="vc-de">das Hauptgericht</span><span class="vc-tr">الطبق الرئيسي</span></div>
+        <div class="vocab-chip"><span class="vc-de">das Mineralwasser</span><span class="vc-tr">الماء المعدني</span></div>
+        <div class="vocab-chip"><span class="vc-de">glutenfrei</span><span class="vc-tr">خالٍ من الجلوتين</span></div>
+        <div class="vocab-chip"><span class="vc-de">zahlen</span><span class="vc-tr">يدفع</span></div>
+        <div class="vocab-chip"><span class="vc-de">mit Karte</span><span class="vc-tr">ببطاقة الدفع</span></div>
+      </div>
+    </article>
+
+    <!-- ===================== SCENE 6: SHOPPING ===================== -->
+    <article class="scene-card reveal" data-category="daily">
+      <div class="scene-header">
+        <div class="scene-icon daily" aria-hidden="true">🛍️</div>
+        <div class="scene-title-wrap">
+          <h3>في المحل — البحث عن المقاس الصحيح</h3>
+          <div class="scene-meta">Im Geschäft · Bekleidung kaufen · زبونة وبائع في محل ملابس</div>
+        </div>
+        <span class="scene-tag">A2 · حياة يومية</span>
+      </div>
+      <div class="dialogue">
+
+        <div class="line them">
+          <span class="speaker-tag">Verkäufer</span>
+          <div class="bubble">
+            <p class="de-text">Guten Tag! Kann ich Ihnen helfen?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Guten Tag! Kann ich Ihnen helfen?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Guten Tag! Kann ich Ihnen helfen?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Good day! Can I help you?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>مرحبًا! هل يمكنني مساعدتك؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Kundin</span>
+          <div class="bubble">
+            <p class="de-text">Ja, ich suche eine Jacke in Größe Medium. Haben Sie etwas in Blau?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ja, ich suche eine Jacke in Größe Medium. Haben Sie etwas in Blau?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ja, ich suche eine Jacke in Größe Medium. Haben Sie etwas in Blau?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Yes, I'm looking for a jacket in size medium. Do you have something in blue?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>نعم، أبحث عن جاكيت مقاس وسط. هل لديكم شيء باللون الأزرق؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Verkäufer</span>
+          <div class="bubble">
+            <p class="de-text">Ja, wir haben diese Jacke hier in verschiedenen Blautönen. Möchten Sie sie anprobieren?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ja, wir haben diese Jacke hier in verschiedenen Blautönen. Möchten Sie sie anprobieren?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ja, wir haben diese Jacke hier in verschiedenen Blautönen. Möchten Sie sie anprobieren?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Yes, we have this jacket in various shades of blue. Would you like to try it on?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>نعم، لدينا هذا الجاكيت بظلال زرقاء مختلفة. هل تريدين تجربته؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Kundin</span>
+          <div class="bubble">
+            <p class="de-text">Gerne! Wo ist die Umkleidekabine?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Gerne! Wo ist die Umkleidekabine?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Gerne! Wo ist die Umkleidekabine?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>With pleasure! Where is the fitting room?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>بكل سرور! أين غرفة القياس؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Verkäufer</span>
+          <div class="bubble">
+            <p class="de-text">Die Umkleidekabinen sind hinten rechts. Brauchen Sie eine andere Größe?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Die Umkleidekabinen sind hinten rechts. Brauchen Sie eine andere Größe?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Die Umkleidekabinen sind hinten rechts. Brauchen Sie eine andere Größe?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>The fitting rooms are at the back on the right. Do you need a different size?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>غرف القياس في الخلف على اليمين. هل تحتاجين مقاسًا آخر؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Kundin</span>
+          <div class="bubble">
+            <p class="de-text">Sie passt perfekt! Ich nehme sie. Gibt es gerade einen Rabatt?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Sie passt perfekt! Ich nehme sie. Gibt es gerade einen Rabatt?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Sie passt perfekt! Ich nehme sie. Gibt es gerade einen Rabatt?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>It fits perfectly! I'll take it. Is there currently a discount?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>إنه مناسب تمامًا! سآخذه. هل يوجد خصم الآن؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="vocab-strip">
+        <div class="vocab-chip"><span class="vc-de">die Größe</span><span class="vc-tr">المقاس</span></div>
+        <div class="vocab-chip"><span class="vc-de">anprobieren</span><span class="vc-tr">تجربة الملابس</span></div>
+        <div class="vocab-chip"><span class="vc-de">die Umkleidekabine</span><span class="vc-tr">غرفة القياس</span></div>
+        <div class="vocab-chip"><span class="vc-de">passen</span><span class="vc-tr">يناسب / يلائم</span></div>
+        <div class="vocab-chip"><span class="vc-de">der Rabatt</span><span class="vc-tr">الخصم</span></div>
+        <div class="vocab-chip"><span class="vc-de">verschiedene Farben</span><span class="vc-tr">ألوان مختلفة</span></div>
+      </div>
+    </article>
+
+    <!-- ===================== SCENE 7: PUBLIC TRANSPORT ===================== -->
+    <article class="scene-card reveal" data-category="daily">
+      <div class="scene-header">
+        <div class="scene-icon daily" aria-hidden="true">🚆</div>
+        <div class="scene-title-wrap">
+          <h3>في المحطة — حجز تذكرة قطار</h3>
+          <div class="scene-meta">Am Bahnhof · مسافر يحجز تذكرة قطار</div>
+        </div>
+        <span class="scene-tag">A2–B1 · حياة يومية</span>
+      </div>
+      <div class="dialogue">
+
+        <div class="line you">
+          <span class="speaker-tag">Reisende</span>
+          <div class="bubble">
+            <p class="de-text">Guten Tag. Ich möchte eine Fahrkarte nach München kaufen, für morgen bitte.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Guten Tag. Ich möchte eine Fahrkarte nach München kaufen, für morgen bitte." aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Guten Tag. Ich möchte eine Fahrkarte nach München kaufen, für morgen bitte." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Good day. I'd like to buy a train ticket to Munich, for tomorrow please.</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>مرحبًا. أريد شراء تذكرة قطار إلى ميونيخ، لغدٍ من فضلك.</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Schalterbeamter</span>
+          <div class="bubble">
+            <p class="de-text">Einfach oder hin und zurück?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Einfach oder hin und zurück?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Einfach oder hin und zurück?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>One way or return?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>ذهاب فقط أم ذهابًا وإيابًا؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Reisende</span>
+          <div class="bubble">
+            <p class="de-text">Hin und zurück bitte. Und um wie viel Uhr fährt der nächste Zug?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Hin und zurück bitte. Und um wie viel Uhr fährt der nächste Zug?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Hin und zurück bitte. Und um wie viel Uhr fährt der nächste Zug?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Return please. And what time does the next train depart?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>ذهابًا وإيابًا من فضلك. وفي أي وقت يغادر القطار القادم؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Schalterbeamter</span>
+          <div class="bubble">
+            <p class="de-text">Der nächste Zug fährt um 08:42 Uhr ab Gleis 5. Er kommt um 11:17 Uhr in München an.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Der nächste Zug fährt um 08:42 Uhr ab Gleis 5. Er kommt um 11:17 Uhr in München an." aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Der nächste Zug fährt um 08:42 Uhr ab Gleis 5. Er kommt um 11:17 Uhr in München an." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>The next train departs at 08:42 from platform 5. It arrives in Munich at 11:17.</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>القطار القادم يغادر الساعة 8:42 من الرصيف 5. يصل إلى ميونيخ الساعة 11:17.</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Reisende</span>
+          <div class="bubble">
+            <p class="de-text">Perfekt. Was kostet eine Hin- und Rückfahrt in der zweiten Klasse?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Perfekt. Was kostet eine Hin- und Rückfahrt in der zweiten Klasse?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Perfekt. Was kostet eine Hin- und Rückfahrt in der zweiten Klasse?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Perfect. How much does a return ticket in second class cost?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>ممتاز. كم تكلف تذكرة الذهاب والإياب في الدرجة الثانية؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="vocab-strip">
+        <div class="vocab-chip"><span class="vc-de">die Fahrkarte</span><span class="vc-tr">التذكرة</span></div>
+        <div class="vocab-chip"><span class="vc-de">hin und zurück</span><span class="vc-tr">ذهابًا وإيابًا</span></div>
+        <div class="vocab-chip"><span class="vc-de">das Gleis</span><span class="vc-tr">الرصيف</span></div>
+        <div class="vocab-chip"><span class="vc-de">abfahren</span><span class="vc-tr">يغادر</span></div>
+        <div class="vocab-chip"><span class="vc-de">ankommen</span><span class="vc-tr">يصل</span></div>
+        <div class="vocab-chip"><span class="vc-de">die zweite Klasse</span><span class="vc-tr">الدرجة الثانية</span></div>
+      </div>
+    </article>
+
+    <!-- ===================== SCENE 8: NEIGHBORS ===================== -->
+    <article class="scene-card reveal" data-category="friends">
+      <div class="scene-header">
+        <div class="scene-icon friends" aria-hidden="true">🏠</div>
+        <div class="scene-title-wrap">
+          <h3>مع الجيران — مقدمة للوافدين الجدد</h3>
+          <div class="scene-meta">Mit den Nachbarn · جار جديد يتعرف على جيرانه</div>
+        </div>
+        <span class="scene-tag">A1–A2 · أصدقاء</span>
+      </div>
+      <div class="dialogue">
+
+        <div class="line them">
+          <span class="speaker-tag">Nachbar Klaus</span>
+          <div class="bubble">
+            <p class="de-text">Hallo! Sind Sie neu hier eingezogen? Ich bin Klaus, ich wohne im dritten Stock.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Hallo! Sind Sie neu hier eingezogen? Ich bin Klaus, ich wohne im dritten Stock." aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Hallo! Sind Sie neu hier eingezogen? Ich bin Klaus, ich wohne im dritten Stock." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Hello! Did you just move in? I'm Klaus, I live on the third floor.</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>مرحبًا! هل انتقلت للسكن هنا حديثًا؟ أنا كلاوس، أسكن في الطابق الثالث.</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Neuer Mieter</span>
+          <div class="bubble">
+            <p class="de-text">Ja, wir sind letzte Woche eingezogen. Ich heiße Rami. Schön, Sie kennenzulernen!</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ja, wir sind letzte Woche eingezogen. Ich heiße Rami. Schön, Sie kennenzulernen!" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ja, wir sind letzte Woche eingezogen. Ich heiße Rami. Schön, Sie kennenzulernen!" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Yes, we moved in last week. My name is Rami. Nice to meet you!</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>نعم، انتقلنا الأسبوع الماضي. اسمي رامي. سعيد بمعرفتك!</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Nachbar Klaus</span>
+          <div class="bubble">
+            <p class="de-text">Ganz meinerseits! Woher kommen Sie, wenn ich fragen darf?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ganz meinerseits! Woher kommen Sie, wenn ich fragen darf?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ganz meinerseits! Woher kommen Sie, wenn ich fragen darf?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Likewise! Where are you from, if you don't mind me asking?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>وأنا كذلك! من أين أنتم، إن كان بإمكاني السؤال؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Neuer Mieter</span>
+          <div class="bubble">
+            <p class="de-text">Ich komme aus Jordanien, aber ich lebe seit drei Jahren in Deutschland. Meine Frau und ich lernen noch Deutsch.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ich komme aus Jordanien, aber ich lebe seit drei Jahren in Deutschland. Meine Frau und ich lernen noch Deutsch." aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ich komme aus Jordanien, aber ich lebe seit drei Jahren in Deutschland. Meine Frau und ich lernen noch Deutsch." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>I'm from Jordan, but I've been living in Germany for three years. My wife and I are still learning German.</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>أنا من الأردن، لكنني أعيش في ألمانيا منذ ثلاث سنوات. زوجتي وأنا نتعلم الألمانية.</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Nachbar Klaus</span>
+          <div class="bubble">
+            <p class="de-text">Ihr Deutsch klingt wirklich gut! Falls Sie etwas brauchen, klopfen Sie einfach an. Die Nachbarschaft hier ist sehr nett.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ihr Deutsch klingt wirklich gut! Falls Sie etwas brauchen, klopfen Sie einfach an. Die Nachbarschaft hier ist sehr nett." aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ihr Deutsch klingt wirklich gut! Falls Sie etwas brauchen, klopfen Sie einfach an. Die Nachbarschaft hier ist sehr nett." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Your German sounds really good! If you need anything, just knock. The neighborhood here is very nice.</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>ألمانيتك تبدو جيدة حقًا! إذا احتجت أي شيء، فقط اطرق الباب. الجيران هنا لطيفون جدًا.</span></div>
+            </div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="vocab-strip">
+        <div class="vocab-chip"><span class="vc-de">einziehen</span><span class="vc-tr">ينتقل للسكن</span></div>
+        <div class="vocab-chip"><span class="vc-de">der Nachbar</span><span class="vc-tr">الجار</span></div>
+        <div class="vocab-chip"><span class="vc-de">der Stock</span><span class="vc-tr">الطابق</span></div>
+        <div class="vocab-chip"><span class="vc-de">kennenlernen</span><span class="vc-tr">التعارف</span></div>
+        <div class="vocab-chip"><span class="vc-de">klopfen</span><span class="vc-tr">يطرق</span></div>
+        <div class="vocab-chip"><span class="vc-de">die Nachbarschaft</span><span class="vc-tr">الحي / الجيرة</span></div>
+      </div>
+    </article>
+
+    <!-- ===================== SCENE 9: PHONE CALL ===================== -->
+    <article class="scene-card reveal" data-category="work">
+      <div class="scene-header">
+        <div class="scene-icon work" aria-hidden="true">📞</div>
+        <div class="scene-title-wrap">
+          <h3>مكالمة هاتفية — تحديد موعد</h3>
+          <div class="scene-meta">Telefonisches Gespräch · حجز موعد عبر الهاتف</div>
+        </div>
+        <span class="scene-tag">B1 · عمل</span>
+      </div>
+      <div class="dialogue">
+
+        <div class="line them">
+          <span class="speaker-tag">Sekretärin</span>
+          <div class="bubble">
+            <p class="de-text">Müller GmbH, guten Morgen, wie kann ich Ihnen helfen?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Müller GmbH, guten Morgen, wie kann ich Ihnen helfen?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Müller GmbH, guten Morgen, wie kann ich Ihnen helfen?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Müller GmbH, good morning, how can I help you?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>شركة مولر، صباح الخير، كيف يمكنني مساعدتك؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Anrufer</span>
+          <div class="bubble">
+            <p class="de-text">Guten Morgen, mein Name ist Khalid Mansour. Ich würde gerne einen Termin mit Herrn Braun vereinbaren.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Guten Morgen, mein Name ist Khalid Mansour. Ich würde gerne einen Termin mit Herrn Braun vereinbaren." aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Guten Morgen, mein Name ist Khalid Mansour. Ich würde gerne einen Termin mit Herrn Braun vereinbaren." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Good morning, my name is Khalid Mansour. I would like to arrange an appointment with Mr. Braun.</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>صباح الخير، اسمي خالد منصور. أريد تحديد موعد مع السيد براون.</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Sekretärin</span>
+          <div class="bubble">
+            <p class="de-text">Einen Moment bitte. Herr Braun ist diese Woche leider sehr beschäftigt. Würde Ihnen nächste Woche Dienstag um 14 Uhr passen?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Einen Moment bitte. Herr Braun ist diese Woche leider sehr beschäftigt. Würde Ihnen nächste Woche Dienstag um 14 Uhr passen?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Einen Moment bitte. Herr Braun ist diese Woche leider sehr beschäftigt. Würde Ihnen nächste Woche Dienstag um 14 Uhr passen?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>One moment please. Mr. Braun is unfortunately very busy this week. Would next Tuesday at 2 PM work for you?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>لحظة من فضلك. السيد براون مشغول جدًا هذا الأسبوع للأسف. هل يناسبك الثلاثاء القادم الساعة الثانية؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Anrufer</span>
+          <div class="bubble">
+            <p class="de-text">Ja, das passt mir sehr gut. Soll ich zur Bestätigung eine E-Mail senden?</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ja, das passt mir sehr gut. Soll ich zur Bestätigung eine E-Mail senden?" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ja, das passt mir sehr gut. Soll ich zur Bestätigung eine E-Mail senden?" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Yes, that suits me very well. Should I send an email for confirmation?</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>نعم، هذا يناسبني جدًا. هل أرسل بريدًا إلكترونيًا للتأكيد؟</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Sekretärin</span>
+          <div class="bubble">
+            <p class="de-text">Das wäre sehr hilfreich, danke. Unsere Adresse ist info@mueller-gmbh.de. Ich freue mich auf Ihre E-Mail.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Das wäre sehr hilfreich, danke. Unsere Adresse ist info@mueller-gmbh.de. Ich freue mich auf Ihre E-Mail." aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Das wäre sehr hilfreich, danke. Unsere Adresse ist info@mueller-gmbh.de. Ich freue mich auf Ihre E-Mail." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>That would be very helpful, thank you. Our address is info@mueller-gmbh.de. I look forward to your email.</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>سيكون ذلك مفيدًا جدًا، شكرًا. عنواننا هو info@mueller-gmbh.de. أتطلع إلى بريدك.</span></div>
+            </div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="vocab-strip">
+        <div class="vocab-chip"><span class="vc-de">einen Termin vereinbaren</span><span class="vc-tr">تحديد موعد</span></div>
+        <div class="vocab-chip"><span class="vc-de">beschäftigt</span><span class="vc-tr">مشغول</span></div>
+        <div class="vocab-chip"><span class="vc-de">passen</span><span class="vc-tr">يناسب</span></div>
+        <div class="vocab-chip"><span class="vc-de">die Bestätigung</span><span class="vc-tr">التأكيد</span></div>
+        <div class="vocab-chip"><span class="vc-de">sich freuen auf</span><span class="vc-tr">يتطلع إلى</span></div>
+      </div>
+    </article>
+
+    <!-- ===================== SCENE 10: FAMILY – BIRTHDAY ===================== -->
+    <article class="scene-card reveal" data-category="family">
+      <div class="scene-header">
+        <div class="scene-icon family" aria-hidden="true">🎂</div>
+        <div class="scene-title-wrap">
+          <h3>عيد ميلاد في العائلة</h3>
+          <div class="scene-meta">Geburtstag · أفراد العائلة يحتفلون بعيد ميلاد الجدة</div>
+        </div>
+        <span class="scene-tag">A1–A2 · عائلة</span>
+      </div>
+      <div class="dialogue">
+
+        <div class="line them">
+          <span class="speaker-tag">Papa</span>
+          <div class="bubble">
+            <p class="de-text">Heute hat Oma Geburtstag! Wir singen ihr ein Lied.</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Heute hat Oma Geburtstag! Wir singen ihr ein Lied." aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Heute hat Oma Geburtstag! Wir singen ihr ein Lied." aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Today is Grandma's birthday! We'll sing her a song.</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>اليوم عيد ميلاد جدتنا! سنغني لها أغنية.</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Kind</span>
+          <div class="bubble">
+            <p class="de-text">Herzlichen Glückwunsch zum Geburtstag, Oma! Das ist für dich!</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Herzlichen Glückwunsch zum Geburtstag, Oma! Das ist für dich!" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Herzlichen Glückwunsch zum Geburtstag, Oma! Das ist für dich!" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Happy birthday, Grandma! This is for you!</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>عيد ميلاد سعيد يا جدتي! هذا لكِ!</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Oma</span>
+          <div class="bubble">
+            <p class="de-text">Oh, wie schön! Vielen Dank mein Schatz. Das ist ein wunderbarer Blumenstrauß!</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Oh, wie schön! Vielen Dank mein Schatz. Das ist ein wunderbarer Blumenstrauß!" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Oh, wie schön! Vielen Dank mein Schatz. Das ist ein wunderbarer Blumenstrauß!" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Oh, how lovely! Thank you so much, my darling. What a wonderful bouquet!</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>أوه، ما أجمل هذا! شكرًا جزيلاً يا حبيبي. إنه باقة زهور رائعة!</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line you">
+          <span class="speaker-tag">Papa</span>
+          <div class="bubble">
+            <p class="de-text">Wir haben auch einen Kuchen gebacken. Mach dir keine Sorgen, er ist nicht angebrannt!</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Wir haben auch einen Kuchen gebacken. Mach dir keine Sorgen, er ist nicht angebrannt!" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Wir haben auch einen Kuchen gebacken. Mach dir keine Sorgen, er ist nicht angebrannt!" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>We also baked a cake. Don't worry, it's not burned!</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>خبزنا كعكة أيضًا. لا تقلقي، لم تحترق!</span></div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="line them">
+          <span class="speaker-tag">Oma</span>
+          <div class="bubble">
+            <p class="de-text">Ha ha! Ihr seid die liebste Familie der Welt. Ich bin so glücklich!</p>
+            <div class="bubble-actions">
+              <button class="act-btn play-btn" data-text="Ha ha! Ihr seid die liebste Familie der Welt. Ich bin so glücklich!" aria-label="استمع للنطق"><span class="wave" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="btn-label">استمع</span></button>
+              <button class="act-btn translate-btn" aria-label="عرض الترجمة">🌐 ترجم</button>
+              <button class="act-btn copy-btn" data-text="Ha ha! Ihr seid die liebste Familie der Welt. Ich bin so glücklich!" aria-label="نسخ النص">📋 نسخ</button>
+            </div>
+            <div class="translations"><div class="translations-inner">
+              <div class="translation-row en"><span class="flag-chip">EN</span><span>Ha ha! You are the dearest family in the world. I'm so happy!</span></div>
+              <div class="translation-row ar"><span class="flag-chip">AR</span><span>ها ها! أنتم أحب عائلة في العالم. أنا سعيدة جدًا!</span></div>
+            </div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="vocab-strip">
+        <div class="vocab-chip"><span class="vc-de">der Geburtstag</span><span class="vc-tr">عيد الميلاد</span></div>
+        <div class="vocab-chip"><span class="vc-de">Herzlichen Glückwunsch</span><span class="vc-tr">تهاني حارة</span></div>
+        <div class="vocab-chip"><span class="vc-de">der Blumenstrauß</span><span class="vc-tr">باقة الزهور</span></div>
+        <div class="vocab-chip"><span class="vc-de">backen</span><span class="vc-tr">يخبز</span></div>
+        <div class="vocab-chip"><span class="vc-de">glücklich</span><span class="vc-tr">سعيد</span></div>
+        <div class="vocab-chip"><span class="vc-de">der Kuchen</span><span class="vc-tr">الكعكة</span></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================================
+     SENTENCE PATTERNS (code-style blocks)
+     ============================================ -->
+<section class="section" id="patterns">
+  <div class="section-head reveal">
+    <span class="eyebrow">قوالب جاهزة</span>
+    <h2>صيغ جمل يمكنك إعادة استخدامها</h2>
+    <p>هذه القوالب مأخوذة من المحادثات أعلاه — استبدل الكلمات الملوّنة بكلماتك الخاصة لبناء جمل جديدة بسرعة.</p>
+  </div>
+
+  <div class="pattern-block reveal">
+    <div class="pattern-head">
+      <span class="ph-title">طلب معلومة عن الخطط — Pläne erfragen</span>
+      <button class="pattern-copy-btn" data-copy="Hast du schon Pläne für [ZEIT]? Wollen wir [AKTIVITÄT] gehen?">
+        📋 نسخ القالب
+      </button>
+    </div>
+    <div class="pattern-body">
+      <div class="line-out"><span class="tok-comment">// السؤال عن الخطط</span></div>
+      <div class="line-out"><span class="tok-verb">Hast</span> du schon Pläne für <span class="tok-slot">[ZEIT]</span>?</div>
+      <div class="line-out"><span class="tok-comment">// اقتراح نشاط</span></div>
+      <div class="line-out"><span class="tok-verb">Wollen</span> wir <span class="tok-slot">[AKTIVITÄT]</span> gehen?</div>
+      <div class="line-out"><span class="tok-comment">// أمثلة: ZEIT = das Wochenende, heute Abend / AKTIVITÄT = wandern, schwimmen, ins Kino</span></div>
+    </div>
+  </div>
+
+  <div class="pattern-block reveal">
+    <div class="pattern-head">
+      <span class="ph-title">سؤال عن مهمة عمل — Im Büro nachfragen</span>
+      <button class="pattern-copy-btn" data-copy="Haben Sie [AUFGABE] schon fertiggestellt? Ich brauche noch [ZEITDAUER], um [DETAIL] zu erledigen.">
+        📋 نسخ القالب
+      </button>
+    </div>
+    <div class="pattern-body">
+      <div class="line-out"><span class="tok-comment">// السؤال عن حالة المهمة</span></div>
+      <div class="line-out"><span class="tok-verb">Haben</span> Sie <span class="tok-noun">[AUFGABE]</span> schon fertiggestellt?</div>
+      <div class="line-out"><span class="tok-comment">// الرد بتحديد الوقت المطلوب</span></div>
+      <div class="line-out">Ich <span class="tok-verb">brauche</span> noch <span class="tok-slot">[ZEITDAUER]</span>, um <span class="tok-slot">[DETAIL]</span> zu erledigen.</div>
+      <div class="line-out"><span class="tok-comment">// أمثلة: AUFGABE = den Bericht, die Präsentation / ZEITDAUER = eine Stunde, zehn Minuten</span></div>
+    </div>
+  </div>
+
+  <div class="pattern-block reveal">
+    <div class="pattern-head">
+      <span class="ph-title">السؤال عن اليوم — Nach dem Tag fragen</span>
+      <button class="pattern-copy-btn" data-copy="Wie war dein Tag, [NAME]? — Ganz gut, danke! Wir hatten heute [EREIGNIS].">
+        📋 نسخ القالب
+      </button>
+    </div>
+    <div class="pattern-body">
+      <div class="line-out"><span class="tok-comment">// السؤال</span></div>
+      <div class="line-out"><span class="tok-verb">Wie war</span> dein Tag, <span class="tok-slot">[NAME]</span>?</div>
+      <div class="line-out"><span class="tok-comment">// الرد</span></div>
+      <div class="line-out">Ganz gut, danke! Wir hatten heute <span class="tok-noun">[EREIGNIS]</span>.</div>
+      <div class="line-out"><span class="tok-comment">// أمثلة: EREIGNIS = eine Mathearbeit, einen Ausflug, viel Arbeit</span></div>
+    </div>
+  </div>
+
+  <div class="pattern-block reveal">
+    <div class="pattern-head">
+      <span class="ph-title">وصف الأعراض للطبيب — Symptome beschreiben</span>
+      <button class="pattern-copy-btn" data-copy="Ich fühle mich seit [ZEITRAUM] nicht gut. Ich habe [SYMPTOM1] und [SYMPTOM2].">
+        📋 نسخ القالب
+      </button>
+    </div>
+    <div class="pattern-body">
+      <div class="line-out"><span class="tok-comment">// وصف حالتك الصحية</span></div>
+      <div class="line-out">Ich <span class="tok-verb">fühle</span> mich seit <span class="tok-slot">[ZEITRAUM]</span> nicht gut.</div>
+      <div class="line-out"><span class="tok-comment">// ذكر الأعراض</span></div>
+      <div class="line-out">Ich <span class="tok-verb">habe</span> <span class="tok-noun">[SYMPTOM1]</span> und <span class="tok-slot">[SYMPTOM2]</span>.</div>
+      <div class="line-out"><span class="tok-comment">// أمثلة: ZEITRAUM = zwei Tagen, einer Woche / SYMPTOM = Kopfschmerzen, Fieber, Husten</span></div>
+    </div>
+  </div>
+
+  <div class="pattern-block reveal">
+    <div class="pattern-head">
+      <span class="ph-title">الطلب في المطعم — Im Restaurant bestellen</span>
+      <button class="pattern-copy-btn" data-copy="Ich nehme [SPEISE] als [GANG]. Und können Sie mir sagen, ob [SPEISE] [EIGENSCHAFT] ist?">
+        📋 نسخ القالب
+      </button>
+    </div>
+    <div class="pattern-body">
+      <div class="line-out"><span class="tok-comment">// الطلب</span></div>
+      <div class="line-out">Ich <span class="tok-verb">nehme</span> <span class="tok-noun">[SPEISE]</span> als <span class="tok-slot">[GANG]</span>.</div>
+      <div class="line-out"><span class="tok-comment">// السؤال عن المكونات</span></div>
+      <div class="line-out">Können Sie mir sagen, ob <span class="tok-noun">[SPEISE]</span> <span class="tok-slot">[EIGENSCHAFT]</span> ist?</div>
+      <div class="line-out"><span class="tok-comment">// أمثلة: GANG = Vorspeise / Hauptgericht / Nachspeise — EIGENSCHAFT = vegetarisch, glutenfrei, vegan</span></div>
+    </div>
+  </div>
+
+  <div class="pattern-block reveal">
+    <div class="pattern-head">
+      <span class="ph-title">شراء تذكرة قطار — Eine Fahrkarte kaufen</span>
+      <button class="pattern-copy-btn" data-copy="Ich möchte eine Fahrkarte nach [ZIEL] kaufen. Hin und zurück bitte. Um wie viel Uhr fährt der nächste Zug?">
+        📋 نسخ القالب
+      </button>
+    </div>
+    <div class="pattern-body">
+      <div class="line-out"><span class="tok-comment">// طلب التذكرة</span></div>
+      <div class="line-out">Ich <span class="tok-verb">möchte</span> eine Fahrkarte nach <span class="tok-noun">[ZIEL]</span> kaufen.</div>
+      <div class="line-out"><span class="tok-comment">// تحديد نوع التذكرة</span></div>
+      <div class="line-out"><span class="tok-verb">Hin und zurück</span> / <span class="tok-slot">Einfach</span> bitte.</div>
+      <div class="line-out"><span class="tok-comment">// السؤال عن موعد القطار</span></div>
+      <div class="line-out">Um wie viel Uhr <span class="tok-verb">fährt</span> der nächste Zug <span class="tok-slot">ab</span>?</div>
+      <div class="line-out"><span class="tok-comment">// أمثلة: ZIEL = München, Berlin, Hamburg / الكلاسات: erste Klasse, zweite Klasse</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     GRAMMAR COMPARISON
+     ============================================ -->
+<section class="section" id="grammar">
+  <div class="section-head reveal">
+    <span class="eyebrow">القواعد المستخدمة</span>
+    <h2>التفاوت بين الرسمي وغير الرسمي</h2>
+    <p>أحد أهم الفروقات في الألمانية اليومية هي استخدام <strong>du</strong> مع العائلة والأصدقاء والجيران، و <strong>Sie</strong> في بيئة العمل، عند الطبيب، وفي المحلات. لاحظ الفرق في الجمل التالية المأخوذة من المحادثات.</p>
+  </div>
+
+  <div class="compare-table-wrap reveal">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>السياق</th>
+          <th>صيغة العنوان</th>
+          <th>مثال من المحادثة</th>
+          <th>الترجمة العربية</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>عائلة / أصدقاء</td>
+          <td>du (غير رسمي)</td>
+          <td class="de-cell">Wie war dein Tag?</td>
+          <td>كيف كان يومك؟</td>
+        </tr>
+        <tr>
+          <td>أصدقاء / جيران</td>
+          <td>du (غير رسمي)</td>
+          <td class="de-cell">Hast du schon Pläne?</td>
+          <td>هل لديك خطط؟</td>
+        </tr>
+        <tr>
+          <td>بيئة العمل</td>
+          <td>Sie (رسمي)</td>
+          <td class="de-cell">Haben Sie den Bericht fertiggestellt?</td>
+          <td>هل أنهيت التقرير؟</td>
+        </tr>
+        <tr>
+          <td>مكالمة هاتفية</td>
+          <td>Sie (رسمي)</td>
+          <td class="de-cell">Ich würde gerne einen Termin vereinbaren.</td>
+          <td>أريد تحديد موعد.</td>
+        </tr>
+        <tr>
+          <td>عند الطبيب</td>
+          <td>Sie (رسمي)</td>
+          <td class="de-cell">Haben Sie auch Halsschmerzen?</td>
+          <td>هل لديك أيضًا ألم في الحلق؟</td>
+        </tr>
+        <tr>
+          <td>في المطعم</td>
+          <td>Sie (رسمي)</td>
+          <td class="de-cell">Was möchten Sie trinken?</td>
+          <td>ماذا تريد أن تشرب؟</td>
+        </tr>
+        <tr>
+          <td>في محل الملابس</td>
+          <td>Sie (رسمي)</td>
+          <td class="de-cell">Möchten Sie sie anprobieren?</td>
+          <td>هل تريد تجربتها؟</td>
+        </tr>
+        <tr>
+          <td>مع الجيران (معرفة)</td>
+          <td>du / Sie (حسب العمر)</td>
+          <td class="de-cell">Falls Sie etwas brauchen, klopfen Sie an.</td>
+          <td>إذا احتجت شيئًا، اطرق الباب.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================
+     LEARNING ROADMAP / TIMELINE
+     ============================================ -->
+<section class="section" id="roadmap">
+  <div class="section-head reveal">
+    <span class="eyebrow">خطة التعلم المقترحة</span>
+    <h2>رحلة ستة أسابيع مع المحادثات</h2>
+    <p>اقترح هذا الترتيب لتطبيق المحادثات الست بشكل تدريجي، مع التركيز على الاستماع والتكرار الصوتي.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-card">
+        <div class="tl-week">الأسبوع 1</div>
+        <h4>محادثة العائلة — الاستماع والتكرار</h4>
+        <p>استمع لكل جملة 3 مرات، كرر النص الألماني بصوت عالٍ، وراجع الترجمة العربية فقط عند الحاجة.</p>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-card">
+        <div class="tl-week">الأسبوع 2</div>
+        <h4>عيد الميلاد والأصدقاء — التعبير عن المشاعر</h4>
+        <p>ركّز على كلمات الاحتفال والتهنئة والعلاقات الاجتماعية. تدرب على التعبير عن الفرح بأكثر من طريقة.</p>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-card">
+        <div class="tl-week">الأسبوع 3</div>
+        <h4>الصحة والطبيب — المفردات الطبية الأساسية</h4>
+        <p>تعلّم أسماء الأعراض الشائعة، وكيفية وصف حالتك الصحية بالألمانية بجمل مباشرة وواضحة.</p>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-card">
+        <div class="tl-week">الأسبوع 4</div>
+        <h4>المطعم والتسوق — الحياة اليومية</h4>
+        <p>تدرب على طلب الطعام، السؤال عن المقاسات والألوان، والتعامل مع المواقف اليومية التسوقية بثقة.</p>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-card">
+        <div class="tl-week">الأسبوع 5</div>
+        <h4>المحطة والمكالمة الهاتفية — التواصل الرسمي</h4>
+        <p>ركّز على صيغة Sie الرسمية، وتدرب على إجراء مكالمات هاتفية وحجز تذاكر القطار باستخدام الأرقام والأوقات.</p>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-card">
+        <div class="tl-week">الأسبوع 6</div>
+        <h4>المراجعة الشاملة — تمثيل الأدوار</h4>
+        <p>اختر شريكًا أو سجّل صوتك بنفسك، وأعد تمثيل جميع المحادثات كاملة دون النظر إلى الترجمة. هذا هو الاختبار الحقيقي!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FAQ
+     ============================================ -->
+<section class="section" id="faq">
+  <div class="section-head reveal">
+    <span class="eyebrow">الأسئلة الشائعة</span>
+    <h2>كل ما تحتاج معرفته</h2>
+    <p>إجابات سريعة حول كيفية استخدام أدوات النطق والترجمة والنسخ في هذه الصفحة.</p>
+  </div>
+
+  <div class="faq-list reveal">
+    <details class="faq-item">
+      <summary>كيف يعمل زر "استمع"؟<span class="faq-icon" aria-hidden="true">＋</span></summary>
+      <div class="faq-body">يستخدم الزر محرك تحويل النص إلى كلام المدمج في متصفحك (Web Speech API) لقراءة الجملة الألمانية بنطق ألماني. تأكد من تفعيل الصوت في جهازك، وإذا لم يكن متصفحك يدعم صوتًا ألمانيًا، سيستخدم أقرب صوت متاح.</div>
+    </details>
+    <details class="faq-item">
+      <summary>هل الترجمة دقيقة بنسبة 100%؟<span class="faq-icon" aria-hidden="true">＋</span></summary>
+      <div class="faq-body">الترجمات هنا مُعدّة مسبقًا لتعكس المعنى الطبيعي للجملة في سياقها، وليست ترجمة آلية حرفية. هذا يساعدك على فهم كيف يُعبَّر عن الأفكار في الألمانية اليومية بدلًا من الترجمة كلمة بكلمة.</div>
+    </details>
+    <details class="faq-item">
+      <summary>ماذا يحدث عند الضغط على "نسخ"؟<span class="faq-icon" aria-hidden="true">＋</span></summary>
+      <div class="faq-body">يتم نسخ النص الألماني فقط إلى الحافظة مباشرة، ليتسنى لك لصقه في أي تطبيق ملاحظات أو بطاقات تعليمية أو محرك بحث للمراجعة الإضافية.</div>
+    </details>
+    <details class="faq-item">
+      <summary>لماذا لا توجد تبويبات منفصلة للمحادثات؟<span class="faq-icon" aria-hidden="true">＋</span></summary>
+      <div class="faq-body">صُممت الصفحة كتجربة تمرير واحدة (single-scroll) لتجنب التنقل المعقد بين الصفحات. يمكنك استخدام أزرار التصفية (الكل، العائلة، الأصدقاء، العمل) لإظهار أو إخفاء المحادثات مباشرة دون مغادرة الصفحة.</div>
+    </details>
+    <details class="faq-item">
+      <summary>هل تعمل المنصة على الهاتف المحمول؟<span class="faq-icon" aria-hidden="true">＋</span></summary>
+      <div class="faq-body">نعم، التصميم متجاوب بالكامل ويعمل بسلاسة على الهواتف، الأجهزة اللوحية، أجهزة الكمبيوتر المحمولة، والشاشات العريضة، مع الحفاظ على وضوح النصوص وسهولة الضغط على الأزرار.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ============================================
+     CTA
+     ============================================ -->
+<div class="cta-band reveal">
+  <h2>ابدأ التحدث كالألمان منذ اليوم</h2>
+  <p>عُد إلى أعلى الصفحة، اختر سياقك المفضل، واستمع لأول جملة الآن. التعلم بالاستماع والتكرار هو أسرع طريق للطلاقة.</p>
+  <button class="cta-button" onclick="document.getElementById('conversations').scrollIntoView({behavior:'smooth'})">
+    ↑ انتقل إلى المحادثات
+  </button>
+</div>
+
+<footer>
+  <div class="footer-flags" aria-hidden="true">🇩🇪 ・ 🇬🇧 ・ 🇸🇦</div>
+  <p>Alltagsdeutsch — منصة تعليمية لمحادثات الألمانية اليومية. صُممت لأغراض تعليمية لتسهيل التعلم من خلال السياق الحقيقي.</p>
+</footer>
+
+<!-- Toast notification -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================
+     THEME: dark / light + system detection
+     ============================================ */
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const STORAGE_KEY = 'alltagsdeutsch-theme';
+
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+  }
+
+  function getPreferredTheme() {
+    const stored = null; // no localStorage persistence per artifact rules; rely on system + session state
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    return 'light';
+  }
+
+  let currentTheme = getPreferredTheme();
+  applyTheme(currentTheme);
+
+  themeToggle.addEventListener('click', function () {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(currentTheme);
+  });
+
+  // React to system theme changes live
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+      currentTheme = e.matches ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+  }
+
+  /* ============================================
+     SCROLL PROGRESS BAR
+     ============================================ */
+  const scrollBar = document.getElementById('scrollBar');
+  function updateScrollProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollBar.style.width = progress + '%';
+  }
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  updateScrollProgress();
+
+  /* ============================================
+     ACTIVE SECTION HIGHLIGHTING
+     ============================================ */
+  const sections = document.querySelectorAll('section[id], .hero[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+
+  function setActiveLink() {
+    let currentId = sections[0] ? sections[0].id : '';
+    const scrollPos = window.scrollY + 140;
+
+    sections.forEach(function (sec) {
+      if (sec.offsetTop <= scrollPos) {
+        currentId = sec.id;
+      }
+    });
+
+    navAnchors.forEach(function (a) {
+      const target = a.getAttribute('href').replace('#', '');
+      a.classList.toggle('active', target === currentId);
+    });
+  }
+  window.addEventListener('scroll', setActiveLink, { passive: true });
+  setActiveLink();
+
+  /* ============================================
+     REVEAL ON SCROLL ANIMATION
+     ============================================ */
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in-view'); });
+  }
+
+  /* ============================================
+     TOAST HELPER
+     ============================================ */
+  const toast = document.getElementById('toast');
+  let toastTimer = null;
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      toast.classList.remove('show');
+    }, 1800);
+  }
+
+  /* ============================================
+     COPY TO CLIPBOARD
+     ============================================ */
+  function copyText(text, btn) {
+    function done() {
+      const original = btn.innerHTML;
+      const wasPattern = btn.classList.contains('pattern-copy-btn');
+      btn.classList.add('copied');
+      btn.innerHTML = wasPattern ? '✅ تم النسخ' : '✅ تم';
+      showToast('تم نسخ النص الألماني إلى الحافظة');
+      setTimeout(function () {
+        btn.classList.remove('copied');
+        btn.innerHTML = original;
+      }, 1500);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () {
+        fallbackCopy(text);
+        done();
+      });
+    } else {
+      fallbackCopy(text);
+      done();
+    }
+  }
+
+  function fallbackCopy(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      copyText(btn.getAttribute('data-text'), btn);
+    });
+  });
+
+  document.querySelectorAll('.pattern-copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      copyText(btn.getAttribute('data-copy'), btn);
+    });
+  });
+
+  /* ============================================
+     TEXT-TO-SPEECH (German)
+     ============================================ */
+  let germanVoice = null;
+
+  function pickGermanVoice() {
+    if (!('speechSynthesis' in window)) return;
+    const voices = window.speechSynthesis.getVoices();
+    germanVoice = voices.find(function (v) { return v.lang === 'de-DE'; }) ||
+                  voices.find(function (v) { return v.lang && v.lang.indexOf('de') === 0; }) ||
+                  null;
+  }
+
+  if ('speechSynthesis' in window) {
+    pickGermanVoice();
+    window.speechSynthesis.onvoiceschanged = pickGermanVoice;
+  }
+
+  let activePlayBtn = null;
+
+  document.querySelectorAll('.play-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const text = btn.getAttribute('data-text');
+
+      if (!('speechSynthesis' in window)) {
+        showToast('متصفحك لا يدعم تحويل النص إلى كلام');
+        return;
+      }
+
+      // Toggle off if same button is already playing
+      if (activePlayBtn === btn) {
+        window.speechSynthesis.cancel();
+        return;
+      }
+
+      window.speechSynthesis.cancel();
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'de-DE';
+      if (germanVoice) utterance.voice = germanVoice;
+      utterance.rate = 0.92;
+      utterance.pitch = 1;
+
+      utterance.onstart = function () {
+        if (activePlayBtn) {
+          activePlayBtn.classList.remove('playing');
+          activePlayBtn.querySelector('.btn-label').textContent = 'استمع';
+        }
+        activePlayBtn = btn;
+        btn.classList.add('playing');
+        btn.querySelector('.btn-label').textContent = 'إيقاف';
+      };
+
+      utterance.onend = function () {
+        btn.classList.remove('playing');
+        btn.querySelector('.btn-label').textContent = 'استمع';
+        if (activePlayBtn === btn) activePlayBtn = null;
+      };
+
+      utterance.onerror = function () {
+        btn.classList.remove('playing');
+        btn.querySelector('.btn-label').textContent = 'استمع';
+        if (activePlayBtn === btn) activePlayBtn = null;
+      };
+
+      window.speechSynthesis.speak(utterance);
+    });
+  });
+
+  /* ============================================
+     TRANSLATION TOGGLE
+     ============================================ */
+  document.querySelectorAll('.translate-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const bubble = btn.closest('.bubble');
+      const panel = bubble.querySelector('.translations');
+      const isOpen = panel.classList.toggle('open');
+      btn.textContent = isOpen ? '🌐 إخفاء' : '🌐 ترجم';
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
+  /* ============================================
+     CATEGORY FILTER
+     ============================================ */
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const sceneCards = document.querySelectorAll('.scene-card');
+
+  filterPills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      filterPills.forEach(function (p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      const filter = pill.getAttribute('data-filter');
+
+      sceneCards.forEach(function (card) {
+        const cat = card.getAttribute('data-category');
+        const show = filter === 'all' || filter === cat;
+        if (show) {
+          card.style.display = '';
+          card.classList.remove('in-view');
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () { card.classList.add('in-view'); });
+          });
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  /* ============================================
+     SMOOTH ANCHOR NAV (graceful, accounts for sticky header)
+     ============================================ */
+  document.querySelectorAll('.nav-links a').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      const id = link.getAttribute('href');
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        const headerHeight = document.querySelector('.navbar').offsetHeight;
+        const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 8;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+})();
+</script>
+
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="stories-alltagsdeutsch" data-category="stories" data-title="Alltagsdeutsch — محادثات يومية" data-root="../../" defer></script>
+</body>
+</html>

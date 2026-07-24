@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Deutsch Lernen A2 | تعلم الألمانية — Deutsch mit Mira</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,400&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Cairo:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:#f0f4f8;--bg2:#e4ecf4;--surface:#ffffff;--surface2:#f7f9fc;
+  --border:#ccd7e4;--border2:#dce6f0;--text:#1c2b3a;--text2:#4a6278;--text3:#7a93a8;
+  --accent:#2e6da4;--accent2:#3d85c8;--accent-soft:#ddeeff;
+  --hero-glow:rgba(46,109,164,0.06);
+  --de-color:#1a5fa0;--de-soft:#ddeef9;
+  --en-color:#1d7a4e;--en-soft:#d8f3e8;
+  --ar-color:#6b3ea0;--ar-soft:#ede0ff;
+  --tip-color:#c46a00;--tip-soft:#fff3dd;
+  --shadow:0 2px 16px rgba(30,60,100,0.08);--shadow-lg:0 8px 40px rgba(30,60,100,0.14);
+  --radius:18px;--radius-sm:10px;--transition:0.28s cubic-bezier(0.4,0,0.2,1);
+  --font-ar:'Cairo','Segoe UI',sans-serif;
+}
+[data-theme="dark"] {
+  --bg:#10161f;--bg2:#161e2b;--surface:#1c2735;--surface2:#23303f;
+  --border:#314a64;--border2:#2a394d;--text:#e3edf7;--text2:#93b3cf;--text3:#7e96b0;
+  --accent:#4a9ede;--accent2:#5eb0f0;--accent-soft:#102845;
+  --hero-glow:rgba(74,158,222,0.12);
+  --de-color:#5caae8;--de-soft:#0e2238;
+  --en-color:#52cf93;--en-soft:#0c2520;
+  --ar-color:#b18af0;--ar-soft:#1f1438;
+  --tip-color:#f3ab3c;--tip-soft:#221704;
+  --shadow:0 2px 18px rgba(0,0,0,0.45);--shadow-lg:0 12px 48px rgba(0,0,0,0.6);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'DM Sans',system-ui,sans-serif;background:radial-gradient(ellipse 1100px 650px at 50% -8%,var(--hero-glow),transparent 60%) var(--bg);background-attachment:fixed;color:var(--text);line-height:1.75;transition:background var(--transition),color var(--transition);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+*{-webkit-user-select:text;user-select:text;}
+#progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--de-color),var(--accent2));width:0%;z-index:1001;transition:width .1s linear;border-radius:0 2px 2px 0;}
+nav{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border2);padding:0 clamp(1rem,4vw,2.5rem);transition:background var(--transition);}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:62px;gap:1rem;}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:1.25rem;font-weight:800;color:var(--accent);text-decoration:none;letter-spacing:-0.02em;white-space:nowrap;flex-shrink:0;}
+.nav-logo span{color:var(--text2);font-weight:300;}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.nav-links::-webkit-scrollbar{display:none;}
+.nav-link{padding:5px 12px;border-radius:20px;font-size:.8rem;font-weight:500;color:var(--text2);text-decoration:none;white-space:nowrap;transition:all var(--transition);border:1px solid transparent;font-family:var(--font-ar);}
+.nav-link:hover,.nav-link.active{background:var(--accent-soft);color:var(--accent);border-color:color-mix(in srgb,var(--accent) 25%,transparent);}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.theme-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all var(--transition);}
+.theme-btn:hover{transform:rotate(20deg) scale(1.1);}
+.print-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--surface);cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all var(--transition);}
+.print-btn:hover{transform:scale(1.1);background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 30%,transparent);color:var(--accent);}
+.hero{max-width:1280px;margin:0 auto;padding:clamp(3rem,7vw,5.5rem) clamp(1rem,4vw,2.5rem);text-align:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);padding:6px 18px;border-radius:24px;font-size:.8rem;font-weight:700;margin-bottom:1.5rem;letter-spacing:.06em;animation:fadeUp .6s ease both;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(2.4rem,6vw,4.8rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:1rem;animation:fadeUp .6s .1s ease both;}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:300;}
+.hero-sub{font-size:clamp(1rem,2vw,1.18rem);color:var(--text2);max-width:580px;margin:0 auto 2rem;font-family:var(--font-ar);line-height:1.8;animation:fadeUp .6s .2s ease both;}
+.hero-langs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;animation:fadeUp .6s .3s ease both;}
+.lang-chip{display:flex;align-items:center;gap:6px;padding:7px 16px;border-radius:30px;font-size:.83rem;font-weight:600;border:1.5px solid;}
+.lang-chip.de{background:var(--de-soft);color:var(--de-color);border-color:color-mix(in srgb,var(--de-color) 30%,transparent);}
+.lang-chip.en{background:var(--en-soft);color:var(--en-color);border-color:color-mix(in srgb,var(--en-color) 30%,transparent);}
+.lang-chip.ar{background:var(--ar-soft);color:var(--ar-color);border-color:color-mix(in srgb,var(--ar-color) 30%,transparent);font-family:var(--font-ar);}
+.stats-row{display:flex;justify-content:center;gap:clamp(.75rem,3vw,2rem);flex-wrap:wrap;max-width:1280px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem) 2.5rem;animation:fadeUp .6s .4s ease both;}
+.stat-pill{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);padding:10px 20px;border-radius:30px;box-shadow:var(--shadow);font-size:.88rem;}
+.stat-pill strong{color:var(--accent);font-size:1.1rem;font-weight:700;}
+.section-head{max-width:1280px;margin:0 auto;padding:2.5rem clamp(1rem,4vw,2.5rem) 1rem;display:flex;align-items:center;gap:14px;}
+.section-head h2{font-family:'Fraunces',serif;font-size:clamp(1.3rem,3vw,1.9rem);font-weight:700;letter-spacing:-.02em;white-space:nowrap;}
+.section-head-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
+.section-head-ar{font-family:var(--font-ar);font-size:.85rem;color:var(--text3);white-space:nowrap;}
+.topics-grid{max-width:1280px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem) 4rem;display:grid;gap:2.2rem;}
+.topic-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);opacity:0;transform:translateY(28px);transition:box-shadow var(--transition),transform .6s ease,opacity .6s ease,border-color var(--transition);}
+.topic-card:hover{box-shadow:var(--shadow-lg);border-color:color-mix(in srgb,var(--accent) 22%,var(--border));}
+.topic-card.visible{opacity:1;transform:translateY(0);}
+.topic-header{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.6rem;border-bottom:1px solid var(--border2);background:var(--surface2);gap:1rem;flex-wrap:wrap;}
+.topic-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.topic-icon{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:1.35rem;flex-shrink:0;border:1px solid color-mix(in srgb,var(--accent) 20%,transparent);}
+.topic-titles h2{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;letter-spacing:-.02em;line-height:1.25;}
+.topic-titles small{font-size:.76rem;color:var(--text3);font-family:var(--font-ar);direction:rtl;display:block;margin-top:2px;}
+.level-badge{background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:20px;font-size:.72rem;font-weight:800;letter-spacing:.08em;border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);}
+.topic-body{padding:1.6rem;}
+.lang-section{padding:1.1rem 1.3rem;border-radius:var(--radius-sm);margin-bottom:1.25rem;background:var(--surface2);border:1px solid var(--border2);border-inline-start:4px solid var(--border);transition:border-color var(--transition),background var(--transition);}
+.lang-section:last-of-type{margin-bottom:0;}
+.lang-section.lang-de{--lang-color:var(--de-color);background:var(--de-soft);border-color:color-mix(in srgb,var(--de-color) 16%,var(--border2));border-inline-start-color:color-mix(in srgb,var(--de-color) 55%,transparent);}
+.lang-section.lang-en{--lang-color:var(--en-color);background:var(--en-soft);border-color:color-mix(in srgb,var(--en-color) 16%,var(--border2));border-inline-start-color:color-mix(in srgb,var(--en-color) 55%,transparent);}
+.lang-section.lang-ar{--lang-color:var(--ar-color);direction:rtl;background:var(--ar-soft);border-color:color-mix(in srgb,var(--ar-color) 16%,var(--border2));border-inline-start-color:color-mix(in srgb,var(--ar-color) 55%,transparent);}
+.lang-label{display:flex;align-items:baseline;gap:9px;margin-bottom:.85rem;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;}
+.lang-section.lang-de .lang-label{color:var(--de-color);}
+.lang-section.lang-en .lang-label{color:var(--en-color);}
+.lang-section.lang-ar .lang-label{color:var(--ar-color);direction:rtl;}
+.lang-flag{font-size:1.05rem;letter-spacing:0;}
+.lang-sub{font-weight:500;letter-spacing:0;text-transform:none;color:var(--text3);font-size:.78rem;font-family:var(--font-ar);}
+.lang-section .text-block{margin:0;}
+.lang-section.lang-de .text-block,.lang-section.lang-en .text-block,.lang-section.lang-ar .text-block{border:none;background:transparent;padding:0;}
+.text-block{border-radius:var(--radius-sm);padding:1.3rem 1.5rem;line-height:1.95;font-size:1rem;position:relative;}
+.text-block.de{background:var(--de-soft);border:1px solid color-mix(in srgb,var(--de-color) 18%,transparent);}
+.text-block.en{background:var(--en-soft);border:1px solid color-mix(in srgb,var(--en-color) 18%,transparent);}
+.text-block.ar{background:var(--ar-soft);border:1px solid color-mix(in srgb,var(--ar-color) 18%,transparent);direction:rtl;text-align:right;font-family:var(--font-ar);font-size:1.08rem;line-height:2.1;}
+.text-block p{margin-bottom:.65rem;}.text-block p:last-child{margin-bottom:0;}
+.hl-noun{color:var(--de-color);font-weight:600;}.hl-verb{color:var(--accent);font-weight:600;}.hl-adj{color:var(--en-color);font-weight:600;}.hl-sep{color:var(--tip-color);font-weight:700;text-decoration:underline dotted;}
+.lang-actions{display:flex;gap:8px;margin-top:1rem;flex-wrap:wrap;}
+.lang-section.lang-ar .lang-actions{direction:rtl;}
+.action-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:8px;border:1.5px solid color-mix(in srgb,var(--lang-color,var(--accent)) 32%,transparent);font-size:.76rem;font-weight:600;cursor:pointer;transition:all var(--transition);font-family:inherit;background:var(--surface);color:var(--lang-color,var(--accent));}
+.action-btn:hover{background:var(--lang-color,var(--accent));color:#fff;border-color:var(--lang-color,var(--accent));transform:scale(1.02);}
+.btn-speak.speaking{background:var(--lang-color,var(--accent));color:#fff;border-color:var(--lang-color,var(--accent));animation:pulse 1.1s ease infinite;}
+.tip-box{background:var(--tip-soft);border:1px solid color-mix(in srgb,var(--tip-color) 28%,transparent);border-radius:var(--radius-sm);padding:.75rem 1rem;font-size:.82rem;color:var(--text2);margin-top:.85rem;display:flex;gap:8px;align-items:flex-start;}
+.tip-icon{font-size:1rem;flex-shrink:0;margin-top:2px;}
+.tip-content{direction:ltr;text-align:left;font-family:'DM Sans',sans-serif;}
+.vocab-section{margin-top:1.4rem;border-top:1px solid var(--border2);padding-top:1.2rem;}
+.vocab-title{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:.8rem;display:flex;align-items:center;gap:6px;}
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:7px;}
+.vocab-item{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:8px 12px;transition:border-color var(--transition),transform var(--transition);}
+.vocab-item:hover{border-color:var(--accent);transform:translateY(-1px);}
+.vocab-de{font-weight:700;color:var(--de-color);font-size:.86rem;}
+.vocab-en{font-size:.76rem;color:var(--en-color);margin-top:2px;}
+.vocab-ar{font-size:.82rem;color:var(--ar-color);font-family:var(--font-ar);direction:rtl;margin-top:2px;}
+.grammar-table-wrap{margin-top:1.2rem;overflow-x:auto;}
+.grammar-table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:360px;}
+.grammar-table th{background:var(--accent-soft);color:var(--accent);padding:8px 12px;text-align:left;font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;}
+.grammar-table td{padding:8px 12px;border-bottom:1px solid var(--border2);vertical-align:top;}
+.grammar-table tr:last-child td{border-bottom:none;}
+.grammar-table tr:hover td{background:var(--surface2);}
+.grammar-table .td-de{color:var(--de-color);font-weight:600;}.grammar-table .td-en{color:var(--en-color);}.grammar-table .td-ar{color:var(--ar-color);font-family:var(--font-ar);direction:rtl;text-align:right;}
+.dialogue{display:flex;flex-direction:column;gap:10px;}
+.dlg-line{display:flex;gap:10px;align-items:flex-start;}
+.dlg-speaker{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:2px;}
+.dlg-speaker.a{background:var(--de-soft);color:var(--de-color);border:1px solid color-mix(in srgb,var(--de-color) 25%,transparent);}
+.dlg-speaker.b{background:var(--en-soft);color:var(--en-color);border:1px solid color-mix(in srgb,var(--en-color) 25%,transparent);}
+.dlg-text{font-size:.96rem;line-height:1.7;}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--text);color:var(--bg);padding:10px 20px;border-radius:10px;font-size:.85rem;font-weight:600;transform:translateY(80px);opacity:0;transition:all .3s ease;z-index:999;pointer-events:none;font-family:var(--font-ar);}
+.toast.show{transform:translateY(0);opacity:1;}
+footer{border-top:1px solid var(--border2);padding:2.5rem clamp(1rem,4vw,2.5rem);text-align:center;color:var(--text3);font-size:.82rem;}
+.footer-inner{max-width:1280px;margin:0 auto;}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:800;color:var(--accent);display:block;margin-bottom:.5rem;}
+.footer-legend{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:.75rem;font-size:.79rem;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--lang-color,var(--accent)) 40%,transparent)}50%{box-shadow:0 0 0 7px color-mix(in srgb,var(--lang-color,var(--accent)) 0%,transparent)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media (max-width:640px){.nav-links{display:none;}.topic-header{padding:1rem 1.1rem;}.topic-body{padding:1.1rem;}.lang-section{padding:.9rem 1rem;}.text-block{padding:0;font-size:.94rem;}.text-block.ar{font-size:1rem;}.vocab-grid{grid-template-columns:1fr 1fr;}.hero h1{font-size:2.1rem;}.stats-row{gap:.5rem;}.stat-pill{font-size:.8rem;padding:8px 14px;}}
+
+/* ============ PRINT / A4 STYLESHEET ============ */
+@page{size:A4;margin:14mm 12mm;}
+@media print{
+  :root,[data-theme="dark"]{
+    --bg:#ffffff;--bg2:#ffffff;--surface:#ffffff;--surface2:#f6f8fb;
+    --border:#d6dee8;--border2:#e7ecf2;--text:#16212c;--text2:#445668;--text3:#71839a;
+    --accent:#1f5c91;--accent2:#3d85c8;--accent-soft:#eaf3fb;
+    --hero-glow:transparent;
+    --de-color:#15568f;--de-soft:#edf6fc;
+    --en-color:#16704a;--en-soft:#ecf8f2;
+    --ar-color:#5f3996;--ar-soft:#f4eefc;
+    --tip-color:#9c5500;--tip-soft:#fff8ec;
+    --shadow:none;--shadow-lg:none;
+  }
+  *,*::before,*::after{
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;color-adjust:exact;
+    animation:none!important;transition:none!important;
+  }
+  html{font-size:12px;}
+  body{background:#ffffff;line-height:1.6;}
+  #progress-bar,nav,.toast,.print-btn,.theme-btn,.lang-actions,.hero-badge{display:none!important;}
+  a{text-decoration:none;color:inherit;}
+  .hero{padding:.4rem 0 1.1rem;}
+  .hero h1{font-size:24pt;line-height:1.15;margin-bottom:.35rem;}
+  .hero-sub{font-size:9.5pt;line-height:1.6;margin:0 auto .7rem;max-width:640px;}
+  .hero-langs{gap:6px;}
+  .lang-chip{padding:4px 12px;font-size:9pt;}
+  .stats-row{padding:0 0 .9rem;gap:8px;}
+  .stat-pill{padding:6px 14px;font-size:8.5pt;box-shadow:none;border:1px solid var(--border);}
+  .section-head{padding:.6rem 0 .6rem;page-break-after:avoid;break-after:avoid;}
+  .section-head:has(+ .topics-grid #transport){page-break-before:always;break-before:page;}
+  #transport{page-break-before:auto!important;break-before:auto!important;}
+  .topics-grid{padding:0;gap:0;}
+  .topic-card{
+    opacity:1!important;transform:none!important;
+    box-shadow:none;border:1px solid var(--border);border-radius:10px;
+    page-break-before:always;break-before:page;
+    margin-bottom:0;
+  }
+  #intro{page-break-before:auto!important;break-before:auto!important;}
+  .topic-header{padding:9px 13px;}
+  .topic-icon{width:34px;height:34px;font-size:1.1rem;border-radius:9px;}
+  .topic-titles h2{font-size:12.5pt;}
+  .topic-titles small{font-size:8.5pt;}
+  .level-badge{font-size:7.5pt;padding:2px 8px;}
+  .topic-body{padding:11px 13px;}
+  .lang-section{page-break-inside:avoid;break-inside:avoid;padding:.7rem .9rem;margin-bottom:.6rem;border-radius:8px;}
+  .lang-label{margin-bottom:.5rem;font-size:8pt;}
+  .text-block{font-size:9.5pt;line-height:1.55;}
+  .text-block.ar{font-size:10.5pt;line-height:1.8;}
+  .tip-box,.vocab-item,.dlg-line,.grammar-table tr{page-break-inside:avoid;break-inside:avoid;}
+  .tip-box{font-size:8.5pt;padding:.55rem .75rem;margin-top:.6rem;}
+  .grammar-table-wrap{margin-top:.7rem;}
+  .grammar-table{font-size:8.5pt;min-width:0;}
+  .grammar-table th,.grammar-table td{padding:5px 8px;}
+  .dlg-speaker{font-size:7.5pt;}
+  .dlg-text{font-size:9.5pt;line-height:1.5;}
+  .vocab-section{margin-top:.8rem;padding-top:.7rem;}
+  .vocab-title{font-size:7.5pt;margin-bottom:.5rem;}
+  .vocab-grid{gap:5px;}
+  .vocab-item{padding:5px 8px;}
+  .vocab-de{font-size:8.5pt;}
+  .vocab-en{font-size:7.5pt;}
+  .vocab-ar{font-size:8pt;}
+  footer{padding:1.2rem 0 0;border-top:1px solid var(--border);}
+  .footer-legend{font-size:8pt;}
+}
+
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<div class="toast" id="toast">✓ تم النسخ!</div>
+<nav>
+<div class="nav-inner">
+<a class="nav-logo" href="#top">Deutsch<span> mit Mira</span></a>
+<div class="nav-links">
+<a class="nav-link" href="#intro">التعريف</a>
+<a class="nav-link" href="#routine">الروتين</a>
+<a class="nav-link" href="#family">العائلة</a>
+<a class="nav-link" href="#food">الطعام</a>
+<a class="nav-link" href="#weather">الطقس</a>
+<a class="nav-link" href="#work">العمل</a>
+<a class="nav-link" href="#hobbies">الهوايات</a>
+<a class="nav-link" href="#shopping">التسوق</a>
+<a class="nav-link" href="#transport">المواصلات</a>
+<a class="nav-link" href="#health">الصحة</a>
+<a class="nav-link" href="#housing">السكن</a>
+<a class="nav-link" href="#city">المدينة</a>
+<a class="nav-link" href="#friends">الأصدقاء</a>
+</div>
+<div class="nav-right">
+<button aria-label="Print this page / طباعة الصفحة" class="print-btn" id="printBtn" title="طباعة / Print">🖨️</button>
+<button aria-label="Toggle theme" class="theme-btn" id="themeBtn">🌙</button>
+</div>
+</div>
+</nav>
+<header class="hero" id="top">
+<div class="hero-badge">📚 Niveau A2 · مستوى A2 · CEFR</div>
+<h1>Deutsch lernen<br/><em>تعلم اللغة الألمانية</em></h1>
+<p class="hero-sub">١٣ موضوعًا بمستوى A2 — كل موضوع بالألمانية ثم الإنجليزية ثم العربية، مع النطق والمفردات الثلاثية، وتنسيق أنيق جاهز للطباعة على A4</p>
+<div class="hero-langs">
+<div class="lang-chip de"><span>🇩🇪</span> Deutsch</div>
+<div class="lang-chip en"><span>🇬🇧</span> English</div>
+<div class="lang-chip ar"><span>🇸🇦</span> العربية</div>
+</div>
+</header>
+<div class="stats-row">
+<div class="stat-pill"><strong>13</strong> موضوع يومي</div>
+<div class="stat-pill"><strong>130+</strong> مفردة جديدة</div>
+<div class="stat-pill"><strong>🔊</strong> نطق فوري</div>
+<div class="stat-pill"><strong>A1→A2</strong> تقدم متدرج</div>
+</div>
+<div class="section-head"><h2>المواضيع الأساسية</h2><div class="section-head-line"></div><span class="section-head-ar">Grundlegende Themen</span></div>
+<div class="topics-grid">
+<!-- ===== 1. SELF INTRODUCTION ===== -->
+<div class="topic-card" id="intro">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">👤</div>
+<div class="topic-titles"><h2>Sich vorstellen — التعريف بالنفس</h2><small>تعريف بالنفس · Self Introduction</small></div>
+</div><span class="level-badge">A2</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t1-de">
+<p>Guten Tag! Ich <span class="hl-verb">heiße</span> <span class="hl-noun">Ahmed Al-Rashid</span>. Ich bin <span class="hl-adj">sechsundzwanzig Jahre alt</span> und <span class="hl-verb">komme</span> ursprünglich aus <span class="hl-noun">Syrien</span>. Seit einem Jahr <span class="hl-verb">wohne</span> ich in <span class="hl-noun">Hamburg</span>.</p>
+<p>Von Beruf bin ich <span class="hl-noun">Informatiker</span>. Ich <span class="hl-verb">arbeite</span> bei einer kleinen <span class="hl-noun">Firma</span> in der <span class="hl-noun">Innenstadt</span>. Außerdem <span class="hl-verb">studiere</span> ich <span class="hl-adj">nebenbei</span> an der <span class="hl-noun">Volkshochschule</span>.</p>
+<p>Ich <span class="hl-verb">spreche</span> <span class="hl-noun">Arabisch</span> als Muttersprache und <span class="hl-noun">Englisch</span> <span class="hl-adj">fließend</span>. Mein Deutsch <span class="hl-verb">wird</span> immer <span class="hl-adj">besser</span>! In meiner Freizeit <span class="hl-verb">fotografiere</span> ich gern und <span class="hl-verb">spiele</span> <span class="hl-noun">Schach</span>.</p>
+<p>Es <span class="hl-verb">freut</span> mich sehr, Sie kennenzulernen!</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t1-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t1-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">💡</span><div class="tip-content"><b>Verb-Zweit-Regel:</b> الفعل يأتي دائمًا في المكان الثاني — <i>Seit einem Jahr <u>wohne</u> ich in Hamburg.</i> حتى لو بدأت الجملة بكلمة أخرى، الفعل يظل ثانيًا.</div></div><div class="grammar-table-wrap">
+<table class="grammar-table">
+<thead><tr><th>Deutsch</th><th>English</th><th>العربية</th></tr></thead>
+<tbody>
+<tr><td class="td-de">Ich heiße…</td><td class="td-en">My name is…</td><td class="td-ar">اسمي…</td></tr>
+<tr><td class="td-de">Ich komme aus…</td><td class="td-en">I come from…</td><td class="td-ar">أنا من…</td></tr>
+<tr><td class="td-de">Ich wohne in…</td><td class="td-en">I live in…</td><td class="td-ar">أسكن في…</td></tr>
+<tr><td class="td-de">Ich bin von Beruf…</td><td class="td-en">My profession is…</td><td class="td-ar">مهنتي…</td></tr>
+<tr><td class="td-de">Es freut mich!</td><td class="td-en">Pleased to meet you!</td><td class="td-ar">يسعدني لقاؤك!</td></tr>
+</tbody>
+</table>
+</div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t1-en">
+<p>Good day! My name is Ahmed Al-Rashid. I am twenty-six years old and I originally come from Syria. I have been living in Hamburg for a year.</p>
+<p>By profession I am a computer scientist. I work at a small company in the city centre. I also study part-time at the adult education centre.</p>
+<p>I speak Arabic as my mother tongue and English fluently. My German keeps getting better! In my free time I enjoy photography and playing chess.</p>
+<p>I am very pleased to meet you!</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t1-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t1-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t1-ar">
+<p>مرحبًا! اسمي أحمد الراشد. عمري ٢٦ عامًا وأنا أصلًا من سوريا. أسكن في هامبورغ منذ عام.</p>
+<p>أنا مهندس معلوماتية من حيث المهنة. أعمل في شركة صغيرة في وسط المدينة. كما أدرس بدوام جزئي في مدرسة التعليم الشعبي.</p>
+<p>أتحدث العربية كلغة أم والإنجليزية بطلاقة. ألمانيتي تتحسن باستمرار! في وقت فراغي أحب التصوير ولعب الشطرنج.</p>
+<p>يسعدني جدًا التعرف عليكم!</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t1-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t1-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">heißen</div><div class="vocab-en">to be named</div><div class="vocab-ar">اسمه / يُسمَّى</div></div>
+<div class="vocab-item"><div class="vocab-de">ursprünglich</div><div class="vocab-en">originally</div><div class="vocab-ar">أصلًا / في الأصل</div></div>
+<div class="vocab-item"><div class="vocab-de">die Muttersprache</div><div class="vocab-en">mother tongue</div><div class="vocab-ar">اللغة الأم</div></div>
+<div class="vocab-item"><div class="vocab-de">von Beruf</div><div class="vocab-en">by profession</div><div class="vocab-ar">من حيث المهنة</div></div>
+<div class="vocab-item"><div class="vocab-de">fließend</div><div class="vocab-en">fluently</div><div class="vocab-ar">بطلاقة</div></div>
+<div class="vocab-item"><div class="vocab-de">nebenbei</div><div class="vocab-en">on the side / part-time</div><div class="vocab-ar">بدوام جزئي</div></div>
+<div class="vocab-item"><div class="vocab-de">die Volkshochschule</div><div class="vocab-en">adult education centre</div><div class="vocab-ar">مدرسة التعليم الشعبي</div></div>
+<div class="vocab-item"><div class="vocab-de">kennenlernen</div><div class="vocab-en">to get to know</div><div class="vocab-ar">التعرف على</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== 2. DAILY ROUTINE ===== -->
+<div class="topic-card" id="routine">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">🌅</div>
+<div class="topic-titles"><h2>Der Tagesablauf — الروتين اليومي</h2><small>يومياتي · My Daily Routine</small></div>
+</div><span class="level-badge">A2</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t2-de">
+<p>Mein Tag <span class="hl-verb">beginnt</span> um halb sieben. Ich <span class="hl-sep">stehe</span> <span class="hl-sep">auf</span>, <span class="hl-verb">wasche</span> mir das Gesicht und <span class="hl-verb">dusche</span> kurz. Danach <span class="hl-verb">frühstücke</span> ich in Ruhe — meistens <span class="hl-noun">Brot</span> mit <span class="hl-noun">Butter</span>, <span class="hl-noun">Marmelade</span> oder <span class="hl-noun">Käse</span> und dazu einen starken <span class="hl-noun">Kaffee</span>.</p>
+<p>Gegen Viertel nach acht <span class="hl-verb">fahre</span> ich mit der <span class="hl-noun">U-Bahn</span> ins Büro. Die Fahrt <span class="hl-verb">dauert</span> etwa zwanzig Minuten. Die Arbeit <span class="hl-sep">fängt</span> um neun Uhr <span class="hl-sep">an</span> und <span class="hl-verb">endet</span> um fünf Uhr nachmittags.</p>
+<p>In der <span class="hl-noun">Mittagspause</span> <span class="hl-verb">gehe</span> ich mit Kollegen in die <span class="hl-noun">Kantine</span>. Abends <span class="hl-verb">koche</span> ich oft selbst — das <span class="hl-verb">macht</span> mir <span class="hl-adj">Spaß</span>. Danach <span class="hl-verb">lese</span> ich oder <span class="hl-verb">schaue</span> eine <span class="hl-noun">Serie</span>. Ich <span class="hl-verb">gehe</span> gegen elf Uhr <span class="hl-verb">schlafen</span>.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t2-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t2-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">⏰</span><div class="tip-content"><b>Zeitangaben:</b> halb sieben = 6:30 | Viertel nach acht = 8:15 | Viertel vor neun = 8:45 | gegen = حوالي — الأفعال المنفصلة: <i>stehe…auf / fängt…an</i></div></div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t2-en">
+<p>My day begins at half past six. I get up, wash my face and take a quick shower. Then I have breakfast in peace — usually bread with butter, jam or cheese and a strong coffee.</p>
+<p>Around quarter past eight I take the underground to the office. The journey takes about twenty minutes. Work starts at nine and ends at five in the afternoon.</p>
+<p>During my lunch break I go to the canteen with colleagues. In the evenings I often cook for myself — I enjoy it. Afterwards I read or watch a series. I go to sleep around eleven o'clock.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t2-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t2-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t2-ar">
+<p>يبدأ يومي في السادسة والنصف. أستيقظ، أغسل وجهي وأستحم بسرعة. ثم أتناول الفطور بهدوء — عادةً خبز مع زبدة، مربى أو جبن وقهوة قوية.</p>
+<p>حوالي الساعة الثامنة والربع أركب المترو إلى المكتب. تستغرق الرحلة نحو عشرين دقيقة. يبدأ العمل الساعة التاسعة وينتهي الساعة الخامسة مساءً.</p>
+<p>في استراحة الغداء أذهب مع الزملاء إلى الكافيتيريا. في المساء كثيرًا ما أطبخ بنفسي — أستمتع بذلك. بعدها أقرأ أو أشاهد مسلسلًا. أذهب للنوم حوالي الساعة الحادية عشرة.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t2-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t2-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">aufstehen (sep.)</div><div class="vocab-en">to get up</div><div class="vocab-ar">يستيقظ / ينهض</div></div>
+<div class="vocab-item"><div class="vocab-de">anfangen (sep.)</div><div class="vocab-en">to begin / start</div><div class="vocab-ar">يبدأ</div></div>
+<div class="vocab-item"><div class="vocab-de">dauern</div><div class="vocab-en">to last / take (time)</div><div class="vocab-ar">يستغرق (وقت)</div></div>
+<div class="vocab-item"><div class="vocab-de">die Mittagspause</div><div class="vocab-en">lunch break</div><div class="vocab-ar">استراحة الغداء</div></div>
+<div class="vocab-item"><div class="vocab-de">die Kantine</div><div class="vocab-en">canteen / cafeteria</div><div class="vocab-ar">الكافيتيريا</div></div>
+<div class="vocab-item"><div class="vocab-de">Spaß machen</div><div class="vocab-en">to be fun</div><div class="vocab-ar">يكون ممتعًا</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== 3. FAMILY ===== -->
+<div class="topic-card" id="family">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">👨‍👩‍👧‍👦</div>
+<div class="topic-titles"><h2>Die Familie — العائلة</h2><small>أسرتي · My Family</small></div>
+</div><span class="level-badge">A2</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t3-de">
+<p>Meine <span class="hl-noun">Familie</span> <span class="hl-verb">lebt</span> noch in <span class="hl-noun">Syrien</span>. Wir sind insgesamt sechs Personen: meine <span class="hl-noun">Eltern</span>, zwei <span class="hl-noun">Brüder</span>, eine <span class="hl-noun">Schwester</span> und ich.</p>
+<p>Mein <span class="hl-noun">Vater</span> Karim <span class="hl-verb">arbeitet</span> als <span class="hl-noun">Architekt</span>. Meine <span class="hl-noun">Mutter</span> Samira <span class="hl-verb">unterrichtet</span> <span class="hl-noun">Mathematik</span> an einer <span class="hl-noun">Grundschule</span>. Ich bin sehr <span class="hl-adj">stolz</span> auf meine Eltern!</p>
+<p>Mein älterer <span class="hl-noun">Bruder</span> Tarek <span class="hl-verb">hat</span> schon <span class="hl-verb">geheiratet</span>. Seine <span class="hl-noun">Frau</span> heißt Rima und sie <span class="hl-verb">haben</span> ein <span class="hl-adj">kleines</span> <span class="hl-noun">Baby</span>. Ich bin jetzt <span class="hl-noun">Onkel</span>! Mein jüngerer Bruder Youssef <span class="hl-verb">studiert</span> noch.</p>
+<p>Wir <span class="hl-verb">schreiben</span> uns täglich Nachrichten und <span class="hl-verb">telefonieren</span> mindestens zweimal pro Woche per Video. Ich <span class="hl-verb">vermisse</span> sie sehr.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t3-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t3-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">💡</span><div class="tip-content"><b>Possessivpronomen:</b> mein (مذكر) / meine (مؤنث + جمع) — <i>mein Vater / meine Mutter / meine Eltern / mein Baby</i></div></div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t3-en">
+<p>My family still lives in Syria. There are six of us in total: my parents, two brothers, one sister and me.</p>
+<p>My father Karim works as an architect. My mother Samira teaches mathematics at a primary school. I am very proud of my parents!</p>
+<p>My older brother Tarek is already married. His wife is called Rima and they have a small baby. I am an uncle now! My younger brother Youssef is still studying.</p>
+<p>We message each other every day and video call at least twice a week. I miss them very much.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t3-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t3-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t3-ar">
+<p>تعيش عائلتي في سوريا حتى الآن. نحن ستة أشخاص في المجموع: والديّ، أخوان وأخت وأنا.</p>
+<p>أبي كريم يعمل مهندسًا معماريًا. أمي سميرة تدرّس الرياضيات في مدرسة ابتدائية. أنا فخور جدًا بوالديّ!</p>
+<p>أخي الأكبر طارق متزوج بالفعل. زوجته اسمها ريما ولديهما طفل صغير. أنا الآن عمّ! أخي الأصغر يوسف لا يزال يدرس.</p>
+<p>نتراسل يوميًا ونتكلم بالفيديو على الأقل مرتين في الأسبوع. أشتاق إليهم كثيرًا.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t3-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t3-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">die Eltern (pl.)</div><div class="vocab-en">parents</div><div class="vocab-ar">الوالدان</div></div>
+<div class="vocab-item"><div class="vocab-de">heiraten</div><div class="vocab-en">to get married</div><div class="vocab-ar">يتزوج</div></div>
+<div class="vocab-item"><div class="vocab-de">der Onkel / die Tante</div><div class="vocab-en">uncle / aunt</div><div class="vocab-ar">العم / العمة</div></div>
+<div class="vocab-item"><div class="vocab-de">stolz auf</div><div class="vocab-en">proud of</div><div class="vocab-ar">فخور بـ</div></div>
+<div class="vocab-item"><div class="vocab-de">unterrichten</div><div class="vocab-en">to teach</div><div class="vocab-ar">يُدرِّس</div></div>
+<div class="vocab-item"><div class="vocab-de">mindestens</div><div class="vocab-en">at least</div><div class="vocab-ar">على الأقل</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== 4. FOOD ===== -->
+<div class="topic-card" id="food">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">🍽️</div>
+<div class="topic-titles"><h2>Essen und Trinken — الطعام والشراب</h2><small>أكلاتي المفضلة · My Favourite Foods</small></div>
+</div><span class="level-badge">A2</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t4-de">
+<p>Ich <span class="hl-verb">esse</span> sehr <span class="hl-adj">gerne</span> und <span class="hl-verb">koche</span> auch selbst. Zum <span class="hl-noun">Frühstück</span> <span class="hl-verb">esse</span> ich oft <span class="hl-noun">Haferflocken</span> mit <span class="hl-noun">Honig</span> und <span class="hl-noun">Banane</span>. Das ist <span class="hl-adj">nahrhaft</span> und gibt mir viel <span class="hl-noun">Energie</span>.</p>
+<p>Mein Lieblingsessen ist <span class="hl-noun">Linsensuppe</span> mit <span class="hl-noun">Brot</span> — das <span class="hl-verb">erinnert</span> mich an zu Hause. Hier in Deutschland <span class="hl-verb">mag</span> ich besonders <span class="hl-noun">Schnitzel</span>, <span class="hl-noun">Kartoffelsuppe</span> und natürlich <span class="hl-noun">Döner</span>.</p>
+<p>Am Wochenende <span class="hl-verb">gehe</span> ich manchmal ins <span class="hl-noun">Restaurant</span>. Wenn ich selbst <span class="hl-verb">koche</span>, <span class="hl-verb">probiere</span> ich gern neue <span class="hl-noun">Rezepte</span> <span class="hl-sep">aus</span>. Ich <span class="hl-verb">trinke</span> lieber <span class="hl-noun">Wasser</span>, <span class="hl-noun">Tee</span> oder frischen <span class="hl-noun">Saft</span>.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t4-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t4-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">🍴</span><div class="tip-content"><b>Vorlieben ausdrücken:</b> ich esse gern (أحب أكل) · ich esse am liebsten (أكثر ما أحبه) · ich mag besonders (أحب بشكل خاص) · lieber = يفضّل</div></div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t4-en">
+<p>I love eating and also cook myself. For breakfast I often eat porridge with honey and banana. It is nutritious and gives me a lot of energy.</p>
+<p>My favourite food is lentil soup with bread — it reminds me of home. Here in Germany I especially like schnitzel, potato soup and of course doner kebab.</p>
+<p>At the weekend I sometimes go to a restaurant. When I cook myself, I like trying out new recipes. I prefer to drink water, tea or fresh juice.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t4-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t4-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t4-ar">
+<p>أحب الأكل كثيرًا وأطبخ بنفسي أيضًا. على الإفطار كثيرًا ما آكل الشوفان مع العسل والموز. هذا مغذٍّ ويمنحني طاقة كثيرة.</p>
+<p>طعامي المفضل هو شوربة العدس مع الخبز — يذكّرني ذلك بالبيت. هنا في ألمانيا أحب بشكل خاص الشنيتسل وحساء البطاطا وطبعًا الدونر.</p>
+<p>في عطلة نهاية الأسبوع أذهب أحيانًا إلى مطعم. عندما أطبخ بنفسي أحب تجربة وصفات جديدة. أفضّل شرب الماء والشاي والعصير الطازج.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t4-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t4-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">nahrhaft</div><div class="vocab-en">nutritious</div><div class="vocab-ar">مغذٍّ</div></div>
+<div class="vocab-item"><div class="vocab-de">erinnern an</div><div class="vocab-en">to remind of</div><div class="vocab-ar">يذكّر بـ</div></div>
+<div class="vocab-item"><div class="vocab-de">das Rezept</div><div class="vocab-en">recipe</div><div class="vocab-ar">الوصفة</div></div>
+<div class="vocab-item"><div class="vocab-de">die Linsensuppe</div><div class="vocab-en">lentil soup</div><div class="vocab-ar">شوربة العدس</div></div>
+<div class="vocab-item"><div class="vocab-de">ausprobieren (sep.)</div><div class="vocab-en">to try out</div><div class="vocab-ar">يجرّب</div></div>
+<div class="vocab-item"><div class="vocab-de">lieber</div><div class="vocab-en">rather / prefer</div><div class="vocab-ar">يفضّل</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== 5. WEATHER ===== -->
+<div class="topic-card" id="weather">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">🌤️</div>
+<div class="topic-titles"><h2>Das Wetter — الطقس</h2><small>أحوال الجو · The Weather</small></div>
+</div><span class="level-badge">A2</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t5-de">
+<p>Das Wetter in <span class="hl-noun">Deutschland</span> ist sehr anders als in meiner <span class="hl-noun">Heimat</span>. Im <span class="hl-noun">Winter</span> ist es <span class="hl-adj">kalt</span> und oft <span class="hl-adj">bewölkt</span>. Es <span class="hl-verb">schneit</span> manchmal und die <span class="hl-noun">Temperaturen</span> <span class="hl-verb">fallen</span> auf minus fünf Grad.</p>
+<p>Im <span class="hl-noun">Sommer</span> kann es sehr <span class="hl-adj">warm</span> werden — bis zu 35 Grad! Aber es <span class="hl-verb">regnet</span> auch im Sommer ab und zu. Der <span class="hl-noun">Frühling</span> ist meine Lieblingszeit: Die <span class="hl-noun">Sonne</span> <span class="hl-verb">scheint</span>, die Blumen <span class="hl-verb">blühen</span> und alles <span class="hl-verb">wird</span> <span class="hl-adj">grün</span>.</p>
+<p>Ich <span class="hl-verb">habe</span> mich inzwischen ans Wetter <span class="hl-verb">gewöhnt</span>. Ich <span class="hl-verb">trage</span> jetzt immer eine <span class="hl-noun">Jacke</span> und <span class="hl-verb">nehme</span> bei Regen meinen <span class="hl-noun">Regenschirm</span> mit.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t5-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t5-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">🌡️</span><div class="tip-content"><b>Wetter beschreiben:</b> Es ist kalt/warm/heiß/kühl (بارد/دافئ/حار/طازج) | Es regnet (تمطر) | Es schneit (تثلج) | Es ist bewölkt (غائم) | Die Sonne scheint (الشمس تشرق)</div></div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t5-en">
+<p>The weather in Germany is very different from my home country. In winter it is cold and often cloudy. Sometimes it snows and temperatures drop to minus five degrees.</p>
+<p>In summer it can get very warm — up to 35 degrees! But it also rains occasionally in summer. Spring is my favourite time: the sun shines, the flowers bloom and everything turns green.</p>
+<p>I have got used to the weather by now. I always wear a jacket now and take my umbrella when it rains.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t5-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t5-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t5-ar">
+<p>الطقس في ألمانيا مختلف جدًا عن بلدي. في الشتاء يكون باردًا وغائمًا في الغالب. أحيانًا تثلج وتنخفض درجات الحرارة إلى خمس درجات تحت الصفر.</p>
+<p>في الصيف يمكن أن يكون الجو حارًا جدًا — حتى ٣٥ درجة! لكنه يمطر أحيانًا في الصيف أيضًا. الربيع هو فصلي المفضل: تشرق الشمس وتتفتح الأزهار ويتحول كل شيء للون الأخضر.</p>
+<p>لقد تعودت على الطقس الآن. أرتدي دائمًا جاكيتًا وآخذ مظلتي معي عند المطر.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t5-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t5-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">bewölkt</div><div class="vocab-en">cloudy</div><div class="vocab-ar">غائم</div></div>
+<div class="vocab-item"><div class="vocab-de">schneien</div><div class="vocab-en">to snow</div><div class="vocab-ar">يثلج</div></div>
+<div class="vocab-item"><div class="vocab-de">regnen</div><div class="vocab-en">to rain</div><div class="vocab-ar">يمطر</div></div>
+<div class="vocab-item"><div class="vocab-de">scheinen</div><div class="vocab-en">to shine</div><div class="vocab-ar">يسطع / يشرق</div></div>
+<div class="vocab-item"><div class="vocab-de">sich gewöhnen an</div><div class="vocab-en">to get used to</div><div class="vocab-ar">يتعود على</div></div>
+<div class="vocab-item"><div class="vocab-de">der Regenschirm</div><div class="vocab-en">umbrella</div><div class="vocab-ar">المظلة</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== 6. WORK ===== -->
+<div class="topic-card" id="work">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">💼</div>
+<div class="topic-titles"><h2>Arbeit und Beruf — العمل والمهنة</h2><small>في مكان العمل · At the Workplace</small></div>
+</div><span class="level-badge">A2</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t6-de">
+<p>Ich <span class="hl-verb">arbeite</span> seit acht Monaten bei der <span class="hl-noun">Firma</span> „Technik Nord GmbH". Mein <span class="hl-noun">Arbeitsplatz</span> ist im fünften <span class="hl-noun">Stock</span> eines modernen <span class="hl-noun">Bürogebäudes</span>.</p>
+<p>Meine <span class="hl-noun">Aufgaben</span> sind vielfältig: Ich <span class="hl-verb">programmiere</span>, <span class="hl-verb">bearbeite</span> <span class="hl-noun">E-Mails</span> und <span class="hl-verb">nehme</span> an <span class="hl-noun">Meetings</span> <span class="hl-sep">teil</span>. Manchmal <span class="hl-verb">arbeite</span> ich auch von zu Hause aus — das nennt man <span class="hl-noun">Homeoffice</span>.</p>
+<p>Mein <span class="hl-noun">Chef</span> ist <span class="hl-adj">freundlich</span> und meine <span class="hl-noun">Kollegen</span> <span class="hl-verb">helfen</span> mir viel mit der deutschen Sprache. Das <span class="hl-noun">Gehalt</span> ist <span class="hl-adj">fair</span>. Ich bin <span class="hl-adj">zufrieden</span> mit meiner Arbeit.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t6-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t6-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">💡</span><div class="tip-content"><b>seit + Präsens:</b> للتعبير عن فعل بدأ في الماضي ولا يزال مستمرًا — <i>Ich arbeite <u>seit</u> acht Monaten.</i> (أعمل منذ ثمانية أشهر)</div></div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t6-en">
+<p>I have been working at the company "Technik Nord GmbH" for eight months. My workplace is on the fifth floor of a modern office building.</p>
+<p>My tasks are varied: I program, deal with emails and take part in meetings. Sometimes I also work from home — this is called working from home.</p>
+<p>My boss is friendly and my colleagues help me a lot with the German language. The salary is fair. I am satisfied with my work.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t6-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t6-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t6-ar">
+<p>أعمل في شركة "تيكنيك نورد" منذ ثمانية أشهر. مكان عملي في الطابق الخامس من مبنى مكاتب حديث.</p>
+<p>مهامي متنوعة: أبرمج وأعالج الرسائل الإلكترونية وأشارك في الاجتماعات. أحيانًا أعمل من المنزل أيضًا — يسمى ذلك العمل من المنزل.</p>
+<p>مديري ودود وزملائي يساعدونني كثيرًا في اللغة الألمانية. الراتب عادل. أنا راضٍ عن عملي.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t6-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t6-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">der Arbeitsplatz</div><div class="vocab-en">workplace</div><div class="vocab-ar">مكان العمل</div></div>
+<div class="vocab-item"><div class="vocab-de">die Aufgabe</div><div class="vocab-en">task / job</div><div class="vocab-ar">المهمة</div></div>
+<div class="vocab-item"><div class="vocab-de">teilnehmen an (sep.)</div><div class="vocab-en">to take part in</div><div class="vocab-ar">يشارك في</div></div>
+<div class="vocab-item"><div class="vocab-de">das Gehalt</div><div class="vocab-en">salary</div><div class="vocab-ar">الراتب</div></div>
+<div class="vocab-item"><div class="vocab-de">zufrieden</div><div class="vocab-en">satisfied</div><div class="vocab-ar">راضٍ</div></div>
+<div class="vocab-item"><div class="vocab-de">das Homeoffice</div><div class="vocab-en">working from home</div><div class="vocab-ar">العمل من المنزل</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== 7. HOBBIES ===== -->
+<div class="topic-card" id="hobbies">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">🎯</div>
+<div class="topic-titles"><h2>Hobbys und Freizeit — الهوايات ووقت الفراغ</h2><small>ما أحب فعله · What I Love Doing</small></div>
+</div><span class="level-badge">A2</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t7-de">
+<p>In meiner <span class="hl-noun">Freizeit</span> <span class="hl-verb">habe</span> ich viele <span class="hl-noun">Interessen</span>. Am meisten <span class="hl-verb">liebe</span> ich <span class="hl-noun">Fotografie</span>: Ich <span class="hl-verb">fotografiere</span> <span class="hl-noun">Stadtansichten</span>, <span class="hl-noun">Natur</span> und <span class="hl-noun">Menschen</span>. Meine Bilder <span class="hl-verb">lade</span> ich manchmal auf <span class="hl-noun">Instagram</span> <span class="hl-sep">hoch</span>.</p>
+<p>Außerdem <span class="hl-verb">spiele</span> ich <span class="hl-adj">leidenschaftlich</span> <span class="hl-noun">Schach</span> — online und in einem <span class="hl-noun">Verein</span>. Zweimal pro Woche <span class="hl-verb">gehe</span> ich <span class="hl-verb">laufen</span>, weil Sport mir hilft, <span class="hl-noun">Stress</span> <span class="hl-verb">abzubauen</span>.</p>
+<p>Ich <span class="hl-verb">lese</span> gerne <span class="hl-noun">Sachbücher</span> über <span class="hl-noun">Geschichte</span> und <span class="hl-noun">Technologie</span>. Am Wochenende <span class="hl-verb">treffe</span> ich mich mit <span class="hl-noun">Freunden</span> zum <span class="hl-noun">Abendessen</span> oder wir <span class="hl-verb">gehen</span> ins <span class="hl-noun">Kino</span>.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t7-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t7-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">🎯</span><div class="tip-content"><b>Häufigkeitsadverbien:</b> manchmal (أحيانًا) · oft (كثيرًا) · immer (دائمًا) · nie (أبدًا) · zweimal pro Woche (مرتين أسبوعيًا) · ab und zu (من حين لآخر)</div></div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t7-en">
+<p>In my free time I have many interests. I love photography the most: I photograph city views, nature and people. I sometimes upload my pictures to Instagram.</p>
+<p>I also play chess passionately — online and in a club. Twice a week I go running, because sport helps me reduce stress.</p>
+<p>I enjoy reading non-fiction about history and technology. At the weekend I meet up with friends for dinner or we go to the cinema.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t7-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t7-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t7-ar">
+<p>لديّ اهتمامات كثيرة في وقت فراغي. أكثر ما أحبه هو التصوير الفوتوغرافي: أصور مناظر المدينة والطبيعة والناس. أحيانًا أرفع صوري على إنستغرام.</p>
+<p>كما أنني ألعب الشطرنج بشغف — عبر الإنترنت وفي نادٍ. مرتين في الأسبوع أذهب للجري لأن الرياضة تساعدني على تخفيف التوتر.</p>
+<p>أحب قراءة كتب المعلومات عن التاريخ والتكنولوجيا. في عطلة نهاية الأسبوع ألتقي بأصدقاء على العشاء أو نذهب إلى السينما.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t7-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t7-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">leidenschaftlich</div><div class="vocab-en">passionately</div><div class="vocab-ar">بشغف</div></div>
+<div class="vocab-item"><div class="vocab-de">Stress abbauen</div><div class="vocab-en">to reduce stress</div><div class="vocab-ar">يخفف التوتر</div></div>
+<div class="vocab-item"><div class="vocab-de">hochladen (sep.)</div><div class="vocab-en">to upload</div><div class="vocab-ar">يرفع ملفًا</div></div>
+<div class="vocab-item"><div class="vocab-de">der Verein</div><div class="vocab-en">club / association</div><div class="vocab-ar">النادي / الجمعية</div></div>
+<div class="vocab-item"><div class="vocab-de">das Sachbuch</div><div class="vocab-en">non-fiction book</div><div class="vocab-ar">كتاب معلومات</div></div>
+<div class="vocab-item"><div class="vocab-de">laufen gehen</div><div class="vocab-en">to go running</div><div class="vocab-ar">يذهب للجري</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== 8. SHOPPING ===== -->
+<div class="topic-card" id="shopping">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">🛒</div>
+<div class="topic-titles"><h2>Einkaufen — التسوق</h2><small>حوار في المحل · Dialogue at the Shop</small></div>
+</div><span class="level-badge">A2</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t8-de">
+<div class="dialogue">
+<div class="dlg-line"><span class="dlg-speaker a">Verk.</span><span class="dlg-text">Guten Tag! Womit kann ich Ihnen <span class="hl-verb">helfen</span>?</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Kd.</span><span class="dlg-text">Ich <span class="hl-verb">suche</span> eine <span class="hl-adj">warme</span> <span class="hl-noun">Winterjacke</span>.</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Verk.</span><span class="dlg-text">Welche <span class="hl-noun">Farbe</span> und <span class="hl-noun">Größe</span> <span class="hl-verb">möchten</span> Sie?</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Kd.</span><span class="dlg-text">Größe <span class="hl-adj">L</span>, am liebsten <span class="hl-adj">Dunkelblau</span> oder <span class="hl-adj">Schwarz</span>.</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Verk.</span><span class="dlg-text">Hier <span class="hl-verb">haben</span> wir ein <span class="hl-adj">schönes</span> Modell in Schwarz. <span class="hl-verb">Gefällt</span> Ihnen das?</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Kd.</span><span class="dlg-text">Ja, die <span class="hl-verb">sieht</span> <span class="hl-adj">gut</span> <span class="hl-sep">aus</span>! Was <span class="hl-verb">kostet</span> sie?</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Verk.</span><span class="dlg-text">Normalerweise 119 Euro, aber heute im <span class="hl-noun">Angebot</span> für 89 Euro.</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Kd.</span><span class="dlg-text"><span class="hl-verb">Darf</span> ich sie <span class="hl-verb">anprobieren</span>? … Perfekt! Ich <span class="hl-verb">nehme</span> sie. Kann ich mit <span class="hl-noun">EC-Karte</span> <span class="hl-verb">bezahlen</span>?</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Verk.</span><span class="dlg-text">Natürlich! Kein Problem. <span class="hl-verb">Möchten</span> Sie eine <span class="hl-noun">Tüte</span>?</span></div>
+</div>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t8-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t8-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">🛍️</span><div class="tip-content"><b>Darf ich…?</b> صيغة مؤدبة للطلب — <i>Darf ich anprobieren?</i> (هل يمكنني القياس؟) | <i>Was kostet das?</i> (كم سعره؟) | <i>Haben Sie das in Größe M?</i> (هل عندكم مقاس M؟)</div></div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t8-en">
+<div class="dialogue">
+<div class="dlg-line"><span class="dlg-speaker a">Sales</span><span class="dlg-text">Good day! How can I help you?</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Cust.</span><span class="dlg-text">I am looking for a warm winter jacket.</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Sales</span><span class="dlg-text">What colour and size would you like?</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Cust.</span><span class="dlg-text">Size L, preferably dark blue or black.</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Sales</span><span class="dlg-text">Here we have a nice model in black. Do you like it?</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Cust.</span><span class="dlg-text">Yes, it looks great! How much does it cost?</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Sales</span><span class="dlg-text">Normally 119 euros, but on offer today for 89 euros.</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Cust.</span><span class="dlg-text">May I try it on? … Perfect! I'll take it. Can I pay by debit card?</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Sales</span><span class="dlg-text">Of course! No problem. Would you like a bag?</span></div>
+</div>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t8-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t8-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t8-ar">
+<div class="dialogue" style="direction:rtl;text-align:right">
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">البائع</span><span class="dlg-text">مرحبًا! كيف أستطيع مساعدتك؟</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker b">الزبون</span><span class="dlg-text">أبحث عن جاكيت شتوي دافئ.</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">البائع</span><span class="dlg-text">ما اللون والمقاس المطلوب؟</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker b">الزبون</span><span class="dlg-text">مقاس L، يفضّل أزرق داكن أو أسود.</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">البائع</span><span class="dlg-text">إليك موديل جميل باللون الأسود. هل يعجبك؟</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker b">الزبون</span><span class="dlg-text">نعم يبدو رائعًا! بكم سعره؟</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">البائع</span><span class="dlg-text">عادةً ١١٩ يورو، لكن اليوم في العرض بـ٨٩ يورو.</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker b">الزبون</span><span class="dlg-text">هل يمكنني تجربته؟ … ممتاز! سآخذه. هل أستطيع الدفع ببطاقة؟</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">البائع</span><span class="dlg-text">بالطبع! لا مشكلة. هل تريد كيسًا؟</span></div>
+</div>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t8-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t8-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">anprobieren (sep.)</div><div class="vocab-en">to try on</div><div class="vocab-ar">يجرّب (ملابس)</div></div>
+<div class="vocab-item"><div class="vocab-de">das Angebot</div><div class="vocab-en">special offer</div><div class="vocab-ar">العرض / الخصم</div></div>
+<div class="vocab-item"><div class="vocab-de">aussehen (sep.)</div><div class="vocab-en">to look / appear</div><div class="vocab-ar">يبدو</div></div>
+<div class="vocab-item"><div class="vocab-de">gefallen</div><div class="vocab-en">to please / like</div><div class="vocab-ar">يعجب</div></div>
+<div class="vocab-item"><div class="vocab-de">die EC-Karte</div><div class="vocab-en">debit card</div><div class="vocab-ar">بطاقة الدفع</div></div>
+<div class="vocab-item"><div class="vocab-de">die Tüte</div><div class="vocab-en">bag (shopping)</div><div class="vocab-ar">الكيس / الحقيبة</div></div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- end topics-grid 1 -->
+<!-- =================== SECTION 2 — NEW TOPICS =================== -->
+<div class="section-head"><h2>مواضيع إضافية</h2><div class="section-head-line"></div><span class="section-head-ar">Weitere Themen · A2+</span></div>
+<div class="topics-grid">
+<!-- ===== 9. TRANSPORT ===== -->
+<div class="topic-card" id="transport">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">🚆</div>
+<div class="topic-titles"><h2>Verkehrsmittel — وسائل المواصلات</h2><small>التنقل في المدينة · Getting Around the City</small></div>
+</div><span class="level-badge">A2+</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t9-de">
+<p>In Deutschland <span class="hl-verb">benutze</span> ich hauptsächlich den öffentlichen <span class="hl-noun">Nahverkehr</span>. Ich <span class="hl-verb">fahre</span> täglich mit der <span class="hl-noun">U-Bahn</span> und manchmal mit dem <span class="hl-noun">Bus</span> oder der <span class="hl-noun">Straßenbahn</span>.</p>
+<p>Ich <span class="hl-verb">habe</span> ein <span class="hl-noun">Monatsticket</span>, das ich am <span class="hl-noun">Automaten</span> <span class="hl-verb">gekauft</span> habe. Das ist <span class="hl-adj">günstiger</span> als Einzeltickets. Manchmal <span class="hl-verb">fahre</span> ich auch mit dem <span class="hl-noun">Fahrrad</span> — das ist <span class="hl-adj">gesund</span> und <span class="hl-adj">umweltfreundlich</span>.</p>
+<p>Wenn ich in eine andere <span class="hl-noun">Stadt</span> <span class="hl-verb">reisen</span> möchte, <span class="hl-verb">nehme</span> ich den <span class="hl-noun">Zug</span>. Die <span class="hl-noun">Bahn</span> ist sehr <span class="hl-adj">bequem</span>. Ich <span class="hl-verb">kaufe</span> die <span class="hl-noun">Fahrkarte</span> meistens online — das ist oft <span class="hl-adj">billiger</span>.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t9-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t9-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">🚇</span><div class="tip-content"><b>mit + Dativ:</b> للتعبير عن وسيلة التنقل — <i>mit dem Bus / mit der U-Bahn / mit dem Fahrrad / mit dem Zug</i> — دائمًا مع حالة الجر (Dativ)</div></div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t9-en">
+<p>In Germany I mainly use public transport. I travel by underground every day and sometimes by bus or tram.</p>
+<p>I have a monthly ticket that I bought at the machine. It is cheaper than single tickets. Sometimes I also cycle — it is healthy and environmentally friendly.</p>
+<p>When I want to travel to another city, I take the train. The railway is very comfortable. I mostly buy the ticket online — it is often cheaper.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t9-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t9-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t9-ar">
+<p>في ألمانيا أستخدم بصفة رئيسية المواصلات العامة. أركب المترو يوميًا وأحيانًا الحافلة أو الترام.</p>
+<p>لدي تذكرة شهرية اشتريتها من الآلة. هذا أرخص من التذاكر الفردية. أحيانًا أركب الدراجة أيضًا — هذا صحي وصديق للبيئة.</p>
+<p>عندما أريد السفر إلى مدينة أخرى أركب القطار. القطار مريح جدًا. أشتري التذكرة عادةً عبر الإنترنت — هذا في الغالب أرخص.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t9-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t9-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">der Nahverkehr</div><div class="vocab-en">local public transport</div><div class="vocab-ar">المواصلات المحلية</div></div>
+<div class="vocab-item"><div class="vocab-de">die Straßenbahn</div><div class="vocab-en">tram</div><div class="vocab-ar">الترام</div></div>
+<div class="vocab-item"><div class="vocab-de">das Monatsticket</div><div class="vocab-en">monthly ticket</div><div class="vocab-ar">التذكرة الشهرية</div></div>
+<div class="vocab-item"><div class="vocab-de">umweltfreundlich</div><div class="vocab-en">eco-friendly</div><div class="vocab-ar">صديق للبيئة</div></div>
+<div class="vocab-item"><div class="vocab-de">die Fahrkarte</div><div class="vocab-en">transport ticket</div><div class="vocab-ar">تذكرة المواصلات</div></div>
+<div class="vocab-item"><div class="vocab-de">bequem</div><div class="vocab-en">comfortable</div><div class="vocab-ar">مريح</div></div>
+<div class="vocab-item"><div class="vocab-de">hauptsächlich</div><div class="vocab-en">mainly</div><div class="vocab-ar">بصفة رئيسية</div></div>
+<div class="vocab-item"><div class="vocab-de">günstiger</div><div class="vocab-en">cheaper</div><div class="vocab-ar">أرخص</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== 10. HEALTH ===== -->
+<div class="topic-card" id="health">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">🏥</div>
+<div class="topic-titles"><h2>Gesundheit und Arzt — الصحة والطبيب</h2><small>عند الطبيب · At the Doctor's</small></div>
+</div><span class="level-badge">A2+</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t10-de">
+<div class="dialogue">
+<div class="dlg-line"><span class="dlg-speaker a">Arzt</span><span class="dlg-text">Guten Morgen! Was <span class="hl-verb">fehlt</span> Ihnen?</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Pat.</span><span class="dlg-text">Ich <span class="hl-verb">fühle</span> mich nicht gut. Ich <span class="hl-verb">habe</span> <span class="hl-noun">Halsschmerzen</span> und <span class="hl-noun">Fieber</span> seit zwei Tagen.</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Arzt</span><span class="dlg-text"><span class="hl-verb">Haben</span> Sie auch <span class="hl-noun">Husten</span> oder <span class="hl-noun">Schnupfen</span>?</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Pat.</span><span class="dlg-text">Ja, etwas <span class="hl-noun">Husten</span>. Und mein <span class="hl-noun">Kopf</span> <span class="hl-verb">tut</span> weh.</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Arzt</span><span class="dlg-text">Ich <span class="hl-verb">untersuche</span> Sie kurz… Sie <span class="hl-verb">haben</span> eine <span class="hl-adj">leichte</span> <span class="hl-noun">Grippe</span>. Ich <span class="hl-verb">schreibe</span> Ihnen ein <span class="hl-noun">Rezept</span>.</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Pat.</span><span class="dlg-text">Muss ich im <span class="hl-noun">Bett</span> <span class="hl-verb">bleiben</span>?</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Arzt</span><span class="dlg-text">Ja, bitte <span class="hl-verb">ruhen</span> Sie sich aus, <span class="hl-verb">trinken</span> Sie viel und <span class="hl-verb">nehmen</span> Sie diese <span class="hl-noun">Tabletten</span> dreimal täglich.</span></div>
+</div>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t10-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t10-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">🩺</span><div class="tip-content"><b>Schmerzen benennen:</b> Kopfschmerzen (صداع) · Bauchschmerzen (ألم بطن) · Rückenschmerzen (ألم ظهر) · Zahnschmerzen (ألم أسنان) · wehtun = يؤلم</div></div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t10-en">
+<div class="dialogue">
+<div class="dlg-line"><span class="dlg-speaker a">Doctor</span><span class="dlg-text">Good morning! What is the matter?</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Pat.</span><span class="dlg-text">I don't feel well. I have had a sore throat and fever for two days.</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Doctor</span><span class="dlg-text">Do you also have a cough or runny nose?</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Pat.</span><span class="dlg-text">Yes, a slight cough. And my head hurts.</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Doctor</span><span class="dlg-text">I'll examine you briefly… You have a mild flu. I'll write you a prescription.</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Pat.</span><span class="dlg-text">Do I have to stay in bed?</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Doctor</span><span class="dlg-text">Yes, please rest, drink plenty and take these tablets three times daily.</span></div>
+</div>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t10-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t10-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t10-ar">
+<div class="dialogue" style="direction:rtl;text-align:right">
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">الطبيب</span><span class="dlg-text">صباح الخير! ما الذي تشعر به؟</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker b">المريض</span><span class="dlg-text">لا أشعر بتحسن. لديّ ألم في الحلق وحمى منذ يومين.</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">الطبيب</span><span class="dlg-text">هل عندك أيضًا سعال أو رشح؟</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker b">المريض</span><span class="dlg-text">نعم، سعال خفيف. ورأسي يؤلمني.</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">الطبيب</span><span class="dlg-text">سأفحصك بسرعة… لديك إنفلونزا خفيفة. سأكتب لك وصفة طبية.</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker b">المريض</span><span class="dlg-text">هل يجب أن أبقى في الفراش؟</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">الطبيب</span><span class="dlg-text">نعم، يُرجى الراحة والإكثار من الشرب وتناول هذه الأقراص ثلاث مرات يوميًا.</span></div>
+</div>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t10-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t10-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">die Halsschmerzen</div><div class="vocab-en">sore throat</div><div class="vocab-ar">ألم الحلق</div></div>
+<div class="vocab-item"><div class="vocab-de">das Fieber</div><div class="vocab-en">fever</div><div class="vocab-ar">الحمى</div></div>
+<div class="vocab-item"><div class="vocab-de">der Husten</div><div class="vocab-en">cough</div><div class="vocab-ar">السعال</div></div>
+<div class="vocab-item"><div class="vocab-de">die Grippe</div><div class="vocab-en">flu / influenza</div><div class="vocab-ar">الإنفلونزا</div></div>
+<div class="vocab-item"><div class="vocab-de">wehtun (sep.)</div><div class="vocab-en">to hurt / ache</div><div class="vocab-ar">يؤلم</div></div>
+<div class="vocab-item"><div class="vocab-de">sich ausruhen</div><div class="vocab-en">to rest</div><div class="vocab-ar">يستريح</div></div>
+<div class="vocab-item"><div class="vocab-de">die Tablette</div><div class="vocab-en">tablet / pill</div><div class="vocab-ar">القرص الدوائي</div></div>
+<div class="vocab-item"><div class="vocab-de">das Rezept</div><div class="vocab-en">prescription</div><div class="vocab-ar">الوصفة الطبية</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== 11. HOUSING ===== -->
+<div class="topic-card" id="housing">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">🏠</div>
+<div class="topic-titles"><h2>Wohnen — السكن</h2><small>شقتي في ألمانيا · My Apartment in Germany</small></div>
+</div><span class="level-badge">A2+</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t11-de">
+<p>Ich <span class="hl-verb">wohne</span> in einer <span class="hl-adj">kleinen</span> <span class="hl-noun">Zwei-Zimmer-Wohnung</span> im dritten <span class="hl-noun">Stock</span>. Die Wohnung <span class="hl-verb">hat</span> ein <span class="hl-noun">Schlafzimmer</span>, ein <span class="hl-noun">Wohnzimmer</span>, eine <span class="hl-noun">Küche</span> und ein <span class="hl-noun">Badezimmer</span>. Es gibt auch einen <span class="hl-adj">kleinen</span> <span class="hl-noun">Balkon</span>.</p>
+<p>Die <span class="hl-noun">Miete</span> <span class="hl-verb">beträgt</span> 750 Euro pro Monat — das ist <span class="hl-adj">normal</span> für Hamburg. Der <span class="hl-noun">Vermieter</span> ist <span class="hl-adj">nett</span> und die <span class="hl-noun">Nachbarn</span> sind <span class="hl-adj">ruhig</span> und <span class="hl-adj">freundlich</span>.</p>
+<p>Ich <span class="hl-verb">mag</span> meine Wohnung sehr. Sie ist <span class="hl-adj">hell</span> und <span class="hl-adj">gemütlich</span>. Es gibt große <span class="hl-noun">Fenster</span> mit <span class="hl-noun">Blick</span> auf den <span class="hl-noun">Park</span>. Am liebsten <span class="hl-verb">sitze</span> ich abends auf dem <span class="hl-noun">Balkon</span> und <span class="hl-verb">trinke</span> Tee.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t11-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t11-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">🏡</span><div class="tip-content"><b>Wohnungsräume:</b> das Schlafzimmer (غرفة النوم) · das Wohnzimmer (غرفة المعيشة) · die Küche (المطبخ) · das Badezimmer (الحمام) · der Balkon (الشرفة) · der Flur (الممر)</div></div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t11-en">
+<p>I live in a small two-room flat on the third floor. The flat has a bedroom, a living room, a kitchen and a bathroom. There is also a small balcony.</p>
+<p>The rent is 750 euros per month — that is normal for Hamburg. The landlord is nice and the neighbours are quiet and friendly.</p>
+<p>I like my flat very much. It is bright and cosy. There are large windows with a view of the park. I love sitting on the balcony in the evenings and drinking tea.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t11-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t11-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t11-ar">
+<p>أسكن في شقة صغيرة من غرفتين في الطابق الثالث. الشقة فيها غرفة نوم وغرفة معيشة ومطبخ وحمام. يوجد أيضًا شرفة صغيرة.</p>
+<p>الإيجار ٧٥٠ يورو شهريًا — هذا طبيعي في هامبورغ. صاحب الشقة لطيف والجيران هادئون وودودون.</p>
+<p>أحب شقتي كثيرًا. إنها مضيئة ومريحة. يوجد نوافذ كبيرة تطل على الحديقة. أكثر ما أحبه هو الجلوس على الشرفة مساءً وشرب الشاي.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t11-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t11-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">die Miete</div><div class="vocab-en">rent</div><div class="vocab-ar">الإيجار</div></div>
+<div class="vocab-item"><div class="vocab-de">der Vermieter</div><div class="vocab-en">landlord</div><div class="vocab-ar">صاحب الشقة</div></div>
+<div class="vocab-item"><div class="vocab-de">der Nachbar</div><div class="vocab-en">neighbour</div><div class="vocab-ar">الجار</div></div>
+<div class="vocab-item"><div class="vocab-de">gemütlich</div><div class="vocab-en">cosy / comfortable</div><div class="vocab-ar">مريح / دافئ</div></div>
+<div class="vocab-item"><div class="vocab-de">hell</div><div class="vocab-en">bright / light</div><div class="vocab-ar">مضيء</div></div>
+<div class="vocab-item"><div class="vocab-de">betragen</div><div class="vocab-en">to amount to</div><div class="vocab-ar">يبلغ / يصل إلى</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== 12. CITY & DIRECTIONS ===== -->
+<div class="topic-card" id="city">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">🗺️</div>
+<div class="topic-titles"><h2>Stadt und Wegbeschreibung — المدينة والاتجاهات</h2><small>في الشارع · In the Street</small></div>
+</div><span class="level-badge">A2+</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t12-de">
+<div class="dialogue">
+<div class="dlg-line"><span class="dlg-speaker b">Tourist</span><span class="dlg-text">Entschuldigung! Können Sie mir bitte <span class="hl-verb">helfen</span>? Ich <span class="hl-verb">suche</span> den <span class="hl-noun">Hauptbahnhof</span>.</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Passant</span><span class="dlg-text">Klar! <span class="hl-verb">Gehen</span> Sie diese Straße <span class="hl-adj">geradeaus</span> — etwa fünf Minuten zu Fuß.</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Tourist</span><span class="dlg-text">Und dann?</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Passant</span><span class="dlg-text">An der <span class="hl-noun">Ampel</span> <span class="hl-verb">biegen</span> Sie <span class="hl-adj">links</span> <span class="hl-sep">ab</span>. Das Gebäude <span class="hl-verb">sehen</span> Sie dann schon.</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Tourist</span><span class="dlg-text">Ist es weit? Soll ich die <span class="hl-noun">U-Bahn</span> <span class="hl-verb">nehmen</span>?</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Passant</span><span class="dlg-text">Nein, nicht weit. Zu Fuß <span class="hl-verb">dauert</span> es höchstens zehn Minuten.</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Tourist</span><span class="dlg-text">Vielen Dank! Das ist sehr <span class="hl-adj">nett</span> von Ihnen.</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Passant</span><span class="dlg-text">Gern geschehen! Viel Spaß in Hamburg!</span></div>
+</div>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t12-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t12-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">📍</span><div class="tip-content"><b>Richtungen:</b> geradeaus (مستقيم) · links abbiegen (يلف يسارًا) · rechts abbiegen (يلف يمينًا) · gegenüber (مقابل) · neben (بجانب) · an der Ampel (عند إشارة المرور)</div></div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t12-en">
+<div class="dialogue">
+<div class="dlg-line"><span class="dlg-speaker b">Tourist</span><span class="dlg-text">Excuse me! Could you please help me? I am looking for the main station.</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Passer-by</span><span class="dlg-text">Sure! Go straight along this street — about five minutes on foot.</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Tourist</span><span class="dlg-text">And then?</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Passer-by</span><span class="dlg-text">At the traffic light turn left. You'll see the building right away.</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Tourist</span><span class="dlg-text">Is it far? Should I take the underground?</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Passer-by</span><span class="dlg-text">No, not far. On foot it takes ten minutes at most.</span></div>
+<div class="dlg-line"><span class="dlg-speaker b">Tourist</span><span class="dlg-text">Many thanks! That is very kind of you.</span></div>
+<div class="dlg-line"><span class="dlg-speaker a">Passer-by</span><span class="dlg-text">You're welcome! Enjoy Hamburg!</span></div>
+</div>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t12-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t12-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t12-ar">
+<div class="dialogue" style="direction:rtl;text-align:right">
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker b">السائح</span><span class="dlg-text">عفوًا! هل يمكنك مساعدتي؟ أبحث عن محطة القطار الرئيسية.</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">المارّ</span><span class="dlg-text">بالطبع! اسر في هذا الشارع مستقيمًا — نحو خمس دقائق مشيًا.</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker b">السائح</span><span class="dlg-text">وبعدين؟</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">المارّ</span><span class="dlg-text">عند إشارة المرور لفّ يسارًا. حينها ستشاهد المبنى مباشرةً.</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker b">السائح</span><span class="dlg-text">هل هو بعيد؟ هل أركب المترو؟</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">المارّ</span><span class="dlg-text">لا، ليس بعيدًا. مشيًا لن تستغرق أكثر من عشر دقائق.</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker b">السائح</span><span class="dlg-text">شكرًا جزيلًا! هذا لطيف جدًا منك.</span></div>
+<div class="dlg-line" style="flex-direction:row-reverse"><span class="dlg-speaker a">المارّ</span><span class="dlg-text">العفو! استمتع في هامبورغ!</span></div>
+</div>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t12-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t12-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">geradeaus</div><div class="vocab-en">straight ahead</div><div class="vocab-ar">مستقيم / أمامًا</div></div>
+<div class="vocab-item"><div class="vocab-de">abbiegen (sep.)</div><div class="vocab-en">to turn</div><div class="vocab-ar">يلتف / ينعطف</div></div>
+<div class="vocab-item"><div class="vocab-de">die Ampel</div><div class="vocab-en">traffic light</div><div class="vocab-ar">إشارة المرور</div></div>
+<div class="vocab-item"><div class="vocab-de">gegenüber</div><div class="vocab-en">opposite</div><div class="vocab-ar">مقابل</div></div>
+<div class="vocab-item"><div class="vocab-de">höchstens</div><div class="vocab-en">at most</div><div class="vocab-ar">على الأكثر</div></div>
+<div class="vocab-item"><div class="vocab-de">der Hauptbahnhof</div><div class="vocab-en">main train station</div><div class="vocab-ar">محطة القطار الرئيسية</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== 13. FRIENDS ===== -->
+<div class="topic-card" id="friends">
+<div class="topic-header">
+<div class="topic-meta">
+<div class="topic-icon">🤝</div>
+<div class="topic-titles"><h2>Freunde und Beziehungen — الأصدقاء والعلاقات</h2><small>علاقاتي الاجتماعية · My Social Life</small></div>
+</div><span class="level-badge">A2+</span>
+</div>
+<div class="topic-body">
+<div class="lang-section lang-de"><div class="lang-label"><span class="lang-flag">🇩🇪</span><span class="lang-name">Deutsch</span><span class="lang-sub">الألمانية</span></div><div class="text-block de" id="text-t13-de">
+<p>Seit ich in Deutschland <span class="hl-verb">wohne</span>, <span class="hl-verb">habe</span> ich neue <span class="hl-noun">Freunde</span> <span class="hl-verb">kennengelernt</span>. Mein bester Freund hier <span class="hl-verb">heißt</span> Tobias. Wir <span class="hl-verb">haben</span> uns beim <span class="hl-noun">Deutschkurs</span> <span class="hl-verb">kennengelernt</span>. Er ist <span class="hl-adj">hilfsbereit</span> und <span class="hl-adj">lustig</span>.</p>
+<p>Ich <span class="hl-verb">habe</span> auch Freunde aus anderen <span class="hl-noun">Ländern</span> — aus der <span class="hl-noun">Türkei</span>, aus dem <span class="hl-noun">Iran</span> und aus <span class="hl-noun">Nigeria</span>. Wir <span class="hl-verb">treffen</span> uns regelmäßig und <span class="hl-verb">reden</span> auf Deutsch miteinander. Das <span class="hl-verb">verbessert</span> unsere Sprache!</p>
+<p>Manchmal <span class="hl-verb">fühle</span> ich mich noch <span class="hl-adj">einsam</span>, besonders an <span class="hl-noun">Feiertagen</span>. Aber die <span class="hl-noun">Gemeinschaft</span> hier <span class="hl-verb">wächst</span> langsam. Ich bin <span class="hl-adj">dankbar</span> für jeden guten <span class="hl-noun">Freund</span>.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t13-de',this,'de-DE')">🔊 Vorlesen</button><button class="action-btn btn-copy" onclick="copyText('text-t13-de',this)">📋 Kopieren</button></div><div class="tip-box"><span class="tip-icon">💡</span><div class="tip-content"><b>Perfekt:</b> للحديث عن الماضي في المحادثة — <i>Wir <u>haben</u> uns kennenge<u>lernt</u></i> (تعرّفنا على بعض) · التركيبة: haben/sein + Partizip II في نهاية الجملة</div></div></div><div class="lang-section lang-en"><div class="lang-label"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span><span class="lang-sub">الإنجليزية</span></div><div class="text-block en" id="text-t13-en">
+<p>Since I have been living in Germany, I have got to know new friends. My best friend here is called Tobias. We got to know each other at the German course. He is helpful and funny.</p>
+<p>I also have friends from other countries — from Turkey, Iran and Nigeria. We meet regularly and talk to each other in German. That improves our language!</p>
+<p>Sometimes I still feel lonely, especially on public holidays. But the community here is slowly growing. I am grateful for every good friend.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t13-en',this,'en-GB')">🔊 Listen</button><button class="action-btn btn-copy" onclick="copyText('text-t13-en',this)">📋 Copy</button></div></div><div class="lang-section lang-ar"><div class="lang-label"><span class="lang-flag">🇸🇦</span><span class="lang-name">العربية</span><span class="lang-sub">Arabic</span></div><div class="text-block ar" id="text-t13-ar">
+<p>منذ أن أسكن في ألمانيا تعرّفت على أصدقاء جدد. أفضل صديق لي هنا اسمه توبياس. تعرّفنا على بعض في دورة اللغة الألمانية. إنه متعاون ومرح.</p>
+<p>لديّ أيضًا أصدقاء من دول أخرى — من تركيا وإيران ونيجيريا. نلتقي بانتظام ونتحدث مع بعض بالألمانية. هذا يحسّن لغتنا!</p>
+<p>أحيانًا لا أزال أشعر بالوحدة، خاصةً في أيام العطل. لكن مجتمعي هنا ينمو ببطء. أنا ممتن لكل صديق جيد.</p>
+</div><div class="lang-actions"><button class="action-btn btn-speak" onclick="speakText('text-t13-ar',this,'ar-SA')">🔊 استماع</button><button class="action-btn btn-copy" onclick="copyText('text-t13-ar',this)">📋 نسخ</button></div></div>
+
+
+
+<div class="vocab-section">
+<div class="vocab-title">📖 Wörter / المفردات</div>
+<div class="vocab-grid">
+<div class="vocab-item"><div class="vocab-de">kennenlernen</div><div class="vocab-en">to get to know</div><div class="vocab-ar">يتعرّف على</div></div>
+<div class="vocab-item"><div class="vocab-de">hilfsbereit</div><div class="vocab-en">helpful</div><div class="vocab-ar">متعاون / مساعد</div></div>
+<div class="vocab-item"><div class="vocab-de">regelmäßig</div><div class="vocab-en">regularly</div><div class="vocab-ar">بانتظام</div></div>
+<div class="vocab-item"><div class="vocab-de">einsam</div><div class="vocab-en">lonely</div><div class="vocab-ar">وحيد</div></div>
+<div class="vocab-item"><div class="vocab-de">der Feiertag</div><div class="vocab-en">public holiday</div><div class="vocab-ar">يوم العطلة الرسمية</div></div>
+<div class="vocab-item"><div class="vocab-de">dankbar</div><div class="vocab-en">grateful</div><div class="vocab-ar">ممتن / شاكر</div></div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- end topics-grid 2 -->
+<footer>
+<div class="footer-inner">
+<span class="footer-brand">Deutsch mit Mira</span>
+<p>🎓 Niveau A2 · تعلم الألمانية بمستوى A2 · <span style="color:var(--accent);font-weight:600">Viel Erfolg! بالتوفيق!</span></p>
+<div class="footer-legend">
+<span class="legend-dot"><span style="color:var(--de-color);font-weight:700">■</span> أسماء / Nomen</span>
+<span class="legend-dot"><span style="color:var(--accent);font-weight:700">■</span> أفعال / Verben</span>
+<span class="legend-dot"><span style="color:var(--en-color);font-weight:700">■</span> صفات / Adjektive</span>
+<span class="legend-dot"><span style="color:var(--tip-color);font-weight:700">■</span> أفعال منفصلة / Trennbare Verben</span>
+</div>
+</div>
+</footer>
+<script>
+const themeBtn=document.getElementById('themeBtn');
+const saved=localStorage.getItem('mira-theme');
+const prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+let dark=saved?saved==='dark':prefersDark;
+document.documentElement.setAttribute('data-theme',dark?'dark':'light');
+themeBtn.textContent=dark?'☀️':'🌙';
+themeBtn.addEventListener('click',()=>{
+  dark=!dark;
+  document.documentElement.setAttribute('data-theme',dark?'dark':'light');
+  themeBtn.textContent=dark?'☀️':'🌙';
+  localStorage.setItem('mira-theme',dark?'dark':'light');
+});
+
+const progressBar=document.getElementById('progress-bar');
+window.addEventListener('scroll',()=>{
+  const total=document.documentElement.scrollHeight-window.innerHeight;
+  progressBar.style.width=(total>0?(window.scrollY/total)*100:0)+'%';
+},{passive:true});
+
+const navLinks=document.querySelectorAll('.nav-link');
+const navObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) navLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));
+  });
+},{rootMargin:'-38% 0px -55% 0px'});
+document.querySelectorAll('.topic-card[id]').forEach(s=>navObs.observe(s));
+
+function switchTab(btn,lang,topicId){
+  const card=btn.closest('.topic-card');
+  card.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  card.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(topicId+'-'+lang).classList.add('active');
+}
+
+function speakText(elementId,btn){
+  if(!('speechSynthesis' in window)){alert('متصفحك لا يدعم قراءة النصوص. جرب Chrome أو Edge.');return;}
+  if(speechSynthesis.speaking){
+    speechSynthesis.cancel();
+    document.querySelectorAll('.btn-speak').forEach(b=>{b.classList.remove('speaking');delete b.dataset.active;});
+    if(btn.dataset.active){delete btn.dataset.active;return;}
+  }
+  const el=document.getElementById(elementId);
+  const cleanText=(el.innerText||el.textContent).replace(/\n+/g,' ').replace(/\s+/g,' ').trim();
+  const utter=new SpeechSynthesisUtterance(cleanText);
+  utter.lang='de-DE';utter.rate=0.82;utter.pitch=1;
+  const voices=speechSynthesis.getVoices();
+  const deVoice=voices.find(v=>v.lang&&v.lang.startsWith('de'));
+  if(deVoice)utter.voice=deVoice;
+  btn.classList.add('speaking');btn.dataset.active='1';
+  utter.onend=utter.onerror=()=>{btn.classList.remove('speaking');delete btn.dataset.active;};
+  speechSynthesis.speak(utter);
+}
+if(typeof speechSynthesis!=='undefined'&&speechSynthesis.onvoiceschanged!==undefined)speechSynthesis.onvoiceschanged=()=>{};
+
+const toast=document.getElementById('toast');
+let toastTimer;
+function copyText(elementId,btn){
+  const text=(document.getElementById(elementId).innerText||document.getElementById(elementId).textContent).trim();
+  const show=()=>{clearTimeout(toastTimer);toast.classList.add('show');toastTimer=setTimeout(()=>toast.classList.remove('show'),2200);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(show).catch(()=>{fallbackCopy(text);show();});
+  } else{fallbackCopy(text);show();}
+}
+function fallbackCopy(text){
+  const ta=document.createElement('textarea');
+  ta.value=text;ta.style.cssText='position:fixed;top:0;left:0;opacity:0;';
+  document.body.appendChild(ta);ta.focus();ta.select();
+  try{document.execCommand('copy');}catch(e){}
+  document.body.removeChild(ta);
+}
+
+const cardObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');cardObs.unobserve(e.target);}});
+},{threshold:0.07});
+document.querySelectorAll('.topic-card').forEach((card,i)=>{
+  card.style.transitionDelay=(i%3*0.06)+'s';
+  cardObs.observe(card);
+});
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="stories-deutsch-mit-mira" data-category="stories" data-title="Deutsch mit Mira — A2" data-root="../../" defer></script>
+</body>
+</html>

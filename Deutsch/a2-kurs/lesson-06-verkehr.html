@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الألمانية A2 — الدرس السادس: المواصلات والاتجاهات</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,400&family=Vazirmatn:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════
+   DESIGN DIRECTION: Berlin Transit / Metro Map
+   Inspired by BVG (Berlin's transit system) —
+   strong cobalt blue + vivid signal yellow + white.
+   Clean, system-like, grid-based.
+   Typography: DM Sans (system-feel) + Vazirmatn (Arabic)
+   Feel: like a live transit board at Alexanderplatz.
+══════════════════════════════════════════════════ */
+:root {
+  --bg:      #06080f;
+  --bg2:     #0c1020;
+  --bg3:     #131828;
+  --bg4:     #1a2038;
+  --card:    #090c18;
+
+  --border:  rgba(80,140,255,0.1);
+  --border2: rgba(80,140,255,0.22);
+
+  /* BVG-inspired transit palette */
+  --cobalt:  #2255dd;
+  --cobalt2: #4488ff;
+  --cobalt-d:rgba(34,85,221,0.12);
+
+  --signal:  #f5c800;   /* BVG yellow */
+  --signal2: #ffe055;
+  --signal-d:rgba(245,200,0,0.1);
+
+  --lime:    #60d440;
+  --lime-d:  rgba(96,212,64,0.1);
+
+  --red:     #e83030;
+  --red-d:   rgba(232,48,48,0.1);
+
+  --teal:    #00c8c8;
+  --teal-d:  rgba(0,200,200,0.1);
+
+  --orange:  #f08020;
+  --orange-d:rgba(240,128,32,0.1);
+
+  --text:    #e0e8ff;
+  --text2:   #6878a8;
+  --text3:   #2e3860;
+
+  --r:  14px;
+  --rs: 8px;
+  --sh: 0 8px 48px rgba(0,0,0,0.7);
+}
+
+[data-theme="light"] {
+  --bg:      #f0f4ff;
+  --bg2:     #e0e8ff;
+  --bg3:     #d0daff;
+  --bg4:     #c0ccf0;
+  --card:    #ffffff;
+  --border:  rgba(20,60,180,0.1);
+  --border2: rgba(20,60,180,0.22);
+  --cobalt:  #1840c0;
+  --cobalt2: #2255dd;
+  --cobalt-d:rgba(24,64,192,0.08);
+  --signal:  #c09000;
+  --signal2: #d0a800;
+  --signal-d:rgba(192,144,0,0.08);
+  --lime:    #2a9010;
+  --lime-d:  rgba(42,144,16,0.08);
+  --red:     #c02020;
+  --red-d:   rgba(192,32,32,0.08);
+  --teal:    #008890;
+  --teal-d:  rgba(0,136,144,0.08);
+  --orange:  #c05000;
+  --orange-d:rgba(192,80,0,0.08);
+  --text:    #0a1030;
+  --text2:   #3048a0;
+  --text3:   #a0b0d0;
+  --sh: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  direction: rtl;
+  overflow-x: hidden;
+  transition: background .4s, color .4s;
+}
+
+/* Grid-line background like transit map paper */
+body::before {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: .5;
+}
+
+/* Cobalt top glow */
+body::after {
+  content:'';
+  position:fixed; top:0; left:0; right:0; height:320px;
+  background: radial-gradient(ellipse 60% 80% at 50% -10%,
+    rgba(34,85,221,0.12) 0%, transparent 70%);
+  pointer-events:none; z-index:0;
+}
+
+/* Progress line (like a metro line) */
+#spb {
+  position:fixed; top:0; left:0; right:0; height:4px;
+  background: linear-gradient(90deg,
+    var(--red), var(--orange), var(--signal), var(--lime), var(--cobalt), var(--teal));
+  transform-origin:right; transform:scaleX(0);
+  z-index:1001;
+}
+
+/* ══ NAV ══ */
+nav {
+  position:sticky; top:0; z-index:100;
+  background: rgba(6,8,15,.93);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border2);
+  padding: 0 2rem; height:64px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+[data-theme="light"] nav { background: rgba(240,244,255,.95); }
+
+.nav-brand {
+  display:flex; align-items:center; gap:.75rem;
+  font-family:'DM Sans',sans-serif; font-weight:800; font-size:.95rem;
+}
+.nav-chip {
+  background: var(--cobalt-d); border:1px solid var(--border2);
+  color:var(--cobalt2); font-size:.68rem; font-weight:700;
+  padding:3px 10px; border-radius:4px; letter-spacing:.06em;
+  font-family:'DM Mono',monospace;
+}
+.nav-links { display:flex; gap:1.5rem; list-style:none; }
+.nav-links a {
+  font-size:.82rem; color:var(--text2);
+  text-decoration:none; font-weight:600; transition:color .2s;
+  font-family:'DM Sans',sans-serif;
+}
+.nav-links a:hover { color:var(--signal); }
+.tbtn {
+  width:36px; height:36px; border-radius:4px;
+  border:1px solid var(--border2); background:var(--bg3);
+  color:var(--text2); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; font-size:1rem;
+  transition:all .2s;
+}
+.tbtn:hover { background:var(--bg4); color:var(--text); }
+
+/* ══ HERO ══ */
+.hero {
+  position:relative; z-index:1;
+  padding: 5rem 2rem 3.5rem;
+  max-width:900px; margin:0 auto; text-align:center;
+}
+
+/* Metro map SVG */
+.metro-svg { width:100%; max-width:560px; height:90px; margin:0 auto 2rem; display:block; }
+
+.hero-badge {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--cobalt-d); border:1px solid var(--border2);
+  color:var(--cobalt2); padding:5px 18px; border-radius:4px;
+  font-size:.75rem; font-weight:700; font-family:'DM Mono',monospace;
+  margin-bottom:1.5rem; letter-spacing:.08em;
+  animation: fadeUp .6s ease both;
+}
+
+.hero h1 {
+  font-family:'DM Sans',sans-serif;
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-weight:800; line-height:1.1; margin-bottom:1rem;
+  animation: fadeUp .7s ease .1s both;
+}
+.hero h1 .acc {
+  color: var(--signal);
+  position: relative;
+}
+.hero h1 .acc::after {
+  content: '';
+  position: absolute; bottom:-4px; left:0; right:0; height:3px;
+  background: var(--signal); border-radius:2px;
+}
+
+.hero-p {
+  color:var(--text2); font-size:1.05rem; line-height:1.9;
+  max-width:650px; margin:0 auto 2.5rem;
+  animation: fadeUp .7s ease .2s both;
+}
+.hero-pills {
+  display:flex; justify-content:center; gap:.6rem; flex-wrap:wrap;
+  animation: fadeUp .7s ease .3s both;
+}
+.pill {
+  display:flex; align-items:center; gap:.4rem;
+  padding:6px 14px; border-radius:4px;
+  font-size:.8rem; font-weight:600; border:1px solid;
+  font-family:'DM Sans',sans-serif;
+}
+.pc { background:var(--cobalt-d); color:var(--cobalt2); border-color:rgba(68,136,255,.3); }
+.ps { background:var(--signal-d); color:var(--signal2); border-color:rgba(245,200,0,.3); }
+.pl { background:var(--lime-d);   color:var(--lime);    border-color:rgba(96,212,64,.3); }
+.pr { background:var(--red-d);    color:var(--red);     border-color:rgba(232,48,48,.3); }
+.pt { background:var(--teal-d);   color:var(--teal);    border-color:rgba(0,200,200,.3); }
+
+/* ══ MAIN ══ */
+main {
+  position:relative; z-index:1;
+  max-width:960px; margin:0 auto;
+  padding:1rem 2rem 4rem;
+  display:flex; flex-direction:column; gap:3rem;
+}
+
+/* Section header */
+.sh { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
+.si {
+  width:48px; height:48px; border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.3rem; flex-shrink:0;
+}
+.si-c { background:var(--cobalt-d); border:1px solid rgba(68,136,255,.2); }
+.si-s { background:var(--signal-d); border:1px solid rgba(245,200,0,.2); }
+.si-l { background:var(--lime-d);   border:1px solid rgba(96,212,64,.2); }
+.si-r { background:var(--red-d);    border:1px solid rgba(232,48,48,.2); }
+.si-t { background:var(--teal-d);   border:1px solid rgba(0,200,200,.2); }
+.si-o { background:var(--orange-d); border:1px solid rgba(240,128,32,.2); }
+.sm h2 { font-family:'DM Sans',sans-serif; font-size:1.22rem; font-weight:800; }
+.sm p  { font-size:.83rem; color:var(--text2); margin-top:2px; }
+
+/* Card */
+.card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r); padding:1.75rem;
+  transition:border-color .25s, box-shadow .25s;
+  animation: fadeUp .65s ease both;
+}
+.card:hover { border-color:var(--border2); box-shadow:var(--sh); }
+/* Quiz card — no animation to avoid pointer-events interference */
+.card.quiz-card { animation:none; }
+.opts { display:grid; grid-template-columns:1fr 1fr; gap:.55rem; position:relative; z-index:5; }
+
+/* Tip */
+.tip {
+  display:flex; gap:1rem; align-items:flex-start;
+  padding:1.1rem 1.3rem; border-radius:var(--rs); margin:1rem 0;
+}
+.tip.c { background:var(--cobalt-d); border:1px solid rgba(68,136,255,.2); }
+.tip.s { background:var(--signal-d); border:1px solid rgba(245,200,0,.2); }
+.tip.l { background:var(--lime-d);   border:1px solid rgba(96,212,64,.2); }
+.tip.r { background:var(--red-d);    border:1px solid rgba(232,48,48,.2); }
+.tip.t { background:var(--teal-d);   border:1px solid rgba(0,200,200,.2); }
+.tip.o { background:var(--orange-d); border:1px solid rgba(240,128,32,.2); }
+.tpic { font-size:1.3rem; flex-shrink:0; margin-top:2px; }
+.tip h4 { font-family:'DM Sans',sans-serif; font-size:.88rem; font-weight:700; margin-bottom:4px; }
+.tip.c h4{color:var(--cobalt2);} .tip.s h4{color:var(--signal2);}
+.tip.l h4{color:var(--lime);}    .tip.r h4{color:var(--red);}
+.tip.t h4{color:var(--teal);}    .tip.o h4{color:var(--orange);}
+.tip p { font-size:.85rem; color:var(--text2); line-height:1.8; }
+
+/* inline code */
+.de {
+  font-family:'DM Mono',monospace;
+  background:var(--bg3); border:1px solid var(--border2);
+  padding:2px 8px; border-radius:4px;
+  font-size:.87em; color:var(--signal2);
+  direction:ltr; display:inline-block;
+}
+
+/* table */
+.tw { overflow-x:auto; margin-top:.75rem; }
+table { width:100%; border-collapse:collapse; font-size:.9rem; }
+th { background:var(--bg3); color:var(--text2); padding:10px 14px; text-align:right; font-weight:700; font-size:.78rem; border-bottom:1px solid var(--border2); letter-spacing:.04em; font-family:'DM Sans',sans-serif; }
+td { padding:10px 14px; border-bottom:1px solid var(--border); }
+tr:last-child td{border-bottom:none;} tr:hover td{background:var(--bg2);}
+.tde { font-family:'DM Mono',monospace; color:var(--signal2); font-weight:600; direction:ltr; text-align:left; }
+.tex { color:var(--text2); font-size:.82rem; direction:ltr; text-align:left; }
+.tcob { font-family:'DM Mono',monospace; color:var(--cobalt2); direction:ltr; text-align:left; font-weight:600; }
+
+/* ══ TRANSPORT CARDS ══ */
+.transport-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px,1fr));
+  gap:1rem;
+}
+.transport-card {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1.1rem;
+  cursor:pointer; transition:all .25s;
+  position:relative; overflow:hidden;
+}
+.transport-card::before {
+  content:''; position:absolute; top:0; right:0; left:0; height:3px;
+  transform:scaleX(0); transform-origin:right; transition:transform .3s;
+}
+.transport-card:hover { border-color:var(--cobalt2); transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,.4); }
+.transport-card:hover::before { transform:scaleX(1); }
+.tc-line-u  { background:var(--cobalt); } /* U-Bahn */
+.tc-line-s  { background:var(--lime); }   /* S-Bahn */
+.tc-line-bu { background:var(--red); }    /* Bus */
+.tc-line-tr { background:var(--orange); } /* Tram */
+.tc-line-ta { background:var(--signal); } /* Taxi */
+.tc-line-bi { background:var(--teal); }   /* Fahrrad */
+
+.tc-icon { font-size:2rem; display:block; margin-bottom:.5rem; }
+.tc-badge {
+  display:inline-block; padding:2px 8px; border-radius:3px;
+  font-family:'DM Mono',monospace; font-size:.7rem; font-weight:700;
+  margin-bottom:.4rem; color:#fff; letter-spacing:.04em;
+}
+.tc-de { font-family:'DM Mono',monospace; color:var(--signal2); font-size:.95rem; font-weight:600; display:block; direction:ltr; margin-bottom:2px; }
+.tc-ar { font-size:.85rem; color:var(--text2); display:block; margin-bottom:4px; }
+.tc-tip { font-size:.72rem; color:var(--text3); direction:ltr; font-style:italic; }
+
+/* ══ METRO MAP INTERACTIVE ══ */
+.metro-map-wrap {
+  background:var(--bg2); border:1px solid var(--border2);
+  border-radius:var(--r); padding:1.5rem; overflow:hidden;
+}
+.metro-map-title {
+  font-family:'DM Sans',sans-serif; font-size:.85rem; font-weight:800;
+  color:var(--cobalt2); margin-bottom:1rem;
+  display:flex; align-items:center; gap:.5rem;
+}
+#metro-svg { width:100%; height:220px; }
+
+.station-info {
+  margin-top:1rem; background:var(--bg3); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1rem;
+  min-height:60px; transition:all .3s;
+}
+.si-name { font-family:'DM Sans',sans-serif; font-weight:800; color:var(--signal); display:block; font-size:.95rem; margin-bottom:4px; }
+.si-lines { display:flex; gap:.4rem; flex-wrap:wrap; margin-bottom:4px; }
+.si-line-badge {
+  padding:2px 8px; border-radius:3px;
+  font-family:'DM Mono',monospace; font-size:.7rem; font-weight:700; color:#fff;
+}
+.si-desc { font-size:.82rem; color:var(--text2); }
+
+/* ══ DIRECTIONS COMPASS ══ */
+.compass-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:1rem;
+}
+.dir-card {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1rem;
+  display:flex; align-items:center; gap:1rem;
+  cursor:pointer; transition:all .22s;
+}
+.dir-card:hover { border-color:var(--cobalt2); background:var(--cobalt-d); transform:scale(1.02); }
+.dir-arrow { font-size:2rem; flex-shrink:0; }
+.dir-de { font-family:'DM Mono',monospace; color:var(--signal2); font-size:1rem; font-weight:600; display:block; direction:ltr; }
+.dir-ar { font-size:.85rem; color:var(--text2); display:block; }
+.dir-ex { font-size:.75rem; color:var(--text3); direction:ltr; font-style:italic; }
+
+/* ══ PREPOSITIONS SYSTEM ══ */
+.prep-tabs { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1rem; }
+.ptab {
+  padding:6px 14px; border-radius:4px;
+  background:var(--bg3); border:1px solid var(--border2);
+  color:var(--text2); font-family:'DM Mono',monospace;
+  font-size:.82rem; font-weight:600; cursor:pointer; transition:all .2s;
+}
+.ptab:hover { border-color:var(--cobalt2); color:var(--cobalt2); }
+.ptab.active { background:var(--cobalt-d); border-color:var(--cobalt2); color:var(--cobalt2); }
+
+.prep-panel {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1.2rem;
+}
+.prep-de { font-family:'DM Sans',sans-serif; font-size:1.8rem; font-weight:800; color:var(--cobalt2); direction:ltr; margin-bottom:.3rem; }
+.prep-meaning { font-size:.88rem; color:var(--text2); margin-bottom:.8rem; }
+.prep-examples { display:flex; flex-direction:column; gap:.4rem; }
+.prep-ex {
+  background:var(--bg3); border-radius:6px; padding:.6rem 1rem;
+  font-family:'DM Mono',monospace; font-size:.85rem;
+  direction:ltr; color:var(--signal2); cursor:pointer; transition:background .2s;
+}
+.prep-ex:hover { background:var(--cobalt-d); }
+.prep-ex span { color:var(--text2); font-family:'Vazirmatn',sans-serif; font-size:.8rem; }
+
+/* ══ NAVIGATION GAME ══ */
+.nav-game {
+  background:var(--bg2); border:1px solid var(--border2);
+  border-radius:var(--rs); padding:1.4rem;
+}
+.ng-title {
+  font-family:'DM Sans',sans-serif; font-size:.9rem;
+  font-weight:800; color:var(--signal2); margin-bottom:1rem;
+}
+.ng-scenario {
+  background:var(--bg3); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1rem; margin-bottom:1rem;
+  font-size:.88rem; color:var(--text2); line-height:1.7;
+}
+.ng-q { color:var(--cobalt2); font-weight:700; display:block; margin-bottom:.5rem; }
+.ng-options { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; margin-bottom:.8rem; }
+.ng-opt {
+  padding:9px 14px; border-radius:var(--rs);
+  border:1px solid var(--border2); background:var(--bg3);
+  color:var(--text); cursor:pointer;
+  font-family:'DM Mono',monospace; font-size:.8rem;
+  transition:all .2s; text-align:center; direction:ltr;
+  width:100%; display:block; outline:none; appearance:none; -webkit-appearance:none;
+  pointer-events:auto; position:relative; z-index:10;
+}
+.ng-opt:hover { border-color:var(--cobalt2); background:var(--cobalt-d); color:var(--cobalt2); }
+.ng-opt.ok  { border-color:var(--lime)!important; background:var(--lime-d)!important; color:var(--lime)!important; }
+.ng-opt.bad { border-color:var(--red)!important;  background:var(--red-d)!important;  color:var(--red)!important; }
+.ng-fb { font-size:.82rem; padding:8px 12px; border-radius:6px; display:none; }
+.ng-fb.show { display:block; }
+.ng-fb.ok  { background:var(--lime-d); color:var(--lime); border:1px solid rgba(96,212,64,.2); }
+.ng-fb.err { background:var(--red-d);  color:var(--red);  border:1px solid rgba(232,48,48,.2); }
+.ng-next {
+  padding:8px 20px; border-radius:var(--rs);
+  background:var(--cobalt); color:#fff; border:none;
+  font-family:'DM Sans',sans-serif; font-size:.85rem; font-weight:700;
+  cursor:pointer; transition:all .2s; display:none; margin-top:.5rem;
+}
+.ng-next:hover { background:var(--cobalt2); }
+
+/* ══ DIALOGUE ══ */
+.conv { display:flex; flex-direction:column; gap:1.1rem; }
+.msg { display:flex; gap:1rem; align-items:flex-start; }
+.msg.l { flex-direction:row-reverse; }
+.av { width:44px; height:44px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; }
+.msg.r .av { background:var(--cobalt-d); border:1px solid rgba(68,136,255,.25); }
+.msg.l .av { background:var(--signal-d); border:1px solid rgba(245,200,0,.25); }
+.bw { flex:1; max-width:80%; }
+.msg.r .bw { text-align:right; }
+.bub { display:inline-block; padding:11px 16px; border-radius:10px; font-size:.92rem; line-height:1.78; max-width:100%; }
+.msg.r .bub { background:var(--cobalt-d); border:1px solid rgba(68,136,255,.2); border-radius:10px 2px 10px 10px; }
+.msg.l .bub { background:var(--bg3); border:1px solid var(--border); border-radius:2px 10px 10px 10px; }
+.dl { color:var(--signal2); font-weight:700; display:block; font-size:.95rem; margin-bottom:3px; direction:ltr; font-family:'DM Mono',monospace; }
+.who { font-size:.72rem; color:var(--text3); margin-top:4px; display:block; }
+
+/* ══ QUIZ ══ */
+.qblock { background:var(--bg2); border:1px solid var(--border); border-radius:var(--rs); padding:1.2rem 1.4rem; margin-bottom:1rem; }
+.qlabel { font-family:'DM Mono',monospace; font-size:.68rem; color:var(--text3); font-weight:700; letter-spacing:.08em; display:block; margin-bottom:.5rem; }
+.qtext { font-weight:600; font-size:.95rem; margin-bottom:.9rem; }
+.qde { color:var(--signal2); font-family:'DM Mono',monospace; }
+
+.opt { padding:9px 14px; border-radius:6px; border:1px solid var(--border2); background:var(--bg3); color:var(--text); cursor:pointer; font-family:'Vazirmatn',sans-serif; font-size:.87rem; font-weight:500; transition:all .2s; text-align:center; width:100%; display:block; outline:none; appearance:none; -webkit-appearance:none; pointer-events:auto; position:relative; z-index:10; }
+.opt:hover:not(:disabled) { border-color:var(--cobalt2); background:var(--cobalt-d); }
+.opt.correct { border-color:var(--lime)!important; background:var(--lime-d)!important; color:var(--lime)!important; }
+.opt.wrong   { border-color:var(--red)!important;  background:var(--red-d)!important;  color:var(--red)!important; }
+.opt:disabled { cursor:not-allowed; opacity:0.65; pointer-events:none; }
+.qfb { font-size:.82rem; padding:8px 12px; border-radius:6px; margin-top:8px; display:none; }
+.qfb.show { display:block; }
+.qfb.ok  { background:var(--lime-d); color:var(--lime); border:1px solid rgba(96,212,64,.2); }
+.qfb.err { background:var(--red-d);  color:var(--red);  border:1px solid rgba(232,48,48,.2); }
+
+/* Result */
+.result-wrap {
+  background:linear-gradient(135deg,var(--cobalt-d),var(--lime-d));
+  border:1px solid var(--border2); border-radius:var(--r);
+  padding:2rem; text-align:center; display:none; margin-top:1.5rem;
+}
+.r-score { font-family:'DM Sans',sans-serif; font-size:4.5rem; font-weight:800; color:var(--signal); line-height:1; margin-bottom:.5rem; }
+.r-msg { color:var(--text2); margin-bottom:1.5rem; }
+.r-btn { display:inline-flex; align-items:center; gap:.5rem; background:var(--cobalt); color:#fff; border:none; padding:11px 30px; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:.95rem; font-weight:800; cursor:pointer; transition:all .25s; }
+.r-btn:hover { background:var(--cobalt2); transform:translateY(-2px); }
+
+/* Homework */
+.hw-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(175px,1fr)); gap:.75rem; margin-bottom:1.2rem; }
+.hw-item { background:var(--bg2); border:1px solid var(--border); border-radius:var(--rs); padding:.9rem; }
+.hw-item strong { display:block; margin-bottom:3px; color:var(--signal2); font-family:'DM Sans',sans-serif; font-size:.85rem; }
+.hw-item span { color:var(--text2); font-size:.78rem; }
+
+footer { position:relative; z-index:1; text-align:center; padding:2.5rem 2rem; color:var(--text3); font-size:.82rem; border-top:1px solid var(--border); font-family:'DM Sans',sans-serif; }
+
+/* Animations */
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);} }
+.a1{animation-delay:.05s;} .a2{animation-delay:.15s;}
+.a3{animation-delay:.25s;} .a4{animation-delay:.35s;}
+
+@media(max-width:700px){
+  nav{padding:0 1rem;} .nav-links{display:none;}
+  main{padding:1rem 1rem 3rem;} .hero{padding:3rem 1rem 2rem;}
+  .transport-grid{grid-template-columns:repeat(2,1fr);}
+  .compass-grid{grid-template-columns:1fr;}
+  .opts{grid-template-columns:1fr;}
+  .ng-options{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div id="spb"></div>
+
+<nav>
+  <div class="nav-brand">
+    <span>🇩🇪</span>
+    <span>الألمانية للعرب</span>
+    <span class="nav-chip">LEKTION 06 / A2</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#transport">المواصلات</a></li>
+    <li><a href="#metro">خريطة المترو</a></li>
+    <li><a href="#directions">الاتجاهات</a></li>
+    <li><a href="#prepositions">حروف الجر</a></li>
+    <li><a href="#quiz">الاختبار</a></li>
+  </ul>
+  <button class="tbtn" onclick="toggleTheme()">☀</button>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <!-- Metro map illustration -->
+  <svg class="metro-svg" viewBox="0 0 560 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- U-Bahn line (blue) -->
+    <path d="M 20 45 L 540 45" stroke="var(--cobalt2)" stroke-width="6" stroke-linecap="round"/>
+    <!-- S-Bahn line (lime) -->
+    <path d="M 20 30 Q 100 30 140 45 Q 180 60 260 60 Q 340 60 380 45 Q 420 30 540 30" stroke="var(--lime)" stroke-width="5" stroke-linecap="round"/>
+    <!-- Bus line (red) -->
+    <path d="M 20 68 L 200 68 Q 230 68 230 50" stroke="var(--red)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 540 68 L 340 68 Q 320 68 320 55" stroke="var(--red)" stroke-width="4" stroke-linecap="round"/>
+    <!-- Tram (orange) -->
+    <path d="M 80 15 L 480 15" stroke="var(--orange)" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 4"/>
+
+    <!-- Station dots on U-Bahn -->
+    <circle cx="80"  cy="45" r="7" fill="var(--cobalt2)" stroke="var(--bg)" stroke-width="2"/>
+    <circle cx="180" cy="45" r="7" fill="var(--cobalt2)" stroke="var(--bg)" stroke-width="2"/>
+    <circle cx="280" cy="45" r="9" fill="var(--signal)" stroke="var(--bg)" stroke-width="2"/>
+    <circle cx="380" cy="45" r="7" fill="var(--cobalt2)" stroke="var(--bg)" stroke-width="2"/>
+    <circle cx="480" cy="45" r="7" fill="var(--cobalt2)" stroke="var(--bg)" stroke-width="2"/>
+
+    <!-- S-Bahn stations -->
+    <circle cx="140" cy="45" r="6" fill="var(--lime)" stroke="var(--bg)" stroke-width="2"/>
+    <circle cx="260" cy="60" r="6" fill="var(--lime)" stroke="var(--bg)" stroke-width="2"/>
+    <circle cx="380" cy="45" r="5" fill="var(--lime)" stroke="var(--bg)" stroke-width="1.5"/>
+
+    <!-- Labels -->
+    <text x="80"  y="38" text-anchor="middle" font-size="7" fill="var(--text2)" font-family="DM Mono">Wedding</text>
+    <text x="180" y="38" text-anchor="middle" font-size="7" fill="var(--text2)" font-family="DM Mono">Mitte</text>
+    <text x="280" y="35" text-anchor="middle" font-size="8" fill="var(--signal)" font-family="DM Mono" font-weight="bold">Alex</text>
+    <text x="380" y="38" text-anchor="middle" font-size="7" fill="var(--text2)" font-family="DM Mono">Kreuzberg</text>
+    <text x="480" y="38" text-anchor="middle" font-size="7" fill="var(--text2)" font-family="DM Mono">Friedrichsh.</text>
+
+    <!-- Line labels -->
+    <rect x="25" y="40" width="20" height="10" rx="3" fill="var(--cobalt)"/>
+    <text x="35" y="48" text-anchor="middle" font-size="7" fill="white" font-family="DM Mono" font-weight="bold">U2</text>
+    <rect x="25" y="26" width="20" height="9" rx="3" fill="var(--lime)" opacity=".9"/>
+    <text x="35" y="33" text-anchor="middle" font-size="7" fill="white" font-family="DM Mono" font-weight="bold">S5</text>
+  </svg>
+
+  <div class="hero-badge">🚇 LEKTION 06 — VERKEHR & WEGBESCHREIBUNG</div>
+  <h1>احكِ عن طريقك<br>بـ<span class="acc">ألمانية المترو!</span> 🗺️</h1>
+  <p class="hero-p">ستتعلم اليوم وسائل النقل في ألمانيا، كيف تسأل عن الطريق، تفهم الإجابات، وتستخدم حروف الجر المكانية بشكل صحيح!</p>
+  <div class="hero-pills">
+    <div class="pill pc">🚇 وسائل النقل</div>
+    <div class="pill ps">🗺️ الاتجاهات</div>
+    <div class="pill pl">📍 حروف الجر</div>
+    <div class="pill pr">🎮 لعبة الملاحة</div>
+    <div class="pill pt">💬 حوار الشارع</div>
+  </div>
+</div>
+
+<main>
+
+<!-- ══════════════ SECTION 1: TRANSPORT ══════════════ -->
+<section id="transport">
+  <div class="sh">
+    <div class="si si-c">🚇</div>
+    <div class="sm">
+      <h2>وسائل النقل — Verkehrsmittel</h2>
+      <p>اضغط على أي وسيلة لسماع اسمها — مع حروف الجر الصحيحة!</p>
+    </div>
+  </div>
+
+  <div class="card a1">
+    <div class="transport-grid">
+
+      <div class="transport-card" onclick="speak('die U-Bahn')">
+        <div class="tc-line-u" style="position:absolute;top:0;right:0;left:0;height:3px;border-radius:var(--rs) var(--rs) 0 0;"></div>
+        <span class="tc-icon">🚇</span>
+        <span class="tc-badge" style="background:var(--cobalt);">U-Bahn</span>
+        <span class="tc-de">die U-Bahn</span>
+        <span class="tc-ar">المترو (تحت الأرض)</span>
+        <span class="tc-tip">mit der U-Bahn fahren</span>
+      </div>
+
+      <div class="transport-card" onclick="speak('die S-Bahn')">
+        <div class="tc-line-s" style="position:absolute;top:0;right:0;left:0;height:3px;border-radius:var(--rs) var(--rs) 0 0;"></div>
+        <span class="tc-icon">🚆</span>
+        <span class="tc-badge" style="background:var(--lime);">S-Bahn</span>
+        <span class="tc-de">die S-Bahn</span>
+        <span class="tc-ar">القطار السريع (فوق الأرض)</span>
+        <span class="tc-tip">mit der S-Bahn fahren</span>
+      </div>
+
+      <div class="transport-card" onclick="speak('der Bus')">
+        <div class="tc-line-bu" style="position:absolute;top:0;right:0;left:0;height:3px;border-radius:var(--rs) var(--rs) 0 0;"></div>
+        <span class="tc-icon">🚌</span>
+        <span class="tc-badge" style="background:var(--red);">Bus</span>
+        <span class="tc-de">der Bus</span>
+        <span class="tc-ar">الحافلة</span>
+        <span class="tc-tip">mit dem Bus fahren</span>
+      </div>
+
+      <div class="transport-card" onclick="speak('die Straßenbahn')">
+        <div class="tc-line-tr" style="position:absolute;top:0;right:0;left:0;height:3px;border-radius:var(--rs) var(--rs) 0 0;"></div>
+        <span class="tc-icon">🚊</span>
+        <span class="tc-badge" style="background:var(--orange);">Tram</span>
+        <span class="tc-de">die Straßenbahn</span>
+        <span class="tc-ar">الترام</span>
+        <span class="tc-tip">mit der Straßenbahn fahren</span>
+      </div>
+
+      <div class="transport-card" onclick="speak('das Taxi')">
+        <div class="tc-line-ta" style="position:absolute;top:0;right:0;left:0;height:3px;border-radius:var(--rs) var(--rs) 0 0;"></div>
+        <span class="tc-icon">🚕</span>
+        <span class="tc-badge" style="background:var(--signal);color:#000;">Taxi</span>
+        <span class="tc-de">das Taxi</span>
+        <span class="tc-ar">سيارة الأجرة</span>
+        <span class="tc-tip">mit dem Taxi fahren</span>
+      </div>
+
+      <div class="transport-card" onclick="speak('das Fahrrad')">
+        <div class="tc-line-bi" style="position:absolute;top:0;right:0;left:0;height:3px;border-radius:var(--rs) var(--rs) 0 0;"></div>
+        <span class="tc-icon">🚴</span>
+        <span class="tc-badge" style="background:var(--teal);">Rad</span>
+        <span class="tc-de">das Fahrrad</span>
+        <span class="tc-ar">الدراجة الهوائية</span>
+        <span class="tc-tip">mit dem Fahrrad fahren</span>
+      </div>
+
+      <div class="transport-card" onclick="speak('das Auto')">
+        <div style="position:absolute;top:0;right:0;left:0;height:3px;border-radius:var(--rs) var(--rs) 0 0;background:var(--text3);"></div>
+        <span class="tc-icon">🚗</span>
+        <span class="tc-badge" style="background:var(--text3);">PKW</span>
+        <span class="tc-de">das Auto</span>
+        <span class="tc-ar">السيارة</span>
+        <span class="tc-tip">mit dem Auto fahren</span>
+      </div>
+
+      <div class="transport-card" onclick="speak('zu Fuß gehen')">
+        <div style="position:absolute;top:0;right:0;left:0;height:3px;border-radius:var(--rs) var(--rs) 0 0;background:var(--text2);"></div>
+        <span class="tc-icon">🚶</span>
+        <span class="tc-badge" style="background:var(--text2);">Fuß</span>
+        <span class="tc-de">zu Fuß</span>
+        <span class="tc-ar">سيراً على الأقدام</span>
+        <span class="tc-tip">Ich gehe zu Fuß. (لا نقول: mit)</span>
+      </div>
+
+    </div>
+
+    <div class="tip s" style="margin-top:1.2rem;">
+      <div class="tpic">🔑</div>
+      <div>
+        <h4>قاعدة "mit" ووسائل النقل</h4>
+        <p>مع كل وسائل النقل نستخدم حرف الجر <span class="de">mit</span> + حالة المفعول به (Dativ).<br>
+        المذكر والمحايد: <span class="de">mit dem Bus / mit dem Taxi</span><br>
+        المؤنث: <span class="de">mit der U-Bahn / mit der S-Bahn</span><br>
+        الاستثناء الوحيد: <span class="de">zu Fuß gehen</span> (لا نستخدم "mit" هنا).</p>
+      </div>
+    </div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>السؤال</th><th>الألمانية</th><th>مثال جواب</th></tr></thead>
+        <tbody>
+          <tr><td>كيف تذهب؟</td><td class="tde">Wie fährst du zur Arbeit?</td><td class="tex">Ich fahre mit der U-Bahn.</td></tr>
+          <tr><td>كم يستغرق؟</td><td class="tde">Wie lange dauert die Fahrt?</td><td class="tex">Etwa 20 Minuten.</td></tr>
+          <tr><td>أين المحطة؟</td><td class="tde">Wo ist die nächste U-Bahn-Station?</td><td class="tex">Gleich hier, 200 Meter.</td></tr>
+          <tr><td>أي خط؟</td><td class="tde">Welche Linie fährt zum Hauptbahnhof?</td><td class="tex">Die U2 fährt direkt dorthin.</td></tr>
+          <tr><td>تذكرة واحدة</td><td class="tde">Eine Fahrkarte, bitte!</td><td class="tex">Einfach oder hin und zurück?</td></tr>
+          <tr><td>تذكرة يومية</td><td class="tde">Ich möchte eine Tageskarte.</td><td class="tex">Das macht 9,20 Euro.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 2: METRO MAP ══════════════ -->
+<section id="metro">
+  <div class="sh">
+    <div class="si si-c">🗺️</div>
+    <div class="sm">
+      <h2>خريطة مترو برلين التفاعلية</h2>
+      <p>اضغط على أي محطة لمعرفة المعلومات عنها بالألمانية</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div class="metro-map-wrap">
+      <div class="metro-map-title">🚇 Berliner U-Bahn & S-Bahn — خريطة مبسّطة</div>
+      <svg id="metro-svg" viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- U2 line -->
+        <path d="M 40 100 L 660 100" stroke="#2255dd" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+        <!-- S5/S7 line -->
+        <path d="M 40 65 Q 150 65 200 100 Q 250 135 370 135 Q 490 135 540 100 Q 580 65 660 65" stroke="#60d440" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+        <!-- U5 line -->
+        <path d="M 40 140 L 380 140 Q 420 140 450 100" stroke="#7b3f9e" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+        <!-- Bus connection -->
+        <path d="M 230 100 L 230 170" stroke="#e83030" stroke-width="4" stroke-dasharray="6 3" opacity=".5"/>
+        <path d="M 500 100 L 500 170" stroke="#e83030" stroke-width="4" stroke-dasharray="6 3" opacity=".5"/>
+
+        <!-- U2 Stations -->
+        <g id="s-ruhleben" class="station" onclick="selectStation('ruhleben')" style="cursor:pointer">
+          <circle cx="80" cy="100" r="9" fill="#2255dd" stroke="#0c1020" stroke-width="2.5"/>
+          <text x="80" y="88" text-anchor="middle" font-size="9" fill="#6878a8" font-family="DM Mono">Ruhleben</text>
+        </g>
+        <g id="s-zoo" class="station" onclick="selectStation('zoo')" style="cursor:pointer">
+          <circle cx="180" cy="100" r="9" fill="#2255dd" stroke="#0c1020" stroke-width="2.5"/>
+          <text x="180" y="88" text-anchor="middle" font-size="9" fill="#6878a8" font-family="DM Mono">Zoologischer G.</text>
+        </g>
+        <g id="s-bhf" class="station" onclick="selectStation('hbf')" style="cursor:pointer">
+          <circle cx="280" cy="100" r="12" fill="#f5c800" stroke="#0c1020" stroke-width="3"/>
+          <text x="280" y="85" text-anchor="middle" font-size="9" fill="#f5c800" font-family="DM Mono" font-weight="bold">Hauptbahnhof</text>
+        </g>
+        <g id="s-alex" class="station" onclick="selectStation('alex')" style="cursor:pointer">
+          <circle cx="400" cy="100" r="12" fill="#f5c800" stroke="#0c1020" stroke-width="3"/>
+          <text x="400" y="85" text-anchor="middle" font-size="9" fill="#f5c800" font-family="DM Mono" font-weight="bold">Alexanderplatz</text>
+        </g>
+        <g id="s-frank" class="station" onclick="selectStation('frankfurter')" style="cursor:pointer">
+          <circle cx="500" cy="100" r="9" fill="#2255dd" stroke="#0c1020" stroke-width="2.5"/>
+          <text x="500" y="88" text-anchor="middle" font-size="9" fill="#6878a8" font-family="DM Mono">Frankfurter A.</text>
+        </g>
+        <g id="s-pankow" class="station" onclick="selectStation('pankow')" style="cursor:pointer">
+          <circle cx="620" cy="100" r="9" fill="#2255dd" stroke="#0c1020" stroke-width="2.5"/>
+          <text x="620" y="88" text-anchor="middle" font-size="9" fill="#6878a8" font-family="DM Mono">Pankow</text>
+        </g>
+
+        <!-- S-Bahn Stations -->
+        <g id="s-potsdamer" class="station" onclick="selectStation('potsdamer')" style="cursor:pointer">
+          <circle cx="200" cy="100" r="7" fill="#60d440" stroke="#0c1020" stroke-width="2"/>
+          <text x="200" y="155" text-anchor="middle" font-size="8" fill="#60d440" font-family="DM Mono">Potsdamer Pl.</text>
+        </g>
+        <g id="s-ostbhf" class="station" onclick="selectStation('ostbahnhof')" style="cursor:pointer">
+          <circle cx="550" cy="100" r="7" fill="#60d440" stroke="#0c1020" stroke-width="2"/>
+          <text x="550" y="155" text-anchor="middle" font-size="8" fill="#60d440" font-family="DM Mono">Ostbahnhof</text>
+        </g>
+
+        <!-- Line labels -->
+        <rect x="44" y="95" width="22" height="10" rx="3" fill="#2255dd"/>
+        <text x="55" y="103" text-anchor="middle" font-size="7" fill="white" font-family="DM Mono" font-weight="bold">U2</text>
+        <rect x="44" y="60" width="22" height="10" rx="3" fill="#60d440" opacity=".9"/>
+        <text x="55" y="68" text-anchor="middle" font-size="7" fill="white" font-family="DM Mono" font-weight="bold">S5</text>
+        <rect x="44" y="135" width="22" height="10" rx="3" fill="#7b3f9e"/>
+        <text x="55" y="143" text-anchor="middle" font-size="7" fill="white" font-family="DM Mono" font-weight="bold">U5</text>
+        <rect x="225" y="166" width="22" height="10" rx="3" fill="#e83030"/>
+        <text x="236" y="174" text-anchor="middle" font-size="7" fill="white" font-family="DM Mono" font-weight="bold">Bus</text>
+
+        <!-- Compass -->
+        <text x="670" y="25" text-anchor="middle" font-size="12" fill="#2e3860" font-family="DM Mono">N↑</text>
+      </svg>
+      <div class="station-info" id="station-info">
+        <span class="si-desc" style="color:var(--text3);">← اضغط على أي محطة في الخريطة لمعرفة معلوماتها</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 3: DIRECTIONS ══════════════ -->
+<section id="directions">
+  <div class="sh">
+    <div class="si si-s">🧭</div>
+    <div class="sm">
+      <h2>الاتجاهات — Wegbeschreibung</h2>
+      <p>اضغط على أي اتجاه لسماع نطقه ورؤية مثال</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div class="tip c" style="margin-bottom:1.2rem;">
+      <div class="tpic">❓</div>
+      <div>
+        <h4>كيف تسأل عن الطريق؟</h4>
+        <p>
+          <span class="de">Entschuldigung, wie komme ich zum Bahnhof?</span> — عفواً، كيف أصل إلى المحطة؟<br>
+          <span class="de">Entschuldigung, wo ist die nächste Apotheke?</span> — عفواً، أين أقرب صيدلية؟<br>
+          <span class="de">Können Sie mir den Weg erklären?</span> — هل يمكنك شرح الطريق لي؟
+        </p>
+      </div>
+    </div>
+
+    <div class="compass-grid">
+
+      <div class="dir-card" onclick="speak('geradeaus')">
+        <div class="dir-arrow">⬆️</div>
+        <div>
+          <span class="dir-de">geradeaus</span>
+          <span class="dir-ar">على طول / دُغري</span>
+          <span class="dir-ex">Gehen Sie geradeaus!</span>
+        </div>
+      </div>
+
+      <div class="dir-card" onclick="speak('nach links')">
+        <div class="dir-arrow">⬅️</div>
+        <div>
+          <span class="dir-de">nach links</span>
+          <span class="dir-ar">إلى اليسار</span>
+          <span class="dir-ex">Biegen Sie links ab.</span>
+        </div>
+      </div>
+
+      <div class="dir-card" onclick="speak('nach rechts')">
+        <div class="dir-arrow">➡️</div>
+        <div>
+          <span class="dir-de">nach rechts</span>
+          <span class="dir-ar">إلى اليمين</span>
+          <span class="dir-ex">Biegen Sie rechts ab.</span>
+        </div>
+      </div>
+
+      <div class="dir-card" onclick="speak('zurück')">
+        <div class="dir-arrow">⬇️</div>
+        <div>
+          <span class="dir-de">zurück / umkehren</span>
+          <span class="dir-ar">ارجع / استدر</span>
+          <span class="dir-ex">Sie müssen umkehren!</span>
+        </div>
+      </div>
+
+      <div class="dir-card" onclick="speak('an der Ampel')">
+        <div class="dir-arrow">🚦</div>
+        <div>
+          <span class="dir-de">an der Ampel</span>
+          <span class="dir-ar">عند إشارة المرور</span>
+          <span class="dir-ex">An der Ampel links abbiegen.</span>
+        </div>
+      </div>
+
+      <div class="dir-card" onclick="speak('an der Kreuzung')">
+        <div class="dir-arrow">✚</div>
+        <div>
+          <span class="dir-de">an der Kreuzung</span>
+          <span class="dir-ar">عند التقاطع</span>
+          <span class="dir-ex">An der nächsten Kreuzung rechts.</span>
+        </div>
+      </div>
+
+      <div class="dir-card" onclick="speak('über die Brücke')">
+        <div class="dir-arrow">🌉</div>
+        <div>
+          <span class="dir-de">über die Brücke</span>
+          <span class="dir-ar">عبر الجسر</span>
+          <span class="dir-ex">Gehen Sie über die Brücke.</span>
+        </div>
+      </div>
+
+      <div class="dir-card" onclick="speak('circa fünf Minuten zu Fuß')">
+        <div class="dir-arrow">🚶</div>
+        <div>
+          <span class="dir-de">ca. 5 Minuten zu Fuß</span>
+          <span class="dir-ar">حوالي 5 دقائق مشياً</span>
+          <span class="dir-ex">Es ist circa fünf Minuten.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tw" style="margin-top:1rem;">
+      <table>
+        <thead><tr><th>التعبير</th><th>بالألمانية</th><th>في جملة</th></tr></thead>
+        <tbody>
+          <tr><td>بجانب</td><td class="tde">neben</td><td class="tex">Die Bank ist neben dem Supermarkt.</td></tr>
+          <tr><td>مقابل / أمام</td><td class="tde">gegenüber</td><td class="tex">Die Post ist gegenüber dem Bahnhof.</td></tr>
+          <tr><td>بين</td><td class="tde">zwischen</td><td class="tex">Das Café ist zwischen der Bäckerei und der Apotheke.</td></tr>
+          <tr><td>في نهاية الشارع</td><td class="tde">am Ende der Straße</td><td class="tex">Am Ende der Straße rechts abbiegen.</td></tr>
+          <tr><td>تقريباً</td><td class="tde">ungefähr / circa</td><td class="tex">Das sind ungefähr 500 Meter.</td></tr>
+          <tr><td>لا تخطأه</td><td class="tde">Sie können es nicht verfehlen.</td><td class="tex">Das große Gebäude — Sie können es nicht verfehlen!</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 4: PREPOSITIONS ══════════════ -->
+<section id="prepositions">
+  <div class="sh">
+    <div class="si si-l">📍</div>
+    <div class="sm">
+      <h2>حروف الجر المكانية — Lokale Präpositionen</h2>
+      <p>الفرق بين "أين؟" و"إلى أين؟" — قاعدة مهمة جداً في الألمانية</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div class="tip o" style="margin-bottom:1.2rem;">
+      <div class="tpic">⚡</div>
+      <div>
+        <h4>القاعدة الذهبية: Wo? مقابل Wohin?</h4>
+        <p>في الألمانية، يُغيّر حرف الجر حالته النحوية تبعاً للمعنى:<br>
+        <strong>Wo? (أين؟)</strong> = موضع ثابت → نستخدم حالة المضاف إليه الثانية (Dativ)<br>
+        <strong>Wohin? (إلى أين؟)</strong> = حركة نحو مكان → نستخدم حالة المفعول به (Akkusativ)<br>
+        مثال: <span class="de">Das Buch liegt auf dem Tisch.</span> (الكتاب على الطاولة — Dativ)<br>
+        مقابل: <span class="de">Ich lege das Buch auf den Tisch.</span> (أضع الكتاب — Akkusativ)</p>
+      </div>
+    </div>
+
+    <div class="prep-tabs" id="prep-tabs">
+      <div class="ptab active" onclick="showPrep('in')">in</div>
+      <div class="ptab" onclick="showPrep('an')">an</div>
+      <div class="ptab" onclick="showPrep('auf')">auf</div>
+      <div class="ptab" onclick="showPrep('neben')">neben</div>
+      <div class="ptab" onclick="showPrep('vor')">vor</div>
+      <div class="ptab" onclick="showPrep('hinter')">hinter</div>
+      <div class="ptab" onclick="showPrep('zwischen')">zwischen</div>
+      <div class="ptab" onclick="showPrep('über')">über</div>
+    </div>
+
+    <div class="prep-panel" id="prep-panel"><!-- filled by JS --></div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 5: NAVIGATION GAME ══════════════ -->
+<section id="game">
+  <div class="sh">
+    <div class="si si-r">🎮</div>
+    <div class="sm">
+      <h2>لعبة الملاحة — Navigations-Spiel</h2>
+      <p>ساعد أحمد على الوصول إلى وجهته!</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div class="nav-game">
+      <div class="ng-title">🗺️ أحمد يسأل أحد المارة عن الطريق — اختر الجواب الصحيح!</div>
+      <div class="ng-scenario" id="ng-scenario"></div>
+      <div class="ng-options" id="ng-options"></div>
+      <div class="ng-fb" id="ng-fb"></div>
+      <button class="ng-next" id="ng-next" onclick="nextNavQ()">التالي ←</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 6: DIALOGUE ══════════════ -->
+<section>
+  <div class="sh">
+    <div class="si si-t">💬</div>
+    <div class="sm">
+      <h2>حوار: أحمد يسأل عن الطريق</h2>
+      <p>مشهد حقيقي في شوارع برلين</p>
+    </div>
+  </div>
+
+  <div class="card a4">
+    <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);">
+      <span style="font-size:1.3rem;">🏙️</span>
+      <div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:800;">برلين — Alexanderplatz</div>
+        <div style="font-size:.78rem;color:var(--text2);">أحمد يريد الوصول إلى متحف برلين من المترو</div>
+      </div>
+    </div>
+
+    <div class="conv">
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Entschuldigung! Können Sie mir helfen? Ich suche das Berliner Dom.</span>عفواً! هل يمكنك مساعدتي؟ أبحث عن كاتدرائية برلين.</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ja, natürlich! Der Berliner Dom ist nicht weit. Gehen Sie hier geradeaus, etwa 300 Meter.</span>نعم، بالطبع! كاتدرائية برلين ليست بعيدة. اذهب هنا على طول، حوالي 300 متر.</div>
+          <span class="who" style="text-align:left;">المارّة</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Und dann? An der Kreuzung?</span>وبعدها؟ عند التقاطع؟</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Genau! An der Kreuzung biegen Sie links ab. Dann sehen Sie die Spree — den Fluss. Gehen Sie über die Brücke. Der Dom ist direkt dahinter, Sie können ihn nicht verfehlen!</span>بالضبط! عند التقاطع انعطف يساراً. ستشاهد نهر شبري. اعبر الجسر. الكاتدرائية مباشرةً خلفه، لن تخطئها!</div>
+          <span class="who" style="text-align:left;">المارّة</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Wie lange dauert das zu Fuß?</span>كم يستغرق ذلك مشياً؟</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Etwa 10 Minuten. Oder nehmen Sie die U2 bis zur Station Museumsinsel — nur zwei Stationen.</span>حوالي 10 دقائق. أو خذ الـ U2 حتى محطة Museumsinsel — محطتان فقط.</div>
+          <span class="who" style="text-align:left;">المارّة</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ich gehe lieber zu Fuß, das Wetter ist schön heute! Vielen Dank für Ihre Hilfe!</span>أفضّل المشي، الطقس جميل اليوم! شكراً جزيلاً على مساعدتك!</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Bitte sehr! Viel Spaß beim Besichtigen!</span>على الرحب! استمتع بالزيارة!</div>
+          <span class="who" style="text-align:left;">المارّة</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+      <h4 style="font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:800;color:var(--signal2);margin-bottom:.8rem;">🔑 تعابير مهمة من الحوار:</h4>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;font-size:.8rem;align-items:center;">
+        <span class="de">Können Sie mir helfen?</span><span style="color:var(--text2)"> هل يمكنك مساعدتي؟</span> &nbsp;·&nbsp;
+        <span class="de">Ich suche...</span><span style="color:var(--text2)"> أبحث عن...</span> &nbsp;·&nbsp;
+        <span class="de">nicht weit</span><span style="color:var(--text2)"> ليس بعيداً</span> &nbsp;·&nbsp;
+        <span class="de">Biegen Sie ab.</span><span style="color:var(--text2)"> انعطف / اتجه</span> &nbsp;·&nbsp;
+        <span class="de">Viel Spaß!</span><span style="color:var(--text2)"> استمتع!</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 7: QUIZ ══════════════ -->
+<section id="quiz">
+  <div class="sh">
+    <div class="si si-s">🎯</div>
+    <div class="sm">
+      <h2>اختبر نفسك!</h2>
+      <p>8 أسئلة على المواصلات والاتجاهات وحروف الجر</p>
+    </div>
+  </div>
+
+  <div class="card quiz-card">
+
+    <div class="qblock" id="q1">
+      <span class="qlabel">FRAGE 1 / 8</span>
+      <div class="qtext">كيف تقول "أسافر بالحافلة"؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q1\',\'w\')">Ich fahre in dem Bus.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q1\',\'c\')">Ich fahre mit dem Bus.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q1\',\'w\')">Ich fahre an dem Bus.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q1\',\'w\')">Ich fahre auf dem Bus.</button>
+      </div>
+      <div class="qfb" id="fb-q1"></div>
+    </div>
+
+    <div class="qblock" id="q2">
+      <span class="qlabel">FRAGE 2 / 8</span>
+      <div class="qtext">ما معنى <span class="qde">Biegen Sie links ab!</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q2\',\'w\')">استمر على طول</button>
+        <button class="opt" type="button" onclick="ans(this,\'q2\',\'w\')">انعطف يميناً</button>
+        <button class="opt" type="button" onclick="ans(this,\'q2\',\'c\')">انعطف يساراً</button>
+        <button class="opt" type="button" onclick="ans(this,\'q2\',\'w\')">ارجع إلى الخلف</button>
+      </div>
+      <div class="qfb" id="fb-q2"></div>
+    </div>
+
+    <div class="qblock" id="q3">
+      <span class="qlabel">FRAGE 3 / 8</span>
+      <div class="qtext">أي حرف جر يدل على الحركة نحو المكان (Akkusativ)؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q3\',\'w\')">Das Buch liegt auf dem Tisch.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q3\',\'c\')">Ich lege das Buch auf den Tisch.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q3\',\'w\')">Er sitzt in dem Auto.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q3\',\'w\')">Sie wohnt neben dem Bahnhof.</button>
+      </div>
+      <div class="qfb" id="fb-q3"></div>
+    </div>
+
+    <div class="qblock" id="q4">
+      <span class="qlabel">FRAGE 4 / 8</span>
+      <div class="qtext">كيف تسأل "أين أقرب محطة مترو؟"</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q4\',\'w\')">Wie ist die U-Bahn-Station?</button>
+        <button class="opt" type="button" onclick="ans(this,\'q4\',\'c\')">Wo ist die nächste U-Bahn-Station?</button>
+        <button class="opt" type="button" onclick="ans(this,\'q4\',\'w\')">Was ist die U-Bahn-Station?</button>
+        <button class="opt" type="button" onclick="ans(this,\'q4\',\'w\')">Wann fährt die U-Bahn ab?</button>
+      </div>
+      <div class="qfb" id="fb-q4"></div>
+    </div>
+
+    <div class="qblock" id="q5">
+      <span class="qlabel">FRAGE 5 / 8</span>
+      <div class="qtext">ماذا يعني <span class="qde">geradeaus</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q5\',\'w\')">انعطف</button>
+        <button class="opt" type="button" onclick="ans(this,\'q5\',\'w\')">ارجع</button>
+        <button class="opt" type="button" onclick="ans(this,\'q5\',\'c\')">على طول / دُغري</button>
+        <button class="opt" type="button" onclick="ans(this,\'q5\',\'w\')">عبر الجسر</button>
+      </div>
+      <div class="qfb" id="fb-q5"></div>
+    </div>
+
+    <div class="qblock" id="q6">
+      <span class="qlabel">FRAGE 6 / 8</span>
+      <div class="qtext">ما حرف الجر المناسب مع وسيلة النقل المؤنثة مثل U-Bahn؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q6\',\'w\')">mit dem U-Bahn</button>
+        <button class="opt" type="button" onclick="ans(this,\'q6\',\'c\')">mit der U-Bahn</button>
+        <button class="opt" type="button" onclick="ans(this,\'q6\',\'w\')">mit die U-Bahn</button>
+        <button class="opt" type="button" onclick="ans(this,\'q6\',\'w\')">mit das U-Bahn</button>
+      </div>
+      <div class="qfb" id="fb-q6"></div>
+    </div>
+
+    <div class="qblock" id="q7">
+      <span class="qlabel">FRAGE 7 / 8</span>
+      <div class="qtext">ما معنى <span class="qde">gegenüber</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q7\',\'w\')">بجانب</button>
+        <button class="opt" type="button" onclick="ans(this,\'q7\',\'w\')">بين</button>
+        <button class="opt" type="button" onclick="ans(this,\'q7\',\'c\')">مقابل / في مواجهة</button>
+        <button class="opt" type="button" onclick="ans(this,\'q7\',\'w\')">خلف</button>
+      </div>
+      <div class="qfb" id="fb-q7"></div>
+    </div>
+
+    <div class="qblock" id="q8">
+      <span class="qlabel">FRAGE 8 / 8</span>
+      <div class="qtext">كيف تقول "أسير على الأقدام" بالألمانية؟</div>
+      <div class="opts">
+        <button class="opt" type="button" onclick="ans(this,\'q8\',\'w\')">Ich fahre mit Fuß.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q8\',\'w\')">Ich laufe mit den Füßen.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q8\',\'c\')">Ich gehe zu Fuß.</button>
+        <button class="opt" type="button" onclick="ans(this,\'q8\',\'w\')">Ich gehe mit Fuß.</button>
+      </div>
+      <div class="qfb" id="fb-q8"></div>
+    </div>
+
+    <div class="result-wrap" id="result-wrap">
+      <div class="r-score" id="r-score">0/8</div>
+      <div class="r-msg" id="r-msg"></div>
+      <button class="r-btn" onclick="resetQuiz()">🔄 أعد التدريب</button>
+    </div>
+  </div>
+</section>
+
+<!-- HOMEWORK -->
+<section>
+  <div class="sh">
+    <div class="si si-l">📝</div>
+    <div class="sm"><h2>واجب الدرس السادس</h2><p>طبّق ما تعلمته عن المواصلات والاتجاهات</p></div>
+  </div>
+  <div class="card">
+    <div class="hw-grid">
+      <div class="hw-item"><strong>✅ وصف طريقك</strong><span>اكتب كيف تصل من بيتك إلى مكتبة أو مكان قريب منك بالألمانية</span></div>
+      <div class="hw-item"><strong>✅ وسائل النقل</strong><span>اكتب جملة لكل وسيلة نقل تستخدمها في حياتك</span></div>
+      <div class="hw-item"><strong>✅ حروف الجر</strong><span>اكتب 4 جمل: جملتان Wo؟ وجملتان Wohin؟</span></div>
+      <div class="hw-item"><strong>✅ حوار الشارع</strong><span>تخيّل شخصاً يسألك عن طريق مكان تعرفه واكتب الحوار</span></div>
+    </div>
+    <div class="tip l">
+      <div class="tpic">🚀</div>
+      <div>
+        <h4>الدرس السابع القادم</h4>
+        <p>سنتعلم <strong>الطقس والفصول والتعبير عن المشاعر</strong> — كيف تتحدث عن الطقس الألماني، تصف مشاعرك، وتعبّر عن آرائك باللغة الألمانية! <span class="de">Gute Fahrt!</span> 🚇</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>🇩🇪 الألمانية للعرب &nbsp;·&nbsp; المستوى A2 &nbsp;·&nbsp; الدرس 6 من 12</p>
+  <p style="margin-top:.5rem;">المواصلات · الاتجاهات · حروف الجر المكانية</p>
+</footer>
+
+<script>
+// ── Theme ──
+let dark = true;
+const root = document.documentElement;
+const tbtn = document.querySelector('.tbtn');
+function applyTheme(d) { dark=d; root.setAttribute('data-theme',d?'dark':'light'); tbtn.textContent=d?'☀':'🌙'; }
+function toggleTheme() { applyTheme(!dark); }
+const sys = window.matchMedia('(prefers-color-scheme: dark)');
+applyTheme(sys.matches);
+sys.addEventListener('change', e => applyTheme(e.matches));
+
+// ── Scroll ──
+const spb = document.getElementById('spb');
+window.addEventListener('scroll', () => {
+  const h = document.body.scrollHeight - window.innerHeight;
+  spb.style.transform = `scaleX(${window.scrollY / h})`;
+});
+
+// ── Speech ──
+function speak(t) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(t);
+  u.lang = 'de-DE'; u.rate = 0.82;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+
+// ── Metro Stations ──
+const stations = {
+  ruhleben: { name:'Ruhleben', lines:['U2'], color:'#2255dd', desc:'محطة الطرف الغربي لخط U2 — بجانب الملعب الأولمبي. Endstation der U2 im Westen — neben dem Olympiastadion.' },
+  zoo: { name:'Zoologischer Garten', lines:['U2','S5','S7'], color:'#f5c800', desc:'محطة مزدوجة مشهورة — بجانب حديقة حيوانات برلين. Wichtiger Umsteigebahnhof neben dem Berliner Zoo.' },
+  hbf: { name:'Berlin Hauptbahnhof', lines:['U5','S5','S7','RE','IC'], color:'#f5c800', desc:'المحطة المركزية الكبرى — أكبر محطة في ألمانيا! Der größte Bahnhof Deutschlands — Zentrum des Fernverkehrs.' },
+  alex: { name:'Alexanderplatz', lines:['U2','U5','U8','S5','S7'], color:'#f5c800', desc:'أهم ساحة في برلين — تقاطع خطوط كثيرة. Der wichtigste Platz Berlins — viele Linien kreuzen sich hier.' },
+  frankfurter: { name:'Frankfurter Allee', lines:['U5','S8','S9'], color:'#2255dd', desc:'شرق برلين — حي حيوي بكثير من المطاعم والمقاهي. Im Osten Berlins — lebendiges Viertel mit Restaurants und Cafés.' },
+  pankow: { name:'Pankow', lines:['U2','S2','S8'], color:'#2255dd', desc:'محطة الطرف الشمالي الشرقي لخط U2. Nördlicher Endbahnhof der U2-Linie.' },
+  potsdamer: { name:'Potsdamer Platz', lines:['U2','S1','S2','S25'], color:'#60d440', desc:'ساحة بوتسدام الشهيرة — مركز الأعمال والسينما. Bekannter Platz mit Kinos, Büros und dem Sony Center.' },
+  ostbahnhof: { name:'Ostbahnhof', lines:['S3','S5','S7','S9','RE'], color:'#60d440', desc:'محطة القطارات الشرقية — بوابة شرق برلين. Wichtiger Fernbahnhof im Osten der Stadt.' }
+};
+
+function selectStation(key) {
+  const s = stations[key];
+  if (!s) return;
+  speak(s.name);
+  const info = document.getElementById('station-info');
+  info.innerHTML = `
+    <span class="si-name">${s.name}</span>
+    <div class="si-lines">${s.lines.map(l => `<span class="si-line-badge" style="background:${s.color}${s.color==='#f5c800'?';color:#000':''}">${l}</span>`).join('')}</div>
+    <span class="si-desc">${s.desc}</span>
+  `;
+}
+
+// ── Prepositions ──
+const preps = {
+  in: {
+    de:'in', meaning:'في / داخل',
+    examples:[
+      ['Ich bin in der Stadt.', '— أنا في المدينة. (Wo? Dativ → der)'],
+      ['Ich fahre in die Stadt.', '— أذهب إلى المدينة. (Wohin? Akkusativ → die)'],
+      ['Er wohnt in Berlin.', '— يسكن في برلين. (بدون أداة تعريف للمدن)'],
+    ]
+  },
+  an: {
+    de:'an', meaning:'على (السطح) / بجانب (الحافة)',
+    examples:[
+      ['Die Bank ist an der Ecke.', '— البنك في الزاوية. (Wo? Dativ → der)'],
+      ['Ich gehe an den Strand.', '— أذهب إلى الشاطئ. (Wohin? Akkusativ → den)'],
+      ['Er wartet an der Haltestelle.', '— ينتظر عند المحطة. (Wo? Dativ)'],
+    ]
+  },
+  auf: {
+    de:'auf', meaning:'على (السطح الأفقي)',
+    examples:[
+      ['Das Buch liegt auf dem Tisch.', '— الكتاب على الطاولة. (Wo? Dativ → dem)'],
+      ['Ich lege das Buch auf den Tisch.', '— أضع الكتاب على الطاولة. (Wohin? Akkusativ → den)'],
+      ['Wir treffen uns auf dem Marktplatz.', '— نلتقي في الساحة. (Wo? Dativ)'],
+    ]
+  },
+  neben: {
+    de:'neben', meaning:'بجانب',
+    examples:[
+      ['Das Café ist neben dem Bahnhof.', '— المقهى بجانب المحطة. (Wo? Dativ → dem)'],
+      ['Stell das Fahrrad neben den Eingang.', '— ضع الدراجة بجانب المدخل. (Wohin? Akkusativ → den)'],
+      ['Ich sitze neben meiner Schwester.', '— أجلس بجانب أختي. (Wo? Dativ)'],
+    ]
+  },
+  vor: {
+    de:'vor', meaning:'أمام / قبل',
+    examples:[
+      ['Das Auto steht vor dem Haus.', '— السيارة أمام البيت. (Wo? Dativ → dem)'],
+      ['Ich fahre das Auto vor die Garage.', '— أُحرّك السيارة أمام الكراج. (Wohin? Akkusativ → die)'],
+      ['Warte vor dem Eingang!', '— انتظر أمام المدخل! (Wo? Dativ)'],
+    ]
+  },
+  hinter: {
+    de:'hinter', meaning:'خلف / وراء',
+    examples:[
+      ['Der Park ist hinter dem Museum.', '— الحديقة خلف المتحف. (Wo? Dativ → dem)'],
+      ['Geh hinter das Gebäude!', '— اذهب خلف المبنى! (Wohin? Akkusativ → das)'],
+      ['Das Auto ist hinter der Schule.', '— السيارة خلف المدرسة. (Wo? Dativ → der)'],
+    ]
+  },
+  zwischen: {
+    de:'zwischen', meaning:'بين',
+    examples:[
+      ['Die Post ist zwischen der Bäckerei und der Bank.', '— البريد بين المخبز والبنك. (Wo? Dativ)'],
+      ['Stell den Stuhl zwischen den Tisch und die Wand.', '— ضع الكرسي بين الطاولة والجدار. (Wohin? Akkusativ)'],
+      ['Wir sitzen zwischen den anderen Gästen.', '— نجلس بين الضيوف الآخرين.'],
+    ]
+  },
+  über: {
+    de:'über', meaning:'فوق / عبر',
+    examples:[
+      ['Das Bild hängt über dem Sofa.', '— اللوحة معلّقة فوق الأريكة. (Wo? Dativ → dem)'],
+      ['Gehen Sie über die Brücke!', '— اعبر الجسر! (Wohin? Akkusativ → die)'],
+      ['Der Flug geht über Frankfurt.', '— الرحلة تمر من فوق فرانكفورت.'],
+    ]
+  }
+};
+
+function showPrep(key) {
+  document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  const p = preps[key];
+  document.getElementById('prep-panel').innerHTML = `
+    <div class="prep-de">${p.de}</div>
+    <div class="prep-meaning">${p.meaning}</div>
+    <div class="prep-examples">
+      ${p.examples.map(([de,ar]) => `
+        <div class="prep-ex" onclick="speak('${de}')">
+          ${de} <span>${ar||''}</span>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+showPrep('in');
+
+// ── Navigation Game ──
+const navQuestions = [
+  {
+    scenario: 'شخص يسألك: "Entschuldigung, wie komme ich zum Supermarkt?" — عفواً كيف أصل إلى السوبرماركت؟\nالسوبرماركت في الشارع التالي على اليسار.',
+    q: 'ما الإجابة الصحيحة؟',
+    options: [
+      'Biegen Sie rechts ab.',
+      'Gehen Sie geradeaus bis zur nächsten Straße, dann links.',
+      'Der Supermarkt ist hinter Ihnen.',
+      'Nehmen Sie die U-Bahn.'
+    ],
+    correct: 1,
+    feedback_ok: '✅ ممتاز! "Gehen Sie geradeaus ... dann links" = تعليمات واضحة ودقيقة!',
+    feedback_err: '❌ السوبرماركت على اليسار في الشارع التالي — الإجابة الصحيحة تشمل "geradeaus" ثم "links".'
+  },
+  {
+    scenario: 'تريد شراء تذكرة مترو. أي جملة تستخدم؟',
+    q: 'اختر الجملة الصحيحة:',
+    options: [
+      'Ich möchte ein Taxi, bitte.',
+      'Wo ist die Bushaltestelle?',
+      'Eine Fahrkarte bis zum Hauptbahnhof, bitte.',
+      'Wann fährt der nächste Zug nach Hamburg?'
+    ],
+    correct: 2,
+    feedback_ok: '✅ صحيح! "Eine Fahrkarte bis zum..." هي الصيغة الصحيحة لشراء التذكرة.',
+    feedback_err: '❌ لشراء تذكرة المترو نقول: "Eine Fahrkarte bis zum [المحطة], bitte."'
+  },
+  {
+    scenario: 'تسمع: "Die Apotheke ist gegenüber dem Bahnhof."\nأين تقع الصيدلية؟',
+    q: 'ما موقع الصيدلية؟',
+    options: [
+      'بجانب المحطة',
+      'خلف المحطة',
+      'مقابل المحطة تماماً',
+      'بعيدة عن المحطة'
+    ],
+    correct: 2,
+    feedback_ok: '✅ بالضبط! gegenüber = مقابل / في مواجهة. كلمة مفيدة جداً لوصف المواقع!',
+    feedback_err: '❌ gegenüber = مقابل / في المواجهة المباشرة. neben = بجانب، hinter = خلف.'
+  },
+  {
+    scenario: 'تريد الركوب بالمترو. أيهما صحيح نحوياً؟',
+    q: 'الجملة الصحيحة هي:',
+    options: [
+      'Ich fahre mit die U-Bahn.',
+      'Ich fahre in der U-Bahn.',
+      'Ich fahre mit der U-Bahn.',
+      'Ich fahre auf der U-Bahn.'
+    ],
+    correct: 2,
+    feedback_ok: '✅ ممتاز! mit + Dativ → U-Bahn مؤنث (die) → mit der U-Bahn. هذا هو القانون!',
+    feedback_err: '❌ وسائل النقل تأتي مع "mit" + Dativ. U-Bahn مؤنث → mit DER U-Bahn (وليس "die").'
+  },
+  {
+    scenario: 'السائح يقول: "Ich suche den Alexanderplatz." ماذا تقول له؟',
+    q: 'أفضل إجابة هي:',
+    options: [
+      'Ich weiß es nicht.',
+      'Gehen Sie geradeaus und dann nehmen Sie die U2.',
+      'Der Alexanderplatz ist sehr schön!',
+      'Ich bin auch Tourist.'
+    ],
+    correct: 1,
+    feedback_ok: '✅ رائع! جملة مفيدة تجمع الاتجاه ووسيلة النقل معاً — هذا ما يحتاجه السائح!',
+    feedback_err: '❌ السائح يحتاج اتجاهات واضحة. أفضل جواب يشمل geradeaus وربما وسيلة النقل المناسبة.'
+  }
+];
+
+let navIdx = 0;
+let navAnswered = false;
+
+function renderNavQ() {
+  navAnswered = false;
+  const q = navQuestions[navIdx];
+  document.getElementById('ng-scenario').innerHTML = `<span class="ng-q">${q.q}</span>${q.scenario.replace(/\n/g,'<br>')}`;
+  const opts = document.getElementById('ng-options');
+  opts.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'ng-opt';
+    btn.textContent = opt;
+    btn.onclick = () => checkNavAns(i, q);
+    opts.appendChild(btn);
+  });
+  document.getElementById('ng-fb').className = 'ng-fb';
+  document.getElementById('ng-next').style.display = 'none';
+}
+
+function checkNavAns(idx, q) {
+  if (navAnswered) return;
+  navAnswered = true;
+  const opts = document.querySelectorAll('.ng-opt');
+  opts.forEach(o => { o.disabled = true; o.style.pointerEvents = 'none'; });
+  opts[idx].classList.add(idx === q.correct ? 'ok' : 'bad');
+  if (idx !== q.correct) opts[q.correct].classList.add('ok');
+  const fb = document.getElementById('ng-fb');
+  fb.textContent = idx === q.correct ? q.feedback_ok : q.feedback_err;
+  fb.className = 'ng-fb show ' + (idx === q.correct ? 'ok' : 'err');
+  const nxt = document.getElementById('ng-next');
+  nxt.style.display = 'inline-block';
+  nxt.textContent = navIdx < navQuestions.length - 1 ? 'التالي ←' : '🔄 من البداية';
+}
+
+function nextNavQ() {
+  navIdx = (navIdx + 1) % navQuestions.length;
+  renderNavQ();
+}
+
+renderNavQ();
+
+// ── Quiz ──
+const fb_c = {
+  q1: '✅ صحيح! وسائل النقل تأتي دائماً مع "mit". الحافلة مذكرة → mit dem Bus.',
+  q2: '✅ بالضبط! "Biegen Sie links ab" = انعطف يساراً. links = يسار، rechts = يمين.',
+  q3: '✅ ممتاز! "auf den Tisch" (Akkusativ) = حركة نحو المكان. "auf dem Tisch" (Dativ) = موضع ثابت.',
+  q4: '✅ صحيح! "Wo ist die nächste...?" هي الجملة الاستفسارية الأكثر استخداماً عن المواقع.',
+  q5: '✅ بالضبط! geradeaus = على طول / مستقيم. من Gerade (مستقيم) + aus (خارجاً).',
+  q6: '✅ رائع! U-Bahn مؤنث (die) → مع mit في Dativ يصبح "mit der U-Bahn".',
+  q7: '✅ صحيح! gegenüber = مقابل / في المواجهة المباشرة. neben = بجانب، hinter = خلف.',
+  q8: '✅ ممتاز! "zu Fuß gehen" هو التعبير الصحيح — بدون "mit"! هذا استثناء مهم.',
+};
+const fb_w = {
+  q1: '❌ وسائل النقل تأتي دائماً مع "mit" + Dativ. Bus مذكر → "mit dem Bus".',
+  q2: '❌ links = يسار، rechts = يمين. "Biegen Sie links ab" = انعطف يساراً.',
+  q3: '❌ الحركة نحو المكان (Wohin?) تستخدم Akkusativ: "auf den Tisch". الموضع الثابت (Wo?) يستخدم Dativ: "auf dem Tisch".',
+  q4: '❌ للسؤال عن موقع مكان ما نستخدم: "Wo ist die nächste...?" (أين أقرب...؟).',
+  q5: '❌ geradeaus = على طول / مستقيم. هذه الكلمة أساسية في وصف الطريق!',
+  q6: '❌ U-Bahn مؤنث (die U-Bahn). مع حرف الجر "mit" في Dativ: المؤنث يصبح "der" → "mit der U-Bahn".',
+  q7: '❌ gegenüber = مقابل / في المواجهة. neben = بجانب، zwischen = بين، hinter = خلف.',
+  q8: '❌ المشي على الأقدام = "zu Fuß gehen" (بدون "mit"). هذا استثناء وحيد بين وسائل النقل!',
+};
+
+let answers = {};
+function ans(btn, qid, r) {
+  if (answers[qid]) return;
+  answers[qid] = r;
+  document.querySelectorAll(`#${qid} .opt`).forEach(b => b.disabled = true);
+  btn.classList.add(r === 'c' ? 'correct' : 'wrong');
+  const fb = document.getElementById('fb-' + qid);
+  fb.textContent = r === 'c' ? fb_c[qid] : fb_w[qid];
+  fb.className = 'qfb show ' + (r === 'c' ? 'ok' : 'err');
+  if (Object.keys(answers).length === 8) showResult();
+}
+function showResult() {
+  const s = Object.values(answers).filter(v => v === 'c').length;
+  const msgs = ['حاول مجدداً 💪','راجع المواضيع 📖','تقدم جيد! 🌟','جيد جداً! 🏆','ممتاز! 🎉','رائع جداً! 🌟🌟','شبه مثالي! 🥈','مثالي تقريباً! 🥇','نجم الدرس السادس! ⭐⭐'];
+  document.getElementById('r-score').textContent = s + '/8';
+  document.getElementById('r-msg').textContent = msgs[s] || '';
+  const rb = document.getElementById('result-wrap');
+  rb.style.display = 'block';
+  rb.scrollIntoView({ behavior:'smooth', block:'center' });
+}
+function resetQuiz() {
+  answers = {};
+  document.querySelectorAll('.opt').forEach(b => {
+    b.disabled = false;
+    b.className = 'opt';
+  });
+  document.querySelectorAll('.qfb').forEach(f => { f.className = 'qfb'; });
+  document.getElementById('result-wrap').style.display = 'none';
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-kurs-lesson-06-verkehr" data-category="a2-kurs" data-title="المواصلات والاتجاهات" data-root="../../" defer></script>
+</body>
+</html>

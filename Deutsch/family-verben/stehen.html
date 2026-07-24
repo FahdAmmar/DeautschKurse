@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Säulenhalle bei Nacht — دراسة عائلة الفعل stehen</title>
+<meta name="description" content="درس تفاعلي عن عائلة الفعل الألماني stehen: تصريف قوي غير منتظم، أفعال منفصلة وغير منفصلة، حالات إعرابية متنوعة، حوار طلابي حقيقي، ووضع ليلي أنيق.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   1. DESIGN TOKENS — "Säulenhalle bei Nacht" (Colonnade at Night)
+   Bronze + verdigris on cool stone — ancient columns lit at night.
+   ============================================================ */
+:root{
+  --font-display:'Cormorant Garamond',serif;
+  --font-latin:'IBM Plex Sans',sans-serif;
+  --font-ar:'IBM Plex Sans Arabic',sans-serif;
+
+  --radius-s:10px; --radius-m:16px; --radius-l:22px; --radius-xl:30px;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --t-fast:.2s var(--ease); --t-med:.4s var(--ease); --t-slow:.6s var(--ease);
+  --header-h:72px;
+
+  /* light mode — pale stone by day */
+  --bg:#F8F9FA; --bg2:#EDEFF0;
+  --surface:#FFFFFF; --surface-2:#F1F3F4; --surface-a:rgba(255,255,255,.78);
+  --border:rgba(20,24,28,.11);
+  --text:#1C1E22; --text-2:#5C6570;
+  --glow:#A6702E; --glow-2:#2F7A6E;
+  --success:#4F8A47; --success-bg:#E9F2E5;
+  --error:#C0392B; --error-bg:#FBEAE7;
+  --shadow-s:0 2px 10px rgba(20,22,26,.09);
+  --shadow-m:0 10px 32px rgba(20,22,26,.13);
+  --shadow-l:0 24px 60px rgba(20,22,26,.17);
+  --glow-shadow:0 0 40px rgba(166,112,46,.25);
+}
+[data-theme="dark"]{
+  /* cool near-black stone, bronze + verdigris glow, easy on the eyes */
+  --bg:#090A0C; --bg2:#0E1013;
+  --surface:#14161A; --surface-2:#1B1E23; --surface-a:rgba(10,11,13,.72);
+  --border:rgba(230,232,230,.08);
+  --text:#E8E6E0; --text-2:#9CA3A8;
+  --glow:#D4AF6A; --glow-2:#4FB3A3;
+  --success:#8FBF7A; --success-bg:rgba(143,191,122,.12);
+  --error:#E8807A; --error-bg:rgba(232,128,122,.12);
+  --shadow-s:0 2px 12px rgba(0,0,0,.55);
+  --shadow-m:0 12px 34px rgba(0,0,0,.65);
+  --shadow-l:0 26px 70px rgba(0,0,0,.75);
+  --glow-shadow:0 0 46px rgba(212,175,106,.2);
+}
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+}
+body{
+  font-family:var(--font-ar);
+  background:var(--bg);
+  background-image:radial-gradient(circle at 10% -10%, var(--bg2), transparent 55%),
+                    radial-gradient(circle at 92% 105%, var(--bg2), transparent 55%);
+  color:var(--text);
+  line-height:1.8;
+  overflow-x:hidden;
+  min-height:100vh;
+  transition:background-color var(--t-slow), color var(--t-slow);
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block; max-width:100%;}
+button{font:inherit; color:inherit; background:none; border:none; cursor:pointer;}
+ul{list-style:none;}
+a{color:inherit; text-decoration:none;}
+table{border-collapse:collapse; width:100%;}
+h1,h2,h3,h4{font-weight:800; line-height:1.3; font-family:var(--font-ar);}
+.de{font-family:var(--font-latin); direction:ltr; unicode-bidi:isolate; font-weight:600;}
+.de-display{font-family:var(--font-display); direction:ltr; unicode-bidi:isolate; font-weight:700;}
+.speak-el{padding:0; margin:0; display:inline; vertical-align:baseline; border-radius:4px;}
+.speak-el:hover, .speak-el:focus-visible{color:var(--glow);}
+
+:focus-visible{outline:3px solid var(--glow); outline-offset:3px; border-radius:4px;}
+.skip-link{
+  position:absolute; right:1rem; top:-60px; background:var(--glow); color:#1A1408;
+  padding:.8rem 1.4rem; border-radius:var(--radius-s); z-index:9999; font-weight:800;
+  transition:top var(--t-fast);
+}
+.skip-link:focus{top:1rem;}
+
+/* ============================================================
+   3. LAYOUT UTILITIES
+   ============================================================ */
+.wrap{max-width:1180px; margin-inline:auto; padding-inline:clamp(1.1rem,4vw,2.5rem);}
+.section{padding-block:clamp(3.5rem,8vw,6.5rem);}
+.section-head{max-width:760px; margin-inline:auto; text-align:center; margin-bottom:clamp(2.2rem,5vw,3.5rem);}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.5rem; font-family:var(--font-latin);
+  font-size:.8rem; letter-spacing:.14em; font-weight:700; color:var(--glow);
+  text-transform:uppercase; direction:ltr;
+}
+.section-head h2{font-size:clamp(1.6rem,3.4vw,2.5rem); margin-block:.6rem .8rem;}
+.section-head p{color:var(--text-2); font-size:clamp(.98rem,1.6vw,1.12rem);}
+.reveal{opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
+.reveal.in-view{opacity:1; transform:translateY(0);}
+.hidden{display:none !important;}
+.sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap;}
+
+/* ============================================================
+   4. PROGRESS BAR
+   ============================================================ */
+.progress-bar{
+  position:fixed; inset-inline:0; top:0; height:3px; z-index:1000;
+  background:linear-gradient(90deg, var(--glow), var(--glow-2));
+  width:0%; transition:width .1s linear; box-shadow:0 0 14px rgba(245,168,60,.5);
+}
+
+/* ============================================================
+   5. HEADER / NAV
+   ============================================================ */
+.site-header{
+  position:sticky; top:0; z-index:900; height:var(--header-h); display:flex; align-items:center;
+  background:var(--surface-a); backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%);
+  border-bottom:1px solid var(--border); transition:background-color var(--t-slow), border-color var(--t-slow);
+}
+.header-inner{
+  width:100%; max-width:1180px; margin-inline:auto; padding-inline:clamp(1.1rem,4vw,2.5rem);
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+}
+.brand{display:flex; align-items:center; gap:.6rem; font-weight:800; font-size:1.02rem; white-space:nowrap;}
+.brand-badge{
+  width:38px; height:38px; border-radius:12px; display:grid; place-items:center;
+  background:linear-gradient(145deg, var(--glow), var(--glow-2)); color:#1A1408; box-shadow:var(--shadow-s); flex-shrink:0;
+}
+.brand-badge svg{width:21px; height:21px;}
+.main-nav{display:flex; align-items:center; gap:1.5rem;}
+.main-nav a{font-size:.9rem; font-weight:700; color:var(--text-2); position:relative; padding-block:.3rem; transition:color var(--t-fast);}
+.main-nav a::after{content:''; position:absolute; bottom:-2px; inset-inline:0; height:2px; background:var(--glow); transform:scaleX(0); transition:transform var(--t-fast); border-radius:2px;}
+.main-nav a:hover, .main-nav a.active{color:var(--text);}
+.main-nav a:hover::after, .main-nav a.active::after{transform:scaleX(1);}
+.header-actions{display:flex; align-items:center; gap:.35rem;}
+.icon-btn{width:40px; height:40px; border-radius:12px; display:grid; place-items:center; color:var(--text); transition:background var(--t-fast), transform var(--t-fast); flex-shrink:0;}
+.icon-btn svg{width:19px; height:19px;}
+.icon-btn:hover{background:var(--border); transform:translateY(-1px);}
+.icon-btn:active{transform:translateY(0) scale(.94);}
+#themeToggle .icon-moon{display:none;}
+[data-theme="dark"] #themeToggle .icon-sun{display:none;}
+[data-theme="dark"] #themeToggle .icon-moon{display:block;}
+.nav-toggle{display:none;}
+.search-panel{
+  position:absolute; top:var(--header-h); inset-inline:0; background:var(--surface); border-bottom:1px solid var(--border);
+  padding:1rem clamp(1.1rem,4vw,2.5rem); box-shadow:var(--shadow-m); transform:translateY(-10px); opacity:0; pointer-events:none; transition:all var(--t-fast);
+}
+.search-panel.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+.search-panel input{width:100%; max-width:1180px; margin-inline:auto; display:block; padding:.85rem 1.1rem; border-radius:var(--radius-m); border:1.5px solid var(--border); background:var(--bg); color:var(--text); font-family:var(--font-ar); font-size:1rem;}
+.search-panel input:focus{border-color:var(--glow);}
+
+.speech-settings-wrap{position:relative;}
+.speech-popover{
+  position:absolute; top:calc(100% + 12px); inset-inline-end:0; width:250px; background:var(--surface);
+  border:1px solid var(--border); border-radius:var(--radius-m); padding:1.1rem; box-shadow:var(--shadow-l);
+  transform:translateY(-8px); opacity:0; pointer-events:none; transition:all var(--t-fast); z-index:960;
+}
+.speech-popover.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+.speech-popover label{display:block; font-size:.78rem; font-weight:700; margin-bottom:.4rem; color:var(--text-2);}
+.speech-popover label span{color:var(--glow); direction:ltr; display:inline-block;}
+.speech-popover input[type=range]{width:100%; margin-bottom:1rem; accent-color:var(--glow);}
+.speech-popover select{width:100%; padding:.55rem .6rem; border-radius:var(--radius-s); border:1.5px solid var(--border); background:var(--bg); color:var(--text); font-family:var(--font-ar); font-size:.85rem;}
+
+@media (max-width:860px){
+  .main-nav{
+    position:fixed; inset-block:var(--header-h) 0; inset-inline-start:0; width:min(78vw,320px);
+    background:var(--surface); flex-direction:column; align-items:flex-start; gap:0; padding:1.5rem;
+    box-shadow:var(--shadow-l); transform:translateX(105%); transition:transform var(--t-med); z-index:950; overflow-y:auto;
+  }
+  [dir="rtl"] .main-nav{transform:translateX(-105%);}
+  .main-nav.open{transform:translateX(0);}
+  .main-nav a{width:100%; padding:.9rem 0; border-bottom:1px solid var(--border); font-size:1.02rem;}
+  .nav-toggle{display:grid;}
+}
+
+/* ============================================================
+   6. BUTTONS & BADGES
+   ============================================================ */
+.btn{display:inline-flex; align-items:center; gap:.5rem; font-weight:700; font-size:.92rem; padding:.75rem 1.4rem; border-radius:999px; transition:transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast); white-space:nowrap;}
+.btn svg{width:16px; height:16px; flex-shrink:0;}
+.btn-primary{background:linear-gradient(135deg, var(--glow), var(--glow-2)); color:#1A1408; box-shadow:var(--shadow-s);}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-m);}
+.btn-ghost{background:var(--surface); border:1.5px solid var(--border); color:var(--text);}
+.btn-ghost:hover{border-color:var(--glow); color:var(--glow);}
+.btn-sm{padding:.5rem 1rem; font-size:.82rem; border-radius:999px;}
+.btn:active{transform:scale(.97);}
+.btn:disabled{opacity:.45; cursor:not-allowed; transform:none !important;}
+.badge{display:inline-flex; align-items:center; gap:.35rem; font-size:.74rem; font-weight:800; padding:.32rem .8rem; border-radius:999px; direction:ltr; letter-spacing:.02em;}
+
+/* ============================================================
+   7. HERO + COLONNADE (columns standing at night)
+   ============================================================ */
+.hero{position:relative; padding-block:clamp(2.5rem,6vw,4rem) clamp(1rem,4vw,2rem); overflow:hidden;}
+.hero-content{position:relative; z-index:1; text-align:center; max-width:740px; margin-inline:auto;}
+.hero-content .eyebrow{justify-content:center;}
+.hero-content h1{font-family:var(--font-display); font-size:clamp(2.1rem,5.6vw,3.6rem); margin-block:.7rem .9rem; font-weight:600;}
+.hero-content h1 .de-display{color:var(--glow); font-size:1.08em; font-style:italic;}
+.hero-content p{color:var(--text-2); font-size:clamp(1rem,2vw,1.15rem); max-width:600px; margin-inline:auto;}
+.colonnade{position:relative; z-index:1; width:min(96vw,900px); height:clamp(190px,27vw,270px); margin:clamp(2.2rem,6vw,3.8rem) auto 0;}
+.colonnade-ground{position:absolute; bottom:32px; inset-inline:0; height:2px; background:var(--border);}
+.column-node{position:absolute; bottom:32px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; width:58px;}
+.column-orb{
+  width:clamp(32px,5.5vw,46px); height:clamp(32px,5.5vw,46px); border-radius:50%; margin-bottom:.55rem; position:relative; z-index:2;
+  background:var(--surface); border:2px solid var(--node-color,var(--glow));
+  display:grid; place-items:center; color:var(--node-color,var(--glow));
+  box-shadow:var(--shadow-s); transition:transform var(--t-fast);
+}
+.column-orb svg{width:52%; height:52%;}
+[data-theme="dark"] .column-orb{
+  background:radial-gradient(circle at 35% 30%, #fff6e0, var(--node-color,var(--glow)) 60%, var(--node-color,var(--glow)));
+  border:none; color:#221806;
+  filter:drop-shadow(0 0 12px var(--node-color,var(--glow)));
+  animation:twinkle 3.4s ease-in-out infinite;
+}
+.column-node:hover .column-orb, .column-node:focus-visible .column-orb{transform:scale(1.15);}
+.column-cap{width:34px; height:7px; background:var(--surface-2); border:1px solid var(--border); border-radius:2px 2px 0 0; flex-shrink:0;}
+.column-shaft{
+  width:20px; background:repeating-linear-gradient(90deg, var(--surface-2) 0 3px, var(--surface) 3px 6px);
+  border-inline:1px solid var(--border); flex-shrink:0;
+}
+.column-base{width:38px; height:8px; background:var(--surface-2); border:1px solid var(--border); border-radius:0 0 2px 2px; margin-top:-1px; flex-shrink:0;}
+.column-label{
+  position:absolute; bottom:-1.9rem; font-family:var(--font-latin); font-weight:700; font-size:.85rem; direction:ltr;
+  color:var(--text); background:var(--surface-a); backdrop-filter:blur(6px); padding:.12rem .5rem; border-radius:999px; white-space:nowrap;
+}
+@keyframes twinkle{0%,100%{filter:drop-shadow(0 0 9px var(--node-color,var(--glow)));} 50%{filter:drop-shadow(0 0 20px var(--node-color,var(--glow)));}}
+@media(max-width:600px){.colonnade{height:230px;}}
+
+/* ============================================================
+   8. INTRO / GRAMMAR CONCEPT
+   ============================================================ */
+.concept-grid{display:grid; grid-template-columns:1fr; gap:1.4rem; margin-bottom:1.6rem;}
+@media(min-width:840px){.concept-grid{grid-template-columns:1fr 1fr;}}
+.concept-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); padding:clamp(1.4rem,3vw,2rem); box-shadow:var(--shadow-s);}
+.concept-card h3{font-size:1.15rem; margin-bottom:.7rem; display:flex; align-items:center; gap:.5rem;}
+.concept-card h3 svg{width:22px; height:22px; color:var(--glow); flex-shrink:0;}
+.concept-card p{color:var(--text-2); font-size:.98rem; margin-bottom:.6rem;}
+.split-demo{margin-top:1.1rem; background:var(--bg); border-radius:var(--radius-m); padding:1.3rem 1rem; display:flex; flex-direction:column; align-items:center; gap:.7rem; overflow:hidden; border:1px dashed var(--border);}
+.split-demo .word-whole{font-family:var(--font-display); font-weight:700; font-size:1.5rem; direction:ltr; color:var(--text); transition:opacity .5s, transform .5s;}
+.split-demo .word-whole.faded{opacity:0; transform:scale(.85); position:absolute; pointer-events:none;}
+.split-demo .word-split{display:flex; gap:.6rem; font-family:var(--font-latin); font-weight:700; font-size:1.15rem; direction:ltr; opacity:0; transform:translateY(6px); transition:opacity .5s, transform .5s;}
+.split-demo .word-split.shown{opacity:1; transform:translateY(0);}
+.split-demo .stem-part{color:var(--text);}
+.split-demo .prefix-part{color:var(--glow-2); background:var(--error-bg); padding:.1rem .5rem; border-radius:8px;}
+.split-demo .word-split.shown .prefix-part{animation:flyToEnd .7s .3s both;}
+@keyframes flyToEnd{0%{transform:translateX(-140px) scale(1.15);} 100%{transform:translateX(0) scale(1);}}
+.split-demo .arrow-row{font-size:1.3rem; color:var(--text-2); direction:ltr;}
+
+.case-legend{display:grid; grid-template-columns:1fr; gap:1rem; margin-bottom:1.6rem;}
+@media(min-width:640px){.case-legend{grid-template-columns:1fr 1fr;}}
+.case-card{border-radius:var(--radius-m); padding:1.2rem 1.3rem; border:1.5px solid var(--border); background:var(--surface); display:flex; gap:.9rem; align-items:flex-start;}
+.case-card .case-icon{width:40px; height:40px; border-radius:12px; display:grid; place-items:center; flex-shrink:0; color:#1A1408;}
+.case-card .case-icon svg{width:20px; height:20px;}
+.case-card h4{font-size:1rem; margin-bottom:.3rem;}
+.case-card p{font-size:.9rem; color:var(--text-2);}
+.case-card .q-badge{direction:ltr; font-family:var(--font-latin); font-weight:700; color:var(--text);}
+
+.tip-box{display:flex; gap:.9rem; align-items:flex-start; background:linear-gradient(120deg, var(--success-bg), var(--surface)); border:1px solid var(--success); border-radius:var(--radius-m); padding:1.2rem 1.3rem;}
+.tip-box svg{width:26px; height:26px; color:var(--success); flex-shrink:0; margin-top:.1rem;}
+.tip-box p{font-size:.92rem; color:var(--text);}
+.tip-box strong{color:var(--success);}
+
+/* ============================================================
+   9. WORD FAMILY SECTION
+   ============================================================ */
+.family-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.1rem; margin-bottom:2rem;}
+.family-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); padding:1.3rem; text-align:center; box-shadow:var(--shadow-s); transition:transform var(--t-fast), box-shadow var(--t-fast);}
+.family-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-m);}
+.family-card .fam-icon{width:52px; height:52px; border-radius:14px; margin-inline:auto; display:grid; place-items:center; background:color-mix(in srgb, var(--glow) 15%, var(--surface)); color:var(--glow); margin-bottom:.8rem;}
+.family-card .fam-icon svg{width:26px; height:26px;}
+.family-card .de{font-size:1.1rem; display:block; margin-bottom:.3rem;}
+.family-card p{font-size:.85rem; color:var(--text-2);}
+
+.verbs-compare{overflow-x:auto; border-radius:var(--radius-l); border:1px solid var(--border);}
+.compare-table{min-width:560px; font-size:.92rem;}
+.compare-table th, .compare-table td{padding:.9rem 1.1rem; text-align:start; border-bottom:1px solid var(--border);}
+.compare-table thead th{background:var(--surface-2); font-weight:800;}
+.compare-table tbody tr:last-child td{border-bottom:none;}
+.compare-table td:first-child{font-family:var(--font-latin); font-weight:700; direction:ltr; color:var(--glow); white-space:nowrap;}
+.compare-table td:nth-child(2){color:var(--text-2); font-size:.85rem; white-space:nowrap;}
+
+/* ============================================================
+   10. VERB ACCORDIONS
+   ============================================================ */
+.verb-toolbar{display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-bottom:1.4rem;}
+.chip-filter{padding:.5rem 1.1rem; border-radius:999px; border:1.5px solid var(--border); font-size:.85rem; font-weight:700; background:var(--surface); color:var(--text-2); direction:ltr; transition:all var(--t-fast);}
+.chip-filter:hover{border-color:var(--glow); color:var(--text);}
+.chip-filter.active{background:var(--glow); border-color:var(--glow); color:#1A1408;}
+.verb-progress-label{text-align:center; font-size:.86rem; color:var(--text-2); margin-bottom:2rem; font-weight:600;}
+.verb-progress-label strong{color:var(--glow); direction:ltr; display:inline-block;}
+
+.verb-accordion-list{display:flex; flex-direction:column; gap:1rem;}
+.verb-item{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); overflow:hidden; box-shadow:var(--shadow-s); scroll-margin-top:calc(var(--header-h) + 16px); transition:box-shadow var(--t-fast);}
+.verb-item.open{box-shadow:var(--shadow-m);}
+.verb-item-header{width:100%; display:flex; align-items:stretch;}
+.verb-speak-icon-btn{flex-shrink:0; width:52px; display:grid; place-items:center; color:var(--text-2); transition:color var(--t-fast), background var(--t-fast);}
+.verb-speak-icon-btn:hover, .verb-speak-icon-btn:focus-visible{color:var(--card-accent,var(--glow)); background:var(--surface-2);}
+.verb-speak-icon-btn svg{width:19px; height:19px;}
+.verb-toggle-btn{flex:1; min-width:0; display:flex; align-items:center; gap:1rem; padding:1.1rem 1.3rem 1.1rem .2rem; text-align:start;}
+.verb-toggle-btn:hover{background:var(--surface-2);}
+.verb-icon{width:52px; height:52px; border-radius:14px; flex-shrink:0; display:grid; place-items:center; background:color-mix(in srgb, var(--card-accent,var(--glow)) 16%, var(--surface)); color:var(--card-accent,var(--glow));}
+.verb-icon svg{width:27px; height:27px;}
+.verb-header-text{flex:1; min-width:0; text-align:start;}
+.verb-prefix-eyebrow{font-family:var(--font-latin); font-size:.7rem; font-weight:800; letter-spacing:.1em; direction:ltr; color:var(--card-accent,var(--glow)); text-transform:uppercase;}
+.verb-infinitive{font-size:1.2rem; font-weight:700; display:block; margin-block:.1rem .2rem;}
+.verb-meaning-short{color:var(--text-2); font-size:.86rem; display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden;}
+.verb-header-right{display:flex; align-items:center; gap:.8rem; flex-shrink:0;}
+.case-tag{color:#1A1408; background:var(--card-accent,var(--glow));}
+.accordion-chevron{width:22px; height:22px; transition:transform var(--t-med); color:var(--text-2); flex-shrink:0;}
+.verb-item.open .accordion-chevron{transform:rotate(180deg); color:var(--card-accent,var(--glow));}
+
+.accordion-body{display:grid; grid-template-rows:0fr; transition:grid-template-rows var(--t-med);}
+.verb-item.open .accordion-body{grid-template-rows:1fr;}
+.accordion-body-inner{overflow:hidden;}
+.accordion-content-pad{padding:0 1.3rem 1.4rem;}
+
+.speak-trigger{display:inline-flex; align-items:center; gap:.4rem; direction:ltr; color:var(--text); border-radius:10px; transition:color var(--t-fast);}
+.speak-trigger:hover, .speak-trigger:focus-visible{color:var(--card-accent,var(--glow));}
+.speak-trigger svg{width:16px; height:16px; opacity:.55; flex-shrink:0;}
+.speak-trigger.speaking{color:var(--card-accent,var(--glow));}
+.speak-trigger.speaking svg{opacity:1; animation:wiggle .5s ease-in-out infinite;}
+@keyframes wiggle{0%,100%{transform:scale(1);} 50%{transform:scale(1.18);}}
+
+.table-scroll{overflow-x:auto; border-radius:var(--radius-m); border:1px solid var(--border); margin-block:1rem;}
+.conj-table{font-size:.86rem; min-width:480px;}
+.conj-table th, .conj-table td{padding:.6rem .8rem; text-align:center; border-bottom:1px solid var(--border); direction:ltr;}
+.conj-table thead th{background:color-mix(in srgb, var(--card-accent,var(--glow)) 12%, var(--surface-2)); font-family:var(--font-latin); font-weight:800; font-size:.8rem;}
+.conj-table tbody th{font-family:var(--font-latin); font-weight:700; text-align:right; color:var(--text-2); white-space:nowrap; font-size:.82rem;}
+.conj-table tbody tr:last-child td, .conj-table tbody tr:last-child th{border-bottom:none;}
+.conj-table td .de{cursor:pointer; border-radius:6px; padding:.2rem .5rem; transition:background var(--t-fast), color var(--t-fast);}
+.conj-table td .de:hover, .conj-table td .de:focus-visible{background:var(--bg); color:var(--card-accent,var(--glow));}
+
+.native-tip{display:flex; gap:.6rem; align-items:flex-start; background:var(--bg); border-radius:var(--radius-m); padding:.9rem 1rem; margin-bottom:1.2rem; font-size:.87rem; color:var(--text-2);}
+.native-tip svg{width:19px; height:19px; color:var(--glow); flex-shrink:0; margin-top:.15rem;}
+
+.examples-title{font-size:.95rem; font-weight:800; margin-bottom:.7rem; display:flex; align-items:center; gap:.4rem;}
+.examples-title svg{width:17px; height:17px; color:var(--card-accent,var(--glow));}
+.example-item{background:var(--bg); border-radius:var(--radius-m); padding:1rem 1.1rem; margin-bottom:.7rem; border:1px solid var(--border);}
+.example-tense-tag{font-size:.68rem; font-weight:800; color:var(--card-accent,var(--glow)); direction:ltr; letter-spacing:.05em; text-transform:uppercase;}
+.example-de{display:block; width:100%; text-align:start; font-family:var(--font-latin); font-weight:600; font-size:1.04rem; direction:ltr; margin-block:.35rem .3rem; cursor:pointer; line-height:1.6; border-radius:8px; padding:.2rem .3rem; transition:background var(--t-fast);}
+.example-de:hover, .example-de:focus-visible{background:var(--surface);}
+.example-de.speaking{background:color-mix(in srgb, var(--card-accent,var(--glow)) 10%, var(--surface));}
+.example-de .w{transition:background var(--t-fast), color var(--t-fast); border-radius:5px; padding:0 .12rem;}
+.example-de .w.speaking-word{background:var(--glow); color:#1A1408;}
+.example-ar{color:var(--text-2); font-size:.88rem; margin-bottom:.6rem;}
+.example-actions{display:flex; flex-wrap:wrap; gap:.5rem;}
+
+.bonus-examples{margin-top:1rem; padding-top:1rem; border-top:1px dashed var(--border);}
+.bonus-label{font-size:.8rem; font-weight:800; color:var(--text-2); margin-bottom:.6rem; display:flex; align-items:center; gap:.4rem;}
+.bonus-label svg{width:15px; height:15px; color:var(--card-accent,var(--glow));}
+.bonus-item{display:flex; align-items:flex-start; justify-content:space-between; gap:.8rem; padding:.6rem 0; border-bottom:1px solid var(--border);}
+.bonus-item:last-child{border-bottom:none;}
+.bonus-text{flex:1; min-width:0;}
+.bonus-de{display:block; font-family:var(--font-latin); font-weight:600; direction:ltr; text-align:start; cursor:pointer; font-size:.98rem; border-radius:6px;}
+.bonus-de:hover{color:var(--card-accent,var(--glow));}
+.bonus-ar{color:var(--text-2); font-size:.85rem; margin-top:.15rem;}
+.bonus-speak-btn{flex-shrink:0; width:34px; height:34px; border-radius:50%; display:grid; place-items:center; background:var(--surface); border:1px solid var(--border); color:var(--text-2); transition:all var(--t-fast);}
+.bonus-speak-btn:hover{color:var(--card-accent,var(--glow)); border-color:var(--card-accent,var(--glow));}
+.bonus-speak-btn svg{width:15px; height:15px;}
+
+.builder-widget{margin-top:.9rem; padding-top:.9rem; border-top:1px dashed var(--border);}
+.builder-zone{display:flex; flex-wrap:wrap; gap:.5rem; min-height:48px; padding:.6rem; border-radius:var(--radius-m); background:var(--surface); border:1.5px dashed var(--border); margin-bottom:.6rem; direction:ltr;}
+.builder-zone.answer-zone{background:color-mix(in srgb, var(--card-accent,var(--glow)) 7%, var(--surface));}
+.word-tile{font-family:var(--font-latin); font-weight:700; font-size:.92rem; padding:.45rem .85rem; border-radius:10px; background:var(--bg); border:1.5px solid var(--border); color:var(--text); cursor:pointer; transition:transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);}
+.word-tile:hover{transform:translateY(-2px); box-shadow:var(--shadow-s); border-color:var(--card-accent,var(--glow));}
+.builder-feedback{font-size:.86rem; font-weight:700; min-height:1.4em; margin-bottom:.4rem;}
+.builder-feedback.correct{color:var(--success);}
+.builder-feedback.wrong{color:var(--error);}
+.shake{animation:shake .4s;}
+@keyframes shake{10%,90%{transform:translateX(-2px);} 20%,80%{transform:translateX(4px);} 30%,50%,70%{transform:translateX(-7px);} 40%,60%{transform:translateX(7px);}}
+.pop-correct{animation:popcorrect .4s var(--ease);}
+@keyframes popcorrect{0%{transform:scale(1);} 45%{transform:scale(1.02);} 100%{transform:scale(1);}}
+
+/* ============================================================
+   11. DIALOGUE SECTION
+   ============================================================ */
+.dialogue-shell{max-width:720px; margin-inline:auto;}
+.dialogue-controls{display:flex; justify-content:center; margin-bottom:1.6rem;}
+.dialogue-list{display:flex; flex-direction:column; gap:.9rem;}
+.dlg-line{display:flex; gap:.8rem; max-width:88%;}
+.dlg-line.role-b{margin-inline-start:auto; flex-direction:row-reverse;}
+.dlg-avatar{width:38px; height:38px; border-radius:50%; flex-shrink:0; display:grid; place-items:center; color:#1A1408; font-weight:800; font-size:.8rem;}
+.dlg-line.role-a .dlg-avatar{background:linear-gradient(135deg,var(--glow),var(--glow-2));}
+.dlg-line.role-b .dlg-avatar{background:linear-gradient(135deg,#9BBF6B,#6B8F5A);}
+.dlg-bubble{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); padding:.85rem 1rem; box-shadow:var(--shadow-s); flex:1;}
+.dlg-line.role-b .dlg-bubble{background:color-mix(in srgb, var(--glow) 6%, var(--surface));}
+.dlg-de{display:block; width:100%; text-align:start; font-family:var(--font-latin); font-weight:600; direction:ltr; cursor:pointer; border-radius:6px; font-size:1rem; line-height:1.55;}
+.dlg-de .w{border-radius:4px; padding:0 .1rem; transition:background var(--t-fast);}
+.dlg-de .w.speaking-word{background:var(--glow); color:#1A1408;}
+.dlg-ar{color:var(--text-2); font-size:.86rem; margin-top:.3rem;}
+.dlg-name{font-size:.72rem; font-weight:800; color:var(--text-2); margin-bottom:.2rem; direction:ltr;}
+
+/* ============================================================
+   12. FLASHCARDS
+   ============================================================ */
+.fc-toolbar{display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:2rem; flex-wrap:wrap;}
+.fc-progress{font-family:var(--font-latin); font-weight:700; font-size:.9rem; color:var(--text-2); direction:ltr;}
+.flashcards-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1.4rem;}
+.flashcard{perspective:1400px; height:225px;}
+.flashcard-inner{position:relative; width:100%; height:100%; transition:transform .7s var(--ease); transform-style:preserve-3d; cursor:pointer;}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg);}
+.fc-face{position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:var(--radius-l); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.2rem; text-align:center; box-shadow:var(--shadow-m); border:1px solid var(--border);}
+.fc-front{background:linear-gradient(155deg, color-mix(in srgb, var(--card-accent,var(--glow)) 20%, var(--surface)), var(--surface));}
+.fc-front svg{width:34px; height:34px; color:var(--card-accent,var(--glow)); margin-bottom:.6rem;}
+.fc-front .de{font-size:1.28rem; font-weight:700;}
+.fc-front .fc-hint{font-size:.74rem; color:var(--text-2); margin-top:.5rem;}
+.fc-back{background:var(--card-accent,var(--glow)); color:#1A1408; transform:rotateY(180deg);}
+.fc-back p{font-size:.9rem; margin-bottom:.5rem;}
+.fc-back .fc-case{font-size:.72rem; font-weight:800; background:rgba(26,20,8,.18); padding:.25rem .7rem; border-radius:999px; direction:ltr;}
+
+/* ============================================================
+   13. QUIZ
+   ============================================================ */
+.quiz-shell{max-width:680px; margin-inline:auto;}
+.quiz-progress-row{display:flex; align-items:center; gap:.9rem; margin-bottom:1.6rem;}
+.quiz-progress-track{flex:1; height:8px; border-radius:999px; background:var(--border); overflow:hidden;}
+.quiz-progress-fill{height:100%; background:linear-gradient(90deg,var(--glow),var(--glow-2)); width:0%; transition:width var(--t-med); border-radius:999px;}
+.quiz-progress-label{font-size:.82rem; font-weight:700; color:var(--text-2); white-space:nowrap; direction:ltr;}
+.quiz-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:clamp(1.4rem,4vw,2.2rem); box-shadow:var(--shadow-m);}
+.quiz-question{font-size:1.1rem; font-weight:700; margin-bottom:1.3rem;}
+.quiz-options{display:grid; gap:.7rem;}
+.quiz-option{text-align:start; padding:.9rem 1.1rem; border-radius:var(--radius-m); border:1.5px solid var(--border); background:var(--bg); font-size:.96rem; transition:all var(--t-fast); display:flex; align-items:center; justify-content:space-between; gap:.6rem;}
+.quiz-option:hover:not(:disabled){border-color:var(--glow);}
+.quiz-option.correct{background:var(--success-bg); border-color:var(--success); color:var(--success);}
+.quiz-option.wrong{background:var(--error-bg); border-color:var(--error); color:var(--error);}
+.quiz-option svg{width:18px; height:18px; flex-shrink:0;}
+.quiz-footer{display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem; gap:1rem;}
+.quiz-result{text-align:center; padding:1.5rem 0;}
+.quiz-result svg{width:64px; height:64px; color:var(--glow); margin-inline:auto; margin-bottom:1rem;}
+.quiz-result .score-big{font-family:var(--font-display); font-size:2.6rem; font-weight:700; color:var(--glow); direction:ltr;}
+.quiz-result p{color:var(--text-2); margin-top:.5rem; max-width:420px; margin-inline:auto;}
+
+/* ============================================================
+   14. FOOTER & BACK-TO-TOP
+   ============================================================ */
+.site-footer{padding-block:3rem 2.2rem; text-align:center; border-top:1px solid var(--border); color:var(--text-2); font-size:.9rem;}
+.site-footer strong{color:var(--text); font-family:var(--font-latin); direction:ltr; display:inline-block;}
+.site-footer .foot-icons{display:flex; justify-content:center; gap:.8rem; margin-block:1rem; opacity:.5;}
+.site-footer .foot-icons svg{width:20px; height:20px;}
+.back-to-top{position:fixed; bottom:1.6rem; inset-inline-end:1.6rem; width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,var(--glow),var(--glow-2)); color:#1A1408; display:grid; place-items:center; box-shadow:var(--shadow-m); opacity:0; transform:translateY(16px) scale(.8); pointer-events:none; transition:all var(--t-fast); z-index:500;}
+.back-to-top.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
+.back-to-top svg{width:20px; height:20px;}
+.back-to-top:hover{transform:translateY(-3px) scale(1.05);}
+
+/* ============================================================
+   15. PRINT
+   ============================================================ */
+@media print{
+  .site-header,.back-to-top,.progress-bar,.search-panel,.example-actions,.builder-widget,.fc-toolbar,.flashcards-grid,.quiz-section,.verb-toolbar,.nav-toggle,.colonnade{display:none !important;}
+  body{background:#fff !important; color:#000 !important;}
+  .verb-item{box-shadow:none !important; border:1px solid #ccc !important; page-break-inside:avoid;}
+  .accordion-body{grid-template-rows:1fr !important;}
+}
+
+/* ============================================================
+   16. RESPONSIVE FINE-TUNING
+   ============================================================ */
+@media(max-width:480px){
+  .conj-table{font-size:.78rem;}
+  .quiz-footer{flex-direction:column; align-items:stretch;}
+  .flashcards-grid{grid-template-columns:1fr 1fr;}
+  .flashcard{height:195px;}
+  .dlg-line{max-width:96%;}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ============ SVG ICON SPRITE ============ -->
+<svg style="display:none" aria-hidden="true">
+<defs>
+<symbol id="icon-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M4.2 4.2l1.85 1.85M17.95 17.95l1.85 1.85M2.5 12h2.6M18.9 12h2.6M4.2 19.8l1.85-1.85M17.95 6.05l1.85-1.85"/></g></symbol>
+<symbol id="icon-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20.5 14.4A8.5 8.5 0 1 1 9.6 3.5a7 7 0 0 0 10.9 10.9z"/></symbol>
+<symbol id="icon-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.7-4.7"/></g></symbol>
+<symbol id="icon-menu" viewBox="0 0 24 24"><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></g></symbol>
+<symbol id="icon-close" viewBox="0 0 24 24"><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></g></symbol>
+<symbol id="icon-speaker" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.6l5 4V5.5l-5 4H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/><path d="M18.9 6.2a9 9 0 0 1 0 11.6"/></g></symbol>
+<symbol id="icon-replay" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 1 1 2.6 5.9M4 12V6.5M4 12h5.5"/></symbol>
+<symbol id="icon-shuffle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h3.6L15 18h5.5M3 18h3.6L15 6h5.5"/><path d="M17.5 3.5L21 6l-3.5 2.5M17.5 20.5L21 18l-3.5-2.5"/></g></symbol>
+<symbol id="icon-check-circle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="M7.8 12.3l2.7 2.7 5.6-6"/></g></symbol>
+<symbol id="icon-x-circle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="M9 9l6 6M15 9l-6 6"/></g></symbol>
+<symbol id="icon-arrow-up" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6"/><path d="M5.5 12.5L12 6l6.5 6.5"/></g></symbol>
+<symbol id="icon-lightbulb" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 2.5A6.5 6.5 0 0 0 8.2 14.3c.7.6 1.1 1.4 1.1 2.2h5.4c0-.8.4-1.6 1.1-2.2A6.5 6.5 0 0 0 12 2.5z"/></g></symbol>
+<symbol id="icon-puzzle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M9 4h3.2a1.6 1.6 0 0 1 1.5 2.2 1.6 1.6 0 0 0 1.5 2.2H18a2 2 0 0 1 2 2v3.2a1.6 1.6 0 0 0-2.2 1.5 1.6 1.6 0 0 0 2.2 1.5V19a2 2 0 0 1-2 2h-3.2a1.6 1.6 0 0 1 0-3.2 1.6 1.6 0 0 0-1.6-1.6H9a2 2 0 0 1-2-2v-3a1.6 1.6 0 0 0 0-3.2A1.6 1.6 0 0 1 8.6 6.2 1.6 1.6 0 0 0 9 4z"/></symbol>
+<symbol id="icon-chevron-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></symbol>
+<symbol id="icon-trophy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 6H4.5A2.5 2.5 0 0 0 7 9.5M17 6h2.5A2.5 2.5 0 0 1 17 9.5"/><path d="M12 14v3M9 20.5h6M9.5 20.5l.7-3.5h3.6l.7 3.5"/></g></symbol>
+<symbol id="icon-expand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H5a1 1 0 0 0-1 1v4M15 4h4a1 1 0 0 1 1 1v4M9 20H5a1 1 0 0 1-1-1v-4M15 20h4a1 1 0 0 0 1-1v-4"/></g></symbol>
+<symbol id="icon-layers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l9 4.7-9 4.7-9-4.7L12 3z"/><path d="M3 12.3l9 4.7 9-4.7M3 17l9 4.7L21 17" stroke-linecap="round"/></g></symbol>
+<!-- standing / stehen-family icons -->
+<symbol id="icon-column" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="4" width="8" height="2.2"/><path d="M10 6.2v12M14 6.2v12"/><rect x="7" y="18.2" width="10" height="2.2"/></g></symbol>
+<symbol id="icon-sunrise" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5h17"/><path d="M6.5 17.5a5.5 5.5 0 0 1 11 0"/><path d="M12 8v2.3M6.2 12.2l1.5 1.3M17.8 12.2l-1.5 1.3"/></g></symbol>
+<symbol id="icon-medal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9.8L7 3M15 9.8l2-6.8"/><circle cx="12" cy="14.2" r="5"/><path d="M9.6 14.2l1.7 1.7 3.1-3.5"/></g></symbol>
+<symbol id="icon-sprout" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8.5"/><path d="M12 12.5c0-4-3-5.5-6.5-5.5-.3 4.2 2.9 6 6.5 5.5z"/><path d="M12 12.5c0-3.2 2.7-4.5 5.5-4.5.3 3.5-2.3 5-5.5 4.5z"/></g></symbol>
+<symbol id="icon-hand-offer" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13.2c0-1 .8-1.8 1.8-1.8h4.6c.7 0 1.4.2 2 .6l2.8 1.8h3.8a1.6 1.6 0 0 1 0 3.2h-6.2"/><path d="M3 13.2V19h4"/><circle cx="15.5" cy="5.8" r="2.3"/></g></symbol>
+<symbol id="icon-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.2-5.7-6.2-10.3a6.2 6.2 0 1 1 12.4 0C18.2 15.3 12 21 12 21z"/><circle cx="12" cy="10.6" r="2.1"/></g></symbol>
+<symbol id="icon-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 3.2l6.8 2.6v5.7c0 4.4-2.9 7.9-6.8 8.8-3.9-.9-6.8-4.4-6.8-8.8V5.8L12 3.2z"/></symbol>
+<symbol id="icon-standing" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="10" y="3" width="4" height="15" rx="1"/><path d="M6 20.5h12"/></g></symbol>
+<symbol id="icon-lying" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="9.5" width="18" height="5" rx="1"/><path d="M4 20.5h16"/></g></symbol>
+<symbol id="icon-sitting" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 4v9.5M6.5 13.5H15M15 4v13"/><path d="M6.5 13.5a3.2 3.2 0 0 0 3.2 3.2H15"/></g></symbol>
+<symbol id="icon-hanging" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2.3"/><circle cx="12" cy="7" r="2"/><path d="M12 9v5.5"/><rect x="7.5" y="14.5" width="9" height="6" rx="1"/></g></symbol>
+</defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-badge"><svg><use href="#icon-column"/></svg></span>
+      <span>Säulenhalle <span class="de">bei Nacht</span></span>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="التنقل الرئيسي">
+      <a href="#hero">الرئيسية</a>
+      <a href="#intro">القاعدة</a>
+      <a href="#family">عائلة الكلمة</a>
+      <a href="#verbs">الأفعال</a>
+      <a href="#dialogue">حوار</a>
+      <a href="#flashcards">البطاقات</a>
+      <a href="#quiz">الاختبار</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="بحث" aria-expanded="false"><svg><use href="#icon-search"/></svg></button>
+      <button class="icon-btn" id="fullscreenToggle" aria-label="وضع ملء الشاشة"><svg><use href="#icon-expand"/></svg></button>
+      <div class="speech-settings-wrap">
+        <button class="icon-btn" id="speechSettingsToggle" aria-label="إعدادات النطق" aria-expanded="false"><svg><use href="#icon-speaker"/></svg></button>
+        <div class="speech-popover" id="speechPopover">
+          <label for="rateSlider">سرعة النطق: <span id="rateValue">0.9x</span></label>
+          <input type="range" id="rateSlider" min="0.6" max="1.3" step="0.1" value="0.9">
+          <label for="voiceSelect">الصوت الألماني المستخدم</label>
+          <select id="voiceSelect"><option>جارٍ البحث عن الأصوات…</option></select>
+        </div>
+      </div>
+      <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع الليلي والنهاري" aria-pressed="false">
+        <svg class="icon-sun"><use href="#icon-sun"/></svg>
+        <svg class="icon-moon"><use href="#icon-moon"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false"><svg><use href="#icon-menu"/></svg></button>
+    </div>
+  </div>
+  <div class="search-panel" id="searchPanel">
+    <input type="text" id="searchInput" placeholder="ابحث عن فعل، مثل: verstehen أو نجاح..." aria-label="ابحث داخل الدرس">
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-content reveal in-view">
+      <span class="eyebrow"><svg width="14" height="14"><use href="#icon-layers"/></svg> Wortfeld · حقل كلمات</span>
+      <h1>عائلة الفعل <span class="de-display">stehen</span> — إصدار الدراسة الليلية</h1>
+      <p>سبعة أفعال ألمانية شديدة الأهمية (منها verstehen وbestehen!)، أغلبها غير منفصل هذه المرة، بتصريف قوي غير منتظم وحوار طلابي حقيقي قبل امتحان. انقر أي عمود أدناه للانتقال إلى شرحه الكامل.</p>
+    </div>
+    <div class="colonnade reveal" id="colonnade" aria-label="أعمدة تمثل الأفعال السبعة"></div>
+  </div>
+</section>
+
+<!-- ============ INTRO / GRAMMAR CONCEPT ============ -->
+<section class="section" id="intro">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">القاعدة النحوية</span>
+      <h2>كيف تعمل هذه الأفعال؟</h2>
+      <p>قبل الغوص في الأفعال السبعة، إليك الأساس النحوي الذي يجمعها — وهذه المرة، غير المنفصل هو الأغلبية.</p>
+    </div>
+    <div class="concept-grid reveal">
+      <div class="concept-card">
+        <h3><svg><use href="#icon-layers"/></svg> ما هو حقل الكلمات (Wortfeld)؟</h3>
+        <p><span class="de">Wortfeld</span> يعني مجموعة كلمات تدور حول فكرة مركزية واحدة. هنا، الفكرة المركزية هي الوقوف والثبات <span class="de">(stehen)</span>، وكل بادئة تُضاف إليه لتنتج فعلًا جديدًا: من النهوض الصباحي إلى فهم قاعدة نحوية أو النجاح في امتحان.</p>
+        <p>هذه الطريقة في تعلّم الكلمات تساعدك على حفظ مفردات كثيرة دفعة واحدة وربطها ببعضها بدلاً من حفظها بشكل منفصل.</p>
+      </div>
+      <div class="concept-card">
+        <h3><svg><use href="#icon-puzzle"/></svg> غير منفصلة هذه المرة! (untrennbar / trennbar)</h3>
+        <p>على عكس الدروس السابقة، أربعة من الأفعال السبعة <span class="de">(verstehen, bestehen, entstehen, widerstehen)</span> غير منفصلة، بينما ثلاثة فقط منفصلة.</p>
+        <div class="split-demo">
+          <div class="word-whole de" id="splitWhole">aufstehen</div>
+          <div class="arrow-row">⬇</div>
+          <div class="word-split" id="splitParts">
+            <span class="stem-part">Ich stehe um sieben Uhr ...</span>
+            <span class="prefix-part">auf!</span>
+          </div>
+          <button class="btn btn-ghost btn-sm" id="replaySplit"><svg><use href="#icon-replay"/></svg> إعادة العرض</button>
+        </div>
+        <p style="margin-top:.9rem;">أما <span class="de">verstehen</span> مثلاً: البادئة <span class="de">ver-</span> غير منفصلة أبدًا، فتبقى ملتصقة دائمًا: <span class="de">ich verstehe</span>، وليس <span class="de">ich stehe... ver</span>.</p>
+      </div>
+    </div>
+    <div class="case-legend reveal">
+      <div class="case-card">
+        <span class="case-icon" style="background:var(--glow);"><svg><use href="#icon-hand-offer"/></svg></span>
+        <div><h4><span class="q-badge">Dativ + Nominativ</span></h4>
+        <p>يظهر مع <span class="de">zustehen</span> للتعبير عمّا يحقّه لشخص. الشيء المستحَق في حالة Nominativ، والشخص في حالة Dativ. مثال: <button type="button" class="de speak-el" style="text-decoration:underline; text-underline-offset:3px;">Diese Pause steht mir zu.</button></p></div>
+      </div>
+      <div class="case-card">
+        <span class="case-icon" style="background:var(--glow-2);"><svg><use href="#icon-shield"/></svg></span>
+        <div><h4>الداتيف <span class="q-badge">(Dativ)</span></h4>
+        <p>يظهر مع <span class="de">widerstehen</span> للتعبير عن المقاومة. مثال: <button type="button" class="de speak-el" style="text-decoration:underline; text-underline-offset:3px;">Ich widerstehe der Versuchung.</button></p></div>
+      </div>
+    </div>
+    <div class="tip-box reveal">
+      <svg><use href="#icon-lightbulb"/></svg>
+      <p><strong>نصيحة نحوية للمتحدث الأصلي:</strong> <span class="de">stehen</span> فعل قوي (unregelmäßig): الماضي البسيط <span class="de">stand</span> وليس <span class="de">stehte</span>، وينتقل هذا التغيير الصوتي إلى كل مشتقاته: <span class="de">verstand, bestand, entstand...</span> كذلك، الأفعال التي تصف حركة أو تحوّلاً مثل <span class="de">aufstehen</span> و<span class="de">entstehen</span> تُصرَّف مع <span class="de">sein</span> في Perfekt، بينما البقية — التي لا تصف حركة فعلية — تُصرَّف مع <span class="de">haben</span>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORD FAMILY SECTION ============ -->
+<section class="section" id="family" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">عائلة الكلمة</span>
+      <h2>ماذا يخرج من جذر stehen؟</h2>
+      <p>أسماء وصفات مرتبطة، ومقارنة سريعة بين أفعال الوضعية الألمانية الأربعة الشهيرة.</p>
+    </div>
+    <div class="family-grid reveal" id="familyGrid"></div>
+    <div class="verbs-compare reveal">
+      <table class="compare-table">
+        <thead><tr><th>Verb</th><th>السؤال</th><th>الشرح</th></tr></thead>
+        <tbody id="compareTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VERBS SECTION (accordion) ============ -->
+<section class="section" id="verbs">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">الأفعال السبعة</span>
+      <h2>كل بادئة ومعناها الكامل</h2>
+      <p>انقر على أي فعل لفتح شرحه الكامل: التصريف، النصائح، والجمل التفاعلية.</p>
+    </div>
+    <div class="verb-toolbar reveal" id="verbToolbar"></div>
+    <p class="verb-progress-label reveal">تم استكشاف <strong id="verbProgressCount">0</strong> / 7 أفعال</p>
+    <div class="verb-accordion-list" id="verbCardsContainer"></div>
+  </div>
+</section>
+
+<!-- ============ DIALOGUE SECTION ============ -->
+<section class="section" id="dialogue" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">تطبيق واقعي</span>
+      <h2>حوار قبل الامتحان</h2>
+      <p>محادثة قصيرة بين صديقين تجمع الأفعال السبعة في سياق التشجيع قبل امتحان مهم. انقر أي سطر لسماعه، أو استمع للحوار كاملاً.</p>
+    </div>
+    <div class="dialogue-shell reveal">
+      <div class="dialogue-controls">
+        <button class="btn btn-primary" id="playDialogueBtn"><svg><use href="#icon-speaker"/></svg> استمع للحوار كاملاً</button>
+      </div>
+      <div class="dialogue-list" id="dialogueContainer"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLASHCARDS SECTION ============ -->
+<section class="section" id="flashcards">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">مراجعة سريعة</span>
+      <h2>بطاقات تعليمية قابلة للقلب</h2>
+      <p>انقر على أي بطاقة لقلبها ورؤية المعنى.</p>
+    </div>
+    <div class="fc-toolbar reveal">
+      <button class="btn btn-ghost" id="shuffleCards"><svg><use href="#icon-shuffle"/></svg> ترتيب عشوائي</button>
+      <span class="fc-progress" id="fcProgress">0 / 7 تمت مراجعتها</span>
+    </div>
+    <div class="flashcards-grid reveal" id="flashcardsContainer"></div>
+  </div>
+</section>
+
+<!-- ============ QUIZ SECTION ============ -->
+<section class="section" id="quiz" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">اختبر نفسك</span>
+      <h2>اختبار شامل على الدرس</h2>
+      <p>أسئلة تغطي المعنى، التصريف، الحالة الإعرابية، وعائلة الكلمة والحوار.</p>
+    </div>
+    <div class="quiz-shell reveal" id="quizContainer"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="foot-icons" aria-hidden="true"><svg><use href="#icon-column"/></svg><svg><use href="#icon-medal"/></svg><svg><use href="#icon-shield"/></svg></div>
+  <p>درس تفاعلي موسّع لعائلة الفعل <span class="de">stehen</span> — صُمم لجلسات دراسة مريحة وعميقة في وضع ليلي مدروس.</p>
+  <p style="margin-top:.6rem;">إعداد: <strong>Herr Mohamed Yassin</strong></p>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى"><svg><use href="#icon-arrow-up"/></svg></button>
+
+<script>
+/* ============================================================
+   SHARED CONJUGATION PATTERNS
+   stehen is a STRONG (irregular) verb: Präteritum uses vowel
+   change (stand), not a weak -te suffix. Some prefixed verbs
+   are separable, some inseparable; auxiliary varies (haben/sein).
+   ============================================================ */
+const PRONOUNS = ['ich','du','er / sie / es','wir','ihr','sie / Sie'];
+const STEM_PRAESENS    = ['stehe','stehst','steht','stehen','steht','stehen'];
+const STEM_PRAETERITUM = ['stand','standst','stand','standen','standet','standen'];
+const HABEN = ['habe','hast','hat','haben','habt','haben'];
+const SEIN  = ['bin','bist','ist','sind','seid','sind'];
+
+const verbsData = [
+  {
+    key:'aufstehen', prefix:'auf', icon:'icon-sunrise', color:'#D4AF6A', separable:true, aux:'sein',
+    caseLabel:'intransitiv (sein)', caseType:'intr',
+    meaning:'النهوض أو الوقوف بعد الجلوس أو الاستيقاظ من النوم.',
+    partizip:'aufgestanden', tip:null,
+    sentences:[
+      {tense:'Präsens',    de:'Ich stehe um sieben Uhr auf.',      ar:'أنهض الساعة السابعة.'},
+      {tense:'Präteritum', de:'Ich stand um sieben Uhr auf.',      ar:'نهضتُ الساعة السابعة.'},
+      {tense:'Perfekt',    de:'Ich bin um sieben Uhr aufgestanden.',ar:'لقد نهضتُ الساعة السابعة.'}
+    ],
+    bonus:[
+      {de:'Er steht jeden Morgen früh auf.', ar:'ينهض كل صباح باكرًا.'},
+      {de:'Bitte steh auf, wenn die Lehrerin hereinkommt.', ar:'رجاءً قف عندما تدخل المعلمة.'}
+    ]
+  },
+  {
+    key:'verstehen', prefix:'ver', icon:'icon-lightbulb', color:'#4FB3A3', separable:false, aux:'haben',
+    caseLabel:'Akkusativ (untrennbar)', caseType:'akk',
+    meaning:'إدراك معنى شيء أو استيعابه ذهنيًا — غير منفصل دائمًا.',
+    partizip:'verstanden',
+    tip:'من أهم وأكثر الأفعال الألمانية استخدامًا. البادئة ver- غير منفصلة أبدًا، ولذلك Partizip II هو verstanden بدون ge-.',
+    sentences:[
+      {tense:'Präsens',    de:'Ich verstehe die Grammatik.',       ar:'أفهم القواعد.'},
+      {tense:'Präteritum', de:'Ich verstand die Grammatik.',       ar:'فهمتُ القواعد.'},
+      {tense:'Perfekt',    de:'Ich habe die Grammatik verstanden.',ar:'لقد فهمتُ القواعد.'}
+    ],
+    bonus:[
+      {de:'Verstehst du diesen Satz?', ar:'هل تفهم هذه الجملة؟'},
+      {de:'Wir haben uns auf Anhieb verstanden.', ar:'تفاهمنا من أول لحظة.'}
+    ]
+  },
+  {
+    key:'bestehen', prefix:'be', icon:'icon-medal', color:'#D9A441', separable:false, aux:'haben',
+    caseLabel:'Akkusativ (untrennbar)', caseType:'akk',
+    meaning:'النجاح في اجتياز اختبار أو امتحان — غير منفصل دائمًا.',
+    partizip:'bestanden',
+    tip:'لهذا الفعل معانٍ إضافية غنية حسب حرف الجر المرافق: bestehen aus + Dativ (يتكوّن من)، bestehen auf + Dativ (يصرّ على)، وبدون حرف جر (يوجد/يستمر). مثال: «Diese Münze besteht aus purem Gold» (تتكوّن هذه العملة من ذهب خالص).',
+    sentences:[
+      {tense:'Präsens',    de:'Sie besteht die Prüfung.',       ar:'تنجح في الامتحان.'},
+      {tense:'Präteritum', de:'Sie bestand die Prüfung.',       ar:'نجحت في الامتحان.'},
+      {tense:'Perfekt',    de:'Sie hat die Prüfung bestanden.', ar:'لقد نجحت في الامتحان.'}
+    ],
+    bonus:[
+      {de:'Dieser Kuchen besteht aus Schokolade und Nüssen.', ar:'تتكوّن هذه الكعكة من الشوكولاتة والمكسرات.'},
+      {de:'Er besteht auf seinem Recht.', ar:'يصرّ على حقه.'}
+    ]
+  },
+  {
+    key:'entstehen', prefix:'ent', icon:'icon-sprout', color:'#7FA65C', separable:false, aux:'sein',
+    caseLabel:'intransitiv (sein, untrennbar)', caseType:'intr',
+    meaning:'النشوء أو الظهور إلى الوجود تدريجيًا — غير منفصل، ويُصرَّف مع sein.',
+    partizip:'entstanden', tip:null,
+    sentences:[
+      {tense:'Präsens',    de:'Ein neues Problem entsteht.',       ar:'تنشأ مشكلة جديدة.'},
+      {tense:'Präteritum', de:'Ein neues Problem entstand.',       ar:'نشأت مشكلة جديدة.'},
+      {tense:'Perfekt',    de:'Ein neues Problem ist entstanden.',ar:'لقد نشأت مشكلة جديدة.'}
+    ],
+    bonus:[
+      {de:'Wie entsteht Regen?', ar:'كيف تنشأ الأمطار؟'},
+      {de:'Durch den Streit entstand ein Missverständnis.', ar:'نشأ سوء تفاهم بسبب الخلاف.'}
+    ]
+  },
+  {
+    key:'zustehen', prefix:'zu', icon:'icon-hand-offer', color:'#C97A5C', separable:true, aux:'haben',
+    caseLabel:'Dativ + Nominativ', caseType:'dat',
+    meaning:'استحقاق شخص لشيء بحكم الحق — الشيء المستحَق يكون فاعلًا (Nominativ)، والشخص يكون في حالة الجر (Dativ).',
+    partizip:'zugestanden',
+    tip:'غالبًا ما يبدأ الجملة بالـ Dativ لأنه محور المعنى: «Mir steht eine Pause zu» (حرفيًا: تقف استراحة لي) بدلاً من البدء بالفاعل النحوي.',
+    sentences:[
+      {tense:'Präsens',    de:'Mir steht eine Pause zu.',        ar:'يحقّ لي أخذ استراحة.'},
+      {tense:'Präteritum', de:'Mir stand eine Pause zu.',        ar:'كان يحقّ لي أخذ استراحة.'},
+      {tense:'Perfekt',    de:'Mir hat eine Pause zugestanden.', ar:'لقد كان يحقّ لي أخذ استراحة.'}
+    ],
+    bonus:[
+      {de:'Ihm steht ein Urlaubstag zu.', ar:'يحقّ له الحصول على يوم إجازة.'},
+      {de:'Ich nehme nur, was mir zusteht.', ar:'لا آخذ إلا ما يحقّ لي.'}
+    ]
+  },
+  {
+    key:'feststehen', prefix:'fest', icon:'icon-pin', color:'#6B8FB8', separable:true, aux:'haben',
+    caseLabel:'intransitiv', caseType:'intr',
+    meaning:'كون الأمر مؤكَّدًا أو مُحدَّدًا بشكل نهائي، دون تغيير.',
+    partizip:'festgestanden', tip:null,
+    sentences:[
+      {tense:'Präsens',    de:'Der Termin steht fest.',         ar:'الموعد محدَّد ومؤكَّد.'},
+      {tense:'Präteritum', de:'Der Termin stand fest.',         ar:'كان الموعد محدَّدًا.'},
+      {tense:'Perfekt',    de:'Der Termin hat festgestanden.', ar:'لقد كان الموعد محدَّدًا.'}
+    ],
+    bonus:[
+      {de:'Es steht fest, dass wir gewinnen werden.', ar:'من المؤكَّد أننا سنفوز.'},
+      {de:'Noch steht nichts fest.', ar:'لا شيء مؤكَّد بعد.'}
+    ]
+  },
+  {
+    key:'widerstehen', prefix:'wider', icon:'icon-shield', color:'#A6702E', separable:false, aux:'haben',
+    caseLabel:'Dativ (untrennbar)', caseType:'dat',
+    meaning:'مقاومة إغراء أو رغبة والامتناع عن الاستسلام لها — غير منفصل دائمًا.',
+    partizip:'widerstanden', tip:null,
+    sentences:[
+      {tense:'Präsens',    de:'Ich widerstehe der Versuchung.',       ar:'أقاوم الإغراء.'},
+      {tense:'Präteritum', de:'Ich widerstand der Versuchung.',      ar:'قاومتُ الإغراء.'},
+      {tense:'Perfekt',    de:'Ich habe der Versuchung widerstanden.',ar:'لقد قاومتُ الإغراء.'}
+    ],
+    bonus:[
+      {de:'Sie kann der Schokolade einfach nicht widerstehen.', ar:'لا تستطيع ببساطة مقاومة الشوكولاتة.'},
+      {de:'Niemand kann diesem Angebot widerstehen.', ar:'لا أحد يستطيع مقاومة هذا العرض.'}
+    ]
+  }
+];
+
+const familyData = [
+  {icon:'icon-column', de:'der Standpunkt', ar:'وجهة النظر — الموقف الفكري من قضية ما.'},
+  {icon:'icon-lightbulb', de:'das Verständnis', ar:'الفهم أو التفهّم — القدرة على إدراك شيء أو تقبّله.'},
+  {icon:'icon-check-circle', de:'selbstverständlich', ar:'بديهي، من البديهي أو الطبيعي جدًا.'},
+  {icon:'icon-pin', de:'der Stand', ar:'الوضع الحالي، أو جناح العرض في معرض.'},
+  {icon:'icon-shield', de:'beständig', ar:'ثابت، مستمر، ومقاوم للتغيّر بمرور الوقت.'}
+];
+
+const compareData = [
+  {icon:'icon-standing', verb:'stehen', q:'wo?', explain:'وضعية عمودية واقفة — كالزجاجات والأكواب.'},
+  {icon:'icon-lying', verb:'liegen', q:'wo?', explain:'وضعية أفقية مستلقية — كالكتب على الطاولة.'},
+  {icon:'icon-sitting', verb:'sitzen', q:'wo?', explain:'وضعية جالسة — للكائنات الحية أو أشياء مثبتة بإحكام.'},
+  {icon:'icon-hanging', verb:'hängen', q:'wo?', explain:'وضعية معلّقة أو متدلية — كالصور والملابس.'}
+];
+
+const dialogueData = [
+  {role:'a', name:'Layla', de:'Sami, morgen steht meine große Prüfung fest, und ich habe solche Angst!', ar:'يا سامي، غدًا موعد امتحاني الكبير مؤكَّد، وأشعر بخوف شديد!'},
+  {role:'b', name:'Sami', de:'Das kann ich gut verstehen, aber du hast doch die ganze Woche gelernt.', ar:'أتفهّم هذا جيدًا، لكنك ذاكرتِ طوال الأسبوع.'},
+  {role:'a', name:'Layla', de:'Stimmt, aber manchmal entsteht bei mir einfach Panik vor Prüfungen.', ar:'صحيح، لكن أحيانًا ينتابني الذعر ببساطة قبل الامتحانات.'},
+  {role:'b', name:'Sami', de:'Steh morgen einfach früh auf, iss ein gutes Frühstück, und du wirst bestehen!', ar:'انهضي باكرًا غدًا، وتناولي فطورًا جيدًا، وستنجحين بالتأكيد!'},
+  {role:'a', name:'Layla', de:'Danke! Ich muss auch der Versuchung widerstehen, die ganze Nacht wach zu bleiben.', ar:'شكرًا! يجب أيضًا أن أقاوم إغراء السهر طوال الليل.'},
+  {role:'b', name:'Sami', de:'Genau, Schlaf ist wichtiger. Und danach steht dir sowieso eine Belohnung zu!', ar:'بالضبط، النوم أهم. وعلى أي حال، يحقّ لك مكافأة بعد ذلك!'},
+  {role:'a', name:'Layla', de:'Du hast recht. Ich glaube, ich verstehe den Stoff wirklich gut.', ar:'معك حق. أعتقد أنني أفهم المادة جيدًا فعلاً.'},
+  {role:'b', name:'Sami', de:'Siehst du? Es steht fest: Du wirst diese Prüfung bestehen!', ar:'أرأيتِ؟ الأمر مؤكَّد: ستنجحين في هذا الامتحان!'}
+];
+
+const quizData = [
+  { q:'ماذا يعني الفعل «verstehen»؟',
+    options:['إدراك معنى شيء واستيعابه','النهوض من النوم','مقاومة الإغراء','الاستحقاق'], correct:0 },
+  { q:'ما هي صيغة Präteritum الصحيحة لـ «stehen» (فعل قوي/غير منتظم)؟',
+    options:['stehte','stand','stehen','gestehte'], correct:1 },
+  { q:'أي فعل من السبعة يُصرَّف مع «sein» في Perfekt؟',
+    options:['verstehen','bestehen','aufstehen','widerstehen'], correct:2 },
+  { q:'ما هو Partizip II الصحيح للفعل «bestehen»؟',
+    options:['gebestanden','bestanden','bestandet','beganden'], correct:1 },
+  { q:'أكمل: «Ich habe der Versuchung ___.»',
+    options:['widergestanden','widerstanden','widerstehen','gewiderstanden'], correct:1 },
+  { q:'ما الحالة الإعرابية المرتبطة بفعل «zustehen»؟',
+    options:['Akkusativ فقط','Dativ + Nominativ','Genitiv','لا يحتاج فاعلاً'], correct:1 },
+  { q:'ماذا يعني «bestehen aus + Dativ»؟',
+    options:['النجاح في امتحان','الإصرار على شيء','التكوّن من شيء','الوجود فقط'], correct:2 },
+  { q:'أكمل بصيغة Präsens: «Ein neues Problem ___.»',
+    options:['entsteht','entstehst','entstehen','entstehte'], correct:0 },
+  { q:'أي بادئتين من السبع تجعلان الفعل غير منفصل (untrennbar)؟',
+    options:['auf- و zu-','ver- و be- (و ent-, wider-)','fest- و auf-','zu- و fest-'], correct:1 },
+  { q:'ماذا يعني الاسم «der Standpunkt»؟',
+    options:['وجهة النظر','الفهم','الاستحقاق','المقاومة'], correct:0 },
+  { q:'أي فعل من أفعال الوضعية الأربعة (stehen, liegen, sitzen, hängen) يصف أشياء معلّقة كالصور؟',
+    options:['stehen','liegen','hängen','sitzen'], correct:2 },
+  { q:'في حوار الامتحان، بماذا نصح سامي صديقته ليلى؟',
+    options:['بالسهر طوال الليل للمذاكرة','بالنوم الجيد والنهوض باكرًا','بإلغاء الامتحان','بعدم المذاكرة إطلاقًا'], correct:1 },
+  { q:'أكمل بصيغة Perfekt: «Sie hat die Prüfung ___.»',
+    options:['bestehen','bestanden','gebestanden','bestandet'], correct:1 },
+  { q:'ماذا يعني «feststehen»؟',
+    options:['كون الأمر مؤكَّدًا ومحدَّدًا','النجاح في امتحان','مقاومة إغراء','النشوء تدريجيًا'], correct:0 },
+  { q:'ما هي صيغة «wir» في Präteritum للفعل «aufstehen»؟',
+    options:['wir standen auf','wir stehten auf','wir aufstanden','wir standen'], correct:0 }
+];
+
+/* ============================================================
+   THEME MANAGEMENT
+   ============================================================ */
+function getPreferredTheme(){
+  const saved = localStorage.getItem('stehenLesson_theme');
+  if(saved) return saved;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  document.getElementById('themeToggle').setAttribute('aria-pressed', theme === 'dark');
+  localStorage.setItem('stehenLesson_theme', theme);
+}
+function initTheme(){
+  applyTheme(getPreferredTheme());
+  document.getElementById('themeToggle').addEventListener('click', ()=>{
+    const cur = document.documentElement.getAttribute('data-theme');
+    applyTheme(cur === 'dark' ? 'light' : 'dark');
+    localStorage.setItem('stehenLesson_theme_manual','1');
+  });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)=>{
+    if(!localStorage.getItem('stehenLesson_theme_manual')) applyTheme(e.matches ? 'dark' : 'light');
+  });
+}
+
+/* ============================================================
+   SPEECH SYNTHESIS
+   ============================================================ */
+let voicesList = [];
+let selectedVoice = null;
+let currentRate = 0.9;
+const supportsSpeech = 'speechSynthesis' in window;
+
+function loadVoices(){
+  if(!supportsSpeech) return;
+  voicesList = speechSynthesis.getVoices();
+  const deVoices = voicesList.filter(v => v.lang.toLowerCase().startsWith('de'));
+  selectedVoice = deVoices.find(v => v.lang.toLowerCase()==='de-de') || deVoices[0] || null;
+  populateVoiceSelect(deVoices);
+}
+function populateVoiceSelect(deVoices){
+  const sel = document.getElementById('voiceSelect');
+  if(!sel) return;
+  if(deVoices.length === 0){ sel.innerHTML = '<option>لا يوجد صوت ألماني مثبت على هذا الجهاز</option>'; return; }
+  sel.innerHTML = deVoices.map((v,i)=>`<option value="${i}">${v.name} — ${v.lang}</option>`).join('');
+  const idx = deVoices.indexOf(selectedVoice);
+  sel.value = idx >= 0 ? idx : 0;
+  sel.onchange = ()=>{ selectedVoice = deVoices[parseInt(sel.value,10)]; };
+}
+if(supportsSpeech){ loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
+
+function speak(text, opts={}){
+  if(!supportsSpeech) return;
+  speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'de-DE';
+  if(selectedVoice) utter.voice = selectedVoice;
+  utter.rate = opts.rate || currentRate;
+  if(opts.onStart) utter.onstart = opts.onStart;
+  if(opts.onEnd) utter.onend = opts.onEnd;
+  if(opts.onBoundary) utter.onboundary = (e)=>{ if(typeof e.charIndex === 'number') opts.onBoundary(e.charIndex); };
+  speechSynthesis.speak(utter);
+}
+function speakSimple(el){
+  const text = el.textContent.trim();
+  if(!text) return;
+  el.classList.add('speaking');
+  speak(text, { onEnd: ()=> el.classList.remove('speaking') });
+}
+function speakSentence(container, afterEnd){
+  const words = Array.from(container.querySelectorAll('.w'));
+  const text = container.textContent.trim();
+  const offsets = [];
+  let acc = 0;
+  words.forEach(w=>{ const len=w.textContent.length; offsets.push([acc, acc+len]); acc += len+1; });
+  container.classList.add('speaking');
+  speak(text, {
+    onBoundary:(ci)=> words.forEach((w,i)=> w.classList.toggle('speaking-word', ci >= offsets[i][0] && ci < offsets[i][1])),
+    onEnd:()=>{ words.forEach(w=>w.classList.remove('speaking-word')); container.classList.remove('speaking'); if(afterEnd) afterEnd(); }
+  });
+}
+function initSpeechDelegation(){
+  document.body.addEventListener('click', (e)=>{
+    const exDe = e.target.closest('.example-de, .dlg-de');
+    if(exDe){ speakSentence(exDe); return; }
+    const sBtn = e.target.closest('.speak-sentence-btn, .bonus-speak-btn');
+    if(sBtn){ const t = document.getElementById(sBtn.dataset.target); if(t) speakSimple(t); return; }
+    const bonusDe = e.target.closest('.bonus-de');
+    if(bonusDe){ speakSimple(bonusDe); return; }
+    const simple = e.target.closest('.speak-el');
+    if(simple){ speakSimple(simple); return; }
+  });
+}
+function initSpeechSettings(){
+  const toggle = document.getElementById('speechSettingsToggle');
+  const pop = document.getElementById('speechPopover');
+  toggle.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    const open = pop.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    if(open) document.getElementById('searchPanel').classList.remove('open');
+  });
+  const slider = document.getElementById('rateSlider');
+  const rateValue = document.getElementById('rateValue');
+  slider.addEventListener('input', ()=>{ currentRate = parseFloat(slider.value); rateValue.textContent = currentRate.toFixed(1) + 'x'; });
+}
+
+/* ============================================================
+   HERO COLONNADE
+   ============================================================ */
+function renderColonnade(){
+  const el = document.getElementById('colonnade');
+  const n = verbsData.length;
+  const heights = [88, 122, 74, 134, 98, 80, 116];
+  const nodes = verbsData.map((v,i)=>{
+    const leftPct = (((i+0.5)/n)*100).toFixed(1);
+    const h = heights[i % heights.length];
+    return `<button type="button" class="column-node" style="left:${leftPct}%;--node-color:${v.color}" data-goto="verb-${v.key}" aria-label="اذهب إلى شرح ${v.prefix}stehen">
+      <span class="column-orb" style="animation-delay:${(i*0.3).toFixed(2)}s"><svg><use href="#${v.icon}"/></svg></span>
+      <span class="column-cap"></span>
+      <span class="column-shaft" style="height:${h}px"></span>
+      <span class="column-base"></span>
+      <span class="column-label">${v.prefix}-</span>
+    </button>`;
+  }).join('');
+
+  el.innerHTML = `<div class="colonnade-ground"></div>${nodes}`;
+
+  el.querySelectorAll('.column-node').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const target = document.getElementById(btn.dataset.goto);
+      if(!target) return;
+      if(!target.classList.contains('open')) target.querySelector('.verb-toggle-btn').click();
+      setTimeout(()=> target.scrollIntoView({behavior:'smooth', block:'center'}), 60);
+    });
+  });
+}
+
+/* ============================================================
+   VERB ACCORDIONS
+   ============================================================ */
+const exploredSet = new Set();
+function updateVerbProgress(){
+  document.getElementById('verbProgressCount').textContent = exploredSet.size;
+}
+function verbItemHTML(v){
+  const infinitive = v.prefix + 'stehen';
+  const rows = PRONOUNS.map((pn, idx)=>{
+    const praesens = v.separable ? (STEM_PRAESENS[idx] + ' ' + v.prefix) : (v.prefix + STEM_PRAESENS[idx]);
+    const praeteritum = v.separable ? (STEM_PRAETERITUM[idx] + ' ' + v.prefix) : (v.prefix + STEM_PRAETERITUM[idx]);
+    const auxArr = v.aux === 'sein' ? SEIN : HABEN;
+    const perfekt = auxArr[idx] + ' ' + v.partizip;
+    return `<tr>
+      <th scope="row">${pn}</th>
+      <td><button type="button" class="de speak-el">${praesens}</button></td>
+      <td><button type="button" class="de speak-el">${praeteritum}</button></td>
+      <td><button type="button" class="de speak-el">${perfekt}</button></td>
+    </tr>`;
+  }).join('');
+
+  const examples = v.sentences.map((s,si)=>{
+    const id = `ex-${v.key}-${si}`;
+    const wordsHTML = s.de.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
+    return `<div class="example-item">
+      <span class="example-tense-tag">${s.tense}</span>
+      <button type="button" class="example-de de" id="${id}" aria-label="نطق الجملة: ${s.de}">${wordsHTML}</button>
+      <p class="example-ar">${s.ar}</p>
+      <div class="example-actions">
+        <button type="button" class="btn btn-ghost btn-sm speak-sentence-btn" data-target="${id}"><svg><use href="#icon-speaker"/></svg> استمع</button>
+        <button type="button" class="btn btn-ghost btn-sm builder-toggle-btn" data-builder="${id}-b"><svg><use href="#icon-puzzle"/></svg> كوّن الجملة</button>
+      </div>
+      <div class="builder-widget hidden" id="${id}-b" data-sentence="${s.de}"></div>
+    </div>`;
+  }).join('');
+
+  const bonusHTML = v.bonus.map((b,bi)=>{
+    const id = `bonus-${v.key}-${bi}`;
+    return `<div class="bonus-item">
+      <div class="bonus-text">
+        <button type="button" class="bonus-de de" id="${id}">${b.de}</button>
+        <p class="bonus-ar">${b.ar}</p>
+      </div>
+      <button type="button" class="bonus-speak-btn" data-target="${id}" aria-label="نطق الجملة"><svg><use href="#icon-speaker"/></svg></button>
+    </div>`;
+  }).join('');
+
+  return `<article class="verb-item" id="verb-${v.key}" data-prefix="${v.prefix}" style="--card-accent:${v.color}">
+    <div class="verb-item-header">
+      <button type="button" class="verb-speak-icon-btn speak-el" aria-label="نطق الفعل ${infinitive}"><svg><use href="#icon-speaker"/></svg></button>
+      <button type="button" class="verb-toggle-btn" aria-expanded="false" aria-controls="body-${v.key}">
+        <span class="verb-icon"><svg><use href="#${v.icon}"/></svg></span>
+        <span class="verb-header-text">
+          <span class="verb-prefix-eyebrow">${v.prefix}-</span>
+          <span class="verb-infinitive de">${infinitive}</span>
+          <span class="verb-meaning-short">${v.meaning}</span>
+        </span>
+        <span class="verb-header-right">
+          <span class="badge case-tag">${v.caseLabel}</span>
+          <svg class="accordion-chevron"><use href="#icon-chevron-down"/></svg>
+        </span>
+      </button>
+    </div>
+    <div class="accordion-body" id="body-${v.key}">
+      <div class="accordion-body-inner">
+        <div class="accordion-content-pad">
+          <div class="table-scroll">
+            <table class="conj-table">
+              <thead><tr><th scope="col">Pronomen</th><th scope="col">Präsens</th><th scope="col">Präteritum</th><th scope="col">Perfekt</th></tr></thead>
+              <tbody>${rows}</tbody>
+            </table>
+          </div>
+          ${v.tip ? `<div class="native-tip"><svg><use href="#icon-lightbulb"/></svg><p>${v.tip}</p></div>` : ''}
+          <div class="examples-block">
+            <h4 class="examples-title"><svg><use href="#icon-puzzle"/></svg>أمثلة على الأزمنة الثلاثة</h4>
+            ${examples}
+            <div class="bonus-examples">
+              <p class="bonus-label"><svg><use href="#icon-layers"/></svg>جمل إضافية للاستماع</p>
+              ${bonusHTML}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>`;
+}
+function renderVerbCards(){
+  document.getElementById('verbCardsContainer').innerHTML = verbsData.map(verbItemHTML).join('');
+}
+function initAccordions(){
+  document.getElementById('verbCardsContainer').addEventListener('click', (e)=>{
+    const btn = e.target.closest('.verb-toggle-btn');
+    if(!btn) return;
+    const item = btn.closest('.verb-item');
+    const isOpen = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    if(isOpen){ exploredSet.add(item.dataset.prefix); updateVerbProgress(); }
+  });
+}
+
+/* ============================================================
+   WORD FAMILY + COMPARISON TABLE
+   ============================================================ */
+function renderFamily(){
+  document.getElementById('familyGrid').innerHTML = familyData.map(f=>`
+    <div class="family-card">
+      <span class="fam-icon"><svg><use href="#${f.icon}"/></svg></span>
+      <button type="button" class="de speak-el" style="display:inline-block;">${f.de}</button>
+      <p>${f.ar}</p>
+    </div>`).join('');
+
+  document.getElementById('compareTableBody').innerHTML = compareData.map(c=>`
+    <tr>
+      <td><button type="button" class="speak-el" style="display:inline-flex; align-items:center; gap:.45rem; font-family:var(--font-latin); font-weight:700;"><svg width="16" height="16"><use href="#${c.icon}"/></svg>${c.verb}</button></td>
+      <td class="de">${c.q}</td>
+      <td>${c.explain}</td>
+    </tr>`).join('');
+}
+
+/* ============================================================
+   DIALOGUE
+   ============================================================ */
+function renderDialogue(){
+  document.getElementById('dialogueContainer').innerHTML = dialogueData.map((line,i)=>{
+    const wordsHTML = line.de.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
+    return `<div class="dlg-line role-${line.role}">
+      <span class="dlg-avatar">${line.name.charAt(0)}</span>
+      <div class="dlg-bubble">
+        <span class="dlg-name">${line.name}</span>
+        <button type="button" class="dlg-de" id="dlg-${i}" aria-label="نطق السطر">${wordsHTML}</button>
+        <p class="dlg-ar">${line.ar}</p>
+      </div>
+    </div>`;
+  }).join('');
+}
+let dialoguePlaying = false;
+function playDialogueSequential(index){
+  if(index >= dialogueData.length){ dialoguePlaying = false; return; }
+  const el = document.getElementById('dlg-'+index);
+  el.scrollIntoView({behavior:'smooth', block:'center'});
+  speakSentence(el, ()=> setTimeout(()=>playDialogueSequential(index+1), 250));
+}
+function initDialoguePlayAll(){
+  document.getElementById('playDialogueBtn').addEventListener('click', ()=>{
+    if(dialoguePlaying) return;
+    dialoguePlaying = true;
+    playDialogueSequential(0);
+  });
+}
+
+/* ============================================================
+   SENTENCE BUILDER
+   ============================================================ */
+function shuffleArray(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a;
+}
+function shuffleChildren(parent){ shuffleArray(Array.from(parent.children)).forEach(c=>parent.appendChild(c)); }
+function initSentenceBuilder(container){
+  const sentence = container.dataset.sentence;
+  const words = sentence.split(' ');
+  container.innerHTML = `
+    <div class="builder-zone bank-zone" role="list" aria-label="كلمات متاحة"></div>
+    <div class="builder-zone answer-zone" role="list" aria-label="ترتيبك للجملة"></div>
+    <p class="builder-feedback" aria-live="polite"></p>
+    <div class="example-actions">
+      <button type="button" class="btn btn-ghost btn-sm reset-builder-btn"><svg><use href="#icon-replay"/></svg> إعادة الترتيب</button>
+      <button type="button" class="btn btn-primary btn-sm check-builder-btn"><svg><use href="#icon-check-circle"/></svg> تحقّق</button>
+    </div>`;
+  const bank = container.querySelector('.bank-zone');
+  const answer = container.querySelector('.answer-zone');
+  const feedback = container.querySelector('.builder-feedback');
+  function makeTile(word){
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'word-tile de'; btn.textContent = word;
+    btn.addEventListener('click', ()=>{ (btn.parentElement===bank?answer:bank).appendChild(btn); feedback.textContent=''; feedback.className='builder-feedback'; });
+    return btn;
+  }
+  shuffleArray(words).forEach(w=>bank.appendChild(makeTile(w)));
+  container.querySelector('.reset-builder-btn').addEventListener('click', ()=>{
+    Array.from(answer.children).forEach(c=>bank.appendChild(c));
+    shuffleChildren(bank);
+    feedback.textContent=''; feedback.className='builder-feedback';
+  });
+  container.querySelector('.check-builder-btn').addEventListener('click', ()=>{
+    const order = Array.from(answer.children).map(c=>c.textContent).join(' ');
+    if(order === sentence && answer.children.length === words.length){
+      feedback.textContent = '✓ صحيح! أحسنت.'; feedback.className = 'builder-feedback correct';
+      container.classList.add('pop-correct'); setTimeout(()=>container.classList.remove('pop-correct'), 400);
+    } else {
+      feedback.textContent = '✗ ترتيب غير صحيح، حاول مجددًا.'; feedback.className = 'builder-feedback wrong';
+      container.classList.add('shake'); setTimeout(()=>container.classList.remove('shake'), 400);
+    }
+  });
+}
+function initBuilderToggles(){
+  document.body.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.builder-toggle-btn');
+    if(!btn) return;
+    const target = document.getElementById(btn.dataset.builder);
+    if(!target) return;
+    const isHidden = target.classList.contains('hidden');
+    if(isHidden){
+      target.classList.remove('hidden');
+      if(!target.dataset.initialized){ initSentenceBuilder(target); target.dataset.initialized = '1'; }
+      btn.innerHTML = '<svg><use href="#icon-chevron-down"/></svg> إخفاء التمرين';
+    } else {
+      target.classList.add('hidden');
+      btn.innerHTML = '<svg><use href="#icon-puzzle"/></svg> كوّن الجملة';
+    }
+  });
+}
+
+/* ============================================================
+   FLASHCARDS
+   ============================================================ */
+const reviewedSet = new Set();
+function flashcardHTML(v, idx){
+  const infinitive = v.prefix + 'stehen';
+  return `<div class="flashcard" data-idx="${idx}" tabindex="0" role="button" aria-label="بطاقة الفعل ${infinitive}، انقر لقلبها ورؤية المعنى">
+    <div class="flashcard-inner">
+      <div class="fc-face fc-front" style="--card-accent:${v.color}">
+        <svg><use href="#${v.icon}"/></svg>
+        <span class="de">${infinitive}</span>
+        <span class="fc-hint">انقر لرؤية المعنى</span>
+      </div>
+      <div class="fc-face fc-back" style="--card-accent:${v.color}">
+        <p>${v.meaning}</p>
+        <span class="fc-case">${v.caseLabel}</span>
+      </div>
+    </div>
+  </div>`;
+}
+function updateFcProgress(){ document.getElementById('fcProgress').textContent = `${reviewedSet.size} / ${verbsData.length} تمت مراجعتها`; }
+function renderFlashcards(){
+  const container = document.getElementById('flashcardsContainer');
+  container.innerHTML = verbsData.map(flashcardHTML).join('');
+  container.querySelectorAll('.flashcard').forEach(card=>{
+    card.addEventListener('click', ()=>{ card.classList.toggle('flipped'); reviewedSet.add(card.dataset.idx); updateFcProgress(); });
+  });
+  container.addEventListener('keydown', (e)=>{
+    if(e.key==='Enter' || e.key===' '){ const card = e.target.closest('.flashcard'); if(card){ e.preventDefault(); card.click(); } }
+  });
+}
+function initFlashcardControls(){
+  document.getElementById('shuffleCards').addEventListener('click', ()=> shuffleChildren(document.getElementById('flashcardsContainer')));
+}
+
+/* ============================================================
+   QUIZ
+   ============================================================ */
+let quizIndex = 0, quizScore = 0, quizAnswered = false;
+function renderQuizQuestion(){
+  const container = document.getElementById('quizContainer');
+  if(quizIndex >= quizData.length){ renderQuizResult(); return; }
+  const q = quizData[quizIndex];
+  quizAnswered = false;
+  container.innerHTML = `
+    <div class="quiz-progress-row">
+      <span class="quiz-progress-label">${quizIndex+1} / ${quizData.length}</span>
+      <div class="quiz-progress-track"><div class="quiz-progress-fill" style="width:${(quizIndex/quizData.length)*100}%"></div></div>
+      <span class="quiz-progress-label" id="quizScoreLabel">النتيجة: ${quizScore}</span>
+    </div>
+    <div class="quiz-card">
+      <p class="quiz-question">${q.q}</p>
+      <div class="quiz-options" aria-live="polite">
+        ${q.options.map((opt,i)=>`<button type="button" class="quiz-option" data-i="${i}"><span>${opt}</span></button>`).join('')}
+      </div>
+      <div class="quiz-footer">
+        <button type="button" class="btn btn-ghost btn-sm" id="quizRestartBtn"><svg><use href="#icon-replay"/></svg> إعادة البدء</button>
+        <button type="button" class="btn btn-primary" id="quizNextBtn" disabled>التالي</button>
+      </div>
+    </div>`;
+  container.querySelectorAll('.quiz-option').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(quizAnswered) return;
+      quizAnswered = true;
+      const i = parseInt(btn.dataset.i,10);
+      container.querySelectorAll('.quiz-option').forEach((b,bi)=>{
+        b.disabled = true;
+        if(bi===q.correct){ b.classList.add('correct'); b.insertAdjacentHTML('beforeend','<svg><use href="#icon-check-circle"/></svg>'); }
+        else if(bi===i){ b.classList.add('wrong'); b.insertAdjacentHTML('beforeend','<svg><use href="#icon-x-circle"/></svg>'); }
+      });
+      if(i===q.correct) quizScore++;
+      document.getElementById('quizNextBtn').disabled = false;
+      document.getElementById('quizScoreLabel').textContent = `النتيجة: ${quizScore}`;
+    });
+  });
+  document.getElementById('quizNextBtn').addEventListener('click', ()=>{ quizIndex++; renderQuizQuestion(); });
+  document.getElementById('quizRestartBtn').addEventListener('click', resetQuiz);
+}
+function renderQuizResult(){
+  const container = document.getElementById('quizContainer');
+  const pct = Math.round((quizScore/quizData.length)*100);
+  const msg = pct>=90 ? 'ممتاز! أنت تتقن هذا الدرس بشكل رائع.' : pct>=70 ? 'جيد جدًا! راجع بعض النقاط ثم حاول مجددًا لتثبيت المعلومة.' : 'لا بأس، التكرار مفتاح الإتقان — راجع البطاقات والحوار ثم أعد المحاولة.';
+  container.innerHTML = `<div class="quiz-card"><div class="quiz-result">
+      <svg><use href="#icon-trophy"/></svg>
+      <div class="score-big">${quizScore}/${quizData.length}</div>
+      <p>${msg}</p>
+      <button type="button" class="btn btn-primary" id="quizRestartBtn2" style="margin-top:1.2rem;"><svg><use href="#icon-replay"/></svg> إعادة المحاولة</button>
+  </div></div>`;
+  document.getElementById('quizRestartBtn2').addEventListener('click', resetQuiz);
+}
+function resetQuiz(){ quizIndex=0; quizScore=0; renderQuizQuestion(); }
+
+/* ============================================================
+   TOOLBAR FILTER + SEARCH
+   ============================================================ */
+function renderVerbToolbar(){
+  const toolbar = document.getElementById('verbToolbar');
+  const allChip = `<button type="button" class="chip-filter active" data-prefix="all" aria-pressed="true">الكل</button>`;
+  const chips = verbsData.map(v=>`<button type="button" class="chip-filter" data-prefix="${v.prefix}" aria-pressed="false">${v.prefix}-</button>`).join('');
+  toolbar.innerHTML = allChip + chips;
+  toolbar.querySelectorAll('.chip-filter').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      toolbar.querySelectorAll('.chip-filter').forEach(c=>{ c.classList.remove('active'); c.setAttribute('aria-pressed','false'); });
+      chip.classList.add('active'); chip.setAttribute('aria-pressed','true');
+      filterVerbCards(chip.dataset.prefix);
+    });
+  });
+}
+function filterVerbCards(prefix){
+  document.querySelectorAll('.verb-item').forEach(card=>{
+    card.classList.toggle('hidden', prefix !== 'all' && card.dataset.prefix !== prefix);
+  });
+}
+function initSearch(){
+  const toggle = document.getElementById('searchToggle');
+  const panel = document.getElementById('searchPanel');
+  const input = document.getElementById('searchInput');
+  toggle.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    const open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    document.getElementById('speechPopover').classList.remove('open');
+    if(open) setTimeout(()=>input.focus(), 200);
+  });
+  input.addEventListener('input', ()=>{
+    const q = input.value.trim().toLowerCase();
+    document.querySelectorAll('.verb-item').forEach(card=>{
+      card.classList.toggle('hidden', q.length>0 && !card.textContent.toLowerCase().includes(q));
+    });
+    if(q.length>0){
+      const toolbar = document.getElementById('verbToolbar');
+      toolbar.querySelectorAll('.chip-filter').forEach(c=>{ c.classList.remove('active'); c.setAttribute('aria-pressed','false'); });
+      const allChip = toolbar.querySelector('[data-prefix="all"]');
+      allChip.classList.add('active'); allChip.setAttribute('aria-pressed','true');
+    }
+  });
+}
+
+/* ============================================================
+   SCROLL REVEAL, NAV, PROGRESS BAR, BACK-TO-TOP, FULLSCREEN
+   ============================================================ */
+function initScrollReveal(){
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in-view'); obs.unobserve(entry.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(item=>obs.observe(item));
+}
+function initNav(){
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  navToggle.addEventListener('click', ()=>{
+    const open = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+    navToggle.innerHTML = open ? '<svg><use href="#icon-close"/></svg>' : '<svg><use href="#icon-menu"/></svg>';
+  });
+  mainNav.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{ mainNav.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); navToggle.innerHTML = '<svg><use href="#icon-menu"/></svg>'; });
+  });
+  const sectionIds = ['hero','intro','family','verbs','dialogue','flashcards','quiz'];
+  const sections = sectionIds.map(id=>document.getElementById(id));
+  const links = Array.from(mainNav.querySelectorAll('a'));
+  const navObs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const idx = sections.indexOf(entry.target);
+        links.forEach(l=>l.classList.remove('active'));
+        if(links[idx]) links[idx].classList.add('active');
+      }
+    });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  sections.forEach(s=> s && navObs.observe(s));
+}
+function initScrollExtras(){
+  const bar = document.getElementById('progressBar');
+  const backBtn = document.getElementById('backToTop');
+  let ticking = false;
+  function onScroll(){
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(()=>{
+      const scrollTop = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (height>0 ? (scrollTop/height*100) : 0) + '%';
+      backBtn.classList.toggle('show', scrollTop > 500);
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+  onScroll();
+}
+function initFullscreen(){
+  document.getElementById('fullscreenToggle').addEventListener('click', ()=>{
+    if(!document.fullscreenElement) document.documentElement.requestFullscreen?.().catch(()=>{});
+    else document.exitFullscreen?.();
+  });
+}
+
+/* ============================================================
+   SPLIT DEMO
+   ============================================================ */
+function playSplitDemo(){
+  const whole = document.getElementById('splitWhole');
+  const split = document.getElementById('splitParts');
+  whole.classList.remove('faded'); split.classList.remove('shown');
+  void split.offsetWidth;
+  setTimeout(()=>{ whole.classList.add('faded'); split.classList.add('shown'); }, 900);
+}
+function initSplitDemo(){
+  document.getElementById('replaySplit').addEventListener('click', playSplitDemo);
+  const introSection = document.getElementById('intro');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting){ playSplitDemo(); obs.disconnect(); } });
+  }, {threshold:0.4});
+  obs.observe(introSection);
+}
+
+/* ============================================================
+   OUTSIDE CLICK HANDLERS
+   ============================================================ */
+function initOutsideClickHandlers(){
+  document.addEventListener('click', (e)=>{
+    const searchPanel = document.getElementById('searchPanel');
+    const searchToggle = document.getElementById('searchToggle');
+    if(searchPanel.classList.contains('open') && !searchPanel.contains(e.target) && !searchToggle.contains(e.target)){
+      searchPanel.classList.remove('open'); searchToggle.setAttribute('aria-expanded','false');
+    }
+    const pop = document.getElementById('speechPopover');
+    const popToggle = document.getElementById('speechSettingsToggle');
+    if(pop.classList.contains('open') && !pop.contains(e.target) && !popToggle.contains(e.target)){
+      pop.classList.remove('open'); popToggle.setAttribute('aria-expanded','false');
+    }
+  });
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', ()=>{
+  initTheme();
+  renderColonnade();
+  renderVerbCards();
+  initAccordions();
+  renderVerbToolbar();
+  updateVerbProgress();
+  renderFamily();
+  renderDialogue();
+  initDialoguePlayAll();
+  renderFlashcards();
+  updateFcProgress();
+  initFlashcardControls();
+  renderQuizQuestion();
+  initSpeechDelegation();
+  initSpeechSettings();
+  initBuilderToggles();
+  initSearch();
+  initNav();
+  initScrollReveal();
+  initScrollExtras();
+  initFullscreen();
+  initSplitDemo();
+  initOutsideClickHandlers();
+});
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="family-verben-stehen" data-category="family-verben" data-title="Säulenhalle bei Nacht — عائلة الفعل stehen" data-root="../../" defer></script>
+</body>
+</html>

@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الألمانية A2 — الدرس الثاني عشر: السفر والختام 🎓</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Alkalami&family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════
+   DESIGN: Vintage Grand Tour Travel Poster
+   
+   The GRAND FINALE. The concept: a 1930s Art Deco
+   travel poster promoting Germany — warm ochre,
+   deep burgundy, ivory, and midnight blue. Think
+   Deutsche Bahn vintage posters, Bauhaus influence,
+   WPA-era national park posters brought to digital.
+   
+   UNFORGETTABLE: An animated train that rides across
+   the hero, a genuine animated certificate at the
+   end that the student "earns," and a full course
+   review that feels like a travel itinerary recap.
+   
+   Fonts: Playfair Display (luxury serif display) +
+          Josefin Sans (geometric 1920s label style) +
+          Libre Baskerville (elegant body serif) +
+          Alkalami (beautiful Arabic)
+   
+   Feel: You've completed the journey. You're ready.
+   Auf Wiedersehen, und Willkommen in Deutschland!
+══════════════════════════════════════════════════ */
+:root {
+  --ochre:    #d4820a;
+  --ochre2:   #e8a020;
+  --ochre3:   #f8c84a;
+  --ochre-d:  rgba(212,130,10,0.12);
+  --ochre-d2: rgba(212,130,10,0.22);
+
+  --burg:     #8b1a2a;
+  --burg2:    #b02236;
+  --burg-d:   rgba(139,26,42,0.1);
+
+  --midnight: #0d1f3c;
+  --midnight2:#1a3460;
+  --midnight3:#254a88;
+  --mid-d:    rgba(13,31,60,0.08);
+
+  --ivory:    #faf6ec;
+  --ivory2:   #f0e8d0;
+  --ivory3:   #e4d8b4;
+
+  --sage:     #4a7a5a;
+  --sage-d:   rgba(74,122,90,0.1);
+
+  --text:     #1e1408;
+  --text2:    #5a4020;
+  --text3:    #9a8060;
+
+  --card:     #fffdf5;
+  --border:   rgba(212,130,10,0.18);
+  --border2:  rgba(212,130,10,0.38);
+
+  --r:  8px;
+  --rs: 4px;
+  --sh: 0 4px 24px rgba(30,20,8,0.14);
+}
+
+[data-theme="dark"] {
+  --ivory:    #14100a;
+  --ivory2:   #1e180e;
+  --ivory3:   #2a2218;
+  --card:     #181208;
+  --text:     #f0e8d0;
+  --text2:    #c8a868;
+  --text3:    #7a6040;
+  --border:   rgba(232,160,32,0.15);
+  --border2:  rgba(232,160,32,0.32);
+  --mid-d:    rgba(100,150,220,0.08);
+  --sh: 0 4px 32px rgba(0,0,0,0.6);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: 'Libre Baskerville', 'Alkalami', serif;
+  background: var(--ivory);
+  color: var(--text);
+  direction: rtl;
+  overflow-x: hidden;
+  transition: background .4s, color .4s;
+}
+
+/* Subtle paper texture */
+body::before {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    radial-gradient(ellipse 70% 40% at 20% 10%, rgba(212,130,10,0.04), transparent),
+    radial-gradient(ellipse 50% 60% at 80% 90%, rgba(139,26,42,0.04), transparent);
+}
+
+/* ── Progress ── */
+#spb {
+  position:fixed; top:0; left:0; right:0; height:4px;
+  background: linear-gradient(90deg, var(--burg), var(--ochre2), var(--ochre3), var(--ochre2), var(--burg));
+  transform-origin:right; transform:scaleX(0);
+  z-index:1001;
+}
+
+/* ══ NAV ══ */
+nav {
+  position:sticky; top:0; z-index:100;
+  background: var(--midnight);
+  border-bottom: 3px solid var(--ochre);
+  padding: 0 2rem; height:62px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+
+.nav-brand {
+  display:flex; align-items:center; gap:.8rem;
+  font-family:'Josefin Sans',sans-serif;
+  font-weight:700; font-size:.9rem;
+  color:var(--ochre3); letter-spacing:.1em; text-transform:uppercase;
+}
+.nav-chip {
+  font-family:'Josefin Sans',monospace;
+  background:var(--burg); color:var(--ivory2);
+  font-size:.62rem; font-weight:700;
+  padding:3px 9px; border-radius:2px; letter-spacing:.1em;
+}
+.nav-links { display:flex; gap:1.5rem; list-style:none; }
+.nav-links a {
+  font-size:.76rem; color:rgba(248,200,74,.65);
+  text-decoration:none; font-weight:600;
+  font-family:'Josefin Sans',sans-serif;
+  letter-spacing:.06em; text-transform:uppercase;
+  transition:color .2s;
+}
+.nav-links a:hover { color:var(--ochre3); }
+.tbtn {
+  width:34px; height:34px;
+  border:2px solid var(--ochre);
+  background:transparent; color:var(--ochre3);
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  font-size:.9rem; transition:all .2s;
+}
+.tbtn:hover { background:var(--ochre-d2); }
+
+/* ══ HERO — Vintage Poster ══ */
+.hero {
+  position:relative; z-index:1;
+  background: var(--midnight);
+  overflow:hidden;
+  padding-bottom:0;
+}
+
+/* Sky gradient layers — sunset */
+.hero-sky {
+  position:absolute; inset:0; z-index:0;
+  background:
+    linear-gradient(180deg,
+      #0d1f3c 0%,
+      #1a3460 30%,
+      #8b3a1a 65%,
+      #d4820a 80%,
+      #e8c040 100%
+    );
+  opacity:.9;
+}
+
+/* Stars */
+.hero-stars {
+  position:absolute; top:0; left:0; right:0; height:50%; z-index:1;
+  pointer-events:none;
+}
+
+/* Animated train track & train */
+.train-track {
+  position:absolute; bottom:0; left:0; right:0; height:6px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--text3) 0px, var(--text3) 20px,
+    transparent 20px, transparent 30px
+  );
+  z-index:3;
+}
+.train-rail-top, .train-rail-bot {
+  position:absolute; left:0; right:0;
+  height:2px; background:var(--ivory3); opacity:.5;
+}
+.train-rail-top { top:0; }
+.train-rail-bot { bottom:0; }
+
+.train {
+  position:absolute; bottom:6px;
+  z-index:4; animation:trainRide 18s linear infinite;
+  transform:translateX(-320px);
+  filter:drop-shadow(0 0 8px rgba(232,160,32,0.4));
+}
+@keyframes trainRide {
+  from { transform:translateX(-320px); }
+  to   { transform:translateX(calc(100vw + 50px)); }
+}
+
+/* Mountain silhouette */
+.hero-mountains {
+  position:absolute; bottom:0; left:0; right:0; z-index:2;
+}
+
+/* City silhouette */
+.hero-city {
+  position:absolute; bottom:6px; right:0; left:0; z-index:2;
+}
+
+.hero-content {
+  position:relative; z-index:5;
+  padding:5rem 3rem 6rem;
+  max-width:900px; margin:0 auto; text-align:center;
+}
+
+.hero-eyebrow {
+  font-family:'Josefin Sans',sans-serif;
+  font-size:.75rem; letter-spacing:.2em;
+  color:var(--ochre2); text-transform:uppercase;
+  display:block; margin-bottom:1.2rem;
+  animation: fadeUp .6s ease both;
+}
+
+.hero h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.5rem,7vw,5rem);
+  font-weight:900; font-style:italic;
+  line-height:1.1; margin-bottom:.6rem;
+  color:var(--ochre3);
+  text-shadow: 0 2px 20px rgba(212,130,10,0.3);
+  animation: fadeUp .7s ease .1s both;
+}
+
+.hero-sub {
+  font-family:'Josefin Sans',sans-serif;
+  font-size:clamp(1rem,2.5vw,1.4rem);
+  letter-spacing:.15em; text-transform:uppercase;
+  color:var(--ivory2); margin-bottom:2rem;
+  animation: fadeUp .7s ease .2s both;
+}
+
+.hero-badge-row {
+  display:flex; justify-content:center; gap:.6rem; flex-wrap:wrap;
+  animation: fadeUp .7s ease .3s both;
+}
+.hbadge {
+  font-family:'Josefin Sans',sans-serif;
+  font-size:.72rem; font-weight:600; letter-spacing:.08em;
+  text-transform:uppercase; padding:5px 14px;
+  border:1px solid; border-radius:2px;
+}
+.hb-o { background:var(--ochre-d2); color:var(--ochre3); border-color:rgba(232,160,32,.5); }
+.hb-r { background:var(--burg-d);   color:var(--burg2);  border-color:rgba(176,34,54,.4); }
+.hb-w { background:rgba(255,255,255,.08); color:var(--ivory2); border-color:rgba(255,255,255,.2); }
+
+/* ══ MAIN ══ */
+main {
+  position:relative; z-index:1;
+  max-width:980px; margin:0 auto;
+  padding:2rem 2rem 4rem;
+  display:flex; flex-direction:column; gap:3.5rem;
+}
+
+/* Section header */
+.sh {
+  display:flex; align-items:center; gap:1rem;
+  margin-bottom:1.5rem;
+  border-bottom:2px solid var(--ochre);
+  padding-bottom:.6rem;
+}
+.sh-num {
+  font-family:'Josefin Sans',sans-serif;
+  font-size:.72rem; letter-spacing:.12em; text-transform:uppercase;
+  background:var(--midnight); color:var(--ochre3);
+  padding:4px 10px; flex-shrink:0;
+}
+.sh-text h2 {
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem; font-style:italic; color:var(--midnight);
+}
+[data-theme="dark"] .sh-text h2 { color:var(--ochre2); }
+.sh-text p { font-size:.83rem; color:var(--text2); margin-top:2px; font-family:'Josefin Sans',sans-serif; }
+
+/* Card */
+.card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r); padding:1.75rem;
+  box-shadow:var(--sh);
+  animation: fadeUp .6s ease both;
+}
+.card:hover { border-color:var(--border2); }
+
+.quiz-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r); padding:1.75rem; box-shadow:var(--sh);
+}
+
+/* Tip */
+.tip {
+  display:flex; gap:1rem; align-items:flex-start;
+  padding:1rem 1.3rem; border-radius:var(--rs); margin:1rem 0;
+  border-right:4px solid;
+}
+.tip.oc { background:var(--ochre-d); border-color:var(--ochre2); }
+.tip.bu { background:var(--burg-d);  border-color:var(--burg2); }
+.tip.mi { background:var(--mid-d);   border-color:var(--midnight3); }
+.tip.sa { background:var(--sage-d);  border-color:var(--sage); }
+.tpic { font-size:1.2rem; flex-shrink:0; margin-top:3px; }
+.tip h4 { font-family:'Josefin Sans',sans-serif; font-size:.88rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-bottom:4px; }
+.tip.oc h4{color:var(--ochre);}  .tip.bu h4{color:var(--burg2);}
+.tip.mi h4{color:var(--midnight3);} .tip.sa h4{color:var(--sage);}
+.tip p { font-size:.85rem; color:var(--text2); line-height:1.8; }
+
+/* inline code */
+.de {
+  font-family:'Josefin Sans',monospace;
+  background:var(--ivory2); border-bottom:2px solid var(--ochre);
+  padding:2px 7px; font-size:.87em; color:var(--midnight2);
+  direction:ltr; display:inline-block; font-style:normal;
+}
+[data-theme="dark"] .de { background:var(--ivory3); color:var(--ochre2); }
+
+/* Table */
+.tw { overflow-x:auto; margin-top:.75rem; }
+table { width:100%; border-collapse:collapse; font-size:.9rem; }
+th {
+  background:var(--midnight); color:var(--ochre3);
+  padding:9px 14px; text-align:right;
+  font-family:'Josefin Sans',sans-serif; font-size:.75rem;
+  letter-spacing:.06em; text-transform:uppercase;
+}
+td { padding:9px 14px; border-bottom:1px solid var(--border); }
+tr:last-child td{border-bottom:none;} tr:hover td{background:var(--ivory2);}
+[data-theme="dark"] tr:hover td { background:var(--ivory3); }
+.tde { font-family:'Josefin Sans',monospace; color:var(--midnight2); font-weight:700; direction:ltr; text-align:left; }
+[data-theme="dark"] .tde { color:var(--ochre2); }
+.tex { color:var(--text2); font-size:.82rem; direction:ltr; text-align:left; }
+
+/* ══ TRAVEL VOCAB — Luggage tag cards ══ */
+.luggage-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(190px,1fr));
+  gap:.8rem;
+}
+.lug-tag {
+  background:var(--card);
+  border:2px solid var(--ochre);
+  border-radius:var(--rs);
+  padding:1rem;
+  cursor:pointer;
+  transition:all .25s;
+  position:relative;
+  overflow:hidden;
+}
+/* Luggage tag hole */
+.lug-tag::before {
+  content:'';
+  position:absolute; top:8px; right:10px;
+  width:12px; height:12px; border-radius:50%;
+  border:2px solid var(--ochre);
+  background:var(--ivory2);
+}
+/* Luggage tag stripe */
+.lug-tag::after {
+  content:'';
+  position:absolute; top:0; right:0; bottom:0;
+  width:5px; background:var(--ochre);
+}
+.lug-tag:hover { border-color:var(--burg); transform:rotate(-1deg) translateY(-3px); box-shadow:4px 4px 16px rgba(30,20,8,.2); }
+.lug-emoji { font-size:1.7rem; display:block; margin-bottom:.4rem; padding-top:.5rem; }
+.lug-de { font-family:'Josefin Sans',sans-serif; font-size:.88rem; font-weight:700; color:var(--midnight2); display:block; direction:ltr; margin-bottom:2px; letter-spacing:.02em; }
+[data-theme="dark"] .lug-de { color:var(--ochre2); }
+.lug-ar { font-size:.86rem; color:var(--text2); display:block; margin-bottom:3px; }
+.lug-ex { font-size:.72rem; color:var(--text3); direction:ltr; font-style:italic; }
+
+/* ══ COURSE REVIEW — Train schedule style ══ */
+.journey-timeline {
+  position:relative;
+  padding-right:2rem;
+}
+.journey-timeline::before {
+  content:'';
+  position:absolute; right:8px; top:0; bottom:0;
+  width:3px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--ochre) 0px, var(--ochre) 10px,
+    var(--ivory3) 10px, var(--ivory3) 16px
+  );
+}
+[data-theme="dark"] .journey-timeline::before {
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--ochre) 0px, var(--ochre) 10px,
+    var(--ivory3) 10px, var(--ivory3) 16px
+  );
+}
+
+.jt-stop {
+  display:flex; flex-direction:row-reverse; gap:1.2rem;
+  padding:1rem 0; align-items:flex-start;
+  animation:fadeUp .5s ease both;
+}
+.jt-dot {
+  width:20px; height:20px; border-radius:50%;
+  border:3px solid var(--ochre);
+  background:var(--card); flex-shrink:0;
+  position:relative; z-index:1;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.6rem;
+}
+.jt-body { flex:1; padding-bottom:.8rem; border-bottom:1px dashed var(--border); }
+.jt-stop:last-child .jt-body { border-bottom:none; }
+.jt-num {
+  font-family:'Josefin Sans',sans-serif;
+  font-size:.65rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ochre); display:block; margin-bottom:2px;
+}
+.jt-title {
+  font-family:'Playfair Display',serif;
+  font-size:1rem; font-style:italic;
+  color:var(--midnight2); display:block; margin-bottom:3px;
+}
+[data-theme="dark"] .jt-title { color:var(--ochre2); }
+.jt-desc { font-size:.83rem; color:var(--text2); line-height:1.7; }
+.jt-keywords {
+  display:flex; flex-wrap:wrap; gap:.3rem; margin-top:.5rem;
+}
+.jt-kw {
+  font-family:'Josefin Sans',sans-serif;
+  font-size:.68rem; padding:2px 8px;
+  background:var(--ochre-d); border:1px solid var(--border);
+  color:var(--ochre); border-radius:2px; direction:ltr;
+  cursor:pointer; transition:all .18s;
+}
+.jt-kw:hover { background:var(--ochre-d2); border-color:var(--ochre); }
+
+/* ══ HOTEL BOOKING GAME ══ */
+.hotel-board {
+  background:var(--ivory2); border:2px solid var(--ochre);
+  border-radius:var(--rs); overflow:hidden;
+}
+[data-theme="dark"] .hotel-board { background:var(--ivory3); }
+.hb-header {
+  background:var(--midnight); padding:1rem 1.5rem;
+  display:flex; align-items:center; justify-content:space-between;
+  font-family:'Josefin Sans',sans-serif;
+  color:var(--ochre3); font-size:.88rem; letter-spacing:.06em; text-transform:uppercase;
+}
+.hb-body { padding:1.5rem; }
+.hb-scenario {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1rem; margin-bottom:1.2rem;
+}
+.hb-de { font-family:'Josefin Sans',monospace; color:var(--midnight2); direction:ltr; display:block; font-size:.85rem; margin-bottom:3px; font-weight:700; }
+[data-theme="dark"] .hb-de { color:var(--ochre2); }
+.hb-ar { font-size:.83rem; color:var(--text2); }
+.hb-opts { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
+.hb-opt {
+  padding:9px 13px; border:2px solid var(--border2);
+  background:var(--card); color:var(--text);
+  cursor:pointer; font-family:'Alkalami',serif; font-size:.87rem;
+  transition:all .18s; width:100%; display:block; outline:none; appearance:none;
+  border-radius:var(--rs);
+}
+[data-theme="dark"] .hb-opt { background:var(--ivory3); }
+.hb-opt:hover { border-color:var(--ochre); background:var(--ochre-d); color:var(--ochre); }
+.hb-opt.ok  { border-color:var(--sage)!important;  background:var(--sage-d)!important;  color:var(--sage)!important; }
+.hb-opt.bad { border-color:var(--burg2)!important; background:var(--burg-d)!important;  color:var(--burg2)!important; }
+.hb-fb { font-size:.82rem; padding:8px 12px; display:none; border-right:3px solid; margin-top:.6rem; }
+.hb-fb.show { display:block; }
+.hb-fb.ok  { border-color:var(--sage);  background:var(--sage-d);  color:var(--sage); }
+.hb-fb.err { border-color:var(--burg2); background:var(--burg-d);  color:var(--burg2); }
+.hb-next {
+  margin-top:.8rem; padding:8px 22px;
+  background:var(--midnight); color:var(--ochre3);
+  border:2px solid var(--ochre);
+  font-family:'Josefin Sans',sans-serif; font-size:.85rem;
+  letter-spacing:.06em; text-transform:uppercase;
+  cursor:pointer; transition:background .2s; display:none;
+}
+.hb-next:hover { background:var(--midnight2); }
+
+/* ══ DIALOGUE ══ */
+.conv { display:flex; flex-direction:column; gap:1.1rem; }
+.msg { display:flex; gap:1rem; align-items:flex-start; }
+.msg.l { flex-direction:row-reverse; }
+.av {
+  width:44px; height:44px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; flex-shrink:0;
+  border:2px solid var(--ochre); background:var(--ivory2);
+}
+.msg.l .av { background:var(--midnight); }
+.bw { flex:1; max-width:80%; }
+.msg.r .bw { text-align:right; }
+.bub {
+  display:inline-block; padding:11px 16px;
+  border-radius:var(--r); font-size:.9rem; line-height:1.78; max-width:100%;
+}
+.msg.r .bub { background:var(--ochre-d2); border:1px solid rgba(212,130,10,.25); border-radius:var(--r) 2px var(--r) var(--r); }
+.msg.l .bub { background:var(--midnight); color:var(--ivory2); border-radius:2px var(--r) var(--r) var(--r); }
+.dl { font-family:'Josefin Sans',monospace; color:var(--ochre); font-weight:700; display:block; font-size:.85rem; margin-bottom:3px; direction:ltr; }
+.msg.l .dl { color:var(--ochre2); }
+.who { font-family:'Josefin Sans',sans-serif; font-size:.68rem; color:var(--text3); margin-top:4px; display:block; letter-spacing:.04em; }
+
+/* ══ QUIZ ══ */
+.qblock { background:var(--ivory2); border:1px solid var(--border); border-radius:var(--rs); padding:1.1rem 1.3rem; margin-bottom:.8rem; }
+[data-theme="dark"] .qblock { background:var(--ivory3); }
+.qlabel { font-family:'Josefin Sans',sans-serif; font-size:.65rem; color:var(--ochre); font-weight:700; letter-spacing:.1em; text-transform:uppercase; display:block; margin-bottom:.4rem; }
+.qtext { font-weight:700; font-size:.93rem; margin-bottom:.8rem; line-height:1.6; }
+.qde { color:var(--midnight2); font-family:'Josefin Sans',monospace; }
+[data-theme="dark"] .qde { color:var(--ochre2); }
+.opts { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
+.opt {
+  padding:10px 13px; border:2px solid var(--border2);
+  background:var(--card); color:var(--text);
+  cursor:pointer; font-family:'Alkalami',serif; font-size:.88rem;
+  transition:all .18s; text-align:center;
+  width:100%; display:block; outline:none; appearance:none;
+  border-radius:var(--rs);
+}
+[data-theme="dark"] .opt { background:var(--ivory2); }
+.opt:hover { border-color:var(--ochre); background:var(--ochre-d); color:var(--ochre); }
+.opt:disabled { cursor:not-allowed; pointer-events:none; opacity:.6; }
+.opt.correct { border-color:var(--sage)!important;  background:var(--sage-d)!important;  color:var(--sage)!important; font-weight:700; }
+.opt.wrong   { border-color:var(--burg2)!important; background:var(--burg-d)!important;  color:var(--burg2)!important; }
+.qfb { font-size:.81rem; padding:7px 10px; margin-top:7px; display:none; border-right:3px solid; }
+.qfb.show { display:block; }
+.qfb.ok  { border-color:var(--sage);  background:var(--sage-d);  color:var(--sage); }
+.qfb.err { border-color:var(--burg2); background:var(--burg-d);  color:var(--burg2); }
+
+/* ══ CERTIFICATE ══ */
+.cert-wrapper {
+  display:flex; flex-direction:column;
+  align-items:center; gap:2rem; margin-top:1.5rem;
+}
+
+.certificate {
+  width:100%; max-width:680px;
+  background: linear-gradient(135deg, var(--ivory), #fff5e0, var(--ivory));
+  border:3px solid var(--ochre);
+  border-radius:4px;
+  padding:3rem 3.5rem;
+  text-align:center;
+  position:relative;
+  box-shadow: 0 8px 48px rgba(30,20,8,0.2), inset 0 0 0 8px rgba(212,130,10,0.08);
+  animation:fadeUp .8s ease both, certGlow 3s ease-in-out 1s infinite alternate;
+  display:none;
+}
+@keyframes certGlow {
+  from { box-shadow: 0 8px 48px rgba(30,20,8,0.2), inset 0 0 0 8px rgba(212,130,10,0.08); }
+  to   { box-shadow: 0 12px 60px rgba(212,130,10,0.25), inset 0 0 0 8px rgba(212,130,10,0.15); }
+}
+[data-theme="dark"] .certificate {
+  background:linear-gradient(135deg,var(--ivory2),var(--ivory3),var(--ivory2));
+}
+
+/* Corner flourishes */
+.certificate::before, .certificate::after {
+  content:'✦ ✦ ✦';
+  position:absolute;
+  font-size:.85rem; color:var(--ochre2); letter-spacing:.5em;
+}
+.certificate::before { top:12px; right:0; left:0; text-align:center; }
+.certificate::after  { bottom:12px; right:0; left:0; text-align:center; }
+
+.cert-seal {
+  font-size:4rem; display:block; margin-bottom:1rem;
+  animation:certSpin .8s cubic-bezier(.34,1.56,.64,1) 1.2s both;
+}
+@keyframes certSpin {
+  from{transform:scale(0) rotate(-180deg); opacity:0;}
+  to{transform:scale(1) rotate(0deg); opacity:1;}
+}
+.cert-issued {
+  font-family:'Josefin Sans',sans-serif;
+  font-size:.72rem; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--ochre); display:block; margin-bottom:.6rem;
+}
+.cert-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.6rem,4vw,2.4rem);
+  font-weight:900; color:var(--midnight);
+  margin-bottom:.5rem; line-height:1.2;
+}
+[data-theme="dark"] .cert-title { color:var(--ochre2); }
+.cert-subtitle {
+  font-family:'Josefin Sans',sans-serif;
+  font-size:.82rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--text2); margin-bottom:1.5rem;
+}
+.cert-name {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.4rem,3vw,2rem);
+  font-style:italic; color:var(--burg);
+  margin-bottom:.5rem;
+  border-bottom:2px solid var(--ochre);
+  padding-bottom:.5rem; display:inline-block;
+}
+.cert-body {
+  font-size:.85rem; color:var(--text2); line-height:1.9;
+  margin-bottom:1.5rem; font-family:'Libre Baskerville',serif;
+}
+.cert-level {
+  font-family:'Josefin Sans',sans-serif;
+  font-size:.95rem; font-weight:700; letter-spacing:.1em;
+  color:var(--midnight); text-transform:uppercase;
+  background:var(--ochre-d2); border:2px solid var(--ochre);
+  display:inline-block; padding:.4rem 1.2rem; margin-bottom:1.5rem;
+}
+[data-theme="dark"] .cert-level { color:var(--ochre2); }
+.cert-sigs {
+  display:flex; justify-content:space-around; margin-top:1.5rem;
+  padding-top:1rem; border-top:1px solid var(--border);
+}
+.cert-sig { text-align:center; }
+.cert-sig-line { width:100px; height:1px; background:var(--text3); margin:0 auto .3rem; }
+.cert-sig-name { font-family:'Josefin Sans',sans-serif; font-size:.65rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text3); }
+.cert-lessons {
+  display:flex; justify-content:center; gap:1.5rem;
+  margin-top:1rem; flex-wrap:wrap;
+}
+.cert-lesson-badge {
+  font-family:'Josefin Sans',sans-serif;
+  font-size:.65rem; letter-spacing:.06em;
+  background:var(--midnight); color:var(--ochre3);
+  padding:3px 10px; border-radius:2px;
+}
+
+/* Name input */
+.cert-name-input-wrap {
+  display:flex; flex-direction:column; align-items:center; gap:1rem;
+  padding:2rem;
+  background:var(--ivory2); border:2px solid var(--ochre);
+  border-radius:var(--r);
+  text-align:center;
+}
+[data-theme="dark"] .cert-name-input-wrap { background:var(--ivory3); }
+.cert-name-input-wrap h3 {
+  font-family:'Playfair Display',serif;
+  font-style:italic; font-size:1.3rem; color:var(--midnight2);
+}
+[data-theme="dark"] .cert-name-input-wrap h3 { color:var(--ochre2); }
+.cert-name-input-wrap p { font-size:.85rem; color:var(--text2); }
+#cert-name-input {
+  width:100%; max-width:400px;
+  padding:12px 18px; font-size:1.1rem;
+  font-family:'Playfair Display',serif; font-style:italic;
+  border:2px solid var(--ochre); border-radius:var(--rs);
+  background:var(--card); color:var(--text);
+  outline:none; text-align:center;
+}
+#cert-name-input:focus { box-shadow:0 0 0 3px var(--ochre-d2); }
+.cert-generate-btn {
+  padding:12px 32px;
+  background:var(--midnight); color:var(--ochre3);
+  border:2px solid var(--ochre);
+  font-family:'Josefin Sans',sans-serif; font-size:.9rem;
+  font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  cursor:pointer; transition:all .25s; border-radius:var(--rs);
+}
+.cert-generate-btn:hover { background:var(--burg); border-color:var(--burg); }
+
+/* Farewell message */
+.farewell {
+  background: var(--midnight);
+  border-radius:var(--r);
+  padding:3rem 2rem; text-align:center;
+  position:relative; overflow:hidden;
+}
+.farewell::before {
+  content:'';
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(212,130,10,0.15), transparent 60%);
+}
+.fw-emoji { font-size:3rem; display:block; margin-bottom:1rem; position:relative; z-index:1; }
+.fw-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,3rem);
+  font-style:italic; color:var(--ochre3);
+  margin-bottom:1rem; position:relative; z-index:1;
+}
+.fw-body { color:rgba(240,232,208,.75); font-size:.95rem; line-height:1.9; max-width:600px; margin:0 auto 2rem; position:relative; z-index:1; }
+.fw-german {
+  font-family:'Playfair Display',serif;
+  font-style:italic; font-size:1.1rem;
+  color:var(--ochre2); display:block; margin-top:1rem;
+  position:relative; z-index:1;
+}
+
+/* Result */
+.result-wrap {
+  background:var(--midnight);
+  border:3px double var(--ochre);
+  border-radius:var(--r);
+  padding:2.5rem; text-align:center;
+  display:none; margin-top:1.5rem;
+}
+.r-score {
+  font-family:'Playfair Display',serif;
+  font-size:5rem; font-style:italic;
+  color:var(--ochre3); line-height:1; margin-bottom:.5rem;
+}
+.r-msg { color:rgba(240,232,208,.7); margin-bottom:1.5rem; }
+.r-btn {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--ochre); color:var(--midnight);
+  border:none; padding:11px 30px;
+  font-family:'Josefin Sans',sans-serif; font-size:.9rem;
+  font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  cursor:pointer; transition:all .25s; border-radius:var(--rs);
+}
+.r-btn:hover { background:var(--ochre2); }
+
+footer {
+  position:relative; z-index:1; text-align:center;
+  padding:3rem 2rem; color:var(--text3); font-size:.82rem;
+  border-top:2px solid var(--ochre);
+  font-family:'Josefin Sans',sans-serif; letter-spacing:.06em;
+  background:var(--midnight); color:rgba(240,232,208,.4);
+}
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
+.a1{animation-delay:.05s;} .a2{animation-delay:.12s;}
+.a3{animation-delay:.2s;}  .a4{animation-delay:.28s;}
+
+@media(max-width:768px){
+  nav{padding:0 1rem;} .nav-links{display:none;}
+  main{padding:1rem 1rem 3rem;}
+  .hero-content{padding:3rem 1.5rem 5rem;}
+  .opts{grid-template-columns:1fr;}
+  .hb-opts{grid-template-columns:1fr;}
+  .certificate{padding:2rem 1.5rem;}
+  .cert-sigs{gap:1rem;}
+}
+</style>
+</head>
+<body>
+<div id="spb"></div>
+
+<nav>
+  <div class="nav-brand">
+    <span>🇩🇪</span>
+    <span>Deutsch A2</span>
+    <span class="nav-chip">LEK.12 ★ FINAL</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#travel">السفر</a></li>
+    <li><a href="#hotel">الفندق</a></li>
+    <li><a href="#review">المراجعة</a></li>
+    <li><a href="#quiz">الاختبار</a></li>
+    <li><a href="#certificate">الشهادة</a></li>
+  </ul>
+  <button class="tbtn" onclick="toggleTheme()">🌙</button>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-sky"></div>
+
+  <!-- Stars SVG -->
+  <svg class="hero-stars" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50"  cy="20"  r="1.5" fill="white" opacity=".8"/>
+    <circle cx="120" cy="45"  r="1"   fill="white" opacity=".6"/>
+    <circle cx="200" cy="15"  r="2"   fill="white" opacity=".9"/>
+    <circle cx="280" cy="35"  r="1.5" fill="white" opacity=".7"/>
+    <circle cx="350" cy="10"  r="1"   fill="white" opacity=".8"/>
+    <circle cx="430" cy="40"  r="1.5" fill="white" opacity=".6"/>
+    <circle cx="510" cy="22"  r="2"   fill="white" opacity=".9"/>
+    <circle cx="600" cy="38"  r="1"   fill="white" opacity=".7"/>
+    <circle cx="680" cy="12"  r="1.5" fill="white" opacity=".8"/>
+    <circle cx="760" cy="30"  r="1"   fill="white" opacity=".6"/>
+    <!-- Twinkle animations -->
+    <circle cx="160" cy="55" r="1" fill="white" opacity=".5">
+      <animate attributeName="opacity" values=".5;1;.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="18" r="1.5" fill="white" opacity=".6">
+      <animate attributeName="opacity" values=".6;1;.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="720" cy="48" r="1" fill="white" opacity=".4">
+      <animate attributeName="opacity" values=".4;.9;.4" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </svg>
+
+  <!-- Mountains SVG -->
+  <svg class="hero-mountains" viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="0,120 150,40 300,90 450,20 600,70 750,30 900,80 1050,25 1200,60 1200,120" fill="#0d1f3c" opacity=".9"/>
+    <polygon points="0,120 80,65 200,100 350,55 500,90 620,50 780,85 900,45 1050,75 1200,40 1200,120" fill="#162a50" opacity=".8"/>
+  </svg>
+
+  <!-- Animated Train -->
+  <div style="position:absolute;bottom:6px;left:0;right:0;height:30px;z-index:4;pointer-events:none;">
+    <!-- Track -->
+    <div class="train-track">
+      <div class="train-rail-top"></div>
+      <div class="train-rail-bot"></div>
+    </div>
+    <!-- Train SVG -->
+    <svg class="train" width="280" height="30" viewBox="0 0 280 30" xmlns="http://www.w3.org/2000/svg">
+      <!-- Locomotive -->
+      <rect x="0" y="6" width="70" height="20" rx="3" fill="#8b1a2a"/>
+      <rect x="8" y="3" width="50" height="14" rx="2" fill="#b02236"/>
+      <rect x="60" y="8" width="15" height="14" rx="2" fill="#8b1a2a"/>
+      <circle cx="15" cy="26" r="4" fill="#d4820a"/>
+      <circle cx="55" cy="26" r="4" fill="#d4820a"/>
+      <!-- Cab window -->
+      <rect x="12" y="6" width="14" height="9" rx="1" fill="#f8c84a" opacity=".8"/>
+      <!-- Chimney smoke -->
+      <circle cx="30" cy="1" r="3" fill="rgba(200,200,200,.4)">
+        <animate attributeName="cy" values="1;-5;-10" dur="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values=".4;.2;0" dur="1s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Cars -->
+      <rect x="74"  y="8" width="60" height="18" rx="3" fill="#1a3460"/>
+      <rect x="138" y="8" width="60" height="18" rx="3" fill="#1a3460"/>
+      <rect x="202" y="8" width="60" height="18" rx="3" fill="#1a3460"/>
+      <!-- Car windows -->
+      <rect x="80"  y="12" width="14" height="8" rx="1" fill="#f8c84a" opacity=".6"/>
+      <rect x="98"  y="12" width="14" height="8" rx="1" fill="#f8c84a" opacity=".6"/>
+      <rect x="116" y="12" width="14" height="8" rx="1" fill="#f8c84a" opacity=".6"/>
+      <rect x="144" y="12" width="14" height="8" rx="1" fill="#f8c84a" opacity=".5"/>
+      <rect x="162" y="12" width="14" height="8" rx="1" fill="#f8c84a" opacity=".5"/>
+      <rect x="208" y="12" width="14" height="8" rx="1" fill="#f8c84a" opacity=".4"/>
+      <rect x="226" y="12" width="14" height="8" rx="1" fill="#f8c84a" opacity=".4"/>
+      <!-- Wheels -->
+      <circle cx="90"  cy="26" r="4" fill="#d4820a"/>
+      <circle cx="122" cy="26" r="4" fill="#d4820a"/>
+      <circle cx="155" cy="26" r="4" fill="#d4820a"/>
+      <circle cx="187" cy="26" r="4" fill="#d4820a"/>
+      <circle cx="218" cy="26" r="4" fill="#d4820a"/>
+      <circle cx="250" cy="26" r="4" fill="#d4820a"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow">★ الدرس الثاني عشر والأخير ★</span>
+    <h1>Auf Wiedersehen,<br>Deutschland!</h1>
+    <p class="hero-sub">السفر · المراجعة الشاملة · شهادة الإتمام</p>
+    <div class="hero-badge-row">
+      <div class="hbadge hb-o">🚂 السفر والسياحة</div>
+      <div class="hbadge hb-r">🏨 الفنادق</div>
+      <div class="hbadge hb-w">📖 مراجعة 12 درساً</div>
+      <div class="hbadge hb-o">🎓 شهادة الإتمام</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ══════ SECTION 1: TRAVEL VOCABULARY ══════ -->
+<section id="travel">
+  <div class="sh">
+    <div class="sh-num">Lektion XII — I</div>
+    <div class="sh-text">
+      <h2>السفر والسياحة — Reisen & Tourismus</h2>
+      <p>اضغط على أي بطاقة لسماع نطقها</p>
+    </div>
+  </div>
+
+  <div class="card a1">
+    <div class="tip oc" style="margin-bottom:1.2rem;">
+      <div class="tpic">🚂</div>
+      <div>
+        <h4>Deutschland — وجهة سياحية لا تُقاوم</h4>
+        <p>ألمانيا بلد السفر الداخلي الرائع! القطارات السريعة (ICE) تربط كل المدن. التذكرة: <span class="de">die Fahrkarte</span>. المحطة: <span class="de">der Bahnhof</span>. رصيف القطار: <span class="de">der Bahnsteig</span>. المطار: <span class="de">der Flughafen</span>.</p>
+      </div>
+    </div>
+
+    <div class="luggage-grid">
+      <div class="lug-tag" onclick="speak('der Koffer')"><span class="lug-emoji">🧳</span><span class="lug-de">der Koffer</span><span class="lug-ar">الحقيبة الكبيرة</span><span class="lug-ex">Ich packe meinen Koffer.</span></div>
+      <div class="lug-tag" onclick="speak('die Reise')"><span class="lug-emoji">✈️</span><span class="lug-de">die Reise</span><span class="lug-ar">الرحلة / السفر</span><span class="lug-ex">Gute Reise!</span></div>
+      <div class="lug-tag" onclick="speak('das Hotel')"><span class="lug-emoji">🏨</span><span class="lug-de">das Hotel</span><span class="lug-ar">الفندق</span><span class="lug-ex">Ich buche ein Hotel.</span></div>
+      <div class="lug-tag" onclick="speak('die Unterkunft')"><span class="lug-emoji">🏠</span><span class="lug-de">die Unterkunft</span><span class="lug-ar">مكان الإقامة</span><span class="lug-ex">Wir suchen eine günstige Unterkunft.</span></div>
+      <div class="lug-tag" onclick="speak('der Reisepass')"><span class="lug-emoji">📘</span><span class="lug-de">der Reisepass</span><span class="lug-ar">جواز السفر</span><span class="lug-ex">Vergiss deinen Reisepass nicht!</span></div>
+      <div class="lug-tag" onclick="speak('die Sehenswürdigkeit')"><span class="lug-emoji">🏛️</span><span class="lug-de">die Sehenswürdigkeit</span><span class="lug-ar">معلم سياحي</span><span class="lug-ex">Was sind die Sehenswürdigkeiten hier?</span></div>
+      <div class="lug-tag" onclick="speak('die Reservierung')"><span class="lug-emoji">📋</span><span class="lug-de">die Reservierung</span><span class="lug-ar">الحجز</span><span class="lug-ex">Ich habe eine Reservierung.</span></div>
+      <div class="lug-tag" onclick="speak('der Stadtplan')"><span class="lug-emoji">🗺️</span><span class="lug-de">der Stadtplan</span><span class="lug-ar">خريطة المدينة</span><span class="lug-ex">Haben Sie einen Stadtplan?</span></div>
+      <div class="lug-tag" onclick="speak('die Touristeninformation')"><span class="lug-emoji">ℹ️</span><span class="lug-de">die Touristeninformation</span><span class="lug-ar">مكتب السياحة</span><span class="lug-ex">Wo ist die Touristeninformation?</span></div>
+      <div class="lug-tag" onclick="speak('die Abfahrt')"><span class="lug-emoji">🚂</span><span class="lug-de">die Abfahrt / Ankunft</span><span class="lug-ar">المغادرة / الوصول</span><span class="lug-ex">Die Abfahrt ist um 14:30 Uhr.</span></div>
+      <div class="lug-tag" onclick="speak('der Aufenthalt')"><span class="lug-emoji">📅</span><span class="lug-de">der Aufenthalt</span><span class="lug-ar">الإقامة / المكوث</span><span class="lug-ex">Wie lange ist Ihr Aufenthalt?</span></div>
+      <div class="lug-tag" onclick="speak('das Souvenir')"><span class="lug-emoji">🎁</span><span class="lug-de">das Souvenir</span><span class="lug-ar">الهدية التذكارية</span><span class="lug-ex">Ich kaufe Souvenirs für die Familie.</span></div>
+    </div>
+
+    <div class="tw" style="margin-top:1.2rem;">
+      <table>
+        <thead><tr><th>الموقف</th><th>الألمانية</th><th>المعنى</th></tr></thead>
+        <tbody>
+          <tr><td>عند محطة القطار</td><td class="tde">Einmal nach München, bitte!</td><td>تذكرة واحدة لميونخ!</td></tr>
+          <tr><td>ذهاب وإياب</td><td class="tde">Hin und zurück.</td><td>ذهاباً وعودةً</td></tr>
+          <tr><td>متأخر القطار</td><td class="tde">Der Zug hat Verspätung.</td><td>القطار متأخر</td></tr>
+          <tr><td>على أي رصيف؟</td><td class="tde">Auf welchem Gleis?</td><td>على أي رصيف / سكة؟</td></tr>
+          <tr><td>حجز فندق</td><td class="tde">Ich möchte ein Zimmer reservieren.</td><td>أريد حجز غرفة</td></tr>
+          <tr><td>الخروج من الفندق</td><td class="tde">Ich möchte auschecken.</td><td>أريد تسجيل الخروج</td></tr>
+          <tr><td>توصية سياحية</td><td class="tde">Was empfehlen Sie mir zu sehen?</td><td>ماذا تنصح برؤيته؟</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 2: HOTEL GAME ══════ -->
+<section id="hotel">
+  <div class="sh">
+    <div class="sh-num">Lektion XII — II</div>
+    <div class="sh-text">
+      <h2>في الفندق — Im Hotel</h2>
+      <p>تدرّب على حوارات الفندق الحقيقية</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div class="hotel-board">
+      <div class="hb-header">
+        <span>🏨 Hotel Reichstag — Berlin</span>
+        <span id="hb-progress" style="font-size:.72rem;opacity:.7;">سؤال 1 / 5</span>
+      </div>
+      <div class="hb-body">
+        <div class="hb-scenario" id="hb-scenario">
+          <span class="hb-de" id="hb-de"></span>
+          <span class="hb-ar" id="hb-ar"></span>
+        </div>
+        <div class="hb-opts" id="hb-opts"></div>
+        <div class="hb-fb" id="hb-fb"></div>
+        <button class="hb-next" id="hb-next" onclick="nextHotelQ()">التالي — Weiter →</button>
+      </div>
+    </div>
+
+    <div class="tip sa" style="margin-top:1.2rem;">
+      <div class="tpic">🛎️</div>
+      <div>
+        <h4>أهم مفردات الفندق</h4>
+        <p>
+          <span class="de">das Einzelzimmer</span> = غرفة مفردة &nbsp;·&nbsp;
+          <span class="de">das Doppelzimmer</span> = غرفة مزدوجة &nbsp;·&nbsp;
+          <span class="de">die Rezeption</span> = الاستقبال &nbsp;·&nbsp;
+          <span class="de">inklusive Frühstück</span> = مع الفطور &nbsp;·&nbsp;
+          <span class="de">die Rechnung</span> = الفاتورة
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 3: COURSE REVIEW — Train Journey ══════ -->
+<section id="review">
+  <div class="sh">
+    <div class="sh-num">Lektion XII — III</div>
+    <div class="sh-text">
+      <h2>رحلتك عبر الألمانية — Deine Reise</h2>
+      <p>مراجعة الدروس الاثني عشر — اضغط على أي كلمة لسماعها</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div class="journey-timeline">
+
+      <div class="jt-stop a1">
+        <div class="jt-dot">1</div>
+        <div class="jt-body">
+          <span class="jt-num">Lektion 01</span>
+          <span class="jt-title">التعارف — Sich vorstellen</span>
+          <div class="jt-desc">تعلّمت كيف تعرّف عن نفسك، تذكر اسمك وعمرك وبلدك ومهنتك. فعل sein والضمائر الشخصية.</div>
+          <div class="jt-keywords">
+            <span class="jt-kw" onclick="speak('Ich heiße')">Ich heiße</span>
+            <span class="jt-kw" onclick="speak('Ich komme aus')">Ich komme aus</span>
+            <span class="jt-kw" onclick="speak('Mein Name ist')">Mein Name ist</span>
+            <span class="jt-kw" onclick="speak('Ich bin')">Ich bin</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jt-stop a2">
+        <div class="jt-dot">2</div>
+        <div class="jt-body">
+          <span class="jt-num">Lektion 02</span>
+          <span class="jt-title">الأرقام والوقت — Zahlen & Zeit</span>
+          <div class="jt-desc">الأرقام 0-100، قراءة الساعة، أيام الأسبوع، الأشهر، وقاعدة الموضع الثاني.</div>
+          <div class="jt-keywords">
+            <span class="jt-kw" onclick="speak('Es ist halb neun')">halb neun = 8:30</span>
+            <span class="jt-kw" onclick="speak('Wie spät ist es?')">Wie spät?</span>
+            <span class="jt-kw" onclick="speak('Montag')">Montag</span>
+            <span class="jt-kw" onclick="speak('fünfundzwanzig')">fünfundzwanzig</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jt-stop a3">
+        <div class="jt-dot">3</div>
+        <div class="jt-body">
+          <span class="jt-num">Lektion 03</span>
+          <span class="jt-title">التسوق والمطعم — Einkaufen & Restaurant</span>
+          <div class="jt-desc">مفردات السوق والأسعار، كيف تطلب طعاماً، تدفع الفاتورة، وتقدّم إكرامية.</div>
+          <div class="jt-keywords">
+            <span class="jt-kw" onclick="speak('Was kostet das?')">Was kostet das?</span>
+            <span class="jt-kw" onclick="speak('Zahlen bitte')">Zahlen bitte!</span>
+            <span class="jt-kw" onclick="speak('Ich hätte gerne')">Ich hätte gerne</span>
+            <span class="jt-kw" onclick="speak('Stimmt so')">Stimmt so!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jt-stop a4">
+        <div class="jt-dot">4</div>
+        <div class="jt-body">
+          <span class="jt-num">Lektion 04</span>
+          <span class="jt-title">المنزل والعائلة — Wohnung & Familie</span>
+          <div class="jt-desc">غرف المنزل وأثاثه، شجرة العائلة، الصفات مع قاعدة نهاياتها المهمة.</div>
+          <div class="jt-keywords">
+            <span class="jt-kw" onclick="speak('das Wohnzimmer')">das Wohnzimmer</span>
+            <span class="jt-kw" onclick="speak('die Schwester')">die Schwester</span>
+            <span class="jt-kw" onclick="speak('gemütlich')">gemütlich</span>
+            <span class="jt-kw" onclick="speak('ein großer Tisch')">ein großer Tisch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jt-stop">
+        <div class="jt-dot">5</div>
+        <div class="jt-body">
+          <span class="jt-num">Lektion 05</span>
+          <span class="jt-title">الروتين اليومي — Tagesablauf</span>
+          <div class="jt-desc">تصريف الأفعال، الأفعال الشاذة، الأفعال المنفصلة، وقاعدة الموضع الثاني.</div>
+          <div class="jt-keywords">
+            <span class="jt-kw" onclick="speak('Ich stehe um 7 Uhr auf')">aufstehen</span>
+            <span class="jt-kw" onclick="speak('Er fährt')">fährt ≠ fahrt</span>
+            <span class="jt-kw" onclick="speak('fernsehen')">fernsehen</span>
+            <span class="jt-kw" onclick="speak('meistens')">meistens</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jt-stop">
+        <div class="jt-dot">6</div>
+        <div class="jt-body">
+          <span class="jt-num">Lektion 06</span>
+          <span class="jt-title">المواصلات والاتجاهات — Verkehr</span>
+          <div class="jt-desc">وسائل النقل مع حرف الجر mit، كيف تسأل عن الطريق، الفرق بين Wo و Wohin.</div>
+          <div class="jt-keywords">
+            <span class="jt-kw" onclick="speak('mit der U-Bahn')">mit der U-Bahn</span>
+            <span class="jt-kw" onclick="speak('geradeaus')">geradeaus</span>
+            <span class="jt-kw" onclick="speak('Biegen Sie links ab')">links abbiegen</span>
+            <span class="jt-kw" onclick="speak('zu Fuß gehen')">zu Fuß</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jt-stop">
+        <div class="jt-dot">7</div>
+        <div class="jt-body">
+          <span class="jt-num">Lektion 07</span>
+          <span class="jt-title">الطقس والمشاعر — Wetter & Gefühle</span>
+          <div class="jt-desc">وصف الطقس بـ Es ist / Es regnet / Es gibt، الفصول الأربعة، التعبير عن المشاعر.</div>
+          <div class="jt-keywords">
+            <span class="jt-kw" onclick="speak('Es regnet')">Es regnet</span>
+            <span class="jt-kw" onclick="speak('im Winter')">im Winter</span>
+            <span class="jt-kw" onclick="speak('Ich fühle mich müde')">sich fühlen</span>
+            <span class="jt-kw" onclick="speak('Ich habe Hunger')">Ich habe Hunger</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jt-stop">
+        <div class="jt-dot">8</div>
+        <div class="jt-body">
+          <span class="jt-num">Lektion 08</span>
+          <span class="jt-title">الصحة والطبيب — Gesundheit</span>
+          <div class="jt-desc">أعضاء الجسم، وصف الأعراض، حوار الطبيب، الدواء، والشهادة المرضية.</div>
+          <div class="jt-keywords">
+            <span class="jt-kw" onclick="speak('Ich habe Kopfschmerzen')">Kopfschmerzen</span>
+            <span class="jt-kw" onclick="speak('Gute Besserung')">Gute Besserung!</span>
+            <span class="jt-kw" onclick="speak('Ich bin allergisch gegen')">allergisch gegen</span>
+            <span class="jt-kw" onclick="speak('das Rezept')">das Rezept</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jt-stop">
+        <div class="jt-dot">9</div>
+        <div class="jt-body">
+          <span class="jt-num">Lektion 09</span>
+          <span class="jt-title">العمل والمهن — Arbeit & Berufe</span>
+          <div class="jt-desc">أسماء المهن بدون أداة تعريف، السيرة الذاتية، ومقابلة العمل بثقة.</div>
+          <div class="jt-keywords">
+            <span class="jt-kw" onclick="speak('Ich bin Ingenieur')">Ich bin Arzt</span>
+            <span class="jt-kw" onclick="speak('Ich arbeite als')">als + مهنة</span>
+            <span class="jt-kw" onclick="speak('der Lebenslauf')">Lebenslauf</span>
+            <span class="jt-kw" onclick="speak('brutto und netto')">brutto / netto</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jt-stop">
+        <div class="jt-dot">10</div>
+        <div class="jt-body">
+          <span class="jt-num">Lektion 10</span>
+          <span class="jt-title">التعليم — Bildung & Universität</span>
+          <div class="jt-desc">النظام التعليمي الألماني، درجات 1-6، مفردات الجامعة والدراسة.</div>
+          <div class="jt-keywords">
+            <span class="jt-kw" onclick="speak('das Abitur')">das Abitur</span>
+            <span class="jt-kw" onclick="speak('sehr gut Note eins')">Note 1 = بالممتاز</span>
+            <span class="jt-kw" onclick="speak('das Semester')">das Semester</span>
+            <span class="jt-kw" onclick="speak('das Stipendium')">das Stipendium</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jt-stop">
+        <div class="jt-dot">11</div>
+        <div class="jt-body">
+          <span class="jt-num">Lektion 11</span>
+          <span class="jt-title">التكنولوجيا — Technologie & Medien</span>
+          <div class="jt-desc">مفردات الحياة الرقمية، وسائل التواصل، الأفعال الرقمية المنفصلة.</div>
+          <div class="jt-keywords">
+            <span class="jt-kw" onclick="speak('das WLAN')">das WLAN</span>
+            <span class="jt-kw" onclick="speak('hochladen')">hochladen</span>
+            <span class="jt-kw" onclick="speak('teilen')">teilen</span>
+            <span class="jt-kw" onclick="speak('Ich folge dir')">Ich folge dir</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jt-stop">
+        <div class="jt-dot" style="background:var(--ochre);border-color:var(--burg);">🎓</div>
+        <div class="jt-body">
+          <span class="jt-num">Lektion 12</span>
+          <span class="jt-title">السفر والإتمام — Reise & Abschluss</span>
+          <div class="jt-desc">مفردات السفر والفنادق — وها أنت الآن تُكمل رحلتك! أنت جاهز للحياة في ألمانيا! 🇩🇪</div>
+          <div class="jt-keywords">
+            <span class="jt-kw" onclick="speak('Gute Reise!')">Gute Reise! 🚂</span>
+            <span class="jt-kw" onclick="speak('Auf Wiedersehen!')">Auf Wiedersehen!</span>
+            <span class="jt-kw" onclick="speak('Willkommen in Deutschland!')">Willkommen!</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 4: DIALOGUE ══════ -->
+<section>
+  <div class="sh">
+    <div class="sh-num">Lektion XII — IV</div>
+    <div class="sh-text">
+      <h2>حوار: أحمد في فندق برلين</h2>
+      <p>آخر حوار في الدورة — أحمد يُسجّل في فندق فاخر</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--ochre);">
+      <span style="font-size:1.4rem;">🏨</span>
+      <div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;">Hotel Adlon Kempinski — Berlin, Unter den Linden</div>
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:.73rem;color:var(--text2);letter-spacing:.04em;">أحمد يصل بعد رحلة ناجحة ويُسجّل في أفخم فنادق برلين</div>
+      </div>
+    </div>
+
+    <div class="conv">
+      <div class="msg l">
+        <div class="av">🧑‍💼</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Herzlich willkommen im Hotel Adlon! Haben Sie eine Reservierung?</span>أهلاً وسهلاً بكم في فندق أدلون! هل لديكم حجز مسبق؟</div>
+          <span class="who">موظف الاستقبال</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ja, ich habe eine Reservierung auf den Namen Ahmad Al-Rashid. Drei Nächte, Einzelzimmer.</span>نعم، لدي حجز باسم أحمد الراشد. ثلاث ليالٍ، غرفة مفردة.</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">🧑‍💼</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Einen Moment, bitte... Ja, Herr Al-Rashid, wir haben Ihr Zimmer 304 bereit. Das Frühstück ist von 7 bis 10 Uhr inklusive.</span>لحظة من فضلك... نعم يا سيد الراشد، غرفتكم 304 جاهزة. الفطور مشمول من 7 حتى 10 صباحاً.</div>
+          <span class="who">موظف الاستقبال</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ausgezeichnet! Können Sie mir den WLAN-Code geben? Und gibt es in der Nähe eine U-Bahn-Station?</span>ممتاز! هل يمكنكم إعطائي كود الواي فاي؟ وهل توجد محطة مترو قريبة؟</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">🧑‍💼</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Der WLAN-Code steht auf dieser Karte. Die nächste U-Bahn ist die U3, zwei Minuten zu Fuß vom Hotel.</span>كود الواي فاي مكتوب على هذه البطاقة. أقرب مترو هو U3، دقيقتان سيراً من الفندق.</div>
+          <span class="who">موظف الاستقبال</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Perfekt! Was empfehlen Sie mir als Sehenswürdigkeit in Berlin?</span>ممتاز! ما الذي تنصحني برؤيته في برلين؟</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">🧑‍💼</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Das Brandenburger Tor ist direkt vor dem Hotel! Und der Reichstag ist auch sehr schön. Genießen Sie Berlin, Herr Al-Rashid!</span>بوابة براندنبورغ مباشرةً أمام الفندق! والبرلمان الألماني جميل أيضاً. استمتع بالبقاء في برلين يا سيد الراشد!</div>
+          <span class="who">موظف الاستقبال</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Vielen herzlichen Dank! Berlin, hier bin ich! 🇩🇪</span>شكراً جزيلاً من القلب! يا برلين، ها أنا هنا! 🇩🇪</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 5: FINAL QUIZ ══════ -->
+<section id="quiz">
+  <div class="sh">
+    <div class="sh-num">Lektion XII — V</div>
+    <div class="sh-text">
+      <h2>الاختبار الختامي — Die Abschlussprüfung</h2>
+      <p>10 أسئلة تغطي الدرس الأخير + مراجعة الدورة كاملة</p>
+    </div>
+  </div>
+
+  <div class="quiz-card">
+
+    <div class="qblock" id="q1">
+      <span class="qlabel">Frage 01 / 10</span>
+      <div class="qtext">كيف تقول "تذكرة واحدة إلى برلين" عند محطة القطار؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q1" data-val="w">Ich will nach Berlin fahren.</button>
+        <button class="opt" type="button" data-qid="q1" data-val="c">Einmal nach Berlin, bitte!</button>
+        <button class="opt" type="button" data-qid="q1" data-val="w">Berlin-Ticket, danke!</button>
+        <button class="opt" type="button" data-qid="q1" data-val="w">Ich brauche Berlin.</button>
+      </div>
+      <div class="qfb" id="fb-q1"></div>
+    </div>
+
+    <div class="qblock" id="q2">
+      <span class="qlabel">Frage 02 / 10</span>
+      <div class="qtext">ما معنى <span class="qde">hin und zurück</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q2" data-val="w">في الأمام والخلف</button>
+        <button class="opt" type="button" data-qid="q2" data-val="c">ذهاباً وعودةً (تذكرة مزدوجة)</button>
+        <button class="opt" type="button" data-qid="q2" data-val="w">يميناً ويساراً</button>
+        <button class="opt" type="button" data-qid="q2" data-val="w">السرعة والعودة</button>
+      </div>
+      <div class="qfb" id="fb-q2"></div>
+    </div>
+
+    <div class="qblock" id="q3">
+      <span class="qlabel">Frage 03 / 10 — مراجعة</span>
+      <div class="qtext">أي الجمل صحيح نحوياً؟ (مهنة بعد sein)</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q3" data-val="w">Ich bin ein Arzt.</button>
+        <button class="opt" type="button" data-qid="q3" data-val="c">Ich bin Ärztin.</button>
+        <button class="opt" type="button" data-qid="q3" data-val="w">Ich habe Ärztin.</button>
+        <button class="opt" type="button" data-qid="q3" data-val="w">Ich bin die Ärztin.</button>
+      </div>
+      <div class="qfb" id="fb-q3"></div>
+    </div>
+
+    <div class="qblock" id="q4">
+      <span class="qlabel">Frage 04 / 10</span>
+      <div class="qtext">ما معنى <span class="qde">der Aufenthalt</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q4" data-val="w">الرحلة الجوية</span></div>
+        <button class="opt" type="button" data-qid="q4" data-val="c">الإقامة / المكوث</button>
+        <button class="opt" type="button" data-qid="q4" data-val="w">الوصول</button>
+        <button class="opt" type="button" data-qid="q4" data-val="w">الجواز</button>
+      </div>
+      <div class="qfb" id="fb-q4"></div>
+    </div>
+
+    <div class="qblock" id="q5">
+      <span class="qlabel">Frage 05 / 10 — مراجعة</span>
+      <div class="qtext">أكمل: <span class="qde">Ich ___ um 7 Uhr ___.</span> (aufstehen)</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q5" data-val="c">stehe ... auf</button>
+        <button class="opt" type="button" data-qid="q5" data-val="w">aufstehe ... auf</button>
+        <button class="opt" type="button" data-qid="q5" data-val="w">stehe ... aufstehen</button>
+        <button class="opt" type="button" data-qid="q5" data-val="w">stehen ... auf</button>
+      </div>
+      <div class="qfb" id="fb-q5"></div>
+    </div>
+
+    <div class="qblock" id="q6">
+      <span class="qlabel">Frage 06 / 10</span>
+      <div class="qtext">كيف تطلب غرفة مزدوجة في الفندق؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q6" data-val="w">Ich möchte zwei Zimmer.</button>
+        <button class="opt" type="button" data-qid="q6" data-val="c">Ich möchte ein Doppelzimmer reservieren.</button>
+        <button class="opt" type="button" data-qid="q6" data-val="w">Bitte zwei Personen Zimmer!</button>
+        <button class="opt" type="button" data-qid="q6" data-val="w">Haben Sie Zimmer für zwei?</button>
+      </div>
+      <div class="qfb" id="fb-q6"></div>
+    </div>
+
+    <div class="qblock" id="q7">
+      <span class="qlabel">Frage 07 / 10 — مراجعة</span>
+      <div class="qtext">ما أفضل درجة في النظام الألماني؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q7" data-val="w">6 — ungenügend</button>
+        <button class="opt" type="button" data-qid="q7" data-val="w">10 — sehr gut</button>
+        <button class="opt" type="button" data-qid="q7" data-val="c">1 — sehr gut</button>
+        <button class="opt" type="button" data-qid="q7" data-val="w">5 — mangelhaft</button>
+      </div>
+      <div class="qfb" id="fb-q7"></div>
+    </div>
+
+    <div class="qblock" id="q8">
+      <span class="qlabel">Frage 08 / 10 — مراجعة</span>
+      <div class="qtext">كيف تقول "أنا جائع" بالطريقة الصحيحة؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q8" data-val="w">Ich bin Hunger.</button>
+        <button class="opt" type="button" data-qid="q8" data-val="c">Ich habe Hunger.</button>
+        <button class="opt" type="button" data-qid="q8" data-val="w">Ich fühle Hunger.</button>
+        <button class="opt" type="button" data-qid="q8" data-val="w">Mir ist Hunger.</button>
+      </div>
+      <div class="qfb" id="fb-q8"></div>
+    </div>
+
+    <div class="qblock" id="q9">
+      <span class="qlabel">Frage 09 / 10 — مراجعة</span>
+      <div class="qtext">ماذا تعني <span class="qde">Gute Reise!</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q9" data-val="w">مع السلامة!</button>
+        <button class="opt" type="button" data-qid="q9" data-val="w">أهلاً وسهلاً!</button>
+        <button class="opt" type="button" data-qid="q9" data-val="c">رحلة موفقة! (تمنية بسفر جيد)</button>
+        <button class="opt" type="button" data-qid="q9" data-val="w">هل رحلتك ممتعة؟</button>
+      </div>
+      <div class="qfb" id="fb-q9"></div>
+    </div>
+
+    <div class="qblock" id="q10">
+      <span class="qlabel">Frage 10 / 10 — السؤال الأخير!</span>
+      <div class="qtext">أكمل: <span class="qde">Herzlich _____ in Deutschland!</span></div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q10" data-val="w">Hallo</button>
+        <button class="opt" type="button" data-qid="q10" data-val="w">Auf Wiedersehen</button>
+        <button class="opt" type="button" data-qid="q10" data-val="c">willkommen</button>
+        <button class="opt" type="button" data-qid="q10" data-val="w">gut</button>
+      </div>
+      <div class="qfb" id="fb-q10"></div>
+    </div>
+
+    <div class="result-wrap" id="result-wrap">
+      <div class="r-score" id="r-score">0/10</div>
+      <div class="r-msg" id="r-msg"></div>
+      <button class="r-btn" onclick="resetQuiz()">↺ أعد الاختبار</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 6: CERTIFICATE ══════ -->
+<section id="certificate">
+  <div class="sh">
+    <div class="sh-num">Lektion XII — VI</div>
+    <div class="sh-text">
+      <h2>شهادة الإتمام — Das Abschlusszertifikat</h2>
+      <p>أدخل اسمك واحصل على شهادتك الرسمية 🎓</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cert-wrapper">
+      <!-- Name input -->
+      <div class="cert-name-input-wrap" id="cert-input-wrap">
+        <h3>أدخل اسمك لإنشاء شهادتك</h3>
+        <p>ستحصل على شهادة رقمية تُثبت إتمامك لدورة الألمانية A2 المكوّنة من 12 درساً</p>
+        <input type="text" id="cert-name-input" placeholder="اكتب اسمك هنا..." maxlength="50">
+        <button class="cert-generate-btn" onclick="generateCert()">🎓 أنشئ شهادتي — Zertifikat erstellen</button>
+      </div>
+
+      <!-- Certificate -->
+      <div class="certificate" id="certificate">
+        <span class="cert-seal" id="cert-seal">🏅</span>
+        <span class="cert-issued">DEUTSCHKURS A2 — KURSABSCHLUSS</span>
+        <div class="cert-title">شهادة إتمام</div>
+        <div class="cert-subtitle">Certificate of Completion — Abschlusszertifikat</div>
+
+        <p style="font-family:'Josefin Sans',sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text2);margin-bottom:.4rem;">يُشهد بأن</p>
+        <div class="cert-name" id="cert-name-display">—</div>
+
+        <p class="cert-body">
+          قد أتمّ بنجاح دورة <strong>اللغة الألمانية للمستوى A2</strong>، المكوّنة من اثني عشر درساً تُغطي التواصل اليومي، العمل، التعليم، الصحة، السفر، والتكنولوجيا بالألمانية. وقد أظهر المتعلّم التزاماً وتفانياً في رحلته نحو إتقان اللغة الألمانية.
+        </p>
+
+        <div class="cert-level">🇩🇪 Deutschniveau: A2 — Grundlegende Kenntnisse</div>
+
+        <div class="cert-lessons">
+          <span class="cert-lesson-badge">L01 ✓</span>
+          <span class="cert-lesson-badge">L02 ✓</span>
+          <span class="cert-lesson-badge">L03 ✓</span>
+          <span class="cert-lesson-badge">L04 ✓</span>
+          <span class="cert-lesson-badge">L05 ✓</span>
+          <span class="cert-lesson-badge">L06 ✓</span>
+          <span class="cert-lesson-badge">L07 ✓</span>
+          <span class="cert-lesson-badge">L08 ✓</span>
+          <span class="cert-lesson-badge">L09 ✓</span>
+          <span class="cert-lesson-badge">L10 ✓</span>
+          <span class="cert-lesson-badge">L11 ✓</span>
+          <span class="cert-lesson-badge">L12 ✓</span>
+        </div>
+
+        <div class="cert-sigs">
+          <div class="cert-sig">
+            <div class="cert-sig-line"></div>
+            <div class="cert-sig-name">المعلّم الرقمي</div>
+          </div>
+          <div class="cert-sig" style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:var(--ochre);line-height:1;">
+            Viel Erfolg!<br>
+            <span style="font-size:.7rem;font-family:'Josefin Sans',sans-serif;color:var(--text2);">حظاً موفقاً!</span>
+          </div>
+          <div class="cert-sig">
+            <div class="cert-sig-line"></div>
+            <div class="cert-sig-name" id="cert-date-display">التاريخ</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Print button (visible after cert generated) -->
+      <div id="cert-actions" style="display:none;text-align:center;">
+        <button onclick="window.print()" style="padding:10px 28px;background:var(--midnight);color:var(--ochre3);border:2px solid var(--ochre);font-family:'Josefin Sans',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:var(--rs);">
+          🖨️ طباعة الشهادة — Drucken
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FAREWELL ══════ -->
+<div class="farewell">
+  <span class="fw-emoji">🇩🇪</span>
+  <h2 class="fw-title">Herzlichen Glückwunsch!</h2>
+  <p class="fw-body">
+    أنهيت رحلة مذهلة من 12 درساً في اللغة الألمانية! من التعارف الأول حتى السفر والتكنولوجيا — لقد قطعتَ مسافة هائلة. الآن أنت قادر على التواصل في معظم المواقف اليومية في ألمانيا.
+    <br><br>
+    الخطوة التالية: تحدّث مع ألمان حقيقيين، شاهد أفلاماً ألمانية، واقرأ أخبار بالألمانية. اللغة تُكتسب بالممارسة!
+    <span class="fw-german">"Übung macht den Meister!" — الممارسة تصنع المتقن</span>
+  </p>
+</div>
+
+</main>
+
+<footer>
+  ★ DEUTSCHKURS A2 — VOLLSTÄNDIG ABGESCHLOSSEN ★<br>
+  الألمانية للعرب &nbsp;·&nbsp; 12 درساً كاملاً &nbsp;·&nbsp; Auf Wiedersehen und viel Erfolg! 🎓
+</footer>
+
+<script>
+// ── Theme
+let dark = false;
+const root = document.documentElement;
+const tbtn = document.querySelector('.tbtn');
+function applyTheme(d) {
+  dark = d;
+  root.setAttribute('data-theme', d ? 'dark' : 'light');
+  tbtn.textContent = d ? '☀' : '🌙';
+}
+function toggleTheme() { applyTheme(!dark); }
+applyTheme(false);
+
+// ── Scroll progress
+const spb = document.getElementById('spb');
+window.addEventListener('scroll', () => {
+  const h = document.body.scrollHeight - window.innerHeight;
+  spb.style.transform = `scaleX(${window.scrollY / h})`;
+});
+
+// ── Speech
+function speak(t) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(t);
+  u.lang = 'de-DE'; u.rate = 0.82;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+}
+
+// ── Hotel game
+const hotelQs = [
+  {
+    de:'Rezeptionist: "Guten Tag! Haben Sie eine Reservierung?"',
+    ar:'موظف الاستقبال: "مرحباً! هل لديكم حجز مسبق؟"',
+    opts:['Ja, ich bin Ahmad.','Ich möchte ein Zimmer kaufen.','Ja, auf den Namen Müller, zwei Nächte.','Nein, ich bin Tourist.'],
+    correct:2,
+    ok:'✅ ممتاز! الإجابة الصحيحة تذكر الاسم وعدد الليالي — هذه المعلومات الأساسية عند الوصول.',
+    err:'❌ الإجابة الصحيحة تتضمن اسمك وعدد الليالي المحجوزة: auf den Namen..., ... Nächte.'
+  },
+  {
+    de:'Rezeptionist: "Möchten Sie ein Einzel- oder Doppelzimmer?"',
+    ar:'هل تريدون غرفة مفردة أم مزدوجة؟',
+    opts:['Ein kleines Zimmer, bitte.','Ich komme alleine — ein Einzelzimmer, bitte.','Ja, bitte!','Zwei Zimmer!'],
+    correct:1,
+    ok:'✅ صحيح! Einzelzimmer = غرفة مفردة. الجواب الكامل يُوضح السبب أيضاً — ممتاز!',
+    err:'❌ Einzelzimmer = غرفة مفردة (لشخص واحد). Doppelzimmer = غرفة مزدوجة (لشخصين).'
+  },
+  {
+    de:'Sie wollen wissen: Ist das Frühstück inklusive?',
+    ar:'تريد أن تعرف: هل الفطور مشمول؟',
+    opts:['Wann ist das Essen?','Ich esse gern Frühstück.','Ist das Frühstück inklusive?','Haben Sie Frühstück?'],
+    correct:2,
+    ok:'✅ رائع! inklusive = مشمول في السعر. هذا هو السؤال الصحيح والاحترافي.',
+    err:'❌ الجملة الصحيحة: "Ist das Frühstück inklusive?" — inklusive يعني مشمول في السعر.'
+  },
+  {
+    de:'Sie wollen das Zimmer verlassen. Was sagen Sie?',
+    ar:'تريد مغادرة الغرفة (تسجيل خروج). ماذا تقول؟',
+    opts:['Ich gehe jetzt.','Ich möchte auschecken, bitte.','Auf Wiedersehen!','Das Zimmer ist fertig.'],
+    correct:1,
+    ok:'✅ بالضبط! auschecken = تسجيل الخروج من الفندق. يمكن أيضاً قول: "Ich möchte abmelden."',
+    err:'❌ الصحيح: "Ich möchte auschecken, bitte." — auschecken هو المصطلح الرسمي لمغادرة الفندق.'
+  },
+  {
+    de:'Rezeptionist: "Wie war Ihr Aufenthalt bei uns?"',
+    ar:'كيف كانت إقامتكم معنا؟',
+    opts:['Ja, danke.','Das Hotel ist groß.','Es war wunderbar! Vielen Dank für alles!','Ich weiß nicht.'],
+    correct:2,
+    ok:'✅ ممتاز! هذه إجابة مؤدبة ومُعبّرة. wunderbar = رائع. Vielen Dank für alles = شكراً جزيلاً على كل شيء!',
+    err:'❌ الإجابة المثالية تُعبّر عن رأيك بوضوح. "Es war wunderbar!" تُعطي انطباعاً إيجابياً ممتازاً.'
+  }
+];
+
+let hotelIdx = 0, hotelAnswered = false;
+
+function renderHotelQ() {
+  hotelAnswered = false;
+  const q = hotelQs[hotelIdx];
+  document.getElementById('hb-progress').textContent = `سؤال ${hotelIdx+1} / ${hotelQs.length}`;
+  document.getElementById('hb-de').textContent = q.de;
+  document.getElementById('hb-ar').textContent = q.ar;
+  const opts = document.getElementById('hb-opts');
+  opts.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'hb-opt';
+    btn.textContent = opt;
+    btn.onclick = () => checkHotelAns(i, q, btn);
+    opts.appendChild(btn);
+  });
+  document.getElementById('hb-fb').className = 'hb-fb';
+  document.getElementById('hb-next').style.display = 'none';
+}
+
+function checkHotelAns(idx, q, btn) {
+  if (hotelAnswered) return;
+  hotelAnswered = true;
+  document.querySelectorAll('.hb-opt').forEach(b => { b.disabled = true; });
+  const isOk = idx === q.correct;
+  btn.classList.add(isOk ? 'ok' : 'bad');
+  if (!isOk) document.querySelectorAll('.hb-opt')[q.correct].classList.add('ok');
+  const fb = document.getElementById('hb-fb');
+  fb.textContent = isOk ? q.ok : q.err;
+  fb.className = 'hb-fb show ' + (isOk ? 'ok' : 'err');
+  document.getElementById('hb-next').style.display = 'block';
+}
+
+function nextHotelQ() {
+  hotelIdx = (hotelIdx + 1) % hotelQs.length;
+  renderHotelQ();
+}
+renderHotelQ();
+
+// ── Certificate generation
+function generateCert() {
+  const name = document.getElementById('cert-name-input').value.trim();
+  if (!name) {
+    document.getElementById('cert-name-input').style.borderColor = 'var(--burg)';
+    document.getElementById('cert-name-input').placeholder = 'الاسم مطلوب!';
+    return;
+  }
+  document.getElementById('cert-name-display').textContent = name;
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('ar-SA', { year:'numeric', month:'long', day:'numeric' });
+  document.getElementById('cert-date-display').textContent = dateStr;
+
+  // Hide input, show certificate
+  document.getElementById('cert-input-wrap').style.display = 'none';
+  const cert = document.getElementById('certificate');
+  cert.style.display = 'block';
+  document.getElementById('cert-actions').style.display = 'block';
+
+  // Speak congratulations
+  setTimeout(() => speak('Herzlichen Glückwunsch! Sie haben den Deutschkurs A2 erfolgreich abgeschlossen!'), 500);
+  // Scroll to cert
+  setTimeout(() => cert.scrollIntoView({ behavior:'smooth', block:'center' }), 300);
+}
+
+// ── Final Quiz — event delegation
+const fb_c = {
+  q1:'✅ صحيح! "Einmal nach [Ziel], bitte!" هي الجملة المعيارية لشراء تذكرة قطار.',
+  q2:'✅ بالضبط! hin und zurück = ذهاباً وعودةً. "einfach" = ذهاب فقط.',
+  q3:'✅ ممتاز! المهن بعد sein تأتي بدون أداة تعريف. وصيغة المؤنث لـ Arzt هي Ärztin.',
+  q4:'✅ صحيح! der Aufenthalt = الإقامة / فترة المكوث. "Wie lange ist Ihr Aufenthalt?" = كم مدة إقامتك؟',
+  q5:'✅ رائع! aufstehen فعل منفصل: Ich STEHE um 7 Uhr AUF. البادئة auf تذهب للنهاية دائماً!',
+  q6:'✅ صحيح! Doppelzimmer = غرفة مزدوجة. Einzelzimmer = مفردة. reservieren = يحجز.',
+  q7:'✅ بالضبط! في ألمانيا 1 = sehr gut (الأفضل)، 6 = ungenügend (الأسوأ). النظام مقلوب!',
+  q8:'✅ ممتاز! للجوع والعطش والخوف نستخدم haben: Ich habe Hunger. لا تقل أبداً: Ich bin Hunger!',
+  q9:'✅ صحيح! Gute Reise = رحلة موفقة / سفر آمن. تُقال للمسافر قبل سفره!',
+  q10:'✅ 🎉 Herzlich WILLKOMMEN in Deutschland! — هذه الجملة ستسمعها كثيراً في ألمانيا!'
+};
+const fb_w = {
+  q1:'❌ الجملة الصحيحة: "Einmal nach Berlin, bitte!" — einmal = مرة واحدة = تذكرة واحدة.',
+  q2:'❌ hin und zurück = ذهاباً وعودةً (round trip). اللغة حرفياً: "ذهاب ورجوع".',
+  q3:'❌ المهن بعد sein لا تأخذ أداة تعريف: Ich bin Ärztin (وليس ein أو die). وللمذكر: Ich bin Arzt.',
+  q4:'❌ der Aufenthalt = الإقامة / المكوث. die Ankunft = الوصول. der Reisepass = جواز السفر.',
+  q5:'❌ aufstehen فعل منفصل → الفعل الأساسي يأتي ثانياً والبادئة في النهاية: stehe ... auf.',
+  q6:'❌ الصحيح: "Ich möchte ein Doppelzimmer reservieren." مع فعل reservieren للحجز الرسمي.',
+  q7:'❌ النظام الألماني مقلوب! 1 = sehr gut (ممتاز). كلما صغر الرقم كان أفضل.',
+  q8:'❌ الجوع والعطش والخوف تأتي مع haben: Ich habe Hunger. لا نقول: Ich bin Hunger!',
+  q9:'❌ Gute Reise = رحلة موفقة! تُقال للمسافر عند وداعه قبل السفر. مثل "Safe travels!"',
+  q10:'❌ Herzlich WILLKOMMEN! = أهلاً وسهلاً! هذه تحية الترحيب الألمانية الرسمية.'
+};
+
+let answers = {};
+
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('button.opt');
+  if (!btn) return;
+  const qid = btn.getAttribute('data-qid');
+  const val = btn.getAttribute('data-val');
+  if (qid && val) ans(btn, qid, val);
+});
+
+function ans(btn, qid, r) {
+  if (answers[qid]) return;
+  answers[qid] = r;
+  document.getElementById(qid).querySelectorAll('button.opt').forEach(b => { b.disabled = true; });
+  btn.classList.add(r === 'c' ? 'correct' : 'wrong');
+  const fb = document.getElementById('fb-' + qid);
+  fb.textContent = r === 'c' ? fb_c[qid] : fb_w[qid];
+  fb.className = 'qfb show ' + (r === 'c' ? 'ok' : 'err');
+  if (Object.keys(answers).length === 10) showResult();
+}
+
+function showResult() {
+  const s = Object.values(answers).filter(v => v === 'c').length;
+  const msgs = [
+    '📖 راجع الدروس ومحاولة أخرى!',
+    '💪 تقدم ملحوظ — استمر!',
+    '📚 جيد — راجع الملاحظات',
+    '🌱 تقدم جيد جداً!',
+    '⭐ ممتاز! أنت في الطريق الصحيح',
+    '🌟 رائع جداً!',
+    '🏆 مستوى عالٍ جداً!',
+    '🎖️ شبه مثالي — عمل رائع!',
+    '🥇 مثالي تقريباً! تهانينا!',
+    '🎓 تسعة من عشرة — نخبة!',
+    '🎉 درجة كاملة! أنت مستعد لألمانيا! Herzlichen Glückwunsch!'
+  ];
+  document.getElementById('r-score').textContent = s + '/10';
+  document.getElementById('r-msg').textContent = msgs[s] || '';
+  const rb = document.getElementById('result-wrap');
+  rb.style.display = 'block';
+  rb.scrollIntoView({ behavior:'smooth', block:'center' });
+  // If good score, scroll to certificate
+  if (s >= 7) {
+    setTimeout(() => {
+      document.getElementById('certificate-section') ||
+      document.getElementById('certificate').closest('section')?.scrollIntoView({ behavior:'smooth' });
+    }, 3000);
+  }
+}
+
+function resetQuiz() {
+  answers = {};
+  document.querySelectorAll('button.opt').forEach(b => { b.disabled = false; b.className = 'opt'; });
+  document.querySelectorAll('.qfb').forEach(f => { f.className = 'qfb'; });
+  document.getElementById('result-wrap').style.display = 'none';
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-kurs-lesson-12-reisen" data-category="a2-kurs" data-title="السفر والختام 🎓" data-root="../../" defer></script>
+</body>
+</html>

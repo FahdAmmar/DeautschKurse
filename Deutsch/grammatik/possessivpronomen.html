@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>الضمائر الملكية في اللغة الألمانية – Possessivpronomen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --bg-primary: #f7f6f3;
+  --bg-secondary: #efefec;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fafaf8;
+  --bg-accent: #eef3ff;
+  --border: #e2e1dc;
+  --border-light: #ece9e3;
+  --text-primary: #1a1917;
+  --text-secondary: #4a4845;
+  --text-muted: #8a8680;
+  --text-german: #1e3a5f;
+  --accent-blue: #2563eb;
+  --accent-blue-soft: #dbeafe;
+  --accent-gold: #b45309;
+  --accent-gold-soft: #fef3c7;
+  --accent-green: #15803d;
+  --accent-green-soft: #dcfce7;
+  --accent-violet: #7c3aed;
+  --accent-violet-soft: #ede9fe;
+  --accent-rose: #be185d;
+  --accent-rose-soft: #fce7f3;
+  --accent-teal: #0f766e;
+  --accent-teal-soft: #ccfbf1;
+  --gender-m: #1d4ed8;
+  --gender-m-soft: #dbeafe;
+  --gender-f: #be185d;
+  --gender-f-soft: #fce7f3;
+  --gender-n: #15803d;
+  --gender-n-soft: #dcfce7;
+  --gender-pl: #b45309;
+  --gender-pl-soft: #fef3c7;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --font-ar: 'Cairo', 'Tajawal', sans-serif;
+  --font-de: 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --scroll-color: #2563eb;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #111110;
+  --bg-secondary: #18181a;
+  --bg-card: #1e1e20;
+  --bg-card-hover: #242426;
+  --bg-accent: #1a2035;
+  --border: #2e2e32;
+  --border-light: #272728;
+  --text-primary: #f0efec;
+  --text-secondary: #a8a6a2;
+  --text-muted: #6a6865;
+  --text-german: #93c5fd;
+  --accent-blue: #60a5fa;
+  --accent-blue-soft: #1e3a5f;
+  --accent-gold: #fbbf24;
+  --accent-gold-soft: #3a2800;
+  --accent-green: #4ade80;
+  --accent-green-soft: #0d2b1a;
+  --accent-violet: #a78bfa;
+  --accent-violet-soft: #2d1f52;
+  --accent-rose: #f472b6;
+  --accent-rose-soft: #3d0f28;
+  --accent-teal: #2dd4bf;
+  --accent-teal-soft: #042f2e;
+  --gender-m: #60a5fa;
+  --gender-m-soft: #1e3a5f;
+  --gender-f: #f472b6;
+  --gender-f-soft: #3d0f28;
+  --gender-n: #4ade80;
+  --gender-n-soft: #0d2b1a;
+  --gender-pl: #fbbf24;
+  --gender-pl-soft: #3a2800;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-ar);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  transition: background 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* ===== SCROLL PROGRESS ===== */
+#scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-violet));
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 9999;
+  transition: transform 0.1s linear;
+}
+
+/* ===== STICKY NAV ===== */
+#main-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(247,246,243,0.88);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+[data-theme="dark"] #main-nav {
+  background: rgba(17,17,16,0.88);
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px; gap: 16px;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+}
+.nav-logo {
+  width: 34px; height: 34px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-de); font-weight: 700; font-size: 14px; color: #fff;
+  flex-shrink: 0;
+}
+.nav-title-group { display: flex; flex-direction: column; gap: 0; }
+.nav-series {
+  font-size: 9.5px; font-weight: 600; letter-spacing: 0.08em;
+  color: var(--accent-blue); text-transform: uppercase;
+  line-height: 1.2; font-family: var(--font-de);
+}
+.nav-lesson-title {
+  font-size: 13px; font-weight: 700; color: var(--text-primary); line-height: 1.2;
+}
+.nav-links {
+  display: flex; align-items: center; gap: 6px; overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-link {
+  padding: 5px 11px; border-radius: 6px;
+  font-size: 12px; font-weight: 600; color: var(--text-secondary);
+  text-decoration: none; white-space: nowrap;
+  transition: all 0.2s;
+}
+.nav-link:hover, .nav-link.active { background: var(--accent-blue-soft); color: var(--accent-blue); }
+.nav-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.theme-btn, .print-btn {
+  width: 34px; height: 34px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--bg-card);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  color: var(--text-secondary); font-size: 15px;
+  transition: all 0.2s;
+}
+.theme-btn:hover, .print-btn:hover { background: var(--bg-accent); color: var(--accent-blue); }
+
+/* ===== PAGE LAYOUT ===== */
+.page-wrap {
+  max-width: 1100px; margin: 0 auto; padding: 0 24px 80px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding: 56px 0 48px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 56px;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent-blue-soft); color: var(--accent-blue);
+  padding: 5px 14px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+  margin-bottom: 20px; font-family: var(--font-de);
+}
+.hero-de {
+  font-family: 'Playfair Display', var(--font-de);
+  font-size: clamp(28px, 5vw, 52px); font-weight: 700;
+  color: var(--text-german);
+  letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 8px;
+}
+.hero-ar {
+  font-size: clamp(18px, 3vw, 26px); font-weight: 800;
+  color: var(--text-primary); margin-bottom: 6px;
+}
+.hero-en {
+  font-family: var(--font-de); font-size: 15px; color: var(--text-muted); margin-bottom: 24px;
+}
+.hero-tags {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 28px;
+}
+.hero-tag {
+  padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 600;
+  border: 1px solid var(--border);
+  font-family: var(--font-de);
+}
+.hero-tag.blue { background: var(--gender-m-soft); color: var(--gender-m); border-color: var(--gender-m-soft); }
+.hero-tag.pink { background: var(--gender-f-soft); color: var(--gender-f); border-color: var(--gender-f-soft); }
+.hero-tag.green { background: var(--gender-n-soft); color: var(--gender-n); border-color: var(--gender-n-soft); }
+.hero-tag.gold { background: var(--gender-pl-soft); color: var(--gender-pl); border-color: var(--gender-pl-soft); }
+.hero-desc {
+  max-width: 600px; margin: 0 auto;
+  font-size: 15px; color: var(--text-secondary); line-height: 1.8;
+}
+
+/* ===== SECTION TITLES ===== */
+.section-block { margin-bottom: 52px; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 10px; font-family: var(--font-de);
+}
+.section-label-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent-blue);
+}
+.section-title {
+  font-size: clamp(20px, 3vw, 26px); font-weight: 800;
+  color: var(--text-primary); margin-bottom: 6px; line-height: 1.25;
+}
+.section-subtitle {
+  font-family: var(--font-de); font-size: 13.5px; color: var(--text-muted); margin-bottom: 24px;
+}
+
+/* ===== INTRO CARD ===== */
+.intro-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;
+}
+@media(max-width: 640px){ .intro-grid { grid-template-columns: 1fr; } }
+.intro-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 22px 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.intro-icon {
+  width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.intro-icon.blue { background: var(--gender-m-soft); }
+.intro-icon.pink { background: var(--gender-f-soft); }
+.intro-icon.green { background: var(--gender-n-soft); }
+.intro-icon.gold { background: var(--gender-pl-soft); }
+.intro-card-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.intro-card-text { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+
+/* ===== PRONOUNS TABLE ===== */
+.pronouns-grid {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-md); margin-bottom: 20px;
+}
+.pronouns-title-bar {
+  padding: 14px 20px;
+  background: var(--bg-secondary); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.pronouns-title-bar-text {
+  font-size: 14px; font-weight: 700; color: var(--text-primary);
+}
+.pronouns-title-bar-sub {
+  font-family: var(--font-de); font-size: 12px; color: var(--text-muted);
+}
+.table-wrap { overflow-x: auto; }
+table {
+  width: 100%; border-collapse: collapse; min-width: 600px;
+}
+thead tr { background: var(--bg-secondary); }
+th {
+  padding: 11px 14px; text-align: center; font-size: 12.5px; font-weight: 700;
+  border-bottom: 2px solid var(--border); color: var(--text-secondary);
+  font-family: var(--font-de); white-space: nowrap;
+}
+th.col-pronoun { text-align: right; }
+td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border-light);
+  font-size: 13px; text-align: center; transition: background 0.15s;
+  vertical-align: middle;
+}
+td.col-pronoun {
+  text-align: right; font-weight: 700; font-size: 13.5px;
+  color: var(--text-primary); white-space: nowrap;
+}
+td.col-pronoun span {
+  font-size: 11px; font-weight: 400; color: var(--text-muted);
+  display: block; font-family: var(--font-de);
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg-card-hover); }
+.cell-m { color: var(--gender-m); font-weight: 700; font-family: var(--font-de); font-size: 13px; }
+.cell-f { color: var(--gender-f); font-weight: 700; font-family: var(--font-de); font-size: 13px; }
+.cell-n { color: var(--gender-n); font-weight: 700; font-family: var(--font-de); font-size: 13px; }
+.cell-pl { color: var(--gender-pl); font-weight: 700; font-family: var(--font-de); font-size: 13px; }
+.cell-ending { 
+  display: inline-block;
+  background: currentColor;
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 1px;
+}
+.ending-highlight {
+  background: var(--accent-blue-soft);
+  color: var(--accent-blue);
+  border-radius: 3px;
+  padding: 1px 3px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+}
+.row-divider td { background: var(--bg-secondary) !important; }
+.row-divider td:first-child {
+  font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.06em;
+  text-transform: uppercase; font-family: var(--font-de); padding: 7px 14px;
+}
+
+/* ===== CASE OVERVIEW CARDS ===== */
+.case-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
+@media(max-width: 768px){ .case-cards { grid-template-columns: 1fr; } }
+.case-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  box-shadow: var(--shadow-sm); transition: box-shadow 0.2s, transform 0.2s;
+}
+.case-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.case-card-top {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+}
+.case-badge {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  padding: 3px 8px; border-radius: 5px; letter-spacing: 0.04em;
+}
+.case-badge.nom { background: var(--accent-blue-soft); color: var(--accent-blue); }
+.case-badge.akk { background: var(--accent-violet-soft); color: var(--accent-violet); }
+.case-badge.dat { background: var(--accent-teal-soft); color: var(--accent-teal); }
+.case-card-name { font-size: 15px; font-weight: 800; }
+.case-card-en { font-family: var(--font-de); font-size: 12px; color: var(--text-muted); margin-bottom: 10px; }
+.case-card-rule { font-size: 13px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 10px; }
+.case-card-ex {
+  background: var(--bg-secondary); border-radius: 8px;
+  padding: 10px 12px; border-right: 3px solid;
+}
+.case-card-ex.nom { border-color: var(--accent-blue); }
+.case-card-ex.akk { border-color: var(--accent-violet); }
+.case-card-ex.dat { border-color: var(--accent-teal); }
+.ex-de { font-family: var(--font-de); font-size: 13px; font-weight: 600; color: var(--text-german); margin-bottom: 3px; }
+.ex-ar { font-size: 12.5px; color: var(--text-secondary); }
+.ex-en { font-family: var(--font-de); font-size: 11.5px; color: var(--text-muted); font-style: italic; }
+
+/* ===== ENDINGS VISUAL ===== */
+.endings-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+  margin-bottom: 28px;
+}
+@media(max-width: 600px){ .endings-grid { grid-template-columns: 1fr; } }
+.ending-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 18px;
+  box-shadow: var(--shadow-sm);
+}
+.ending-card-header {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+}
+.ending-tag {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  padding: 3px 8px; border-radius: 5px;
+}
+.ending-title { font-size: 14px; font-weight: 700; }
+.ending-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 0; border-bottom: 1px solid var(--border-light);
+  font-size: 13px;
+}
+.ending-row:last-child { border-bottom: none; }
+.ending-pronoun {
+  font-weight: 700; min-width: 80px; color: var(--text-primary);
+  font-family: var(--font-de); font-size: 12px;
+}
+.ending-form {
+  font-family: var(--font-de); font-weight: 700; font-size: 14px;
+  flex: 1;
+}
+.ending-note { font-size: 11.5px; color: var(--text-muted); }
+
+/* ===== COMPARISON TABLE: FULL DECLENSION ===== */
+.full-table-wrap {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-md); margin-bottom: 28px;
+}
+.table-header-bar {
+  padding: 16px 20px;
+  background: linear-gradient(135deg, var(--accent-blue-soft) 0%, var(--accent-violet-soft) 100%);
+  border-bottom: 1px solid var(--border);
+}
+.table-header-title { font-size: 15px; font-weight: 800; margin-bottom: 2px; }
+.table-header-sub { font-family: var(--font-de); font-size: 12px; color: var(--text-muted); }
+.gender-col-m { background: var(--gender-m-soft); }
+.gender-col-f { background: var(--gender-f-soft); }
+.gender-col-n { background: var(--gender-n-soft); }
+.gender-col-pl { background: var(--gender-pl-soft); }
+th.m { color: var(--gender-m); }
+th.f { color: var(--gender-f); }
+th.n { color: var(--gender-n); }
+th.pl { color: var(--gender-pl); }
+
+/* ===== SENTENCE CARDS (EXAMPLE SENTENCES) ===== */
+.sentence-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  margin-bottom: 12px;
+}
+@media(max-width: 700px){ .sentence-grid { grid-template-columns: 1fr; } }
+.sentence-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 16px;
+  box-shadow: var(--shadow-sm); transition: box-shadow 0.2s;
+}
+.sentence-card:hover { box-shadow: var(--shadow-md); }
+.sentence-top {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;
+}
+.sentence-de {
+  font-family: var(--font-de); font-size: 15px; font-weight: 600;
+  color: var(--text-german); line-height: 1.45; flex: 1;
+}
+.sentence-de .highlighted { 
+  background: var(--accent-blue-soft); color: var(--accent-blue);
+  border-radius: 3px; padding: 1px 4px;
+  font-family: var(--font-mono); font-size: 13px;
+}
+.sentence-case-badge {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  padding: 2px 7px; border-radius: 4px; flex-shrink: 0;
+}
+.sentence-translations { display: flex; flex-direction: column; gap: 4px; }
+.trans-ar { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+.trans-en { font-family: var(--font-de); font-size: 12px; color: var(--text-muted); font-style: italic; }
+.sentence-actions {
+  display: flex; gap: 7px; margin-top: 10px; padding-top: 10px;
+  border-top: 1px solid var(--border-light);
+}
+.action-btn {
+  flex: 1; padding: 7px 10px; border-radius: 7px; border: 1px solid var(--border);
+  background: var(--bg-secondary); cursor: pointer;
+  font-size: 12px; font-weight: 600; color: var(--text-secondary);
+  font-family: var(--font-ar); display: flex; align-items: center; justify-content: center; gap: 5px;
+  transition: all 0.2s;
+}
+.action-btn:hover { background: var(--accent-blue-soft); color: var(--accent-blue); border-color: var(--accent-blue); }
+.action-btn.speak:hover { background: var(--accent-green-soft); color: var(--accent-green); border-color: var(--accent-green); }
+.action-btn.copied { background: var(--accent-green-soft); color: var(--accent-green); border-color: var(--accent-green); }
+
+/* ===== EXERCISES ===== */
+.exercise-block {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-md); margin-bottom: 20px;
+}
+.exercise-header {
+  padding: 16px 20px; display: flex; align-items: center; gap: 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+.ex-num {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 14px; font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
+  color: #fff; flex-shrink: 0;
+}
+.ex-type { font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; color: var(--text-muted); font-family: var(--font-de); text-transform: uppercase; }
+.ex-title { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+.exercise-body { padding: 20px; }
+.ex-instruction {
+  font-size: 13.5px; color: var(--text-secondary); margin-bottom: 18px; line-height: 1.7;
+  background: var(--accent-blue-soft); border-radius: 8px; padding: 12px 14px;
+  border-right: 3px solid var(--accent-blue);
+}
+.ex-items { display: flex; flex-direction: column; gap: 12px; }
+.ex-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px; background: var(--bg-secondary);
+  border-radius: 8px; border: 1px solid var(--border-light);
+}
+.ex-item-num {
+  width: 24px; height: 24px; border-radius: 6px;
+  background: var(--border); color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; flex-shrink: 0; font-family: var(--font-mono);
+}
+.ex-item-text {
+  flex: 1; font-size: 13.5px; line-height: 1.6;
+}
+.ex-item-text .blank {
+  display: inline-block;
+  border-bottom: 2px solid var(--accent-blue);
+  min-width: 70px; height: 20px; margin: 0 3px;
+  vertical-align: bottom; cursor: pointer;
+  transition: border-color 0.2s;
+}
+.ex-item-text .blank:hover { border-color: var(--accent-violet); }
+.ex-item-actions { display: flex; gap: 6px; }
+.show-answer-btn {
+  padding: 5px 11px; border-radius: 6px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  font-size: 12px; font-weight: 600; color: var(--text-muted);
+  cursor: pointer; font-family: var(--font-ar); transition: all 0.2s;
+  white-space: nowrap;
+}
+.show-answer-btn:hover { background: var(--accent-violet-soft); color: var(--accent-violet); border-color: var(--accent-violet); }
+.answer-reveal {
+  display: none; margin-top: 8px; padding: 8px 12px;
+  background: var(--accent-green-soft); border-radius: 7px;
+  border: 1px solid rgba(21,128,61,0.2);
+}
+.answer-reveal.visible { display: block; }
+.answer-de { font-family: var(--font-de); font-size: 13.5px; font-weight: 700; color: var(--accent-green); margin-bottom: 3px; }
+.answer-ar { font-size: 12.5px; color: var(--text-secondary); }
+.answer-en { font-family: var(--font-de); font-size: 11.5px; color: var(--text-muted); font-style: italic; }
+
+/* ===== TIPS BOX ===== */
+.tip-box {
+  background: var(--accent-gold-soft); border: 1px solid rgba(180,83,9,0.2);
+  border-radius: var(--radius-md); padding: 16px 18px; margin-bottom: 16px;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.tip-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.tip-content { flex: 1; }
+.tip-title { font-size: 14px; font-weight: 700; color: var(--accent-gold); margin-bottom: 5px; }
+.tip-text { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+.note-box {
+  background: var(--accent-violet-soft); border: 1px solid rgba(124,58,237,0.15);
+  border-radius: var(--radius-md); padding: 14px 16px; margin-bottom: 16px;
+}
+.note-box-title { font-size: 13px; font-weight: 700; color: var(--accent-violet); margin-bottom: 5px; }
+.note-box-text { font-size: 12.5px; color: var(--text-secondary); line-height: 1.7; }
+
+/* ===== LEGEND ===== */
+.legend {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; padding: 14px 16px;
+  background: var(--bg-secondary); border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+.legend-item {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-de); font-size: 12px; font-weight: 600;
+}
+.legend-dot { width: 10px; height: 10px; border-radius: 3px; }
+.legend-dot.m { background: var(--gender-m); }
+.legend-dot.f { background: var(--gender-f); }
+.legend-dot.n { background: var(--gender-n); }
+.legend-dot.pl { background: var(--gender-pl); }
+
+/* ===== SCROLL REVEAL ===== */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s, transform 0.5s; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== TOAST ===== */
+#toast {
+  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px);
+  background: var(--text-primary); color: var(--bg-primary);
+  padding: 10px 20px; border-radius: 10px; font-size: 13px; font-weight: 600;
+  z-index: 9999; transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events: none; font-family: var(--font-ar);
+}
+#toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ===== PRINT ===== */
+@media print {
+  @page { size: A4 portrait; margin: 12mm 11mm; }
+  #scroll-progress, #main-nav, #toast, .action-btn, .show-answer-btn, .nav-actions { display: none !important; }
+  body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+  .page-wrap { max-width: 100%; padding: 0; }
+  .hero { padding: 16pt 0 12pt; }
+  .hero-de { font-size: 22pt; }
+  .hero-ar { font-size: 16pt; }
+  .section-block { margin-bottom: 18pt; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .sentence-card, .case-card, .exercise-block, .pronouns-grid, .full-table-wrap { page-break-inside: avoid; }
+  .sentence-grid, .case-cards, .endings-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  table { font-size: 9pt; }
+  th, td { padding: 6pt 8pt; }
+  .sentence-card { box-shadow: none !important; border: 1pt solid #ccc !important; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px){
+  .page-wrap { padding: 0 16px 60px; }
+  .hero { padding: 36px 0 32px; }
+  .nav-links { display: none; }
+  .sentence-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body data-theme="light">
+<div id="scroll-progress"></div>
+
+<!-- NAV -->
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <div class="nav-logo">DM</div>
+      <div class="nav-title-group">
+        <span class="nav-series">Deutsch mit Mira</span>
+        <span class="nav-lesson-title">الضمائر الملكية</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#intro" class="nav-link">المقدمة</a>
+      <a href="#nominativ" class="nav-link">Nominativ</a>
+      <a href="#akkusativ" class="nav-link">Akkusativ</a>
+      <a href="#dativ" class="nav-link">Dativ</a>
+      <a href="#sentences" class="nav-link">جمل</a>
+      <a href="#exercises" class="nav-link">تمارين</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <button class="print-btn" onclick="window.print()" aria-label="Print page">🖨️</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-wrap" id="top">
+  <section class="hero reveal" id="hero-sec">
+    <div class="hero-eyebrow">
+      <span>A2 · Grammatik</span>
+      <span>·</span>
+      <span>Deutsch mit Mira</span>
+    </div>
+    <div class="hero-de">Possessivpronomen</div>
+    <div class="hero-ar">الضمائر الملكية في اللغة الألمانية</div>
+    <div class="hero-en">Possessive Pronouns – mein, dein, sein, ihr …</div>
+    <div class="hero-tags">
+      <span class="hero-tag blue">🔵 Maskulin – مذكر</span>
+      <span class="hero-tag pink">🩷 Feminin – مؤنث</span>
+      <span class="hero-tag green">🟢 Neutral – محايد</span>
+      <span class="hero-tag gold">🟡 Plural – جمع</span>
+    </div>
+    <p class="hero-desc">
+      تعلّم كيف تعبّر عن الملكية في اللغة الألمانية باستخدام الضمائر الملكية مع جميع حالات الإعراب: الرفع والنصب والجر — مع أمثلة حية وتمارين تفاعلية.
+    </p>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section-block reveal" id="intro">
+    <div class="section-label"><span class="section-label-dot"></span>المقدمة · Introduction</div>
+    <div class="section-title">ما هي الضمائر الملكية؟</div>
+    <div class="section-subtitle">What are Possessive Pronouns?</div>
+
+    <div class="intro-grid">
+      <div class="intro-card">
+        <div class="intro-icon blue">🔑</div>
+        <div>
+          <div class="intro-card-title">تدلّ على الملكية</div>
+          <div class="intro-card-text">تُستخدم الضمائر الملكية للتعبير عن أن شيئًا ما يعود لشخص أو جماعة معينة، مثل: <strong>كتابي – mein Buch</strong></div>
+        </div>
+      </div>
+      <div class="intro-card">
+        <div class="intro-icon pink">📐</div>
+        <div>
+          <div class="intro-card-title">تتصرّف مثل صفات</div>
+          <div class="intro-card-text">تأتي الضمائر الملكية قبل الاسم وتتغير لواحقها حسب جنس الاسم وحالة الإعراب، تمامًا مثل مادة الصفات.</div>
+        </div>
+      </div>
+      <div class="intro-card">
+        <div class="intro-icon green">🔢</div>
+        <div>
+          <div class="intro-card-title">ثلاث حالات إعراب</div>
+          <div class="intro-card-text">تتغير اللواحق في ثلاث حالات: <strong>Nominativ</strong> (الفاعل) · <strong>Akkusativ</strong> (المفعول به) · <strong>Dativ</strong> (المفعول غير المباشر)</div>
+        </div>
+      </div>
+      <div class="intro-card">
+        <div class="intro-icon gold">🌍</div>
+        <div>
+          <div class="intro-card-title">ثمانية أشكال أساسية</div>
+          <div class="intro-card-text">mein · dein · sein · ihr · sein · unser · euer · ihr/Ihr — كلٌّ منها يتصرّف بنفس النظام اللاحق.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-icon">💡</div>
+      <div class="tip-content">
+        <div class="tip-title">القاعدة الذهبية</div>
+        <div class="tip-text">
+          جذر الضمير الملكي (مثل <strong>mein-</strong>) يُحدّد المالك، واللاحقة المضافة إليه تُحدّد جنس وحالة الشيء المملوك. مثال: <strong>mein<span style="color:var(--accent-blue)">e</span> Mutter</strong> — أمي (مؤنث، فاعل).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOMINATIV ===== -->
+  <section class="section-block reveal" id="nominativ">
+    <div class="section-label"><span class="section-label-dot"></span>Nominativ · حالة الرفع</div>
+    <div class="section-title">حالة الفاعل – Nominativ</div>
+    <div class="section-subtitle">The Subject Case – used when the possessor IS the subject of the sentence</div>
+
+    <div class="case-cards">
+      <div class="case-card">
+        <div class="case-card-top">
+          <span class="case-badge nom">NOM</span>
+          <span class="case-card-name">الفاعل</span>
+        </div>
+        <div class="case-card-en">Subject of the sentence</div>
+        <p class="case-card-rule">تُستخدم حالة الرفع حين يكون الشيء المملوك هو <strong>فاعل الجملة</strong> — أي من يقوم بالفعل.</p>
+        <div class="case-card-ex nom">
+          <div class="ex-de">Mein Bruder ist Arzt.</div>
+          <div class="ex-ar">أخي طبيب.</div>
+          <div class="ex-en">My brother is a doctor.</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-top">
+          <span class="case-badge nom">NOM</span>
+          <span class="case-card-name">اللواحق</span>
+        </div>
+        <div class="case-card-en">Endings in Nominativ</div>
+        <p class="case-card-rule">في حالة الرفع تُضاف اللواحق التالية:</p>
+        <div class="case-card-ex nom">
+          <div class="ex-de">مذكر: <strong>—</strong> · مؤنث: <strong>-e</strong> · محايد: <strong>—</strong> · جمع: <strong>-e</strong></div>
+          <div class="ex-ar">mein · meine · mein · meine</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-top">
+          <span class="case-badge nom">NOM</span>
+          <span class="case-card-name">ملاحظة</span>
+        </div>
+        <div class="case-card-en">Special note</div>
+        <p class="case-card-rule">المذكر والمحايد في حالة الرفع <strong>لا يأخذان لاحقة</strong> — الضمير يبقى على شكله الأساسي.</p>
+        <div class="case-card-ex nom">
+          <div class="ex-de">Mein Vater – Mein Kind</div>
+          <div class="ex-ar">أبي – طفلي</div>
+          <div class="ex-en">My father – My child</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pronouns-grid">
+      <div class="pronouns-title-bar">
+        <div>
+          <div class="pronouns-title-bar-text">جدول الضمائر الملكية — Nominativ</div>
+          <div class="pronouns-title-bar-sub">Possessive Pronouns in the Nominative Case</div>
+        </div>
+      </div>
+      <div class="legend">
+        <div class="legend-item"><span class="legend-dot m"></span>Maskulin · مذكر</div>
+        <div class="legend-item"><span class="legend-dot f"></span>Feminin · مؤنث</div>
+        <div class="legend-item"><span class="legend-dot n"></span>Neutral · محايد</div>
+        <div class="legend-item"><span class="legend-dot pl"></span>Plural · جمع</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-pronoun">الضمير</th>
+              <th class="m">Maskulin<br><small>der Vater</small></th>
+              <th class="f">Feminin<br><small>die Mutter</small></th>
+              <th class="n">Neutral<br><small>das Kind</small></th>
+              <th class="pl">Plural<br><small>die Eltern</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-divider"><td colspan="5">Singular — مفرد</td><td></td><td></td><td></td></tr>
+            <tr><td class="col-pronoun">ich<span>أنا</span></td><td class="cell-m">mein</td><td class="cell-f">meine</td><td class="cell-n">mein</td><td class="cell-pl">meine</td></tr>
+            <tr><td class="col-pronoun">du<span>أنتَ/ِ</span></td><td class="cell-m">dein</td><td class="cell-f">deine</td><td class="cell-n">dein</td><td class="cell-pl">deine</td></tr>
+            <tr><td class="col-pronoun">er<span>هو</span></td><td class="cell-m">sein</td><td class="cell-f">seine</td><td class="cell-n">sein</td><td class="cell-pl">seine</td></tr>
+            <tr><td class="col-pronoun">sie<span>هي</span></td><td class="cell-m">ihr</td><td class="cell-f">ihre</td><td class="cell-n">ihr</td><td class="cell-pl">ihre</td></tr>
+            <tr><td class="col-pronoun">es<span>هو/ها</span></td><td class="cell-m">sein</td><td class="cell-f">seine</td><td class="cell-n">sein</td><td class="cell-pl">seine</td></tr>
+            <tr class="row-divider"><td colspan="5">Plural — جمع</td><td></td><td></td><td></td></tr>
+            <tr><td class="col-pronoun">wir<span>نحن</span></td><td class="cell-m">unser</td><td class="cell-f">unsere</td><td class="cell-n">unser</td><td class="cell-pl">unsere</td></tr>
+            <tr><td class="col-pronoun">ihr<span>أنتم</span></td><td class="cell-m">euer</td><td class="cell-f">eure</td><td class="cell-n">euer</td><td class="cell-pl">eure</td></tr>
+            <tr><td class="col-pronoun">sie / Sie<span>هم / حضرتك</span></td><td class="cell-m">ihr / Ihr</td><td class="cell-f">ihre / Ihre</td><td class="cell-n">ihr / Ihr</td><td class="cell-pl">ihre / Ihre</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <div class="note-box-title">📌 ملاحظة: euer ← eure</div>
+      <div class="note-box-text">
+        الضمير <strong>euer</strong> (الخاص بـ "ihr — أنتم") يحذف الـ <strong>e</strong> الداخلية عند إضافة لاحقة مؤنثة أو جمع:
+        euer (م.) ← eure (مؤ./جمع) وليس "euere". هذا استثناء مهم يجب حفظه!
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AKKUSATIV ===== -->
+  <section class="section-block reveal" id="akkusativ">
+    <div class="section-label"><span class="section-label-dot" style="background:var(--accent-violet)"></span>Akkusativ · حالة النصب</div>
+    <div class="section-title">حالة المفعول به – Akkusativ</div>
+    <div class="section-subtitle">The Accusative Case – used for the direct object</div>
+
+    <div class="case-cards">
+      <div class="case-card">
+        <div class="case-card-top">
+          <span class="case-badge akk">AKK</span>
+          <span class="case-card-name">متى تُستخدم؟</span>
+        </div>
+        <div class="case-card-en">When to use?</div>
+        <p class="case-card-rule">تُستخدم حالة النصب حين يكون الشيء المملوك <strong>مفعولاً به مباشرًا</strong> للفعل — الشيء الذي يقع عليه الفعل.</p>
+        <div class="case-card-ex akk">
+          <div class="ex-de">Ich sehe meinen Vater.</div>
+          <div class="ex-ar">أنا أرى أبي.</div>
+          <div class="ex-en">I see my father.</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-top">
+          <span class="case-badge akk">AKK</span>
+          <span class="case-card-name">ما الذي يتغير؟</span>
+        </div>
+        <div class="case-card-en">What changes?</div>
+        <p class="case-card-rule"><strong>فقط المذكر</strong> يتغير في حالة النصب! المؤنث والمحايد والجمع تبقى مثل Nominativ.</p>
+        <div class="case-card-ex akk">
+          <div class="ex-de">مذكر فقط: mein<span style="color:var(--accent-violet);font-weight:800">en</span></div>
+          <div class="ex-ar">مؤنث / محايد / جمع: لا تغيير</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-top">
+          <span class="case-badge akk">AKK</span>
+          <span class="case-card-name">أفعال شائعة</span>
+        </div>
+        <div class="case-card-en">Common verbs + Akkusativ</div>
+        <p class="case-card-rule">أفعال تطلب Akkusativ: <strong>haben, sehen, kaufen, lieben, brauchen, nehmen, finden</strong></p>
+        <div class="case-card-ex akk">
+          <div class="ex-de">Ich liebe meine Familie.</div>
+          <div class="ex-ar">أنا أحبّ عائلتي.</div>
+          <div class="ex-en">I love my family.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="full-table-wrap">
+      <div class="table-header-bar">
+        <div class="table-header-title">جدول الضمائر الملكية — Akkusativ</div>
+        <div class="table-header-sub">Possessive Pronouns in the Accusative Case · التغيير الوحيد في المذكر: -en</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-pronoun">الضمير</th>
+              <th class="m">Maskulin ⚡<br><small>der → den</small></th>
+              <th class="f">Feminin<br><small>die → die</small></th>
+              <th class="n">Neutral<br><small>das → das</small></th>
+              <th class="pl">Plural<br><small>die → die</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-divider"><td colspan="5">Singular — مفرد</td><td></td><td></td><td></td></tr>
+            <tr><td class="col-pronoun">ich<span>أنا</span></td><td class="cell-m">mein<span class="ending-highlight">en</span></td><td class="cell-f">meine</td><td class="cell-n">mein</td><td class="cell-pl">meine</td></tr>
+            <tr><td class="col-pronoun">du<span>أنتَ/ِ</span></td><td class="cell-m">dein<span class="ending-highlight">en</span></td><td class="cell-f">deine</td><td class="cell-n">dein</td><td class="cell-pl">deine</td></tr>
+            <tr><td class="col-pronoun">er<span>هو</span></td><td class="cell-m">sein<span class="ending-highlight">en</span></td><td class="cell-f">seine</td><td class="cell-n">sein</td><td class="cell-pl">seine</td></tr>
+            <tr><td class="col-pronoun">sie<span>هي</span></td><td class="cell-m">ihr<span class="ending-highlight">en</span></td><td class="cell-f">ihre</td><td class="cell-n">ihr</td><td class="cell-pl">ihre</td></tr>
+            <tr><td class="col-pronoun">es<span>هو/ها</span></td><td class="cell-m">sein<span class="ending-highlight">en</span></td><td class="cell-f">seine</td><td class="cell-n">sein</td><td class="cell-pl">seine</td></tr>
+            <tr class="row-divider"><td colspan="5">Plural — جمع</td><td></td><td></td><td></td></tr>
+            <tr><td class="col-pronoun">wir<span>نحن</span></td><td class="cell-m">unser<span class="ending-highlight">en</span></td><td class="cell-f">unsere</td><td class="cell-n">unser</td><td class="cell-pl">unsere</td></tr>
+            <tr><td class="col-pronoun">ihr<span>أنتم</span></td><td class="cell-m">eur<span class="ending-highlight">en</span></td><td class="cell-f">eure</td><td class="cell-n">euer</td><td class="cell-pl">eure</td></tr>
+            <tr><td class="col-pronoun">sie / Sie<span>هم / حضرتك</span></td><td class="cell-m">ihr<span class="ending-highlight">en</span> / Ihr<span class="ending-highlight">en</span></td><td class="cell-f">ihre / Ihre</td><td class="cell-n">ihr / Ihr</td><td class="cell-pl">ihre / Ihre</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <div class="tip-icon">⚡</div>
+      <div class="tip-content">
+        <div class="tip-title">قاعدة سهلة: AKK = NOM + إضافة -en للمذكر فقط</div>
+        <div class="tip-text">
+          كل ما تحتاج تذكّره: في حالة Akkusativ، <strong>المذكر فقط</strong> يأخذ لاحقة <strong>-en</strong> إضافية.
+          المؤنث والمحايد والجمع يبقيان تمامًا كما هما في حالة الرفع (Nominativ).
+          <br><br>
+          NOM: mein Vater · AKK: mein<strong>en</strong> Vater
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DATIV ===== -->
+  <section class="section-block reveal" id="dativ">
+    <div class="section-label"><span class="section-label-dot" style="background:var(--accent-teal)"></span>Dativ · حالة الجر</div>
+    <div class="section-title">حالة المفعول غير المباشر – Dativ</div>
+    <div class="section-subtitle">The Dative Case – used for the indirect object</div>
+
+    <div class="case-cards">
+      <div class="case-card">
+        <div class="case-card-top">
+          <span class="case-badge dat">DAT</span>
+          <span class="case-card-name">متى تُستخدم؟</span>
+        </div>
+        <div class="case-card-en">When to use?</div>
+        <p class="case-card-rule">تُستخدم بعد أفعال مثل <strong>geben, helfen, zeigen</strong>، وبعد حروف جر مثل <strong>mit, von, bei, nach, seit, zu, aus, von</strong>.</p>
+        <div class="case-card-ex dat">
+          <div class="ex-de">Ich helfe meiner Mutter.</div>
+          <div class="ex-ar">أنا أساعد أمي.</div>
+          <div class="ex-en">I help my mother.</div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-top">
+          <span class="case-badge dat">DAT</span>
+          <span class="case-card-name">اللواحق</span>
+        </div>
+        <div class="case-card-en">Endings in Dativ</div>
+        <p class="case-card-rule">في حالة الجر تتغير <strong>جميع الأجناس</strong>، وليس المذكر فحسب. هذه اللواحق مهمة جداً:</p>
+        <div class="case-card-ex dat">
+          <div class="ex-de">مذكر: <strong>-em</strong> · مؤنث: <strong>-er</strong> · محايد: <strong>-em</strong> · جمع: <strong>-en</strong></div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-top">
+          <span class="case-badge dat">DAT</span>
+          <span class="case-card-name">حروف جر + Dativ</span>
+        </div>
+        <div class="case-card-en">Prepositions always with Dativ</div>
+        <p class="case-card-rule">هذه الحروف تطلب دائمًا Dativ: <strong>mit · von · bei · nach · seit · zu · aus · gegenüber</strong></p>
+        <div class="case-card-ex dat">
+          <div class="ex-de">Ich wohne bei meiner Tante.</div>
+          <div class="ex-ar">أسكن عند عمّتي / خالتي.</div>
+          <div class="ex-en">I live at my aunt's.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="full-table-wrap">
+      <div class="table-header-bar">
+        <div class="table-header-title">جدول الضمائر الملكية — Dativ</div>
+        <div class="table-header-sub">Possessive Pronouns in the Dative Case · جميع الأجناس تتغير هنا</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-pronoun">الضمير</th>
+              <th class="m">Maskulin<br><small>-em لاحقة</small></th>
+              <th class="f">Feminin<br><small>-er لاحقة</small></th>
+              <th class="n">Neutral<br><small>-em لاحقة</small></th>
+              <th class="pl">Plural<br><small>-en لاحقة</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-divider"><td colspan="5">Singular — مفرد</td><td></td><td></td><td></td></tr>
+            <tr><td class="col-pronoun">ich<span>أنا</span></td><td class="cell-m">mein<span class="ending-highlight">em</span></td><td class="cell-f">mein<span class="ending-highlight">er</span></td><td class="cell-n">mein<span class="ending-highlight">em</span></td><td class="cell-pl">mein<span class="ending-highlight">en</span></td></tr>
+            <tr><td class="col-pronoun">du<span>أنتَ/ِ</span></td><td class="cell-m">dein<span class="ending-highlight">em</span></td><td class="cell-f">dein<span class="ending-highlight">er</span></td><td class="cell-n">dein<span class="ending-highlight">em</span></td><td class="cell-pl">dein<span class="ending-highlight">en</span></td></tr>
+            <tr><td class="col-pronoun">er<span>هو</span></td><td class="cell-m">sein<span class="ending-highlight">em</span></td><td class="cell-f">sein<span class="ending-highlight">er</span></td><td class="cell-n">sein<span class="ending-highlight">em</span></td><td class="cell-pl">sein<span class="ending-highlight">en</span></td></tr>
+            <tr><td class="col-pronoun">sie<span>هي</span></td><td class="cell-m">ihr<span class="ending-highlight">em</span></td><td class="cell-f">ihr<span class="ending-highlight">er</span></td><td class="cell-n">ihr<span class="ending-highlight">em</span></td><td class="cell-pl">ihr<span class="ending-highlight">en</span></td></tr>
+            <tr><td class="col-pronoun">es<span>هو/ها</span></td><td class="cell-m">sein<span class="ending-highlight">em</span></td><td class="cell-f">sein<span class="ending-highlight">er</span></td><td class="cell-n">sein<span class="ending-highlight">em</span></td><td class="cell-pl">sein<span class="ending-highlight">en</span></td></tr>
+            <tr class="row-divider"><td colspan="5">Plural — جمع</td><td></td><td></td><td></td></tr>
+            <tr><td class="col-pronoun">wir<span>نحن</span></td><td class="cell-m">unser<span class="ending-highlight">em</span></td><td class="cell-f">unser<span class="ending-highlight">er</span></td><td class="cell-n">unser<span class="ending-highlight">em</span></td><td class="cell-pl">unser<span class="ending-highlight">en</span></td></tr>
+            <tr><td class="col-pronoun">ihr<span>أنتم</span></td><td class="cell-m">eur<span class="ending-highlight">em</span></td><td class="cell-f">eur<span class="ending-highlight">er</span></td><td class="cell-n">eur<span class="ending-highlight">em</span></td><td class="cell-pl">eur<span class="ending-highlight">en</span></td></tr>
+            <tr><td class="col-pronoun">sie / Sie<span>هم / حضرتك</span></td><td class="cell-m">ihr<span class="ending-highlight">em</span> / Ihr<span class="ending-highlight">em</span></td><td class="cell-f">ihr<span class="ending-highlight">er</span> / Ihr<span class="ending-highlight">er</span></td><td class="cell-n">ihr<span class="ending-highlight">em</span> / Ihr<span class="ending-highlight">em</span></td><td class="cell-pl">ihr<span class="ending-highlight">en</span> / Ihr<span class="ending-highlight">en</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="endings-grid">
+      <div class="ending-card">
+        <div class="ending-card-header">
+          <span class="ending-tag" style="background:var(--accent-teal-soft);color:var(--accent-teal)">DAT م.ذ</span>
+          <span class="ending-title">المذكر والمحايد → -em</span>
+        </div>
+        <div class="ending-row"><span class="ending-pronoun">ich →</span><span class="ending-form cell-m">meinem</span><span class="ending-note">mit meinem Vater</span></div>
+        <div class="ending-row"><span class="ending-pronoun">du →</span><span class="ending-form cell-m">deinem</span><span class="ending-note">mit deinem Kind</span></div>
+        <div class="ending-row"><span class="ending-pronoun">er →</span><span class="ending-form cell-m">seinem</span><span class="ending-note">mit seinem Bruder</span></div>
+        <div class="ending-row"><span class="ending-pronoun">wir →</span><span class="ending-form cell-m">unserem</span><span class="ending-note">mit unserem Lehrer</span></div>
+      </div>
+      <div class="ending-card">
+        <div class="ending-card-header">
+          <span class="ending-tag" style="background:var(--gender-f-soft);color:var(--gender-f)">DAT م.ث</span>
+          <span class="ending-title">المؤنث → -er</span>
+        </div>
+        <div class="ending-row"><span class="ending-pronoun">ich →</span><span class="ending-form cell-f">meiner</span><span class="ending-note">mit meiner Mutter</span></div>
+        <div class="ending-row"><span class="ending-pronoun">du →</span><span class="ending-form cell-f">deiner</span><span class="ending-note">von deiner Schwester</span></div>
+        <div class="ending-row"><span class="ending-pronoun">sie →</span><span class="ending-form cell-f">ihrer</span><span class="ending-note">bei ihrer Freundin</span></div>
+        <div class="ending-row"><span class="ending-pronoun">wir →</span><span class="ending-form cell-f">unserer</span><span class="ending-note">seit unserer Reise</span></div>
+      </div>
+      <div class="ending-card">
+        <div class="ending-card-header">
+          <span class="ending-tag" style="background:var(--gender-pl-soft);color:var(--gender-pl)">DAT جمع</span>
+          <span class="ending-title">الجمع → -en</span>
+        </div>
+        <div class="ending-row"><span class="ending-pronoun">ich →</span><span class="ending-form cell-pl">meinen</span><span class="ending-note">mit meinen Kindern</span></div>
+        <div class="ending-row"><span class="ending-pronoun">du →</span><span class="ending-form cell-pl">deinen</span><span class="ending-note">von deinen Eltern</span></div>
+        <div class="ending-row"><span class="ending-pronoun">er →</span><span class="ending-form cell-pl">seinen</span><span class="ending-note">bei seinen Freunden</span></div>
+        <div class="ending-row"><span class="ending-pronoun">wir →</span><span class="ending-form cell-pl">unseren</span><span class="ending-note">zu unseren Großeltern</span></div>
+      </div>
+      <div class="ending-card">
+        <div class="ending-card-header">
+          <span class="ending-tag" style="background:var(--accent-violet-soft);color:var(--accent-violet)">ملخّص</span>
+          <span class="ending-title">مقارنة اللواحق الثلاث</span>
+        </div>
+        <div class="ending-row"><span class="ending-pronoun">NOM م.ذ</span><span class="ending-form cell-m">mein —</span><span class="ending-note">لا لاحقة</span></div>
+        <div class="ending-row"><span class="ending-pronoun">AKK م.ذ</span><span class="ending-form cell-m">meinen</span><span class="ending-note">لاحقة -en</span></div>
+        <div class="ending-row"><span class="ending-pronoun">DAT م.ذ</span><span class="ending-form cell-m">meinem</span><span class="ending-note">لاحقة -em</span></div>
+        <div class="ending-row"><span class="ending-pronoun">DAT م.ث</span><span class="ending-form cell-f">meiner</span><span class="ending-note">لاحقة -er</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXAMPLE SENTENCES ===== -->
+  <section class="section-block reveal" id="sentences">
+    <div class="section-label"><span class="section-label-dot" style="background:var(--accent-rose)"></span>Beispielsätze · جمل نموذجية</div>
+    <div class="section-title">جمل تطبيقية مع النطق والنسخ</div>
+    <div class="section-subtitle">Example Sentences – tap 🔊 to hear, tap 📋 to copy</div>
+
+    <!-- NOM sentences -->
+    <div class="note-box" style="margin-bottom:12px">
+      <div class="note-box-title" style="color:var(--accent-blue)">🔵 Nominativ — الفاعل</div>
+    </div>
+    <div class="sentence-grid" style="margin-bottom:20px">
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-de">
+            <span class="highlighted">Mein</span> Bruder wohnt in Berlin.
+          </div>
+          <span class="sentence-case-badge" style="background:var(--accent-blue-soft);color:var(--accent-blue)">NOM</span>
+        </div>
+        <div class="sentence-translations">
+          <div class="trans-ar">أخي يسكن في برلين.</div>
+          <div class="trans-en">My brother lives in Berlin.</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="action-btn speak" onclick="speak('Mein Bruder wohnt in Berlin.')">🔊 نطق</button>
+          <button class="action-btn" onclick="copyText('Mein Bruder wohnt in Berlin.', this)">📋 نسخ</button>
+        </div>
+      </div>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-de"><span class="highlighted">Ihre</span> Mutter ist sehr nett.</div>
+          <span class="sentence-case-badge" style="background:var(--accent-blue-soft);color:var(--accent-blue)">NOM</span>
+        </div>
+        <div class="sentence-translations">
+          <div class="trans-ar">أمها لطيفة جداً.</div>
+          <div class="trans-en">Her mother is very nice.</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="action-btn speak" onclick="speak('Ihre Mutter ist sehr nett.')">🔊 نطق</button>
+          <button class="action-btn" onclick="copyText('Ihre Mutter ist sehr nett.', this)">📋 نسخ</button>
+        </div>
+      </div>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-de"><span class="highlighted">Unser</span> Lehrer erklärt gut.</div>
+          <span class="sentence-case-badge" style="background:var(--accent-blue-soft);color:var(--accent-blue)">NOM</span>
+        </div>
+        <div class="sentence-translations">
+          <div class="trans-ar">معلّمنا يشرح بشكل جيد.</div>
+          <div class="trans-en">Our teacher explains well.</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="action-btn speak" onclick="speak('Unser Lehrer erklärt gut.')">🔊 نطق</button>
+          <button class="action-btn" onclick="copyText('Unser Lehrer erklärt gut.', this)">📋 نسخ</button>
+        </div>
+      </div>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-de"><span class="highlighted">Eure</span> Kinder spielen draußen.</div>
+          <span class="sentence-case-badge" style="background:var(--accent-blue-soft);color:var(--accent-blue)">NOM</span>
+        </div>
+        <div class="sentence-translations">
+          <div class="trans-ar">أطفالكم يلعبون في الخارج.</div>
+          <div class="trans-en">Your children are playing outside.</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="action-btn speak" onclick="speak('Eure Kinder spielen draußen.')">🔊 نطق</button>
+          <button class="action-btn" onclick="copyText('Eure Kinder spielen draußen.', this)">📋 نسخ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- AKK sentences -->
+    <div class="note-box" style="margin-bottom:12px;background:var(--accent-violet-soft);border-color:rgba(124,58,237,0.15)">
+      <div class="note-box-title" style="color:var(--accent-violet)">🟣 Akkusativ — المفعول به</div>
+    </div>
+    <div class="sentence-grid" style="margin-bottom:20px">
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-de">Ich besuche <span class="highlighted">meinen</span> Vater.</div>
+          <span class="sentence-case-badge" style="background:var(--accent-violet-soft);color:var(--accent-violet)">AKK</span>
+        </div>
+        <div class="sentence-translations">
+          <div class="trans-ar">أنا أزور أبي.</div>
+          <div class="trans-en">I visit my father.</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="action-btn speak" onclick="speak('Ich besuche meinen Vater.')">🔊 نطق</button>
+          <button class="action-btn" onclick="copyText('Ich besuche meinen Vater.', this)">📋 نسخ</button>
+        </div>
+      </div>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-de">Sie liebt <span class="highlighted">ihren</span> Hund sehr.</div>
+          <span class="sentence-case-badge" style="background:var(--accent-violet-soft);color:var(--accent-violet)">AKK</span>
+        </div>
+        <div class="sentence-translations">
+          <div class="trans-ar">هي تحبّ كلبها كثيراً.</div>
+          <div class="trans-en">She loves her dog very much.</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="action-btn speak" onclick="speak('Sie liebt ihren Hund sehr.')">🔊 نطق</button>
+          <button class="action-btn" onclick="copyText('Sie liebt ihren Hund sehr.', this)">📋 نسخ</button>
+        </div>
+      </div>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-de">Wir kaufen <span class="highlighted">unser</span> Haus.</div>
+          <span class="sentence-case-badge" style="background:var(--accent-violet-soft);color:var(--accent-violet)">AKK</span>
+        </div>
+        <div class="sentence-translations">
+          <div class="trans-ar">نحن نشتري بيتنا.</div>
+          <div class="trans-en">We are buying our house.</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="action-btn speak" onclick="speak('Wir kaufen unser Haus.')">🔊 نطق</button>
+          <button class="action-btn" onclick="copyText('Wir kaufen unser Haus.', this)">📋 نسخ</button>
+        </div>
+      </div>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-de">Er braucht <span class="highlighted">seinen</span> Schlüssel.</div>
+          <span class="sentence-case-badge" style="background:var(--accent-violet-soft);color:var(--accent-violet)">AKK</span>
+        </div>
+        <div class="sentence-translations">
+          <div class="trans-ar">هو يحتاج إلى مفتاحه.</div>
+          <div class="trans-en">He needs his key.</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="action-btn speak" onclick="speak('Er braucht seinen Schlüssel.')">🔊 نطق</button>
+          <button class="action-btn" onclick="copyText('Er braucht seinen Schlüssel.', this)">📋 نسخ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAT sentences -->
+    <div class="note-box" style="margin-bottom:12px;background:var(--accent-teal-soft);border-color:rgba(15,118,110,0.15)">
+      <div class="note-box-title" style="color:var(--accent-teal)">🟩 Dativ — المفعول غير المباشر</div>
+    </div>
+    <div class="sentence-grid">
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-de">Ich helfe <span class="highlighted">meiner</span> Schwester.</div>
+          <span class="sentence-case-badge" style="background:var(--accent-teal-soft);color:var(--accent-teal)">DAT</span>
+        </div>
+        <div class="sentence-translations">
+          <div class="trans-ar">أنا أساعد أختي.</div>
+          <div class="trans-en">I help my sister.</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="action-btn speak" onclick="speak('Ich helfe meiner Schwester.')">🔊 نطق</button>
+          <button class="action-btn" onclick="copyText('Ich helfe meiner Schwester.', this)">📋 نسخ</button>
+        </div>
+      </div>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-de">Er wohnt bei <span class="highlighted">seinem</span> Onkel.</div>
+          <span class="sentence-case-badge" style="background:var(--accent-teal-soft);color:var(--accent-teal)">DAT</span>
+        </div>
+        <div class="sentence-translations">
+          <div class="trans-ar">هو يسكن عند عمّه/خاله.</div>
+          <div class="trans-en">He lives with his uncle.</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="action-btn speak" onclick="speak('Er wohnt bei seinem Onkel.')">🔊 نطق</button>
+          <button class="action-btn" onclick="copyText('Er wohnt bei seinem Onkel.', this)">📋 نسخ</button>
+        </div>
+      </div>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-de">Wir fahren mit <span class="highlighted">unserem</span> Auto.</div>
+          <span class="sentence-case-badge" style="background:var(--accent-teal-soft);color:var(--accent-teal)">DAT</span>
+        </div>
+        <div class="sentence-translations">
+          <div class="trans-ar">نحن نسافر بسيارتنا.</div>
+          <div class="trans-en">We travel with our car.</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="action-btn speak" onclick="speak('Wir fahren mit unserem Auto.')">🔊 نطق</button>
+          <button class="action-btn" onclick="copyText('Wir fahren mit unserem Auto.', this)">📋 نسخ</button>
+        </div>
+      </div>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-de">Sie gibt <span class="highlighted">ihren</span> Kindern Geschenke.</div>
+          <span class="sentence-case-badge" style="background:var(--accent-teal-soft);color:var(--accent-teal)">DAT</span>
+        </div>
+        <div class="sentence-translations">
+          <div class="trans-ar">هي تعطي أطفالها هدايا.</div>
+          <div class="trans-en">She gives her children gifts.</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="action-btn speak" onclick="speak('Sie gibt ihren Kindern Geschenke.')">🔊 نطق</button>
+          <button class="action-btn" onclick="copyText('Sie gibt ihren Kindern Geschenke.', this)">📋 نسخ</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXERCISES ===== -->
+  <section class="section-block reveal" id="exercises">
+    <div class="section-label"><span class="section-label-dot" style="background:var(--accent-gold)"></span>Übungen · تمارين</div>
+    <div class="section-title">تمارين تفاعلية</div>
+    <div class="section-subtitle">Interactive Exercises – اضغط "أظهر الإجابة" للتحقق</div>
+
+    <!-- Exercise 1: Fill in the blank - NOM -->
+    <div class="exercise-block">
+      <div class="exercise-header">
+        <div class="ex-num">١</div>
+        <div>
+          <div class="ex-type">Nominativ Exercise</div>
+          <div class="ex-title">أكمل بالضمير الملكي الصحيح — Nominativ</div>
+        </div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-instruction">اختر الشكل الصحيح للضمير الملكي في حالة الرفع (Nominativ) لكل جملة. انتبه لجنس الاسم!</div>
+        <div class="ex-items">
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">١</div>
+              <div class="ex-item-text">______ Schwester heißt Lena. (ich / مؤنث)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('a1')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="a1">
+              <div class="answer-de">✅ Meine Schwester heißt Lena.</div>
+              <div class="answer-ar">أختي اسمها لينا.</div>
+              <div class="answer-en">My sister's name is Lena.</div>
+            </div>
+          </div>
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">٢</div>
+              <div class="ex-item-text">______ Vater arbeitet als Arzt. (du / مذكر)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('a2')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="a2">
+              <div class="answer-de">✅ Dein Vater arbeitet als Arzt.</div>
+              <div class="answer-ar">أبوك يعمل طبيباً.</div>
+              <div class="answer-en">Your father works as a doctor.</div>
+            </div>
+          </div>
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">٣</div>
+              <div class="ex-item-text">______ Auto ist sehr teuer. (er / محايد)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('a3')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="a3">
+              <div class="answer-de">✅ Sein Auto ist sehr teuer.</div>
+              <div class="answer-ar">سيارته غالية جداً.</div>
+              <div class="answer-en">His car is very expensive.</div>
+            </div>
+          </div>
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">٤</div>
+              <div class="ex-item-text">______ Kinder spielen im Park. (wir / جمع)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('a4')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="a4">
+              <div class="answer-de">✅ Unsere Kinder spielen im Park.</div>
+              <div class="answer-ar">أطفالنا يلعبون في الحديقة.</div>
+              <div class="answer-en">Our children play in the park.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise 2: Akkusativ -->
+    <div class="exercise-block">
+      <div class="exercise-header">
+        <div class="ex-num" style="background:linear-gradient(135deg,var(--accent-violet),var(--accent-rose))">٢</div>
+        <div>
+          <div class="ex-type">Akkusativ Exercise</div>
+          <div class="ex-title">أكمل بالضمير الملكي الصحيح — Akkusativ</div>
+        </div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-instruction">تذكّر: في Akkusativ فقط المذكر يأخذ لاحقة -en إضافية!</div>
+        <div class="ex-items">
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">١</div>
+              <div class="ex-item-text">Ich sehe ______ Bruder. (mein / مذكر)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('b1')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="b1">
+              <div class="answer-de">✅ Ich sehe meinen Bruder.</div>
+              <div class="answer-ar">أنا أرى أخي.</div>
+              <div class="answer-en">I see my brother.</div>
+            </div>
+          </div>
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">٢</div>
+              <div class="ex-item-text">Du liebst ______ Katze. (dein / مؤنث)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('b2')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="b2">
+              <div class="answer-de">✅ Du liebst deine Katze.</div>
+              <div class="answer-ar">أنتَ تحبّ قطّتك.</div>
+              <div class="answer-en">You love your cat. (same as NOM — Feminin!)</div>
+            </div>
+          </div>
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">٣</div>
+              <div class="ex-item-text">Wir besuchen ______ Großvater. (unser / مذكر)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('b3')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="b3">
+              <div class="answer-de">✅ Wir besuchen unseren Großvater.</div>
+              <div class="answer-ar">نحن نزور جدّنا.</div>
+              <div class="answer-en">We visit our grandfather.</div>
+            </div>
+          </div>
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">٤</div>
+              <div class="ex-item-text">Sie kauft ______ Buch. (ihr / محايد)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('b4')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="b4">
+              <div class="answer-de">✅ Sie kauft ihr Buch.</div>
+              <div class="answer-ar">هي تشتري كتابها.</div>
+              <div class="answer-en">She buys her book. (same as NOM — Neutral!)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise 3: Dativ -->
+    <div class="exercise-block">
+      <div class="exercise-header">
+        <div class="ex-num" style="background:linear-gradient(135deg,var(--accent-teal),var(--accent-green))">٣</div>
+        <div>
+          <div class="ex-type">Dativ Exercise</div>
+          <div class="ex-title">أكمل بالضمير الملكي الصحيح — Dativ</div>
+        </div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-instruction">في Dativ: المذكر والمحايد → -em · المؤنث → -er · الجمع → -en</div>
+        <div class="ex-items">
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">١</div>
+              <div class="ex-item-text">Ich wohne bei ______ Onkel. (mein / مذكر)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('c1')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="c1">
+              <div class="answer-de">✅ Ich wohne bei meinem Onkel.</div>
+              <div class="answer-ar">أنا أسكن عند عمّي/خالي.</div>
+              <div class="answer-en">I live with my uncle.</div>
+            </div>
+          </div>
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">٢</div>
+              <div class="ex-item-text">Er hilft ______ Mutter. (sein / مؤنث)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('c2')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="c2">
+              <div class="answer-de">✅ Er hilft seiner Mutter.</div>
+              <div class="answer-ar">هو يساعد أمّه.</div>
+              <div class="answer-en">He helps his mother.</div>
+            </div>
+          </div>
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">٣</div>
+              <div class="ex-item-text">Wir fahren mit ______ Fahrrad. (unser / محايد)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('c3')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="c3">
+              <div class="answer-de">✅ Wir fahren mit unserem Fahrrad.</div>
+              <div class="answer-ar">نحن نتنقّل بدرّاجتنا.</div>
+              <div class="answer-en">We ride with our bicycle.</div>
+            </div>
+          </div>
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">٤</div>
+              <div class="ex-item-text">Sie spricht mit ______ Kindern. (ihr / جمع)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('c4')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="c4">
+              <div class="answer-de">✅ Sie spricht mit ihren Kindern.</div>
+              <div class="answer-ar">هي تتحدّث مع أطفالها.</div>
+              <div class="answer-en">She speaks with her children.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercise 4: Mixed -->
+    <div class="exercise-block">
+      <div class="exercise-header">
+        <div class="ex-num" style="background:linear-gradient(135deg,var(--accent-gold),var(--accent-rose))">٤</div>
+        <div>
+          <div class="ex-type">Mixed Exercise · تمرين مختلط</div>
+          <div class="ex-title">اختر الحالة الصحيحة — NOM / AKK / DAT</div>
+        </div>
+      </div>
+      <div class="exercise-body">
+        <div class="ex-instruction">تمرين متقدّم: حدّد الحالة الإعرابية المطلوبة ثم أكمل بالشكل الصحيح للضمير الملكي.</div>
+        <div class="ex-items">
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">١</div>
+              <div class="ex-item-text">______ Hund läuft schnell. (ihr / مذكر · من يقوم بالفعل؟)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('d1')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="d1">
+              <div class="answer-de">✅ Ihr Hund läuft schnell. — NOM (الكلب = الفاعل)</div>
+              <div class="answer-ar">كلبها يجري بسرعة.</div>
+              <div class="answer-en">Her dog runs fast. (Nominative – subject)</div>
+            </div>
+          </div>
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">٢</div>
+              <div class="ex-item-text">Ich zeige ______ Freund die Stadt. (mein / مذكر · من يتلقّى الفعل؟)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('d2')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="d2">
+              <div class="answer-de">✅ Ich zeige meinem Freund die Stadt. — DAT</div>
+              <div class="answer-ar">أنا أُري صديقي المدينة. (zeigen يطلب Dativ للشخص)</div>
+              <div class="answer-en">I show my friend the city. (Dative – indirect object)</div>
+            </div>
+          </div>
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">٣</div>
+              <div class="ex-item-text">Du nimmst ______ Tasche. (dein / مؤنث · ماذا تأخذ؟)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('d3')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="d3">
+              <div class="answer-de">✅ Du nimmst deine Tasche. — AKK</div>
+              <div class="answer-ar">أنتَ تأخذ شنطتك. (الشنطة = مفعول به)</div>
+              <div class="answer-en">You take your bag. (Accusative – direct object)</div>
+            </div>
+          </div>
+          <div>
+            <div class="ex-item">
+              <div class="ex-item-num">٤</div>
+              <div class="ex-item-text">Wir denken oft an ______ Großeltern. (unser / جمع · بعد حرف الجر "an"?)</div>
+              <div class="ex-item-actions"><button class="show-answer-btn" onclick="toggleAnswer('d4')">أظهر الإجابة</button></div>
+            </div>
+            <div class="answer-reveal" id="d4">
+              <div class="answer-de">✅ Wir denken oft an unsere Großeltern. — AKK (an + AKK للاتجاه/التفكير)</div>
+              <div class="answer-ar">نحن كثيراً ما نفكّر في أجدادنا.</div>
+              <div class="answer-en">We often think of our grandparents. (an + Accusative here)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUMMARY TABLE -->
+  <section class="section-block reveal">
+    <div class="section-label"><span class="section-label-dot" style="background:var(--accent-rose)"></span>Zusammenfassung · ملخّص</div>
+    <div class="section-title">جدول الملخّص الشامل</div>
+    <div class="section-subtitle">Complete Summary – mein as the model for all possessive pronouns</div>
+    <div class="full-table-wrap">
+      <div class="table-header-bar" style="background:linear-gradient(135deg,var(--accent-teal-soft),var(--accent-blue-soft))">
+        <div class="table-header-title">ملخّص لواحق "mein" في جميع الحالات</div>
+        <div class="table-header-sub">All other possessives (dein, sein, ihr…) follow exactly the same endings</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align:right">الحالة</th>
+              <th class="m">Maskulin<br><small>der Mann</small></th>
+              <th class="f">Feminin<br><small>die Frau</small></th>
+              <th class="n">Neutral<br><small>das Kind</small></th>
+              <th class="pl">Plural<br><small>die Kinder</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align:right;font-weight:700"><span class="case-badge nom" style="font-size:10px">NOM</span><br><small style="color:var(--text-muted);font-family:var(--font-de)">الفاعل</small></td>
+              <td class="cell-m">mein</td>
+              <td class="cell-f">meine</td>
+              <td class="cell-n">mein</td>
+              <td class="cell-pl">meine</td>
+            </tr>
+            <tr>
+              <td style="text-align:right;font-weight:700"><span class="case-badge akk" style="font-size:10px">AKK</span><br><small style="color:var(--text-muted);font-family:var(--font-de)">المفعول به</small></td>
+              <td class="cell-m">mein<span class="ending-highlight">en</span></td>
+              <td class="cell-f">meine</td>
+              <td class="cell-n">mein</td>
+              <td class="cell-pl">meine</td>
+            </tr>
+            <tr>
+              <td style="text-align:right;font-weight:700"><span class="case-badge dat" style="font-size:10px">DAT</span><br><small style="color:var(--text-muted);font-family:var(--font-de)">الجر</small></td>
+              <td class="cell-m">mein<span class="ending-highlight">em</span></td>
+              <td class="cell-f">mein<span class="ending-highlight">er</span></td>
+              <td class="cell-n">mein<span class="ending-highlight">em</span></td>
+              <td class="cell-pl">mein<span class="ending-highlight">en</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tip-box" style="margin-top:20px">
+      <div class="tip-icon">🎯</div>
+      <div class="tip-content">
+        <div class="tip-title">ملخّص القواعد في ثلاث جمل</div>
+        <div class="tip-text">
+          <strong>١. Nominativ:</strong> لا لاحقة للمذكر والمحايد · لاحقة <strong>-e</strong> للمؤنث والجمع<br>
+          <strong>٢. Akkusativ:</strong> فقط المذكر يأخذ <strong>-en</strong> · الباقي مثل Nominativ<br>
+          <strong>٣. Dativ:</strong> المذكر والمحايد → <strong>-em</strong> · المؤنث → <strong>-er</strong> · الجمع → <strong>-en</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end page-wrap -->
+
+<!-- TOAST -->
+<div id="toast">✅ تم النسخ!</div>
+
+<script>
+// ===== THEME =====
+const root = document.documentElement.querySelector('body') || document.body;
+const themeBtn = document.getElementById('theme-toggle');
+let isDark = false;
+
+function applyTheme(dark) {
+  isDark = dark;
+  document.body.setAttribute('data-theme', dark ? 'dark' : 'light');
+  themeBtn.textContent = dark ? '☀️' : '🌙';
+  try { localStorage.setItem('dmm-theme', dark ? 'dark' : 'light'); } catch(e){}
+}
+
+(function initTheme() {
+  let saved;
+  try { saved = localStorage.getItem('dmm-theme'); } catch(e){}
+  if (saved) { applyTheme(saved === 'dark'); }
+  else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) { applyTheme(true); }
+})();
+
+themeBtn.addEventListener('click', () => applyTheme(!isDark));
+
+// ===== SCROLL PROGRESS =====
+const prog = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const s = document.documentElement.scrollTop;
+  const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  prog.style.transform = `scaleX(${s/h})`;
+}, { passive: true });
+
+// ===== SCROLL REVEAL =====
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+reveals.forEach(r => observer.observe(r));
+
+// ===== ACTIVE NAV =====
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+      if(active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.4 });
+sections.forEach(s => navObserver.observe(s));
+
+// ===== TTS =====
+function speak(text) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'de-DE';
+  utt.rate = 0.82;
+  utt.pitch = 1.0;
+  const voices = window.speechSynthesis.getVoices();
+  const deVoice = voices.find(v => v.lang.startsWith('de'));
+  if(deVoice) utt.voice = deVoice;
+  window.speechSynthesis.speak(utt);
+}
+if(window.speechSynthesis) {
+  window.speechSynthesis.onvoiceschanged = () => {};
+}
+
+// ===== COPY =====
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg || '✅ تم النسخ!';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function copyText(text, btn) {
+  const doFallback = () => {
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      if(btn) { btn.textContent = '✅ تم'; btn.classList.add('copied'); setTimeout(() => { btn.textContent = '📋 نسخ'; btn.classList.remove('copied'); }, 1500); }
+      showToast();
+    } catch(e) { showToast('❌ تعذّر النسخ'); }
+  };
+  if(navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => {
+      if(btn) { btn.textContent = '✅ تم'; btn.classList.add('copied'); setTimeout(() => { btn.textContent = '📋 نسخ'; btn.classList.remove('copied'); }, 1500); }
+      showToast();
+    }).catch(doFallback);
+  } else { doFallback(); }
+}
+
+// ===== EXERCISES =====
+function toggleAnswer(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('visible');
+  const btn = el.previousElementSibling.querySelector('.show-answer-btn');
+  if(btn) btn.textContent = el.classList.contains('visible') ? 'أخفِ الإجابة' : 'أظهر الإجابة';
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-possessivpronomen" data-category="grammatik" data-title="الضمائر الملكية — Possessivpronomen" data-root="../../" defer></script>
+</body>
+</html>

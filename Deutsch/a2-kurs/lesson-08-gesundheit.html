@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الألمانية A2 — الدرس الثامن: الصحة والجسم</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Rubik:wght@300;400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════
+   DESIGN: Clinical Warmth
+   Inspired by a modern German Arztpraxis (doctor's
+   office) — crisp white with warm sage green accents,
+   precise red for urgency, and a soft cream base.
+   LIGHT THEME as default (medical = clean & bright).
+   Fonts: Instrument Serif (headers) + Noto Naskh (body)
+   Feel: trustworthy, calm, precise — like good healthcare.
+══════════════════════════════════════════════════ */
+:root {
+  /* Light-first design */
+  --bg:       #f8faf8;
+  --bg2:      #eef3ee;
+  --bg3:      #e2ece2;
+  --bg4:      #d4e4d4;
+  --card:     #ffffff;
+  --border:   rgba(60,120,60,0.1);
+  --border2:  rgba(60,120,60,0.22);
+
+  /* Palette */
+  --sage:     #3a7a50;
+  --sage2:    #52a870;
+  --sage3:    #c8e8d0;
+  --sage-d:   rgba(58,122,80,0.08);
+  --sage-d2:  rgba(58,122,80,0.15);
+
+  --red:      #c83840;
+  --red2:     #e05058;
+  --red-d:    rgba(200,56,64,0.08);
+
+  --amber:    #d08020;
+  --amber2:   #e8a030;
+  --amber-d:  rgba(208,128,32,0.08);
+
+  --teal:     #207878;
+  --teal2:    #309898;
+  --teal-d:   rgba(32,120,120,0.08);
+
+  --cream:    #fdf6ec;
+  --slate:    #6080a0;
+  --slate-d:  rgba(96,128,160,0.08);
+
+  --text:     #1a2a1a;
+  --text2:    #4a6a4a;
+  --text3:    #8aaa8a;
+
+  --r:  14px;
+  --rs: 8px;
+  --sh: 0 4px 32px rgba(58,122,80,0.12);
+  --sh2:0 8px 48px rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] {
+  --bg:       #0a0f0a;
+  --bg2:      #101810;
+  --bg3:      #182018;
+  --bg4:      #202a20;
+  --card:     #0e160e;
+  --border:   rgba(82,168,112,0.1);
+  --border2:  rgba(82,168,112,0.22);
+  --sage:     #52a870;
+  --sage2:    #78c890;
+  --sage3:    #1a3020;
+  --sage-d:   rgba(82,168,112,0.1);
+  --sage-d2:  rgba(82,168,112,0.18);
+  --red:      #e05058;
+  --red2:     #f07080;
+  --red-d:    rgba(224,80,88,0.1);
+  --amber:    #e8a030;
+  --amber2:   #f0b850;
+  --amber-d:  rgba(232,160,48,0.1);
+  --teal:     #309898;
+  --teal2:    #50b8b8;
+  --teal-d:   rgba(48,152,152,0.1);
+  --cream:    #1a2a1a;
+  --slate:    #8098b8;
+  --slate-d:  rgba(128,152,184,0.1);
+  --text:     #d8f0d8;
+  --text2:    #88b888;
+  --text3:    #3a5a3a;
+  --sh: 0 4px 32px rgba(0,0,0,0.5);
+  --sh2:0 8px 48px rgba(0,0,0,0.6);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: 'Noto Naskh Arabic', 'Rubik', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  direction: rtl;
+  overflow-x: hidden;
+  transition: background .4s, color .4s;
+}
+
+/* Subtle cross/plus pattern — medical motif */
+body::before {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity:.4;
+}
+
+/* Soft green glow top-left */
+body::after {
+  content:'';
+  position:fixed; top:-80px; right:-80px;
+  width:400px; height:400px;
+  background: radial-gradient(circle, rgba(58,122,80,0.06) 0%, transparent 70%);
+  pointer-events:none; z-index:0;
+}
+
+/* ── Progress ── */
+#spb {
+  position:fixed; top:0; left:0; right:0; height:3px;
+  background: linear-gradient(90deg, var(--sage), var(--teal), var(--amber));
+  transform-origin:right; transform:scaleX(0);
+  z-index:1001;
+}
+
+/* ══ NAV ══ */
+nav {
+  position:sticky; top:0; z-index:100;
+  background: rgba(248,250,248,.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 2px solid var(--sage3);
+  padding: 0 2rem; height:64px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+[data-theme="dark"] nav {
+  background: rgba(10,15,10,.94);
+  border-bottom-color: var(--border2);
+}
+
+.nav-brand { display:flex; align-items:center; gap:.75rem; font-family:'Rubik',sans-serif; font-weight:800; font-size:.95rem; color:var(--text); }
+.nav-chip {
+  background: var(--sage-d2); border:1px solid var(--sage);
+  color:var(--sage); font-size:.68rem; font-weight:700;
+  padding:3px 10px; border-radius:4px; letter-spacing:.06em;
+  font-family:'JetBrains Mono',monospace;
+}
+/* Red cross badge */
+.nav-cross {
+  font-size:1.1rem;
+  color:var(--red);
+}
+.nav-links { display:flex; gap:1.5rem; list-style:none; }
+.nav-links a { font-size:.82rem; color:var(--text2); text-decoration:none; font-weight:600; transition:color .2s; font-family:'Rubik',sans-serif; }
+.nav-links a:hover { color:var(--sage); }
+.tbtn {
+  width:36px; height:36px; border-radius:8px;
+  border:1px solid var(--border2); background:var(--bg2);
+  color:var(--text2); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; font-size:1rem;
+  transition:all .2s;
+}
+.tbtn:hover { background:var(--bg3); color:var(--text); }
+
+/* ══ HERO ══ */
+.hero {
+  position:relative; z-index:1;
+  padding: 5rem 2rem 3.5rem;
+  max-width:900px; margin:0 auto; text-align:center;
+}
+
+/* Medical cross SVG illustration */
+.hero-art {
+  width:120px; height:120px; margin:0 auto 1.5rem; display:block;
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100%{transform:scale(1);} 50%{transform:scale(1.04);}
+}
+
+.hero-badge {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--sage-d); border:1px solid var(--sage);
+  color:var(--sage); padding:5px 18px; border-radius:4px;
+  font-size:.75rem; font-weight:700; font-family:'JetBrains Mono',monospace;
+  margin-bottom:1.5rem; letter-spacing:.06em;
+  animation: fadeUp .6s ease both;
+}
+
+.hero h1 {
+  font-family:'Instrument Serif', serif;
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-weight:400; font-style:italic;
+  line-height:1.15; margin-bottom:1rem;
+  color:var(--text);
+  animation: fadeUp .7s ease .1s both;
+}
+.hero h1 strong {
+  font-style:normal; font-weight:400;
+  color:var(--sage);
+  border-bottom:3px solid var(--sage3);
+  padding-bottom:2px;
+}
+
+.hero-p {
+  color:var(--text2); font-size:1.05rem; line-height:1.9;
+  max-width:650px; margin:0 auto 2.5rem;
+  font-family:'Rubik',sans-serif;
+  animation: fadeUp .7s ease .2s both;
+}
+.hero-pills {
+  display:flex; justify-content:center; gap:.6rem; flex-wrap:wrap;
+  animation: fadeUp .7s ease .3s both;
+}
+.pill {
+  display:flex; align-items:center; gap:.4rem;
+  padding:6px 14px; border-radius:4px;
+  font-size:.8rem; font-weight:600; border:1px solid;
+  font-family:'Rubik',sans-serif;
+}
+.psa { background:var(--sage-d);  color:var(--sage);  border-color:rgba(58,122,80,.3); }
+.pre { background:var(--red-d);   color:var(--red2);  border-color:rgba(200,56,64,.3); }
+.pam { background:var(--amber-d); color:var(--amber2);border-color:rgba(208,128,32,.3); }
+.pte { background:var(--teal-d);  color:var(--teal2); border-color:rgba(32,120,120,.3); }
+.psl { background:var(--slate-d); color:var(--slate); border-color:rgba(96,128,160,.3); }
+
+/* ══ MAIN ══ */
+main {
+  position:relative; z-index:1;
+  max-width:960px; margin:0 auto;
+  padding:1rem 2rem 4rem;
+  display:flex; flex-direction:column; gap:3rem;
+}
+
+/* Section header */
+.sh { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
+.si {
+  width:48px; height:48px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.3rem; flex-shrink:0;
+}
+.si-sa { background:var(--sage-d);  border:2px solid var(--sage3); }
+.si-re { background:var(--red-d);   border:2px solid rgba(200,56,64,.2); }
+.si-am { background:var(--amber-d); border:2px solid rgba(208,128,32,.2); }
+.si-te { background:var(--teal-d);  border:2px solid rgba(32,120,120,.2); }
+.si-sl { background:var(--slate-d); border:2px solid rgba(96,128,160,.2); }
+.sm h2 { font-family:'Instrument Serif',serif; font-size:1.3rem; font-style:italic; color:var(--text); }
+.sm p  { font-size:.83rem; color:var(--text2); margin-top:2px; font-family:'Rubik',sans-serif; }
+
+/* Card */
+.card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r); padding:1.75rem;
+  transition:border-color .25s, box-shadow .25s;
+  animation: fadeUp .65s ease both;
+  box-shadow: var(--sh);
+}
+.card:hover { border-color:var(--sage); box-shadow:var(--sh2); }
+
+/* Quiz card — no animation to prevent pointer-events bug */
+.quiz-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r); padding:1.75rem;
+  box-shadow: var(--sh);
+}
+
+/* Tip */
+.tip {
+  display:flex; gap:1rem; align-items:flex-start;
+  padding:1.1rem 1.3rem; border-radius:var(--rs); margin:1rem 0;
+  font-family:'Rubik',sans-serif;
+}
+.tip.sa { background:var(--sage-d);  border:1px solid rgba(58,122,80,.2); }
+.tip.re { background:var(--red-d);   border:1px solid rgba(200,56,64,.2); }
+.tip.am { background:var(--amber-d); border:1px solid rgba(208,128,32,.2); }
+.tip.te { background:var(--teal-d);  border:1px solid rgba(32,120,120,.2); }
+.tip.sl { background:var(--slate-d); border:1px solid rgba(96,128,160,.2); }
+.tpic { font-size:1.3rem; flex-shrink:0; margin-top:2px; }
+.tip h4 { font-family:'Instrument Serif',serif; font-size:.95rem; font-style:italic; margin-bottom:4px; }
+.tip.sa h4{color:var(--sage);} .tip.re h4{color:var(--red2);}
+.tip.am h4{color:var(--amber2);} .tip.te h4{color:var(--teal2);}
+.tip.sl h4{color:var(--slate);}
+.tip p { font-size:.85rem; color:var(--text2); line-height:1.8; }
+
+/* Inline code */
+.de {
+  font-family:'JetBrains Mono',monospace;
+  background:var(--sage3); border:1px solid var(--sage);
+  padding:2px 8px; border-radius:4px;
+  font-size:.87em; color:var(--sage);
+  direction:ltr; display:inline-block;
+}
+[data-theme="dark"] .de {
+  background:var(--sage-d); color:var(--sage2);
+}
+
+/* Table */
+.tw { overflow-x:auto; margin-top:.75rem; }
+table { width:100%; border-collapse:collapse; font-size:.9rem; font-family:'Rubik',sans-serif; }
+th { background:var(--sage3); color:var(--sage); padding:10px 14px; text-align:right; font-weight:700; font-size:.78rem; border-bottom:2px solid var(--sage); letter-spacing:.04em; }
+[data-theme="dark"] th { background:var(--bg3); color:var(--sage2); border-bottom-color:var(--border2); }
+td { padding:10px 14px; border-bottom:1px solid var(--border); }
+tr:last-child td{border-bottom:none;} tr:hover td{background:var(--bg2);}
+.tde { font-family:'JetBrains Mono',monospace; color:var(--sage); font-weight:600; direction:ltr; text-align:left; }
+.tex { color:var(--text2); font-size:.82rem; direction:ltr; text-align:left; }
+.tre { font-family:'JetBrains Mono',monospace; color:var(--red2); direction:ltr; text-align:left; font-weight:600; }
+
+/* ══ BODY MAP ══ */
+.body-layout {
+  display:grid; grid-template-columns:1fr 280px; gap:1.5rem;
+  align-items:start;
+}
+.body-svg-wrap {
+  position:relative; max-width:260px; margin:0 auto;
+}
+#body-svg { width:100%; }
+.body-part {
+  cursor:pointer; transition:all .2s;
+  fill:var(--sage3); stroke:var(--sage); stroke-width:1.5;
+}
+.body-part:hover { fill:var(--sage); opacity:.85; }
+.body-part.active { fill:var(--sage); }
+[data-theme="dark"] .body-part { fill:var(--bg3); stroke:var(--sage2); }
+[data-theme="dark"] .body-part:hover,
+[data-theme="dark"] .body-part.active { fill:var(--sage-d2); }
+
+.body-info {
+  background:var(--bg2); border:1px solid var(--border2);
+  border-radius:var(--rs); padding:1.2rem;
+  min-height:200px;
+}
+.bi-emoji { font-size:2.5rem; display:block; margin-bottom:.6rem; }
+.bi-de { font-family:'JetBrains Mono',monospace; font-size:1.1rem; font-weight:600; color:var(--sage); display:block; direction:ltr; margin-bottom:3px; }
+.bi-ar { font-size:1rem; color:var(--text); display:block; margin-bottom:.6rem; font-weight:600; }
+.bi-pain { font-family:'JetBrains Mono',monospace; font-size:.82rem; color:var(--red2); direction:ltr; display:block; margin:.3rem 0; }
+.bi-pain::before { content:'🩺 '; }
+.bi-hint { font-size:.8rem; color:var(--text2); font-style:italic; margin-top:.5rem; display:block; }
+
+.body-vocab-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(140px,1fr));
+  gap:.6rem; margin-top:1rem;
+}
+.bv-chip {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:var(--rs); padding:.7rem .9rem;
+  cursor:pointer; transition:all .22s; text-align:center;
+}
+.bv-chip:hover { border-color:var(--sage); background:var(--sage-d); transform:translateY(-2px); }
+.bv-de { font-family:'JetBrains Mono',monospace; color:var(--sage); font-size:.88rem; font-weight:600; display:block; direction:ltr; }
+.bv-ar { font-size:.8rem; color:var(--text2); display:block; margin-top:2px; }
+
+/* ══ SYMPTOMS ══ */
+.symptoms-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(195px,1fr));
+  gap:1rem;
+}
+.sym-card {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1rem;
+  cursor:pointer; transition:all .25s;
+  border-right:3px solid var(--red);
+}
+.sym-card:hover { border-color:var(--red); background:var(--red-d); transform:translateY(-2px); box-shadow:var(--sh); }
+.sym-emoji { font-size:1.6rem; display:block; margin-bottom:.4rem; }
+.sym-de { font-family:'JetBrains Mono',monospace; font-size:.92rem; font-weight:600; color:var(--red2); display:block; direction:ltr; margin-bottom:3px; }
+.sym-ar { font-size:.88rem; color:var(--text2); display:block; margin-bottom:4px; }
+.sym-ex { font-size:.74rem; color:var(--text3); direction:ltr; font-style:italic; }
+
+/* ══ DOCTOR PHRASES ══ */
+.phrase-cols {
+  display:grid; grid-template-columns:1fr 1fr; gap:1rem;
+}
+.phrase-col-title {
+  font-family:'Instrument Serif',serif; font-size:.95rem;
+  font-style:italic; padding-bottom:.5rem;
+  border-bottom:2px solid; margin-bottom:.8rem;
+}
+.pct-patient { color:var(--sage); border-color:var(--sage); }
+.pct-doctor  { color:var(--teal2); border-color:var(--teal2); }
+.phrase-item {
+  background:var(--bg2); border-radius:6px; padding:.7rem .9rem;
+  margin-bottom:.5rem; cursor:pointer; transition:background .2s;
+}
+.phrase-item:hover { background:var(--bg3); }
+.ph-de { font-family:'JetBrains Mono',monospace; font-size:.82rem; color:var(--sage); direction:ltr; display:block; margin-bottom:2px; }
+.pct-doctor + div .ph-de { color:var(--teal2); }
+.ph-ar { font-size:.8rem; color:var(--text2); display:block; }
+
+/* ══ MEDICINE VOCAB ══ */
+.med-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:.8rem;
+}
+.med-card {
+  background:var(--cream); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1rem;
+  cursor:pointer; transition:all .22s;
+  display:flex; align-items:center; gap:.8rem;
+}
+[data-theme="dark"] .med-card { background:var(--bg2); }
+.med-card:hover { border-color:var(--amber); transform:translateY(-2px); box-shadow:var(--sh); }
+.med-icon { font-size:1.8rem; flex-shrink:0; }
+.med-de { font-family:'JetBrains Mono',monospace; font-size:.85rem; color:var(--amber); font-weight:600; display:block; direction:ltr; }
+.med-ar { font-size:.8rem; color:var(--text2); display:block; }
+
+/* ══ DIALOGUE ══ */
+.conv { display:flex; flex-direction:column; gap:1.1rem; }
+.msg { display:flex; gap:1rem; align-items:flex-start; }
+.msg.l { flex-direction:row-reverse; }
+.av {
+  width:44px; height:44px; border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; flex-shrink:0;
+}
+.msg.r .av { background:var(--sage-d);  border:2px solid var(--sage3); }
+.msg.l .av { background:var(--teal-d);  border:2px solid rgba(32,120,120,.2); }
+.bw { flex:1; max-width:80%; }
+.msg.r .bw { text-align:right; }
+.bub {
+  display:inline-block; padding:11px 16px;
+  border-radius:12px; font-size:.92rem; line-height:1.78;
+  max-width:100%; font-family:'Rubik',sans-serif;
+}
+.msg.r .bub { background:var(--sage-d2); border:1px solid var(--sage3); border-radius:12px 2px 12px 12px; }
+.msg.l .bub { background:var(--teal-d); border:1px solid rgba(32,120,120,.2); border-radius:2px 12px 12px 12px; }
+.dl { color:var(--sage); font-weight:600; display:block; font-size:.95rem; margin-bottom:3px; direction:ltr; font-family:'JetBrains Mono',monospace; }
+.msg.l .dl { color:var(--teal2); }
+.who { font-size:.72rem; color:var(--text3); margin-top:4px; display:block; font-family:'Rubik',sans-serif; }
+
+/* ══ QUIZ ══ */
+.qblock {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1.2rem 1.4rem; margin-bottom:1rem;
+  font-family:'Rubik',sans-serif;
+}
+.qlabel {
+  font-family:'JetBrains Mono',monospace; font-size:.68rem;
+  color:var(--text3); font-weight:700; letter-spacing:.08em;
+  display:block; margin-bottom:.5rem;
+}
+.qtext { font-weight:600; font-size:.95rem; margin-bottom:.9rem; }
+.qde { color:var(--sage); font-family:'JetBrains Mono',monospace; }
+.opts { display:grid; grid-template-columns:1fr 1fr; gap:.55rem; }
+.opt {
+  padding:10px 14px; border-radius:6px;
+  border:1px solid var(--border2); background:var(--card);
+  color:var(--text); cursor:pointer;
+  font-family:'Rubik',sans-serif; font-size:.87rem; font-weight:500;
+  transition:border-color .18s, background .18s, color .18s;
+  text-align:center; width:100%; display:block;
+  outline:none; appearance:none; -webkit-appearance:none;
+}
+.opt:hover { border-color:var(--sage); background:var(--sage-d); color:var(--sage); }
+.opt:disabled { cursor:not-allowed; pointer-events:none; opacity:.6; }
+.opt.correct { border-color:var(--sage)!important; background:var(--sage-d)!important; color:var(--sage)!important; font-weight:700; }
+.opt.wrong   { border-color:var(--red2)!important;  background:var(--red-d)!important;  color:var(--red2)!important; }
+.qfb { font-size:.82rem; padding:9px 12px; border-radius:6px; margin-top:8px; display:none; font-family:'Rubik',sans-serif; }
+.qfb.show { display:block; }
+.qfb.ok  { background:var(--sage-d);  color:var(--sage);  border:1px solid rgba(58,122,80,.2); }
+.qfb.err { background:var(--red-d);   color:var(--red2);  border:1px solid rgba(200,56,64,.2); }
+
+/* Result */
+.result-wrap {
+  background:linear-gradient(135deg, var(--sage-d), var(--teal-d));
+  border:2px solid var(--sage); border-radius:var(--r);
+  padding:2rem; text-align:center; display:none; margin-top:1.5rem;
+}
+.r-score { font-family:'Instrument Serif',serif; font-size:5rem; font-style:italic; color:var(--sage); line-height:1; margin-bottom:.5rem; }
+.r-msg { color:var(--text2); margin-bottom:1.5rem; font-family:'Rubik',sans-serif; }
+.r-btn { display:inline-flex; align-items:center; gap:.5rem; background:var(--sage); color:#fff; border:none; padding:11px 30px; border-radius:6px; font-family:'Rubik',sans-serif; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .25s; }
+.r-btn:hover { background:var(--sage2); transform:translateY(-2px); }
+
+/* Homework */
+.hw-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(175px,1fr)); gap:.75rem; margin-bottom:1.2rem; }
+.hw-item { background:var(--bg2); border:1px solid var(--border); border-radius:var(--rs); padding:.9rem; font-family:'Rubik',sans-serif; }
+.hw-item strong { display:block; margin-bottom:3px; color:var(--sage); font-family:'Instrument Serif',serif; font-size:.95rem; font-style:italic; }
+.hw-item span { color:var(--text2); font-size:.78rem; }
+
+footer { position:relative; z-index:1; text-align:center; padding:2.5rem 2rem; color:var(--text3); font-size:.82rem; border-top:2px solid var(--sage3); font-family:'Rubik',sans-serif; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);} }
+.a1{animation-delay:.05s;} .a2{animation-delay:.15s;}
+.a3{animation-delay:.25s;} .a4{animation-delay:.35s;}
+
+@media(max-width:768px){
+  nav{padding:0 1rem;} .nav-links{display:none;}
+  main{padding:1rem 1rem 3rem;} .hero{padding:3rem 1rem 2rem;}
+  .body-layout{grid-template-columns:1fr;}
+  .phrase-cols{grid-template-columns:1fr;}
+  .opts{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div id="spb"></div>
+
+<nav>
+  <div class="nav-brand">
+    <span class="nav-cross">✚</span>
+    <span>الألمانية للعرب</span>
+    <span class="nav-chip">LEKTION 08 / A2</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#body">أعضاء الجسم</a></li>
+    <li><a href="#symptoms">الأعراض</a></li>
+    <li><a href="#doctor">عند الطبيب</a></li>
+    <li><a href="#medicine">الدواء</a></li>
+    <li><a href="#quiz">الاختبار</a></li>
+  </ul>
+  <button class="tbtn" onclick="toggleTheme()">🌙</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <!-- Medical cross SVG -->
+  <svg class="hero-art" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="60" cy="60" r="58" fill="var(--sage-d)" stroke="var(--sage)" stroke-width="2"/>
+    <rect x="44" y="20" width="32" height="80" rx="8" fill="var(--sage)" opacity=".8"/>
+    <rect x="20" y="44" width="80" height="32" rx="8" fill="var(--sage)" opacity=".8"/>
+    <circle cx="60" cy="60" r="14" fill="var(--card)" opacity=".9"/>
+    <text x="60" y="66" text-anchor="middle" font-size="16" fill="var(--sage)" font-family="JetBrains Mono" font-weight="700">Rp.</text>
+  </svg>
+
+  <div class="hero-badge">✚ LEKTION 08 — GESUNDHEIT & KÖRPER</div>
+  <h1><em>Beim Arzt</em> —<br>عند الطبيب بـ<strong>ألمانية</strong> مثالية</h1>
+  <p class="hero-p">ستتعلم اليوم أسماء أعضاء الجسم، تصف أعراضك بدقة عند الطبيب الألماني، وتفهم تعليماته وصفة الدواء — مهارة حيوية لكل مقيم في ألمانيا!</p>
+  <div class="hero-pills">
+    <div class="pill psa">🫀 أعضاء الجسم</div>
+    <div class="pill pre">🤒 الأعراض والشكاوى</div>
+    <div class="pill pam">💊 الدواء والصيدلية</div>
+    <div class="pill pte">🩺 حوار الطبيب</div>
+    <div class="pill psl">📋 التأمين الصحي</div>
+  </div>
+</div>
+
+<main>
+
+<!-- ══════ SECTION 1: BODY MAP ══════ -->
+<section id="body">
+  <div class="sh">
+    <div class="si si-sa">🫀</div>
+    <div class="sm">
+      <h2>أعضاء الجسم — Der Körper</h2>
+      <p>اضغط على أي جزء من الجسم لتعرف اسمه وكيف تصف الألم فيه</p>
+    </div>
+  </div>
+
+  <div class="card a1">
+    <div class="body-layout">
+      <!-- SVG Body Figure -->
+      <div class="body-svg-wrap">
+        <svg id="body-svg" viewBox="0 0 200 380" xmlns="http://www.w3.org/2000/svg">
+          <!-- Head -->
+          <ellipse class="body-part" id="bp-head" cx="100" cy="40" rx="30" ry="35" onclick="showBodyPart('head')"/>
+          <!-- Neck -->
+          <rect class="body-part" id="bp-neck" x="88" y="72" width="24" height="20" rx="6" onclick="showBodyPart('neck')"/>
+          <!-- Shoulders -->
+          <ellipse class="body-part" id="bp-shoulder-r" cx="58" cy="100" rx="22" ry="14" onclick="showBodyPart('shoulder')"/>
+          <ellipse class="body-part" id="bp-shoulder-l" cx="142" cy="100" rx="22" ry="14" onclick="showBodyPart('shoulder')"/>
+          <!-- Chest / Torso -->
+          <rect class="body-part" id="bp-chest" x="68" y="90" width="64" height="70" rx="10" onclick="showBodyPart('chest')"/>
+          <!-- Stomach -->
+          <rect class="body-part" id="bp-stomach" x="70" y="158" width="60" height="50" rx="8" onclick="showBodyPart('stomach')"/>
+          <!-- Left arm -->
+          <rect class="body-part" id="bp-arm-r" x="30" y="95" width="20" height="90" rx="10" onclick="showBodyPart('arm')"/>
+          <!-- Right arm -->
+          <rect class="body-part" id="bp-arm-l" x="150" y="95" width="20" height="90" rx="10" onclick="showBodyPart('arm')"/>
+          <!-- Left hand -->
+          <ellipse class="body-part" id="bp-hand-r" cx="40" cy="200" rx="14" ry="16" onclick="showBodyPart('hand')"/>
+          <!-- Right hand -->
+          <ellipse class="body-part" id="bp-hand-l" cx="160" cy="200" rx="14" ry="16" onclick="showBodyPart('hand')"/>
+          <!-- Left leg -->
+          <rect class="body-part" id="bp-leg-r" x="70" y="206" width="24" height="100" rx="10" onclick="showBodyPart('leg')"/>
+          <!-- Right leg -->
+          <rect class="body-part" id="bp-leg-l" x="106" y="206" width="24" height="100" rx="10" onclick="showBodyPart('leg')"/>
+          <!-- Left knee -->
+          <ellipse class="body-part" id="bp-knee-r" cx="82" cy="270" rx="14" ry="14" onclick="showBodyPart('knee')"/>
+          <!-- Right knee -->
+          <ellipse class="body-part" id="bp-knee-l" cx="118" cy="270" rx="14" ry="14" onclick="showBodyPart('knee')"/>
+          <!-- Left foot -->
+          <ellipse class="body-part" id="bp-foot-r" cx="78" cy="320" rx="18" ry="12" onclick="showBodyPart('foot')"/>
+          <!-- Right foot -->
+          <ellipse class="body-part" id="bp-foot-l" cx="122" cy="320" rx="18" ry="12" onclick="showBodyPart('foot')"/>
+          <!-- Back label -->
+          <text x="100" y="375" text-anchor="middle" font-size="10" fill="var(--text3)" font-family="JetBrains Mono">← اضغط للتفاصيل</text>
+        </svg>
+      </div>
+
+      <!-- Info Panel -->
+      <div class="body-info" id="body-info">
+        <span class="bi-emoji">👆</span>
+        <span class="bi-de">اضغط على جزء من الجسم</span>
+        <span class="bi-ar">لتظهر المعلومات هنا</span>
+        <span class="bi-hint">كل جزء يأتي مع طريقة وصف الألم بالألمانية!</span>
+      </div>
+    </div>
+
+    <!-- Body vocab grid -->
+    <div class="body-vocab-grid" style="margin-top:1.5rem;">
+      <div class="bv-chip" onclick="speak('der Kopf')"><span class="bv-de">der Kopf</span><span class="bv-ar">الرأس</span></div>
+      <div class="bv-chip" onclick="speak('das Auge')"><span class="bv-de">das Auge</span><span class="bv-ar">العين</span></div>
+      <div class="bv-chip" onclick="speak('das Ohr')"><span class="bv-de">das Ohr</span><span class="bv-ar">الأذن</span></div>
+      <div class="bv-chip" onclick="speak('die Nase')"><span class="bv-de">die Nase</span><span class="bv-ar">الأنف</span></div>
+      <div class="bv-chip" onclick="speak('der Mund')"><span class="bv-de">der Mund</span><span class="bv-ar">الفم</span></div>
+      <div class="bv-chip" onclick="speak('der Hals')"><span class="bv-de">der Hals</span><span class="bv-ar">الرقبة / الحلق</span></div>
+      <div class="bv-chip" onclick="speak('die Schulter')"><span class="bv-de">die Schulter</span><span class="bv-ar">الكتف</span></div>
+      <div class="bv-chip" onclick="speak('der Rücken')"><span class="bv-de">der Rücken</span><span class="bv-ar">الظهر</span></div>
+      <div class="bv-chip" onclick="speak('die Brust')"><span class="bv-de">die Brust</span><span class="bv-ar">الصدر</span></div>
+      <div class="bv-chip" onclick="speak('der Bauch')"><span class="bv-de">der Bauch</span><span class="bv-ar">البطن</span></div>
+      <div class="bv-chip" onclick="speak('der Arm')"><span class="bv-de">der Arm</span><span class="bv-ar">الذراع</span></div>
+      <div class="bv-chip" onclick="speak('die Hand')"><span class="bv-de">die Hand</span><span class="bv-ar">اليد</span></div>
+      <div class="bv-chip" onclick="speak('das Bein')"><span class="bv-de">das Bein</span><span class="bv-ar">الساق</span></div>
+      <div class="bv-chip" onclick="speak('das Knie')"><span class="bv-de">das Knie</span><span class="bv-ar">الركبة</span></div>
+      <div class="bv-chip" onclick="speak('der Fuß')"><span class="bv-de">der Fuß</span><span class="bv-ar">القدم</span></div>
+      <div class="bv-chip" onclick="speak('das Herz')"><span class="bv-de">das Herz</span><span class="bv-ar">القلب</span></div>
+    </div>
+
+    <div class="tip sa" style="margin-top:1.2rem;">
+      <div class="tpic">💡</div>
+      <div>
+        <h4>كيف تقول "يؤلمني"؟</h4>
+        <p>الطريقة الأساسية: <span class="de">Mein/Meine ... tut weh.</span> (يؤلمني...)<br>
+        أو: <span class="de">Ich habe Schmerzen in/im/an dem...</span> (عندي ألم في...)<br>
+        أو: <span class="de">Ich habe ... schmerzen.</span> مثل: <span class="de">Ich habe Kopfschmerzen.</span> (عندي صداع)<br>
+        ملاحظة: كلمة <span class="de">Schmerzen</span> دائماً جمع في الألمانية!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 2: SYMPTOMS ══════ -->
+<section id="symptoms">
+  <div class="sh">
+    <div class="si si-re">🤒</div>
+    <div class="sm">
+      <h2>الأعراض والشكاوى — Beschwerden</h2>
+      <p>اضغط على أي عرض لسماع كيف تصفه عند الطبيب</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div class="symptoms-grid">
+      <div class="sym-card" onclick="speak('Ich habe Kopfschmerzen')">
+        <span class="sym-emoji">🤕</span>
+        <span class="sym-de">Kopfschmerzen haben</span>
+        <span class="sym-ar">يؤلمني رأسي / عندي صداع</span>
+        <span class="sym-ex">Ich habe starke Kopfschmerzen.</span>
+      </div>
+      <div class="sym-card" onclick="speak('Ich habe Fieber')">
+        <span class="sym-emoji">🌡️</span>
+        <span class="sym-de">Fieber haben</span>
+        <span class="sym-ar">عندي حرارة / حمّى</span>
+        <span class="sym-ex">Ich habe 39 Grad Fieber.</span>
+      </div>
+      <div class="sym-card" onclick="speak('Ich habe Halsschmerzen')">
+        <span class="sym-emoji">🤧</span>
+        <span class="sym-de">Halsschmerzen haben</span>
+        <span class="sym-ar">يؤلمني حلقي</span>
+        <span class="sym-ex">Mein Hals tut sehr weh.</span>
+      </div>
+      <div class="sym-card" onclick="speak('Ich habe Bauchschmerzen')">
+        <span class="sym-emoji">😣</span>
+        <span class="sym-de">Bauchschmerzen haben</span>
+        <span class="sym-ar">يؤلمني بطني</span>
+        <span class="sym-ex">Ich habe Bauchschmerzen seit gestern.</span>
+      </div>
+      <div class="sym-card" onclick="speak('Ich huste')">
+        <span class="sym-emoji">😮‍💨</span>
+        <span class="sym-de">husten / der Husten</span>
+        <span class="sym-ar">أسعل / السعال</span>
+        <span class="sym-ex">Ich huste schon seit einer Woche.</span>
+      </div>
+      <div class="sym-card" onclick="speak('Ich habe Schnupfen')">
+        <span class="sym-emoji">🤧</span>
+        <span class="sym-de">der Schnupfen</span>
+        <span class="sym-ar">زكام / نزلة برد</span>
+        <span class="sym-ex">Ich habe Schnupfen und Husten.</span>
+      </div>
+      <div class="sym-card" onclick="speak('Mir ist schwindelig')">
+        <span class="sym-emoji">💫</span>
+        <span class="sym-de">Schwindel / schwindelig</span>
+        <span class="sym-ar">دوخة / دوار</span>
+        <span class="sym-ex">Mir ist schwindelig, wenn ich aufstehe.</span>
+      </div>
+      <div class="sym-card" onclick="speak('Ich habe Rückenschmerzen')">
+        <span class="sym-emoji">😰</span>
+        <span class="sym-de">Rückenschmerzen haben</span>
+        <span class="sym-ar">يؤلمني ظهري</span>
+        <span class="sym-ex">Ich habe starke Rückenschmerzen.</span>
+      </div>
+      <div class="sym-card" onclick="speak('Ich bin allergisch gegen')">
+        <span class="sym-emoji">🌿</span>
+        <span class="sym-de">allergisch sein</span>
+        <span class="sym-ar">عندي حساسية من</span>
+        <span class="sym-ex">Ich bin allergisch gegen Penicillin.</span>
+      </div>
+      <div class="sym-card" onclick="speak('Mir ist übel')">
+        <span class="sym-emoji">🤢</span>
+        <span class="sym-de">Übelkeit / übel sein</span>
+        <span class="sym-ar">غثيان / شعور بالغثيان</span>
+        <span class="sym-ex">Mir ist übel und ich habe erbrochen.</span>
+      </div>
+      <div class="sym-card" onclick="speak('Ich fühle mich erschöpft')">
+        <span class="sym-emoji">😩</span>
+        <span class="sym-de">erschöpft / müde sein</span>
+        <span class="sym-ar">مُنهَك / متعب جداً</span>
+        <span class="sym-ex">Ich fühle mich sehr erschöpft.</span>
+      </div>
+      <div class="sym-card" onclick="speak('Ich habe Durchfall')">
+        <span class="sym-emoji">🚻</span>
+        <span class="sym-de">Durchfall haben</span>
+        <span class="sym-ar">عندي إسهال</span>
+        <span class="sym-ex">Ich habe seit zwei Tagen Durchfall.</span>
+      </div>
+    </div>
+
+    <div class="tip re" style="margin-top:1.2rem;">
+      <div class="tpic">🩺</div>
+      <div>
+        <h4>تركيب كلمة الألم — Schmerzen compounds</h4>
+        <p>في الألمانية يمكنك تركيب كلمة الألم بسهولة: اسم العضو + schmerzen<br>
+        Kopf + schmerzen = <span class="de">Kopfschmerzen</span> (صداع) &nbsp;·&nbsp;
+        Hals + schmerzen = <span class="de">Halsschmerzen</span> (ألم الحلق)<br>
+        Rücken + schmerzen = <span class="de">Rückenschmerzen</span> (ألم الظهر) &nbsp;·&nbsp;
+        Zahn + schmerzen = <span class="de">Zahnschmerzen</span> (ألم الأسنان)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 3: DOCTOR PHRASES ══════ -->
+<section id="doctor">
+  <div class="sh">
+    <div class="si si-te">🩺</div>
+    <div class="sm">
+      <h2>عند الطبيب — Beim Arzt</h2>
+      <p>جمل المريض والطبيب — اضغط على أي جملة لسماعها</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div class="phrase-cols">
+      <div>
+        <div class="phrase-col-title pct-patient">👨 المريض — Der Patient</div>
+        <div id="patient-phrases"></div>
+      </div>
+      <div>
+        <div class="phrase-col-title pct-doctor">👨‍⚕️ الطبيب — Der Arzt</div>
+        <div id="doctor-phrases"></div>
+      </div>
+    </div>
+
+    <div class="tip am" style="margin-top:1.2rem;">
+      <div class="tpic">📋</div>
+      <div>
+        <h4>التأمين الصحي في ألمانيا — Krankenversicherung</h4>
+        <p>التأمين الصحي إلزامي في ألمانيا لكل مقيم. هناك نوعان:<br>
+        <span class="de">gesetzliche Krankenversicherung (GKV)</span> = التأمين العام (الحكومي) — الأكثر شيوعاً.<br>
+        <span class="de">private Krankenversicherung (PKV)</span> = التأمين الخاص — للأجور المرتفعة.<br>
+        عند الطبيب ستُقدّم <span class="de">die Versicherungskarte</span> (بطاقة التأمين) بدلاً من الدفع النقدي.</p>
+      </div>
+    </div>
+
+    <div class="tw" style="margin-top:.5rem;">
+      <table>
+        <thead><tr><th>الموقف</th><th>ما تقوله</th><th>المعنى</th></tr></thead>
+        <tbody>
+          <tr><td>حجز موعد</td><td class="tde">Ich möchte einen Termin.</td><td>أريد موعداً</td></tr>
+          <tr><td>إلغاء موعد</td><td class="tde">Ich muss den Termin absagen.</td><td>أريد إلغاء الموعد</td></tr>
+          <tr><td>الطوارئ</td><td class="tde">Es ist dringend / ein Notfall!</td><td>إنها حالة طارئة!</td></tr>
+          <tr><td>وصف شدة الألم</td><td class="tde">Die Schmerzen sind stark / mild.</td><td>الألم شديد / خفيف</td></tr>
+          <tr><td>منذ متى؟</td><td class="tde">Seit wann haben Sie Schmerzen?</td><td>منذ متى يؤلمك؟</td></tr>
+          <tr><td>الإجابة</td><td class="tde">Seit drei Tagen / einer Woche.</td><td>منذ ثلاثة أيام / أسبوع</td></tr>
+          <tr><td>طلب إجازة مرضية</td><td class="tde">Ich brauche eine Krankmeldung.</td><td>أحتاج شهادة مرضية</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 4: MEDICINE ══════ -->
+<section id="medicine">
+  <div class="sh">
+    <div class="si si-am">💊</div>
+    <div class="sm">
+      <h2>الدواء والصيدلية — Apotheke</h2>
+      <p>اضغط على أي دواء لسماع اسمه وكيف تطلبه</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div class="med-grid">
+      <div class="med-card" onclick="speak('die Tablette')">
+        <span class="med-icon">💊</span>
+        <div><span class="med-de">die Tablette/-n</span><span class="med-ar">الحبة / الأقراص</span></div>
+      </div>
+      <div class="med-card" onclick="speak('das Antibiotikum')">
+        <span class="med-icon">🧪</span>
+        <div><span class="med-de">das Antibiotikum</span><span class="med-ar">المضاد الحيوي</span></div>
+      </div>
+      <div class="med-card" onclick="speak('das Schmerzmittel')">
+        <span class="med-icon">🩹</span>
+        <div><span class="med-de">das Schmerzmittel</span><span class="med-ar">مسكن الألم</span></div>
+      </div>
+      <div class="med-card" onclick="speak('der Hustensaft')">
+        <span class="med-icon">🍯</span>
+        <div><span class="med-de">der Hustensaft</span><span class="med-ar">شراب السعال</span></div>
+      </div>
+      <div class="med-card" onclick="speak('die Salbe')">
+        <span class="med-icon">🧴</span>
+        <div><span class="med-de">die Salbe</span><span class="med-ar">المرهم / الكريم</span></div>
+      </div>
+      <div class="med-card" onclick="speak('das Pflaster')">
+        <span class="med-icon">🩹</span>
+        <div><span class="med-de">das Pflaster</span><span class="med-ar">لاصقة الجرح (باند إيد)</span></div>
+      </div>
+      <div class="med-card" onclick="speak('die Spritze')">
+        <span class="med-icon">💉</span>
+        <div><span class="med-de">die Spritze</span><span class="med-ar">الحقنة</span></div>
+      </div>
+      <div class="med-card" onclick="speak('das Rezept')">
+        <span class="med-icon">📋</span>
+        <div><span class="med-de">das Rezept</span><span class="med-ar">الوصفة الطبية</span></div>
+      </div>
+      <div class="med-card" onclick="speak('ohne Rezept')">
+        <span class="med-icon">🏪</span>
+        <div><span class="med-de">ohne Rezept</span><span class="med-ar">بدون وصفة طبية</span></div>
+      </div>
+      <div class="med-card" onclick="speak('die Krankmeldung')">
+        <span class="med-icon">📄</span>
+        <div><span class="med-de">die Krankmeldung</span><span class="med-ar">الشهادة المرضية</span></div>
+      </div>
+    </div>
+
+    <div class="tip sa" style="margin-top:1.2rem;">
+      <div class="tpic">💊</div>
+      <div>
+        <h4>كيف تطلب دواءً من الصيدلية؟</h4>
+        <p>
+          <span class="de">Ich hätte gerne etwas gegen Kopfschmerzen.</span> = أريد شيئاً لعلاج الصداع.<br>
+          <span class="de">Haben Sie das ohne Rezept?</span> = هل هذا متوفر بدون وصفة؟<br>
+          <span class="de">Dreimal täglich, eine Tablette nach dem Essen.</span> = ثلاث مرات يومياً، حبة بعد الأكل.<br>
+          <span class="de">Wie lange soll ich das nehmen?</span> = كم من الوقت آخذ هذا؟
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 5: DIALOGUE ══════ -->
+<section>
+  <div class="sh">
+    <div class="si si-te">💬</div>
+    <div class="sm">
+      <h2>حوار: أحمد عند الطبيب</h2>
+      <p>مشهد حقيقي في عيادة طبيب عام في ألمانيا</p>
+    </div>
+  </div>
+
+  <div class="card a4">
+    <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--sage3);">
+      <span style="font-size:1.5rem;">🏥</span>
+      <div>
+        <div style="font-family:'Instrument Serif',serif;font-size:1rem;font-style:italic;color:var(--text);">Arztpraxis Dr. Weber — برلين</div>
+        <div style="font-size:.78rem;color:var(--text2);font-family:'Rubik',sans-serif;">أحمد يزور الطبيب لأول مرة بعد الإصابة بالزكام</div>
+      </div>
+    </div>
+
+    <div class="conv">
+      <div class="msg l">
+        <div class="av">👨‍⚕️</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Guten Morgen! Herr Ahmad? Ich bin Dr. Weber. Was fehlt Ihnen heute?</span>صباح الخير! السيد أحمد؟ أنا الدكتور Weber. ما الذي يؤلمك اليوم؟</div>
+          <span class="who" style="text-align:left;">Dr. Weber 👨‍⚕️</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Guten Morgen, Herr Doktor. Ich fühle mich seit drei Tagen sehr krank. Ich habe Halsschmerzen, Husten und Fieber.</span>صباح الخير دكتور. أشعر بمرض شديد منذ ثلاثة أيام. عندي ألم في الحلق وسعال وحرارة.</div>
+          <span class="who">أحمد 🧑</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👨‍⚕️</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Wie hoch ist das Fieber? Und haben Sie noch andere Beschwerden?</span>كم درجة الحرارة؟ وهل لديك أعراض أخرى؟</div>
+          <span class="who" style="text-align:left;">Dr. Weber 👨‍⚕️</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Das Fieber ist 38,5 Grad. Ich habe auch Kopfschmerzen und mir ist manchmal schwindelig. Ich bin sehr erschöpft.</span>الحرارة 38.5 درجة. عندي أيضاً صداع وأحياناً أشعر بالدوخة. أنا منهك تماماً.</div>
+          <span class="who">أحمد 🧑</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👨‍⚕️</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ich schaue mal in Ihren Hals... Der Hals ist gerötet und entzündet. Sind Sie gegen irgendwelche Medikamente allergisch?</span>دعني أرى حلقك... الحلق محمر ومتهيّج. هل أنت حساس من أي أدوية؟</div>
+          <span class="who" style="text-align:left;">Dr. Weber 👨‍⚕️</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ich bin allergisch gegen Penicillin. Das habe ich immer vergessen zu sagen!</span>أنا حساس من البنسيلين. كنت دائماً أنسى أن أقول هذا!</div>
+          <span class="who">أحمد 🧑</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👨‍⚕️</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Gut, dass Sie das sagen! Ich verschreibe Ihnen dann ein anderes Antibiotikum. Dreimal täglich, eine Tablette nach dem Essen. Und viel Ruhe und warme Getränke!</span>جيد أنك قلت ذلك! سأصف لك إذاً مضاداً حيوياً مختلفاً. ثلاث مرات يومياً، حبة بعد الأكل. وكثير من الراحة والمشروبات الدافئة!</div>
+          <span class="who" style="text-align:left;">Dr. Weber 👨‍⚕️</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Brauche ich auch eine Krankmeldung für die Arbeit?</span>هل أحتاج أيضاً شهادة مرضية للعمل؟</div>
+          <span class="who">أحمد 🧑</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👨‍⚕️</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ja, natürlich. Ich schreibe Sie für drei Tage krank. Wenn es nicht besser wird, kommen Sie bitte wieder. Gute Besserung, Herr Ahmad!</span>نعم، بالطبع. سأكتب لك إجازة مرضية لثلاثة أيام. إذا لم تتحسن، يرجى العودة مجدداً. أتمنى لك الشفاء العاجل يا سيد أحمد!</div>
+          <span class="who" style="text-align:left;">Dr. Weber 👨‍⚕️</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Vielen Dank, Herr Doktor! Auf Wiedersehen!</span>شكراً جزيلاً دكتور! مع السلامة!</div>
+          <span class="who">أحمد 🧑</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem;padding-top:1rem;border-top:2px solid var(--sage3);">
+      <h4 style="font-family:'Instrument Serif',serif;font-size:.95rem;font-style:italic;color:var(--sage);margin-bottom:.8rem;">🔑 تعابير مفتاحية من الحوار:</h4>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;font-size:.8rem;align-items:center;font-family:'Rubik',sans-serif;">
+        <span class="de">Was fehlt Ihnen?</span><span style="color:var(--text2)"> ما الذي يؤلمك؟</span>&nbsp;·&nbsp;
+        <span class="de">Ich bin allergisch gegen...</span><span style="color:var(--text2)"> أنا حساس من...</span>&nbsp;·&nbsp;
+        <span class="de">Ich verschreibe Ihnen...</span><span style="color:var(--text2)"> سأصف لك...</span>&nbsp;·&nbsp;
+        <span class="de">Gute Besserung!</span><span style="color:var(--text2)"> أتمنى الشفاء!</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 6: QUIZ ══════ -->
+<section id="quiz">
+  <div class="sh">
+    <div class="si si-sa">🎯</div>
+    <div class="sm">
+      <h2>اختبر نفسك!</h2>
+      <p>8 أسئلة على الصحة والجسم والطبيب</p>
+    </div>
+  </div>
+
+  <div class="quiz-card">
+
+    <div class="qblock" id="q1">
+      <span class="qlabel">FRAGE 1 / 8</span>
+      <div class="qtext">كيف تقول "يؤلمني رأسي" بالألمانية؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q1" data-val="w">Ich bin Kopfschmerzen.</button>
+        <button class="opt" type="button" data-qid="q1" data-val="c">Ich habe Kopfschmerzen.</button>
+        <button class="opt" type="button" data-qid="q1" data-val="w">Mein Kopf ist krank.</button>
+        <button class="opt" type="button" data-qid="q1" data-val="w">Der Kopf tut mich weh.</button>
+      </div>
+      <div class="qfb" id="fb-q1"></div>
+    </div>
+
+    <div class="qblock" id="q2">
+      <span class="qlabel">FRAGE 2 / 8</span>
+      <div class="qtext">ما معنى <span class="qde">Gute Besserung!</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q2" data-val="w">تحسّن بسرعة! (أمر)</button>
+        <button class="opt" type="button" data-qid="q2" data-val="c">أتمنى لك الشفاء!</button>
+        <button class="opt" type="button" data-qid="q2" data-val="w">أنت بحاجة لطبيب!</button>
+        <button class="opt" type="button" data-qid="q2" data-val="w">الأطباء هنا ممتازون!</button>
+      </div>
+      <div class="qfb" id="fb-q2"></div>
+    </div>
+
+    <div class="qblock" id="q3">
+      <span class="qlabel">FRAGE 3 / 8</span>
+      <div class="qtext">ما هو <span class="qde">das Rezept</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q3" data-val="w">بطاقة التأمين الصحي</button>
+        <button class="opt" type="button" data-qid="q3" data-val="w">الشهادة المرضية</button>
+        <button class="opt" type="button" data-qid="q3" data-val="c">الوصفة الطبية</button>
+        <button class="opt" type="button" data-qid="q3" data-val="w">فاتورة الطبيب</button>
+      </div>
+      <div class="qfb" id="fb-q3"></div>
+    </div>
+
+    <div class="qblock" id="q4">
+      <span class="qlabel">FRAGE 4 / 8</span>
+      <div class="qtext">كيف تصف ألمك بالطريقة الصحيحة؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q4" data-val="w">Mein Bauch ist schmerzen.</button>
+        <button class="opt" type="button" data-qid="q4" data-val="c">Mein Bauch tut weh.</button>
+        <button class="opt" type="button" data-qid="q4" data-val="w">Ich bin Bauchschmerz.</button>
+        <button class="opt" type="button" data-qid="q4" data-val="w">Der Bauch schmerzt mich.</button>
+      </div>
+      <div class="qfb" id="fb-q4"></div>
+    </div>
+
+    <div class="qblock" id="q5">
+      <span class="qlabel">FRAGE 5 / 8</span>
+      <div class="qtext">ما جنس كلمة <span class="qde">Hals</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q5" data-val="c">مذكر (der)</button>
+        <button class="opt" type="button" data-qid="q5" data-val="w">مؤنث (die)</button>
+        <button class="opt" type="button" data-qid="q5" data-val="w">محايد (das)</button>
+        <button class="opt" type="button" data-qid="q5" data-val="w">يتغير حسب السياق</button>
+      </div>
+      <div class="qfb" id="fb-q5"></div>
+    </div>
+
+    <div class="qblock" id="q6">
+      <span class="qlabel">FRAGE 6 / 8</span>
+      <div class="qtext">كيف تقول "أنا حساس من البنسيلين"؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q6" data-val="w">Ich habe Allergie Penicillin.</button>
+        <button class="opt" type="button" data-qid="q6" data-val="c">Ich bin allergisch gegen Penicillin.</button>
+        <button class="opt" type="button" data-qid="q6" data-val="w">Penicillin macht mich krank.</button>
+        <button class="opt" type="button" data-qid="q6" data-val="w">Ich nehme kein Penicillin.</button>
+      </div>
+      <div class="qfb" id="fb-q6"></div>
+    </div>
+
+    <div class="qblock" id="q7">
+      <span class="qlabel">FRAGE 7 / 8</span>
+      <div class="qtext">ما معنى <span class="qde">Mir ist schwindelig.</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q7" data-val="w">أنا تعبان.</button>
+        <button class="opt" type="button" data-qid="q7" data-val="w">أشعر بالغثيان.</button>
+        <button class="opt" type="button" data-qid="q7" data-val="c">أشعر بالدوخة / الدوار.</button>
+        <button class="opt" type="button" data-qid="q7" data-val="w">أنا مصاب بحمى.</button>
+      </div>
+      <div class="qfb" id="fb-q7"></div>
+    </div>
+
+    <div class="qblock" id="q8">
+      <span class="qlabel">FRAGE 8 / 8</span>
+      <div class="qtext">ماذا تقول للطبيب عندما تريد شهادة مرضية؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q8" data-val="w">Ich möchte Urlaub haben.</button>
+        <button class="opt" type="button" data-qid="q8" data-val="w">Ich bin zu krank für die Arbeit.</button>
+        <button class="opt" type="button" data-qid="q8" data-val="c">Ich brauche eine Krankmeldung.</button>
+        <button class="opt" type="button" data-qid="q8" data-val="w">Geben Sie mir ein Rezept.</button>
+      </div>
+      <div class="qfb" id="fb-q8"></div>
+    </div>
+
+    <div class="result-wrap" id="result-wrap">
+      <div class="r-score" id="r-score">0/8</div>
+      <div class="r-msg" id="r-msg"></div>
+      <button class="r-btn" onclick="resetQuiz()">🔄 أعد التدريب</button>
+    </div>
+  </div>
+</section>
+
+<!-- HOMEWORK -->
+<section>
+  <div class="sh">
+    <div class="si si-sa">📝</div>
+    <div class="sm"><h2>واجب الدرس الثامن</h2><p>طبّق ما تعلمته في سياقات طبية حقيقية</p></div>
+  </div>
+  <div class="card">
+    <div class="hw-grid">
+      <div class="hw-item"><strong>عند الطبيب</strong><span>اكتب حواراً كاملاً بينك وبين طبيب تصف فيه أعراضك</span></div>
+      <div class="hw-item"><strong>أعضاء الجسم</strong><span>احفظ 10 أعضاء مع جنسها النحوي وكررها بصوت عالٍ</span></div>
+      <div class="hw-item"><strong>كلمات الألم</strong><span>كوّن 5 كلمات مركبة بـ schmerzen: Kopf، Zahn، Bauch...</span></div>
+      <div class="hw-item"><strong>في الصيدلية</strong><span>اكتب ماذا ستقول لطلب مسكن للألم بدون وصفة</span></div>
+    </div>
+    <div class="tip sa">
+      <div class="tpic">🚀</div>
+      <div>
+        <h4>الدرس التاسع القادم</h4>
+        <p>سنتعلم <strong>العمل والمهن والمقابلات الوظيفية</strong> — كيف تكتب سيرتك الذاتية بالألمانية، تتحدث عن خبراتك، وتجتاز مقابلة عمل! <span class="de">Gute Besserung und bis bald!</span> 💊</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>🇩🇪 الألمانية للعرب &nbsp;·&nbsp; المستوى A2 &nbsp;·&nbsp; الدرس 8 من 12</p>
+  <p style="margin-top:.5rem;">الصحة · الجسم · الطبيب · الدواء · التأمين الصحي</p>
+</footer>
+
+<script>
+// ── Theme — starts LIGHT (medical aesthetic), toggle to dark
+let dark = false;
+const root = document.documentElement;
+const tbtn = document.querySelector('.tbtn');
+function applyTheme(d) {
+  dark = d;
+  root.setAttribute('data-theme', d ? 'dark' : 'light');
+  tbtn.textContent = d ? '☀' : '🌙';
+}
+function toggleTheme() { applyTheme(!dark); }
+// Start light (medical context = bright)
+applyTheme(false);
+
+// ── Scroll progress ──
+const spb = document.getElementById('spb');
+window.addEventListener('scroll', () => {
+  const h = document.body.scrollHeight - window.innerHeight;
+  spb.style.transform = `scaleX(${window.scrollY / h})`;
+});
+
+// ── Speech ──
+function speak(t) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(t);
+  u.lang = 'de-DE'; u.rate = 0.82;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+}
+
+// ── Body part data ──
+const bodyParts = {
+  head: {
+    emoji:'🤕', de:'der Kopf', ar:'الرأس',
+    pain:['Ich habe Kopfschmerzen.','Mein Kopf tut weh.','Mir ist schwindelig.'],
+    hint:'Kopf = مذكر. Kopfschmerzen دائماً جمع!'
+  },
+  neck: {
+    emoji:'😣', de:'der Hals / der Nacken', ar:'الحلق / الرقبة',
+    pain:['Ich habe Halsschmerzen.','Mein Hals tut weh.','Ich kann kaum schlucken.'],
+    hint:'der Hals = الحلق (الداخل)، der Nacken = مؤخرة الرقبة'
+  },
+  shoulder: {
+    emoji:'💪', de:'die Schulter', ar:'الكتف',
+    pain:['Meine Schulter tut weh.','Ich habe Schmerzen in der Schulter.'],
+    hint:'die Schulter = مؤنث. الجمع: die Schultern'
+  },
+  chest: {
+    emoji:'❤️', de:'die Brust / das Herz', ar:'الصدر / القلب',
+    pain:['Ich habe Brustschmerzen.','Mein Herz schlägt zu schnell.','Ich habe Herzschmerzen.'],
+    hint:'⚠️ ألم الصدر حالة طارئة! قل: Es ist ein Notfall!'
+  },
+  stomach: {
+    emoji:'🫃', de:'der Bauch / der Magen', ar:'البطن / المعدة',
+    pain:['Ich habe Bauchschmerzen.','Mein Bauch tut weh.','Mir ist übel.'],
+    hint:'der Bauch = البطن عموماً، der Magen = المعدة تحديداً'
+  },
+  arm: {
+    emoji:'💪', de:'der Arm', ar:'الذراع',
+    pain:['Mein Arm tut weh.','Ich habe Schmerzen im Arm.','Ich kann den Arm nicht heben.'],
+    hint:'der Arm = مذكر. الجمع: die Arme'
+  },
+  hand: {
+    emoji:'🖐️', de:'die Hand / der Finger', ar:'اليد / الإصبع',
+    pain:['Meine Hand tut weh.','Mein Finger ist geschwollen.'],
+    hint:'die Hand = مؤنث. der Finger = مذكر'
+  },
+  leg: {
+    emoji:'🦵', de:'das Bein', ar:'الساق',
+    pain:['Mein Bein tut weh.','Ich habe Schmerzen im Bein.','Ich kann nicht richtig laufen.'],
+    hint:'das Bein = محايد. الجمع: die Beine'
+  },
+  knee: {
+    emoji:'🦵', de:'das Knie', ar:'الركبة',
+    pain:['Mein Knie tut weh.','Das Knie ist geschwollen.','Knieschmerzen beim Laufen.'],
+    hint:'das Knie = محايد. مشكلة شائعة عند الرياضيين!'
+  },
+  foot: {
+    emoji:'🦶', de:'der Fuß / die Zehe', ar:'القدم / إصبع القدم',
+    pain:['Mein Fuß tut weh.','Ich habe mir den Fuß verstaucht.'],
+    hint:'der Fuß = مذكر. die Zehe = إصبع القدم (مؤنث)'
+  }
+};
+
+function showBodyPart(key) {
+  const p = bodyParts[key];
+  if (!p) return;
+  // Remove active from all
+  document.querySelectorAll('.body-part').forEach(el => el.classList.remove('active'));
+  // Activate matching parts
+  document.querySelectorAll(`[id^="bp-${key}"]`).forEach(el => el.classList.add('active'));
+  speak(p.de.split(' /')[0]);
+  document.getElementById('body-info').innerHTML = `
+    <span class="bi-emoji">${p.emoji}</span>
+    <span class="bi-de">${p.de}</span>
+    <span class="bi-ar">${p.ar}</span>
+    ${p.pain.map(s => `<span class="bi-pain" onclick="speak('${s}')" style="cursor:pointer">${s}</span>`).join('')}
+    <span class="bi-hint">💡 ${p.hint}</span>
+  `;
+}
+
+// ── Patient & Doctor phrases ──
+const patientPhrases = [
+  { de:"Ich fühle mich seit drei Tagen krank.", ar:"أشعر بالمرض منذ ثلاثة أيام." },
+  { de:"Ich habe starke Schmerzen hier.", ar:"عندي ألم شديد هنا." },
+  { de:"Es tut hier weh.", ar:"يؤلمني هنا." },
+  { de:"Ich bin allergisch gegen...", ar:"أنا حساس من..." },
+  { de:"Ich nehme bereits Medikamente.", ar:"أنا أخذ أدوية بالفعل." },
+  { de:"Ich habe keinen Appetit.", ar:"ليس عندي شهية للأكل." },
+  { de:"Ich brauche eine Krankmeldung.", ar:"أحتاج شهادة مرضية." },
+  { de:"Haben Sie auch einen Dolmetscher?", ar:"هل عندكم مترجم أيضاً؟" },
+];
+
+const doctorPhrases = [
+  { de:"Was fehlt Ihnen?", ar:"ما الذي يؤلمك؟ / ما شكواك؟" },
+  { de:"Seit wann haben Sie die Beschwerden?", ar:"منذ متى عندك هذه الأعراض؟" },
+  { de:"Atmen Sie tief ein!", ar:"تنفّس بعمق!" },
+  { de:"Machen Sie bitte den Mund auf.", ar:"افتح فمك من فضلك." },
+  { de:"Ich verschreibe Ihnen ein Mittel.", ar:"سأصف لك دواءً." },
+  { de:"Dreimal täglich, eine Tablette.", ar:"ثلاث مرات يومياً، حبة واحدة." },
+  { de:"Kommen Sie bitte in einer Woche wieder.", ar:"تعال مرة أخرى بعد أسبوع." },
+  { de:"Gute Besserung!", ar:"أتمنى لك الشفاء!" },
+];
+
+function buildPhraseItems(phrases, containerId) {
+  const el = document.getElementById(containerId);
+  el.innerHTML = phrases.map(ph => `
+    <div class="phrase-item" onclick="speak('${ph.de.replace(/'/g,"\\'")}')">
+      <span class="ph-de">${ph.de}</span>
+      <span class="ph-ar">${ph.ar}</span>
+    </div>
+  `).join('');
+}
+buildPhraseItems(patientPhrases, 'patient-phrases');
+buildPhraseItems(doctorPhrases, 'doctor-phrases');
+
+// ── Quiz — event delegation (no inline onclick, no escaping bugs) ──
+const fb_c = {
+  q1:'✅ صحيح! الجوع والألم والأمراض تأتي مع haben: Ich habe Kopfschmerzen. وليس "Ich bin".',
+  q2:'✅ بالضبط! Gute Besserung = أتمنى لك الشفاء. تُقال للمريض وهي من أهم التعابير الاجتماعية.',
+  q3:'✅ ممتاز! das Rezept = الوصفة الطبية. بدونها لا يمكنك الحصول على أدوية معينة في الصيدلية.',
+  q4:'✅ رائع! "tut weh" هي الطريقة الصحيحة لوصف الألم في ألمانيا. الفعل wehtun منفصل!',
+  q5:'✅ صحيح! der Hals = مذكر. الحلق الداخلي، أما الرقبة الخارجية فهي der Nacken أيضاً مذكر.',
+  q6:'✅ ممتاز! allergisch gegen + اسم في حالة Akkusativ. هذه معلومة طبية حيوية يجب دائماً ذكرها!',
+  q7:'✅ بالضبط! schwindelig = يشعر بالدوار. لاحظ: Mir ist schwindelig وليس Ich bin schwindelig.',
+  q8:'✅ صحيح! die Krankmeldung هي الشهادة المرضية التي تثبت مرضك لصاحب العمل. إلزامية من اليوم الثالث في ألمانيا.',
+};
+const fb_w = {
+  q1:'❌ في الألمانية نقول: Ich habe Kopfschmerzen (عندي صداع). لا نستخدم sein مع الأمراض بهذه الطريقة.',
+  q2:'❌ Gute Besserung = أتمنى لك الشفاء السريع. تُقال للمريض مثل "Gesundheit" بعد العطسة.',
+  q3:'❌ das Rezept = الوصفة الطبية. الشهادة المرضية = die Krankmeldung. بطاقة التأمين = die Versicherungskarte.',
+  q4:'❌ الصحيح: "Mein Bauch tut weh." الفعل هو wehtun (منفصل): tut ... weh. ليس "ist schmerzen".',
+  q5:'❌ der Hals = مذكر. تذكّر: der Kopf، der Hals، der Arm، der Bauch — كلها مذكر!',
+  q6:'❌ الصحيح: Ich bin allergisch GEGEN Penicillin. حرف الجر "gegen" مع حالة Akkusativ ضروري هنا.',
+  q7:'❌ schwindelig = دوخة / دوار. Übelkeit = غثيان، müde = تعب. Mir ist schwindelig (وليس Ich bin).',
+  q8:'❌ die Krankmeldung = الشهادة المرضية. في ألمانيا إلزامية من اليوم الثالث للمرض وتُعطى من الطبيب.',
+};
+
+let answers = {};
+
+// ✅ Clean event delegation — works perfectly in all browsers
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('button.opt');
+  if (!btn) return;
+  const qid = btn.getAttribute('data-qid');
+  const val = btn.getAttribute('data-val');
+  if (qid && val) ans(btn, qid, val);
+});
+
+function ans(btn, qid, r) {
+  if (answers[qid]) return;
+  answers[qid] = r;
+  // Disable all options in this question block
+  document.getElementById(qid).querySelectorAll('button.opt').forEach(b => {
+    b.disabled = true;
+  });
+  btn.classList.add(r === 'c' ? 'correct' : 'wrong');
+  const fb = document.getElementById('fb-' + qid);
+  fb.textContent = r === 'c' ? fb_c[qid] : fb_w[qid];
+  fb.className = 'qfb show ' + (r === 'c' ? 'ok' : 'err');
+  if (Object.keys(answers).length === 8) showResult();
+}
+
+function showResult() {
+  const s = Object.values(answers).filter(v => v === 'c').length;
+  const msgs = [
+    'حاول مجدداً! 💪','راجع مفردات الصحة 📖',
+    'تقدم جيد! 🌱','جيد جداً! ✚',
+    'ممتاز! 🏆','رائع جداً! ⭐',
+    'شبه مثالي! 🥈','مثالي تقريباً! 🥇',
+    'درجة كاملة! طبيب ألماني قادم! 👨‍⚕️'
+  ];
+  document.getElementById('r-score').textContent = s + '/8';
+  document.getElementById('r-msg').textContent = msgs[s] || '';
+  const rb = document.getElementById('result-wrap');
+  rb.style.display = 'block';
+  rb.scrollIntoView({ behavior:'smooth', block:'center' });
+}
+
+function resetQuiz() {
+  answers = {};
+  document.querySelectorAll('button.opt').forEach(b => {
+    b.disabled = false;
+    b.className = 'opt';
+  });
+  document.querySelectorAll('.qfb').forEach(f => { f.className = 'qfb'; });
+  document.getElementById('result-wrap').style.display = 'none';
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-kurs-lesson-08-gesundheit" data-category="a2-kurs" data-title="الصحة والجسم" data-root="../../" defer></script>
+</body>
+</html>

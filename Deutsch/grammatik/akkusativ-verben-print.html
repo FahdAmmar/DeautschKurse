@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akkusativ Verben | German Accusative Verbs — A4 Print Edition</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════════════════
+       CSS CUSTOM PROPERTIES — DESIGN TOKENS
+    ═══════════════════════════════════════════════════════ */
+    :root {
+      --bg: #090d18;
+      --bg-card: #111827;
+      --bg-subtle: #161d2e;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-acc: rgba(56, 189, 248, 0.3);
+      --text: #e2e8f4;
+      --muted: #64748b;
+      --accent: #38bdf8;
+      --accent2: #a78bfa;
+      --accent3: #fb923c;
+      --green: #34d399;
+      --red: #f87171;
+      --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.45);
+      --r: 14px;
+      --fdis: 'Playfair Display', Georgia, serif;
+      --fbody: 'DM Sans', system-ui, sans-serif;
+      --fmono: 'JetBrains Mono', 'Fira Code', monospace;
+      --ease: cubic-bezier(.4, 0, .2, 1);
+      --dur: .3s;
+      --pres-col: #38bdf8;
+      --praet-col: #fb923c;
+      --perf-col: #a78bfa;
+      --a4-w: 210mm;
+      --a4-h: 300mm;
+      --page-margin: 14mm;
+    }
+
+    [data-theme="light"] {
+      --bg: #f5f7fc;
+      --bg-card: #ffffff;
+      --bg-subtle: #eef1f9;
+      --border: rgba(0, 0, 0, 0.08);
+      --border-acc: rgba(56, 189, 248, 0.35);
+      --text: #0d1526;
+      --muted: #5a6785;
+      --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.09);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--fbody);
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: -15vw; right: -15vw;
+      width: 60vw; height: 60vw;
+      background: radial-gradient(ellipse, rgba(56, 189, 248, 0.07) 0%, transparent 68%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── SCROLL PROGRESS ── */
+    #progress-bar {
+      position: fixed; top: 0; left: 0;
+      height: 2.5px; z-index: 9999;
+      background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+      width: 0%;
+      transition: width .1s linear;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      backdrop-filter: blur(28px) saturate(1.9);
+      -webkit-backdrop-filter: blur(28px) saturate(1.9);
+      background: rgba(9, 13, 24, 0.85);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(16px, 4vw, 32px);
+      height: 62px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px;
+      transition: background var(--dur);
+    }
+    [data-theme="light"] header { background: rgba(245, 247, 252, 0.9); }
+
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+    .logo-flag { font-size: 22px; line-height: 1; }
+    .logo-text { font-family: var(--fdis); font-size: 1.1rem; font-weight: 700; color: var(--text); letter-spacing: -.01em; }
+    .logo-text em { color: var(--accent); font-style: normal; }
+
+    .hdr-center { flex: 1; max-width: 480px; margin: 0 auto; position: relative; }
+    .search-icon-hdr { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+
+    #search {
+      width: 100%;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 9px 18px 9px 42px;
+      color: var(--text);
+      font-family: var(--fbody);
+      font-size: .88rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    #search::placeholder { color: var(--muted); }
+    #search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(56, 189, 248, .12); }
+
+    .hdr-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+
+    .pill-count {
+      display: flex; align-items: center; gap: 7px;
+      background: rgba(167, 139, 250, 0.1);
+      border: 1px solid rgba(167, 139, 250, 0.22);
+      border-radius: 30px;
+      padding: 5px 14px;
+      font-size: .78rem; color: var(--muted); white-space: nowrap;
+    }
+    .pill-count strong { color: var(--accent2); font-weight: 700; }
+    .pill-count .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent2); flex-shrink: 0; }
+
+    .btn-icon {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s, transform .2s, box-shadow .2s;
+    }
+    .btn-icon:hover { background: var(--accent); color: #001a30; transform: rotate(20deg); }
+    .btn-icon:active { transform: rotate(20deg) scale(0.94); }
+
+    .btn-print {
+      display: flex; align-items: center; gap: 7px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      border-radius: 22px;
+      padding: 7px 16px;
+      font-size: .8rem; font-weight: 600;
+      color: var(--accent);
+      cursor: pointer; white-space: nowrap;
+      transition: background .2s, box-shadow .2s;
+      font-family: var(--fbody);
+    }
+    .btn-print:hover { background: rgba(56, 189, 248, 0.22); box-shadow: 0 0 0 3px rgba(56, 189, 248, .1); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; z-index: 1;
+      padding: clamp(44px, 7vw, 88px) clamp(16px, 5vw, 40px) clamp(32px, 5vw, 64px);
+      text-align: center;
+      background: linear-gradient(180deg, transparent, rgba(56, 189, 248, 0.025) 50%, transparent);
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(56, 189, 248, 0.09);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      border-radius: 30px;
+      padding: 6px 18px; margin-bottom: 22px;
+      font-size: .74rem; font-family: var(--fmono);
+      color: var(--accent); letter-spacing: .07em; text-transform: uppercase;
+    }
+
+    .hero h1 { font-family: var(--fdis); font-size: clamp(1.9rem, 5vw, 3.9rem); font-weight: 900; line-height: 1.09; letter-spacing: -.025em; margin-bottom: 16px; }
+    .hero h1 .hl { background: linear-gradient(130deg, var(--accent) 0%, var(--accent2) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-desc { color: var(--muted); font-size: clamp(.88rem, 2vw, 1.05rem); max-width: 560px; margin: 0 auto 28px; line-height: 1.75; }
+
+    .hero-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .hstat { display: flex; align-items: center; gap: 7px; background: var(--bg-subtle); border: 1px solid var(--border); border-radius: 30px; padding: 7px 16px; font-size: .78rem; color: var(--muted); }
+    .hstat .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .hstat strong { color: var(--text); font-weight: 600; }
+
+    /* ── FILTER BAR ── */
+    .filter-bar {
+      position: relative; z-index: 1;
+      max-width: 1680px; margin: 0 auto;
+      padding: 0 clamp(12px, 3vw, 24px) 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .result-count { font-size: .8rem; color: var(--muted); }
+    .result-count strong { color: var(--text); font-weight: 600; }
+
+    /* ── VOLUME BADGE ── */
+    .vol-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(251, 146, 60, 0.1);
+      border: 1px solid rgba(251, 146, 60, 0.3);
+      border-radius: 22px;
+      padding: 5px 14px;
+      font-size: .75rem; font-family: var(--fmono);
+      color: var(--accent3); letter-spacing: .05em;
+    }
+
+    /* ── GRID ── */
+    .grid {
+      position: relative; z-index: 1;
+      max-width: 1680px; margin: 0 auto;
+      padding: 0 clamp(12px, 3vw, 24px) clamp(60px, 8vw, 100px);
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 540px), 1fr));
+      gap: 20px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-card);
+      transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+      animation: fadeUp .45s var(--ease) both;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.55); border-color: var(--border-acc); }
+    [data-theme="light"] .card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+
+    .card-stripe { height:3px; background:linear-gradient(90deg,var(--pres-col) 0%,var(--praet-col) 50%,var(--perf-col) 100%); transform:scaleX(0); transform-origin:left; transition:transform .3s var(--ease); }
+    .card:hover .card-stripe { transform:scaleX(1); }
+
+    .card-hdr { padding:15px 17px 10px; display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .card-meta { flex:1; min-width:0; }
+    .card-title-row { display:flex; align-items:center; flex-wrap:wrap; gap:9px; margin-bottom:4px; }
+
+    .akk-badge { display:inline-flex; align-items:center; background:rgba(56,189,248,.11); border:1px solid rgba(56,189,248,.28); color:var(--accent); font-family:var(--fmono); font-size:.58rem; font-weight:700; border-radius:5px; padding:2px 7px; letter-spacing:.07em; text-transform:uppercase; }
+    .card-verb { font-family:var(--fdis); font-size:1.55rem; font-weight:700; color:var(--accent2); line-height:1.1; }
+    .card-meaning { font-size:.8rem; color:var(--muted); font-style:italic; line-height:1.4; direction:rtl; text-align:right; }
+    .card-num { font-family:var(--fmono); font-size:.66rem; font-weight:600; color:var(--accent); background:rgba(56,189,248,.09); border:1px solid rgba(56,189,248,.2); border-radius:6px; padding:3px 8px; white-space:nowrap; flex-shrink:0; margin-top:2px; }
+
+    /* ── CONJUGATION TABLE ── */
+    .conj-wrap { padding:0 14px 10px; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+    .conj-table { width:100%; border-collapse:collapse; min-width:320px; }
+    .conj-table thead th { padding:7px 10px; font-family:var(--fmono); font-size:.63rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; text-align:center; border-bottom:2px solid var(--border); }
+    .col-pron { width:50px !important; text-align:left !important; color:var(--muted) !important; font-size:.58rem !important; border-bottom-color:transparent !important; background:transparent !important; }
+    .col-pres { color:var(--pres-col); border-bottom-color:var(--pres-col) !important; background:rgba(56,189,248,.04); border-radius:8px 8px 0 0; }
+    .col-praet { color:var(--praet-col); border-bottom-color:var(--praet-col) !important; background:rgba(251,146,60,.04); border-radius:8px 8px 0 0; }
+    .col-perf { color:var(--perf-col); border-bottom-color:var(--perf-col) !important; background:rgba(167,139,250,.04); border-radius:8px 8px 0 0; }
+    .conj-table tbody td { padding:5px 10px; font-size:.77rem; vertical-align:middle; border-bottom:1px solid rgba(255,255,255,.03); }
+    [data-theme="light"] .conj-table tbody td { border-bottom-color:rgba(0,0,0,.04); }
+    .conj-table tbody tr:last-child td { border-bottom:none; }
+    .td-pron { font-family:var(--fmono); font-size:.62rem; color:var(--muted); white-space:nowrap; }
+    .td-pres { text-align:center; font-weight:600; color:var(--text); background:rgba(56,189,248,.03); }
+    .td-praet { text-align:center; font-weight:600; color:var(--text); background:rgba(251,146,60,.03); }
+    .td-perf { text-align:center; font-weight:600; background:rgba(167,139,250,.03); }
+    .td-perf .aux { color:var(--praet-col); margin-right:3px; }
+    .td-perf .pp { color:var(--perf-col); }
+    .row-er td { background:rgba(167,139,250,.05); }
+    .row-er .td-pres { background:rgba(56,189,248,.07); font-weight:700; }
+    .row-er .td-praet { background:rgba(251,146,60,.07); font-weight:700; }
+    .row-er .td-perf { background:rgba(167,139,250,.07); font-weight:700; }
+    .perf-helper { display:block; font-size:.52rem; font-weight:400; letter-spacing:.04em; color:rgba(167,139,250,.65); margin-top:2px; }
+
+    /* ── EXAMPLES ── */
+    .examples-section { margin:4px 14px 14px; }
+    .examples-label { font-family:var(--fmono); font-size:.6rem; font-weight:700; color:var(--accent); letter-spacing:.08em; text-transform:uppercase; margin-bottom:9px; display:flex; align-items:center; gap:6px; }
+    .example-item { background:linear-gradient(135deg,rgba(56,189,248,.05),rgba(52,211,153,.04)); border:1px solid rgba(56,189,248,.11); border-left:3px solid rgba(56,189,248,.32); border-radius:10px; padding:11px 13px; margin-bottom:9px; position:relative; transition:border-color .2s; }
+    .example-item:last-child { margin-bottom:0; }
+    .example-item:hover { border-left-color:var(--accent); border-color:rgba(56,189,248,.25); }
+    .ex-num { position:absolute; top:9px; left:-1px; font-family:var(--fmono); font-size:.52rem; font-weight:700; color:var(--accent); background:var(--bg-card); border:1px solid rgba(56,189,248,.22); border-radius:0 4px 4px 0; padding:2px 6px; line-height:1.2; }
+    .ex-de { font-size:.88rem; font-weight:600; color:var(--text); line-height:1.6; margin-bottom:4px; padding-left:15px; word-break:break-word; }
+    .ex-de .aw { color:var(--accent2); border-bottom:1px dashed rgba(167,139,250,.4); }
+    .ex-en { font-size:.76rem; color:var(--green); line-height:1.5; margin-bottom:3px; padding-left:15px; font-style:italic; }
+    .ex-ar { font-size:.76rem; color:var(--muted); line-height:1.55; direction:rtl; text-align:right; }
+    .ex-actions { display:flex; align-items:center; gap:7px; margin-top:9px; flex-wrap:wrap; }
+
+    .btn-copy, .btn-speak {
+      display:inline-flex; align-items:center; gap:5px;
+      border-radius:7px; padding:5px 10px; cursor:pointer;
+      font-size:.68rem; font-family:var(--fbody); font-weight:500;
+      transition:all .2s; white-space:nowrap; touch-action:manipulation;
+      min-height:30px; border:1px solid var(--border);
+      background:rgba(255,255,255,0.04); color:var(--muted);
+      -webkit-tap-highlight-color:transparent;
+      -webkit-user-select:none; user-select:none;
+    }
+    .btn-copy:hover,.btn-copy:active { background:var(--accent2); color:#0a0015; border-color:var(--accent2); }
+    .btn-copy.copied { background:var(--accent2); color:#0a0015; border-color:var(--accent2); }
+    .btn-speak:hover,.btn-speak:active { background:var(--accent); color:#001a30; border-color:var(--accent); }
+    .btn-speak.speaking { background:var(--accent); color:#001a30; border-color:var(--accent); animation:pulse-speak .8s ease infinite alternate; }
+    @keyframes pulse-speak { from{opacity:.8;} to{opacity:1;transform:scale(1.02);} }
+
+    /* ── EMPTY & TOAST ── */
+    .empty { grid-column:1/-1; text-align:center; color:var(--muted); padding:80px 24px; }
+    .empty svg { margin-bottom:16px; opacity:.35; }
+    .empty p { font-size:1rem; }
+
+    #toast {
+      position:fixed; bottom:28px; left:50%;
+      transform:translateX(-50%) translateY(100px);
+      background:var(--accent2); color:#0a0015;
+      font-weight:700; font-size:.83rem;
+      padding:11px 26px; border-radius:50px;
+      z-index:9999; pointer-events:none;
+      transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+      white-space:nowrap; box-shadow:0 8px 24px rgba(0,0,0,.25);
+    }
+    #toast.show { transform:translateX(-50%) translateY(0); }
+
+    /* ── QUIZ SECTION ── */
+    .quiz-section {
+      position:relative; z-index:1;
+      max-width:860px; margin:0 auto;
+      padding:0 clamp(12px,3vw,24px) clamp(60px,8vw,100px);
+    }
+    .quiz-header {
+      text-align:center; margin-bottom:36px;
+    }
+    .quiz-eyebrow {
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(167,139,250,0.09);
+      border:1px solid rgba(167,139,250,0.22);
+      border-radius:30px; padding:6px 18px; margin-bottom:18px;
+      font-size:.74rem; font-family:var(--fmono); color:var(--accent2);
+      letter-spacing:.07em; text-transform:uppercase;
+    }
+    .quiz-title { font-family:var(--fdis); font-size:clamp(1.4rem,3.5vw,2.4rem); font-weight:900; margin-bottom:10px; }
+    .quiz-title .hl2 { background:linear-gradient(130deg,var(--accent2) 0%,var(--accent3) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .quiz-desc { color:var(--muted); font-size:.9rem; max-width:500px; margin:0 auto; line-height:1.7; }
+
+    #quiz-app {
+      background:var(--bg-card); border:1px solid var(--border);
+      border-radius:var(--r); box-shadow:var(--shadow-card);
+      overflow:hidden;
+    }
+    .quiz-progress-bar-wrap { height:4px; background:var(--bg-subtle); }
+    .quiz-progress-bar-fill { height:4px; background:linear-gradient(90deg,var(--accent2),var(--accent3)); transition:width .4s var(--ease); width:0%; }
+    .quiz-inner { padding:32px 28px; }
+    .quiz-meta { display:flex; align-items:center; justify-content:space-between; margin-bottom:22px; flex-wrap:wrap; gap:10px; }
+    .quiz-counter { font-family:var(--fmono); font-size:.72rem; color:var(--muted); }
+    .quiz-counter strong { color:var(--text); }
+    .quiz-score-display { display:flex; align-items:center; gap:6px; font-size:.75rem; color:var(--muted); }
+    .quiz-score-display .score-num { font-family:var(--fmono); font-weight:700; color:var(--green); font-size:.88rem; }
+    .quiz-q { font-family:var(--fdis); font-size:clamp(1rem,2.5vw,1.4rem); font-weight:700; color:var(--text); margin-bottom:24px; line-height:1.45; }
+    .quiz-q .q-verb { color:var(--accent2); }
+    .quiz-q .q-pron { color:var(--accent); }
+    .quiz-q .q-tense { font-family:var(--fmono); font-size:.65rem; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); display:block; margin-bottom:8px; }
+    .quiz-opts { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px; }
+    @media(max-width:500px){ .quiz-opts { grid-template-columns:1fr; } }
+    .quiz-opt {
+      background:var(--bg-subtle); border:1.5px solid var(--border);
+      border-radius:10px; padding:13px 16px;
+      font-size:.88rem; font-weight:600; color:var(--text);
+      cursor:pointer; text-align:center;
+      transition:background .18s, border-color .18s, transform .15s, color .18s;
+      font-family:var(--fbody);
+    }
+    .quiz-opt:hover:not(:disabled) { background:rgba(167,139,250,0.12); border-color:var(--accent2); transform:translateY(-2px); }
+    .quiz-opt.correct { background:rgba(52,211,153,.18); border-color:var(--green); color:var(--green); }
+    .quiz-opt.wrong { background:rgba(248,113,113,.14); border-color:var(--red); color:var(--red); }
+    .quiz-opt:disabled { cursor:not-allowed; opacity:.75; transform:none; }
+    .quiz-feedback { background:var(--bg-subtle); border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-bottom:18px; font-size:.85rem; line-height:1.65; display:none; }
+    .quiz-feedback.show { display:block; }
+    .quiz-feedback .fb-correct { color:var(--green); font-weight:700; font-size:.95rem; margin-bottom:4px; }
+    .quiz-feedback .fb-wrong { color:var(--red); font-weight:700; font-size:.95rem; margin-bottom:4px; }
+    .quiz-feedback .fb-ar { color:var(--muted); direction:rtl; text-align:right; font-size:.82rem; margin-top:6px; }
+    .quiz-next-btn {
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      width:100%; padding:13px; border-radius:10px;
+      background:linear-gradient(135deg,rgba(167,139,250,.18),rgba(251,146,60,.14));
+      border:1.5px solid rgba(167,139,250,.28);
+      color:var(--accent2); font-weight:700; font-size:.9rem;
+      cursor:pointer; font-family:var(--fbody);
+      transition:background .2s, box-shadow .2s;
+      display:none;
+    }
+    .quiz-next-btn.show { display:flex; }
+    .quiz-next-btn:hover { background:rgba(167,139,250,.28); box-shadow:0 0 0 3px rgba(167,139,250,.12); }
+    .quiz-result {
+      text-align:center; padding:40px 28px; display:none;
+    }
+    .quiz-result.show { display:block; }
+    .quiz-result-emoji { font-size:3.5rem; margin-bottom:16px; }
+    .quiz-result-title { font-family:var(--fdis); font-size:1.9rem; font-weight:900; margin-bottom:10px; }
+    .quiz-result-sub { color:var(--muted); font-size:.95rem; margin-bottom:24px; line-height:1.7; }
+    .quiz-result-score { font-family:var(--fmono); font-size:2.8rem; font-weight:900; color:var(--green); margin-bottom:20px; }
+    .quiz-restart {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:12px 28px; border-radius:22px;
+      background:rgba(52,211,153,.14); border:1.5px solid rgba(52,211,153,.3);
+      color:var(--green); font-weight:700; cursor:pointer;
+      font-family:var(--fbody); font-size:.9rem;
+      transition:background .2s;
+    }
+    .quiz-restart:hover { background:rgba(52,211,153,.26); }
+
+    /* ── FOOTER ── */
+    footer {
+      position:relative; z-index:1;
+      text-align:center; padding:40px 24px;
+      border-top:1px solid var(--border);
+      color:var(--muted); font-size:.78rem; line-height:1.7;
+    }
+    footer strong { color:var(--text); }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:640px){
+      .hdr-center { display:none; }
+      .pill-count { display:none; }
+      .hero { padding:36px 16px 28px; }
+      .grid { padding:0 10px 50px; gap:13px; grid-template-columns:1fr; }
+      .card-verb { font-size:1.3rem; }
+      .conj-table thead th, .conj-table tbody td { padding:4px 7px; font-size:.7rem; }
+    }
+    @media(min-width:1100px){ .grid { grid-template-columns:repeat(2,1fr); } }
+    @media(min-width:1700px){ .grid { grid-template-columns:repeat(3,1fr); } }
+
+    /* ── PRINT ── */
+    @media print {
+      #progress-bar, header, .hero, .filter-bar, #toast, footer,
+      .btn-copy, .btn-speak, .ex-actions, .quiz-section { display:none !important; }
+
+      @page { size:A4 portrait; margin:14mm 14mm 16mm 14mm; }
+      @page :first { margin-top:10mm; }
+
+      html, body {
+        width:210mm; margin:0 !important; padding:0 !important;
+        background:#ffffff !important; color:#0d1526 !important;
+        font-family:'DM Sans',Arial,Helvetica,sans-serif !important;
+        font-size:8.5pt !important; line-height:1.45 !important;
+        -webkit-print-color-adjust:exact !important;
+        print-color-adjust:exact !important; color-adjust:exact !important;
+      }
+      body::after, body::before { display:none !important; }
+
+      .print-cover {
+        display:block !important; width:182mm; margin:0 auto 10mm;
+        page-break-after:always; break-after:page; text-align:center;
+        padding:30mm 10mm 20mm;
+        border:2px solid #38bdf8; border-radius:8px;
+        background:#f8faff !important;
+      }
+      .print-cover .cov-flag { font-size:52pt; display:block; margin-bottom:8mm; }
+      .print-cover .cov-title { font-family:'Playfair Display',Georgia,serif !important; font-size:28pt; font-weight:900; letter-spacing:-.02em; color:#0d1526 !important; line-height:1.1; margin-bottom:4mm; }
+      .print-cover .cov-title span { color:#38bdf8 !important; }
+      .print-cover .cov-sub { font-size:11pt; color:#5a6785 !important; line-height:1.6; margin-bottom:8mm; }
+      .print-cover .cov-meta { display:inline-flex; align-items:center; gap:6mm; flex-wrap:wrap; justify-content:center; margin-bottom:6mm; }
+      .print-cover .cov-tag { background:rgba(56,189,248,0.1) !important; border:1px solid #38bdf8; border-radius:4px; padding:2pt 8pt; font-size:8.5pt; font-weight:600; color:#1a6b90 !important; }
+      .print-cover .cov-legend { margin-top:10mm; padding-top:6mm; border-top:1pt solid #dde2ee; display:flex; justify-content:center; gap:8mm; flex-wrap:wrap; }
+      .print-cover .cov-legend-item { display:flex; align-items:center; gap:3mm; font-size:8.5pt; color:#5a6785 !important; }
+      .print-cover .cov-legend-dot { width:8pt; height:8pt; border-radius:50%; display:inline-block; flex-shrink:0; }
+
+      .grid { display:grid !important; grid-template-columns:1fr 1fr !important; gap:5mm !important; padding:0 !important; max-width:182mm !important; margin:0 auto !important; width:182mm !important; }
+
+      .card { background:#ffffff !important; border:1pt solid #c8d2e8 !important; border-radius:5pt !important; box-shadow:none !important; transform:none !important; animation:none !important; page-break-inside:avoid !important; break-inside:avoid !important; overflow:visible !important; margin:0 !important; }
+      .card:hover { transform:none !important; border-color:#c8d2e8 !important; }
+      .card-stripe { display:block !important; height:2.5pt !important; background:linear-gradient(90deg,#38bdf8,#fb923c,#a78bfa) !important; transform:scaleX(1) !important; border-radius:5pt 5pt 0 0 !important; }
+      .card-hdr { padding:4pt 6pt 3pt !important; }
+      .card-num { font-size:6pt !important; padding:1.5pt 5pt !important; }
+      .akk-badge { font-size:5.5pt !important; padding:1.5pt 5pt !important; border:0.5pt solid #38bdf8 !important; background:rgba(56,189,248,0.08) !important; color:#1a6b90 !important; }
+      .card-verb { font-size:12.5pt !important; color:#6d28d9 !important; font-family:'Playfair Display',Georgia,serif !important; }
+      .card-meaning { font-size:7pt !important; color:#6b7280 !important; }
+      .conj-wrap { padding:0 5pt 5pt !important; overflow:visible !important; }
+      .conj-table { min-width:0 !important; width:100% !important; }
+      .conj-table thead th { padding:3pt 5pt !important; font-size:6pt !important; letter-spacing:.05em !important; border-bottom-width:1pt !important; }
+      .col-pron { width:28pt !important; font-size:5.5pt !important; }
+      .col-pres { color:#1a6b90 !important; border-bottom-color:#38bdf8 !important; background:rgba(56,189,248,0.04) !important; }
+      .col-praet { color:#92400e !important; border-bottom-color:#fb923c !important; background:rgba(251,146,60,0.04) !important; }
+      .col-perf { color:#5b21b6 !important; border-bottom-color:#a78bfa !important; background:rgba(167,139,250,0.04) !important; }
+      .conj-table tbody td { padding:2.5pt 5pt !important; font-size:7pt !important; border-bottom:0.5pt solid #edf0f7 !important; }
+      .conj-table tbody tr:last-child td { border-bottom:none !important; }
+      .td-pron { font-size:6pt !important; color:#888 !important; }
+      .td-pres { color:#0d1526 !important; background:rgba(56,189,248,0.03) !important; }
+      .td-praet { color:#0d1526 !important; background:rgba(251,146,60,0.03) !important; }
+      .td-perf { background:rgba(167,139,250,0.03) !important; }
+      .td-perf .aux { color:#92400e !important; }
+      .td-perf .pp { color:#5b21b6 !important; }
+      .row-er td { background:rgba(167,139,250,0.06) !important; }
+      .row-er .td-pres { background:rgba(56,189,248,0.09) !important; }
+      .row-er .td-praet { background:rgba(251,146,60,0.09) !important; }
+      .row-er .td-perf { background:rgba(167,139,250,0.09) !important; }
+      .perf-helper { font-size:4.5pt !important; color:#a78bfa !important; display:block !important; }
+      .examples-section { margin:3pt 5pt 5pt !important; }
+      .examples-label { font-size:5.5pt !important; margin-bottom:4pt !important; color:#1a6b90 !important; }
+      .example-item { padding:4pt 5pt 4pt 9pt !important; margin-bottom:4pt !important; border-left:2pt solid #38bdf8 !important; border:0.5pt solid #dde6f4 !important; border-left:2pt solid #38bdf8 !important; border-radius:3pt !important; background:rgba(56,189,248,0.03) !important; page-break-inside:avoid !important; break-inside:avoid !important; }
+      .ex-num { font-size:5pt !important; padding:1pt 4pt !important; color:#1a6b90 !important; border:0.5pt solid #b8d4e8 !important; background:#fff !important; }
+      .ex-de { font-size:7.5pt !important; padding-left:10pt !important; color:#0d1526 !important; margin-bottom:2pt !important; }
+      .ex-de .aw { color:#6d28d9 !important; border-bottom:0.5pt dashed #a78bfa !important; }
+      .ex-en { font-size:6.5pt !important; padding-left:10pt !important; color:#065f46 !important; margin-bottom:1.5pt !important; }
+      .ex-ar { font-size:6.5pt !important; color:#5a6785 !important; }
+      .page-num-marker { display:block !important; width:182mm; text-align:right; font-size:7pt; color:#9ca3af !important; margin-bottom:2mm; }
+
+      @page {
+        @bottom-right { content:counter(page) " / " counter(pages); font-family:'DM Sans',Arial,sans-serif; font-size:8pt; color:#9ca3af; }
+        @bottom-center { content:"Akkusativ Verben · A1–A2 · Deutsch lernen"; font-family:'DM Sans',Arial,sans-serif; font-size:7pt; color:#9ca3af; }
+      }
+      .print-cover { display:block !important; }
+      .card-title-row { flex-wrap:nowrap !important; }
+      * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+    }
+
+    .print-cover { display:none; }
+
+    @media(prefers-reduced-motion:reduce){
+      *, *::before, *::after { animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="progress-bar"></div>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header>
+    <a class="logo" href="#top" aria-label="Home">
+      <span class="logo-flag">🇩🇪</span>
+      <span class="logo-text">Akkusativ<em>Verben</em></span>
+    </a>
+    <div class="hdr-center" role="search">
+      <svg class="search-icon-hdr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+      </svg>
+      <input type="search" id="search" placeholder="ابحث عن فعل… (z.B. kaufen, zeigen)" oninput="filter()"
+        autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Suche nach einem Verb">
+    </div>
+    <div class="hdr-right">
+      <div class="pill-count" aria-live="polite">
+        <span class="dot"></span>
+        <strong id="count">80</strong>&nbsp;Verben
+      </div>
+      <button class="btn-print" onclick="window.print()" aria-label="Als A4 drucken" title="Als A4 drucken">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 6 2 18 2 18 9"/>
+          <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+          <rect x="6" y="14" width="12" height="8"/>
+        </svg>
+        A4 drucken
+      </button>
+      <button class="btn-icon" id="themeBtn" onclick="toggleTheme()" title="Theme wechseln" aria-label="Zwischen Hell- und Dunkel-Modus wechseln">☀️</button>
+    </div>
+  </header>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="hero" id="top">
+    <div class="hero-eyebrow" aria-label="Kursebene">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+      Akkusativ · Deutsch lernen · A1–A2
+    </div>
+    <h1>German <span class="hl">Akkusativ Verbs</span></h1>
+    <p class="hero-desc">
+      أفعال الـ Akkusativ مع التصريف الكامل —
+      <strong>Präsens | Präteritum | Perfekt</strong> —
+      وجمل مثال مع ترجمة <strong>إنجليزية وعربية</strong> · المجموعة المُدقَّقة #1–80
+    </p>
+    <div class="hero-stats" role="list">
+      <div class="hstat" role="listitem"><span class="dot" style="background:var(--pres-col)"></span><strong>Präsens</strong>&nbsp;المضارع</div>
+      <div class="hstat" role="listitem"><span class="dot" style="background:var(--praet-col)"></span><strong>Präteritum</strong>&nbsp;الماضي البسيط</div>
+      <div class="hstat" role="listitem"><span class="dot" style="background:var(--perf-col)"></span><strong>Perfekt</strong>&nbsp;الماضي المركب</div>
+      <div class="hstat" role="listitem"><span class="dot" style="background:var(--accent2)"></span><strong id="count2">80</strong>&nbsp;فعل</div>
+      <div class="hstat" role="listitem"><span class="dot" style="background:var(--accent3)"></span><strong>#1–80</strong>&nbsp;الأرقام</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FILTER BAR ═══════════════ -->
+  <div class="filter-bar">
+    <p class="result-count">عرض <strong id="shown-count">80</strong> / 80 فعل</p>
+    <div class="vol-badge">📖 Geprüfte Ausgabe · Verben #1–80</div>
+  </div>
+
+  <!-- ═══════════════ PRINT COVER ═══════════════ -->
+  <div class="print-cover" role="doc-cover" aria-hidden="true">
+    <span class="cov-flag">🇩🇪</span>
+    <div class="cov-title">German <span>Akkusativ</span> Verbs</div>
+    <div class="cov-sub">
+      جميع أفعال الـ Akkusativ — مجموعة مُدقَّقة نحويًا (#1–80)<br>
+      Präsens · Präteritum · Perfekt<br>
+      مع أمثلة بالعربية والإنجليزية
+    </div>
+    <div class="cov-meta">
+      <span class="cov-tag">80 Verben</span>
+      <span class="cov-tag">#1–80</span>
+      <span class="cov-tag">A1–A2</span>
+      <span class="cov-tag">DIN A4</span>
+    </div>
+    <div class="cov-legend">
+      <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#38bdf8"></span>Präsens (المضارع)</span>
+      <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#fb923c"></span>Präteritum (الماضي البسيط)</span>
+      <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#a78bfa"></span>Perfekt (الماضي المركب)</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ VERB GRID ═══════════════ -->
+  <main>
+    <div class="grid" id="grid" role="list" aria-label="Liste der Akkusativverben"></div>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite">✓ Kopiert!</div>
+
+  <!-- ═══════════════ QUIZ SECTION ═══════════════ -->
+  <section class="quiz-section" aria-label="Quiz">
+    <div class="quiz-header">
+      <div class="quiz-eyebrow">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+        </svg>
+        اختبار تفاعلي
+      </div>
+      <h2 class="quiz-title">اختبر نفسك — <span class="hl2">Quiz</span></h2>
+      <p class="quiz-desc">اختبر معرفتك بجميع أفعال الـ Akkusativ! 20 سؤالاً عشوائيًا من بين 80 فعل تشمل التصريف والمعنى والجمل.</p>
+    </div>
+    <div id="quiz-app">
+      <div class="quiz-progress-bar-wrap">
+        <div class="quiz-progress-bar-fill" id="quiz-prog"></div>
+      </div>
+      <div class="quiz-inner" id="quiz-inner">
+        <div style="text-align:center;padding:40px 0;">
+          <p style="color:var(--muted);margin-bottom:20px;font-size:.95rem;">20 سؤالاً عشوائيًا يغطي التصريف والمعنى والجمل من بين 80 فعل</p>
+          <button class="quiz-next-btn show" style="max-width:280px;margin:0 auto;" id="quiz-start-btn" onclick="startQuiz()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            ابدأ الاختبار
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer>
+    <strong>Akkusativ Verben</strong> · A1–A2 · Deutsch lernen<br>
+    80 فعل Akkusativ مع تصريف كامل وأمثلة بالعربية والإنجليزية
+  </footer>
+
+  <script>
+    // ══════════════════════════════════════════════
+    //  VERB DATA — #1–80 (Geprüfte Sammlung: Kasus & Konjugation validiert, Duplikate entfernt)
+    // ══════════════════════════════════════════════
+    const VERBS = [
+      {
+        n: 1, v: "kaufen", m: "يشتري",
+        pres: [["ich", "kaufe"], ["du", "kaufst"], ["er/sie/es", "kauft"], ["wir", "kaufen"], ["ihr", "kauft"], ["sie/Sie", "kaufen"]],
+        praet: [["ich", "kaufte"], ["du", "kauftest"], ["er/sie/es", "kaufte"], ["wir", "kauften"], ["ihr", "kauftet"], ["sie/Sie", "kauften"]],
+        perf: [["ich", "habe gekauft"], ["du", "hast gekauft"], ["er/sie/es", "hat gekauft"], ["wir", "haben gekauft"], ["ihr", "habt gekauft"], ["sie/Sie", "haben gekauft"]],
+        sents: [
+          { de: 'Ich kaufe <span class="aw">ein neues Buch</span>.', dep: 'Ich kaufe ein neues Buch.', en: 'I am buying a new book.', ar: 'أنا أشتري كتابًا جديدًا.' },
+          { de: 'Sie kauft <span class="aw">frisches Brot</span> beim Bäcker.', dep: 'Sie kauft frisches Brot beim Bäcker.', en: 'She buys fresh bread at the bakery.', ar: 'هي تشتري خبزًا طازجًا من المخبزة.' },
+          { de: 'Wir kaufen <span class="aw">Milch und Eier</span> im Supermarkt.', dep: 'Wir kaufen Milch und Eier im Supermarkt.', en: 'We buy milk and eggs at the supermarket.', ar: 'نحن نشتري الحليب والبيض من السوبر ماركت.' },
+          { de: 'Er kaufte <span class="aw">ein Fahrrad</span> für seinen Sohn.', dep: 'Er kaufte ein Fahrrad für seinen Sohn.', en: 'He bought a bicycle for his son.', ar: 'هو اشترى دراجة لابنه.' }
+        ]
+      },
+
+      {
+        n: 2, v: "sehen", m: "يرى / يشاهد",
+        pres: [["ich", "sehe"], ["du", "siehst"], ["er/sie/es", "sieht"], ["wir", "sehen"], ["ihr", "seht"], ["sie/Sie", "sehen"]],
+        praet: [["ich", "sah"], ["du", "sahst"], ["er/sie/es", "sah"], ["wir", "sahen"], ["ihr", "saht"], ["sie/Sie", "sahen"]],
+        perf: [["ich", "habe gesehen"], ["du", "hast gesehen"], ["er/sie/es", "hat gesehen"], ["wir", "haben gesehen"], ["ihr", "habt gesehen"], ["sie/Sie", "haben gesehen"]],
+        sents: [
+          { de: 'Ich sehe <span class="aw">den Film</span> gern.', dep: 'Ich sehe den Film gern.', en: 'I like watching the film.', ar: 'أنا أحب مشاهدة الفيلم.' },
+          { de: 'Du siehst <span class="aw">eine schöne Stadt</span>.', dep: 'Du siehst eine schöne Stadt.', en: 'You see a beautiful city.', ar: 'أنت ترى مدينة جميلة.' },
+          { de: 'Wir sehen <span class="aw">das Konzert</span> am Freitag.', dep: 'Wir sehen das Konzert am Freitag.', en: 'We are watching the concert on Friday.', ar: 'نحن نشاهد الحفلة الموسيقية يوم الجمعة.' },
+          { de: 'Sie haben <span class="aw">den Unfall</span> gesehen.', dep: 'Sie haben den Unfall gesehen.', en: 'They saw the accident.', ar: 'لقد رأوا الحادث.' }
+        ]
+      },
+
+      {
+        n: 3, v: "hören", m: "يسمع / يستمع",
+        pres: [["ich", "höre"], ["du", "hörst"], ["er/sie/es", "hört"], ["wir", "hören"], ["ihr", "hört"], ["sie/Sie", "hören"]],
+        praet: [["ich", "hörte"], ["du", "hörtest"], ["er/sie/es", "hörte"], ["wir", "hörten"], ["ihr", "hörtet"], ["sie/Sie", "hörten"]],
+        perf: [["ich", "habe gehört"], ["du", "hast gehört"], ["er/sie/es", "hat gehört"], ["wir", "haben gehört"], ["ihr", "habt gehört"], ["sie/Sie", "haben gehört"]],
+        sents: [
+          { de: 'Sie hört <span class="aw">Musik</span> jeden Tag.', dep: 'Sie hört Musik jeden Tag.', en: 'She listens to music every day.', ar: 'هي تستمع إلى الموسيقى كل يوم.' },
+          { de: 'Ich höre <span class="aw">ein Lied</span> im Radio.', dep: 'Ich höre ein Lied im Radio.', en: 'I am listening to a song on the radio.', ar: 'أنا أستمع إلى أغنية في الراديو.' },
+          { de: 'Hörst du <span class="aw">das Geräusch</span>?', dep: 'Hörst du das Geräusch?', en: 'Do you hear the sound?', ar: 'هل تسمع الصوت؟' },
+          { de: 'Wir hörten <span class="aw">den Vortrag</span> in der Schule.', dep: 'Wir hörten den Vortrag in der Schule.', en: 'We listened to the lecture at school.', ar: 'استمعنا إلى المحاضرة في المدرسة.' }
+        ]
+      },
+
+      {
+        n: 4, v: "machen", m: "يفعل / يصنع",
+        pres: [["ich", "mache"], ["du", "machst"], ["er/sie/es", "macht"], ["wir", "machen"], ["ihr", "macht"], ["sie/Sie", "machen"]],
+        praet: [["ich", "machte"], ["du", "machtest"], ["er/sie/es", "machte"], ["wir", "machten"], ["ihr", "machtet"], ["sie/Sie", "machten"]],
+        perf: [["ich", "habe gemacht"], ["du", "hast gemacht"], ["er/sie/es", "hat gemacht"], ["wir", "haben gemacht"], ["ihr", "habt gemacht"], ["sie/Sie", "haben gemacht"]],
+        sents: [
+          { de: 'Er macht <span class="aw">seine Hausaufgaben</span>.', dep: 'Er macht seine Hausaufgaben.', en: 'He is doing his homework.', ar: 'هو يقوم بواجباته المدرسية.' },
+          { de: 'Ich mache <span class="aw">einen Kuchen</span> für die Party.', dep: 'Ich mache einen Kuchen für die Party.', en: 'I am making a cake for the party.', ar: 'أنا أصنع كعكة للحفلة.' },
+          { de: '<span class="aw">Was</span> machst du am Wochenende?', dep: 'Was machst du am Wochenende?', en: 'What are you doing at the weekend?', ar: 'ماذا تفعل في نهاية الأسبوع؟' },
+          { de: 'Sie machten <span class="aw">einen Spaziergang</span> im Park.', dep: 'Sie machten einen Spaziergang im Park.', en: 'They took a walk in the park.', ar: 'لقد تمشوا في الحديقة.' }
+        ]
+      },
+
+      {
+        n: 5, v: "haben", m: "يملك / لديه",
+        pres: [["ich", "habe"], ["du", "hast"], ["er/sie/es", "hat"], ["wir", "haben"], ["ihr", "habt"], ["sie/Sie", "haben"]],
+        praet: [["ich", "hatte"], ["du", "hattest"], ["er/sie/es", "hatte"], ["wir", "hatten"], ["ihr", "hattet"], ["sie/Sie", "hatten"]],
+        perf: [["ich", "habe gehabt"], ["du", "hast gehabt"], ["er/sie/es", "hat gehabt"], ["wir", "haben gehabt"], ["ihr", "habt gehabt"], ["sie/Sie", "haben gehabt"]],
+        sents: [
+          { de: 'Wir haben <span class="aw">einen Hund</span>.', dep: 'Wir haben einen Hund.', en: 'We have a dog.', ar: 'نحن لدينا كلب.' },
+          { de: 'Ich habe <span class="aw">eine Frage</span>.', dep: 'Ich habe eine Frage.', en: 'I have a question.', ar: 'لدي سؤال.' },
+          { de: 'Er hat <span class="aw">viel Zeit</span> heute.', dep: 'Er hat viel Zeit heute.', en: 'He has a lot of time today.', ar: 'لديه وقت كثير اليوم.' },
+          { de: 'Habt ihr <span class="aw">das Buch</span>?', dep: 'Habt ihr das Buch?', en: 'Do you (all) have the book?', ar: 'هل لديكم الكتاب؟' }
+        ]
+      },
+
+      {
+        n: 6, v: "kennen", m: "يعرف (شخصًا/مكانًا)",
+        pres: [["ich", "kenne"], ["du", "kennst"], ["er/sie/es", "kennt"], ["wir", "kennen"], ["ihr", "kennt"], ["sie/Sie", "kennen"]],
+        praet: [["ich", "kannte"], ["du", "kanntest"], ["er/sie/es", "kannte"], ["wir", "kannten"], ["ihr", "kanntet"], ["sie/Sie", "kannten"]],
+        perf: [["ich", "habe gekannt"], ["du", "hast gekannt"], ["er/sie/es", "hat gekannt"], ["wir", "haben gekannt"], ["ihr", "habt gekannt"], ["sie/Sie", "haben gekannt"]],
+        sents: [
+          { de: 'Ich kenne <span class="aw">diesen Mann</span> gut.', dep: 'Ich kenne diesen Mann gut.', en: 'I know this man well.', ar: 'أنا أعرف هذا الرجل جيدًا.' },
+          { de: 'Kennst du <span class="aw">diese Stadt</span>?', dep: 'Kennst du diese Stadt?', en: 'Do you know this city?', ar: 'هل تعرف هذه المدينة؟' },
+          { de: 'Sie kennt <span class="aw">die Antwort</span> nicht.', dep: 'Sie kennt die Antwort nicht.', en: 'She does not know the answer.', ar: 'هي لا تعرف الإجابة.' },
+          { de: 'Wir kannten <span class="aw">den Weg</span> nicht.', dep: 'Wir kannten den Weg nicht.', en: 'We did not know the way.', ar: 'لم نكن نعرف الطريق.' }
+        ]
+      },
+
+      {
+        n: 7, v: "lieben", m: "يحب",
+        pres: [["ich", "liebe"], ["du", "liebst"], ["er/sie/es", "liebt"], ["wir", "lieben"], ["ihr", "liebt"], ["sie/Sie", "lieben"]],
+        praet: [["ich", "liebte"], ["du", "liebtest"], ["er/sie/es", "liebte"], ["wir", "liebten"], ["ihr", "liebtet"], ["sie/Sie", "liebten"]],
+        perf: [["ich", "habe geliebt"], ["du", "hast geliebt"], ["er/sie/es", "hat geliebt"], ["wir", "haben geliebt"], ["ihr", "habt geliebt"], ["sie/Sie", "haben geliebt"]],
+        sents: [
+          { de: 'Er liebt <span class="aw">seine Mutter</span> sehr.', dep: 'Er liebt seine Mutter sehr.', en: 'He loves his mother very much.', ar: 'هو يحب أمه كثيرًا.' },
+          { de: 'Ich liebe <span class="aw">Schokolade</span>.', dep: 'Ich liebe Schokolade.', en: 'I love chocolate.', ar: 'أنا أحب الشوكولاتة.' },
+          { de: 'Wir lieben <span class="aw">unsere Stadt</span>.', dep: 'Wir lieben unsere Stadt.', en: 'We love our city.', ar: 'نحن نحب مدينتنا.' },
+          { de: 'Sie liebt <span class="aw">das Lesen</span>.', dep: 'Sie liebt das Lesen.', en: 'She loves reading.', ar: 'هي تحب القراءة.' }
+        ]
+      },
+
+      {
+        n: 8, v: "brauchen", m: "يحتاج",
+        pres: [["ich", "brauche"], ["du", "brauchst"], ["er/sie/es", "braucht"], ["wir", "brauchen"], ["ihr", "braucht"], ["sie/Sie", "brauchen"]],
+        praet: [["ich", "brauchte"], ["du", "brauchtest"], ["er/sie/es", "brauchte"], ["wir", "brauchten"], ["ihr", "brauchtet"], ["sie/Sie", "brauchten"]],
+        perf: [["ich", "habe gebraucht"], ["du", "hast gebraucht"], ["er/sie/es", "hat gebraucht"], ["wir", "haben gebraucht"], ["ihr", "habt gebraucht"], ["sie/Sie", "haben gebraucht"]],
+        sents: [
+          { de: 'Ich brauche <span class="aw">deine Hilfe</span>.', dep: 'Ich brauche deine Hilfe.', en: 'I need your help.', ar: 'أنا أحتاج مساعدتك.' },
+          { de: 'Er braucht <span class="aw">einen neuen Stift</span>.', dep: 'Er braucht einen neuen Stift.', en: 'He needs a new pen.', ar: 'هو يحتاج إلى قلم جديد.' },
+          { de: 'Wir brauchen <span class="aw">mehr Zeit</span>.', dep: 'Wir brauchen mehr Zeit.', en: 'We need more time.', ar: 'نحن نحتاج إلى مزيد من الوقت.' },
+          { de: 'Sie braucht <span class="aw">das Wörterbuch</span> für die Prüfung.', dep: 'Sie braucht das Wörterbuch für die Prüfung.', en: 'She needs the dictionary for the exam.', ar: 'هي تحتاج القاموس للامتحان.' }
+        ]
+      },
+
+      {
+        n: 9, v: "nehmen", m: "يأخذ",
+        pres: [["ich", "nehme"], ["du", "nimmst"], ["er/sie/es", "nimmt"], ["wir", "nehmen"], ["ihr", "nehmt"], ["sie/Sie", "nehmen"]],
+        praet: [["ich", "nahm"], ["du", "nahmst"], ["er/sie/es", "nahm"], ["wir", "nahmen"], ["ihr", "nahmt"], ["sie/Sie", "nahmen"]],
+        perf: [["ich", "habe genommen"], ["du", "hast genommen"], ["er/sie/es", "hat genommen"], ["wir", "haben genommen"], ["ihr", "habt genommen"], ["sie/Sie", "haben genommen"]],
+        sents: [
+          { de: 'Sie nimmt <span class="aw">den Bus</span> zur Arbeit.', dep: 'Sie nimmt den Bus zur Arbeit.', en: 'She takes the bus to work.', ar: 'هي تأخذ الحافلة للعمل.' },
+          { de: 'Ich nehme <span class="aw">einen Apfel</span> aus der Tasche.', dep: 'Ich nehme einen Apfel aus der Tasche.', en: 'I take an apple out of the bag.', ar: 'أنا أخرج تفاحة من الحقيبة.' },
+          { de: 'Nimmst du <span class="aw">die Treppe</span>?', dep: 'Nimmst du die Treppe?', en: 'Are you taking the stairs?', ar: 'هل تأخذ الدرج؟' },
+          { de: 'Er nahm <span class="aw">seine Jacke</span> mit.', dep: 'Er nahm seine Jacke mit.', en: 'He took his jacket with him.', ar: 'أخذ معطفه معه.' }
+        ]
+      },
+
+      {
+        n: 10, v: "fragen", m: "يسأل",
+        pres: [["ich", "frage"], ["du", "fragst"], ["er/sie/es", "fragt"], ["wir", "fragen"], ["ihr", "fragt"], ["sie/Sie", "fragen"]],
+        praet: [["ich", "fragte"], ["du", "fragtest"], ["er/sie/es", "fragte"], ["wir", "fragten"], ["ihr", "fragtet"], ["sie/Sie", "fragten"]],
+        perf: [["ich", "habe gefragt"], ["du", "hast gefragt"], ["er/sie/es", "hat gefragt"], ["wir", "haben gefragt"], ["ihr", "habt gefragt"], ["sie/Sie", "haben gefragt"]],
+        sents: [
+          { de: 'Er fragt <span class="aw">den Lehrer</span> um Rat.', dep: 'Er fragt den Lehrer um Rat.', en: 'He asks the teacher for advice.', ar: 'هو يسأل المعلم عن النصيحة.' },
+          { de: 'Ich frage <span class="aw">meinen Vater</span>.', dep: 'Ich frage meinen Vater.', en: 'I ask my father.', ar: 'أنا أسأل أبي.' },
+          { de: 'Sie fragt <span class="aw">die Frau</span> nach dem Weg.', dep: 'Sie fragt die Frau nach dem Weg.', en: 'She asks the woman for directions.', ar: 'هي تسأل المرأة عن الطريق.' },
+          { de: 'Wir fragten <span class="aw">den Arzt</span>.', dep: 'Wir fragten den Arzt.', en: 'We asked the doctor.', ar: 'سألنا الطبيب.' }
+        ]
+      },
+
+      {
+        n: 11, v: "suchen", m: "يبحث عن",
+        pres: [["ich", "suche"], ["du", "suchst"], ["er/sie/es", "sucht"], ["wir", "suchen"], ["ihr", "sucht"], ["sie/Sie", "suchen"]],
+        praet: [["ich", "suchte"], ["du", "suchtest"], ["er/sie/es", "suchte"], ["wir", "suchten"], ["ihr", "suchtet"], ["sie/Sie", "suchten"]],
+        perf: [["ich", "habe gesucht"], ["du", "hast gesucht"], ["er/sie/es", "hat gesucht"], ["wir", "haben gesucht"], ["ihr", "habt gesucht"], ["sie/Sie", "haben gesucht"]],
+        sents: [
+          { de: 'Ich suche <span class="aw">meinen Schlüssel</span>.', dep: 'Ich suche meinen Schlüssel.', en: 'I am looking for my key.', ar: 'أنا أبحث عن مفتاحي.' },
+          { de: 'Er sucht <span class="aw">eine Wohnung</span> in der Stadt.', dep: 'Er sucht eine Wohnung in der Stadt.', en: 'He is looking for an apartment in the city.', ar: 'هو يبحث عن شقة في المدينة.' },
+          { de: 'Wir suchen <span class="aw">einen guten Arzt</span>.', dep: 'Wir suchen einen guten Arzt.', en: 'We are looking for a good doctor.', ar: 'نحن نبحث عن طبيب جيد.' },
+          { de: 'Sie suchte <span class="aw">ihren Pass</span> überall.', dep: 'Sie suchte ihren Pass überall.', en: 'She looked for her passport everywhere.', ar: 'بحثت عن جوازها في كل مكان.' }
+        ]
+      },
+
+      {
+        n: 12, v: "finden", m: "يجد",
+        pres: [["ich", "finde"], ["du", "findest"], ["er/sie/es", "findet"], ["wir", "finden"], ["ihr", "findet"], ["sie/Sie", "finden"]],
+        praet: [["ich", "fand"], ["du", "fandst"], ["er/sie/es", "fand"], ["wir", "fanden"], ["ihr", "fandet"], ["sie/Sie", "fanden"]],
+        perf: [["ich", "habe gefunden"], ["du", "hast gefunden"], ["er/sie/es", "hat gefunden"], ["wir", "haben gefunden"], ["ihr", "habt gefunden"], ["sie/Sie", "haben gefunden"]],
+        sents: [
+          { de: 'Hast du <span class="aw">den Fehler</span> gefunden?', dep: 'Hast du den Fehler gefunden?', en: 'Did you find the mistake?', ar: 'هل وجدت الخطأ؟' },
+          { de: 'Ich finde <span class="aw">das Buch</span> interessant.', dep: 'Ich finde das Buch interessant.', en: 'I find the book interesting.', ar: 'أجد الكتاب مثيرًا للاهتمام.' },
+          { de: 'Er fand <span class="aw">seinen Ring</span> im Garten.', dep: 'Er fand seinen Ring im Garten.', en: 'He found his ring in the garden.', ar: 'وجد خاتمه في الحديقة.' },
+          { de: 'Wir finden <span class="aw">den Weg</span> leicht.', dep: 'Wir finden den Weg leicht.', en: 'We find the way easily.', ar: 'نجد الطريق بسهولة.' }
+        ]
+      },
+
+      {
+        n: 13, v: "lernen", m: "يتعلم / يدرس",
+        pres: [["ich", "lerne"], ["du", "lernst"], ["er/sie/es", "lernt"], ["wir", "lernen"], ["ihr", "lernt"], ["sie/Sie", "lernen"]],
+        praet: [["ich", "lernte"], ["du", "lerntest"], ["er/sie/es", "lernte"], ["wir", "lernten"], ["ihr", "lerntet"], ["sie/Sie", "lernten"]],
+        perf: [["ich", "habe gelernt"], ["du", "hast gelernt"], ["er/sie/es", "hat gelernt"], ["wir", "haben gelernt"], ["ihr", "habt gelernt"], ["sie/Sie", "haben gelernt"]],
+        sents: [
+          { de: 'Sie lernt <span class="aw">die deutsche Sprache</span>.', dep: 'Sie lernt die deutsche Sprache.', en: 'She is learning the German language.', ar: 'هي تتعلم اللغة الألمانية.' },
+          { de: 'Ich lerne <span class="aw">neue Wörter</span> jeden Tag.', dep: 'Ich lerne neue Wörter jeden Tag.', en: 'I learn new words every day.', ar: 'أنا أتعلم كلمات جديدة كل يوم.' },
+          { de: 'Er lernte <span class="aw">das Alphabet</span> schnell.', dep: 'Er lernte das Alphabet schnell.', en: 'He learned the alphabet quickly.', ar: 'تعلم الأبجدية بسرعة.' },
+          { de: 'Wir lernen <span class="aw">ein Lied</span> auswendig.', dep: 'Wir lernen ein Lied auswendig.', en: 'We are learning a song by heart.', ar: 'نحن نحفظ أغنية عن ظهر قلب.' }
+        ]
+      },
+
+      {
+        n: 14, v: "vergessen", m: "ينسى",
+        pres: [["ich", "vergesse"], ["du", "vergisst"], ["er/sie/es", "vergisst"], ["wir", "vergessen"], ["ihr", "vergesst"], ["sie/Sie", "vergessen"]],
+        praet: [["ich", "vergaß"], ["du", "vergaßt"], ["er/sie/es", "vergaß"], ["wir", "vergaßen"], ["ihr", "vergaßt"], ["sie/Sie", "vergaßen"]],
+        perf: [["ich", "habe vergessen"], ["du", "hast vergessen"], ["er/sie/es", "hat vergessen"], ["wir", "haben vergessen"], ["ihr", "habt vergessen"], ["sie/Sie", "haben vergessen"]],
+        sents: [
+          { de: 'Ich habe <span class="aw">meinen Regenschirm</span> vergessen.', dep: 'Ich habe meinen Regenschirm vergessen.', en: 'I forgot my umbrella.', ar: 'لقد نسيت مظلتي.' },
+          { de: 'Er vergisst <span class="aw">den Termin</span> oft.', dep: 'Er vergisst den Termin oft.', en: 'He often forgets the appointment.', ar: 'هو كثيرًا ما ينسى الموعد.' },
+          { de: 'Vergiss <span class="aw">deinen Pass</span> nicht!', dep: 'Vergiss deinen Pass nicht!', en: 'Don\'t forget your passport!', ar: 'لا تنسَ جوازك!' },
+          { de: 'Sie hat <span class="aw">das Passwort</span> vergessen.', dep: 'Sie hat das Passwort vergessen.', en: 'She forgot the password.', ar: 'هي نسيت كلمة المرور.' }
+        ]
+      },
+
+      {
+        n: 15, v: "verstehen", m: "يفهم",
+        pres: [["ich", "verstehe"], ["du", "verstehst"], ["er/sie/es", "versteht"], ["wir", "verstehen"], ["ihr", "versteht"], ["sie/Sie", "verstehen"]],
+        praet: [["ich", "verstand"], ["du", "verstandst"], ["er/sie/es", "verstand"], ["wir", "verstanden"], ["ihr", "verstandet"], ["sie/Sie", "verstanden"]],
+        perf: [["ich", "habe verstanden"], ["du", "hast verstanden"], ["er/sie/es", "hat verstanden"], ["wir", "haben verstanden"], ["ihr", "habt verstanden"], ["sie/Sie", "haben verstanden"]],
+        sents: [
+          { de: 'Ich verstehe <span class="aw">die Frage</span> nicht.', dep: 'Ich verstehe die Frage nicht.', en: 'I do not understand the question.', ar: 'أنا لا أفهم السؤال.' },
+          { de: 'Er versteht <span class="aw">den Text</span> gut.', dep: 'Er versteht den Text gut.', en: 'He understands the text well.', ar: 'هو يفهم النص جيدًا.' },
+          { de: 'Verstehst du <span class="aw">mich</span>?', dep: 'Verstehst du mich?', en: 'Do you understand me?', ar: 'هل تفهمني؟' },
+          { de: 'Wir haben <span class="aw">die Erklärung</span> verstanden.', dep: 'Wir haben die Erklärung verstanden.', en: 'We understood the explanation.', ar: 'لقد فهمنا الشرح.' }
+        ]
+      },
+
+      {
+        n: 16, v: "schreiben", m: "يكتب",
+        pres: [["ich", "schreibe"], ["du", "schreibst"], ["er/sie/es", "schreibt"], ["wir", "schreiben"], ["ihr", "schreibt"], ["sie/Sie", "schreiben"]],
+        praet: [["ich", "schrieb"], ["du", "schriebst"], ["er/sie/es", "schrieb"], ["wir", "schrieben"], ["ihr", "schriebt"], ["sie/Sie", "schrieben"]],
+        perf: [["ich", "habe geschrieben"], ["du", "hast geschrieben"], ["er/sie/es", "hat geschrieben"], ["wir", "haben geschrieben"], ["ihr", "habt geschrieben"], ["sie/Sie", "haben geschrieben"]],
+        sents: [
+          { de: 'Er schreibt <span class="aw">einen Brief</span>.', dep: 'Er schreibt einen Brief.', en: 'He is writing a letter.', ar: 'هو يكتب رسالة.' },
+          { de: 'Ich schreibe <span class="aw">meine Adresse</span> auf das Blatt.', dep: 'Ich schreibe meine Adresse auf das Blatt.', en: 'I write my address on the paper.', ar: 'أنا أكتب عنواني على الورقة.' },
+          { de: 'Sie schrieb <span class="aw">eine E-Mail</span> an den Chef.', dep: 'Sie schrieb eine E-Mail an den Chef.', en: 'She wrote an email to the boss.', ar: 'كتبت بريدًا إلكترونيًا إلى المدير.' },
+          { de: 'Wir schreiben <span class="aw">einen Test</span> morgen.', dep: 'Wir schreiben einen Test morgen.', en: 'We have a test tomorrow.', ar: 'لدينا اختبار غدًا.' }
+        ]
+      },
+
+      {
+        n: 17, v: "lesen", m: "يقرأ",
+        pres: [["ich", "lese"], ["du", "liest"], ["er/sie/es", "liest"], ["wir", "lesen"], ["ihr", "lest"], ["sie/Sie", "lesen"]],
+        praet: [["ich", "las"], ["du", "last"], ["er/sie/es", "las"], ["wir", "lasen"], ["ihr", "last"], ["sie/Sie", "lasen"]],
+        perf: [["ich", "habe gelesen"], ["du", "hast gelesen"], ["er/sie/es", "hat gelesen"], ["wir", "haben gelesen"], ["ihr", "habt gelesen"], ["sie/Sie", "haben gelesen"]],
+        sents: [
+          { de: 'Sie liest <span class="aw">ein interessantes Buch</span>.', dep: 'Sie liest ein interessantes Buch.', en: 'She is reading an interesting book.', ar: 'هي تقرأ كتابًا مثيرًا للاهتمام.' },
+          { de: 'Ich lese <span class="aw">die Zeitung</span> am Morgen.', dep: 'Ich lese die Zeitung am Morgen.', en: 'I read the newspaper in the morning.', ar: 'أنا أقرأ الجريدة في الصباح.' },
+          { de: 'Er las <span class="aw">einen Artikel</span> über Deutschland.', dep: 'Er las einen Artikel über Deutschland.', en: 'He read an article about Germany.', ar: 'قرأ مقالًا عن ألمانيا.' },
+          { de: 'Lest ihr <span class="aw">das Buch</span> gern?', dep: 'Lest ihr das Buch gern?', en: 'Do you (all) enjoy reading the book?', ar: 'هل تستمتعون بقراءة الكتاب؟' }
+        ]
+      },
+
+      {
+        n: 18, v: "essen", m: "يأكل",
+        pres: [["ich", "esse"], ["du", "isst"], ["er/sie/es", "isst"], ["wir", "essen"], ["ihr", "esst"], ["sie/Sie", "essen"]],
+        praet: [["ich", "aß"], ["du", "aßt"], ["er/sie/es", "aß"], ["wir", "aßen"], ["ihr", "aßt"], ["sie/Sie", "aßen"]],
+        perf: [["ich", "habe gegessen"], ["du", "hast gegessen"], ["er/sie/es", "hat gegessen"], ["wir", "haben gegessen"], ["ihr", "habt gegessen"], ["sie/Sie", "haben gegessen"]],
+        sents: [
+          { de: 'Wir essen <span class="aw">das Abendessen</span> um sieben.', dep: 'Wir essen das Abendessen um sieben.', en: 'We eat dinner at seven.', ar: 'نحن نتناول العشاء الساعة السابعة.' },
+          { de: 'Ich esse <span class="aw">ein Brötchen</span> zum Frühstück.', dep: 'Ich esse ein Brötchen zum Frühstück.', en: 'I eat a roll for breakfast.', ar: 'أنا آكل خبزة صغيرة في الفطور.' },
+          { de: 'Er isst <span class="aw">das Mittagessen</span> in der Kantine.', dep: 'Er isst das Mittagessen in der Kantine.', en: 'He eats lunch in the canteen.', ar: 'هو يتناول الغداء في المقصف.' },
+          { de: 'Isst du gern <span class="aw">Pizza</span>?', dep: 'Isst du gern Pizza?', en: 'Do you like eating pizza?', ar: 'هل تحب تناول البيتزا؟' }
+        ]
+      },
+
+      {
+        n: 19, v: "trinken", m: "يشرب",
+        pres: [["ich", "trinke"], ["du", "trinkst"], ["er/sie/es", "trinkt"], ["wir", "trinken"], ["ihr", "trinkt"], ["sie/Sie", "trinken"]],
+        praet: [["ich", "trank"], ["du", "trankst"], ["er/sie/es", "trank"], ["wir", "tranken"], ["ihr", "trankt"], ["sie/Sie", "tranken"]],
+        perf: [["ich", "habe getrunken"], ["du", "hast getrunken"], ["er/sie/es", "hat getrunken"], ["wir", "haben getrunken"], ["ihr", "habt getrunken"], ["sie/Sie", "haben getrunken"]],
+        sents: [
+          { de: 'Er trinkt <span class="aw">seinen Kaffee</span> schwarz.', dep: 'Er trinkt seinen Kaffee schwarz.', en: 'He drinks his coffee black.', ar: 'هو يشرب قهوته بدون حليب.' },
+          { de: 'Ich trinke <span class="aw">ein Glas Wasser</span> jeden Morgen.', dep: 'Ich trinke ein Glas Wasser jeden Morgen.', en: 'I drink a glass of water every morning.', ar: 'أنا أشرب كوب ماء كل صباح.' },
+          { de: 'Sie trinkt <span class="aw">Tee</span> am Abend.', dep: 'Sie trinkt Tee am Abend.', en: 'She drinks tea in the evening.', ar: 'هي تشرب الشاي في المساء.' },
+          { de: 'Wir tranken <span class="aw">Saft</span> nach dem Sport.', dep: 'Wir tranken Saft nach dem Sport.', en: 'We drank juice after sports.', ar: 'شربنا عصيرًا بعد الرياضة.' }
+        ]
+      },
+
+      {
+        n: 20, v: "besuchen", m: "يزور",
+        pres: [["ich", "besuche"], ["du", "besuchst"], ["er/sie/es", "besucht"], ["wir", "besuchen"], ["ihr", "besucht"], ["sie/Sie", "besuchen"]],
+        praet: [["ich", "besuchte"], ["du", "besuchtest"], ["er/sie/es", "besuchte"], ["wir", "besuchten"], ["ihr", "besuchtet"], ["sie/Sie", "besuchten"]],
+        perf: [["ich", "habe besucht"], ["du", "hast besucht"], ["er/sie/es", "hat besucht"], ["wir", "haben besucht"], ["ihr", "habt besucht"], ["sie/Sie", "haben besucht"]],
+        sents: [
+          { de: 'Wir besuchen <span class="aw">unsere Großeltern</span> am Wochenende.', dep: 'Wir besuchen unsere Großeltern am Wochenende.', en: 'We visit our grandparents at the weekend.', ar: 'نحن نزور أجدادنا في عطلة نهاية الأسبوع.' },
+          { de: 'Ich besuche <span class="aw">einen Deutschkurs</span>.', dep: 'Ich besuche einen Deutschkurs.', en: 'I attend a German course.', ar: 'أنا أحضر دورة في اللغة الألمانية.' },
+          { de: 'Sie besuchte <span class="aw">das Museum</span> in Berlin.', dep: 'Sie besuchte das Museum in Berlin.', en: 'She visited the museum in Berlin.', ar: 'زارت المتحف في برلين.' },
+          { de: 'Besucht ihr <span class="aw">die Schule</span> jeden Tag?', dep: 'Besucht ihr die Schule jeden Tag?', en: 'Do you (all) go to school every day?', ar: 'هل تذهبون إلى المدرسة كل يوم؟' }
+        ]
+      },
+
+      {
+        n: 21, v: "rufen", m: "ينادي / يصرخ",
+        pres: [["ich", "rufe"], ["du", "rufst"], ["er/sie/es", "ruft"], ["wir", "rufen"], ["ihr", "ruft"], ["sie/Sie", "rufen"]],
+        praet: [["ich", "rief"], ["du", "riefst"], ["er/sie/es", "rief"], ["wir", "riefen"], ["ihr", "rieft"], ["sie/Sie", "riefen"]],
+        perf: [["ich", "habe gerufen"], ["du", "hast gerufen"], ["er/sie/es", "hat gerufen"], ["wir", "haben gerufen"], ["ihr", "habt gerufen"], ["sie/Sie", "haben gerufen"]],
+        sents: [
+          { de: 'Er ruft <span class="aw">seinen Freund</span> an.', dep: 'Er ruft seinen Freund an.', en: 'He calls his friend.', ar: 'هو يتصل بصديقه.' },
+          { de: 'Ich rufe <span class="aw">den Arzt</span>.', dep: 'Ich rufe den Arzt.', en: 'I call the doctor.', ar: 'أنا أتصل بالطبيب.' },
+          { de: 'Sie rief <span class="aw">ein Taxi</span>.', dep: 'Sie rief ein Taxi.', en: 'She called a taxi.', ar: 'طلبت سيارة أجرة.' },
+          { de: 'Ruft <span class="aw">die Polizei</span>!', dep: 'Ruft die Polizei!', en: 'Call the police!', ar: 'اتصلوا بالشرطة!' }
+        ]
+      },
+
+      {
+        n: 22, v: "anrufen", m: "يتصل هاتفيًا",
+        pres: [["ich", "rufe an"], ["du", "rufst an"], ["er/sie/es", "ruft an"], ["wir", "rufen an"], ["ihr", "ruft an"], ["sie/Sie", "rufen an"]],
+        praet: [["ich", "rief an"], ["du", "riefst an"], ["er/sie/es", "rief an"], ["wir", "riefen an"], ["ihr", "rieft an"], ["sie/Sie", "riefen an"]],
+        perf: [["ich", "habe angerufen"], ["du", "hast angerufen"], ["er/sie/es", "hat angerufen"], ["wir", "haben angerufen"], ["ihr", "habt angerufen"], ["sie/Sie", "haben angerufen"]],
+        sents: [
+          { de: 'Ich rufe <span class="aw">dich</span> morgen an.', dep: 'Ich rufe dich morgen an.', en: 'I will call you tomorrow.', ar: 'سأتصل بك غدًا.' },
+          { de: 'Er rief <span class="aw">seine Mutter</span> an.', dep: 'Er rief seine Mutter an.', en: 'He called his mother.', ar: 'اتصل بأمه.' },
+          { de: 'Rufst du <span class="aw">das Büro</span> an?', dep: 'Rufst du das Büro an?', en: 'Are you calling the office?', ar: 'هل تتصل بالمكتب؟' },
+          { de: 'Wir rufen <span class="aw">euch</span> am Abend an.', dep: 'Wir rufen euch am Abend an.', en: 'We will call you (all) in the evening.', ar: 'سنتصل بكم في المساء.' }
+        ]
+      },
+
+      {
+        n: 23, v: "einladen", m: "يدعو",
+        pres: [["ich", "lade ein"], ["du", "lädst ein"], ["er/sie/es", "lädt ein"], ["wir", "laden ein"], ["ihr", "ladet ein"], ["sie/Sie", "laden ein"]],
+        praet: [["ich", "lud ein"], ["du", "ludst ein"], ["er/sie/es", "lud ein"], ["wir", "luden ein"], ["ihr", "ludet ein"], ["sie/Sie", "luden ein"]],
+        perf: [["ich", "habe eingeladen"], ["du", "hast eingeladen"], ["er/sie/es", "hat eingeladen"], ["wir", "haben eingeladen"], ["ihr", "habt eingeladen"], ["sie/Sie", "haben eingeladen"]],
+        sents: [
+          { de: 'Sie lädt <span class="aw">alle Freunde</span> zur Party ein.', dep: 'Sie lädt alle Freunde zur Party ein.', en: 'She invites all friends to the party.', ar: 'هي تدعو جميع الأصدقاء للحفلة.' },
+          { de: 'Ich lade <span class="aw">dich</span> zum Abendessen ein.', dep: 'Ich lade dich zum Abendessen ein.', en: 'I invite you to dinner.', ar: 'أنا أدعوك إلى العشاء.' },
+          { de: 'Er lud <span class="aw">seine Kollegen</span> ein.', dep: 'Er lud seine Kollegen ein.', en: 'He invited his colleagues.', ar: 'دعا زملاءه.' },
+          { de: 'Wir laden <span class="aw">die Familie</span> zum Fest ein.', dep: 'Wir laden die Familie zum Fest ein.', en: 'We invite the family to the celebration.', ar: 'ندعو العائلة إلى الاحتفال.' }
+        ]
+      },
+
+      {
+        n: 24, v: "kennenlernen", m: "يتعرف على",
+        pres: [["ich", "lerne kennen"], ["du", "lernst kennen"], ["er/sie/es", "lernt kennen"], ["wir", "lernen kennen"], ["ihr", "lernt kennen"], ["sie/Sie", "lernen kennen"]],
+        praet: [["ich", "lernte kennen"], ["du", "lerntest kennen"], ["er/sie/es", "lernte kennen"], ["wir", "lernten kennen"], ["ihr", "lerntet kennen"], ["sie/Sie", "lernten kennen"]],
+        perf: [["ich", "habe kennengelernt"], ["du", "hast kennengelernt"], ["er/sie/es", "hat kennengelernt"], ["wir", "haben kennengelernt"], ["ihr", "habt kennengelernt"], ["sie/Sie", "haben kennengelernt"]],
+        sents: [
+          { de: 'Ich habe <span class="aw">ihn</span> auf einer Party kennengelernt.', dep: 'Ich habe ihn auf einer Party kennengelernt.', en: 'I met him at a party.', ar: 'تعرفت عليه في حفلة.' },
+          { de: 'Sie lernte <span class="aw">ihre Nachbarn</span> kennen.', dep: 'Sie lernte ihre Nachbarn kennen.', en: 'She got to know her neighbors.', ar: 'تعرفت على جيرانها.' },
+          { de: 'Wir lernen <span class="aw">neue Leute</span> im Kurs kennen.', dep: 'Wir lernen neue Leute im Kurs kennen.', en: 'We are meeting new people in the course.', ar: 'نتعرف على أشخاص جدد في الدورة.' },
+          { de: 'Lernst du <span class="aw">meinen Bruder</span> kennen?', dep: 'Lernst du meinen Bruder kennen?', en: 'Will you meet my brother?', ar: 'هل ستتعرف على أخي؟' }
+        ]
+      },
+
+      {
+        n: 25, v: "treffen", m: "يلتقي بـ",
+        pres: [["ich", "treffe"], ["du", "triffst"], ["er/sie/es", "trifft"], ["wir", "treffen"], ["ihr", "trefft"], ["sie/Sie", "treffen"]],
+        praet: [["ich", "traf"], ["du", "trafst"], ["er/sie/es", "traf"], ["wir", "trafen"], ["ihr", "traft"], ["sie/Sie", "trafen"]],
+        perf: [["ich", "habe getroffen"], ["du", "hast getroffen"], ["er/sie/es", "hat getroffen"], ["wir", "haben getroffen"], ["ihr", "habt getroffen"], ["sie/Sie", "haben getroffen"]],
+        sents: [
+          { de: 'Wir treffen <span class="aw">unsere Kollegen</span> um zehn.', dep: 'Wir treffen unsere Kollegen um zehn.', en: 'We meet our colleagues at ten.', ar: 'نحن نلتقي بزملائنا الساعة العاشرة.' },
+          { de: 'Ich treffe <span class="aw">meinen Freund</span> im Café.', dep: 'Ich treffe meinen Freund im Café.', en: 'I am meeting my friend at the café.', ar: 'أنا ألتقي بصديقي في المقهى.' },
+          { de: 'Er traf <span class="aw">sie</span> zufällig auf der Straße.', dep: 'Er traf sie zufällig auf der Straße.', en: 'He met her by chance on the street.', ar: 'التقى بها صدفةً في الشارع.' },
+          { de: 'Triffst du <span class="aw">die Lehrerin</span> heute?', dep: 'Triffst du die Lehrerin heute?', en: 'Are you meeting the teacher today?', ar: 'هل ستلتقي بالمعلمة اليوم؟' }
+        ]
+      },
+
+      {
+        n: 26, v: "öffnen", m: "يفتح",
+        pres: [["ich", "öffne"], ["du", "öffnest"], ["er/sie/es", "öffnet"], ["wir", "öffnen"], ["ihr", "öffnet"], ["sie/Sie", "öffnen"]],
+        praet: [["ich", "öffnete"], ["du", "öffnetest"], ["er/sie/es", "öffnete"], ["wir", "öffneten"], ["ihr", "öffnetet"], ["sie/Sie", "öffneten"]],
+        perf: [["ich", "habe geöffnet"], ["du", "hast geöffnet"], ["er/sie/es", "hat geöffnet"], ["wir", "haben geöffnet"], ["ihr", "habt geöffnet"], ["sie/Sie", "haben geöffnet"]],
+        sents: [
+          { de: 'Er öffnet <span class="aw">das Fenster</span>.', dep: 'Er öffnet das Fenster.', en: 'He opens the window.', ar: 'هو يفتح النافذة.' },
+          { de: 'Ich öffne <span class="aw">die Tür</span> für dich.', dep: 'Ich öffne die Tür für dich.', en: 'I open the door for you.', ar: 'أنا أفتح الباب لك.' },
+          { de: 'Sie öffnete <span class="aw">das Paket</span> vorsichtig.', dep: 'Sie öffnete das Paket vorsichtig.', en: 'She opened the package carefully.', ar: 'فتحت الطرد بحذر.' },
+          { de: 'Bitte öffnet <span class="aw">eure Bücher</span>!', dep: 'Bitte öffnet eure Bücher!', en: 'Please open your books!', ar: 'افتحوا كتبكم من فضلكم!' }
+        ]
+      },
+
+      {
+        n: 27, v: "schließen", m: "يُغلق",
+        pres: [["ich", "schließe"], ["du", "schließt"], ["er/sie/es", "schließt"], ["wir", "schließen"], ["ihr", "schließt"], ["sie/Sie", "schließen"]],
+        praet: [["ich", "schloss"], ["du", "schlosst"], ["er/sie/es", "schloss"], ["wir", "schlossen"], ["ihr", "schlosst"], ["sie/Sie", "schlossen"]],
+        perf: [["ich", "habe geschlossen"], ["du", "hast geschlossen"], ["er/sie/es", "hat geschlossen"], ["wir", "haben geschlossen"], ["ihr", "habt geschlossen"], ["sie/Sie", "haben geschlossen"]],
+        sents: [
+          { de: 'Sie schließt <span class="aw">die Tür</span> ab.', dep: 'Sie schließt die Tür ab.', en: 'She locks the door.', ar: 'هي تُغلق الباب.' },
+          { de: 'Ich schließe <span class="aw">das Fenster</span> bei Regen.', dep: 'Ich schließe das Fenster bei Regen.', en: 'I close the window when it rains.', ar: 'أنا أُغلق النافذة عند المطر.' },
+          { de: 'Er schloss <span class="aw">sein Buch</span> und schlief ein.', dep: 'Er schloss sein Buch und schlief ein.', en: 'He closed his book and fell asleep.', ar: 'أغلق كتابه ونام.' },
+          { de: 'Wir schließen <span class="aw">das Geschäft</span> um acht.', dep: 'Wir schließen das Geschäft um acht.', en: 'We close the shop at eight.', ar: 'نُغلق المتجر الساعة الثامنة.' }
+        ]
+      },
+
+      {
+        n: 28, v: "packen", m: "يحزم / يُعبّئ",
+        pres: [["ich", "packe"], ["du", "packst"], ["er/sie/es", "packt"], ["wir", "packen"], ["ihr", "packt"], ["sie/Sie", "packen"]],
+        praet: [["ich", "packte"], ["du", "packtest"], ["er/sie/es", "packte"], ["wir", "packten"], ["ihr", "packtet"], ["sie/Sie", "packten"]],
+        perf: [["ich", "habe gepackt"], ["du", "hast gepackt"], ["er/sie/es", "hat gepackt"], ["wir", "haben gepackt"], ["ihr", "habt gepackt"], ["sie/Sie", "haben gepackt"]],
+        sents: [
+          { de: 'Ich packe <span class="aw">meinen Koffer</span> für die Reise.', dep: 'Ich packe meinen Koffer für die Reise.', en: 'I pack my suitcase for the trip.', ar: 'أنا أحزم حقيبتي للرحلة.' },
+          { de: 'Er packt <span class="aw">die Geschenke</span> ein.', dep: 'Er packt die Geschenke ein.', en: 'He wraps the gifts.', ar: 'هو يلفّ الهدايا.' },
+          { de: 'Hast du <span class="aw">deinen Rucksack</span> gepackt?', dep: 'Hast du deinen Rucksack gepackt?', en: 'Have you packed your backpack?', ar: 'هل حزمت حقيبة ظهرك؟' },
+          { de: 'Wir packten <span class="aw">die Sachen</span> schnell zusammen.', dep: 'Wir packten die Sachen schnell zusammen.', en: 'We packed our things up quickly.', ar: 'أسرعنا في جمع الأغراض.' }
+        ]
+      },
+
+      {
+        n: 29, v: "bezahlen", m: "يدفع",
+        pres: [["ich", "bezahle"], ["du", "bezahlst"], ["er/sie/es", "bezahlt"], ["wir", "bezahlen"], ["ihr", "bezahlt"], ["sie/Sie", "bezahlen"]],
+        praet: [["ich", "bezahlte"], ["du", "bezahltest"], ["er/sie/es", "bezahlte"], ["wir", "bezahlten"], ["ihr", "bezahltet"], ["sie/Sie", "bezahlten"]],
+        perf: [["ich", "habe bezahlt"], ["du", "hast bezahlt"], ["er/sie/es", "hat bezahlt"], ["wir", "haben bezahlt"], ["ihr", "habt bezahlt"], ["sie/Sie", "haben bezahlt"]],
+        sents: [
+          { de: 'Er bezahlt <span class="aw">die Rechnung</span>.', dep: 'Er bezahlt die Rechnung.', en: 'He pays the bill.', ar: 'هو يدفع الفاتورة.' },
+          { de: 'Ich bezahle <span class="aw">das Ticket</span> online.', dep: 'Ich bezahle das Ticket online.', en: 'I pay for the ticket online.', ar: 'أنا أدفع ثمن التذكرة عبر الإنترنت.' },
+          { de: 'Wer bezahlt <span class="aw">das Essen</span>?', dep: 'Wer bezahlt das Essen?', en: 'Who is paying for the food?', ar: 'من سيدفع ثمن الطعام؟' },
+          { de: 'Sie bezahlte <span class="aw">den Kaffee</span> für uns.', dep: 'Sie bezahlte den Kaffee für uns.', en: 'She paid for the coffee for us.', ar: 'دفعت ثمن القهوة لنا.' }
+        ]
+      },
+
+      {
+        n: 30, v: "zeigen", m: "يُريد / يعرض",
+        pres: [["ich", "zeige"], ["du", "zeigst"], ["er/sie/es", "zeigt"], ["wir", "zeigen"], ["ihr", "zeigt"], ["sie/Sie", "zeigen"]],
+        praet: [["ich", "zeigte"], ["du", "zeigtest"], ["er/sie/es", "zeigte"], ["wir", "zeigten"], ["ihr", "zeigtet"], ["sie/Sie", "zeigten"]],
+        perf: [["ich", "habe gezeigt"], ["du", "hast gezeigt"], ["er/sie/es", "hat gezeigt"], ["wir", "haben gezeigt"], ["ihr", "habt gezeigt"], ["sie/Sie", "haben gezeigt"]],
+        sents: [
+          { de: 'Er zeigt mir <span class="aw">den Weg</span>.', dep: 'Er zeigt mir den Weg.', en: 'He shows me the way.', ar: 'هو يُريني الطريق.' },
+          { de: 'Ich zeige <span class="aw">das Foto</span> meiner Familie.', dep: 'Ich zeige das Foto meiner Familie.', en: 'I show the photo to my family.', ar: 'أُري الصورة لعائلتي.' },
+          { de: 'Sie zeigte <span class="aw">den Pass</span> dem Beamten.', dep: 'Sie zeigte den Pass dem Beamten.', en: 'She showed the passport to the officer.', ar: 'أرت جوازها للموظف.' },
+          { de: 'Zeigst du mir <span class="aw">dein Zimmer</span>?', dep: 'Zeigst du mir dein Zimmer?', en: 'Will you show me your room?', ar: 'هل ستريني غرفتك؟' }
+        ]
+      },
+
+      {
+        n: 31, v: "erklären", m: "يشرح",
+        pres: [["ich", "erkläre"], ["du", "erklärst"], ["er/sie/es", "erklärt"], ["wir", "erklären"], ["ihr", "erklärt"], ["sie/Sie", "erklären"]],
+        praet: [["ich", "erklärte"], ["du", "erklärtest"], ["er/sie/es", "erklärte"], ["wir", "erklärten"], ["ihr", "erklärtet"], ["sie/Sie", "erklärten"]],
+        perf: [["ich", "habe erklärt"], ["du", "hast erklärt"], ["er/sie/es", "hat erklärt"], ["wir", "haben erklärt"], ["ihr", "habt erklärt"], ["sie/Sie", "haben erklärt"]],
+        sents: [
+          { de: 'Der Lehrer erklärt <span class="aw">die Grammatik</span>.', dep: 'Der Lehrer erklärt die Grammatik.', en: 'The teacher explains the grammar.', ar: 'المعلم يشرح قواعد اللغة.' },
+          { de: 'Ich erkläre <span class="aw">das Problem</span> noch einmal.', dep: 'Ich erkläre das Problem noch einmal.', en: 'I explain the problem once more.', ar: 'أشرح المسألة مرة أخرى.' },
+          { de: 'Kannst du <span class="aw">das Wort</span> erklären?', dep: 'Kannst du das Wort erklären?', en: 'Can you explain the word?', ar: 'هل يمكنك شرح الكلمة؟' },
+          { de: 'Sie erklärte <span class="aw">den Plan</span> klar.', dep: 'Sie erklärte den Plan klar.', en: 'She explained the plan clearly.', ar: 'شرحت الخطة بوضوح.' }
+        ]
+      },
+
+      {
+        n: 32, v: "benutzen", m: "يستخدم",
+        pres: [["ich", "benutze"], ["du", "benutzt"], ["er/sie/es", "benutzt"], ["wir", "benutzen"], ["ihr", "benutzt"], ["sie/Sie", "benutzen"]],
+        praet: [["ich", "benutzte"], ["du", "benutztest"], ["er/sie/es", "benutzte"], ["wir", "benutzten"], ["ihr", "benutztet"], ["sie/Sie", "benutzten"]],
+        perf: [["ich", "habe benutzt"], ["du", "hast benutzt"], ["er/sie/es", "hat benutzt"], ["wir", "haben benutzt"], ["ihr", "habt benutzt"], ["sie/Sie", "haben benutzt"]],
+        sents: [
+          { de: 'Ich benutze <span class="aw">das Wörterbuch</span> oft.', dep: 'Ich benutze das Wörterbuch oft.', en: 'I often use the dictionary.', ar: 'أنا أستخدم القاموس كثيرًا.' },
+          { de: 'Er benutzt <span class="aw">sein Handy</span> in der Schule.', dep: 'Er benutzt sein Handy in der Schule.', en: 'He uses his mobile phone at school.', ar: 'هو يستخدم هاتفه في المدرسة.' },
+          { de: 'Bitte benutzt <span class="aw">den Eingang</span> links!', dep: 'Bitte benutzt den Eingang links!', en: 'Please use the entrance on the left!', ar: 'استخدموا المدخل على اليسار من فضلكم!' },
+          { de: 'Wir benutzten <span class="aw">die Karte</span>.', dep: 'Wir benutzten die Karte.', en: 'We used the map.', ar: 'استخدمنا الخريطة.' }
+        ]
+      },
+
+      {
+        n: 33, v: "stellen", m: "يضع / يضع بشكل عمودي",
+        pres: [["ich", "stelle"], ["du", "stellst"], ["er/sie/es", "stellt"], ["wir", "stellen"], ["ihr", "stellt"], ["sie/Sie", "stellen"]],
+        praet: [["ich", "stellte"], ["du", "stelltest"], ["er/sie/es", "stellte"], ["wir", "stellten"], ["ihr", "stelltet"], ["sie/Sie", "stellten"]],
+        perf: [["ich", "habe gestellt"], ["du", "hast gestellt"], ["er/sie/es", "hat gestellt"], ["wir", "haben gestellt"], ["ihr", "habt gestellt"], ["sie/Sie", "haben gestellt"]],
+        sents: [
+          { de: 'Er stellt <span class="aw">die Flasche</span> auf den Tisch.', dep: 'Er stellt die Flasche auf den Tisch.', en: 'He puts the bottle on the table.', ar: 'هو يضع الزجاجة على الطاولة.' },
+          { de: 'Ich stelle <span class="aw">eine Frage</span>.', dep: 'Ich stelle eine Frage.', en: 'I ask a question.', ar: 'أنا أطرح سؤالًا.' },
+          { de: 'Sie stellte <span class="aw">das Kind</span> vor die Klasse.', dep: 'Sie stellte das Kind vor die Klasse.', en: 'She presented the child to the class.', ar: 'قدّمت الطفل أمام الصف.' },
+          { de: 'Stell <span class="aw">deinen Rucksack</span> auf den Boden!', dep: 'Stell deinen Rucksack auf den Boden!', en: 'Put your backpack on the floor!', ar: 'ضع حقيبة ظهرك على الأرض!' }
+        ]
+      },
+
+      {
+        n: 34, v: "legen", m: "يضع / يمد أفقيًا",
+        pres: [["ich", "lege"], ["du", "legst"], ["er/sie/es", "legt"], ["wir", "legen"], ["ihr", "legt"], ["sie/Sie", "legen"]],
+        praet: [["ich", "legte"], ["du", "legtest"], ["er/sie/es", "legte"], ["wir", "legten"], ["ihr", "legtet"], ["sie/Sie", "legten"]],
+        perf: [["ich", "habe gelegt"], ["du", "hast gelegt"], ["er/sie/es", "hat gelegt"], ["wir", "haben gelegt"], ["ihr", "habt gelegt"], ["sie/Sie", "haben gelegt"]],
+        sents: [
+          { de: 'Ich lege <span class="aw">das Heft</span> auf den Tisch.', dep: 'Ich lege das Heft auf den Tisch.', en: 'I put the notebook on the table.', ar: 'أنا أضع الكراسة على الطاولة.' },
+          { de: 'Er legt <span class="aw">das Baby</span> ins Bett.', dep: 'Er legt das Baby ins Bett.', en: 'He puts the baby to bed.', ar: 'هو يضع الرضيع في السرير.' },
+          { de: 'Sie legte <span class="aw">ihre Tasche</span> auf den Stuhl.', dep: 'Sie legte ihre Tasche auf den Stuhl.', en: 'She put her bag on the chair.', ar: 'وضعت حقيبتها على الكرسي.' },
+          { de: 'Leg <span class="aw">dein Handy</span> weg!', dep: 'Leg dein Handy weg!', en: 'Put your phone away!', ar: 'ضع هاتفك جانبًا!' }
+        ]
+      },
+
+      {
+        n: 35, v: "wählen", m: "يختار / يصوّت",
+        pres: [["ich", "wähle"], ["du", "wählst"], ["er/sie/es", "wählt"], ["wir", "wählen"], ["ihr", "wählt"], ["sie/Sie", "wählen"]],
+        praet: [["ich", "wählte"], ["du", "wähltest"], ["er/sie/es", "wählte"], ["wir", "wählten"], ["ihr", "wähltet"], ["sie/Sie", "wählten"]],
+        perf: [["ich", "habe gewählt"], ["du", "hast gewählt"], ["er/sie/es", "hat gewählt"], ["wir", "haben gewählt"], ["ihr", "habt gewählt"], ["sie/Sie", "haben gewählt"]],
+        sents: [
+          { de: 'Ich wähle <span class="aw">einen neuen Kurs</span>.', dep: 'Ich wähle einen neuen Kurs.', en: 'I choose a new course.', ar: 'أنا أختار دورة جديدة.' },
+          { de: 'Er wählte <span class="aw">die richtige Antwort</span>.', dep: 'Er wählte die richtige Antwort.', en: 'He chose the correct answer.', ar: 'اختار الإجابة الصحيحة.' },
+          { de: 'Sie wählt <span class="aw">ein Kleid</span> im Laden.', dep: 'Sie wählt ein Kleid im Laden.', en: 'She is choosing a dress in the shop.', ar: 'هي تختار فستانًا في المحل.' },
+          { de: 'Wir wählen <span class="aw">das Restaurant</span> zusammen.', dep: 'Wir wählen das Restaurant zusammen.', en: 'We choose the restaurant together.', ar: 'نختار المطعم معًا.' }
+        ]
+      },
+
+      {
+        n: 36, v: "spielen", m: "يلعب",
+        pres: [["ich", "spiele"], ["du", "spielst"], ["er/sie/es", "spielt"], ["wir", "spielen"], ["ihr", "spielt"], ["sie/Sie", "spielen"]],
+        praet: [["ich", "spielte"], ["du", "spieltest"], ["er/sie/es", "spielte"], ["wir", "spielten"], ["ihr", "spieltet"], ["sie/Sie", "spielten"]],
+        perf: [["ich", "habe gespielt"], ["du", "hast gespielt"], ["er/sie/es", "hat gespielt"], ["wir", "haben gespielt"], ["ihr", "habt gespielt"], ["sie/Sie", "haben gespielt"]],
+        sents: [
+          { de: 'Die Kinder spielen <span class="aw">Fußball</span>.', dep: 'Die Kinder spielen Fußball.', en: 'The children play football.', ar: 'الأطفال يلعبون كرة القدم.' },
+          { de: 'Ich spiele <span class="aw">ein Instrument</span>.', dep: 'Ich spiele ein Instrument.', en: 'I play an instrument.', ar: 'أنا أعزف على آلة موسيقية.' },
+          { de: 'Er spielte <span class="aw">ein Computerspiel</span>.', dep: 'Er spielte ein Computerspiel.', en: 'He played a computer game.', ar: 'لعب لعبة على الحاسوب.' },
+          { de: 'Spielst du <span class="aw">Gitarre</span>?', dep: 'Spielst du Gitarre?', en: 'Do you play guitar?', ar: 'هل تعزف على الغيتار؟' }
+        ]
+      },
+
+      {
+        n: 37, v: "kochen", m: "يطبخ",
+        pres: [["ich", "koche"], ["du", "kochst"], ["er/sie/es", "kocht"], ["wir", "kochen"], ["ihr", "kocht"], ["sie/Sie", "kochen"]],
+        praet: [["ich", "kochte"], ["du", "kochtest"], ["er/sie/es", "kochte"], ["wir", "kochten"], ["ihr", "kochtet"], ["sie/Sie", "kochten"]],
+        perf: [["ich", "habe gekocht"], ["du", "hast gekocht"], ["er/sie/es", "hat gekocht"], ["wir", "haben gekocht"], ["ihr", "habt gekocht"], ["sie/Sie", "haben gekocht"]],
+        sents: [
+          { de: 'Meine Mutter kocht <span class="aw">das Mittagessen</span>.', dep: 'Meine Mutter kocht das Mittagessen.', en: 'My mother cooks lunch.', ar: 'أمي تطبخ الغداء.' },
+          { de: 'Ich koche <span class="aw">Suppe</span> für die Familie.', dep: 'Ich koche Suppe für die Familie.', en: 'I cook soup for the family.', ar: 'أنا أطبخ حساءً للعائلة.' },
+          { de: 'Kochst du <span class="aw">das Gemüse</span>?', dep: 'Kochst du das Gemüse?', en: 'Are you cooking the vegetables?', ar: 'هل أنت تطبخ الخضروات؟' },
+          { de: 'Sie kochte <span class="aw">Pasta</span> zum Abendessen.', dep: 'Sie kochte Pasta zum Abendessen.', en: 'She cooked pasta for dinner.', ar: 'طبخت معكرونة للعشاء.' }
+        ]
+      },
+
+      {
+        n: 38, v: "waschen", m: "يغسل",
+        pres: [["ich", "wasche"], ["du", "wäschst"], ["er/sie/es", "wäscht"], ["wir", "waschen"], ["ihr", "wascht"], ["sie/Sie", "waschen"]],
+        praet: [["ich", "wusch"], ["du", "wuschst"], ["er/sie/es", "wusch"], ["wir", "wuschen"], ["ihr", "wuscht"], ["sie/Sie", "wuschen"]],
+        perf: [["ich", "habe gewaschen"], ["du", "hast gewaschen"], ["er/sie/es", "hat gewaschen"], ["wir", "haben gewaschen"], ["ihr", "habt gewaschen"], ["sie/Sie", "haben gewaschen"]],
+        sents: [
+          { de: 'Sie wäscht <span class="aw">das Auto</span> jeden Samstag.', dep: 'Sie wäscht das Auto jeden Samstag.', en: 'She washes the car every Saturday.', ar: 'هي تغسل السيارة كل سبت.' },
+          { de: 'Ich wasche <span class="aw">meine Hände</span> oft.', dep: 'Ich wasche meine Hände oft.', en: 'I wash my hands often.', ar: 'أنا أغسل يديّ كثيرًا.' },
+          { de: 'Er wusch <span class="aw">die Wäsche</span>.', dep: 'Er wusch die Wäsche.', en: 'He washed the laundry.', ar: 'غسل الملابس.' },
+          { de: 'Bitte wascht <span class="aw">das Obst</span>!', dep: 'Bitte wascht das Obst!', en: 'Please wash the fruit!', ar: 'اغسلوا الفاكهة من فضلكم!' }
+        ]
+      },
+
+      {
+        n: 39, v: "putzen", m: "ينظّف",
+        pres: [["ich", "putze"], ["du", "putzt"], ["er/sie/es", "putzt"], ["wir", "putzen"], ["ihr", "putzt"], ["sie/Sie", "putzen"]],
+        praet: [["ich", "putzte"], ["du", "putztest"], ["er/sie/es", "putzte"], ["wir", "putzten"], ["ihr", "putztet"], ["sie/Sie", "putzten"]],
+        perf: [["ich", "habe geputzt"], ["du", "hast geputzt"], ["er/sie/es", "hat geputzt"], ["wir", "haben geputzt"], ["ihr", "habt geputzt"], ["sie/Sie", "haben geputzt"]],
+        sents: [
+          { de: 'Ich putze <span class="aw">meine Zähne</span> zweimal täglich.', dep: 'Ich putze meine Zähne zweimal täglich.', en: 'I brush my teeth twice a day.', ar: 'أنا أنظّف أسناني مرتين يوميًا.' },
+          { de: 'Er putzt <span class="aw">das Zimmer</span> am Wochenende.', dep: 'Er putzt das Zimmer am Wochenende.', en: 'He cleans the room at the weekend.', ar: 'هو ينظّف الغرفة في نهاية الأسبوع.' },
+          { de: 'Wir putzten <span class="aw">das ganze Haus</span>.', dep: 'Wir putzten das ganze Haus.', en: 'We cleaned the whole house.', ar: 'نظّفنا البيت كله.' },
+          { de: 'Putzt du <span class="aw">die Fenster</span>?', dep: 'Putzt du die Fenster?', en: 'Are you cleaning the windows?', ar: 'هل تنظّف النوافذ؟' }
+        ]
+      },
+
+      {
+        n: 40, v: "bringen", m: "يُحضر / يجلب",
+        pres: [["ich", "bringe"], ["du", "bringst"], ["er/sie/es", "bringt"], ["wir", "bringen"], ["ihr", "bringt"], ["sie/Sie", "bringen"]],
+        praet: [["ich", "brachte"], ["du", "brachtest"], ["er/sie/es", "brachte"], ["wir", "brachten"], ["ihr", "brachtet"], ["sie/Sie", "brachten"]],
+        perf: [["ich", "habe gebracht"], ["du", "hast gebracht"], ["er/sie/es", "hat gebracht"], ["wir", "haben gebracht"], ["ihr", "habt gebracht"], ["sie/Sie", "haben gebracht"]],
+        sents: [
+          { de: 'Er bringt <span class="aw">das Buch</span> zur Bibliothek zurück.', dep: 'Er bringt das Buch zur Bibliothek zurück.', en: 'He returns the book to the library.', ar: 'هو يُعيد الكتاب إلى المكتبة.' },
+          { de: 'Ich bringe <span class="aw">ein Geschenk</span> mit.', dep: 'Ich bringe ein Geschenk mit.', en: 'I am bringing a gift along.', ar: 'أنا أحمل هدية معي.' },
+          { de: 'Sie brachte <span class="aw">den Kaffee</span> ans Bett.', dep: 'Sie brachte den Kaffee ans Bett.', en: 'She brought the coffee to the bed.', ar: 'أحضرت القهوة إلى السرير.' },
+          { de: 'Bring <span class="aw">deinen Freund</span> mit!', dep: 'Bring deinen Freund mit!', en: 'Bring your friend along!', ar: 'أحضر صديقك معك!' }
+        ]
+      },
+
+      {
+        n: 41, v: "schicken", m: "يُرسل",
+        pres: [["ich", "schicke"], ["du", "schickst"], ["er/sie/es", "schickt"], ["wir", "schicken"], ["ihr", "schickt"], ["sie/Sie", "schicken"]],
+        praet: [["ich", "schickte"], ["du", "schicktest"], ["er/sie/es", "schickte"], ["wir", "schickten"], ["ihr", "schicktet"], ["sie/Sie", "schickten"]],
+        perf: [["ich", "habe geschickt"], ["du", "hast geschickt"], ["er/sie/es", "hat geschickt"], ["wir", "haben geschickt"], ["ihr", "habt geschickt"], ["sie/Sie", "haben geschickt"]],
+        sents: [
+          { de: 'Ich schicke <span class="aw">eine E-Mail</span> an den Lehrer.', dep: 'Ich schicke eine E-Mail an den Lehrer.', en: 'I send an email to the teacher.', ar: 'أنا أرسل بريدًا إلكترونيًا إلى المعلم.' },
+          { de: 'Er schickte <span class="aw">ein Paket</span> nach Hause.', dep: 'Er schickte ein Paket nach Hause.', en: 'He sent a package home.', ar: 'أرسل طردًا إلى المنزل.' },
+          { de: 'Schickst du mir <span class="aw">die Datei</span>?', dep: 'Schickst du mir die Datei?', en: 'Will you send me the file?', ar: 'هل سترسل لي الملف؟' },
+          { de: 'Wir schicken <span class="aw">die Einladung</span> per Post.', dep: 'Wir schicken die Einladung per Post.', en: 'We send the invitation by post.', ar: 'نرسل الدعوة بالبريد.' }
+        ]
+      },
+
+      {
+        n: 42, v: "tragen", m: "يحمل / يلبس",
+        pres: [["ich", "trage"], ["du", "trägst"], ["er/sie/es", "trägt"], ["wir", "tragen"], ["ihr", "tragt"], ["sie/Sie", "tragen"]],
+        praet: [["ich", "trug"], ["du", "trugst"], ["er/sie/es", "trug"], ["wir", "trugen"], ["ihr", "trugt"], ["sie/Sie", "trugen"]],
+        perf: [["ich", "habe getragen"], ["du", "hast getragen"], ["er/sie/es", "hat getragen"], ["wir", "haben getragen"], ["ihr", "habt getragen"], ["sie/Sie", "haben getragen"]],
+        sents: [
+          { de: 'Er trägt <span class="aw">eine rote Jacke</span>.', dep: 'Er trägt eine rote Jacke.', en: 'He is wearing a red jacket.', ar: 'هو يرتدي جاكيت أحمر.' },
+          { de: 'Ich trage <span class="aw">die Tasche</span> für dich.', dep: 'Ich trage die Tasche für dich.', en: 'I carry the bag for you.', ar: 'أنا أحمل الحقيبة عنك.' },
+          { de: 'Sie trägt <span class="aw">ihre Brille</span> beim Lesen.', dep: 'Sie trägt ihre Brille beim Lesen.', en: 'She wears her glasses when reading.', ar: 'هي ترتدي نظارتها أثناء القراءة.' },
+          { de: 'Wir trugen <span class="aw">die Kisten</span> in das Haus.', dep: 'Wir trugen die Kisten in das Haus.', en: 'We carried the boxes into the house.', ar: 'حملنا الصناديق إلى داخل المنزل.' }
+        ]
+      },
+
+      {
+        n: 43, v: "halten", m: "يُمسك / يتوقف",
+        pres: [["ich", "halte"], ["du", "hältst"], ["er/sie/es", "hält"], ["wir", "halten"], ["ihr", "haltet"], ["sie/Sie", "halten"]],
+        praet: [["ich", "hielt"], ["du", "hieltst"], ["er/sie/es", "hielt"], ["wir", "hielten"], ["ihr", "hieltet"], ["sie/Sie", "hielten"]],
+        perf: [["ich", "habe gehalten"], ["du", "hast gehalten"], ["er/sie/es", "hat gehalten"], ["wir", "haben gehalten"], ["ihr", "habt gehalten"], ["sie/Sie", "haben gehalten"]],
+        sents: [
+          { de: 'Das Kind hält <span class="aw">den Ball</span>.', dep: 'Das Kind hält den Ball.', en: 'The child holds the ball.', ar: 'الطفل يُمسك الكرة.' },
+          { de: 'Bitte halte <span class="aw">die Tür</span> auf!', dep: 'Bitte halte die Tür auf!', en: 'Please hold the door open!', ar: 'أمسك الباب مفتوحًا من فضلك!' },
+          { de: 'Er hielt <span class="aw">eine Rede</span> vor der Klasse.', dep: 'Er hielt eine Rede vor der Klasse.', en: 'He gave a speech in front of the class.', ar: 'ألقى خطابًا أمام الصف.' },
+          { de: 'Hältst du <span class="aw">das Seil</span>?', dep: 'Hältst du das Seil?', en: 'Are you holding the rope?', ar: 'هل تمسك الحبل؟' }
+        ]
+      },
+
+      {
+        n: 44, v: "bauen", m: "يبني",
+        pres: [["ich", "baue"], ["du", "baust"], ["er/sie/es", "baut"], ["wir", "bauen"], ["ihr", "baut"], ["sie/Sie", "bauen"]],
+        praet: [["ich", "baute"], ["du", "bautest"], ["er/sie/es", "baute"], ["wir", "bauten"], ["ihr", "bautet"], ["sie/Sie", "bauten"]],
+        perf: [["ich", "habe gebaut"], ["du", "hast gebaut"], ["er/sie/es", "hat gebaut"], ["wir", "haben gebaut"], ["ihr", "habt gebaut"], ["sie/Sie", "haben gebaut"]],
+        sents: [
+          { de: 'Sie bauen <span class="aw">ein neues Haus</span>.', dep: 'Sie bauen ein neues Haus.', en: 'They are building a new house.', ar: 'هم يبنون منزلًا جديدًا.' },
+          { de: 'Das Kind baut <span class="aw">einen Turm</span> aus Bausteinen.', dep: 'Das Kind baut einen Turm aus Bausteinen.', en: 'The child builds a tower out of blocks.', ar: 'الطفل يبني برجًا من المكعبات.' },
+          { de: 'Wir bauten <span class="aw">eine Brücke</span>.', dep: 'Wir bauten eine Brücke.', en: 'We built a bridge.', ar: 'بنينا جسرًا.' },
+          { de: 'Er baut <span class="aw">ein Regal</span> für das Zimmer.', dep: 'Er baut ein Regal für das Zimmer.', en: 'He builds a shelf for the room.', ar: 'هو يبني رفًّا للغرفة.' }
+        ]
+      },
+
+      {
+        n: 45, v: "glauben", m: "يعتقد / يؤمن بـ",
+        pres: [["ich", "glaube"], ["du", "glaubst"], ["er/sie/es", "glaubt"], ["wir", "glauben"], ["ihr", "glaubt"], ["sie/Sie", "glauben"]],
+        praet: [["ich", "glaubte"], ["du", "glaubtest"], ["er/sie/es", "glaubte"], ["wir", "glaubten"], ["ihr", "glaubtet"], ["sie/Sie", "glaubten"]],
+        perf: [["ich", "habe geglaubt"], ["du", "hast geglaubt"], ["er/sie/es", "hat geglaubt"], ["wir", "haben geglaubt"], ["ihr", "habt geglaubt"], ["sie/Sie", "haben geglaubt"]],
+        sents: [
+          { de: 'Ich glaube <span class="aw">das nicht</span>.', dep: 'Ich glaube das nicht.', en: 'I do not believe that.', ar: 'أنا لا أصدق ذلك.' },
+          { de: 'Er glaubt <span class="aw">die Geschichte</span>.', dep: 'Er glaubt die Geschichte.', en: 'He believes the story.', ar: 'هو يصدق القصة.' },
+          { de: 'Ich glaube <span class="aw">diesen Bericht</span> nicht.', dep: 'Ich glaube diesen Bericht nicht.', en: 'I do not believe this report.', ar: 'أنا لا أصدق هذا التقرير.' },
+          { de: 'Wir glaubten <span class="aw">seine Worte</span>.', dep: 'Wir glaubten seine Worte.', en: 'We believed his words.', ar: 'صدّقنا كلماته.' }
+        ]
+      },
+
+      {
+        n: 46, v: "genießen", m: "يستمتع بـ",
+        pres: [["ich", "genieße"], ["du", "genießt"], ["er/sie/es", "genießt"], ["wir", "genießen"], ["ihr", "genießt"], ["sie/Sie", "genießen"]],
+        praet: [["ich", "genoss"], ["du", "genosst"], ["er/sie/es", "genoss"], ["wir", "genossen"], ["ihr", "genosst"], ["sie/Sie", "genossen"]],
+        perf: [["ich", "habe genossen"], ["du", "hast genossen"], ["er/sie/es", "hat genossen"], ["wir", "haben genossen"], ["ihr", "habt genossen"], ["sie/Sie", "haben genossen"]],
+        sents: [
+          { de: 'Er genießt <span class="aw">das schöne Wetter</span>.', dep: 'Er genießt das schöne Wetter.', en: 'He enjoys the nice weather.', ar: 'هو يستمتع بالطقس الجميل.' },
+          { de: 'Ich genieße <span class="aw">meinen Urlaub</span>.', dep: 'Ich genieße meinen Urlaub.', en: 'I enjoy my holiday.', ar: 'أنا أستمتع بإجازتي.' },
+          { de: 'Wir genossen <span class="aw">das Konzert</span> sehr.', dep: 'Wir genossen das Konzert sehr.', en: 'We greatly enjoyed the concert.', ar: 'استمتعنا بالحفلة كثيرًا.' },
+          { de: 'Genießt du <span class="aw">das Essen</span>?', dep: 'Genießt du das Essen?', en: 'Are you enjoying the food?', ar: 'هل تستمتع بالطعام؟' }
+        ]
+      },
+
+      {
+        n: 47, v: "wissen", m: "يعلم / يعرف (معلومة)",
+        pres: [["ich", "weiß"], ["du", "weißt"], ["er/sie/es", "weiß"], ["wir", "wissen"], ["ihr", "wisst"], ["sie/Sie", "wissen"]],
+        praet: [["ich", "wusste"], ["du", "wusstest"], ["er/sie/es", "wusste"], ["wir", "wussten"], ["ihr", "wusstet"], ["sie/Sie", "wussten"]],
+        perf: [["ich", "habe gewusst"], ["du", "hast gewusst"], ["er/sie/es", "hat gewusst"], ["wir", "haben gewusst"], ["ihr", "habt gewusst"], ["sie/Sie", "haben gewusst"]],
+        sents: [
+          { de: 'Ich weiß <span class="aw">die Antwort</span>.', dep: 'Ich weiß die Antwort.', en: 'I know the answer.', ar: 'أنا أعرف الإجابة.' },
+          { de: 'Weißt du <span class="aw">seine Telefonnummer</span>?', dep: 'Weißt du seine Telefonnummer?', en: 'Do you know his phone number?', ar: 'هل تعرف رقم هاتفه؟' },
+          { de: 'Er wusste <span class="aw">den Namen</span> nicht.', dep: 'Er wusste den Namen nicht.', en: 'He did not know the name.', ar: 'لم يكن يعرف الاسم.' },
+          { de: 'Wir wissen <span class="aw">das Ergebnis</span>.', dep: 'Wir wissen das Ergebnis.', en: 'We know the result.', ar: 'نحن نعرف النتيجة.' }
+        ]
+      },
+
+      {
+        n: 48, v: "heiraten", m: "يتزوج",
+        pres: [["ich", "heirate"], ["du", "heiratest"], ["er/sie/es", "heiratet"], ["wir", "heiraten"], ["ihr", "heiratet"], ["sie/Sie", "heiraten"]],
+        praet: [["ich", "heiratete"], ["du", "heiratest"], ["er/sie/es", "heiratete"], ["wir", "heirateten"], ["ihr", "heiratetet"], ["sie/Sie", "heirateten"]],
+        perf: [["ich", "habe geheiratet"], ["du", "hast geheiratet"], ["er/sie/es", "hat geheiratet"], ["wir", "haben geheiratet"], ["ihr", "habt geheiratet"], ["sie/Sie", "haben geheiratet"]],
+        sents: [
+          { de: 'Sie heiraten <span class="aw">nächstes Jahr</span>.', dep: 'Sie heiraten nächstes Jahr.', en: 'They are getting married next year.', ar: 'سيتزوجان العام القادم.' },
+          { de: 'Er heiratete <span class="aw">seine Jugendliebe</span>.', dep: 'Er heiratete seine Jugendliebe.', en: 'He married his childhood sweetheart.', ar: 'تزوج من حبيبته في الشباب.' },
+          { de: 'Möchtest du <span class="aw">mich</span> heiraten?', dep: 'Möchtest du mich heiraten?', en: 'Do you want to marry me?', ar: 'هل تريد الزواج مني؟' },
+          { de: 'Wir haben <span class="aw">letzten Sommer</span> geheiratet.', dep: 'Wir haben letzten Sommer geheiratet.', en: 'We got married last summer.', ar: 'تزوجنا الصيف الماضي.' }
+        ]
+      },
+
+      {
+        n: 49, v: "planen", m: "يخطط",
+        pres: [["ich", "plane"], ["du", "planst"], ["er/sie/es", "plant"], ["wir", "planen"], ["ihr", "plant"], ["sie/Sie", "planen"]],
+        praet: [["ich", "plante"], ["du", "plantest"], ["er/sie/es", "plante"], ["wir", "planten"], ["ihr", "plantet"], ["sie/Sie", "planten"]],
+        perf: [["ich", "habe geplant"], ["du", "hast geplant"], ["er/sie/es", "hat geplant"], ["wir", "haben geplant"], ["ihr", "habt geplant"], ["sie/Sie", "haben geplant"]],
+        sents: [
+          { de: 'Wir planen <span class="aw">eine Reise</span> nach Berlin.', dep: 'Wir planen eine Reise nach Berlin.', en: 'We are planning a trip to Berlin.', ar: 'نحن نخطط لرحلة إلى برلين.' },
+          { de: 'Ich plane <span class="aw">meine Woche</span> am Sonntag.', dep: 'Ich plane meine Woche am Sonntag.', en: 'I plan my week on Sunday.', ar: 'أنا أخطط لأسبوعي يوم الأحد.' },
+          { de: 'Er plante <span class="aw">das Fest</span> sehr gut.', dep: 'Er plante das Fest sehr gut.', en: 'He planned the celebration very well.', ar: 'خطط للاحتفال بشكل جيد جدًا.' },
+          { de: '<span class="aw">Was</span> plant ihr für morgen?', dep: 'Was plant ihr für morgen?', en: 'What are you (all) planning for tomorrow?', ar: 'ماذا تخططون لغد؟' }
+        ]
+      },
+
+      {
+        n: 50, v: "mögen", m: "يحب / يرغب في",
+        pres: [["ich", "mag"], ["du", "magst"], ["er/sie/es", "mag"], ["wir", "mögen"], ["ihr", "mögt"], ["sie/Sie", "mögen"]],
+        praet: [["ich", "mochte"], ["du", "mochtest"], ["er/sie/es", "mochte"], ["wir", "mochten"], ["ihr", "mochtet"], ["sie/Sie", "mochten"]],
+        perf: [["ich", "habe gemocht"], ["du", "hast gemocht"], ["er/sie/es", "hat gemocht"], ["wir", "haben gemocht"], ["ihr", "habt gemocht"], ["sie/Sie", "haben gemocht"]],
+        sents: [
+          { de: 'Ich mag <span class="aw">Eis</span> sehr.', dep: 'Ich mag Eis sehr.', en: 'I like ice cream very much.', ar: 'أنا أحب المثلجات كثيرًا.' },
+          { de: 'Magst du <span class="aw">Tiere</span>?', dep: 'Magst du Tiere?', en: 'Do you like animals?', ar: 'هل تحب الحيوانات؟' },
+          { de: 'Er mochte <span class="aw">das Buch</span> nicht.', dep: 'Er mochte das Buch nicht.', en: 'He did not like the book.', ar: 'لم يعجبه الكتاب.' },
+          { de: 'Wir mögen <span class="aw">den Lehrer</span>.', dep: 'Wir mögen den Lehrer.', en: 'We like the teacher.', ar: 'نحن نحب المعلم.' }
+        ]
+      },
+
+      {
+        n: 51, v: "wiederholen", m: "يُعيد / يُكرر",
+        pres: [["ich", "wiederhole"], ["du", "wiederholst"], ["er/sie/es", "wiederholt"], ["wir", "wiederholen"], ["ihr", "wiederholt"], ["sie/Sie", "wiederholen"]],
+        praet: [["ich", "wiederholte"], ["du", "wiederholtest"], ["er/sie/es", "wiederholte"], ["wir", "wiederholten"], ["ihr", "wiederholtet"], ["sie/Sie", "wiederholten"]],
+        perf: [["ich", "habe wiederholt"], ["du", "hast wiederholt"], ["er/sie/es", "hat wiederholt"], ["wir", "haben wiederholt"], ["ihr", "habt wiederholt"], ["sie/Sie", "haben wiederholt"]],
+        sents: [
+          { de: 'Bitte wiederholen Sie <span class="aw">den Satz</span>!', dep: 'Bitte wiederholen Sie den Satz!', en: 'Please repeat the sentence!', ar: 'أعد الجملة من فضلك!' },
+          { de: 'Ich wiederhole <span class="aw">das Vokabular</span> jeden Tag.', dep: 'Ich wiederhole das Vokabular jeden Tag.', en: 'I review the vocabulary every day.', ar: 'أنا أكرر المفردات كل يوم.' },
+          { de: 'Er wiederholte <span class="aw">seine Frage</span>.', dep: 'Er wiederholte seine Frage.', en: 'He repeated his question.', ar: 'كرر سؤاله.' },
+          { de: 'Wir wiederholen <span class="aw">den Stoff</span> vor der Prüfung.', dep: 'Wir wiederholen den Stoff vor der Prüfung.', en: 'We review the material before the exam.', ar: 'نراجع المادة قبل الامتحان.' }
+        ]
+      },
+
+      {
+        n: 52, v: "beenden", m: "يُنهي / ينتهي من",
+        pres: [["ich", "beende"], ["du", "beendest"], ["er/sie/es", "beendet"], ["wir", "beenden"], ["ihr", "beendet"], ["sie/Sie", "beenden"]],
+        praet: [["ich", "beendete"], ["du", "beendetest"], ["er/sie/es", "beendete"], ["wir", "beendeten"], ["ihr", "beendetet"], ["sie/Sie", "beendeten"]],
+        perf: [["ich", "habe beendet"], ["du", "hast beendet"], ["er/sie/es", "hat beendet"], ["wir", "haben beendet"], ["ihr", "habt beendet"], ["sie/Sie", "haben beendet"]],
+        sents: [
+          { de: 'Er beendet <span class="aw">die Aufgabe</span> pünktlich.', dep: 'Er beendet die Aufgabe pünktlich.', en: 'He finishes the task on time.', ar: 'هو ينهي المهمة في الوقت المحدد.' },
+          { de: 'Ich beende <span class="aw">das Gespräch</span>.', dep: 'Ich beende das Gespräch.', en: 'I end the conversation.', ar: 'أنا أُنهي المحادثة.' },
+          { de: 'Wann beendest du <span class="aw">deine Arbeit</span>?', dep: 'Wann beendest du deine Arbeit?', en: 'When do you finish your work?', ar: 'متى تُنهي عملك؟' },
+          { de: 'Sie hat <span class="aw">das Kapitel</span> beendet.', dep: 'Sie hat das Kapitel beendet.', en: 'She has finished the chapter.', ar: 'لقد أنهت الفصل.' }
+        ]
+      },
+
+      {
+        n: 53, v: "starten", m: "يبدأ / يُطلق",
+        pres: [["ich", "starte"], ["du", "startest"], ["er/sie/es", "startet"], ["wir", "starten"], ["ihr", "startet"], ["sie/Sie", "starten"]],
+        praet: [["ich", "startete"], ["du", "startetest"], ["er/sie/es", "startete"], ["wir", "starteten"], ["ihr", "startetet"], ["sie/Sie", "starteten"]],
+        perf: [["ich", "habe gestartet"], ["du", "hast gestartet"], ["er/sie/es", "hat gestartet"], ["wir", "haben gestartet"], ["ihr", "habt gestartet"], ["sie/Sie", "haben gestartet"]],
+        sents: [
+          { de: 'Wir starten <span class="aw">das Projekt</span> nächste Woche.', dep: 'Wir starten das Projekt nächste Woche.', en: 'We start the project next week.', ar: 'نبدأ المشروع الأسبوع القادم.' },
+          { de: 'Er startet <span class="aw">seinen Computer</span>.', dep: 'Er startet seinen Computer.', en: 'He starts his computer.', ar: 'هو يشغّل حاسوبه.' },
+          { de: 'Ich starte <span class="aw">den Motor</span>.', dep: 'Ich starte den Motor.', en: 'I start the engine.', ar: 'أنا أُشغّل المحرك.' },
+          { de: 'Sie starteten <span class="aw">das Programm</span>.', dep: 'Sie starteten das Programm.', en: 'They started the programme.', ar: 'بدأوا البرنامج.' }
+        ]
+      },
+
+      {
+        n: 54, v: "fotografieren", m: "يلتقط صورًا",
+        pres: [["ich", "fotografiere"], ["du", "fotografierst"], ["er/sie/es", "fotografiert"], ["wir", "fotografieren"], ["ihr", "fotografiert"], ["sie/Sie", "fotografieren"]],
+        praet: [["ich", "fotografierte"], ["du", "fotografiertest"], ["er/sie/es", "fotografierte"], ["wir", "fotografierten"], ["ihr", "fotografiertet"], ["sie/Sie", "fotografierten"]],
+        perf: [["ich", "habe fotografiert"], ["du", "hast fotografiert"], ["er/sie/es", "hat fotografiert"], ["wir", "haben fotografiert"], ["ihr", "habt fotografiert"], ["sie/Sie", "haben fotografiert"]],
+        sents: [
+          { de: 'Wir fotografieren <span class="aw">die Sehenswürdigkeiten</span>.', dep: 'Wir fotografieren die Sehenswürdigkeiten.', en: 'We photograph the sights.', ar: 'نحن نصوّر المعالم السياحية.' },
+          { de: 'Er fotografiert <span class="aw">die Natur</span> gern.', dep: 'Er fotografiert die Natur gern.', en: 'He likes photographing nature.', ar: 'هو يحب تصوير الطبيعة.' },
+          { de: 'Ich fotografierte <span class="aw">das Konzert</span>.', dep: 'Ich fotografierte das Konzert.', en: 'I photographed the concert.', ar: 'صوّرت الحفلة الموسيقية.' },
+          { de: 'Fotografierst du <span class="aw">die Kinder</span>?', dep: 'Fotografierst du die Kinder?', en: 'Are you photographing the children?', ar: 'هل تصوّر الأطفال؟' }
+        ]
+      },
+
+      {
+        n: 55, v: "übersetzen", m: "يترجم",
+        pres: [["ich", "übersetze"], ["du", "übersetzt"], ["er/sie/es", "übersetzt"], ["wir", "übersetzen"], ["ihr", "übersetzt"], ["sie/Sie", "übersetzen"]],
+        praet: [["ich", "übersetzte"], ["du", "übersetztest"], ["er/sie/es", "übersetzte"], ["wir", "übersetzten"], ["ihr", "übersetztet"], ["sie/Sie", "übersetzten"]],
+        perf: [["ich", "habe übersetzt"], ["du", "hast übersetzt"], ["er/sie/es", "hat übersetzt"], ["wir", "haben übersetzt"], ["ihr", "habt übersetzt"], ["sie/Sie", "haben übersetzt"]],
+        sents: [
+          { de: 'Er übersetzt <span class="aw">den Text</span> ins Arabische.', dep: 'Er übersetzt den Text ins Arabische.', en: 'He translates the text into Arabic.', ar: 'هو يترجم النص إلى العربية.' },
+          { de: 'Ich übersetze <span class="aw">das Wort</span> für dich.', dep: 'Ich übersetze das Wort für dich.', en: 'I translate the word for you.', ar: 'أنا أترجم الكلمة لك.' },
+          { de: 'Sie übersetzt <span class="aw">den Brief</span> ins Englische.', dep: 'Sie übersetzt den Brief ins Englische.', en: 'She translates the letter into English.', ar: 'هي تترجم الرسالة إلى الإنجليزية.' },
+          { de: 'Wir übersetzten <span class="aw">das Dokument</span>.', dep: 'Wir übersetzten das Dokument.', en: 'We translated the document.', ar: 'ترجمنا الوثيقة.' }
+        ]
+      },
+
+      {
+        n: 56, v: "verbringen", m: "يقضي (وقتًا)",
+        pres: [["ich", "verbringe"], ["du", "verbringst"], ["er/sie/es", "verbringt"], ["wir", "verbringen"], ["ihr", "verbringt"], ["sie/Sie", "verbringen"]],
+        praet: [["ich", "verbrachte"], ["du", "verbrachtest"], ["er/sie/es", "verbrachte"], ["wir", "verbrachten"], ["ihr", "verbrachtet"], ["sie/Sie", "verbrachten"]],
+        perf: [["ich", "habe verbracht"], ["du", "hast verbracht"], ["er/sie/es", "hat verbracht"], ["wir", "haben verbracht"], ["ihr", "habt verbracht"], ["sie/Sie", "haben verbracht"]],
+        sents: [
+          { de: 'Wir verbringen <span class="aw">den Urlaub</span> in Italien.', dep: 'Wir verbringen den Urlaub in Italien.', en: 'We spend the holiday in Italy.', ar: 'نحن نقضي إجازتنا في إيطاليا.' },
+          { de: 'Ich verbringe <span class="aw">viel Zeit</span> mit meiner Familie.', dep: 'Ich verbringe viel Zeit mit meiner Familie.', en: 'I spend a lot of time with my family.', ar: 'أقضي وقتًا طويلًا مع عائلتي.' },
+          { de: 'Er verbrachte <span class="aw">den Abend</span> zuhause.', dep: 'Er verbrachte den Abend zuhause.', en: 'He spent the evening at home.', ar: 'قضى المساء في المنزل.' },
+          { de: 'Wie verbringst du <span class="aw">deinen Tag</span>?', dep: 'Wie verbringst du deinen Tag?', en: 'How do you spend your day?', ar: 'كيف تقضي يومك؟' }
+        ]
+      },
+
+      {
+        n: 57, v: "bewundern", m: "يُعجب بـ",
+        pres: [["ich", "bewundere"], ["du", "bewunderst"], ["er/sie/es", "bewundert"], ["wir", "bewundern"], ["ihr", "bewundert"], ["sie/Sie", "bewundern"]],
+        praet: [["ich", "bewunderte"], ["du", "bewundertest"], ["er/sie/es", "bewunderte"], ["wir", "bewunderten"], ["ihr", "bewundertet"], ["sie/Sie", "bewunderten"]],
+        perf: [["ich", "habe bewundert"], ["du", "hast bewundert"], ["er/sie/es", "hat bewundert"], ["wir", "haben bewundert"], ["ihr", "habt bewundert"], ["sie/Sie", "haben bewundert"]],
+        sents: [
+          { de: 'Alle bewundern <span class="aw">seine Geduld</span>.', dep: 'Alle bewundern seine Geduld.', en: 'Everyone admires his patience.', ar: 'الجميع يُعجب بصبره.' },
+          { de: 'Ich bewundere <span class="aw">die Landschaft</span>.', dep: 'Ich bewundere die Landschaft.', en: 'I admire the landscape.', ar: 'أنا أُعجب بالمنظر الطبيعي.' },
+          { de: 'Wir bewunderten <span class="aw">das Gemälde</span>.', dep: 'Wir bewunderten das Gemälde.', en: 'We admired the painting.', ar: 'أُعجبنا باللوحة.' },
+          { de: 'Er bewundert <span class="aw">ihren Mut</span>.', dep: 'Er bewundert ihren Mut.', en: 'He admires her courage.', ar: 'هو يُعجب بشجاعتها.' }
+        ]
+      },
+
+      {
+        n: 58, v: "entscheiden", m: "يقرر",
+        pres: [["ich", "entscheide"], ["du", "entscheidest"], ["er/sie/es", "entscheidet"], ["wir", "entscheiden"], ["ihr", "entscheidet"], ["sie/Sie", "entscheiden"]],
+        praet: [["ich", "entschied"], ["du", "entschiedst"], ["er/sie/es", "entschied"], ["wir", "entschieden"], ["ihr", "entschiedet"], ["sie/Sie", "entschieden"]],
+        perf: [["ich", "habe entschieden"], ["du", "hast entschieden"], ["er/sie/es", "hat entschieden"], ["wir", "haben entschieden"], ["ihr", "habt entschieden"], ["sie/Sie", "haben entschieden"]],
+        sents: [
+          { de: 'Ich entscheide <span class="aw">die Sache</span> selbst.', dep: 'Ich entscheide die Sache selbst.', en: 'I decide the matter myself.', ar: 'أنا أقرر الأمر بنفسي.' },
+          { de: 'Er entschied <span class="aw">den Fall</span> schnell.', dep: 'Er entschied den Fall schnell.', en: 'He decided the case quickly.', ar: 'قرر القضية بسرعة.' },
+          { de: 'Wir entscheiden <span class="aw">das Problem</span> zusammen.', dep: 'Wir entscheiden das Problem zusammen.', en: 'We decide on the problem together.', ar: 'نحن نقرر في المسألة معًا.' },
+          { de: 'Sie hat <span class="aw">den Plan</span> entschieden.', dep: 'Sie hat den Plan entschieden.', en: 'She decided on the plan.', ar: 'هي قررت بشأن الخطة.' }
+        ]
+      },
+
+      {
+        n: 59, v: "versuchen", m: "يحاول",
+        pres: [["ich", "versuche"], ["du", "versuchst"], ["er/sie/es", "versucht"], ["wir", "versuchen"], ["ihr", "versucht"], ["sie/Sie", "versuchen"]],
+        praet: [["ich", "versuchte"], ["du", "versuchtest"], ["er/sie/es", "versuchte"], ["wir", "versuchten"], ["ihr", "versuchtet"], ["sie/Sie", "versuchten"]],
+        perf: [["ich", "habe versucht"], ["du", "hast versucht"], ["er/sie/es", "hat versucht"], ["wir", "haben versucht"], ["ihr", "habt versucht"], ["sie/Sie", "haben versucht"]],
+        sents: [
+          { de: 'Er versucht <span class="aw">sein Glück</span>.', dep: 'Er versucht sein Glück.', en: 'He tries his luck.', ar: 'هو يجرب حظه.' },
+          { de: 'Ich versuche <span class="aw">ein neues Rezept</span>.', dep: 'Ich versuche ein neues Rezept.', en: 'I am trying a new recipe.', ar: 'أجرّب وصفة جديدة.' },
+          { de: 'Wir versuchen <span class="aw">einen anderen Weg</span>.', dep: 'Wir versuchen einen anderen Weg.', en: 'We are trying a different way.', ar: 'نجرّب طريقًا آخر.' },
+          { de: 'Versuchst du <span class="aw">es</span> noch einmal?', dep: 'Versuchst du es noch einmal?', en: 'Are you trying it again?', ar: 'هل ستحاول مرة أخرى؟' }
+        ]
+      },
+
+      {
+        n: 60, v:"bestellen", m:"يطلب / يأمر بـ",
+        pres:[["ich","bestelle"],["du","bestellst"],["er/sie/es","bestellt"],["wir","bestellen"],["ihr","bestellt"],["sie/Sie","bestellen"]],
+        praet:[["ich","bestellte"],["du","bestelltest"],["er/sie/es","bestellte"],["wir","bestellten"],["ihr","bestelltet"],["sie/Sie","bestellten"]],
+        perf:[["ich","habe bestellt"],["du","hast bestellt"],["er/sie/es","hat bestellt"],["wir","haben bestellt"],["ihr","habt bestellt"],["sie/Sie","haben bestellt"]],
+        sents:[
+          {de:'Ich bestelle <span class="aw">einen Kaffee</span> und ein Croissant.',dep:'Ich bestelle einen Kaffee und ein Croissant.',en:'I order a coffee and a croissant.',ar:'أطلب قهوة وكروسان.'},
+          {de:'Er bestellte <span class="aw">das Buch</span> online.',dep:'Er bestellte das Buch online.',en:'He ordered the book online.',ar:'طلب الكتاب عبر الإنترنت.'},
+          {de:'Haben Sie <span class="aw">Ihr Essen</span> schon bestellt?',dep:'Haben Sie Ihr Essen schon bestellt?',en:'Have you already ordered your food?',ar:'هل طلبت طعامك بالفعل؟'},
+          {de:'Wir bestellen <span class="aw">eine Pizza</span> zum Liefern.',dep:'Wir bestellen eine Pizza zum Liefern.',en:'We order a pizza for delivery.',ar:'نطلب بيتزا للتوصيل.'}
+        ]
+      },
+
+      {
+        n: 61, v:"gewinnen", m:"يفوز / يكسب",
+        pres:[["ich","gewinne"],["du","gewinnst"],["er/sie/es","gewinnt"],["wir","gewinnen"],["ihr","gewinnt"],["sie/Sie","gewinnen"]],
+        praet:[["ich","gewann"],["du","gewannst"],["er/sie/es","gewann"],["wir","gewannen"],["ihr","gewannt"],["sie/Sie","gewannen"]],
+        perf:[["ich","habe gewonnen"],["du","hast gewonnen"],["er/sie/es","hat gewonnen"],["wir","haben gewonnen"],["ihr","habt gewonnen"],["sie/Sie","haben gewonnen"]],
+        sents:[
+          {de:'Das Team gewinnt <span class="aw">das Spiel</span>.',dep:'Das Team gewinnt das Spiel.',en:'The team wins the game.',ar:'الفريق يفوز باللعبة.'},
+          {de:'Ich habe <span class="aw">einen Preis</span> gewonnen.',dep:'Ich habe einen Preis gewonnen.',en:'I won a prize.',ar:'فزت بجائزة.'},
+          {de:'Sie gewann <span class="aw">die Wahl</span> mit großem Abstand.',dep:'Sie gewann die Wahl mit großem Abstand.',en:'She won the election by a wide margin.',ar:'فازت في الانتخابات بفارق كبير.'},
+          {de:'Wer gewinnt <span class="aw">das Turnier</span>?',dep:'Wer gewinnt das Turnier?',en:'Who will win the tournament?',ar:'من سيفوز بالبطولة؟'}
+        ]
+      },
+
+      {
+        n: 62, v:"verlieren", m:"يخسر / يضيع",
+        pres:[["ich","verliere"],["du","verlierst"],["er/sie/es","verliert"],["wir","verlieren"],["ihr","verliert"],["sie/Sie","verlieren"]],
+        praet:[["ich","verlor"],["du","verlorst"],["er/sie/es","verlor"],["wir","verloren"],["ihr","verlort"],["sie/Sie","verloren"]],
+        perf:[["ich","habe verloren"],["du","hast verloren"],["er/sie/es","hat verloren"],["wir","haben verloren"],["ihr","habt verloren"],["sie/Sie","haben verloren"]],
+        sents:[
+          {de:'Er verliert <span class="aw">seinen Schlüssel</span> oft.',dep:'Er verliert seinen Schlüssel oft.',en:'He often loses his key.',ar:'هو كثيرًا ما يضيع مفتاحه.'},
+          {de:'Wir verloren <span class="aw">das Match</span> leider.',dep:'Wir verloren das Match leider.',en:'Unfortunately we lost the match.',ar:'للأسف خسرنا المباراة.'},
+          {de:'Hast du <span class="aw">deinen Geldbeutel</span> verloren?',dep:'Hast du deinen Geldbeutel verloren?',en:'Did you lose your wallet?',ar:'هل ضيّعت محفظتك؟'},
+          {de:'Sie verliert <span class="aw">die Kontrolle</span> nicht.',dep:'Sie verliert die Kontrolle nicht.',en:'She does not lose control.',ar:'هي لا تفقد السيطرة.'}
+        ]
+      },
+
+      {
+        n: 63, v:"beschreiben", m:"يصف",
+        pres:[["ich","beschreibe"],["du","beschreibst"],["er/sie/es","beschreibt"],["wir","beschreiben"],["ihr","beschreibt"],["sie/Sie","beschreiben"]],
+        praet:[["ich","beschrieb"],["du","beschriebst"],["er/sie/es","beschrieb"],["wir","beschrieben"],["ihr","beschriebt"],["sie/Sie","beschrieben"]],
+        perf:[["ich","habe beschrieben"],["du","hast beschrieben"],["er/sie/es","hat beschrieben"],["wir","haben beschrieben"],["ihr","habt beschrieben"],["sie/Sie","haben beschrieben"]],
+        sents:[
+          {de:'Beschreibe <span class="aw">das Bild</span> mit deinen Worten.',dep:'Beschreibe das Bild mit deinen Worten.',en:'Describe the picture in your own words.',ar:'صف الصورة بكلماتك الخاصة.'},
+          {de:'Er beschreibt <span class="aw">die Person</span> genau.',dep:'Er beschreibt die Person genau.',en:'He describes the person precisely.',ar:'هو يصف الشخص بدقة.'},
+          {de:'Ich beschrieb <span class="aw">meinen Traum</span> dem Arzt.',dep:'Ich beschrieb meinen Traum dem Arzt.',en:'I described my dream to the doctor.',ar:'وصفت حلمي للطبيب.'},
+          {de:'Kannst du <span class="aw">den Weg</span> beschreiben?',dep:'Kannst du den Weg beschreiben?',en:'Can you describe the way?',ar:'هل يمكنك وصف الطريق؟'}
+        ]
+      },
+
+      {
+        n: 64, v:"vorbereiten", m:"يُعدّ / يُحضّر",
+        pres:[["ich","bereite vor"],["du","bereitest vor"],["er/sie/es","bereitet vor"],["wir","bereiten vor"],["ihr","bereitet vor"],["sie/Sie","bereiten vor"]],
+        praet:[["ich","bereitete vor"],["du","bereitetest vor"],["er/sie/es","bereitete vor"],["wir","bereiteten vor"],["ihr","bereitet vor"],["sie/Sie","bereiteten vor"]],
+        perf:[["ich","habe vorbereitet"],["du","hast vorbereitet"],["er/sie/es","hat vorbereitet"],["wir","haben vorbereitet"],["ihr","habt vorbereitet"],["sie/Sie","haben vorbereitet"]],
+        sents:[
+          {de:'Ich bereite <span class="aw">das Essen</span> für die Gäste vor.',dep:'Ich bereite das Essen für die Gäste vor.',en:'I prepare the food for the guests.',ar:'أنا أُعدّ الطعام للضيوف.'},
+          {de:'Die Lehrerin bereitet <span class="aw">die Prüfung</span> sorgfältig vor.',dep:'Die Lehrerin bereitet die Prüfung sorgfältig vor.',en:'The teacher carefully prepares the exam.',ar:'المعلمة تُعدّ الامتحان بعناية.'},
+          {de:'Wir bereiteten <span class="aw">die Präsentation</span> vor.',dep:'Wir bereiteten die Präsentation vor.',en:'We prepared the presentation.',ar:'حضّرنا العرض التقديمي.'},
+          {de:'Hast du <span class="aw">den Unterricht</span> vorbereitet?',dep:'Hast du den Unterricht vorbereitet?',en:'Did you prepare the lesson?',ar:'هل حضّرت الدرس؟'}
+        ]
+      },
+
+      {
+        n: 65, v:"ändern", m:"يُغيّر / يعدّل",
+        pres:[["ich","ändere"],["du","änderst"],["er/sie/es","ändert"],["wir","ändern"],["ihr","ändert"],["sie/Sie","ändern"]],
+        praet:[["ich","änderte"],["du","ändertest"],["er/sie/es","änderte"],["wir","änderten"],["ihr","ändertet"],["sie/Sie","änderten"]],
+        perf:[["ich","habe geändert"],["du","hast geändert"],["er/sie/es","hat geändert"],["wir","haben geändert"],["ihr","habt geändert"],["sie/Sie","haben geändert"]],
+        sents:[
+          {de:'Ich ändere <span class="aw">meinen Plan</span>.',dep:'Ich ändere meinen Plan.',en:'I am changing my plan.',ar:'أنا أُغيّر خطتي.'},
+          {de:'Er änderte <span class="aw">seine Meinung</span>.',dep:'Er änderte seine Meinung.',en:'He changed his opinion.',ar:'غيّر رأيه.'},
+          {de:'Bitte ändere <span class="aw">das Passwort</span>!',dep:'Bitte ändere das Passwort!',en:'Please change the password!',ar:'غيّر كلمة المرور من فضلك!'},
+          {de:'Wir haben <span class="aw">die Regeln</span> geändert.',dep:'Wir haben die Regeln geändert.',en:'We have changed the rules.',ar:'لقد غيّرنا القواعد.'}
+        ]
+      },
+
+      {
+        n: 66, v:"lösen", m:"يحل / يفك",
+        pres:[["ich","löse"],["du","löst"],["er/sie/es","löst"],["wir","lösen"],["ihr","löst"],["sie/Sie","lösen"]],
+        praet:[["ich","löste"],["du","löstest"],["er/sie/es","löste"],["wir","lösten"],["ihr","löstet"],["sie/Sie","lösten"]],
+        perf:[["ich","habe gelöst"],["du","hast gelöst"],["er/sie/es","hat gelöst"],["wir","haben gelöst"],["ihr","habt gelöst"],["sie/Sie","haben gelöst"]],
+        sents:[
+          {de:'Er löst <span class="aw">das Rätsel</span> schnell.',dep:'Er löst das Rätsel schnell.',en:'He solves the puzzle quickly.',ar:'هو يحل الألغاز بسرعة.'},
+          {de:'Wir müssen <span class="aw">das Problem</span> lösen.',dep:'Wir müssen das Problem lösen.',en:'We need to solve the problem.',ar:'نحتاج إلى حل المشكلة.'},
+          {de:'Ich habe <span class="aw">alle Aufgaben</span> gelöst.',dep:'Ich habe alle Aufgaben gelöst.',en:'I have solved all the tasks.',ar:'لقد حللت جميع المهام.'},
+          {de:'Kannst du <span class="aw">diese Gleichung</span> lösen?',dep:'Kannst du diese Gleichung lösen?',en:'Can you solve this equation?',ar:'هل يمكنك حل هذه المعادلة؟'}
+        ]
+      },
+
+      {
+        n: 67, v:"drucken", m:"يطبع",
+        pres:[["ich","drucke"],["du","druckst"],["er/sie/es","druckt"],["wir","drucken"],["ihr","druckt"],["sie/Sie","drucken"]],
+        praet:[["ich","druckte"],["du","drucktest"],["er/sie/es","druckte"],["wir","druckten"],["ihr","drucktet"],["sie/Sie","druckten"]],
+        perf:[["ich","habe gedruckt"],["du","hast gedruckt"],["er/sie/es","hat gedruckt"],["wir","haben gedruckt"],["ihr","habt gedruckt"],["sie/Sie","haben gedruckt"]],
+        sents:[
+          {de:'Ich drucke <span class="aw">das Dokument</span> aus.',dep:'Ich drucke das Dokument aus.',en:'I am printing the document.',ar:'أنا أطبع المستند.'},
+          {de:'Er druckte <span class="aw">die Fotos</span> in Farbe.',dep:'Er druckte die Fotos in Farbe.',en:'He printed the photos in colour.',ar:'طبع الصور بالألوان.'},
+          {de:'Kannst du <span class="aw">das Formular</span> drucken?',dep:'Kannst du das Formular drucken?',en:'Can you print the form?',ar:'هل يمكنك طباعة النموذج؟'},
+          {de:'Wir druckten <span class="aw">100 Einladungen</span>.',dep:'Wir druckten 100 Einladungen.',en:'We printed 100 invitations.',ar:'طبعنا 100 دعوة.'}
+        ]
+      },
+
+      {
+        n: 68, v:"zählen", m:"يعدّ / يحسب",
+        pres:[["ich","zähle"],["du","zählst"],["er/sie/es","zählt"],["wir","zählen"],["ihr","zählt"],["sie/Sie","zählen"]],
+        praet:[["ich","zählte"],["du","zähltest"],["er/sie/es","zählte"],["wir","zählten"],["ihr","zähltet"],["sie/Sie","zählten"]],
+        perf:[["ich","habe gezählt"],["du","hast gezählt"],["er/sie/es","hat gezählt"],["wir","haben gezählt"],["ihr","habt gezählt"],["sie/Sie","haben gezählt"]],
+        sents:[
+          {de:'Das Kind zählt <span class="aw">die Münzen</span>.',dep:'Das Kind zählt die Münzen.',en:'The child counts the coins.',ar:'الطفل يعدّ العملات.'},
+          {de:'Ich zähle <span class="aw">die Teilnehmer</span>.',dep:'Ich zähle die Teilnehmer.',en:'I am counting the participants.',ar:'أنا أعدّ المشاركين.'},
+          {de:'Sie zählte <span class="aw">alle Stimmen</span> zweimal.',dep:'Sie zählte alle Stimmen zweimal.',en:'She counted all the votes twice.',ar:'عدّت جميع الأصوات مرتين.'},
+          {de:'Zählt ihr <span class="aw">die Punkte</span> selbst?',dep:'Zählt ihr die Punkte selbst?',en:'Are you (all) counting the points yourselves?',ar:'هل تعدّون النقاط بأنفسكم؟'}
+        ]
+      },
+
+      {
+        n: 69, v:"merken", m:"يلاحظ / يتذكر",
+        pres:[["ich","merke"],["du","merkst"],["er/sie/es","merkt"],["wir","merken"],["ihr","merkt"],["sie/Sie","merken"]],
+        praet:[["ich","merkte"],["du","merktest"],["er/sie/es","merkte"],["wir","merkten"],["ihr","merktet"],["sie/Sie","merkten"]],
+        perf:[["ich","habe gemerkt"],["du","hast gemerkt"],["er/sie/es","hat gemerkt"],["wir","haben gemerkt"],["ihr","habt gemerkt"],["sie/Sie","haben gemerkt"]],
+        sents:[
+          {de:'Ich merke <span class="aw">den Unterschied</span> sofort.',dep:'Ich merke den Unterschied sofort.',en:'I notice the difference immediately.',ar:'ألاحظ الفرق فورًا.'},
+          {de:'Er hat <span class="aw">den Fehler</span> nicht gemerkt.',dep:'Er hat den Fehler nicht gemerkt.',en:'He did not notice the mistake.',ar:'لم يلاحظ الخطأ.'},
+          {de:'Merkst du <span class="aw">die Veränderung</span>?',dep:'Merkst du die Veränderung?',en:'Do you notice the change?',ar:'هل تلاحظ التغيير؟'},
+          {de:'Wir merkten <span class="aw">das Problem</span> zu spät.',dep:'Wir merkten das Problem zu spät.',en:'We noticed the problem too late.',ar:'لاحظنا المشكلة متأخرًا.'}
+        ]
+      },
+
+      {
+        n: 70, v:"prüfen", m:"يختبر / يتحقق",
+        pres:[["ich","prüfe"],["du","prüfst"],["er/sie/es","prüft"],["wir","prüfen"],["ihr","prüft"],["sie/Sie","prüfen"]],
+        praet:[["ich","prüfte"],["du","prüftest"],["er/sie/es","prüfte"],["wir","prüften"],["ihr","prüftet"],["sie/Sie","prüften"]],
+        perf:[["ich","habe geprüft"],["du","hast geprüft"],["er/sie/es","hat geprüft"],["wir","haben geprüft"],["ihr","habt geprüft"],["sie/Sie","haben geprüft"]],
+        sents:[
+          {de:'Der Arzt prüft <span class="aw">den Puls</span>.',dep:'Der Arzt prüft den Puls.',en:'The doctor checks the pulse.',ar:'الطبيب يفحص النبض.'},
+          {de:'Ich prüfe <span class="aw">meine Antworten</span> noch mal.',dep:'Ich prüfe meine Antworten noch mal.',en:'I am checking my answers again.',ar:'أتحقق من إجاباتي مرة أخرى.'},
+          {de:'Sie prüfte <span class="aw">das Ergebnis</span> sorgfältig.',dep:'Sie prüfte das Ergebnis sorgfältig.',en:'She checked the result carefully.',ar:'تحققت من النتيجة بعناية.'},
+          {de:'Haben Sie <span class="aw">den Vertrag</span> schon geprüft?',dep:'Haben Sie den Vertrag schon geprüft?',en:'Have you checked the contract yet?',ar:'هل تحققت من العقد بالفعل؟'}
+        ]
+      },
+
+      {
+        n: 71, v:"erreichen", m:"يصل إلى / يحقق",
+        pres:[["ich","erreiche"],["du","erreichst"],["er/sie/es","erreicht"],["wir","erreichen"],["ihr","erreicht"],["sie/Sie","erreichen"]],
+        praet:[["ich","erreichte"],["du","erreichtest"],["er/sie/es","erreichte"],["wir","erreichten"],["ihr","erreichtet"],["sie/Sie","erreichten"]],
+        perf:[["ich","habe erreicht"],["du","hast erreicht"],["er/sie/es","hat erreicht"],["wir","haben erreicht"],["ihr","habt erreicht"],["sie/Sie","haben erreicht"]],
+        sents:[
+          {de:'Wir haben <span class="aw">unser Ziel</span> erreicht.',dep:'Wir haben unser Ziel erreicht.',en:'We have reached our goal.',ar:'لقد حققنا هدفنا.'},
+          {de:'Er erreichte <span class="aw">den Gipfel</span> am Mittag.',dep:'Er erreichte den Gipfel am Mittag.',en:'He reached the summit at noon.',ar:'وصل إلى القمة عند الظهر.'},
+          {de:'Ich erreiche <span class="aw">dich</span> nicht telefonisch.',dep:'Ich erreiche dich nicht telefonisch.',en:'I cannot reach you by phone.',ar:'لا أستطيع الاتصال بك.'},
+          {de:'Sie hat <span class="aw">eine hohe Punktzahl</span> erreicht.',dep:'Sie hat eine hohe Punktzahl erreicht.',en:'She has achieved a high score.',ar:'حققت درجة عالية.'}
+        ]
+      },
+
+      {
+        n: 72, v:"verbinden", m:"يربط / يوصّل",
+        pres:[["ich","verbinde"],["du","verbindest"],["er/sie/es","verbindet"],["wir","verbinden"],["ihr","verbindet"],["sie/Sie","verbinden"]],
+        praet:[["ich","verband"],["du","verbandst"],["er/sie/es","verband"],["wir","verbanden"],["ihr","verbandet"],["sie/Sie","verbanden"]],
+        perf:[["ich","habe verbunden"],["du","hast verbunden"],["er/sie/es","hat verbunden"],["wir","haben verbunden"],["ihr","habt verbunden"],["sie/Sie","haben verbunden"]],
+        sents:[
+          {de:'Ich verbinde <span class="aw">die Kabel</span> miteinander.',dep:'Ich verbinde die Kabel miteinander.',en:'I connect the cables together.',ar:'أوصّل الكابلات ببعضها.'},
+          {de:'Die Brücke verbindet <span class="aw">die zwei Stadtteile</span>.',dep:'Die Brücke verbindet die zwei Stadtteile.',en:'The bridge connects the two districts.',ar:'الجسر يربط الحيّين معًا.'},
+          {de:'Er verband <span class="aw">die Wunde</span> mit einem Verband.',dep:'Er verband die Wunde mit einem Verband.',en:'He bandaged the wound.',ar:'ضمّد الجرح بالضمادة.'},
+          {de:'Verbinde <span class="aw">das Gerät</span> mit dem Internet!',dep:'Verbinde das Gerät mit dem Internet!',en:'Connect the device to the internet!',ar:'وصّل الجهاز بالإنترنت!'}
+        ]
+      },
+
+      {
+        n: 73, v:"empfehlen", m:"يوصي بـ / يُنصح بـ",
+        pres:[["ich","empfehle"],["du","empfiehlst"],["er/sie/es","empfiehlt"],["wir","empfehlen"],["ihr","empfehlt"],["sie/Sie","empfehlen"]],
+        praet:[["ich","empfahl"],["du","empfahlst"],["er/sie/es","empfahl"],["wir","empfahlen"],["ihr","empfahlt"],["sie/Sie","empfahlen"]],
+        perf:[["ich","habe empfohlen"],["du","hast empfohlen"],["er/sie/es","hat empfohlen"],["wir","haben empfohlen"],["ihr","habt empfohlen"],["sie/Sie","haben empfohlen"]],
+        sents:[
+          {de:'Ich empfehle <span class="aw">dieses Restaurant</span>.',dep:'Ich empfehle dieses Restaurant.',en:'I recommend this restaurant.',ar:'أوصي بهذا المطعم.'},
+          {de:'Der Arzt empfiehlt <span class="aw">mehr Bewegung</span>.',dep:'Der Arzt empfiehlt mehr Bewegung.',en:'The doctor recommends more exercise.',ar:'الطبيب يوصي بممارسة المزيد من الحركة.'},
+          {de:'Sie hat <span class="aw">das Buch</span> empfohlen.',dep:'Sie hat das Buch empfohlen.',en:'She recommended the book.',ar:'أوصت بالكتاب.'},
+          {de:'<span class="aw">Was</span> empfehlt ihr als Hauptgericht?',dep:'Was empfehlt ihr als Hauptgericht?',en:'What do you (all) recommend as a main course?',ar:'ماذا توصون به كطبق رئيسي؟'}
+        ]
+      },
+
+      {
+        n: 74, v:"verbieten", m:"يحظر / يمنع",
+        pres:[["ich","verbiete"],["du","verbietest"],["er/sie/es","verbietet"],["wir","verbieten"],["ihr","verbietet"],["sie/Sie","verbieten"]],
+        praet:[["ich","verbot"],["du","verbotst"],["er/sie/es","verbot"],["wir","verboten"],["ihr","verbotet"],["sie/Sie","verboten"]],
+        perf:[["ich","habe verboten"],["du","hast verboten"],["er/sie/es","hat verboten"],["wir","haben verboten"],["ihr","habt verboten"],["sie/Sie","haben verboten"]],
+        sents:[
+          {de:'Das Gesetz verbietet <span class="aw">das Rauchen</span> hier.',dep:'Das Gesetz verbietet das Rauchen hier.',en:'The law prohibits smoking here.',ar:'القانون يحظر التدخين هنا.'},
+          {de:'Die Lehrerin verbot <span class="aw">das Handy</span> im Unterricht.',dep:'Die Lehrerin verbot das Handy im Unterricht.',en:'The teacher banned the phone in class.',ar:'المعلمة منعت الهاتف أثناء الدرس.'},
+          {de:'Ich verbiete <span class="aw">das</span> dir!',dep:'Ich verbiete das dir!',en:'I forbid you that!',ar:'أنا أمنعك من ذلك!'},
+          {de:'Der Kapitän verbietet <span class="aw">den Alkohol</span> an Bord.',dep:'Der Kapitän verbietet den Alkohol an Bord.',en:'The captain forbids alcohol on board.',ar:'يحظر القبطان الكحول على متن السفينة.'}
+        ]
+      },
+
+      {
+        n: 75, v:"erlauben", m:"يسمح / يأذن",
+        pres:[["ich","erlaube"],["du","erlaubst"],["er/sie/es","erlaubt"],["wir","erlauben"],["ihr","erlaubt"],["sie/Sie","erlauben"]],
+        praet:[["ich","erlaubte"],["du","erlaubtest"],["er/sie/es","erlaubte"],["wir","erlaubten"],["ihr","erlaubtet"],["sie/Sie","erlaubten"]],
+        perf:[["ich","habe erlaubt"],["du","hast erlaubt"],["er/sie/es","hat erlaubt"],["wir","haben erlaubt"],["ihr","habt erlaubt"],["sie/Sie","haben erlaubt"]],
+        sents:[
+          {de:'Erlauben Sie mir <span class="aw">eine Frage</span>?',dep:'Erlauben Sie mir eine Frage?',en:'May I ask a question?',ar:'هل تسمحون لي بسؤال؟'},
+          {de:'Die Eltern erlauben <span class="aw">das</span> nicht.',dep:'Die Eltern erlauben das nicht.',en:'The parents do not allow that.',ar:'الوالدان لا يسمحان بذلك.'},
+          {de:'Er erlaubte <span class="aw">den Kindern</span> fernzusehen.',dep:'Er erlaubte den Kindern fernzusehen.',en:'He allowed the children to watch TV.',ar:'سمح للأطفال بمشاهدة التلفاز.'},
+          {de:'Ist <span class="aw">das Fotografieren</span> hier erlaubt?',dep:'Ist das Fotografieren hier erlaubt?',en:'Is photography allowed here?',ar:'هل التصوير مسموح به هنا؟'}
+        ]
+      },
+
+      {
+        n: 76, v:"vermissen", m:"يشتاق إلى / يفتقد",
+        pres:[["ich","vermisse"],["du","vermisst"],["er/sie/es","vermisst"],["wir","vermissen"],["ihr","vermisst"],["sie/Sie","vermissen"]],
+        praet:[["ich","vermisste"],["du","vermisstest"],["er/sie/es","vermisste"],["wir","vermissten"],["ihr","vermisstet"],["sie/Sie","vermissten"]],
+        perf:[["ich","habe vermisst"],["du","hast vermisst"],["er/sie/es","hat vermisst"],["wir","haben vermisst"],["ihr","habt vermisst"],["sie/Sie","haben vermisst"]],
+        sents:[
+          {de:'Ich vermisse <span class="aw">meine Familie</span> sehr.',dep:'Ich vermisse meine Familie sehr.',en:'I miss my family a lot.',ar:'أنا أشتاق إلى عائلتي كثيرًا.'},
+          {de:'Er vermisst <span class="aw">seinen Hund</span> seit dem Urlaub.',dep:'Er vermisst seinen Hund seit dem Urlaub.',en:'He has missed his dog since the holiday.',ar:'هو يفتقد كلبه منذ العطلة.'},
+          {de:'Wir vermissen <span class="aw">dich</span> im Büro.',dep:'Wir vermissen dich im Büro.',en:'We miss you in the office.',ar:'نفتقدك في المكتب.'},
+          {de:'Vermisst du <span class="aw">deine alte Schule</span>?',dep:'Vermisst du deine alte Schule?',en:'Do you miss your old school?',ar:'هل تشتاق إلى مدرستك القديمة؟'}
+        ]
+      },
+
+      {
+        n: 77, v:"bedeuten", m:"يعني / يدل على",
+        pres:[["ich","bedeute"],["du","bedeutest"],["er/sie/es","bedeutet"],["wir","bedeuten"],["ihr","bedeutet"],["sie/Sie","bedeuten"]],
+        praet:[["ich","bedeutete"],["du","bedeutetest"],["er/sie/es","bedeutete"],["wir","bedeuteten"],["ihr","bedeutetet"],["sie/Sie","bedeuteten"]],
+        perf:[["ich","habe bedeutet"],["du","hast bedeutet"],["er/sie/es","hat bedeutet"],["wir","haben bedeutet"],["ihr","habt bedeutet"],["sie/Sie","haben bedeutet"]],
+        sents:[
+          {de:'<span class="aw">Was</span> bedeutet dieses Wort?',dep:'Was bedeutet dieses Wort?',en:'What does this word mean?',ar:'ماذا تعني هذه الكلمة؟'},
+          {de:'Das bedeutet <span class="aw">viel</span> für mich.',dep:'Das bedeutet viel für mich.',en:'That means a lot to me.',ar:'هذا يعني الكثير بالنسبة لي.'},
+          {de:'Das rote Licht bedeutet <span class="aw">Stopp</span>.',dep:'Das rote Licht bedeutet Stopp.',en:'The red light means stop.',ar:'الضوء الأحمر يعني التوقف.'},
+          {de:'Es bedeutete <span class="aw">einen großen Fortschritt</span>.',dep:'Es bedeutete einen großen Fortschritt.',en:'It represented a major advance.',ar:'كان يمثّل تقدمًا كبيرًا.'}
+        ]
+      },
+
+      {
+        n: 78, v:"erinnern", m:"يتذكر / يُذكّر بـ",
+        pres:[["ich","erinnere"],["du","erinnerst"],["er/sie/es","erinnert"],["wir","erinnern"],["ihr","erinnert"],["sie/Sie","erinnern"]],
+        praet:[["ich","erinnerte"],["du","erinnertest"],["er/sie/es","erinnerte"],["wir","erinnerten"],["ihr","erinnert"],["sie/Sie","erinnerten"]],
+        perf:[["ich","habe erinnert"],["du","hast erinnert"],["er/sie/es","hat erinnert"],["wir","haben erinnert"],["ihr","habt erinnert"],["sie/Sie","haben erinnert"]],
+        sents:[
+          {de:'Ich erinnere <span class="aw">dich</span> an den Termin.',dep:'Ich erinnere dich an den Termin.',en:'I remind you of the appointment.',ar:'أُذكّرك بالموعد.'},
+          {de:'Er erinnert <span class="aw">mich</span> an meinen Bruder.',dep:'Er erinnert mich an meinen Bruder.',en:'He reminds me of my brother.',ar:'هو يُذكّرني بأخي.'},
+          {de:'Wir erinnern <span class="aw">uns</span> an den schönen Urlaub.',dep:'Wir erinnern uns an den schönen Urlaub.',en:'We remember the wonderful holiday.',ar:'نتذكر العطلة الجميلة.'},
+          {de:'Erinnere <span class="aw">mich</span> bitte daran!',dep:'Erinnere mich bitte daran!',en:'Please remind me of it!',ar:'ذكّرني بذلك من فضلك!'}
+        ]
+      },
+
+      {
+        n: 79, v:"vermeiden", m:"يتجنب / يتحاشى",
+        pres:[["ich","vermeide"],["du","vermeidest"],["er/sie/es","vermeidet"],["wir","vermeiden"],["ihr","vermeidet"],["sie/Sie","vermeiden"]],
+        praet:[["ich","vermied"],["du","vermiedst"],["er/sie/es","vermied"],["wir","vermieden"],["ihr","vermiedet"],["sie/Sie","vermieden"]],
+        perf:[["ich","habe vermieden"],["du","hast vermieden"],["er/sie/es","hat vermieden"],["wir","haben vermieden"],["ihr","habt vermieden"],["sie/Sie","haben vermieden"]],
+        sents:[
+          {de:'Ich vermeide <span class="aw">Fehler</span> beim Schreiben.',dep:'Ich vermeide Fehler beim Schreiben.',en:'I avoid mistakes when writing.',ar:'أتجنب الأخطاء أثناء الكتابة.'},
+          {de:'Er vermied <span class="aw">das Thema</span> absichtlich.',dep:'Er vermied das Thema absichtlich.',en:'He deliberately avoided the topic.',ar:'تجنّب الموضوع عن قصد.'},
+          {de:'Bitte vermeide <span class="aw">Lärm</span> nach 22 Uhr!',dep:'Bitte vermeide Lärm nach 22 Uhr!',en:'Please avoid noise after 10 pm!',ar:'تجنّب الضوضاء بعد الساعة العاشرة ليلًا!'},
+          {de:'Wir vermeiden <span class="aw">unnötigen Stress</span>.',dep:'Wir vermeiden unnötigen Stress.',en:'We avoid unnecessary stress.',ar:'نتجنب الضغط غير الضروري.'}
+        ]
+      },
+
+      {
+        n: 80, v:"vorstellen", m:"يُقدّم / يتخيّل",
+        pres:[["ich","stelle vor"],["du","stellst vor"],["er/sie/es","stellt vor"],["wir","stellen vor"],["ihr","stellt vor"],["sie/Sie","stellen vor"]],
+        praet:[["ich","stellte vor"],["du","stelltest vor"],["er/sie/es","stellte vor"],["wir","stellten vor"],["ihr","stelltet vor"],["sie/Sie","stellten vor"]],
+        perf:[["ich","habe vorgestellt"],["du","hast vorgestellt"],["er/sie/es","hat vorgestellt"],["wir","haben vorgestellt"],["ihr","habt vorgestellt"],["sie/Sie","haben vorgestellt"]],
+        sents:[
+          {de:'Ich stelle <span class="aw">mich</span> kurz vor.',dep:'Ich stelle mich kurz vor.',en:'I will briefly introduce myself.',ar:'سأُقدّم نفسي باختصار.'},
+          {de:'Er stellt <span class="aw">seinen neuen Kollegen</span> vor.',dep:'Er stellt seinen neuen Kollegen vor.',en:'He introduces his new colleague.',ar:'هو يُقدّم زميله الجديد.'},
+          {de:'Ich kann mir <span class="aw">das</span> gut vorstellen.',dep:'Ich kann mir das gut vorstellen.',en:'I can well imagine that.',ar:'يمكنني تخيّل ذلك جيدًا.'},
+          {de:'Wir stellen <span class="aw">das Projekt</span> vor.',dep:'Wir stellen das Projekt vor.',en:'We are presenting the project.',ar:'نحن نُقدّم المشروع.'}
+        ]
+      }
+    ];
+
+    // ── UTILITIES ──
+    function copyViaExecCommand(text){const ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;pointer-events:none;';document.body.appendChild(ta);if(navigator.userAgent.match(/ipad|iphone/i)){const range=document.createRange();range.selectNodeContents(ta);const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);ta.setSelectionRange(0,999999);}else{ta.select();}let ok=false;try{ok=document.execCommand('copy');}catch(e){ok=false;}document.body.removeChild(ta);return ok;}
+    function showCopiedFeedback(btn){btn.classList.add('copied');btn.innerHTML=svgCheck()+' Kopiert!';showToast();setTimeout(()=>{btn.classList.remove('copied');btn.innerHTML=svgCopy()+' Kopieren';},2200);}
+    function handleCopy(btn,text){if(!text)return;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>showCopiedFeedback(btn),()=>{if(copyViaExecCommand(text))showCopiedFeedback(btn);});}else{if(copyViaExecCommand(text))showCopiedFeedback(btn);}}
+    function svgCopy(){return`<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>`;}
+    function svgCheck(){return`<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`;}
+    function svgSpeak(){return`<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>`;}
+    function svgStop(){return`<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>`;}
+    function svgDocIcon(){return`<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`;}
+    function showToast(){const t=document.getElementById('toast');if(t.classList.contains('show'))return;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);}
+
+    // ── TTS ──
+    let currentUtter=null;
+    function speakText(text,btn){if(!window.speechSynthesis){alert('Ihr Browser unterstützt keine Sprachausgabe.');return;}if(currentUtter){window.speechSynthesis.cancel();}if(btn.classList.contains('speaking')){btn.classList.remove('speaking');btn.innerHTML=svgSpeak()+' Hören';currentUtter=null;return;}document.querySelectorAll('.btn-speak.speaking').forEach(b=>{b.classList.remove('speaking');b.innerHTML=svgSpeak()+' Hören';});const utter=new SpeechSynthesisUtterance(text);utter.lang='de-DE';utter.rate=0.88;utter.pitch=1;currentUtter=utter;btn.classList.add('speaking');btn.innerHTML=svgStop()+' Stop';utter.onend=()=>{btn.classList.remove('speaking');btn.innerHTML=svgSpeak()+' Hören';currentUtter=null;};utter.onerror=()=>{btn.classList.remove('speaking');btn.innerHTML=svgSpeak()+' Hören';currentUtter=null;};window.speechSynthesis.speak(utter);}
+
+    // ── CARD BUILDER ──
+    function buildCard(v,idx){
+      function perfForm(raw){const p=raw.split(' ');if(p.length>=2)return`<span class="aux">${p[0]}</span><span class="pp"> ${p.slice(1).join(' ')}</span>`;return raw;}
+      let rows='';
+      for(let i=0;i<6;i++){const isER=(i===2);const pron=v.pres[i][0];rows+=`<tr class="${isER?'row-er':''}"><td class="td-pron">${pron}</td><td class="td-pres">${v.pres[i][1]}</td><td class="td-praet">${v.praet[i][1]}</td><td class="td-perf">${perfForm(v.perf[i][1])}</td></tr>`;}
+      const sentHtml=v.sents.map((s,si)=>`
+        <div class="example-item">
+          <span class="ex-num">${si+1}</span>
+          <div class="ex-de">${s.de}</div>
+          <div class="ex-en">🇬🇧 ${s.en}</div>
+          <div class="ex-ar">🇸🇦 ${s.ar}</div>
+          <div class="ex-actions">
+            <button class="btn-speak" data-speak="${s.dep.replace(/"/g,'&quot;')}" aria-label="Satz vorlesen" type="button">${svgSpeak()} Hören</button>
+            <button class="btn-copy" data-copy="${s.dep.replace(/"/g,'&quot;')}" aria-label="Satz kopieren" type="button">${svgCopy()} Kopieren</button>
+          </div>
+        </div>`).join('');
+      return`<div class="card" id="c${v.n}" style="animation-delay:${(idx%24)*0.04}s" role="listitem" aria-label="Verb: ${v.v}">
+        <div class="card-stripe" aria-hidden="true"></div>
+        <div class="card-hdr">
+          <div class="card-meta">
+            <div class="card-title-row">
+              <span class="akk-badge">AKKUSATIV</span>
+              <span class="card-verb">${v.v}</span>
+            </div>
+            <div class="card-meaning" lang="ar">${v.m}</div>
+          </div>
+          <span class="card-num" aria-label="Verb Nummer ${v.n}">#${String(v.n).padStart(2,'0')}</span>
+        </div>
+        <div class="conj-wrap">
+          <table class="conj-table" aria-label="Konjugation von ${v.v}">
+            <thead><tr>
+              <th class="col-pron" scope="col"></th>
+              <th class="col-pres" scope="col">Präsens</th>
+              <th class="col-praet" scope="col">Präteritum</th>
+              <th class="col-perf" scope="col">Perfekt<span class="perf-helper">Hilfsverb + Partizip II</span></th>
+            </tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+        <div class="examples-section">
+          <div class="examples-label">${svgDocIcon()} 📝 Beispielsätze (A1–A2)</div>
+          ${sentHtml}
+        </div>
+      </div>`;
+    }
+
+    // ── STATE & RENDER ──
+    let currentData=VERBS;
+    function filter(){const q=document.getElementById('search').value.toLowerCase().trim();currentData=q?VERBS.filter(v=>v.v.toLowerCase().includes(q)||v.m.toLowerCase().includes(q)):VERBS;render();}
+    function render(){const grid=document.getElementById('grid');const n=currentData.length;['count','count2','shown-count'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=n;});if(n===0){grid.innerHTML=`<div class="empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><line x1="8" y1="11" x2="14" y2="11"/></svg><p>لا يوجد فعل مطابق. جرب مصطلحًا آخر.</p></div>`;return;}grid.innerHTML=currentData.map((v,i)=>buildCard(v,i)).join('');}
+
+    // ── THEME ──
+    let dark=true;
+    function toggleTheme(){dark=!dark;document.documentElement.setAttribute('data-theme',dark?'dark':'light');const btn=document.getElementById('themeBtn');if(btn)btn.textContent=dark?'☀️':'🌙';try{localStorage.setItem('theme',dark?'dark':'light');}catch(e){}}
+    (function(){let saved;try{saved=localStorage.getItem('theme');}catch(e){}if(saved==='light'||(!saved&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)){dark=false;document.documentElement.setAttribute('data-theme','light');document.addEventListener('DOMContentLoaded',()=>{const btn=document.getElementById('themeBtn');if(btn)btn.textContent='🌙';});}})();
+
+    // ── SCROLL PROGRESS ──
+    window.addEventListener('scroll',()=>{const el=document.getElementById('progress-bar');if(!el)return;const sT=document.documentElement.scrollTop||document.body.scrollTop;const dH=document.documentElement.scrollHeight-document.documentElement.clientHeight;el.style.width=(dH>0?(sT/dH)*100:0)+'%';},{passive:true});
+
+    // ── EVENT DELEGATION ──
+    document.addEventListener('click',function(e){const copyBtn=e.target.closest('.btn-copy');if(copyBtn){e.preventDefault();e.stopPropagation();const text=copyBtn.getAttribute('data-copy');if(text)handleCopy(copyBtn,text);return;}const speakBtn=e.target.closest('.btn-speak');if(speakBtn){e.preventDefault();e.stopPropagation();const text=speakBtn.getAttribute('data-speak');if(text)speakText(text,speakBtn);return;}},true);
+
+    // ── INITIAL RENDER ──
+    render();
+
+    // ══════════════════════════════════════════════
+    //  QUIZ ENGINE
+    // ══════════════════════════════════════════════
+    const QUIZ_TOTAL = 20;
+    let qIdx = 0, qScore = 0, qData = [], qAnswered = false;
+
+    function buildQuizQuestions(){
+      const pool = [];
+      // Q-type 1: Präsens form (er/sie/es)
+      VERBS.forEach(v=>{
+        pool.push({type:'pres_er', v, correct: v.pres[2][1], pron:'er/sie/es', tense:'Präsens'});
+      });
+      // Q-type 2: Präteritum form (ich)
+      VERBS.forEach(v=>{
+        pool.push({type:'praet_ich', v, correct: v.praet[0][1], pron:'ich', tense:'Präteritum'});
+      });
+      // Q-type 3: Perfekt form (wir)
+      VERBS.forEach(v=>{
+        pool.push({type:'perf_wir', v, correct: v.perf[4][1], pron:'wir', tense:'Perfekt'});
+      });
+      // Q-type 4: Arabic meaning
+      VERBS.forEach(v=>{
+        pool.push({type:'meaning', v, correct: v.m, pron:null, tense:null});
+      });
+      // Shuffle & pick 20
+      for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
+      return pool.slice(0,QUIZ_TOTAL).map(q=>{
+        // build 4 choices
+        if(q.type==='meaning'){
+          const others=VERBS.filter(x=>x.n!==q.v.n).sort(()=>Math.random()-.5).slice(0,3).map(x=>x.m);
+          const opts=shuffle([q.correct,...others]);
+          return{...q,opts};
+        } else {
+          const key=q.type==='pres_er'?2:q.type==='praet_ich'?0:4;
+          const arr=q.type==='pres_er'?'pres':q.type==='praet_ich'?'praet':'perf';
+          const others=VERBS.filter(x=>x.n!==q.v.n).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[arr][key][1]);
+          const opts=shuffle([q.correct,...others]);
+          return{...q,opts};
+        }
+      });
+    }
+
+    function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+
+    function startQuiz(){
+      qIdx=0; qScore=0; qAnswered=false;
+      qData=buildQuizQuestions();
+      renderQ();
+    }
+
+    function renderQ(){
+      const inner=document.getElementById('quiz-inner');
+      const prog=document.getElementById('quiz-prog');
+      prog.style.width=((qIdx/QUIZ_TOTAL)*100)+'%';
+
+      if(qIdx>=QUIZ_TOTAL){
+        // Result
+        const pct=Math.round((qScore/QUIZ_TOTAL)*100);
+        const emoji=pct>=80?'🏆':pct>=60?'👍':pct>=40?'📚':'💪';
+        const msg=pct>=80?'ممتاز! إتقان رائع!':pct>=60?'أحسنت! استمر في التعلم.':pct>=40?'جيد، لكن تحتاج مزيدًا من المراجعة.':'لا تستسلم، كرّر المفردات وحاول ثانيةً!';
+        inner.innerHTML=`
+          <div class="quiz-result show">
+            <div class="quiz-result-emoji">${emoji}</div>
+            <div class="quiz-result-title">النتيجة النهائية</div>
+            <div class="quiz-result-score">${qScore} / ${QUIZ_TOTAL}</div>
+            <div class="quiz-result-sub">${msg}<br><span style="color:var(--accent);font-family:var(--fmono);font-size:.85rem">${pct}٪ صحيح</span></div>
+            <button class="quiz-restart" onclick="startQuiz()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+              إعادة الاختبار
+            </button>
+          </div>`;
+        prog.style.width='100%';
+        return;
+      }
+
+      const q=qData[qIdx];
+      let questionHtml='';
+      if(q.type==='meaning'){
+        questionHtml=`<span class="q-tense">معنى الفعل</span>ما معنى الفعل <span class="q-verb">${q.v.v}</span> بالعربية؟`;
+      } else {
+        questionHtml=`<span class="q-tense">${q.tense}</span>كيف نُصرّف الفعل <span class="q-verb">${q.v.v}</span> مع <span class="q-pron">${q.pron}</span>؟`;
+      }
+
+      const optsHtml=q.opts.map((opt,i)=>`<button class="quiz-opt" data-opt="${i}" onclick="answerQ(this,'${opt.replace(/'/g,"\\'")}','${q.correct.replace(/'/g,"\\'")}',${JSON.stringify(q).replace(/</g,'&lt;').length})">${opt}</button>`).join('');
+
+      const arMeaning = q.v.m;
+      inner.innerHTML=`
+        <div class="quiz-meta">
+          <div class="quiz-counter">السؤال <strong>${qIdx+1}</strong> / ${QUIZ_TOTAL}</div>
+          <div class="quiz-score-display">النقاط: <span class="score-num">${qScore}</span></div>
+        </div>
+        <div class="quiz-q">${questionHtml}</div>
+        <div class="quiz-opts" id="quiz-opts">${optsHtml}</div>
+        <div class="quiz-feedback" id="quiz-fb"></div>
+        <button class="quiz-next-btn" id="quiz-next" onclick="nextQ()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg>
+          ${qIdx+1<QUIZ_TOTAL?'السؤال التالي':'عرض النتيجة'}
+        </button>`;
+
+      // attach real answer handler after render
+      document.querySelectorAll('.quiz-opt').forEach(btn=>{
+        btn.addEventListener('click',function(){
+          if(qAnswered)return;
+          qAnswered=true;
+          const chosen=this.textContent.trim();
+          const correct=q.correct;
+          const isRight=(chosen===correct);
+          if(isRight)qScore++;
+          document.querySelectorAll('.quiz-opt').forEach(b=>{
+            b.disabled=true;
+            if(b.textContent.trim()===correct)b.classList.add('correct');
+            else if(b===this&&!isRight)b.classList.add('wrong');
+          });
+          const fb=document.getElementById('quiz-fb');
+          fb.classList.add('show');
+          if(isRight){
+            fb.innerHTML=`<div class="fb-correct">✅ إجابة صحيحة!</div>الفعل <strong>${q.v.v}</strong> يعني: <em>${arMeaning}</em>`;
+          } else {
+            fb.innerHTML=`<div class="fb-wrong">❌ إجابة خاطئة</div>الجواب الصحيح هو: <strong>${correct}</strong> — الفعل يعني: <em>${arMeaning}</em>`;
+          }
+          document.getElementById('quiz-next').classList.add('show');
+        });
+      });
+      qAnswered=false;
+    }
+
+    function nextQ(){qIdx++;renderQ();}
+
+  </script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-akkusativ-verben-print" data-category="grammatik" data-title="Akkusativ Verben — نسخة كاملة للطباعة" data-root="../../" defer></script>
+</body>
+</html>

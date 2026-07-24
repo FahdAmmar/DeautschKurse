@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الألمانية A2 — الدرس التاسع: العمل والمهن</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Markazi+Text:wght@400;500;600;700&family=Cairo+Play:wght@300;400;500;600;700;900&family:Courier+Prime:ital,wght@0,400;0,700;1,400&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════
+   DESIGN: Brutalist Editorial Magazine
+   Black ink on paper — like a 1970s German job
+   listings newspaper brought to the digital age.
+   Strong typographic hierarchy, raw grid structure,
+   newspaper columns, bold rules and dividers.
+   PURE BLACK & WHITE with one vivid accent: 
+   electric #FF3A00 (German flag red-orange).
+   Fonts: Bebas Neue (display) + Cairo Play (Arabic)
+   + Courier Prime (monospace data)
+   Feel: authoritative, energetic, no-nonsense.
+══════════════════════════════════════════════════ */
+:root {
+  --ink:      #0a0800;
+  --ink2:     #2a2620;
+  --ink3:     #5a5650;
+  --paper:    #f5f0e8;
+  --paper2:   #ece6d6;
+  --paper3:   #e0d8c4;
+  --paper4:   #d4cab4;
+  --accent:   #ff3a00;
+  --accent2:  #ff6030;
+  --accent-d: rgba(255,58,0,0.1);
+  --gold:     #c8900a;
+  --gold-d:   rgba(200,144,10,0.1);
+  --card:     #ffffff;
+  --border:   rgba(10,8,0,0.15);
+  --border2:  rgba(10,8,0,0.35);
+  --r:  0px;   /* brutalist — no border radius */
+  --rs: 0px;
+}
+
+[data-theme="dark"] {
+  --ink:      #f5f0e8;
+  --ink2:     #c8c0b0;
+  --ink3:     #807060;
+  --paper:    #0e0c08;
+  --paper2:   #181410;
+  --paper3:   #222018;
+  --paper4:   #2e2a20;
+  --card:     #141208;
+  --border:   rgba(245,240,232,0.12);
+  --border2:  rgba(245,240,232,0.28);
+  --gold:     #e0a820;
+  --gold-d:   rgba(224,168,32,0.1);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: 'Cairo Play', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  direction: rtl;
+  overflow-x: hidden;
+  transition: background .3s, color .3s;
+}
+
+/* Halftone dot grid — newspaper print texture */
+body::before {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity:.35;
+}
+
+/* ── Progress bar ── */
+#spb {
+  position:fixed; top:0; left:0; right:0; height:4px;
+  background: var(--accent);
+  transform-origin:right; transform:scaleX(0);
+  z-index:1001;
+}
+
+/* ══ NAV ══ */
+nav {
+  position:sticky; top:0; z-index:100;
+  background: var(--ink);
+  border-bottom: 4px solid var(--accent);
+  padding: 0 2rem; height:60px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+
+.nav-brand {
+  display:flex; align-items:center; gap:.75rem;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.3rem; letter-spacing:.08em;
+  color: var(--paper);
+}
+.nav-chip {
+  background: var(--accent);
+  color: white; font-family:'Courier Prime',monospace;
+  font-size:.65rem; font-weight:700;
+  padding:3px 8px; letter-spacing:.08em;
+}
+.nav-links { display:flex; gap:1.5rem; list-style:none; }
+.nav-links a {
+  font-size:.78rem; color:var(--paper2);
+  text-decoration:none; font-weight:700;
+  letter-spacing:.04em; text-transform:uppercase;
+  transition:color .2s;
+  font-family:'Cairo Play',sans-serif;
+}
+.nav-links a:hover { color:var(--accent); }
+.tbtn {
+  width:34px; height:34px;
+  border:2px solid var(--paper3);
+  background:transparent;
+  color:var(--paper); cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.9rem; transition:all .2s;
+}
+.tbtn:hover { background:var(--accent); border-color:var(--accent); }
+
+/* ══ HERO — newspaper front page ══ */
+.hero {
+  position:relative; z-index:1;
+  border-bottom: 4px solid var(--ink);
+  background: var(--paper);
+  overflow:hidden;
+}
+
+.hero-masthead {
+  border-bottom: 2px solid var(--ink);
+  padding: 1.5rem 3rem .8rem;
+  display:flex; align-items:baseline; justify-content:space-between;
+  flex-wrap:wrap; gap:.5rem;
+}
+.paper-name {
+  font-family:'Bebas Neue',sans-serif;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  letter-spacing:.04em; color:var(--ink);
+  line-height:.9;
+}
+.paper-name span { color:var(--accent); }
+.paper-meta {
+  font-family:'Courier Prime',monospace;
+  font-size:.72rem; color:var(--ink3);
+  text-align:left; line-height:1.6;
+}
+
+.hero-body {
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  border-top:2px solid var(--ink);
+}
+
+.hero-lead {
+  padding: 2.5rem 3rem 3rem;
+  border-left: 2px solid var(--ink);
+  [data-theme="dark"] & { border-left-color: var(--border2); }
+}
+
+.hero-kicker {
+  font-family:'Courier Prime',monospace;
+  font-size:.72rem; font-weight:700;
+  color:var(--accent); letter-spacing:.12em;
+  text-transform:uppercase; display:block;
+  margin-bottom:.8rem;
+}
+
+.hero-headline {
+  font-family:'Bebas Neue',sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height:.95; letter-spacing:.02em;
+  margin-bottom:1.2rem; color:var(--ink);
+}
+.hero-headline em {
+  color:var(--accent);
+  font-style:normal;
+}
+
+.hero-deck {
+  font-size:1rem; line-height:1.8;
+  color:var(--ink2); margin-bottom:1.5rem;
+  max-width:480px;
+  border-right:4px solid var(--accent);
+  padding-right:1rem;
+}
+
+.hero-pills {
+  display:flex; gap:.4rem; flex-wrap:wrap;
+}
+.hero-pill {
+  font-family:'Courier Prime',monospace;
+  font-size:.7rem; font-weight:700;
+  padding:4px 10px;
+  border:2px solid var(--ink);
+  background: transparent;
+  color:var(--ink);
+  letter-spacing:.06em; text-transform:uppercase;
+  cursor:default;
+}
+.hero-pill.acc { background:var(--accent); border-color:var(--accent); color:white; }
+
+.hero-sidebar {
+  padding:2rem 2rem 2rem 1.5rem;
+  background:var(--paper2);
+  display:flex; flex-direction:column; gap:1.2rem;
+}
+.hs-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.1rem; letter-spacing:.06em;
+  border-bottom:2px solid var(--ink);
+  padding-bottom:.4rem; color:var(--ink);
+}
+.hs-stat {
+  display:flex; flex-direction:column; gap:.2rem;
+}
+.hs-num {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2.5rem; color:var(--accent); line-height:1;
+}
+.hs-label { font-size:.78rem; color:var(--ink2); font-weight:600; }
+
+/* ══ MAIN ══ */
+main {
+  position:relative; z-index:1;
+  max-width:1000px; margin:0 auto;
+  padding:2rem 2rem 4rem;
+  display:flex; flex-direction:column; gap:3rem;
+}
+
+/* Section header — newspaper section marker */
+.sh {
+  display:flex; align-items:center; gap:0;
+  margin-bottom:1.5rem;
+  border-bottom:3px solid var(--ink);
+  padding-bottom:.6rem;
+}
+.sh-num {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1rem; letter-spacing:.1em;
+  background:var(--accent); color:white;
+  padding:4px 10px; margin-left:.8rem;
+  flex-shrink:0;
+}
+.sh-text h2 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.6rem; letter-spacing:.04em; color:var(--ink);
+}
+.sh-text p { font-size:.82rem; color:var(--ink3); font-weight:500; margin-top:2px; }
+
+/* Card — flat, newspaper-style */
+.card {
+  background:var(--card);
+  border:2px solid var(--ink);
+  padding:1.75rem;
+  animation: fadeUp .5s ease both;
+}
+[data-theme="dark"] .card { background:var(--paper2); }
+.card + .card { margin-top:1rem; }
+
+/* Quiz card — no animation */
+.quiz-card {
+  background:var(--card);
+  border:2px solid var(--ink);
+  padding:1.75rem;
+}
+[data-theme="dark"] .quiz-card { background:var(--paper2); }
+
+/* Tip */
+.tip {
+  display:flex; gap:1rem; align-items:flex-start;
+  padding:1rem 1.2rem; margin:1rem 0;
+  border-right:4px solid;
+  background:var(--paper2);
+}
+[data-theme="dark"] .tip { background:var(--paper3); }
+.tip.acc { border-right-color:var(--accent); }
+.tip.ink { border-right-color:var(--ink);   }
+.tip.gld { border-right-color:var(--gold);  }
+.tpic { font-size:1.2rem; flex-shrink:0; margin-top:2px; }
+.tip h4 {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1rem; letter-spacing:.04em; margin-bottom:4px;
+}
+.tip.acc h4 { color:var(--accent); }
+.tip.ink h4 { color:var(--ink); }
+.tip.gld h4 { color:var(--gold); }
+.tip p { font-size:.84rem; color:var(--ink2); line-height:1.8; }
+
+/* Inline code */
+.de {
+  font-family:'Courier Prime',monospace;
+  background:var(--paper3); border-bottom:2px solid var(--accent);
+  padding:1px 6px;
+  font-size:.88em; color:var(--ink);
+  direction:ltr; display:inline-block;
+}
+
+/* Table */
+.tw { overflow-x:auto; margin-top:.75rem; }
+table { width:100%; border-collapse:collapse; font-size:.9rem; }
+th {
+  background:var(--ink); color:var(--paper);
+  padding:9px 14px; text-align:right; font-weight:700;
+  font-size:.75rem; letter-spacing:.06em;
+  font-family:'Cairo Play',sans-serif; text-transform:uppercase;
+}
+td { padding:9px 14px; border-bottom:1px solid var(--border); }
+tr:last-child td { border-bottom:none; }
+tr:hover td { background:var(--paper2); }
+.tde { font-family:'Courier Prime',monospace; color:var(--ink); font-weight:700; direction:ltr; text-align:left; }
+.tex { color:var(--ink2); font-size:.82rem; direction:ltr; text-align:left; }
+.tacc { font-family:'Courier Prime',monospace; color:var(--accent); font-weight:700; direction:ltr; text-align:left; }
+
+/* ══ PROFESSION CARDS ══ */
+.profession-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(190px,1fr));
+  gap:0; /* brutalist — no gaps, borders create separation */
+}
+.prof-card {
+  border:1px solid var(--border);
+  padding:1.1rem 1.2rem;
+  cursor:pointer;
+  transition:background .18s;
+  position:relative;
+  background:var(--card);
+}
+[data-theme="dark"] .prof-card { background:var(--paper2); }
+.prof-card:hover { background:var(--accent); }
+.prof-card:hover .prof-de,
+.prof-card:hover .prof-ar,
+.prof-card:hover .prof-gen { color:white!important; }
+.prof-card:hover .prof-emoji { transform:scale(1.2); }
+.prof-emoji { font-size:1.6rem; display:block; margin-bottom:.4rem; transition:transform .2s; }
+.prof-de { font-family:'Courier Prime',monospace; font-size:.9rem; font-weight:700; color:var(--ink); display:block; direction:ltr; margin-bottom:2px; }
+.prof-ar { font-size:.85rem; color:var(--ink2); display:block; margin-bottom:4px; }
+.prof-gen {
+  font-family:'Courier Prime',monospace; font-size:.7rem;
+  color:var(--ink3); display:block; direction:ltr;
+}
+
+/* ══ CV BUILDER ══ */
+.cv-section {
+  border:2px solid var(--ink);
+  background: var(--paper);
+}
+[data-theme="dark"] .cv-section { background:var(--paper2); }
+.cv-header {
+  background:var(--ink); color:var(--paper);
+  padding:.8rem 1.5rem;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.2rem; letter-spacing:.08em;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.cv-header span { font-family:'Courier Prime',monospace; font-size:.75rem; color:var(--paper3); letter-spacing:.1em; }
+.cv-body { padding:1.5rem; }
+
+.cv-field { margin-bottom:1.2rem; }
+.cv-label {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:.85rem; letter-spacing:.08em;
+  color:var(--ink3); display:block; margin-bottom:.3rem;
+  border-bottom:1px dashed var(--border); padding-bottom:.2rem;
+}
+.cv-de {
+  font-family:'Courier Prime',monospace;
+  font-size:.9rem; color:var(--ink); direction:ltr;
+  background:var(--paper2); padding:.5rem .8rem;
+  border-right:3px solid var(--accent); display:block;
+  cursor:pointer; transition:background .2s;
+}
+[data-theme="dark"] .cv-de { background:var(--paper3); }
+.cv-de:hover { background:var(--accent-d); }
+.cv-ar { font-size:.78rem; color:var(--ink3); margin-top:3px; display:block; }
+
+/* ══ JOB INTERVIEW GAME ══ */
+.interview-board {
+  border:2px solid var(--ink);
+  overflow:hidden;
+}
+.ib-header {
+  background:var(--ink); padding:1rem 1.5rem;
+  color:var(--paper);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.1rem; letter-spacing:.06em;
+  display:flex; align-items:center; gap:1rem;
+}
+.ib-status {
+  font-family:'Courier Prime',monospace;
+  font-size:.7rem; color:var(--paper3); letter-spacing:.1em;
+}
+.ib-body { padding:1.5rem; background:var(--card); }
+[data-theme="dark"] .ib-body { background:var(--paper2); }
+.ib-question {
+  font-size:.95rem; font-weight:700; color:var(--ink);
+  margin-bottom:1rem; padding:.8rem 1rem;
+  border-right:4px solid var(--accent);
+  background:var(--paper2);
+}
+[data-theme="dark"] .ib-question { background:var(--paper3); }
+.ib-de { font-family:'Courier Prime',monospace; font-size:.85rem; color:var(--accent); direction:ltr; display:block; margin-bottom:3px; }
+.ib-ar { font-size:.82rem; color:var(--ink2); display:block; }
+.ib-options { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; margin-bottom:.8rem; }
+.ib-opt {
+  padding:9px 13px; border:2px solid var(--border2);
+  background:var(--paper);
+  color:var(--ink); cursor:pointer;
+  font-family:'Courier Prime',monospace; font-size:.8rem;
+  transition:all .18s; text-align:center; direction:ltr;
+  width:100%; display:block; outline:none; appearance:none;
+}
+[data-theme="dark"] .ib-opt { background:var(--paper3); }
+.ib-opt:hover { border-color:var(--accent); background:var(--accent-d); color:var(--accent); }
+.ib-opt.ok  { border-color:var(--gold)!important; background:var(--gold-d)!important; color:var(--gold)!important; }
+.ib-opt.bad { border-color:var(--accent)!important; background:var(--accent-d)!important; color:var(--accent)!important; }
+.ib-fb { font-size:.82rem; padding:8px 12px; display:none; border-right:3px solid; font-family:'Cairo Play',sans-serif; }
+.ib-fb.show { display:block; }
+.ib-fb.ok  { border-color:var(--gold);  background:var(--gold-d);  color:var(--gold); }
+.ib-fb.err { border-color:var(--accent); background:var(--accent-d); color:var(--accent); }
+.ib-next {
+  padding:8px 20px; background:var(--ink); color:var(--paper);
+  border:none; font-family:'Bebas Neue',sans-serif;
+  font-size:1rem; letter-spacing:.06em;
+  cursor:pointer; transition:background .2s; display:none; margin-top:.5rem;
+}
+.ib-next:hover { background:var(--accent); }
+
+/* ══ DIALOGUE ══ */
+.conv { display:flex; flex-direction:column; gap:1rem; }
+.msg { display:flex; gap:1rem; align-items:flex-start; }
+.msg.l { flex-direction:row-reverse; }
+.av {
+  width:44px; height:44px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; flex-shrink:0;
+  border:2px solid var(--ink);
+  background:var(--paper2);
+}
+.msg.l .av { background:var(--ink); font-size:1rem; }
+.bw { flex:1; max-width:82%; }
+.msg.r .bw { text-align:right; }
+.bub {
+  display:inline-block; padding:10px 14px;
+  font-size:.9rem; line-height:1.75; max-width:100%;
+  border:2px solid var(--ink);
+}
+.msg.r .bub {
+  background:var(--paper2);
+  border-bottom-left-radius:0;
+}
+[data-theme="dark"] .msg.r .bub { background:var(--paper3); }
+.msg.l .bub {
+  background:var(--ink); color:var(--paper);
+  border-bottom-right-radius:0;
+}
+.dl {
+  font-family:'Courier Prime',monospace;
+  color:var(--accent); font-weight:700;
+  display:block; font-size:.88rem;
+  margin-bottom:3px; direction:ltr;
+}
+.msg.l .dl { color:var(--paper2); }
+.who { font-family:'Courier Prime',monospace; font-size:.68rem; color:var(--ink3); margin-top:4px; display:block; letter-spacing:.04em; }
+.msg.l .who { color:var(--ink3); }
+
+/* ══ QUIZ ══ */
+.qblock {
+  border:1px solid var(--border); padding:1.1rem 1.3rem;
+  margin-bottom:.8rem; background:var(--paper);
+}
+[data-theme="dark"] .qblock { background:var(--paper2); }
+.qlabel {
+  font-family:'Courier Prime',monospace; font-size:.65rem;
+  color:var(--accent); font-weight:700; letter-spacing:.1em;
+  display:block; margin-bottom:.4rem;
+}
+.qtext { font-weight:700; font-size:.93rem; margin-bottom:.8rem; }
+.qde { color:var(--accent); font-family:'Courier Prime',monospace; }
+.opts { display:grid; grid-template-columns:1fr 1fr; gap:.4rem; }
+.opt {
+  padding:9px 12px;
+  border:2px solid var(--border2);
+  background:var(--paper);
+  color:var(--ink); cursor:pointer;
+  font-family:'Cairo Play',sans-serif; font-size:.85rem; font-weight:600;
+  transition:all .18s; text-align:center;
+  width:100%; display:block; outline:none; appearance:none;
+}
+[data-theme="dark"] .opt { background:var(--paper3); }
+.opt:hover { border-color:var(--accent); color:var(--accent); background:var(--accent-d); }
+.opt:disabled { cursor:not-allowed; pointer-events:none; opacity:.6; }
+.opt.correct { border-color:var(--gold)!important; color:var(--gold)!important; background:var(--gold-d)!important; font-weight:700; }
+.opt.wrong   { border-color:var(--accent)!important; color:var(--accent)!important; background:var(--accent-d)!important; }
+.qfb {
+  font-size:.8rem; padding:7px 10px; margin-top:7px; display:none;
+  border-right:3px solid; font-family:'Cairo Play',sans-serif;
+}
+.qfb.show { display:block; }
+.qfb.ok  { border-color:var(--gold);  background:var(--gold-d);  color:var(--gold); }
+.qfb.err { border-color:var(--accent); background:var(--accent-d); color:var(--accent); }
+
+/* Result */
+.result-wrap {
+  border:4px solid var(--ink);
+  padding:2.5rem; text-align:center;
+  display:none; margin-top:1.5rem;
+  background:var(--paper);
+  position:relative; overflow:hidden;
+}
+[data-theme="dark"] .result-wrap { background:var(--paper2); }
+.result-wrap::before {
+  content:'ERGEBNIS';
+  position:absolute; top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:8rem; color:var(--border);
+  letter-spacing:.2em; white-space:nowrap;
+  pointer-events:none;
+}
+.r-score {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:6rem; color:var(--accent);
+  line-height:1; margin-bottom:.5rem;
+  position:relative; z-index:1;
+}
+.r-msg { color:var(--ink2); margin-bottom:1.5rem; position:relative; z-index:1; font-size:.95rem; }
+.r-btn {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--ink); color:var(--paper);
+  border:none; padding:12px 32px;
+  font-family:'Bebas Neue',sans-serif; font-size:1.1rem;
+  letter-spacing:.08em; cursor:pointer; transition:background .2s;
+  position:relative; z-index:1;
+}
+.r-btn:hover { background:var(--accent); }
+
+/* Homework */
+.hw-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(185px,1fr)); gap:0; margin-bottom:1rem; }
+.hw-item {
+  border:1px solid var(--border); padding:.9rem;
+  background:var(--paper);
+}
+[data-theme="dark"] .hw-item { background:var(--paper2); }
+.hw-item strong {
+  display:block; margin-bottom:3px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:.9rem; letter-spacing:.04em; color:var(--ink);
+}
+.hw-item strong em { color:var(--accent); font-style:normal; }
+.hw-item span { color:var(--ink2); font-size:.78rem; }
+
+footer {
+  position:relative; z-index:1;
+  text-align:center; padding:2rem;
+  color:var(--ink3); font-size:.78rem;
+  border-top:4px solid var(--ink);
+  font-family:'Courier Prime',monospace; letter-spacing:.04em;
+}
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);} }
+.a1{animation-delay:.05s;} .a2{animation-delay:.12s;}
+.a3{animation-delay:.2s;} .a4{animation-delay:.28s;}
+
+@media(max-width:768px){
+  nav{padding:0 1rem;} .nav-links{display:none;}
+  main{padding:1rem 1rem 3rem;}
+  .hero-body{grid-template-columns:1fr;}
+  .hero-sidebar{display:none;}
+  .hero-masthead{padding:1rem;}
+  .hero-lead{padding:1.5rem;}
+  .opts{grid-template-columns:1fr;}
+  .ib-options{grid-template-columns:1fr;}
+  .profession-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+<div id="spb"></div>
+
+<nav>
+  <div class="nav-brand">
+    <span>🇩🇪</span>
+    <span>Deutsch A2</span>
+    <span class="nav-chip">LEK.09</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#professions">المهن</a></li>
+    <li><a href="#workplace">بيئة العمل</a></li>
+    <li><a href="#cv">السيرة الذاتية</a></li>
+    <li><a href="#interview">المقابلة</a></li>
+    <li><a href="#quiz">الاختبار</a></li>
+  </ul>
+  <button class="tbtn" onclick="toggleTheme()">🌙</button>
+</nav>
+
+<!-- ══ HERO — Newspaper Front Page ══ -->
+<div class="hero">
+  <div class="hero-masthead">
+    <div>
+      <div class="paper-name">DIE <span>ARBEIT</span></div>
+      <div style="font-family:'Cairo Play',sans-serif;font-size:.82rem;color:var(--ink2);font-weight:600;">الدرس التاسع — العمل والمهن والمقابلة الوظيفية</div>
+    </div>
+    <div class="paper-meta">
+      LEKTION 09 / A2<br>
+      DEUTSCHE SPRACHE<br>
+      درس رقم 9 من 12
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-lead">
+      <span class="hero-kicker">■ مهارة حيوية للمقيمين في ألمانيا</span>
+      <h1 class="hero-headline">
+        كيف تحصل على <em>وظيفتك</em><br>في ألمانيا؟
+      </h1>
+      <p class="hero-deck">ستتعلم اليوم أسماء المهن والوظائف، مفردات بيئة العمل، كيف تكتب سيرتك الذاتية بالألمانية، وكيف تجتاز مقابلة عمل بثقة وأسلوب احترافي.</p>
+      <div class="hero-pills">
+        <div class="hero-pill acc">💼 المهن</div>
+        <div class="hero-pill">🏢 بيئة العمل</div>
+        <div class="hero-pill">📄 Lebenslauf</div>
+        <div class="hero-pill">🤝 Vorstellungsgespräch</div>
+        <div class="hero-pill">📋 Bewerbung</div>
+      </div>
+    </div>
+
+    <div class="hero-sidebar">
+      <div class="hs-title">أرقام العمل</div>
+      <div class="hs-stat">
+        <span class="hs-num">3.4%</span>
+        <span class="hs-label">معدل البطالة في ألمانيا</span>
+      </div>
+      <div class="hs-stat">
+        <span class="hs-num">€ 3.857</span>
+        <span class="hs-label">متوسط الراتب الشهري</span>
+      </div>
+      <div class="hs-stat">
+        <span class="hs-num">38 Std.</span>
+        <span class="hs-label">ساعات العمل الأسبوعية</span>
+      </div>
+      <div class="hs-stat">
+        <span class="hs-num">24</span>
+        <span class="hs-label">أيام إجازة سنوية مضمونة</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ══════ SECTION 1: PROFESSIONS ══════ -->
+<section id="professions">
+  <div class="sh">
+    <div class="sh-num">01</div>
+    <div class="sh-text">
+      <h2>المهن والوظائف — Berufe</h2>
+      <p>اضغط على أي مهنة لسماع نطقها بالألمانية</p>
+    </div>
+  </div>
+
+  <div class="card a1">
+    <div class="tip acc" style="margin-bottom:1.2rem;">
+      <div class="tpic">💡</div>
+      <div>
+        <h4>قاعدة: المهنة بدون أداة تعريف</h4>
+        <p>في الألمانية، عند ذكر المهنة بعد sein (يكون)، لا نستخدم أداة تعريف! نقول: <span class="de">Ich bin Arzt.</span> وليس: <span class="de">~~Ich bin ein Arzt.~~</span> — هذا خطأ شائع جداً! أما للمؤنث نضيف <span class="de">-in</span> في الغالب: der Arzt ← die Ärztin.</p>
+      </div>
+    </div>
+
+    <div class="profession-grid">
+      <div class="prof-card" onclick="speak('der Arzt')"><span class="prof-emoji">👨‍⚕️</span><span class="prof-de">der Arzt / die Ärztin</span><span class="prof-ar">الطبيب / الطبيبة</span><span class="prof-gen">Ich bin Arzt.</span></div>
+      <div class="prof-card" onclick="speak('der Ingenieur')"><span class="prof-emoji">👷</span><span class="prof-de">der Ingenieur /-in</span><span class="prof-ar">المهندس / المهندسة</span><span class="prof-gen">Ich bin Ingenieur.</span></div>
+      <div class="prof-card" onclick="speak('der Lehrer')"><span class="prof-emoji">👨‍🏫</span><span class="prof-de">der Lehrer / -in</span><span class="prof-ar">المعلم / المعلمة</span><span class="prof-gen">Sie ist Lehrerin.</span></div>
+      <div class="prof-card" onclick="speak('der Programmierer')"><span class="prof-emoji">💻</span><span class="prof-de">der Programmierer /-in</span><span class="prof-ar">المبرمج / المبرمجة</span><span class="prof-gen">Er arbeitet als Programmierer.</span></div>
+      <div class="prof-card" onclick="speak('der Koch')"><span class="prof-emoji">👨‍🍳</span><span class="prof-de">der Koch / die Köchin</span><span class="prof-ar">الطباخ / الطباخة</span><span class="prof-gen">Ich bin Koch in einem Restaurant.</span></div>
+      <div class="prof-card" onclick="speak('der Rechtsanwalt')"><span class="prof-emoji">⚖️</span><span class="prof-de">der Rechtsanwalt /-wältin</span><span class="prof-ar">المحامي / المحامية</span><span class="prof-gen">Sie ist Rechtsanwältin.</span></div>
+      <div class="prof-card" onclick="speak('der Buchhalter')"><span class="prof-emoji">📊</span><span class="prof-de">der Buchhalter /-in</span><span class="prof-ar">المحاسب / المحاسبة</span><span class="prof-gen">Ich arbeite als Buchhalter.</span></div>
+      <div class="prof-card" onclick="speak('der Verkäufer')"><span class="prof-emoji">🏪</span><span class="prof-de">der Verkäufer /-in</span><span class="prof-ar">البائع / البائعة</span><span class="prof-gen">Er ist Verkäufer im Supermarkt.</span></div>
+      <div class="prof-card" onclick="speak('der Fahrer')"><span class="prof-emoji">🚗</span><span class="prof-de">der Fahrer / -in</span><span class="prof-ar">السائق / السائقة</span><span class="prof-gen">Ich bin Taxifahrer.</span></div>
+      <div class="prof-card" onclick="speak('der Architekt')"><span class="prof-emoji">🏛️</span><span class="prof-de">der Architekt /-in</span><span class="prof-ar">المهندس المعماري</span><span class="prof-gen">Sie ist Architektin.</span></div>
+      <div class="prof-card" onclick="speak('der Pfleger')"><span class="prof-emoji">🏥</span><span class="prof-de">der Pfleger / die Pflegerin</span><span class="prof-ar">الممرض / الممرضة</span><span class="prof-gen">Er arbeitet als Pfleger.</span></div>
+      <div class="prof-card" onclick="speak('der Student')"><span class="prof-emoji">🎓</span><span class="prof-de">der Student /-in</span><span class="prof-ar">الطالب / الطالبة</span><span class="prof-gen">Ich bin noch Student.</span></div>
+    </div>
+
+    <div class="tw" style="margin-top:1.2rem;">
+      <table>
+        <thead><tr><th>السؤال</th><th>الجواب الألماني</th><th>المعنى</th></tr></thead>
+        <tbody>
+          <tr><td>ماذا تعمل؟ (رسمي)</td><td class="tde">Was sind Sie von Beruf?</td><td>ما مهنتك؟</td></tr>
+          <tr><td>ماذا تعمل؟ (غير رسمي)</td><td class="tde">Was machst du beruflich?</td><td>ماذا تعمل مهنياً؟</td></tr>
+          <tr><td>أين تعمل؟</td><td class="tde">Wo arbeitest du?</td><td>في أي مكان؟</td></tr>
+          <tr><td>منذ متى؟</td><td class="tde">Seit wann arbeiten Sie dort?</td><td>منذ متى تعمل هناك؟</td></tr>
+          <tr><td>أعمل كـ / كمهندس</td><td class="tde">Ich arbeite als Ingenieur.</td><td>als = بصفة / كـ</td></tr>
+          <tr><td>أعمل في شركة</td><td class="tde">Ich arbeite bei einer Firma.</td><td>bei = عند / لدى</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 2: WORKPLACE ══════ -->
+<section id="workplace">
+  <div class="sh">
+    <div class="sh-num">02</div>
+    <div class="sh-text">
+      <h2>بيئة العمل — Am Arbeitsplatz</h2>
+      <p>مفردات المكتب والشركة والزملاء</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+      <div>
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.04em;border-bottom:2px solid var(--ink);padding-bottom:.3rem;margin-bottom:.8rem;">🏢 المكان والأشخاص</h3>
+        <div class="tw">
+          <table>
+            <tbody>
+              <tr><td class="tde" onclick="speak('die Firma')" style="cursor:pointer">die Firma</td><td>الشركة</td></tr>
+              <tr><td class="tde" onclick="speak('das Büro')" style="cursor:pointer">das Büro</td><td>المكتب</td></tr>
+              <tr><td class="tde" onclick="speak('der Chef')" style="cursor:pointer">der Chef / die Chefin</td><td>المدير / المديرة</td></tr>
+              <tr><td class="tde" onclick="speak('der Kollege')" style="cursor:pointer">der Kollege / -in</td><td>الزميل / الزميلة</td></tr>
+              <tr><td class="tde" onclick="speak('die Besprechung')" style="cursor:pointer">die Besprechung</td><td>الاجتماع</td></tr>
+              <tr><td class="tde" onclick="speak('der Kunde')" style="cursor:pointer">der Kunde / die Kundin</td><td>العميل / العميلة</td></tr>
+              <tr><td class="tde" onclick="speak('die Abteilung')" style="cursor:pointer">die Abteilung</td><td>القسم / الإدارة</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.04em;border-bottom:2px solid var(--ink);padding-bottom:.3rem;margin-bottom:.8rem;">📋 العقد والراتب</h3>
+        <div class="tw">
+          <table>
+            <tbody>
+              <tr><td class="tde" onclick="speak('der Vertrag')" style="cursor:pointer">der Vertrag</td><td>العقد</td></tr>
+              <tr><td class="tde" onclick="speak('das Gehalt')" style="cursor:pointer">das Gehalt</td><td>الراتب الشهري</td></tr>
+              <tr><td class="tde" onclick="speak('der Urlaub')" style="cursor:pointer">der Urlaub</td><td>إجازة العمل</td></tr>
+              <tr><td class="tde" onclick="speak('die Überstunden')" style="cursor:pointer">die Überstunden</td><td>العمل الإضافي</td></tr>
+              <tr><td class="tde" onclick="speak('die Kündigung')" style="cursor:pointer">die Kündigung</td><td>الفصل / الاستقالة</td></tr>
+              <tr><td class="tde" onclick="speak('die Probezeit')" style="cursor:pointer">die Probezeit</td><td>فترة التجربة</td></tr>
+              <tr><td class="tde" onclick="speak('Vollzeit / Teilzeit')" style="cursor:pointer">Vollzeit / Teilzeit</td><td>دوام كامل / جزئي</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip gld" style="margin-top:1.2rem;">
+      <div class="tpic">💶</div>
+      <div>
+        <h4>الراتب في ألمانيا — كيف تتحدث عنه؟</h4>
+        <p>
+          <span class="de">Wie hoch ist das Gehalt?</span> = كم الراتب؟<br>
+          <span class="de">Das Gehalt beträgt 3.500 Euro brutto.</span> = الراتب 3500 يورو إجمالي (قبل الضرائب).<br>
+          <span class="de">brutto</span> = قبل الاستقطاعات &nbsp;·&nbsp; <span class="de">netto</span> = صافي بعد الضرائب والتأمين.<br>
+          عادةً الفرق بين الـ brutto و netto حوالي 40٪!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 3: CV / LEBENSLAUF ══════ -->
+<section id="cv">
+  <div class="sh">
+    <div class="sh-num">03</div>
+    <div class="sh-text">
+      <h2>السيرة الذاتية — Der Lebenslauf</h2>
+      <p>نموذج Lebenslauf بالألمانية — اضغط على أي حقل لسماعه</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div class="tip acc" style="margin-bottom:1.2rem;">
+      <div class="tpic">📄</div>
+      <div>
+        <h4>مكونات Lebenslauf الألماني</h4>
+        <p>السيرة الذاتية الألمانية لها شكل محدد: صورة شخصية (Foto) في الأعلى يميناً، المعلومات الشخصية (Persönliche Daten)، التعليم (Ausbildung)، الخبرة (Berufserfahrung)، المهارات (Kenntnisse)، وتُكتب بترتيب زمني عكسي (الأحدث أولاً).</p>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-header">
+        <span>LEBENSLAUF</span>
+        <span>CURRICULUM VITAE — السيرة الذاتية</span>
+      </div>
+      <div class="cv-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+          <div>
+            <div class="cv-field">
+              <span class="cv-label">PERSÖNLICHE DATEN — المعلومات الشخصية</span>
+              <span class="cv-de" onclick="speak('Name: Ahmad Al-Rashid')">Name: Ahmad Al-Rashid</span>
+              <span class="cv-ar">الاسم</span>
+            </div>
+            <div class="cv-field">
+              <span class="cv-label">GEBURTSDATUM — تاريخ الميلاد</span>
+              <span class="cv-de" onclick="speak('Geburtsdatum: 15. März 1990')">Geburtsdatum: 15. März 1990</span>
+              <span class="cv-ar">تاريخ الميلاد</span>
+            </div>
+            <div class="cv-field">
+              <span class="cv-label">ADRESSE — العنوان</span>
+              <span class="cv-de" onclick="speak('Adresse: Musterstraße 12, 10115 Berlin')">Musterstraße 12, 10115 Berlin</span>
+              <span class="cv-ar">العنوان</span>
+            </div>
+            <div class="cv-field">
+              <span class="cv-label">NATIONALITÄT — الجنسية</span>
+              <span class="cv-de" onclick="speak('Nationalität: syrisch')">Nationalität: syrisch</span>
+              <span class="cv-ar">الجنسية</span>
+            </div>
+          </div>
+          <div>
+            <div class="cv-field">
+              <span class="cv-label">AUSBILDUNG — التعليم</span>
+              <span class="cv-de" onclick="speak('2009 bis 2014, Ingenieurswesen, Universität Damaskus')">2009–2014: Ingenieurwesen<br>Universität Damaskus</span>
+              <span class="cv-ar">هندسة — جامعة دمشق</span>
+            </div>
+            <div class="cv-field">
+              <span class="cv-label">BERUFSERFAHRUNG — الخبرة</span>
+              <span class="cv-de" onclick="speak('2018 bis heute, Ingenieur bei Siemens Berlin')">2018–heute: Ingenieur<br>Siemens AG, Berlin</span>
+              <span class="cv-ar">مهندس — شركة سيمنس برلين</span>
+            </div>
+            <div class="cv-field">
+              <span class="cv-label">SPRACHKENNTNISSE — اللغات</span>
+              <span class="cv-de" onclick="speak('Arabisch Muttersprache, Deutsch B2, Englisch C1')">Arabisch (Muttersprache)<br>Deutsch (B2), Englisch (C1)</span>
+              <span class="cv-ar">اللغات المتقنة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tw" style="margin-top:1.2rem;">
+      <table>
+        <thead><tr><th>عبارة السيرة الذاتية</th><th>الألمانية</th><th>الاستخدام</th></tr></thead>
+        <tbody>
+          <tr><td>تخرجت من</td><td class="tde">Ich habe ... studiert / abgeschlossen.</td><td class="tex">للتعليم الجامعي</td></tr>
+          <tr><td>عملت كـ</td><td class="tde">Ich war tätig als...</td><td class="tex">للخبرة السابقة</td></tr>
+          <tr><td>أعمل حالياً</td><td class="tde">Derzeit arbeite ich bei...</td><td class="tex">للوضع الحالي</td></tr>
+          <tr><td>مهاراتي تشمل</td><td class="tde">Zu meinen Kenntnissen gehören...</td><td class="tex">لقسم المهارات</td></tr>
+          <tr><td>أتقن اللغة الألمانية</td><td class="tde">Ich spreche Deutsch auf B2-Niveau.</td><td class="tex">لمستوى اللغة</td></tr>
+          <tr><td>مرفق الشهادات</td><td class="tde">Zeugnisse liegen bei.</td><td class="tex">في نهاية الطلب</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 4: JOB INTERVIEW GAME ══════ -->
+<section id="interview">
+  <div class="sh">
+    <div class="sh-num">04</div>
+    <div class="sh-text">
+      <h2>مقابلة العمل — Das Vorstellungsgespräch</h2>
+      <p>تدرّب على أسئلة وأجوبة مقابلة العمل الحقيقية</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div class="tip ink" style="margin-bottom:1.2rem;">
+      <div class="tpic">🤝</div>
+      <div>
+        <h4>قواعد المقابلة في ألمانيا</h4>
+        <p>الألمان يقدّرون: الدقة في الوقت (حضّر قبل 5 دقائق!)، الإجابات المباشرة والمحددة، إظهار المعرفة بالشركة، وطرح أسئلة ذكية في النهاية. تجنّب: الغموض، المبالغة في التواضع، وإخبار قصص شخصية طويلة غير مرتبطة.</p>
+      </div>
+    </div>
+
+    <!-- Interview simulator -->
+    <div class="interview-board">
+      <div class="ib-header">
+        <span>🤝 INTERVIEW SIMULATOR</span>
+        <span class="ib-status" id="ib-progress">FRAGE 1 / 5</span>
+      </div>
+      <div class="ib-body">
+        <div class="ib-question" id="ib-question">
+          <span class="ib-de" id="ib-de"></span>
+          <span class="ib-ar" id="ib-ar"></span>
+        </div>
+        <div class="ib-options" id="ib-options"></div>
+        <div class="ib-fb" id="ib-fb"></div>
+        <button class="ib-next" id="ib-next" onclick="nextIntQ()">WEITER → التالي</button>
+      </div>
+    </div>
+
+    <!-- Common interview phrases -->
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.04em;margin:1.5rem 0 .8rem;border-bottom:2px solid var(--ink);padding-bottom:.3rem;">أهم جمل المقابلة — اضغط لسماعها</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;" id="interview-phrases"></div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 5: DIALOGUE ══════ -->
+<section>
+  <div class="sh">
+    <div class="sh-num">05</div>
+    <div class="sh-text">
+      <h2>حوار: أحمد في مقابلة العمل</h2>
+      <p>مشهد مقابلة حقيقية في شركة هندسية في ميونخ</p>
+    </div>
+  </div>
+
+  <div class="card a4">
+    <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--ink);">
+      <span style="font-size:1.3rem;">🏢</span>
+      <div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.04em;">TechBau GmbH, München — مقابلة عمل</div>
+        <div style="font-family:'Courier Prime',monospace;font-size:.75rem;color:var(--ink3);">أحمد يتقدم لوظيفة مهندس مشاريع</div>
+      </div>
+    </div>
+
+    <div class="conv">
+      <div class="msg l">
+        <div class="av">👔</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Guten Morgen, Herr Ahmad. Ich bin Frau Schneider, Leiterin der Personalabteilung. Bitte nehmen Sie Platz!</span>صباح الخير يا سيد أحمد. أنا الآنسة Schneider، مديرة قسم الموارد البشرية. تفضل بالجلوس!</div>
+          <span class="who">Frau Schneider — مدير الموارد البشرية</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Guten Morgen, Frau Schneider. Vielen Dank für die Einladung. Ich freue mich sehr, heute hier zu sein.</span>صباح الخير آنسة Schneider. شكراً جزيلاً على الدعوة. يسعدني كثيراً أن أكون هنا اليوم.</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👔</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Erzählen Sie mir bitte kurz von sich. Was sind Ihre wichtigsten Qualifikationen für diese Stelle?</span>أخبرني بإيجاز عن نفسك. ما هي أهم مؤهلاتك لهذا المنصب؟</div>
+          <span class="who">Frau Schneider</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ich bin Ingenieur mit über acht Jahren Erfahrung im Bereich Bauprojekte. Ich habe in Syrien und Deutschland gearbeitet und spreche Deutsch auf B2-Niveau. Teamarbeit und Problemlösung sind meine Stärken.</span>أنا مهندس بخبرة أكثر من ثمانية أعوام في مجال مشاريع البناء. عملت في سوريا وألمانيا، وأتحدث الألمانية بمستوى B2. العمل الجماعي وحل المشكلات هما أبرز نقاط قوتي.</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👔</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Sehr gut! Warum möchten Sie bei uns arbeiten? Was wissen Sie über unser Unternehmen?</span>ممتاز! لماذا تريد العمل معنا؟ ماذا تعرف عن شركتنا؟</div>
+          <span class="who">Frau Schneider</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">TechBau ist bekannt für nachhaltige Bauprojekte und Innovation. Ich teile diese Werte sehr. Ich möchte meine Erfahrung einbringen und gleichzeitig weiter wachsen.</span>TechBau معروفة بمشاريع البناء المستدامة والابتكار. أشارككم هذه القيم كثيراً. أريد إسهام خبرتي والنمو في الوقت ذاته.</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👔</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Was sind Ihre Gehaltsvorstellungen?</span>ما هي توقعاتك للراتب؟</div>
+          <span class="who">Frau Schneider</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ich stelle mir ein Gehalt von etwa 55.000 bis 60.000 Euro brutto im Jahr vor. Das entspricht meiner Erfahrung und dem Marktstandard.</span>أتوقع راتباً حوالي 55,000 إلى 60,000 يورو سنوياً إجمالي. هذا يتناسب مع خبرتي ومعيار السوق.</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👔</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Haben Sie noch Fragen an uns?</span>هل لديك أسئلة لنا؟</div>
+          <span class="who">Frau Schneider</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ja, gerne. Wie sieht die Einarbeitungsphase aus? Und gibt es Möglichkeiten zur Weiterbildung?</span>نعم، بكل سرور. كيف تبدو مرحلة الاندماج في العمل؟ وهل هناك فرص للتطوير المهني؟</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👔</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Sehr gute Fragen! Wir melden uns bis Ende der Woche bei Ihnen. Vielen Dank für das Gespräch, Herr Ahmad!</span>أسئلة ممتازة! سنتواصل معك بحلول نهاية الأسبوع. شكراً جزيلاً على المقابلة يا سيد أحمد!</div>
+          <span class="who">Frau Schneider</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem;padding-top:1rem;border-top:2px solid var(--ink);">
+      <h4 style="font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;color:var(--ink);margin-bottom:.8rem;font-size:1rem;">■ تعابير مفتاحية من المقابلة:</h4>
+      <div style="display:flex;flex-wrap:wrap;gap:.4rem;font-size:.79rem;align-items:center;">
+        <span class="de">Ich freue mich, hier zu sein.</span><span style="color:var(--ink2)"> يسعدني أن أكون هنا</span>&nbsp;·&nbsp;
+        <span class="de">Meine Stärken sind...</span><span style="color:var(--ink2)"> نقاط قوتي هي...</span>&nbsp;·&nbsp;
+        <span class="de">Ich stelle mir ... vor.</span><span style="color:var(--ink2)"> أتوقع... (للراتب)</span>&nbsp;·&nbsp;
+        <span class="de">Haben Sie noch Fragen?</span><span style="color:var(--ink2)"> هل لديك أسئلة أخرى؟</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 6: QUIZ ══════ -->
+<section id="quiz">
+  <div class="sh">
+    <div class="sh-num">06</div>
+    <div class="sh-text">
+      <h2>الاختبار — Die Prüfung</h2>
+      <p>8 أسئلة على العمل والمهن والمقابلة</p>
+    </div>
+  </div>
+
+  <div class="quiz-card">
+
+    <div class="qblock" id="q1">
+      <span class="qlabel">FRAGE 01 / 08</span>
+      <div class="qtext">أي الجمل صحيح لوصف مهنتك؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q1" data-val="w">Ich bin ein Arzt.</button>
+        <button class="opt" type="button" data-qid="q1" data-val="c">Ich bin Arzt.</button>
+        <button class="opt" type="button" data-qid="q1" data-val="w">Ich habe Arzt.</button>
+        <button class="opt" type="button" data-qid="q1" data-val="w">Ich mache Arzt.</button>
+      </div>
+      <div class="qfb" id="fb-q1"></div>
+    </div>
+
+    <div class="qblock" id="q2">
+      <span class="qlabel">FRAGE 02 / 08</span>
+      <div class="qtext">ما معنى <span class="qde">das Gehalt</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q2" data-val="w">العقد</button>
+        <button class="opt" type="button" data-qid="q2" data-val="w">الإجازة</button>
+        <button class="opt" type="button" data-qid="q2" data-val="c">الراتب الشهري</button>
+        <button class="opt" type="button" data-qid="q2" data-val="w">العمل الإضافي</button>
+      </div>
+      <div class="qfb" id="fb-q2"></div>
+    </div>
+
+    <div class="qblock" id="q3">
+      <span class="qlabel">FRAGE 03 / 08</span>
+      <div class="qtext">كيف تقول "أعمل كمهندس" بالألمانية؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q3" data-val="w">Ich arbeite wie Ingenieur.</button>
+        <button class="opt" type="button" data-qid="q3" data-val="w">Ich bin bei Ingenieur.</button>
+        <button class="opt" type="button" data-qid="q3" data-val="c">Ich arbeite als Ingenieur.</button>
+        <button class="opt" type="button" data-qid="q3" data-val="w">Ich mache Ingenieur.</button>
+      </div>
+      <div class="qfb" id="fb-q3"></div>
+    </div>
+
+    <div class="qblock" id="q4">
+      <span class="qlabel">FRAGE 04 / 08</span>
+      <div class="qtext">ما الفرق بين <span class="qde">brutto</span> و<span class="qde">netto</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q4" data-val="w">لا فرق بينهما.</button>
+        <button class="opt" type="button" data-qid="q4" data-val="c">brutto = قبل الاستقطاعات، netto = بعدها</button>
+        <button class="opt" type="button" data-qid="q4" data-val="w">brutto = الأجر الأسبوعي، netto = الشهري</button>
+        <button class="opt" type="button" data-qid="q4" data-val="w">brutto = للعمل الجزئي، netto = للكامل</button>
+      </div>
+      <div class="qfb" id="fb-q4"></div>
+    </div>
+
+    <div class="qblock" id="q5">
+      <span class="qlabel">FRAGE 05 / 08</span>
+      <div class="qtext">ما معنى <span class="qde">die Probezeit</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q5" data-val="w">امتحان الترقية</button>
+        <button class="opt" type="button" data-qid="q5" data-val="w">وقت الاستراحة</button>
+        <button class="opt" type="button" data-qid="q5" data-val="c">فترة التجربة في العمل</button>
+        <button class="opt" type="button" data-qid="q5" data-val="w">اجتماع العمل</button>
+      </div>
+      <div class="qfb" id="fb-q5"></div>
+    </div>
+
+    <div class="qblock" id="q6">
+      <span class="qlabel">FRAGE 06 / 08</span>
+      <div class="qtext">كيف تسأل عن المهنة بشكل رسمي؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q6" data-val="w">Was machst du?</button>
+        <button class="opt" type="button" data-qid="q6" data-val="c">Was sind Sie von Beruf?</button>
+        <button class="opt" type="button" data-qid="q6" data-val="w">Wo bist du?</button>
+        <button class="opt" type="button" data-qid="q6" data-val="w">Wie heißt deine Arbeit?</button>
+      </div>
+      <div class="qfb" id="fb-q6"></div>
+    </div>
+
+    <div class="qblock" id="q7">
+      <span class="qlabel">FRAGE 07 / 08</span>
+      <div class="qtext">ما هو <span class="qde">der Lebenslauf</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q7" data-val="w">خطاب التقديم</button>
+        <button class="opt" type="button" data-qid="q7" data-val="c">السيرة الذاتية</button>
+        <button class="opt" type="button" data-qid="q7" data-val="w">عقد العمل</button>
+        <button class="opt" type="button" data-qid="q7" data-val="w">شهادة التخرج</button>
+      </div>
+      <div class="qfb" id="fb-q7"></div>
+    </div>
+
+    <div class="qblock" id="q8">
+      <span class="qlabel">FRAGE 08 / 08</span>
+      <div class="qtext">كيف تذكر مهارة في السيرة الذاتية؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q8" data-val="w">Ich kann Programmieren sehr.</button>
+        <button class="opt" type="button" data-qid="q8" data-val="c">Ich spreche Englisch auf C1-Niveau.</button>
+        <button class="opt" type="button" data-qid="q8" data-val="w">Mein Englisch ist sehr gut Englisch.</button>
+        <button class="opt" type="button" data-qid="q8" data-val="w">Englisch = gut bei mir.</button>
+      </div>
+      <div class="qfb" id="fb-q8"></div>
+    </div>
+
+    <div class="result-wrap" id="result-wrap">
+      <div class="r-score" id="r-score">0/8</div>
+      <div class="r-msg" id="r-msg"></div>
+      <button class="r-btn" onclick="resetQuiz()">↺ WIEDERHOLEN — أعد التدريب</button>
+    </div>
+  </div>
+</section>
+
+<!-- HOMEWORK -->
+<section>
+  <div class="sh">
+    <div class="sh-num">07</div>
+    <div class="sh-text">
+      <h2>الواجب — Hausaufgaben</h2>
+      <p>تطبيق عملي لمهارات الدرس التاسع</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="hw-grid">
+      <div class="hw-item"><strong><em>Lebenslauf</em></strong><span>اكتب سيرتك الذاتية بالألمانية مستخدماً النموذج الذي رأيته في الدرس</span></div>
+      <div class="hw-item"><strong><em>المهن</em></strong><span>اكتب جملة عن مهنتك الحالية أو المستقبلية واحفظ 5 مهن مع صيغتها المؤنثة</span></div>
+      <div class="hw-item"><strong><em>المقابلة</em></strong><span>سجّل إجابتك على سؤال: "Erzählen Sie mir von sich" في دقيقة كاملة</span></div>
+      <div class="hw-item"><strong><em>Bewerbungsschreiben</em></strong><span>اكتب مقدمة قصيرة لخطاب تقديم لوظيفة تحلم بها</span></div>
+    </div>
+    <div class="tip acc">
+      <div class="tpic">🚀</div>
+      <div>
+        <h4>الدرس العاشر القادم</h4>
+        <p>سنتعلم <strong>التعليم والمدرسة والجامعة</strong> — نظام التعليم الألماني، مفردات الدراسة، وكيف تتحدث عن سنوات دراستك بالألمانية! <span class="de">Viel Erfolg!</span> 💼</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  LEKTION 09 / A2 &nbsp;·&nbsp; DIE ARBEIT &nbsp;·&nbsp; BERUFE · LEBENSLAUF · VORSTELLUNGSGESPRÄCH<br>
+  الألمانية للعرب &nbsp;·&nbsp; الدرس 9 من 12
+</footer>
+
+<script>
+// ── Theme — starts light (editorial/newspaper)
+let dark = false;
+const root = document.documentElement;
+const tbtn = document.querySelector('.tbtn');
+function applyTheme(d) {
+  dark = d;
+  root.setAttribute('data-theme', d ? 'dark' : 'light');
+  tbtn.textContent = d ? '☀' : '🌙';
+}
+function toggleTheme() { applyTheme(!dark); }
+applyTheme(false);
+
+// ── Scroll progress
+const spb = document.getElementById('spb');
+window.addEventListener('scroll', () => {
+  const h = document.body.scrollHeight - window.innerHeight;
+  spb.style.transform = `scaleX(${window.scrollY / h})`;
+});
+
+// ── Speech
+function speak(t) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(t);
+  u.lang = 'de-DE'; u.rate = 0.82;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+}
+
+// ── Interview game data
+const intQuestions = [
+  {
+    de: 'Erzählen Sie mir kurz von sich.',
+    ar: 'أخبرني باختصار عن نفسك.',
+    options: [
+      'Ich bin 1990 geboren und mag Fußball.',
+      'Ich bin Ingenieur mit 8 Jahren Erfahrung im Bauwesen. Ich arbeite derzeit bei Siemens.',
+      'Ich bin hier, weil ich Arbeit brauche.',
+      'Mein Name ist Ahmad.'
+    ],
+    correct: 1,
+    ok: '✅ ممتاز! الإجابة المهنية تذكر المسمى الوظيفي والخبرة والوضع الحالي — موجزة ومركّزة.',
+    err: '❌ في المقابلة يجب ذكر مهنتك وخبرتك بشكل مهني. تجنب المعلومات الشخصية غير ذات الصلة.'
+  },
+  {
+    de: 'Was sind Ihre größten Stärken?',
+    ar: 'ما هي أبرز نقاط قوتك؟',
+    options: [
+      'Ich bin perfekt und mache nie Fehler.',
+      'Ich weiß nicht genau.',
+      'Teamarbeit, analytisches Denken und Zuverlässigkeit.',
+      'Ich arbeite sehr viel und schlafe wenig.'
+    ],
+    correct: 2,
+    ok: '✅ صحيح! الألمان يحبون الإجابات المحددة والواقعية. ذكر مهارات قابلة للقياس هو الأفضل.',
+    err: '❌ الإجابة المثلى تذكر مهارات محددة قابلة للتوثيق. تجنب المبالغة أو الغموض.'
+  },
+  {
+    de: 'Warum möchten Sie bei uns arbeiten?',
+    ar: 'لماذا تريد العمل معنا؟',
+    options: [
+      'Weil ich eine Arbeit brauche.',
+      'Das Gehalt ist gut bei Ihnen.',
+      'Ich schätze Ihre Innovationskultur und möchte zum Wachstum des Unternehmens beitragen.',
+      'Weil mein Freund hier arbeitet.'
+    ],
+    correct: 2,
+    ok: '✅ رائع! إظهار المعرفة بالشركة والرغبة في المساهمة يُحسن انطباعك بشكل كبير.',
+    err: '❌ يجب إظهار اهتمامك بالشركة تحديداً، وليس فقط الحاجة للعمل أو عوامل شخصية.'
+  },
+  {
+    de: 'Was sind Ihre Gehaltsvorstellungen?',
+    ar: 'ما هي توقعاتك للراتب؟',
+    options: [
+      'So viel wie möglich!',
+      'Ich lasse das Sie entscheiden.',
+      'Basierend auf meiner Erfahrung stelle ich mir 55.000 bis 60.000 Euro brutto vor.',
+      'Das ist mir egal.'
+    ],
+    correct: 2,
+    ok: '✅ صحيح! ذكر نطاق راتب محدد مبني على البحث والخبرة يُظهر ثقتك واحترافيتك.',
+    err: '❌ يجب أن تذكر رقماً أو نطاقاً محدداً مبنياً على معيار السوق وخبرتك. الغموض لا يفيدك.'
+  },
+  {
+    de: 'Haben Sie noch Fragen an uns?',
+    ar: 'هل لديك أسئلة لنا؟',
+    options: [
+      'Nein, danke.',
+      'Wie viel Urlaub bekomme ich?',
+      'Wie sieht die Einarbeitung aus, und gibt es Weiterbildungsmöglichkeiten?',
+      'Wann fange ich an?'
+    ],
+    correct: 2,
+    ok: '✅ ممتاز! السؤال عن الاندماج والتطوير المهني يُظهر تفكيراً طويل المدى وجدية.',
+    err: '❌ "لا أسئلة لدي" يُعطي انطباعاً سلبياً. دائماً احضّر سؤالاً أو اثنين يُظهران اهتمامك.'
+  }
+];
+
+let intIdx = 0;
+let intAnswered = false;
+
+function renderIntQ() {
+  intAnswered = false;
+  const q = intQuestions[intIdx];
+  document.getElementById('ib-progress').textContent = `FRAGE ${intIdx+1} / ${intQuestions.length}`;
+  document.getElementById('ib-de').textContent = q.de;
+  document.getElementById('ib-ar').textContent = q.ar;
+  const opts = document.getElementById('ib-options');
+  opts.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'ib-opt';
+    btn.textContent = opt;
+    btn.onclick = () => checkIntAns(i, q, btn);
+    opts.appendChild(btn);
+  });
+  document.getElementById('ib-fb').className = 'ib-fb';
+  document.getElementById('ib-next').style.display = 'none';
+}
+
+function checkIntAns(idx, q, btn) {
+  if (intAnswered) return;
+  intAnswered = true;
+  document.querySelectorAll('.ib-opt').forEach(b => { b.disabled = true; });
+  const isOk = idx === q.correct;
+  btn.classList.add(isOk ? 'ok' : 'bad');
+  if (!isOk) document.querySelectorAll('.ib-opt')[q.correct].classList.add('ok');
+  const fb = document.getElementById('ib-fb');
+  fb.textContent = isOk ? q.ok : q.err;
+  fb.className = 'ib-fb show ' + (isOk ? 'ok' : 'err');
+  const nxt = document.getElementById('ib-next');
+  nxt.style.display = 'block';
+  nxt.textContent = intIdx < intQuestions.length - 1 ? 'WEITER → التالي' : '↺ NEUSTART — من البداية';
+}
+
+function nextIntQ() {
+  intIdx = (intIdx + 1) % intQuestions.length;
+  renderIntQ();
+}
+renderIntQ();
+
+// ── Interview phrases
+const intPhrases = [
+  { de:"Ich freue mich über die Einladung.", ar:"يسعدني الدعوة لهذه المقابلة." },
+  { de:"Meine Stärken sind...", ar:"نقاط قوتي هي..." },
+  { de:"Ich bin zuverlässig und teamfähig.", ar:"أنا موثوق وأستطيع العمل ضمن فريق." },
+  { de:"Ich habe Erfahrung in diesem Bereich.", ar:"لدي خبرة في هذا المجال." },
+  { de:"Ich lerne sehr schnell.", ar:"أتعلم بسرعة كبيرة." },
+  { de:"Ich arbeite gerne selbstständig.", ar:"أحب العمل باستقلالية." },
+  { de:"Wann kann ich mit einer Rückmeldung rechnen?", ar:"متى يمكنني توقع الرد؟" },
+  { de:"Vielen Dank für das Gespräch!", ar:"شكراً جزيلاً على المقابلة!" },
+];
+
+const intPhrEl = document.getElementById('interview-phrases');
+intPhrEl.innerHTML = intPhrases.map(p => `
+  <div style="border:1px solid var(--border);padding:.6rem .8rem;cursor:pointer;background:var(--paper);transition:background .18s;" onclick="speak('${p.de.replace(/'/g,"\\'")}')">
+    <span style="font-family:'Courier Prime',monospace;font-size:.8rem;color:var(--accent);display:block;direction:ltr;">${p.de}</span>
+    <span style="font-size:.76rem;color:var(--ink2);">${p.ar}</span>
+  </div>
+`).join('');
+
+// ── Quiz — event delegation (clean, no escaping bugs)
+const fb_c = {
+  q1:'✅ صحيح! المهن في الألمانية بعد "sein" تأتي بدون أداة تعريف: Ich bin Arzt وليس ein Arzt.',
+  q2:'✅ بالضبط! das Gehalt = الراتب الشهري. اللوهن (der Lohn) للعمل اليومي/الساعي.',
+  q3:'✅ ممتاز! "als" هو حرف الجر الصحيح للمهنة: arbeiten als + مهنة بدون أداة تعريف.',
+  q4:'✅ صحيح! brutto = قبل الضرائب والتأمين. netto = ما يصل يدك فعلاً. الفرق كبير جداً!',
+  q5:'✅ رائع! die Probezeit عادةً 3-6 أشهر في ألمانيا. خلالها يمكن إنهاء العقد بإشعار أقصر.',
+  q6:'✅ صحيح! "Was sind Sie von Beruf?" هي الصيغة الرسمية. "Beruf" = المهنة بشكل رسمي.',
+  q7:'✅ بالضبط! der Lebenslauf = السيرة الذاتية. مع خطاب التقديم das Anschreiben يشكلان طلب العمل.',
+  q8:'✅ ممتاز! في السيرة الذاتية يُذكر المستوى بشكل محدد: auf B2-Niveau / auf C1-Niveau.',
+};
+const fb_w = {
+  q1:'❌ في الألمانية: Ich bin Arzt (بدون ein). عند ذكر المهنة بعد sein لا نستخدم أداة تعريف!',
+  q2:'❌ das Gehalt = الراتب الشهري للموظفين. der Lohn = للعمال بالساعة. die Überstunden = ساعات إضافية.',
+  q3:'❌ الصحيح: "Ich arbeite als Ingenieur." حرف الجر "als" ضروري + المهنة بدون أداة تعريف.',
+  q4:'❌ brutto = الراتب الكامل قبل أي استقطاعات. netto = ما تستلمه بعد الضرائب والتأمينات.',
+  q5:'❌ die Probezeit = فترة التجربة في بداية العمل. عادةً 3-6 أشهر يُقيَّم فيها الموظف.',
+  q6:'❌ الصيغة الرسمية: "Was sind Sie von Beruf?" أما "Was machst du?" فهي غير رسمية للمعارف.',
+  q7:'❌ der Lebenslauf = السيرة الذاتية. das Anschreiben = خطاب التقديم. das Zeugnis = شهادة العمل.',
+  q8:'❌ الصيغة الصحيحة لذكر اللغة: "Ich spreche X auf Y-Niveau." هذا هو المعيار في السير الذاتية.',
+};
+
+let answers = {};
+
+// ✅ Event delegation — clean, no inline onclick, works in all browsers
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('button.opt');
+  if (!btn) return;
+  const qid = btn.getAttribute('data-qid');
+  const val = btn.getAttribute('data-val');
+  if (qid && val) ans(btn, qid, val);
+});
+
+function ans(btn, qid, r) {
+  if (answers[qid]) return;
+  answers[qid] = r;
+  document.getElementById(qid).querySelectorAll('button.opt').forEach(b => {
+    b.disabled = true;
+  });
+  btn.classList.add(r === 'c' ? 'correct' : 'wrong');
+  const fb = document.getElementById('fb-' + qid);
+  fb.textContent = r === 'c' ? fb_c[qid] : fb_w[qid];
+  fb.className = 'qfb show ' + (r === 'c' ? 'ok' : 'err');
+  if (Object.keys(answers).length === 8) showResult();
+}
+
+function showResult() {
+  const s = Object.values(answers).filter(v => v === 'c').length;
+  const msgs = [
+    'حاول مجدداً! 💪','راجع المفردات 📖',
+    'تقدم جيد! 📈','جيد جداً! 🌟',
+    'ممتاز! 🏆','رائع جداً! ⭐',
+    'شبه مثالي! 🥈','مثالي تقريباً! 🥇',
+    'موظف المستقبل في ألمانيا! 👔'
+  ];
+  document.getElementById('r-score').textContent = s + '/8';
+  document.getElementById('r-msg').textContent = msgs[s] || '';
+  const rb = document.getElementById('result-wrap');
+  rb.style.display = 'block';
+  rb.scrollIntoView({ behavior:'smooth', block:'center' });
+}
+
+function resetQuiz() {
+  answers = {};
+  document.querySelectorAll('button.opt').forEach(b => {
+    b.disabled = false;
+    b.className = 'opt';
+  });
+  document.querySelectorAll('.qfb').forEach(f => { f.className = 'qfb'; });
+  document.getElementById('result-wrap').style.display = 'none';
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-kurs-lesson-09-arbeit" data-category="a2-kurs" data-title="العمل والمهن" data-root="../../" defer></script>
+</body>
+</html>

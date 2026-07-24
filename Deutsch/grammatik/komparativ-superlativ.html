@@ -1,0 +1,2628 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>سلّم المقارنة | Komparativ &amp; Superlativ + Dativ — درس ألماني تفاعلي</title>
+<meta name="description" content="درس تفاعلي شامل في قواعد المقارنة والتفضيل الألمانية (Komparativ und Superlativ) وتصريف الصفة في حالة الجر Dativ، مع نطق صوتي وبطاقات وألعاب تفاعلية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   درس: المقارنة والتفضيل في الألمانية + حالة الجر Dativ
+   نظام تصميم "رحلة الصعود" — Ascent Design System
+   ============================================================ */
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+h1,h2,h3,h4,p { margin: 0; }
+a { color: inherit; }
+
+/* ---------- Design tokens ---------- */
+:root{
+  --bg: #F5F2EA;
+  --bg-soft: #EEEADF;
+  --bg-elevated: #FFFFFF;
+  --surface: rgba(255,255,255,0.62);
+  --surface-strong: rgba(255,255,255,0.86);
+  --border: rgba(23,33,58,0.12);
+  --border-strong: rgba(23,33,58,0.22);
+  --text: #17213A;
+  --text-muted: #566079;
+  --text-faint: #838da3;
+
+  --primary: #24345C;
+  --primary-2: #34497F;
+  --primary-soft: #E7EBF5;
+  --accent: #C6812A;       /* peak gold — قمة Superlativ */
+  --accent-soft: #F4E3C6;
+  --sky: #3E7CB1;          /* comparative — سماء المرتفعات */
+  --sky-soft: #DCEAF5;
+
+  --case-der: #2C6CA6;     /* مذكر */
+  --case-das: #3E8F63;     /* محايد */
+  --case-die: #B4426A;     /* مؤنث */
+  --case-der-soft: #DDEAF6;
+  --case-das-soft: #DEF0E5;
+  --case-die-soft: #F7E1E9;
+
+  --success: #3E8F63;
+  --success-soft: #DEF0E5;
+  --error: #C24949;
+  --error-soft: #FBE4E4;
+
+  --shadow-sm: 0 1px 2px rgba(23,33,58,0.06), 0 1px 1px rgba(23,33,58,0.04);
+  --shadow-md: 0 8px 24px -8px rgba(23,33,58,0.18), 0 2px 8px rgba(23,33,58,0.06);
+  --shadow-lg: 0 24px 60px -16px rgba(23,33,58,0.28), 0 8px 24px rgba(23,33,58,0.08);
+  --shadow-glow-gold: 0 0 0 1px rgba(198,129,42,0.25), 0 12px 32px -8px rgba(198,129,42,0.35);
+  --shadow-glow-sky: 0 0 0 1px rgba(62,124,177,0.22), 0 12px 32px -8px rgba(62,124,177,0.28);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  --font-ar: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-latin: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --header-h: 72px;
+  --trail-w: 84px;
+  --content-max: 980px;
+
+  --dur-fast: 160ms;
+  --dur-med: 340ms;
+  --dur-slow: 620ms;
+  --ease: cubic-bezier(.22,.8,.28,1);
+
+  color-scheme: light;
+}
+
+html[data-theme="dark"]{
+  --bg: #0D1220;
+  --bg-soft: #121A2E;
+  --bg-elevated: #161F36;
+  --surface: rgba(255,255,255,0.05);
+  --surface-strong: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.09);
+  --border-strong: rgba(255,255,255,0.16);
+  --text: #EDEFF7;
+  --text-muted: #A9B2C8;
+  --text-faint: #6d7690;
+
+  --primary: #8FAEE8;
+  --primary-2: #6E8FCE;
+  --primary-soft: #1B2540;
+  --accent: #E7B15C;
+  --accent-soft: #34290F;
+  --sky: #6FB2E8;
+  --sky-soft: #10233A;
+
+  --case-der: #5FA0D8;
+  --case-das: #63C08D;
+  --case-die: #E17FA4;
+  --case-der-soft: #12233A;
+  --case-das-soft: #10291f;
+  --case-die-soft: #2c1620;
+
+  --success: #63C08D;
+  --success-soft: #10291f;
+  --error: #E58888;
+  --error-soft: #2c1414;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 8px 24px -8px rgba(0,0,0,0.5);
+  --shadow-lg: 0 24px 60px -16px rgba(0,0,0,0.6);
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Base ---------- */
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ar);
+  line-height: 1.75;
+  overflow-x: hidden;
+  transition: background var(--dur-slow) var(--ease), color var(--dur-slow) var(--ease);
+  background-image:
+    radial-gradient(ellipse 900px 500px at 15% -5%, var(--sky-soft), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 105% 10%, var(--accent-soft), transparent 55%);
+  background-attachment: fixed;
+}
+
+/* topographic contour texture — signature motif (elevation lines) */
+.contour-bg{
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  opacity: .5;
+}
+html[data-theme="dark"] .contour-bg{ opacity: .28; }
+
+.de, bdi.de{ font-family: var(--font-latin); unicode-bidi: isolate; }
+.mono{ font-family: var(--font-mono); letter-spacing: 0.02em; }
+
+.de-speak{
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 1px 7px 2px; border-radius: 8px;
+  background: var(--primary-soft);
+  color: var(--primary-2);
+  cursor: pointer; border: 1px solid transparent;
+  font-weight: 600;
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+  line-height: 1.5;
+}
+html[data-theme="dark"] .de-speak{ color: var(--primary); }
+.de-speak svg{ width: 12px; height: 12px; opacity: .7; flex-shrink:0; }
+.de-speak:hover, .de-speak:focus-visible{
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+  background: var(--sky-soft);
+}
+.de-speak.speaking{
+  background: var(--accent-soft);
+  color: var(--accent);
+  animation: speakPulse 0.9s ease-in-out infinite;
+}
+.de-speak.big{
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  padding: 4px 14px 6px;
+  border-radius: 12px;
+}
+@keyframes speakPulse{
+  0%,100%{ box-shadow: 0 0 0 0 rgba(198,129,42,.35); }
+  50%{ box-shadow: 0 0 0 6px rgba(198,129,42,0); }
+}
+
+:focus-visible{
+  outline: 2.5px solid var(--sky);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skip-link{
+  position: fixed; top: -100px; right: 12px; z-index: 999;
+  background: var(--accent); color: #fff; padding: 10px 18px;
+  border-radius: 0 0 10px 10px; font-weight: 700;
+  transition: top var(--dur-fast) var(--ease);
+}
+.skip-link:focus{ top: 0; }
+
+/* ---------- Scroll progress ---------- */
+.scroll-progress{
+  position: fixed; top: 0; inset-inline: 0; height: 3px; z-index: 200;
+  background: transparent;
+}
+.scroll-progress-bar{
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--sky), var(--accent));
+  transition: width 80ms linear;
+}
+
+/* ---------- Header ---------- */
+.site-header{
+  position: sticky; top: 0; z-index: 150;
+  height: var(--header-h);
+  display: flex; align-items: center;
+  padding-inline: clamp(14px, 4vw, 36px);
+  background: var(--surface-strong);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom: 1px solid var(--border);
+  gap: 14px;
+}
+.brand{
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 1.05rem; white-space: nowrap;
+}
+.brand-mark{ width: 34px; height: 34px; flex-shrink:0; }
+.brand small{ display:block; font-family: var(--font-ar); font-weight: 400; font-size: .68rem; color: var(--text-muted); }
+
+.header-spacer{ flex: 1; }
+
+.header-search{
+  position: relative; display: flex; align-items: center;
+  max-width: 230px; width: 100%;
+}
+.header-search input{
+  width: 100%; padding: 9px 34px 9px 12px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--bg-elevated);
+  color: var(--text); font-family: var(--font-ar); font-size: .82rem;
+  transition: box-shadow var(--dur-fast) var(--ease), border-color var(--dur-fast);
+}
+.header-search input:focus{ border-color: var(--sky); box-shadow: 0 0 0 3px var(--sky-soft); }
+.header-search svg{ position: absolute; inset-inline-start: 10px; width: 15px; height: 15px; color: var(--text-faint); pointer-events:none; }
+
+.icon-btn{
+  width: 38px; height: 38px; border-radius: 12px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  color: var(--text); cursor: pointer; flex-shrink: 0;
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast), background var(--dur-fast);
+}
+.icon-btn:hover{ transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.icon-btn svg{ width: 18px; height: 18px; }
+
+.theme-toggle{ position: relative; }
+.theme-toggle svg{ position:absolute; transition: opacity var(--dur-med) var(--ease), transform var(--dur-med) var(--ease); }
+.icon-sun{ opacity: 1; transform: rotate(0deg) scale(1); }
+.icon-moon{ opacity: 0; transform: rotate(-60deg) scale(.5); }
+html[data-theme="dark"] .icon-sun{ opacity: 0; transform: rotate(60deg) scale(.5); }
+html[data-theme="dark"] .icon-moon{ opacity: 1; transform: rotate(0deg) scale(1); }
+
+.progress-pill{
+  display:flex; align-items:center; gap:8px;
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--primary-soft); color: var(--primary-2);
+  font-size: .76rem; font-weight: 700; white-space: nowrap;
+}
+html[data-theme="dark"] .progress-pill{ color: var(--primary); }
+.progress-pill .ring{ width:18px; height:18px; }
+
+.hamburger{ display:none; }
+
+/* ---------- Trail nav (desktop side rail — signature element) ---------- */
+.trail-nav{
+  position: fixed; inset-inline-start: 14px; top: 50%; transform: translateY(-50%);
+  z-index: 140; width: var(--trail-w);
+  display: flex; flex-direction: column; align-items: center;
+}
+.trail-line{
+  position: absolute; top: 8px; bottom: 8px; inset-inline-start: 50%;
+  width: 2px; background: var(--border-strong); transform: translateX(-50%);
+  border-radius: 2px; overflow: hidden;
+}
+html[dir="rtl"] .trail-line{ transform: translateX(50%); }
+.trail-fill{
+  position: absolute; top:0; inset-inline:0; height: 0%;
+  background: linear-gradient(180deg, var(--sky), var(--accent));
+  transition: height 200ms linear;
+}
+.trail-stops{ position: relative; display:flex; flex-direction: column; gap: 0; width: 100%; }
+.trail-stop{
+  position: relative; width: 100%; padding-block: 14px;
+  display:flex; justify-content:center; cursor:pointer; background:none; border:none;
+}
+.trail-dot{
+  width: 13px; height: 13px; border-radius: 50%;
+  background: var(--bg-elevated); border: 2.5px solid var(--border-strong);
+  transition: all var(--dur-med) var(--ease); position: relative; z-index: 2;
+}
+.trail-stop[data-visited="true"] .trail-dot{ border-color: var(--sky); background: var(--sky); }
+.trail-stop[data-active="true"] .trail-dot{
+  border-color: var(--accent); background: var(--accent);
+  box-shadow: 0 0 0 5px var(--accent-soft);
+  transform: scale(1.25);
+}
+.trail-tip{
+  position: absolute; inset-inline-end: calc(100% + 12px); top: 50%; transform: translateY(-50%) translateX(6px);
+  background: var(--text); color: var(--bg); font-size: .74rem; font-weight:700;
+  padding: 6px 12px; border-radius: 8px; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: all var(--dur-fast) var(--ease);
+}
+html[dir="rtl"] .trail-tip{ inset-inline-end: auto; inset-inline-start: calc(100% + 12px); }
+.trail-stop:hover .trail-tip, .trail-stop:focus-visible .trail-tip{ opacity: 1; transform: translateY(-50%) translateX(0); }
+
+@media (max-width: 1180px){ .trail-nav{ display: none; } }
+
+/* ---------- Layout ---------- */
+main{ display:block; }
+.section{
+  max-width: var(--content-max); margin-inline: auto;
+  padding: clamp(50px, 8vw, 96px) clamp(18px, 4vw, 32px);
+  scroll-margin-top: calc(var(--header-h) + 14px);
+}
+.section-eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .12em;
+  color: var(--accent); font-weight: 700; text-transform: uppercase;
+  background: var(--accent-soft); padding: 5px 12px; border-radius: 999px;
+  margin-bottom: 16px;
+}
+.section-title{
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(1.55rem, 4vw, 2.5rem);
+  line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.01em;
+}
+.section-sub{
+  color: var(--text-muted); font-size: clamp(.95rem, 1.6vw, 1.08rem);
+  max-width: 68ch; margin-bottom: 34px;
+}
+
+.reveal{ opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.in-view{ opacity: 1; transform: translateY(0); }
+.reveal-stagger > *{ transition-delay: calc(var(--i, 0) * 70ms); }
+
+/* ---------- Glass card ---------- */
+.card{
+  background: var(--surface);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: clamp(18px, 3vw, 30px);
+}
+.card-solid{
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+  padding: clamp(18px,3vw,30px);
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding: 11px 22px; border-radius: 999px; font-weight: 700; font-size: .92rem;
+  border: 1px solid transparent; cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease), background var(--dur-fast);
+  font-family: var(--font-ar);
+}
+.btn svg{ width:16px; height:16px; }
+.btn:active{ transform: scale(.96); }
+.btn-primary{ background: linear-gradient(135deg, var(--sky), var(--primary-2)); color: #fff; box-shadow: var(--shadow-glow-sky); }
+.btn-primary:hover{ transform: translateY(-2px); }
+.btn-gold{ background: linear-gradient(135deg, var(--accent), #b06a1e); color: #fff; box-shadow: var(--shadow-glow-gold); }
+.btn-gold:hover{ transform: translateY(-2px); }
+.btn-ghost{ background: var(--bg-elevated); border-color: var(--border); color: var(--text); }
+.btn-ghost:hover{ border-color: var(--border-strong); transform: translateY(-2px); }
+.btn:disabled{ opacity: .45; cursor: not-allowed; transform:none !important; }
+.btn-sm{ padding: 7px 14px; font-size: .78rem; }
+.btn-icon-only{ width: 42px; height: 42px; border-radius: 50%; padding:0; }
+
+/* ---------- Hero ---------- */
+.hero{
+  position: relative; padding-block: clamp(50px, 10vw, 90px);
+  max-width: var(--content-max); margin-inline:auto; padding-inline: clamp(18px,4vw,32px);
+  display: grid; gap: 40px; align-items:center;
+}
+@media(min-width: 900px){ .hero{ grid-template-columns: 1.1fr 1fr; } }
+.hero-eyebrow{
+  font-family: var(--font-mono); font-size: .78rem; color: var(--sky); font-weight:700;
+  letter-spacing: .1em; display:flex; align-items:center; gap:10px; margin-bottom: 18px;
+}
+.hero-eyebrow::before{ content:''; width:26px; height:2px; background: var(--sky); }
+.hero h1{
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2rem, 5.2vw, 3.4rem); line-height: 1.18; letter-spacing: -0.015em;
+  margin-bottom: 20px;
+}
+.hero h1 em{ font-style: italic; color: var(--accent); }
+.hero p.lead{ color: var(--text-muted); font-size: clamp(1rem, 1.8vw, 1.15rem); max-width: 54ch; margin-bottom: 28px; }
+.hero-ctas{ display:flex; flex-wrap:wrap; gap: 12px; margin-bottom: 30px; }
+.hero-stats{ display:flex; flex-wrap:wrap; gap: 22px; }
+.hero-stat b{ font-family: var(--font-display); font-size: 1.5rem; color: var(--primary); display:block; }
+html[data-theme="dark"] .hero-stat b{ color: var(--primary); }
+.hero-stat span{ font-size: .78rem; color: var(--text-muted); }
+
+.hero-visual{ position: relative; }
+
+/* floating badges around hero visual */
+.float-badge{
+  position:absolute; padding: 8px 14px; border-radius: 14px;
+  background: var(--surface-strong); backdrop-filter: blur(14px);
+  border: 1px solid var(--border); box-shadow: var(--shadow-md);
+  font-size: .78rem; font-weight: 700; display:flex; align-items:center; gap:6px;
+  animation: floatY 5s ease-in-out infinite;
+}
+.float-badge.b2{ animation-delay: -2s; }
+.float-badge.b3{ animation-delay: -3.4s; }
+@keyframes floatY{ 0%,100%{ transform: translateY(0px);} 50%{ transform: translateY(-10px);} }
+
+/* ---------- Peaks diagram (hero signature) ---------- */
+.peaks-wrap{ position:relative; }
+.peak-btn{
+  cursor:pointer; transition: transform var(--dur-fast) var(--ease);
+  transform-origin: center bottom;
+}
+.peak-btn:hover, .peak-btn:focus-visible{ transform: translateY(-4px); }
+.peak-label{ font-family: var(--font-latin); font-weight: 800; }
+
+/* ---------- Tables ---------- */
+.grammar-table{ width:100%; border-collapse: separate; border-spacing:0; font-size: .95rem; }
+.grammar-table th, .grammar-table td{
+  padding: 13px 14px; text-align: start; border-bottom: 1px solid var(--border);
+}
+.grammar-table thead th{
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing:.06em; text-transform: uppercase;
+  color: var(--text-muted); background: var(--bg-soft); font-weight: 700;
+}
+.grammar-table thead th:first-child{ border-start-start-radius: var(--radius-sm); border-end-start-radius: var(--radius-sm); }
+.grammar-table thead th:last-child{ border-start-end-radius: var(--radius-sm); border-end-end-radius: var(--radius-sm); }
+.grammar-table tbody tr{ transition: background var(--dur-fast); }
+.grammar-table tbody tr:hover{ background: var(--bg-soft); }
+.table-scroll{ overflow-x:auto; border-radius: var(--radius-md); border: 1px solid var(--border); }
+.table-scroll .grammar-table thead th{ border-radius:0; }
+
+.tag{
+  display:inline-flex; align-items:center; justify-content:center;
+  font-family: var(--font-mono); font-weight: 700; font-size: .74rem;
+  padding: 3px 9px; border-radius: 7px;
+}
+.tag-der{ background: var(--case-der-soft); color: var(--case-der); }
+.tag-das{ background: var(--case-das-soft); color: var(--case-das); }
+.tag-die{ background: var(--case-die-soft); color: var(--case-die); }
+.tag-n{ background: var(--sky-soft); color: var(--sky); }
+.tag-a{ background: var(--accent-soft); color: var(--accent); }
+.tag-d{ background: var(--primary-soft); color: var(--primary-2); }
+html[data-theme="dark"] .tag-d{ color: var(--primary); }
+
+/* ---------- Rule callout boxes ---------- */
+.callout{
+  border-radius: var(--radius-md); padding: 18px 20px; border: 1px solid var(--border);
+  display:flex; gap: 14px; margin-block: 20px;
+}
+.callout svg{ width: 22px; height:22px; flex-shrink:0; margin-top:2px; }
+.callout-tip{ background: var(--sky-soft); border-color: transparent; }
+.callout-tip svg{ color: var(--sky); }
+.callout-warn{ background: var(--error-soft); border-color: transparent; }
+.callout-warn svg{ color: var(--error); }
+.callout-gold{ background: var(--accent-soft); border-color: transparent; }
+.callout-gold svg{ color: var(--accent); }
+.callout h4{ font-weight: 800; margin-bottom: 4px; font-size: .95rem; }
+.callout p{ color: var(--text-muted); font-size: .89rem; margin:0; }
+
+/* collapsible native details styled */
+details.tips{
+  border: 1px solid var(--border); border-radius: var(--radius-md); overflow:hidden; margin-block: 16px;
+  background: var(--bg-elevated);
+}
+details.tips > summary{
+  cursor: pointer; padding: 14px 18px; font-weight: 700; list-style:none;
+  display:flex; align-items:center; gap:10px; user-select:none;
+}
+details.tips > summary::-webkit-details-marker{ display:none; }
+details.tips > summary .chev{ transition: transform var(--dur-med) var(--ease); margin-inline-start:auto; width:16px;height:16px; }
+details.tips[open] > summary .chev{ transform: rotate(180deg); }
+details.tips .tips-body{ padding: 0 18px 18px; color: var(--text-muted); font-size:.9rem; }
+details.tips .tips-body ul{ display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+details.tips .tips-body li{ padding-inline-start: 18px; position:relative; }
+details.tips .tips-body li::before{ content:'✕'; position:absolute; inset-inline-start:0; color: var(--error); font-weight:800; font-size:.75rem; top:3px; }
+
+/* ---------- Formation cards (Positiv/Komparativ/Superlativ) ---------- */
+.stage-grid{ display:grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); }
+.stage-card{
+  border-radius: var(--radius-md); padding: 20px; text-align:center; position:relative;
+  border: 1px solid var(--border); background: var(--bg-elevated);
+  transition: transform var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease);
+}
+.stage-card:hover{ transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.stage-card .stage-lvl{ font-family: var(--font-mono); font-size:.68rem; color: var(--text-faint); letter-spacing:.1em; text-transform:uppercase; margin-bottom:10px; }
+.stage-card .stage-word{ font-family: var(--font-display); font-size: clamp(1.3rem,3vw,1.7rem); font-weight:600; margin-bottom: 8px; }
+.stage-card .stage-ar{ color: var(--text-muted); font-size:.85rem; }
+.stage-card.lvl-2{ border-color: color-mix(in srgb, var(--sky) 40%, transparent); }
+.stage-card.lvl-3{ border-color: color-mix(in srgb, var(--accent) 50%, transparent); background: linear-gradient(160deg, var(--accent-soft), var(--bg-elevated) 60%); }
+
+.arrow-flow{ display:flex; align-items:center; justify-content:center; color: var(--text-faint); }
+.arrow-flow svg{ width: 26px; height:26px; }
+@media (max-width: 700px){ .arrow-flow svg{ transform: rotate(90deg);} }
+
+/* ---------- Flip Flashcards (3D) ---------- */
+.flash-deck{ display:grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.flash-card{ perspective: 1400px; height: 220px; }
+.flash-inner{
+  position:relative; width:100%; height:100%; transition: transform .7s var(--ease);
+  transform-style: preserve-3d; cursor:pointer;
+}
+.flash-card.flipped .flash-inner{ transform: rotateY(180deg); }
+.flash-face{
+  position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+  border-radius: var(--radius-lg); border:1px solid var(--border);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+  padding: 18px; text-align:center; box-shadow: var(--shadow-md);
+}
+.flash-front{ background: linear-gradient(160deg, var(--bg-elevated), var(--sky-soft)); }
+.flash-back{ background: linear-gradient(160deg, var(--accent-soft), var(--bg-elevated)); transform: rotateY(180deg); }
+.flash-badge{ position:absolute; top:12px; inset-inline-start:12px; font-family:var(--font-mono); font-size:.65rem; color: var(--text-faint); }
+.flash-hint{ position:absolute; bottom:10px; inset-inline-end:12px; font-size:.65rem; color: var(--text-faint); display:flex; align-items:center; gap:4px; }
+.flash-word{ font-family: var(--font-display); font-size: 1.6rem; font-weight:700; }
+.flash-ar{ color: var(--text-muted); font-size:.85rem; }
+.flash-sentence{ font-size:.82rem; color: var(--text-muted); margin-top:6px; line-height:1.5; }
+.flash-forms{ display:flex; flex-direction:column; gap:4px; margin-top:2px; }
+
+/* ---------- Matching game ---------- */
+.match-board{ display:grid; gap: 26px; }
+@media(min-width:640px){ .match-board{ grid-template-columns: 1fr 1fr; } }
+.match-col-title{ font-weight:800; font-size:.85rem; color: var(--text-muted); margin-bottom:10px; text-align:center; }
+.match-chip{
+  width:100%; text-align:center; padding: 13px 16px; border-radius: var(--radius-md);
+  border: 1.5px solid var(--border); background: var(--bg-elevated); margin-bottom:10px;
+  cursor:pointer; font-weight:700; font-family: var(--font-latin);
+  transition: all var(--dur-fast) var(--ease);
+}
+.match-chip:hover{ border-color: var(--sky); transform: translateY(-2px); }
+.match-chip.selected{ border-color: var(--sky); background: var(--sky-soft); box-shadow: 0 0 0 3px var(--sky-soft); }
+.match-chip.correct{ border-color: var(--success); background: var(--success-soft); color: var(--success); animation: popCorrect .4s var(--ease); }
+.match-chip.wrong{ animation: shakeX .4s var(--ease); border-color: var(--error); background: var(--error-soft); }
+.match-chip.matched{ opacity:.45; pointer-events:none; }
+@keyframes popCorrect{ 0%{transform:scale(1);} 50%{transform:scale(1.06);} 100%{transform:scale(1);} }
+@keyframes shakeX{ 0%,100%{transform:translateX(0);} 25%{transform:translateX(-6px);} 75%{transform:translateX(6px);} }
+
+/* ---------- Fill in blank / drag chips ---------- */
+.blank-sentence{ font-size: 1.05rem; line-height: 2.6; }
+.blank-slot{
+  display:inline-flex; min-width: 96px; justify-content:center;
+  border-bottom: 2.5px dashed var(--border-strong); padding: 2px 10px; margin: 0 4px;
+  font-weight:700; color: var(--text-faint); border-radius: 6px;
+  transition: all var(--dur-fast);
+}
+.blank-slot.filled{ border-style: solid; border-color: var(--sky); color: var(--sky); background: var(--sky-soft); }
+.blank-slot.drag-over{ background: var(--accent-soft); border-color: var(--accent); }
+.blank-slot.correct{ border-color: var(--success); background: var(--success-soft); color: var(--success); }
+.blank-slot.wrong{ border-color: var(--error); background: var(--error-soft); color: var(--error); }
+.chip-bank{ display:flex; flex-wrap:wrap; gap:10px; margin-block:18px; }
+.drag-chip{
+  padding: 9px 18px; border-radius: 999px; background: var(--bg-elevated);
+  border: 1.5px solid var(--border); font-weight:700; cursor:grab; font-family: var(--font-latin);
+  transition: all var(--dur-fast) var(--ease);
+}
+.drag-chip:hover{ transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.drag-chip.used{ opacity:.35; pointer-events:none; }
+.drag-chip:active{ cursor:grabbing; }
+
+/* ---------- Quiz ---------- */
+.quiz-shell{ position:relative; }
+.quiz-progress-track{ height:6px; border-radius:999px; background: var(--border); overflow:hidden; margin-bottom:22px; }
+.quiz-progress-fill{ height:100%; background: linear-gradient(90deg, var(--sky), var(--accent)); transition: width var(--dur-med) var(--ease); }
+.quiz-q{ font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 18px; font-weight:600; }
+.quiz-opts{ display:flex; flex-direction:column; gap:10px; }
+.quiz-opt{
+  text-align: start; padding: 14px 18px; border-radius: var(--radius-md);
+  border: 1.5px solid var(--border); background: var(--bg-elevated); cursor:pointer;
+  display:flex; align-items:center; gap:12px; transition: all var(--dur-fast) var(--ease);
+  font-family: var(--font-ar); font-size: .95rem;
+}
+.quiz-opt:hover{ border-color: var(--sky); }
+.quiz-opt .opt-letter{
+  width:26px; height:26px; border-radius:50%; background: var(--bg-soft); flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.78rem; font-family: var(--font-mono);
+}
+.quiz-opt.correct{ border-color: var(--success); background: var(--success-soft); }
+.quiz-opt.correct .opt-letter{ background: var(--success); color:#fff; }
+.quiz-opt.wrong{ border-color: var(--error); background: var(--error-soft); animation: shakeX .4s var(--ease); }
+.quiz-opt.wrong .opt-letter{ background: var(--error); color:#fff; }
+.quiz-opt:disabled{ cursor:default; }
+.quiz-feedback{
+  margin-top: 16px; padding: 14px 18px; border-radius: var(--radius-md); font-size:.88rem;
+  display:none; gap:10px; align-items:flex-start;
+}
+.quiz-feedback.show{ display:flex; }
+.quiz-feedback.ok{ background: var(--success-soft); color: var(--success); }
+.quiz-feedback.no{ background: var(--error-soft); color: var(--error); }
+.quiz-nav{ display:flex; justify-content:space-between; margin-top:24px; }
+.quiz-result{ text-align:center; padding: 30px 10px; }
+.quiz-result .score-num{ font-family:var(--font-display); font-size: 3.4rem; font-weight:700; color: var(--accent); }
+
+/* ---------- City / price comparison viz ---------- */
+.bars-wrap{ display:flex; align-items:flex-end; gap: clamp(10px,3vw,26px); height: 220px; padding-top: 30px; }
+.bar-item{ flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end; }
+.bar-fill{
+  width: 100%; max-width: 76px; border-radius: 12px 12px 4px 4px;
+  background: linear-gradient(180deg, var(--sky), var(--primary-2));
+  transform: scaleY(0); transform-origin: bottom; transition: transform 1s var(--ease);
+  position:relative;
+}
+.bar-item.tallest .bar-fill{ background: linear-gradient(180deg, var(--accent), #a8631c); }
+.bar-fill.grow{ transform: scaleY(1); }
+.bar-value{ position:absolute; top:-26px; inset-inline:0; text-align:center; font-weight:800; font-size:.8rem; }
+.bar-label{ margin-top: 10px; font-weight:700; font-size:.85rem; text-align:center; }
+.bar-label small{ display:block; color: var(--text-muted); font-weight:400; font-size:.72rem; }
+
+/* ---------- Sentence Pronunciation Lab ---------- */
+.lab{ border-radius: var(--radius-xl); overflow:hidden; position:relative; }
+.lab-sentence{
+  font-family: var(--font-display); font-size: clamp(1.15rem, 3vw, 1.7rem);
+  line-height: 1.8; text-align:center; padding: 30px 10px 10px; direction:ltr;
+}
+.lab-word{ display:inline-block; padding: 2px 6px; border-radius: 8px; transition: all .15s; margin-inline: 1px; }
+.lab-word.active{ background: var(--accent); color:#fff; transform: scale(1.08); }
+.lab-controls{ display:flex; align-items:center; justify-content:center; gap: 14px; flex-wrap:wrap; padding: 18px 20px 26px; }
+.lab-speed{ display:flex; align-items:center; gap:8px; font-size:.8rem; color: var(--text-muted); }
+.lab-speed input[type=range]{ width: 110px; accent-color: var(--sky); }
+.lab-voice{ font-size:.72rem; color: var(--text-faint); text-align:center; padding-bottom: 14px; display:flex; align-items:center; justify-content:center; gap:6px; }
+.lab-wave{ display:flex; align-items:center; gap:3px; height:16px; }
+.lab-wave span{ width:3px; border-radius:2px; background: var(--sky); height: 4px; transition: height .12s; }
+.lab.playing .lab-wave span{ animation: wave 1s ease-in-out infinite; }
+.lab-wave span:nth-child(2){ animation-delay: .1s;} .lab-wave span:nth-child(3){ animation-delay:.2s;} .lab-wave span:nth-child(4){ animation-delay:.3s;} .lab-wave span:nth-child(5){ animation-delay:.4s;}
+@keyframes wave{ 0%,100%{height:4px;} 50%{height:16px;} }
+
+/* sentence sets list under lab */
+.sentence-list{ display:flex; flex-direction:column; gap:8px; margin-top:18px; }
+.sentence-pick{
+  display:flex; align-items:center; gap:12px; padding: 11px 16px; border-radius: var(--radius-md);
+  border: 1px solid var(--border); background: var(--bg-elevated); cursor:pointer; text-align:start;
+  transition: all var(--dur-fast);
+}
+.sentence-pick:hover{ border-color: var(--sky); }
+.sentence-pick.active-pick{ border-color: var(--accent); background: var(--accent-soft); }
+.sentence-pick .de{ font-weight:700; }
+.sentence-pick .ar{ color: var(--text-muted); font-size:.82rem; }
+
+/* ---------- Achievements ---------- */
+.ach-grid{ display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); }
+.ach-badge{
+  text-align:center; padding: 20px 12px; border-radius: var(--radius-lg);
+  border: 1px solid var(--border); background: var(--bg-elevated);
+  transition: all var(--dur-med) var(--ease); filter: grayscale(1) opacity(.5);
+}
+.ach-badge.unlocked{ filter:none; background: linear-gradient(160deg, var(--accent-soft), var(--bg-elevated)); border-color: color-mix(in srgb, var(--accent) 45%, transparent); box-shadow: var(--shadow-md); }
+.ach-badge .ach-icon{ font-size: 2rem; margin-bottom:8px; }
+.ach-badge h5{ font-size:.82rem; font-weight:800; margin-bottom:4px; }
+.ach-badge p{ font-size:.7rem; color: var(--text-muted); margin:0; }
+
+.toast{
+  position: fixed; bottom: 24px; inset-inline-start: 50%; transform: translateX(-50%) translateY(120%);
+  background: var(--text); color: var(--bg); padding: 14px 22px; border-radius: 999px;
+  display:flex; align-items:center; gap:10px; font-weight:700; z-index: 300; box-shadow: var(--shadow-lg);
+  transition: transform var(--dur-med) var(--ease); font-size:.88rem;
+}
+html[dir="rtl"] .toast{ transform: translateX(50%) translateY(120%); }
+.toast.show{ transform: translateX(-50%) translateY(0); }
+html[dir="rtl"] .toast.show{ transform: translateX(50%) translateY(0); }
+
+/* ---------- Back to top ---------- */
+.back-top{
+  position: fixed; bottom: 26px; inset-inline-end: 22px; z-index: 140;
+  width: 46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  background: var(--bg-elevated); border:1px solid var(--border); box-shadow: var(--shadow-md);
+  opacity:0; pointer-events:none; transform: translateY(10px) scale(.85);
+  transition: all var(--dur-med) var(--ease); cursor:pointer;
+}
+.back-top.show{ opacity:1; pointer-events:auto; transform:translateY(0) scale(1); }
+.back-top svg{ width:20px; height:20px; }
+
+/* ---------- Footer ---------- */
+footer.site-footer{
+  border-top: 1px solid var(--border); padding: 40px clamp(18px,4vw,32px) 60px;
+  max-width: var(--content-max); margin-inline:auto; text-align:center; color: var(--text-muted); font-size:.85rem;
+}
+footer.site-footer .foot-actions{ display:flex; justify-content:center; gap:12px; margin-bottom: 18px; flex-wrap:wrap; }
+
+/* ---------- Section nav dots (mobile alt to trail) ---------- */
+.mobile-jump{
+  display:none; position: sticky; top: var(--header-h); z-index: 120;
+  overflow-x:auto; white-space:nowrap; padding: 10px 14px; gap:8px;
+  background: var(--surface-strong); backdrop-filter: blur(14px); border-bottom:1px solid var(--border);
+}
+.mobile-jump::-webkit-scrollbar{ display:none; }
+.mobile-jump a{
+  display:inline-flex; padding: 7px 14px; border-radius:999px; font-size:.78rem; font-weight:700;
+  background: var(--bg-elevated); border:1px solid var(--border); margin-inline-end:8px;
+}
+.mobile-jump a.active-jump{ background: var(--accent); color:#fff; border-color:transparent; }
+@media(max-width:1180px){ .mobile-jump{ display:flex; } }
+
+/* ---------- Search highlight & filtering ---------- */
+mark.search-mark{ background: var(--accent-soft); color: var(--accent); padding:0 2px; border-radius:4px; }
+.section.search-hidden{ display:none; }
+.no-results{ text-align:center; padding: 60px 20px; color: var(--text-muted); display:none; }
+.no-results.show{ display:block; }
+
+/* ---------- Utility ---------- */
+.grid-2{ display:grid; gap: 22px; }
+@media(min-width:760px){ .grid-2{ grid-template-columns: 1fr 1fr; } }
+.grid-3{ display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); }
+.center-text{ text-align:center; }
+.mt-16{ margin-top:16px; } .mt-24{ margin-top:24px; } .mb-16{ margin-bottom:16px; }
+.pill-row{ display:flex; flex-wrap:wrap; gap:10px; }
+.small-note{ font-size:.8rem; color: var(--text-faint); }
+.divider{ height:1px; background: var(--border); margin-block: 30px; border:none; }
+.example-box{ background: var(--bg-soft); border-radius: var(--radius-md); padding: 16px 18px; margin-block: 10px; }
+.example-box .ar{ color: var(--text-muted); font-size: .87rem; margin-top:4px; }
+.example-box .de{ font-size: 1.02rem; font-weight: 600; }
+
+.gender-legend{ display:flex; flex-wrap:wrap; gap:14px; margin-block:14px; }
+.gender-legend span{ display:flex; align-items:center; gap:7px; font-size:.82rem; font-weight:700; }
+.gender-dot{ width:12px; height:12px; border-radius:50%; display:inline-block; }
+
+/* ---------- Print ---------- */
+@media print{
+  .site-header, .trail-nav, .mobile-jump, .back-top, .toast, .scroll-progress, .hero-ctas, .icon-btn, footer .foot-actions, .header-search{ display:none !important; }
+  body{ background: #fff !important; color:#000 !important; }
+  .card, .card-solid{ box-shadow:none !important; border: 1px solid #ccc !important; break-inside: avoid; }
+  .section{ padding-block: 20px; }
+  a[href]::after{ content: none !important; }
+}
+
+/* ---------- Responsive tuning ---------- */
+@media (max-width: 480px){
+  :root{ --header-h: 64px; }
+  .header-search{ display:none; }
+  .hero-stats{ gap: 14px; }
+}
+@media (min-width: 1600px){
+  :root{ --content-max: 1180px; }
+}
+
+</style>
+<script>
+  // Set theme before first paint to avoid flash of wrong theme.
+  (function(){
+    try{
+      var saved = localStorage.getItem('ascent-theme');
+      var theme = saved ? JSON.parse(saved) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    }catch(e){ document.documentElement.setAttribute('data-theme','light'); }
+  })();
+</script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">تخطَّ إلى المحتوى الرئيسي</a>
+
+<!-- Decorative topographic contour background (signature ascent motif) -->
+<svg class="contour-bg" viewBox="0 0 1600 1400" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <path d="M-50,120 C 250,60 450,180 700,120 S 1150,40 1400,110 S 1650,140 1700,120" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+  <path d="M-50,230 C 280,170 480,290 760,230 S 1180,150 1420,220 S 1650,250 1700,230" fill="none" stroke="var(--sky)" stroke-width="1.2" opacity="0.35"/>
+  <path d="M-50,340 C 260,280 500,400 780,340 S 1200,260 1430,330 S 1650,360 1700,340" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+  <path d="M-50,460 C 300,400 520,520 800,460 S 1220,380 1440,450 S 1650,480 1700,460" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+  <path d="M-50,600 C 260,540 540,660 820,600 S 1240,520 1460,590 S 1650,620 1700,600" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity="0.3"/>
+  <path d="M-50,760 C 280,700 540,820 820,760 S 1240,680 1460,750 S 1650,780 1700,760" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+  <path d="M-50,940 C 280,880 540,1000 820,940 S 1240,860 1460,930 S 1650,960 1700,940" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+  <path d="M-50,1140 C 280,1080 540,1200 820,1140 S 1240,1060 1460,1130 S 1650,1160 1700,1140" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+  <path d="M-50,1340 C 280,1280 540,1400 820,1340 S 1240,1260 1460,1330 S 1650,1360 1700,1340" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+</svg>
+
+<div class="scroll-progress"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <polygon points="2,32 11,16 20,32" fill="var(--sky)"/>
+      <polygon points="13,32 24,10 35,32" fill="var(--accent)"/>
+      <circle cx="24" cy="10" r="2.4" fill="var(--accent)"/>
+    </svg>
+    <span>سلّم المقارنة<small>Komparativ &amp; Superlativ · Dativ</small></span>
+  </div>
+
+  <div class="header-spacer"></div>
+
+  <div class="header-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <input type="search" id="lessonSearch" placeholder="ابحث في الدرس… (مثال: Dativ)" aria-label="بحث داخل الدرس">
+  </div>
+
+  <div class="progress-pill" title="نسبة إنجاز الدرس">
+    <svg class="ring" viewBox="0 0 36 36" aria-hidden="true">
+      <circle cx="18" cy="18" r="15" fill="none" stroke="var(--border)" stroke-width="3"/>
+      <circle id="progressRingFg" cx="18" cy="18" r="15" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+    </svg>
+    <span id="progressPct">0٪</span>
+  </div>
+
+  <button class="icon-btn" id="fullscreenToggle" aria-label="وضع ملء الشاشة" title="ملء الشاشة">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+  </button>
+  <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس" title="طباعة">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+  </button>
+  <button class="icon-btn theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري" aria-pressed="false" title="تبديل السمة">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+  </button>
+</header>
+
+<!-- Mobile section jump strip -->
+<nav class="mobile-jump" aria-label="التنقل بين الأقسام">
+  <a href="#intro" data-target="intro">المقدمة</a>
+  <a href="#basic" data-target="basic">القاعدة الأساسية</a>
+  <a href="#spelling" data-target="spelling">قاعدة إملائية</a>
+  <a href="#umlaut" data-target="umlaut">التحول الصوتي</a>
+  <a href="#eler" data-target="eler">el/er</a>
+  <a href="#irregular" data-target="irregular">الشاذة</a>
+  <a href="#compare-tools" data-target="compare-tools">أدوات المقارنة</a>
+  <a href="#applied" data-target="applied">أمثلة تطبيقية</a>
+  <a href="#dativ" data-target="dativ">Dativ</a>
+  <a href="#lab" data-target="lab">معمل النطق</a>
+  <a href="#flashcards" data-target="flashcards">البطاقات</a>
+  <a href="#practice" data-target="practice">تمارين</a>
+  <a href="#quiz" data-target="quiz">الاختبار</a>
+  <a href="#summary" data-target="summary">الملخص</a>
+</nav>
+
+<!-- Desktop trail nav (signature ascent rail) -->
+<nav class="trail-nav" aria-label="مسار الدرس">
+  <div class="trail-line"><div class="trail-fill" id="trailFill"></div></div>
+  <div class="trail-stops">
+    <button class="trail-stop" data-target="intro"><span class="trail-dot"></span><span class="trail-tip">المقدمة</span></button>
+    <button class="trail-stop" data-target="basic"><span class="trail-dot"></span><span class="trail-tip">القاعدة الأساسية</span></button>
+    <button class="trail-stop" data-target="spelling"><span class="trail-dot"></span><span class="trail-tip">قاعدة إملائية</span></button>
+    <button class="trail-stop" data-target="umlaut"><span class="trail-dot"></span><span class="trail-tip">التحوّل الصوتي</span></button>
+    <button class="trail-stop" data-target="eler"><span class="trail-dot"></span><span class="trail-tip">قاعدة el/er</span></button>
+    <button class="trail-stop" data-target="irregular"><span class="trail-dot"></span><span class="trail-tip">الصفات الشاذة</span></button>
+    <button class="trail-stop" data-target="compare-tools"><span class="trail-dot"></span><span class="trail-tip">أدوات المقارنة</span></button>
+    <button class="trail-stop" data-target="applied"><span class="trail-dot"></span><span class="trail-tip">أمثلة تطبيقية</span></button>
+    <button class="trail-stop" data-target="dativ"><span class="trail-dot"></span><span class="trail-tip">صفة Dativ</span></button>
+    <button class="trail-stop" data-target="lab"><span class="trail-dot"></span><span class="trail-tip">معمل النطق</span></button>
+    <button class="trail-stop" data-target="flashcards"><span class="trail-dot"></span><span class="trail-tip">البطاقات</span></button>
+    <button class="trail-stop" data-target="practice"><span class="trail-dot"></span><span class="trail-tip">تمارين</span></button>
+    <button class="trail-stop" data-target="quiz"><span class="trail-dot"></span><span class="trail-tip">الاختبار</span></button>
+    <button class="trail-stop" data-target="summary"><span class="trail-dot"></span><span class="trail-tip">الملخص</span></button>
+  </div>
+</nav>
+
+<main id="main-content">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div>
+      <div class="hero-eyebrow">درس تفاعلي · Grammatik</div>
+      <h1>كل صفة ألمانية<br>تصعد <em>ثلاث درجات</em></h1>
+      <p class="lead">من الدرجة الأساسية Positiv، مرورًا بالمقارنة Komparativ، وصولًا إلى قمة التفضيل Superlativ — رحلة كاملة في قواعد المقارنة الألمانية، مع تصريف الصفة الكامل في حالة الجر Dativ.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-gold" onclick="document.getElementById('basic').scrollIntoView({behavior:'smooth'})">
+          ابدأ الصعود
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+        <button class="btn btn-ghost" onclick="document.getElementById('lab').scrollIntoView({behavior:'smooth'})">
+          🔊 جرّب معمل النطق
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>3</b><span>درجات مقارنة</span></div>
+        <div class="hero-stat"><b>14</b><span>قسمًا تفاعليًا</span></div>
+        <div class="hero-stat"><b>de-DE</b><span>نطق أصلي فوري</span></div>
+        <div class="hero-stat"><b>4</b><span>ألعاب وتمارين</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float-badge" style="top:0; inset-inline-start:6%;">✅ Positiv</div>
+      <div class="float-badge b2" style="top:34%; inset-inline-end:2%;">📈 Komparativ</div>
+      <div class="float-badge b3" style="bottom:6%; inset-inline-start:18%;">🏔️ Superlativ</div>
+
+      <svg class="peaks-wrap" viewBox="0 0 520 320" role="group" aria-label="مخطط درجات المقارنة: انقر على كل قمة للاستماع">
+        <line x1="10" y1="270" x2="510" y2="270" stroke="var(--border)" stroke-width="1.5"/>
+        <!-- dotted ascent path -->
+        <path d="M90,160 C 150,140 190,110 250,100 S 360,60 420,50" fill="none" stroke="var(--text-faint)" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>
+
+        <g class="peak-btn" data-de="schön" tabindex="0" role="button" aria-label="استمع: schön — الدرجة الأساسية">
+          <polygon points="20,270 90,160 160,270" fill="var(--primary-soft)" stroke="var(--sky)" stroke-width="2"/>
+          <polygon points="75,182 90,160 105,182" fill="var(--bg-elevated)" opacity="0.7"/>
+          <text x="90" y="296" text-anchor="middle" class="peak-label de" font-size="19" fill="var(--text)">schön</text>
+          <text x="90" y="313" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="Tajawal">الأساس · Positiv</text>
+        </g>
+
+        <g class="peak-btn" data-de="schöner" tabindex="0" role="button" aria-label="استمع: schöner — درجة المقارنة">
+          <polygon points="180,270 250,100 320,270" fill="var(--sky-soft)" stroke="var(--sky)" stroke-width="2"/>
+          <polygon points="228,132 250,100 272,132" fill="var(--bg-elevated)" opacity="0.7"/>
+          <text x="250" y="296" text-anchor="middle" class="peak-label de" font-size="19" fill="var(--text)">schöner</text>
+          <text x="250" y="313" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="Tajawal">المقارنة · Komparativ</text>
+        </g>
+
+        <g class="peak-btn" data-de="am schönsten" tabindex="0" role="button" aria-label="استمع: am schönsten — درجة التفضيل المطلق">
+          <polygon points="350,270 420,50 490,270" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2.4"/>
+          <polygon points="398,90 420,50 442,90" fill="var(--bg-elevated)" opacity="0.8"/>
+          <line x1="420" y1="50" x2="420" y2="24" stroke="var(--accent)" stroke-width="2.4"/>
+          <polygon points="420,24 442,32 420,40" fill="var(--accent)"/>
+          <text x="420" y="296" text-anchor="middle" class="peak-label de" font-size="19" font-weight="800" fill="var(--accent)">am schönsten</text>
+          <text x="420" y="313" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="Tajawal">القمة · Superlativ</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===================== 1. INTRO ===================== -->
+  <section class="section" id="intro" data-search="مقدمة لماذا نقارن positiv komparativ superlativ درجات المقارنة">
+    <span class="section-eyebrow">01 · المقدّمة</span>
+    <h2 class="section-title reveal">لماذا تحتاج الصفة الألمانية إلى ثلاث درجات؟</h2>
+    <p class="section-sub reveal">حين تصف شيئًا في الألمانية، تحتاج أحيانًا إلى مقارنته بشيء آخر — أو بكل الأشياء المشابهة له. لهذا، لكل صفة (Adjektiv) في الألمانية ثلاث "درجات" يمكن أن تتحوّل إليها:</p>
+
+    <div class="stage-grid reveal reveal-stagger">
+      <div class="stage-card" style="--i:0">
+        <div class="stage-lvl">01 · Positiv</div>
+        <div class="stage-word de-speak big" data-de="schön" tabindex="0" role="button">schön</div>
+        <div class="stage-ar">الدرجة الأساسية — بلا مقارنة، تصف الشيء وحده</div>
+      </div>
+      <div class="arrow-flow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </div>
+      <div class="stage-card lvl-2" style="--i:1">
+        <div class="stage-lvl">02 · Komparativ</div>
+        <div class="stage-word de-speak big" data-de="schöner" tabindex="0" role="button">schöner</div>
+        <div class="stage-ar">درجة المقارنة — تقارن بين <b>شيئين</b> باستخدام als</div>
+      </div>
+      <div class="arrow-flow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </div>
+      <div class="stage-card lvl-3" style="--i:2">
+        <div class="stage-lvl">03 · Superlativ</div>
+        <div class="stage-word de-speak big" data-de="am schönsten" tabindex="0" role="button">am schönsten</div>
+        <div class="stage-ar">التفضيل المطلق — الأعلى بين <b>ثلاثة أو أكثر</b></div>
+      </div>
+    </div>
+
+    <div class="callout callout-tip reveal">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg></span>
+      <div>
+        <h4>فكرة سريعة</h4>
+        <p>تخيّل الأمر كسلّم صعود: كل صفة تبدأ من الأرض (Positiv)، وتتسلّق درجة لتقارن غرضين (Komparativ)، ثم تصل إلى القمة لتصف الأعلى بين مجموعة كاملة (Superlativ). في الأقسام التالية سنتعلّم القواعد الخمس التي تتحكّم في شكل هذا التسلّق.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. BASIC RULE ===================== -->
+  <section class="section" id="basic" data-search="القاعدة الاساسية er am sten langsam schon اضافة">
+    <span class="section-eyebrow">02 · القاعدة الأساسية</span>
+    <h2 class="section-title reveal">ببساطة: أضِف <span class="mono">-er</span> ثم <span class="mono">am -sten</span></h2>
+    <p class="section-sub reveal">في مُعظم الصفات الألمانية، القاعدة سهلة ومباشرة: لا حاجة لحفظ كلمات جديدة، فقط أضف اللاحقة المناسبة إلى نهاية الصفة.</p>
+
+    <div class="card reveal">
+      <div class="grid-2" style="align-items:center; margin-bottom:20px;">
+        <div class="example-box" style="background:var(--sky-soft); margin:0;">
+          <div style="font-weight:800; color:var(--sky); margin-bottom:6px;">Komparativ</div>
+          <div class="de" style="font-size:1.3rem;">Positiv <b>+ er</b></div>
+        </div>
+        <div class="example-box" style="background:var(--accent-soft); margin:0;">
+          <div style="font-weight:800; color:var(--accent); margin-bottom:6px;">Superlativ</div>
+          <div class="de" style="font-size:1.3rem;"><b>am</b> Positiv <b>+ sten</b></div>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="grammar-table">
+          <thead>
+            <tr><th>Positiv</th><th>المعنى</th><th>Komparativ</th><th>المعنى</th><th>Superlativ</th><th>المعنى</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><bdi class="de-speak" data-de="langsam" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>langsam</bdi></td>
+              <td>بطيء</td>
+              <td><bdi class="de-speak" data-de="langsamer" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>langsamer</bdi></td>
+              <td>أبطأ</td>
+              <td><bdi class="de-speak" data-de="am langsamsten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am langsamsten</bdi></td>
+              <td>الأبطأ بإطلاق</td>
+            </tr>
+            <tr>
+              <td><bdi class="de-speak" data-de="schön" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>schön</bdi></td>
+              <td>جميل / حلو</td>
+              <td><bdi class="de-speak" data-de="schöner" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>schöner</bdi></td>
+              <td>أجمل</td>
+              <td><bdi class="de-speak" data-de="am schönsten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am schönsten</bdi></td>
+              <td>الأجمل بإطلاق</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <details class="tips reveal">
+      <summary>لماذا تُكتب <span class="mono">am</span> قبل صيغة Superlativ؟
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="tips-body">
+        <p>هذا الشكل (<span class="de">am + Adjektiv+sten</span>) يُستخدم حين تصف الصفة الفعلَ نفسه أو الفاعل دون أن تُلحق باسم مباشرةً، مثل: <span class="de">Ronaldo ist am besten.</span> (رونالدو هو الأفضل). لكن حين تُلحق الصفة باسم مباشرة، تُستخدم صيغة أخرى مع أداة التعريف — سنشرحها بالتفصيل في قسم "أدوات المقارنة".</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ===================== 3. SPELLING RULE ===================== -->
+  <section class="section" id="spelling" data-search="قاعدة املائية t d ß z sch حرف e weit süß hübsch">
+    <span class="section-eyebrow">03 · قاعدة إملائية</span>
+    <h2 class="section-title reveal">حين تنتهي الصفة بـ <span class="mono">t · d · ß · z · sch</span></h2>
+    <p class="section-sub reveal">لتسهيل النطق، إذا انتهت الصفة بأحد هذه الحروف، نُضيف حرف <b class="mono">e</b> إضافيًا قبل <span class="mono">-st</span> في صيغة <b>Superlativ</b> فقط (لا تتأثر صيغة Komparativ بهذه القاعدة).</p>
+
+    <div class="pill-row reveal mb-16">
+      <span class="tag" style="background:var(--accent-soft); color:var(--accent); font-size:.85rem; padding:6px 12px;">t</span>
+      <span class="tag" style="background:var(--accent-soft); color:var(--accent); font-size:.85rem; padding:6px 12px;">d</span>
+      <span class="tag" style="background:var(--accent-soft); color:var(--accent); font-size:.85rem; padding:6px 12px;">ß</span>
+      <span class="tag" style="background:var(--accent-soft); color:var(--accent); font-size:.85rem; padding:6px 12px;">z</span>
+      <span class="tag" style="background:var(--accent-soft); color:var(--accent); font-size:.85rem; padding:6px 12px;">sch</span>
+      <span class="small-note" style="align-self:center;">→ Superlativ = Positiv + <b class="mono">e</b> + sten</span>
+    </div>
+
+    <div class="card reveal">
+      <div class="table-scroll">
+        <table class="grammar-table">
+          <thead><tr><th>Positiv</th><th>المعنى</th><th>Komparativ</th><th>المعنى</th><th>Superlativ</th><th>المعنى</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><bdi class="de-speak" data-de="weit" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>weit</bdi></td><td>بعيد</td>
+              <td><bdi class="de-speak" data-de="weiter" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>weiter</bdi></td><td>أبعد</td>
+              <td><bdi class="de-speak" data-de="am weitesten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am weit<b style="color:var(--accent)">e</b>sten</bdi></td><td>الأبعد</td>
+            </tr>
+            <tr>
+              <td><bdi class="de-speak" data-de="süß" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>süß</bdi></td><td>حلو المذاق</td>
+              <td><bdi class="de-speak" data-de="süßer" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>süßer</bdi></td><td>أحلى</td>
+              <td><bdi class="de-speak" data-de="am süßesten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am süß<b style="color:var(--accent)">e</b>sten</bdi></td><td>الأحلى</td>
+            </tr>
+            <tr>
+              <td><bdi class="de-speak" data-de="hübsch" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>hübsch</bdi></td><td>جميل / لطيف</td>
+              <td><bdi class="de-speak" data-de="hübscher" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>hübscher</bdi></td><td>أجمل</td>
+              <td><bdi class="de-speak" data-de="am hübschesten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am hübsch<b style="color:var(--accent)">e</b>sten</bdi></td><td>الأجمل</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <details class="tips reveal">
+      <summary>أخطاء شائعة يقع فيها الطلاب
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="tips-body">
+        <ul>
+          <li>كتابة <span class="de">am weitsten</span> بدل <span class="de">am weitesten</span> — نسيان الـ e الإضافية.</li>
+          <li>كتابة <span class="de">am hübschsten</span> بدل <span class="de">am hübschesten</span>.</li>
+          <li>تذكّر: هذه القاعدة تخصّ صيغة <b>Superlativ</b> فقط، أما Komparativ فتبقى بإضافة <span class="mono">-er</span> العادية دون تغيير.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ===================== 4. UMLAUT RULE ===================== -->
+  <section class="section" id="umlaut" data-search="التحول الصوتي umlaut a o u ä ö ü alt groß jung">
+    <span class="section-eyebrow">04 · التحوّل الصوتي</span>
+    <h2 class="section-title reveal">من <span class="mono">a · o · u</span> إلى <span class="mono">ä · ö · ü</span></h2>
+    <p class="section-sub reveal">كثير من الصفات المكوَّنة من مقطع صوتي واحد وتحتوي على حرف a أو o أو u، تُضيف نقطتين (Umlaut) فوق ذلك الحرف في كلٍّ من Komparativ وSuperlativ. لاحظ كلمة "غالبًا" — فهذه القاعدة أغلبية لا قاعدة مطلقة.</p>
+
+    <div class="card reveal">
+      <div class="table-scroll">
+        <table class="grammar-table">
+          <thead><tr><th>Positiv</th><th>المعنى</th><th>Komparativ</th><th>المعنى</th><th>Superlativ</th><th>المعنى</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><bdi class="de-speak" data-de="alt" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>alt</bdi></td><td>قديم / كبير السن</td>
+              <td><bdi class="de-speak" data-de="älter" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg><b style="color:var(--sky)">ä</b>lter</bdi></td><td>أقدم</td>
+              <td><bdi class="de-speak" data-de="am ältesten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am <b style="color:var(--sky)">ä</b>ltesten</bdi></td><td>الأقدم</td>
+            </tr>
+            <tr>
+              <td><bdi class="de-speak" data-de="groß" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>groß</bdi></td><td>كبير</td>
+              <td><bdi class="de-speak" data-de="größer" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>gr<b style="color:var(--sky)">ö</b>ßer</bdi></td><td>أكبر</td>
+              <td><bdi class="de-speak" data-de="am größten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am gr<b style="color:var(--sky)">ö</b>ßten</bdi></td><td>الأكبر</td>
+            </tr>
+            <tr>
+              <td><bdi class="de-speak" data-de="jung" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>jung</bdi></td><td>شاب / صغير السن</td>
+              <td><bdi class="de-speak" data-de="jünger" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>j<b style="color:var(--sky)">ü</b>nger</bdi></td><td>أصغر</td>
+              <td><bdi class="de-speak" data-de="am jüngsten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am j<b style="color:var(--sky)">ü</b>ngsten</bdi></td><td>الأصغر</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout callout-warn reveal">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4M12 17h.01"/></svg></span>
+      <div>
+        <h4>تنبيه: groß استثناء داخل الاستثناء</h4>
+        <p>رغم أن groß تنتهي بحرف <span class="mono">ß</span> (وهو من حروف قاعدة القسم السابق)، فإن صيغة Superlativ الصحيحة هي <span class="de" style="font-weight:700">am größten</span> وليس "größesten" — استثناء يستحق الحفظ لأن الكلمة شائعة جدًا.</p>
+      </div>
+    </div>
+
+    <details class="tips reveal">
+      <summary>استثناءات شائعة لا تأخذ Umlaut رغم احتوائها على a/o/u
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="tips-body">
+        <p>هذه الصفات شائعة الاستخدام ولا تتحوّل حروفها العلة رغم انطباق الشرط عليها ظاهريًا — ينصح المدرّسون بحفظها كقائمة منفصلة:</p>
+        <ul style="color:var(--text)">
+          <li style="padding-inline-start:0;"><span class="de-speak" data-de="froh" tabindex="0" role="button">froh</span> ← <span class="de-speak" data-de="froher" tabindex="0" role="button">froher</span> <span class="small-note">(سعيد)</span></li>
+          <li style="padding-inline-start:0;"><span class="de-speak" data-de="klar" tabindex="0" role="button">klar</span> ← <span class="de-speak" data-de="klarer" tabindex="0" role="button">klarer</span> <span class="small-note">(واضح)</span></li>
+          <li style="padding-inline-start:0;"><span class="de-speak" data-de="voll" tabindex="0" role="button">voll</span> ← <span class="de-speak" data-de="voller" tabindex="0" role="button">voller</span> <span class="small-note">(ممتلئ)</span></li>
+          <li style="padding-inline-start:0;"><span class="de-speak" data-de="flach" tabindex="0" role="button">flach</span> ← <span class="de-speak" data-de="flacher" tabindex="0" role="button">flacher</span> <span class="small-note">(مسطّح)</span></li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ===================== 5. EL/ER RULE ===================== -->
+  <section class="section" id="eler" data-search="قاعدة el er dunkel teuer حذف حرف">
+    <span class="section-eyebrow">05 · قاعدة الاختصار</span>
+    <h2 class="section-title reveal">حين تنتهي الصفة بـ <span class="mono">-el</span> أو <span class="mono">-er</span></h2>
+    <p class="section-sub reveal">هنا يحدث العكس تمامًا من القاعدة السابقة: من أجل سهولة النطق، يُحذف حرف الـ <b class="mono">e</b> الذي يسبق الـ l أو r مباشرة عند تكوين Komparativ.</p>
+
+    <div class="grid-2 reveal">
+      <div class="example-box" style="background:var(--sky-soft); margin:0;">
+        <div style="font-weight:800; color:var(--sky); margin-bottom:6px;">el ← تُصبح ← l</div>
+        <div class="de">dunk<s style="opacity:.4">e</s>l + er = dunkler</div>
+      </div>
+      <div class="example-box" style="background:var(--sky-soft); margin:0;">
+        <div style="font-weight:800; color:var(--sky); margin-bottom:6px;">er ← تُصبح ← r</div>
+        <div class="de">teu<s style="opacity:.4">e</s>r + er = teurer</div>
+      </div>
+    </div>
+
+    <div class="card reveal mt-24">
+      <div class="table-scroll">
+        <table class="grammar-table">
+          <thead><tr><th>Positiv</th><th>المعنى</th><th>Komparativ</th><th>المعنى</th><th>Superlativ</th><th>المعنى</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><bdi class="de-speak" data-de="teuer" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>teuer</bdi></td><td>غالي</td>
+              <td><bdi class="de-speak" data-de="teurer" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>teurer</bdi></td><td>أغلى</td>
+              <td><bdi class="de-speak" data-de="am teuersten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am teuersten</bdi></td><td>الأغلى</td>
+            </tr>
+            <tr>
+              <td><bdi class="de-speak" data-de="dunkel" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>dunkel</bdi></td><td>مظلم / داكن</td>
+              <td><bdi class="de-speak" data-de="dunkler" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>dunkler</bdi></td><td>أظلم</td>
+              <td><bdi class="de-speak" data-de="am dunkelsten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am dunkelsten</bdi></td><td>الأظلم</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout callout-tip reveal">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg></span>
+      <div>
+        <h4>قارن مع القسم 03</h4>
+        <p>لاحظ الفرق: صفات مثل <span class="de">weit</span> "تُضيف" حرفًا (weitesten)، بينما صفات مثل <span class="de">dunkel</span> "تحذف" حرفًا (dunkler). كلا القاعدتين هدفهما نفسه: تسهيل نطق الكلمة الألمانية.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. IRREGULAR ===================== -->
+  <section class="section" id="irregular" data-search="صفات شاذة unregelmäßig gut besser viel mehr gern lieber am besten meisten liebsten hoch nah">
+    <span class="section-eyebrow">06 · الاستثناءات الكاملة</span>
+    <h2 class="section-title reveal">صفات تُغيّر شكلها بالكامل</h2>
+    <p class="section-sub reveal">ثلاث كلمات من أكثر الكلمات استخدامًا في الألمانية اليومية لا تتبع أي قاعدة مما سبق، بل تتحوّل إلى شكل مختلف كليًا — يجب حفظها غيبًا.</p>
+
+    <div class="card reveal">
+      <div class="table-scroll">
+        <table class="grammar-table">
+          <thead><tr><th>Positiv</th><th>المعنى</th><th>Komparativ</th><th>المعنى</th><th>Superlativ</th><th>المعنى</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><bdi class="de-speak" data-de="viel" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>viel</bdi></td><td>كثير</td>
+              <td><bdi class="de-speak" data-de="mehr" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>mehr</bdi></td><td>أكثر</td>
+              <td><bdi class="de-speak" data-de="am meisten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am meisten</bdi></td><td>الأكثر بإطلاق</td>
+            </tr>
+            <tr>
+              <td><bdi class="de-speak" data-de="gern" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>gern</bdi></td><td>بسرور <span class="small-note">(ظرف)</span></td>
+              <td><bdi class="de-speak" data-de="lieber" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>lieber</bdi></td><td>يُفضَّل أكثر</td>
+              <td><bdi class="de-speak" data-de="am liebsten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am liebsten</bdi></td><td>المفضَّل الأول</td>
+            </tr>
+            <tr>
+              <td><bdi class="de-speak" data-de="gut" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>gut</bdi></td><td>جيد</td>
+              <td><bdi class="de-speak" data-de="besser" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>besser</bdi></td><td>أفضل</td>
+              <td><bdi class="de-speak" data-de="am besten" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>am besten</bdi></td><td>الأفضل بإطلاق</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout callout-warn reveal">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4M12 17h.01"/></svg></span>
+      <div>
+        <h4>gern ليست صفة!</h4>
+        <p><span class="de">gern</span> في الحقيقة "ظرف" (Adverb) يصف فعلاً، وليس صفة تصف اسمًا — نستخدمها للتعبير عن التفضيل في فعل شيء ما، مثل: <span class="de-speak" data-de="Ich spiele gern Fußball." tabindex="0" role="button">Ich spiele gern Fußball.</span> (أحب لعب كرة القدم).</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-size:1.15rem; margin:28px 0 14px;" class="reveal">أمثلة من الحياة اليومية</h3>
+    <div class="grid-2 reveal">
+      <div class="card-solid">
+        <div class="example-box">
+          <div class="de-speak" data-de="Ich kaufe bei Kaufland mehr als bei Netto." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Ich kaufe bei Kaufland mehr als bei Netto.</div>
+          <div class="ar">أنا أشتري من "كاوفلاند" أكثر مما أشتري من "نيتو".</div>
+        </div>
+        <div class="example-box">
+          <div class="de-speak" data-de="Ich kaufe bei Lidl am meisten." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Ich kaufe bei Lidl am meisten.</div>
+          <div class="ar">أنا أشتري من "ليدل" أكثر من أي مكان آخر.</div>
+        </div>
+      </div>
+      <div class="card-solid">
+        <div class="example-box">
+          <div class="de-speak" data-de="Ich trinke Saft lieber als Kaffee." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Ich trinke Saft lieber als Kaffee.</div>
+          <div class="ar">أُفضّل شرب العصير على القهوة.</div>
+        </div>
+        <div class="example-box">
+          <div class="de-speak" data-de="Ich trinke Tee am liebsten." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Ich trinke Tee am liebsten.</div>
+          <div class="ar">الشاي هو المشروب المفضَّل لديّ أكثر من أي شيء.</div>
+        </div>
+      </div>
+    </div>
+    <div class="example-box reveal mt-16">
+      <div class="de-speak" data-de="Messi ist besser als Neymar." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Messi ist besser als Neymar.</div>
+      <div class="ar">ميسي أفضل من نيمار.</div>
+      <div class="de-speak" data-de="Ronaldo ist am besten." tabindex="0" role="button" style="display:block; font-weight:600; margin-top:10px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Ronaldo ist am besten.</div>
+      <div class="ar">رونالدو هو الأفضل.</div>
+    </div>
+
+    <details class="tips reveal">
+      <summary>تلميح إضافي: كلمتان شاذتان أخريان يكثر استخدامهما
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="tips-body">
+        <p>لم ترد هاتان الكلمتان في المصدر الأصلي لهذا الدرس، لكن كل مدرّس ألمانية يذكرهما عادة مع gut/viel/gern لأنهما شائعتان جدًا:</p>
+        <ul style="color:var(--text)">
+          <li style="padding-inline-start:0;"><span class="de-speak" data-de="hoch" tabindex="0" role="button">hoch</span> (مرتفع) ← <span class="de-speak" data-de="höher" tabindex="0" role="button">höher</span> ← <span class="de-speak" data-de="am höchsten" tabindex="0" role="button">am höchsten</span></li>
+          <li style="padding-inline-start:0;"><span class="de-speak" data-de="nah" tabindex="0" role="button">nah</span> (قريب) ← <span class="de-speak" data-de="näher" tabindex="0" role="button">näher</span> ← <span class="de-speak" data-de="am nächsten" tabindex="0" role="button">am nächsten</span></li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ===================== 7. COMPARE TOOLS ===================== -->
+  <section class="section" id="compare-tools" data-search="als wie nicht so wie ادوات المقارنة nominativ akkusativ der die das ste">
+    <span class="section-eyebrow">07 · أدوات المقارنة</span>
+    <h2 class="section-title reveal">كيف تربط جملة المقارنة؟</h2>
+    <p class="section-sub reveal">تختلف الأداة المستخدمة حسب درجة المقارنة التي تختارها. إليك القواعد الثلاث الأساسية:</p>
+
+    <div class="grid-2 reveal">
+      <div class="card-solid">
+        <div class="tag tag-a" style="margin-bottom:10px;">Positiv</div>
+        <h4 style="font-family:var(--font-display); font-size:1.1rem; margin-bottom:8px;">so + صفة + wie</h4>
+        <p class="small-note" style="margin-bottom:12px;">للتساوي بين شيئين — "بقدر ما"</p>
+        <div class="de-speak" data-de="Berlin ist nicht so groß wie Wien." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Berlin ist nicht so groß wie Wien.</div>
+        <div class="ar small-note">برلين ليست كبيرة مثل فيينا.</div>
+      </div>
+      <div class="card-solid">
+        <div class="tag tag-n" style="margin-bottom:10px;">Komparativ</div>
+        <h4 style="font-family:var(--font-display); font-size:1.1rem; margin-bottom:8px;">صفة+er + als</h4>
+        <p class="small-note" style="margin-bottom:12px;">لمقارنة شيئين مع تفاوت — "أكثر من"</p>
+        <div class="de-speak" data-de="Die Hose ist teurer als das Hemd." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Die Hose ist teurer als das Hemd.</div>
+        <div class="ar small-note">البنطال أغلى من القميص.</div>
+      </div>
+    </div>
+
+    <div class="card-solid reveal mt-16">
+      <div class="tag tag-d" style="margin-bottom:10px;">Superlativ</div>
+      <h4 style="font-family:var(--font-display); font-size:1.1rem; margin-bottom:8px;">am + صفة+sten (بلا أداة مقارنة)</h4>
+      <p class="small-note" style="margin-bottom:12px;">تصف الأعلى بين مجموعة كاملة — لا تحتاج "als" أو "wie" لأنها لا تقارن بعنصر واحد بل بكل شيء آخر</p>
+      <div class="de-speak" data-de="Moskau ist am größten." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Moskau ist am größten.</div>
+      <div class="ar small-note">موسكو هي الأكبر.</div>
+    </div>
+
+    <div class="callout callout-gold reveal">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg></span>
+      <div>
+        <h4>Superlativ بأداة التعريف: der/die/das + صفة+ste</h4>
+        <p>حين تُلحَق صيغة Superlativ باسمٍ مباشرةً (قبل الاسم)، تتغيّر الصيغة من <span class="de">am ...sten</span> إلى <span class="de">der/die/das ...ste</span> وتتصرّف كصفة عادية تتبع جنس وحالة الاسم. مثال: <span class="de-speak" data-de="der Schönste" tabindex="0" role="button">der Schönste</span> (الأجمل)، <span class="de-speak" data-de="der Langsamste" tabindex="0" role="button">der Langsamste</span> (الأبطأ).</p>
+      </div>
+    </div>
+
+    <details class="tips reveal">
+      <summary>قاعدة نحوية دقيقة: als + حالة الرفع (Nominativ)
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="tips-body">
+        <p>بعد أداة المقارنة <span class="mono">als</span>، تُستخدم الضمائر في حالة الرفع Nominativ وليس حالة النصب Akkusativ — عكس ما قد يتوقعه بعض الطلاب:</p>
+        <ul style="color:var(--text)">
+          <li style="padding-inline-start:0;">✅ <span class="de-speak" data-de="Mein Bruder ist älter als ich." tabindex="0" role="button">Mein Bruder ist älter als ich.</span> <span class="small-note">(ich = Nominativ، صحيح)</span></li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ===================== 8. APPLIED EXAMPLES ===================== -->
+  <section class="section" id="applied" data-search="امثلة تطبيقية اسعار مدن dortmund berlin wien moskau hose hemd">
+    <span class="section-eyebrow">08 · أمثلة تطبيقية</span>
+    <h2 class="section-title reveal">لنطبّق كل شيء على مواقف حقيقية</h2>
+    <p class="section-sub reveal">دمج القواعد السابقة في جمل يومية — الأسعار، الأعمار، ومقارنة حجم المدن الأوروبية.</p>
+
+    <h3 style="font-family:var(--font-display); font-size:1.15rem; margin-bottom:14px;" class="reveal">👖 مقارنة الأسعار</h3>
+    <div class="card-solid reveal">
+      <div class="example-box">
+        <div class="de-speak" data-de="Die Hose kostet 200 Euro. Die Hose ist teuer." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Die Hose kostet 200 €. Die Hose ist teuer.</div>
+        <div class="ar">البنطال يكلّف 200 يورو. البنطال غالي.</div>
+      </div>
+      <div class="example-box">
+        <div class="de-speak" data-de="Das Hemd kostet 10 Euro. Das Hemd ist billig." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Das Hemd kostet 10 €. Das Hemd ist billig.</div>
+        <div class="ar">القميص يكلّف 10 يورو. القميص رخيص.</div>
+      </div>
+      <div class="example-box" style="background:var(--accent-soft);">
+        <div class="de-speak" data-de="Die Hose ist teurer als das Hemd." tabindex="0" role="button" style="display:block; font-weight:700;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Die Hose ist teurer als das Hemd.</div>
+        <div class="ar">البنطال أغلى من القميص.</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-size:1.15rem; margin:28px 0 14px;" class="reveal">👨‍👩‍👦 مقارنة العمر والجمال</h3>
+    <div class="grid-2 reveal">
+      <div class="example-box" style="margin:0;">
+        <div class="de-speak" data-de="Mein Bruder ist älter als ich." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Mein Bruder ist älter als ich.</div>
+        <div class="ar">أخي أكبر مني.</div>
+        <div class="de-speak" data-de="Ich bin jünger als mein Bruder." tabindex="0" role="button" style="display:block; font-weight:600; margin-top:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Ich bin jünger als mein Bruder.</div>
+        <div class="ar">أنا أصغر من أخي.</div>
+      </div>
+      <div class="example-box" style="margin:0;">
+        <div class="de-speak" data-de="Schakira ist schöner als Frau Merkel." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Schakira ist schöner als Frau Merkel.</div>
+        <div class="ar">شاكيرا أجمل من السيدة ميركل.</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-size:1.15rem; margin:28px 0 6px;" class="reveal">🏙️ أي مدينة أكبر؟</h3>
+    <p class="small-note reveal mb-16">الترتيب الحقيقي من الأصغر إلى الأكبر (حسب أمثلة الدرس): دورتموند ← برلين ← فيينا ← موسكو.</p>
+
+    <div class="card reveal">
+      <div class="bars-wrap">
+        <div class="bar-item">
+          <div class="bar-fill" style="height:32%; background:linear-gradient(180deg, #C24949, #8f3535);"><span class="bar-value">١</span></div>
+          <div class="bar-label de">Dortmund<small>الأصغر</small></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-fill" style="height:56%;"><span class="bar-value">٢</span></div>
+          <div class="bar-label de">Berlin<small>أكبر من دورتموند</small></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-fill" style="height:74%;"><span class="bar-value">٣</span></div>
+          <div class="bar-label de">Wien<small>أكبر من برلين</small></div>
+        </div>
+        <div class="bar-item tallest">
+          <div class="bar-fill" style="height:100%;"><span class="bar-value">٤</span></div>
+          <div class="bar-label de">Moskau<small>الأكبر إطلاقًا</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2 reveal mt-24">
+      <div class="card-solid">
+        <div class="example-box" style="margin-top:0;">
+          <div class="de-speak" data-de="Dortmund ist am kleinsten." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Dortmund ist am kleinsten.</div>
+          <div class="ar">دورتموند هي الأصغر.</div>
+        </div>
+        <div class="example-box">
+          <div class="de-speak" data-de="Moskau ist am größten." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Moskau ist am größten.</div>
+          <div class="ar">موسكو هي الأكبر.</div>
+        </div>
+      </div>
+      <div class="card-solid">
+        <div class="example-box" style="margin-top:0;">
+          <div class="de-speak" data-de="Berlin ist größer als Dortmund." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Berlin ist größer als Dortmund.</div>
+          <div class="ar">برلين أكبر من دورتموند.</div>
+        </div>
+        <div class="example-box">
+          <div class="de-speak" data-de="Berlin ist nicht so klein wie Dortmund." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Berlin ist nicht so klein wie Dortmund.</div>
+          <div class="ar">برلين ليست صغيرة مثل دورتموند <span class="small-note">(= نفس المعنى بصيغة أخرى)</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-2 reveal mt-16">
+      <div class="card-solid">
+        <div class="example-box" style="margin-top:0;">
+          <div class="de-speak" data-de="Berlin ist nicht so groß wie Wien." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Berlin ist nicht so groß wie Wien.</div>
+          <div class="ar">برلين ليست كبيرة مثل فيينا.</div>
+        </div>
+      </div>
+      <div class="card-solid">
+        <div class="example-box" style="margin-top:0;">
+          <div class="de-speak" data-de="Berlin ist kleiner als Wien." tabindex="0" role="button" style="display:block; font-weight:600;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Berlin ist kleiner als Wien.</div>
+          <div class="ar">برلين أصغر من فيينا <span class="small-note">(= نفس المعنى بصيغة أخرى)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-tip reveal">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg></span>
+      <div>
+        <h4>كيف تُقرأ هذه الأمثلة؟</h4>
+        <p>كل زوج من الجُمل أعلاه يقول نفس المعنى بطريقتين: مرة بصيغة Komparativ المباشرة (größer als)، ومرة بصيغة النفي المتساوي (nicht so klein wie) — تدريب ممتاز على المرونة في التعبير عن نفس الفكرة.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 9. DATIV ===================== -->
+  <section class="section" id="dativ" data-search="dativ حالة الجر صفة الاسم schwarzer tisch gelbes buch blaue hose der das die n a d">
+    <span class="section-eyebrow">09 · صفة الاسم</span>
+    <h2 class="section-title reveal">تصريف الصفة في حالة الجر <span class="mono">Dativ</span></h2>
+    <p class="section-sub reveal">حين تسبق الصفةُ اسمًا (مثل: طاولة سوداء)، يجب أن تأخذ الصفة نهاية خاصة تتغيّر حسب <b>جنس الاسم</b> (مذكر/مؤنث/محايد) و<b>حالته الإعرابية</b> (Nominativ / Akkusativ / Dativ). إليك القاعدة كاملة مع أداة النكرة <span class="mono">ein</span>.</p>
+
+    <div class="gender-legend reveal">
+      <span><span class="gender-dot" style="background:var(--case-der)"></span> der (مذكر)</span>
+      <span><span class="gender-dot" style="background:var(--case-das)"></span> das (محايد)</span>
+      <span><span class="gender-dot" style="background:var(--case-die)"></span> die (مؤنث)</span>
+    </div>
+
+    <div class="card reveal">
+      <div class="table-scroll">
+        <table class="grammar-table">
+          <thead><tr><th>الحالة</th><th><span class="tag-der de" style="color:var(--case-der)">der Tisch</span></th><th><span class="tag-das de" style="color:var(--case-das)">das Buch</span></th><th><span class="tag-die de" style="color:var(--case-die)">die Hose</span></th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="tag tag-n">N</span> Nominativ</td>
+              <td class="de">ein schwarz<b style="color:var(--case-der)">er</b> Tisch</td>
+              <td class="de">ein gelb<b style="color:var(--case-das)">es</b> Buch</td>
+              <td class="de">eine blau<b style="color:var(--case-die)">e</b> Hose</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-a">A</span> Akkusativ</td>
+              <td class="de">einen schwarz<b style="color:var(--case-der)">en</b> Tisch</td>
+              <td class="de">ein gelb<b style="color:var(--case-das)">es</b> Buch</td>
+              <td class="de">eine blau<b style="color:var(--case-die)">e</b> Hose</td>
+            </tr>
+            <tr>
+              <td><span class="tag tag-d">D</span> Dativ</td>
+              <td class="de">dem schwarz<b style="color:var(--accent)">en</b> Tisch</td>
+              <td class="de">dem gelb<b style="color:var(--accent)">en</b> Buch</td>
+              <td class="de">der blau<b style="color:var(--accent)">en</b> Hose</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout callout-gold reveal">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg></span>
+      <div>
+        <h4>القاعدة الذهبية لـ Dativ</h4>
+        <p>لاحظ العمود الأخير في كل صف: في حالة <b>Dativ المفرد</b>، تنتهي الصفة دائمًا تقريبًا بـ <span class="mono">-en</span> — بغض النظر عن جنس الاسم! هذه أسهل حالة إعرابية لحفظ نهاية الصفة فيها.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-size:1.15rem; margin:28px 0 14px;" class="reveal">جُمل كاملة من كل حالة</h3>
+    <div class="grid-2 reveal">
+      <div class="card-solid">
+        <div style="font-weight:800; color:var(--case-der); margin-bottom:10px;">🔵 der Tisch (مذكر)</div>
+        <div class="example-box" style="margin-top:0;">
+          <span class="tag tag-n">N</span>
+          <div class="de-speak" data-de="Das ist ein schwarzer Tisch." tabindex="0" role="button" style="display:block; font-weight:600; margin-top:6px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Das ist ein schwarzer Tisch.</div>
+          <div class="ar">هذه طاولة سوداء.</div>
+        </div>
+        <div class="example-box">
+          <span class="tag tag-a">A</span>
+          <div class="de-speak" data-de="Ich habe einen schwarzen Tisch." tabindex="0" role="button" style="display:block; font-weight:600; margin-top:6px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Ich habe einen schwarzen Tisch.</div>
+          <div class="ar">أملك طاولة سوداء.</div>
+        </div>
+        <div class="example-box" style="background:var(--accent-soft);">
+          <span class="tag tag-d">D</span>
+          <div class="de-speak" data-de="Der Kuli ist auf dem schwarzen Tisch." tabindex="0" role="button" style="display:block; font-weight:600; margin-top:6px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Der Kuli ist auf dem schwarzen Tisch.</div>
+          <div class="ar">القلم على الطاولة السوداء.</div>
+        </div>
+      </div>
+
+      <div class="card-solid">
+        <div style="font-weight:800; color:var(--case-das); margin-bottom:10px;">🟢 das Buch (محايد)</div>
+        <div class="example-box" style="margin-top:0;">
+          <span class="tag tag-n">N</span>
+          <div class="de-speak" data-de="Das ist ein gelbes Buch." tabindex="0" role="button" style="display:block; font-weight:600; margin-top:6px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Das ist ein gelbes Buch.</div>
+          <div class="ar">هذا كتاب أصفر.</div>
+        </div>
+        <div class="example-box">
+          <span class="tag tag-a">A</span>
+          <div class="de-speak" data-de="Ich habe ein gelbes Buch." tabindex="0" role="button" style="display:block; font-weight:600; margin-top:6px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Ich habe ein gelbes Buch.</div>
+          <div class="ar">أملك كتابًا أصفر.</div>
+        </div>
+        <div class="example-box" style="background:var(--accent-soft);">
+          <span class="tag tag-d">D</span>
+          <div class="de-speak" data-de="Der Kuli ist neben dem gelben Buch." tabindex="0" role="button" style="display:block; font-weight:600; margin-top:6px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Der Kuli ist neben dem gelben Buch.</div>
+          <div class="ar">القلم بجانب الكتاب الأصفر.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-solid reveal mt-16">
+      <div style="font-weight:800; color:var(--case-die); margin-bottom:10px;">🔴 die Hose (مؤنث)</div>
+      <div class="grid-2" style="gap:12px;">
+        <div class="example-box" style="margin:0;">
+          <span class="tag tag-n">N</span>
+          <div class="de-speak" data-de="Das ist eine blaue Hose." tabindex="0" role="button" style="display:block; font-weight:600; margin-top:6px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Das ist eine blaue Hose.</div>
+          <div class="ar">هذا بنطال أزرق.</div>
+        </div>
+        <div class="example-box" style="margin:0;">
+          <span class="tag tag-a">A</span>
+          <div class="de-speak" data-de="Ich habe eine blaue Hose." tabindex="0" role="button" style="display:block; font-weight:600; margin-top:6px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Ich habe eine blaue Hose.</div>
+          <div class="ar">أملك بنطالًا أزرق.</div>
+        </div>
+        <div class="example-box" style="margin:0; background:var(--accent-soft);">
+          <span class="tag tag-d">D</span>
+          <div class="de-speak" data-de="Das Hemd ist neben der blauen Hose." tabindex="0" role="button" style="display:block; font-weight:600; margin-top:6px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Das Hemd ist neben der blauen Hose.</div>
+          <div class="ar">القميص بجانب البنطال الأزرق.</div>
+        </div>
+      </div>
+    </div>
+
+    <details class="tips reveal">
+      <summary>ملاحظة: auf و neben من حروف الجر ثنائية الحالة (Wechselpräpositionen)
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="tips-body">
+        <p>حروف الجر مثل <span class="de">auf</span> و<span class="de">neben</span> تأخذ حالة Dativ عند وصف موقع ثابت (السؤال: wo? أين؟)، وتأخذ حالة Akkusativ عند وصف حركة باتجاه مكان (السؤال: wohin? إلى أين؟). في أمثلتنا أعلاه، القلم والقميص في وضع ثابت، لذلك استخدمنا Dativ.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ===================== 10. PRONUNCIATION LAB ===================== -->
+  <section class="section" id="lab" data-search="معمل النطق استماع صوت speech نطق sentence">
+    <span class="section-eyebrow">10 · معمل النطق</span>
+    <h2 class="section-title reveal">تدرّب على نطق جُمل كاملة</h2>
+    <p class="section-sub reveal">اختر جملة، ثم استمع إليها كلمةً كلمة مع تمييز الكلمة المنطوقة حاليًا. يمكنك التحكّم في سرعة النطق أيضًا.</p>
+
+    <div class="card lab reveal" id="pronunciationLab">
+      <div class="lab-sentence" id="labSentence" dir="ltr" lang="de"></div>
+      <p class="center-text" style="direction:rtl;" id="labSentenceAr"></p>
+      <div class="lab-controls">
+        <button class="btn btn-gold" id="labPlayBtn" aria-label="تشغيل النطق"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><span>استماع</span></button>
+        <button class="btn btn-ghost" id="labReplayBtn" aria-label="إعادة من البداية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg><span>إعادة</span></button>
+        <div class="lab-speed">
+          <span>السرعة</span>
+          <input type="range" id="labSpeed" min="0.5" max="1.5" step="0.05" value="0.95" aria-label="سرعة النطق">
+          <span id="labSpeedVal" class="mono">0.95×</span>
+        </div>
+      </div>
+      <div class="lab-voice">
+        <span class="lab-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+        الصوت المستخدم: <span id="labVoiceName">جارِ التحديد…</span> (de-DE)
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-size:1.05rem; margin:22px 0 10px;" class="reveal">اختر جملة أخرى</h3>
+    <div class="sentence-list reveal" id="labSentenceList" role="list"></div>
+  </section>
+
+  <!-- ===================== 11. FLASHCARDS ===================== -->
+  <section class="section" id="flashcards" data-search="بطاقات تعليمية flashcards مفردات vocabulary">
+    <span class="section-eyebrow">11 · البطاقات التعليمية</span>
+    <h2 class="section-title reveal">راجع كل المفردات ببطاقات ثلاثية الأبعاد</h2>
+    <p class="section-sub reveal">انقر على أي بطاقة لقلبها ورؤية صيغتَي Komparativ وSuperlativ مع مثال كامل. انقر على أي كلمة لسماع نطقها.</p>
+    <div class="flash-deck reveal" id="flashDeck"></div>
+  </section>
+
+  <!-- ===================== 12. PRACTICE (matching + fill blank) ===================== -->
+  <section class="section" id="practice" data-search="تمارين مطابقة سحب وافلات drag drop matching تدريب">
+    <span class="section-eyebrow">12 · تمارين تفاعلية</span>
+    <h2 class="section-title reveal">اختبر فهمك بالممارسة</h2>
+    <p class="section-sub reveal">تمرينان تفاعليان: مطابقة الدرجات، وإكمال الجُمل الناقصة.</p>
+
+    <h3 style="font-family:var(--font-display); font-size:1.15rem; margin-bottom:6px;" class="reveal">🧩 طابِق: Positiv ↔ Superlativ</h3>
+    <p class="small-note reveal mb-16">انقر على كلمة من العمود الأيمن، ثم على الصيغة المطابقة لها من اليسار.</p>
+    <div class="card reveal">
+      <div class="match-board">
+        <div>
+          <div class="match-col-title">Positiv</div>
+          <div id="matchLeft"></div>
+        </div>
+        <div>
+          <div class="match-col-title">Superlativ</div>
+          <div id="matchRight"></div>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px; flex-wrap:wrap; gap:10px;">
+        <span id="matchStatus" class="small-note" style="font-weight:700;" aria-live="polite"></span>
+        <button class="btn btn-ghost btn-sm" id="matchReset"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg><span>بطاقات جديدة</span></button>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-size:1.15rem; margin:34px 0 6px;" class="reveal">✍️ أكمل الجملة الصحيحة</h3>
+    <p class="small-note reveal mb-16">اسحب كلمة من البنك أدناه إلى الفراغ المناسب، أو انقر عليها لوضعها في أول فراغ فارغ.</p>
+    <div class="card reveal">
+      <div id="blankSentences"></div>
+      <div class="chip-bank" id="chipBank"></div>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <div>
+          <button class="btn btn-primary" id="blankCheck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>تحقّق من الإجابات</span></button>
+          <button class="btn btn-ghost" id="blankReset"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg><span>إعادة</span></button>
+        </div>
+        <strong id="blankResult" aria-live="polite"></strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 13. QUIZ ===================== -->
+  <section class="section" id="quiz" data-search="اختبار quiz أسئلة اختيار من متعدد">
+    <span class="section-eyebrow">13 · اختبار تفاعلي</span>
+    <h2 class="section-title reveal">اختبر معلوماتك في القواعد كلها</h2>
+    <p class="section-sub reveal">تسعة أسئلة تغطي كل ما تعلّمته — نتيجتك تُحفظ محليًا على جهازك.</p>
+    <div class="card reveal quiz-shell" id="quizShell"></div>
+  </section>
+
+  <!-- ===================== 14. SUMMARY / ACHIEVEMENTS ===================== -->
+  <section class="section" id="summary" data-search="ملخص انجازات achievements تقدم مراجعة">
+    <span class="section-eyebrow">14 · الملخص</span>
+    <h2 class="section-title reveal">ملخّص القواعد الخمس</h2>
+    <div class="grid-3 reveal reveal-stagger">
+      <div class="card-solid" style="--i:0"><b class="de">+er / am +sten</b><p class="small-note mt-16">القاعدة الأساسية لمعظم الصفات.</p></div>
+      <div class="card-solid" style="--i:1"><b class="de">t,d,ß,z,sch + e</b><p class="small-note mt-16">إضافة e قبل st في Superlativ.</p></div>
+      <div class="card-solid" style="--i:2"><b class="de">a,o,u → ä,ö,ü</b><p class="small-note mt-16">تحوّل صوتي غالب لا مطلق.</p></div>
+      <div class="card-solid" style="--i:3"><b class="de">el/er → l/r</b><p class="small-note mt-16">حذف e قبل إضافة er.</p></div>
+      <div class="card-solid" style="--i:4"><b class="de">gut · viel · gern</b><p class="small-note mt-16">صفات شاذة تُحفظ كما هي.</p></div>
+      <div class="card-solid" style="--i:5"><b class="de">Dativ = -en</b><p class="small-note mt-16">نهاية شبه ثابتة لكل الأجناس.</p></div>
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-size:1.15rem; margin:34px 0 14px;" class="reveal">🏅 إنجازاتك</h3>
+    <div class="ach-grid reveal" id="achGrid" role="list"></div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="foot-actions">
+    <button class="btn btn-ghost btn-sm" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg><span>العودة للأعلى</span></button>
+    <button class="btn btn-ghost btn-sm" id="footPrintBtn" onclick="window.print()">🖨️ <span>نسخة للطباعة</span></button>
+  </div>
+  <p>سلّم المقارنة — درس تفاعلي في قواعد Komparativ, Superlativ وDativ · <span id="yearNow"></span></p>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="العودة إلى الأعلى">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<p class="no-results" id="noResults">لا توجد نتائج مطابقة لبحثك داخل الدرس.</p>
+
+<script>
+/* ============================================================
+   محرك الدرس التفاعلي — Ascent Lesson Engine
+   ============================================================ */
+(function(){
+  "use strict";
+
+  /* ---------------- Icon library (inline SVG strings) ---------------- */
+  const ICONS = {
+    speaker: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>',
+    play: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',
+    pause: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>',
+    replay: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>',
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+    x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
+    refresh: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>',
+    lightbulb: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg>',
+    warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4M12 17h.01"/></svg>',
+    star: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>',
+  };
+
+  const $ = (sel, ctx) => (ctx||document).querySelector(sel);
+  const $$ = (sel, ctx) => Array.from((ctx||document).querySelectorAll(sel));
+  const store = {
+    get(k, fallback){ try{ const v = localStorage.getItem(k); return v===null? fallback : JSON.parse(v); }catch(e){ return fallback; } },
+    set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){ /* storage unavailable */ } }
+  };
+
+  /* ================================================================
+     1) THEME — light/dark + system detection + persistence
+     ================================================================ */
+  const ThemeMod = (function(){
+    const root = document.documentElement;
+    function apply(theme){
+      root.setAttribute('data-theme', theme);
+      const btn = $('#themeToggle');
+      if (btn) btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    }
+    function init(){
+      const saved = store.get('ascent-theme', null);
+      if (saved === 'light' || saved === 'dark'){ apply(saved); }
+      else {
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        apply(prefersDark ? 'dark' : 'light');
+      }
+      if (window.matchMedia){
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)=>{
+          if (store.get('ascent-theme', null) === null) apply(e.matches ? 'dark' : 'light');
+        });
+      }
+    }
+    function toggle(){
+      const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      apply(next);
+      store.set('ascent-theme', next);
+    }
+    return { init, toggle };
+  })();
+
+  /* ================================================================
+     2) SPEECH SYNTHESIS ENGINE — de-DE, best voice, controls
+     ================================================================ */
+  const Speech = (function(){
+    let voices = [];
+    let bestVoice = null;
+    let currentEl = null;
+
+    function loadVoices(){
+      voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+      const de = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith('de'));
+      const exact = de.filter(v => v.lang.toLowerCase() === 'de-de');
+      const pool = exact.length ? exact : de;
+      // prefer local/native-sounding voices over remote generic ones
+      pool.sort((a,b) => (b.localService === true) - (a.localService === true));
+      bestVoice = pool[0] || null;
+      const indicator = $('#labVoiceName');
+      if (indicator) indicator.textContent = bestVoice ? bestVoice.name : 'صوت المتصفح الافتراضي';
+    }
+
+    if ('speechSynthesis' in window){
+      loadVoices();
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    function speak(text, opts){
+      opts = opts || {};
+      if (!('speechSynthesis' in window)){
+        console.warn('SpeechSynthesis غير مدعوم في هذا المتصفح');
+        return null;
+      }
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'de-DE';
+      if (bestVoice) utter.voice = bestVoice;
+      utter.rate = opts.rate || 0.95;
+      utter.pitch = 1;
+      if (opts.onboundary) utter.onboundary = opts.onboundary;
+      if (opts.onend) utter.onend = opts.onend;
+      if (opts.onstart) utter.onstart = opts.onstart;
+      window.speechSynthesis.speak(utter);
+      return utter;
+    }
+
+    // Generic click-to-speak for any [data-de] / .de-speak element
+    function bindGlobalClickToSpeak(){
+      document.addEventListener('click', (e)=>{
+        const el = e.target.closest('.de-speak');
+        if (!el) return;
+        e.preventDefault();
+        speakElement(el);
+      });
+      document.addEventListener('keydown', (e)=>{
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        const el = e.target.closest && e.target.closest('.de-speak');
+        if (!el) return;
+        e.preventDefault();
+        speakElement(el);
+      });
+    }
+
+    function speakElement(el){
+      const text = el.getAttribute('data-de') || el.textContent.trim();
+      if (currentEl) currentEl.classList.remove('speaking');
+      currentEl = el;
+      el.classList.add('speaking');
+      speak(text, {
+        onend: () => { el.classList.remove('speaking'); if (currentEl===el) currentEl=null; }
+      });
+    }
+
+    return { speak, bindGlobalClickToSpeak, getBestVoiceName: () => bestVoice ? bestVoice.name : null };
+  })();
+
+  /* ================================================================
+     3) PRONUNCIATION LAB — play / pause / replay / speed / word highlight
+     ================================================================ */
+  const Lab = (function(){
+    const sentences = [
+      { de: "Mein Bruder ist älter als ich.", ar: "أخي أكبر مني." },
+      { de: "Die Hose ist teurer als das Hemd.", ar: "البنطال أغلى من القميص." },
+      { de: "Moskau ist am größten.", ar: "موسكو هي الأكبر." },
+      { de: "Berlin ist nicht so klein wie Dortmund.", ar: "برلين ليست صغيرة مثل دورتموند." },
+      { de: "Ronaldo ist am besten.", ar: "رونالدو هو الأفضل." },
+      { de: "Der Kuli ist auf dem schwarzen Tisch.", ar: "القلم على الطاولة السوداء." }
+    ];
+    let activeIndex = 0;
+    let isPaused = false;
+    let currentUtter = null;
+    let wordEls = [];
+
+    function renderSentenceList(){
+      const list = $('#labSentenceList');
+      if (!list) return;
+      list.innerHTML = sentences.map((s,i)=>`
+        <button class="sentence-pick${i===activeIndex?' active-pick':''}" data-idx="${i}" role="listitem" aria-label="اختر الجملة: ${s.de}">
+          <span>
+            <span class="de">${s.de}</span><br/>
+            <span class="ar">${s.ar}</span>
+          </span>
+        </button>
+      `).join('');
+      $$('.sentence-pick', list).forEach(btn=>{
+        btn.addEventListener('click', ()=>{ setActive(parseInt(btn.dataset.idx,10)); });
+      });
+    }
+
+    function renderSentence(){
+      const wrap = $('#labSentence');
+      const s = sentences[activeIndex];
+      const words = s.de.split(' ');
+      let idx = 0;
+      wordEls = [];
+      wrap.innerHTML = words.map((w)=>{
+        const html = `<span class="lab-word" data-i="${idx}">${w}</span>`;
+        idx++;
+        return html;
+      }).join(' ');
+      wordEls = $$('.lab-word', wrap);
+      $('#labSentenceAr').textContent = s.ar;
+    }
+
+    function setActive(i){
+      activeIndex = i;
+      window.speechSynthesis && window.speechSynthesis.cancel();
+      setPlayingState(false);
+      renderSentence();
+      renderSentenceList();
+    }
+
+    function setPlayingState(playing){
+      const lab = $('#pronunciationLab');
+      const playBtn = $('#labPlayBtn');
+      if (!lab || !playBtn) return;
+      lab.classList.toggle('playing', playing);
+      playBtn.innerHTML = playing ? (ICONS.pause + '<span>إيقاف مؤقت</span>') : (ICONS.play + '<span>استماع</span>');
+      playBtn.setAttribute('aria-label', playing ? 'إيقاف مؤقت' : 'تشغيل النطق');
+    }
+
+    function highlightWord(charIndex){
+      const s = sentences[activeIndex].de;
+      // find word whose range contains charIndex
+      let acc = 0;
+      for (let i=0;i<wordEls.length;i++){
+        const w = wordEls[i].textContent;
+        const start = s.indexOf(w, acc);
+        const end = start + w.length;
+        if (charIndex >= start && charIndex <= end){
+          wordEls.forEach(el=>el.classList.remove('active'));
+          wordEls[i].classList.add('active');
+          acc = end;
+          return;
+        }
+        acc = end;
+      }
+    }
+
+    function play(){
+      if (!('speechSynthesis' in window)) return;
+      if (isPaused){
+        window.speechSynthesis.resume();
+        isPaused = false;
+        setPlayingState(true);
+        return;
+      }
+      const rate = parseFloat($('#labSpeed').value || '0.95');
+      const s = sentences[activeIndex];
+      wordEls.forEach(el=>el.classList.remove('active'));
+      currentUtter = Speech.speak(s.de, {
+        rate,
+        onstart: ()=> setPlayingState(true),
+        onboundary: (e)=>{ if (e.name === 'word' || e.charIndex !== undefined) highlightWord(e.charIndex); },
+        onend: ()=>{ setPlayingState(false); wordEls.forEach(el=>el.classList.remove('active')); }
+      });
+    }
+
+    function pauseToggle(){
+      if (!('speechSynthesis' in window)) return;
+      if (window.speechSynthesis.speaking && !isPaused){
+        window.speechSynthesis.pause();
+        isPaused = true;
+        setPlayingState(false);
+      } else {
+        play();
+      }
+    }
+
+    function replay(){
+      window.speechSynthesis && window.speechSynthesis.cancel();
+      isPaused = false;
+      play();
+    }
+
+    function init(){
+      if (!$('#pronunciationLab')) return;
+      renderSentence();
+      renderSentenceList();
+      $('#labPlayBtn').addEventListener('click', pauseToggle);
+      $('#labReplayBtn').addEventListener('click', replay);
+      $('#labSpeed').addEventListener('input', (e)=>{
+        $('#labSpeedVal').textContent = parseFloat(e.target.value).toFixed(2) + '×';
+      });
+    }
+    return { init };
+  })();
+
+  /* ================================================================
+     4) SCROLL PROGRESS BAR + TRAIL NAV + LESSON PROGRESS
+     ================================================================ */
+  const Trail = (function(){
+    const TOTAL_SECTIONS_KEY = 'ascent-progress';
+    let visited = new Set(store.get(TOTAL_SECTIONS_KEY, []));
+
+    function updateScrollBar(){
+      const doc = document.documentElement;
+      const scrollTop = window.scrollY || doc.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const pct = height > 0 ? (scrollTop/height)*100 : 0;
+      const bar = $('#scrollProgressBar');
+      if (bar) bar.style.width = pct + '%';
+    }
+
+    function updateProgressRing(){
+      const sections = $$('.section[id]');
+      const total = sections.length;
+      const pct = total ? Math.round((visited.size/total)*100) : 0;
+      const label = $('#progressPct');
+      if (label) label.textContent = pct + '٪';
+      const fg = $('#progressRingFg');
+      if (fg){
+        const circumference = 2*Math.PI*15;
+        fg.style.strokeDasharray = circumference;
+        fg.style.strokeDashoffset = circumference - (pct/100)*circumference;
+      }
+      Achievements.check('progress', pct);
+    }
+
+    function markVisited(id){
+      if (visited.has(id)) return;
+      visited.add(id);
+      store.set(TOTAL_SECTIONS_KEY, Array.from(visited));
+      updateProgressRing();
+      const stop = $(`.trail-stop[data-target="${id}"]`);
+      if (stop) stop.setAttribute('data-visited','true');
+      const jump = $(`.mobile-jump a[href="#${id}"]`);
+      // no-op, visited styling not required on mobile chip
+    }
+
+    function setActiveTrail(id){
+      $$('.trail-stop').forEach(s=> s.setAttribute('data-active', s.dataset.target===id ? 'true':'false'));
+      $$('.mobile-jump a').forEach(a=> a.classList.toggle('active-jump', a.getAttribute('href')==='#'+id));
+      const fill = $('#trailFill');
+      if (fill){
+        const stops = $$('.trail-stop');
+        const idx = stops.findIndex(s=>s.dataset.target===id);
+        if (idx>-1){
+          const pct = stops.length>1 ? (idx/(stops.length-1))*100 : 0;
+          fill.style.height = pct + '%';
+        }
+      }
+    }
+
+    function initObservers(){
+      const sections = $$('.section[id]');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if (entry.isIntersecting){
+            if (entry.intersectionRatio > 0.45) markVisited(entry.target.id);
+          }
+        });
+        // determine the most-visible section for active trail state
+        let best = null, bestRatio = 0;
+        sections.forEach(sec=>{
+          const rect = sec.getBoundingClientRect();
+          const visibleTop = Math.max(rect.top, 80);
+          const visibleBottom = Math.min(rect.bottom, window.innerHeight);
+          const visible = Math.max(0, visibleBottom - visibleTop);
+          const ratio = visible / Math.min(rect.height, window.innerHeight);
+          if (ratio > bestRatio){ bestRatio = ratio; best = sec.id; }
+        });
+        if (best) setActiveTrail(best);
+      }, { threshold: [0,0.15,0.3,0.45,0.6,0.8] });
+      sections.forEach(s=>io.observe(s));
+    }
+
+    function initRevealAnimations(){
+      const els = $$('.reveal');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if (entry.isIntersecting){ entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(el=>io.observe(el));
+    }
+
+    function initBarsAnimation(){
+      const wraps = $$('.bars-wrap');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if (entry.isIntersecting){
+            $$('.bar-fill', entry.target).forEach(b=>b.classList.add('grow'));
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      wraps.forEach(w=>io.observe(w));
+    }
+
+    function initClicks(){
+      $$('.trail-stop, .mobile-jump a').forEach(el=>{
+        el.addEventListener('click', (e)=>{
+          e.preventDefault();
+          const target = el.dataset.target ? document.getElementById(el.dataset.target) : document.querySelector(el.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+        });
+      });
+    }
+
+    function restoreVisitedDots(){
+      visited.forEach(id=>{
+        const stop = $(`.trail-stop[data-target="${id}"]`);
+        if (stop) stop.setAttribute('data-visited','true');
+      });
+      updateProgressRing();
+    }
+
+    function init(){
+      window.addEventListener('scroll', updateScrollBar, { passive:true });
+      updateScrollBar();
+      initObservers();
+      initRevealAnimations();
+      initBarsAnimation();
+      initClicks();
+      restoreVisitedDots();
+    }
+    return { init, get visitedCount(){ return visited.size; } };
+  })();
+
+  /* ================================================================
+     5) SEARCH INSIDE LESSON
+     ================================================================ */
+  const Search = (function(){
+    function run(query){
+      const q = query.trim().toLowerCase();
+      const sections = $$('.section[data-search]');
+      let anyVisible = false;
+      sections.forEach(sec=>{
+        const hay = sec.dataset.search.toLowerCase();
+        const match = q.length < 2 || hay.includes(q);
+        sec.classList.toggle('search-hidden', !match);
+        if (match) anyVisible = true;
+      });
+      const noRes = $('#noResults');
+      if (noRes) noRes.classList.toggle('show', q.length>=2 && !anyVisible);
+    }
+    function init(){
+      const input = $('#lessonSearch');
+      if (!input) return;
+      let t;
+      input.addEventListener('input', (e)=>{
+        clearTimeout(t);
+        t = setTimeout(()=> run(e.target.value), 150);
+      });
+    }
+    return { init };
+  })();
+
+  /* ================================================================
+     6) FULLSCREEN + BACK TO TOP + PRINT
+     ================================================================ */
+  const Chrome = (function(){
+    function toggleFullscreen(){
+      if (!document.fullscreenElement){
+        document.documentElement.requestFullscreen().catch(()=>{});
+      } else {
+        document.exitFullscreen().catch(()=>{});
+      }
+    }
+    function initBackTop(){
+      const btn = $('#backTop');
+      if (!btn) return;
+      window.addEventListener('scroll', ()=>{
+        btn.classList.toggle('show', window.scrollY > 700);
+      }, { passive:true });
+      btn.addEventListener('click', ()=> window.scrollTo({ top:0, behavior:'smooth' }));
+    }
+    function init(){
+      const fsBtn = $('#fullscreenToggle');
+      if (fsBtn) fsBtn.addEventListener('click', toggleFullscreen);
+      const printBtn = $('#printBtn');
+      if (printBtn) printBtn.addEventListener('click', ()=> window.print());
+      initBackTop();
+    }
+    return { init };
+  })();
+
+  /* ================================================================
+     7) TOAST + ACHIEVEMENTS
+     ================================================================ */
+  const Achievements = (function(){
+    const DEFS = {
+      start:    { icon:'🥾', title:'بداية الرحلة', desc:'فتحت الدرس لأول مرة' },
+      half:     { icon:'🗺️', title:'منتصف الطريق', desc:'اطّلعت على نصف أقسام الدرس' },
+      summit:   { icon:'⛰️', title:'وصلت للقمة', desc:'أكملت جميع أقسام الدرس' },
+      flash:    { icon:'🃏', title:'خبير البطاقات', desc:'قلّبت كل البطاقات التعليمية' },
+      match:    { icon:'🧩', title:'عبقري المطابقة', desc:'أكملت لعبة المطابقة' },
+      blank:    { icon:'✍️', title:'سيد الجُمل', desc:'أكملت تمرين إكمال الجُمل' },
+      quiz:     { icon:'🏆', title:'بطل الاختبار', desc:'حققت 80٪ أو أكثر في الاختبار' }
+    };
+    let unlocked = new Set(store.get('ascent-achievements', []));
+
+    function render(){
+      const grid = $('#achGrid');
+      if (!grid) return;
+      grid.innerHTML = Object.keys(DEFS).map(key=>{
+        const d = DEFS[key];
+        const isUnlocked = unlocked.has(key);
+        return `<div class="ach-badge${isUnlocked?' unlocked':''}" role="listitem" aria-label="${d.title}${isUnlocked?' — تم الحصول عليه':' — مقفل'}">
+          <div class="ach-icon" aria-hidden="true">${d.icon}</div>
+          <h5>${d.title}</h5>
+          <p>${d.desc}</p>
+        </div>`;
+      }).join('');
+    }
+
+    function toast(key){
+      const d = DEFS[key];
+      const t = $('#toast');
+      if (!t) return;
+      t.innerHTML = `<span style="font-size:1.3rem">${d.icon}</span><span>إنجاز جديد: ${d.title}</span>`;
+      t.classList.add('show');
+      clearTimeout(t._timer);
+      t._timer = setTimeout(()=> t.classList.remove('show'), 3200);
+    }
+
+    function unlock(key){
+      if (unlocked.has(key)) return;
+      unlocked.add(key);
+      store.set('ascent-achievements', Array.from(unlocked));
+      render();
+      toast(key);
+    }
+
+    function check(kind, value){
+      if (kind==='progress'){
+        if (value>0) unlock('start');
+        if (value>=50) unlock('half');
+        if (value>=100) unlock('summit');
+      }
+      if (kind==='flash' && value===true) unlock('flash');
+      if (kind==='match' && value===true) unlock('match');
+      if (kind==='blank' && value===true) unlock('blank');
+      if (kind==='quiz' && value>=80) unlock('quiz');
+    }
+
+    function init(){ render(); }
+    return { init, check };
+  })();
+
+  /* ================================================================
+     8) FLASHCARDS
+     ================================================================ */
+  const Flashcards = (function(){
+    const data = [
+      { ar:'بطيء', de:'langsam', comp:'langsamer', sup:'am langsamsten', sentence:'Die Schildkröte ist langsamer als der Hase.', sentenceAr:'السلحفاة أبطأ من الأرنب.' },
+      { ar:'جميل / حلو', de:'schön', comp:'schöner', sup:'am schönsten', sentence:'Schakira ist schöner als Frau Merkel.', sentenceAr:'شاكيرا أجمل من السيدة ميركل.' },
+      { ar:'بعيد', de:'weit', comp:'weiter', sup:'am weitesten', sentence:'Berlin ist weiter als Bonn.', sentenceAr:'برلين أبعد من بون.' },
+      { ar:'حلو المذاق', de:'süß', comp:'süßer', sup:'am süßesten', sentence:'Der Honig ist süßer als der Zucker.', sentenceAr:'العسل أحلى من السكر.' },
+      { ar:'جميل / لطيف', de:'hübsch', comp:'hübscher', sup:'am hübschesten', sentence:'Deine Tasche ist hübscher als meine.', sentenceAr:'حقيبتك أجمل من حقيبتي.' },
+      { ar:'قديم / كبير السن', de:'alt', comp:'älter', sup:'am ältesten', sentence:'Mein Bruder ist älter als ich.', sentenceAr:'أخي أكبر مني.' },
+      { ar:'كبير', de:'groß', comp:'größer', sup:'am größten', sentence:'Moskau ist am größten.', sentenceAr:'موسكو هي الأكبر.' },
+      { ar:'شاب / صغير السن', de:'jung', comp:'jünger', sup:'am jüngsten', sentence:'Ich bin jünger als mein Bruder.', sentenceAr:'أنا أصغر من أخي.' },
+      { ar:'غالي', de:'teuer', comp:'teurer', sup:'am teuersten', sentence:'Die Hose ist teurer als das Hemd.', sentenceAr:'البنطال أغلى من القميص.' },
+      { ar:'مظلم / داكن', de:'dunkel', comp:'dunkler', sup:'am dunkelsten', sentence:'Der Keller ist dunkler als das Wohnzimmer.', sentenceAr:'القبو أظلم من غرفة المعيشة.' },
+      { ar:'كثير', de:'viel', comp:'mehr', sup:'am meisten', sentence:'Ich kaufe bei Lidl am meisten.', sentenceAr:'أشتري من ليدل أكثر من أي مكان آخر.' },
+      { ar:'بسرور (ظرف)', de:'gern', comp:'lieber', sup:'am liebsten', sentence:'Ich trinke Tee am liebsten.', sentenceAr:'الشاي هو ما أُفضّل شربه أكثر من غيره.' },
+      { ar:'جيد', de:'gut', comp:'besser', sup:'am besten', sentence:'Ronaldo ist am besten.', sentenceAr:'رونالدو هو الأفضل.' }
+    ];
+    let flippedSet = new Set(store.get('ascent-flash-flipped', []));
+
+    function render(){
+      const deck = $('#flashDeck');
+      if (!deck) return;
+      deck.innerHTML = data.map((c,i)=>`
+        <div class="flash-card" data-i="${i}" role="button" tabindex="0" aria-label="بطاقة: ${c.de}. انقر للقلب">
+          <div class="flash-inner">
+            <div class="flash-face flash-front">
+              <span class="flash-badge">POSITIV</span>
+              <div class="flash-word de">${c.de}</div>
+              <div class="flash-ar">${c.ar}</div>
+              <span class="flash-hint">${ICONS.replay}اقلب البطاقة</span>
+            </div>
+            <div class="flash-face flash-back">
+              <span class="flash-badge">KOMP · SUPERL</span>
+              <div class="flash-forms">
+                <span class="de" style="font-weight:700">${c.comp}</span>
+                <span class="de" style="font-weight:700; color:var(--accent)">${c.sup}</span>
+              </div>
+              <div class="flash-sentence de">${c.sentence}</div>
+              <div class="flash-sentence">${c.sentenceAr}</div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      $$('.flash-card', deck).forEach(card=>{
+        const i = card.dataset.i;
+        if (flippedSet.has(i)) card.classList.add('flipped');
+        const flip = (e)=>{
+          if (e.target.closest('.de-speak')) return;
+          card.classList.toggle('flipped');
+          flippedSet.add(i);
+          store.set('ascent-flash-flipped', Array.from(flippedSet));
+          if (flippedSet.size >= data.length) Achievements.check('flash', true);
+        };
+        card.addEventListener('click', flip);
+        card.addEventListener('keydown', (e)=>{ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); flip(e); } });
+        // click-to-speak on the German word/sentence inside card (stop flip propagation)
+        $$('.de', card).forEach(w=>{
+          w.classList.add('de-speak');
+          w.setAttribute('tabindex','0');
+          w.setAttribute('role','button');
+          w.setAttribute('data-de', w.textContent.trim());
+          w.addEventListener('click', (e)=> e.stopPropagation());
+        });
+      });
+    }
+    function init(){ render(); }
+    return { init };
+  })();
+
+  /* ================================================================
+     9) MATCHING GAME — Positiv ↔ Superlativ
+     ================================================================ */
+  const Matching = (function(){
+    const pairs = [
+      { left:'langsam', right:'am langsamsten' },
+      { left:'alt', right:'am ältesten' },
+      { left:'groß', right:'am größten' },
+      { left:'teuer', right:'am teuersten' },
+      { left:'gut', right:'am besten' },
+      { left:'viel', right:'am meisten' }
+    ];
+    let selectedLeft = null;
+    let matchedCount = 0;
+
+    function shuffle(arr){
+      const a = arr.slice();
+      for (let i=a.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+      return a;
+    }
+
+    function render(){
+      const leftCol = $('#matchLeft');
+      const rightCol = $('#matchRight');
+      if (!leftCol || !rightCol) return;
+      matchedCount = 0;
+      selectedLeft = null;
+      leftCol.innerHTML = pairs.map((p,i)=>`<button class="match-chip de" data-side="left" data-id="${i}">${p.left}</button>`).join('');
+      const shuffled = shuffle(pairs.map((p,i)=>({...p, id:i})));
+      rightCol.innerHTML = shuffled.map(p=>`<button class="match-chip de" data-side="right" data-id="${p.id}">${p.right}</button>`).join('');
+      bind();
+      const status = $('#matchStatus');
+      if (status) status.textContent = `0 / ${pairs.length} أزواج صحيحة`;
+    }
+
+    function bind(){
+      $$('.match-chip').forEach(chip=>{
+        chip.addEventListener('click', onChipClick);
+      });
+    }
+
+    function onChipClick(e){
+      const chip = e.currentTarget;
+      if (chip.classList.contains('matched')) return;
+      const side = chip.dataset.side;
+      if (side === 'left'){
+        $$('.match-chip[data-side="left"]').forEach(c=>c.classList.remove('selected'));
+        chip.classList.add('selected');
+        selectedLeft = chip;
+        return;
+      }
+      // right side clicked
+      if (!selectedLeft){ return; }
+      const isCorrect = selectedLeft.dataset.id === chip.dataset.id;
+      if (isCorrect){
+        selectedLeft.classList.remove('selected');
+        selectedLeft.classList.add('correct','matched');
+        chip.classList.add('correct','matched');
+        matchedCount++;
+        const status = $('#matchStatus');
+        if (status) status.textContent = `${matchedCount} / ${pairs.length} أزواج صحيحة`;
+        selectedLeft = null;
+        if (matchedCount === pairs.length){
+          Achievements.check('match', true);
+          const status2 = $('#matchStatus');
+          if (status2) status2.innerHTML = `🎉 أحسنت! أكملت جميع الأزواج (${pairs.length}/${pairs.length})`;
+        }
+      } else {
+        chip.classList.add('wrong');
+        selectedLeft.classList.add('wrong');
+        setTimeout(()=>{
+          chip.classList.remove('wrong');
+          selectedLeft && selectedLeft.classList.remove('wrong','selected');
+          selectedLeft = null;
+        }, 420);
+      }
+    }
+
+    function init(){
+      render();
+      const resetBtn = $('#matchReset');
+      if (resetBtn) resetBtn.addEventListener('click', render);
+    }
+    return { init };
+  })();
+
+  /* ================================================================
+     10) FILL-IN-THE-BLANK (click/drag chips)
+     ================================================================ */
+  const FillBlank = (function(){
+    const items = [
+      { pre:'Die Hose ist', post:'als das Hemd.', ar:'البنطال أغلى من القميص.', answer:'teurer' },
+      { pre:'Mein Bruder ist', post:'als ich.', ar:'أخي أكبر مني.', answer:'älter' },
+      { pre:'Moskau ist', post:'.', ar:'موسكو هي الأكبر.', answer:'am größten' },
+      { pre:'Berlin ist', post:'als Dortmund.', ar:'برلين أكبر من دورتموند.', answer:'größer' },
+      { pre:'Ronaldo ist', post:'.', ar:'رونالدو هو الأفضل.', answer:'am besten' }
+    ];
+    const distractors = ['teuer','alt','groß','gut','am teuersten'];
+    let placed = {};
+
+    function shuffle(arr){
+      const a = arr.slice();
+      for (let i=a.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+      return a;
+    }
+
+    function renderSentences(){
+      const wrap = $('#blankSentences');
+      if (!wrap) return;
+      wrap.innerHTML = items.map((it,i)=>`
+        <div class="blank-sentence example-box">
+          <div class="de">${it.pre} <span class="blank-slot" data-idx="${i}" data-answer="${it.answer}" tabindex="0" role="button" aria-label="فراغ رقم ${i+1}">___</span> ${it.post}</div>
+          <div class="ar">${it.ar}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderChips(){
+      const bank = $('#chipBank');
+      if (!bank) return;
+      const all = shuffle(items.map(i=>i.answer).concat(distractors));
+      bank.innerHTML = all.map((word,i)=>`<button class="drag-chip de" draggable="true" data-word="${word}" data-cid="${i}">${word}</button>`).join('');
+      bindChips();
+    }
+
+    function bindChips(){
+      $$('.drag-chip').forEach(chip=>{
+        chip.addEventListener('dragstart', (e)=>{
+          e.dataTransfer.setData('text/plain', chip.dataset.cid);
+        });
+        chip.addEventListener('click', ()=>{
+          if (chip.classList.contains('used')) return;
+          const firstEmpty = $$('.blank-slot').find(s=>!s.classList.contains('filled'));
+          if (firstEmpty) placeChip(chip, firstEmpty);
+        });
+      });
+      $$('.blank-slot').forEach(slot=>{
+        slot.addEventListener('dragover', (e)=>{ e.preventDefault(); slot.classList.add('drag-over'); });
+        slot.addEventListener('dragleave', ()=> slot.classList.remove('drag-over'));
+        slot.addEventListener('drop', (e)=>{
+          e.preventDefault();
+          slot.classList.remove('drag-over');
+          const cid = e.dataTransfer.getData('text/plain');
+          const chip = $(`.drag-chip[data-cid="${cid}"]`);
+          if (chip && !chip.classList.contains('used')) placeChip(chip, slot);
+        });
+        slot.addEventListener('click', ()=>{
+          if (slot.classList.contains('filled')){
+            const idx = slot.dataset.idx;
+            const prevWord = placed[idx];
+            if (prevWord !== undefined){
+              const chip = $(`.drag-chip[data-word="${CSS.escape(prevWord.word)}"][data-cid="${prevWord.cid}"]`);
+              if (chip) chip.classList.remove('used');
+            }
+            slot.textContent = '___';
+            slot.classList.remove('filled','correct','wrong');
+            delete placed[idx];
+          }
+        });
+        // keyboard support: Enter/Space triggers the same clear behavior as a click
+        slot.addEventListener('keydown', (e)=>{
+          if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); slot.click(); }
+        });
+      });
+    }
+
+    function placeChip(chip, slot){
+      const idx = slot.dataset.idx;
+      slot.textContent = chip.dataset.word;
+      slot.classList.add('filled');
+      slot.classList.remove('correct','wrong');
+      chip.classList.add('used');
+      placed[idx] = { word: chip.dataset.word, cid: chip.dataset.cid };
+    }
+
+    function checkAnswers(){
+      let allCorrect = true;
+      $$('.blank-slot').forEach(slot=>{
+        const correctAnswer = slot.dataset.answer;
+        const idx = slot.dataset.idx;
+        const given = placed[idx] ? placed[idx].word : null;
+        if (given && given.toLowerCase() === correctAnswer.toLowerCase()){
+          slot.classList.add('correct'); slot.classList.remove('wrong');
+        } else {
+          slot.classList.add('wrong'); slot.classList.remove('correct');
+          allCorrect = false;
+        }
+      });
+      const result = $('#blankResult');
+      if (result){
+        result.textContent = allCorrect ? '🎉 ممتاز! جميع الإجابات صحيحة.' : 'بعض الإجابات غير صحيحة، حاول تعديلها.';
+        result.style.color = allCorrect ? 'var(--success)' : 'var(--error)';
+      }
+      if (allCorrect) Achievements.check('blank', true);
+    }
+
+    function reset(){
+      placed = {};
+      renderSentences();
+      renderChips();
+      const result = $('#blankResult');
+      if (result) result.textContent = '';
+    }
+
+    function init(){
+      if (!$('#blankSentences')) return;
+      reset();
+      const checkBtn = $('#blankCheck');
+      if (checkBtn) checkBtn.addEventListener('click', checkAnswers);
+      const resetBtn = $('#blankReset');
+      if (resetBtn) resetBtn.addEventListener('click', reset);
+    }
+    return { init };
+  })();
+
+  /* ================================================================
+     11) QUIZ — multiple choice with instant feedback + score
+     ================================================================ */
+  const Quiz = (function(){
+    const questions = [
+      { q:'ما هي صيغة Komparativ الصحيحة لكلمة langsam؟', opts:['langsammer','langsamer','am langsamsten','langsamst'], correct:1,
+        exp:'نضيف er فقط: langsam + er = langsamer.' },
+      { q:'أي صفة من التالي تحتاج إضافة حرف e قبل st في صيغة Superlativ؟', opts:['schön','teuer','süß','dunkel'], correct:2,
+        exp:'süß تنتهي بـ ß، وهذا الحرف من ضمن t, d, ß, z, sch التي تتطلب e: am süßesten.' },
+      { q:'ما صيغة Superlativ الصحيحة لكلمة alt؟', opts:['am altesten','älter','am ältesten','am alterste'], correct:2,
+        exp:'alt صفة تأخذ Umlaut (a → ä) في الحالتين: älter و am ältesten.' },
+      { q:'أي صفة تفقد حرف e الداخلي عند تكوين Komparativ؟', opts:['schön','dunkel','weit','jung'], correct:1,
+        exp:'الصفات المنتهية بـ -el مثل dunkel تُسقط الـ e: dunkel + er = dunkler.' },
+      { q:'ما صيغة Komparativ الصحيحة للفعل غير المنتظم gut؟', opts:['guter','gutter','besser','am besten'], correct:2,
+        exp:'gut صفة شاذة تمامًا: gut – besser – am besten.' },
+      { q:'ما الأداة التي نستخدمها بعد صيغة Komparativ للمقارنة بين شيئين؟', opts:['wie','als','und','am'], correct:1,
+        exp:'نستخدم als بعد صيغة المقارنة: teurer als, älter als.' },
+      { q:'ماذا تعني جملة "Berlin ist nicht so klein wie Dortmund"؟', opts:['برلين أصغر من دورتموند','برلين أكبر من دورتموند','برلين ودورتموند بنفس الحجم','لا توجد علاقة بينهما'], correct:1,
+        exp:'"ليست صغيرة مثل" تعني أنها ليست بنفس صِغَر الطرف الآخر، أي أنها أكبر منه.' },
+      { q:'في جملة "Der Kuli ist auf dem schwarz___ Tisch"، ما هي نهاية الصفة الصحيحة في حالة Dativ؟', opts:['-er','-es','-e','-en'], correct:3,
+        exp:'في حالة Dativ المفرد، تنتهي الصفة دائمًا تقريبًا بـ -en بغض النظر عن جنس الاسم: dem schwarzen Tisch.' },
+      { q:'ما هو النوع النحوي لكلمة gern في اللغة الألمانية؟', opts:['صفة (Adjektiv)','ظرف (Adverb)','اسم (Nomen)','فعل (Verb)'], correct:1,
+        exp:'gern ظرف يُستخدم مع الأفعال للتعبير عن التفضيل، وليس صفة تصف اسمًا.' }
+    ];
+    let current = 0;
+    let score = 0;
+    let answered = false;
+
+    function renderQuestion(){
+      const qEl = $('#quizQuestion');
+      const optsEl = $('#quizOptions');
+      const progFill = $('#quizProgressFill');
+      const counter = $('#quizCounter');
+      if (!qEl) return;
+      answered = false;
+      const item = questions[current];
+      qEl.textContent = item.q;
+      const letters = ['أ','ب','ج','د'];
+      optsEl.innerHTML = item.opts.map((opt,i)=>`
+        <button class="quiz-opt de" data-i="${i}">
+          <span class="opt-letter mono">${letters[i]}</span>
+          <span class="${/^[a-zA-ZäöüßÄÖÜ]/.test(opt)? 'de':''}">${opt}</span>
+        </button>
+      `).join('');
+      $('#quizFeedback').className = 'quiz-feedback';
+      $('#quizFeedback').innerHTML = '';
+      $$('.quiz-opt', optsEl).forEach(btn=> btn.addEventListener('click', ()=> selectAnswer(btn, item)));
+      progFill.style.width = ((current)/questions.length*100) + '%';
+      counter.textContent = `السؤال ${current+1} من ${questions.length}`;
+      $('#quizNextBtn').textContent = current === questions.length-1 ? 'عرض النتيجة' : 'السؤال التالي';
+      $('#quizNextBtn').disabled = true;
+    }
+
+    function selectAnswer(btn, item){
+      if (answered) return;
+      answered = true;
+      const chosen = parseInt(btn.dataset.i,10);
+      const opts = $$('.quiz-opt');
+      opts.forEach(o=> o.disabled = true);
+      if (chosen === item.correct){
+        btn.classList.add('correct');
+        score++;
+        showFeedback(true, item.exp);
+      } else {
+        btn.classList.add('wrong');
+        opts[item.correct].classList.add('correct');
+        showFeedback(false, item.exp);
+      }
+      $('#quizNextBtn').disabled = false;
+    }
+
+    function showFeedback(ok, exp){
+      const fb = $('#quizFeedback');
+      fb.className = 'quiz-feedback show ' + (ok?'ok':'no');
+      fb.innerHTML = (ok? ICONS.check : ICONS.x) + `<span>${ok? 'إجابة صحيحة! ' : 'إجابة غير صحيحة. '}${exp}</span>`;
+    }
+
+    function next(){
+      if (current < questions.length-1){
+        current++;
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult(){
+      const shell = $('#quizShell');
+      const pct = Math.round((score/questions.length)*100);
+      const best = Math.max(store.get('ascent-quiz-best', 0), pct);
+      store.set('ascent-quiz-best', best);
+      shell.innerHTML = `
+        <div class="quiz-result">
+          <div class="score-num">${pct}٪</div>
+          <p style="font-weight:700; margin-top:8px;">${score} من ${questions.length} إجابات صحيحة</p>
+          <p class="small-note mt-16">أفضل نتيجة محفوظة: ${best}٪</p>
+          <button class="btn btn-gold mt-24" id="quizRestart">${ICONS.refresh}<span>إعادة المحاولة</span></button>
+        </div>
+      `;
+      $('#quizRestart').addEventListener('click', restart);
+      Achievements.check('quiz', pct);
+    }
+
+    function restart(){
+      current = 0; score = 0;
+      const shell = $('#quizShell');
+      shell.innerHTML = `
+        <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+        <p class="small-note mb-16" id="quizCounter"></p>
+        <div class="quiz-q" id="quizQuestion" aria-live="polite"></div>
+        <div class="quiz-opts" id="quizOptions"></div>
+        <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
+        <div class="quiz-nav">
+          <span></span>
+          <button class="btn btn-primary" id="quizNextBtn" disabled>السؤال التالي</button>
+        </div>
+      `;
+      $('#quizNextBtn').addEventListener('click', next);
+      renderQuestion();
+    }
+
+    function init(){
+      if (!$('#quizShell')) return;
+      restart();
+    }
+    return { init };
+  })();
+
+  /* ================================================================
+     12) HERO PEAKS — click to speak Positiv/Komparativ/Superlativ
+     ================================================================ */
+  function initPeaks(){
+    $$('.peak-btn').forEach(p=>{
+      p.addEventListener('click', ()=>{
+        const text = p.getAttribute('data-de');
+        p.classList.add('de-speak');
+        Speech.speak(text);
+        p.animate([{ transform:'translateY(0)' },{ transform:'translateY(-8px)' },{ transform:'translateY(0)' }], { duration: 420, easing:'ease-out' });
+      });
+      p.addEventListener('keydown', (e)=>{
+        if (e.key==='Enter'||e.key===' '){ e.preventDefault(); p.click(); }
+      });
+    });
+  }
+
+  /* ================================================================
+     INIT
+     ================================================================ */
+  document.addEventListener('DOMContentLoaded', function(){
+    ThemeMod.init();
+    $('#themeToggle') && $('#themeToggle').addEventListener('click', ThemeMod.toggle);
+    Speech.bindGlobalClickToSpeak();
+    Lab.init();
+    Trail.init();
+    Search.init();
+    Chrome.init();
+    Achievements.init();
+    Flashcards.init();
+    Matching.init();
+    FillBlank.init();
+    Quiz.init();
+    initPeaks();
+
+    // year in footer, if present
+    const y = $('#yearNow');
+    if (y) y.textContent = new Date().getFullYear();
+  });
+})();
+
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-komparativ-superlativ" data-category="grammatik" data-title="سلّم المقارنة — Komparativ & Superlativ" data-root="../../" defer></script>
+</body>
+</html>

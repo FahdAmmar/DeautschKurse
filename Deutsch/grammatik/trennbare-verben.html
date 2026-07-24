@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>الأفعال الألمانية — القابلة وغير القابلة للانفصال</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+<style>
+/* ════════════════════════════════════════════════
+   DESIGN TOKENS
+════════════════════════════════════════════════ */
+:root{
+  --bg:#0a0a0f;--bg2:#111118;--bg3:#1a1a26;--bg4:#22223a;
+  --surface:#1e1e30;--surface2:#252540;
+  --border:rgba(120,120,200,0.15);--border2:rgba(120,120,200,0.3);
+  --text:#e8e8f5;--text2:#a0a0c0;--text3:#6060a0;
+  --accent:#7c6af7;--accent2:#a78bfa;
+  --sep:#f59e0b;--sep2:#fcd34d;
+  --insep:#34d399;--insep2:#6ee7b7;
+  --red:#f87171;--blue:#60a5fa;--pink:#f472b6;
+  --card-radius:14px;--pill-radius:50px;
+  --tr:0.25s cubic-bezier(.4,0,.2,1);
+  /* print page dimensions — match reference A4 edition */
+  --a4-w:210mm;--a4-h:300mm;--page-margin:14mm;
+}
+[data-theme="light"]{
+  --bg:#f5f5fc;--bg2:#fff;--bg3:#eeeef8;--bg4:#e0e0f0;
+  --surface:#fff;--surface2:#f0f0fa;
+  --border:rgba(80,80,160,0.12);--border2:rgba(80,80,160,0.25);
+  --text:#1a1a3a;--text2:#4a4a7a;--text3:#8888bb;
+  --accent:#5b47e0;--accent2:#7c6af7;
+  --sep:#d97706;--sep2:#f59e0b;
+  --insep:#059669;--insep2:#10b981;
+  --red:#dc2626;--blue:#2563eb;--pink:#db2777;
+}
+/* ════════════════════════════════════════════════
+   BASE RESET
+════════════════════════════════════════════════ */
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Tajawal',sans-serif;font-size:15px;line-height:1.65;
+  transition:background var(--tr),color var(--tr);overflow-x:hidden;
+}
+*{-webkit-user-select:text!important;user-select:text!important;}
+button{-webkit-user-select:none!important;user-select:none!important;cursor:pointer;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px;}
+/* ════════════════════════════════════════════════
+   PROGRESS BAR
+════════════════════════════════════════════════ */
+#progress-bar{
+  position:fixed;top:0;left:0;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--sep),var(--insep));
+  z-index:1000;transition:width .1s;width:0;
+}
+/* ════════════════════════════════════════════════
+   NAV
+════════════════════════════════════════════════ */
+nav{
+  position:fixed;top:3px;left:0;right:0;z-index:999;
+  background:rgba(10,10,15,.88);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:0 24px;height:56px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background var(--tr);
+}
+[data-theme="light"] nav{background:rgba(245,245,252,.93);}
+.nav-logo{
+  font-family:'Playfair Display',serif;font-size:18px;
+  background:linear-gradient(135deg,var(--accent2),var(--sep2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.theme-btn{
+  background:var(--surface);border:1px solid var(--border2);
+  color:var(--text);width:36px;height:36px;border-radius:9px;
+  font-size:16px;display:flex;align-items:center;justify-content:center;
+  transition:all var(--tr);
+}
+.theme-btn:hover{background:var(--surface2);transform:scale(1.05);}
+.print-btn{
+  display:flex;align-items:center;gap:6px;
+  background:var(--surface);border:1px solid var(--border2);
+  color:var(--text);height:36px;padding:0 14px;border-radius:9px;
+  font-family:'Tajawal',sans-serif;font-size:13px;font-weight:600;
+  letter-spacing:.02em;transition:all var(--tr);
+}
+.print-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+.print-btn svg{width:14px;height:14px;flex-shrink:0;}
+/* ════════════════════════════════════════════════
+   HERO
+════════════════════════════════════════════════ */
+.hero{
+  padding:72px 24px 32px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero-glow{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:600px;height:350px;
+  background:radial-gradient(ellipse,rgba(124,106,247,.14) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(22px,4vw,40px);line-height:1.15;margin-bottom:8px;
+}
+.hero h1 span{
+  background:linear-gradient(135deg,var(--accent2) 0%,var(--sep2) 50%,var(--insep2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero p{color:var(--text2);font-size:14px;max-width:560px;margin:0 auto 16px;}
+.hero-badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;}
+.badge{
+  padding:5px 14px;border-radius:var(--pill-radius);font-size:11.5px;
+  font-weight:600;border:1px solid;display:flex;align-items:center;gap:6px;
+}
+.badge-sep{background:rgba(245,158,11,.1);border-color:var(--sep);color:var(--sep2);}
+.badge-insep{background:rgba(52,211,153,.1);border-color:var(--insep);color:var(--insep2);}
+.badge-levels{background:rgba(124,106,247,.1);border-color:var(--accent);color:var(--accent2);}
+/* ════════════════════════════════════════════════
+   LAYOUT
+════════════════════════════════════════════════ */
+main{max-width:1280px;margin:0 auto;padding:0 18px 60px;}
+section{padding:22px 0 14px;}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.section-icon{
+  width:44px;height:44px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;
+}
+.icon-sep{background:rgba(245,158,11,.15);}
+.icon-insep{background:rgba(52,211,153,.15);}
+.section-header h2{font-size:clamp(18px,2.5vw,24px);font-weight:700;}
+.section-header p{color:var(--text2);font-size:13px;margin-top:3px;}
+/* ════════════════════════════════════════════════
+   THEORY BOX
+════════════════════════════════════════════════ */
+.theory-box{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--card-radius);padding:16px 18px;margin-bottom:18px;
+  position:relative;overflow:hidden;
+}
+.theory-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.theory-box.sep-box::before{background:linear-gradient(90deg,var(--sep),var(--sep2));}
+.theory-box.insep-box::before{background:linear-gradient(90deg,var(--insep),var(--insep2));}
+.theory-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:8px;margin-top:12px;
+}
+.theory-item{
+  background:var(--bg3);border-radius:8px;padding:9px 11px;
+  border:1px solid var(--border);
+}
+.prefix-pill{
+  display:inline-block;padding:2px 10px;border-radius:var(--pill-radius);
+  font-family:'JetBrains Mono',monospace;font-weight:600;font-size:12px;margin-bottom:4px;
+}
+.sep-pill{background:rgba(245,158,11,.2);color:var(--sep2);border:1px solid rgba(245,158,11,.3);}
+.insep-pill{background:rgba(52,211,153,.2);color:var(--insep2);border:1px solid rgba(52,211,153,.3);}
+.theory-item p{font-size:12px;color:var(--text2);}
+/* ════════════════════════════════════════════════
+   VERB GRID
+════════════════════════════════════════════════ */
+.verbs-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,580px),1fr));
+  gap:14px;
+}
+/* ════════════════════════════════════════════════
+   VERB CARD
+════════════════════════════════════════════════ */
+.verb-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--card-radius);overflow:hidden;
+  transition:all var(--tr);animation:fadeInUp .45s ease both;
+  display:flex;flex-direction:column;
+}
+.verb-card:hover{
+  border-color:var(--border2);transform:translateY(-2px);
+  box-shadow:0 16px 40px rgba(0,0,0,.3);
+}
+[data-theme="light"] .verb-card:hover{box-shadow:0 8px 28px rgba(80,80,160,.11);}
+/* ── Card Header ── */
+.verb-card-header{
+  padding:12px 16px 10px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:flex-start;justify-content:space-between;gap:10px;
+  background:var(--bg3);
+}
+.verb-name{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:600;}
+.verb-name .prefix{color:var(--sep2);text-decoration:underline;text-underline-offset:3px;}
+.verb-name.insep .prefix{color:var(--insep2);}
+.verb-meaning{color:var(--text2);font-size:12.5px;margin-top:2px;}
+.verb-type-badge{
+  padding:4px 11px;border-radius:var(--pill-radius);
+  font-size:11px;font-weight:700;letter-spacing:.4px;
+  white-space:nowrap;flex-shrink:0;
+}
+.sep-badge{background:rgba(245,158,11,.15);color:var(--sep2);border:1px solid rgba(245,158,11,.25);}
+.insep-badge{background:rgba(52,211,153,.15);color:var(--insep2);border:1px solid rgba(52,211,153,.25);}
+/* ════════════════════════════════════════════════
+   CONJUGATION — 3-COLUMN SIDE BY SIDE (NO TABS)
+════════════════════════════════════════════════ */
+.conj-wrapper{
+  padding:10px 12px 9px;
+  border-bottom:1px solid var(--border);
+}
+.conj-label{
+  font-size:9.5px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--text3);margin-bottom:6px;
+  display:flex;align-items:center;gap:5px;
+}
+.conj-label::before{
+  content:'';width:20px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,var(--accent),transparent);flex-shrink:0;
+}
+.conj-three-cols{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:5px;
+}
+.conj-col{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:7px;overflow:hidden;
+}
+.conj-col-head{
+  padding:4px 6px;text-align:center;font-size:9.5px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;
+  border-bottom:1px solid var(--border);
+}
+.col-head-pr{
+  background:rgba(124,106,247,.12);color:var(--accent2);
+  border-bottom-color:rgba(124,106,247,.25);
+}
+.col-head-pt{
+  background:rgba(245,158,11,.10);color:var(--sep2);
+  border-bottom-color:rgba(245,158,11,.25);
+}
+.col-head-pf{
+  background:rgba(52,211,153,.10);color:var(--insep2);
+  border-bottom-color:rgba(52,211,153,.25);
+}
+.conj-col table{
+  width:100%;max-width:100%;table-layout:fixed;border-collapse:collapse;font-size:11px;direction:ltr;
+}
+.conj-col td{
+  padding:3px 6px;border-bottom:1px solid var(--border);
+  line-height:1.35;overflow-wrap:break-word;word-break:break-word;
+}
+.conj-col tr:last-child td{border-bottom:none;}
+.conj-col tr:hover td{background:var(--surface2);}
+.td-pro{
+  color:var(--text3);font-size:10px;font-family:'JetBrains Mono',monospace;
+  width:36%;
+}
+.td-form{
+  font-family:'JetBrains Mono',monospace;font-weight:600;
+}
+.pr-form{color:var(--accent2);}
+.pt-form{color:var(--sep2);}
+.pf-form{color:var(--insep2);}
+.pf-note{
+  padding:3px 6px;font-size:9.5px;color:var(--text3);
+  text-align:left;border-top:1px solid var(--border);
+  background:rgba(52,211,153,.04);
+  font-family:'Tajawal',sans-serif;
+  direction:rtl;
+}
+/* ════════════════════════════════════════════════
+   SENTENCES SECTION
+════════════════════════════════════════════════ */
+.sentences-section{padding:10px 12px 14px;}
+.sent-label{
+  font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--text3);margin-bottom:7px;
+  display:flex;align-items:center;gap:5px;
+}
+.sent-label::before{
+  content:'';width:20px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,var(--sep),transparent);flex-shrink:0;
+}
+.sentence-list{list-style:none;}
+.sentence-item{
+  padding:7px 0;border-bottom:1px solid var(--border);
+}
+.sentence-item:last-child{border-bottom:none;}
+.german-sent{
+  font-family:'JetBrains Mono',monospace;font-size:12.5px;
+  color:var(--text);margin-bottom:2px;line-height:1.5;direction:ltr;text-align:left;
+}
+.german-sent .verb-highlight{color:var(--sep2);font-weight:700;}
+.german-sent .insep-highlight{color:var(--insep2);font-weight:700;}
+.english-sent{
+  color:var(--text2);font-size:11.5px;font-style:italic;
+  direction:ltr;text-align:left;margin-bottom:5px;
+}
+.level-tag{
+  display:inline-block;padding:1px 7px;border-radius:4px;
+  font-size:10px;font-weight:700;margin-left:6px;vertical-align:middle;
+}
+.a1-tag{background:rgba(52,211,153,.15);color:var(--insep2);}
+.a2-tag{background:rgba(96,165,250,.15);color:var(--blue);}
+/* ── Action Buttons ── */
+.sent-actions{display:flex;gap:7px;flex-wrap:wrap;}
+.copy-de-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--surface2);border:1px solid var(--border2);
+  color:var(--text2);border-radius:7px;padding:5px 12px;
+  font-size:11px;font-family:'Tajawal',sans-serif;
+  min-height:32px;transition:all .2s;touch-action:manipulation;
+}
+.copy-de-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+.copy-de-btn.copied{background:rgba(52,211,153,.15);border-color:var(--insep);color:var(--insep2);}
+.tts-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3);
+  color:var(--blue);border-radius:7px;padding:5px 12px;
+  font-size:11px;font-family:'Tajawal',sans-serif;
+  min-height:32px;transition:all .2s;touch-action:manipulation;
+}
+.tts-btn:hover{background:rgba(59,130,246,.2);border-color:rgba(59,130,246,.5);}
+.tts-btn.playing{background:rgba(59,130,246,.25);border-color:rgba(59,130,246,.6);color:#fff;animation:pulse-tts .9s ease infinite alternate;}
+@keyframes pulse-tts{from{box-shadow:0 0 0 0 rgba(59,130,246,.35);}to{box-shadow:0 0 0 6px rgba(59,130,246,0);}}
+/* ════════════════════════════════════════════════
+   COMPARE + RULES SECTIONS
+════════════════════════════════════════════════ */
+.compare-table{width:100%;border-collapse:collapse;font-size:12.5px;}
+.compare-table th{
+  padding:10px 13px;text-align:center;font-size:11.5px;
+  border-bottom:2px solid var(--border2);
+}
+.compare-table th:first-child{text-align:right;}
+.compare-table td{padding:8px 13px;border-bottom:1px solid var(--border);font-size:12.5px;}
+.compare-table td:first-child{color:var(--text2);font-weight:500;}
+.compare-table td:not(:first-child){text-align:center;font-family:'JetBrains Mono',monospace;}
+.compare-table tr:hover td{background:var(--surface2);}
+.sep-col{color:var(--sep2);}.insep-col{color:var(--insep2);}
+.rule-box{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:9px;padding:12px 16px;margin-bottom:10px;
+  border-right:3px solid var(--accent);
+}
+.rule-box h4{font-size:13px;margin-bottom:4px;color:var(--accent2);}
+.rule-box p{font-size:12.5px;color:var(--text2);}
+.sticky-label{
+  position:sticky;top:56px;background:var(--bg);
+  padding:8px 0;z-index:10;border-bottom:1px solid var(--border);
+  margin-bottom:14px;display:flex;align-items:center;gap:10px;
+}
+.sticky-label h3{font-size:16px;font-weight:700;}
+.count-badge{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--pill-radius);padding:2px 11px;
+  font-size:11px;color:var(--text2);
+}
+/* ════════════════════════════════════════════════
+   TOAST + TTS BANNER
+════════════════════════════════════════════════ */
+#copy-toast{
+  position:fixed;bottom:24px;left:50%;
+  transform:translateX(-50%) translateY(80px);
+  background:var(--surface);border:1px solid var(--border2);
+  color:var(--text);padding:9px 20px;border-radius:var(--pill-radius);
+  font-size:13px;font-family:'Tajawal',sans-serif;
+  z-index:9999;pointer-events:none;
+  transition:transform .3s,opacity .3s;opacity:0;white-space:nowrap;
+  box-shadow:0 4px 20px rgba(0,0,0,.3);
+}
+#copy-toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
+#tts-banner{
+  display:none;position:fixed;bottom:66px;left:50%;
+  transform:translateX(-50%);background:var(--surface);
+  border:1px solid rgba(59,130,246,.35);border-radius:11px;
+  padding:9px 16px;font-size:12px;color:var(--blue);
+  z-index:9998;box-shadow:0 4px 20px rgba(0,0,0,.25);
+  align-items:center;gap:9px;max-width:90vw;
+}
+#tts-banner.show{display:flex;}
+.tts-progress{height:3px;background:rgba(59,130,246,.2);border-radius:2px;flex:1;min-width:70px;overflow:hidden;}
+.tts-progress-bar{height:100%;background:var(--blue);border-radius:2px;width:0%;transition:width .3s linear;}
+#tts-stop-btn{background:none;border:none;color:var(--red);font-size:16px;padding:0 3px;line-height:1;}
+/* ════════════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════════════ */
+footer{
+  text-align:center;padding:24px 24px;color:var(--text3);
+  font-size:12px;border-top:1px solid var(--border);margin-top:28px;
+}
+/* ════════════════════════════════════════════════
+   ANIMATION
+════════════════════════════════════════════════ */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.verb-card.hidden{display:none;}
+/* ════════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════════ */
+@media(max-width:760px){
+  .conj-three-cols{grid-template-columns:1fr;}
+  .conj-col-head{font-size:11px;}
+  .verb-name{font-size:17px;}
+}
+@media(max-width:480px){
+  nav{padding:0 14px;}
+  .hero{padding:78px 14px 40px;}
+  main{padding:0 12px 60px;}
+  .print-btn span{display:none;}
+}
+
+/* ════════════════════════════════════════════════
+   ██████████████ A4 PRINT STYLES ██████████████
+   A4 = 210mm × 297mm
+   Margins: 16mm × 16mm → printable 178mm × 265mm
+   Rebuilt for MAXIMUM READABILITY: single-column verb
+   layout, comfortable font sizes (no text under 7.5pt),
+   tightened tracking on small caps labels, and generous
+   but controlled line-height so sentences read as solid
+   blocks instead of scattered fragments.
+════════════════════════════════════════════════ */
+@media print{
+  /* ─── Page Setup ─── */
+  @page{
+    size:A4 portrait;
+    margin:16mm 16mm 18mm 16mm;
+  }
+  @page:first{ margin-top:12mm; }
+
+  /* ─── Reset global for print ─── */
+  *,*::before,*::after{
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+  }
+  html,body{
+    width:auto!important;max-width:100%!important;margin:0!important;padding:0!important;
+    background:#ffffff!important;color:#161c2c!important;
+    font-size:10pt!important;line-height:1.6!important;
+    font-family:'Tajawal','Arial',sans-serif!important;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:visible!important;
+  }
+  /* IMPORTANT: do NOT set body to a fixed 210mm width — @page already
+     reserves 16mm margins on each side, so the printable area the
+     browser hands to body is already 178mm wide. Forcing body to the
+     full 210mm physical sheet width double-counts that margin and
+     pushes ~32mm of content past the page edge — in this RTL layout
+     that overflow is invisible because it bleeds off the LEFT side,
+     silently clipping the start of every conjugation row and word. */
+
+  /* ─── Print cover page — matches reference 178mm cover ─── */
+  .print-cover{
+    display:block!important;
+    width:100%;
+    max-width:178mm;
+    box-sizing:border-box;
+    margin:0 auto 10mm;
+    page-break-after:always;break-after:page;
+    text-align:center;
+    padding:32mm 12mm 22mm;
+    border:2px solid #4338ca;
+    border-radius:10px;
+    background:#f8faff!important;
+  }
+  .print-cover .cov-flag{font-size:52pt;display:block;margin-bottom:8mm;}
+  .print-cover .cov-title{
+    font-family:'Playfair Display',Georgia,serif!important;
+    font-size:28pt;font-weight:900;letter-spacing:-.02em;
+    color:#111827!important;line-height:1.3;margin-bottom:5mm;
+  }
+  .print-cover .cov-title span{color:#4338ca!important;}
+  .print-cover .cov-sub{font-size:12pt;color:#374151!important;line-height:1.75;margin-bottom:9mm;}
+  .print-cover .cov-meta{display:inline-flex;align-items:center;gap:6mm;flex-wrap:wrap;justify-content:center;margin-bottom:7mm;}
+  .print-cover .cov-tag{
+    background:rgba(67,56,202,0.08)!important;border:1px solid #4338ca;
+    border-radius:5px;padding:3pt 10pt;font-size:9.5pt;font-weight:600;color:#4338ca!important;
+  }
+  .print-cover .cov-legend{
+    margin-top:11mm;padding-top:7mm;border-top:1pt solid #dde2ee;
+    display:flex;justify-content:center;gap:9mm;flex-wrap:wrap;
+  }
+  .print-cover .cov-legend-item{display:flex;align-items:center;gap:3mm;font-size:9.5pt;color:#374151!important;}
+  .print-cover .cov-legend-dot{width:9pt;height:9pt;border-radius:50%;display:inline-block;flex-shrink:0;}
+
+  /* ─── Override CSS variables for white paper ─── */
+  :root,[data-theme="dark"],[data-theme="light"]{
+    --bg:#ffffff;--bg2:#f9fafb;--bg3:#f4f6f9;--bg4:#e5e7eb;
+    --surface:#ffffff;--surface2:#f8fafc;
+    --border:rgba(0,0,0,0.14);--border2:rgba(0,0,0,0.22);
+    --text:#161c2c;--text2:#3d4456;--text3:#6b7280;
+    --accent:#4338ca;--accent2:#4f46e5;
+    --sep:#b45309;--sep2:#9a4708;
+    --insep:#047857;--insep2:#03664a;
+    --red:#dc2626;--blue:#1d4ed8;--pink:#be185d;
+    --card-radius:6px;
+  }
+
+  /* ─── Hide screen-only elements ─── */
+  #progress-bar,nav,.hero-glow,
+  .tts-btn,.copy-de-btn,.sent-actions,
+  #copy-toast,#tts-banner,footer,
+  .sticky-label,.print-btn,
+  .theme-btn{display:none!important;}
+
+  /* ─── Hero: compact but legible ─── */
+  .hero{
+    padding:0 0 6mm 0!important;text-align:center;
+    page-break-after:avoid;
+  }
+  .hero h1{font-size:18pt!important;line-height:1.3!important;margin-bottom:3mm!important;color:#111827!important;}
+  .hero h1 span{
+    background:none!important;
+    -webkit-text-fill-color:#4338ca!important;
+    color:#4338ca!important;
+  }
+  .hero p{font-size:9.5pt!important;line-height:1.6!important;color:#3d4456!important;margin-bottom:3.5mm!important;}
+  .hero-badges{gap:6px!important;margin-bottom:0!important;}
+  .badge{font-size:8pt!important;padding:3px 11px!important;letter-spacing:.01em!important;}
+  .badge-sep{background:rgba(180,83,9,.08)!important;border-color:#b45309!important;color:#9a4708!important;}
+  .badge-insep{background:rgba(4,120,87,.08)!important;border-color:#047857!important;color:#03664a!important;}
+  .badge-levels{background:rgba(67,56,202,.08)!important;border-color:#4338ca!important;color:#4338ca!important;}
+
+  /* ─── Sections ─── */
+  main{max-width:100%!important;padding:0!important;margin:0!important;}
+  section{padding:5mm 0 3mm!important;}
+  .section-header{margin-bottom:3.5mm!important;page-break-after:avoid;}
+  .section-header h2{font-size:14pt!important;line-height:1.35!important;color:#111827!important;}
+  .section-header p{font-size:9pt!important;line-height:1.5!important;color:#3d4456!important;margin-top:1.5mm!important;}
+  .section-icon{width:30px!important;height:30px!important;font-size:14px!important;}
+
+  /* ─── Theory Box ─── */
+  .theory-box{
+    padding:9px 12px!important;margin-bottom:4.5mm!important;
+    border:1px solid rgba(0,0,0,0.16)!important;
+    background:#f8fafc!important;
+    page-break-inside:avoid;break-inside:avoid;
+  }
+  .theory-box p{font-size:9pt!important;line-height:1.6!important;color:#3d4456!important;}
+  .theory-grid{gap:6px!important;grid-template-columns:repeat(4,1fr)!important;margin-top:7px!important;}
+  .theory-item{padding:6px 8px!important;background:#fff!important;border:1px solid rgba(0,0,0,0.13)!important;}
+  .prefix-pill{font-size:8.5pt!important;padding:2px 8px!important;margin-bottom:3px!important;letter-spacing:0!important;}
+  .sep-pill{background:rgba(180,83,9,.12)!important;color:#9a4708!important;}
+  .insep-pill{background:rgba(4,120,87,.12)!important;color:#03664a!important;}
+  .theory-item p{font-size:8pt!important;line-height:1.45!important;color:#4b5563!important;}
+
+  /* ─── Verb Grid: 2 columns, full 178mm printable width ───
+     Two comfortably-sized columns instead of the old
+     cramped layout. Combined with the body-width fix above
+     (which was the real source of clipped/unclear text),
+     this keeps the booklet a sensible page count while every
+     word stays fully legible. ─── */
+  .verbs-grid{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    gap:5mm!important;
+    padding:0!important;
+    max-width:100%!important;
+    margin:0 auto!important;
+    width:100%!important;
+    box-sizing:border-box!important;
+  }
+
+  /* ─── Verb Card ─── */
+  .verb-card{
+    background:#ffffff!important;border:1px solid rgba(0,0,0,0.18)!important;
+    border-radius:6px!important;overflow:hidden!important;
+    page-break-inside:avoid!important;break-inside:avoid!important;
+    box-shadow:none!important;transform:none!important;animation:none!important;
+  }
+  .verb-card:hover{transform:none!important;box-shadow:none!important;}
+
+  /* ─── Card Header ─── */
+  .verb-card-header{
+    padding:7px 12px 6px!important;
+    background:#f1f5f9!important;
+    border-bottom:1px solid rgba(0,0,0,0.15)!important;
+  }
+  .verb-name{font-size:13.5pt!important;letter-spacing:0!important;color:#111827!important;}
+  .verb-name .prefix{color:#9a4708!important;}
+  .verb-name.insep .prefix{color:#03664a!important;}
+  .verb-meaning{font-size:8pt!important;color:#3d4456!important;margin-top:2px!important;}
+  .verb-type-badge{font-size:6.8pt!important;padding:2.5px 8px!important;letter-spacing:.02em!important;}
+  .sep-badge{background:rgba(180,83,9,.10)!important;color:#9a4708!important;border-color:rgba(180,83,9,.28)!important;}
+  .insep-badge{background:rgba(4,120,87,.10)!important;color:#03664a!important;border-color:rgba(4,120,87,.28)!important;}
+
+  /* ─── Conjugation Wrapper ─── */
+  .conj-wrapper{
+    padding:7px 10px 6px!important;
+    border-bottom:1px solid rgba(0,0,0,0.11)!important;
+  }
+  .conj-label{font-size:7pt!important;letter-spacing:.03em!important;margin-bottom:5px!important;color:#6b7280!important;}
+  .conj-three-cols{
+    display:grid!important;
+    grid-template-columns:1fr 1fr 1fr!important;
+    gap:5px!important;
+  }
+  .conj-col{
+    background:#f9fafb!important;
+    border:1px solid rgba(0,0,0,0.13)!important;
+    border-radius:4px!important;
+  }
+  .conj-col-head{
+    padding:3px 5px!important;font-size:6.8pt!important;letter-spacing:.02em!important;
+    border-bottom:1px solid rgba(0,0,0,0.11)!important;
+  }
+  .col-head-pr{background:rgba(67,56,202,.08)!important;color:#4338ca!important;}
+  .col-head-pt{background:rgba(180,83,9,.08)!important;color:#9a4708!important;}
+  .col-head-pf{background:rgba(4,120,87,.08)!important;color:#03664a!important;}
+  .conj-col table{font-size:7.8pt!important;}
+  .conj-col td{padding:2.5px 5px!important;border-bottom:1px solid rgba(0,0,0,0.08)!important;line-height:1.4!important;}
+  .td-pro{color:#6b7280!important;font-size:7pt!important;}
+  .td-form{font-weight:700!important;}
+  .pr-form{color:#4338ca!important;}
+  .pt-form{color:#9a4708!important;}
+  .pf-form{color:#03664a!important;}
+  .pf-note{
+    font-size:6.8pt!important;line-height:1.45!important;color:#6b7280!important;
+    padding:3px 6px!important;
+    background:rgba(4,120,87,.05)!important;
+    border-top:1px solid rgba(0,0,0,0.09)!important;
+  }
+
+  /* ─── Sentences Section ───
+     German example sentences are the primary learning
+     content, so they get the largest, clearest treatment
+     of any text on the page. ─── */
+  .sentences-section{padding:7px 10px 9px!important;}
+  .sent-label{font-size:7pt!important;letter-spacing:.03em!important;margin-bottom:5px!important;color:#6b7280!important;}
+  .sentence-item{padding:5px 0!important;border-bottom:1px solid rgba(0,0,0,0.09)!important;}
+  .sentence-item:last-child{border-bottom:none!important;}
+  .german-sent{font-size:8.8pt!important;font-weight:500!important;color:#111827!important;margin-bottom:2px!important;line-height:1.5!important;}
+  .german-sent .verb-highlight{color:#9a4708!important;font-weight:700!important;}
+  .german-sent .insep-highlight{color:#03664a!important;font-weight:700!important;}
+  .english-sent{font-size:7.6pt!important;color:#4b5563!important;margin-bottom:0!important;line-height:1.45!important;}
+  .level-tag{font-size:6.2pt!important;padding:1px 5px!important;}
+  .a1-tag{background:rgba(4,120,87,.10)!important;color:#03664a!important;}
+  .a2-tag{background:rgba(29,78,216,.10)!important;color:#1d4ed8!important;}
+
+  /* ─── Compare + Rules ─── */
+  .compare-table{font-size:8.5pt!important;}
+  .compare-table th{padding:6px 9px!important;font-size:8.5pt!important;}
+  .compare-table td{padding:5px 9px!important;font-size:8.5pt!important;line-height:1.5!important;}
+  .rule-box{padding:8px 12px!important;margin-bottom:5px!important;border-radius:4px!important;}
+  .rule-box h4{font-size:9pt!important;margin-bottom:3px!important;}
+  .rule-box p{font-size:8.3pt!important;line-height:1.5!important;}
+
+  /* ─── Page-break management ─── */
+  section{page-break-before:auto;}
+  #separable{page-break-before:avoid;}
+  #inseparable{page-break-before:always;}
+  .verb-card{page-break-inside:avoid!important;break-inside:avoid!important;}
+  .verbs-grid{page-break-inside:auto!important;}
+  .theory-box{page-break-inside:avoid!important;break-inside:avoid!important;}
+  .section-header{page-break-after:avoid!important;break-after:avoid!important;}
+  h2,h3,h4{page-break-after:avoid!important;break-after:avoid!important;}
+
+  /* ─── Scrollbar hidden ─── */
+  ::-webkit-scrollbar{display:none;}
+
+  /* ─── Running page footer with page numbers ─── */
+  @page{
+    @bottom-right{ content:counter(page) " / " counter(pages); font-family:'Tajawal',Arial,sans-serif; font-size:8.5pt; color:#9ca3af; }
+    @bottom-center{ content:"الأفعال الألمانية القابلة وغير القابلة للانفصال · A1–A2"; font-family:'Tajawal',Arial,sans-serif; font-size:7.5pt; color:#9ca3af; }
+  }
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+}
+
+.print-cover{display:none;}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<div id="copy-toast"></div>
+<div id="tts-banner">
+  <span id="tts-label" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px;font-family:'JetBrains Mono',monospace;font-size:11px;"></span>
+  <div class="tts-progress"><div class="tts-progress-bar" id="tts-prog"></div></div>
+  <button id="tts-stop-btn" onclick="stopTTS()" title="إيقاف">✕</button>
+</div>
+
+<nav id="main-nav">
+  <div class="nav-logo">🇩🇪 Deutschverben</div>
+  <div class="nav-right">
+    <button class="print-btn" onclick="window.print()" aria-label="طباعة A4">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 6 2 18 2 18 9"/>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+        <rect x="6" y="14" width="12" height="8"/>
+      </svg>
+      <span>طباعة A4</span>
+    </button>
+    <button class="theme-btn" id="theme-btn" title="تبديل المظهر">☀️</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-glow"></div>
+  <h1>الأفعال الألمانية<br/><span>القابلة وغير القابلة للانفصال</span></h1>
+  <p>تصريف شامل مع جمل تطبيقية بمستوى A1–A2 • Präsens • Präteritum • Perfekt</p>
+  <div class="hero-badges">
+    <span class="badge badge-sep">🔀 Trennbare Verben — القابلة للانفصال</span>
+    <span class="badge badge-insep">🔒 Untrennbare Verben — غير القابلة للانفصال</span>
+    <span class="badge badge-levels">📚 مستوى A1 – A2</span>
+  </div>
+</header>
+
+<!-- ═══════════════ PRINT COVER ═══════════════ -->
+<div class="print-cover" role="doc-cover" aria-hidden="true">
+  <span class="cov-flag">&#127465;&#127466;</span>
+  <div class="cov-title">الأفعال الألمانية<br><span>القابلة وغير القابلة للانفصال</span></div>
+  <div class="cov-sub">
+    تصريف شامل مع جمل تطبيقية بمستوى A1–A2<br>
+    Präsens · Präteritum · Perfekt<br>
+    Trennbare &amp; Untrennbare Verben
+  </div>
+  <div class="cov-meta">
+    <span class="cov-tag">20 Verben</span>
+    <span class="cov-tag">A1–A2</span>
+    <span class="cov-tag">DIN A4</span>
+  </div>
+  <div class="cov-legend">
+    <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#b45309"></span>Trennbare (القابلة للانفصال)</span>
+    <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#047857"></span>Untrennbare (غير القابلة للانفصال)</span>
+  </div>
+</div>
+
+<main>
+<!-- ═══════════════════ SEPARABLE ═══════════════════ -->
+<section id="separable">
+  <div class="section-header">
+    <div class="section-icon icon-sep">🔀</div>
+    <div>
+      <h2>الأفعال القابلة للانفصال — Trennbare Verben</h2>
+      <p>البادئة تنفصل عن الفعل في الجمل العادية وتذهب إلى النهاية</p>
+    </div>
+  </div>
+  <div class="theory-box sep-box">
+    <p style="font-size:13.5px;margin-bottom:10px;">📌 <strong>كيف تعرف أن الفعل قابل للانفصال؟</strong> إذا كانت البادئة تحمل معنى مستقلاً والنبرة تقع عليها، فالفعل قابل للانفصال.</p>
+    <div class="theory-grid">
+      <div class="theory-item"><span class="prefix-pill sep-pill">auf-</span><p>aufstehen (يستيقظ)</p></div>
+      <div class="theory-item"><span class="prefix-pill sep-pill">an-</span><p>anrufen (يتصل)</p></div>
+      <div class="theory-item"><span class="prefix-pill sep-pill">ab-</span><p>abfahren (يغادر)</p></div>
+      <div class="theory-item"><span class="prefix-pill sep-pill">ein-</span><p>einkaufen (يتسوق)</p></div>
+      <div class="theory-item"><span class="prefix-pill sep-pill">aus-</span><p>aussteigen (ينزل)</p></div>
+      <div class="theory-item"><span class="prefix-pill sep-pill">mit-</span><p>mitkommen (يأتي معاً)</p></div>
+      <div class="theory-item"><span class="prefix-pill sep-pill">zurück-</span><p>zurückkommen (يعود)</p></div>
+      <div class="theory-item"><span class="prefix-pill sep-pill">vor-</span><p>vorstellen (يقدم)</p></div>
+    </div>
+  </div>
+  <div class="sticky-label">
+    <h3>الأفعال القابلة للانفصال</h3>
+    <span class="count-badge">10 أفعال</span>
+  </div>
+  <div class="verbs-grid" id="sep-grid"></div>
+</section>
+
+<!-- ═══════════════════ INSEPARABLE ═══════════════════ -->
+<section id="inseparable">
+  <div class="section-header">
+    <div class="section-icon icon-insep">🔒</div>
+    <div>
+      <h2>الأفعال غير القابلة للانفصال — Untrennbare Verben</h2>
+      <p>البادئة تبقى دائماً متصلة بالفعل ولا تنفصل أبداً</p>
+    </div>
+  </div>
+  <div class="theory-box insep-box">
+    <p style="font-size:13.5px;margin-bottom:10px;">📌 <strong>كيف تعرف أن الفعل غير قابل للانفصال؟</strong> البادئة لا تحمل معنى مستقلاً والنبرة لا تقع عليها. في Partizip II لا تأتي ge-.</p>
+    <div class="theory-grid">
+      <div class="theory-item"><span class="prefix-pill insep-pill">be-</span><p>bezahlen (يدفع)</p></div>
+      <div class="theory-item"><span class="prefix-pill insep-pill">ver-</span><p>verstehen (يفهم)</p></div>
+      <div class="theory-item"><span class="prefix-pill insep-pill">er-</span><p>erklären (يشرح)</p></div>
+      <div class="theory-item"><span class="prefix-pill insep-pill">ge-</span><p>gefallen (يعجب)</p></div>
+      <div class="theory-item"><span class="prefix-pill insep-pill">emp-</span><p>empfehlen (يوصي)</p></div>
+      <div class="theory-item"><span class="prefix-pill insep-pill">ent-</span><p>entscheiden (يقرر)</p></div>
+      <div class="theory-item"><span class="prefix-pill insep-pill">miss-</span><p>missverstehen (يسيء)</p></div>
+      <div class="theory-item"><span class="prefix-pill insep-pill">zer-</span><p>zerbrechen (يكسر)</p></div>
+    </div>
+  </div>
+  <div class="sticky-label">
+    <h3>الأفعال غير القابلة للانفصال</h3>
+    <span class="count-badge">10 أفعال</span>
+  </div>
+  <div class="verbs-grid" id="insep-grid"></div>
+</section>
+
+<!-- ═══════════════════ COMPARE ═══════════════════ -->
+<section id="compare">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(124,106,247,.15);">⚖️</div>
+    <div><h2>مقارنة شاملة — Vergleich</h2><p>الفرق بين القابلة وغير القابلة للانفصال</p></div>
+  </div>
+  <div style="overflow-x:auto;background:var(--surface);border-radius:var(--card-radius);border:1px solid var(--border);">
+    <table class="compare-table">
+      <thead><tr><th>الخاصية</th><th style="color:var(--sep2);">🔀 قابلة للانفصال</th><th style="color:var(--insep2);">🔒 غير قابلة للانفصال</th></tr></thead>
+      <tbody>
+        <tr><td>البادئات</td><td class="sep-col">auf، an، ab، ein، aus، mit، zurück، vor</td><td class="insep-col">be، ver، er، ge، emp، ent، miss، zer</td></tr>
+        <tr><td>النبرة</td><td class="sep-col"><strong>AUF</strong>stehen</td><td class="insep-col">be<strong>ZAH</strong>len</td></tr>
+        <tr><td>Präsens</td><td class="sep-col">Ich stehe auf. (البادئة في النهاية)</td><td class="insep-col">Ich bezahle. (تبقى متصلة)</td></tr>
+        <tr><td>Präteritum</td><td class="sep-col">Ich stand auf.</td><td class="insep-col">Ich bezahlte.</td></tr>
+        <tr><td>Partizip II</td><td class="sep-col">aufgestanden ← ge- بين البادئة والجذر</td><td class="insep-col">bezahlt ← بدون ge-</td></tr>
+        <tr><td>النفي</td><td class="sep-col">Ich stehe nicht auf.</td><td class="insep-col">Ich verstehe das nicht.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════ RULES ═══════════════════ -->
+<section id="rules">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(248,113,113,.15);">⭐</div>
+    <div><h2>القواعد الذهبية — Goldene Regeln</h2><p>ثبّت هذه القواعد في ذاكرتك</p></div>
+  </div>
+  <div class="rule-box"><h4>🥇 قاعدة Partizip II للانفصال</h4><p>تأخذ <code style="background:var(--bg4);padding:2px 6px;border-radius:4px;font-family:monospace;">-ge-</code> بين البادئة والجذر: <span style="color:var(--sep2);font-family:monospace;">auf+ge+standen = aufgestanden</span></p></div>
+  <div class="rule-box" style="border-right-color:var(--insep);"><h4>🥈 قاعدة Partizip II للغير انفصال</h4><p>لا تأخذ <code style="background:var(--bg4);padding:2px 6px;border-radius:4px;font-family:monospace;">ge-</code> أبداً: <span style="color:var(--insep2);font-family:monospace;">bezahlt (وليس *gebezahlt)</span></p></div>
+  <div class="rule-box" style="border-right-color:var(--sep);"><h4>🎯 موضع البادئة في Präsens</h4><p>البادئة تذهب دائماً لنهاية الجملة: <span style="color:var(--sep2);font-family:monospace;">Ich kaufe heute ein.</span></p></div>
+  <div class="rule-box" style="border-right-color:var(--blue);"><h4>📝 قاعدة الجملة الفرعية</h4><p>في Nebensatz يعود الفعل متصلاً ببادئته: <span style="color:var(--blue);font-family:monospace;">..., dass ich früh aufstehe.</span></p></div>
+  <div class="rule-box" style="border-right-color:var(--pink);"><h4>🔮 خدعة النبرة — أسرع طريقة</h4><p>النبرة على البادئة ← قابل للانفصال. النبرة على الجذر ← غير قابل للانفصال.</p></div>
+  <div class="rule-box" style="border-right-color:var(--insep);"><h4>⚡ Infinitiv مع zu</h4><p>القابل: <span style="color:var(--sep2);font-family:monospace;">aufzustehen</span> | غير القابل: <span style="color:var(--insep2);font-family:monospace;">zu bezahlen</span></p></div>
+</section>
+</main>
+
+<footer>
+  <p>صُمِّم لمتعلمي اللغة الألمانية • مستوى A1–A2 • Trennbare &amp; Untrennbare Verben</p>
+  <p style="margin-top:6px;color:var(--text3);">© 2025 Deutschverben — جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+/* ════════════════════════════════════════════
+   DATA — Separable Verbs
+════════════════════════════════════════════ */
+const separableVerbs=[
+ {infinitiv:"aufstehen",prefix:"auf",meaning:"يستيقظ / يقوم",type:"sep",
+  prasens:[["ich","stehe","auf"],["du","stehst","auf"],["er/sie/es","steht","auf"],["wir","stehen","auf"],["ihr","steht","auf"],["sie/Sie","stehen","auf"]],
+  prateritum:[["ich","stand","auf"],["du","standst","auf"],["er/sie/es","stand","auf"],["wir","standen","auf"],["ihr","standet","auf"],["sie/Sie","standen","auf"]],
+  partizip:"aufgestanden",hilfsverb:"sein",
+  sentences:[
+   {de:"Ich <v>stehe</v> jeden Morgen um 7 Uhr <v>auf</v>.",en:"I get up every morning at 7 o'clock.",l:"A1"},
+   {de:"Mein Bruder <v>steht</v> sehr früh <v>auf</v>.",en:"My brother gets up very early.",l:"A1"},
+   {de:"Wann <v>stehst</v> du morgens <v>auf</v>?",en:"When do you get up in the morning?",l:"A1"},
+   {de:"Gestern <v>stand</v> ich um 6 Uhr <v>auf</v>.",en:"Yesterday I got up at 6 o'clock.",l:"A2"},
+   {de:"Wir sind um 8 Uhr <v>aufgestanden</v>.",en:"We got up at 8 o'clock.",l:"A2"},
+  ]},
+ {infinitiv:"anrufen",prefix:"an",meaning:"يتصل هاتفياً",type:"sep",
+  prasens:[["ich","rufe","an"],["du","rufst","an"],["er/sie/es","ruft","an"],["wir","rufen","an"],["ihr","ruft","an"],["sie/Sie","rufen","an"]],
+  prateritum:[["ich","rief","an"],["du","riefst","an"],["er/sie/es","rief","an"],["wir","riefen","an"],["ihr","rieft","an"],["sie/Sie","riefen","an"]],
+  partizip:"angerufen",hilfsverb:"haben",
+  sentences:[
+   {de:"Ich <v>rufe</v> meine Mutter <v>an</v>.",en:"I am calling my mother.",l:"A1"},
+   {de:"Er <v>ruft</v> jeden Tag seine Freundin <v>an</v>.",en:"He calls his girlfriend every day.",l:"A1"},
+   {de:"Ich habe dich gestern <v>angerufen</v>.",en:"I called you yesterday.",l:"A2"},
+   {de:"Sie <v>rief</v> sofort den Arzt <v>an</v>.",en:"She immediately called the doctor.",l:"A2"},
+   {de:"Hast du schon deine Eltern <v>angerufen</v>?",en:"Have you already called your parents?",l:"A2"},
+  ]},
+ {infinitiv:"einkaufen",prefix:"ein",meaning:"يتسوق / يشتري",type:"sep",
+  prasens:[["ich","kaufe","ein"],["du","kaufst","ein"],["er/sie/es","kauft","ein"],["wir","kaufen","ein"],["ihr","kauft","ein"],["sie/Sie","kaufen","ein"]],
+  prateritum:[["ich","kaufte","ein"],["du","kauftest","ein"],["er/sie/es","kaufte","ein"],["wir","kauften","ein"],["ihr","kauftet","ein"],["sie/Sie","kauften","ein"]],
+  partizip:"eingekauft",hilfsverb:"haben",
+  sentences:[
+   {de:"Ich <v>kaufe</v> heute Brot <v>ein</v>.",en:"I am shopping for bread today.",l:"A1"},
+   {de:"Wir <v>kaufen</v> im Supermarkt <v>ein</v>.",en:"We shop at the supermarket.",l:"A1"},
+   {de:"Gestern <v>kauften</v> wir sehr viel <v>ein</v>.",en:"Yesterday we shopped a lot.",l:"A2"},
+   {de:"Hast du schon <v>eingekauft</v>?",en:"Have you already done the shopping?",l:"A2"},
+   {de:"Wir haben zu viel <v>eingekauft</v>.",en:"We bought too much.",l:"A2"},
+  ]},
+ {infinitiv:"abfahren",prefix:"ab",meaning:"يغادر / ينطلق",type:"sep",
+  prasens:[["ich","fahre","ab"],["du","fährst","ab"],["er/sie/es","fährt","ab"],["wir","fahren","ab"],["ihr","fahrt","ab"],["sie/Sie","fahren","ab"]],
+  prateritum:[["ich","fuhr","ab"],["du","fuhrst","ab"],["er/sie/es","fuhr","ab"],["wir","fuhren","ab"],["ihr","fuhrt","ab"],["sie/Sie","fuhren","ab"]],
+  partizip:"abgefahren",hilfsverb:"sein",
+  sentences:[
+   {de:"Der Zug <v>fährt</v> um 10 Uhr <v>ab</v>.",en:"The train departs at 10 o'clock.",l:"A1"},
+   {de:"Wann <v>fährt</v> der nächste Bus <v>ab</v>?",en:"When does the next bus depart?",l:"A1"},
+   {de:"Der Zug ist leider schon <v>abgefahren</v>.",en:"The train has unfortunately already departed.",l:"A2"},
+   {de:"Sie <v>fuhr</v> pünktlich um 8 Uhr <v>ab</v>.",en:"She departed punctually at 8 o'clock.",l:"A2"},
+   {de:"Wir sind gestern Abend <v>abgefahren</v>.",en:"We departed yesterday evening.",l:"A2"},
+  ]},
+ {infinitiv:"aussteigen",prefix:"aus",meaning:"ينزل من (مواصلة)",type:"sep",
+  prasens:[["ich","steige","aus"],["du","steigst","aus"],["er/sie/es","steigt","aus"],["wir","steigen","aus"],["ihr","steigt","aus"],["sie/Sie","steigen","aus"]],
+  prateritum:[["ich","stieg","aus"],["du","stiegst","aus"],["er/sie/es","stieg","aus"],["wir","stiegen","aus"],["ihr","stiegt","aus"],["sie/Sie","stiegen","aus"]],
+  partizip:"ausgestiegen",hilfsverb:"sein",
+  sentences:[
+   {de:"Ich <v>steige</v> an der nächsten Station <v>aus</v>.",en:"I get off at the next station.",l:"A1"},
+   {de:"Wo <v>steigst</v> du <v>aus</v>?",en:"Where do you get off?",l:"A1"},
+   {de:"Sie ist an der falschen Haltestelle <v>ausgestiegen</v>.",en:"She got off at the wrong stop.",l:"A2"},
+   {de:"Wir <v>stiegen</v> alle in Berlin <v>aus</v>.",en:"We all got off in Berlin.",l:"A2"},
+   {de:"Ich bin an der falschen Station <v>ausgestiegen</v>.",en:"I got off at the wrong station.",l:"A2"},
+  ]},
+ {infinitiv:"mitkommen",prefix:"mit",meaning:"يأتي مع / يرافق",type:"sep",
+  prasens:[["ich","komme","mit"],["du","kommst","mit"],["er/sie/es","kommt","mit"],["wir","kommen","mit"],["ihr","kommt","mit"],["sie/Sie","kommen","mit"]],
+  prateritum:[["ich","kam","mit"],["du","kamst","mit"],["er/sie/es","kam","mit"],["wir","kamen","mit"],["ihr","kamt","mit"],["sie/Sie","kamen","mit"]],
+  partizip:"mitgekommen",hilfsverb:"sein",
+  sentences:[
+   {de:"Kommst du <v>mit</v>?",en:"Are you coming along?",l:"A1"},
+   {de:"Ich <v>komme</v> sehr gerne <v>mit</v>!",en:"I will gladly come along!",l:"A1"},
+   {de:"Wir sind alle ins Kino <v>mitgekommen</v>.",en:"We all came along to the cinema.",l:"A2"},
+   {de:"Mein bester Freund <v>kam</v> auch <v>mit</v>.",en:"My best friend also came along.",l:"A2"},
+   {de:"Warum bist du nicht <v>mitgekommen</v>?",en:"Why did you not come along?",l:"A2"},
+  ]},
+ {infinitiv:"aufmachen",prefix:"auf",meaning:"يفتح",type:"sep",
+  prasens:[["ich","mache","auf"],["du","machst","auf"],["er/sie/es","macht","auf"],["wir","machen","auf"],["ihr","macht","auf"],["sie/Sie","machen","auf"]],
+  prateritum:[["ich","machte","auf"],["du","machtest","auf"],["er/sie/es","machte","auf"],["wir","machten","auf"],["ihr","machtet","auf"],["sie/Sie","machten","auf"]],
+  partizip:"aufgemacht",hilfsverb:"haben",
+  sentences:[
+   {de:"Ich <v>mache</v> das Fenster <v>auf</v>.",en:"I open the window.",l:"A1"},
+   {de:"<v>Mach</v> bitte die Tür <v>auf</v>!",en:"Please open the door!",l:"A1"},
+   {de:"Hast du das Paket schon <v>aufgemacht</v>?",en:"Have you already opened the package?",l:"A2"},
+   {de:"Sie <v>machte</v> den Brief langsam <v>auf</v>.",en:"She slowly opened the letter.",l:"A2"},
+   {de:"Wir haben das Geschenk sofort <v>aufgemacht</v>.",en:"We opened the present straight away.",l:"A2"},
+  ]},
+ {infinitiv:"zurückkommen",prefix:"zurück",meaning:"يعود / يرجع",type:"sep",
+  prasens:[["ich","komme","zurück"],["du","kommst","zurück"],["er/sie/es","kommt","zurück"],["wir","kommen","zurück"],["ihr","kommt","zurück"],["sie/Sie","kommen","zurück"]],
+  prateritum:[["ich","kam","zurück"],["du","kamst","zurück"],["er/sie/es","kam","zurück"],["wir","kamen","zurück"],["ihr","kamt","zurück"],["sie/Sie","kamen","zurück"]],
+  partizip:"zurückgekommen",hilfsverb:"sein",
+  sentences:[
+   {de:"Ich <v>komme</v> um 18 Uhr <v>zurück</v>.",en:"I come back at 6 PM.",l:"A1"},
+   {de:"Wann <v>kommt</v> er <v>zurück</v>?",en:"When does he come back?",l:"A1"},
+   {de:"Er ist sehr spät <v>zurückgekommen</v>.",en:"He came back very late.",l:"A2"},
+   {de:"Wir <v>kamen</v> erholt vom Urlaub <v>zurück</v>.",en:"We came back refreshed from vacation.",l:"A2"},
+   {de:"Bist du schon <v>zurückgekommen</v>?",en:"Have you already come back?",l:"A2"},
+  ]},
+ {infinitiv:"vorstellen",prefix:"vor",meaning:"يقدّم / يتخيّل",type:"sep",
+  prasens:[["ich","stelle","vor"],["du","stellst","vor"],["er/sie/es","stellt","vor"],["wir","stellen","vor"],["ihr","stellt","vor"],["sie/Sie","stellen","vor"]],
+  prateritum:[["ich","stellte","vor"],["du","stelltest","vor"],["er/sie/es","stellte","vor"],["wir","stellten","vor"],["ihr","stelltet","vor"],["sie/Sie","stellten","vor"]],
+  partizip:"vorgestellt",hilfsverb:"haben",
+  sentences:[
+   {de:"Ich <v>stelle</v> mich <v>vor</v>: Ich heiße Anna.",en:"I introduce myself: My name is Anna.",l:"A1"},
+   {de:"Er <v>stellt</v> seinen neuen Freund <v>vor</v>.",en:"He introduces his new friend.",l:"A1"},
+   {de:"Sie hat sich dem ganzen Team <v>vorgestellt</v>.",en:"She introduced herself to the whole team.",l:"A2"},
+   {de:"Er <v>stellte</v> uns seine Familie <v>vor</v>.",en:"He introduced his family to us.",l:"A2"},
+   {de:"Ich kann mir das einfach nicht <v>vorstellen</v>.",en:"I simply cannot imagine that.",l:"A2"},
+  ]},
+ {infinitiv:"anfangen",prefix:"an",meaning:"يبدأ",type:"sep",
+  prasens:[["ich","fange","an"],["du","fängst","an"],["er/sie/es","fängt","an"],["wir","fangen","an"],["ihr","fangt","an"],["sie/Sie","fangen","an"]],
+  prateritum:[["ich","fing","an"],["du","fingst","an"],["er/sie/es","fing","an"],["wir","fingen","an"],["ihr","fingt","an"],["sie/Sie","fingen","an"]],
+  partizip:"angefangen",hilfsverb:"haben",
+  sentences:[
+   {de:"Der Unterricht <v>fängt</v> um 8 Uhr <v>an</v>.",en:"The lesson starts at 8 o'clock.",l:"A1"},
+   {de:"Ich <v>fange</v> jetzt mit der Arbeit <v>an</v>.",en:"I start working now.",l:"A1"},
+   {de:"Es hat plötzlich zu regnen <v>angefangen</v>.",en:"It suddenly started to rain.",l:"A2"},
+   {de:"Wir haben gestern mit dem Projekt <v>angefangen</v>.",en:"We started the project yesterday.",l:"A2"},
+   {de:"Er hat heute endlich mit dem Sport <v>angefangen</v>.",en:"He finally started doing sport today.",l:"A2"},
+  ]},
+];
+
+/* ════════════════════════════════════════════
+   DATA — Inseparable Verbs
+════════════════════════════════════════════ */
+const inseparableVerbs=[
+ {infinitiv:"bezahlen",prefix:"be",meaning:"يدفع / يسدّد",type:"insep",
+  prasens:[["ich","bezahle"],["du","bezahlst"],["er/sie/es","bezahlt"],["wir","bezahlen"],["ihr","bezahlt"],["sie/Sie","bezahlen"]],
+  prateritum:[["ich","bezahlte"],["du","bezahltest"],["er/sie/es","bezahlte"],["wir","bezahlten"],["ihr","bezahltet"],["sie/Sie","bezahlten"]],
+  partizip:"bezahlt",hilfsverb:"haben",
+  sentences:[
+   {de:"Ich <v>bezahle</v> die Rechnung.",en:"I pay the bill.",l:"A1"},
+   {de:"Kann ich mit Karte <v>bezahlen</v>?",en:"Can I pay by card?",l:"A1"},
+   {de:"Ich habe schon <v>bezahlt</v>.",en:"I have already paid.",l:"A2"},
+   {de:"Sie <v>bezahlte</v> die Arztrechnung.",en:"She paid the doctor's bill.",l:"A2"},
+   {de:"Hat er die Rechnung schon <v>bezahlt</v>?",en:"Has he already paid the bill?",l:"A2"},
+  ]},
+ {infinitiv:"verstehen",prefix:"ver",meaning:"يفهم",type:"insep",
+  prasens:[["ich","verstehe"],["du","verstehst"],["er/sie/es","versteht"],["wir","verstehen"],["ihr","versteht"],["sie/Sie","verstehen"]],
+  prateritum:[["ich","verstand"],["du","verstandst"],["er/sie/es","verstand"],["wir","verstanden"],["ihr","verstandet"],["sie/Sie","verstanden"]],
+  partizip:"verstanden",hilfsverb:"haben",
+  sentences:[
+   {de:"Ich <v>verstehe</v> das nicht.",en:"I do not understand that.",l:"A1"},
+   {de:"<v>Verstehst</v> du Deutsch?",en:"Do you understand German?",l:"A1"},
+   {de:"Ich habe alles gut <v>verstanden</v>.",en:"I understood everything well.",l:"A2"},
+   {de:"Sie <v>verstand</v> damals kein Englisch.",en:"She understood no English back then.",l:"A2"},
+   {de:"Hast du das wirklich <v>verstanden</v>?",en:"Did you really understand that?",l:"A2"},
+  ]},
+ {infinitiv:"erklären",prefix:"er",meaning:"يشرح / يوضّح",type:"insep",
+  prasens:[["ich","erkläre"],["du","erklärst"],["er/sie/es","erklärt"],["wir","erklären"],["ihr","erklärt"],["sie/Sie","erklären"]],
+  prateritum:[["ich","erklärte"],["du","erklärtest"],["er/sie/es","erklärte"],["wir","erklärten"],["ihr","erklärtet"],["sie/Sie","erklärten"]],
+  partizip:"erklärt",hilfsverb:"haben",
+  sentences:[
+   {de:"Der Lehrer <v>erklärt</v> die Grammatik.",en:"The teacher explains the grammar.",l:"A1"},
+   {de:"Kannst du mir das bitte <v>erklären</v>?",en:"Can you please explain that to me?",l:"A1"},
+   {de:"Er hat mir alles genau <v>erklärt</v>.",en:"He explained everything to me in detail.",l:"A2"},
+   {de:"Sie <v>erklärte</v> das Problem sehr klar.",en:"She explained the problem very clearly.",l:"A2"},
+   {de:"Ich habe ihr den Plan <v>erklärt</v>.",en:"I explained the plan to her.",l:"A2"},
+  ]},
+ {infinitiv:"gefallen",prefix:"ge",meaning:"يعجب / يروق له",type:"insep",
+  prasens:[["ich","gefalle"],["du","gefällst"],["er/sie/es","gefällt"],["wir","gefallen"],["ihr","gefallt"],["sie/Sie","gefallen"]],
+  prateritum:[["ich","gefiel"],["du","gefielst"],["er/sie/es","gefiel"],["wir","gefielen"],["ihr","gefielt"],["sie/Sie","gefielen"]],
+  partizip:"gefallen",hilfsverb:"haben",
+  sentences:[
+   {de:"Das Buch <v>gefällt</v> mir sehr.",en:"I like the book very much.",l:"A1"},
+   {de:"<v>Gefällt</v> dir die Stadt?",en:"Do you like the city?",l:"A1"},
+   {de:"Der Film hat mir sehr <v>gefallen</v>.",en:"I liked the film very much.",l:"A2"},
+   {de:"Das Essen <v>gefiel</v> uns leider nicht.",en:"Unfortunately we did not like the food.",l:"A2"},
+   {de:"Hat dir das Konzert <v>gefallen</v>?",en:"Did you like the concert?",l:"A2"},
+  ]},
+ {infinitiv:"empfehlen",prefix:"emp",meaning:"يوصي / ينصح",type:"insep",
+  prasens:[["ich","empfehle"],["du","empfiehlst"],["er/sie/es","empfiehlt"],["wir","empfehlen"],["ihr","empfehlt"],["sie/Sie","empfehlen"]],
+  prateritum:[["ich","empfahl"],["du","empfahlst"],["er/sie/es","empfahl"],["wir","empfahlen"],["ihr","empfahlt"],["sie/Sie","empfahlen"]],
+  partizip:"empfohlen",hilfsverb:"haben",
+  sentences:[
+   {de:"Ich <v>empfehle</v> dieses Restaurant.",en:"I recommend this restaurant.",l:"A2"},
+   {de:"Was <v>empfiehlst</v> du mir?",en:"What do you recommend to me?",l:"A1"},
+   {de:"Er hat mir dieses Buch sehr <v>empfohlen</v>.",en:"He highly recommended this book to me.",l:"A2"},
+   {de:"Sie <v>empfahl</v> uns das Hotel in der Altstadt.",en:"She recommended the hotel in the old town to us.",l:"A2"},
+   {de:"Ich würde diesen Kurs sehr <v>empfehlen</v>.",en:"I would highly recommend this course.",l:"A2"},
+  ]},
+ {infinitiv:"besuchen",prefix:"be",meaning:"يزور",type:"insep",
+  prasens:[["ich","besuche"],["du","besuchst"],["er/sie/es","besucht"],["wir","besuchen"],["ihr","besucht"],["sie/Sie","besuchen"]],
+  prateritum:[["ich","besuchte"],["du","besuchtest"],["er/sie/es","besuchte"],["wir","besuchten"],["ihr","besuchtet"],["sie/Sie","besuchten"]],
+  partizip:"besucht",hilfsverb:"haben",
+  sentences:[
+   {de:"Ich <v>besuche</v> meine Oma.",en:"I visit my grandmother.",l:"A1"},
+   {de:"Er <v>besucht</v> die Schule jeden Tag.",en:"He attends school every day.",l:"A1"},
+   {de:"Ich habe das Museum gestern <v>besucht</v>.",en:"I visited the museum yesterday.",l:"A2"},
+   {de:"Sie <v>besuchte</v> einen alten Freund in Hamburg.",en:"She visited an old friend in Hamburg.",l:"A2"},
+   {de:"Meine Eltern <v>besuchen</v> mich jedes Wochenende.",en:"My parents visit me every weekend.",l:"A1"},
+  ]},
+ {infinitiv:"verlassen",prefix:"ver",meaning:"يغادر / يترك",type:"insep",
+  prasens:[["ich","verlasse"],["du","verlässt"],["er/sie/es","verlässt"],["wir","verlassen"],["ihr","verlasst"],["sie/Sie","verlassen"]],
+  prateritum:[["ich","verließ"],["du","verließt"],["er/sie/es","verließ"],["wir","verließen"],["ihr","verließt"],["sie/Sie","verließen"]],
+  partizip:"verlassen",hilfsverb:"haben",
+  sentences:[
+   {de:"Ich <v>verlasse</v> das Haus um 8 Uhr.",en:"I leave the house at 8 o'clock.",l:"A1"},
+   {de:"Sie <v>verlässt</v> die Stadt morgen.",en:"She is leaving the city tomorrow.",l:"A1"},
+   {de:"Er hat die Schule mit 18 <v>verlassen</v>.",en:"He left school at 18.",l:"A2"},
+   {de:"Wir <v>verließen</v> das Land vor drei Jahren.",en:"We left the country three years ago.",l:"A2"},
+   {de:"Sie hat die Stadt noch nie <v>verlassen</v>.",en:"She has never left the city.",l:"A2"},
+  ]},
+ {infinitiv:"entscheiden",prefix:"ent",meaning:"يقرر / يحكم",type:"insep",
+  prasens:[["ich","entscheide"],["du","entscheidest"],["er/sie/es","entscheidet"],["wir","entscheiden"],["ihr","entscheidet"],["sie/Sie","entscheiden"]],
+  prateritum:[["ich","entschied"],["du","entschiedst"],["er/sie/es","entschied"],["wir","entschieden"],["ihr","entschiedet"],["sie/Sie","entschieden"]],
+  partizip:"entschieden",hilfsverb:"haben",
+  sentences:[
+   {de:"Ich <v>entscheide</v> mich für Kaffee.",en:"I decide on coffee.",l:"A2"},
+   {de:"Sie <v>entscheidet</v> sich für die rote Jacke.",en:"She decides on the red jacket.",l:"A2"},
+   {de:"Ich habe mich endlich <v>entschieden</v>.",en:"I have finally decided.",l:"A2"},
+   {de:"Hast du dich schon <v>entschieden</v>?",en:"Have you already decided?",l:"A2"},
+   {de:"Ich kann mich nicht <v>entscheiden</v>.",en:"I cannot decide.",l:"A2"},
+  ]},
+ {infinitiv:"vergessen",prefix:"ver",meaning:"ينسى",type:"insep",
+  prasens:[["ich","vergesse"],["du","vergisst"],["er/sie/es","vergisst"],["wir","vergessen"],["ihr","vergesst"],["sie/Sie","vergessen"]],
+  prateritum:[["ich","vergaß"],["du","vergaßt"],["er/sie/es","vergaß"],["wir","vergaßen"],["ihr","vergaßt"],["sie/Sie","vergaßen"]],
+  partizip:"vergessen",hilfsverb:"haben",
+  sentences:[
+   {de:"Ich <v>vergesse</v> immer meinen Schlüssel.",en:"I always forget my key.",l:"A1"},
+   {de:"Er <v>vergisst</v> nie einen Geburtstag.",en:"He never forgets a birthday.",l:"A1"},
+   {de:"Ich habe das schwierige Wort <v>vergessen</v>.",en:"I have forgotten the difficult word.",l:"A2"},
+   {de:"Sie <v>vergaß</v> ihren Regenschirm im Bus.",en:"She forgot her umbrella on the bus.",l:"A2"},
+   {de:"Wir haben das Treffen völlig <v>vergessen</v>.",en:"We completely forgot the meeting.",l:"A2"},
+  ]},
+ {infinitiv:"erhalten",prefix:"er",meaning:"يتلقى / يحصل على",type:"insep",
+  prasens:[["ich","erhalte"],["du","erhältst"],["er/sie/es","erhält"],["wir","erhalten"],["ihr","erhaltet"],["sie/Sie","erhalten"]],
+  prateritum:[["ich","erhielt"],["du","erhieltest"],["er/sie/es","erhielt"],["wir","erhielten"],["ihr","erhieltet"],["sie/Sie","erhielten"]],
+  partizip:"erhalten",hilfsverb:"haben",
+  sentences:[
+   {de:"Ich <v>erhalte</v> viele E-Mails.",en:"I receive many emails.",l:"A2"},
+   {de:"Er <v>erhält</v> ein schönes Geschenk.",en:"He receives a nice gift.",l:"A1"},
+   {de:"Ich habe deinen Brief <v>erhalten</v>.",en:"I received your letter.",l:"A2"},
+   {de:"Hast du meine Nachricht <v>erhalten</v>?",en:"Did you receive my message?",l:"A2"},
+   {de:"Wir haben keine Antwort <v>erhalten</v>.",en:"We received no reply.",l:"A2"},
+  ]},
+];
+
+/* ════════════════════════════════════════════
+   TTS ENGINE
+════════════════════════════════════════════ */
+let currentUtterance=null,ttsProgressTimer=null;
+function isTTSSupported(){ return 'speechSynthesis' in window; }
+function getGermanVoice(){
+  const v=window.speechSynthesis.getVoices();
+  return v.find(x=>x.lang==='de-DE')||v.find(x=>x.lang.startsWith('de'))||null;
+}
+function stopTTS(){
+  if(window.speechSynthesis) window.speechSynthesis.cancel();
+  currentUtterance=null;
+  if(ttsProgressTimer) clearInterval(ttsProgressTimer);
+  document.getElementById('tts-banner').classList.remove('show');
+  document.getElementById('tts-prog').style.width='0%';
+  document.querySelectorAll('.tts-btn.playing').forEach(b=>{
+    b.classList.remove('playing');b.innerHTML=ttsIcon()+' استمع';
+  });
+}
+function ttsIcon(){
+  return `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`;
+}
+function pauseIcon(){
+  return `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>`;
+}
+function speakGerman(plainText,btn){
+  if(!isTTSSupported()){showToast('⚠️ المتصفح لا يدعم الصوت');return;}
+  if(btn&&btn.classList.contains('playing')){stopTTS();return;}
+  stopTTS();
+  const u=new SpeechSynthesisUtterance(plainText);
+  u.lang='de-DE';u.rate=0.82;u.pitch=1;
+  const voice=getGermanVoice();if(voice)u.voice=voice;
+  currentUtterance=u;
+  if(btn){btn.classList.add('playing');btn.innerHTML=pauseIcon()+' إيقاف';}
+  const banner=document.getElementById('tts-banner');
+  const label=document.getElementById('tts-label');
+  const prog=document.getElementById('tts-prog');
+  label.textContent=plainText.length>40?plainText.substring(0,40)+'…':plainText;
+  banner.classList.add('show');
+  const est=Math.max(2000,plainText.length*95);
+  let el=0;prog.style.width='0%';
+  ttsProgressTimer=setInterval(()=>{el+=200;prog.style.width=Math.min(97,(el/est)*100)+'%';},200);
+  u.onend=u.onerror=()=>{
+    clearInterval(ttsProgressTimer);prog.style.width='100%';
+    setTimeout(()=>{banner.classList.remove('show');prog.style.width='0%';},500);
+    if(btn){btn.classList.remove('playing');btn.innerHTML=ttsIcon()+' استمع';}
+    currentUtterance=null;
+  };
+  window.speechSynthesis.speak(u);
+}
+if(window.speechSynthesis){
+  window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices();
+}
+
+/* ════════════════════════════════════════════
+   COPY SYSTEM
+════════════════════════════════════════════ */
+let toastTimer=null;
+function showToast(msg){
+  const t=document.getElementById('copy-toast');
+  t.textContent=msg;t.className='show';
+  if(toastTimer) clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.className='',2200);
+}
+function markCopied(btn){
+  if(!btn)return;
+  const orig=btn.innerHTML;
+  btn.classList.add('copied');
+  btn.innerHTML=`<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> تم`;
+  setTimeout(()=>{btn.innerHTML=orig;btn.classList.remove('copied');},2000);
+}
+async function copyText(text,btn){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    try{await navigator.clipboard.writeText(text);markCopied(btn);showToast('✓ تم النسخ!');return;}catch(e){}
+  }
+  try{
+    const el=document.createElement('textarea');el.value=text;
+    el.setAttribute('readonly','');
+    el.style.cssText='position:fixed;top:-9999px;left:-9999px;opacity:0;font-size:16px;';
+    document.body.appendChild(el);el.select();
+    const ok=document.execCommand('copy');document.body.removeChild(el);
+    if(ok){markCopied(btn);showToast('✓ تم النسخ!');}
+    else showToast('⚠️ انسخ يدوياً');
+  }catch(e){showToast('⚠️ انسخ يدوياً');}
+}
+const COPY_SVG=`<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+
+/* ════════════════════════════════════════════
+   PERFEKT HELPER MAP
+════════════════════════════════════════════ */
+const hMap={
+  "ich":      {sein:"bin",   haben:"habe"},
+  "du":       {sein:"bist",  haben:"hast"},
+  "er/sie/es":{sein:"ist",   haben:"hat"},
+  "wir":      {sein:"sind",  haben:"haben"},
+  "ihr":      {sein:"seid",  haben:"habt"},
+  "sie/Sie":  {sein:"sind",  haben:"haben"},
+};
+
+/* ════════════════════════════════════════════
+   CARD BUILDER — NO TABS, 3 COLS SIDE BY SIDE
+════════════════════════════════════════════ */
+function buildConjCol(rows,type,isSep){
+  const headCls=`col-head-${type}`;
+  const labels={pr:'Präsens',pt:'Präteritum',pf:'Perfekt'};
+  let rowsHtml='';
+  rows.forEach(([pro,form])=>{
+    rowsHtml+=`<tr>
+      <td class="td-pro">${pro}</td>
+      <td class="td-form ${type}-form">${form}</td>
+    </tr>`;
+  });
+  return `<div class="conj-col">
+    <div class="conj-col-head ${headCls}">${labels[type]}</div>
+    <table><tbody>${rowsHtml}</tbody></table>
+  </div>`;
+}
+
+function buildCard(verb,idx){
+  const isSep=verb.type==='sep';
+  const root=verb.infinitiv.slice(verb.prefix.length);
+  const nameHtml=`<span class="prefix">${verb.prefix}</span>${root}`;
+  const hCls=isSep?'verb-highlight':'insep-highlight';
+
+  /* ─ Build Präsens rows ─ */
+  const prRows=verb.prasens.map(r=>{
+    if(isSep) return [r[0],`${r[1]} ${r[2]}`];
+    return [r[0],r[1]];
+  });
+
+  /* ─ Build Präteritum rows ─ */
+  const ptRows=verb.prateritum.map(r=>{
+    if(isSep) return [r[0],`${r[1]} ${r[2]}`];
+    return [r[0],r[1]];
+  });
+
+  /* ─ Build Perfekt rows ─ */
+  const pfRows=verb.prasens.map(([pro])=>{
+    const h=(hMap[pro]||hMap["sie/Sie"])[verb.hilfsverb];
+    return [pro,`${h} ${verb.partizip}`];
+  });
+
+  /* ─ Build Sentences ─ */
+  const sentHtml=verb.sentences.map(s=>{
+    const de=s.de.replace(/<v>/g,`<span class="${hCls}">`).replace(/<\/v>/g,'</span>');
+    const plain=s.de.replace(/<v>/g,'').replace(/<\/v>/g,'');
+    const esc=plain.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+    return `<li class="sentence-item">
+      <div class="german-sent">${de}</div>
+      <div class="english-sent">🇬🇧 ${s.en}<span class="level-tag ${s.l==='A1'?'a1-tag':'a2-tag'}">${s.l}</span></div>
+      <div class="sent-actions">
+        <button class="copy-de-btn" onclick="copyText('${esc}',this)" aria-label="نسخ">${COPY_SVG} نسخ</button>
+        <button class="tts-btn" onclick="speakGerman('${esc}',this)" aria-label="استمع">${ttsIcon()} استمع</button>
+      </div>
+    </li>`;
+  }).join('');
+
+  const pfNote=`<div class="pf-note">
+    ${verb.hilfsverb} + ${verb.partizip}
+    ${isSep?'&nbsp;|&nbsp; ⚡ ge- بين البادئة والجذر':'&nbsp;|&nbsp; 🔒 بدون ge-'}
+  </div>`;
+
+  return `<div class="verb-card" data-verb="${verb.infinitiv}" data-type="${verb.type}" style="animation-delay:${idx*55}ms">
+    <div class="verb-card-header">
+      <div>
+        <div class="verb-name ${isSep?'':'insep'}" dir="ltr">${nameHtml}</div>
+        <div class="verb-meaning">${verb.meaning}</div>
+      </div>
+      <span class="verb-type-badge ${isSep?'sep-badge':'insep-badge'}">${isSep?'🔀 Trennbar':'🔒 Untrennbar'}</span>
+    </div>
+    <div class="conj-wrapper">
+      <div class="conj-label">التصريف الكامل</div>
+      <div class="conj-three-cols">
+        ${buildConjCol(prRows,'pr',isSep)}
+        ${buildConjCol(ptRows,'pt',isSep)}
+        <div class="conj-col">
+          <div class="conj-col-head col-head-pf">Perfekt</div>
+          <table><tbody>${pfRows.map(([p,f])=>`<tr><td class="td-pro">${p}</td><td class="td-form pf-form">${f}</td></tr>`).join('')}</tbody></table>
+          ${pfNote}
+        </div>
+      </div>
+    </div>
+    <div class="sentences-section">
+      <div class="sent-label">جمل تطبيقية — ${verb.sentences.length} أمثلة</div>
+      <ul class="sentence-list">${sentHtml}</ul>
+    </div>
+  </div>`;
+}
+
+/* ════════════════════════════════════════════
+   INIT
+════════════════════════════════════════════ */
+function init(){
+  const sg=document.getElementById('sep-grid');
+  const ig=document.getElementById('insep-grid');
+  separableVerbs.forEach((v,i)=>sg.insertAdjacentHTML('beforeend',buildCard(v,i)));
+  inseparableVerbs.forEach((v,i)=>ig.insertAdjacentHTML('beforeend',buildCard(v,i)));
+}
+
+/* ════════════════════════════════════════════
+   THEME
+════════════════════════════════════════════ */
+const themeBtn=document.getElementById('theme-btn');
+const rootEl=document.documentElement;
+function applyTheme(m){
+  rootEl.setAttribute('data-theme',m);
+  themeBtn.textContent=m==='dark'?'☀️':'🌙';
+  try{localStorage.setItem('theme',m);}catch(e){}
+}
+applyTheme(
+  (()=>{try{return localStorage.getItem('theme');}catch(e){return null;}})()
+  ||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')
+);
+themeBtn.addEventListener('click',()=>
+  applyTheme(rootEl.getAttribute('data-theme')==='dark'?'light':'dark'));
+
+/* ════════════════════════════════════════════
+   PROGRESS BAR
+════════════════════════════════════════════ */
+const progBar=document.getElementById('progress-bar');
+window.addEventListener('scroll',()=>{
+  const pct=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  progBar.style.width=Math.min(100,pct)+'%';
+},{passive:true});
+
+/* ════════════════════════════════════════════
+   BOOT
+════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded',init);
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-trennbare-verben" data-category="grammatik" data-title="الأفعال القابلة وغير القابلة للانفصال" data-root="../../" defer></script>
+</body>
+</html>

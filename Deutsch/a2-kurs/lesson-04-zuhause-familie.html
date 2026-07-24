@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الألمانية A2 — الدرس الرابع: المنزل والعائلة</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Kufi+Arabic:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   DESIGN DIRECTION: Cozy Nordic Home
+   Muted sage greens + warm terracotta + 
+   cream whites — like a Scandinavian interior
+   magazine page brought to life.
+══════════════════════════════════════════ */
+:root {
+  --bg:        #13110f;
+  --bg2:       #1c1916;
+  --bg3:       #262118;
+  --bg4:       #322a1f;
+  --card:      #191512;
+  --border:    rgba(180,155,110,0.1);
+  --border2:   rgba(180,155,110,0.22);
+
+  /* Primary palette */
+  --cream:     #e8dcc8;
+  --cream2:    #f5edd8;
+  --sage:      #7aab8a;
+  --sage2:     #a0c8a8;
+  --sage-d:    rgba(122,171,138,0.12);
+  --terra:     #c87050;
+  --terra2:    #e89070;
+  --terra-d:   rgba(200,112,80,0.12);
+  --clay:      #b88860;
+  --clay2:     #d4a878;
+  --clay-d:    rgba(184,136,96,0.12);
+  --slate:     #7090b0;
+  --slate-d:   rgba(112,144,176,0.12);
+  --rose:      #c07888;
+  --rose-d:    rgba(192,120,136,0.12);
+
+  --text:      #e8dcc8;
+  --text2:     #9a8870;
+  --text3:     #5a4e3a;
+
+  --r:   16px;
+  --rs:  10px;
+  --sh:  0 8px 48px rgba(0,0,0,0.65);
+}
+
+[data-theme="light"] {
+  --bg:        #f8f4ec;
+  --bg2:       #ede6d8;
+  --bg3:       #e2d8c8;
+  --bg4:       #d6c8b0;
+  --card:      #fdfaf4;
+  --border:    rgba(120,90,50,0.1);
+  --border2:   rgba(120,90,50,0.2);
+  --cream:     #3a2c18;
+  --cream2:    #2c2010;
+  --sage:      #3a7a50;
+  --sage2:     #2a6040;
+  --sage-d:    rgba(58,122,80,0.08);
+  --terra:     #a04020;
+  --terra2:    #c05030;
+  --terra-d:   rgba(160,64,32,0.08);
+  --clay:      #805030;
+  --clay2:     #a07040;
+  --clay-d:    rgba(128,80,48,0.08);
+  --slate:     #305880;
+  --slate-d:   rgba(48,88,128,0.08);
+  --rose:      #904060;
+  --rose-d:    rgba(144,64,96,0.08);
+  --text:      #2a1e0e;
+  --text2:     #6a5040;
+  --text3:     #b09878;
+  --sh:        0 4px 24px rgba(0,0,0,0.1);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Kufi Arabic', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  direction: rtl;
+  overflow-x: hidden;
+  transition: background .4s, color .4s;
+}
+
+/* Subtle linen texture via SVG pattern */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b88860' fill-opacity='0.025'%3E%3Cpath d='M0 20L20 0L40 20L20 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0;
+}
+
+/* Warm gradient top glow */
+body::after {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; height: 300px;
+  background: radial-gradient(ellipse 80% 100% at 50% 0%, rgba(200,112,80,0.06) 0%, transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+
+/* ── Scroll progress ── */
+#spb {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--terra), var(--clay), var(--sage));
+  transform-origin: right; transform: scaleX(0);
+  z-index: 1001; transition: transform .08s;
+}
+
+/* ══ NAV ══ */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(19,17,15,.90);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border2);
+  padding: 0 2rem; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+[data-theme="light"] nav { background: rgba(248,244,236,.93); }
+
+.nav-brand { display: flex; align-items: center; gap: .75rem; font-weight: 700; font-size: 1rem; }
+.nav-chip {
+  background: var(--clay-d); border: 1px solid var(--border2);
+  color: var(--clay); font-size: .7rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px; letter-spacing: .05em;
+}
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a { font-size: .83rem; color: var(--text2); text-decoration: none; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--clay); }
+.tbtn {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--border2); background: var(--bg3);
+  color: var(--text2); cursor: pointer;
+  display: flex; align-items: center; justify-content: center; font-size: 1rem;
+  transition: all .2s;
+}
+.tbtn:hover { background: var(--bg4); color: var(--text); }
+
+/* ══ HERO ══ */
+.hero {
+  position: relative; z-index: 1;
+  padding: 5rem 2rem 3.5rem;
+  max-width: 900px; margin: 0 auto; text-align: center;
+}
+
+/* Animated house SVG illustration */
+.house-svg { width: 100px; height: 80px; margin: 0 auto 1.5rem; display: block; animation: houseBob 4s ease-in-out infinite; }
+@keyframes houseBob { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--terra-d); border: 1px solid rgba(200,112,80,.3);
+  color: var(--terra2); padding: 5px 18px; border-radius: 30px;
+  font-size: .8rem; font-weight: 700; margin-bottom: 1.5rem;
+  letter-spacing: .05em;
+  animation: fadeUp .6s ease both;
+}
+
+.hero h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  font-weight: 700; font-style: italic;
+  line-height: 1.2; margin-bottom: 1rem;
+  animation: fadeUp .7s ease .1s both;
+}
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--terra), var(--clay2), var(--sage));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.hero-p {
+  color: var(--text2); font-size: 1.05rem; line-height: 1.9;
+  max-width: 640px; margin: 0 auto 2.5rem;
+  animation: fadeUp .7s ease .2s both;
+}
+
+.hero-pills {
+  display: flex; justify-content: center; gap: .75rem; flex-wrap: wrap;
+  animation: fadeUp .7s ease .3s both;
+}
+.pill { display: flex; align-items: center; gap: .4rem; padding: 7px 16px; border-radius: 30px; font-size: .82rem; font-weight: 600; border: 1px solid; }
+.pt { background: var(--terra-d); color: var(--terra2); border-color: rgba(200,112,80,.3); }
+.ps { background: var(--sage-d);  color: var(--sage2);  border-color: rgba(122,171,138,.3); }
+.pc { background: var(--clay-d);  color: var(--clay2);  border-color: rgba(184,136,96,.3); }
+.pr { background: var(--rose-d);  color: var(--rose);   border-color: rgba(192,120,136,.3); }
+
+/* ══ MAIN ══ */
+main {
+  position: relative; z-index: 1;
+  max-width: 960px; margin: 0 auto;
+  padding: 1rem 2rem 4rem;
+  display: flex; flex-direction: column; gap: 3rem;
+}
+
+/* Section header */
+.sh { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.si {
+  width: 48px; height: 48px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; flex-shrink: 0;
+}
+.si-t { background: var(--terra-d); border: 1px solid rgba(200,112,80,.2); }
+.si-s { background: var(--sage-d);  border: 1px solid rgba(122,171,138,.2); }
+.si-c { background: var(--clay-d);  border: 1px solid rgba(184,136,96,.2); }
+.si-l { background: var(--slate-d); border: 1px solid rgba(112,144,176,.2); }
+.si-r { background: var(--rose-d);  border: 1px solid rgba(192,120,136,.2); }
+.sm h2 { font-size: 1.25rem; font-weight: 800; }
+.sm p  { font-size: .83rem; color: var(--text2); margin-top: 2px; }
+
+/* Card */
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 1.75rem;
+  transition: border-color .25s, box-shadow .25s;
+  animation: fadeUp .65s ease both;
+}
+.card:hover { border-color: var(--border2); box-shadow: var(--sh); }
+
+/* Tip box */
+.tip {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.1rem 1.3rem; border-radius: var(--rs); margin: 1rem 0;
+}
+.tip.t { background: var(--terra-d); border: 1px solid rgba(200,112,80,.2); }
+.tip.s { background: var(--sage-d);  border: 1px solid rgba(122,171,138,.2); }
+.tip.c { background: var(--clay-d);  border: 1px solid rgba(184,136,96,.2); }
+.tip.l { background: var(--slate-d); border: 1px solid rgba(112,144,176,.2); }
+.tip.r { background: var(--rose-d);  border: 1px solid rgba(192,120,136,.2); }
+.tpic { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+.tip h4 { font-size: .88rem; font-weight: 700; margin-bottom: 4px; }
+.tip.t h4 { color: var(--terra2); } .tip.s h4 { color: var(--sage2); }
+.tip.c h4 { color: var(--clay2); } .tip.l h4 { color: var(--slate); }
+.tip.r h4 { color: var(--rose); }
+.tip p { font-size: .85rem; color: var(--text2); line-height: 1.8; }
+
+/* Inline code */
+.de {
+  font-family: 'Fira Code', monospace;
+  background: var(--bg3); border: 1px solid var(--border2);
+  padding: 2px 8px; border-radius: 5px;
+  font-size: .86em; color: var(--clay2);
+  direction: ltr; display: inline-block;
+}
+
+/* Table */
+.tw { overflow-x: auto; margin-top: .75rem; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th { background: var(--bg3); color: var(--text2); padding: 10px 14px; text-align: right; font-weight: 700; font-size: .78rem; border-bottom: 1px solid var(--border2); letter-spacing: .04em; }
+td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--bg2); }
+.tde { font-family: 'Fira Code', monospace; color: var(--clay2); font-weight: 600; direction: ltr; text-align: left; }
+.tex { color: var(--text2); font-size: .82rem; direction: ltr; text-align: left; }
+
+/* ══ HOUSE FLOORPLAN ══ */
+.floorplan {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 1rem;
+}
+.room {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--rs);
+  padding: 1.1rem;
+  cursor: pointer;
+  transition: all .25s;
+  position: relative;
+  overflow: hidden;
+}
+.room::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent 60%, rgba(255,255,255,.03));
+  pointer-events: none;
+}
+.room:hover { border-color: var(--clay2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+.room.active { border-color: var(--terra); background: var(--terra-d); }
+.room-emoji { font-size: 2rem; display: block; margin-bottom: .5rem; }
+.room-de { font-family: 'Fira Code', monospace; color: var(--clay2); font-weight: 600; font-size: .95rem; display: block; direction: ltr; margin-bottom: 2px; }
+.room-ar { font-size: .85rem; color: var(--text2); display: block; }
+.room-speak { position: absolute; top: 8px; left: 8px; width: 24px; height: 24px; border-radius: 50%; background: var(--bg3); border: 1px solid var(--border2); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: .7rem; transition: all .2s; }
+.room-speak:hover { background: var(--clay-d); color: var(--clay2); }
+
+/* Room detail panel */
+.room-detail {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: var(--rs);
+  padding: 1.2rem;
+  margin-top: 1rem;
+  display: none;
+  animation: fadeUp .4s ease both;
+}
+.room-detail.show { display: block; }
+.rd-title { font-size: .9rem; font-weight: 800; color: var(--terra2); margin-bottom: .8rem; display: flex; align-items: center; gap: .5rem; }
+.rd-items { display: flex; flex-wrap: wrap; gap: .5rem; }
+.rd-item {
+  background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: 20px; padding: 4px 12px;
+  font-family: 'Fira Code', monospace; font-size: .8rem;
+  color: var(--clay2); direction: ltr; cursor: pointer;
+  transition: all .2s;
+}
+.rd-item:hover { border-color: var(--clay); background: var(--clay-d); }
+
+/* ══ FAMILY TREE ══ */
+.family-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+.ft-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+.ft-connector {
+  width: 2px; height: 30px;
+  background: linear-gradient(to bottom, var(--clay), var(--sage));
+  margin: 0 auto;
+  opacity: .4;
+}
+.ft-hline {
+  height: 2px; flex: 1;
+  background: linear-gradient(90deg, transparent, var(--clay), transparent);
+  align-self: center; opacity: .3;
+  max-width: 120px;
+}
+.fam-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--rs);
+  padding: .9rem 1.1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all .22s;
+  min-width: 110px;
+}
+.fam-card:hover { border-color: var(--sage2); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+.fam-emoji { font-size: 1.6rem; display: block; }
+.fam-de { font-family: 'Fira Code', monospace; font-size: .88rem; color: var(--sage2); font-weight: 600; display: block; direction: ltr; margin: 4px 0 2px; }
+.fam-ar { font-size: .78rem; color: var(--text2); display: block; }
+.fam-ex { font-size: .72rem; color: var(--text3); display: block; margin-top: 3px; direction: ltr; font-style: italic; }
+
+/* ══ ADJECTIVE SYSTEM ══ */
+.adj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: .9rem;
+}
+.adj-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--rs);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all .22s;
+  position: relative;
+}
+.adj-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+.adj-de { font-family: 'Fira Code', monospace; font-size: 1.1rem; color: var(--terra2); font-weight: 600; display: block; direction: ltr; margin-bottom: 4px; }
+.adj-op { font-family: 'Fira Code', monospace; font-size: .85rem; color: var(--text3); display: block; direction: ltr; margin-bottom: 6px; }
+.adj-op::before { content: '↔ '; }
+.adj-ar { font-size: .88rem; color: var(--text2); display: block; margin-bottom: 4px; }
+.adj-ex { font-size: .75rem; color: var(--text3); direction: ltr; font-style: italic; }
+.adj-swatch { position: absolute; top: 0; left: 0; width: 3px; height: 100%; border-radius: 0 0 0 var(--rs); }
+
+/* ══ GRAMMAR: ADJECTIVE ENDINGS ══ */
+.endings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.endings-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--rs);
+  padding: 1.1rem;
+}
+.ec-title { font-size: .82rem; font-weight: 800; letter-spacing: .05em; margin-bottom: .8rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border); }
+.ending-row { display: flex; justify-content: space-between; align-items: center; padding: .4rem 0; border-bottom: 1px dashed var(--border); font-size: .85rem; }
+.ending-row:last-child { border-bottom: none; }
+.ending-de { font-family: 'Fira Code', monospace; color: var(--clay2); direction: ltr; font-weight: 600; }
+.ending-ar { color: var(--text2); }
+
+/* ══ INTERACTIVE ROOM BUILDER ══ */
+.room-builder {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: var(--rs);
+  padding: 1.4rem;
+}
+.rb-title { font-size: .88rem; font-weight: 800; color: var(--terra2); margin-bottom: 1rem; }
+.rb-room-tabs {
+  display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.2rem;
+}
+.rb-tab {
+  padding: 6px 14px; border-radius: 20px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  color: var(--text2); font-size: .82rem; cursor: pointer;
+  transition: all .2s;
+}
+.rb-tab.active { background: var(--terra-d); border-color: var(--terra); color: var(--terra2); }
+.rb-desc-area {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--rs); padding: 1rem;
+  min-height: 80px;
+}
+.rb-de-line { font-family: 'Fira Code', monospace; color: var(--clay2); font-size: .95rem; line-height: 1.7; direction: ltr; display: block; margin-bottom: 4px; }
+.rb-ar-line { font-size: .85rem; color: var(--text2); display: block; }
+
+/* ══ DIALOGUE ══ */
+.conv { display: flex; flex-direction: column; gap: 1.1rem; }
+.msg { display: flex; gap: 1rem; align-items: flex-start; }
+.msg.l { flex-direction: row-reverse; }
+.av { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.msg.r .av { background: var(--terra-d); border: 1px solid rgba(200,112,80,.25); }
+.msg.l .av { background: var(--sage-d);  border: 1px solid rgba(122,171,138,.25); }
+.bw { flex: 1; max-width: 80%; }
+.msg.r .bw { text-align: right; }
+.bub { display: inline-block; padding: 11px 16px; border-radius: 14px; font-size: .92rem; line-height: 1.78; max-width: 100%; }
+.msg.r .bub { background: var(--terra-d); border: 1px solid rgba(200,112,80,.2); border-radius: 14px 4px 14px 14px; }
+.msg.l .bub { background: var(--bg3); border: 1px solid var(--border); border-radius: 4px 14px 14px 14px; }
+.dl { color: var(--clay2); font-weight: 700; display: block; font-size: .95rem; margin-bottom: 3px; direction: ltr; font-family: 'Fira Code', monospace; }
+.who { font-size: .72rem; color: var(--text3); margin-top: 4px; display: block; }
+
+/* ══ QUIZ ══ */
+.qblock { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--rs); padding: 1.2rem 1.4rem; margin-bottom: 1rem; }
+.qlabel { font-size: .7rem; color: var(--text3); font-weight: 800; letter-spacing: .07em; display: block; margin-bottom: .5rem; }
+.qtext { font-weight: 700; font-size: .95rem; margin-bottom: .9rem; }
+.qde { color: var(--clay2); font-family: 'Fira Code', monospace; }
+.opts { display: grid; grid-template-columns: 1fr 1fr; gap: .55rem; }
+.opt { padding: 9px 14px; border-radius: 8px; border: 1px solid var(--border2); background: var(--bg3); color: var(--text); cursor: pointer; font-family: 'Noto Kufi Arabic', sans-serif; font-size: .87rem; font-weight: 500; transition: all .2s; text-align: center; }
+.opt:hover:not(:disabled) { border-color: var(--clay); background: var(--clay-d); }
+.opt.correct { border-color: var(--sage)!important; background: var(--sage-d)!important; color: var(--sage2)!important; }
+.opt.wrong { border-color: var(--terra)!important; background: var(--terra-d)!important; color: var(--terra2)!important; }
+.opt:disabled { cursor: default; }
+.qfb { font-size: .82rem; padding: 8px 12px; border-radius: 6px; margin-top: 8px; display: none; }
+.qfb.show { display: block; }
+.qfb.ok  { background: var(--sage-d);  color: var(--sage2);  border: 1px solid rgba(122,171,138,.2); }
+.qfb.err { background: var(--terra-d); color: var(--terra2); border: 1px solid rgba(200,112,80,.2); }
+
+/* Result */
+.result-wrap {
+  background: linear-gradient(135deg, var(--terra-d), var(--sage-d));
+  border: 1px solid var(--border2); border-radius: var(--r);
+  padding: 2rem; text-align: center; display: none; margin-top: 1.5rem;
+}
+.r-score { font-family: 'Lora', serif; font-size: 4.5rem; font-weight: 700; font-style: italic; color: var(--clay2); line-height: 1; margin-bottom: .5rem; }
+.r-msg { color: var(--text2); margin-bottom: 1.5rem; }
+.r-btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--terra); color: var(--cream2); border: none; padding: 11px 30px; border-radius: 30px; font-family: 'Noto Kufi Arabic', sans-serif; font-size: .95rem; font-weight: 800; cursor: pointer; transition: all .25s; }
+.r-btn:hover { background: var(--terra2); transform: translateY(-2px); }
+
+/* Homework */
+.hw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(175px,1fr)); gap: .75rem; margin-bottom: 1.2rem; }
+.hw-item { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--rs); padding: .9rem; font-size: .85rem; }
+.hw-item strong { display: block; margin-bottom: 3px; color: var(--clay2); }
+.hw-item span { color: var(--text2); font-size: .78rem; }
+
+/* Footer */
+footer { position: relative; z-index: 1; text-align: center; padding: 2.5rem 2rem; color: var(--text3); font-size: .82rem; border-top: 1px solid var(--border); }
+
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+.a1{animation-delay:.05s;} .a2{animation-delay:.15s;} .a3{animation-delay:.25s;} .a4{animation-delay:.35s;}
+
+@media (max-width:700px) {
+  nav { padding: 0 1rem; }
+  .nav-links { display: none; }
+  main { padding: 1rem 1rem 3rem; }
+  .hero { padding: 3rem 1rem 2rem; }
+  .floorplan { grid-template-columns: 1fr 1fr; }
+  .opts { grid-template-columns: 1fr; }
+  .endings-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div id="spb"></div>
+
+<nav>
+  <div class="nav-brand">
+    <span>🇩🇪</span>
+    <span>الألمانية للعرب</span>
+    <span class="nav-chip">الدرس 4 / A2</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#house">المنزل</a></li>
+    <li><a href="#family">العائلة</a></li>
+    <li><a href="#adj">الصفات</a></li>
+    <li><a href="#grammar">القواعد</a></li>
+    <li><a href="#quiz">الاختبار</a></li>
+  </ul>
+  <button class="tbtn" onclick="toggleTheme()">☀</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <!-- House SVG Illustration -->
+  <svg class="house-svg" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="50,5 95,38 5,38" fill="var(--terra)" opacity=".85"/>
+    <rect x="15" y="38" width="70" height="38" rx="2" fill="var(--clay)" opacity=".7"/>
+    <rect x="38" y="52" width="24" height="24" rx="2" fill="var(--bg)" opacity=".9"/>
+    <rect x="20" y="44" width="16" height="14" rx="2" fill="var(--sage)" opacity=".6"/>
+    <rect x="64" y="44" width="16" height="14" rx="2" fill="var(--sage)" opacity=".6"/>
+    <circle cx="49" cy="64" r="1.5" fill="var(--clay2)"/>
+    <!-- Chimney smoke -->
+    <circle cx="80" cy="28" r="3" fill="var(--text3)" opacity=".3"/>
+    <circle cx="83" cy="22" r="2.5" fill="var(--text3)" opacity=".2"/>
+    <circle cx="80" cy="16" r="2" fill="var(--text3)" opacity=".1"/>
+    <rect x="76" y="28" width="6" height="10" fill="var(--clay)" opacity=".6"/>
+  </svg>
+
+  <div class="hero-badge">🏠 الدرس الرابع — المنزل والعائلة والصفات</div>
+  <h1><em>Zuhause ist es am schönsten</em><br>المنزل أجمل مكان 🌿</h1>
+  <p class="hero-p">في هذا الدرس ستتعلم غرف المنزل وأثاثه، كيف تعرّف بعائلتك، وتوظيف الصفات في الألمانية مع قاعدة تصريفها المهمة!</p>
+  <div class="hero-pills">
+    <div class="pill pt">🏠 غرف المنزل</div>
+    <div class="pill ps">👨‍👩‍👧 العائلة</div>
+    <div class="pill pc">✨ الصفات</div>
+    <div class="pill pr">📐 القواعد النحوية</div>
+  </div>
+</div>
+
+<main>
+
+<!-- ══════════════ SECTION 1: THE HOUSE ══════════════ -->
+<section id="house">
+  <div class="sh">
+    <div class="si si-t">🏠</div>
+    <div class="sm">
+      <h2>غرف المنزل — Zimmer & Räume</h2>
+      <p>اضغط على أي غرفة لرؤية محتوياتها وسماع نطقها</p>
+    </div>
+  </div>
+
+  <div class="card a1">
+    <div class="floorplan" id="floorplan">
+
+      <div class="room" onclick="showRoom('living')" id="r-living">
+        <button class="room-speak" onclick="speak('das Wohnzimmer');event.stopPropagation()">🔊</button>
+        <span class="room-emoji">🛋️</span>
+        <span class="room-de">das Wohnzimmer</span>
+        <span class="room-ar">غرفة المعيشة</span>
+      </div>
+
+      <div class="room" onclick="showRoom('kitchen')" id="r-kitchen">
+        <button class="room-speak" onclick="speak('die Küche');event.stopPropagation()">🔊</button>
+        <span class="room-emoji">🍳</span>
+        <span class="room-de">die Küche</span>
+        <span class="room-ar">المطبخ</span>
+      </div>
+
+      <div class="room" onclick="showRoom('bedroom')" id="r-bedroom">
+        <button class="room-speak" onclick="speak('das Schlafzimmer');event.stopPropagation()">🔊</button>
+        <span class="room-emoji">🛏️</span>
+        <span class="room-de">das Schlafzimmer</span>
+        <span class="room-ar">غرفة النوم</span>
+      </div>
+
+      <div class="room" onclick="showRoom('bath')" id="r-bath">
+        <button class="room-speak" onclick="speak('das Badezimmer');event.stopPropagation()">🔊</button>
+        <span class="room-emoji">🚿</span>
+        <span class="room-de">das Badezimmer</span>
+        <span class="room-ar">الحمام</span>
+      </div>
+
+      <div class="room" onclick="showRoom('study')" id="r-study">
+        <button class="room-speak" onclick="speak('das Arbeitszimmer');event.stopPropagation()">🔊</button>
+        <span class="room-emoji">💻</span>
+        <span class="room-de">das Arbeitszimmer</span>
+        <span class="room-ar">غرفة العمل / المكتب</span>
+      </div>
+
+      <div class="room" onclick="showRoom('garden')" id="r-garden">
+        <button class="room-speak" onclick="speak('der Garten');event.stopPropagation()">🔊</button>
+        <span class="room-emoji">🌳</span>
+        <span class="room-de">der Garten</span>
+        <span class="room-ar">الحديقة</span>
+      </div>
+
+      <div class="room" onclick="showRoom('hall')" id="r-hall">
+        <button class="room-speak" onclick="speak('der Flur');event.stopPropagation()">🔊</button>
+        <span class="room-emoji">🚪</span>
+        <span class="room-de">der Flur</span>
+        <span class="room-ar">الردهة / الممر</span>
+      </div>
+
+      <div class="room" onclick="showRoom('cellar')" id="r-cellar">
+        <button class="room-speak" onclick="speak('der Keller');event.stopPropagation()">🔊</button>
+        <span class="room-emoji">🏚️</span>
+        <span class="room-de">der Keller</span>
+        <span class="room-ar">القبو / البدروم</span>
+      </div>
+
+      <div class="room" onclick="showRoom('balcony')" id="r-balcony">
+        <button class="room-speak" onclick="speak('der Balkon');event.stopPropagation()">🔊</button>
+        <span class="room-emoji">🌅</span>
+        <span class="room-de">der Balkon</span>
+        <span class="room-ar">الشرفة</span>
+      </div>
+
+    </div>
+
+    <!-- Room detail panel -->
+    <div class="room-detail" id="room-detail">
+      <div class="rd-title" id="rd-title">🛋️ غرفة المعيشة — das Wohnzimmer</div>
+      <div class="rd-items" id="rd-items"></div>
+    </div>
+
+    <div class="tip c" style="margin-top:1.2rem;">
+      <div class="tpic">🏡</div>
+      <div>
+        <h4>كيف تصف منزلك؟</h4>
+        <p>
+          <span class="de">Ich wohne in einer Wohnung / in einem Haus.</span> = أسكن في شقة / في منزل.<br>
+          <span class="de">Meine Wohnung hat drei Zimmer.</span> = شقتي فيها ثلاث غرف.<br>
+          <span class="de">Das Wohnzimmer ist groß und hell.</span> = غرفة المعيشة كبيرة ومضيئة.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 2: FAMILY ══════════════ -->
+<section id="family">
+  <div class="sh">
+    <div class="si si-s">👨‍👩‍👧</div>
+    <div class="sm">
+      <h2>العائلة — Die Familie</h2>
+      <p>اضغط على أي فرد لسماع اسمه بالألمانية</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div class="family-tree">
+
+      <!-- Grandparents row -->
+      <div class="ft-row">
+        <div class="fam-card" onclick="speak('der Großvater')">
+          <span class="fam-emoji">👴</span>
+          <span class="fam-de">der Großvater</span>
+          <span class="fam-ar">الجد</span>
+          <span class="fam-ex">Mein Großvater ist 78.</span>
+        </div>
+        <div class="fam-card" onclick="speak('die Großmutter')">
+          <span class="fam-emoji">👵</span>
+          <span class="fam-de">die Großmutter</span>
+          <span class="fam-ar">الجدة</span>
+          <span class="fam-ex">Meine Großmutter kocht gut.</span>
+        </div>
+        <div class="fam-card" onclick="speak('der Großvater')">
+          <span class="fam-emoji">👴</span>
+          <span class="fam-de">der Großvater</span>
+          <span class="fam-ar">جد من الجهة الأخرى</span>
+          <span class="fam-ex">Er ist nett und ruhig.</span>
+        </div>
+        <div class="fam-card" onclick="speak('die Großmutter')">
+          <span class="fam-emoji">👵</span>
+          <span class="fam-de">die Großmutter</span>
+          <span class="fam-ar">جدة من الجهة الأخرى</span>
+          <span class="fam-ex">Sie wohnt in München.</span>
+        </div>
+      </div>
+
+      <div class="ft-connector"></div>
+
+      <!-- Parents row -->
+      <div class="ft-row">
+        <div class="fam-card" onclick="speak('der Onkel')">
+          <span class="fam-emoji">👨</span>
+          <span class="fam-de">der Onkel</span>
+          <span class="fam-ar">العم / الخال</span>
+          <span class="fam-ex">Mein Onkel ist Arzt.</span>
+        </div>
+        <div class="fam-card" onclick="speak('die Tante')">
+          <span class="fam-emoji">👩</span>
+          <span class="fam-de">die Tante</span>
+          <span class="fam-ar">العمة / الخالة</span>
+          <span class="fam-ex">Meine Tante ist lustig.</span>
+        </div>
+        <div class="fam-card" onclick="speak('der Vater')">
+          <span class="fam-emoji">👨‍💼</span>
+          <span class="fam-de">der Vater</span>
+          <span class="fam-ar">الأب</span>
+          <span class="fam-ex">Mein Vater arbeitet viel.</span>
+        </div>
+        <div class="fam-card" onclick="speak('die Mutter')">
+          <span class="fam-emoji">👩‍💼</span>
+          <span class="fam-de">die Mutter</span>
+          <span class="fam-ar">الأم</span>
+          <span class="fam-ex">Meine Mutter ist Lehrerin.</span>
+        </div>
+      </div>
+
+      <div class="ft-connector"></div>
+
+      <!-- Siblings + me row -->
+      <div class="ft-row">
+        <div class="fam-card" onclick="speak('der Bruder')">
+          <span class="fam-emoji">👦</span>
+          <span class="fam-de">der Bruder</span>
+          <span class="fam-ar">الأخ</span>
+          <span class="fam-ex">Mein Bruder ist jünger.</span>
+        </div>
+        <div class="fam-card" onclick="speak('die Schwester')">
+          <span class="fam-emoji">👧</span>
+          <span class="fam-de">die Schwester</span>
+          <span class="fam-ar">الأخت</span>
+          <span class="fam-ex">Meine Schwester studiert.</span>
+        </div>
+        <div class="fam-card" style="border-color:var(--terra);background:var(--terra-d);" onclick="speak('ich')">
+          <span class="fam-emoji">😊</span>
+          <span class="fam-de" style="color:var(--terra2);">ich (أنا)</span>
+          <span class="fam-ar">أنا</span>
+          <span class="fam-ex">Ich lerne Deutsch!</span>
+        </div>
+        <div class="fam-card" onclick="speak('der Cousin')">
+          <span class="fam-emoji">👦</span>
+          <span class="fam-de">der Cousin</span>
+          <span class="fam-ar">ابن العم / الخال</span>
+          <span class="fam-ex">Mein Cousin wohnt in Berlin.</span>
+        </div>
+        <div class="fam-card" onclick="speak('die Cousine')">
+          <span class="fam-emoji">👧</span>
+          <span class="fam-de">die Cousine</span>
+          <span class="fam-ar">بنت العم / الخال</span>
+          <span class="fam-ex">Meine Cousine ist nett.</span>
+        </div>
+      </div>
+
+      <div class="ft-connector"></div>
+
+      <!-- Children row -->
+      <div class="ft-row">
+        <div class="fam-card" onclick="speak('der Sohn')">
+          <span class="fam-emoji">👶</span>
+          <span class="fam-de">der Sohn</span>
+          <span class="fam-ar">الابن</span>
+          <span class="fam-ex">Mein Sohn ist 5 Jahre alt.</span>
+        </div>
+        <div class="fam-card" onclick="speak('die Tochter')">
+          <span class="fam-emoji">👶</span>
+          <span class="fam-de">die Tochter</span>
+          <span class="fam-ar">البنت / الابنة</span>
+          <span class="fam-ex">Meine Tochter ist klug.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Extra family vocab -->
+    <div class="tip s" style="margin-top:1.2rem;">
+      <div class="tpic">💍</div>
+      <div>
+        <h4>مفردات الزواج والعلاقات</h4>
+        <p>
+          <span class="de">der Mann / die Frau</span> = الزوج / الزوجة &nbsp;·&nbsp;
+          <span class="de">der Ehemann / die Ehefrau</span> = الزوج / الزوجة (رسمي) &nbsp;·&nbsp;
+          <span class="de">die Eltern</span> = الوالدان (جمع) &nbsp;·&nbsp;
+          <span class="de">die Geschwister</span> = الإخوة والأخوات &nbsp;·&nbsp;
+          <span class="de">die Kinder</span> = الأطفال &nbsp;·&nbsp;
+          <span class="de">das Baby</span> = الرضيع
+        </p>
+      </div>
+    </div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>صيغة السؤال</th><th>الألمانية</th><th>مثال الإجابة</th></tr></thead>
+        <tbody>
+          <tr><td>هل لديك إخوة؟</td><td class="tde">Hast du Geschwister?</td><td class="tex">Ja, ich habe einen Bruder.</td></tr>
+          <tr><td>كم عدد أفراد عائلتك؟</td><td class="tde">Wie groß ist deine Familie?</td><td class="tex">Wir sind fünf Personen.</td></tr>
+          <tr><td>هل أنت متزوج؟</td><td class="tde">Bist du verheiratet?</td><td class="tex">Ja, ich bin seit 3 Jahren verheiratet.</td></tr>
+          <tr><td>هل لديك أطفال؟</td><td class="tde">Hast du Kinder?</td><td class="tex">Nein, ich habe keine Kinder.</td></tr>
+          <tr><td>كيف حال والديك؟</td><td class="tde">Wie geht es deinen Eltern?</td><td class="tex">Danke, es geht ihnen gut.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 3: ADJECTIVES ══════════════ -->
+<section id="adj">
+  <div class="sh">
+    <div class="si si-c">✨</div>
+    <div class="sm">
+      <h2>الصفات — Adjektive</h2>
+      <p>صف منزلك وعائلتك بدقة — مع الأضداد</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div class="tip l" style="margin-bottom:1.2rem;">
+      <div class="tpic">💡</div>
+      <div>
+        <h4>الصفات في الألمانية — كيف تستخدمها؟</h4>
+        <p>يمكن استخدام الصفة بعد الفعل مباشرةً دون تغيير: <span class="de">Das Haus ist groß.</span> (المنزل كبير)<br>
+        أو قبل الاسم، وعندها تتغير نهايتها حسب الجنس — وهذا ما سنتعلمه في قسم القواعد!</p>
+      </div>
+    </div>
+
+    <div class="adj-grid">
+
+      <div class="adj-card" onclick="speak('groß und klein')">
+        <div class="adj-swatch" style="background:var(--terra);"></div>
+        <span class="adj-de">groß</span>
+        <span class="adj-op">klein</span>
+        <span class="adj-ar">كبير ↔ صغير</span>
+        <span class="adj-ex">Das Haus ist groß.</span>
+      </div>
+
+      <div class="adj-card" onclick="speak('alt und neu')">
+        <div class="adj-swatch" style="background:var(--clay);"></div>
+        <span class="adj-de">alt</span>
+        <span class="adj-op">neu</span>
+        <span class="adj-ar">قديم ↔ جديد</span>
+        <span class="adj-ex">Das Sofa ist alt.</span>
+      </div>
+
+      <div class="adj-card" onclick="speak('hell und dunkel')">
+        <div class="adj-swatch" style="background:var(--sage);"></div>
+        <span class="adj-de">hell</span>
+        <span class="adj-op">dunkel</span>
+        <span class="adj-ar">مضيء ↔ مظلم</span>
+        <span class="adj-ex">Die Küche ist hell.</span>
+      </div>
+
+      <div class="adj-card" onclick="speak('sauber und schmutzig')">
+        <div class="adj-swatch" style="background:var(--slate);"></div>
+        <span class="adj-de">sauber</span>
+        <span class="adj-op">schmutzig</span>
+        <span class="adj-ar">نظيف ↔ متسخ</span>
+        <span class="adj-ex">Das Bad ist sauber.</span>
+      </div>
+
+      <div class="adj-card" onclick="speak('warm und kalt')">
+        <div class="adj-swatch" style="background:var(--rose);"></div>
+        <span class="adj-de">warm</span>
+        <span class="adj-op">kalt</span>
+        <span class="adj-ar">دافئ ↔ بارد</span>
+        <span class="adj-ex">Das Zimmer ist warm.</span>
+      </div>
+
+      <div class="adj-card" onclick="speak('ruhig und laut')">
+        <div class="adj-swatch" style="background:var(--terra);"></div>
+        <span class="adj-de">ruhig</span>
+        <span class="adj-op">laut</span>
+        <span class="adj-ar">هادئ ↔ صاخب</span>
+        <span class="adj-ex">Die Wohnung ist ruhig.</span>
+      </div>
+
+      <div class="adj-card" onclick="speak('modern und altmodisch')">
+        <div class="adj-swatch" style="background:var(--sage);"></div>
+        <span class="adj-de">modern</span>
+        <span class="adj-op">altmodisch</span>
+        <span class="adj-ar">عصري ↔ قديم الطراز</span>
+        <span class="adj-ex">Die Küche ist modern.</span>
+      </div>
+
+      <div class="adj-card" onclick="speak('teuer und billig')">
+        <div class="adj-swatch" style="background:var(--clay);"></div>
+        <span class="adj-de">teuer</span>
+        <span class="adj-op">billig</span>
+        <span class="adj-ar">غالٍ ↔ رخيص</span>
+        <span class="adj-ex">Die Miete ist teuer.</span>
+      </div>
+
+      <div class="adj-card" onclick="speak('gemütlich')">
+        <div class="adj-swatch" style="background:var(--rose);"></div>
+        <span class="adj-de">gemütlich</span>
+        <span class="adj-op">ungemütlich</span>
+        <span class="adj-ar">مريح / دافئ الأجواء ↔ غير مريح</span>
+        <span class="adj-ex">Das Wohnzimmer ist gemütlich.</span>
+      </div>
+
+      <div class="adj-card" onclick="speak('jung und alt')">
+        <div class="adj-swatch" style="background:var(--terra);"></div>
+        <span class="adj-de">jung</span>
+        <span class="adj-op">alt</span>
+        <span class="adj-ar">شاب / صغير ↔ كبير في السن</span>
+        <span class="adj-ex">Meine Schwester ist jung.</span>
+      </div>
+
+      <div class="adj-card" onclick="speak('freundlich und unfreundlich')">
+        <div class="adj-swatch" style="background:var(--sage);"></div>
+        <span class="adj-de">freundlich</span>
+        <span class="adj-op">unfreundlich</span>
+        <span class="adj-ar">ودود ↔ غير ودود</span>
+        <span class="adj-ex">Mein Nachbar ist freundlich.</span>
+      </div>
+
+      <div class="adj-card" onclick="speak('klug und dumm')">
+        <div class="adj-swatch" style="background:var(--slate);"></div>
+        <span class="adj-de">klug</span>
+        <span class="adj-op">dumm</span>
+        <span class="adj-ar">ذكي ↔ غبي</span>
+        <span class="adj-ex">Meine Tochter ist sehr klug.</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 4: GRAMMAR — ADJECTIVE ENDINGS ══════════════ -->
+<section id="grammar">
+  <div class="sh">
+    <div class="si si-l">📐</div>
+    <div class="sm">
+      <h2>قاعدة نهايات الصفات</h2>
+      <p>كيف تتغير نهاية الصفة حسب الجنس النحوي — نظام "القضبان الضعيفة"</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div class="tip t" style="margin-bottom:1.4rem;">
+      <div class="tpic">🔑</div>
+      <div>
+        <h4>المبدأ الأساسي</h4>
+        <p>عندما تأتي الصفة <strong>بعد أداة التعريف</strong> (der/die/das أو ein/eine/ein) وقبل الاسم، تتغير نهايتها. هذا يُسمى <em>Adjektivdeklination</em>. لا تخف — النمط منطقي جداً إذا فهمته خطوة بخطوة!</p>
+      </div>
+    </div>
+
+    <!-- After der/die/das -->
+    <h3 style="font-size:.95rem;font-weight:800;color:var(--terra2);margin-bottom:.8rem;">بعد أداة التعريف المحددة: der / die / das</h3>
+    <div class="tw" style="margin-bottom:1.5rem;">
+      <table>
+        <thead>
+          <tr><th>الجنس</th><th>أداة التعريف</th><th>النهاية</th><th>مثال</th><th>المعنى</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span style="color:var(--slate)">مذكر</span></td><td class="tde">der</td><td class="tde">-e</td><td class="tde">der große Tisch</td><td>الطاولة الكبيرة (م)</td></tr>
+          <tr><td><span style="color:var(--rose)">مؤنث</span></td><td class="tde">die</td><td class="tde">-e</td><td class="tde">die helle Küche</td><td>المطبخ المضيء</td></tr>
+          <tr><td><span style="color:var(--sage)">محايد</span></td><td class="tde">das</td><td class="tde">-e</td><td class="tde">das kleine Bett</td><td>السرير الصغير</td></tr>
+          <tr><td>جمع</td><td class="tde">die</td><td class="tde">-en</td><td class="tde">die alten Stühle</td><td>الكراسي القديمة</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- After ein/eine/ein -->
+    <h3 style="font-size:.95rem;font-weight:800;color:var(--sage2);margin-bottom:.8rem;">بعد أداة التعريف غير المحددة: ein / eine / ein</h3>
+    <div class="tw" style="margin-bottom:1.5rem;">
+      <table>
+        <thead>
+          <tr><th>الجنس</th><th>أداة التعريف</th><th>النهاية</th><th>مثال</th><th>المعنى</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span style="color:var(--slate)">مذكر</span></td><td class="tde">ein</td><td class="tde">-er</td><td class="tde">ein großer Tisch</td><td>طاولة كبيرة (م)</td></tr>
+          <tr><td><span style="color:var(--rose)">مؤنث</span></td><td class="tde">eine</td><td class="tde">-e</td><td class="tde">eine helle Küche</td><td>مطبخ مضيء</td></tr>
+          <tr><td><span style="color:var(--sage)">محايد</span></td><td class="tde">ein</td><td class="tde">-es</td><td class="tde">ein kleines Bett</td><td>سرير صغير</td></tr>
+          <tr><td>جمع</td><td class="tde">keine</td><td class="tde">-en</td><td class="tde">keine alten Stühle</td><td>لا كراسي قديمة</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="endings-grid">
+      <div class="endings-card">
+        <div class="ec-title" style="color:var(--terra2);">🧠 طريقة سهلة للحفظ</div>
+        <div class="ending-row"><span class="ending-ar">المذكر بعد ein →</span><span class="ending-de">-er</span></div>
+        <div class="ending-row"><span class="ending-ar">المحايد بعد ein →</span><span class="ending-de">-es</span></div>
+        <div class="ending-row"><span class="ending-ar">المؤنث دائماً →</span><span class="ending-de">-e</span></div>
+        <div class="ending-row"><span class="ending-ar">بعد der/die/das →</span><span class="ending-de">-e</span></div>
+        <div class="ending-row"><span class="ending-ar">الجمع دائماً →</span><span class="ending-de">-en</span></div>
+      </div>
+      <div class="endings-card">
+        <div class="ec-title" style="color:var(--sage2);">✅ أمثلة مقارنة</div>
+        <div class="ending-row"><span class="ending-ar">ذكر محدد:</span><span class="ending-de">der alt<u>e</u> Mann</span></div>
+        <div class="ending-row"><span class="ending-ar">ذكر غير محدد:</span><span class="ending-de">ein alt<u>er</u> Mann</span></div>
+        <div class="ending-row"><span class="ending-ar">أنثى محددة:</span><span class="ending-de">die alt<u>e</u> Frau</span></div>
+        <div class="ending-row"><span class="ending-ar">أنثى غير محددة:</span><span class="ending-de">eine alt<u>e</u> Frau</span></div>
+        <div class="ending-row"><span class="ending-ar">محايد محدد:</span><span class="ending-de">das alt<u>e</u> Haus</span></div>
+      </div>
+    </div>
+
+    <div class="tip r" style="margin-top:1.2rem;">
+      <div class="tpic">⚡</div>
+      <div>
+        <h4>القاعدة الذهبية</h4>
+        <p>إذا كانت أداة التعريف تُظهر الجنس بنفسها (مثل <span class="de">der / die / das</span>) فالصفة تأخذ النهاية الخفيفة <strong>-e</strong>. أما إذا لم تُظهر الجنس (مثل <span class="de">ein</span> للمذكر والمحايد) فالصفة هي التي تُظهره بنهاية أقوى.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 5: ROOM BUILDER GAME ══════════════ -->
+<section>
+  <div class="sh">
+    <div class="si si-t">🛋️</div>
+    <div class="sm">
+      <h2>صف غرفتك بالألمانية!</h2>
+      <p>اختر غرفة وشاهد كيف تصفها جملةً بجملة</p>
+    </div>
+  </div>
+
+  <div class="card a4">
+    <div class="room-builder">
+      <div class="rb-title">🏠 اختر غرفة لوصفها:</div>
+      <div class="rb-room-tabs">
+        <div class="rb-tab active" onclick="selectRbRoom(this,'wohnzimmer')">🛋️ المعيشة</div>
+        <div class="rb-tab" onclick="selectRbRoom(this,'schlafzimmer')">🛏️ النوم</div>
+        <div class="rb-tab" onclick="selectRbRoom(this,'kueche')">🍳 المطبخ</div>
+        <div class="rb-tab" onclick="selectRbRoom(this,'badezimmer')">🚿 الحمام</div>
+        <div class="rb-tab" onclick="selectRbRoom(this,'garten')">🌳 الحديقة</div>
+      </div>
+      <div class="rb-desc-area" id="rb-desc">
+        <span class="rb-de-line" id="rb-de">Das Wohnzimmer ist groß und gemütlich. Es hat ein bequemes Sofa, einen großen Fernseher und einen hellen Teppich. Das Zimmer ist sehr schön!</span>
+        <span class="rb-ar-line" id="rb-ar">غرفة المعيشة كبيرة ومريحة. فيها أريكة مريحة، تلفاز كبير، وسجادة مضيئة. الغرفة جميلة جداً!</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 6: DIALOGUE ══════════════ -->
+<section>
+  <div class="sh">
+    <div class="si si-r">💬</div>
+    <div class="sm">
+      <h2>حوار: أحمد يُظهر شقته الجديدة</h2>
+      <p>مشهد زيارة صديق لمشاهدة الشقة الجديدة</p>
+    </div>
+  </div>
+
+  <div class="card a4">
+    <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);">
+      <span style="font-size:1.3rem;">🏠</span>
+      <div>
+        <div style="font-size:.9rem;font-weight:800;">شقة أحمد الجديدة في برلين</div>
+        <div style="font-size:.78rem;color:var(--text2);">Julia تزور أحمد لأول مرة في شقته</div>
+      </div>
+    </div>
+
+    <div class="conv">
+
+      <div class="msg l">
+        <div class="av">👩</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Wow, Ahmad! Deine Wohnung ist wirklich schön! Wie viele Zimmer hat sie?</span>واو يا أحمد! شقتك جميلة فعلاً! كم غرفة فيها؟</div>
+          <span class="who" style="text-align:left;">Julia</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Danke! Sie hat vier Zimmer: ein Wohnzimmer, zwei Schlafzimmer, eine Küche und ein Badezimmer. Und einen kleinen Balkon!</span>شكراً! فيها أربع غرف: غرفة معيشة، غرفتا نوم، مطبخ وحمام. وشرفة صغيرة أيضاً!</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Das Wohnzimmer ist so hell und gemütlich! Ist die Wohnung teuer?</span>غرفة المعيشة مضيئة ومريحة جداً! هل الشقة غالية؟</div>
+          <span class="who" style="text-align:left;">Julia</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Die Miete ist 900 Euro kalt. Das ist normal für Berlin. Ich wohne hier seit drei Monaten.</span>الإيجار 900 يورو بدون تدفئة. هذا طبيعي في برلين. أسكن هنا منذ ثلاثة أشهر.</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Wohnst du allein? Und wer sind die Leute in dem Foto dort?</span>هل تسكن لوحدك؟ ومن هؤلاء في تلك الصورة؟</div>
+          <span class="who" style="text-align:left;">Julia</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Das ist meine Familie! Mein älterer Bruder Khalid, meine jüngere Schwester Noor, und natürlich meine lieben Eltern. Sie wohnen noch in Damaskus.</span>هذه عائلتي! أخي الأكبر خالد، أختي الصغيرة نور، وطبعاً والداي الحبيبان. لا يزالون يسكنون في دمشق.</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Das ist eine schöne große Familie! Vermisst du sie?</span>عائلة كبيرة وجميلة! هل تشتاق إليهم؟</div>
+          <span class="who" style="text-align:left;">Julia</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">👨</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ja, sehr! Aber ich telefoniere jeden Tag mit meiner Mutter. Sie fragt immer: „Ist dein Zimmer sauber, Ahmad?" — Typisch Mama!</span>نعم، كثيراً! لكنني أتصل بأمي كل يوم. هي دائماً تسأل: "هل غرفتك نظيفة يا أحمد؟" — أمهات على طول!</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+      <h4 style="font-size:.88rem;font-weight:800;color:var(--clay2);margin-bottom:.8rem;">🔑 تعابير وصف المنزل:</h4>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;font-size:.8rem;align-items:center;">
+        <span class="de">Die Miete ist ... Euro kalt.</span><span style="color:var(--text2)"> الإيجار ... يورو (بدون تدفئة)</span> &nbsp;·&nbsp;
+        <span class="de">Ich wohne hier seit ...</span><span style="color:var(--text2)"> أسكن هنا منذ...</span> &nbsp;·&nbsp;
+        <span class="de">Ich wohne allein.</span><span style="color:var(--text2)"> أسكن لوحدي</span> &nbsp;·&nbsp;
+        <span class="de">vermissen</span><span style="color:var(--text2)"> يشتاق إلى</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SECTION 7: QUIZ ══════════════ -->
+<section id="quiz">
+  <div class="sh">
+    <div class="si si-c">🎯</div>
+    <div class="sm">
+      <h2>اختبر نفسك!</h2>
+      <p>8 أسئلة تغطي المنزل، العائلة، والصفات</p>
+    </div>
+  </div>
+
+  <div class="card">
+
+    <div class="qblock" id="q1">
+      <span class="qlabel">السؤال 1 / 8</span>
+      <div class="qtext">ما هو <span class="qde">das Schlafzimmer</span>؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q1','w')">المطبخ</div>
+        <div class="opt" onclick="ans(this,'q1','w')">الحمام</div>
+        <div class="opt" onclick="ans(this,'q1','c')">غرفة النوم</div>
+        <div class="opt" onclick="ans(this,'q1','w')">غرفة المعيشة</div>
+      </div>
+      <div class="qfb" id="fb-q1"></div>
+    </div>
+
+    <div class="qblock" id="q2">
+      <span class="qlabel">السؤال 2 / 8</span>
+      <div class="qtext">كيف تقول "الأخت" بالألمانية؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q2','w')">der Bruder</div>
+        <div class="opt" onclick="ans(this,'q2','c')">die Schwester</div>
+        <div class="opt" onclick="ans(this,'q2','w')">die Tochter</div>
+        <div class="opt" onclick="ans(this,'q2','w')">die Mutter</div>
+      </div>
+      <div class="qfb" id="fb-q2"></div>
+    </div>
+
+    <div class="qblock" id="q3">
+      <span class="qlabel">السؤال 3 / 8</span>
+      <div class="qtext">ما معنى الصفة <span class="qde">gemütlich</span>؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q3','w')">كبير</div>
+        <div class="opt" onclick="ans(this,'q3','w')">نظيف</div>
+        <div class="opt" onclick="ans(this,'q3','c')">مريح / دافئ الأجواء</div>
+        <div class="opt" onclick="ans(this,'q3','w')">حديث</div>
+      </div>
+      <div class="qfb" id="fb-q3"></div>
+    </div>
+
+    <div class="qblock" id="q4">
+      <span class="qlabel">السؤال 4 / 8</span>
+      <div class="qtext">أي جملة صحيحة نحوياً؟ (مذكر + ein + صفة)</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q4','c')">ein großer Tisch</div>
+        <div class="opt" onclick="ans(this,'q4','w')">ein große Tisch</div>
+        <div class="opt" onclick="ans(this,'q4','w')">ein großes Tisch</div>
+        <div class="opt" onclick="ans(this,'q4','w')">ein großen Tisch</div>
+      </div>
+      <div class="qfb" id="fb-q4"></div>
+    </div>
+
+    <div class="qblock" id="q5">
+      <span class="qlabel">السؤال 5 / 8</span>
+      <div class="qtext">ما جنس كلمة <span class="qde">Küche</span>؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q5','w')">مذكر (der)</div>
+        <div class="opt" onclick="ans(this,'q5','c')">مؤنث (die)</div>
+        <div class="opt" onclick="ans(this,'q5','w')">محايد (das)</div>
+        <div class="opt" onclick="ans(this,'q5','w')">جمع</div>
+      </div>
+      <div class="qfb" id="fb-q5"></div>
+    </div>
+
+    <div class="qblock" id="q6">
+      <span class="qlabel">السؤال 6 / 8</span>
+      <div class="qtext">كيف تقول "هل لديك إخوة؟"</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q6','w')">Wie groß ist deine Familie?</div>
+        <div class="opt" onclick="ans(this,'q6','c')">Hast du Geschwister?</div>
+        <div class="opt" onclick="ans(this,'q6','w')">Bist du verheiratet?</div>
+        <div class="opt" onclick="ans(this,'q6','w')">Hast du Kinder?</div>
+      </div>
+      <div class="qfb" id="fb-q6"></div>
+    </div>
+
+    <div class="qblock" id="q7">
+      <span class="qlabel">السؤال 7 / 8</span>
+      <div class="qtext">ما ضد كلمة <span class="qde">hell</span>؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q7','w')">klein</div>
+        <div class="opt" onclick="ans(this,'q7','w')">alt</div>
+        <div class="opt" onclick="ans(this,'q7','c')">dunkel</div>
+        <div class="opt" onclick="ans(this,'q7','w')">kalt</div>
+      </div>
+      <div class="qfb" id="fb-q7"></div>
+    </div>
+
+    <div class="qblock" id="q8">
+      <span class="qlabel">السؤال 8 / 8</span>
+      <div class="qtext">أكمل الجملة: <span class="qde">Das ist mein_____ Vater.</span> (محايد → ein)</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q8','w')">meine</div>
+        <div class="opt" onclick="ans(this,'q8','w')">meinen</div>
+        <div class="opt" onclick="ans(this,'q8','c')">mein</div>
+        <div class="opt" onclick="ans(this,'q8','w')">meiner</div>
+      </div>
+      <div class="qfb" id="fb-q8"></div>
+    </div>
+
+    <div class="result-wrap" id="result-wrap">
+      <div class="r-score" id="r-score">0/8</div>
+      <div class="r-msg" id="r-msg"></div>
+      <button class="r-btn" onclick="resetQuiz()">🔄 أعد التدريب</button>
+    </div>
+  </div>
+</section>
+
+<!-- HOMEWORK -->
+<section>
+  <div class="sh">
+    <div class="si si-s">📝</div>
+    <div class="sm"><h2>واجب الدرس الرابع</h2><p>طبّق ما تعلمته عن منزلك وعائلتك</p></div>
+  </div>
+  <div class="card">
+    <div class="hw-grid">
+      <div class="hw-item"><strong>✅ صف شقتك</strong><span>اكتب 5 جمل عن منزلك بالألمانية مستخدماً الصفات</span></div>
+      <div class="hw-item"><strong>✅ شجرة العائلة</strong><span>ارسم شجرة عائلتك واكتب اسم كل فرد بالألمانية</span></div>
+      <div class="hw-item"><strong>✅ الصفات</strong><span>اكتب 6 جمل وصفية عن أفراد عائلتك</span></div>
+      <div class="hw-item"><strong>✅ النهايات</strong><span>أكمل: ein alt___ Mann / die hell___ Küche / ein klein___ Zimmer</span></div>
+    </div>
+    <div class="tip s">
+      <div class="tpic">🚀</div>
+      <div>
+        <h4>الدرس الخامس القادم</h4>
+        <p>سنتعلم <strong>الأفعال الشائعة والأنشطة اليومية</strong> — كيف تتحدث عن روتينك اليومي، ماذا تحب وماذا تكره، وتصريف الأفعال الشائعة! <span class="de">Bis dann!</span> 🏡</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>🇩🇪 الألمانية للعرب &nbsp;·&nbsp; المستوى A2 &nbsp;·&nbsp; الدرس 4 من 12</p>
+  <p style="margin-top:.5rem;">المنزل · العائلة · الصفات · القواعد النحوية</p>
+</footer>
+
+<script>
+// ── Theme ──
+let dark = true;
+const root = document.documentElement;
+const tbtn = document.querySelector('.tbtn');
+function applyTheme(d) { dark=d; root.setAttribute('data-theme',d?'dark':'light'); tbtn.textContent=d?'☀':'🌙'; }
+function toggleTheme() { applyTheme(!dark); }
+const sys = window.matchMedia('(prefers-color-scheme: dark)');
+applyTheme(sys.matches);
+sys.addEventListener('change', e => applyTheme(e.matches));
+
+// ── Scroll progress ──
+const spb = document.getElementById('spb');
+window.addEventListener('scroll', () => {
+  const h = document.body.scrollHeight - window.innerHeight;
+  spb.style.transform = `scaleX(${window.scrollY / h})`;
+});
+
+// ── Speech ──
+function speak(t) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(t);
+  u.lang = 'de-DE'; u.rate = 0.82;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+
+// ── Room data ──
+const roomData = {
+  living: {
+    title: '🛋️ غرفة المعيشة — das Wohnzimmer',
+    items: ['das Sofa','der Tisch','der Fernseher','der Teppich','die Lampe','das Regal','der Sessel','das Bild','die Pflanze']
+  },
+  kitchen: {
+    title: '🍳 المطبخ — die Küche',
+    items: ['der Herd','der Kühlschrank','die Spüle','der Backofen','die Mikrowelle','der Toaster','das Messer','der Topf','die Pfanne']
+  },
+  bedroom: {
+    title: '🛏️ غرفة النوم — das Schlafzimmer',
+    items: ['das Bett','der Kleiderschrank','das Kissen','die Decke','der Wecker','die Kommode','der Spiegel','die Nachttischlampe']
+  },
+  bath: {
+    title: '🚿 الحمام — das Badezimmer',
+    items: ['die Dusche','die Badewanne','das Waschbecken','die Toilette','der Spiegel','das Handtuch','die Seife','der Föhn']
+  },
+  study: {
+    title: '💻 المكتب — das Arbeitszimmer',
+    items: ['der Schreibtisch','der Computer','der Drucker','das Bücherregal','der Stuhl','die Lampe','das Notizbuch','der Stift']
+  },
+  garden: {
+    title: '🌳 الحديقة — der Garten',
+    items: ['der Baum','die Blume','der Rasen','der Gartenstuhl','der Tisch','der Zaun','das Beet','der Gartenschlauch']
+  },
+  hall: {
+    title: '🚪 الردهة — der Flur',
+    items: ['die Tür','der Schlüssel','der Mantel','die Schuhe','der Spiegel','der Schuh­schrank','die Matte']
+  },
+  cellar: {
+    title: '🏚️ القبو — der Keller',
+    items: ['die Waschmaschine','der Trockner','das Fahrrad','die Kiste','das Werkzeug','der Wein']
+  },
+  balcony: {
+    title: '🌅 الشرفة — der Balkon',
+    items: ['der Blumentopf','der Stuhl','der Tisch','die Lichterkette','der Grill','die Pflanze']
+  }
+};
+
+let activeRoom = null;
+
+function showRoom(id) {
+  // Deactivate previous
+  if (activeRoom) {
+    document.getElementById('r-'+activeRoom)?.classList.remove('active');
+  }
+  // If clicking same room, close it
+  if (activeRoom === id) {
+    document.getElementById('room-detail').classList.remove('show');
+    activeRoom = null;
+    return;
+  }
+  activeRoom = id;
+  document.getElementById('r-'+id)?.classList.add('active');
+
+  const data = roomData[id];
+  const detail = document.getElementById('room-detail');
+  const title = document.getElementById('rd-title');
+  const items = document.getElementById('rd-items');
+
+  title.textContent = data.title;
+  items.innerHTML = '';
+  data.items.forEach(word => {
+    const el = document.createElement('div');
+    el.className = 'rd-item';
+    el.textContent = word;
+    el.onclick = () => speak(word);
+    items.appendChild(el);
+  });
+
+  detail.classList.add('show');
+  // Speak the room name
+  const roomNames = {
+    living:'das Wohnzimmer', kitchen:'die Küche', bedroom:'das Schlafzimmer',
+    bath:'das Badezimmer', study:'das Arbeitszimmer', garden:'der Garten',
+    hall:'der Flur', cellar:'der Keller', balcony:'der Balkon'
+  };
+  speak(roomNames[id]);
+}
+
+// ── Room Builder ──
+const rbDescriptions = {
+  wohnzimmer: {
+    de: 'Das Wohnzimmer ist groß und gemütlich. Es hat ein bequemes Sofa, einen großen Fernseher und einen hellen Teppich. Das Zimmer ist sehr schön!',
+    ar: 'غرفة المعيشة كبيرة ومريحة. فيها أريكة مريحة، تلفاز كبير، وسجادة مضيئة. الغرفة جميلة جداً!'
+  },
+  schlafzimmer: {
+    de: 'Das Schlafzimmer ist klein aber ruhig. Es hat ein bequemes Bett, einen alten Kleiderschrank und eine moderne Lampe. Das Zimmer ist dunkel und schön zum Schlafen.',
+    ar: 'غرفة النوم صغيرة لكن هادئة. فيها سرير مريح، خزانة ملابس قديمة ومصباح حديث. الغرفة مظلمة وجميلة للنوم.'
+  },
+  kueche: {
+    de: 'Die Küche ist modern und hell. Sie hat einen neuen Herd, einen großen Kühlschrank und eine praktische Spüle. Die Küche ist sauber und gut organisiert.',
+    ar: 'المطبخ حديث ومضيء. فيه موقد جديد، ثلاجة كبيرة ومغسلة عملية. المطبخ نظيف ومنظم بشكل جيد.'
+  },
+  badezimmer: {
+    de: 'Das Badezimmer ist klein aber sauber. Es hat eine moderne Dusche, ein weißes Waschbecken und einen großen Spiegel. Das Badezimmer riecht frisch und angenehm.',
+    ar: 'الحمام صغير لكن نظيف. فيه دش حديث، مغسلة بيضاء ومرآة كبيرة. الحمام يفوح منه رائحة منعشة وطيبة.'
+  },
+  garten: {
+    de: 'Der Garten ist groß und grün. Er hat viele schöne Blumen, einen alten Baum und einen kleinen Tisch mit Stühlen. Im Sommer ist der Garten wunderschön!',
+    ar: 'الحديقة كبيرة وخضراء. فيها زهور جميلة كثيرة، شجرة قديمة وطاولة صغيرة مع كراسٍ. في الصيف الحديقة رائعة!'
+  }
+};
+
+function selectRbRoom(el, roomKey) {
+  document.querySelectorAll('.rb-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  const d = rbDescriptions[roomKey];
+  document.getElementById('rb-de').textContent = d.de;
+  document.getElementById('rb-ar').textContent = d.ar;
+  speak(d.de.split('.')[0]); // speak first sentence
+}
+
+// ── Quiz ──
+const fb_c = {
+  q1: '✅ صحيح! Schlaf = نوم، Zimmer = غرفة. كثير من أسماء الغرف في الألمانية تنتهي بـ -zimmer.',
+  q2: '✅ ممتاز! die Schwester = الأخت. der Bruder = الأخ. كلاهما مهم جداً!',
+  q3: '✅ بالضبط! gemütlich كلمة ألمانية مشهورة جداً تعني الشعور بالدفء والراحة في مكان ما.',
+  q4: '✅ رائع! Tisch مذكر + ein → الصفة تأخذ النهاية -er لأن "ein" لا يُظهر الجنس بنفسه.',
+  q5: '✅ صحيح! die Küche = مؤنث. تذكر: الكلمات التي تنتهي بـ -e كثيراً ما تكون مؤنثة!',
+  q6: '✅ ممتاز! Geschwister = الإخوة والأخوات معاً (مفرد غير موجود في الألمانية الرسمية!)',
+  q7: '✅ صحيح! hell = مضيء ↔ dunkel = مظلم. هذان من أكثر الأضداد استخداماً.',
+  q8: '✅ بالضبط! Vater مذكر + mein → لا نضيف نهاية. mein Vater. (meine للمؤنث فقط في المبتدأ)',
+};
+const fb_w = {
+  q1: '❌ Schlafzimmer = غرفة النوم. Wohnzimmer = المعيشة، Badezimmer = الحمام، Küche = المطبخ.',
+  q2: '❌ die Schwester هي الأخت. der Bruder = الأخ، die Tochter = الابنة، die Mutter = الأم.',
+  q3: '❌ gemütlich = مريح/دافئ الأجواء. groß = كبير، sauber = نظيف، modern = حديث.',
+  q4: '❌ Tisch مذكر + ein → الصفة تأخذ نهاية -er: ein groß-er Tisch. المذكر يحتاج نهاية قوية!',
+  q5: '❌ die Küche = مؤنث! كثير من الكلمات المنتهية بـ -e في الألمانية مؤنثة.',
+  q6: '❌ Hast du Geschwister? هي الجملة الصحيحة. Geschwister = الإخوة والأخوات مجتمعين.',
+  q7: '❌ ضد hell هو dunkel (مظلم). klein = صغير، alt = قديم، kalt = بارد.',
+  q8: '❌ Vater مذكر → mein Vater (بدون نهاية في حالة المبتدأ). meine = للمؤنث وللجمع.',
+};
+
+let answers = {};
+function ans(btn, qid, r) {
+  if (answers[qid]) return;
+  answers[qid] = r;
+  document.querySelectorAll(`#${qid} .opt`).forEach(b => b.disabled = true);
+  btn.classList.add(r === 'c' ? 'correct' : 'wrong');
+  const fb = document.getElementById('fb-' + qid);
+  fb.textContent = r === 'c' ? fb_c[qid] : fb_w[qid];
+  fb.className = 'qfb show ' + (r === 'c' ? 'ok' : 'err');
+  if (Object.keys(answers).length === 8) showResult();
+}
+function showResult() {
+  const s = Object.values(answers).filter(v => v === 'c').length;
+  const msgs = ['حاول مجدداً! 💪','جيد، راجع الأجزاء الضعيفة 📚','تقدم جيد! 🌿','جيد جداً! 🌟','ممتاز! 🏆','رائع جداً! 🎉','مثالي تقريباً! 🌸','درجة كاملة! 🥇👏','نجم الدرس! 🌟🌟'];
+  document.getElementById('r-score').textContent = s + '/8';
+  document.getElementById('r-msg').textContent = msgs[s] || '';
+  const rb = document.getElementById('result-wrap');
+  rb.style.display = 'block';
+  rb.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+function resetQuiz() {
+  answers = {};
+  document.querySelectorAll('.opt').forEach(b => { b.disabled = false; b.className = 'opt'; });
+  document.querySelectorAll('.qfb').forEach(f => f.className = 'qfb');
+  document.getElementById('result-wrap').style.display = 'none';
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-kurs-lesson-04-zuhause-familie" data-category="a2-kurs" data-title="المنزل والعائلة" data-root="../../" defer></script>
+</body>
+</html>

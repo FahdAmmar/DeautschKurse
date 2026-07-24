@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutsche Tiere – German Animals Vocabulary</title>
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --surface2: #f0ede6;
+    --text: #1a1714;
+    --text2: #5a5650;
+    --text3: #9a9590;
+    --accent: #3d6b4f;
+    --accent2: #5a9b72;
+    --accent-light: #e8f4ed;
+    --border: #e0dbd0;
+    --shadow: rgba(0,0,0,0.08);
+    --card-radius: 20px;
+    --pill: #d4ead9;
+    --pill-text: #2a5c3a;
+    --der: #3a6fa8;
+    --die: #b5438a;
+    --das: #d4750a;
+    --der-bg: #e8f0f9;
+    --die-bg: #fbe8f5;
+    --das-bg: #fdf3e3;
+    --quiz-bg: #1a2e23;
+    --quiz-text: #e8f4ed;
+  }
+  [data-theme="dark"] {
+    --bg: #0a0d08;
+    --surface: #141a11;
+    --surface2: #1c2517;
+    --text: #eef2ea;
+    --text2: #a3b39d;
+    --text3: #647161;
+    --accent: #5dab7a;
+    --accent2: #7dc894;
+    --accent-light: #16251c;
+    --border: #26331f;
+    --shadow: rgba(0,0,0,0.6);
+    --pill: #16301f;
+    --pill-text: #7dc894;
+    --der: #6da8e0;
+    --die: #e070c0;
+    --das: #f0a840;
+    --der-bg: #101c28;
+    --die-bg: #1c1019;
+    --das-bg: #1c150b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--surface);
+    border-bottom: 1.5px solid var(--border);
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-icon {
+    width: 40px; height: 40px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 22px; height: 22px; fill: #fff; }
+  .logo-text { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; }
+  .logo-sub { font-size: 0.72rem; color: var(--text3); letter-spacing: 0.06em; text-transform: uppercase; }
+  .header-controls { display: flex; gap: 10px; align-items: center; }
+  .btn-icon {
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    width: 38px; height: 38px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s;
+    color: var(--text);
+  }
+  .btn-icon:hover { background: var(--accent-light); border-color: var(--accent); }
+  .btn-quiz {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0 16px;
+    height: 38px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+  }
+  .btn-quiz:hover { background: var(--accent2); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--accent) 0%, #2a4f38 100%);
+    color: #fff;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3Ccircle cx='0' cy='0' r='20'/%3E%3Ccircle cx='60' cy='60' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+  .hero p { font-size: 1rem; opacity: 0.85; max-width: 500px; margin: 0 auto 1.5rem; }
+  .article-legend {
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  }
+  .legend-pill {
+    padding: 5px 14px; border-radius: 20px;
+    font-size: 0.8rem; font-weight: 600;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+  }
+
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    padding: 1.2rem 2rem;
+    display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-label { font-size: 0.8rem; color: var(--text3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 4px; }
+  .filter-btn {
+    padding: 6px 14px; border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 0.82rem; font-weight: 600;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .filter-btn.der.active { background: var(--der); border-color: var(--der); }
+  .filter-btn.die.active { background: var(--die); border-color: var(--die); }
+  .filter-btn.das.active { background: var(--das); border-color: var(--das); }
+  .search-input {
+    margin-left: auto;
+    padding: 6px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface2);
+    color: var(--text);
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
+    min-width: 200px;
+  }
+  .search-input:focus { border-color: var(--accent); }
+
+  /* ── GRID ── */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ── CARD ── */
+  .vocab-card {
+    background: var(--surface);
+    border-radius: var(--card-radius);
+    border: 1.5px solid var(--border);
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    cursor: pointer;
+    position: relative;
+  }
+  .vocab-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px var(--shadow);
+    border-color: var(--accent);
+  }
+  .vocab-card:active { transform: translateY(-2px); }
+
+  .card-art {
+    height: 160px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-art.der { background: var(--der-bg); }
+  .card-art.die { background: var(--die-bg); }
+  .card-art.das { background: var(--das-bg); }
+
+  /* ── REAL PHOTO ART ── */
+  .art-photo {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 0.5s ease, transform 0.6s cubic-bezier(.2,.7,.3,1);
+    background: var(--surface2);
+  }
+  .art-photo.is-loaded { opacity: 1; transform: scale(1); }
+  .vocab-card:hover .art-photo.is-loaded { transform: scale(1.08); }
+  @media (prefers-reduced-motion: reduce) {
+    .art-photo { transition: opacity 0.3s ease; }
+    .vocab-card:hover .art-photo.is-loaded { transform: none; }
+  }
+
+  /* subtle bottom scrim so photos read as intentional, not a flat cutout */
+  .card-art::after {
+    content: '';
+    position: absolute; inset: auto 0 0 0; height: 46%;
+    background: linear-gradient(to top, rgba(0,0,0,0.22), transparent);
+    pointer-events: none;
+  }
+
+  .art-skeleton {
+    position: absolute; inset: 0;
+    background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%),
+                var(--surface2);
+    background-size: 200% 100%, 100% 100%;
+    animation: shimmer 1.4s ease-in-out infinite;
+  }
+  .art-skeleton.is-hidden { display: none; }
+  @keyframes shimmer { 0% { background-position: 150% 0, 0 0; } 100% { background-position: -50% 0, 0 0; } }
+  [data-theme="dark"] .art-skeleton { background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,0.06) 50%, transparent 70%), var(--surface2); }
+
+  /* graceful fallback if a photo can't load — never a broken-image icon */
+  .art-fallback {
+    position: absolute; inset: 0;
+    display: none;
+    align-items: center; justify-content: center;
+    flex-direction: column; gap: 6px;
+  }
+  .art-fallback.is-active { display: flex; }
+  .art-fallback svg { width: 46px; height: 46px; opacity: 0.55; }
+  .art-fallback span { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.5; }
+  .card-art.der .art-fallback { color: var(--der); }
+  .card-art.die .art-fallback { color: var(--die); }
+  .card-art.das .art-fallback { color: var(--das); }
+
+  .card-body { padding: 1rem 1rem 1.1rem; }
+  .article-badge {
+    display: inline-block;
+    padding: 2px 8px; border-radius: 8px;
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .ab-der { background: var(--der-bg); color: var(--der); }
+  .ab-die { background: var(--die-bg); color: var(--die); }
+  .ab-das { background: var(--das-bg); color: var(--das); }
+
+  .word-de {
+    font-size: 1.2rem; font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .word-en { font-size: 0.82rem; color: var(--text2); margin-bottom: 8px; font-style: italic; }
+
+  .card-actions { display: flex; gap: 7px; }
+  .action-btn {
+    flex: 1;
+    padding: 7px 0;
+    border-radius: 10px;
+    border: 1.5px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-size: 0.75rem; font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s;
+    display: flex; align-items: center; justify-content: center; gap: 4px;
+  }
+  .action-btn:hover { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+  .action-btn.speaking { background: var(--accent-light); border-color: var(--accent); color: var(--accent); animation: pulse 0.6s infinite alternate; }
+  .action-btn.copied { background: var(--accent); color: #fff; border-color: var(--accent); }
+  @keyframes pulse { from { opacity: 1; } to { opacity: 0.6; } }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #fff;
+    padding: 10px 20px; border-radius: 12px;
+    font-size: 0.85rem; font-weight: 600;
+    opacity: 0; transition: opacity 0.3s;
+    z-index: 9999; pointer-events: none;
+  }
+  .toast.show { opacity: 1; }
+
+  /* ── GRAMMAR SECTION ── */
+  .grammar-section {
+    max-width: 1400px; margin: 0 auto;
+    padding: 0 2rem 2rem;
+  }
+  .section-title {
+    font-size: 1.3rem; font-weight: 800;
+    color: var(--text); margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .grammar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .grammar-card {
+    background: var(--surface);
+    border-radius: 16px; border: 1.5px solid var(--border);
+    padding: 1.2rem;
+  }
+  .grammar-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+  .grammar-card p { font-size: 0.83rem; color: var(--text2); line-height: 1.6; }
+  .grammar-card .example {
+    margin-top: 8px; padding: 8px 12px;
+    background: var(--accent-light);
+    border-radius: 8px; border-left: 3px solid var(--accent);
+    font-size: 0.82rem; color: var(--text);
+    font-style: italic;
+  }
+
+  /* ── QUIZ SECTION ── */
+  .quiz-section {
+    background: var(--surface);
+    border-top: 2px solid var(--border);
+    padding: 2.5rem 2rem;
+  }
+  .quiz-wrap { max-width: 700px; margin: 0 auto; }
+  .quiz-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .quiz-subtitle { font-size: 0.9rem; color: var(--text2); margin-bottom: 1.5rem; }
+  .quiz-box {
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 1.8rem;
+    text-align: center;
+  }
+  .quiz-img {
+    height: 190px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem;
+    position: relative; border-radius: 16px; overflow: hidden;
+    background: var(--surface2); border: 1.5px solid var(--border);
+  }
+  .quiz-img .art-photo, .quiz-img .art-skeleton, .quiz-img .art-fallback { border-radius: 16px; }
+  .quiz-img .art-photo { object-position: center 30%; }
+  .quiz-q { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.4rem; color: var(--text); }
+  .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .quiz-opt {
+    padding: 12px; border-radius: 12px;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 0.9rem; font-weight: 600;
+    cursor: pointer; transition: all 0.2s;
+    text-align: center;
+  }
+  .quiz-opt:hover { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+  .quiz-opt.correct { border-color: #2e7d4f; background: #e8f5ec; color: #2e7d4f; }
+  .quiz-opt.wrong { border-color: #c0392b; background: #fdecea; color: #c0392b; }
+  [data-theme="dark"] .quiz-opt.correct { background: #1a3a24; color: #6dd88a; border-color: #2e7d4f; }
+  [data-theme="dark"] .quiz-opt.wrong { background: #3a1a1a; color: #f08080; border-color: #8b2020; }
+  .quiz-feedback {
+    margin-top: 1rem; padding: 10px 16px;
+    border-radius: 10px; font-size: 0.88rem; font-weight: 600;
+    display: none;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.correct { background: #e8f5ec; color: #2e7d4f; }
+  .quiz-feedback.wrong { background: #fdecea; color: #c0392b; }
+  [data-theme="dark"] .quiz-feedback.correct { background: #1a3a24; color: #6dd88a; }
+  [data-theme="dark"] .quiz-feedback.wrong { background: #3a1a1a; color: #f08080; }
+  .quiz-next {
+    margin-top: 1.2rem;
+    background: var(--accent); color: #fff;
+    border: none; border-radius: 12px;
+    padding: 11px 28px; font-size: 0.9rem; font-weight: 700;
+    cursor: pointer; transition: all 0.2s;
+    display: none;
+  }
+  .quiz-next:hover { background: var(--accent2); }
+  .quiz-next.show { display: inline-block; }
+  .quiz-score {
+    display: flex; align-items: center; justify-content: center; gap: 20px;
+    margin-bottom: 1.4rem; padding: 10px 0; flex-wrap: wrap;
+  }
+  .score-pill {
+    display: flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 20px;
+    background: var(--surface2); border: 1.5px solid var(--border);
+    font-size: 0.82rem; font-weight: 700; color: var(--text);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center; padding: 2rem;
+    font-size: 0.78rem; color: var(--text3);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    .site-header, .filter-bar, .quiz-section, .btn-quiz, .btn-icon, .action-btn { display: none !important; }
+    .vocab-card { break-inside: avoid; border: 1px solid #ccc; }
+    .vocab-grid { grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 1rem; }
+    body { background: white; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.5rem; }
+    .vocab-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; padding: 1rem; }
+    .search-input { min-width: 120px; }
+  }
+  @media (max-width: 400px) {
+    .vocab-grid { grid-template-columns: 1fr 1fr; }
+    .quiz-options { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body data-theme="light">
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="white"/></svg>
+    </div>
+    <div>
+      <div class="logo-text">Deutsche Tiere</div>
+      <div class="logo-sub">Animals Vocabulary</div>
+    </div>
+  </div>
+  <div class="header-controls">
+    <button class="btn-icon" id="themeBtn" title="Toggle dark mode" onclick="toggleTheme()">🌙</button>
+    <button class="btn-icon" title="Print page" onclick="window.print()">🖨️</button>
+    <button class="btn-quiz" onclick="document.querySelector('.quiz-section').scrollIntoView({behavior:'smooth'})">📝 Quiz</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>🐾 Deutsche Tiere</h1>
+    <p>Click any word to hear the correct German pronunciation and copy it instantly. Learn articles, meaning, and usage for every animal.</p>
+    <div class="article-legend">
+      <span class="legend-pill" style="background:rgba(61,107,168,0.3);border-color:#6da8e0">der — Masculine</span>
+      <span class="legend-pill" style="background:rgba(181,67,138,0.3);border-color:#e070c0">die — Feminine</span>
+      <span class="legend-pill" style="background:rgba(212,117,10,0.3);border-color:#f0a840">das — Neuter</span>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-btn active" onclick="filterCards('all',this)">All</button>
+  <button class="filter-btn der" onclick="filterCards('der',this)">der</button>
+  <button class="filter-btn die" onclick="filterCards('die',this)">die</button>
+  <button class="filter-btn das" onclick="filterCards('das',this)">das</button>
+  <input class="search-input" type="text" placeholder="🔍 Search animals…" oninput="searchCards(this.value)" />
+</div>
+
+<!-- VOCABULARY GRID -->
+<main id="vocabGrid" class="vocab-grid"></main>
+
+<!-- GRAMMAR SECTION -->
+<section class="grammar-section">
+  <div class="section-title">📖 Grammar & Article Guide</div>
+  <div class="grammar-grid">
+    <div class="grammar-card">
+      <h3 style="color:var(--der)">der — Maskulinum (Masculine)</h3>
+      <p>Many male animals and most "-er" ending nouns are <strong>der</strong>. The accusative form changes to <strong>den</strong>.</p>
+      <div class="example">Ich sehe <em>den Hund</em>. (I see the dog.)</div>
+    </div>
+    <div class="grammar-card">
+      <h3 style="color:var(--die)">die — Femininum (Feminine)</h3>
+      <p>Female animal forms often use <strong>die</strong>. Nouns ending in <em>-e, -ung, -heit</em> are usually feminine.</p>
+      <div class="example">Die <em>Katze</em> schläft. (The cat is sleeping.)</div>
+    </div>
+    <div class="grammar-card">
+      <h3 style="color:var(--das)">das — Neutrum (Neuter)</h3>
+      <p>Young animals (Diminutives with <em>-chen/-lein</em>) and many loan words are <strong>das</strong>.</p>
+      <div class="example">Das <em>Pferd</em> läuft schnell. (The horse runs fast.)</div>
+    </div>
+    <div class="grammar-card">
+      <h3>💡 Common Mistake</h3>
+      <p>Animal gender often differs from biological sex! <em>das Mädchen</em> (the girl) is neuter. Always learn the article with the noun!</p>
+      <div class="example">Say: "der Hund" — not just "Hund"</div>
+    </div>
+    <div class="grammar-card">
+      <h3>📝 Exam Tips</h3>
+      <p>Female animal forms often add <em>-in</em>: der Löwe → die Löwin. Young animals often use <em>das</em>: das Küken (the chick), das Lamm (the lamb).</p>
+      <div class="example">der Wolf → die Wölfin (female wolf)</div>
+    </div>
+    <div class="grammar-card">
+      <h3>🧠 Memory Trick</h3>
+      <p>Use color-coding: Blue = der, Pink = die, Gold = das. Picture each animal wearing its color to memorize the article!</p>
+      <div class="example">der (🔵) Hund, die (🩷) Katze, das (🟡) Pferd</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ SECTION -->
+<section class="quiz-section" id="quizSection">
+  <div class="quiz-wrap">
+    <div class="quiz-title">📝 Quiz: What's the Article?</div>
+    <div class="quiz-subtitle">Look at the illustration and choose the correct German article. Test your knowledge!</div>
+    <div class="quiz-score">
+      <div class="score-pill">✅ Correct: <span id="qCorrect">0</span></div>
+      <div class="score-pill">❌ Wrong: <span id="qWrong">0</span></div>
+      <div class="score-pill">📊 Score: <span id="qScore">0%</span></div>
+    </div>
+    <div class="quiz-box">
+      <div class="quiz-img" id="quizImg"></div>
+      <div class="quiz-q" id="quizQ">Loading question…</div>
+      <div class="quiz-options" id="quizOpts"></div>
+      <div class="quiz-feedback" id="quizFeedback"></div>
+      <button class="quiz-next" id="quizNext" onclick="nextQuestion()">Next Question →</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  🇩🇪 Deutsche Tiere — German Animals Vocabulary &nbsp;|&nbsp; Click any card to hear pronunciation &nbsp;|&nbsp; Designed for German language learners
+  <br><span style="opacity:0.75">Animal photographs courtesy of Wikimedia Commons contributors, used under their respective free licenses.</span>
+</footer>
+
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+
+// ─── REAL PHOTOGRAPHY (Wikimedia Commons, freely licensed) ────────────────────
+// Each animal links to a real, freely-licensed photograph rather than a drawing.
+// Special:FilePath is Wikimedia's own stable redirect-by-filename service, so
+// entries only need the plain filename — no fragile hashed upload paths.
+function wmImg(filename, width) {
+  return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=${width || 700}`;
+}
+
+// ─── WORD DATA ─────────────────────────────────────────────────────────────────
+const WORDS = [
+  { article: "der", de: "Hund",          en: "Dog",             file: "Golden retriever.jpg" },
+  { article: "die", de: "Katze",         en: "Cat",             file: "Cat03.jpg" },
+  { article: "der", de: "Löwe",          en: "Lion",            file: "Lion waiting in Namibia.jpg" },
+  { article: "der", de: "Elefant",       en: "Elephant",        file: "African Bush Elephant.jpg" },
+  { article: "das", de: "Pferd",         en: "Horse",           file: "Horse-and-pony.jpg" },
+  { article: "die", de: "Kuh",           en: "Cow",             file: "Cow female black white.jpg" },
+  { article: "der", de: "Adler",         en: "Eagle",           file: "Bald Eagle Portrait.jpg" },
+  { article: "die", de: "Schlange",      en: "Snake",           file: "Python royal.jpg" },
+  { article: "der", de: "Fisch",         en: "Fish",            file: "Clownfish (Amphiprion ocellaris).jpg" },
+  { article: "der", de: "Vogel",         en: "Bird",            file: "House Sparrow Male (Passer Domesticus).jpg" },
+  { article: "das", de: "Schwein",       en: "Pig",             file: "Domestic pig (Sus scrofa domesticus) (27690399411).jpg" },
+  { article: "das", de: "Schaf",         en: "Sheep",           file: "Sheep.jpg" },
+  { article: "der", de: "Frosch",        en: "Frog",            file: "European Common Frog Rana temporaria.jpg" },
+  { article: "die", de: "Biene",         en: "Bee",             file: "Apis mellifera Western honey bee.jpg" },
+  { article: "der", de: "Delfin",        en: "Dolphin",         file: "Bottlenose Dolphin KSC04pd0178.jpg" },
+  { article: "der", de: "Schmetterling", en: "Butterfly",       file: "Monarch In May.jpg" },
+  { article: "die", de: "Giraffe",       en: "Giraffe",         file: "Giraffa camelopardalis reticulata.jpg" },
+  { article: "der", de: "Wolf",          en: "Wolf",            file: "Canis lupus laying.jpg" },
+  { article: "die", de: "Ente",          en: "Duck",            file: "Anas platyrhynchos male female quadrat.jpg" },
+  { article: "der", de: "Hase",          en: "Hare",            file: "European Hare.jpg" },
+  { article: "der", de: "Affe",          en: "Monkey",          file: "Rhesus Macaque (Macaca mulatta).jpg" },
+  { article: "das", de: "Krokodil",      en: "Crocodile",       file: "Nile crocodile head.jpg" },
+  { article: "der", de: "Pinguin",       en: "Penguin",         file: "Aptenodytes patagonicus.jpg" },
+  { article: "der", de: "Tiger",         en: "Tiger",           file: "Adult male Royal Bengal tiger.jpg" },
+  { article: "der", de: "Bär",           en: "Bear",            file: "Kamchatka Brown Bear near Dvuhyurtochnoe on 2015-07-23.jpg" },
+  { article: "das", de: "Kaninchen",     en: "Rabbit",          file: "European Rabbit (Oryctolagus cuniculus).jpg" },
+  { article: "der", de: "Hai",           en: "Shark",           file: "White shark.jpg" },
+  { article: "die", de: "Eule",          en: "Owl",             file: "Barn owl (Tyto alba).jpg" },
+  { article: "die", de: "Maus",          en: "Mouse",           file: "Mus musculus 2010.JPG" },
+  { article: "die", de: "Schildkröte",   en: "Tortoise/Turtle", file: "Testudo hermanni.jpg" },
+  { article: "der", de: "Fuchs",         en: "Fox",             file: "Vulpes vulpes sitting.jpg" },
+  { article: "das", de: "Eichhörnchen",  en: "Squirrel",        file: "Eurasian red squirrel (Sciurus vulgaris).JPG" },
+  { article: "die", de: "Spinne",        en: "Spider",          file: "Araneus diadematus.jpg" },
+  { article: "der", de: "Wal",           en: "Whale",           file: "Megaptera novaeangliae.jpg" },
+  { article: "der", de: "Papagei",       en: "Parrot",          file: "Scarlet Macaw (Ara macao).jpg" },
+  { article: "das", de: "Zebra",         en: "Zebra",           file: "Plains Zebra Equus quagga.jpg" },
+].map(w => ({ ...w, img: wmImg(w.file) }));
+
+// Fallback icon per article — shown only if a photo genuinely fails to load,
+// so the grid degrades gracefully and never shows a broken-image glyph.
+const FALLBACK_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16.5V8a2 2 0 0 1 2-2h2.5L10 4h4l1.5 2H18a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><circle cx="12" cy="11" r="3.2"/></svg>`;
+
+// ─── RENDER CARDS ──────────────────────────────────────────────────────────────
+let filtered = [...WORDS];
+
+function photoArtHTML(w) {
+  return `
+    <img class="art-photo" src="${w.img}" alt="Photo of ${w.en.toLowerCase()} (${w.article} ${w.de})"
+         loading="lazy" decoding="async"
+         onload="this.classList.add('is-loaded'); this.nextElementSibling.classList.add('is-hidden')"
+         onerror="this.style.display='none'; this.nextElementSibling.classList.add('is-hidden'); this.parentElement.querySelector('.art-fallback').classList.add('is-active')">
+    <div class="art-skeleton" aria-hidden="true"></div>
+    <div class="art-fallback">${FALLBACK_ICON}<span>${w.en}</span></div>
+  `;
+}
+
+function renderGrid(words) {
+  const grid = document.getElementById('vocabGrid');
+  grid.innerHTML = words.map((w, i) => `
+    <div class="vocab-card" data-article="${w.article}" data-de="${w.de}" data-en="${w.en}" data-idx="${WORDS.indexOf(w)}"
+         onclick="speakWord('${w.article} ${w.de}', this)">
+      <div class="card-art ${w.article}">
+        ${photoArtHTML(w)}
+      </div>
+      <div class="card-body">
+        <span class="article-badge ab-${w.article}">${w.article}</span>
+        <div class="word-de">${w.article} ${w.de}</div>
+        <div class="word-en">${w.en}</div>
+        <div class="card-actions">
+          <button class="action-btn speak-btn" onclick="event.stopPropagation();speakWord('${w.article} ${w.de}', this.closest('.vocab-card'))" title="Hear pronunciation">🔊 Hear</button>
+          <button class="action-btn copy-btn" onclick="event.stopPropagation();copyWord(this,'${w.article} ${w.de}')" title="Copy word">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+renderGrid(WORDS);
+
+// ─── SPEECH ──────────────────────────────────────────────────────────────────────
+function speakWord(text, card) {
+  if (!window.speechSynthesis) { showToast('Speech not supported'); return; }
+  speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'de-DE';
+  utter.rate = 0.85;
+  utter.pitch = 1;
+  const speakBtn = card ? card.querySelector('.speak-btn') : null;
+  if (speakBtn) speakBtn.classList.add('speaking');
+  utter.onend = () => { if (speakBtn) speakBtn.classList.remove('speaking'); };
+  speechSynthesis.speak(utter);
+}
+
+// ─── COPY ────────────────────────────────────────────────────────────────────────
+function copyWord(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    btn.textContent = '✓ Copied';
+    showToast('Copied: ' + text);
+    setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = '📋 Copy'; }, 1500);
+  });
+}
+
+// ─── FILTER & SEARCH ────────────────────────────────────────────────────────────
+function filterCards(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const q = document.querySelector('.search-input').value.toLowerCase();
+  filtered = WORDS.filter(w => (type === 'all' || w.article === type) &&
+    (w.de.toLowerCase().includes(q) || w.en.toLowerCase().includes(q) || w.article === q.slice(0,3)));
+  renderGrid(filtered);
+}
+
+function searchCards(q) {
+  const activeBtn = document.querySelector('.filter-btn.active');
+  const type = activeBtn ? (activeBtn.textContent.trim() === 'All' ? 'all' : activeBtn.textContent.trim()) : 'all';
+  filtered = WORDS.filter(w => (type === 'all' || w.article === type) &&
+    (w.de.toLowerCase().includes(q.toLowerCase()) || w.en.toLowerCase().includes(q.toLowerCase())));
+  renderGrid(filtered);
+}
+
+// ─── DARK MODE ───────────────────────────────────────────────────────────────────
+function toggleTheme() {
+  const body = document.body;
+  const btn = document.getElementById('themeBtn');
+  const isDark = body.getAttribute('data-theme') === 'dark';
+  body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  btn.textContent = isDark ? '🌙' : '☀️';
+  localStorage.setItem('german-animals-theme', isDark ? 'light' : 'dark');
+}
+(function() {
+  const saved = localStorage.getItem('german-animals-theme');
+  if (saved) {
+    document.body.setAttribute('data-theme', saved);
+    document.getElementById('themeBtn').textContent = saved === 'dark' ? '☀️' : '🌙';
+  }
+})();
+
+// ─── TOAST ───────────────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+// ─── QUIZ ────────────────────────────────────────────────────────────────────────
+let quizIdx = 0, qCorrect = 0, qWrong = 0, quizOrder = [], answered = false;
+
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function initQuiz() {
+  quizOrder = shuffleArray(WORDS.map((_, i) => i));
+  quizIdx = 0;
+  loadQuestion();
+}
+
+function loadQuestion() {
+  if (quizIdx >= quizOrder.length) { quizIdx = 0; quizOrder = shuffleArray(WORDS.map((_, i) => i)); }
+  answered = false;
+  const word = WORDS[quizOrder[quizIdx]];
+  document.getElementById('quizImg').innerHTML = photoArtHTML(word);
+  document.getElementById('quizQ').textContent = `Was ist der Artikel für "${word.de}"?`;
+  document.getElementById('quizFeedback').className = 'quiz-feedback';
+  document.getElementById('quizFeedback').textContent = '';
+  document.getElementById('quizNext').className = 'quiz-next';
+
+  const articles = ['der', 'die', 'das'];
+  const opts = shuffleArray(articles);
+  document.getElementById('quizOpts').innerHTML = opts.map(a =>
+    `<button class="quiz-opt" onclick="checkAnswer('${a}','${word.article}','${word.de}','${word.en}',this)">${a}</button>`
+  ).join('');
+}
+
+function checkAnswer(chosen, correct, de, en, btn) {
+  if (answered) return;
+  answered = true;
+  const allBtns = document.querySelectorAll('.quiz-opt');
+  allBtns.forEach(b => {
+    b.style.pointerEvents = 'none';
+    if (b.textContent === correct) b.classList.add('correct');
+  });
+  const fb = document.getElementById('quizFeedback');
+  if (chosen === correct) {
+    qCorrect++;
+    btn.classList.add('correct');
+    fb.textContent = `✅ Richtig! "${correct} ${de}" means "${en}"`;
+    fb.className = 'quiz-feedback correct show';
+    speakWord(correct + ' ' + de, null);
+  } else {
+    qWrong++;
+    btn.classList.add('wrong');
+    fb.textContent = `❌ Falsch! The correct article is "${correct} ${de}" (${en})`;
+    fb.className = 'quiz-feedback wrong show';
+  }
+  updateScore();
+  document.getElementById('quizNext').className = 'quiz-next show';
+}
+
+function nextQuestion() {
+  quizIdx++;
+  loadQuestion();
+}
+
+function updateScore() {
+  document.getElementById('qCorrect').textContent = qCorrect;
+  document.getElementById('qWrong').textContent = qWrong;
+  const total = qCorrect + qWrong;
+  document.getElementById('qScore').textContent = total ? Math.round((qCorrect / total) * 100) + '%' : '0%';
+}
+
+initQuiz();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="wortschatz-tiere" data-category="wortschatz" data-title="Deutsche Tiere — الحيوانات" data-root="../../" defer></script>
+</body>
+</html>

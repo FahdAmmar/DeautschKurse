@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الألمانية A2 — الدرس العاشر: التعليم والمدرسة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════
+   DESIGN: Illuminated Manuscript meets Digital Campus
+   
+   The concept: a medieval illuminated manuscript
+   reimagined for a German university. Think richly
+   colored parchment, gold leaf accents, deep jewel-
+   tone decorative borders — but with sharp modern
+   digital typography and clean data presentation.
+   
+   Palette: Deep parchment cream + prussian blue +
+   aged-gold + crimson + forest green.
+   
+   Fonts: Cinzel (Roman display) + Amiri (Arabic) +
+   Source Code Pro (monospace data)
+   
+   The UNFORGETTABLE element: ornate corner flourishes
+   on cards, a stained-glass progress indicator, and
+   a German school system diagram that feels like an
+   architectural blueprint.
+══════════════════════════════════════════════════ */
+:root {
+  --parchment:  #f7f0de;
+  --parchment2: #ede3c8;
+  --parchment3: #e2d4ad;
+  --parchment4: #d4c290;
+
+  --prussian:   #1a2e4a;
+  --prussian2:  #24436e;
+  --prussian3:  #305a94;
+
+  --gold:       #b8860b;
+  --gold2:      #d4a017;
+  --gold3:      #f0c040;
+  --gold-d:     rgba(184,134,11,0.1);
+  --gold-d2:    rgba(184,134,11,0.2);
+
+  --crimson:    #8b1a1a;
+  --crimson2:   #c02828;
+  --crimson-d:  rgba(139,26,26,0.08);
+
+  --forest:     #1a4a2a;
+  --forest2:    #2a6a3a;
+  --forest-d:   rgba(26,74,42,0.08);
+
+  --indigo:     #2a1a6a;
+  --indigo2:    #4030a0;
+  --indigo-d:   rgba(42,26,106,0.08);
+
+  --ink:        #1a1408;
+  --ink2:       #3a3020;
+  --ink3:       #6a5a40;
+
+  --card:       #fffdf5;
+  --border:     rgba(184,134,11,0.2);
+  --border2:    rgba(184,134,11,0.4);
+
+  --r:  12px;
+  --rs: 6px;
+  --sh: 0 4px 24px rgba(26,20,8,0.15);
+}
+
+[data-theme="dark"] {
+  --parchment:  #12100a;
+  --parchment2: #1c1810;
+  --parchment3: #26201a;
+  --parchment4: #322a1e;
+  --prussian:   #80aad4;
+  --prussian2:  #6090c0;
+  --prussian3:  #4878a8;
+  --gold:       #d4a820;
+  --gold2:      #e8c040;
+  --gold3:      #f8d860;
+  --gold-d:     rgba(212,168,32,0.1);
+  --gold-d2:    rgba(212,168,32,0.2);
+  --crimson:    #e05050;
+  --crimson2:   #f07070;
+  --crimson-d:  rgba(224,80,80,0.1);
+  --forest:     #60c080;
+  --forest2:    #80d8a0;
+  --forest-d:   rgba(96,192,128,0.1);
+  --indigo:     #8080e0;
+  --indigo2:    #a0a0f0;
+  --indigo-d:   rgba(128,128,224,0.1);
+  --ink:        #f0e8d0;
+  --ink2:       #c8b888;
+  --ink3:       #806040;
+  --card:       #1a1610;
+  --border:     rgba(212,168,32,0.15);
+  --border2:    rgba(212,168,32,0.32);
+  --sh: 0 4px 32px rgba(0,0,0,0.6);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: 'Amiri', 'Georgia', serif;
+  background: var(--parchment);
+  color: var(--ink);
+  direction: rtl;
+  overflow-x: hidden;
+  transition: background .4s, color .4s;
+}
+
+/* Parchment texture via SVG filter illusion */
+body::before {
+  content:'';
+  position: fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: .6;
+}
+
+/* Decorative border pattern around entire viewport */
+body::after {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  border: 12px solid transparent;
+  background:
+    linear-gradient(var(--parchment), var(--parchment)) padding-box,
+    repeating-linear-gradient(
+      45deg,
+      var(--gold-d2) 0px, var(--gold-d2) 4px,
+      transparent 4px, transparent 12px
+    ) border-box;
+}
+
+/* ── Scroll progress — stained glass style ── */
+#spb {
+  position:fixed; top:0; left:0; right:0; height:5px;
+  background: linear-gradient(90deg,
+    var(--crimson2), var(--gold2), var(--forest2), var(--indigo2), var(--gold2), var(--crimson2));
+  transform-origin:right; transform:scaleX(0);
+  z-index:1001;
+}
+
+/* ══ NAV ══ */
+nav {
+  position:sticky; top:0; z-index:100;
+  background: var(--prussian);
+  border-bottom: 3px solid var(--gold2);
+  padding: 0 2rem; height:64px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+
+.nav-brand {
+  display:flex; align-items:center; gap:.8rem;
+  font-family:'Cinzel',serif; font-weight:700;
+  font-size:.95rem; color: var(--gold3);
+  letter-spacing:.05em;
+}
+.nav-emblem {
+  width:36px; height:36px;
+  background:var(--gold-d2); border:2px solid var(--gold2);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem; color:var(--gold3);
+}
+.nav-chip {
+  font-family:'Source Code Pro',monospace;
+  background:var(--gold-d2); border:1px solid var(--gold2);
+  color:var(--gold3); font-size:.65rem; font-weight:600;
+  padding:3px 8px; border-radius:3px; letter-spacing:.08em;
+}
+.nav-links { display:flex; gap:1.5rem; list-style:none; }
+.nav-links a {
+  font-size:.8rem; color:rgba(240,192,64,.7);
+  text-decoration:none; font-weight:600;
+  font-family:'Amiri',serif;
+  transition:color .2s; letter-spacing:.02em;
+}
+.nav-links a:hover { color:var(--gold3); }
+.tbtn {
+  width:36px; height:36px; border-radius:50%;
+  border:2px solid var(--gold2); background:transparent;
+  color:var(--gold3); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; font-size:.95rem;
+  transition:all .2s;
+}
+.tbtn:hover { background:var(--gold-d2); }
+
+/* ══ HERO ══ */
+.hero {
+  position:relative; z-index:1;
+  padding: 0;
+  background: var(--prussian);
+  overflow:hidden;
+}
+
+/* Stained glass header pattern */
+.hero-glass {
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(ellipse 40% 60% at 20% 50%, rgba(184,134,11,0.15), transparent),
+    radial-gradient(ellipse 30% 80% at 80% 30%, rgba(139,26,26,0.1), transparent),
+    radial-gradient(ellipse 50% 40% at 50% 80%, rgba(26,74,42,0.12), transparent);
+}
+
+/* Ornamental arch SVG */
+.hero-arch {
+  position:absolute; bottom:0; left:50%;
+  transform:translateX(-50%);
+  width:200px; height:60px; z-index:0;
+  opacity:.15;
+}
+
+.hero-content {
+  position:relative; z-index:1;
+  padding: 5rem 3rem 4rem;
+  max-width:900px; margin:0 auto;
+  text-align:center;
+}
+
+.hero-ornament {
+  font-size:3.5rem; display:block;
+  margin-bottom:1.2rem;
+  filter:drop-shadow(0 0 20px rgba(240,192,64,0.4));
+  animation: glow 3s ease-in-out infinite;
+}
+@keyframes glow {
+  0%,100%{filter:drop-shadow(0 0 15px rgba(240,192,64,0.3));}
+  50%{filter:drop-shadow(0 0 30px rgba(240,192,64,0.6));}
+}
+
+.hero-kicker {
+  font-family:'Source Code Pro',monospace;
+  font-size:.72rem; letter-spacing:.14em;
+  color:var(--gold2); opacity:.8;
+  display:block; margin-bottom:1rem;
+  text-transform:uppercase;
+  animation: fadeUp .6s ease both;
+}
+
+.hero h1 {
+  font-family:'Cinzel',serif;
+  font-size: clamp(2rem, 5.5vw, 3.8rem);
+  font-weight:900; line-height:1.15;
+  color:var(--gold3);
+  margin-bottom:1rem;
+  animation: fadeUp .7s ease .1s both;
+  text-shadow: 0 2px 20px rgba(240,192,64,0.2);
+}
+.hero h1 em {
+  font-style:normal; color:#fff;
+  border-bottom:2px solid var(--gold2);
+  padding-bottom:2px;
+}
+
+.hero-deck {
+  color:rgba(240,224,180,.75);
+  font-size:1.05rem; line-height:1.9;
+  max-width:650px; margin:0 auto 2.5rem;
+  font-family:'Amiri',serif;
+  animation: fadeUp .7s ease .2s both;
+}
+
+.hero-pills {
+  display:flex; justify-content:center; gap:.6rem; flex-wrap:wrap;
+  animation: fadeUp .7s ease .3s both;
+}
+.pill {
+  display:flex; align-items:center; gap:.4rem;
+  padding:6px 14px; border-radius:3px;
+  font-size:.8rem; font-weight:600; border:1px solid;
+  font-family:'Amiri',serif;
+}
+.pg { background:var(--gold-d);   color:var(--gold3);   border-color:rgba(240,192,64,.4); }
+.pr { background:var(--crimson-d);color:var(--crimson2);border-color:rgba(192,40,40,.4); }
+.pf { background:var(--forest-d); color:var(--forest2); border-color:rgba(42,106,58,.4); }
+.pi { background:var(--indigo-d); color:var(--indigo2); border-color:rgba(64,48,160,.4); }
+.pp { background:var(--parchment3);color:var(--ink2);   border-color:var(--border2); }
+[data-theme="dark"] .pp { background:var(--parchment4);color:var(--ink2); }
+
+/* ══ MAIN ══ */
+main {
+  position:relative; z-index:1;
+  max-width:980px; margin:0 auto;
+  padding:2rem 2rem 5rem;
+  display:flex; flex-direction:column; gap:3.5rem;
+}
+
+/* Section header — like a chapter title with illuminated cap */
+.sh {
+  display:flex; align-items:center; gap:1.2rem;
+  margin-bottom:1.5rem;
+  padding-bottom:.8rem;
+  border-bottom: 2px solid var(--gold2);
+  position:relative;
+}
+.sh::after {
+  content:'';
+  position:absolute; bottom:-2px; right:0;
+  width:60px; height:2px;
+  background:var(--crimson2);
+}
+.sh-icon {
+  width:50px; height:50px;
+  background:var(--prussian);
+  border:2px solid var(--gold2);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.3rem; flex-shrink:0;
+  box-shadow: 0 0 16px rgba(184,134,11,0.2);
+}
+.sh-text h2 {
+  font-family:'Cinzel',serif;
+  font-size:1.35rem; font-weight:700;
+  color:var(--prussian);
+  letter-spacing:.03em;
+}
+[data-theme="dark"] .sh-text h2 { color:var(--gold2); }
+.sh-text p { font-size:.84rem; color:var(--ink3); margin-top:2px; }
+
+/* Card — illuminated panel style */
+.card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:1.75rem;
+  box-shadow:var(--sh);
+  position:relative;
+  animation: fadeUp .6s ease both;
+  /* Corner flourishes via pseudo-elements */
+}
+.card::before, .card::after {
+  content:'✦';
+  position:absolute;
+  font-size:1rem; color:var(--gold2); opacity:.5;
+  font-family:serif;
+}
+.card::before { top:8px; right:10px; }
+.card::after  { bottom:8px; left:10px; }
+.card:hover { border-color:var(--border2); box-shadow:0 8px 40px rgba(26,20,8,0.2); }
+
+/* Quiz card — no animation */
+.quiz-card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:1.75rem;
+  box-shadow:var(--sh);
+  position:relative;
+}
+.quiz-card::before { content:'✦'; position:absolute; top:8px; right:10px; font-size:1rem; color:var(--gold2); opacity:.5; }
+.quiz-card::after  { content:'✦'; position:absolute; bottom:8px; left:10px; font-size:1rem; color:var(--gold2); opacity:.5; }
+
+/* Tip */
+.tip {
+  display:flex; gap:1rem; align-items:flex-start;
+  padding:1rem 1.3rem; border-radius:var(--rs); margin:1rem 0;
+  border-right:4px solid;
+}
+.tip.gold   { background:var(--gold-d);   border-color:var(--gold2);   }
+.tip.crim   { background:var(--crimson-d);border-color:var(--crimson2);}
+.tip.fore   { background:var(--forest-d); border-color:var(--forest2); }
+.tip.ind    { background:var(--indigo-d); border-color:var(--indigo2); }
+.tpic { font-size:1.2rem; flex-shrink:0; margin-top:3px; }
+.tip h4 {
+  font-family:'Cinzel',serif;
+  font-size:.88rem; font-weight:700; margin-bottom:4px; letter-spacing:.02em;
+}
+.tip.gold h4  { color:var(--gold); }   .tip.crim h4 { color:var(--crimson2); }
+.tip.fore h4  { color:var(--forest2); } .tip.ind h4  { color:var(--indigo2); }
+.tip p { font-size:.85rem; color:var(--ink2); line-height:1.8; }
+
+/* Inline code */
+.de {
+  font-family:'Source Code Pro',monospace;
+  background:var(--parchment2); border-bottom:2px solid var(--gold2);
+  padding:2px 7px; font-size:.87em; color:var(--prussian2);
+  direction:ltr; display:inline-block;
+}
+[data-theme="dark"] .de { background:var(--parchment3); color:var(--gold2); }
+
+/* Table */
+.tw { overflow-x:auto; margin-top:.75rem; }
+table { width:100%; border-collapse:collapse; font-size:.9rem; }
+th {
+  background:var(--prussian); color:var(--gold3);
+  padding:9px 14px; text-align:right; font-weight:700;
+  font-size:.78rem; font-family:'Cinzel',serif;
+  letter-spacing:.05em;
+}
+td { padding:9px 14px; border-bottom:1px solid var(--border); }
+tr:last-child td { border-bottom:none; }
+tr:hover td { background:var(--parchment2); }
+[data-theme="dark"] tr:hover td { background:var(--parchment3); }
+.tde { font-family:'Source Code Pro',monospace; color:var(--prussian2); font-weight:600; direction:ltr; text-align:left; }
+[data-theme="dark"] .tde { color:var(--gold2); }
+.tex { color:var(--ink2); font-size:.82rem; direction:ltr; text-align:left; }
+
+/* ══ SCHOOL SYSTEM DIAGRAM ══ */
+.schulsystem {
+  position:relative;
+  display:flex; flex-direction:column; gap:0;
+  background:var(--parchment2);
+  border:2px solid var(--gold2);
+  padding:1.5rem;
+  font-family:'Amiri',serif;
+}
+[data-theme="dark"] .schulsystem { background:var(--parchment3); }
+
+.sch-age-ruler {
+  display:flex; gap:0;
+  margin-bottom:1rem;
+  border-bottom:2px solid var(--gold2);
+  padding-bottom:.5rem;
+}
+.sch-age {
+  flex:1; text-align:center;
+  font-family:'Source Code Pro',monospace;
+  font-size:.72rem; color:var(--ink3);
+  font-weight:600;
+}
+
+.sch-phase { margin-bottom:.8rem; }
+.sch-phase-label {
+  font-family:'Cinzel',serif;
+  font-size:.75rem; letter-spacing:.06em;
+  color:var(--ink3); margin-bottom:.3rem;
+}
+.sch-bars { display:flex; gap:.2rem; align-items:center; }
+.sch-bar {
+  height:36px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.78rem; font-weight:700;
+  cursor:pointer; transition:opacity .2s; position:relative;
+  border-radius:3px; color:white;
+  font-family:'Amiri',serif;
+}
+.sch-bar:hover { opacity:.85; transform:scaleY(1.05); }
+.sch-bar-label { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); white-space:nowrap; text-shadow:0 1px 3px rgba(0,0,0,.4); }
+
+.sch-info {
+  margin-top:1rem; padding:1rem;
+  background:var(--card);
+  border:1px solid var(--border2);
+  border-radius:var(--rs);
+  min-height:60px;
+  display:none;
+  animation:fadeUp .3s ease;
+}
+.sch-info.show { display:block; }
+.si-title { font-family:'Cinzel',serif; font-size:.9rem; font-weight:700; color:var(--prussian2); margin-bottom:.3rem; }
+[data-theme="dark"] .si-title { color:var(--gold2); }
+.si-desc { font-size:.83rem; color:var(--ink2); line-height:1.7; }
+.si-ex { font-family:'Source Code Pro',monospace; font-size:.78rem; color:var(--forest2); direction:ltr; margin-top:.4rem; display:block; }
+
+/* ══ VOCAB GRID ══ */
+.vocab-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
+  gap:.6rem;
+}
+.vocab-item {
+  background:var(--parchment2);
+  border:1px solid var(--border);
+  border-radius:var(--rs);
+  padding:.9rem 1rem;
+  cursor:pointer;
+  transition:all .22s;
+  position:relative;
+}
+[data-theme="dark"] .vocab-item { background:var(--parchment3); }
+.vocab-item::before {
+  content:'';
+  position:absolute; top:0; right:0; bottom:0;
+  width:3px; background:var(--gold2); opacity:0;
+  border-radius:0 var(--rs) var(--rs) 0;
+  transition:opacity .2s;
+}
+.vocab-item:hover { border-color:var(--gold2); transform:translateY(-2px); box-shadow:var(--sh); }
+.vocab-item:hover::before { opacity:1; }
+.vi-de { font-family:'Source Code Pro',monospace; font-size:.9rem; color:var(--prussian2); font-weight:600; display:block; direction:ltr; margin-bottom:2px; }
+[data-theme="dark"] .vi-de { color:var(--gold2); }
+.vi-ar { font-size:.88rem; color:var(--ink2); display:block; margin-bottom:3px; }
+.vi-ex { font-size:.73rem; color:var(--ink3); direction:ltr; font-style:italic; }
+
+/* ══ GRADES SYSTEM ══ */
+.grades-grid {
+  display:grid; grid-template-columns:repeat(6,1fr); gap:.5rem;
+}
+.grade-card {
+  text-align:center; padding:1rem .5rem;
+  border:2px solid; border-radius:var(--rs);
+  cursor:pointer; transition:all .22s;
+}
+.grade-card:hover { transform:translateY(-3px); box-shadow:var(--sh); }
+.gc-num {
+  font-family:'Cinzel',serif;
+  font-size:2.2rem; font-weight:900; line-height:1;
+  display:block; margin-bottom:.3rem;
+}
+.gc-name { font-size:.78rem; font-weight:700; display:block; margin-bottom:2px; }
+.gc-ar   { font-size:.72rem; color:var(--ink3); display:block; }
+.g1 { border-color:var(--forest2); }  .g1 .gc-num { color:var(--forest2); }
+.g2 { border-color:var(--forest2); opacity:.85; } .g2 .gc-num { color:var(--forest2); }
+.g3 { border-color:var(--gold2); }    .g3 .gc-num { color:var(--gold2); }
+.g4 { border-color:var(--gold);  }    .g4 .gc-num { color:var(--gold); }
+.g5 { border-color:var(--crimson2); } .g5 .gc-num { color:var(--crimson2); }
+.g6 { border-color:var(--crimson); }  .g6 .gc-num { color:var(--crimson); }
+
+/* ══ UNIVERSITY FINDER GAME ══ */
+.uni-game {
+  background:var(--parchment2);
+  border:2px solid var(--gold2);
+  border-radius:var(--rs);
+  overflow:hidden;
+}
+[data-theme="dark"] .uni-game { background:var(--parchment3); }
+.ug-header {
+  background:var(--prussian);
+  padding:1rem 1.5rem;
+  font-family:'Cinzel',serif;
+  color:var(--gold3); font-size:1rem;
+  letter-spacing:.04em;
+  display:flex; align-items:center; gap:1rem;
+}
+.ug-body { padding:1.5rem; }
+.ug-scenario {
+  background:var(--card);
+  border:1px solid var(--border2);
+  border-radius:var(--rs);
+  padding:1rem; margin-bottom:1.2rem;
+  font-size:.9rem; line-height:1.8;
+}
+.ug-de { font-family:'Source Code Pro',monospace; color:var(--prussian2); display:block; margin-bottom:3px; direction:ltr; font-size:.85rem; }
+[data-theme="dark"] .ug-de { color:var(--gold2); }
+.ug-ar { color:var(--ink2); font-size:.83rem; display:block; }
+.ug-opts { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
+.ug-opt {
+  padding:9px 13px; border:2px solid var(--border2);
+  background:var(--parchment);
+  color:var(--ink); cursor:pointer;
+  font-family:'Amiri',serif; font-size:.85rem;
+  transition:all .18s; width:100%; display:block; outline:none; appearance:none;
+}
+[data-theme="dark"] .ug-opt { background:var(--parchment2); }
+.ug-opt:hover { border-color:var(--gold2); background:var(--gold-d); color:var(--gold); }
+.ug-opt.ok  { border-color:var(--forest2)!important; background:var(--forest-d)!important; color:var(--forest2)!important; }
+.ug-opt.bad { border-color:var(--crimson2)!important; background:var(--crimson-d)!important; color:var(--crimson2)!important; }
+.ug-fb { font-size:.82rem; padding:8px 12px; display:none; border-right:3px solid; margin-top:.6rem; }
+.ug-fb.show { display:block; }
+.ug-fb.ok  { border-color:var(--forest2); background:var(--forest-d); color:var(--forest2); }
+.ug-fb.err { border-color:var(--crimson2); background:var(--crimson-d); color:var(--crimson2); }
+.ug-next {
+  margin-top:.8rem; padding:8px 22px;
+  background:var(--prussian); color:var(--gold3);
+  border:2px solid var(--gold2);
+  font-family:'Cinzel',serif; font-size:.9rem;
+  letter-spacing:.04em; cursor:pointer; transition:background .2s;
+  display:none;
+}
+.ug-next:hover { background:var(--prussian2); }
+
+/* ══ DIALOGUE ══ */
+.conv { display:flex; flex-direction:column; gap:1.1rem; }
+.msg { display:flex; gap:1rem; align-items:flex-start; }
+.msg.l { flex-direction:row-reverse; }
+.av {
+  width:44px; height:44px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; flex-shrink:0;
+  border:2px solid var(--gold2);
+  background:var(--prussian);
+}
+.msg.l .av { background:var(--parchment2); }
+.bw { flex:1; max-width:80%; }
+.msg.r .bw { text-align:right; }
+.bub {
+  display:inline-block; padding:11px 16px;
+  border-radius:var(--r); font-size:.9rem; line-height:1.78; max-width:100%;
+}
+.msg.r .bub { background:var(--prussian); color:var(--gold3); border:1px solid var(--gold-d2); border-radius:var(--r) 2px var(--r) var(--r); }
+.msg.l .bub { background:var(--parchment2); border:1px solid var(--border); border-radius:2px var(--r) var(--r) var(--r); }
+[data-theme="dark"] .msg.l .bub { background:var(--parchment3); }
+.dl { font-family:'Source Code Pro',monospace; color:var(--gold2); font-weight:600; display:block; font-size:.85rem; margin-bottom:3px; direction:ltr; }
+.msg.l .dl { color:var(--prussian2); }
+[data-theme="dark"] .msg.l .dl { color:var(--gold2); }
+.who { font-family:'Source Code Pro',monospace; font-size:.68rem; color:var(--ink3); margin-top:4px; display:block; }
+
+/* ══ QUIZ ══ */
+.qblock { background:var(--parchment2); border:1px solid var(--border); border-radius:var(--rs); padding:1.1rem 1.3rem; margin-bottom:.8rem; }
+[data-theme="dark"] .qblock { background:var(--parchment3); }
+.qlabel { font-family:'Source Code Pro',monospace; font-size:.65rem; color:var(--gold); font-weight:600; letter-spacing:.1em; display:block; margin-bottom:.4rem; }
+.qtext { font-weight:700; font-size:.93rem; margin-bottom:.8rem; line-height:1.6; }
+.qde { color:var(--prussian2); font-family:'Source Code Pro',monospace; }
+[data-theme="dark"] .qde { color:var(--gold2); }
+.opts { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
+.opt {
+  padding:9px 12px; border:2px solid var(--border2);
+  background:var(--card); color:var(--ink);
+  cursor:pointer; font-family:'Amiri',serif; font-size:.88rem; font-weight:600;
+  transition:all .18s; text-align:center;
+  width:100%; display:block; outline:none; appearance:none;
+  border-radius:var(--rs);
+}
+[data-theme="dark"] .opt { background:var(--parchment2); }
+.opt:hover { border-color:var(--gold2); background:var(--gold-d); color:var(--gold); }
+.opt:disabled { cursor:not-allowed; pointer-events:none; opacity:.6; }
+.opt.correct { border-color:var(--forest2)!important; background:var(--forest-d)!important; color:var(--forest2)!important; font-weight:700; }
+.opt.wrong   { border-color:var(--crimson2)!important; background:var(--crimson-d)!important; color:var(--crimson2)!important; }
+.qfb { font-size:.81rem; padding:7px 10px; margin-top:7px; display:none; border-right:3px solid; }
+.qfb.show { display:block; }
+.qfb.ok  { border-color:var(--forest2); background:var(--forest-d); color:var(--forest2); }
+.qfb.err { border-color:var(--crimson2); background:var(--crimson-d); color:var(--crimson2); }
+
+/* Result */
+.result-wrap {
+  background: radial-gradient(ellipse at center, var(--gold-d2), var(--parchment2));
+  border:3px double var(--gold2);
+  border-radius:var(--r);
+  padding:2.5rem; text-align:center; display:none; margin-top:1.5rem;
+}
+[data-theme="dark"] .result-wrap { background:var(--parchment3); }
+.r-score {
+  font-family:'Cinzel',serif;
+  font-size:5.5rem; font-weight:900;
+  color:var(--gold); line-height:1; margin-bottom:.4rem;
+}
+.r-msg { color:var(--ink2); margin-bottom:1.5rem; font-size:.95rem; }
+.r-btn {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--prussian); color:var(--gold3);
+  border:2px solid var(--gold2); padding:11px 30px;
+  font-family:'Cinzel',serif; font-size:.95rem;
+  letter-spacing:.04em; cursor:pointer; transition:all .25s;
+  border-radius:var(--rs);
+}
+.r-btn:hover { background:var(--prussian2); }
+
+/* Homework */
+.hw-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(185px,1fr)); gap:.75rem; margin-bottom:1.2rem; }
+.hw-item {
+  background:var(--parchment2); border:1px solid var(--border);
+  border-radius:var(--rs); padding:.9rem;
+  border-right:3px solid var(--gold2);
+}
+[data-theme="dark"] .hw-item { background:var(--parchment3); }
+.hw-item strong { display:block; margin-bottom:3px; color:var(--prussian2); font-family:'Cinzel',serif; font-size:.88rem; }
+[data-theme="dark"] .hw-item strong { color:var(--gold2); }
+.hw-item span { color:var(--ink2); font-size:.78rem; }
+
+footer {
+  position:relative; z-index:1; text-align:center;
+  padding:2.5rem 2rem; color:var(--ink3); font-size:.82rem;
+  border-top:2px solid var(--gold2);
+  font-family:'Cinzel',serif; letter-spacing:.04em;
+}
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
+.a1{animation-delay:.05s;} .a2{animation-delay:.12s;}
+.a3{animation-delay:.2s;}  .a4{animation-delay:.28s;}
+
+@media(max-width:768px){
+  nav{padding:0 1rem;} .nav-links{display:none;}
+  main{padding:1rem 1rem 3rem;}
+  .hero-content{padding:3rem 1.5rem 2.5rem;}
+  .grades-grid{grid-template-columns:repeat(3,1fr);}
+  .opts{grid-template-columns:1fr;}
+  .ug-opts{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div id="spb"></div>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-emblem">🎓</div>
+    <span>الألمانية للعرب</span>
+    <span class="nav-chip">LEK.10 / A2</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#system">النظام</a></li>
+    <li><a href="#vocab">المفردات</a></li>
+    <li><a href="#grades">الدرجات</a></li>
+    <li><a href="#uni">الجامعة</a></li>
+    <li><a href="#quiz">الاختبار</a></li>
+  </ul>
+  <button class="tbtn" onclick="toggleTheme()">🌙</button>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-glass"></div>
+  <div class="hero-content">
+    <span class="hero-ornament">🎓</span>
+    <span class="hero-kicker">✦ LEKTION X — DAS BILDUNGSSYSTEM ✦</span>
+    <h1>التعليم الألماني —<br><em>من روضة الأطفال حتى الدكتوراه</em></h1>
+    <p class="hero-deck">ستتعلم اليوم النظام التعليمي الألماني الفريد من نوعه، مفردات المدرسة والجامعة، نظام الدرجات، وكيف تتحدث عن مسيرتك الأكاديمية بثقة وفصاحة.</p>
+    <div class="hero-pills">
+      <div class="pill pg">🏫 نظام التعليم</div>
+      <div class="pill pr">📚 مفردات المدرسة</div>
+      <div class="pill pf">🎓 الجامعة</div>
+      <div class="pill pi">📊 نظام الدرجات</div>
+      <div class="pill pp">✍️ حوار الجامعة</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ══════ SECTION 1: GERMAN SCHOOL SYSTEM ══════ -->
+<section id="system">
+  <div class="sh">
+    <div class="sh-icon">🏛️</div>
+    <div class="sh-text">
+      <h2>النظام التعليمي الألماني</h2>
+      <p>اضغط على أي مرحلة لمعرفة تفاصيلها — النظام الألماني فريد ومعقد!</p>
+    </div>
+  </div>
+
+  <div class="card a1">
+    <div class="tip gold" style="margin-bottom:1.2rem;">
+      <div class="tpic">⚠️</div>
+      <div>
+        <h4>لماذا النظام الألماني مختلف؟</h4>
+        <p>في ألمانيا، بعد 4 سنوات من الابتدائية، يُوجَّه الطلاب إلى مسارات مختلفة حسب أدائهم. هذا يعني أن المسار الدراسي يُحدَّد مبكراً جداً! وتختلف التسميات أحياناً بين الولايات الألمانية الست عشرة.</p>
+      </div>
+    </div>
+
+    <div class="schulsystem" id="schulsystem">
+      <!-- Age ruler -->
+      <div class="sch-age-ruler">
+        <div style="width:80px;flex-shrink:0;"></div>
+        <div class="sch-age">6</div>
+        <div class="sch-age">7</div>
+        <div class="sch-age">8</div>
+        <div class="sch-age">9</div>
+        <div class="sch-age">10</div>
+        <div class="sch-age">11</div>
+        <div class="sch-age">12</div>
+        <div class="sch-age">13</div>
+        <div class="sch-age">14</div>
+        <div class="sch-age">15</div>
+        <div class="sch-age">16</div>
+        <div class="sch-age">17</div>
+        <div class="sch-age">18</div>
+        <div class="sch-age">19</div>
+      </div>
+
+      <!-- Phases -->
+      <!-- Kindergarten (before school) -->
+      <div class="sch-phase">
+        <div class="sch-phase-label">قبل المدرسة</div>
+        <div class="sch-bars">
+          <div style="width:80px;flex-shrink:0;font-size:.72rem;color:var(--ink3);font-family:'Amiri',serif;">3–6 سنوات</div>
+          <div class="sch-bar" style="flex:3;background:#6a9ac0;" onclick="showSchInfo('kiga')">
+            <span class="sch-bar-label">Kindergarten 🌈</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grundschule -->
+      <div class="sch-phase">
+        <div class="sch-phase-label">المرحلة الابتدائية</div>
+        <div class="sch-bars">
+          <div style="width:80px;flex-shrink:0;font-size:.72rem;color:var(--ink3);font-family:'Amiri',serif;">الصف 1–4</div>
+          <div class="sch-bar" style="flex:4;background:#4a7a3a;" onclick="showSchInfo('grund')">
+            <span class="sch-bar-label">Grundschule 📚</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary split -->
+      <div class="sch-phase">
+        <div class="sch-phase-label">المرحلة الثانوية (ثلاثة مسارات)</div>
+        <div class="sch-bars" style="flex-direction:column;gap:.4rem;">
+          <div style="display:flex;gap:.2rem;align-items:center;">
+            <div style="width:80px;flex-shrink:0;font-size:.7rem;color:var(--ink3);">مسار أكاديمي</div>
+            <div class="sch-bar" style="flex:9;background:#1a3a7a;" onclick="showSchInfo('gym')">
+              <span class="sch-bar-label">Gymnasium 🎓 (الصف 5–13)</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:.2rem;align-items:center;">
+            <div style="width:80px;flex-shrink:0;font-size:.7rem;color:var(--ink3);">مسار متوسط</div>
+            <div class="sch-bar" style="flex:7;background:#7a3a8a;" onclick="showSchInfo('real')">
+              <span class="sch-bar-label">Realschule (الصف 5–10)</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:.2rem;align-items:center;">
+            <div style="width:80px;flex-shrink:0;font-size:.7rem;color:var(--ink3);">مسار مهني</div>
+            <div class="sch-bar" style="flex:5;background:#7a5a1a;" onclick="showSchInfo('haupt')">
+              <span class="sch-bar-label">Hauptschule (الصف 5–9)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post secondary -->
+      <div class="sch-phase">
+        <div class="sch-phase-label">ما بعد الثانوية</div>
+        <div class="sch-bars" style="flex-direction:column;gap:.4rem;">
+          <div style="display:flex;gap:.2rem;align-items:center;">
+            <div style="width:80px;flex-shrink:0;font-size:.7rem;color:var(--ink3);">جامعة</div>
+            <div class="sch-bar" style="flex:6;background:#1a5a3a;" onclick="showSchInfo('uni')">
+              <span class="sch-bar-label">Universität / FH</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:.2rem;align-items:center;">
+            <div style="width:80px;flex-shrink:0;font-size:.7rem;color:var(--ink3);">تدريب مهني</div>
+            <div class="sch-bar" style="flex:4;background:#5a3a1a;" onclick="showSchInfo('ausb')">
+              <span class="sch-bar-label">Ausbildung / Lehre</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info panel -->
+      <div class="sch-info" id="sch-info"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 2: SCHOOL VOCABULARY ══════ -->
+<section id="vocab">
+  <div class="sh">
+    <div class="sh-icon">📚</div>
+    <div class="sh-text">
+      <h2>مفردات المدرسة — Schulvokabular</h2>
+      <p>اضغط على أي كلمة لسماع نطقها</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+      <div>
+        <h3 style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.03em;border-bottom:2px solid var(--gold2);padding-bottom:.3rem;margin-bottom:.8rem;color:var(--prussian2);">🏫 المكان والأشخاص</h3>
+        <div class="vocab-grid" style="grid-template-columns:1fr;">
+          <div class="vocab-item" onclick="speak('die Schule')"><span class="vi-de">die Schule</span><span class="vi-ar">المدرسة</span><span class="vi-ex">Ich gehe in die Schule.</span></div>
+          <div class="vocab-item" onclick="speak('die Klasse')"><span class="vi-de">die Klasse</span><span class="vi-ar">الفصل / الصف</span><span class="vi-ex">Ich bin in der 8. Klasse.</span></div>
+          <div class="vocab-item" onclick="speak('der Lehrer')"><span class="vi-de">der Lehrer / -in</span><span class="vi-ar">المعلم / المعلمة</span><span class="vi-ex">Mein Lehrer ist streng.</span></div>
+          <div class="vocab-item" onclick="speak('der Schüler')"><span class="vi-de">der Schüler / -in</span><span class="vi-ar">التلميذ / التلميذة</span><span class="vi-ex">Die Schüler lernen fleißig.</span></div>
+          <div class="vocab-item" onclick="speak('der Schulhof')"><span class="vi-de">der Schulhof</span><span class="vi-ar">فناء المدرسة</span><span class="vi-ex">In der Pause spielen wir auf dem Schulhof.</span></div>
+          <div class="vocab-item" onclick="speak('die Schulbibliothek')"><span class="vi-de">die Bibliothek</span><span class="vi-ar">المكتبة</span><span class="vi-ex">Ich lese Bücher in der Bibliothek.</span></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.03em;border-bottom:2px solid var(--gold2);padding-bottom:.3rem;margin-bottom:.8rem;color:var(--prussian2);">📖 الدراسة والامتحانات</h3>
+        <div class="vocab-grid" style="grid-template-columns:1fr;">
+          <div class="vocab-item" onclick="speak('das Fach')"><span class="vi-de">das Fach / die Fächer</span><span class="vi-ar">المادة الدراسية / المواد</span><span class="vi-ex">Mein Lieblingsfach ist Mathe.</span></div>
+          <div class="vocab-item" onclick="speak('die Hausaufgabe')"><span class="vi-de">die Hausaufgaben</span><span class="vi-ar">الواجب المنزلي</span><span class="vi-ex">Ich mache meine Hausaufgaben.</span></div>
+          <div class="vocab-item" onclick="speak('die Prüfung')"><span class="vi-de">die Prüfung / die Klausur</span><span class="vi-ar">الامتحان</span><span class="vi-ex">Ich lerne für die Prüfung.</span></div>
+          <div class="vocab-item" onclick="speak('das Zeugnis')"><span class="vi-de">das Zeugnis</span><span class="vi-ar">بطاقة التقارير / شهادة الدرجات</span><span class="vi-ex">Mein Zeugnis ist gut.</span></div>
+          <div class="vocab-item" onclick="speak('das Abitur')"><span class="vi-de">das Abitur / Abi</span><span class="vi-ar">البكالوريا الألمانية</span><span class="vi-ex">Ich habe Abitur gemacht.</span></div>
+          <div class="vocab-item" onclick="speak('die Pause')"><span class="vi-de">die Pause</span><span class="vi-ar">استراحة / فسحة</span><span class="vi-ex">In der Pause esse ich mein Brot.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Cinzel',serif;font-size:1rem;margin:1.5rem 0 .8rem;border-bottom:2px solid var(--gold2);padding-bottom:.3rem;color:var(--prussian2);">📐 المواد الدراسية — Schulfächer</h3>
+    <div class="vocab-grid">
+      <div class="vocab-item" onclick="speak('Mathematik')"><span class="vi-de">Mathematik</span><span class="vi-ar">الرياضيات</span></div>
+      <div class="vocab-item" onclick="speak('Deutsch')"><span class="vi-de">Deutsch</span><span class="vi-ar">اللغة الألمانية</span></div>
+      <div class="vocab-item" onclick="speak('Englisch')"><span class="vi-de">Englisch</span><span class="vi-ar">الإنجليزية</span></div>
+      <div class="vocab-item" onclick="speak('Geschichte')"><span class="vi-de">Geschichte</span><span class="vi-ar">التاريخ</span></div>
+      <div class="vocab-item" onclick="speak('Biologie')"><span class="vi-de">Biologie</span><span class="vi-ar">الأحياء</span></div>
+      <div class="vocab-item" onclick="speak('Physik')"><span class="vi-de">Physik</span><span class="vi-ar">الفيزياء</span></div>
+      <div class="vocab-item" onclick="speak('Chemie')"><span class="vi-de">Chemie</span><span class="vi-ar">الكيمياء</span></div>
+      <div class="vocab-item" onclick="speak('Sport')"><span class="vi-de">Sport</span><span class="vi-ar">التربية البدنية</span></div>
+      <div class="vocab-item" onclick="speak('Kunst')"><span class="vi-de">Kunst</span><span class="vi-ar">الفنون</span></div>
+      <div class="vocab-item" onclick="speak('Musik')"><span class="vi-de">Musik</span><span class="vi-ar">الموسيقى</span></div>
+      <div class="vocab-item" onclick="speak('Informatik')"><span class="vi-de">Informatik</span><span class="vi-ar">الحاسوب / المعلوماتية</span></div>
+      <div class="vocab-item" onclick="speak('Erdkunde')"><span class="vi-de">Erdkunde / Geografie</span><span class="vi-ar">الجغرافيا</span></div>
+    </div>
+
+    <div class="tip fore" style="margin-top:1.2rem;">
+      <div class="tpic">💬</div>
+      <div>
+        <h4>جمل مهمة عن الدراسة</h4>
+        <p>
+          <span class="de">Ich lerne für die Prüfung.</span> = أذاكر للامتحان. &nbsp;·&nbsp;
+          <span class="de">Ich habe die Prüfung bestanden.</span> = اجتزت الامتحان. &nbsp;·&nbsp;
+          <span class="de">Ich habe die Prüfung nicht bestanden.</span> = رسبت في الامتحان. &nbsp;·&nbsp;
+          <span class="de">Mein Lieblingsfach ist...</span> = مادتي المفضلة هي...
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 3: GRADING SYSTEM ══════ -->
+<section id="grades">
+  <div class="sh">
+    <div class="sh-icon">📊</div>
+    <div class="sh-text">
+      <h2>نظام الدرجات الألماني — Notengebung</h2>
+      <p>من 1 إلى 6 — عكس ما اعتدت عليه تماماً!</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div class="tip crim" style="margin-bottom:1.2rem;">
+      <div class="tpic">🔄</div>
+      <div>
+        <h4>انتبه! النظام مقلوب تماماً!</h4>
+        <p>في ألمانيا، الدرجة <strong>1 هي الأفضل</strong> (ممتاز)، والدرجة <strong>6 هي الأسوأ</strong> (راسب). هذا عكس كثير من الأنظمة العربية تماماً! الرسوب يبدأ من الدرجة 5 وما فوق.</p>
+      </div>
+    </div>
+
+    <div class="grades-grid">
+      <div class="grade-card g1" onclick="speak('sehr gut, Note eins')">
+        <span class="gc-num">1</span>
+        <span class="gc-name">sehr gut</span>
+        <span class="gc-ar">ممتاز (100-87٪)</span>
+      </div>
+      <div class="grade-card g2" onclick="speak('gut, Note zwei')">
+        <span class="gc-num">2</span>
+        <span class="gc-name">gut</span>
+        <span class="gc-ar">جيد جداً (86-74٪)</span>
+      </div>
+      <div class="grade-card g3" onclick="speak('befriedigend, Note drei')">
+        <span class="gc-num">3</span>
+        <span class="gc-name">befriedigend</span>
+        <span class="gc-ar">جيد (73-61٪)</span>
+      </div>
+      <div class="grade-card g4" onclick="speak('ausreichend, Note vier')">
+        <span class="gc-num">4</span>
+        <span class="gc-name">ausreichend</span>
+        <span class="gc-ar">مقبول (60-50٪)</span>
+      </div>
+      <div class="grade-card g5" onclick="speak('mangelhaft, Note fünf')">
+        <span class="gc-num">5</span>
+        <span class="gc-name">mangelhaft</span>
+        <span class="gc-ar">ضعيف (49-30٪) ⚠️</span>
+      </div>
+      <div class="grade-card g6" onclick="speak('ungenügend, Note sechs')">
+        <span class="gc-num">6</span>
+        <span class="gc-name">ungenügend</span>
+        <span class="gc-ar">راسب (أقل من 30٪) ✗</span>
+      </div>
+    </div>
+
+    <div class="tw" style="margin-top:1.2rem;">
+      <table>
+        <thead><tr><th>الموقف</th><th>الألمانية</th><th>المعنى</th></tr></thead>
+        <tbody>
+          <tr><td>ما درجتك؟</td><td class="tde">Welche Note hast du bekommen?</td><td>كم حصلت؟</td></tr>
+          <tr><td>حصلت على 1</td><td class="tde">Ich habe eine Eins bekommen!</td><td>ممتاز!</td></tr>
+          <tr><td>اجتزت الامتحان</td><td class="tde">Ich habe die Prüfung bestanden.</td><td>ناجح ✓</td></tr>
+          <tr><td>رسبت في الامتحان</td><td class="tde">Ich habe die Prüfung nicht bestanden.</td><td>راسب ✗</td></tr>
+          <tr><td>سأعيد الامتحان</td><td class="tde">Ich muss die Prüfung wiederholen.</td><td>إعادة</td></tr>
+          <tr><td>متوسط الدرجات</td><td class="tde">Mein Notendurchschnitt ist 2,3.</td><td>المعدل العام</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 4: UNIVERSITY ══════ -->
+<section id="uni">
+  <div class="sh">
+    <div class="sh-icon">🎓</div>
+    <div class="sh-text">
+      <h2>الجامعة — Die Universität</h2>
+      <p>مفردات الحياة الجامعية الألمانية</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div class="vocab-grid">
+      <div class="vocab-item" onclick="speak('die Universität')"><span class="vi-de">die Universität / Uni</span><span class="vi-ar">الجامعة</span><span class="vi-ex">Ich studiere an der Uni.</span></div>
+      <div class="vocab-item" onclick="speak('die Fachhochschule')"><span class="vi-de">die Fachhochschule / FH</span><span class="vi-ar">كلية التطبيقات العلمية</span><span class="vi-ex">Die FH ist praktisch orientiert.</span></div>
+      <div class="vocab-item" onclick="speak('das Studium')"><span class="vi-de">das Studium</span><span class="vi-ar">الدراسة الجامعية</span><span class="vi-ex">Mein Studium dauert 6 Semester.</span></div>
+      <div class="vocab-item" onclick="speak('das Semester')"><span class="vi-de">das Semester</span><span class="vi-ar">الفصل الدراسي</span><span class="vi-ex">Ich bin im dritten Semester.</span></div>
+      <div class="vocab-item" onclick="speak('die Vorlesung')"><span class="vi-de">die Vorlesung</span><span class="vi-ar">المحاضرة</span><span class="vi-ex">Die Vorlesung beginnt um 8 Uhr.</span></div>
+      <div class="vocab-item" onclick="speak('das Seminar')"><span class="vi-de">das Seminar</span><span class="vi-ar">الندوة / ورشة العمل</span><span class="vi-ex">Im Seminar diskutieren wir.</span></div>
+      <div class="vocab-item" onclick="speak('die Bachelorarbeit')"><span class="vi-de">die Bachelorarbeit</span><span class="vi-ar">بحث البكالوريوس</span><span class="vi-ex">Ich schreibe meine Bachelorarbeit.</span></div>
+      <div class="vocab-item" onclick="speak('der Master')"><span class="vi-de">der Master / die Masterarbeit</span><span class="vi-ar">الماجستير / بحث الماجستير</span><span class="vi-ex">Er macht seinen Master in Physik.</span></div>
+      <div class="vocab-item" onclick="speak('die Immatrikulation')"><span class="vi-de">die Immatrikulation</span><span class="vi-ar">التسجيل في الجامعة</span><span class="vi-ex">Die Immatrikulation ist im Oktober.</span></div>
+      <div class="vocab-item" onclick="speak('das Stipendium')"><span class="vi-de">das Stipendium</span><span class="vi-ar">المنحة الدراسية</span><span class="vi-ex">Ich bewerbe mich um ein Stipendium.</span></div>
+      <div class="vocab-item" onclick="speak('die Studiengebühren')"><span class="vi-de">die Studiengebühren</span><span class="vi-ar">رسوم الدراسة</span><span class="vi-ex">In Deutschland sind Studiengebühren niedrig.</span></div>
+      <div class="vocab-item" onclick="speak('das Studentenwohnheim')"><span class="vi-de">das Studentenwohnheim</span><span class="vi-ar">مسكن الطلاب</span><span class="vi-ex">Ich wohne im Studentenwohnheim.</span></div>
+    </div>
+
+    <div class="tip gold" style="margin-top:1.2rem;">
+      <div class="tpic">🏛️</div>
+      <div>
+        <h4>حقائق مهمة عن الجامعات الألمانية</h4>
+        <p>التعليم الجامعي في معظم الجامعات الحكومية الألمانية <strong>مجاني</strong> تقريباً! فقط رسوم رمزية تُسمى <span class="de">Semesterbeitrag</span> (100-350 يورو/فصل). الجامعات الألمانية من الأفضل عالمياً. البكالوريوس = 6-8 فصول (3-4 سنوات)، الماجستير = 4 فصول إضافية.</p>
+      </div>
+    </div>
+
+    <!-- University quiz game -->
+    <div class="uni-game" style="margin-top:1.2rem;">
+      <div class="ug-header">🎓 اختبر معرفتك بالجامعة الألمانية <span id="ug-progress">سؤال 1 / 5</span></div>
+      <div class="ug-body">
+        <div class="ug-scenario" id="ug-scenario">
+          <span class="ug-de" id="ug-de"></span>
+          <span class="ug-ar" id="ug-ar"></span>
+        </div>
+        <div class="ug-opts" id="ug-opts"></div>
+        <div class="ug-fb" id="ug-fb"></div>
+        <button class="ug-next" id="ug-next" onclick="nextUniQ()">التالي ← Weiter</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 5: DIALOGUE ══════ -->
+<section>
+  <div class="sh">
+    <div class="sh-icon">💬</div>
+    <div class="sh-text">
+      <h2>حوار: أحمد وتجربته الجامعية</h2>
+      <p>أحمد يتحدث مع أستاذته عن تسجيله في الجامعة</p>
+    </div>
+  </div>
+
+  <div class="card a4">
+    <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid var(--gold2);">
+      <span style="font-size:1.4rem;">🏛️</span>
+      <div>
+        <div style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.03em;color:var(--prussian2);">Humboldt-Universität Berlin — مكتب القبول</div>
+        <div style="font-family:'Source Code Pro',monospace;font-size:.73rem;color:var(--ink3);">أحمد يتحدث مع مستشارة الدراسة حول التسجيل</div>
+      </div>
+    </div>
+
+    <div class="conv">
+      <div class="msg l">
+        <div class="av">👩‍🏫</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Guten Tag! Womit kann ich Ihnen helfen?</span>مرحباً! كيف يمكنني مساعدتك؟</div>
+          <span class="who">Frau Prof. Hoffmann — مستشارة الدراسة</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Guten Tag! Ich möchte mich an der Uni immatrikulieren. Ich habe meinen Bachelor in Ingenieurwesen in Syrien abgeschlossen.</span>مرحباً! أريد التسجيل في الجامعة. أنهيت بكالوريوسي في الهندسة في سوريا.</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩‍🏫</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Sehr gut! Für den Master müssen Sie zunächst Ihre Zeugnisse anerkennen lassen. Wie ist Ihr Deutsch-Niveau?</span>ممتاز! للماجستير يجب أولاً الاعتراف بشهاداتك. ما مستواك في اللغة الألمانية؟</div>
+          <span class="who">Frau Prof. Hoffmann</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ich habe das B2-Zertifikat des Goethe-Instituts. Reicht das aus?</span>حصلت على شهادة B2 من معهد غوته. هل هذا كافٍ؟</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩‍🏫</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Für die meisten Studiengänge ja. Aber für Ingenieurwissenschaften empfehle ich C1. Haben Sie auch einen Notendurchschnitt von mindestens 2,5?</span>لمعظم التخصصات نعم. لكن للهندسة أوصي بـ C1. هل معدلك الجامعي 2.5 على الأقل؟</div>
+          <span class="who">Frau Prof. Hoffmann</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Ja, mein Durchschnitt entspricht einer deutschen Note von 1,8. Wann beginnt das nächste Semester?</span>نعم، معدلي يعادل درجة ألمانية 1.8. متى يبدأ الفصل الدراسي القادم؟</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👩‍🏫</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Das Wintersemester beginnt im Oktober. Die Bewerbungsfrist endet am 15. Juli. Ich empfehle Ihnen auch, sich um ein Stipendium zu bewerben!</span>الفصل الشتوي يبدأ في أكتوبر. الموعد النهائي للتقديم 15 يوليو. أوصيك أيضاً بالتقدم لمنحة دراسية!</div>
+          <span class="who">Frau Prof. Hoffmann</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑</div>
+        <div class="bw">
+          <div class="bub"><span class="dl">Vielen Dank für die ausführliche Beratung! Das war sehr hilfreich.</span>شكراً جزيلاً على الاستشارة المفصلة! كان هذا مفيداً جداً.</div>
+          <span class="who">أحمد</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem;padding-top:1rem;border-top:2px solid var(--gold2);">
+      <h4 style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--prussian2);margin-bottom:.8rem;letter-spacing:.02em;">✦ تعابير مهمة من الحوار:</h4>
+      <div style="display:flex;flex-wrap:wrap;gap:.4rem;font-size:.79rem;">
+        <span class="de">sich immatrikulieren</span><span style="color:var(--ink2)"> يسجّل في الجامعة</span>&nbsp;·&nbsp;
+        <span class="de">Zeugnisse anerkennen lassen</span><span style="color:var(--ink2)"> الاعتراف بالشهادات</span>&nbsp;·&nbsp;
+        <span class="de">Bewerbungsfrist</span><span style="color:var(--ink2)"> الموعد النهائي للتقديم</span>&nbsp;·&nbsp;
+        <span class="de">Notendurchschnitt</span><span style="color:var(--ink2)"> المعدل الدراسي</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 6: QUIZ ══════ -->
+<section id="quiz">
+  <div class="sh">
+    <div class="sh-icon">✍️</div>
+    <div class="sh-text">
+      <h2>الاختبار — Die Prüfung</h2>
+      <p>8 أسئلة على التعليم والجامعة ونظام الدرجات</p>
+    </div>
+  </div>
+
+  <div class="quiz-card">
+
+    <div class="qblock" id="q1">
+      <span class="qlabel">AUFGABE 01 / 08</span>
+      <div class="qtext">ما هي أفضل درجة في النظام الألماني؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q1" data-val="w">6 — ungenügend</button>
+        <button class="opt" type="button" data-qid="q1" data-val="w">10 — sehr gut</button>
+        <button class="opt" type="button" data-qid="q1" data-val="c">1 — sehr gut</button>
+        <button class="opt" type="button" data-qid="q1" data-val="w">5 — mangelhaft</button>
+      </div>
+      <div class="qfb" id="fb-q1"></div>
+    </div>
+
+    <div class="qblock" id="q2">
+      <span class="qlabel">AUFGABE 02 / 08</span>
+      <div class="qtext">ما هو <span class="qde">das Abitur</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q2" data-val="w">شهادة التدريب المهني</button>
+        <button class="opt" type="button" data-qid="q2" data-val="c">شهادة البكالوريا الألمانية (نهاية الثانوية)</button>
+        <button class="opt" type="button" data-qid="q2" data-val="w">درجة البكالوريوس الجامعية</button>
+        <button class="opt" type="button" data-qid="q2" data-val="w">شهادة روضة الأطفال</button>
+      </div>
+      <div class="qfb" id="fb-q2"></div>
+    </div>
+
+    <div class="qblock" id="q3">
+      <span class="qlabel">AUFGABE 03 / 08</span>
+      <div class="qtext">كيف تقول "مادتي المفضلة هي الرياضيات"؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q3" data-val="w">Ich mag Mathematik sehr.</button>
+        <button class="opt" type="button" data-qid="q3" data-val="c">Mein Lieblingsfach ist Mathematik.</button>
+        <button class="opt" type="button" data-qid="q3" data-val="w">Mathematik ist mein bestes Fach.</button>
+        <button class="opt" type="button" data-qid="q3" data-val="w">Ich lerne gerne Mathematik.</button>
+      </div>
+      <div class="qfb" id="fb-q3"></div>
+    </div>
+
+    <div class="qblock" id="q4">
+      <span class="qlabel">AUFGABE 04 / 08</span>
+      <div class="qtext">ما معنى <span class="qde">die Vorlesung</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q4" data-val="w">الامتحان</button>
+        <button class="opt" type="button" data-qid="q4" data-val="w">الواجب المنزلي</button>
+        <button class="opt" type="button" data-qid="q4" data-val="c">المحاضرة الجامعية</button>
+        <button class="opt" type="button" data-qid="q4" data-val="w">الاستراحة</button>
+      </div>
+      <div class="qfb" id="fb-q4"></div>
+    </div>
+
+    <div class="qblock" id="q5">
+      <span class="qlabel">AUFGABE 05 / 08</span>
+      <div class="qtext">كيف تقول "اجتزت الامتحان"؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q5" data-val="w">Ich war in der Prüfung.</button>
+        <button class="opt" type="button" data-qid="q5" data-val="w">Die Prüfung war gut.</button>
+        <button class="opt" type="button" data-qid="q5" data-val="c">Ich habe die Prüfung bestanden.</button>
+        <button class="opt" type="button" data-qid="q5" data-val="w">Die Prüfung ist fertig.</button>
+      </div>
+      <div class="qfb" id="fb-q5"></div>
+    </div>
+
+    <div class="qblock" id="q6">
+      <span class="qlabel">AUFGABE 06 / 08</span>
+      <div class="qtext">ما هو <span class="qde">das Stipendium</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q6" data-val="w">رسوم الدراسة</button>
+        <button class="opt" type="button" data-qid="q6" data-val="w">الدرجة الجامعية</button>
+        <button class="opt" type="button" data-qid="q6" data-val="c">المنحة الدراسية</button>
+        <button class="opt" type="button" data-qid="q6" data-val="w">مسكن الطلاب</button>
+      </div>
+      <div class="qfb" id="fb-q6"></div>
+    </div>
+
+    <div class="qblock" id="q7">
+      <span class="qlabel">AUFGABE 07 / 08</span>
+      <div class="qtext">أي مدرسة تُؤهّل للالتحاق بالجامعة في ألمانيا؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q7" data-val="w">die Hauptschule</button>
+        <button class="opt" type="button" data-qid="q7" data-val="w">die Realschule</button>
+        <button class="opt" type="button" data-qid="q7" data-val="c">das Gymnasium</button>
+        <button class="opt" type="button" data-qid="q7" data-val="w">die Grundschule</button>
+      </div>
+      <div class="qfb" id="fb-q7"></div>
+    </div>
+
+    <div class="qblock" id="q8">
+      <span class="qlabel">AUFGABE 08 / 08</span>
+      <div class="qtext">ما معنى <span class="qde">das Semester</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q8" data-val="w">السنة الدراسية كاملة</button>
+        <button class="opt" type="button" data-qid="q8" data-val="c">الفصل الدراسي (نصف سنة)</button>
+        <button class="opt" type="button" data-qid="q8" data-val="w">الأسبوع الدراسي</button>
+        <button class="opt" type="button" data-qid="q8" data-val="w">الامتحان النهائي</button>
+      </div>
+      <div class="qfb" id="fb-q8"></div>
+    </div>
+
+    <div class="result-wrap" id="result-wrap">
+      <div class="r-score" id="r-score">0/8</div>
+      <div class="r-msg" id="r-msg"></div>
+      <button class="r-btn" onclick="resetQuiz()">✦ Wiederholen — أعد الاختبار</button>
+    </div>
+  </div>
+</section>
+
+<!-- HOMEWORK -->
+<section>
+  <div class="sh">
+    <div class="sh-icon">📜</div>
+    <div class="sh-text">
+      <h2>الواجب — Hausaufgaben</h2>
+      <p>تطبيق عملي لمفردات التعليم والجامعة</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="hw-grid">
+      <div class="hw-item"><strong>مسيرتك الدراسية</strong><span>اكتب 5 جمل عن دراستك بالألمانية: أين؟ ماذا؟ متى؟ ما تخصصك؟</span></div>
+      <div class="hw-item"><strong>نظام الدرجات</strong><span>احفظ الدرجات الست مع معانيها واكتب جملة لكل درجة</span></div>
+      <div class="hw-item"><strong>المواد الدراسية</strong><span>اكتب جدولك الدراسي المفضل بالألمانية مع ساعات كل مادة</span></div>
+      <div class="hw-item"><strong>رسالة الجامعة</strong><span>اكتب رسالة قصيرة تطلب فيها التسجيل في دورة لغة ألمانية</span></div>
+    </div>
+    <div class="tip ind">
+      <div class="tpic">🚀</div>
+      <div>
+        <h4>الدرس الحادي عشر القادم</h4>
+        <p>سنتعلم <strong>التكنولوجيا ووسائل التواصل الاجتماعي والإنترنت</strong> — الحياة الرقمية بالألمانية، التواصل الإلكتروني، وكيف تتحدث عن التقنية بطلاقة! <span class="de">Viel Erfolg!</span> 🎓</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  LEKTION X &nbsp;✦&nbsp; DAS BILDUNGSSYSTEM &nbsp;✦&nbsp; SCHULE · UNIVERSITÄT · NOTEN<br>
+  الألمانية للعرب &nbsp;·&nbsp; الدرس 10 من 12
+</footer>
+
+<script>
+// ── Theme — starts light (illuminated manuscript = parchment)
+let dark = false;
+const root = document.documentElement;
+const tbtn = document.querySelector('.tbtn');
+function applyTheme(d) {
+  dark = d;
+  root.setAttribute('data-theme', d ? 'dark' : 'light');
+  tbtn.textContent = d ? '☀' : '🌙';
+}
+function toggleTheme() { applyTheme(!dark); }
+applyTheme(false);
+
+// ── Scroll progress
+const spb = document.getElementById('spb');
+window.addEventListener('scroll', () => {
+  const h = document.body.scrollHeight - window.innerHeight;
+  spb.style.transform = `scaleX(${window.scrollY / h})`;
+});
+
+// ── Speech
+function speak(t) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(t);
+  u.lang = 'de-DE'; u.rate = 0.82;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+}
+
+// ── School system info panels
+const schInfo = {
+  kiga: {
+    title: 'der Kindergarten — الروضة',
+    desc: 'من سن 3 إلى 6 سنوات. اختياري في معظم الولايات. يُركّز على اللعب والتطور الاجتماعي وليس التعليم الأكاديمي. مجاني أو بتكلفة رمزية.',
+    ex: 'Mein Kind geht seit September in den Kindergarten.'
+  },
+  grund: {
+    title: 'die Grundschule — الابتدائية',
+    desc: 'من الصف 1 إلى 4 (سن 6-10 سنوات). إلزامية لجميع الأطفال. في الصف 4 يُوصي المعلمون بالمسار المناسب لكل طالب.',
+    ex: 'Meine Tochter ist in der zweiten Klasse der Grundschule.'
+  },
+  gym: {
+    title: 'das Gymnasium — الثانوية الأكاديمية',
+    desc: 'الصف 5-13. المسار الأكاديمي الأعلى. ينتهي بـ Abitur (البكالوريا) التي تُتيح دخول الجامعات. يدرس الطلاب مواد متنوعة بمستوى عالٍ.',
+    ex: 'Er geht aufs Gymnasium und möchte später Medizin studieren.'
+  },
+  real: {
+    title: 'die Realschule — الثانوية المتوسطة',
+    desc: 'الصف 5-10. ينتهي بـ Mittlere Reife. يُمكّن من الالتحاق بالتدريب المهني أو الانتقال للـ Gymnasium. توازن بين النظري والعملي.',
+    ex: 'Nach der Realschule möchte sie eine Ausbildung als Bürokauffrau machen.'
+  },
+  haupt: {
+    title: 'die Hauptschule — الثانوية المهنية',
+    desc: 'الصف 5-9. ينتهي بـ Hauptschulabschluss. يُؤهّل أساساً للتدريب المهني. تقلّص دورها في السنوات الأخيرة لصالح مدارس مندمجة.',
+    ex: 'Nach der Hauptschule macht er eine Ausbildung als Elektriker.'
+  },
+  uni: {
+    title: 'die Universität / Fachhochschule — الجامعة',
+    desc: 'تتطلب Abitur (أو ما يعادله). الجامعات تُركّز على البحث والنظرية، بينما الـ FH أكثر تطبيقاً. مجانية تقريباً! مدة البكالوريوس 3-4 سنوات.',
+    ex: 'Ich studiere Informatik an der TU München im dritten Semester.'
+  },
+  ausb: {
+    title: 'die Ausbildung — التدريب المهني',
+    desc: 'نظام التدريب المزدوج (duales System) الشهير عالمياً! تتعلم في شركة وفي مدرسة مهنية في آن واحد. 2-3 سنوات. نسبة توظيف عالية جداً.',
+    ex: 'Er macht eine Ausbildung als Koch bei einem Restaurant in Berlin.'
+  }
+};
+
+function showSchInfo(key) {
+  const info = schInfo[key];
+  if (!info) return;
+  speak(info.title.split(' —')[0]);
+  const el = document.getElementById('sch-info');
+  el.innerHTML = `
+    <div class="si-title">${info.title}</div>
+    <div class="si-desc">${info.desc}</div>
+    <span class="si-ex">💬 ${info.ex}</span>
+  `;
+  el.className = 'sch-info show';
+}
+
+// ── University knowledge game
+const uniQuestions = [
+  {
+    de: 'Wie lange dauert ein Bachelorstudium in Deutschland normalerweise?',
+    ar: 'كم تستغرق دراسة البكالوريوس في ألمانيا عادةً؟',
+    opts: ['2 Jahre', '3-4 Jahre (6-8 Semester)', '6 Jahre', '1 Jahr'],
+    correct: 1,
+    ok: '✅ صحيح! البكالوريوس في ألمانيا 6-8 فصول دراسية أي 3-4 سنوات. الماجستير يضيف فصلين إلى أربعة إضافية.',
+    err: '❌ البكالوريوس في ألمانيا يستغرق عادةً 6-8 فصول دراسية (Semester) أي 3-4 سنوات كاملة.'
+  },
+  {
+    de: 'Was bedeutet "immatrikulieren"?',
+    ar: 'ماذا تعني كلمة "immatrikulieren"؟',
+    opts: ['الحصول على درجة', 'التسجيل في الجامعة', 'الرسوب في الامتحان', 'تقديم البحث'],
+    correct: 1,
+    ok: '✅ بالضبط! immatrikulieren = التسجيل الرسمي في الجامعة. والعكس exmatrikulieren = إلغاء التسجيل.',
+    err: '❌ immatrikulieren = التسجيل الرسمي في الجامعة. تُقدّم فيه وثائقك وتحصل على بطاقة الطالب.'
+  },
+  {
+    de: 'Welche Note ist besser: Note 2 oder Note 4?',
+    ar: 'أيهما أفضل: الدرجة 2 أم الدرجة 4؟',
+    opts: ['الدرجة 4 أفضل', 'الدرجتان متساويتان', 'الدرجة 2 أفضل', 'يعتمد على المادة'],
+    correct: 2,
+    ok: '✅ صحيح! الدرجة 2 (gut) أفضل بكثير من الدرجة 4 (ausreichend). في الألمانية كلما قلّ الرقم كان أفضل!',
+    err: '❌ في النظام الألماني المقلوب، الرقم الأصغر = أفضل. 1 = ممتاز، 6 = راسب.'
+  },
+  {
+    de: 'Was ist "das Wintersemester" in Deutschland?',
+    ar: 'ما هو "الفصل الشتوي" في ألمانيا؟',
+    opts: ['فصل الربيع (مارس-يونيو)', 'أكتوبر حتى مارس', 'يناير فقط', 'يوليو حتى سبتمبر'],
+    correct: 1,
+    ok: '✅ ممتاز! الفصل الشتوي Wintersemester: أكتوبر–مارس. والفصل الصيفي Sommersemester: أبريل–سبتمبر.',
+    err: '❌ الفصل الشتوي في ألمانيا يبدأ في أكتوبر وينتهي في مارس. وهناك فصلان فقط في السنة الجامعية.'
+  },
+  {
+    de: 'Wie viel kosten Studiengebühren an deutschen staatlichen Universitäten?',
+    ar: 'كم رسوم الدراسة في الجامعات الحكومية الألمانية؟',
+    opts: ['20,000 Euro pro Jahr', 'Studium ist fast kostenlos!', '5,000 Euro pro Semester', '500 Euro pro Monat'],
+    correct: 1,
+    ok: '✅ رائع! التعليم الجامعي في ألمانيا شبه مجاني! تدفع فقط Semesterbeitrag حوالي 100-350 يورو للترام والخدمات.',
+    err: '❌ الجامعات الحكومية الألمانية شبه مجانية! فقط Semesterbeitrag رمزي (100-350 يورو) للخدمات والنقل.'
+  }
+];
+
+let uniIdx = 0, uniAnswered = false;
+
+function renderUniQ() {
+  uniAnswered = false;
+  const q = uniQuestions[uniIdx];
+  document.getElementById('ug-progress').textContent = `سؤال ${uniIdx+1} / ${uniQuestions.length}`;
+  document.getElementById('ug-de').textContent = q.de;
+  document.getElementById('ug-ar').textContent = q.ar;
+  const opts = document.getElementById('ug-opts');
+  opts.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'ug-opt';
+    btn.textContent = opt;
+    btn.onclick = () => checkUniAns(i, q, btn);
+    opts.appendChild(btn);
+  });
+  document.getElementById('ug-fb').className = 'ug-fb';
+  document.getElementById('ug-next').style.display = 'none';
+}
+
+function checkUniAns(idx, q, btn) {
+  if (uniAnswered) return;
+  uniAnswered = true;
+  document.querySelectorAll('.ug-opt').forEach(b => { b.disabled = true; });
+  const isOk = idx === q.correct;
+  btn.classList.add(isOk ? 'ok' : 'bad');
+  if (!isOk) document.querySelectorAll('.ug-opt')[q.correct].classList.add('ok');
+  const fb = document.getElementById('ug-fb');
+  fb.textContent = isOk ? q.ok : q.err;
+  fb.className = 'ug-fb show ' + (isOk ? 'ok' : 'err');
+  const nxt = document.getElementById('ug-next');
+  nxt.style.display = 'block';
+  nxt.textContent = uniIdx < uniQuestions.length - 1 ? 'التالي ← Weiter' : '↺ من البداية';
+}
+
+function nextUniQ() {
+  uniIdx = (uniIdx + 1) % uniQuestions.length;
+  renderUniQ();
+}
+renderUniQ();
+
+// ── Main Quiz — event delegation (clean, tested pattern)
+const fb_c = {
+  q1:'✅ صحيح! في ألمانيا 1 = sehr gut = ممتاز. هذا عكس كثير من الأنظمة — الرقم الأصغر يعني الأفضل دائماً!',
+  q2:'✅ بالضبط! das Abitur = شهادة نهاية الثانوية من الـ Gymnasium. بدونها لا يمكن الالتحاق بالجامعة.',
+  q3:'✅ ممتاز! Lieblingsfach = المادة المفضلة. Liebling يعني "المفضل" وFach = مادة دراسية.',
+  q4:'✅ صحيح! die Vorlesung = المحاضرة الجامعية يُقدمها أستاذ. das Seminar = نقاش وتفاعل أكثر.',
+  q5:'✅ رائع! bestehen = ينجح في/يجتاز. لاحظ: الفعل المساعد هو haben في الماضي: habe bestanden.',
+  q6:'✅ بالضبط! das Stipendium = المنحة الدراسية. DAAD هي أشهر جهة منح للطلاب الأجانب في ألمانيا.',
+  q7:'✅ صحيح! das Gymnasium هو المسار الذي يُؤهل للجامعة. ينتهي بـ Abitur بعد 8-9 سنوات.',
+  q8:'✅ ممتاز! das Semester = الفصل الدراسي (نصف سنة). كل سنة جامعية فيها فصلان: Winter و Sommer.',
+};
+const fb_w = {
+  q1:'❌ النظام الألماني مقلوب! 1 = sehr gut (ممتاز) و6 = ungenügend (راسب). كلما قلّ الرقم كان أفضل!',
+  q2:'❌ das Abitur = البكالوريا الألمانية في نهاية الـ Gymnasium. هي مفتاح الالتحاق بالجامعة.',
+  q3:'❌ الجملة الصحيحة: "Mein Lieblingsfach ist Mathematik." هذا هو التعبير الاصطلاحي الصحيح.',
+  q4:'❌ die Vorlesung = المحاضرة. وليس الامتحان (Prüfung) ولا الواجب (Hausaufgabe) ولا الاستراحة (Pause).',
+  q5:'❌ الصحيح: "Ich habe die Prüfung bestanden." الفعل bestehen (ينجح) + haben في الماضي.',
+  q6:'❌ das Stipendium = المنحة الدراسية. المنحة DAAD مثلاً تُتيح للطلاب الأجانب الدراسة في ألمانيا.',
+  q7:'❌ فقط خريجو الـ Gymnasium (الذين حصلوا على Abitur) يمكنهم الالتحاق بالجامعة مباشرة.',
+  q8:'❌ das Semester = الفصل الدراسي (نصف السنة). في ألمانيا فصلان: Wintersemester و Sommersemester.',
+};
+
+let answers = {};
+
+// Clean event delegation — the proven approach
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('button.opt');
+  if (!btn) return;
+  const qid = btn.getAttribute('data-qid');
+  const val = btn.getAttribute('data-val');
+  if (qid && val) ans(btn, qid, val);
+});
+
+function ans(btn, qid, r) {
+  if (answers[qid]) return;
+  answers[qid] = r;
+  document.getElementById(qid).querySelectorAll('button.opt').forEach(b => {
+    b.disabled = true;
+  });
+  btn.classList.add(r === 'c' ? 'correct' : 'wrong');
+  const fb = document.getElementById('fb-' + qid);
+  fb.textContent = r === 'c' ? fb_c[qid] : fb_w[qid];
+  fb.className = 'qfb show ' + (r === 'c' ? 'ok' : 'err');
+  if (Object.keys(answers).length === 8) showResult();
+}
+
+function showResult() {
+  const s = Object.values(answers).filter(v => v === 'c').length;
+  const msgs = [
+    '❌ Note 6 — حاول مجدداً!',
+    '📖 Note 5 — راجع الدرس',
+    '📚 Note 4 — تقدم ملحوظ!',
+    '✓ Note 3 — befriedigend جيد!',
+    '★ Note 2 — gut! جيد جداً!',
+    '★★ Note 1+ رائع جداً!',
+    '🏆 Note 1 — sehr gut!',
+    '✦ 1 mit Auszeichnung!',
+    '🎓 Summa Cum Laude!'
+  ];
+  document.getElementById('r-score').textContent = s + '/8';
+  document.getElementById('r-msg').textContent = msgs[s] || '';
+  const rb = document.getElementById('result-wrap');
+  rb.style.display = 'block';
+  rb.scrollIntoView({ behavior:'smooth', block:'center' });
+}
+
+function resetQuiz() {
+  answers = {};
+  document.querySelectorAll('button.opt').forEach(b => {
+    b.disabled = false;
+    b.className = 'opt';
+  });
+  document.querySelectorAll('.qfb').forEach(f => { f.className = 'qfb'; });
+  document.getElementById('result-wrap').style.display = 'none';
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-kurs-lesson-10-bildung" data-category="a2-kurs" data-title="التعليم والمدرسة" data-root="../../" defer></script>
+</body>
+</html>

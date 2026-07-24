@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الدرس ٤ · بوصلة حروف الجر — حالة الجر Dativ | ألمانية A2</title>
+<meta name="description" content="الدرس الرابع من مستوى A2: تعلّم حالة الجر (Dativ) وحروف الجر السبعة (aus, bei, mit, nach, seit, von, zu) عبر بوصلة تفاعلية، مع نطق صوتي وتمارين فورية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   0. RESET + BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+body { margin: 0; overflow-x: hidden; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+/* ==========================================================================
+   1. DESIGN TOKENS — fresh system for Lesson 4 (compass / map theme)
+   ========================================================================== */
+:root {
+  color-scheme: light;
+  --bg: #F7F6F3;
+  --bg-alt: #EFEDE7;
+  --surface: #FFFFFF;
+  --surface-glass: rgba(255,255,255,.68);
+  --surface-glass-border: rgba(255,255,255,.5);
+  --ink: #23291F;
+  --ink-soft: #57604F;
+  --ink-faint: #8B927F;
+  --border: #E3E1D8;
+  --border-strong: #CCC9BC;
+
+  --primary: #3D8A5F;
+  --primary-ink: #2C6746;
+  --primary-soft: #E3F0E8;
+  --primary-glow: rgba(61,138,95,.24);
+
+  --secondary: #C4732E;
+  --secondary-ink: #9A5A23;
+  --secondary-soft: #FBEEE2;
+  --secondary-glow: rgba(196,115,46,.22);
+
+  --success: #2E7D4F;
+  --success-soft: #E4F5EA;
+  --danger: #B8493C;
+  --danger-soft: #FBEAE7;
+
+  /* per-preposition compass colors — also the page's thematic palette */
+  --prep-aus:  #3D8A5F;
+  --prep-bei:  #C4732E;
+  --prep-mit:  #3D74B0;
+  --prep-nach: #B0507A;
+  --prep-seit: #A6842E;
+  --prep-von:  #7A5FB8;
+  --prep-zu:   #4A9B94;
+
+  --shadow-sm: 0 1px 2px rgba(35,41,31,.06), 0 1px 1px rgba(35,41,31,.04);
+  --shadow-md: 0 8px 24px -8px rgba(35,41,31,.16), 0 2px 8px -2px rgba(35,41,31,.08);
+  --shadow-lg: 0 24px 60px -20px rgba(35,41,31,.28), 0 8px 20px -8px rgba(35,41,31,.12);
+  --shadow-glow-primary: 0 8px 30px -6px var(--primary-glow);
+
+  --r-sm: 10px; --r-md: 16px; --r-lg: 24px; --r-xl: 32px;
+
+  --font-ar-display: 'Markazi Text', 'Segoe UI', sans-serif;
+  --font-ar-body: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-de-display: 'Newsreader', Georgia, serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  --nav-h: 72px;
+  --ease: cubic-bezier(.22,.9,.32,1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #14180F;
+  --bg-alt: #0F120B;
+  --surface: #1C2317;
+  --surface-glass: rgba(28,35,23,.62);
+  --surface-glass-border: rgba(255,255,255,.08);
+  --ink: #EEF1E9;
+  --ink-soft: #ACB59F;
+  --ink-faint: #6E7663;
+  --border: #2C3524;
+  --border-strong: #3A4630;
+
+  --primary: #6FC291;
+  --primary-ink: #A4DEBD;
+  --primary-soft: rgba(111,194,145,.14);
+  --primary-glow: rgba(111,194,145,.28);
+
+  --secondary: #E29A5C;
+  --secondary-ink: #F0BE8E;
+  --secondary-soft: rgba(226,154,92,.14);
+  --secondary-glow: rgba(226,154,92,.24);
+
+  --success: #5FCB8C;
+  --success-soft: rgba(95,203,140,.14);
+  --danger: #E2836E;
+  --danger-soft: rgba(226,131,110,.14);
+
+  --prep-aus:  #6FC291;
+  --prep-bei:  #E29A5C;
+  --prep-mit:  #7FA8DE;
+  --prep-nach: #DE8CAE;
+  --prep-seit: #D4B45E;
+  --prep-von:  #AE97DE;
+  --prep-zu:   #7FC9C1;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3);
+  --shadow-md: 0 8px 24px -8px rgba(0,0,0,.5);
+  --shadow-lg: 0 24px 60px -20px rgba(0,0,0,.6);
+}
+
+body { background: var(--bg); color: var(--ink); font-family: var(--font-ar-body); line-height: 1.75; transition: background-color .5s var(--ease), color .5s var(--ease); }
+.de, [lang="de"] { font-family: var(--font-de-display); direction: ltr; unicode-bidi: isolate; }
+.mono { font-family: var(--font-mono); direction: ltr; unicode-bidi: isolate; }
+h1, h2, h3 { font-family: var(--font-ar-display); font-weight: 600; line-height: 1.3; margin: 0; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+::selection { background: var(--primary); color: #fff; }
+.road-rule { height: 3px; background-image: repeating-linear-gradient(to right, var(--border-strong) 0 10px, transparent 10px 20px); border: none; }
+
+/* ==========================================================================
+   2. LAYOUT SHELL
+   ========================================================================== */
+.container { max-width: 1120px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); }
+.section { padding-block: clamp(56px, 8vw, 108px); position: relative; }
+.section-head { max-width: 720px; margin-bottom: clamp(28px, 5vw, 48px); }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .76rem; letter-spacing: .01em; color: var(--primary); background: var(--primary-soft); padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; }
+.section-title { font-size: clamp(1.7rem, 3.9vw, 2.6rem); }
+.section-sub { color: var(--ink-soft); font-size: clamp(.98rem, 1.6vw, 1.1rem); margin-top: 12px; max-width: 60ch; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(1){transition-delay:.03s} .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.09s}
+.reveal-stagger.is-visible > *:nth-child(3){transition-delay:.15s} .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.21s}
+.reveal-stagger.is-visible > *:nth-child(5){transition-delay:.27s} .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.33s}
+
+/* ==========================================================================
+   3. HEADER + ROAD/WAYPOINT NAV (new nav paradigm)
+   ========================================================================== */
+.site-header { position: sticky; top: 0; z-index: 100; background: var(--surface-glass); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); border-bottom: 1px solid var(--surface-glass-border); }
+.header-top { height: var(--nav-h); display: flex; align-items: center; }
+.header-inner { display: flex; align-items: center; gap: 18px; width: 100%; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; white-space: nowrap; }
+.brand-mark { width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; background: conic-gradient(from 0deg, var(--prep-aus), var(--prep-bei), var(--prep-mit), var(--prep-nach), var(--prep-seit), var(--prep-von), var(--prep-zu), var(--prep-aus)); box-shadow: var(--shadow-glow-primary); position: relative; }
+.brand-mark::after { content:""; position:absolute; inset:30%; border-radius:50%; background: var(--surface); }
+.brand-mark::before { content:""; position:absolute; top:14%; left:50%; width:2px; height:22%; background:var(--ink); transform-origin: bottom center; transform: translateX(-50%); border-radius: 2px; }
+.brand-text { font-family: var(--font-ar-display); font-size: 1.15rem; }
+.brand-text small { display: block; font-family: var(--font-ar-body); font-weight: 400; font-size: .68rem; color: var(--ink-faint); }
+.progress-ring-wrap { position: relative; width: 44px; height: 44px; flex-shrink: 0; }
+.progress-ring-wrap svg { transform: rotate(-90deg); }
+.progress-ring-track { fill: none; stroke: var(--border); stroke-width: 4; }
+.progress-ring-bar { fill: none; stroke: var(--primary); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset .6s var(--ease); }
+.progress-ring-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: .6rem; font-weight: 600; }
+.header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.icon-btn { width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .25s var(--ease); }
+.icon-btn:hover { color: var(--primary); border-color: var(--primary); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.icon-btn:active { transform: translateY(0) scale(.94); }
+.icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+.search-box { position: relative; display: none; align-items: center; }
+.search-box input { width: 0; opacity: 0; padding: 0; border: none; background: var(--surface); color: var(--ink); border-radius: 12px; transition: all .3s var(--ease); font-family: var(--font-ar-body); font-size: .88rem; }
+.search-box.open input { width: 190px; opacity: 1; padding: 9px 14px; border: 1px solid var(--border); }
+@media (min-width: 861px){ .search-box { display: flex; } }
+
+.road-nav { overflow-x: auto; scrollbar-width: none; border-top: 1px dashed var(--border); position: relative; }
+.road-nav::-webkit-scrollbar { display: none; }
+.road-track { display: flex; align-items: flex-end; min-width: max-content; padding: 12px clamp(18px,4vw,40px) 10px; position: relative; }
+.road-track::before { content:""; position:absolute; right: clamp(18px,4vw,40px); left: clamp(18px,4vw,40px); bottom: 18px; height: 2px; background-image: repeating-linear-gradient(to left, var(--border-strong) 0 8px, transparent 8px 14px); }
+.waypoint-btn { display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: none; cursor: pointer; padding: 0 14px; flex-shrink: 0; color: var(--ink-faint); position: relative; z-index: 1; }
+.waypoint-pin { width: 14px; height: 14px; border-radius: 50% 50% 50% 0; background: var(--border-strong); transform: rotate(-45deg); margin-bottom: 6px; transition: all .25s var(--ease); }
+.waypoint-btn span.lbl { font-size: .74rem; font-weight: 500; white-space: nowrap; }
+.waypoint-btn:hover .waypoint-pin { background: var(--primary); transform: rotate(-45deg) scale(1.2); }
+.waypoint-btn:hover { color: var(--ink); }
+.waypoint-btn.active .waypoint-pin { background: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft); transform: rotate(-45deg) scale(1.25); }
+.waypoint-btn.active { color: var(--primary); }
+
+/* ==========================================================================
+   4. HERO — ambient decorative compass (pure CSS, no shared state with the
+   main interactive compass further down, by design)
+   ========================================================================== */
+.hero { position: relative; padding-block: clamp(48px, 9vw, 96px) clamp(64px, 9vw, 110px); overflow: hidden; }
+.hero::before { content:""; position:absolute; inset:-20% -10% auto -10%; height:640px; z-index:-2; background: radial-gradient(560px 360px at 18% 15%, var(--primary-glow), transparent 70%), radial-gradient(520px 340px at 88% 20%, var(--secondary-glow), transparent 70%); filter: blur(10px); }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 56px); align-items: center; }
+@media (max-width: 940px){ .hero-grid { grid-template-columns: 1fr; } }
+.level-badge { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: .8rem; background: var(--surface); border: 1px solid var(--border); padding: 7px 8px 7px 16px; border-radius: 999px; box-shadow: var(--shadow-sm); margin-bottom: 22px; }
+.level-badge b { background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 999px; font-weight: 600; }
+.hero-title { font-size: clamp(2.1rem, 5vw, 3.3rem); }
+.hero-title .de { color: var(--primary); }
+.hero-lead { margin-top: 20px; font-size: clamp(1.02rem, 1.7vw, 1.2rem); color: var(--ink-soft); max-width: 56ch; }
+.hero-ctas { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 24px; border-radius: 14px; font-weight: 600; font-size: .96rem; cursor: pointer; border: 1px solid transparent; transition: all .25s var(--ease); }
+.btn:active { transform: scale(.97); }
+.btn-primary { background: linear-gradient(155deg, var(--primary), var(--primary-ink)); color: #fff; box-shadow: var(--shadow-glow-primary); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 34px -8px var(--primary-glow); }
+.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--border); }
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-3px); }
+
+.hero-compass-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: clamp(20px,3vw,30px); box-shadow: var(--shadow-lg); text-align: center; }
+.ambient-compass { position: relative; width: min(260px, 70vw); aspect-ratio: 1; margin: 0 auto 18px; border-radius: 50%; background: conic-gradient(from 0deg, var(--prep-aus), var(--prep-bei), var(--prep-mit), var(--prep-nach), var(--prep-seit), var(--prep-von), var(--prep-zu), var(--prep-aus)); }
+.ambient-compass::after { content:""; position:absolute; inset:9%; border-radius:50%; background: var(--surface); }
+.ambient-needle { position:absolute; top:50%; left:50%; width:3px; height:36%; background: linear-gradient(to top, var(--ink), transparent); transform-origin: bottom center; transform: translate(-50%,-100%) rotate(0deg); animation: ambientSway 7s ease-in-out infinite; border-radius: 3px; }
+@keyframes ambientSway { 0%,100%{ transform: translate(-50%,-100%) rotate(-18deg); } 50%{ transform: translate(-50%,-100%) rotate(198deg); } }
+.ambient-compass::before { content:""; position:absolute; top:50%; left:50%; width:10px; height:10px; margin:-5px; border-radius:50%; background:var(--ink); z-index:2; }
+
+/* ==========================================================================
+   5. PREPOSITION COMPASS — signature interactive component
+   ========================================================================== */
+.compass-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: clamp(20px,3.4vw,32px); box-shadow: var(--shadow-lg); }
+.compass-layout { display: grid; grid-template-columns: minmax(260px, 380px) 1fr; gap: clamp(20px, 4vw, 40px); align-items: center; }
+@media (max-width: 800px){ .compass-layout { grid-template-columns: 1fr; } }
+.compass-face-wrap { position: relative; width: 100%; max-width: 380px; aspect-ratio: 1; margin: 0 auto; }
+.compass-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--border-strong); background: var(--bg-alt); }
+.compass-ring::before { content:""; position:absolute; inset: 14%; border-radius:50%; border: 1px dashed var(--border-strong); }
+.compass-needle { position:absolute; top:50%; left:50%; width:4px; height:32%; background: linear-gradient(to top, var(--primary), transparent); transform-origin: bottom center; transform: translate(-50%,-100%) rotate(0deg); transition: transform .6s var(--ease); border-radius: 4px; z-index: 3; }
+.compass-pivot { position:absolute; top:50%; left:50%; width:14px; height:14px; margin:-7px; border-radius:50%; background:var(--ink); z-index:4; box-shadow: 0 0 0 4px var(--surface); }
+.compass-point { position: absolute; width: 52px; height: 52px; margin: -26px; border-radius: 50%; border: 3px solid var(--surface); cursor: pointer; box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: center; font-family: var(--font-de-display); font-weight: 700; color: #fff; font-size: .95rem; transition: transform .25s var(--ease), box-shadow .25s var(--ease); z-index: 2; }
+.compass-point:hover { transform: scale(1.12); }
+.compass-point.active { transform: scale(1.22); box-shadow: 0 0 0 5px var(--point-glow, var(--primary-soft)), var(--shadow-md); }
+
+.route-card { min-height: 280px; }
+.route-card.focusing { filter: blur(6px); opacity: .35; transition: filter .3s var(--ease), opacity .3s var(--ease); }
+.route-card:not(.focusing) { transition: filter .3s var(--ease), opacity .3s var(--ease); }
+.route-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .8rem; padding: 5px 14px; border-radius: 999px; color: #fff; margin-bottom: 14px; }
+.route-title { font-family: var(--font-de-display); font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 700; margin-bottom: 6px; cursor: pointer; }
+.route-ar { color: var(--ink-soft); margin-bottom: 18px; }
+.route-sentence-box { background: var(--bg-alt); border-radius: var(--r-md); padding: 16px 20px; margin-top: 6px; }
+
+/* ==========================================================================
+   6. ROUTE SENTENCE (used in the compass + examples list)
+   ========================================================================== */
+.route-sentence { direction: ltr; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-family: var(--font-de-display); font-size: clamp(1.05rem, 2.2vw, 1.35rem); }
+.rs-word { cursor: pointer; border-radius: 8px; padding: 3px 4px; transition: background-color .2s, color .2s; }
+.rs-word:hover { background: var(--surface); }
+.rs-word.speaking { background: var(--primary); color: #fff; }
+.rs-prep-chip { border-radius: 999px; padding: 4px 14px; font-weight: 700; color: #fff; cursor: pointer; }
+.rs-dative { border-bottom: 3px dotted var(--ink-faint); font-weight: 700; cursor: pointer; padding-bottom: 1px; }
+.rs-dative:hover, .rs-dative.speaking { background: var(--bg-alt); }
+
+/* ==========================================================================
+   7. GENERIC CARDS / GRIDS / CALLOUTS / TABLES
+   ========================================================================== */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 760px){ .grid-2 { grid-template-columns: 1fr; } }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 940px){ .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px){ .grid-3 { grid-template-columns: 1fr; } }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media (max-width: 760px){ .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+.info-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px; box-shadow: var(--shadow-sm); transition: all .3s var(--ease); }
+.info-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--border-strong); }
+.info-card h3 { font-size: 1.1rem; margin-bottom: 10px; display: flex; align-items: center; gap: 9px; font-family: var(--font-ar-body); font-weight: 700; }
+.info-card h3 .icon-chip { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.info-card p, .info-card li { color: var(--ink-soft); font-size: .95rem; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: .78rem; padding: 4px 11px; border-radius: 999px; }
+.callout { display: flex; gap: 14px; align-items: flex-start; border-inline-start: 4px solid var(--primary); background: var(--surface); border-radius: var(--r-md); padding: 18px 20px; box-shadow: var(--shadow-sm); }
+.callout.secondary { border-inline-start-color: var(--secondary); }
+.callout svg { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+.callout.secondary svg { color: var(--secondary); }
+.simple-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+.simple-table th, .simple-table td { padding: 12px 16px; text-align: center; border-bottom: 1px solid var(--border); }
+.simple-table th { background: var(--bg-alt); font-family: var(--font-ar-body); font-weight: 700; font-size: .88rem; }
+.simple-table tr:last-child td { border-bottom: none; }
+.simple-table td.de { font-size: 1.02rem; cursor: pointer; font-weight: 600; }
+.simple-table tr:hover td { background: var(--bg-alt); }
+.contraction-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px; text-align: center; box-shadow: var(--shadow-sm); transition: all .25s var(--ease); }
+.contraction-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.contraction-eq { font-family: var(--font-de-display); font-size: 1.4rem; font-weight: 700; color: var(--primary); cursor: pointer; margin-bottom: 6px; }
+.contraction-parts { font-family: var(--font-mono); font-size: .8rem; color: var(--ink-faint); }
+
+/* ==========================================================================
+   8. VOCAB — flip cards
+   ========================================================================== */
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.flip-card { perspective: 1200px; height: 190px; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-shadow: var(--shadow-sm); }
+.flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
+.flip-front .de { font-size: 1.4rem; font-weight: 700; }
+.flip-back { color: #fff; transform: rotateY(180deg); gap: 6px; }
+.flip-back .meaning-de { font-family: var(--font-de-display); font-size: 1.05rem; font-weight: 600; }
+.flip-back .meaning { font-size: .92rem; opacity: .92; }
+.flip-hint { font-family: var(--font-mono); font-size: .66rem; color: var(--ink-faint); margin-top: 10px; }
+.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--primary); transition: all .2s; }
+.speak-dot:hover { transform: scale(1.1); }
+.flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
+.speak-dot .icon { width: 15px; height: 15px; }
+.speak-dot.speaking { animation: pulse-ring 1s var(--ease) infinite; }
+@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 var(--primary-glow)} 70%{box-shadow:0 0 0 10px transparent} 100%{box-shadow:0 0 0 0 transparent} }
+
+/* ==========================================================================
+   9. MISTAKES
+   ========================================================================== */
+.mistake-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+@media (max-width: 640px){ .mistake-card { grid-template-columns: 1fr; } }
+.mistake-side { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.mistake-wrong { background: var(--danger-soft); }
+.mistake-right { background: var(--success-soft); }
+.mistake-tag { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .82rem; }
+.mistake-wrong .mistake-tag { color: var(--danger); }
+.mistake-right .mistake-tag { color: var(--success); }
+.mistake-sentence { font-family: var(--font-de-display); direction: ltr; font-size: 1.05rem; }
+.mistake-note { grid-column: 1 / -1; padding: 12px 20px; font-size: .88rem; color: var(--ink-soft); border-top: 1px dashed var(--border); background: var(--surface); }
+
+/* ==========================================================================
+   10. EXERCISES
+   ========================================================================== */
+.exercise-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+.exercise-tabs { display: flex; overflow-x: auto; border-bottom: 1px solid var(--border); scrollbar-width: none; }
+.exercise-tabs::-webkit-scrollbar { display: none; }
+.exercise-tab { flex-shrink: 0; padding: 16px 20px; background: none; border: none; cursor: pointer; font-weight: 600; font-size: .92rem; color: var(--ink-faint); border-bottom: 3px solid transparent; display: flex; align-items: center; gap: 8px; transition: all .25s; }
+.exercise-tab:hover { color: var(--ink); }
+.exercise-tab.active { color: var(--primary); border-color: var(--primary); }
+.exercise-tab .count { font-family: var(--font-mono); font-size: .7rem; background: var(--bg-alt); padding: 1px 7px; border-radius: 999px; }
+.exercise-panels { padding: clamp(20px, 4vw, 34px); }
+.exercise-panel { display: none; }
+.exercise-panel.active { display: block; animation: fadeSlide .4s var(--ease); }
+@keyframes fadeSlide { from { opacity:0; transform:translateY(10px);} to { opacity:1; transform:translateY(0);} }
+.q-block { border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 20px; margin-bottom: 16px; background: var(--bg-alt); }
+.q-prompt { font-family: var(--font-de-display); direction: ltr; font-size: 1.06rem; margin-bottom: 14px; }
+.q-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.opt-btn { font-family: var(--font-de-display); direction: ltr; padding: 9px 20px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 1rem; transition: all .2s var(--ease); }
+.opt-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.opt-btn.correct { background: var(--success-soft); border-color: var(--success); color: var(--success); }
+.opt-btn.wrong { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
+.opt-btn:disabled { cursor: default; }
+.q-feedback { margin-top: 12px; font-size: .88rem; color: var(--ink-soft); display: none; padding-top: 10px; border-top: 1px dashed var(--border); }
+.q-feedback.show { display: block; }
+.fill-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.fill-row input { font-family: var(--font-de-display); direction: ltr; text-align: left; font-size: 1.05rem; padding: 9px 14px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink); width: 160px; max-width: 100%; }
+.fill-row input:focus { border-color: var(--primary); }
+.fill-check { border: none; background: var(--primary); color: #fff; padding: 9px 18px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+.fill-result { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+.builder-pool, .builder-answer { display: flex; flex-wrap: wrap; gap: 10px; min-height: 52px; align-items: center; }
+.builder-answer { border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: 10px 14px; margin-bottom: 14px; background: var(--surface); }
+.chip-word { font-family: var(--font-de-display); direction: ltr; padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 1rem; transition: all .2s var(--ease); box-shadow: var(--shadow-sm); }
+.chip-word:hover { transform: translateY(-2px); border-color: var(--primary); }
+.chip-word.used { opacity: .3; pointer-events: none; }
+.builder-actions { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.builder-actions .btn { padding: 9px 18px; font-size: .88rem; }
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 3vw, 40px); }
+.match-col { display: flex; flex-direction: column; gap: 10px; }
+.match-item { font-family: var(--font-de-display); direction: ltr; padding: 12px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; transition: all .2s var(--ease); text-align: center; }
+.match-item:hover:not(.matched) { border-color: var(--primary); transform: scale(1.02); }
+.match-item.selected { border-color: var(--primary); background: var(--primary-soft); }
+.match-item.matched { border-color: var(--success); background: var(--success-soft); color: var(--success); pointer-events: none; }
+.match-item.shake { animation: shake .4s; border-color: var(--danger); background: var(--danger-soft); }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+.score-bar-wrap { display: flex; align-items: center; gap: 16px; padding: 18px clamp(20px, 4vw, 34px); border-top: 1px solid var(--border); background: var(--bg-alt); flex-wrap: wrap; }
+.score-track { flex: 1; min-width: 140px; height: 10px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.score-fill { height: 100%; background: linear-gradient(to left, var(--primary), var(--secondary)); border-radius: 999px; width: 0%; transition: width .5s var(--ease); }
+.score-label { font-family: var(--font-mono); font-size: .82rem; white-space: nowrap; }
+
+/* ==========================================================================
+   11. AUDIO DOCK / TOAST / BADGES / FOOTER
+   ========================================================================== */
+.audio-dock { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(140%); z-index: 200; background: var(--surface-glass); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border: 1px solid var(--surface-glass-border); box-shadow: var(--shadow-lg); border-radius: 999px; padding: 8px 10px 8px 18px; display: flex; align-items: center; gap: 12px; max-width: min(92vw, 560px); transition: transform .45s var(--ease); }
+.audio-dock.visible { transform: translateX(-50%) translateY(0); }
+.audio-dock-text { font-family: var(--font-de-display); direction: ltr; font-size: .92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px; }
+.audio-dock-controls { display: flex; align-items: center; gap: 4px; }
+.audio-dock .icon-btn { width: 34px; height: 34px; border-radius: 50%; }
+.audio-dock input[type="range"] { width: 70px; accent-color: var(--primary); }
+.audio-dock-voice { font-family: var(--font-mono); font-size: .64rem; color: var(--ink-faint); display: none; }
+@media (min-width: 620px){ .audio-dock-voice { display: block; } }
+.summary-list { display: flex; flex-direction: column; gap: 12px; }
+.summary-list li { display: flex; gap: 12px; align-items: flex-start; }
+.summary-list .icon-chip { background: var(--primary-soft); color: var(--primary); flex-shrink: 0; }
+.badges-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; margin-top: 30px; }
+.badge { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 12px; text-align: center; filter: grayscale(1) opacity(.5); transition: filter .5s var(--ease); }
+.badge.unlocked { filter: none; opacity: 1; }
+.badge.pop { animation: badgePop .6s var(--ease); }
+@keyframes badgePop { 0%{transform:scale(.7) rotate(-8deg)} 60%{transform:scale(1.12) rotate(4deg)} 100%{transform:scale(1) rotate(0)} }
+.badge-icon { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(155deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: #fff; }
+.badge-name { font-size: .82rem; font-weight: 600; }
+.toast-wrap { position: fixed; top: calc(var(--nav-h) + 44px); left: 50%; transform: translateX(-50%); z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+.toast { background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-size: .88rem; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(-14px); transition: all .4s var(--ease); white-space: nowrap; }
+.toast.show { opacity: 1; transform: translateY(0); }
+.site-footer { border-top: 1px solid var(--border); padding-block: 36px; margin-top: 30px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--ink-faint); font-size: .86rem; }
+.back-to-top { position: fixed; bottom: 20px; inset-inline-end: 20px; z-index: 190; width: 46px; height: 46px; border-radius: 50%; background: var(--primary); color: #fff; border: none; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow-primary); cursor: pointer; opacity: 0; transform: translateY(20px) scale(.8); pointer-events: none; transition: all .35s var(--ease); }
+.back-to-top.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.back-to-top:hover { transform: translateY(-4px) scale(1.05); }
+mark.hl { background: var(--secondary-soft); color: var(--secondary-ink); border-radius: 4px; padding: 0 2px; }
+
+@media print {
+  .site-header, .audio-dock, .back-to-top, .exercise-tabs, .score-bar-wrap, .btn, .icon-btn, .toast-wrap { display: none !important; }
+  body { background: #fff; color: #000; }
+  .section { padding-block: 20px; break-inside: avoid; }
+  .exercise-panel { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><g stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/></g></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+<symbol id="i-speaker" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.3 5.7a9 9 0 0 1 0 12.6"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+<symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 4v6h6"/><path d="M4.6 15a8 8 0 1 0 1.5-9.4L4 9"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><polyline points="6,9 6,3 18,3 18,9"/><rect x="4" y="9" width="16" height="8" rx="1.2"/><rect x="8" y="14" width="8" height="6"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5"/><path d="M15 4h5v5"/><path d="M20 15v5h-5"/><path d="M9 20H4v-5"/></symbol>
+<symbol id="i-compress" viewBox="0 0 24 24"><path d="M9 4v5H4"/><path d="M15 4v5h5"/><path d="M20 20v-5h-5"/><path d="M4 20v-5h5"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="5,13 9,17 19,7"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></symbol>
+<symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 13.5 7 21l5-2.5L17 21l-2-7.5"/><path d="M12 6.5l.9 1.9 2.1.3-1.5 1.4.3 2.1-1.8-1-1.8 1 .3-2.1-1.5-1.4 2.1-.3z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2zM20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2z"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5a2.6 2.6 0 0 1 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></symbol>
+<symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 5.5 19 5.5a2 2 0 0 1 2 2L21 18"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M9 15L15 9"/><path d="M13.5 6.5l1-1a3.5 3.5 0 0 1 5 5l-1 1"/><path d="M10.5 17.5l-1 1a3.5 3.5 0 0 1-5-5l1-1"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="i-arrow-out" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4L10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+<symbol id="i-together" viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5"/><path d="M10 20c0-3 3-5 6-5s6 2 6 5"/></symbol>
+<symbol id="i-clock-since" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><polyline points="12,9 12,13 15,15"/><path d="M9 2h6"/></symbol>
+<symbol id="i-target-arrow" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M21 12h-3M6 12H3"/></symbol>
+</defs>
+</svg>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<header class="site-header">
+  <div class="header-top">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">ألمانية A2<small>الدرس الرابع · بوصلة حروف الجر</small></span>
+      </div>
+      <div style="flex:1"></div>
+      <div class="header-controls">
+        <div class="search-box" id="searchBoxDesktop"><input type="search" id="searchInputDesktop" placeholder="ابحث في الدرس…" aria-label="ابحث في الدرس"></div>
+        <button class="icon-btn" id="searchToggle" aria-label="بحث"><svg class="icon"><use href="#i-search"/></svg></button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري">
+          <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+        </button>
+        <button class="icon-btn" id="fullscreenToggle" aria-label="ملء الشاشة"><svg class="icon" id="fsIcon"><use href="#i-expand"/></svg></button>
+        <div class="progress-ring-wrap" title="تقدّمك في الدرس">
+          <svg width="44" height="44"><circle class="progress-ring-track" cx="22" cy="22" r="18"/><circle class="progress-ring-bar" id="progressRingBar" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="113"/></svg>
+          <span class="progress-ring-label" id="progressRingLabel">٠٪</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="road-nav" aria-label="أقسام الدرس"><div class="road-track" id="roadTrack"></div></nav>
+</header>
+
+<main id="mainContent">
+
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="reveal is-visible">
+      <span class="level-badge"><b>A2</b> الدرس رقم ٤ من مسار «الماضي في الألمانية»</span>
+      <h1 class="hero-title">بوصلة حروف الجر: حالة <span class="de">Dativ</span></h1>
+      <p class="hero-lead">سبعة حروف جر صغيرة (aus, bei, mit, nach, seit, von, zu) تفتح لك بابًا كاملاً للحديث عن الأصل، والمرافقة، والوجهة، والزمن. كل واحد منها بوصلة تُغيّر شكل الكلمة التي تليه.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" data-scroll="#rule"><svg class="icon" style="width:18px;height:18px"><use href="#i-play"/></svg>ابدأ الدرس</button>
+        <button class="btn btn-ghost" data-scroll="#compass"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg>جرّب البوصلة</button>
+      </div>
+    </div>
+    <div class="reveal is-visible" style="transition-delay:.15s">
+      <div class="hero-compass-card">
+        <div class="ambient-compass" aria-hidden="true"><div class="ambient-needle"></div></div>
+        <p style="color:var(--ink-soft);font-size:.92rem">سبعة اتجاهات لمعنى واحد: حالة الجر <span class="mono">Dativ</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>لماذا هذا الدرس</span>
+      <h2 class="section-title">لماذا نحتاج حالة الجر Dativ؟</h2>
+      <p class="section-sub">لأنها الحالة التي تصف "لمن" أو "مع من" أو "من أين" — تفاصيل تحتاجها في كل قصة تقريبًا.</p>
+    </div>
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--primary-soft);color:var(--primary)"><svg class="icon" style="width:18px;height:18px"><use href="#i-target-arrow"/></svg></span>المفعول به غير المباشر</h3>
+        <p>الـ Dativ يجيب عن سؤال «لِمن؟» — <span class="de">Ich gebe dem Kind ein Buch.</span> (أعطي الكتاب لِمن؟ للطفل).</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--secondary-soft);color:var(--secondary-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>سبعة حروف جر ثابتة</h3>
+        <p>هذه الحروف السبعة تأخذ الـ Dativ دائمًا، بلا استثناء: <span class="mono">aus, bei, mit, nach, seit, von, zu</span>.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--primary-soft);color:var(--primary)"><svg class="icon" style="width:18px;height:18px"><use href="#i-link"/></svg></span>يبني على ما تعلمته</h3>
+        <p>ضمائر الـ Dativ (<span class="mono">mir, dir, ihm</span>…) تشبه شكليًا ضمائر Akkusativ الانعكاسية من الدرس الثاني — سنقارن بينهما.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="rule">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-book"/></svg>القاعدة الأساسية</span>
+      <h2 class="section-title">كيف تتغيّر الأدوات في حالة الجر؟</h2>
+      <p class="section-sub">كل أداة تعريف تتغيّر شكلها عندما تقع بعد حرف جر من هذه السبعة.</p>
+    </div>
+    <div class="grid-2 reveal" style="align-items:start">
+      <div>
+        <h3 style="font-size:1.1rem;margin-bottom:14px">أدوات التعريف في حالة الجر</h3>
+        <table class="simple-table" id="articleTable"></table>
+      </div>
+      <div>
+        <h3 style="font-size:1.1rem;margin-bottom:14px">الضمائر في حالة الجر</h3>
+        <table class="simple-table" id="pronounTable"></table>
+      </div>
+    </div>
+    <div class="grid-2 reveal" style="margin-top:24px">
+      <div class="callout">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+        <p><b>الجمع دائمًا +ن:</b> في صيغة الجمع، الأداة تصبح <span class="mono">den</span> والاسم يأخذ نهاية <span class="mono">-n</span> إن لم تكن موجودة: <span class="de" data-speak="die Kinder → den Kindern">die Kinder → den Kindern</span>.</p>
+      </div>
+      <div class="callout secondary">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-link"/></svg>
+        <p><b>تذكّر الدرس الثاني:</b> ضمائر Dativ تشبه ضمائر Akkusativ الانعكاسية في <span class="mono">dich/dir</span>، لكنها ليست متطابقة — لاحظ الفرق بين <span class="mono">mich/mir</span> و<span class="mono">dich/dir</span>.</p>
+      </div>
+    </div>
+    <div class="callout reveal" style="margin-top:20px">
+      <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+      <p><b>ترتيب بسيط:</b> عندما تجتمع Dativ و Akkusativ كاسمين في نفس الجملة، يأتي Dativ أولًا عادة: <span class="de" data-speak="Ich gebe dem Kind das Buch">Ich gebe dem Kind das Buch</span> (لِمن؟ ثم ماذا؟).</p>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="compass">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>جرّب بنفسك</span>
+      <h2 class="section-title">بوصلة حروف الجر السبعة</h2>
+      <p class="section-sub">انقر على أي اتجاه لتدور الإبرة نحوه وتظهر معناه، مثاله، وعلامة الجر المميزة (الخط المنقّط تحت الأداة والاسم).</p>
+    </div>
+    <div class="compass-shell reveal">
+      <div class="compass-layout">
+        <div class="compass-face-wrap" id="compassFace"></div>
+        <div class="route-card" id="routeCard"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="contractions">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-link"/></svg>اختصارات شائعة جدًا</span>
+      <h2 class="section-title">حين يندمج حرف الجر مع الأداة</h2>
+      <p class="section-sub">في الحديث اليومي، تُدمج بعض حروف الجر مع الأداة <span class="mono">dem/der</span> لتكوين كلمة واحدة أقصر وأكثر طبيعية.</p>
+    </div>
+    <div class="grid-4 reveal-stagger reveal" id="contractionsGrid"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="vocab">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-cards"/></svg>١٢ عنصرًا أساسيًا</span>
+      <h2 class="section-title">المفردات الأساسية</h2>
+      <p class="section-sub">الأفعال الملوّنة السبعة الأولى هي حروف الجر، والباقي أفعال شهيرة تلازم حالة الجر دائمًا.</p>
+    </div>
+    <div class="vocab-grid" id="vocabGrid"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="examples">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>تطبيق عملي</span>
+      <h2 class="section-title">جملة واحدة لكل حرف جر</h2>
+    </div>
+    <div class="reveal-stagger reveal" id="examplesList" style="display:flex;flex-direction:column;gap:18px"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="mistakes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>تجنّب الفخاخ الشائعة</span>
+      <h2 class="section-title">أخطاء يقع فيها معظم المتعلمين</h2>
+    </div>
+    <div class="reveal-stagger reveal" id="mistakesList" style="display:flex;flex-direction:column;gap:16px"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="pronunciation">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-speaker"/></svg>نطق أصيل</span>
+      <h2 class="section-title">نصائح النطق وأسرار المتحدث الأصلي</h2>
+    </div>
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--primary-soft);color:var(--primary);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">استخدم الاختصارات</h3><p>قول <span class="de" data-speak="bei dem">bei dem</span> بدلًا من <span class="de" data-speak="beim">beim</span> يبدو رسميًا جدًا وغير طبيعي في الحديث اليومي.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--secondary-soft);color:var(--secondary-ink);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px"><span class="mono">seit</span> أم <span class="mono">seid</span>؟</h3><p>ينطقان بنفس الطريقة تمامًا! <span class="de" data-speak="seit">seit</span> (حرف جر: منذ) و<span class="de" data-speak="seid">seid</span> (فعل: أنتم). السياق وحده يفرّق بينهما.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--primary-soft);color:var(--primary);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">النبرة على الاسم</h3><p>حرف الجر نفسه كلمة غير منبورة غالبًا؛ النبرة تقع على الاسم الذي يليه: <span class="de" data-speak="mit dem BUS">mit dem BUS</span>.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="exercises">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>وقت التطبيق</span>
+      <h2 class="section-title">تمارين تفاعلية فورية</h2>
+    </div>
+    <div class="exercise-shell reveal">
+      <div class="exercise-tabs" role="tablist">
+        <button class="exercise-tab active" data-panel="panelMcq" role="tab">اختر الأداة <span class="count" id="countMcq">٠/٧</span></button>
+        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الأداة <span class="count" id="countFill">٠/٧</span></button>
+        <button class="exercise-tab" data-panel="panelBuilder" role="tab">رتّب الجملة <span class="count" id="countBuilder">٠/٣</span></button>
+        <button class="exercise-tab" data-panel="panelMatch" role="tab">طابق المعنى <span class="count" id="countMatch">٠/٧</span></button>
+      </div>
+      <div class="exercise-panels">
+        <div class="exercise-panel active" id="panelMcq"></div>
+        <div class="exercise-panel" id="panelFill"></div>
+        <div class="exercise-panel" id="panelBuilder"></div>
+        <div class="exercise-panel" id="panelMatch"></div>
+      </div>
+      <div class="score-bar-wrap">
+        <span class="score-label">إتقانك للتمارين</span>
+        <div class="score-track"><div class="score-fill" id="scoreFill"></div></div>
+        <span class="score-label mono" id="scoreLabel">٠٪</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="summary">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-star"/></svg>ملخّص الدرس</span>
+      <h2 class="section-title">ما الذي أتقنته اليوم؟</h2>
+    </div>
+    <div class="grid-2 reveal">
+      <ul class="summary-list info-card">
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>سبعة حروف جر تأخذ Dativ دائمًا: <span class="mono">aus, bei, mit, nach, seit, von, zu</span>.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>الأدوات تتغيّر: <span class="mono">der→dem, die→der, das→dem, die(جمع)→den+n</span>.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>الاختصارات <span class="mono">beim, vom, zum, zur</span> هي الشكل الطبيعي في الحديث اليومي.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>بعض الأفعال تأخذ Dativ دائمًا دون حرف جر: <span class="mono">helfen, danken, gefallen</span>.</p></li>
+      </ul>
+      <div class="info-card" style="display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;background:linear-gradient(155deg, var(--primary-soft), var(--secondary-soft))">
+        <svg class="icon" style="width:40px;height:40px;margin:0 auto;color:var(--primary)"><use href="#i-compass"/></svg>
+        <h3 style="justify-content:center;font-size:1.2rem">الدرس القادم</h3>
+        <p>نهايات الصفة (Adjektivendungen) — كيف تتغيّر نهاية الصفة حسب الأداة والجنس والحالة. قريبًا في الدرس الخامس.</p>
+        <button class="btn btn-ghost" disabled style="align-self:center;opacity:.6;cursor:not-allowed">الدرس ٥ (قريبًا)</button>
+      </div>
+    </div>
+    <h3 style="margin-top:40px;text-align:center;font-size:1.3rem" class="reveal">إنجازاتك في هذا الدرس</h3>
+    <div class="badges-row reveal" id="badgesRow"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>الدرس ٤ · مسار الألمانية A2 — حالة الجر Dativ وحروف الجر السبعة.</span>
+    <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس"><svg class="icon"><use href="#i-printer"/></svg></button>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى"><svg class="icon" style="width:20px;height:20px;stroke:#fff"><use href="#i-up"/></svg></button>
+
+<div class="audio-dock" id="audioDock">
+  <div class="audio-dock-controls">
+    <button class="icon-btn" id="dockPlayPause" aria-label="تشغيل/إيقاف مؤقت"><svg class="icon" id="dockPlayIcon"><use href="#i-pause"/></svg></button>
+    <button class="icon-btn" id="dockReplay" aria-label="إعادة"><svg class="icon"><use href="#i-replay"/></svg></button>
+  </div>
+  <span class="audio-dock-text" id="dockText" dir="ltr">…</span>
+  <input type="range" id="dockSpeed" min="0.6" max="1.3" step="0.05" value="0.95" aria-label="سرعة النطق">
+  <span class="audio-dock-voice" id="dockVoice">…</span>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ==========================================================================
+   DATA
+   ========================================================================== */
+const PREPS = [
+  {key:"aus",  word:"aus",  colorVar:"--prep-aus",  ar:"من (الأصل / الخروج)", icon:"i-arrow-out",
+    subject:"Ich", verb:"komme", article:"aus", dative:"Deutschland", rest:"", ar_ex:"أنا من ألمانيا."},
+  {key:"bei",  word:"bei",  colorVar:"--prep-bei",  ar:"عند / لدى", icon:"i-pin",
+    subject:"Ich", verb:"bin", article:"bei", dative:"meiner Familie", rest:"", ar_ex:"أنا عند عائلتي."},
+  {key:"mit",  word:"mit",  colorVar:"--prep-mit",  ar:"مع", icon:"i-together",
+    subject:"Ich", verb:"fahre", article:"mit", dative:"dem Bus", rest:"", ar_ex:"أذهب بالحافلة."},
+  {key:"nach", word:"nach", colorVar:"--prep-nach", ar:"إلى (مدن/دول) / بعد", icon:"i-target-arrow",
+    subject:"Ich", verb:"fahre", article:"nach", dative:"Berlin", rest:"", ar_ex:"أسافر إلى برلين."},
+  {key:"seit", word:"seit", colorVar:"--prep-seit", ar:"منذ", icon:"i-clock-since",
+    subject:"Ich", verb:"lerne", article:"seit", dative:"einem Jahr", rest:"Deutsch", ar_ex:"أتعلم الألمانية منذ سنة."},
+  {key:"von",  word:"von",  colorVar:"--prep-von",  ar:"من", icon:"i-arrow-out",
+    subject:"Das Geschenk", verb:"ist", article:"von", dative:"meiner Mutter", rest:"", ar_ex:"الهدية من أمي."},
+  {key:"zu",   word:"zu",   colorVar:"--prep-zu",   ar:"إلى (أماكن/أشخاص)", icon:"i-target-arrow",
+    subject:"Ich", verb:"gehe", article:"zu", dative:"meinem Freund", rest:"", ar_ex:"أذهب إلى صديقي."}
+];
+
+const VOCAB_EXTRA = [
+  {de:"helfen", ar:"يساعد (+ Dativ)"}, {de:"danken", ar:"يشكر (+ Dativ)"},
+  {de:"gefallen", ar:"يعجب (+ Dativ)"}, {de:"gehören", ar:"ينتمي / يخصّ (+ Dativ)"}, {de:"schmecken", ar:"طعمه لذيذ (+ Dativ)"}
+];
+
+const CONTRACTIONS = [
+  {short:"beim", long:"bei + dem"}, {short:"vom", long:"von + dem"},
+  {short:"zum", long:"zu + dem"}, {short:"zur", long:"zu + der"}
+];
+
+const MISTAKES = [
+  {wrong:"Ich fahre mit der Bus.", right:"Ich fahre mit dem Bus.", note:"«der Bus» مذكّر، فيصبح في حالة الجر «dem»، وليس «der»."},
+  {wrong:"Ich komme aus die Türkei.", right:"Ich komme aus der Türkei.", note:"«die Türkei» مؤنث، فيصبح في حالة الجر «der»."},
+  {wrong:"Ich gebe den Kinder ein Geschenk.", right:"Ich gebe den Kindern ein Geschenk.", note:"في الجمع، الاسم يأخذ نهاية «-n» أيضًا: Kinder → Kindern."},
+  {wrong:"Ich gehe zu der Schule.", right:"Ich gehe zur Schule.", note:"في الحديث الطبيعي، «zu der» تُدمج دائمًا إلى «zur»."},
+  {wrong:"Ich lerne seit ein Jahr Deutsch.", right:"Ich lerne seit einem Jahr Deutsch.", note:"«ein» يأخذ نهاية حالة الجر «-em» هنا: ein → einem."}
+];
+
+const MCQ = [
+  {parts:["Ich fahre mit ", "___", " Bus."], options:["dem","der"], correct:"dem", why:"«der Bus» مذكّر → dem."},
+  {parts:["Ich komme aus ", "___", " Schweiz."], options:["der","dem"], correct:"der", why:"«die Schweiz» مؤنث → der."},
+  {parts:["Er wohnt bei ", "___", " Eltern."], options:["den","dem"], correct:"den", why:"«die Eltern» جمع → den."},
+  {parts:["Nach ", "___", " Arbeit gehe ich nach Hause."], options:["der","dem"], correct:"der", why:"«die Arbeit» مؤنث → der."},
+  {parts:["Das Geschenk ist von ", "___", " Mutter."], options:["der","dem"], correct:"der", why:"«die Mutter» مؤنث → der."},
+  {parts:["Ich gehe zu ", "___", " Arzt."], options:["dem","der"], correct:"dem", why:"«der Arzt» مذكّر → dem."},
+  {parts:["Ich lerne seit ", "___", " Jahr Deutsch."], options:["einem","ein"], correct:"einem", why:"«ein» يأخذ نهاية -em في حالة الجر."}
+];
+
+const FILL = [
+  {prompt:"Ich fahre mit ___ Fahrrad zur Arbeit.", correct:"dem", hint:"das Fahrrad — محايد"},
+  {prompt:"Sie kommt aus ___ USA.", correct:"den", hint:"die USA — تُعامل كجمع"},
+  {prompt:"Er wohnt bei ___ Großeltern.", correct:"den", hint:"die Großeltern — جمع"},
+  {prompt:"Nach ___ Film gehen wir essen.", correct:"dem", hint:"der Film — مذكّر"},
+  {prompt:"Das ist ein Geschenk von ___ Freunden.", correct:"den", hint:"die Freunde — جمع"},
+  {prompt:"Ich gehe zu ___ Bäckerei.", correct:"der", hint:"die Bäckerei — مؤنث"},
+  {prompt:"Wir wohnen hier seit ___ Monaten.", correct:"den", hint:"die Monate — جمع"}
+];
+
+const BUILDER = [
+  {words:["mit","Ich","dem","Bus","fahre"], correct:["Ich","fahre","mit","dem","Bus"], ar:"أذهب بالحافلة."},
+  {words:["Schweiz","Sie","aus","kommt","der"], correct:["Sie","kommt","aus","der","Schweiz"], ar:"هي من سويسرا."},
+  {words:["Schule","Ich","zur","gehe"], correct:["Ich","gehe","zur","Schule"], ar:"أذهب إلى المدرسة."}
+];
+
+/* ==========================================================================
+   THEME
+   ========================================================================== */
+const root = document.documentElement;
+function applyTheme(mode){ root.setAttribute('data-theme', mode); try{ localStorage.setItem('lesson4-theme', mode); }catch(e){} }
+(function initTheme(){
+  let stored = null;
+  try{ stored = localStorage.getItem('lesson4-theme'); }catch(e){}
+  if(stored){ applyTheme(stored); } else { applyTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+})();
+document.getElementById('themeToggle').addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+
+/* ==========================================================================
+   SPEECH SYNTHESIS MANAGER
+   ========================================================================== */
+const Speech = (function(){
+  let voices = [], currentVoice = null, currentUtterance = null, currentEl = null, rate = 0.95;
+  function refreshVoices(){
+    voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+    const de = voices.filter(v => /^de/i.test(v.lang));
+    const pool = de.length ? de : voices;
+    if(pool.length){
+      pool.sort((a,b)=>{ const score = v => (/de-de/i.test(v.lang)?3:0) + (/google/i.test(v.name)?2:0) + (/natural|enhanced|premium|online/i.test(v.name)?2:0) + (v.default?1:0); return score(b)-score(a); });
+      currentVoice = pool[0];
+    }
+    const label = document.getElementById('dockVoice');
+    if(label) label.textContent = currentVoice ? currentVoice.name.replace('Microsoft ','').replace('Google ','') : 'صوت افتراضي';
+  }
+  if(window.speechSynthesis){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+  function clearHighlights(){ document.querySelectorAll('.rs-word.speaking, .rs-dative.speaking, .speak-dot.speaking').forEach(el => el.classList.remove('speaking')); }
+  function speak(text, opts){
+    opts = opts || {};
+    if(!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    clearHighlights();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'de-DE';
+    if(currentVoice) utter.voice = currentVoice;
+    utter.rate = rate;
+    currentUtterance = utter; currentEl = opts.el || null;
+    utter.onstart = () => { showDock(text); if(opts.el) opts.el.classList.add('speaking'); setDockPlaying(true); };
+    utter.onend = () => { clearHighlights(); setDockPlaying(false); hideDockDelayed(); };
+    utter.onerror = () => setDockPlaying(false);
+    window.speechSynthesis.speak(utter);
+  }
+  function togglePause(){
+    if(!window.speechSynthesis) return;
+    if(window.speechSynthesis.speaking && !window.speechSynthesis.paused){ window.speechSynthesis.pause(); setDockPlaying(false); }
+    else if(window.speechSynthesis.paused){ window.speechSynthesis.resume(); setDockPlaying(true); }
+  }
+  function replay(){ if(currentUtterance) speak(currentUtterance.text, {el: currentEl}); }
+  function setRate(r){ rate = r; }
+  let dockTimeout = null;
+  function showDock(text){ clearTimeout(dockTimeout); const dock = document.getElementById('audioDock'); document.getElementById('dockText').textContent = text; dock.classList.add('visible'); }
+  function hideDockDelayed(){ dockTimeout = setTimeout(()=> document.getElementById('audioDock').classList.remove('visible'), 2600); }
+  function setDockPlaying(playing){ document.getElementById('dockPlayIcon').innerHTML = '<use href="#' + (playing?'i-pause':'i-play') + '"/>'; }
+  return { speak, togglePause, replay, setRate };
+})();
+document.getElementById('dockPlayPause').addEventListener('click', Speech.togglePause);
+document.getElementById('dockReplay').addEventListener('click', Speech.replay);
+document.getElementById('dockSpeed').addEventListener('input', e => Speech.setRate(parseFloat(e.target.value)));
+
+/* ==========================================================================
+   SHARED HELPER: click-to-speak accessibility wiring
+   ========================================================================== */
+function makeSpeakable(el, text, opts){
+  opts = opts || {};
+  el.style.cursor = 'pointer';
+  if(!el.getAttribute('role')) el.setAttribute('role','button');
+  if(!el.hasAttribute('tabindex')) el.tabIndex = 0;
+  if(!el.getAttribute('aria-label')) el.setAttribute('aria-label', 'استمع لـ ' + text);
+  el.addEventListener('click', () => Speech.speak(text, Object.assign({el}, opts)));
+  el.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); el.click(); } });
+}
+document.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+
+/* ==========================================================================
+   BADGES
+   (declared early and deliberately NOT triggered by any programmatic initial
+   setup below — only real user interactions unlock them, which also means
+   declaration order can never bite us here even if this weren't already early)
+   ========================================================================== */
+const BADGES = [
+  {id:'explorer', name:'مستكشف الدرس', icon:'i-compass'},
+  {id:'vocab', name:'حافظ المفردات', icon:'i-cards'},
+  {id:'navigator', name:'ملّاح ماهر', icon:'i-pin'},
+  {id:'sharp', name:'حادّ التفكير', icon:'i-medal'},
+  {id:'champion', name:'بطل الدرس الرابع', icon:'i-star'}
+];
+let unlockedBadges = {};
+try{ unlockedBadges = JSON.parse(localStorage.getItem('lesson4-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
+const badgesRow = document.getElementById('badgesRow');
+BADGES.forEach(b => {
+  const el = document.createElement('div'); el.className = 'badge' + (unlockedBadges[b.id]?' unlocked':''); el.id = 'badge-'+b.id;
+  el.innerHTML = `<div class="badge-icon"><svg class="icon" style="stroke:#fff;width:22px;height:22px"><use href="#${b.icon}"/></svg></div><div class="badge-name">${b.name}</div>`;
+  badgesRow.appendChild(el);
+});
+function unlockBadge(id){
+  if(unlockedBadges[id]) return;
+  unlockedBadges[id] = true;
+  try{ localStorage.setItem('lesson4-badges', JSON.stringify(unlockedBadges)); }catch(e){}
+  const el = document.getElementById('badge-'+id);
+  if(el){ el.classList.add('unlocked','pop'); setTimeout(()=>el.classList.remove('pop'), 650); }
+  const badge = BADGES.find(b=>b.id===id);
+  if(badge) showToast('🎉 إنجاز جديد: ' + badge.name);
+}
+function showToast(msg){
+  const wrap = document.getElementById('toastWrap'); const t = document.createElement('div'); t.className='toast'; t.textContent=msg; wrap.appendChild(t);
+  requestAnimationFrame(()=>t.classList.add('show'));
+  setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.remove(),400); }, 3200);
+}
+
+function prepColor(prep){ return getComputedStyle(document.documentElement).getPropertyValue(prep.colorVar).trim(); }
+
+/* ==========================================================================
+   ROUTE SENTENCE COMPONENT (used in compass route-card + examples list)
+   ========================================================================== */
+function buildRouteSentence(container, prep){
+  container.innerHTML = '';
+  const color = prepColor(prep);
+  const mk = (word) => { const s = document.createElement('span'); s.className = 'rs-word de'; s.textContent = word; makeSpeakable(s, word); return s; };
+  container.appendChild(mk(prep.subject));
+  container.appendChild(mk(prep.verb));
+  const chip = document.createElement('span');
+  chip.className = 'rs-prep-chip de';
+  chip.style.background = color;
+  chip.textContent = prep.article;
+  makeSpeakable(chip, prep.article);
+  container.appendChild(chip);
+  const dativeEl = document.createElement('span');
+  dativeEl.className = 'rs-dative de';
+  dativeEl.textContent = prep.dative;
+  makeSpeakable(dativeEl, prep.dative);
+  container.appendChild(dativeEl);
+  if(prep.rest){ prep.rest.split(' ').forEach(w => container.appendChild(mk(w))); }
+  const period = document.createElement('span'); period.textContent = '.'; container.appendChild(period);
+  const fullText = [prep.subject, prep.verb, prep.article, prep.dative, prep.rest].filter(Boolean).join(' ') + '.';
+  container.dataset.fulltext = fullText;
+}
+
+/* ==========================================================================
+   PREPOSITION COMPASS (signature interactive component)
+   ========================================================================== */
+function polar(cxPct, cyPct, rPct, angleDeg){
+  const rad = (angleDeg - 90) * Math.PI/180;
+  return { left: cxPct + rPct*Math.cos(rad), top: cyPct + rPct*Math.sin(rad) };
+}
+
+const compassFace = document.getElementById('compassFace');
+const routeCard = document.getElementById('routeCard');
+let compassPoints = [];
+let compassNeedle = null;
+
+function renderRouteCard(target, prep){
+  const color = prepColor(prep);
+  target.innerHTML = `
+    <span class="route-tag" style="background:${color}"><svg class="icon" style="width:14px;height:14px"><use href="#${prep.icon}"/></svg>${prep.ar}</span>
+    <div class="route-title de" style="color:${color}"></div>
+    <div class="route-ar"></div>
+    <div class="route-sentence-box"><div class="route-sentence" dir="ltr"></div></div>`;
+  const titleEl = target.querySelector('.route-title');
+  titleEl.textContent = prep.word;
+  makeSpeakable(titleEl, prep.word);
+  target.querySelector('.route-ar').textContent = prep.ar_ex;
+  buildRouteSentence(target.querySelector('.route-sentence'), prep);
+}
+
+function buildCompassFace(){
+  compassFace.innerHTML = '<div class="compass-ring"></div><div class="compass-needle" id="compassNeedleEl"></div><div class="compass-pivot"></div>';
+  compassNeedle = compassFace.querySelector('#compassNeedleEl');
+  compassPoints = [];
+  PREPS.forEach((prep, i) => {
+    const angle = i * (360 / PREPS.length);
+    const pos = polar(50, 50, 40, angle);
+    const btn = document.createElement('button');
+    btn.className = 'compass-point';
+    btn.style.left = pos.left + '%';
+    btn.style.top = pos.top + '%';
+    btn.style.background = prepColor(prep);
+    btn.style.setProperty('--point-glow', prepColor(prep) + '55');
+    btn.textContent = prep.word;
+    btn.dataset.key = prep.key;
+    btn.dataset.angle = angle;
+    btn.setAttribute('aria-label', 'اختر حرف الجر ' + prep.word);
+    btn.addEventListener('click', () => selectPrep(prep.key, true));
+    compassFace.appendChild(btn);
+    compassPoints.push(btn);
+  });
+}
+
+// selectPrep is the ONLY place that can unlock the 'navigator' badge, and only
+// when isUserAction is true — the initial programmatic selection below passes
+// false, so achievement state never depends on script execution order.
+function selectPrep(key, isUserAction){
+  const prep = PREPS.find(p => p.key === key);
+  const angle = parseFloat((compassPoints.find(b => b.dataset.key === key) || {}).dataset.angle || 0);
+  if(compassNeedle) compassNeedle.style.transform = `translate(-50%,-100%) rotate(${angle}deg)`;
+  compassPoints.forEach(b => b.classList.toggle('active', b.dataset.key === key));
+  routeCard.classList.add('focusing');
+  setTimeout(() => { renderRouteCard(routeCard, prep); routeCard.classList.remove('focusing'); }, 160);
+  if(isUserAction){ unlockBadge('navigator'); Speech.speak(prep.subject + ' ' + prep.verb + ' ' + prep.article + ' ' + prep.dative + (prep.rest ? ' ' + prep.rest : '') + '.', {}); }
+}
+
+buildCompassFace();
+selectPrep('aus', false);
+
+/* ==========================================================================
+   RULE TABLES
+   ========================================================================== */
+const ARTICLES = [["der (مذكّر)","dem"],["die (مؤنث)","der"],["das (محايد)","dem"],["die (جمع)","den + n"]];
+document.getElementById('articleTable').innerHTML = '<tr><th>أداة التعريف</th><th>في حالة الجر</th></tr>' +
+  ARTICLES.map(([a,b]) => `<tr><td>${a}</td><td class="de" data-speak="${b.replace(' + n','')}">${b}</td></tr>`).join('');
+document.getElementById('articleTable').querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+
+const PRONOUNS = [["ich","mir"],["du","dir"],["er / es","ihm"],["sie","ihr"],["wir","uns"],["ihr","euch"],["sie / Sie","ihnen / Ihnen"]];
+document.getElementById('pronounTable').innerHTML = '<tr><th>الفاعل</th><th>ضمير الجر</th></tr>' +
+  PRONOUNS.map(([a,b]) => `<tr><td class="de">${a}</td><td class="de" data-speak="${b.split(' / ')[0]}">${b}</td></tr>`).join('');
+document.getElementById('pronounTable').querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+
+/* ==========================================================================
+   CONTRACTIONS
+   ========================================================================== */
+const contractionsGrid = document.getElementById('contractionsGrid');
+CONTRACTIONS.forEach(c => {
+  const card = document.createElement('div');
+  card.className = 'contraction-card';
+  card.innerHTML = `<div class="contraction-eq de">${c.short}</div><div class="contraction-parts">${c.long}</div>`;
+  makeSpeakable(card.querySelector('.contraction-eq'), c.short);
+  contractionsGrid.appendChild(card);
+});
+
+/* ==========================================================================
+   VOCAB — flip cards (7 prepositions + 5 dative-only verbs)
+   ========================================================================== */
+const vocabGrid = document.getElementById('vocabGrid');
+const flippedSet = new Set();
+const vocabCombined = [
+  ...PREPS.map(p => ({de:p.word, back:p.ar, ar:p.ar_ex, color:prepColor(p)})),
+  ...VOCAB_EXTRA.map(v => ({de:v.de, back:v.de, ar:v.ar, color:null}))
+];
+vocabCombined.forEach((v, i) => {
+  const card = document.createElement('div');
+  card.className = 'flip-card';
+  const backBg = v.color || 'var(--primary)';
+  card.innerHTML = `
+    <div class="flip-card-inner" tabindex="0" role="button" aria-label="بطاقة ${v.de}, انقر للقلب">
+      <div class="flip-face flip-front">
+        <span class="de">${v.de}</span>
+        <span class="flip-hint">انقر للقلب</span>
+        <span class="speak-dot" data-word="${v.de}" role="button" tabindex="0" aria-label="استمع لـ ${v.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+      </div>
+      <div class="flip-face flip-back" style="background:${backBg}">
+        <span class="meaning-de">${v.back}</span>
+        <span class="meaning">${v.ar}</span>
+        <span class="speak-dot" data-word="${v.de}" role="button" tabindex="0" aria-label="استمع لـ ${v.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+      </div>
+    </div>`;
+  const inner = card.querySelector('.flip-card-inner');
+  inner.addEventListener('click', e => { if(e.target.closest('.speak-dot')) return; card.classList.toggle('flipped'); if(!flippedSet.has(i)){ flippedSet.add(i); checkVocabAchievement(); } updateProgress(); });
+  inner.addEventListener('keydown', e => { if((e.key==='Enter'||e.key===' ') && !e.target.closest('.speak-dot')){ e.preventDefault(); inner.click(); } });
+  card.querySelectorAll('.speak-dot').forEach(dot => {
+    function trigger(e){ e.stopPropagation(); dot.classList.add('speaking'); Speech.speak(dot.dataset.word, {el: dot}); setTimeout(()=>dot.classList.remove('speaking'), 900); }
+    dot.addEventListener('click', trigger);
+    dot.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); trigger(e); } });
+  });
+  vocabGrid.appendChild(card);
+});
+function checkVocabAchievement(){ if(flippedSet.size >= vocabCombined.length) unlockBadge('vocab'); }
+
+/* ==========================================================================
+   EXAMPLES LIST
+   ========================================================================== */
+const examplesList = document.getElementById('examplesList');
+PREPS.forEach(prep => {
+  const wrap = document.createElement('div');
+  wrap.className = 'info-card';
+  wrap.innerHTML = `
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+      <span class="chip" style="background:${prepColor(prep)};color:#fff">${prep.word}</span>
+      <span style="color:var(--ink-soft);font-size:.9rem">${prep.ar}</span>
+    </div>
+    <div class="route-sentence" dir="ltr"></div>
+    <p style="margin-top:14px;padding-top:14px;border-top:1px dashed var(--border);color:var(--ink-soft)"></p>
+    <button class="btn btn-ghost" style="padding:9px 16px;font-size:.85rem;margin-top:14px"><svg class="icon" style="width:15px;height:15px"><use href="#i-speaker"/></svg> استمع للجملة كاملة</button>`;
+  const sentEl = wrap.querySelector('.route-sentence');
+  buildRouteSentence(sentEl, prep);
+  wrap.querySelector('p').textContent = prep.ar_ex;
+  wrap.querySelector('.btn').addEventListener('click', () => Speech.speak(sentEl.dataset.fulltext, {}));
+  examplesList.appendChild(wrap);
+});
+
+/* ==========================================================================
+   MISTAKES LIST
+   ========================================================================== */
+const mistakesList = document.getElementById('mistakesList');
+MISTAKES.forEach(m => {
+  const card = document.createElement('div');
+  card.className = 'mistake-card';
+  card.innerHTML = `
+    <div class="mistake-side mistake-wrong"><span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-x"/></svg> خطأ شائع</span><span class="mistake-sentence">${m.wrong}</span></div>
+    <div class="mistake-side mistake-right"><span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg> الصحيح</span><span class="mistake-sentence de" data-speak="${m.right}">${m.right}</span></div>
+    <div class="mistake-note">${m.note}</div>`;
+  const speakEl = card.querySelector('[data-speak]');
+  makeSpeakable(speakEl, speakEl.dataset.speak);
+  mistakesList.appendChild(card);
+});
+
+/* ==========================================================================
+   EXERCISES
+   ========================================================================== */
+const exState = { mcq:0, fill:0, builder:0, match:0 };
+const exTotals = { mcq: MCQ.length, fill: FILL.length, builder: BUILDER.length, match: PREPS.length };
+function toAr(n){ return String(n).replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]); }
+function updateExerciseCounters(){
+  document.getElementById('countMcq').textContent = toAr(exState.mcq)+'/'+toAr(exTotals.mcq);
+  document.getElementById('countFill').textContent = toAr(exState.fill)+'/'+toAr(exTotals.fill);
+  document.getElementById('countBuilder').textContent = toAr(exState.builder)+'/'+toAr(exTotals.builder);
+  document.getElementById('countMatch').textContent = toAr(exState.match)+'/'+toAr(exTotals.match);
+  const total = exTotals.mcq+exTotals.fill+exTotals.builder+exTotals.match;
+  const done = exState.mcq+exState.fill+exState.builder+exState.match;
+  const pct = Math.round((done/total)*100);
+  document.getElementById('scoreFill').style.width = pct+'%';
+  document.getElementById('scoreLabel').textContent = toAr(pct)+'٪';
+  if(pct===100) unlockBadge('champion');
+  updateProgress();
+}
+document.querySelectorAll('.exercise-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.exercise-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.exercise-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active'); document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+const panelMcq = document.getElementById('panelMcq');
+MCQ.forEach(q => {
+  const block = document.createElement('div'); block.className = 'q-block';
+  block.innerHTML = `<div class="q-prompt de">${q.parts[0]}<b class="mono" style="color:var(--ink-faint)">[ ___ ]</b>${q.parts[2]}</div><div class="q-options"></div><div class="q-feedback"></div>`;
+  const optsWrap = block.querySelector('.q-options'); const feedback = block.querySelector('.q-feedback');
+  q.options.forEach(opt => {
+    const b = document.createElement('button'); b.className = 'opt-btn'; b.textContent = opt;
+    b.addEventListener('click', () => {
+      const correct = opt === q.correct;
+      optsWrap.querySelectorAll('.opt-btn').forEach(o=>o.disabled=true);
+      b.classList.add(correct?'correct':'wrong');
+      if(!correct){ optsWrap.querySelectorAll('.opt-btn').forEach(o=>{ if(o.textContent===q.correct) o.classList.add('correct'); }); }
+      feedback.textContent = q.why; feedback.classList.add('show');
+      exState.mcq++; updateExerciseCounters();
+    });
+    optsWrap.appendChild(b);
+  });
+  panelMcq.appendChild(block);
+});
+
+const panelFill = document.getElementById('panelFill');
+FILL.forEach(q => {
+  const block = document.createElement('div'); block.className = 'q-block';
+  const [before, after] = q.prompt.split('___');
+  block.innerHTML = `<div class="q-prompt de">${before}<b class="mono" style="color:var(--ink-faint)">[ ___ ]</b>${after}</div>
+    <div class="fill-row"><input type="text" placeholder="…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل الأداة المناسبة"><button class="fill-check">تحقّق</button><span class="fill-result"></span></div>
+    <div class="q-feedback">💡 ${q.hint}</div>`;
+  const input = block.querySelector('input'); const result = block.querySelector('.fill-result'); const feedback = block.querySelector('.q-feedback'); const check = block.querySelector('.fill-check');
+  let answered = false;
+  function doCheck(){
+    if(answered) return;
+    const val = input.value.trim().toLowerCase();
+    const correct = val === q.correct.toLowerCase();
+    answered = true; input.disabled = true; check.disabled = true;
+    if(correct){ result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--success)"><use href="#i-check"/></svg>'; input.style.borderColor='var(--success)'; }
+    else{ result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--danger)"><use href="#i-x"/></svg>'; input.style.borderColor='var(--danger)'; input.value=q.correct; }
+    feedback.classList.add('show'); exState.fill++; updateExerciseCounters();
+  }
+  check.addEventListener('click', doCheck);
+  input.addEventListener('keydown', e => { if(e.key==='Enter'){ e.preventDefault(); doCheck(); } });
+  panelFill.appendChild(block);
+});
+
+const panelBuilder = document.getElementById('panelBuilder');
+BUILDER.forEach(q => {
+  const block = document.createElement('div'); block.className = 'q-block';
+  const shuffled = [...q.words].sort(() => Math.random()-0.5);
+  block.innerHTML = `<div class="q-prompt">رتّب الكلمات لتكوين جملة صحيحة (${q.ar})</div><div class="builder-answer"></div><div class="builder-pool"></div>
+    <div class="builder-actions"><button class="btn btn-ghost btn-reset" style="padding:8px 16px;font-size:.85rem">إعادة الترتيب</button><button class="btn btn-primary btn-check" style="padding:8px 16px;font-size:.85rem">تحقّق</button></div>
+    <div class="q-feedback"></div>`;
+  const answerWrap = block.querySelector('.builder-answer'); const poolWrap = block.querySelector('.builder-pool'); const feedback = block.querySelector('.q-feedback');
+  let answer = [];
+  function renderAll(){
+    poolWrap.innerHTML = '';
+    shuffled.forEach((w, wi) => {
+      const chip = document.createElement('button'); chip.className = 'chip-word de'; chip.textContent = w;
+      if(answer.some(a=>a.idx===wi)) chip.classList.add('used');
+      chip.addEventListener('click', () => { if(chip.classList.contains('used')) return; answer.push({idx:wi, word:w}); renderAll(); });
+      poolWrap.appendChild(chip);
+    });
+    answerWrap.innerHTML = '';
+    if(!answer.length) answerWrap.innerHTML = '<span style="color:var(--ink-faint);font-size:.85rem">انقر على الكلمات أدناه بالترتيب الصحيح…</span>';
+    answer.forEach((a, ai) => {
+      const chip = document.createElement('button'); chip.className = 'chip-word de'; chip.style.background='var(--primary-soft)'; chip.style.borderColor='var(--primary)'; chip.textContent = a.word;
+      chip.addEventListener('click', () => { answer.splice(ai,1); renderAll(); });
+      answerWrap.appendChild(chip);
+    });
+  }
+  renderAll();
+  block.querySelector('.btn-reset').addEventListener('click', () => { answer=[]; feedback.classList.remove('show'); renderAll(); });
+  block.querySelector('.btn-check').addEventListener('click', function(){
+    const built = answer.map(a=>a.word);
+    const isCorrect = JSON.stringify(built) === JSON.stringify(q.correct);
+    feedback.textContent = isCorrect ? '✔ صحيح تمامًا! الجملة الصحيحة: ' + q.correct.join(' ') + '.' : '✘ ليس تمامًا. الترتيب الصحيح: ' + q.correct.join(' ') + '.';
+    feedback.classList.add('show');
+    Speech.speak(q.correct.join(' ') + '.', {});
+    if(!block.dataset.counted){ block.dataset.counted='1'; exState.builder++; updateExerciseCounters(); }
+  });
+  panelBuilder.appendChild(block);
+});
+
+const panelMatch = document.getElementById('panelMatch');
+(function initMatch(){
+  const pairs = PREPS.map(p => ({de:p.word, ar:p.ar}));
+  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على حرف جر من العمود الأيمن، ثم معناه المطابق من العمود الأيسر.</div><div class="match-grid"><div class="match-col" id="matchLeft"></div><div class="match-col" id="matchRight"></div></div>`;
+  const left = document.getElementById('matchLeft'); const right = document.getElementById('matchRight');
+  const shuffledRight = [...pairs].sort(() => Math.random()-0.5);
+  let selL=null, selR=null, matched=0;
+  pairs.forEach(p => {
+    const el = document.createElement('button'); el.className = 'match-item de'; el.textContent = p.de; el.dataset.key = p.de;
+    el.addEventListener('click', () => { if(el.classList.contains('matched')) return; left.querySelectorAll('.match-item').forEach(i=>i.classList.remove('selected')); el.classList.add('selected'); selL=el; tryMatch(); });
+    left.appendChild(el);
+  });
+  shuffledRight.forEach(p => {
+    const el = document.createElement('button'); el.className = 'match-item'; el.textContent = p.ar; el.dataset.key = p.de;
+    el.addEventListener('click', () => { if(el.classList.contains('matched')) return; right.querySelectorAll('.match-item').forEach(i=>i.classList.remove('selected')); el.classList.add('selected'); selR=el; tryMatch(); });
+    right.appendChild(el);
+  });
+  function tryMatch(){
+    if(!selL || !selR) return;
+    if(selL.dataset.key === selR.dataset.key){
+      selL.classList.add('matched'); selR.classList.add('matched'); selL.classList.remove('selected'); selR.classList.remove('selected');
+      Speech.speak(selL.textContent, {});
+      matched++; exState.match = matched; updateExerciseCounters();
+      if(matched===PREPS.length) unlockBadge('sharp');
+      selL=null; selR=null;
+    } else {
+      [selL, selR].forEach(el => { el.classList.add('shake'); setTimeout(()=>el.classList.remove('shake','selected'), 400); });
+      setTimeout(()=>{ selL=null; selR=null; }, 420);
+    }
+  }
+})();
+
+/* ==========================================================================
+   SCROLL REVEAL + ROAD NAV + PROGRESS
+   ========================================================================== */
+const revealObserver = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('is-visible'); }); }, {threshold:.15});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+const SECTION_META = [
+  {id:'hero', label:'البداية'}, {id:'why', label:'لماذا'}, {id:'rule', label:'القاعدة'}, {id:'compass', label:'البوصلة'},
+  {id:'contractions', label:'اختصارات'}, {id:'vocab', label:'المفردات'}, {id:'examples', label:'أمثلة'}, {id:'mistakes', label:'أخطاء'},
+  {id:'pronunciation', label:'النطق'}, {id:'exercises', label:'التمارين'}, {id:'summary', label:'الخلاصة'}
+];
+const roadTrack = document.getElementById('roadTrack');
+SECTION_META.forEach(s => {
+  const btn = document.createElement('button'); btn.className = 'waypoint-btn'; btn.dataset.target = '#' + s.id;
+  btn.innerHTML = '<span class="waypoint-pin"></span><span class="lbl">' + s.label + '</span>';
+  roadTrack.appendChild(btn);
+});
+const sections = SECTION_META.map(s => document.getElementById(s.id)).filter(Boolean);
+const visitedSections = new Set();
+const waypointBtns = document.querySelectorAll('.waypoint-btn');
+function setActiveWaypoint(id){ waypointBtns.forEach(b => b.classList.toggle('active', b.dataset.target === id)); }
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if(entry.isIntersecting){ setActiveWaypoint('#'+entry.target.id); visitedSections.add(entry.target.id); if(visitedSections.size===sections.length) unlockBadge('explorer'); updateProgress(); } });
+}, {rootMargin: '-40% 0px -50% 0px'});
+sections.forEach(s => sectionObserver.observe(s));
+document.querySelectorAll('[data-target], [data-scroll]').forEach(btn => {
+  btn.addEventListener('click', () => { const target = btn.dataset.target || btn.dataset.scroll; const el = document.querySelector(target); if(el) el.scrollIntoView({behavior:'smooth', block:'start'}); });
+});
+function updateProgress(){
+  const sectionPct = visitedSections.size / sections.length;
+  const exTotal = exTotals.mcq+exTotals.fill+exTotals.builder+exTotals.match;
+  const exDone = exState.mcq+exState.fill+exState.builder+exState.match;
+  const exPct = exTotal ? exDone/exTotal : 0;
+  const overall = Math.round((sectionPct*0.4 + exPct*0.6) * 100);
+  const circumference = 113;
+  document.getElementById('progressRingBar').style.strokeDashoffset = circumference - (overall/100)*circumference;
+  document.getElementById('progressRingLabel').textContent = toAr(overall)+'٪';
+}
+updateProgress(); updateExerciseCounters();
+
+/* ==========================================================================
+   SEARCH
+   ========================================================================== */
+function runSearch(query){
+  if(!query || query.trim().length < 2) return;
+  const q = query.trim().toLowerCase();
+  document.querySelectorAll('mark.hl').forEach(m => m.replaceWith(document.createTextNode(m.textContent)));
+  const walker = document.createTreeWalker(document.getElementById('mainContent'), NodeFilter.SHOW_TEXT, null);
+  const nodes = []; let n; while(n = walker.nextNode()) nodes.push(n);
+  let found = null;
+  for(const node of nodes){
+    const text = node.nodeValue; const idx = text.toLowerCase().indexOf(q);
+    if(idx > -1 && node.parentElement && !node.parentElement.closest('script,style')){
+      const before = text.slice(0,idx), match = text.slice(idx,idx+q.length), after = text.slice(idx+q.length);
+      const mark = document.createElement('mark'); mark.className='hl'; mark.textContent = match;
+      const frag = document.createDocumentFragment();
+      frag.appendChild(document.createTextNode(before)); frag.appendChild(mark); frag.appendChild(document.createTextNode(after));
+      node.parentElement.replaceChild(frag, node);
+      if(!found) found = mark;
+    }
+  }
+  if(found) found.scrollIntoView({behavior:'smooth', block:'center'});
+  else showToast('لم يتم العثور على «' + query + '» في هذا الدرس');
+}
+document.getElementById('searchToggle').addEventListener('click', () => { document.getElementById('searchBoxDesktop').classList.toggle('open'); document.getElementById('searchInputDesktop').focus(); });
+document.getElementById('searchInputDesktop').addEventListener('keydown', e => { if(e.key==='Enter') runSearch(e.target.value); });
+
+/* ==========================================================================
+   FULLSCREEN / PRINT / BACK TO TOP
+   ========================================================================== */
+document.getElementById('fullscreenToggle').addEventListener('click', () => {
+  if(!document.fullscreenElement){ document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+  else{ document.exitFullscreen && document.exitFullscreen(); }
+});
+document.addEventListener('fullscreenchange', () => { document.getElementById('fsIcon').innerHTML = '<use href="#' + (document.fullscreenElement?'i-compress':'i-expand') + '"/>'; });
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 640), {passive:true});
+backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-guide-04-dativ" data-category="a2" data-title="بوصلة حروف الجر — حالة الجر Dativ" data-root="../../" defer></script>
+</body>
+</html>

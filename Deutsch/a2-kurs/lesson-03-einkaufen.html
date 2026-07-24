@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الألمانية A2 — الدرس الثالث: التسوق والمطعم</title>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #1a1208;
+  --bg2:     #231a0c;
+  --bg3:     #2e2210;
+  --bg4:     #3a2c16;
+  --card:    #201608;
+  --border:  rgba(214,160,60,0.1);
+  --border2: rgba(214,160,60,0.22);
+
+  --gold:    #d6a03c;
+  --gold2:   #f0c060;
+  --gold3:   #ffe8a0;
+  --gold-d:  rgba(214,160,60,0.12);
+  --gold-d2: rgba(214,160,60,0.22);
+
+  --sage:    #7ab87a;
+  --sage-d:  rgba(122,184,122,0.1);
+  --tomato:  #e05a3a;
+  --tomato-d:rgba(224,90,58,0.1);
+  --sky:     #5aabe0;
+  --sky-d:   rgba(90,171,224,0.1);
+  --cream:   #f0e8d0;
+  --warm:    #c8a878;
+
+  --text:    #f0e8d0;
+  --text2:   #a08860;
+  --text3:   #6a5838;
+
+  --r:  16px;
+  --rs: 10px;
+  --sh: 0 8px 48px rgba(0,0,0,0.7);
+}
+[data-theme="light"] {
+  --bg:      #fdf6e8;
+  --bg2:     #f5eccc;
+  --bg3:     #ede0b0;
+  --bg4:     #e4d494;
+  --card:    #fffdf5;
+  --border:  rgba(160,100,20,0.1);
+  --border2: rgba(160,100,20,0.22);
+  --gold:    #a06820;
+  --gold2:   #c08030;
+  --gold3:   #804808;
+  --gold-d:  rgba(160,104,32,0.08);
+  --gold-d2: rgba(160,104,32,0.16);
+  --sage:    #3a7a3a;
+  --sage-d:  rgba(58,122,58,0.08);
+  --tomato:  #b83820;
+  --tomato-d:rgba(184,56,32,0.08);
+  --sky:     #2070b0;
+  --sky-d:   rgba(32,112,176,0.08);
+  --cream:   #2c1e00;
+  --warm:    #5a3c10;
+  --text:    #1e1000;
+  --text2:   #5a4020;
+  --text3:   #9a7840;
+  --sh: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body {
+  font-family: 'Readex Pro', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  direction: rtl;
+  transition: background .4s, color .4s;
+  overflow-x: hidden;
+}
+
+/* Warm texture overlay */
+body::before {
+  content:'';
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(214,160,60,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 80%, rgba(122,184,122,0.03) 0%, transparent 60%);
+}
+
+/* Ornamental top border */
+body::after {
+  content:'';
+  position:fixed; top:0; left:0; right:0; height:3px;
+  background: linear-gradient(90deg,
+    var(--tomato), var(--gold), var(--sage), var(--gold), var(--tomato));
+  z-index:1001;
+}
+
+#scroll-prog {
+  position:fixed; top:3px; left:0; right:0; height:3px;
+  background: linear-gradient(90deg, var(--gold2), var(--gold));
+  transform-origin:right; transform:scaleX(0);
+  z-index:1002; transition:transform .08s;
+}
+
+/* ═══ NAV ═══ */
+nav {
+  position:sticky; top:0; z-index:100;
+  background: rgba(26,18,8,.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border2);
+  padding: 0 2rem;
+  height: 64px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+[data-theme="light"] nav { background:rgba(253,246,232,.94); }
+
+.nav-brand { display:flex; align-items:center; gap:.75rem; font-weight:800; font-size:1rem; }
+.nav-tag {
+  background:var(--gold-d); border:1px solid var(--border2);
+  color:var(--gold); font-size:.7rem; font-weight:700;
+  padding:3px 10px; border-radius:20px; letter-spacing:.05em;
+}
+.nav-links { display:flex; gap:1.5rem; list-style:none; }
+.nav-links a { font-size:.83rem; color:var(--text2); text-decoration:none; font-weight:500; transition:color .2s; }
+.nav-links a:hover { color:var(--gold); }
+.theme-btn {
+  width:36px; height:36px; border-radius:50%;
+  border:1px solid var(--border2); background:var(--bg3);
+  color:var(--text2); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; font-size:1rem;
+  transition:all .2s;
+}
+.theme-btn:hover { background:var(--bg4); color:var(--text); }
+
+/* ═══ HERO ═══ */
+.hero {
+  position:relative; z-index:1;
+  padding: 5rem 2rem 3.5rem;
+  text-align:center; max-width:900px; margin:0 auto;
+}
+
+.hero-ornament {
+  font-size:3rem; display:block; margin-bottom:1rem;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-8px); }
+}
+
+.hero-eyebrow {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--gold-d); border:1px solid var(--border2);
+  color:var(--gold); padding:5px 18px; border-radius:30px;
+  font-size:.8rem; font-weight:700; margin-bottom:1.5rem;
+  letter-spacing:.05em; animation:fadeUp .6s ease both;
+}
+
+.hero h1 {
+  font-family:'Playfair Display', serif;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight:700; font-style:italic;
+  line-height:1.18; margin-bottom:1rem;
+  animation:fadeUp .7s ease .1s both;
+}
+.hero h1 em {
+  font-style:normal;
+  background:linear-gradient(135deg,var(--gold),var(--gold2),var(--tomato));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.hero-sub {
+  color:var(--text2); font-size:1.05rem; line-height:1.9;
+  max-width:640px; margin:0 auto 2.5rem;
+  animation:fadeUp .7s ease .2s both;
+}
+
+.hero-pills {
+  display:flex; justify-content:center; gap:.75rem; flex-wrap:wrap;
+  animation:fadeUp .7s ease .3s both;
+}
+.pill {
+  display:flex; align-items:center; gap:.4rem;
+  padding:7px 16px; border-radius:30px;
+  font-size:.82rem; font-weight:600; border:1px solid;
+}
+.pg { background:var(--gold-d);  color:var(--gold);   border-color:rgba(214,160,60,.3); }
+.ps { background:var(--sage-d);  color:var(--sage);   border-color:rgba(122,184,122,.3); }
+.pt { background:var(--tomato-d);color:var(--tomato); border-color:rgba(224,90,58,.3); }
+.pb { background:var(--sky-d);   color:var(--sky);    border-color:rgba(90,171,224,.3); }
+
+/* ═══ MAIN ═══ */
+main {
+  position:relative; z-index:1;
+  max-width:960px; margin:0 auto;
+  padding:1rem 2rem 4rem;
+  display:flex; flex-direction:column; gap:3rem;
+}
+
+/* Section header */
+.sh {
+  display:flex; align-items:center; gap:1rem;
+  margin-bottom:1.5rem;
+}
+.si {
+  width:48px; height:48px; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem; flex-shrink:0;
+}
+.si-g { background:var(--gold-d);  border:1px solid rgba(214,160,60,.2); }
+.si-s { background:var(--sage-d);  border:1px solid rgba(122,184,122,.2); }
+.si-t { background:var(--tomato-d);border:1px solid rgba(224,90,58,.2); }
+.si-b { background:var(--sky-d);   border:1px solid rgba(90,171,224,.2); }
+.sm h2 { font-size:1.28rem; font-weight:800; }
+.sm p  { font-size:.83rem; color:var(--text2); margin-top:2px; }
+
+/* Card */
+.card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r); padding:1.75rem;
+  transition:border-color .25s, box-shadow .25s;
+  animation:fadeUp .65s ease both;
+}
+.card:hover { border-color:var(--border2); box-shadow:var(--sh); }
+
+/* ═══ MARKET SHELF (vocabulary display) ═══ */
+.shelf {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
+  gap:1rem;
+}
+
+.shelf-item {
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:var(--rs);
+  padding:1.1rem 1.2rem;
+  cursor:pointer;
+  transition:all .25s;
+  position:relative;
+  overflow:hidden;
+}
+.shelf-item::before {
+  content:'';
+  position:absolute; top:0; right:0;
+  width:100%; height:3px;
+  background:linear-gradient(90deg, var(--gold), var(--gold2));
+  transform:scaleX(0); transform-origin:right;
+  transition:transform .3s;
+}
+.shelf-item:hover { border-color:var(--gold); transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.shelf-item:hover::before { transform:scaleX(1); }
+.shelf-item .emoji { font-size:1.8rem; display:block; margin-bottom:.5rem; }
+.shelf-item .de-w  { font-family:'JetBrains Mono',monospace; color:var(--gold); font-weight:600; font-size:1rem; display:block; direction:ltr; margin-bottom:3px; }
+.shelf-item .ar-w  { color:var(--text2); font-size:.9rem; display:block; margin-bottom:5px; }
+.shelf-item .price { font-family:'JetBrains Mono',monospace; font-size:.75rem; color:var(--text3); direction:ltr; }
+.shelf-item .speak-btn { position:absolute; top:10px; left:10px; font-size:.8rem; cursor:pointer; background:var(--bg3); border:1px solid var(--border2); border-radius:50%; width:26px; height:26px; display:flex; align-items:center; justify-content:center; transition:all .2s; }
+.shelf-item .speak-btn:hover { background:var(--gold-d); color:var(--gold); }
+
+/* ═══ PRICE TAG component ═══ */
+.price-section {
+  display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem;
+}
+.price-card {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1rem; text-align:center;
+  cursor:pointer; transition:all .2s;
+}
+.price-card:hover { border-color:var(--sage); background:var(--sage-d); }
+.price-amt  { font-family:'JetBrains Mono',monospace; font-size:1.8rem; font-weight:700; color:var(--gold2); display:block; line-height:1; }
+.price-de   { font-family:'JetBrains Mono',monospace; font-size:.88rem; color:var(--sage); display:block; margin:5px 0 2px; direction:ltr; }
+.price-ar   { font-size:.78rem; color:var(--text2); display:block; }
+
+/* ═══ MENU BOARD ═══ */
+.menu-board {
+  background:var(--bg2);
+  border:2px solid var(--border2);
+  border-radius:var(--r);
+  overflow:hidden;
+}
+.menu-header {
+  background:linear-gradient(135deg, var(--bg3), var(--bg4));
+  border-bottom:1px solid var(--border2);
+  padding:1.2rem 1.5rem;
+  display:flex; align-items:center; gap:1rem;
+}
+.menu-header h3 { font-family:'Playfair Display',serif; font-size:1.2rem; font-style:italic; color:var(--gold2); }
+.menu-body { padding:1rem; }
+.menu-category { margin-bottom:1.2rem; }
+.menu-cat-title {
+  font-size:.72rem; font-weight:800; color:var(--gold);
+  letter-spacing:.1em; text-transform:uppercase;
+  padding-bottom:.5rem; border-bottom:1px solid var(--border);
+  margin-bottom:.7rem; direction:rtl;
+}
+.menu-item {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:.6rem 0; border-bottom:1px dashed var(--border);
+  cursor:pointer; transition:background .2s; border-radius:6px;
+  padding-right:.5rem; padding-left:.5rem;
+}
+.menu-item:last-child { border-bottom:none; }
+.menu-item:hover { background:var(--gold-d); }
+.mi-name { display:flex; flex-direction:column; gap:2px; }
+.mi-de { font-family:'JetBrains Mono',monospace; font-size:.9rem; color:var(--gold); direction:ltr; }
+.mi-ar { font-size:.78rem; color:var(--text2); }
+.mi-price { font-family:'JetBrains Mono',monospace; font-size:.95rem; font-weight:700; color:var(--sage); white-space:nowrap; }
+
+/* ═══ DIALOGUE ═══ */
+.conv { display:flex; flex-direction:column; gap:1.1rem; }
+.msg  { display:flex; gap:1rem; align-items:flex-start; }
+.msg.l { flex-direction:row-reverse; }
+.av {
+  width:44px; height:44px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.3rem; flex-shrink:0;
+}
+.msg.r .av { background:var(--gold-d);  border:1px solid rgba(214,160,60,.25); }
+.msg.l .av { background:var(--sage-d);  border:1px solid rgba(122,184,122,.25); }
+.bwrap { flex:1; max-width:78%; }
+.msg.r .bwrap { text-align:right; }
+.bub {
+  display:inline-block; padding:11px 16px;
+  border-radius:14px; font-size:.92rem; line-height:1.78; max-width:100%;
+}
+.msg.r .bub { background:var(--gold-d2); border:1px solid rgba(214,160,60,.2); border-radius:14px 4px 14px 14px; }
+.msg.l .bub { background:var(--bg3); border:1px solid var(--border); border-radius:4px 14px 14px 14px; }
+.dl  { color:var(--gold2); font-weight:700; display:block; font-size:.96rem; margin-bottom:3px; direction:ltr; font-family:'JetBrains Mono',monospace; }
+.who { font-size:.72rem; color:var(--text3); margin-top:4px; display:block; }
+
+/* ═══ TIP BOX ═══ */
+.tip {
+  display:flex; gap:1rem; align-items:flex-start;
+  padding:1.1rem 1.3rem; border-radius:var(--rs); margin:1rem 0;
+}
+.tip.g { background:var(--gold-d);  border:1px solid rgba(214,160,60,.2); }
+.tip.s { background:var(--sage-d);  border:1px solid rgba(122,184,122,.2); }
+.tip.t { background:var(--tomato-d);border:1px solid rgba(224,90,58,.2); }
+.tip.b { background:var(--sky-d);   border:1px solid rgba(90,171,224,.2); }
+.tpic { font-size:1.3rem; flex-shrink:0; margin-top:2px; }
+.tip h4 { font-size:.88rem; font-weight:700; margin-bottom:4px; }
+.tip.g h4{color:var(--gold);}  .tip.s h4{color:var(--sage);}
+.tip.t h4{color:var(--tomato);}  .tip.b h4{color:var(--sky);}
+.tip p { font-size:.85rem; color:var(--text2); line-height:1.8; }
+
+/* Inline code */
+.de { font-family:'JetBrains Mono',monospace; background:var(--bg3); border:1px solid var(--border2); padding:2px 9px; border-radius:5px; font-size:.86em; color:var(--gold2); direction:ltr; display:inline-block; }
+
+/* Table */
+.tw { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:.9rem; }
+th { background:var(--bg3); color:var(--text2); padding:10px 14px; text-align:right; font-weight:700; font-size:.78rem; border-bottom:1px solid var(--border2); letter-spacing:.04em; }
+td { padding:10px 14px; border-bottom:1px solid var(--border); }
+tr:last-child td{border-bottom:none;} tr:hover td{background:var(--bg2);}
+.td-de { font-family:'JetBrains Mono',monospace; color:var(--gold); font-weight:600; direction:ltr; text-align:left; }
+.td-ex { color:var(--text2); font-size:.82rem; direction:ltr; text-align:left; }
+
+/* ═══ INTERACTIVE CART ═══ */
+.shop-game {
+  display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;
+}
+.product-shelf {
+  display:flex; flex-direction:column; gap:.6rem;
+}
+.prod-btn {
+  display:flex; align-items:center; gap:.8rem;
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:var(--rs); padding:.75rem 1rem;
+  cursor:pointer; transition:all .2s; color:var(--text);
+  font-family:'Readex Pro',sans-serif; font-size:.88rem; font-weight:500;
+  text-align:right;
+}
+.prod-btn:hover { border-color:var(--gold); background:var(--gold-d); }
+.prod-emoji { font-size:1.4rem; }
+.prod-info { flex:1; }
+.prod-de { font-family:'JetBrains Mono',monospace; font-size:.82rem; color:var(--gold2); display:block; direction:ltr; }
+.prod-price { font-size:.75rem; color:var(--sage); }
+
+.cart-panel {
+  background:var(--bg2); border:1px solid var(--border2);
+  border-radius:var(--rs); padding:1.2rem; display:flex; flex-direction:column; gap:.8rem;
+}
+.cart-title { font-size:.85rem; font-weight:800; color:var(--gold); padding-bottom:.5rem; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:.4rem; }
+.cart-items { flex:1; min-height:120px; display:flex; flex-direction:column; gap:.4rem; }
+.cart-item {
+  display:flex; justify-content:space-between; align-items:center;
+  background:var(--bg3); border-radius:6px; padding:.4rem .7rem; font-size:.82rem;
+  animation:fadeUp .3s ease both;
+}
+.cart-item-name { font-family:'JetBrains Mono',monospace; color:var(--gold2); direction:ltr; }
+.cart-item-price { color:var(--sage); font-weight:600; }
+.remove-btn { color:var(--tomato); cursor:pointer; font-size:.9rem; margin-right:.3rem; transition:transform .2s; }
+.remove-btn:hover { transform:scale(1.3); }
+.cart-empty { color:var(--text3); font-size:.83rem; text-align:center; margin:auto; padding:1rem; }
+.cart-total {
+  border-top:1px solid var(--border2); padding-top:.8rem;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.total-label { font-size:.83rem; color:var(--text2); }
+.total-amt { font-family:'JetBrains Mono',monospace; font-size:1.2rem; font-weight:700; color:var(--gold2); }
+.total-de { font-size:.75rem; color:var(--text3); display:block; text-align:left; direction:ltr; margin-top:2px; }
+.pay-btn {
+  width:100%; padding:10px; border-radius:var(--rs);
+  background:var(--gold); color:#1a1208; border:none;
+  font-family:'Readex Pro',sans-serif; font-size:.9rem; font-weight:800;
+  cursor:pointer; transition:all .2s; margin-top:.5rem;
+}
+.pay-btn:hover { background:var(--gold2); transform:translateY(-1px); }
+.receipt-msg {
+  text-align:center; padding:.8rem; background:var(--sage-d);
+  border:1px solid rgba(122,184,122,.25); border-radius:var(--rs);
+  color:var(--sage); font-size:.83rem; display:none;
+  animation:fadeUp .4s ease both;
+}
+
+/* ═══ PHRASE BUILDER ═══ */
+.phrase-builder {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1.4rem;
+}
+.pb-title { font-size:.85rem; font-weight:800; color:var(--gold); margin-bottom:1rem; }
+.pb-slots { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1rem; align-items:center; min-height:44px; }
+.pb-slot {
+  padding:8px 14px; border-radius:8px;
+  border:2px dashed var(--border2); background:var(--bg3);
+  font-size:.85rem; color:var(--text3); min-width:80px; text-align:center;
+  transition:all .25s;
+}
+.pb-slot.filled { border-style:solid; border-color:var(--gold); background:var(--gold-d); color:var(--gold2); font-family:'JetBrains Mono',monospace; }
+.pb-words { display:flex; gap:.5rem; flex-wrap:wrap; }
+.pb-word {
+  padding:7px 13px; border-radius:8px;
+  background:var(--bg3); border:1px solid var(--border2);
+  font-family:'JetBrains Mono',monospace; font-size:.82rem; color:var(--text);
+  cursor:pointer; transition:all .2s; direction:ltr; user-select:none;
+}
+.pb-word:hover:not(.used) { border-color:var(--gold); background:var(--gold-d); color:var(--gold); }
+.pb-word.used { opacity:.35; cursor:default; }
+.pb-feedback {
+  margin-top:.8rem; padding:.7rem 1rem; border-radius:6px;
+  font-size:.83rem; display:none;
+}
+.pb-feedback.ok { background:var(--sage-d); border:1px solid rgba(122,184,122,.2); color:var(--sage); display:block; }
+.pb-feedback.err { background:var(--tomato-d); border:1px solid rgba(224,90,58,.2); color:var(--tomato); display:block; }
+.pb-actions { display:flex; gap:.5rem; margin-top:.8rem; }
+.pb-btn {
+  padding:7px 16px; border-radius:8px; border:1px solid var(--border2);
+  background:var(--bg3); color:var(--text2); cursor:pointer;
+  font-family:'Readex Pro',sans-serif; font-size:.82rem; font-weight:600;
+  transition:all .2s;
+}
+.pb-btn:hover { border-color:var(--gold); color:var(--gold); }
+.pb-btn.check { background:var(--gold); color:#1a1208; border-color:var(--gold); }
+.pb-btn.check:hover { background:var(--gold2); }
+
+/* ═══ QUIZ ═══ */
+.qblock {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1.2rem 1.4rem; margin-bottom:1rem;
+}
+.qlabel { font-size:.7rem; color:var(--text3); font-weight:800; letter-spacing:.07em; display:block; margin-bottom:.5rem; }
+.qtext { font-weight:700; font-size:.95rem; margin-bottom:.9rem; }
+.qde { color:var(--gold); font-family:'JetBrains Mono',monospace; }
+.opts { display:grid; grid-template-columns:1fr 1fr; gap:.55rem; }
+.opt {
+  padding:9px 14px; border-radius:8px;
+  border:1px solid var(--border2); background:var(--bg3);
+  color:var(--text); cursor:pointer;
+  font-family:'Readex Pro',sans-serif; font-size:.87rem; font-weight:500;
+  transition:all .2s; text-align:center;
+}
+.opt:hover:not(:disabled){ border-color:var(--gold); background:var(--gold-d); }
+.opt.correct{ border-color:var(--sage)!important; background:var(--sage-d)!important; color:var(--sage)!important; }
+.opt.wrong  { border-color:var(--tomato)!important; background:var(--tomato-d)!important; color:var(--tomato)!important; }
+.opt:disabled{ cursor:default; }
+.qfb { font-size:.82rem; padding:8px 12px; border-radius:6px; margin-top:8px; display:none; }
+.qfb.show{display:block;}
+.qfb.ok  { background:var(--sage-d);   color:var(--sage);   border:1px solid rgba(122,184,122,.2); }
+.qfb.err { background:var(--tomato-d); color:var(--tomato); border:1px solid rgba(224,90,58,.2); }
+
+/* Result */
+.result-wrap {
+  background:linear-gradient(135deg,var(--gold-d),var(--sage-d));
+  border:1px solid var(--border2); border-radius:var(--r);
+  padding:2rem; text-align:center; display:none; margin-top:1.5rem;
+}
+.r-score { font-family:'Playfair Display',serif; font-size:4.5rem; font-weight:700; font-style:italic; color:var(--gold2); line-height:1; margin-bottom:.5rem; }
+.r-msg { color:var(--text2); margin-bottom:1.5rem; }
+.r-btn {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--gold); color:#1a1208; border:none;
+  padding:11px 30px; border-radius:30px;
+  font-family:'Readex Pro',sans-serif; font-size:.95rem; font-weight:800;
+  cursor:pointer; transition:all .25s;
+}
+.r-btn:hover { background:var(--gold2); transform:translateY(-2px); }
+
+/* homework items */
+.hw-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(175px,1fr)); gap:.75rem; margin-bottom:1.2rem; }
+.hw-item { background:var(--bg2); border:1px solid var(--border); border-radius:var(--rs); padding:.9rem; font-size:.85rem; }
+.hw-item strong { display:block; margin-bottom:3px; }
+.hw-item span { color:var(--text2); font-size:.78rem; }
+
+footer {
+  position:relative; z-index:1;
+  text-align:center; padding:2.5rem 2rem;
+  color:var(--text3); font-size:.82rem;
+  border-top:1px solid var(--border);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from{opacity:0;transform:translateY(22px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.a1{animation-delay:.05s;} .a2{animation-delay:.15s;}
+.a3{animation-delay:.25s;} .a4{animation-delay:.35s;}
+
+@media(max-width:700px){
+  nav{padding:0 1rem;}
+  .nav-links{display:none;}
+  main{padding:1rem 1rem 3rem;}
+  .hero{padding:3rem 1rem 2rem;}
+  .shop-game{grid-template-columns:1fr;}
+  .opts{grid-template-columns:1fr;}
+  .shelf{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}
+  .price-section{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div id="scroll-prog"></div>
+
+<nav>
+  <div class="nav-brand">
+    <span>🇩🇪</span>
+    <span>الألمانية للعرب</span>
+    <span class="nav-tag">الدرس 3 / A2</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#vocab">المفردات</a></li>
+    <li><a href="#prices">الأسعار</a></li>
+    <li><a href="#restaurant">المطعم</a></li>
+    <li><a href="#shop-sim">تسوّق!</a></li>
+    <li><a href="#quiz">الاختبار</a></li>
+  </ul>
+  <button class="theme-btn" onclick="toggleTheme()">☀</button>
+</nav>
+
+<div class="hero">
+  <span class="hero-ornament">🛒</span>
+  <div class="hero-eyebrow">🥨 الدرس الثالث — التسوق والمطعم</div>
+  <h1><em>في السوق والمطعم</em><br>بالألمانية 🍺🥐</h1>
+  <p class="hero-sub">اليوم ستتعلم كيف تتسوق، تسأل عن السعر، تطلب طعاماً في المطعم، وتتحدث بثقة عن المال والفاتورة!</p>
+  <div class="hero-pills">
+    <div class="pill pg">🏪 مفردات السوق</div>
+    <div class="pill ps">💶 الأسعار والمال</div>
+    <div class="pill pt">🍽 في المطعم</div>
+    <div class="pill pb">🗣 حوارات حقيقية</div>
+  </div>
+</div>
+
+<main>
+
+<!-- ══════ SECTION 1: SUPERMARKET VOCAB ══════ -->
+<section id="vocab">
+  <div class="sh">
+    <div class="si si-g">🏪</div>
+    <div class="sm"><h2>في السوبرماركت — Supermarkt</h2><p>مفردات التسوق اليومية — اضغط على أي بطاقة لسماع النطق</p></div>
+  </div>
+
+  <div class="card a1">
+    <h3 style="font-size:.95rem;font-weight:800;color:var(--gold);margin-bottom:1rem;">🥦 الطعام والمشروبات</h3>
+    <div class="shelf">
+
+      <div class="shelf-item" onclick="speak('das Brot')">
+        <button class="speak-btn" onclick="speak('das Brot');event.stopPropagation()">🔊</button>
+        <span class="emoji">🍞</span>
+        <span class="de-w">das Brot</span>
+        <span class="ar-w">الخبز</span>
+        <span class="price">محايد • 1,20 €</span>
+      </div>
+
+      <div class="shelf-item" onclick="speak('die Milch')">
+        <button class="speak-btn" onclick="speak('die Milch');event.stopPropagation()">🔊</button>
+        <span class="emoji">🥛</span>
+        <span class="de-w">die Milch</span>
+        <span class="ar-w">الحليب</span>
+        <span class="price">مؤنث • 0,89 €</span>
+      </div>
+
+      <div class="shelf-item" onclick="speak('der Käse')">
+        <button class="speak-btn" onclick="speak('der Käse');event.stopPropagation()">🔊</button>
+        <span class="emoji">🧀</span>
+        <span class="de-w">der Käse</span>
+        <span class="ar-w">الجبن</span>
+        <span class="price">مذكر • 2,50 €</span>
+      </div>
+
+      <div class="shelf-item" onclick="speak('das Fleisch')">
+        <button class="speak-btn" onclick="speak('das Fleisch');event.stopPropagation()">🔊</button>
+        <span class="emoji">🥩</span>
+        <span class="de-w">das Fleisch</span>
+        <span class="ar-w">اللحم</span>
+        <span class="price">محايد • 8,90 €</span>
+      </div>
+
+      <div class="shelf-item" onclick="speak('der Apfel')">
+        <button class="speak-btn" onclick="speak('der Apfel');event.stopPropagation()">🔊</button>
+        <span class="emoji">🍎</span>
+        <span class="de-w">der Apfel</span>
+        <span class="ar-w">التفاحة</span>
+        <span class="price">مذكر • 0,30 €</span>
+      </div>
+
+      <div class="shelf-item" onclick="speak('die Banane')">
+        <button class="speak-btn" onclick="speak('die Banane');event.stopPropagation()">🔊</button>
+        <span class="emoji">🍌</span>
+        <span class="de-w">die Banane</span>
+        <span class="ar-w">الموزة</span>
+        <span class="price">مؤنث • 0,25 €</span>
+      </div>
+
+      <div class="shelf-item" onclick="speak('die Kartoffel')">
+        <button class="speak-btn" onclick="speak('die Kartoffel');event.stopPropagation()">🔊</button>
+        <span class="emoji">🥔</span>
+        <span class="de-w">die Kartoffel</span>
+        <span class="ar-w">البطاطا</span>
+        <span class="price">مؤنث • 1,99 €</span>
+      </div>
+
+      <div class="shelf-item" onclick="speak('der Kaffee')">
+        <button class="speak-btn" onclick="speak('der Kaffee');event.stopPropagation()">🔊</button>
+        <span class="emoji">☕</span>
+        <span class="de-w">der Kaffee</span>
+        <span class="ar-w">القهوة</span>
+        <span class="price">مذكر • 4,50 €</span>
+      </div>
+
+      <div class="shelf-item" onclick="speak('das Wasser')">
+        <button class="speak-btn" onclick="speak('das Wasser');event.stopPropagation()">🔊</button>
+        <span class="emoji">💧</span>
+        <span class="de-w">das Wasser</span>
+        <span class="ar-w">الماء</span>
+        <span class="price">محايد • 0,29 €</span>
+      </div>
+
+      <div class="shelf-item" onclick="speak('das Ei')">
+        <button class="speak-btn" onclick="speak('das Ei');event.stopPropagation()">🔊</button>
+        <span class="emoji">🥚</span>
+        <span class="de-w">das Ei / die Eier</span>
+        <span class="ar-w">البيضة / البيض</span>
+        <span class="price">محايد • 0,20 €</span>
+      </div>
+
+      <div class="shelf-item" onclick="speak('die Tomate')">
+        <button class="speak-btn" onclick="speak('die Tomate');event.stopPropagation()">🔊</button>
+        <span class="emoji">🍅</span>
+        <span class="de-w">die Tomate</span>
+        <span class="ar-w">الطماطم</span>
+        <span class="price">مؤنث • 0,40 €</span>
+      </div>
+
+      <div class="shelf-item" onclick="speak('der Zucker')">
+        <button class="speak-btn" onclick="speak('der Zucker');event.stopPropagation()">🔊</button>
+        <span class="emoji">🍬</span>
+        <span class="de-w">der Zucker</span>
+        <span class="ar-w">السكر</span>
+        <span class="price">مذكر • 1,09 €</span>
+      </div>
+
+    </div>
+
+    <div class="tip g" style="margin-top:1.2rem;">
+      <div class="tpic">💡</div>
+      <div>
+        <h4>مفردات السوق الضرورية</h4>
+        <p>
+          <span class="de">die Kasse</span> = الصندوق (الدفع) &nbsp;·&nbsp;
+          <span class="de">der Einkaufswagen</span> = عربة التسوق &nbsp;·&nbsp;
+          <span class="de">die Tüte</span> = الكيس &nbsp;·&nbsp;
+          <span class="de">das Angebot</span> = العرض / التخفيض &nbsp;·&nbsp;
+          <span class="de">ausverkauft</span> = نفد من المخزون
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 2: PRICES & MONEY ══════ -->
+<section id="prices">
+  <div class="sh">
+    <div class="si si-s">💶</div>
+    <div class="sm"><h2>الأسعار والمال</h2><p>كيف تسأل عن السعر وتدفع بالألمانية</p></div>
+  </div>
+
+  <div class="card a2">
+    <div class="tip b" style="margin-bottom:1.2rem;">
+      <div class="tpic">❓</div>
+      <div>
+        <h4>كيف تسأل عن السعر؟</h4>
+        <p>
+          <span class="de">Was kostet das?</span> = كم يكلف هذا؟<br>
+          <span class="de">Wie viel kostet...?</span> = كم يكلف...؟<br>
+          <span class="de">Was macht das?</span> = كم المجموع؟ (عند الدفع)<br>
+          الجواب: <span class="de">Das kostet zwei Euro fünfzig.</span> = يكلف يورويْن وخمسين سنتاً
+        </p>
+      </div>
+    </div>
+
+    <h3 style="font-size:.95rem;font-weight:800;color:var(--sage);margin-bottom:1rem;">كيف تقرأ الأسعار</h3>
+    <div class="price-section">
+      <div class="price-card" onclick="speak('ein Euro')"><span class="price-amt">1,00 €</span><span class="price-de">ein Euro</span><span class="price-ar">يورو واحد</span></div>
+      <div class="price-card" onclick="speak('zwei Euro fünfzig')"><span class="price-amt">2,50 €</span><span class="price-de">zwei Euro fünfzig</span><span class="price-ar">يورويْن وخمسون سنتاً</span></div>
+      <div class="price-card" onclick="speak('drei Euro neunundneunzig')"><span class="price-amt">3,99 €</span><span class="price-de">drei Euro neunundneunzig</span><span class="price-ar">ثلاثة يوروهات وتسعة وتسعون سنتاً</span></div>
+      <div class="price-card" onclick="speak('fünfzehn Euro zwanzig')"><span class="price-amt">15,20 €</span><span class="price-de">fünfzehn Euro zwanzig</span><span class="price-ar">خمسة عشر يورو وعشرون سنتاً</span></div>
+    </div>
+
+    <div class="tw" style="margin-top:1.2rem;">
+      <table>
+        <thead><tr><th>الموقف</th><th>الجملة بالألمانية</th><th>المعنى</th></tr></thead>
+        <tbody>
+          <tr><td>تسأل عن السعر</td><td class="td-de">Was kostet das Brot?</td><td>كم يكلف الخبز؟</td></tr>
+          <tr><td>الجواب</td><td class="td-de">Es kostet einen Euro zwanzig.</td><td>يكلف يورو وعشرون سنتاً</td></tr>
+          <tr><td>تريد شيئاً</td><td class="td-de">Ich hätte gerne ein Kilo Äpfel.</td><td>أريد كيلو تفاح من فضلك</td></tr>
+          <tr><td>هل لديك...؟</td><td class="td-de">Haben Sie frische Tomaten?</td><td>هل عندكم طماطم طازجة؟</td></tr>
+          <tr><td>الدفع</td><td class="td-de">Ich zahle mit Karte, bitte.</td><td>أريد الدفع بالبطاقة</td></tr>
+          <tr><td>الفكة</td><td class="td-de">Haben Sie es kleiner?</td><td>هل عندك فكة؟</td></tr>
+          <tr><td>الإيصال</td><td class="td-de">Kann ich eine Quittung haben?</td><td>هل يمكنني الحصول على إيصال؟</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 3: RESTAURANT ══════ -->
+<section id="restaurant">
+  <div class="sh">
+    <div class="si si-t">🍽</div>
+    <div class="sm"><h2>في المطعم — Im Restaurant</h2><p>من الدخول حتى طلب الفاتورة</p></div>
+  </div>
+
+  <div class="card a3">
+    <!-- Menu Board -->
+    <div class="menu-board" style="margin-bottom:1.5rem;">
+      <div class="menu-header">
+        <span style="font-size:1.5rem;">🍺</span>
+        <div>
+          <h3>Restaurant Zur Alten Eiche</h3>
+          <div style="font-size:.75rem;color:var(--text2);">Speisekarte — قائمة الطعام</div>
+        </div>
+      </div>
+      <div class="menu-body">
+
+        <div class="menu-category">
+          <div class="menu-cat-title">🥗 Vorspeisen — المقبلات</div>
+          <div class="menu-item" onclick="speak('Tomatensuppe')">
+            <div class="mi-name"><span class="mi-de">Tomatensuppe</span><span class="mi-ar">شوربة الطماطم</span></div>
+            <div class="mi-price">3,90 €</div>
+          </div>
+          <div class="menu-item" onclick="speak('Gemischter Salat')">
+            <div class="mi-name"><span class="mi-de">Gemischter Salat</span><span class="mi-ar">سلطة مشكلة</span></div>
+            <div class="mi-price">5,50 €</div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-cat-title">🍖 Hauptspeisen — الأطباق الرئيسية</div>
+          <div class="menu-item" onclick="speak('Schnitzel mit Pommes')">
+            <div class="mi-name"><span class="mi-de">Schnitzel mit Pommes</span><span class="mi-ar">شنيتزل مع بطاطا مقلية</span></div>
+            <div class="mi-price">12,90 €</div>
+          </div>
+          <div class="menu-item" onclick="speak('Bratwurst mit Sauerkraut')">
+            <div class="mi-name"><span class="mi-de">Bratwurst mit Sauerkraut</span><span class="mi-ar">نقانق مشوية مع الملفوف الحامض</span></div>
+            <div class="mi-price">9,50 €</div>
+          </div>
+          <div class="menu-item" onclick="speak('Pasta Bolognese')">
+            <div class="mi-name"><span class="mi-de">Pasta Bolognese</span><span class="mi-ar">باستا بولونيز</span></div>
+            <div class="mi-price">10,80 €</div>
+          </div>
+          <div class="menu-item" onclick="speak('Vegetarisches Gericht')">
+            <div class="mi-name"><span class="mi-de">Vegetarisches Gericht</span><span class="mi-ar">طبق نباتي</span></div>
+            <div class="mi-price">8,90 €</div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-cat-title">🍰 Nachspeisen — الحلويات</div>
+          <div class="menu-item" onclick="speak('Schwarzwälder Kirschtorte')">
+            <div class="mi-name"><span class="mi-de">Schwarzwälder Kirschtorte</span><span class="mi-ar">تورتة الغابة السوداء</span></div>
+            <div class="mi-price">4,50 €</div>
+          </div>
+          <div class="menu-item" onclick="speak('Eis')">
+            <div class="mi-name"><span class="mi-de">Eis (3 Kugeln)</span><span class="mi-ar">آيس كريم (3 كرات)</span></div>
+            <div class="mi-price">3,90 €</div>
+          </div>
+        </div>
+
+        <div class="menu-category">
+          <div class="menu-cat-title">🥤 Getränke — المشروبات</div>
+          <div class="menu-item" onclick="speak('Mineralwasser')">
+            <div class="mi-name"><span class="mi-de">Mineralwasser (0,5l)</span><span class="mi-ar">ماء معدني</span></div>
+            <div class="mi-price">2,50 €</div>
+          </div>
+          <div class="menu-item" onclick="speak('Kaffee')">
+            <div class="mi-name"><span class="mi-de">Kaffee / Tee</span><span class="mi-ar">قهوة / شاي</span></div>
+            <div class="mi-price">2,80 €</div>
+          </div>
+          <div class="menu-item" onclick="speak('ein Bier')">
+            <div class="mi-name"><span class="mi-de">Bier (0,3l)</span><span class="mi-ar">بيرة</span></div>
+            <div class="mi-price">3,20 €</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Restaurant Dialogue -->
+    <h3 style="font-size:.95rem;font-weight:800;color:var(--tomato);margin-bottom:1rem;">🎭 حوار: أحمد يطلب الطعام</h3>
+    <div class="conv">
+
+      <div class="msg r">
+        <div class="av">🧑‍🍳</div>
+        <div class="bwrap">
+          <div class="bub"><span class="dl">Guten Abend! Haben Sie reserviert?</span>مساء الخير! هل حجزتم مسبقاً؟</div>
+          <span class="who">النادل</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👨</div>
+        <div class="bwrap">
+          <div class="bub"><span class="dl">Guten Abend! Nein, aber haben Sie noch einen Tisch für zwei Personen?</span>مساء الخير! لا، لكن هل لديكم طاولة لشخصين؟</div>
+          <span class="who" style="text-align:left;">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑‍🍳</div>
+        <div class="bwrap">
+          <div class="bub"><span class="dl">Ja, natürlich! Bitte folgen Sie mir. Hier ist die Speisekarte.</span>نعم، بالطبع! تفضل. هذه قائمة الطعام.</div>
+          <span class="who">النادل</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👨</div>
+        <div class="bwrap">
+          <div class="bub"><span class="dl">Danke. Ich hätte gerne das Schnitzel mit Pommes und ein Mineralwasser, bitte.</span>شكراً. أريد الشنيتزل مع البطاطا وماء معدني من فضلك.</div>
+          <span class="who" style="text-align:left;">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑‍🍳</div>
+        <div class="bwrap">
+          <div class="bub"><span class="dl">Wie möchten Sie das Fleisch? Gut durchgebraten oder medium?</span>كيف تريد اللحم؟ مطبوخاً جيداً أم متوسطاً؟</div>
+          <span class="who">النادل</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👨</div>
+        <div class="bwrap">
+          <div class="bub"><span class="dl">Gut durchgebraten, bitte. Und können Sie mir sagen, was im Gemischten Salat ist?</span>مطبوخاً جيداً من فضلك. وهل يمكنك إخباري ما يوجد في السلطة المشكلة؟</div>
+          <span class="who" style="text-align:left;">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑‍🍳</div>
+        <div class="bwrap">
+          <div class="bub"><span class="dl">Tomaten, Gurken, Paprika und Zwiebeln mit Olivenöl-Dressing.</span>طماطم، خيار، فلفل وبصل مع صلصة زيت الزيتون.</div>
+          <span class="who">النادل</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👨</div>
+        <div class="bwrap">
+          <div class="bub"><span class="dl">Super! Dann nehme ich auch noch den Salat. Zahlen bitte, am Ende.</span>رائع! إذاً سآخذ السلطة أيضاً. الفاتورة في النهاية من فضلك.</div>
+          <span class="who" style="text-align:left;">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="av">🧑‍🍳</div>
+        <div class="bwrap">
+          <div class="bub"><span class="dl">Das macht zusammen 21 Euro 90. Möchten Sie getrennt oder zusammen zahlen?</span>المجموع أحد وعشرون يورو وتسعون سنتاً. هل تريدون الدفع منفصلاً أم معاً؟</div>
+          <span class="who">النادل</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="av">👨</div>
+        <div class="bwrap">
+          <div class="bub"><span class="dl">Zusammen, bitte. Und stimmt so! Das Essen war sehr lecker!</span>معاً من فضلك. والباقي لك! كان الطعام لذيذاً جداً!</div>
+          <span class="who" style="text-align:left;">أحمد</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+      <h4 style="font-size:.88rem;font-weight:800;color:var(--gold);margin-bottom:.8rem;">🔑 تعابير المطعم الأساسية:</h4>
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem;font-size:.8rem;align-items:center;">
+        <span class="de">Ich hätte gerne...</span><span style="color:var(--text2)"> أريد...</span> &nbsp;·&nbsp;
+        <span class="de">Was empfehlen Sie?</span><span style="color:var(--text2)"> ماذا تنصح؟</span> &nbsp;·&nbsp;
+        <span class="de">Das war sehr lecker!</span><span style="color:var(--text2)"> كان لذيذاً جداً!</span> &nbsp;·&nbsp;
+        <span class="de">Zahlen bitte!</span><span style="color:var(--text2)"> الفاتورة من فضلك!</span> &nbsp;·&nbsp;
+        <span class="de">Stimmt so!</span><span style="color:var(--text2)"> الباقي لك (إكرامية)!</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 4: INTERACTIVE SHOPPING CART ══════ -->
+<section id="shop-sim">
+  <div class="sh">
+    <div class="si si-g">🛒</div>
+    <div class="sm"><h2>العب وتسوّق!</h2><p>أضف منتجات لعربة التسوق وتدرب على الجمل الألمانية</p></div>
+  </div>
+
+  <div class="card a3">
+    <div class="tip s" style="margin-bottom:1.2rem;">
+      <div class="tpic">🎮</div>
+      <div><h4>كيف تلعب؟</h4><p>انقر على المنتجات لإضافتها لعربة التسوق. عندما تنتهي، اضغط "ادفع!" وستسمع الجملة الألمانية الصحيحة!</p></div>
+    </div>
+
+    <div class="shop-game">
+      <div class="product-shelf" id="product-shelf">
+        <div class="prod-btn" onclick="addToCart('das Brot','🍞',1.20,'Brot')">
+          <span class="prod-emoji">🍞</span>
+          <div class="prod-info"><span style="font-weight:700;">الخبز</span><span class="prod-de">das Brot</span></div>
+          <span class="prod-price">1,20 €</span>
+        </div>
+        <div class="prod-btn" onclick="addToCart('die Milch','🥛',0.89,'Milch')">
+          <span class="prod-emoji">🥛</span>
+          <div class="prod-info"><span style="font-weight:700;">الحليب</span><span class="prod-de">die Milch</span></div>
+          <span class="prod-price">0,89 €</span>
+        </div>
+        <div class="prod-btn" onclick="addToCart('der Käse','🧀',2.50,'Käse')">
+          <span class="prod-emoji">🧀</span>
+          <div class="prod-info"><span style="font-weight:700;">الجبن</span><span class="prod-de">der Käse</span></div>
+          <span class="prod-price">2,50 €</span>
+        </div>
+        <div class="prod-btn" onclick="addToCart('der Kaffee','☕',4.50,'Kaffee')">
+          <span class="prod-emoji">☕</span>
+          <div class="prod-info"><span style="font-weight:700;">القهوة</span><span class="prod-de">der Kaffee</span></div>
+          <span class="prod-price">4,50 €</span>
+        </div>
+        <div class="prod-btn" onclick="addToCart('die Tomate','🍅',0.40,'Tomate')">
+          <span class="prod-emoji">🍅</span>
+          <div class="prod-info"><span style="font-weight:700;">الطماطم</span><span class="prod-de">die Tomate</span></div>
+          <span class="prod-price">0,40 €</span>
+        </div>
+        <div class="prod-btn" onclick="addToCart('der Apfel','🍎',0.30,'Apfel')">
+          <span class="prod-emoji">🍎</span>
+          <div class="prod-info"><span style="font-weight:700;">التفاحة</span><span class="prod-de">der Apfel</span></div>
+          <span class="prod-price">0,30 €</span>
+        </div>
+      </div>
+
+      <div class="cart-panel">
+        <div class="cart-title">🛒 Einkaufswagen <span id="cart-count" style="background:var(--tomato);color:#fff;border-radius:50%;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:.75rem;margin-right:.3rem;">0</span></div>
+        <div class="cart-items" id="cart-items">
+          <div class="cart-empty" id="cart-empty">لا توجد منتجات بعد.<br>اضغط على منتج لإضافته! 👈</div>
+        </div>
+        <div class="cart-total">
+          <span class="total-label">Gesamt (المجموع):</span>
+          <div>
+            <span class="total-amt" id="cart-total">0,00 €</span>
+            <span class="total-de" id="cart-total-de">null Euro</span>
+          </div>
+        </div>
+        <button class="pay-btn" onclick="checkout()">💳 Zahlen! — ادفع!</button>
+        <div class="receipt-msg" id="receipt-msg"></div>
+      </div>
+    </div>
+
+    <!-- Phrase Builder -->
+    <div class="phrase-builder" style="margin-top:1.5rem;" id="pb-area">
+      <div class="pb-title">🧩 رتّب الجملة الصحيحة</div>
+      <div id="pb-prompt" style="font-size:.85rem;color:var(--text2);margin-bottom:.8rem;"></div>
+      <div class="pb-slots" id="pb-slots"></div>
+      <div class="pb-words" id="pb-words"></div>
+      <div class="pb-feedback" id="pb-fb"></div>
+      <div class="pb-actions">
+        <button class="pb-btn check" onclick="checkPhrase()">✓ تحقق</button>
+        <button class="pb-btn" onclick="resetPhrase()">↺ إعادة</button>
+        <button class="pb-btn" onclick="nextPhrase()">التالي ←</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 5: QUIZ ══════ -->
+<section id="quiz">
+  <div class="sh">
+    <div class="si si-b">🎯</div>
+    <div class="sm"><h2>اختبر نفسك!</h2><p>7 أسئلة على التسوق والمطعم</p></div>
+  </div>
+
+  <div class="card">
+
+    <div class="qblock" id="q1">
+      <span class="qlabel">السؤال 1 / 7</span>
+      <div class="qtext">كيف تسأل عن السعر بالألمانية؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q1','w')">Wie heißt das?</div>
+        <div class="opt" onclick="ans(this,'q1','c')">Was kostet das?</div>
+        <div class="opt" onclick="ans(this,'q1','w')">Wo ist das?</div>
+        <div class="opt" onclick="ans(this,'q1','w')">Wann kostet das?</div>
+      </div>
+      <div class="qfb" id="fb-q1"></div>
+    </div>
+
+    <div class="qblock" id="q2">
+      <span class="qlabel">السؤال 2 / 7</span>
+      <div class="qtext">ماذا تعني <span class="qde">„Ich hätte gerne..."</span>؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q2','w')">أنا لا أريد...</div>
+        <div class="opt" onclick="ans(this,'q2','c')">أود أن أحصل على...</div>
+        <div class="opt" onclick="ans(this,'q2','w')">هل عندك...؟</div>
+        <div class="opt" onclick="ans(this,'q2','w')">أنا أكره...</div>
+      </div>
+      <div class="qfb" id="fb-q2"></div>
+    </div>
+
+    <div class="qblock" id="q3">
+      <span class="qlabel">السؤال 3 / 7</span>
+      <div class="qtext">ما هو <span class="qde">„das Schnitzel"</span>؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q3','w')">السلطة</div>
+        <div class="opt" onclick="ans(this,'q3','w')">الشوربة</div>
+        <div class="opt" onclick="ans(this,'q3','c')">اللحم المقلي (شنيتزل)</div>
+        <div class="opt" onclick="ans(this,'q3','w')">الحلويات</div>
+      </div>
+      <div class="qfb" id="fb-q3"></div>
+    </div>
+
+    <div class="qblock" id="q4">
+      <span class="qlabel">السؤال 4 / 7</span>
+      <div class="qtext">كيف تطلب الفاتورة في المطعم؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q4','w')">Ich möchte essen.</div>
+        <div class="opt" onclick="ans(this,'q4','w')">Was empfehlen Sie?</div>
+        <div class="opt" onclick="ans(this,'q4','c')">Zahlen, bitte!</div>
+        <div class="opt" onclick="ans(this,'q4','w')">Das schmeckt gut!</div>
+      </div>
+      <div class="qfb" id="fb-q4"></div>
+    </div>
+
+    <div class="qblock" id="q5">
+      <span class="qlabel">السؤال 5 / 7</span>
+      <div class="qtext">ماذا يعني <span class="qde">„Stimmt so!"</span>؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q5','w')">الحساب خاطئ!</div>
+        <div class="opt" onclick="ans(this,'q5','c')">الباقي لك (إكرامية)</div>
+        <div class="opt" onclick="ans(this,'q5','w')">أريد الفاتورة</div>
+        <div class="opt" onclick="ans(this,'q5','w')">هذا غالٍ جداً</div>
+      </div>
+      <div class="qfb" id="fb-q5"></div>
+    </div>
+
+    <div class="qblock" id="q6">
+      <span class="qlabel">السؤال 6 / 7</span>
+      <div class="qtext">ما هو جنس كلمة <span class="qde">„Milch"</span>؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q6','w')">مذكر (der)</div>
+        <div class="opt" onclick="ans(this,'q6','c')">مؤنث (die)</div>
+        <div class="opt" onclick="ans(this,'q6','w')">محايد (das)</div>
+        <div class="opt" onclick="ans(this,'q6','w')">جمع</div>
+      </div>
+      <div class="qfb" id="fb-q6"></div>
+    </div>
+
+    <div class="qblock" id="q7">
+      <span class="qlabel">السؤال 7 / 7</span>
+      <div class="qtext">كيف تقول <span class="qde">„5,50 €"</span> بالألمانية؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,'q7','w')">fünf Euro fünfzehn</div>
+        <div class="opt" onclick="ans(this,'q7','c')">fünf Euro fünfzig</div>
+        <div class="opt" onclick="ans(this,'q7','w')">fünfzehn Euro fünfzig</div>
+        <div class="opt" onclick="ans(this,'q7','w')">fünf und fünfzig Euro</div>
+      </div>
+      <div class="qfb" id="fb-q7"></div>
+    </div>
+
+    <div class="result-wrap" id="result-wrap">
+      <div class="r-score" id="r-score">0/7</div>
+      <div class="r-msg" id="r-msg"></div>
+      <button class="r-btn" onclick="resetQuiz()">🔄 أعد التدريب</button>
+    </div>
+  </div>
+</section>
+
+<!-- HOMEWORK -->
+<section>
+  <div class="sh">
+    <div class="si si-s">📝</div>
+    <div class="sm"><h2>واجب الدرس الثالث</h2><p>طبّق ما تعلمته في مواقف حقيقية</p></div>
+  </div>
+  <div class="card">
+    <div class="hw-grid">
+      <div class="hw-item"><strong>✅ قائمة التسوق</strong><span>اكتب قائمة تسوق بـ 10 منتجات بالألمانية مع أسعار وهمية</span></div>
+      <div class="hw-item"><strong>✅ حوار المطعم</strong><span>اكتب حواراً بينك وبين نادل لطلب وجبة كاملة</span></div>
+      <div class="hw-item"><strong>✅ الأسعار</strong><span>اقرأ بصوت عالٍ: 7,30€ / 15,99€ / 2,50€ / 100€</span></div>
+      <div class="hw-item"><strong>✅ المفردات</strong><span>احفظ 5 أطعمة مع جنسها النحوي وكررها 3 مرات</span></div>
+    </div>
+    <div class="tip s">
+      <div class="tpic">🚀</div>
+      <div>
+        <h4>الدرس الرابع القادم</h4>
+        <p>سنتعلم المنزل والعائلة — كيف تصف منزلك، تتحدث عن غرف المنزل، وتعرّف بأفراد عائلتك بالتفصيل! <span class="de">Guten Appetit! — بالهناء والشفاء!</span> 🥨</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>🇩🇪 الألمانية للعرب &nbsp;·&nbsp; المستوى A2 &nbsp;·&nbsp; الدرس 3 من 12</p>
+  <p style="margin-top:.5rem;">التسوق · المطعم · الأسعار · الطعام</p>
+</footer>
+
+<script>
+// ── Theme ──
+let dark = true;
+const root = document.documentElement;
+const tbtn = document.querySelector('.theme-btn');
+function applyTheme(d){ dark=d; root.setAttribute('data-theme',d?'dark':'light'); tbtn.textContent=d?'☀':'🌙'; }
+function toggleTheme(){ applyTheme(!dark); }
+const sys = window.matchMedia('(prefers-color-scheme: dark)');
+applyTheme(sys.matches);
+sys.addEventListener('change', e=>applyTheme(e.matches));
+
+// ── Progress bar ──
+const pb = document.getElementById('scroll-prog');
+window.addEventListener('scroll',()=>{
+  const h=document.body.scrollHeight-window.innerHeight;
+  pb.style.transform=`scaleX(${window.scrollY/h})`;
+});
+
+// ── Smooth scroll ──
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{ e.preventDefault(); document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'}); });
+});
+
+// ── Speech ──
+function speak(t){
+  if(!window.speechSynthesis) return;
+  const u=new SpeechSynthesisUtterance(t);
+  u.lang='de-DE'; u.rate=0.82;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+
+// ── Cart ──
+let cart=[]; let cartTotal=0;
+const numWords=['null','ein','zwei','drei','vier','fünf','sechs','sieben','acht','neun','zehn',
+  'elf','zwölf','dreizehn','vierzehn','fünfzehn','sechzehn','siebzehn','achtzehn','neunzehn','zwanzig',
+  'einundzwanzig','zweiundzwanzig','dreiundzwanzig','vierundzwanzig','fünfundzwanzig'];
+
+function priceToGerman(p){
+  const euros=Math.floor(p), cents=Math.round((p-euros)*100);
+  const e=euros===1?'ein Euro':(numWords[euros]||euros)+' Euro';
+  if(cents===0) return e;
+  return e+' '+(numWords[cents]||cents);
+}
+
+function addToCart(name,emoji,price,speak_word){
+  speak('Ich nehme '+speak_word);
+  cart.push({name,emoji,price,id:Date.now()});
+  cartTotal+=price;
+  renderCart();
+}
+
+function removeFromCart(id){
+  const idx=cart.findIndex(i=>i.id===id);
+  if(idx>-1){ cartTotal-=cart[idx].price; cart.splice(idx,1); }
+  renderCart();
+}
+
+function renderCart(){
+  const el=document.getElementById('cart-items');
+  const em=document.getElementById('cart-empty');
+  const cc=document.getElementById('cart-count');
+  const ct=document.getElementById('cart-total');
+  const ctd=document.getElementById('cart-total-de');
+  cc.textContent=cart.length;
+  ct.textContent=cartTotal.toFixed(2).replace('.',',')+'  €';
+  ctd.textContent=priceToGerman(cartTotal);
+  el.innerHTML='';
+  if(cart.length===0){
+    el.appendChild(Object.assign(document.createElement('div'),{className:'cart-empty',textContent:'لا توجد منتجات بعد.\nاضغط على منتج لإضافته! 👈'}));
+    return;
+  }
+  cart.forEach(item=>{
+    const d=document.createElement('div');
+    d.className='cart-item';
+    d.innerHTML=`<span class="cart-item-name">${item.emoji} ${item.name}</span><div style="display:flex;align-items:center;gap:.3rem;"><span class="cart-item-price">${item.price.toFixed(2).replace('.',',')} €</span><span class="remove-btn" onclick="removeFromCart(${item.id})">✕</span></div>`;
+    el.appendChild(d);
+  });
+}
+
+function checkout(){
+  if(cart.length===0){ speak('Der Einkaufswagen ist leer.'); return; }
+  const total=cartTotal.toFixed(2).replace('.',',');
+  const de=priceToGerman(cartTotal);
+  const phrase=`Das macht zusammen ${de}. Danke schön!`;
+  speak(phrase);
+  const rm=document.getElementById('receipt-msg');
+  rm.innerHTML=`✅ <strong>Das macht zusammen ${total} €</strong><br><span style="font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--text2);">${de}</span><br><span style="font-size:.78rem;color:var(--text2);">المجموع: ${total} يورو</span>`;
+  rm.style.display='block';
+  setTimeout(()=>{ cart=[]; cartTotal=0; renderCart(); rm.style.display='none'; },4000);
+}
+
+// ── Phrase Builder ──
+const phrases=[
+  { prompt:'رتّب الجملة: "أريد كيلو تفاح من فضلك"',
+    words:['Ich','hätte','gerne','ein','Kilo','Äpfel','.'],
+    answer:'Ich hätte gerne ein Kilo Äpfel .' },
+  { prompt:'رتّب الجملة: "كم يكلف الخبز؟"',
+    words:['Was','kostet','das','Brot','?'],
+    answer:'Was kostet das Brot ?' },
+  { prompt:'رتّب الجملة: "الفاتورة من فضلك"',
+    words:['Zahlen','bitte','!'],
+    answer:'Zahlen bitte !' },
+  { prompt:'رتّب الجملة: "الطعام كان لذيذاً جداً"',
+    words:['Das','Essen','war','sehr','lecker','!'],
+    answer:'Das Essen war sehr lecker !' },
+];
+let curPhrase=0, selected=[];
+
+function initPhrase(){
+  const p=phrases[curPhrase];
+  document.getElementById('pb-prompt').textContent=p.prompt;
+  selected=[];
+  const slotsEl=document.getElementById('pb-slots');
+  const wordsEl=document.getElementById('pb-words');
+  const fb=document.getElementById('pb-fb');
+  fb.className='pb-feedback';
+  slotsEl.innerHTML='';
+  wordsEl.innerHTML='';
+  const shuffled=[...p.words].sort(()=>Math.random()-.5);
+  shuffled.forEach((w,i)=>{
+    const wd=document.createElement('div');
+    wd.className='pb-word'; wd.textContent=w; wd.dataset.word=w; wd.dataset.idx=i;
+    wd.onclick=()=>selectWord(wd,w);
+    wordsEl.appendChild(wd);
+  });
+  p.words.forEach(()=>{
+    const sl=document.createElement('div');
+    sl.className='pb-slot'; sl.textContent='___';
+    slotsEl.appendChild(sl);
+  });
+}
+
+function selectWord(el,word){
+  if(el.classList.contains('used')) return;
+  el.classList.add('used');
+  selected.push(word);
+  const slots=document.querySelectorAll('.pb-slot');
+  const idx=selected.length-1;
+  if(slots[idx]){ slots[idx].textContent=word; slots[idx].classList.add('filled'); }
+}
+
+function checkPhrase(){
+  const p=phrases[curPhrase];
+  const ans=selected.join(' ');
+  const fb=document.getElementById('pb-fb');
+  if(ans===p.answer){
+    fb.className='pb-feedback ok';
+    fb.textContent='✅ ممتاز! الجملة صحيحة تماماً! '+p.answer;
+    speak(p.answer.replace('!','').replace('?',''));
+  } else {
+    fb.className='pb-feedback err';
+    fb.textContent='❌ ليس تماماً. الإجابة الصحيحة: '+p.answer;
+  }
+}
+
+function resetPhrase(){ selected=[]; initPhrase(); }
+function nextPhrase(){ curPhrase=(curPhrase+1)%phrases.length; selected=[]; initPhrase(); }
+initPhrase();
+
+// ── Quiz ──
+const fb_correct={
+  q1:'✅ صحيح! Was kostet das? = كم يكلف هذا؟ كلمة kostet هي تصريف الفعل kosten.',
+  q2:'✅ ممتاز! Ich hätte gerne = أود أن أحصل على. هذه الصيغة مؤدبة جداً وتستخدم كثيراً.',
+  q3:'✅ بالضبط! Schnitzel هو اللحم المفروم المقلي، طبق نمساوي-ألماني مشهور جداً.',
+  q4:'✅ رائع! Zahlen bitte = الفاتورة من فضلك. يمكن أيضاً قول: Die Rechnung bitte!',
+  q5:'✅ صحيح! Stimmt so يعني "الباقي لك" — هو طريقة إعطاء البقشيش في ألمانيا.',
+  q6:'✅ ممتاز! die Milch — مؤنث. تذكّر: die Stadt، die Milch، die Familie.',
+  q7:'✅ صحيح! 5,50€ = fünf Euro fünfzig. fünfzig = 50 وليس fünfzehn = 15.',
+};
+const fb_wrong={
+  q1:'❌ Was kostet das? هو السؤال الصحيح. Wie heißt = كيف اسم، Wo = أين.',
+  q2:'❌ Ich hätte gerne = أود أن أحصل على / أريد بأدب. هذه صيغة Konjunktiv II للأدب.',
+  q3:'❌ Schnitzel = اللحم المقلي. Salat = السلطة، Suppe = الشوربة.',
+  q4:'❌ Zahlen bitte! هي الطريقة الصحيحة لطلب الفاتورة. أو: Die Rechnung bitte!',
+  q5:'❌ Stimmt so تعني "الباقي لك". لا تقلها إذا لا تريد إعطاء بقشيش!',
+  q6:'❌ die Milch = مؤنث. هذا استثناء — ليس كل الكلمات التي تنتهي بحرف ساكن مذكر.',
+  q7:'❌ fünfzig = 50 سنتاً. فـ 5,50€ = fünf Euro fünfzig وليس fünfzehn (15).',
+};
+let answers={};
+function ans(btn,qid,r){
+  if(answers[qid]) return;
+  answers[qid]=r;
+  document.querySelectorAll(`#${qid} .opt`).forEach(b=>b.disabled=true);
+  btn.classList.add(r==='c'?'correct':'wrong');
+  const fb=document.getElementById('fb-'+qid);
+  fb.textContent=r==='c'?fb_correct[qid]:fb_wrong[qid];
+  fb.className='qfb show '+(r==='c'?'ok':'err');
+  if(Object.keys(answers).length===7) showResult();
+}
+function showResult(){
+  const s=Object.values(answers).filter(v=>v==='c').length;
+  const msgs=['واصل المحاولة! 💪','ممتاز! تقدم جيد 📖','جيد جداً! 🌟','رائع جداً! 🏆','شبه مثالي! 🎉','مثالي! 🎊','درجة كاملة! 🥇👏'];
+  document.getElementById('r-score').textContent=s+'/7';
+  document.getElementById('r-msg').textContent=msgs[s]||'';
+  const rb=document.getElementById('result-wrap');
+  rb.style.display='block';
+  rb.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetQuiz(){
+  answers={};
+  document.querySelectorAll('.opt').forEach(b=>{b.disabled=false;b.className='opt';});
+  document.querySelectorAll('.qfb').forEach(f=>f.className='qfb');
+  document.getElementById('result-wrap').style.display='none';
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-kurs-lesson-03-einkaufen" data-category="a2-kurs" data-title="التسوق والمطعم" data-root="../../" defer></script>
+</body>
+</html>

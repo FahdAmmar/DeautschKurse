@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الزمن الماضي Perfekt في اللغة الألمانية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0a0d14;
+    --bg-secondary: #0f1320;
+    --bg-card: #131826;
+    --bg-card-hover: #1a2035;
+    --accent-gold: #f0c040;
+    --accent-blue: #4a9eff;
+    --accent-green: #3dd68c;
+    --accent-red: #ff6b6b;
+    --accent-purple: #a78bfa;
+    --accent-orange: #fb923c;
+    --accent-teal: #2dd4bf;
+    --text-primary: #e8eaf0;
+    --text-secondary: #8892a4;
+    --text-muted: #505a6e;
+    --border: #1e2840;
+    --border-bright: #2a3555;
+    --haben-color: #4a9eff;
+    --sein-color: #3dd68c;
+    --glow-gold: 0 0 20px rgba(240,192,64,0.3);
+    --glow-blue: 0 0 20px rgba(74,158,255,0.3);
+    --glow-green: 0 0 20px rgba(61,214,140,0.3);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Tajawal', 'Cairo', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ===== BACKGROUND ===== */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 10% 10%, rgba(74,158,255,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 80%, rgba(240,192,64,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 50% 50%, rgba(61,214,140,0.03) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ===== HERO HEADER ===== */
+  .hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 70px 20px 50px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(74,158,255,0.05) 0%, transparent 100%);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(240,192,64,0.1);
+    border: 1px solid rgba(240,192,64,0.3);
+    border-radius: 50px;
+    padding: 6px 18px;
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    animation: fadeDown 0.6s ease;
+  }
+
+  .hero h1 {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    animation: fadeDown 0.7s ease;
+  }
+
+  .hero h1 .de {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(3rem, 8vw, 6rem);
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-orange) 50%, var(--accent-red) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -2px;
+    text-shadow: none;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 30px;
+    animation: fadeDown 0.8s ease;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    animation: fadeDown 0.9s ease;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ===== NAV ===== */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,13,20,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .sticky-nav::-webkit-scrollbar { display: none; }
+
+  .nav-inner {
+    display: flex;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    white-space: nowrap;
+  }
+
+  .nav-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.85rem;
+    padding: 16px 16px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-btn:hover, .nav-btn.active {
+    color: var(--accent-gold);
+  }
+
+  .nav-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 2px;
+    background: var(--accent-gold);
+    border-radius: 2px 2px 0 0;
+  }
+
+  /* ===== MAIN CONTENT ===== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent-blue);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Cairo', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .section-desc {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 650px;
+    line-height: 1.7;
+  }
+
+  /* ===== CARDS ===== */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .card:hover {
+    border-color: var(--border-bright);
+    transform: translateY(-2px);
+  }
+
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+
+  /* ===== FORMULA BOX ===== */
+  .formula-box {
+    background: linear-gradient(135deg, rgba(240,192,64,0.08) 0%, rgba(74,158,255,0.08) 100%);
+    border: 2px solid rgba(240,192,64,0.3);
+    border-radius: 20px;
+    padding: 36px;
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .formula-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(240,192,64,0.05) 0%, transparent 60%);
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+
+  .formula-label {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin-bottom: 16px;
+  }
+
+  .formula-main {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.1rem, 3.5vw, 2rem);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .formula-part {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+  }
+
+  .fp-subject { background: rgba(167,139,250,0.15); border: 1px solid rgba(167,139,250,0.4); color: var(--accent-purple); }
+  .fp-haben { background: rgba(74,158,255,0.15); border: 1px solid rgba(74,158,255,0.4); color: var(--accent-blue); }
+  .fp-sein { background: rgba(61,214,140,0.15); border: 1px solid rgba(61,214,140,0.4); color: var(--accent-green); }
+  .fp-pp { background: rgba(240,192,64,0.15); border: 1px solid rgba(240,192,64,0.4); color: var(--accent-gold); }
+
+  .formula-plus {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+  }
+
+  /* ===== HABEN/SEIN CARDS ===== */
+  .haben-card {
+    border-color: rgba(74,158,255,0.4);
+    background: linear-gradient(135deg, rgba(74,158,255,0.08) 0%, var(--bg-card) 100%);
+  }
+
+  .sein-card {
+    border-color: rgba(61,214,140,0.4);
+    background: linear-gradient(135deg, rgba(61,214,140,0.08) 0%, var(--bg-card) 100%);
+  }
+
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
+
+  .icon-haben { background: rgba(74,158,255,0.15); }
+  .icon-sein { background: rgba(61,214,140,0.15); }
+
+  .card-title {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+
+  .card-subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
+
+  .haben-color { color: var(--haben-color); }
+  .sein-color { color: var(--sein-color); }
+
+  /* ===== CONJUGATION TABLE ===== */
+  .conj-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .conj-table th {
+    background: rgba(74,158,255,0.15);
+    color: var(--accent-blue);
+    padding: 12px 16px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .conj-table td {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .conj-table tr:hover td {
+    background: rgba(255,255,255,0.03);
+  }
+
+  .pronoun { color: var(--accent-purple); font-family: 'JetBrains Mono', monospace; }
+  .verb-form { color: var(--accent-blue); font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+  .verb-sein { color: var(--accent-green); font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+  .arabic-text { color: var(--text-secondary); font-size: 0.85rem; }
+
+  /* ===== PARTICIPLE RULES ===== */
+  .rule-card {
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .rule-number {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 4rem;
+    font-weight: 900;
+    opacity: 0.08;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .rule-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .tag-regular { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+  .tag-irregular { background: rgba(240,192,64,0.15); color: var(--accent-gold); }
+  .tag-prefix { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
+  .tag-trennbar { background: rgba(251,146,60,0.15); color: var(--accent-orange); }
+
+  .rule-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; }
+  .rule-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
+
+  .example-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .ex-infinitiv {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .ex-arrow { color: var(--text-muted); }
+
+  .ex-pp {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .pp-blue { color: var(--accent-blue); }
+  .pp-gold { color: var(--accent-gold); }
+  .pp-purple { color: var(--accent-purple); }
+  .pp-orange { color: var(--accent-orange); }
+
+  .ex-meaning { color: var(--text-muted); font-size: 0.8rem; margin-right: auto; }
+
+  /* ===== SENTENCE BUILDER ===== */
+  .sentence-visual {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+  }
+
+  .sent-block {
+    flex: 1;
+    min-width: 130px;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+  }
+
+  .sb-pos1 { background: rgba(167,139,250,0.12); border: 1px solid rgba(167,139,250,0.3); }
+  .sb-pos2 { background: rgba(74,158,255,0.12); border: 1px solid rgba(74,158,255,0.35); box-shadow: var(--glow-blue); }
+  .sb-mid { background: rgba(255,255,255,0.03); border: 1px dashed rgba(255,255,255,0.1); }
+  .sb-end { background: rgba(240,192,64,0.12); border: 1px solid rgba(240,192,64,0.35); box-shadow: var(--glow-gold); }
+
+  .sb-label {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .sb-content {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
+    font-weight: 600;
+  }
+
+  .sb-arabic {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  .pos2-badge {
+    position: absolute;
+    top: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    background: var(--accent-blue);
+    color: #000;
+    font-size: 0.6rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  /* ===== WORD ORDER DIAGRAM ===== */
+  .word-order-diagram {
+    overflow-x: auto;
+    margin: 24px 0;
+  }
+
+  .wo-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+  }
+
+  .wo-table th {
+    background: rgba(255,255,255,0.04);
+    padding: 10px 14px;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .wo-table td {
+    padding: 14px;
+    border: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    vertical-align: middle;
+  }
+
+  .wo-pos2 { background: rgba(74,158,255,0.08); color: var(--accent-blue); font-weight: 700; text-align: center; }
+  .wo-end { background: rgba(240,192,64,0.08); color: var(--accent-gold); font-weight: 700; text-align: center; }
+  .wo-mid { color: var(--text-secondary); }
+  .wo-label { color: var(--text-muted); font-family: 'Tajawal', sans-serif; font-size: 0.8rem; }
+
+  /* ===== HABEN VS SEIN DECISION TREE ===== */
+  .tree-container {
+    padding: 30px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow-x: auto;
+  }
+
+  .tree-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .tree-box {
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 220px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .tree-start { background: rgba(74,158,255,0.15); border: 2px solid rgba(74,158,255,0.5); color: var(--accent-blue); font-weight: 700; }
+  .tree-question { background: rgba(167,139,250,0.12); border: 2px solid rgba(167,139,250,0.4); color: var(--accent-purple); }
+  .tree-haben-end { background: rgba(74,158,255,0.15); border: 2px solid rgba(74,158,255,0.5); color: var(--accent-blue); font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; }
+  .tree-sein-end { background: rgba(61,214,140,0.15); border: 2px solid rgba(61,214,140,0.5); color: var(--accent-green); font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; }
+
+  .tree-arrow {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .tree-yes { color: var(--accent-green); font-size: 0.7rem; font-weight: 700; }
+  .tree-no { color: var(--accent-red); font-size: 0.7rem; font-weight: 700; }
+
+  .tree-branches {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .tree-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 180px;
+    max-width: 280px;
+  }
+
+  .tree-connector {
+    width: 2px;
+    height: 30px;
+    background: var(--border-bright);
+  }
+
+  .tree-horizontal {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tree-h-line {
+    height: 2px;
+    background: var(--border-bright);
+    flex: 1;
+  }
+
+  /* ===== SEIN VERBS LIST ===== */
+  .verb-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(61,214,140,0.08);
+    border: 1px solid rgba(61,214,140,0.25);
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+  }
+
+  .verb-chip .vname { color: var(--accent-green); font-weight: 600; }
+  .verb-chip .vmeaning { color: var(--text-muted); font-size: 0.75rem; }
+
+  .category-title {
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-gold);
+    margin: 24px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .category-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border-bright), transparent);
+  }
+
+  /* ===== NEGATION ===== */
+  .neg-example {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .neg-pos {
+    background: rgba(61,214,140,0.05);
+    border: 1px solid rgba(61,214,140,0.2);
+    border-radius: 10px;
+    padding: 14px;
+  }
+
+  .neg-neg {
+    background: rgba(255,107,107,0.05);
+    border: 1px solid rgba(255,107,107,0.2);
+    border-radius: 10px;
+    padding: 14px;
+  }
+
+  .neg-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .neg-label.pos { color: var(--accent-green); }
+  .neg-label.neg { color: var(--accent-red); }
+
+  .neg-sent {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+  }
+
+  .neg-sent .highlight-nicht { color: var(--accent-red); font-weight: 700; }
+  .neg-sent .highlight-kein { color: var(--accent-orange); font-weight: 700; }
+
+  .neg-arabic { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+
+  /* ===== QUESTION ===== */
+  .question-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .q-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .q-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    background: rgba(167,139,250,0.15);
+    color: var(--accent-purple);
+    flex-shrink: 0;
+  }
+
+  .q-content { flex: 1; }
+
+  .q-sent {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .q-sent .q-verb { color: var(--accent-blue); font-weight: 700; }
+  .q-sent .q-pp { color: var(--accent-gold); font-weight: 700; }
+
+  .q-arabic { font-size: 0.78rem; color: var(--text-muted); }
+
+  .q-type {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .qt-ja { background: rgba(61,214,140,0.15); color: var(--accent-green); }
+  .qt-w { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+
+  /* ===== COMPARE TABLE ===== */
+  .compare-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .ch-label {
+    text-align: center;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  .ch-inf { background: rgba(167,139,250,0.12); color: var(--accent-purple); }
+  .ch-prä { background: rgba(74,158,255,0.12); color: var(--accent-blue); }
+  .ch-perf { background: rgba(240,192,64,0.12); color: var(--accent-gold); }
+
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .cr-cell {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .cr-inf { color: var(--accent-purple); background: rgba(167,139,250,0.05); }
+  .cr-prä { color: var(--accent-blue); background: rgba(74,158,255,0.05); }
+  .cr-perf { color: var(--accent-gold); background: rgba(240,192,64,0.05); font-weight: 600; }
+
+  /* ===== CHIPS & BADGES ===== */
+  .tag-chip {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin: 3px;
+  }
+
+  .chip-blue { background: rgba(74,158,255,0.15); color: var(--accent-blue); border: 1px solid rgba(74,158,255,0.3); }
+  .chip-green { background: rgba(61,214,140,0.15); color: var(--accent-green); border: 1px solid rgba(61,214,140,0.3); }
+  .chip-gold { background: rgba(240,192,64,0.15); color: var(--accent-gold); border: 1px solid rgba(240,192,64,0.3); }
+  .chip-red { background: rgba(255,107,107,0.15); color: var(--accent-red); border: 1px solid rgba(255,107,107,0.3); }
+
+  /* ===== TIPS ===== */
+  .tip-box {
+    display: flex;
+    gap: 14px;
+    padding: 18px 20px;
+    border-radius: 12px;
+    margin: 16px 0;
+    align-items: flex-start;
+  }
+
+  .tip-box.info { background: rgba(74,158,255,0.06); border: 1px solid rgba(74,158,255,0.2); }
+  .tip-box.warning { background: rgba(240,192,64,0.06); border: 1px solid rgba(240,192,64,0.2); }
+  .tip-box.success { background: rgba(61,214,140,0.06); border: 1px solid rgba(61,214,140,0.2); }
+  .tip-box.error { background: rgba(255,107,107,0.06); border: 1px solid rgba(255,107,107,0.2); }
+
+  .tip-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+  .tip-content { flex: 1; }
+  .tip-title { font-weight: 700; margin-bottom: 4px; font-size: 0.9rem; }
+  .tip-text { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+
+  .tip-box.info .tip-title { color: var(--accent-blue); }
+  .tip-box.warning .tip-title { color: var(--accent-gold); }
+  .tip-box.success .tip-title { color: var(--accent-green); }
+  .tip-box.error .tip-title { color: var(--accent-red); }
+
+  /* ===== EXAMPLES MEGA LIST ===== */
+  .example-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+  }
+
+  .example-card:hover { border-color: var(--border-bright); }
+
+  .ex-german {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
+  .ex-german .aux { color: var(--accent-blue); font-weight: 700; }
+  .ex-german .aux-sein { color: var(--accent-green); font-weight: 700; }
+  .ex-german .pp { color: var(--accent-gold); font-weight: 700; }
+  .ex-german .nicht { color: var(--accent-red); font-weight: 700; }
+
+  .ex-arabic { color: var(--text-secondary); font-size: 0.88rem; }
+
+  .ex-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* ===== INTERACTIVE QUIZ ===== */
+  .quiz-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px;
+  }
+
+  .quiz-question {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .quiz-sentence {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    color: var(--accent-blue);
+    margin-bottom: 6px;
+  }
+
+  .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .quiz-opt {
+    background: rgba(255,255,255,0.04);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 18px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all 0.2s;
+    text-align: center;
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  .quiz-opt:hover { border-color: var(--accent-blue); background: rgba(74,158,255,0.08); }
+  .quiz-opt.correct { border-color: var(--accent-green); background: rgba(61,214,140,0.12); color: var(--accent-green); }
+  .quiz-opt.wrong { border-color: var(--accent-red); background: rgba(255,107,107,0.12); color: var(--accent-red); }
+
+  .quiz-feedback {
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    display: none;
+    line-height: 1.6;
+  }
+
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.correct { background: rgba(61,214,140,0.1); border: 1px solid rgba(61,214,140,0.3); color: var(--accent-green); }
+  .quiz-feedback.wrong { background: rgba(255,107,107,0.1); border: 1px solid rgba(255,107,107,0.3); color: var(--accent-red); }
+
+  .quiz-btn {
+    background: var(--accent-blue);
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-left: 10px;
+  }
+
+  .quiz-btn:hover { opacity: 0.85; }
+  .quiz-btn.secondary { background: rgba(255,255,255,0.08); color: var(--text-primary); border: 1px solid var(--border); }
+
+  .quiz-score {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .score-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    flex-shrink: 0;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline {
+    position: relative;
+    padding: 20px 0;
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--border-bright), var(--accent-gold), var(--border-bright), transparent);
+    transform: translateY(-50%);
+  }
+
+  .timeline-events {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 1;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .tl-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    min-width: 100px;
+    max-width: 140px;
+  }
+
+  .tl-top {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    min-height: 50px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 8px;
+  }
+
+  .tl-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-gold);
+    background: var(--bg-primary);
+    flex-shrink: 0;
+  }
+
+  .tl-dot.present { background: var(--accent-gold); box-shadow: var(--glow-gold); }
+
+  .tl-bottom {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    min-height: 50px;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 8px;
+  }
+
+  .tl-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: var(--accent-gold);
+    font-size: 0.8rem;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+
+  footer .footer-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  /* ===== SCROLL TOP ===== */
+  .scroll-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 44px;
+    height: 44px;
+    background: rgba(74,158,255,0.2);
+    border: 1px solid rgba(74,158,255,0.4);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;
+    color: var(--accent-blue);
+  }
+
+  .scroll-top.visible { opacity: 1; pointer-events: all; }
+  .scroll-top:hover { background: rgba(74,158,255,0.35); }
+
+  /* ===== PROGRESS BAR ===== */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-gold));
+    z-index: 200;
+    transition: width 0.1s;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .hero { padding: 50px 16px 40px; }
+    .hero-stats { gap: 20px; }
+    .formula-main { gap: 8px; }
+    .formula-part { padding: 8px 12px; font-size: 0.85rem; }
+    .formula-plus { font-size: 1.1rem; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .neg-example { grid-template-columns: 1fr; }
+    .compare-row, .compare-header { grid-template-columns: 1fr; }
+    .quiz-options { grid-template-columns: 1fr; }
+    .q-row { grid-template-columns: auto 1fr; }
+    .q-type { display: none; }
+    .tree-branches { gap: 20px; }
+    .sentence-visual { flex-direction: column; }
+    .sent-block { min-width: auto; }
+    section { padding: 40px 0; }
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 20px; }
+    .formula-box { padding: 24px 16px; }
+    .nav-btn { padding: 14px 12px; font-size: 0.78rem; }
+  }
+
+  /* separator line in tree */
+  .tree-h-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">🇩🇪 النحو الألماني</div>
+  <h1>
+    زمن الماضي في الألمانية
+    <span class="de">Das Perfekt</span>
+  </h1>
+  <p class="hero-subtitle">الدليل الشامل والمفصّل لفهم وإتقان زمن الماضي المركب — من القواعد إلى التطبيق الفعلي</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">8</div><div class="stat-label">أقسام</div></div>
+    <div class="stat"><div class="stat-num">50+</div><div class="stat-label">مثال</div></div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label">أفعال مساعدة</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">ممارسة</div></div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="scrollToSection('intro')">١ · المقدمة</button>
+    <button class="nav-btn" onclick="scrollToSection('formula')">٢ · التركيب</button>
+    <button class="nav-btn" onclick="scrollToSection('partizip')">٣ · اسم المفعول</button>
+    <button class="nav-btn" onclick="scrollToSection('haben-sein')">٤ · haben/sein</button>
+    <button class="nav-btn" onclick="scrollToSection('word-order')">٥ · ترتيب الكلمات</button>
+    <button class="nav-btn" onclick="scrollToSection('negation')">٦ · النفي</button>
+    <button class="nav-btn" onclick="scrollToSection('questions')">٧ · الأسئلة</button>
+    <button class="nav-btn" onclick="scrollToSection('examples')">٨ · أمثلة</button>
+    <button class="nav-btn" onclick="scrollToSection('quiz')">✦ اختبار</button>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ===== SECTION 1: INTRO ===== -->
+<section id="intro">
+  <div class="section-header">
+    <div class="section-tag">// 01 — Einleitung</div>
+    <h2 class="section-title">ما هو زمن Perfekt؟</h2>
+    <p class="section-desc">Perfekt هو الزمن الماضي الأكثر استخداماً في اللغة الألمانية المحكية. يُستخدم للتعبير عن أحداث وقعت في الماضي وانتهت، وهو الزمن الذي ستسمعه في كل محادثة يومية.</p>
+  </div>
+
+  <!-- Timeline -->
+  <div class="card" style="margin-bottom:24px;">
+    <div class="card-title" style="margin-bottom:20px;">📅 متى نستخدم Perfekt؟</div>
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      <div class="timeline-events">
+        <div class="tl-event">
+          <div class="tl-top"><span>الماضي البعيد<br><small style="color:var(--text-muted)">Präteritum</small></span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-bottom"><small>كان يعمل هنا</small></div>
+        </div>
+        <div class="tl-event">
+          <div class="tl-top"><span style="color:var(--accent-gold); font-weight:700;">حدث انتهى ✓<br><small>Perfekt</small></span></div>
+          <div class="tl-dot" style="border-color:var(--accent-gold); background:rgba(240,192,64,0.2);"></div>
+          <div class="tl-bottom"><span style="color:var(--accent-gold);">أكلت، ذهبت، فعلت</span></div>
+        </div>
+        <div class="tl-event">
+          <div class="tl-top"><span style="color:var(--accent-gold); font-weight:700;">حدث انتهى ✓<br><small>Perfekt</small></span></div>
+          <div class="tl-dot" style="border-color:var(--accent-gold); background:rgba(240,192,64,0.2);"></div>
+          <div class="tl-bottom"><span style="color:var(--accent-gold);">قابلت، كتبت</span></div>
+        </div>
+        <div class="tl-event">
+          <div class="tl-top"><span>الآن</span></div>
+          <div class="tl-dot present"></div>
+          <div class="tl-bottom"><span class="tl-label">JETZT</span></div>
+        </div>
+        <div class="tl-event">
+          <div class="tl-top"><span>المستقبل<br><small>Futur</small></span></div>
+          <div class="tl-dot"></div>
+          <div class="tl-bottom"><small>سيذهب</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <div style="font-size:2rem;margin-bottom:12px;">💬</div>
+      <h3 class="card-title" style="color:var(--accent-blue);">اللغة المحكية</h3>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;">في المحادثة اليومية، يُستخدم Perfekt للتعبير عن أي حدث في الماضي بغض النظر عن قِدَمه.</p>
+    </div>
+    <div class="card">
+      <div style="font-size:2rem;margin-bottom:12px;">📞</div>
+      <h3 class="card-title" style="color:var(--accent-green);">الأخبار الشخصية</h3>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;">«ماذا فعلت اليوم؟ أين ذهبت؟ ماذا أكلت؟» — كل هذه الأسئلة تُجاب بـ Perfekt.</p>
+    </div>
+    <div class="card">
+      <div style="font-size:2rem;margin-bottom:12px;">✅</div>
+      <h3 class="card-title" style="color:var(--accent-gold);">الأحداث المنتهية</h3>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;">يُستخدم لأحداث وقعت في الماضي وانتهت تماماً، ولها صلة بالحاضر أو أثر عليه.</p>
+    </div>
+  </div>
+
+  <div class="tip-box info" style="margin-top:24px;">
+    <span class="tip-icon">💡</span>
+    <div class="tip-content">
+      <div class="tip-title">Perfekt vs Präteritum</div>
+      <div class="tip-text">في اللغة المحكية الألمانية (خاصةً في جنوب ألمانيا والنمسا وسويسرا)، يُستخدم Perfekt تقريباً لكل الأحداث الماضية. أما Präteritum فيُستخدم غالباً في الكتابة الرسمية والروايات.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: FORMULA ===== -->
+<section id="formula">
+  <div class="section-header">
+    <div class="section-tag">// 02 — Die Formel</div>
+    <h2 class="section-title">تركيب الجملة — القاعدة الأساسية</h2>
+    <p class="section-desc">يتكون زمن Perfekt من جزءين أساسيين: فعل مساعد (haben أو sein) في الزمن المضارع، واسم المفعول (Partizip II) في نهاية الجملة.</p>
+  </div>
+
+  <div class="formula-box">
+    <div class="formula-label">⚡ الصيغة الأساسية</div>
+    <div class="formula-main">
+      <span class="formula-part fp-subject">الفاعل</span>
+      <span class="formula-plus">+</span>
+      <span class="formula-part fp-haben">haben / sein</span>
+      <span class="formula-plus">+</span>
+      <span style="color:var(--text-muted);">... المتممات ...</span>
+      <span class="formula-plus">+</span>
+      <span class="formula-part fp-pp">Partizip II</span>
+    </div>
+    <div style="margin-top:16px;color:var(--text-muted);font-size:0.85rem;">
+      الفاعل → الفعل المساعد (المركز الثاني) → ... باقي الجملة ... → اسم المفعول (نهاية الجملة)
+    </div>
+  </div>
+
+  <!-- haben conjugation -->
+  <div class="grid-2" style="margin-top:30px;">
+    <div class="card haben-card">
+      <div class="card-icon icon-haben">🔵</div>
+      <div class="card-title">تصريف <span class="haben-color">haben</span></div>
+      <div class="card-subtitle haben-color">يملك / لديه</div>
+      <table class="conj-table" style="margin-top:16px;">
+        <thead><tr><th>الضمير</th><th>haben</th><th>المعنى</th></tr></thead>
+        <tbody>
+          <tr><td class="pronoun">ich</td><td class="verb-form">habe</td><td class="arabic-text">أنا لدي</td></tr>
+          <tr><td class="pronoun">du</td><td class="verb-form">hast</td><td class="arabic-text">أنت لديك</td></tr>
+          <tr><td class="pronoun">er/sie/es</td><td class="verb-form">hat</td><td class="arabic-text">هو/هي لديه</td></tr>
+          <tr><td class="pronoun">wir</td><td class="verb-form">haben</td><td class="arabic-text">نحن لدينا</td></tr>
+          <tr><td class="pronoun">ihr</td><td class="verb-form">habt</td><td class="arabic-text">أنتم لديكم</td></tr>
+          <tr><td class="pronoun">sie/Sie</td><td class="verb-form">haben</td><td class="arabic-text">هم/حضرتك لديهم</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card sein-card">
+      <div class="card-icon icon-sein">🟢</div>
+      <div class="card-title">تصريف <span class="sein-color">sein</span></div>
+      <div class="card-subtitle sein-color">يكون / هو</div>
+      <table class="conj-table" style="margin-top:16px;">
+        <thead><tr><th>الضمير</th><th>sein</th><th>المعنى</th></tr></thead>
+        <tbody>
+          <tr><td class="pronoun">ich</td><td class="verb-sein">bin</td><td class="arabic-text">أنا أكون</td></tr>
+          <tr><td class="pronoun">du</td><td class="verb-sein">bist</td><td class="arabic-text">أنت تكون</td></tr>
+          <tr><td class="pronoun">er/sie/es</td><td class="verb-sein">ist</td><td class="arabic-text">هو/هي يكون</td></tr>
+          <tr><td class="pronoun">wir</td><td class="verb-sein">sind</td><td class="arabic-text">نحن نكون</td></tr>
+          <tr><td class="pronoun">ihr</td><td class="verb-sein">seid</td><td class="arabic-text">أنتم تكونون</td></tr>
+          <tr><td class="pronoun">sie/Sie</td><td class="verb-sein">sind</td><td class="arabic-text">هم/حضرتك يكونون</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: PARTIZIP ===== -->
+<section id="partizip">
+  <div class="section-header">
+    <div class="section-tag">// 03 — Das Partizip II</div>
+    <h2 class="section-title">اسم المفعول — Partizip II</h2>
+    <p class="section-desc">اسم المفعول (Partizip II) هو الجزء الذي يتغير من فعل لآخر. هناك أنماط واضحة تساعدك على بنائه بسهولة.</p>
+  </div>
+
+  <div class="grid-2">
+    <!-- Rule 1: Regular -->
+    <div class="card rule-card" style="border-color:rgba(74,158,255,0.3);">
+      <div class="rule-number">1</div>
+      <div class="rule-tag tag-regular">الأفعال المنتظمة</div>
+      <h3 class="rule-title">ge + جذر الفعل + t</h3>
+      <p class="rule-desc">معظم الأفعال المنتظمة (schwache Verben) تأخذ هذه الصيغة. أضف <strong style="color:var(--accent-blue);">ge-</strong> في البداية و<strong style="color:var(--accent-blue);">-t</strong> في النهاية.</p>
+      <div class="example-row">
+        <span class="ex-infinitiv">machen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-blue">ge<strong>mach</strong>t</span>
+        <span class="ex-meaning">فعل / صنع</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">spielen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-blue">ge<strong>spiel</strong>t</span>
+        <span class="ex-meaning">لعب</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">kaufen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-blue">ge<strong>kauf</strong>t</span>
+        <span class="ex-meaning">اشترى</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">lernen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-blue">ge<strong>lern</strong>t</span>
+        <span class="ex-meaning">تعلّم</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">arbeiten</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-blue">ge<strong>arbeit</strong>et</span>
+        <span class="ex-meaning">عمل (et لسهولة النطق)</span>
+      </div>
+    </div>
+
+    <!-- Rule 2: Irregular -->
+    <div class="card rule-card" style="border-color:rgba(240,192,64,0.3);">
+      <div class="rule-number">2</div>
+      <div class="rule-tag tag-irregular">الأفعال الشاذة</div>
+      <h3 class="rule-title">ge + جذر متغير + en</h3>
+      <p class="rule-desc">الأفعال الشاذة (starke Verben) تغيّر جذرها وتنتهي بـ <strong style="color:var(--accent-gold);">-en</strong>. يجب حفظها.</p>
+      <div class="example-row">
+        <span class="ex-infinitiv">schreiben</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-gold">ge<strong>schrieb</strong>en</span>
+        <span class="ex-meaning">كتب</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">lesen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-gold">ge<strong>les</strong>en</span>
+        <span class="ex-meaning">قرأ</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">trinken</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-gold">ge<strong>trunk</strong>en</span>
+        <span class="ex-meaning">شرب</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">essen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-gold">ge<strong>gess</strong>en</span>
+        <span class="ex-meaning">أكل</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">sprechen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-gold">ge<strong>sproch</strong>en</span>
+        <span class="ex-meaning">تكلّم</span>
+      </div>
+    </div>
+
+    <!-- Rule 3: ge- Prefixes -->
+    <div class="card rule-card" style="border-color:rgba(167,139,250,0.3);">
+      <div class="rule-number">3</div>
+      <div class="rule-tag tag-prefix">بدون ge-</div>
+      <h3 class="rule-title">الأفعال التي لا تأخذ ge-</h3>
+      <p class="rule-desc">ثلاث حالات لا يُضاف فيها ge-: الأفعال المنتهية بـ -ieren، والأفعال ذات البادئات غير القابلة للفصل (be-, er-, ver-, zer-, emp-, ent-, ge-, miss-).</p>
+      <div class="example-row">
+        <span class="ex-infinitiv">studieren</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-purple">studiert</span>
+        <span class="ex-meaning">درس (جامعياً)</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">telefonieren</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-purple">telefoniert</span>
+        <span class="ex-meaning">اتصل هاتفياً</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">besuchen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-purple">besucht</span>
+        <span class="ex-meaning">زار (be-)</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">verstehen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-purple">verstanden</span>
+        <span class="ex-meaning">فهم (ver-)</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">erzählen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-purple">erzählt</span>
+        <span class="ex-meaning">حكى (er-)</span>
+      </div>
+    </div>
+
+    <!-- Rule 4: Trennbare Verben -->
+    <div class="card rule-card" style="border-color:rgba(251,146,60,0.3);">
+      <div class="rule-number">4</div>
+      <div class="rule-tag tag-trennbar">الأفعال المنفصلة</div>
+      <h3 class="rule-title">البادئة + ge + جذر + t/en</h3>
+      <p class="rule-desc">الأفعال ذات البادئات القابلة للفصل (auf-, an-, ab-, ein-, mit-, vor-, zurück-...) تضع ge- بين البادئة والجذر.</p>
+      <div class="example-row">
+        <span class="ex-infinitiv">aufmachen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-orange">auf<strong>ge</strong>macht</span>
+        <span class="ex-meaning">فتح</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">anrufen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-orange">an<strong>ge</strong>rufen</span>
+        <span class="ex-meaning">اتصل بـ</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">einkaufen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-orange">ein<strong>ge</strong>kauft</span>
+        <span class="ex-meaning">تسوّق</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">mitnehmen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-orange">mit<strong>ge</strong>nommen</span>
+        <span class="ex-meaning">أخذ معه</span>
+      </div>
+      <div class="example-row">
+        <span class="ex-infinitiv">aufstehen</span>
+        <span class="ex-arrow">→</span>
+        <span class="ex-pp pp-orange">auf<strong>ge</strong>standen</span>
+        <span class="ex-meaning">استيقظ / نهض</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Important irregular verbs table -->
+  <div class="card" style="margin-top:24px;">
+    <h3 class="card-title" style="margin-bottom:16px;">📋 أبرز الأفعال الشاذة — يجب حفظها!</h3>
+    <div style="overflow-x:auto;">
+      <table class="conj-table" style="min-width:600px;">
+        <thead>
+          <tr>
+            <th>المصدر</th>
+            <th>Partizip II</th>
+            <th>Hilfsverb</th>
+            <th>المعنى</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pronoun">sein</td><td class="verb-sein">gewesen</td><td><span class="chip-green">sein</span></td><td class="arabic-text">كان</td></tr>
+          <tr><td class="pronoun">haben</td><td class="verb-form">gehabt</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">كان لديه</td></tr>
+          <tr><td class="pronoun">gehen</td><td class="verb-sein">gegangen</td><td><span class="chip-green">sein</span></td><td class="arabic-text">ذهب</td></tr>
+          <tr><td class="pronoun">kommen</td><td class="verb-sein">gekommen</td><td><span class="chip-green">sein</span></td><td class="arabic-text">جاء</td></tr>
+          <tr><td class="pronoun">fahren</td><td class="verb-sein">gefahren</td><td><span class="chip-green">sein</span></td><td class="arabic-text">سافر / قاد السيارة</td></tr>
+          <tr><td class="pronoun">fliegen</td><td class="verb-sein">geflogen</td><td><span class="chip-green">sein</span></td><td class="arabic-text">طار</td></tr>
+          <tr><td class="pronoun">schlafen</td><td class="verb-form">geschlafen</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">نام</td></tr>
+          <tr><td class="pronoun">essen</td><td class="verb-form">gegessen</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">أكل</td></tr>
+          <tr><td class="pronoun">trinken</td><td class="verb-form">getrunken</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">شرب</td></tr>
+          <tr><td class="pronoun">sehen</td><td class="verb-form">gesehen</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">رأى</td></tr>
+          <tr><td class="pronoun">lesen</td><td class="verb-form">gelesen</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">قرأ</td></tr>
+          <tr><td class="pronoun">schreiben</td><td class="verb-form">geschrieben</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">كتب</td></tr>
+          <tr><td class="pronoun">sprechen</td><td class="verb-form">gesprochen</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">تكلّم</td></tr>
+          <tr><td class="pronoun">finden</td><td class="verb-form">gefunden</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">وجد</td></tr>
+          <tr><td class="pronoun">bringen</td><td class="verb-form">gebracht</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">أحضر</td></tr>
+          <tr><td class="pronoun">wissen</td><td class="verb-form">gewusst</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">عرف / علم</td></tr>
+          <tr><td class="pronoun">denken</td><td class="verb-form">gedacht</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">فكّر</td></tr>
+          <tr><td class="pronoun">nehmen</td><td class="verb-form">genommen</td><td><span class="chip-blue">haben</span></td><td class="arabic-text">أخذ</td></tr>
+          <tr><td class="pronoun">laufen</td><td class="verb-sein">gelaufen</td><td><span class="chip-green">sein</span></td><td class="arabic-text">جرى / مشى</td></tr>
+          <tr><td class="pronoun">werden</td><td class="verb-sein">geworden</td><td><span class="chip-green">sein</span></td><td class="arabic-text">أصبح</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 4: HABEN vs SEIN ===== -->
+<section id="haben-sein">
+  <div class="section-header">
+    <div class="section-tag">// 04 — Haben oder Sein?</div>
+    <h2 class="section-title">متى نستخدم haben ومتى نستخدم sein؟</h2>
+    <p class="section-desc">هذا هو السؤال الأهم في زمن Perfekt. الغالبية العظمى من الأفعال تستخدم haben، لكن مجموعة محددة تستخدم sein.</p>
+  </div>
+
+  <!-- Decision Tree -->
+  <div class="tree-container" style="margin-bottom:24px;">
+    <div style="text-align:center;font-size:0.75rem;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase;margin-bottom:24px;">شجرة القرار — haben أم sein؟</div>
+    <div class="tree-node">
+      <div class="tree-box tree-start">الفعل الذي تريد تصريفه</div>
+      <div class="tree-connector"></div>
+      <div class="tree-box tree-question">❓ هل يعبّر عن انتقال من مكان إلى آخر؟<br><small>(حركة مكانية واضحة)</small></div>
+      <div class="tree-connector"></div>
+      <div class="tree-branches">
+        <div class="tree-branch">
+          <div class="tree-arrow"><span class="tree-yes">✓ نعم</span> ↓</div>
+          <div class="tree-box tree-question">هل هو<br>gehen, kommen, fahren,<br>fliegen, laufen, reisen...?</div>
+          <div class="tree-connector"></div>
+          <div class="tree-box tree-sein">sein ✓<br><small>bin/bist/ist/sind/seid gegangen...</small></div>
+        </div>
+        <div class="tree-branch">
+          <div class="tree-arrow"><span class="tree-no">✗ لا</span> ↓</div>
+          <div class="tree-box tree-question">هل يعبّر عن تغيير في الحالة؟<br><small>(نوم→صحوة، ولادة، موت، نمو...)</small></div>
+          <div class="tree-connector"></div>
+          <div class="tree-branches">
+            <div class="tree-branch" style="max-width:180px;">
+              <div class="tree-arrow"><span class="tree-yes">✓ نعم</span></div>
+              <div class="tree-box tree-sein" style="font-size:0.9rem;">sein ✓</div>
+            </div>
+            <div class="tree-branch" style="max-width:180px;">
+              <div class="tree-arrow"><span class="tree-no">✗ لا</span></div>
+              <div class="tree-box tree-haben-end">haben ✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- sein verbs categories -->
+  <div class="card sein-card" style="margin-bottom:24px;">
+    <h3 class="card-title sein-color" style="margin-bottom:4px;">⚡ الأفعال التي تستخدم sein</h3>
+    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:16px;">احفظ هذه الفئات وستكون قادراً على تحديد معظم أفعال sein</p>
+
+    <div class="category-title">🚶 أفعال الحركة والانتقال المكاني</div>
+    <div>
+      <span class="verb-chip"><span class="vname">gehen</span><span class="vmeaning">ذهب</span></span>
+      <span class="verb-chip"><span class="vname">kommen</span><span class="vmeaning">جاء</span></span>
+      <span class="verb-chip"><span class="vname">fahren</span><span class="vmeaning">سافر/قاد</span></span>
+      <span class="verb-chip"><span class="vname">fliegen</span><span class="vmeaning">طار</span></span>
+      <span class="verb-chip"><span class="vname">laufen</span><span class="vmeaning">جرى</span></span>
+      <span class="verb-chip"><span class="vname">reisen</span><span class="vmeaning">سافر</span></span>
+      <span class="verb-chip"><span class="vname">schwimmen</span><span class="vmeaning">سبح</span></span>
+      <span class="verb-chip"><span class="vname">springen</span><span class="vmeaning">قفز</span></span>
+      <span class="verb-chip"><span class="vname">klettern</span><span class="vmeaning">تسلّق</span></span>
+      <span class="verb-chip"><span class="vname">wandern</span><span class="vmeaning">تنزّه</span></span>
+    </div>
+
+    <div class="category-title">🌱 أفعال تغيير الحالة</div>
+    <div>
+      <span class="verb-chip"><span class="vname">aufwachen</span><span class="vmeaning">صحا</span></span>
+      <span class="verb-chip"><span class="vname">einschlafen</span><span class="vmeaning">نام</span></span>
+      <span class="verb-chip"><span class="vname">aufstehen</span><span class="vmeaning">نهض</span></span>
+      <span class="verb-chip"><span class="vname">werden</span><span class="vmeaning">أصبح</span></span>
+      <span class="verb-chip"><span class="vname">wachsen</span><span class="vmeaning">نما</span></span>
+      <span class="verb-chip"><span class="vname">sterben</span><span class="vmeaning">مات</span></span>
+      <span class="verb-chip"><span class="vname">gebären</span><span class="vmeaning">وُلد</span></span>
+    </div>
+
+    <div class="category-title">🔒 أفعال استثنائية يجب حفظها</div>
+    <div>
+      <span class="verb-chip"><span class="vname">sein</span><span class="vmeaning">كان</span></span>
+      <span class="verb-chip"><span class="vname">bleiben</span><span class="vmeaning">بقي</span></span>
+      <span class="verb-chip"><span class="vname">passieren</span><span class="vmeaning">حدث</span></span>
+      <span class="verb-chip"><span class="vname">gelingen</span><span class="vmeaning">نجح</span></span>
+      <span class="verb-chip"><span class="vname">geschehen</span><span class="vmeaning">وقع/حدث</span></span>
+      <span class="verb-chip"><span class="vname">begegnen</span><span class="vmeaning">قابل</span></span>
+    </div>
+  </div>
+
+  <div class="tip-box warning">
+    <span class="tip-icon">⚠️</span>
+    <div class="tip-content">
+      <div class="tip-title">انتبه! fahren مع مفعول به</div>
+      <div class="tip-text">
+        عادةً: <span style="color:var(--accent-green);font-family:monospace;">Ich bin nach Berlin gefahren.</span> (sein — انتقال مكاني) <br>
+        لكن: <span style="color:var(--accent-blue);font-family:monospace;">Ich habe das Auto gefahren.</span> (haben — عندما يوجد مفعول به مباشر!)
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: WORD ORDER ===== -->
+<section id="word-order">
+  <div class="section-header">
+    <div class="section-tag">// 05 — Wortstellung</div>
+    <h2 class="section-title">ترتيب الكلمات في الجملة</h2>
+    <p class="section-desc">أهم قاعدة: الفعل المساعد يجب أن يكون في المركز الثاني دائماً، واسم المفعول يذهب دائماً إلى نهاية الجملة.</p>
+  </div>
+
+  <!-- Sentence Visual Builder -->
+  <div style="margin-bottom:30px;">
+    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:12px;text-align:center;text-transform:uppercase;letter-spacing:2px;">الجملة الإخبارية العادية</div>
+    <div class="sentence-visual">
+      <div class="sent-block sb-pos1">
+        <div class="sb-label">المركز الأول</div>
+        <div class="sb-content" style="color:var(--accent-purple);">Ich</div>
+        <div class="sb-arabic">الفاعل</div>
+      </div>
+      <div class="sent-block sb-pos2">
+        <div class="pos2-badge">موقع ثابت!</div>
+        <div class="sb-label">المركز الثاني</div>
+        <div class="sb-content" style="color:var(--accent-blue);">habe</div>
+        <div class="sb-arabic">الفعل المساعد</div>
+      </div>
+      <div class="sent-block sb-mid">
+        <div class="sb-label">المتممات</div>
+        <div class="sb-content" style="color:var(--text-secondary);">heute</div>
+        <div class="sb-arabic">اليوم</div>
+      </div>
+      <div class="sent-block sb-mid">
+        <div class="sb-label">المتممات</div>
+        <div class="sb-content" style="color:var(--text-secondary);">Pizza</div>
+        <div class="sb-arabic">بيتزا</div>
+      </div>
+      <div class="sent-block sb-end">
+        <div class="sb-label">نهاية الجملة</div>
+        <div class="sb-content" style="color:var(--accent-gold);">gegessen.</div>
+        <div class="sb-arabic">Partizip II</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Word order table with different structures -->
+  <div class="word-order-diagram">
+    <table class="wo-table">
+      <thead>
+        <tr>
+          <th>المركز الأول</th>
+          <th>المركز الثاني (Hilfsverb)</th>
+          <th>المتممات</th>
+          <th>نهاية الجملة (P2)</th>
+          <th>المعنى</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="wo-mid">Ich</td>
+          <td class="wo-pos2">habe</td>
+          <td class="wo-mid">gestern</td>
+          <td class="wo-end">gearbeitet.</td>
+          <td class="wo-label">عملتُ أمس</td>
+        </tr>
+        <tr>
+          <td class="wo-mid">Er</td>
+          <td class="wo-pos2">ist</td>
+          <td class="wo-mid">nach Hamburg</td>
+          <td class="wo-end">gefahren.</td>
+          <td class="wo-label">ذهب إلى هامبورغ</td>
+        </tr>
+        <tr>
+          <td class="wo-mid" style="color:var(--accent-orange);">Gestern</td>
+          <td class="wo-pos2">haben</td>
+          <td class="wo-mid">wir einen Film</td>
+          <td class="wo-end">gesehen.</td>
+          <td class="wo-label">أمس شاهدنا فيلماً (التقديم)</td>
+        </tr>
+        <tr>
+          <td class="wo-mid" style="color:var(--accent-orange);">Im Sommer</td>
+          <td class="wo-pos2">bin</td>
+          <td class="wo-mid">ich nach Italien</td>
+          <td class="wo-end">geflogen.</td>
+          <td class="wo-label">في الصيف طرتُ لإيطاليا</td>
+        </tr>
+        <tr>
+          <td class="wo-mid">Sie</td>
+          <td class="wo-pos2">hat</td>
+          <td class="wo-mid">das Buch schnell</td>
+          <td class="wo-end">gelesen.</td>
+          <td class="wo-label">قرأت الكتاب بسرعة</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip-box success" style="margin-top:20px;">
+    <span class="tip-icon">✅</span>
+    <div class="tip-content">
+      <div class="tip-title">قاعدة الذهب: الفعل المساعد = المركز الثاني</div>
+      <div class="tip-text">حتى لو بدأت الجملة بظرف زمان أو مكان، يبقى الفعل المساعد في المركز الثاني. المركز الأول يمكن أن يكون أي عنصر. <br>مثال: <span style="color:var(--accent-orange);font-family:monospace;">Gestern</span> <span style="color:var(--accent-blue);font-family:monospace;">habe</span> ich viel gelernt → <span style="color:var(--accent-gold);">gelernt</span> دائماً في الآخر!</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: NEGATION ===== -->
+<section id="negation">
+  <div class="section-header">
+    <div class="section-tag">// 06 — Verneinung</div>
+    <h2 class="section-title">النفي في زمن Perfekt</h2>
+    <p class="section-desc">لنفي الجملة في Perfekt نستخدم <span style="color:var(--accent-red);font-family:monospace;font-weight:700;">nicht</span> أو <span style="color:var(--accent-orange);font-family:monospace;font-weight:700;">kein-</span> حسب السياق.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card" style="border-color:rgba(255,107,107,0.3);">
+      <h3 class="card-title" style="color:var(--accent-red);margin-bottom:4px;">nicht — نفي الفعل والصفة</h3>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">يُوضع nicht قبل Partizip II مباشرةً (أي قرب نهاية الجملة)</p>
+      <div class="neg-example">
+        <div class="neg-pos">
+          <div class="neg-label pos">إيجابي</div>
+          <div class="neg-sent">Ich habe geschlafen.</div>
+          <div class="neg-arabic">نمتُ.</div>
+        </div>
+        <div class="neg-neg">
+          <div class="neg-label neg">نفي</div>
+          <div class="neg-sent">Ich habe <span class="highlight-nicht">nicht</span> geschlafen.</div>
+          <div class="neg-arabic">لم أنم.</div>
+        </div>
+      </div>
+      <div class="neg-example">
+        <div class="neg-pos">
+          <div class="neg-label pos">إيجابي</div>
+          <div class="neg-sent">Er ist gegangen.</div>
+          <div class="neg-arabic">ذهب.</div>
+        </div>
+        <div class="neg-neg">
+          <div class="neg-label neg">نفي</div>
+          <div class="neg-sent">Er ist <span class="highlight-nicht">nicht</span> gegangen.</div>
+          <div class="neg-arabic">لم يذهب.</div>
+        </div>
+      </div>
+      <div class="neg-example">
+        <div class="neg-pos">
+          <div class="neg-label pos">إيجابي</div>
+          <div class="neg-sent">Wir haben das verstanden.</div>
+          <div class="neg-arabic">فهمنا ذلك.</div>
+        </div>
+        <div class="neg-neg">
+          <div class="neg-label neg">نفي</div>
+          <div class="neg-sent">Wir haben das <span class="highlight-nicht">nicht</span> verstanden.</div>
+          <div class="neg-arabic">لم نفهم ذلك.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-color:rgba(251,146,60,0.3);">
+      <h3 class="card-title" style="color:var(--accent-orange);margin-bottom:4px;">kein- — نفي الاسم النكرة</h3>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">يُستخدم kein- بدلاً من nicht عندما ننفي اسماً جاء بعد ein- أو بدون أداة تعريف</p>
+      <div class="neg-example">
+        <div class="neg-pos">
+          <div class="neg-label pos">إيجابي</div>
+          <div class="neg-sent">Ich habe ein Buch gelesen.</div>
+          <div class="neg-arabic">قرأتُ كتاباً.</div>
+        </div>
+        <div class="neg-neg">
+          <div class="neg-label neg">نفي</div>
+          <div class="neg-sent">Ich habe <span class="highlight-kein">kein</span> Buch gelesen.</div>
+          <div class="neg-arabic">لم أقرأ أي كتاب.</div>
+        </div>
+      </div>
+      <div class="neg-example">
+        <div class="neg-pos">
+          <div class="neg-label pos">إيجابي</div>
+          <div class="neg-sent">Sie hat Kaffee getrunken.</div>
+          <div class="neg-arabic">شربت قهوة.</div>
+        </div>
+        <div class="neg-neg">
+          <div class="neg-label neg">نفي</div>
+          <div class="neg-sent">Sie hat <span class="highlight-kein">keinen</span> Kaffee getrunken.</div>
+          <div class="neg-arabic">لم تشرب قهوة.</div>
+        </div>
+      </div>
+      <div class="neg-example">
+        <div class="neg-pos">
+          <div class="neg-label pos">إيجابي</div>
+          <div class="neg-sent">Er hat Freunde besucht.</div>
+          <div class="neg-arabic">زار أصدقاء.</div>
+        </div>
+        <div class="neg-neg">
+          <div class="neg-label neg">نفي</div>
+          <div class="neg-sent">Er hat <span class="highlight-kein">keine</span> Freunde besucht.</div>
+          <div class="neg-arabic">لم يزر أي أصدقاء.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 7: QUESTIONS ===== -->
+<section id="questions">
+  <div class="section-header">
+    <div class="section-tag">// 07 — Fragesätze</div>
+    <h2 class="section-title">صياغة الأسئلة في Perfekt</h2>
+    <p class="section-desc">نوعان رئيسيان من الأسئلة: أسئلة نعم/لا (Ja-Nein-Fragen) وأسئلة Wh (W-Fragen).</p>
+  </div>
+
+  <div class="grid-2">
+    <!-- Yes/No Questions -->
+    <div class="card" style="border-color:rgba(61,214,140,0.3);">
+      <div class="rule-tag tag-regular" style="background:rgba(61,214,140,0.15);color:var(--accent-green);">Ja/Nein-Frage</div>
+      <h3 class="card-title" style="margin-bottom:8px;">أسئلة نعم/لا</h3>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">الفعل المساعد يأتي في بداية الجملة (المركز الأول)</p>
+      <div class="formula-box" style="padding:16px;margin-bottom:16px;">
+        <div class="formula-main" style="font-size:0.9rem;">
+          <span class="formula-part fp-haben" style="padding:8px 12px;">haben/sein</span>
+          <span class="formula-plus" style="font-size:1rem;">+</span>
+          <span class="formula-part fp-subject" style="padding:8px 12px;">فاعل</span>
+          <span class="formula-plus" style="font-size:1rem;">+</span>
+          <span class="formula-part fp-pp" style="padding:8px 12px;">P2 ?</span>
+        </div>
+      </div>
+      <div class="question-box">
+        <div class="q-row">
+          <div class="q-num">1</div>
+          <div class="q-content">
+            <div class="q-sent"><span class="q-verb">Hast</span> du geschlafen?</div>
+            <div class="q-arabic">هل نمتَ؟</div>
+          </div>
+          <div class="q-type qt-ja">Ja/Nein</div>
+        </div>
+        <div class="q-row">
+          <div class="q-num">2</div>
+          <div class="q-content">
+            <div class="q-sent"><span class="q-verb" style="color:var(--accent-green);">Bist</span> du nach Hause <span class="q-pp">gegangen</span>?</div>
+            <div class="q-arabic">هل ذهبتَ إلى البيت؟</div>
+          </div>
+          <div class="q-type qt-ja">Ja/Nein</div>
+        </div>
+        <div class="q-row">
+          <div class="q-num">3</div>
+          <div class="q-content">
+            <div class="q-sent"><span class="q-verb">Habt</span> ihr das Film <span class="q-pp">gesehen</span>?</div>
+            <div class="q-arabic">هل شاهدتم الفيلم؟</div>
+          </div>
+          <div class="q-type qt-ja">Ja/Nein</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- W-Questions -->
+    <div class="card" style="border-color:rgba(74,158,255,0.3);">
+      <div class="rule-tag tag-regular">W-Frage</div>
+      <h3 class="card-title" style="margin-bottom:8px;">أسئلة بأداة استفهام</h3>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">أداة الاستفهام في المركز الأول، الفعل المساعد في المركز الثاني</p>
+      <div class="formula-box" style="padding:16px;margin-bottom:16px;">
+        <div class="formula-main" style="font-size:0.9rem;">
+          <span class="formula-part" style="background:rgba(251,146,60,0.15);border:1px solid rgba(251,146,60,0.4);color:var(--accent-orange);padding:8px 12px;">W-Wort</span>
+          <span class="formula-plus" style="font-size:1rem;">+</span>
+          <span class="formula-part fp-haben" style="padding:8px 12px;">haben/sein</span>
+          <span class="formula-plus" style="font-size:1rem;">+</span>
+          <span class="formula-part fp-pp" style="padding:8px 12px;">P2 ?</span>
+        </div>
+      </div>
+      <div class="question-box">
+        <div class="q-row">
+          <div class="q-num">W</div>
+          <div class="q-content">
+            <div class="q-sent"><span style="color:var(--accent-orange);">Was</span> <span class="q-verb">hast</span> du <span class="q-pp">gemacht</span>?</div>
+            <div class="q-arabic">ماذا فعلتَ؟</div>
+          </div>
+          <div class="q-type qt-w">W-Frage</div>
+        </div>
+        <div class="q-row">
+          <div class="q-num">W</div>
+          <div class="q-content">
+            <div class="q-sent"><span style="color:var(--accent-orange);">Wohin</span> <span class="q-verb" style="color:var(--accent-green);">bist</span> du <span class="q-pp">geflogen</span>?</div>
+            <div class="q-arabic">إلى أين طرتَ؟</div>
+          </div>
+          <div class="q-type qt-w">W-Frage</div>
+        </div>
+        <div class="q-row">
+          <div class="q-num">W</div>
+          <div class="q-content">
+            <div class="q-sent"><span style="color:var(--accent-orange);">Wann</span> <span class="q-verb">hat</span> er <span class="q-pp">angerufen</span>?</div>
+            <div class="q-arabic">متى اتصل؟</div>
+          </div>
+          <div class="q-type qt-w">W-Frage</div>
+        </div>
+        <div class="q-row">
+          <div class="q-num">W</div>
+          <div class="q-content">
+            <div class="q-sent"><span style="color:var(--accent-orange);">Warum</span> <span class="q-verb">bist</span> du so früh <span class="q-pp">aufgestanden</span>?</div>
+            <div class="q-arabic">لماذا قمتَ مبكراً؟</div>
+          </div>
+          <div class="q-type qt-w">W-Frage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- W-words reference -->
+  <div class="card" style="margin-top:20px;">
+    <h3 class="card-title" style="margin-bottom:16px;">📌 أدوات الاستفهام الأكثر شيوعاً — W-Wörter</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+      <span class="tag-chip chip-gold">was — ماذا</span>
+      <span class="tag-chip chip-gold">wer — من</span>
+      <span class="tag-chip chip-gold">wann — متى</span>
+      <span class="tag-chip chip-gold">wo — أين</span>
+      <span class="tag-chip chip-gold">wohin — إلى أين</span>
+      <span class="tag-chip chip-gold">woher — من أين</span>
+      <span class="tag-chip chip-gold">warum — لماذا</span>
+      <span class="tag-chip chip-gold">wie — كيف</span>
+      <span class="tag-chip chip-gold">wie lange — كم من الوقت</span>
+      <span class="tag-chip chip-gold">wie oft — كم مرة</span>
+      <span class="tag-chip chip-gold">mit wem — مع من</span>
+      <span class="tag-chip chip-gold">wen — من (مفعول به)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 8: EXAMPLES ===== -->
+<section id="examples">
+  <div class="section-header">
+    <div class="section-tag">// 08 — Beispiele</div>
+    <h2 class="section-title">أمثلة شاملة من الحياة اليومية</h2>
+    <p class="section-desc">مجموعة متنوعة من الجمل تغطي مواضيع الحياة اليومية — الفعل المساعد باللون الأزرق/الأخضر، واسم المفعول باللون الذهبي.</p>
+  </div>
+
+  <!-- Filter tabs -->
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;">
+    <button class="nav-btn active" style="background:rgba(74,158,255,0.15);color:var(--accent-blue);border:1px solid rgba(74,158,255,0.3);border-radius:8px;padding:8px 16px;font-size:0.82rem;" onclick="filterExamples('all', this)">الكل</button>
+    <button class="nav-btn" style="background:transparent;color:var(--text-muted);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:0.82rem;" onclick="filterExamples('haben', this)">haben فقط</button>
+    <button class="nav-btn" style="background:transparent;color:var(--text-muted);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:0.82rem;" onclick="filterExamples('sein', this)">sein فقط</button>
+    <button class="nav-btn" style="background:transparent;color:var(--text-muted);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:0.82rem;" onclick="filterExamples('neg', this)">النفي</button>
+  </div>
+
+  <div id="examplesContainer">
+    <!-- haben examples -->
+    <div class="example-card" data-type="haben">
+      <div class="ex-german">Ich <span class="aux">habe</span> heute viel <span class="pp">gearbeitet</span>. <span class="ex-tag chip-blue">haben</span></div>
+      <div class="ex-arabic">عملتُ كثيراً اليوم.</div>
+    </div>
+    <div class="example-card" data-type="haben">
+      <div class="ex-german">Wir <span class="aux">haben</span> einen interessanten Film <span class="pp">gesehen</span>. <span class="ex-tag chip-blue">haben</span></div>
+      <div class="ex-arabic">شاهدنا فيلماً مثيراً للاهتمام.</div>
+    </div>
+    <div class="example-card" data-type="haben">
+      <div class="ex-german">Sie <span class="aux">hat</span> einen langen Brief <span class="pp">geschrieben</span>. <span class="ex-tag chip-blue">haben</span></div>
+      <div class="ex-arabic">كتبت رسالة طويلة.</div>
+    </div>
+    <div class="example-card" data-type="haben">
+      <div class="ex-german">Ihr <span class="aux">habt</span> das Essen <span class="pp">gekocht</span>. <span class="ex-tag chip-blue">haben</span></div>
+      <div class="ex-arabic">أنتم طبختم الطعام.</div>
+    </div>
+    <div class="example-card" data-type="haben">
+      <div class="ex-german">Er <span class="aux">hat</span> seinen Freund <span class="pp">angerufen</span>. <span class="ex-tag chip-blue">haben + trennbar</span></div>
+      <div class="ex-arabic">اتصل بصديقه (فعل منفصل).</div>
+    </div>
+    <div class="example-card" data-type="haben">
+      <div class="ex-german">Du <span class="aux">hast</span> an der Universität <span class="pp">studiert</span>. <span class="ex-tag chip-blue">-ieren</span></div>
+      <div class="ex-arabic">درستَ في الجامعة (لا ge-).</div>
+    </div>
+    <div class="example-card" data-type="haben">
+      <div class="ex-german">Ich <span class="aux">habe</span> das Fenster <span class="pp">aufgemacht</span>. <span class="ex-tag chip-blue">trennbar</span></div>
+      <div class="ex-arabic">فتحتُ النافذة.</div>
+    </div>
+    <div class="example-card" data-type="haben">
+      <div class="ex-german">Wir <span class="aux">haben</span> viel Spaß <span class="pp">gehabt</span>. <span class="ex-tag chip-blue">haben</span></div>
+      <div class="ex-arabic">استمتعنا كثيراً.</div>
+    </div>
+    <!-- sein examples -->
+    <div class="example-card" data-type="sein">
+      <div class="ex-german">Ich <span class="aux-sein">bin</span> gestern nach München <span class="pp">gefahren</span>. <span class="ex-tag chip-green">sein</span></div>
+      <div class="ex-arabic">ذهبتُ إلى ميونيخ أمس بالسيارة.</div>
+    </div>
+    <div class="example-card" data-type="sein">
+      <div class="ex-german">Er <span class="aux-sein">ist</span> früh <span class="pp">aufgestanden</span>. <span class="ex-tag chip-green">sein + trennbar</span></div>
+      <div class="ex-arabic">استيقظ مبكراً.</div>
+    </div>
+    <div class="example-card" data-type="sein">
+      <div class="ex-german">Wir <span class="aux-sein">sind</span> nach Spanien <span class="pp">geflogen</span>. <span class="ex-tag chip-green">sein</span></div>
+      <div class="ex-arabic">طرنا إلى إسبانيا.</div>
+    </div>
+    <div class="example-card" data-type="sein">
+      <div class="ex-german">Sie <span class="aux-sein">ist</span> Ärztin <span class="pp">geworden</span>. <span class="ex-tag chip-green">sein + تغيير حالة</span></div>
+      <div class="ex-arabic">أصبحت طبيبة.</div>
+    </div>
+    <div class="example-card" data-type="sein">
+      <div class="ex-german">Das Kind <span class="aux-sein">ist</span> schnell <span class="pp">gewachsen</span>. <span class="ex-tag chip-green">sein + تغيير حالة</span></div>
+      <div class="ex-arabic">نما الطفل بسرعة.</div>
+    </div>
+    <div class="example-card" data-type="sein">
+      <div class="ex-german">Ich <span class="aux-sein">bin</span> zu Hause <span class="pp">geblieben</span>. <span class="ex-tag chip-green">sein + استثناء</span></div>
+      <div class="ex-arabic">بقيتُ في البيت.</div>
+    </div>
+    <!-- negation examples -->
+    <div class="example-card" data-type="neg">
+      <div class="ex-german">Ich <span class="aux">habe</span> <span class="nicht">nicht</span> <span class="pp">geschlafen</span>. <span class="ex-tag chip-red">nicht</span></div>
+      <div class="ex-arabic">لم أنم.</div>
+    </div>
+    <div class="example-card" data-type="neg">
+      <div class="ex-german">Er <span class="aux-sein">ist</span> <span class="nicht">nicht</span> nach Hause <span class="pp">gegangen</span>. <span class="ex-tag chip-red">nicht</span></div>
+      <div class="ex-arabic">لم يذهب إلى البيت.</div>
+    </div>
+    <div class="example-card" data-type="neg">
+      <div class="ex-german">Ich <span class="aux">habe</span> <span class="nicht" style="color:var(--accent-orange);">keine</span> Zeit <span class="pp">gehabt</span>. <span class="ex-tag chip-red">kein-</span></div>
+      <div class="ex-arabic">لم يكن لديّ وقت.</div>
+    </div>
+    <div class="example-card" data-type="neg">
+      <div class="ex-german">Wir <span class="aux">haben</span> das Spiel <span class="nicht">nicht</span> <span class="pp">gewonnen</span>. <span class="ex-tag chip-red">nicht</span></div>
+      <div class="ex-arabic">لم نفز باللعبة.</div>
+    </div>
+    <div class="example-card" data-type="neg">
+      <div class="ex-german">Sie <span class="aux">hat</span> <span class="nicht" style="color:var(--accent-orange);">keinen</span> Kaffee <span class="pp">getrunken</span>. <span class="ex-tag chip-red">kein-</span></div>
+      <div class="ex-arabic">لم تشرب قهوة.</div>
+    </div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div class="card" style="margin-top:30px;">
+    <h3 class="card-title" style="margin-bottom:20px;">⚖️ مقارنة: المصدر vs المضارع vs Perfekt</h3>
+    <div class="compare-header">
+      <div class="ch-label ch-inf">Infinitiv</div>
+      <div class="ch-label ch-prä">Präsens</div>
+      <div class="ch-label ch-perf">Perfekt ✓</div>
+    </div>
+    <div class="compare-row">
+      <div class="cr-cell cr-inf">kaufen</div>
+      <div class="cr-cell cr-prä">ich kaufe</div>
+      <div class="cr-cell cr-perf">ich habe gekauft</div>
+    </div>
+    <div class="compare-row">
+      <div class="cr-cell cr-inf">gehen</div>
+      <div class="cr-cell cr-prä">ich gehe</div>
+      <div class="cr-cell cr-perf">ich bin gegangen</div>
+    </div>
+    <div class="compare-row">
+      <div class="cr-cell cr-inf">schreiben</div>
+      <div class="cr-cell cr-prä">er schreibt</div>
+      <div class="cr-cell cr-perf">er hat geschrieben</div>
+    </div>
+    <div class="compare-row">
+      <div class="cr-cell cr-inf">aufstehen</div>
+      <div class="cr-cell cr-prä">sie steht auf</div>
+      <div class="cr-cell cr-perf">sie ist aufgestanden</div>
+    </div>
+    <div class="compare-row">
+      <div class="cr-cell cr-inf">studieren</div>
+      <div class="cr-cell cr-prä">wir studieren</div>
+      <div class="cr-cell cr-perf">wir haben studiert</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION QUIZ ===== -->
+<section id="quiz">
+  <div class="section-header">
+    <div class="section-tag">// Quiz — Übung macht den Meister</div>
+    <h2 class="section-title">اختبر معلوماتك! 🎯</h2>
+    <p class="section-desc">تدرّب على زمن Perfekt من خلال أسئلة تفاعلية. الممارسة هي المفتاح للإتقان!</p>
+  </div>
+
+  <div class="quiz-container">
+    <div class="quiz-score">
+      <div class="score-circle" id="scoreCircle">0/0</div>
+      <div>
+        <div style="font-weight:700;margin-bottom:4px;">نتيجتك</div>
+        <div style="font-size:0.82rem;color:var(--text-muted);">السؤال <span id="qNumDisplay">1</span> من <span id="qTotalDisplay">8</span></div>
+      </div>
+    </div>
+
+    <div id="quizContent"></div>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Perfekt ✓</div>
+  <p>دليل شامل لتعلّم زمن الماضي المركب في اللغة الألمانية</p>
+  <p style="margin-top:8px;">Viel Erfolg beim Deutschlernen! 🇩🇪</p>
+</footer>
+
+<script>
+// Progress bar
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progress = (scrollTop / height) * 100;
+  document.getElementById('progressBar').style.width = progress + '%';
+
+  const scrollTopBtn = document.getElementById('scrollTop');
+  if (scrollTop > 300) scrollTopBtn.classList.add('visible');
+  else scrollTopBtn.classList.remove('visible');
+});
+
+// Nav active state
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+// Filter examples
+function filterExamples(type, btn) {
+  document.querySelectorAll('#examplesContainer .example-card').forEach(card => {
+    if (type === 'all' || card.dataset.type === type) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  document.querySelectorAll('[onclick^="filterExamples"]').forEach(b => {
+    b.style.background = 'transparent';
+    b.style.color = 'var(--text-muted)';
+    b.style.borderColor = 'var(--border)';
+  });
+  btn.style.background = 'rgba(74,158,255,0.15)';
+  btn.style.color = 'var(--accent-blue)';
+  btn.style.borderColor = 'rgba(74,158,255,0.3)';
+}
+
+// Quiz
+const quizData = [
+  {
+    q: 'أي فعل مساعد يستخدم مع gehen في زمن Perfekt؟',
+    sentence: 'Ich ___ nach Hause gegangen.',
+    options: ['habe', 'bin', 'hat', 'ist'],
+    correct: 1,
+    explanation: '✅ صحيح! gehen فعل حركة مكانية، لذا يستخدم sein. الجواب: Ich <strong>bin</strong> nach Hause gegangen.'
+  },
+  {
+    q: 'ما هو Partizip II للفعل kaufen؟',
+    sentence: 'Sie hat ein Buch ___.',
+    options: ['gekafen', 'gekauft', 'kauft', 'gekauten'],
+    correct: 1,
+    explanation: '✅ صحيح! kaufen فعل منتظم: ge + kauf + t = <strong>gekauft</strong>'
+  },
+  {
+    q: 'أين يجب أن يكون Partizip II في الجملة؟',
+    sentence: 'Gestern ___ ich viel gearbeitet ___.',
+    options: ['في البداية', 'في المركز الثاني', 'في نهاية الجملة', 'أي مكان'],
+    correct: 2,
+    explanation: '✅ صحيح! Partizip II يذهب دائماً إلى نهاية الجملة. Gestern <strong>habe</strong> ich viel <strong>gearbeitet</strong>.'
+  },
+  {
+    q: 'كيف تنفي هذه الجملة؟\n"Ich habe geschlafen."',
+    sentence: 'Ich habe ___ geschlafen.',
+    options: ['kein', 'nicht', 'keine', 'nein'],
+    correct: 1,
+    explanation: '✅ صحيح! لنفي الفعل نستخدم <strong>nicht</strong> قبل Partizip II مباشرةً.'
+  },
+  {
+    q: 'ما هو Partizip II للفعل المنفصل aufmachen؟',
+    sentence: 'Er hat das Fenster ___.',
+    options: ['gemachtauf', 'aufgemacht', 'aufmacht', 'geaufmacht'],
+    correct: 1,
+    explanation: '✅ صحيح! الأفعال المنفصلة: بادئة + ge + جذر + t = <strong>aufgemacht</strong>'
+  },
+  {
+    q: 'ما هو Partizip II للفعل studieren؟',
+    sentence: 'Sie hat in Berlin ___.',
+    options: ['gestudiert', 'studiert', 'studiert ge', 'gestudieren'],
+    correct: 1,
+    explanation: '✅ صحيح! الأفعال المنتهية بـ -ieren لا تأخذ ge-. المجواب: <strong>studiert</strong>'
+  },
+  {
+    q: 'أي جملة صحيحة نحوياً؟',
+    sentence: 'اختر الجملة الصحيحة:',
+    options: ['Ich gegessen habe Brot.', 'Ich habe Brot gegessen.', 'Habe Brot ich gegessen.', 'Ich habe gegessen Brot.'],
+    correct: 1,
+    explanation: '✅ صحيح! الفعل المساعد في المركز الثاني، Partizip II في النهاية: Ich <strong>habe</strong> Brot <strong>gegessen</strong>.'
+  },
+  {
+    q: 'كيف نصوغ سؤال W؟ (ما الذي أكلتَه؟)',
+    sentence: '___ hast du gegessen?',
+    options: ['Wann', 'Was', 'Wer', 'Wie'],
+    correct: 1,
+    explanation: '✅ صحيح! <strong>Was</strong> hast du gegessen? — ماذا أكلتَ؟ (was = ماذا/ما)'
+  }
+];
+
+let currentQ = 0;
+let score = 0;
+let answered = false;
+
+function renderQuiz() {
+  if (currentQ >= quizData.length) {
+    document.getElementById('quizContent').innerHTML = `
+      <div style="text-align:center;padding:30px;">
+        <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
+        <h3 style="font-size:1.5rem;margin-bottom:8px;">انتهى الاختبار!</h3>
+        <p style="color:var(--text-secondary);margin-bottom:24px;">حصلتَ على <strong style="color:var(--accent-gold);font-size:1.3rem;">${score}</strong> من ${quizData.length}</p>
+        <div style="font-size:0.9rem;color:var(--text-muted);margin-bottom:24px;">
+          ${score === quizData.length ? '🏆 ممتاز! أتقنتَ المادة!' : score >= quizData.length*0.7 ? '👍 جيد جداً! راجع الأقسام التي أخطأت فيها.' : '📚 راجع الشرح مرة أخرى وأعد المحاولة!'}
+        </div>
+        <button class="quiz-btn" onclick="resetQuiz()">🔄 إعادة الاختبار</button>
+      </div>
+    `;
+    return;
+  }
+
+  const q = quizData[currentQ];
+  document.getElementById('qNumDisplay').textContent = currentQ + 1;
+  document.getElementById('qTotalDisplay').textContent = quizData.length;
+
+  const optionsHtml = q.options.map((opt, i) =>
+    `<button class="quiz-opt" onclick="selectAnswer(${i})">${opt}</button>`
+  ).join('');
+
+  document.getElementById('quizContent').innerHTML = `
+    <div class="quiz-question">${q.q}</div>
+    <div class="quiz-sentence">${q.sentence}</div>
+    <div class="quiz-options">${optionsHtml}</div>
+    <div class="quiz-feedback" id="feedback"></div>
+    <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:8px;">
+      <button class="quiz-btn secondary" onclick="skipQuestion()">تخطي →</button>
+    </div>
+  `;
+  answered = false;
+}
+
+function selectAnswer(idx) {
+  if (answered) return;
+  answered = true;
+  const q = quizData[currentQ];
+  const opts = document.querySelectorAll('.quiz-opt');
+  const feedback = document.getElementById('feedback');
+
+  opts[q.correct].classList.add('correct');
+  if (idx !== q.correct) {
+    opts[idx].classList.add('wrong');
+    feedback.className = 'quiz-feedback show wrong';
+    feedback.innerHTML = '❌ خطأ — ' + q.explanation;
+  } else {
+    score++;
+    feedback.className = 'quiz-feedback show correct';
+    feedback.innerHTML = q.explanation;
+  }
+
+  document.getElementById('scoreCircle').textContent = `${score}/${currentQ+1}`;
+
+  document.querySelectorAll('.quiz-opt').forEach(b => b.style.pointerEvents = 'none');
+
+  // Add next button
+  const btnDiv = document.querySelector('#quizContent > div:last-child');
+  btnDiv.innerHTML = `<button class="quiz-btn" onclick="nextQuestion()">السؤال التالي →</button>`;
+}
+
+function skipQuestion() {
+  if (!answered) {
+    currentQ++;
+    renderQuiz();
+  }
+}
+
+function nextQuestion() {
+  currentQ++;
+  renderQuiz();
+}
+
+function resetQuiz() {
+  currentQ = 0;
+  score = 0;
+  document.getElementById('scoreCircle').textContent = '0/0';
+  renderQuiz();
+}
+
+// Initialize quiz
+renderQuiz();
+
+// Intersection observer for animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.card, .formula-box, .example-card').forEach(el => observer.observe(el));
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-perfekt-uebersicht" data-category="grammatik" data-title="الزمن الماضي Perfekt" data-root="../../" defer></script>
+</body>
+</html>

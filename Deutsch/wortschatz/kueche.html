@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>أدوات المطبخ بالألمانية | Küchengeräte auf Deutsch</title>
+<meta name="description" content="تعلم أسماء أدوات المطبخ باللغة الألمانية مع الأرتيكل والنطق والرسومات التوضيحية"/>
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   CSS VARIABLES — LIGHT & DARK THEMES
+═══════════════════════════════════════════════════════════════ */
+:root {
+  --bg-primary: #F7F5F0;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-header: #1A2B3C;
+  --text-primary: #1A2B3C;
+  --text-secondary: #5A6A7A;
+  --text-muted: #8A9AB0;
+  --text-on-dark: #FFFFFF;
+  --border-color: #E0E8F0;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.13);
+  --shadow-hover: 0 12px 40px rgba(0,0,0,0.16);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  /* Article colors */
+  --der-color: #2563EB;
+  --der-bg: #EFF6FF;
+  --der-border: #BFDBFE;
+  --die-color: #D91868;
+  --die-bg: #FDF2F8;
+  --die-border: #FBCFE8;
+  --das-color: #059669;
+  --das-bg: #F0FDF4;
+  --das-border: #A7F3D0;
+  /* Accent */
+  --accent: #E8A020;
+  --accent-bg: #FFF8EC;
+  --accent-dark: #C47A0A;
+  /* Quiz */
+  --correct-bg: #D1FAE5;
+  --correct-text: #065F46;
+  --wrong-bg: #FEE2E2;
+  --wrong-text: #991B1B;
+  --quiz-bg: #F8FAFF;
+  /* UI */
+  --btn-primary: #1A2B3C;
+  --btn-primary-text: #FFFFFF;
+  --btn-hover: #2A3B4C;
+  --input-bg: #FFFFFF;
+  --input-border: #D0D8E4;
+  --progress-bar: #2563EB;
+  --tag-bg: #F0F4F8;
+  --tag-text: #4A5A6A;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0F1923;
+  --bg-secondary: #162032;
+  --bg-card: #1E2D3D;
+  --bg-header: #0A1218;
+  --text-primary: #E8F0F8;
+  --text-secondary: #8AA4C0;
+  --text-muted: #5A7090;
+  --text-on-dark: #E8F0F8;
+  --border-color: #263646;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+  --shadow-hover: 0 12px 40px rgba(0,0,0,0.6);
+  --der-color: #60A5FA;
+  --der-bg: #1E3A5F;
+  --der-border: #2D5480;
+  --die-color: #F472B6;
+  --die-bg: #3D1A2E;
+  --die-border: #5D2A4E;
+  --das-color: #34D399;
+  --das-bg: #064E3B;
+  --das-border: #065F46;
+  --accent: #F59E0B;
+  --accent-bg: #3A2800;
+  --accent-dark: #FCD34D;
+  --correct-bg: #064E3B;
+  --correct-text: #6EE7B7;
+  --wrong-bg: #450A0A;
+  --wrong-text: #FCA5A5;
+  --quiz-bg: #162032;
+  --btn-primary: #2563EB;
+  --btn-primary-text: #FFFFFF;
+  --btn-hover: #1D4ED8;
+  --input-bg: #1E2D3D;
+  --input-border: #2D4060;
+  --progress-bar: #60A5FA;
+  --tag-bg: #1E2D3D;
+  --tag-text: #8AA4C0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════════════════════════ */
+.site-header {
+  background: var(--bg-header);
+  color: var(--text-on-dark);
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+}
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 68px;
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.header-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--accent);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.header-title-group { display: flex; flex-direction: column; gap: 1px; }
+.header-title { font-size: 16px; font-weight: 700; letter-spacing: 0.01em; line-height: 1.2; }
+.header-subtitle { font-size: 11px; color: #8AA4C0; letter-spacing: 0.05em; text-transform: uppercase; }
+.header-search {
+  flex: 1;
+  max-width: 380px;
+  position: relative;
+}
+.header-search input {
+  width: 100%;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  color: #fff;
+  padding: 0 16px 0 40px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s;
+}
+.header-search input::placeholder { color: rgba(255,255,255,0.4); }
+.header-search input:focus {
+  background: rgba(255,255,255,0.15);
+  border-color: var(--accent);
+}
+.header-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  font-size: 15px;
+}
+.header-controls { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.btn-icon {
+  width: 40px; height: 40px;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+.btn-icon:hover { background: rgba(255,255,255,0.18); border-color: var(--accent); }
+.btn-quiz {
+  height: 40px;
+  padding: 0 18px;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  color: #1A2B3C;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  display: flex; align-items: center; gap: 6px;
+}
+.btn-quiz:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO BANNER
+═══════════════════════════════════════════════════════════════ */
+.hero {
+  background: linear-gradient(135deg, #1A2B3C 0%, #2A4060 50%, #1A3550 100%);
+  color: #fff;
+  padding: 56px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232,160,32,0.2);
+  border: 1px solid rgba(232,160,32,0.4);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.hero h1 span { color: var(--accent); }
+.hero-ar {
+  font-size: clamp(16px, 2.5vw, 22px);
+  color: rgba(255,255,255,0.7);
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  margin-bottom: 28px;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num { font-size: 28px; font-weight: 800; color: var(--accent); display: block; }
+.hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.55); letter-spacing: 0.04em; }
+
+/* ═══════════════════════════════════════════════════════════════
+   FILTER BAR
+═══════════════════════════════════════════════════════════════ */
+.filter-bar {
+  background: var(--bg-secondary);
+  border-bottom: 1.5px solid var(--border-color);
+  padding: 0 24px;
+  position: sticky;
+  top: 68px;
+  z-index: 90;
+  box-shadow: var(--shadow-sm);
+}
+.filter-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 56px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.filter-inner::-webkit-scrollbar { display: none; }
+.filter-label { font-size: 12px; font-weight: 600; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.filter-btn {
+  flex-shrink: 0;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+}
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+.filter-btn.active-all { background: var(--btn-primary); border-color: var(--btn-primary); color: #fff; }
+.filter-btn.active-der { background: var(--der-color); border-color: var(--der-color); color: #fff; }
+.filter-btn.active-die { background: var(--die-color); border-color: var(--die-color); color: #fff; }
+.filter-btn.active-das { background: var(--das-color); border-color: var(--das-color); color: #fff; }
+.filter-sep { width: 1px; height: 24px; background: var(--border-color); flex-shrink: 0; }
+.result-count { margin-left: auto; font-size: 12px; color: var(--text-muted); white-space: nowrap; flex-shrink: 0; }
+
+/* ═══════════════════════════════════════════════════════════════
+   MAIN CONTENT
+═══════════════════════════════════════════════════════════════ */
+.main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+}
+.section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VOCABULARY GRID
+═══════════════════════════════════════════════════════════════ */
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 48px;
+}
+.vocab-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  position: relative;
+}
+.vocab-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: var(--shadow-hover);
+  border-color: transparent;
+}
+.vocab-card[data-article="der"] { border-top: 3px solid var(--der-color); }
+.vocab-card[data-article="die"] { border-top: 3px solid var(--die-color); }
+.vocab-card[data-article="das"] { border-top: 3px solid var(--das-color); }
+.vocab-card[data-article="die-pl"] { border-top: 3px solid #7C3AED; }
+
+.card-svg-area {
+  width: 100%;
+  aspect-ratio: 1/0.85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--bg-primary);
+  position: relative;
+}
+.card-svg-area svg { width: 100%; height: 100%; max-width: 130px; max-height: 110px; }
+
+.card-copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px; height: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: var(--text-secondary);
+}
+.vocab-card:hover .card-copy-btn { opacity: 1; }
+.card-copy-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.card-copy-btn.copied { background: var(--das-color); color: #fff; border-color: var(--das-color); }
+
+.card-body { padding: 14px 16px 16px; }
+.card-article-badge {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 5px;
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.card-article-badge.der { background: var(--der-bg); color: var(--der-color); }
+.card-article-badge.die { background: var(--die-bg); color: var(--die-color); }
+.card-article-badge.das { background: var(--das-bg); color: var(--das-color); }
+.card-article-badge.die-pl { background: #EDE9FE; color: #7C3AED; }
+
+[data-theme="dark"] .card-article-badge.die-pl { background: #2D1A5E; color: #A78BFA; }
+
+.card-german {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 3px;
+  letter-spacing: -0.01em;
+}
+.card-plural {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.card-english {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+.card-arabic {
+  font-size: 13px;
+  color: var(--text-muted);
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+.card-actions {
+  display: flex;
+  gap: 6px;
+  padding: 10px 16px 14px;
+  border-top: 1px solid var(--border-color);
+}
+.card-speak-btn {
+  flex: 1;
+  height: 34px;
+  background: var(--btn-primary);
+  color: var(--btn-primary-text);
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+  transition: all 0.2s;
+}
+.card-speak-btn:hover { background: var(--btn-hover); transform: translateY(-1px); }
+.card-speak-btn.speaking { background: var(--accent); color: #1A2B3C; }
+.card-info-btn {
+  width: 34px; height: 34px;
+  background: var(--tag-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+.card-info-btn:hover { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); }
+
+/* ═══════════════════════════════════════════════════════════════
+   ARTICLE LEGEND
+═══════════════════════════════════════════════════════════════ */
+.article-legend {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.legend-title { font-size: 12px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.legend-items { display: flex; gap: 20px; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 8px; }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.legend-dot.der { background: var(--der-color); }
+.legend-dot.die { background: var(--die-color); }
+.legend-dot.das { background: var(--das-color); }
+.legend-dot.pl { background: #7C3AED; }
+.legend-text { font-size: 13px; color: var(--text-secondary); }
+.legend-text strong { color: var(--text-primary); }
+.legend-arabic { font-size: 12px; color: var(--text-muted); direction: rtl; }
+
+/* ═══════════════════════════════════════════════════════════════
+   GRAMMAR REFERENCE
+═══════════════════════════════════════════════════════════════ */
+.grammar-section {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+.grammar-header {
+  padding: 18px 24px;
+  background: var(--bg-header);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.grammar-header-icon { font-size: 20px; }
+.grammar-header-text h2 { font-size: 16px; font-weight: 700; }
+.grammar-header-text p { font-size: 12px; color: rgba(255,255,255,0.6); direction: rtl; margin-top: 2px; }
+.grammar-toggle { margin-left: auto; font-size: 18px; transition: transform 0.3s; }
+.grammar-toggle.open { transform: rotate(180deg); }
+.grammar-body {
+  padding: 24px;
+  display: none;
+}
+.grammar-body.open { display: block; }
+.grammar-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.grammar-table th {
+  background: var(--bg-primary);
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border-color);
+}
+.grammar-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+.grammar-table tr:last-child td { border-bottom: none; }
+.grammar-table tr:hover td { background: var(--bg-primary); }
+.der-text { color: var(--der-color); font-weight: 700; }
+.die-text { color: var(--die-color); font-weight: 700; }
+.das-text { color: var(--das-color); font-weight: 700; }
+.grammar-tip {
+  background: var(--accent-bg);
+  border-left: 3px solid var(--accent);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  font-size: 13px;
+  color: var(--text-primary);
+  direction: rtl;
+  line-height: 1.7;
+}
+.grammar-tip strong { color: var(--accent-dark); }
+
+/* ═══════════════════════════════════════════════════════════════
+   QUIZ APP
+═══════════════════════════════════════════════════════════════ */
+.quiz-section {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+.quiz-header {
+  background: linear-gradient(135deg, #1A2B3C 0%, #2A4060 100%);
+  padding: 28px 32px;
+  color: #fff;
+}
+.quiz-header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.quiz-header h2 { font-size: 22px; font-weight: 800; }
+.quiz-header p { font-size: 14px; color: rgba(255,255,255,0.65); direction: rtl; margin-top: 4px; }
+.quiz-mode-btns { display: flex; gap: 8px; }
+.quiz-mode-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.quiz-mode-btn.active-mode { background: var(--accent); border-color: var(--accent); color: #1A2B3C; }
+.quiz-progress-bar-wrap {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  height: 5px;
+  overflow: hidden;
+}
+.quiz-progress-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+.quiz-body { padding: 32px; }
+.quiz-score-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.quiz-score-badge {
+  display: flex; flex-direction: column; align-items: center;
+  background: var(--bg-primary);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  flex: 1;
+  gap: 2px;
+}
+.quiz-score-num { font-size: 24px; font-weight: 800; color: var(--text-primary); }
+.quiz-score-num.correct { color: #059669; }
+.quiz-score-num.wrong { color: #DC2626; }
+.quiz-score-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.quiz-question-card {
+  background: var(--quiz-bg);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.quiz-num-label { font-size: 11px; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+.quiz-svg-wrap {
+  margin: 0 auto 16px;
+  width: 100px; height: 85px;
+  display: flex; align-items: center; justify-content: center;
+}
+.quiz-svg-wrap svg { width: 100%; height: 100%; }
+.quiz-question-text {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.quiz-question-hint { font-size: 14px; color: var(--text-muted); margin-bottom: 4px; }
+.quiz-question-ar { font-size: 15px; color: var(--text-secondary); direction: rtl; }
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.quiz-option {
+  padding: 14px 18px;
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s;
+  color: var(--text-primary);
+  text-align: center;
+}
+.quiz-option:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-bg); }
+.quiz-option.correct-ans { background: var(--correct-bg); border-color: #059669; color: var(--correct-text); }
+.quiz-option.wrong-ans { background: var(--wrong-bg); border-color: #DC2626; color: var(--wrong-text); }
+.quiz-option:disabled { cursor: default; }
+
+.quiz-feedback {
+  background: var(--bg-primary);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  display: none;
+  direction: rtl;
+  line-height: 1.7;
+}
+.quiz-feedback.show { display: block; }
+.quiz-feedback.correct-fb { border-color: #059669; background: var(--correct-bg); color: var(--correct-text); }
+.quiz-feedback.wrong-fb { border-color: #DC2626; background: var(--wrong-bg); color: var(--wrong-text); }
+
+.quiz-controls { display: flex; gap: 10px; justify-content: center; }
+.quiz-btn {
+  height: 44px;
+  padding: 0 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  display: flex; align-items: center; gap: 6px;
+}
+.quiz-btn.primary { background: var(--btn-primary); color: var(--btn-primary-text); }
+.quiz-btn.primary:hover { background: var(--btn-hover); transform: translateY(-1px); }
+.quiz-btn.secondary { background: var(--bg-primary); color: var(--text-secondary); border: 1.5px solid var(--border-color); }
+.quiz-btn.secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+.quiz-results {
+  text-align: center;
+  padding: 20px;
+  display: none;
+}
+.quiz-results.show { display: block; }
+.quiz-results-icon { font-size: 56px; margin-bottom: 12px; }
+.quiz-results h3 { font-size: 24px; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
+.quiz-results p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; direction: rtl; }
+.quiz-results-stars { font-size: 28px; margin-bottom: 20px; letter-spacing: 4px; }
+
+/* Article quiz — write-in mode */
+.quiz-input-wrap { position: relative; margin-bottom: 16px; }
+.quiz-input {
+  width: 100%;
+  height: 56px;
+  background: var(--input-bg);
+  border: 2px solid var(--input-border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.quiz-input:focus { border-color: var(--accent); }
+.quiz-input.input-correct { border-color: #059669; background: var(--correct-bg); color: var(--correct-text); }
+.quiz-input.input-wrong { border-color: #DC2626; background: var(--wrong-bg); color: var(--wrong-text); }
+
+/* ═══════════════════════════════════════════════════════════════
+   MODAL / DETAIL
+═══════════════════════════════════════════════════════════════ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+.modal-overlay.show { display: flex; }
+.modal-box {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  max-width: 460px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+  animation: modalIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.85) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-top {
+  padding: 28px 28px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border-bottom: 1.5px solid var(--border-color);
+}
+.modal-svg-wrap {
+  width: 90px; height: 76px; flex-shrink: 0;
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  padding: 10px;
+}
+.modal-svg-wrap svg { width: 100%; height: 100%; }
+.modal-title-group { flex: 1; }
+.modal-article-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.modal-article-badge.der { background: var(--der-bg); color: var(--der-color); }
+.modal-article-badge.die { background: var(--die-bg); color: var(--die-color); }
+.modal-article-badge.das { background: var(--das-bg); color: var(--das-color); }
+.modal-article-badge.die-pl { background: #EDE9FE; color: #7C3AED; }
+[data-theme="dark"] .modal-article-badge.die-pl { background: #2D1A5E; color: #A78BFA; }
+.modal-german { font-size: 26px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; letter-spacing: -0.01em; }
+.modal-english { font-size: 15px; color: var(--text-secondary); margin-bottom: 3px; }
+.modal-arabic { font-size: 15px; color: var(--text-muted); direction: rtl; }
+.modal-close-btn {
+  width: 32px; height: 32px; flex-shrink: 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+.modal-close-btn:hover { background: var(--wrong-bg); color: var(--wrong-text); border-color: #DC2626; }
+.modal-body { padding: 24px 28px 28px; }
+.modal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  gap: 12px;
+}
+.modal-row:last-child { border-bottom: none; }
+.modal-row-label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; }
+.modal-row-value { font-size: 14px; color: var(--text-primary); text-align: right; }
+.modal-row-value-ar { font-size: 14px; color: var(--text-secondary); direction: rtl; text-align: right; }
+.modal-example {
+  background: var(--bg-primary);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+.modal-example-ar { font-size: 13px; color: var(--text-muted); direction: rtl; margin-top: 6px; }
+.modal-actions { display: flex; gap: 10px; margin-top: 16px; }
+.modal-speak-btn {
+  flex: 1; height: 42px;
+  background: var(--btn-primary); color: var(--btn-primary-text);
+  border: none; border-radius: 10px;
+  font-size: 14px; font-weight: 700;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.modal-speak-btn:hover { background: var(--btn-hover); }
+.modal-copy-btn {
+  width: 42px; height: 42px;
+  background: var(--tag-bg);
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; color: var(--text-secondary);
+}
+.modal-copy-btn:hover { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); }
+
+/* ═══════════════════════════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════════════════════════ */
+.toast {
+  position: fixed;
+  bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px);
+  background: #1A2B3C; color: #fff;
+  padding: 10px 20px; border-radius: 24px;
+  font-size: 13px; font-weight: 600;
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+/* ═══════════════════════════════════════════════════════════════
+   NO RESULTS
+═══════════════════════════════════════════════════════════════ */
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+.no-results.show { display: block; }
+.no-results-icon { font-size: 48px; margin-bottom: 12px; }
+.no-results h3 { font-size: 18px; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px; }
+.no-results p { font-size: 14px; }
+
+/* ═══════════════════════════════════════════════════════════════
+   PRINT STYLES
+═══════════════════════════════════════════════════════════════ */
+@media print {
+  :root {
+    --bg-primary: #fff !important;
+    --bg-card: #fff !important;
+    --text-primary: #000 !important;
+    --text-secondary: #333 !important;
+    --border-color: #ccc !important;
+  }
+  .site-header, .filter-bar, .quiz-section, .modal-overlay, .toast,
+  .card-actions, .card-copy-btn { display: none !important; }
+  body { background: #fff; font-size: 11px; }
+  .hero { padding: 20px; background: #1A2B3C; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .main-content { padding: 16px 0; max-width: 100%; }
+  .vocab-grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .vocab-card {
+    break-inside: avoid;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    transform: none !important;
+  }
+  .vocab-card:hover { transform: none !important; box-shadow: none !important; }
+  .grammar-section { break-inside: avoid; }
+  @page { size: A4 portrait; margin: 15mm 12mm; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero { padding: 36px 16px 32px; }
+  .hero-stats { gap: 20px; }
+  .main-content { padding: 20px 16px 48px; }
+  .vocab-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+  .quiz-options { grid-template-columns: 1fr; }
+  .quiz-body { padding: 20px; }
+  .quiz-mode-btns { display: none; }
+  .header-search { max-width: 180px; }
+  .article-legend { flex-direction: column; gap: 12px; }
+}
+@media (max-width: 480px) {
+  .header-inner { height: 60px; }
+  .header-title { font-size: 14px; }
+  .header-search { display: none; }
+  .vocab-grid { grid-template-columns: repeat(2, 1fr); }
+  .quiz-score-row { gap: 8px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   UTILITY
+═══════════════════════════════════════════════════════════════ */
+.hidden { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="header-icon">🍳</div>
+      <div class="header-title-group">
+        <div class="header-title">Küchengeräte</div>
+        <div class="header-subtitle">أدوات المطبخ</div>
+      </div>
+    </div>
+    <div class="header-search">
+      <span class="header-search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="ابحث عن أداة... (z.B. Löffel)" aria-label="Search vocabulary" autocomplete="off"/>
+    </div>
+    <div class="header-controls">
+      <button class="btn-icon" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+      <button class="btn-icon" onclick="window.print()" aria-label="Print" title="Print page">🖨️</button>
+      <button class="btn-quiz" onclick="document.getElementById('quizSection').scrollIntoView({behavior:'smooth'})">📝 اختبر نفسك</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" role="banner">
+  <div class="hero-badge">📚 مستوى A1–A2 · Deutsch</div>
+  <h1>Küchengeräte<br/><span>أدوات المطبخ</span></h1>
+  <p class="hero-ar">تعلّم أسماء أدوات المطبخ باللغة الألمانية مع الأرتيكل والنطق والرسومات التوضيحية</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-num" id="totalCount">36</span><span class="hero-stat-label">مفردة</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-label">أرتيكل</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">🔊</span><span class="hero-stat-label">نطق ألماني</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">📝</span><span class="hero-stat-label">اختبار تفاعلي</span></div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<nav class="filter-bar" role="navigation" aria-label="Filter vocabulary">
+  <div class="filter-inner">
+    <span class="filter-label">تصفية:</span>
+    <button class="filter-btn active-all" data-filter="all" onclick="filterCards('all', this)">الكل</button>
+    <div class="filter-sep"></div>
+    <button class="filter-btn" data-filter="der" onclick="filterCards('der', this)" style="color:var(--der-color)">🔵 der (مذكر)</button>
+    <button class="filter-btn" data-filter="die" onclick="filterCards('die', this)" style="color:var(--die-color)">🔴 die (مؤنث)</button>
+    <button class="filter-btn" data-filter="das" onclick="filterCards('das', this)" style="color:var(--das-color)">🟢 das (محايد)</button>
+    <div class="filter-sep"></div>
+    <button class="filter-btn" data-filter="die-pl" onclick="filterCards('die-pl', this)" style="color:#7C3AED">🟣 Plural (جمع)</button>
+    <span class="result-count" id="resultCount">36 نتيجة</span>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main-content" role="main">
+
+  <!-- ARTICLE LEGEND -->
+  <div class="article-legend">
+    <span class="legend-title">أرتيكل الاسم</span>
+    <div class="legend-items">
+      <div class="legend-item"><div class="legend-dot der"></div><span class="legend-text"><strong>der</strong> — مذكر <span class="legend-arabic">(Maskulinum)</span></span></div>
+      <div class="legend-item"><div class="legend-dot die"></div><span class="legend-text"><strong>die</strong> — مؤنث <span class="legend-arabic">(Femininum)</span></span></div>
+      <div class="legend-item"><div class="legend-dot das"></div><span class="legend-text"><strong>das</strong> — محايد <span class="legend-arabic">(Neutrum)</span></span></div>
+      <div class="legend-item"><div class="legend-dot pl"></div><span class="legend-text"><strong>die (Pl.)</strong> — جمع <span class="legend-arabic">(Plural)</span></span></div>
+    </div>
+  </div>
+
+  <!-- VOCAB GRID -->
+  <div class="section-title">قاموس أدوات المطبخ المصور</div>
+  <div class="vocab-grid" id="vocabGrid"></div>
+  <div class="no-results" id="noResults">
+    <div class="no-results-icon">🔍</div>
+    <h3>لا توجد نتائج</h3>
+    <p>جرّب كلمة بحث مختلفة</p>
+  </div>
+
+  <!-- GRAMMAR REFERENCE -->
+  <div class="grammar-section">
+    <div class="grammar-header" onclick="toggleGrammar()" role="button" tabindex="0" aria-expanded="false" aria-controls="grammarBody">
+      <span class="grammar-header-icon">📖</span>
+      <div class="grammar-header-text">
+        <h2>قواعد الأرتيكل في الألمانية</h2>
+        <p>كل الأسماء في الألمانية لها جنس — مذكر أو مؤنث أو محايد</p>
+      </div>
+      <span class="grammar-toggle" id="grammarToggle">▼</span>
+    </div>
+    <div class="grammar-body" id="grammarBody">
+      <table class="grammar-table">
+        <thead><tr><th>الأرتيكل</th><th>الجنس</th><th>اللون المرجعي</th><th>مثال</th><th>الجمع</th></tr></thead>
+        <tbody>
+          <tr><td class="der-text">der</td><td>مذكر – Maskulinum</td><td>🔵 أزرق</td><td>der Löffel (الملعقة)</td><td>die Löffel</td></tr>
+          <tr><td class="die-text">die</td><td>مؤنث – Femininum</td><td>🔴 أحمر</td><td>die Pfanne (المقلاة)</td><td>die Pfannen</td></tr>
+          <tr><td class="das-text">das</td><td>محايد – Neutrum</td><td>🟢 أخضر</td><td>das Messer (السكين)</td><td>die Messer</td></tr>
+        </tbody>
+      </table>
+      <div class="grammar-tip">
+        <strong>💡 نصيحة:</strong> لا توجد قواعد ثابتة لتحديد جنس الاسم في الألمانية — تعلّم كل اسم مع أرتيكله! مثلاً: تعلّم <strong>der Löffel</strong> وليس فقط <strong>Löffel</strong>.
+        جميع الأسماء في الجمع تأخذ الأرتيكل <strong>die</strong> بصرف النظر عن جنس المفرد.
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ SECTION -->
+  <div class="quiz-section" id="quizSection">
+    <div class="quiz-header">
+      <div class="quiz-header-top">
+        <div>
+          <h2>📝 اختبار أدوات المطبخ</h2>
+          <p>اختبر معرفتك بالمفردات والأرتيكل</p>
+        </div>
+        <div class="quiz-mode-btns">
+          <button class="quiz-mode-btn active-mode" onclick="setQuizMode('article', this)">الأرتيكل</button>
+          <button class="quiz-mode-btn" onclick="setQuizMode('meaning', this)">المعنى</button>
+          <button class="quiz-mode-btn" onclick="setQuizMode('german', this)">الألمانية</button>
+        </div>
+      </div>
+      <div class="quiz-progress-bar-wrap">
+        <div class="quiz-progress-bar-fill" id="quizProgressBar"></div>
+      </div>
+    </div>
+    <div class="quiz-body">
+      <div class="quiz-score-row">
+        <div class="quiz-score-badge"><span class="quiz-score-num correct" id="scoreCorrect">0</span><span class="quiz-score-label">✅ صحيح</span></div>
+        <div class="quiz-score-badge"><span class="quiz-score-num wrong" id="scoreWrong">0</span><span class="quiz-score-label">❌ خطأ</span></div>
+        <div class="quiz-score-badge"><span class="quiz-score-num" id="scoreTotal">0/10</span><span class="quiz-score-label">📊 السؤال</span></div>
+      </div>
+
+      <!-- Question display -->
+      <div class="quiz-question-card" id="quizQuestionCard">
+        <div class="quiz-num-label" id="quizNumLabel">السؤال 1 من 10</div>
+        <div class="quiz-svg-wrap" id="quizSvgWrap"></div>
+        <div class="quiz-question-text" id="quizQuestionText"></div>
+        <div class="quiz-question-hint" id="quizQuestionHint"></div>
+        <div class="quiz-question-ar" id="quizQuestionAr"></div>
+      </div>
+
+      <div class="quiz-options" id="quizOptions"></div>
+      <div class="quiz-feedback" id="quizFeedback"></div>
+      <div class="quiz-results" id="quizResults">
+        <div class="quiz-results-icon" id="quizResultsIcon"></div>
+        <h3 id="quizResultsTitle"></h3>
+        <div class="quiz-results-stars" id="quizResultsStars"></div>
+        <p id="quizResultsMsg"></p>
+        <button class="quiz-btn primary" onclick="startQuiz()">🔄 إعادة الاختبار</button>
+      </div>
+      <div class="quiz-controls" id="quizControls">
+        <button class="quiz-btn secondary" onclick="startQuiz()">🔄 إعادة البدء</button>
+        <button class="quiz-btn primary" id="nextBtn" onclick="nextQuestion()">التالي ←</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- WORD DETAIL MODAL -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Word details" onclick="closeModal(event)">
+  <div class="modal-box">
+    <div class="modal-top">
+      <div class="modal-svg-wrap" id="modalSvgWrap"></div>
+      <div class="modal-title-group">
+        <div class="modal-article-badge" id="modalArticleBadge"></div>
+        <div class="modal-german" id="modalGerman"></div>
+        <div class="modal-english" id="modalEnglish"></div>
+        <div class="modal-arabic" id="modalArabic"></div>
+      </div>
+      <button class="modal-close-btn" onclick="document.getElementById('modalOverlay').classList.remove('show')" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-row">
+        <span class="modal-row-label">الجمع</span>
+        <span class="modal-row-value" id="modalPlural"></span>
+      </div>
+      <div class="modal-row">
+        <span class="modal-row-label">النطق</span>
+        <span class="modal-row-value" id="modalPronounce"></span>
+      </div>
+      <div class="modal-row" style="flex-direction:column;gap:6px">
+        <span class="modal-row-label">جملة مثال</span>
+        <div class="modal-example" id="modalExample"></div>
+        <div class="modal-example-ar" id="modalExampleAr"></div>
+      </div>
+      <div class="modal-actions">
+        <button class="modal-speak-btn" id="modalSpeakBtn">🔊 استمع للنطق</button>
+        <button class="modal-copy-btn" id="modalCopyBtn" title="نسخ الكلمة">📋</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   VOCABULARY DATA — 36 kitchen tools with full metadata
+═══════════════════════════════════════════════════════════════ */
+const vocab = [
+  {
+    id: 1, article: "der", gender: "Maskulinum",
+    german: "Löffel", plural: "die Löffel",
+    english: "Spoon", arabic: "الملعقة",
+    pronounce: "ˈlœfl̩",
+    example: "Ich rühre die Suppe mit dem Löffel.", exampleAr: "أحرّك الشوربة بالملعقة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="60" cy="28" rx="22" ry="16" fill="#C0A882" stroke="#8B6A3E" stroke-width="2.5"/>
+      <ellipse cx="60" cy="28" rx="16" ry="11" fill="#D4BC96"/>
+      <rect x="56" y="42" width="8" height="44" rx="4" fill="#C0A882" stroke="#8B6A3E" stroke-width="2"/>
+      <rect x="57" y="80" width="6" height="10" rx="3" fill="#A0845A"/>
+    </svg>`
+  },
+  {
+    id: 2, article: "die", gender: "Femininum",
+    german: "Gabel", plural: "die Gabeln",
+    english: "Fork", arabic: "الشوكة",
+    pronounce: "ˈɡaːbl̩",
+    example: "Bitte gib mir die Gabel.", exampleAr: "من فضلك أعطني الشوكة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="57" y="42" width="6" height="46" rx="3" fill="#C0C8D0" stroke="#8090A0" stroke-width="2"/>
+      <rect x="49" y="12" width="5" height="32" rx="2.5" fill="#C0C8D0" stroke="#8090A0" stroke-width="1.5"/>
+      <rect x="57" y="12" width="5" height="32" rx="2.5" fill="#C0C8D0" stroke="#8090A0" stroke-width="1.5"/>
+      <rect x="66" y="12" width="5" height="32" rx="2.5" fill="#C0C8D0" stroke="#8090A0" stroke-width="1.5"/>
+      <path d="M51 42 Q60 46 69 42" fill="#C0C8D0" stroke="#8090A0" stroke-width="1.5"/>
+    </svg>`
+  },
+  {
+    id: 3, article: "das", gender: "Neutrum",
+    german: "Messer", plural: "die Messer",
+    english: "Knife", arabic: "السكين",
+    pronounce: "ˈmɛsɐ",
+    example: "Das Messer ist sehr scharf.", exampleAr: "السكين حادة جداً.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="54" y="52" width="12" height="34" rx="4" fill="#8B6A3E" stroke="#6B4A2E" stroke-width="2"/>
+      <path d="M54 52 L54 16 Q70 24 66 52 Z" fill="#D0D8E0" stroke="#90A0B0" stroke-width="2"/>
+      <line x1="58" y1="20" x2="64" y2="48" stroke="#A0B0C0" stroke-width="1" opacity="0.6"/>
+    </svg>`
+  },
+  {
+    id: 4, article: "die", gender: "Femininum",
+    german: "Pfanne", plural: "die Pfannen",
+    english: "Pan / Frying pan", arabic: "المقلاة",
+    pronounce: "ˈpfanə",
+    example: "Die Pfanne ist auf dem Herd.", exampleAr: "المقلاة على الموقد.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="55" cy="62" rx="34" ry="14" fill="#5A5A5A" stroke="#3A3A3A" stroke-width="2.5"/>
+      <ellipse cx="55" cy="58" rx="30" ry="10" fill="#707070"/>
+      <ellipse cx="55" cy="58" rx="26" ry="7" fill="#3A3A3A"/>
+      <rect x="88" y="56" width="24" height="7" rx="3.5" fill="#8B6A3E" stroke="#6B4A2E" stroke-width="2"/>
+    </svg>`
+  },
+  {
+    id: 5, article: "der", gender: "Maskulinum",
+    german: "Topf", plural: "die Töpfe",
+    english: "Pot / Saucepan", arabic: "القدر / الحلة",
+    pronounce: "tɔpf",
+    example: "Das Wasser kocht im Topf.", exampleAr: "الماء يغلي في القدر.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="44" width="64" height="42" rx="8" fill="#6A6A6A" stroke="#4A4A4A" stroke-width="2.5"/>
+      <ellipse cx="60" cy="44" rx="32" ry="9" fill="#808080" stroke="#4A4A4A" stroke-width="2"/>
+      <rect x="18" y="50" width="12" height="8" rx="4" fill="#8B6A3E" stroke="#6B4A2E" stroke-width="1.5"/>
+      <rect x="90" y="50" width="12" height="8" rx="4" fill="#8B6A3E" stroke="#6B4A2E" stroke-width="1.5"/>
+      <ellipse cx="60" cy="44" rx="24" ry="6" fill="#909090"/>
+    </svg>`
+  },
+  {
+    id: 6, article: "der", gender: "Maskulinum",
+    german: "Schneebesen", plural: "die Schneebesen",
+    english: "Whisk", arabic: "خفاقة / مضرب بيض",
+    pronounce: "ˈʃneːˌbeːzn̩",
+    example: "Ich schlage die Eier mit dem Schneebesen.", exampleAr: "أخفق البيض بالخفاقة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="56" y="60" width="8" height="32" rx="4" fill="#C0A882" stroke="#8B6A3E" stroke-width="2"/>
+      <ellipse cx="60" cy="45" rx="18" ry="22" fill="none" stroke="#D0D8E0" stroke-width="2.5"/>
+      <ellipse cx="60" cy="45" rx="10" ry="14" fill="none" stroke="#D0D8E0" stroke-width="2"/>
+      <path d="M42 40 Q60 55 78 40" fill="none" stroke="#D0D8E0" stroke-width="2"/>
+      <path d="M44 50 Q60 60 76 50" fill="none" stroke="#D0D8E0" stroke-width="2"/>
+    </svg>`
+  },
+  {
+    id: 7, article: "das", gender: "Neutrum",
+    german: "Schneidebrett", plural: "die Schneidebretter",
+    english: "Cutting board", arabic: "لوح التقطيع",
+    pronounce: "ˈʃnaɪ̯dəˌbʁɛt",
+    example: "Ich schneide das Gemüse auf dem Schneidebrett.", exampleAr: "أقطّع الخضار على لوح التقطيع.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="18" y="32" width="76" height="50" rx="6" fill="#D4A870" stroke="#A07840" stroke-width="2.5"/>
+      <rect x="22" y="36" width="68" height="42" rx="4" fill="#E0BC88"/>
+      <circle cx="84" cy="40" r="4" fill="#D4A870" stroke="#A07840" stroke-width="1.5"/>
+      <line x1="35" y1="50" x2="75" y2="50" stroke="#C0986A" stroke-width="1.5" opacity="0.6"/>
+      <line x1="35" y1="58" x2="75" y2="58" stroke="#C0986A" stroke-width="1.5" opacity="0.6"/>
+      <line x1="35" y1="66" x2="75" y2="66" stroke="#C0986A" stroke-width="1.5" opacity="0.6"/>
+    </svg>`
+  },
+  {
+    id: 8, article: "der", gender: "Maskulinum",
+    german: "Kochtopf", plural: "die Kochtöpfe",
+    english: "Cooking pot", arabic: "إناء الطهي",
+    pronounce: "ˈkɔxtɔpf",
+    example: "Die Suppe ist im Kochtopf.", exampleAr: "الشوربة في إناء الطهي.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="26" y="40" width="68" height="46" rx="9" fill="#708090" stroke="#4A5A6A" stroke-width="2.5"/>
+      <ellipse cx="60" cy="40" rx="34" ry="10" fill="#8090A0" stroke="#4A5A6A" stroke-width="2"/>
+      <rect x="45" y="28" width="30" height="14" rx="6" fill="#506070" stroke="#3A4A5A" stroke-width="2"/>
+      <ellipse cx="60" cy="28" rx="8" ry="4" fill="#608090"/>
+      <rect x="16" y="47" width="10" height="7" rx="3.5" fill="#6A5040" stroke="#4A3020" stroke-width="1.5"/>
+      <rect x="94" y="47" width="10" height="7" rx="3.5" fill="#6A5040" stroke="#4A3020" stroke-width="1.5"/>
+    </svg>`
+  },
+  {
+    id: 9, article: "der", gender: "Maskulinum",
+    german: "Kochlöffel", plural: "die Kochlöffel",
+    english: "Wooden spoon", arabic: "الملعقة الخشبية",
+    pronounce: "ˈkɔxˌlœfl̩",
+    example: "Ich rühre die Soße mit dem Kochlöffel.", exampleAr: "أحرّك الصلصة بالملعقة الخشبية.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="56" y="42" width="8" height="48" rx="4" fill="#C0A882" stroke="#8B6A3E" stroke-width="2"/>
+      <ellipse cx="60" cy="30" rx="18" ry="13" fill="#C0A882" stroke="#8B6A3E" stroke-width="2.5"/>
+      <ellipse cx="60" cy="30" rx="12" ry="8" fill="#D4BC96"/>
+      <circle cx="64" cy="28" r="5" fill="#C0A882"/>
+    </svg>`
+  },
+  {
+    id: 10, article: "das", gender: "Neutrum",
+    german: "Nudelholz", plural: "die Nudelholze",
+    english: "Rolling pin", arabic: "شوبك العجين / النشابة",
+    pronounce: "ˈnuːdl̩ˌhɔlts",
+    example: "Ich rolle den Teig mit dem Nudelholz aus.", exampleAr: "أفرد العجينة بالشوبك.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="22" y="43" width="76" height="20" rx="10" fill="#C0A882" stroke="#8B6A3E" stroke-width="2.5"/>
+      <rect x="26" y="47" width="68" height="12" rx="6" fill="#D4BC96"/>
+      <ellipse cx="12" cy="53" rx="8" ry="5" fill="#8B6A3E" stroke="#6B4A2E" stroke-width="2"/>
+      <ellipse cx="108" cy="53" rx="8" ry="5" fill="#8B6A3E" stroke="#6B4A2E" stroke-width="2"/>
+    </svg>`
+  },
+  {
+    id: 11, article: "der", gender: "Maskulinum",
+    german: "Mixer", plural: "die Mixer",
+    english: "Blender / Mixer", arabic: "الخلاط",
+    pronounce: "ˈmɪksɐ",
+    example: "Der Mixer ist kaputt.", exampleAr: "الخلاط معطل.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="38" y="12" width="44" height="50" rx="8" fill="#E8EEF4" stroke="#A0B0C0" stroke-width="2.5"/>
+      <rect x="42" y="16" width="36" height="42" rx="6" fill="#F5F8FB"/>
+      <path d="M44 62 L36 88 Q60 92 84 88 L76 62 Z" fill="#D0D8E0" stroke="#A0B0C0" stroke-width="2"/>
+      <rect x="44" y="85" width="32" height="8" rx="4" fill="#A0B0C0"/>
+      <circle cx="60" cy="38" r="10" fill="#C0D0E0" stroke="#8090A0" stroke-width="2"/>
+      <circle cx="60" cy="38" r="6" fill="#8090A0"/>
+    </svg>`
+  },
+  {
+    id: 12, article: "der", gender: "Maskulinum",
+    german: "Toaster", plural: "die Toaster",
+    english: "Toaster", arabic: "محمصة الخبز",
+    pronounce: "ˈtoːstɐ",
+    example: "Ich mache Toast im Toaster.", exampleAr: "أصنع التوست في المحمصة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="42" width="80" height="40" rx="8" fill="#C0C8D0" stroke="#8090A0" stroke-width="2.5"/>
+      <rect x="30" y="46" width="24" height="22" rx="4" fill="#A0A8B0"/>
+      <rect x="66" y="46" width="24" height="22" rx="4" fill="#A0A8B0"/>
+      <rect x="34" y="20" width="16" height="28" rx="3" fill="#E8C870" stroke="#C0A040" stroke-width="1.5"/>
+      <rect x="70" y="20" width="16" height="28" rx="3" fill="#E8C870" stroke="#C0A040" stroke-width="1.5"/>
+      <rect x="22" y="78" width="76" height="6" rx="3" fill="#8090A0"/>
+      <circle cx="92" cy="55" r="5" fill="#E05050" stroke="#C03030" stroke-width="1.5"/>
+    </svg>`
+  },
+  {
+    id: 13, article: "die", gender: "Femininum",
+    german: "Küchenwaage", plural: "die Küchenwaagen",
+    english: "Kitchen scale", arabic: "ميزان المطبخ",
+    pronounce: "ˈkʏçn̩ˌvaːɡə",
+    example: "Die Küchenwaage zeigt 200 Gramm.", exampleAr: "ميزان المطبخ يظهر 200 غرام.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="55" width="80" height="30" rx="8" fill="#E0E8F0" stroke="#A0B0C0" stroke-width="2.5"/>
+      <rect x="28" y="63" width="50" height="14" rx="4" fill="#F5F8FB" stroke="#C0D0E0" stroke-width="1.5"/>
+      <ellipse cx="60" cy="55" rx="36" ry="14" fill="#D0D8E4" stroke="#A0B0C0" stroke-width="2"/>
+      <ellipse cx="60" cy="52" rx="30" ry="10" fill="#E8EEF5"/>
+      <text x="42" y="73" font-size="10" fill="#4A5A6A" font-family="monospace" font-weight="bold">200 g</text>
+      <circle cx="88" cy="73" r="5" fill="#60A0E0" stroke="#4080C0" stroke-width="1.5"/>
+    </svg>`
+  },
+  {
+    id: 14, article: "der", gender: "Maskulinum",
+    german: "Wasserkocher", plural: "die Wasserkocher",
+    english: "Kettle / Water boiler", arabic: "غلاية الماء",
+    pronounce: "ˈvasɐˌkɔxɐ",
+    example: "Der Wasserkocher ist heiß.", exampleAr: "غلاية الماء ساخنة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 30 Q28 80 40 88 Q60 94 80 88 Q92 80 90 30 Z" fill="#D0D8E4" stroke="#8090A0" stroke-width="2.5"/>
+      <path d="M34 34 Q32 78 42 86 Q60 92 78 86 Q88 78 86 34 Z" fill="#E0E8F0"/>
+      <rect x="26" y="26" width="68" height="10" rx="5" fill="#8090A0" stroke="#6070A0" stroke-width="2"/>
+      <path d="M90 50 Q108 50 108 60 Q108 70 90 70" fill="none" stroke="#8090A0" stroke-width="3" stroke-linecap="round"/>
+      <rect x="28" y="86" width="64" height="8" rx="4" fill="#A0B0C0"/>
+    </svg>`
+  },
+  {
+    id: 15, article: "der", gender: "Maskulinum",
+    german: "Herd", plural: "die Herde",
+    english: "Stove / Cooker", arabic: "الموقد / البوتاغاز",
+    pronounce: "heːɐ̯t",
+    example: "Der Herd ist an.", exampleAr: "الموقد مشتعل.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="16" y="18" width="88" height="74" rx="8" fill="#4A4A4A" stroke="#2A2A2A" stroke-width="2.5"/>
+      <rect x="22" y="24" width="76" height="38" rx="5" fill="#1A1A1A"/>
+      <circle cx="40" cy="36" r="10" fill="#2A2A2A" stroke="#3A3A3A" stroke-width="1.5"/>
+      <circle cx="40" cy="36" r="6" fill="#505050"/>
+      <circle cx="80" cy="36" r="10" fill="#2A2A2A" stroke="#3A3A3A" stroke-width="1.5"/>
+      <circle cx="80" cy="36" r="6" fill="#505050"/>
+      <circle cx="40" cy="54" r="8" fill="#2A2A2A" stroke="#3A3A3A" stroke-width="1.5"/>
+      <circle cx="40" cy="54" r="5" fill="#505050"/>
+      <circle cx="80" cy="54" r="8" fill="#2A2A2A" stroke="#3A3A3A" stroke-width="1.5"/>
+      <circle cx="80" cy="54" r="5" fill="#505050"/>
+      <rect x="22" y="68" width="76" height="18" rx="4" fill="#3A3A3A"/>
+      <rect x="28" y="73" width="50" height="8" rx="3" fill="#606060"/>
+    </svg>`
+  },
+  {
+    id: 16, article: "der", gender: "Maskulinum",
+    german: "Backofen", plural: "die Backöfen",
+    english: "Oven", arabic: "الفرن",
+    pronounce: "ˈbakoːfn̩",
+    example: "Der Kuchen ist im Backofen.", exampleAr: "الكعك في الفرن.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="16" y="14" width="88" height="78" rx="8" fill="#5A5A5A" stroke="#3A3A3A" stroke-width="2.5"/>
+      <rect x="26" y="28" width="68" height="50" rx="5" fill="#2A2A2A" stroke="#4A4A4A" stroke-width="2"/>
+      <rect x="30" y="32" width="60" height="42" rx="3" fill="#1A1A1A"/>
+      <rect x="34" y="36" width="52" height="34" rx="2" fill="#202020"/>
+      <rect x="18" y="18" width="84" height="10" rx="4" fill="#4A4A4A"/>
+      <circle cx="34" cy="23" r="4" fill="#808080"/>
+      <circle cx="54" cy="23" r="4" fill="#808080"/>
+      <circle cx="86" cy="23" r="4" fill="#E06050"/>
+      <rect x="36" y="86" width="48" height="5" rx="2.5" fill="#8090A0"/>
+    </svg>`
+  },
+  {
+    id: 17, article: "die", gender: "Femininum",
+    german: "Reibe", plural: "die Reiben",
+    english: "Grater", arabic: "المبشرة",
+    pronounce: "ˈʁaɪ̯bə",
+    example: "Ich reibe den Käse mit der Reibe.", exampleAr: "أبشر الجبن بالمبشرة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40" y="12" width="40" height="70" rx="6" fill="#C0C8D0" stroke="#8090A0" stroke-width="2.5"/>
+      <rect x="44" y="16" width="32" height="62" rx="4" fill="#D0D8E0"/>
+      <circle cx="52" cy="26" r="3" fill="#8090A0"/>
+      <circle cx="60" cy="26" r="3" fill="#8090A0"/>
+      <circle cx="68" cy="26" r="3" fill="#8090A0"/>
+      <circle cx="52" cy="36" r="3" fill="#8090A0"/>
+      <circle cx="60" cy="36" r="3" fill="#8090A0"/>
+      <circle cx="68" cy="36" r="3" fill="#8090A0"/>
+      <circle cx="52" cy="46" r="3" fill="#8090A0"/>
+      <circle cx="60" cy="46" r="3" fill="#8090A0"/>
+      <circle cx="68" cy="46" r="3" fill="#8090A0"/>
+      <circle cx="52" cy="56" r="3" fill="#8090A0"/>
+      <circle cx="60" cy="56" r="3" fill="#8090A0"/>
+      <circle cx="68" cy="56" r="3" fill="#8090A0"/>
+      <rect x="48" y="78" width="24" height="6" rx="3" fill="#8090A0"/>
+    </svg>`
+  },
+  {
+    id: 18, article: "das", gender: "Neutrum",
+    german: "Sieb", plural: "die Siebe",
+    english: "Sieve / Colander", arabic: "المصفاة",
+    pronounce: "ziːp",
+    example: "Ich gieße die Nudeln durch das Sieb.", exampleAr: "أصفّي المعكرونة بالمصفاة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 40 Q22 80 60 84 Q98 80 98 40 Z" fill="none" stroke="#8090A0" stroke-width="3"/>
+      <path d="M22 40 Q22 80 60 84 Q98 80 98 40 Z" fill="#D0D8E0" opacity="0.5"/>
+      <ellipse cx="60" cy="40" rx="38" ry="12" fill="none" stroke="#8090A0" stroke-width="3"/>
+      <ellipse cx="60" cy="40" rx="34" ry="9" fill="#D0D8E0"/>
+      <circle cx="47" cy="55" r="2.5" fill="#8090A0"/>
+      <circle cx="60" cy="55" r="2.5" fill="#8090A0"/>
+      <circle cx="73" cy="55" r="2.5" fill="#8090A0"/>
+      <circle cx="53" cy="64" r="2.5" fill="#8090A0"/>
+      <circle cx="67" cy="64" r="2.5" fill="#8090A0"/>
+      <circle cx="60" cy="73" r="2.5" fill="#8090A0"/>
+      <rect x="14" y="36" width="8" height="7" rx="3.5" fill="#8B6A3E" stroke="#6B4A2E" stroke-width="1.5"/>
+      <rect x="98" y="36" width="8" height="7" rx="3.5" fill="#8B6A3E" stroke="#6B4A2E" stroke-width="1.5"/>
+    </svg>`
+  },
+  {
+    id: 19, article: "der", gender: "Maskulinum",
+    german: "Dosenöffner", plural: "die Dosenöffner",
+    english: "Can opener", arabic: "فتاحة العلب",
+    pronounce: "ˈdoːzn̩ˌœfnɐ",
+    example: "Wo ist der Dosenöffner?", exampleAr: "أين فتاحة العلب؟",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="48" width="64" height="12" rx="6" fill="#C0C8D0" stroke="#8090A0" stroke-width="2.5"/>
+      <circle cx="40" cy="54" r="12" fill="none" stroke="#8090A0" stroke-width="3"/>
+      <circle cx="40" cy="54" r="7" fill="#C0C8D0" stroke="#8090A0" stroke-width="2"/>
+      <circle cx="40" cy="54" r="3" fill="#6A7A8A"/>
+      <rect x="82" y="46" width="12" height="16" rx="4" fill="#E8D080" stroke="#C0A840" stroke-width="2"/>
+    </svg>`
+  },
+  {
+    id: 20, article: "der", gender: "Maskulinum",
+    german: "Flaschenöffner", plural: "die Flaschenöffner",
+    english: "Bottle opener", arabic: "فتاحة الزجاجات",
+    pronounce: "ˈflaʃn̩ˌœfnɐ",
+    example: "Ich brauche einen Flaschenöffner.", exampleAr: "أحتاج إلى فتاحة زجاجات.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="50" y="14" width="20" height="64" rx="8" fill="#C0C8D0" stroke="#8090A0" stroke-width="2.5"/>
+      <path d="M42 72 Q42 90 60 90 Q78 90 78 72 Z" fill="#C0C8D0" stroke="#8090A0" stroke-width="2"/>
+      <rect x="40" y="20" width="40" height="14" rx="6" fill="#A0B0C0" stroke="#8090A0" stroke-width="2"/>
+      <rect x="46" y="24" width="10" height="6" rx="2" fill="#E8E0D0"/>
+      <rect x="64" y="24" width="10" height="6" rx="2" fill="#E8E0D0"/>
+    </svg>`
+  },
+  {
+    id: 21, article: "die", gender: "Femininum",
+    german: "Küchenmaschine", plural: "die Küchenmaschinen",
+    english: "Food processor / Stand mixer", arabic: "روبوت المطبخ",
+    pronounce: "ˈkʏçn̩maˌʃiːnə",
+    example: "Die Küchenmaschine knetet den Teig.", exampleAr: "روبوت المطبخ يعجن العجينة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="30" y="48" width="60" height="38" rx="8" fill="#E0E8F0" stroke="#A0B0C0" stroke-width="2.5"/>
+      <rect x="34" y="52" width="52" height="30" rx="6" fill="#EEF4FA"/>
+      <rect x="30" y="38" width="30" height="14" rx="6" fill="#C0C8D4" stroke="#A0B0C0" stroke-width="2"/>
+      <circle cx="82" cy="32" rx="16" r="16" fill="#D0D8E4" stroke="#A0B0C0" stroke-width="2.5"/>
+      <circle cx="82" cy="32" r="10" fill="#E0E8F0"/>
+      <line x1="82" y1="46" x2="82" y2="48" stroke="#A0B0C0" stroke-width="3"/>
+      <circle cx="50" cy="70" r="5" fill="#E06050" stroke="#C04030" stroke-width="1.5"/>
+      <circle cx="66" cy="70" r="5" fill="#808080"/>
+    </svg>`
+  },
+  {
+    id: 22, article: "der", gender: "Maskulinum",
+    german: "Kühlschrank", plural: "die Kühlschränke",
+    english: "Refrigerator / Fridge", arabic: "الثلاجة",
+    pronounce: "ˈkyːlˌʃʁaŋk",
+    example: "Die Milch ist im Kühlschrank.", exampleAr: "الحليب في الثلاجة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="8" width="64" height="86" rx="7" fill="#E0E8F0" stroke="#A0B0C0" stroke-width="2.5"/>
+      <line x1="28" y1="52" x2="92" y2="52" stroke="#A0B0C0" stroke-width="2"/>
+      <rect x="32" y="12" width="56" height="36" rx="4" fill="#EEF4FA"/>
+      <rect x="32" y="56" width="56" height="34" rx="4" fill="#EEF4FA"/>
+      <rect x="80" y="26" width="5" height="14" rx="2.5" fill="#A0B0C0"/>
+      <rect x="80" y="64" width="5" height="10" rx="2.5" fill="#A0B0C0"/>
+      <rect x="36" y="18" width="20" height="4" rx="2" fill="#D0D8E4"/>
+      <rect x="36" y="26" width="28" height="4" rx="2" fill="#D0D8E4"/>
+    </svg>`
+  },
+  {
+    id: 23, article: "die", gender: "Femininum",
+    german: "Schüssel", plural: "die Schüsseln",
+    english: "Bowl", arabic: "الوعاء / الطاسة",
+    pronounce: "ˈʃʏsl̩",
+    example: "Ich wasche das Obst in der Schüssel.", exampleAr: "أغسل الفاكهة في الوعاء.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 48 Q18 84 60 88 Q102 84 102 48 Z" fill="#E8A060" stroke="#C07838" stroke-width="2.5"/>
+      <path d="M22 48 Q22 80 60 84 Q98 80 98 48 Z" fill="#F0B870"/>
+      <ellipse cx="60" cy="48" rx="42" ry="13" fill="#E8A060" stroke="#C07838" stroke-width="2.5"/>
+      <ellipse cx="60" cy="48" rx="38" ry="10" fill="#F0B870"/>
+    </svg>`
+  },
+  {
+    id: 24, article: "der", gender: "Maskulinum",
+    german: "Teller", plural: "die Teller",
+    english: "Plate / Dish", arabic: "الطبق",
+    pronounce: "ˈtɛlɐ",
+    example: "Der Teller ist sauber.", exampleAr: "الطبق نظيف.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="60" cy="62" rx="46" ry="14" fill="#D0D4D8" stroke="#A0A4A8" stroke-width="2"/>
+      <ellipse cx="60" cy="56" rx="46" ry="14" fill="#E8ECEE" stroke="#A0A4A8" stroke-width="2.5"/>
+      <ellipse cx="60" cy="54" rx="38" ry="11" fill="#F0F4F6"/>
+      <ellipse cx="60" cy="52" rx="26" ry="7" fill="#E0E4E8"/>
+      <ellipse cx="60" cy="51" rx="18" ry="5" fill="#F5F8FA"/>
+    </svg>`
+  },
+  {
+    id: 25, article: "die", gender: "Femininum",
+    german: "Tasse", plural: "die Tassen",
+    english: "Cup / Mug", arabic: "الكوب / الفنجان",
+    pronounce: "ˈtasə",
+    example: "Ich trinke Kaffee aus der Tasse.", exampleAr: "أشرب القهوة من الفنجان.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 36 Q28 78 60 82 Q92 78 88 36 Z" fill="#E8705A" stroke="#C04030" stroke-width="2.5"/>
+      <path d="M36 40 Q32 76 60 80 Q88 76 84 40 Z" fill="#F08870"/>
+      <rect x="28" y="32" width="64" height="10" rx="5" fill="#D05040" stroke="#B03020" stroke-width="2"/>
+      <path d="M88 48 Q104 48 104 60 Q104 72 88 68" fill="none" stroke="#C04030" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="60" cy="86" rx="34" ry="6" fill="#C04030" stroke="#A02010" stroke-width="1.5"/>
+    </svg>`
+  },
+  {
+    id: 26, article: "das", gender: "Neutrum",
+    german: "Glas", plural: "die Gläser",
+    english: "Glass", arabic: "الكأس / الزجاجة",
+    pronounce: "ɡlaːs",
+    example: "Das Glas ist voll Wasser.", exampleAr: "الكأس ممتلئ بالماء.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 18 Q36 82 60 88 Q84 82 80 18 Z" fill="#B8D8F0" stroke="#80A8C8" stroke-width="2" opacity="0.8"/>
+      <path d="M44 18 Q40 78 60 84 Q80 78 76 18 Z" fill="#D0E8F8" opacity="0.7"/>
+      <rect x="36" y="14" width="48" height="8" rx="4" fill="#80A8C8" stroke="#6090B0" stroke-width="2"/>
+      <rect x="42" y="86" width="36" height="6" rx="3" fill="#80A8C8"/>
+      <path d="M46 50 Q60 56 74 50" fill="#A0C4E0" opacity="0.5"/>
+    </svg>`
+  },
+  {
+    id: 27, article: "die", gender: "Femininum",
+    german: "Schöpfkelle", plural: "die Schöpfkellen",
+    english: "Ladle", arabic: "مغرفة الشوربة",
+    pronounce: "ˈʃœpfˌkɛlə",
+    example: "Ich fülle die Suppe mit der Schöpfkelle.", exampleAr: "أملأ الشوربة بالمغرفة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="56" y="44" width="8" height="48" rx="4" fill="#C0C8D0" stroke="#8090A0" stroke-width="2"/>
+      <circle cx="36" cy="36" r="20" fill="none" stroke="#8090A0" stroke-width="3"/>
+      <circle cx="36" cy="36" r="16" fill="#D0D8E4"/>
+      <path d="M52 36 Q56 44 60 44" fill="none" stroke="#8090A0" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`
+  },
+  {
+    id: 28, article: "die", gender: "Femininum",
+    german: "Bratpfanne", plural: "die Bratpfannen",
+    english: "Frying pan", arabic: "مقلاة القلي",
+    pronounce: "ˈbʁaːtˌpfanə",
+    example: "Das Öl ist heiß in der Bratpfanne.", exampleAr: "الزيت ساخن في مقلاة القلي.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="52" cy="64" rx="32" ry="12" fill="#4A4A4A" stroke="#2A2A2A" stroke-width="2.5"/>
+      <ellipse cx="52" cy="60" rx="28" ry="8" fill="#606060"/>
+      <ellipse cx="52" cy="58" rx="24" ry="6" fill="#2A2A2A"/>
+      <rect x="83" y="56" width="26" height="8" rx="4" fill="#8B6A3E" stroke="#6B4A2E" stroke-width="2"/>
+    </svg>`
+  },
+  {
+    id: 29, article: "der", gender: "Maskulinum",
+    german: "Pürierstab", plural: "die Pürierstäbe",
+    english: "Immersion blender / Hand blender", arabic: "الخلاط اليدوي",
+    pronounce: "ˈpyːʁiɐ̯ˌʃtaːp",
+    example: "Der Pürierstab macht die Suppe glatt.", exampleAr: "الخلاط اليدوي يجعل الشوربة ناعمة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="52" y="8" width="16" height="48" rx="7" fill="#C0C8D4" stroke="#8090A0" stroke-width="2.5"/>
+      <rect x="55" y="12" width="10" height="38" rx="5" fill="#D0D8E4"/>
+      <rect x="48" y="54" width="24" height="20" rx="5" fill="#E8EEF4" stroke="#A0B0C0" stroke-width="2"/>
+      <circle cx="60" cy="82" r="12" fill="#909090" stroke="#6A6A6A" stroke-width="2.5"/>
+      <circle cx="60" cy="82" r="7" fill="#707070"/>
+      <circle cx="56" cy="20" r="4" fill="#E06050" stroke="#C04030" stroke-width="1.5"/>
+    </svg>`
+  },
+  {
+    id: 30, article: "die", gender: "Femininum",
+    german: "Backform", plural: "die Backformen",
+    english: "Baking tin / Cake pan", arabic: "قالب الخبيز",
+    pronounce: "ˈbakˌfɔʁm",
+    example: "Ich backe den Kuchen in der Backform.", exampleAr: "أخبز الكعك في القالب.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="16" y="46" width="88" height="36" rx="5" fill="#C8A060" stroke="#A07830" stroke-width="2.5"/>
+      <rect x="20" y="50" width="80" height="28" rx="3" fill="#D4B070"/>
+      <rect x="10" y="50" width="12" height="8" rx="4" fill="#A07830"/>
+      <rect x="98" y="50" width="12" height="8" rx="4" fill="#A07830"/>
+      <ellipse cx="60" cy="50" rx="40" ry="8" fill="#E0C080" stroke="#B09040" stroke-width="2"/>
+    </svg>`
+  },
+  {
+    id: 31, article: "das", gender: "Neutrum",
+    german: "Besteck", plural: "die Bestecke",
+    english: "Cutlery / Flatware", arabic: "أدوات المائدة",
+    pronounce: "bəˈʃtɛk",
+    example: "Das Besteck liegt auf dem Tisch.", exampleAr: "أدوات المائدة على الطاولة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="38" y="14" width="7" height="72" rx="3.5" fill="#C0C8D0" stroke="#8090A0" stroke-width="2"/>
+      <ellipse cx="41.5" cy="28" rx="10" ry="8" fill="#C0C8D0" stroke="#8090A0" stroke-width="2"/>
+      <rect x="57" y="14" width="7" height="72" rx="3.5" fill="#C0C8D0" stroke="#8090A0" stroke-width="2"/>
+      <path d="M53 14 L55 40 Q60.5 44 66 40 L68 14 Z" fill="#C0C8D0" stroke="#8090A0" stroke-width="2"/>
+      <rect x="76" y="14" width="7" height="72" rx="3.5" fill="#C0A882" stroke="#8B6A3E" stroke-width="2"/>
+      <path d="M68 28 Q76 20 84 28 Q84 36 76 40 L76 28 Z" fill="#C0A882" stroke="#8B6A3E" stroke-width="2"/>
+    </svg>`
+  },
+  {
+    id: 32, article: "die", gender: "Femininum",
+    german: "Küchenrolle", plural: "die Küchenrollen",
+    english: "Kitchen roll / Paper towel", arabic: "ورق المطبخ",
+    pronounce: "ˈkʏçn̩ˌʁɔlə",
+    example: "Die Küchenrolle ist fast leer.", exampleAr: "ورق المطبخ شبه نافد.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="34" y="22" width="52" height="62" rx="26" fill="#F0EBE0" stroke="#D0C8B0" stroke-width="2.5"/>
+      <rect x="38" y="26" width="44" height="54" rx="22" fill="#F8F4EC"/>
+      <circle cx="60" cy="53" r="14" fill="#E8E0D0" stroke="#C8C0B0" stroke-width="2"/>
+      <circle cx="60" cy="53" r="8" fill="#D8D0C0"/>
+      <rect x="56" y="10" width="8" height="80" rx="4" fill="none" stroke="#C0B8A0" stroke-width="2" opacity="0.4"/>
+    </svg>`
+  },
+  {
+    id: 33, article: "der", gender: "Maskulinum",
+    german: "Sparschäler", plural: "die Sparschäler",
+    english: "Vegetable peeler", arabic: "مقشرة الخضار",
+    pronounce: "ˈʃpaːɐ̯ˌʃɛːlɐ",
+    example: "Ich schäle die Karotten mit dem Sparschäler.", exampleAr: "أقشر الجزر بمقشرة الخضار.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="52" y="54" width="16" height="34" rx="7" fill="#C0A882" stroke="#8B6A3E" stroke-width="2"/>
+      <rect x="44" y="28" width="32" height="28" rx="6" fill="#C0C8D0" stroke="#8090A0" stroke-width="2.5"/>
+      <rect x="48" y="32" width="24" height="8" rx="3" fill="#8090A0"/>
+      <rect x="48" y="42" width="24" height="8" rx="3" fill="#8090A0"/>
+      <rect x="56" y="52" width="8" height="5" rx="2" fill="#A0B0C0"/>
+    </svg>`
+  },
+  {
+    id: 34, article: "die", gender: "Femininum",
+    german: "Zange", plural: "die Zangen",
+    english: "Tongs / Kitchen tongs", arabic: "الملقط / الكلبة",
+    pronounce: "ˈtsaŋə",
+    example: "Ich nehme das Fleisch mit der Zange.", exampleAr: "أمسك اللحم بالملقط.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M44 88 L40 20 Q46 16 54 24 L58 88 Z" fill="#C0C8D0" stroke="#8090A0" stroke-width="2.5" rx="4"/>
+      <path d="M76 88 L80 20 Q74 16 66 24 L62 88 Z" fill="#C0C8D0" stroke="#8090A0" stroke-width="2.5"/>
+      <path d="M36 22 Q60 14 84 22" fill="none" stroke="#D0D8E0" stroke-width="4" stroke-linecap="round"/>
+      <rect x="44" y="84" width="14" height="8" rx="4" fill="#E05050" stroke="#C03030" stroke-width="2"/>
+      <rect x="62" y="84" width="14" height="8" rx="4" fill="#E05050" stroke="#C03030" stroke-width="2"/>
+    </svg>`
+  },
+  {
+    id: 35, article: "der", gender: "Maskulinum",
+    german: "Pfannenwender", plural: "die Pfannenwender",
+    english: "Spatula / Turner", arabic: "ملعقة التقليب المسطحة",
+    pronounce: "ˈpfanənˌvɛndɐ",
+    example: "Ich wende das Omelett mit dem Pfannenwender.", exampleAr: "أقلّب الأومليت بالملعقة المسطحة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="54" y="50" width="12" height="42" rx="5" fill="#C0A882" stroke="#8B6A3E" stroke-width="2"/>
+      <rect x="36" y="24" width="48" height="28" rx="5" fill="#C0C8D0" stroke="#8090A0" stroke-width="2.5"/>
+      <rect x="40" y="28" width="40" height="20" rx="3" fill="#D0D8E4"/>
+      <rect x="58" y="50" width="4" height="2" fill="#A0B0C0"/>
+    </svg>`
+  },
+  {
+    id: 36, article: "die", gender: "Femininum",
+    german: "Kaffeemaschine", plural: "die Kaffeemaschinen",
+    english: "Coffee maker", arabic: "آلة القهوة",
+    pronounce: "ˈkafəˌmaˌʃiːnə",
+    example: "Die Kaffeemaschine macht frischen Kaffee.", exampleAr: "آلة القهوة تصنع قهوة طازجة.",
+    svg: `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="18" width="64" height="70" rx="9" fill="#2A2A2A" stroke="#1A1A1A" stroke-width="2.5"/>
+      <rect x="34" y="24" width="52" height="28" rx="5" fill="#3A3A3A"/>
+      <rect x="38" y="28" width="44" height="20" rx="3" fill="#4A4A4A"/>
+      <rect x="34" y="56" width="52" height="8" rx="4" fill="#1A1A1A"/>
+      <path d="M44 68 Q50 76 60 76 Q70 76 76 68 L76 82 Q70 86 60 86 Q50 86 44 82 Z" fill="#5A3020" stroke="#3A1A00" stroke-width="2"/>
+      <circle cx="72" cy="36" r="6" fill="#E06050" stroke="#C04030" stroke-width="2"/>
+      <line x1="60" y1="56" x2="60" y2="68" stroke="#808080" stroke-width="2"/>
+    </svg>`
+  }
+];
+
+/* ═══════════════════════════════════════════════════════════════
+   STATE
+═══════════════════════════════════════════════════════════════ */
+let currentFilter = 'all';
+let quizMode = 'article'; // article | meaning | german
+let quizItems = [];
+let quizIndex = 0;
+let quizCorrect = 0;
+let quizWrong = 0;
+let quizAnswered = false;
+const QUIZ_LENGTH = 10;
+
+/* ═══════════════════════════════════════════════════════════════
+   THEME
+═══════════════════════════════════════════════════════════════ */
+function initTheme() {
+  const saved = localStorage.getItem('kueche-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+  document.getElementById('themeToggle').textContent = saved === 'dark' ? '☀️' : '🌙';
+}
+document.getElementById('themeToggle').addEventListener('click', function() {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('kueche-theme', next);
+  this.textContent = next === 'dark' ? '☀️' : '🌙';
+});
+initTheme();
+
+/* ═══════════════════════════════════════════════════════════════
+   RENDER CARDS
+═══════════════════════════════════════════════════════════════ */
+function renderCards(items) {
+  const grid = document.getElementById('vocabGrid');
+  const noRes = document.getElementById('noResults');
+  document.getElementById('resultCount').textContent = `${items.length} نتيجة`;
+  document.getElementById('totalCount').textContent = vocab.length;
+  if (items.length === 0) {
+    grid.innerHTML = '';
+    noRes.classList.add('show');
+    return;
+  }
+  noRes.classList.remove('show');
+  grid.innerHTML = items.map(w => `
+    <div class="vocab-card" data-article="${w.article}" data-id="${w.id}" 
+         onclick="openModal(${w.id})" role="button" tabindex="0" 
+         aria-label="${w.article} ${w.german}" 
+         onkeydown="if(event.key==='Enter')openModal(${w.id})">
+      <div class="card-svg-area">
+        ${w.svg}
+        <button class="card-copy-btn" onclick="event.stopPropagation();copyWord('${w.article} ${w.german}',this)" title="نسخ">📋</button>
+      </div>
+      <div class="card-body">
+        <div class="card-article-badge ${w.article}">${w.article}</div>
+        <div class="card-german">${w.german}</div>
+        <div class="card-plural">${w.plural}</div>
+        <div class="card-english">${w.english}</div>
+        <div class="card-arabic">${w.arabic}</div>
+      </div>
+      <div class="card-actions">
+        <button class="card-speak-btn" onclick="event.stopPropagation();speakWord('${w.article} ${w.german}', this)">🔊 استمع</button>
+        <button class="card-info-btn" onclick="event.stopPropagation();openModal(${w.id})" title="تفاصيل">ℹ️</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FILTER
+═══════════════════════════════════════════════════════════════ */
+function filterCards(type, btn) {
+  currentFilter = type;
+  // update active class
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.remove('active-all','active-der','active-die','active-das');
+  });
+  if (btn) {
+    if (type === 'all') btn.classList.add('active-all');
+    else if (type === 'der') btn.classList.add('active-der');
+    else if (type === 'die') btn.classList.add('active-die');
+    else if (type === 'das') btn.classList.add('active-das');
+    else if (type === 'die-pl') {
+      btn.style.background = '#7C3AED'; btn.style.color = '#fff'; btn.style.borderColor = '#7C3AED';
+    }
+  }
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  applyFilters(q, type);
+}
+
+function applyFilters(q, f) {
+  let items = vocab;
+  if (f && f !== 'all') items = items.filter(w => w.article === f);
+  if (q) items = items.filter(w =>
+    w.german.toLowerCase().includes(q) ||
+    w.english.toLowerCase().includes(q) ||
+    w.arabic.includes(q)
+  );
+  renderCards(items);
+}
+
+document.getElementById('searchInput').addEventListener('input', function() {
+  applyFilters(this.value.toLowerCase(), currentFilter);
+});
+
+/* ═══════════════════════════════════════════════════════════════
+   GRAMMAR TOGGLE
+═══════════════════════════════════════════════════════════════ */
+function toggleGrammar() {
+  const body = document.getElementById('grammarBody');
+  const toggle = document.getElementById('grammarToggle');
+  const hdr = document.querySelector('.grammar-header');
+  const isOpen = body.classList.toggle('open');
+  toggle.classList.toggle('open', isOpen);
+  hdr.setAttribute('aria-expanded', isOpen);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TTS PRONUNCIATION
+═══════════════════════════════════════════════════════════════ */
+function speakWord(text, btn) {
+  if (!('speechSynthesis' in window)) { showToast('TTS غير مدعوم في المتصفح'); return; }
+  window.speechSynthesis.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'de-DE';
+  utt.rate = 0.85;
+  utt.pitch = 1;
+  if (btn) {
+    const orig = btn.innerHTML;
+    btn.classList.add('speaking');
+    btn.innerHTML = '⏹ جاري النطق...';
+    utt.onend = () => { btn.classList.remove('speaking'); btn.innerHTML = orig; };
+    utt.onerror = () => { btn.classList.remove('speaking'); btn.innerHTML = orig; };
+  }
+  window.speechSynthesis.speak(utt);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   COPY TO CLIPBOARD
+═══════════════════════════════════════════════════════════════ */
+function copyWord(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    if (btn) {
+      btn.textContent = '✅';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = '📋'; btn.classList.remove('copied'); }, 1500);
+    }
+    showToast(`تم النسخ: ${text}`);
+  }).catch(() => showToast('تعذّر النسخ'));
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MODAL
+═══════════════════════════════════════════════════════════════ */
+function openModal(id) {
+  const w = vocab.find(v => v.id === id);
+  if (!w) return;
+  document.getElementById('modalSvgWrap').innerHTML = w.svg;
+  const badge = document.getElementById('modalArticleBadge');
+  badge.textContent = w.article;
+  badge.className = `modal-article-badge ${w.article}`;
+  document.getElementById('modalGerman').textContent = `${w.article} ${w.german}`;
+  document.getElementById('modalEnglish').textContent = w.english;
+  document.getElementById('modalArabic').textContent = w.arabic;
+  document.getElementById('modalPlural').textContent = w.plural;
+  document.getElementById('modalPronounce').textContent = `/${w.pronounce}/`;
+  document.getElementById('modalExample').textContent = w.example;
+  document.getElementById('modalExampleAr').textContent = w.exampleAr;
+  const speakBtn = document.getElementById('modalSpeakBtn');
+  speakBtn.onclick = () => speakWord(`${w.article} ${w.german}`, speakBtn);
+  document.getElementById('modalCopyBtn').onclick = () => copyWord(`${w.article} ${w.german}`);
+  document.getElementById('modalOverlay').classList.add('show');
+}
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('show');
+  }
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.getElementById('modalOverlay').classList.remove('show');
+});
+
+/* ═══════════════════════════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════════════════════════ */
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   QUIZ ENGINE
+═══════════════════════════════════════════════════════════════ */
+function setQuizMode(mode, btn) {
+  quizMode = mode;
+  document.querySelectorAll('.quiz-mode-btn').forEach(b => b.classList.remove('active-mode'));
+  btn.classList.add('active-mode');
+  startQuiz();
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startQuiz() {
+  quizItems = shuffle(vocab).slice(0, QUIZ_LENGTH);
+  quizIndex = 0;
+  quizCorrect = 0;
+  quizWrong = 0;
+  quizAnswered = false;
+  document.getElementById('quizResults').classList.remove('show');
+  document.getElementById('quizQuestionCard').style.display = '';
+  document.getElementById('quizOptions').style.display = '';
+  document.getElementById('quizControls').style.display = '';
+  document.getElementById('quizFeedback').classList.remove('show');
+  updateScoreDisplay();
+  renderQuestion();
+}
+
+function updateScoreDisplay() {
+  document.getElementById('scoreCorrect').textContent = quizCorrect;
+  document.getElementById('scoreWrong').textContent = quizWrong;
+  document.getElementById('scoreTotal').textContent = `${quizIndex}/${QUIZ_LENGTH}`;
+  const pct = (quizIndex / QUIZ_LENGTH) * 100;
+  document.getElementById('quizProgressBar').style.width = `${pct}%`;
+}
+
+function renderQuestion() {
+  if (quizIndex >= QUIZ_LENGTH) { showQuizResults(); return; }
+  const w = quizItems[quizIndex];
+  quizAnswered = false;
+  document.getElementById('quizNumLabel').textContent = `السؤال ${quizIndex + 1} من ${QUIZ_LENGTH}`;
+  document.getElementById('quizSvgWrap').innerHTML = w.svg;
+  document.getElementById('quizFeedback').classList.remove('show', 'correct-fb', 'wrong-fb');
+  document.getElementById('nextBtn').disabled = true;
+
+  if (quizMode === 'article') {
+    // Choose correct article from 4 options
+    document.getElementById('quizQuestionText').textContent = w.german;
+    document.getElementById('quizQuestionHint').textContent = `ما هو الأرتيكل الصحيح؟`;
+    document.getElementById('quizQuestionAr').textContent = w.arabic;
+    const articles = ['der', 'die', 'das'];
+    const correct = w.article;
+    const options4 = shuffle([...articles, correct === 'der' ? 'die' : correct === 'die' ? 'das' : 'der']).slice(0, 3);
+    if (!options4.includes(correct)) options4[0] = correct;
+    renderOptions(shuffle(options4), correct, (ans, correct) => ans === correct,
+      (ans) => `${w.article} ${w.german} — الأرتيكل الصحيح هو "${w.article}"`,
+      () => `✅ صحيح! الأرتيكل هو "${w.article}" (${w.german})`
+    );
+  } else if (quizMode === 'meaning') {
+    // Show German, pick Arabic meaning
+    document.getElementById('quizQuestionText').textContent = `${w.article} ${w.german}`;
+    document.getElementById('quizQuestionHint').textContent = `ما معنى هذه الكلمة بالعربية؟`;
+    document.getElementById('quizQuestionAr').textContent = '';
+    const pool = shuffle(vocab.filter(v => v.id !== w.id)).slice(0, 3).map(v => v.arabic);
+    const options4 = shuffle([...pool, w.arabic]);
+    renderOptions(options4, w.arabic, (ans, correct) => ans === correct,
+      (ans) => `❌ خطأ! المعنى الصحيح هو "${w.arabic}" — ${w.english}`,
+      () => `✅ صحيح! "${w.german}" تعني "${w.arabic}"`
+    );
+  } else {
+    // Show Arabic, pick German word
+    document.getElementById('quizQuestionText').textContent = w.arabic;
+    document.getElementById('quizQuestionHint').textContent = `ما هي الكلمة الألمانية؟`;
+    document.getElementById('quizQuestionAr').textContent = w.english;
+    const pool = shuffle(vocab.filter(v => v.id !== w.id)).slice(0, 3).map(v => v.german);
+    const options4 = shuffle([...pool, w.german]);
+    renderOptions(options4, w.german, (ans, correct) => ans === correct,
+      (ans) => `❌ خطأ! الكلمة الصحيحة هي "${w.article} ${w.german}"`,
+      () => `✅ صحيح! "${w.arabic}" = "${w.article} ${w.german}"`
+    );
+  }
+}
+
+function renderOptions(options, correct, checkFn, wrongFeedback, correctFeedback) {
+  const container = document.getElementById('quizOptions');
+  container.innerHTML = options.map(opt => `
+    <button class="quiz-option" onclick="selectAnswer(this, '${opt.replace(/'/g, "\\'")}', '${correct.replace(/'/g, "\\'")}', ${JSON.stringify(wrongFeedback.toString())}, ${JSON.stringify(correctFeedback.toString())})">
+      ${opt}
+    </button>
+  `).join('');
+  // re-bind with proper closures
+  const btns = container.querySelectorAll('.quiz-option');
+  btns.forEach(btn => {
+    const ans = btn.textContent.trim();
+    btn.onclick = () => selectAnswer(btn, ans, correct, wrongFeedback, correctFeedback);
+  });
+}
+
+function selectAnswer(btn, answer, correct, wrongFeedback, correctFeedback) {
+  if (quizAnswered) return;
+  quizAnswered = true;
+  const isCorrect = answer === correct;
+  // highlight buttons
+  document.querySelectorAll('.quiz-option').forEach(b => {
+    b.disabled = true;
+    const a = b.textContent.trim();
+    if (a === correct) b.classList.add('correct-ans');
+    else if (a === answer && !isCorrect) b.classList.add('wrong-ans');
+  });
+  const fb = document.getElementById('quizFeedback');
+  fb.classList.add('show');
+  if (isCorrect) {
+    quizCorrect++;
+    fb.textContent = typeof correctFeedback === 'function' ? correctFeedback() : correctFeedback;
+    fb.classList.add('correct-fb');
+    fb.classList.remove('wrong-fb');
+    speakWord(quizItems[quizIndex].german);
+  } else {
+    quizWrong++;
+    fb.textContent = typeof wrongFeedback === 'function' ? wrongFeedback(answer) : wrongFeedback;
+    fb.classList.add('wrong-fb');
+    fb.classList.remove('correct-fb');
+  }
+  quizIndex++;
+  updateScoreDisplay();
+  document.getElementById('nextBtn').disabled = false;
+}
+
+function nextQuestion() {
+  if (quizIndex >= QUIZ_LENGTH) { showQuizResults(); return; }
+  document.getElementById('quizFeedback').classList.remove('show');
+  renderQuestion();
+}
+
+function showQuizResults() {
+  document.getElementById('quizQuestionCard').style.display = 'none';
+  document.getElementById('quizOptions').style.display = 'none';
+  document.getElementById('quizControls').style.display = 'none';
+  document.getElementById('quizFeedback').classList.remove('show');
+  const pct = quizCorrect / QUIZ_LENGTH;
+  let icon, title, stars, msg;
+  if (pct === 1) {
+    icon = '🏆'; title = 'ممتاز! نتيجة مثالية!';
+    stars = '⭐⭐⭐⭐⭐';
+    msg = `أحسنت! حصلت على ${quizCorrect} من ${QUIZ_LENGTH} — نتيجة رائعة جداً!`;
+  } else if (pct >= 0.8) {
+    icon = '🎉'; title = 'عمل رائع!';
+    stars = '⭐⭐⭐⭐';
+    msg = `حصلت على ${quizCorrect} من ${QUIZ_LENGTH} — أداء جيد جداً!`;
+  } else if (pct >= 0.6) {
+    icon = '👍'; title = 'جيد!';
+    stars = '⭐⭐⭐';
+    msg = `حصلت على ${quizCorrect} من ${QUIZ_LENGTH} — استمر في التدريب!`;
+  } else if (pct >= 0.4) {
+    icon = '📚'; title = 'يمكنك تحسين نتيجتك!';
+    stars = '⭐⭐';
+    msg = `حصلت على ${quizCorrect} من ${QUIZ_LENGTH} — راجع المفردات وحاول مجدداً.`;
+  } else {
+    icon = '💪'; title = 'واصل المحاولة!';
+    stars = '⭐';
+    msg = `حصلت على ${quizCorrect} من ${QUIZ_LENGTH} — لا تيأس، كرّر الدراسة!`;
+  }
+  document.getElementById('quizResultsIcon').textContent = icon;
+  document.getElementById('quizResultsTitle').textContent = title;
+  document.getElementById('quizResultsStars').textContent = stars;
+  document.getElementById('quizResultsMsg').textContent = msg;
+  document.getElementById('quizProgressBar').style.width = '100%';
+  document.getElementById('quizResults').classList.add('show');
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════════════════════ */
+renderCards(vocab);
+startQuiz();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="wortschatz-kueche" data-category="wortschatz" data-title="Küchengeräte — أدوات المطبخ" data-root="../../" defer></script>
+</body>
+</html>

@@ -1,0 +1,2315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الدرس ٤ · دليل حروف الجر الشامل — Akkusativ · Dativ · Genitiv · Wechsel | ألمانية A2</title>
+<meta name="description" content="الدرس الرابع الموسّع من مستوى A2: كل حروف الجر الألمانية مصنّفة حسب الحالة — Akkusativ وDativ وGenitiv وحروف الجر المزدوجة (Wechselpräpositionen) — مع بوصلات تفاعلية، نطق صوتي، ومئات الأمثلة والتمارين.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   0. RESET + BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+body { margin: 0; overflow-x: hidden; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+/* ==========================================================================
+   1. DESIGN TOKENS — compass / map theme, extended for four case-groups
+   ========================================================================== */
+:root {
+  color-scheme: light;
+  --bg: #F7F6F3;
+  --bg-alt: #EFEDE7;
+  --surface: #FFFFFF;
+  --surface-glass: rgba(255,255,255,.68);
+  --surface-glass-border: rgba(255,255,255,.5);
+  --ink: #23291F;
+  --ink-soft: #57604F;
+  --ink-faint: #8B927F;
+  --border: #E3E1D8;
+  --border-strong: #CCC9BC;
+
+  --primary: #3D8A5F;
+  --primary-ink: #2C6746;
+  --primary-soft: #E3F0E8;
+  --primary-glow: rgba(61,138,95,.24);
+
+  --secondary: #C4732E;
+  --secondary-ink: #9A5A23;
+  --secondary-soft: #FBEEE2;
+  --secondary-glow: rgba(196,115,46,.22);
+
+  --success: #2E7D4F;
+  --success-soft: #E4F5EA;
+  --danger: #B8493C;
+  --danger-soft: #FBEAE7;
+
+  --prep-aus:  #3D8A5F;
+  --prep-bei:  #C4732E;
+  --prep-mit:  #3D74B0;
+  --prep-nach: #B0507A;
+  --prep-seit: #A6842E;
+  --prep-von:  #7A5FB8;
+  --prep-zu:   #4A9B94;
+
+  --case-akk: #3D74B0;
+  --case-dativ: #3D8A5F;
+  --case-genitiv: #7A5FB8;
+  --case-wechsel: #C4732E;
+  --case-akk-soft: #E7EFF9;
+  --case-dativ-soft: #E3F0E8;
+  --case-genitiv-soft: #EFEBFA;
+  --case-wechsel-soft: #FBEEE2;
+
+  --akk-durch:   #3D74B0;
+  --akk-fuer:    #2E5C94;
+  --akk-gegen:   #B0503F;
+  --akk-ohne:    #77839A;
+  --akk-um:      #4A8FB0;
+  --akk-bis:     #345E8C;
+  --akk-entlang: #5C93D6;
+
+  --gen-wegen:      #7A5FB8;
+  --gen-trotz:      #9B7FD1;
+  --gen-waehrend:   #5C4694;
+  --gen-statt:      #8A6FC7;
+  --gen-innerhalb:  #6B52A3;
+  --gen-ausserhalb: #A88FD9;
+
+  --shadow-sm: 0 1px 2px rgba(35,41,31,.06), 0 1px 1px rgba(35,41,31,.04);
+  --shadow-md: 0 8px 24px -8px rgba(35,41,31,.16), 0 2px 8px -2px rgba(35,41,31,.08);
+  --shadow-lg: 0 24px 60px -20px rgba(35,41,31,.28), 0 8px 20px -8px rgba(35,41,31,.12);
+  --shadow-glow-primary: 0 8px 30px -6px var(--primary-glow);
+
+  --r-sm: 10px; --r-md: 16px; --r-lg: 24px; --r-xl: 32px;
+
+  --font-ar-display: 'Markazi Text', 'Segoe UI', sans-serif;
+  --font-ar-body: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-de-display: 'Newsreader', Georgia, serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  --nav-h: 72px;
+  --ease: cubic-bezier(.22,.9,.32,1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #14180F;
+  --bg-alt: #0F120B;
+  --surface: #1C2317;
+  --surface-glass: rgba(28,35,23,.62);
+  --surface-glass-border: rgba(255,255,255,.08);
+  --ink: #EEF1E9;
+  --ink-soft: #ACB59F;
+  --ink-faint: #6E7663;
+  --border: #2C3524;
+  --border-strong: #3A4630;
+
+  --primary: #6FC291;
+  --primary-ink: #A4DEBD;
+  --primary-soft: rgba(111,194,145,.14);
+  --primary-glow: rgba(111,194,145,.28);
+
+  --secondary: #E29A5C;
+  --secondary-ink: #F0BE8E;
+  --secondary-soft: rgba(226,154,92,.14);
+  --secondary-glow: rgba(226,154,92,.24);
+
+  --success: #5FCB8C;
+  --success-soft: rgba(95,203,140,.14);
+  --danger: #E2836E;
+  --danger-soft: rgba(226,131,110,.14);
+
+  --prep-aus:  #6FC291;
+  --prep-bei:  #E29A5C;
+  --prep-mit:  #7FA8DE;
+  --prep-nach: #DE8CAE;
+  --prep-seit: #D4B45E;
+  --prep-von:  #AE97DE;
+  --prep-zu:   #7FC9C1;
+
+  --case-akk: #7FA8DE;
+  --case-dativ: #6FC291;
+  --case-genitiv: #AE97DE;
+  --case-wechsel: #E29A5C;
+  --case-akk-soft: rgba(127,168,222,.14);
+  --case-dativ-soft: rgba(111,194,145,.14);
+  --case-genitiv-soft: rgba(174,151,222,.14);
+  --case-wechsel-soft: rgba(226,154,92,.14);
+
+  --akk-durch:   #7FA8DE;
+  --akk-fuer:    #6690C9;
+  --akk-gegen:   #DE9A8C;
+  --akk-ohne:    #9AA6BC;
+  --akk-um:      #86C2DE;
+  --akk-bis:     #6E93C2;
+  --akk-entlang: #A8C6EC;
+
+  --gen-wegen:      #AE97DE;
+  --gen-trotz:      #C6B3EC;
+  --gen-waehrend:   #9581C7;
+  --gen-statt:      #BAA5E0;
+  --gen-innerhalb:  #A28FCC;
+  --gen-ausserhalb: #D2C2F0;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3);
+  --shadow-md: 0 8px 24px -8px rgba(0,0,0,.5);
+  --shadow-lg: 0 24px 60px -20px rgba(0,0,0,.6);
+}
+
+body { background: var(--bg); color: var(--ink); font-family: var(--font-ar-body); line-height: 1.75; transition: background-color .5s var(--ease), color .5s var(--ease); }
+.de, [lang="de"] { font-family: var(--font-de-display); direction: ltr; unicode-bidi: isolate; }
+.mono { font-family: var(--font-mono); direction: ltr; unicode-bidi: isolate; }
+h1, h2, h3 { font-family: var(--font-ar-display); font-weight: 600; line-height: 1.3; margin: 0; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+::selection { background: var(--primary); color: #fff; }
+.road-rule { height: 3px; background-image: repeating-linear-gradient(to right, var(--border-strong) 0 10px, transparent 10px 20px); border: none; }
+
+/* ==========================================================================
+   2. LAYOUT SHELL
+   ========================================================================== */
+.container { max-width: 1120px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); }
+.section { padding-block: clamp(56px, 8vw, 108px); position: relative; }
+.section-head { max-width: 720px; margin-bottom: clamp(28px, 5vw, 48px); }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .76rem; letter-spacing: .01em; color: var(--primary); background: var(--primary-soft); padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; }
+.section-title { font-size: clamp(1.7rem, 3.9vw, 2.6rem); }
+.section-sub { color: var(--ink-soft); font-size: clamp(.98rem, 1.6vw, 1.1rem); margin-top: 12px; max-width: 64ch; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(1){transition-delay:.03s} .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.09s}
+.reveal-stagger.is-visible > *:nth-child(3){transition-delay:.15s} .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.21s}
+.reveal-stagger.is-visible > *:nth-child(5){transition-delay:.27s} .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.33s}
+.reveal-stagger.is-visible > *:nth-child(7){transition-delay:.39s} .reveal-stagger.is-visible > *:nth-child(8){transition-delay:.45s}
+.reveal-stagger.is-visible > *:nth-child(9){transition-delay:.51s}
+
+/* ==========================================================================
+   3. HEADER + ROAD/WAYPOINT NAV
+   ========================================================================== */
+.site-header { position: sticky; top: 0; z-index: 100; background: var(--surface-glass); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); border-bottom: 1px solid var(--surface-glass-border); }
+.header-top { height: var(--nav-h); display: flex; align-items: center; }
+.header-inner { display: flex; align-items: center; gap: 18px; width: 100%; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; white-space: nowrap; }
+.brand-mark { width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; background: conic-gradient(from 0deg, var(--case-akk), var(--case-dativ), var(--case-genitiv), var(--case-wechsel), var(--case-akk)); box-shadow: var(--shadow-glow-primary); position: relative; }
+.brand-mark::after { content:""; position:absolute; inset:30%; border-radius:50%; background: var(--surface); }
+.brand-mark::before { content:""; position:absolute; top:14%; left:50%; width:2px; height:22%; background:var(--ink); transform-origin: bottom center; transform: translateX(-50%); border-radius: 2px; }
+.brand-text { font-family: var(--font-ar-display); font-size: 1.15rem; }
+.brand-text small { display: block; font-family: var(--font-ar-body); font-weight: 400; font-size: .68rem; color: var(--ink-faint); }
+.progress-ring-wrap { position: relative; width: 44px; height: 44px; flex-shrink: 0; }
+.progress-ring-wrap svg { transform: rotate(-90deg); }
+.progress-ring-track { fill: none; stroke: var(--border); stroke-width: 4; }
+.progress-ring-bar { fill: none; stroke: var(--primary); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset .6s var(--ease); }
+.progress-ring-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: .6rem; font-weight: 600; }
+.header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.icon-btn { width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .25s var(--ease); }
+.icon-btn:hover { color: var(--primary); border-color: var(--primary); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.icon-btn:active { transform: translateY(0) scale(.94); }
+.icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+.search-box { position: relative; display: none; align-items: center; }
+.search-box input { width: 0; opacity: 0; padding: 0; border: none; background: var(--surface); color: var(--ink); border-radius: 12px; transition: all .3s var(--ease); font-family: var(--font-ar-body); font-size: .88rem; }
+.search-box.open input { width: 190px; opacity: 1; padding: 9px 14px; border: 1px solid var(--border); }
+@media (min-width: 861px){ .search-box { display: flex; } }
+
+.road-nav { overflow-x: auto; scrollbar-width: none; border-top: 1px dashed var(--border); position: relative; }
+.road-nav::-webkit-scrollbar { display: none; }
+.road-track { display: flex; align-items: flex-end; min-width: max-content; padding: 12px clamp(18px,4vw,40px) 10px; position: relative; }
+.road-track::before { content:""; position:absolute; right: clamp(18px,4vw,40px); left: clamp(18px,4vw,40px); bottom: 18px; height: 2px; background-image: repeating-linear-gradient(to left, var(--border-strong) 0 8px, transparent 8px 14px); }
+.waypoint-btn { display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: none; cursor: pointer; padding: 0 13px; flex-shrink: 0; color: var(--ink-faint); position: relative; z-index: 1; }
+.waypoint-pin { width: 14px; height: 14px; border-radius: 50% 50% 50% 0; background: var(--border-strong); transform: rotate(-45deg); margin-bottom: 6px; transition: all .25s var(--ease); }
+.waypoint-btn span.lbl { font-size: .72rem; font-weight: 500; white-space: nowrap; }
+.waypoint-btn:hover .waypoint-pin { background: var(--primary); transform: rotate(-45deg) scale(1.2); }
+.waypoint-btn:hover { color: var(--ink); }
+.waypoint-btn.active .waypoint-pin { background: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft); transform: rotate(-45deg) scale(1.25); }
+.waypoint-btn.active { color: var(--primary); }
+
+/* ==========================================================================
+   4. HERO
+   ========================================================================== */
+.hero { position: relative; padding-block: clamp(48px, 9vw, 96px) clamp(64px, 9vw, 110px); overflow: hidden; }
+.hero::before { content:""; position:absolute; inset:-20% -10% auto -10%; height:640px; z-index:-2; background: radial-gradient(560px 360px at 18% 15%, var(--case-akk-soft), transparent 70%), radial-gradient(520px 340px at 88% 20%, var(--case-wechsel-soft), transparent 70%); filter: blur(10px); }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 56px); align-items: center; }
+@media (max-width: 940px){ .hero-grid { grid-template-columns: 1fr; } }
+.level-badge { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: .8rem; background: var(--surface); border: 1px solid var(--border); padding: 7px 8px 7px 16px; border-radius: 999px; box-shadow: var(--shadow-sm); margin-bottom: 22px; }
+.level-badge b { background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 999px; font-weight: 600; }
+.hero-title { font-size: clamp(2rem, 4.6vw, 3.1rem); }
+.hero-title .de { color: var(--primary); }
+.hero-lead { margin-top: 20px; font-size: clamp(1.02rem, 1.7vw, 1.2rem); color: var(--ink-soft); max-width: 58ch; }
+.hero-ctas { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 24px; border-radius: 14px; font-weight: 600; font-size: .96rem; cursor: pointer; border: 1px solid transparent; transition: all .25s var(--ease); }
+.btn:active { transform: scale(.97); }
+.btn-primary { background: linear-gradient(155deg, var(--primary), var(--primary-ink)); color: #fff; box-shadow: var(--shadow-glow-primary); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 34px -8px var(--primary-glow); }
+.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--border); }
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-3px); }
+.btn-sm { padding: 8px 16px; font-size: .85rem; }
+
+.hero-quad-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: clamp(18px,3vw,26px); box-shadow: var(--shadow-lg); }
+.hero-quad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.hero-quad-item { border-radius: var(--r-md); padding: 16px 14px; text-align: center; color: #fff; box-shadow: var(--shadow-sm); }
+.hero-quad-item .hq-case { font-family: var(--font-mono); font-size: .68rem; opacity: .88; }
+.hero-quad-item .hq-name { font-family: var(--font-de-display); font-weight: 700; font-size: 1.25rem; margin-top: 2px; }
+.hero-quad-item .hq-list { font-size: .74rem; opacity: .92; margin-top: 6px; direction: ltr; }
+
+/* ==========================================================================
+   5. GENERIC PREPOSITION COMPASS — reused for Akkusativ / Dativ / Genitiv
+   ========================================================================== */
+.compass-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: clamp(20px,3.4vw,32px); box-shadow: var(--shadow-lg); }
+.compass-layout { display: grid; grid-template-columns: minmax(260px, 380px) 1fr; gap: clamp(20px, 4vw, 40px); align-items: center; }
+@media (max-width: 800px){ .compass-layout { grid-template-columns: 1fr; } }
+.compass-face-wrap { position: relative; width: 100%; max-width: 380px; aspect-ratio: 1; margin: 0 auto; }
+.compass-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--border-strong); background: var(--bg-alt); }
+.compass-ring::before { content:""; position:absolute; inset: 14%; border-radius:50%; border: 1px dashed var(--border-strong); }
+.compass-needle { position:absolute; top:50%; left:50%; width:4px; height:32%; transform-origin: bottom center; transform: translate(-50%,-100%) rotate(0deg); transition: transform .6s var(--ease); border-radius: 4px; z-index: 3; }
+.compass-pivot { position:absolute; top:50%; left:50%; width:14px; height:14px; margin:-7px; border-radius:50%; background:var(--ink); z-index:4; box-shadow: 0 0 0 4px var(--surface); }
+.compass-point { position: absolute; width: 52px; height: 52px; margin: -26px; border-radius: 50%; border: 3px solid var(--surface); cursor: pointer; box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: center; font-family: var(--font-de-display); font-weight: 700; color: #fff; font-size: .92rem; transition: transform .25s var(--ease), box-shadow .25s var(--ease); z-index: 2; }
+.compass-point:hover { transform: scale(1.12); }
+.compass-point.active { transform: scale(1.22); box-shadow: 0 0 0 5px var(--point-glow, var(--primary-soft)), var(--shadow-md); }
+.compass-face-wrap.small { max-width: 320px; }
+
+.route-card { min-height: 260px; }
+.route-card.focusing { filter: blur(6px); opacity: .35; transition: filter .3s var(--ease), opacity .3s var(--ease); }
+.route-card:not(.focusing) { transition: filter .3s var(--ease), opacity .3s var(--ease); }
+.route-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .8rem; padding: 5px 14px; border-radius: 999px; color: #fff; margin-bottom: 14px; }
+.route-title { font-family: var(--font-de-display); font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 700; margin-bottom: 6px; cursor: pointer; }
+.route-ar { color: var(--ink-soft); margin-bottom: 18px; }
+.route-sentence-box { background: var(--bg-alt); border-radius: var(--r-md); padding: 16px 20px; margin-top: 6px; }
+.route-note { margin-top: 12px; font-size: .84rem; color: var(--ink-faint); }
+
+/* ==========================================================================
+   6. ROUTE SENTENCE (compass + examples) — case-colored underline
+   ========================================================================== */
+.route-sentence { direction: ltr; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-family: var(--font-de-display); font-size: clamp(1.05rem, 2.2vw, 1.35rem); }
+.rs-word { cursor: pointer; border-radius: 8px; padding: 3px 4px; transition: background-color .2s, color .2s; }
+.rs-word:hover { background: var(--surface); }
+.rs-word.speaking { background: var(--primary); color: #fff; }
+.rs-prep-chip { border-radius: 999px; padding: 4px 14px; font-weight: 700; color: #fff; cursor: pointer; }
+.rs-case-noun { border-bottom: 3px dotted var(--case-marker, var(--ink-faint)); font-weight: 700; cursor: pointer; padding-bottom: 1px; }
+.rs-case-noun:hover, .rs-case-noun.speaking { background: var(--bg-alt); }
+
+/* ==========================================================================
+   7. GENERIC CARDS / GRIDS / CALLOUTS / TABLES
+   ========================================================================== */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 760px){ .grid-2 { grid-template-columns: 1fr; } }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 940px){ .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px){ .grid-3 { grid-template-columns: 1fr; } }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media (max-width: 760px){ .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+.info-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px; box-shadow: var(--shadow-sm); transition: all .3s var(--ease); }
+.info-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--border-strong); }
+.info-card h3 { font-size: 1.1rem; margin-bottom: 10px; display: flex; align-items: center; gap: 9px; font-family: var(--font-ar-body); font-weight: 700; }
+.info-card h3 .icon-chip { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.info-card p, .info-card li { color: var(--ink-soft); font-size: .95rem; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: .78rem; padding: 4px 11px; border-radius: 999px; }
+.callout { display: flex; gap: 14px; align-items: flex-start; border-inline-start: 4px solid var(--primary); background: var(--surface); border-radius: var(--r-md); padding: 18px 20px; box-shadow: var(--shadow-sm); }
+.callout.secondary { border-inline-start-color: var(--secondary); }
+.callout.genitiv { border-inline-start-color: var(--case-genitiv); }
+.callout.wechsel { border-inline-start-color: var(--case-wechsel); }
+.callout svg { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+.callout.secondary svg { color: var(--secondary); }
+.callout.genitiv svg { color: var(--case-genitiv); }
+.callout.wechsel svg { color: var(--case-wechsel); }
+.simple-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+.simple-table th, .simple-table td { padding: 12px 16px; text-align: center; border-bottom: 1px solid var(--border); }
+.simple-table th { background: var(--bg-alt); font-family: var(--font-ar-body); font-weight: 700; font-size: .88rem; }
+.simple-table tr:last-child td { border-bottom: none; }
+.simple-table td.de { font-size: 1.02rem; cursor: pointer; font-weight: 600; }
+.simple-table tr:hover td { background: var(--bg-alt); }
+.simple-table.compact th, .simple-table.compact td { padding: 10px 12px; font-size: .86rem; }
+.contraction-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px; text-align: center; box-shadow: var(--shadow-sm); transition: all .25s var(--ease); }
+.contraction-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.contraction-eq { font-family: var(--font-de-display); font-size: 1.4rem; font-weight: 700; color: var(--primary); cursor: pointer; margin-bottom: 6px; }
+.contraction-parts { font-family: var(--font-mono); font-size: .8rem; color: var(--ink-faint); }
+.contraction-case-tag { display: inline-block; margin-top: 8px; font-size: .66rem; font-family: var(--font-mono); padding: 2px 9px; border-radius: 999px; color: #fff; }
+
+/* ==========================================================================
+   7b. CASE-GROUP MIND-MAP CARDS
+   ========================================================================== */
+.mindmap-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+@media (max-width: 760px){ .mindmap-grid { grid-template-columns: 1fr; } }
+.case-card { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 24px 24px 22px; box-shadow: var(--shadow-sm); overflow: hidden; transition: all .3s var(--ease); cursor: pointer; }
+.case-card:hover { box-shadow: var(--shadow-md); transform: translateY(-5px); }
+.case-card::before { content:""; position:absolute; inset-inline:0; top:0; height:6px; background: var(--case-color, var(--primary)); }
+.case-card .cc-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: var(--case-soft, var(--primary-soft)); color: var(--case-color, var(--primary)); margin-bottom: 14px; }
+.case-card .cc-title { font-family: var(--font-de-display); font-size: 1.3rem; font-weight: 700; color: var(--case-color, var(--primary)); }
+.case-card .cc-title small { display: block; font-family: var(--font-ar-display); font-size: 1rem; color: var(--ink); font-weight: 600; }
+.case-card .cc-rule { margin-top: 10px; color: var(--ink-soft); font-size: .92rem; }
+.case-card .cc-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.case-card .cc-chips span { font-family: var(--font-mono); direction: ltr; font-size: .74rem; padding: 3px 10px; border-radius: 999px; background: var(--case-soft, var(--primary-soft)); color: var(--case-color, var(--primary)); }
+.flow-mini-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: stretch; }
+@media (max-width: 700px){ .flow-mini-grid { grid-template-columns: 1fr; } .flow-mini-arrow { transform: rotate(90deg); margin: 0 auto; } }
+.flow-mini-arrow { display: flex; align-items: center; justify-content: center; color: var(--ink-faint); }
+.flow-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 20px; box-shadow: var(--shadow-sm); }
+.flow-card .fc-q { font-weight: 700; margin-bottom: 10px; }
+.flow-card .fc-result { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-family: var(--font-mono); font-size: .82rem; color: #fff; margin-top: 8px; }
+
+/* ==========================================================================
+   8. VOCAB — flip cards + filter bar (reused for vocab & examples sections)
+   ========================================================================== */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+.filter-chip { font-family: var(--font-ar-body); font-size: .86rem; font-weight: 600; padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink-soft); cursor: pointer; transition: all .22s var(--ease); display: inline-flex; align-items: center; gap: 7px; }
+.filter-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--dot-color, var(--ink-faint)); }
+.filter-chip:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+.filter-chip.active { background: var(--dot-color, var(--primary)); border-color: var(--dot-color, var(--primary)); color: #fff; }
+.filter-chip.active .dot { background: #fff; }
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.flip-card { perspective: 1200px; height: 190px; }
+.flip-card.hidden-item { display: none; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-shadow: var(--shadow-sm); }
+.flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
+.flip-front .de { font-size: 1.4rem; font-weight: 700; }
+.flip-front .flip-case-tag { position:absolute; top:10px; inset-inline-start:10px; font-family: var(--font-mono); font-size:.62rem; padding:2px 9px; border-radius:999px; color:#fff; }
+.flip-back { color: #fff; transform: rotateY(180deg); gap: 6px; }
+.flip-back .meaning-de { font-family: var(--font-de-display); font-size: 1.05rem; font-weight: 600; }
+.flip-back .meaning { font-size: .92rem; opacity: .92; }
+.flip-hint { font-family: var(--font-mono); font-size: .66rem; color: var(--ink-faint); margin-top: 10px; }
+.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--primary); transition: all .2s; }
+.speak-dot:hover { transform: scale(1.1); }
+.flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
+.speak-dot .icon { width: 15px; height: 15px; }
+.speak-dot.speaking { animation: pulse-ring 1s var(--ease) infinite; }
+@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 var(--primary-glow)} 70%{box-shadow:0 0 0 10px transparent} 100%{box-shadow:0 0 0 0 transparent} }
+
+/* ==========================================================================
+   9. MISTAKES
+   ========================================================================== */
+.mistake-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+@media (max-width: 640px){ .mistake-card { grid-template-columns: 1fr; } }
+.mistake-side { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.mistake-wrong { background: var(--danger-soft); }
+.mistake-right { background: var(--success-soft); }
+.mistake-tag { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .82rem; }
+.mistake-wrong .mistake-tag { color: var(--danger); }
+.mistake-right .mistake-tag { color: var(--success); }
+.mistake-sentence { font-family: var(--font-de-display); direction: ltr; font-size: 1.05rem; }
+.mistake-note { grid-column: 1 / -1; padding: 12px 20px; font-size: .88rem; color: var(--ink-soft); border-top: 1px dashed var(--border); background: var(--surface); display:flex; align-items:center; gap:8px; }
+.mistake-note .grp-tag { font-family: var(--font-mono); font-size: .64rem; padding: 2px 8px; border-radius: 999px; color: #fff; flex-shrink:0; }
+
+/* ==========================================================================
+   10. EXERCISES
+   ========================================================================== */
+.exercise-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+.exercise-tabs { display: flex; overflow-x: auto; border-bottom: 1px solid var(--border); scrollbar-width: none; }
+.exercise-tabs::-webkit-scrollbar { display: none; }
+.exercise-tab { flex-shrink: 0; padding: 16px 18px; background: none; border: none; cursor: pointer; font-weight: 600; font-size: .88rem; color: var(--ink-faint); border-bottom: 3px solid transparent; display: flex; align-items: center; gap: 8px; transition: all .25s; }
+.exercise-tab:hover { color: var(--ink); }
+.exercise-tab.active { color: var(--primary); border-color: var(--primary); }
+.exercise-tab .count { font-family: var(--font-mono); font-size: .68rem; background: var(--bg-alt); padding: 1px 7px; border-radius: 999px; }
+.exercise-panels { padding: clamp(20px, 4vw, 34px); }
+.exercise-panel { display: none; }
+.exercise-panel.active { display: block; animation: fadeSlide .4s var(--ease); }
+@keyframes fadeSlide { from { opacity:0; transform:translateY(10px);} to { opacity:1; transform:translateY(0);} }
+.q-block { border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 20px; margin-bottom: 16px; background: var(--bg-alt); }
+.q-prompt { font-family: var(--font-de-display); direction: ltr; font-size: 1.06rem; margin-bottom: 14px; }
+.q-prompt-ar { font-family: var(--font-ar-body); direction: rtl; font-size: .86rem; color: var(--ink-soft); margin-bottom: 12px; }
+.q-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.opt-btn { font-family: var(--font-de-display); direction: ltr; padding: 9px 20px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 1rem; transition: all .2s var(--ease); }
+.opt-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.opt-btn.correct { background: var(--success-soft); border-color: var(--success); color: var(--success); }
+.opt-btn.wrong { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
+.opt-btn:disabled { cursor: default; }
+.q-feedback { margin-top: 12px; font-size: .88rem; color: var(--ink-soft); display: none; padding-top: 10px; border-top: 1px dashed var(--border); }
+.q-feedback.show { display: block; }
+.fill-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.fill-row input { font-family: var(--font-de-display); direction: ltr; text-align: left; font-size: 1.05rem; padding: 9px 14px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink); width: 160px; max-width: 100%; }
+.fill-row input:focus { border-color: var(--primary); }
+.fill-check { border: none; background: var(--primary); color: #fff; padding: 9px 18px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+.fill-result { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+.builder-pool, .builder-answer { display: flex; flex-wrap: wrap; gap: 10px; min-height: 52px; align-items: center; }
+.builder-answer { border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: 10px 14px; margin-bottom: 14px; background: var(--surface); }
+.chip-word { font-family: var(--font-de-display); direction: ltr; padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 1rem; transition: all .2s var(--ease); box-shadow: var(--shadow-sm); }
+.chip-word:hover { transform: translateY(-2px); border-color: var(--primary); }
+.chip-word.used { opacity: .3; pointer-events: none; }
+.builder-actions { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.builder-actions .btn { padding: 9px 18px; font-size: .88rem; }
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 3vw, 40px); }
+.match-col { display: flex; flex-direction: column; gap: 10px; }
+.match-item { font-family: var(--font-de-display); direction: ltr; padding: 12px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; transition: all .2s var(--ease); text-align: center; }
+.match-item:hover:not(.matched) { border-color: var(--primary); transform: scale(1.02); }
+.match-item.selected { border-color: var(--primary); background: var(--primary-soft); }
+.match-item.matched { border-color: var(--success); background: var(--success-soft); color: var(--success); pointer-events: none; }
+.match-item.shake { animation: shake .4s; border-color: var(--danger); background: var(--danger-soft); }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+.score-bar-wrap { display: flex; align-items: center; gap: 16px; padding: 18px clamp(20px, 4vw, 34px); border-top: 1px solid var(--border); background: var(--bg-alt); flex-wrap: wrap; }
+.score-track { flex: 1; min-width: 140px; height: 10px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.score-fill { height: 100%; background: linear-gradient(to left, var(--case-akk), var(--case-dativ), var(--case-genitiv), var(--case-wechsel)); border-radius: 999px; width: 0%; transition: width .5s var(--ease); }
+.score-label { font-family: var(--font-mono); font-size: .82rem; white-space: nowrap; }
+
+.toggle-group { display: inline-flex; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 999px; padding: 4px; gap: 4px; }
+.toggle-btn { border: none; background: none; padding: 9px 22px; border-radius: 999px; cursor: pointer; font-weight: 700; font-size: .92rem; color: var(--ink-soft); transition: all .25s var(--ease); display:flex; align-items:center; gap:7px; }
+.toggle-btn .toggle-de { font-family: var(--font-de-display); direction: ltr; }
+.toggle-btn.active[data-mode="wo"] { background: var(--case-dativ); color: #fff; box-shadow: var(--shadow-sm); }
+.toggle-btn.active[data-mode="wohin"] { background: var(--case-akk); color: #fff; box-shadow: var(--shadow-sm); }
+
+.prep-picker { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px; }
+.prep-picker-btn { font-family: var(--font-de-display); direction: ltr; font-weight: 700; font-size: .95rem; padding: 8px 18px; border-radius: 999px; border: 2px solid var(--border-strong); background: var(--surface); color: var(--ink); cursor: pointer; transition: all .22s var(--ease); }
+.prep-picker-btn:hover { transform: translateY(-2px); border-color: var(--case-wechsel); }
+.prep-picker-btn.active { background: var(--case-wechsel); border-color: var(--case-wechsel); color: #fff; box-shadow: var(--shadow-sm); }
+
+.wechsel-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: clamp(20px,3.4vw,32px); box-shadow: var(--shadow-lg); }
+.wechsel-layout { display: grid; grid-template-columns: minmax(260px,360px) 1fr; gap: clamp(20px,4vw,40px); align-items: center; }
+@media (max-width: 800px){ .wechsel-layout { grid-template-columns: 1fr; } }
+.wechsel-scene-wrap { background: var(--bg-alt); border-radius: var(--r-md); border: 1px solid var(--border); padding: 14px; }
+.wechsel-scene-wrap svg { width: 100%; height: auto; }
+.ws-box { fill: var(--surface); stroke: var(--border-strong); stroke-width: 2; }
+.ws-box.behind { opacity: .55; stroke-dasharray: 4 3; }
+.ws-label { font-family: var(--font-de-display); font-size: 11px; fill: var(--ink-soft); }
+.ws-dot-g { transition: transform .85s cubic-bezier(.34,1.4,.4,1); }
+.ws-dot { r: 11; transition: fill .3s var(--ease); }
+.ws-dot.state-wo { fill: var(--case-dativ); }
+.ws-dot.state-wohin { fill: var(--case-akk); }
+.ws-dot-pulse { r: 11; fill: none; stroke-width: 2; opacity: 0; }
+.ws-dot-g.pulsing .ws-dot-pulse { animation: wsPulse 1.1s var(--ease) 1; }
+@keyframes wsPulse { 0%{ opacity:.9; r:11; stroke: var(--case-akk);} 100%{ opacity:0; r:26; stroke: var(--case-akk);} }
+
+/* ==========================================================================
+   11. AUDIO DOCK / TOAST / BADGES / FOOTER
+   ========================================================================== */
+.audio-dock { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(140%); z-index: 200; background: var(--surface-glass); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border: 1px solid var(--surface-glass-border); box-shadow: var(--shadow-lg); border-radius: 999px; padding: 8px 10px 8px 18px; display: flex; align-items: center; gap: 12px; max-width: min(92vw, 560px); transition: transform .45s var(--ease); }
+.audio-dock.visible { transform: translateX(-50%) translateY(0); }
+.audio-dock-text { font-family: var(--font-de-display); direction: ltr; font-size: .92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px; }
+.audio-dock-controls { display: flex; align-items: center; gap: 4px; }
+.audio-dock .icon-btn { width: 34px; height: 34px; border-radius: 50%; }
+.audio-dock input[type="range"] { width: 70px; accent-color: var(--primary); }
+.audio-dock-voice { font-family: var(--font-mono); font-size: .64rem; color: var(--ink-faint); display: none; }
+@media (min-width: 620px){ .audio-dock-voice { display: block; } }
+.summary-list { display: flex; flex-direction: column; gap: 12px; }
+.summary-list li { display: flex; gap: 12px; align-items: flex-start; }
+.summary-list .icon-chip { flex-shrink: 0; }
+.badges-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 14px; margin-top: 30px; }
+.badge { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 10px; text-align: center; filter: grayscale(1) opacity(.5); transition: filter .5s var(--ease); }
+.badge.unlocked { filter: none; opacity: 1; }
+.badge.pop { animation: badgePop .6s var(--ease); }
+@keyframes badgePop { 0%{transform:scale(.7) rotate(-8deg)} 60%{transform:scale(1.12) rotate(4deg)} 100%{transform:scale(1) rotate(0)} }
+.badge-icon { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(155deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: #fff; }
+.badge-name { font-size: .8rem; font-weight: 600; }
+.toast-wrap { position: fixed; top: calc(var(--nav-h) + 44px); left: 50%; transform: translateX(-50%); z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+.toast { background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-size: .88rem; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(-14px); transition: all .4s var(--ease); white-space: nowrap; }
+.toast.show { opacity: 1; transform: translateY(0); }
+.site-footer { border-top: 1px solid var(--border); padding-block: 36px; margin-top: 30px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--ink-faint); font-size: .86rem; }
+.back-to-top { position: fixed; bottom: 20px; inset-inline-end: 20px; z-index: 190; width: 46px; height: 46px; border-radius: 50%; background: var(--primary); color: #fff; border: none; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow-primary); cursor: pointer; opacity: 0; transform: translateY(20px) scale(.8); pointer-events: none; transition: all .35s var(--ease); }
+.back-to-top.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.back-to-top:hover { transform: translateY(-4px) scale(1.05); }
+mark.hl { background: var(--secondary-soft); color: var(--secondary-ink); border-radius: 4px; padding: 0 2px; }
+
+@media print {
+  .site-header, .audio-dock, .back-to-top, .exercise-tabs, .score-bar-wrap, .btn, .icon-btn, .toast-wrap, .filter-bar, .prep-picker { display: none !important; }
+  body { background: #fff; color: #000; }
+  .section { padding-block: 20px; break-inside: avoid; }
+  .exercise-panel { display: block !important; }
+  .flip-card.hidden-item { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><g stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/></g></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+<symbol id="i-speaker" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.3 5.7a9 9 0 0 1 0 12.6"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+<symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 4v6h6"/><path d="M4.6 15a8 8 0 1 0 1.5-9.4L4 9"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><polyline points="6,9 6,3 18,3 18,9"/><rect x="4" y="9" width="16" height="8" rx="1.2"/><rect x="8" y="14" width="8" height="6"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5"/><path d="M15 4h5v5"/><path d="M20 15v5h-5"/><path d="M9 20H4v-5"/></symbol>
+<symbol id="i-compress" viewBox="0 0 24 24"><path d="M9 4v5H4"/><path d="M15 4v5h5"/><path d="M20 20v-5h-5"/><path d="M4 20v-5h5"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="5,13 9,17 19,7"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></symbol>
+<symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 13.5 7 21l5-2.5L17 21l-2-7.5"/><path d="M12 6.5l.9 1.9 2.1.3-1.5 1.4.3 2.1-1.8-1-1.8 1 .3-2.1-1.5-1.4 2.1-.3z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2zM20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2z"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5a2.6 2.6 0 0 1 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></symbol>
+<symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 5.5 19 5.5a2 2 0 0 1 2 2L21 18"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M9 15L15 9"/><path d="M13.5 6.5l1-1a3.5 3.5 0 0 1 5 5l-1 1"/><path d="M10.5 17.5l-1 1a3.5 3.5 0 0 1-5-5l1-1"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="i-arrow-out" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4L10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+<symbol id="i-together" viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5"/><path d="M10 20c0-3 3-5 6-5s6 2 6 5"/></symbol>
+<symbol id="i-clock-since" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><polyline points="12,9 12,13 15,15"/><path d="M9 2h6"/></symbol>
+<symbol id="i-target-arrow" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M21 12h-3M6 12H3"/></symbol>
+<symbol id="i-through" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="1.5"/><line x1="2" y1="12" x2="22" y2="12"/><polyline points="17,8 22,12 17,16"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1"/><line x1="3" y1="14" x2="21" y2="14"/><line x1="12" y1="9" x2="12" y2="21"/><path d="M12 9C9 9 8 6 9.5 4.5 11 3 12 6 12 9zM12 9c3 0 4-3 2.5-4.5C13 3 12 6 12 9z"/></symbol>
+<symbol id="i-versus" viewBox="0 0 24 24"><polygon points="2,6 10,12 2,18"/><polygon points="22,6 14,12 22,18"/></symbol>
+<symbol id="i-no" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="6" y1="18" x2="18" y2="6"/></symbol>
+<symbol id="i-circle-arrow" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 1 3 6.2"/><polyline points="3,15 4,19.5 8.3,18.5"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><line x1="5" y1="3" x2="5" y2="21"/><path d="M5 4h13l-3 4 3 4H5"/></symbol>
+<symbol id="i-road" viewBox="0 0 24 24"><path d="M6 21 10 3M18 21 14 3"/><line x1="12" y1="4" x2="12" y2="8" stroke-dasharray="2 3"/><line x1="12" y1="11" x2="12" y2="15" stroke-dasharray="2 3"/><line x1="12" y1="18" x2="12" y2="21" stroke-dasharray="2 3"/></symbol>
+<symbol id="i-cause" viewBox="0 0 24 24"><circle cx="5" cy="12" r="3"/><circle cx="19" cy="12" r="3.6"/><path d="M8.4 12h7"/><polyline points="13,9.4 15.6,12 13,14.6"/></symbol>
+<symbol id="i-umbrella" viewBox="0 0 24 24"><path d="M12 12V20a2 2 0 0 1-4 0"/><path d="M2 12a10 10 0 0 1 20 0c-2 0-2.5-2-4.5-2s-2.5 2-4.5 2-2.5-2-4.5-2S4 12 2 12z"/><line x1="12" y1="3" x2="12" y2="5"/></symbol>
+<symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M6 3h12M6 21h12"/><path d="M7 3c0 5 4 7 5 9-1 2-5 4-5 9M17 3c0 5-4 7-5 9 1 2 5 4 5 9"/></symbol>
+<symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h13"/><polyline points="13,4 17,8 13,12"/><path d="M20 16H7"/><polyline points="11,20 7,16 11,12"/></symbol>
+<symbol id="i-box-in" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><circle cx="12" cy="12" r="2.6"/></symbol>
+<symbol id="i-box-out" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="13" rx="1.5"/><circle cx="19" cy="6" r="2.6"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><path d="M4 7h16"/><path d="M4 7l-2 6a3 3 0 0 0 4.5 0z"/><path d="M20 7l-2 6a3 3 0 0 0 4.5 0z"/></symbol>
+<symbol id="i-question" viewBox="0 0 24 24"><path d="M9 9a3 3 0 1 1 4.5 2.6c-1 .6-1.5 1.2-1.5 2.4"/><line x1="12" y1="17.5" x2="12" y2="17.6"/></symbol>
+</defs>
+</svg>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<header class="site-header">
+  <div class="header-top">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">ألمانية A2<small>الدرس الرابع · دليل حروف الجر الشامل</small></span>
+      </div>
+      <div style="flex:1"></div>
+      <div class="header-controls">
+        <div class="search-box" id="searchBoxDesktop"><input type="search" id="searchInputDesktop" placeholder="ابحث في الدرس…" aria-label="ابحث في الدرس"></div>
+        <button class="icon-btn" id="searchToggle" aria-label="بحث"><svg class="icon"><use href="#i-search"/></svg></button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري">
+          <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+        </button>
+        <button class="icon-btn" id="fullscreenToggle" aria-label="ملء الشاشة"><svg class="icon" id="fsIcon"><use href="#i-expand"/></svg></button>
+        <div class="progress-ring-wrap" title="تقدّمك في الدرس">
+          <svg width="44" height="44"><circle class="progress-ring-track" cx="22" cy="22" r="18"/><circle class="progress-ring-bar" id="progressRingBar" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="113"/></svg>
+          <span class="progress-ring-label" id="progressRingLabel">٠٪</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="road-nav" aria-label="أقسام الدرس"><div class="road-track" id="roadTrack"></div></nav>
+</header>
+
+<main id="mainContent">
+
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="reveal is-visible">
+      <span class="level-badge"><b>A2</b> الدرس رقم ٤ من مسار «الألمانية خطوة بخطوة» — نسخة موسّعة</span>
+      <h1 class="hero-title">دليل حروف الجر الألمانية <span class="de">الشامل</span></h1>
+      <p class="hero-lead">أربع مجموعات فقط تحكم كل حروف الجر في اللغة الألمانية: مجموعة تلتصق بالنصب <span class="de">Akkusativ</span> دائمًا، ومجموعة تلتصق بالجر <span class="de">Dativ</span> دائمًا، ومجموعة تتطلّب <span class="de">Genitiv</span>، ومجموعة "مزدوجة" تتغيّر حسب السؤال: أين؟ أم إلى أين؟ هذا الدرس يرتّبها لك جميعًا في مكان واحد.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" data-scroll="#map"><svg class="icon" style="width:18px;height:18px"><use href="#i-play"/></svg>ابدأ من الخريطة الشاملة</button>
+        <button class="btn btn-ghost" data-scroll="#wechsel"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg>جرّب حروف الجر المزدوجة</button>
+      </div>
+    </div>
+    <div class="reveal is-visible" style="transition-delay:.15s">
+      <div class="hero-quad-card">
+        <div class="hero-quad-grid">
+          <div class="hero-quad-item" style="background:linear-gradient(155deg, var(--case-akk), #26456f)">
+            <div class="hq-case">Akkusativ</div><div class="hq-name">النصب</div>
+            <div class="hq-list">durch · für · gegen · ohne · um</div>
+          </div>
+          <div class="hero-quad-item" style="background:linear-gradient(155deg, var(--case-dativ), var(--primary-ink))">
+            <div class="hq-case">Dativ</div><div class="hq-name">الجر</div>
+            <div class="hq-list">aus · bei · mit · nach · seit · von · zu</div>
+          </div>
+          <div class="hero-quad-item" style="background:linear-gradient(155deg, var(--case-genitiv), #4a3873)">
+            <div class="hq-case">Genitiv</div><div class="hq-name">الإضافة</div>
+            <div class="hq-list">wegen · trotz · während · statt</div>
+          </div>
+          <div class="hero-quad-item" style="background:linear-gradient(155deg, var(--case-wechsel), var(--secondary-ink))">
+            <div class="hq-case">Wechsel</div><div class="hq-name">مزدوجة</div>
+            <div class="hq-list">an · auf · in · über · unter…</div>
+          </div>
+        </div>
+        <p style="color:var(--ink-soft);font-size:.86rem;margin-top:14px;text-align:center">اسأل نفسك دائمًا: أي حرف جر هذا، وأي سؤال يجيب عنه؟</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>لماذا هذا الدرس</span>
+      <h2 class="section-title">لماذا حروف الجر تستحق درسًا كاملاً؟</h2>
+      <p class="section-sub">لأن حرف الجر في الألمانية لا يُترجم فقط — بل يقرّر شكل الأداة والاسم اللذين يليانه. تعلّم أربع مجموعات فقط، وستقرأ أي جملة ألمانية بثقة أكبر.</p>
+    </div>
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--primary-soft);color:var(--primary)"><svg class="icon" style="width:18px;height:18px"><use href="#i-target-arrow"/></svg></span>الحالة تُغيّر الأداة</h3>
+        <p>نفس الاسم "der Tisch" يصبح "den Tisch" بعد <span class="mono">für</span>، و"dem Tisch" بعد <span class="mono">mit</span>. الحرف يقرّر الشكل.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--secondary-soft);color:var(--secondary-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>أربع مجموعات فقط</h3>
+        <p>لا داعي لحفظ كل حرف على حدة — احفظ إلى أي مجموعة ينتمي (Akkusativ / Dativ / Genitiv / مزدوج)، والباقي يأتي تلقائيًا.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--case-wechsel-soft);color:var(--case-wechsel)"><svg class="icon" style="width:18px;height:18px"><use href="#i-question"/></svg></span>سؤال واحد يحسم الأمر</h3>
+        <p>في المجموعة المزدوجة، كل ما تحتاجه هو سؤال: هل هذا مكان ثابت (<span class="de">Wo?</span>) أم اتجاه حركة (<span class="de">Wohin?</span>)؟</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="map">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-link"/></svg>الخريطة الذهنية</span>
+      <h2 class="section-title">الصورة الكاملة: أربع مجموعات لحروف الجر</h2>
+      <p class="section-sub">انقر على أي بطاقة للانتقال مباشرة إلى قسمها التفصيلي.</p>
+    </div>
+    <div class="mindmap-grid reveal-stagger reveal">
+      <div class="case-card" style="--case-color:var(--case-akk);--case-soft:var(--case-akk-soft)" data-scroll="#akkusativ">
+        <span class="cc-icon"><svg class="icon" style="width:22px;height:22px"><use href="#i-through"/></svg></span>
+        <div class="cc-title">Akkusativ<small>حروف تلتصق بالنصب دائمًا</small></div>
+        <p class="cc-rule">تُستخدم غالبًا مع الحركة المباشرة، الهدف، أو المقابلة — الأداة المذكّرة فقط هي التي تتغيّر: <span class="mono">der → den</span>.</p>
+        <div class="cc-chips"><span>durch</span><span>für</span><span>gegen</span><span>ohne</span><span>um</span><span>bis</span><span>entlang</span></div>
+      </div>
+      <div class="case-card" style="--case-color:var(--case-dativ);--case-soft:var(--case-dativ-soft)" data-scroll="#dativ">
+        <span class="cc-icon"><svg class="icon" style="width:22px;height:22px"><use href="#i-arrow-out"/></svg></span>
+        <div class="cc-title">Dativ<small>حروف تلتصق بالجر دائمًا</small></div>
+        <p class="cc-rule">تصف الأصل، المرافقة، الوجهة، والزمن — سبعة حروف ثابتة تمامًا مهما تغيّر السياق.</p>
+        <div class="cc-chips"><span>aus</span><span>bei</span><span>mit</span><span>nach</span><span>seit</span><span>von</span><span>zu</span></div>
+      </div>
+      <div class="case-card" style="--case-color:var(--case-genitiv);--case-soft:var(--case-genitiv-soft)" data-scroll="#genitiv">
+        <span class="cc-icon"><svg class="icon" style="width:22px;height:22px"><use href="#i-cause"/></svg></span>
+        <div class="cc-title">Genitiv<small>حروف الجر الإضافية/الرسمية</small></div>
+        <p class="cc-rule">تصف السبب، التنازل، المدة، أو البديل — الاسم المذكّر/المحايد يأخذ نهاية <span class="mono">-s/-es</span> إضافية.</p>
+        <div class="cc-chips"><span>wegen</span><span>trotz</span><span>während</span><span>statt</span><span>innerhalb</span><span>außerhalb</span></div>
+      </div>
+      <div class="case-card" style="--case-color:var(--case-wechsel);--case-soft:var(--case-wechsel-soft)" data-scroll="#wechsel">
+        <span class="cc-icon"><svg class="icon" style="width:22px;height:22px"><use href="#i-box-in"/></svg></span>
+        <div class="cc-title">Wechsel<small>حروف جر مزدوجة الحالة</small></div>
+        <p class="cc-rule">مكان ثابت = Dativ (<span class="mono">Wo?</span>) — حركة نحو مكان = Akkusativ (<span class="mono">Wohin?</span>).</p>
+        <div class="cc-chips"><span>an</span><span>auf</span><span>hinter</span><span>in</span><span>neben</span><span>über</span><span>unter</span><span>vor</span><span>zwischen</span></div>
+      </div>
+    </div>
+    <div class="callout reveal" style="margin-top:22px">
+      <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+      <p><b>ملاحظة مهمّة:</b> الأكوزاتيف Akkusativ هي "الحالة الافتراضية" للمفعول به المباشر في الألمانية، لذلك لا توجد قائمة أفعال خاصة تتطلّبها كما هو الحال مع Dativ (مثل <span class="mono">helfen, danken</span>) — كل فعل متعدٍ عادي يأخذ مفعولاً به في حالة Akkusativ تلقائيًا.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="akkusativ">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--case-akk);background:var(--case-akk-soft)"><svg class="icon" style="width:14px;height:14px"><use href="#i-through"/></svg>المجموعة الأولى</span>
+      <h2 class="section-title">حروف الجر مع <span class="de" style="color:var(--case-akk)">Akkusativ</span></h2>
+      <p class="section-sub">خمسة حروف أساسية (<span class="mono">durch, für, gegen, ohne, um</span>) وحرفان إضافيان أقل تكرارًا (<span class="mono">bis, entlang</span>) — كلّها تلتصق بالنصب دون استثناء، مهما كان الفعل أو السياق.</p>
+    </div>
+    <div class="grid-2 reveal" style="align-items:start">
+      <div>
+        <h3 style="font-size:1.1rem;margin-bottom:14px">أدوات التعريف في حالة النصب</h3>
+        <table class="simple-table" id="articleTableAkk"></table>
+      </div>
+      <div>
+        <div class="callout reveal">
+          <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+          <p><b>القاعدة الذهبية:</b> فقط المذكّر يتغيّر — <span class="mono">der → den</span> و<span class="mono">ein → einen</span>. المؤنث والمحايد والجمع تبقى كما هي تمامًا كحالة الرفع.</p>
+        </div>
+        <div class="callout secondary reveal" style="margin-top:16px">
+          <svg class="icon" style="width:22px;height:22px"><use href="#i-target-arrow"/></svg>
+          <p><b>لماذا Akkusativ هنا؟</b> غالبًا لأنّ هذه الحروف تصف حركة عبر شيء، هدفًا، أو مقابلة مباشرة — أي أقرب لمنطق "المفعول به المباشر".</p>
+        </div>
+      </div>
+    </div>
+    <div class="compass-shell reveal" style="margin-top:28px">
+      <div class="compass-layout">
+        <div class="compass-face-wrap" id="compassFaceAkk"></div>
+        <div class="route-card" id="routeCardAkk"></div>
+      </div>
+    </div>
+    <div class="callout reveal" style="margin-top:20px">
+      <svg class="icon" style="width:22px;height:22px"><use href="#i-flag"/></svg>
+      <p><b>حالتان خاصتان:</b> <span class="mono">bis</span> غالبًا تُستخدم بمفردها مع الزمن (<span class="de" data-speak="bis Montag">bis Montag</span>) أو مع حرف جر آخر للأماكن (<span class="de" data-speak="bis zum Bahnhof">bis zum Bahnhof</span>). و<span class="mono">entlang</span> يأتي عادة بعد الاسم في حالة Akkusativ (<span class="de" data-speak="die Straße entlang">die Straße entlang</span>)، بينما قبل الاسم يُستخدم غالبًا مع Genitiv في اللغة الرسمية.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="dativ">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--case-dativ);background:var(--case-dativ-soft)"><svg class="icon" style="width:14px;height:14px"><use href="#i-arrow-out"/></svg>المجموعة الثانية</span>
+      <h2 class="section-title">حروف الجر مع <span class="de" style="color:var(--case-dativ)">Dativ</span></h2>
+      <p class="section-sub">سبعة حروف جر صغيرة (<span class="mono">aus, bei, mit, nach, seit, von, zu</span>) تفتح لك بابًا كاملاً للحديث عن الأصل، والمرافقة، والوجهة، والزمن.</p>
+    </div>
+    <div class="grid-2 reveal" style="align-items:start">
+      <div>
+        <h3 style="font-size:1.1rem;margin-bottom:14px">أدوات التعريف في حالة الجر</h3>
+        <table class="simple-table" id="articleTable"></table>
+      </div>
+      <div>
+        <h3 style="font-size:1.1rem;margin-bottom:14px">الضمائر في حالة الجر</h3>
+        <table class="simple-table" id="pronounTable"></table>
+      </div>
+    </div>
+    <div class="grid-2 reveal" style="margin-top:24px">
+      <div class="callout">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+        <p><b>الجمع دائمًا +ن:</b> في صيغة الجمع، الأداة تصبح <span class="mono">den</span> والاسم يأخذ نهاية <span class="mono">-n</span> إن لم تكن موجودة: <span class="de" data-speak="die Kinder → den Kindern">die Kinder → den Kindern</span>.</p>
+      </div>
+      <div class="callout secondary">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-link"/></svg>
+        <p><b>تذكّر:</b> ضمائر Dativ تشبه ضمائر Akkusativ الانعكاسية في <span class="mono">dich/dir</span>، لكنها ليست متطابقة — لاحظ الفرق بين <span class="mono">mich/mir</span> و<span class="mono">dich/dir</span>.</p>
+      </div>
+    </div>
+    <div class="compass-shell reveal" style="margin-top:28px">
+      <div class="compass-layout">
+        <div class="compass-face-wrap" id="compassFace"></div>
+        <div class="route-card" id="routeCard"></div>
+      </div>
+    </div>
+    <div class="callout reveal" style="margin-top:20px">
+      <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+      <p><b>معلومة إضافية:</b> توجد حروف جر أخرى أقل شيوعًا تلتصق بالـ Dativ أيضًا، خصوصًا في اللغة الرسمية: <span class="mono">außer</span> (عدا)، <span class="mono">gegenüber</span> (مقابل/تجاه)، <span class="mono">ab</span> (ابتداءً من)، <span class="mono">entgegen</span> (خلافًا لـ). لا تحتاج لحفظها الآن، لكن من المفيد التعرّف عليها عند قراءتها.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="genitiv">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--case-genitiv);background:var(--case-genitiv-soft)"><svg class="icon" style="width:14px;height:14px"><use href="#i-cause"/></svg>المجموعة الثالثة</span>
+      <h2 class="section-title">حروف الجر مع <span class="de" style="color:var(--case-genitiv)">Genitiv</span></h2>
+      <p class="section-sub">حروف جر "رسمية" الطابع تصف السبب، التنازل، المدة الزمنية، أو البديل — تُستخدم كثيرًا في الكتابة والأخبار والامتحانات.</p>
+    </div>
+    <div class="grid-2 reveal" style="align-items:start">
+      <div>
+        <h3 style="font-size:1.1rem;margin-bottom:14px">أدوات التعريف في حالة الإضافة</h3>
+        <table class="simple-table" id="articleTableGen"></table>
+      </div>
+      <div>
+        <div class="callout genitiv reveal">
+          <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+          <p><b>لا تنسَ نهاية الاسم:</b> الأسماء المذكّرة والمحايدة المفردة تأخذ نهاية إضافية <span class="mono">-s</span> أو <span class="mono">-es</span>: <span class="de" data-speak="der Regen → des Regens">der Regen → des Regens</span>، <span class="de" data-speak="das Kind → des Kindes">das Kind → des Kindes</span>.</p>
+        </div>
+        <div class="callout secondary reveal" style="margin-top:16px">
+          <svg class="icon" style="width:22px;height:22px"><use href="#i-chat"/></svg>
+          <p><b>في الحديث اليومي:</b> كثير من الألمان يستخدمون Dativ بدلاً من Genitiv بعد <span class="mono">wegen, trotz, während</span> (مثل <span class="de" data-speak="wegen dem Regen">wegen dem Regen</span>) — لكن في الكتابة الرسمية والامتحانات، يبقى Genitiv هو الشكل الصحيح المتوقّع.</p>
+        </div>
+      </div>
+    </div>
+    <div class="compass-shell reveal" style="margin-top:28px">
+      <div class="compass-layout">
+        <div class="compass-face-wrap small" id="compassFaceGen"></div>
+        <div class="route-card" id="routeCardGen"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="wechsel">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--case-wechsel);background:var(--case-wechsel-soft)"><svg class="icon" style="width:14px;height:14px"><use href="#i-box-in"/></svg>المجموعة الرابعة · الأهم</span>
+      <h2 class="section-title">حروف الجر <span class="de" style="color:var(--case-wechsel)">المزدوجة</span> (Wechselpräpositionen)</h2>
+      <p class="section-sub">تسعة حروف جر تتغيّر حالتها حسب المعنى: <span class="mono">an, auf, hinter, in, neben, über, unter, vor, zwischen</span>. السؤال الذي تطرحه على نفسك يحدّد كل شيء.</p>
+    </div>
+    <div class="flow-mini-grid reveal" style="margin-bottom:32px">
+      <div class="flow-card">
+        <div class="fc-q">🧭 أين؟ <span class="de mono">Wo?</span> — سكون / مكان ثابت</div>
+        <p style="color:var(--ink-soft);font-size:.92rem">الفعل يصف حالة وجود بلا حركة: <span class="mono">sein, liegen, stehen, sitzen, hängen</span>.</p>
+        <span class="fc-result" style="background:var(--case-dativ)">→ Dativ</span>
+      </div>
+      <div class="flow-mini-arrow"><svg class="icon" style="width:28px;height:28px"><use href="#i-versus"/></svg></div>
+      <div class="flow-card">
+        <div class="fc-q">🎯 إلى أين؟ <span class="de mono">Wohin?</span> — حركة نحو مكان</div>
+        <p style="color:var(--ink-soft);font-size:.92rem">الفعل يصف انتقالاً أو حركة نحو هدف: <span class="mono">gehen, legen, stellen, setzen, fahren</span>.</p>
+        <span class="fc-result" style="background:var(--case-akk)">→ Akkusativ</span>
+      </div>
+    </div>
+    <div class="wechsel-shell reveal">
+      <div class="prep-picker" id="wechselPicker"></div>
+      <div class="wechsel-layout">
+        <div class="wechsel-scene-wrap">
+          <svg id="wechselScene" viewBox="0 0 200 150" aria-hidden="true"></svg>
+          <div style="display:flex;justify-content:center;margin-top:14px">
+            <div class="toggle-group" id="woWohinToggle">
+              <button class="toggle-btn" data-mode="wo" type="button">🧭 <span class="toggle-de">Wo?</span></button>
+              <button class="toggle-btn" data-mode="wohin" type="button">🎯 <span class="toggle-de">Wohin?</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="route-card" id="wechselCard"></div>
+      </div>
+    </div>
+    <div class="section-head reveal" style="margin-top:44px;margin-bottom:20px">
+      <h3 class="section-title" style="font-size:1.4rem">أزواج الأفعال الشهيرة (Wechselverben)</h3>
+      <p class="section-sub">هذه الأفعال تُترجم غالبًا بنفس الكلمة العربية، لكنها في الألمانية فعلان مختلفان تمامًا حسب السكون أو الحركة.</p>
+    </div>
+    <table class="simple-table reveal" id="verbPairsTable"></table>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="contractions">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-link"/></svg>اختصارات شائعة جدًا</span>
+      <h2 class="section-title">حين يندمج حرف الجر مع الأداة</h2>
+      <p class="section-sub">في الحديث اليومي، تُدمج حروف جر كثيرة مع الأداة <span class="mono">dem/das/der</span> لتكوين كلمة واحدة أقصر وأكثر طبيعية — من كل المجموعات الثلاث الثابتة.</p>
+    </div>
+    <div class="grid-4 reveal-stagger reveal" id="contractionsGrid"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="compare">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-book"/></svg>الخلاصة السريعة</span>
+      <h2 class="section-title">الجدول الرئيسي الشامل</h2>
+      <p class="section-sub">مرجع سريع تعود إليه كلما ترددت في اختيار الحالة الصحيحة.</p>
+    </div>
+    <table class="simple-table reveal" id="masterTable" style="text-align:right"></table>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="vocab">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-cards"/></svg>مفردات شاملة</span>
+      <h2 class="section-title">بطاقات كل حروف الجر</h2>
+      <p class="section-sub">صفّها حسب المجموعة، أو اعرضها كلها. انقر لقلب البطاقة، وانقر على أيقونة الصوت للاستماع.</p>
+    </div>
+    <div class="filter-bar reveal" id="vocabFilterBar"></div>
+    <div class="vocab-grid reveal-stagger reveal" id="vocabGrid"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="examples">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>تطبيق عملي</span>
+      <h2 class="section-title">جملة لكل حرف جر</h2>
+      <p class="section-sub">فلترة حسب المجموعة، مع تلوين الاسم الذي تغيّر بلون حالته النحوية.</p>
+    </div>
+    <div class="filter-bar reveal" id="examplesFilterBar"></div>
+    <div class="reveal-stagger reveal" id="examplesList" style="display:flex;flex-direction:column;gap:18px"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="mistakes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>تجنّب الفخاخ الشائعة</span>
+      <h2 class="section-title">أخطاء يقع فيها معظم المتعلمين</h2>
+    </div>
+    <div class="reveal-stagger reveal" id="mistakesList" style="display:flex;flex-direction:column;gap:16px"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="pronunciation">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-speaker"/></svg>نطق أصيل</span>
+      <h2 class="section-title">نصائح النطق وأسرار المتحدث الأصلي</h2>
+    </div>
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--primary-soft);color:var(--primary);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">استخدم الاختصارات</h3><p>قول <span class="de" data-speak="bei dem">bei dem</span> بدلًا من <span class="de" data-speak="beim">beim</span> يبدو رسميًا جدًا وغير طبيعي في الحديث اليومي.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--secondary-soft);color:var(--secondary-ink);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px"><span class="mono">seit</span> أم <span class="mono">seid</span>؟</h3><p>ينطقان بنفس الطريقة تمامًا! <span class="de" data-speak="seit">seit</span> (حرف جر: منذ) و<span class="de" data-speak="seid">seid</span> (فعل: أنتم). السياق وحده يفرّق بينهما.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--primary-soft);color:var(--primary);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">النبرة على الاسم</h3><p>حرف الجر نفسه كلمة غير منبورة غالبًا؛ النبرة تقع على الاسم الذي يليه: <span class="de" data-speak="mit dem BUS">mit dem BUS</span>.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--case-genitiv-soft);color:var(--case-genitiv);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">وقفة قبل Genitiv</h3><p>في الكلام السريع، المتحدثون الأصليون يتوقفون لحظة قصيرة قبل <span class="de" data-speak="wegen, trotz, während">wegen/trotz/während</span> لأنها تُدخل فكرة جديدة (سبب أو تنازل).</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--case-wechsel-soft);color:var(--case-wechsel);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">استمع لنهاية الأداة</h3><p>الفرق بين <span class="de" data-speak="in die Schule">in die Schule</span> و<span class="de" data-speak="in der Schule">in der Schule</span> يكمن فقط في صوت آخر حرف — درّب أذنك عليه.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--case-akk-soft);color:var(--case-akk);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">للـ + مذكّر فقط</h3><p><span class="de" data-speak="für den">für den</span> ,<span class="de" data-speak="durch den">durch den</span> ,<span class="de" data-speak="um den">um den</span> — لاحظ كيف يتكرّر صوت "-en" فقط مع الأسماء المذكّرة بعد Akkusativ.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="exercises">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>وقت التطبيق</span>
+      <h2 class="section-title">تمارين تفاعلية شاملة</h2>
+      <p class="section-sub">خمسة أنواع من التمارين تغطي المجموعات الأربع بالكامل — بما فيها تمرين خاص بحروف الجر المزدوجة.</p>
+    </div>
+    <div class="exercise-shell reveal">
+      <div class="exercise-tabs" role="tablist">
+        <button class="exercise-tab active" data-panel="panelMcq" role="tab">اختر الأداة <span class="count" id="countMcq">٠/٠</span></button>
+        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الفراغ <span class="count" id="countFill">٠/٠</span></button>
+        <button class="exercise-tab" data-panel="panelBuilder" role="tab">رتّب الجملة <span class="count" id="countBuilder">٠/٠</span></button>
+        <button class="exercise-tab" data-panel="panelMatch" role="tab">طابق المعنى <span class="count" id="countMatch">٠/٠</span></button>
+        <button class="exercise-tab" data-panel="panelWoWohin" role="tab">أين أم إلى أين؟ <span class="count" id="countWoWohin">٠/٠</span></button>
+      </div>
+      <div class="exercise-panels">
+        <div class="exercise-panel active" id="panelMcq"></div>
+        <div class="exercise-panel" id="panelFill"></div>
+        <div class="exercise-panel" id="panelBuilder"></div>
+        <div class="exercise-panel" id="panelMatch"></div>
+        <div class="exercise-panel" id="panelWoWohin"></div>
+      </div>
+      <div class="score-bar-wrap">
+        <span class="score-label">إتقانك للتمارين</span>
+        <div class="score-track"><div class="score-fill" id="scoreFill"></div></div>
+        <span class="score-label mono" id="scoreLabel">٠٪</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="summary">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-star"/></svg>ملخّص الدرس</span>
+      <h2 class="section-title">ما الذي أتقنته اليوم؟</h2>
+    </div>
+    <div class="grid-2 reveal">
+      <ul class="summary-list info-card">
+        <li><span class="icon-chip" style="background:var(--case-akk-soft);color:var(--case-akk)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>Akkusativ دائمًا:</b> <span class="mono">durch, für, gegen, ohne, um, bis, entlang</span> — فقط der→den تتغيّر.</p></li>
+        <li><span class="icon-chip" style="background:var(--case-dativ-soft);color:var(--case-dativ)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>Dativ دائمًا:</b> <span class="mono">aus, bei, mit, nach, seit, von, zu</span> — der→dem, die→der, das→dem, الجمع+n.</p></li>
+        <li><span class="icon-chip" style="background:var(--case-genitiv-soft);color:var(--case-genitiv)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>Genitiv (رسمي):</b> <span class="mono">wegen, trotz, während, statt, innerhalb, außerhalb</span> — الاسم المذكّر/المحايد +s/-es.</p></li>
+        <li><span class="icon-chip" style="background:var(--case-wechsel-soft);color:var(--case-wechsel)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>مزدوجة:</b> <span class="mono">an, auf, hinter, in, neben, über, unter, vor, zwischen</span> — اسأل Wo? أم Wohin؟</p></li>
+      </ul>
+      <div class="info-card" style="display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;background:linear-gradient(155deg, var(--case-akk-soft), var(--case-wechsel-soft))">
+        <svg class="icon" style="width:40px;height:40px;margin:0 auto;color:var(--primary)"><use href="#i-compass"/></svg>
+        <h3 style="justify-content:center;font-size:1.2rem">الدرس القادم</h3>
+        <p>نهايات الصفة (Adjektivendungen) — كيف تتغيّر نهاية الصفة حسب الأداة والجنس والحالة، بما فيها الحالات الأربع التي تعلّمتها اليوم. قريبًا في الدرس الخامس.</p>
+        <button class="btn btn-ghost" disabled style="align-self:center;opacity:.6;cursor:not-allowed">الدرس ٥ (قريبًا)</button>
+      </div>
+    </div>
+    <h3 style="margin-top:40px;text-align:center;font-size:1.3rem" class="reveal">إنجازاتك في هذا الدرس</h3>
+    <div class="badges-row reveal" id="badgesRow"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>الدرس ٤ · مسار الألمانية A2 — دليل حروف الجر الشامل: Akkusativ · Dativ · Genitiv · Wechselpräpositionen.</span>
+    <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس"><svg class="icon"><use href="#i-printer"/></svg></button>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى"><svg class="icon" style="width:20px;height:20px;stroke:#fff"><use href="#i-up"/></svg></button>
+
+<div class="audio-dock" id="audioDock">
+  <div class="audio-dock-controls">
+    <button class="icon-btn" id="dockPlayPause" aria-label="تشغيل/إيقاف مؤقت"><svg class="icon" id="dockPlayIcon"><use href="#i-pause"/></svg></button>
+    <button class="icon-btn" id="dockReplay" aria-label="إعادة"><svg class="icon"><use href="#i-replay"/></svg></button>
+  </div>
+  <span class="audio-dock-text" id="dockText" dir="ltr">…</span>
+  <input type="range" id="dockSpeed" min="0.6" max="1.3" step="0.05" value="0.95" aria-label="سرعة النطق">
+  <span class="audio-dock-voice" id="dockVoice">…</span>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ==========================================================================
+   HELPERS
+   ========================================================================== */
+function qs(sel, el){ return (el||document).querySelector(sel); }
+function qsa(sel, el){ return Array.prototype.slice.call((el||document).querySelectorAll(sel)); }
+function ce(tag, cls, html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!==undefined) e.innerHTML=html; return e; }
+
+var toastWrap = qs('#toastWrap');
+function toast(msg, icon){
+  var t = ce('div','toast', (icon? '<svg class="icon" style="width:16px;height:16px;stroke:var(--bg)"><use href="#'+icon+'"/></svg>':'')+'<span>'+msg+'</span>');
+  toastWrap.appendChild(t);
+  requestAnimationFrame(function(){ t.classList.add('show'); });
+  setTimeout(function(){ t.classList.remove('show'); setTimeout(function(){ t.remove(); }, 400); }, 2600);
+}
+
+/* ==========================================================================
+   THEME
+   ========================================================================== */
+var root = document.documentElement;
+function applyTheme(mode){
+  root.setAttribute('data-theme', mode);
+  try{ localStorage.setItem('prep-guide-theme', mode); }catch(e){}
+}
+(function initTheme(){
+  var saved = null;
+  try{ saved = localStorage.getItem('prep-guide-theme'); }catch(e){}
+  if(saved){ applyTheme(saved); }
+  else{
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
+})();
+qs('#themeToggle').addEventListener('click', function(){
+  var cur = root.getAttribute('data-theme');
+  applyTheme(cur === 'dark' ? 'light' : 'dark');
+});
+
+/* ==========================================================================
+   SPEECH ENGINE (SpeechSynthesis, de-DE)
+   ========================================================================== */
+var Speech = (function(){
+  var voices = [];
+  var chosenVoice = null;
+  var currentUtterance = null;
+  var currentEls = [];
+  var rate = 0.95;
+  var isPaused = false;
+
+  function loadVoices(){
+    voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+    var de = voices.filter(function(v){ return /de-DE|de_DE|German/i.test(v.lang) || /de-DE/i.test(v.lang); });
+    if(!de.length) de = voices.filter(function(v){ return /^de/i.test(v.lang); });
+    var preferredNames = ['Google Deutsch','Anna','Markus','Petra','Yannick','Amala'];
+    var found = null;
+    for(var i=0;i<preferredNames.length && !found;i++){
+      found = de.find(function(v){ return v.name.indexOf(preferredNames[i]) !== -1; });
+    }
+    chosenVoice = found || de[0] || null;
+    var dockVoice = qs('#dockVoice');
+    if(dockVoice) dockVoice.textContent = chosenVoice ? chosenVoice.name : 'صوت النظام الافتراضي';
+  }
+  if(window.speechSynthesis){
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+  }
+
+  function clearHighlights(){
+    currentEls.forEach(function(el){ el.classList.remove('speaking'); });
+    currentEls = [];
+  }
+
+  function speak(text, opts){
+    if(!window.speechSynthesis) { toast('متصفحك لا يدعم النطق الصوتي'); return; }
+    opts = opts || {};
+    window.speechSynthesis.cancel();
+    clearHighlights();
+    if(opts.els) currentEls = opts.els;
+    currentEls.forEach(function(el){ el.classList.add('speaking'); });
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'de-DE';
+    if(chosenVoice) u.voice = chosenVoice;
+    u.rate = rate;
+    u.onend = function(){ clearHighlights(); showDock(false); if(opts.onend) opts.onend(); };
+    u.onerror = function(){ clearHighlights(); };
+    currentUtterance = u;
+    window.speechSynthesis.speak(u);
+    showDock(true, opts.label || text);
+  }
+
+  function replay(){ if(currentUtterance){ speak(currentUtterance.text, {els: currentEls, label: qs('#dockText').textContent}); } }
+  function togglePause(){
+    if(!window.speechSynthesis) return;
+    if(window.speechSynthesis.speaking && !isPaused){ window.speechSynthesis.pause(); isPaused = true; qs('#dockPlayIcon use').setAttribute('href','#i-play'); }
+    else if(isPaused){ window.speechSynthesis.resume(); isPaused = false; qs('#dockPlayIcon use').setAttribute('href','#i-pause'); }
+  }
+  function setRate(r){ rate = r; }
+
+  var dock = qs('#audioDock'), dockText = qs('#dockText');
+  function showDock(visible, label){
+    if(visible){ dock.classList.add('visible'); dockText.textContent = label || ''; qs('#dockPlayIcon use').setAttribute('href','#i-pause'); isPaused=false; }
+    else { dock.classList.remove('visible'); }
+  }
+  qs('#dockPlayPause').addEventListener('click', togglePause);
+  qs('#dockReplay').addEventListener('click', replay);
+  qs('#dockSpeed').addEventListener('input', function(e){ setRate(parseFloat(e.target.value)); if(window.speechSynthesis && window.speechSynthesis.speaking) replay(); });
+
+  return { speak: speak, replay: replay };
+})();
+
+/* generic "click any .de text to speak it" wiring, using data-speak override if present */
+document.addEventListener('click', function(e){
+  var target = e.target.closest ? e.target.closest('[data-speak]') : null;
+  if(target){
+    Speech.speak(target.getAttribute('data-speak'), { els:[target], label: target.getAttribute('data-speak') });
+  }
+});
+
+/* ==========================================================================
+   DATA — Akkusativ / Dativ / Genitiv / Wechsel prepositions
+   ========================================================================== */
+var AKK_PREPS = [
+  { key:'durch', word:'durch', ar:'عبر / من خلال', icon:'i-through', color:'var(--akk-durch)',
+    ex:{ sentence:'Ich gehe durch den Park.', marked:'den Park', ar:'أنا أمشي عبر الحديقة.' } },
+  { key:'fuer', word:'für', ar:'من أجل / لـ', icon:'i-gift', color:'var(--akk-fuer)',
+    ex:{ sentence:'Das Geschenk ist für meinen Bruder.', marked:'meinen Bruder', ar:'الهدية من أجل أخي.' } },
+  { key:'gegen', word:'gegen', ar:'ضدّ', icon:'i-versus', color:'var(--akk-gegen)',
+    ex:{ sentence:'Wir spielen gegen die Nachbarn.', marked:'die Nachbarn', ar:'نلعب ضدّ الجيران.' } },
+  { key:'ohne', word:'ohne', ar:'بدون', icon:'i-no', color:'var(--akk-ohne)',
+    ex:{ sentence:'Er kommt ohne seinen Bruder.', marked:'seinen Bruder', ar:'يأتي بدون أخيه.' } },
+  { key:'um', word:'um', ar:'حول / في تمام الساعة', icon:'i-circle-arrow', color:'var(--akk-um)',
+    ex:{ sentence:'Die Familie sitzt um den Tisch.', marked:'den Tisch', ar:'تجلس العائلة حول الطاولة.' },
+    note:'تُستخدم أيضًا مع الوقت بلا أداة تعريف: Der Unterricht beginnt um 8 Uhr.' },
+  { key:'bis', word:'bis', ar:'حتى', icon:'i-flag', color:'var(--akk-bis)',
+    ex:{ sentence:'Ich bleibe bis nächsten Freitag hier.', marked:'nächsten Freitag', ar:'سأبقى هنا حتى الجمعة القادم.' },
+    note:'غالبًا تُستخدم مع حرف جر آخر للأماكن: bis zum Bahnhof (حتى المحطة).' },
+  { key:'entlang', word:'entlang', ar:'على طول', icon:'i-road', color:'var(--akk-entlang)',
+    ex:{ sentence:'Wir fahren die Straße entlang.', marked:'die Straße', ar:'نقود على طول الشارع.' },
+    note:'يأتي عادة بعد الاسم في حالة Akkusativ؛ ونادرًا قبل الاسم مع Genitiv في اللغة الرسمية.' }
+];
+
+var DAT_PREPS = [
+  { key:'aus', word:'aus', ar:'من (أصل / مصدر)', icon:'i-arrow-out', color:'var(--prep-aus)',
+    ex:{ sentence:'Ich komme aus der Türkei.', marked:'der Türkei', ar:'أنا قادم من تركيا.' } },
+  { key:'bei', word:'bei', ar:'عند / لدى', icon:'i-pin', color:'var(--prep-bei)',
+    ex:{ sentence:'Sie wohnt bei ihrer Tante.', marked:'ihrer Tante', ar:'تسكن عند عمّتها.' } },
+  { key:'mit', word:'mit', ar:'مع / بواسطة', icon:'i-together', color:'var(--prep-mit)',
+    ex:{ sentence:'Ich fahre mit dem Bus.', marked:'dem Bus', ar:'أذهب بواسطة الحافلة.' } },
+  { key:'nach', word:'nach', ar:'إلى (مدينة/بلد) / بعد', icon:'i-target-arrow', color:'var(--prep-nach)',
+    ex:{ sentence:'Wir fliegen nach Berlin.', marked:'Berlin', ar:'نسافر جوًا إلى برلين.' },
+    note:'بلا أداة عادةً مع أسماء المدن والبلدان، وتعني أيضًا "بعد" في الزمن: nach dem Essen.' },
+  { key:'seit', word:'seit', ar:'منذ', icon:'i-clock-since', color:'var(--prep-seit)',
+    ex:{ sentence:'Ich lerne seit zwei Jahren Deutsch.', marked:'zwei Jahren', ar:'أتعلّم الألمانية منذ سنتين.' } },
+  { key:'von', word:'von', ar:'من (ملكية / مصدر)', icon:'i-link', color:'var(--prep-von)',
+    ex:{ sentence:'Das ist das Auto von meinem Vater.', marked:'meinem Vater', ar:'هذه سيارة والدي.' } },
+  { key:'zu', word:'zu', ar:'إلى (شخص / مكان)', icon:'i-compass', color:'var(--prep-zu)',
+    ex:{ sentence:'Ich gehe zu meinem Arzt.', marked:'meinem Arzt', ar:'أذهب إلى طبيبي.' } }
+];
+
+var GEN_PREPS = [
+  { key:'wegen', word:'wegen', ar:'بسبب', icon:'i-cause', color:'var(--gen-wegen)',
+    ex:{ sentence:'Wegen des Regens bleiben wir zu Hause.', marked:'des Regens', ar:'بسبب المطر، نبقى في البيت.' } },
+  { key:'trotz', word:'trotz', ar:'رغم / بالرغم من', icon:'i-umbrella', color:'var(--gen-trotz)',
+    ex:{ sentence:'Trotz der Kälte gehen wir spazieren.', marked:'der Kälte', ar:'رغم البرودة، نذهب في نزهة.' } },
+  { key:'waehrend', word:'während', ar:'أثناء / خلال', icon:'i-hourglass', color:'var(--gen-waehrend)',
+    ex:{ sentence:'Während des Films hat er geschlafen.', marked:'des Films', ar:'أثناء الفيلم، كان نائمًا.' } },
+  { key:'statt', word:'statt', ar:'بدلاً من', icon:'i-swap', color:'var(--gen-statt)',
+    ex:{ sentence:'Statt eines Kaffees trinke ich einen Tee.', marked:'eines Kaffees', ar:'بدلاً من قهوة، أشرب شايًا.' } },
+  { key:'innerhalb', word:'innerhalb', ar:'خلال / داخل (فترة)', icon:'i-box-in', color:'var(--gen-innerhalb)',
+    ex:{ sentence:'Innerhalb einer Woche bekommen Sie die Antwort.', marked:'einer Woche', ar:'خلال أسبوع واحد ستحصلون على الرد.' } },
+  { key:'ausserhalb', word:'außerhalb', ar:'خارج', icon:'i-box-out', color:'var(--gen-ausserhalb)',
+    ex:{ sentence:'Das Haus liegt außerhalb der Stadt.', marked:'der Stadt', ar:'يقع البيت خارج المدينة.' } }
+];
+
+var WECHSEL_PREPS = [
+  { key:'an', word:'an', ar:'على / عند (سطح رأسي)', sceneLabel:'die Wand',
+    wo:{ sentence:'Das Bild hängt an der Wand.', marked:'der Wand', ar:'اللوحة معلّقة على الجدار.' },
+    wohin:{ sentence:'Ich hänge das Bild an die Wand.', marked:'die Wand', ar:'أُعلّق اللوحة على الجدار.' },
+    verbNote:'hängen (وصف حالة سكون) / hängen (فعل بحركة) — نفس الفعل، بمعنيين مختلفين.' },
+  { key:'auf', word:'auf', ar:'على (سطح أفقي)', sceneLabel:'der Tisch',
+    wo:{ sentence:'Das Buch liegt auf dem Tisch.', marked:'dem Tisch', ar:'الكتاب على الطاولة.' },
+    wohin:{ sentence:'Ich lege das Buch auf den Tisch.', marked:'den Tisch', ar:'أضع الكتاب على الطاولة.' },
+    verbNote:'liegen (سكون) / legen (حركة).' },
+  { key:'hinter', word:'hinter', ar:'خلف', sceneLabel:'das Haus',
+    wo:{ sentence:'Der Ball ist hinter dem Haus.', marked:'dem Haus', ar:'الكرة خلف البيت.' },
+    wohin:{ sentence:'Der Ball rollt hinter das Haus.', marked:'das Haus', ar:'تتدحرج الكرة إلى خلف البيت.' } },
+  { key:'in', word:'in', ar:'في / داخل', sceneLabel:'die Schule',
+    wo:{ sentence:'Die Kinder sind in der Schule.', marked:'der Schule', ar:'الأطفال في المدرسة.' },
+    wohin:{ sentence:'Die Kinder gehen in die Schule.', marked:'die Schule', ar:'يذهب الأطفال إلى المدرسة.' } },
+  { key:'neben', word:'neben', ar:'بجانب', sceneLabel:'der Schrank',
+    wo:{ sentence:'Der Stuhl steht neben dem Schrank.', marked:'dem Schrank', ar:'الكرسي بجانب الخزانة.' },
+    wohin:{ sentence:'Ich stelle den Stuhl neben den Schrank.', marked:'den Schrank', ar:'أضع الكرسي بجانب الخزانة.' },
+    verbNote:'stehen (سكون) / stellen (حركة).' },
+  { key:'ueber', word:'über', ar:'فوق (بلا ملامسة)', sceneLabel:'der Tisch',
+    wo:{ sentence:'Die Lampe hängt über dem Tisch.', marked:'dem Tisch', ar:'المصباح معلّق فوق الطاولة.' },
+    wohin:{ sentence:'Ich hänge die Lampe über den Tisch.', marked:'den Tisch', ar:'أُعلّق المصباح فوق الطاولة.' } },
+  { key:'unter', word:'unter', ar:'تحت', sceneLabel:'das Bett',
+    wo:{ sentence:'Die Katze schläft unter dem Bett.', marked:'dem Bett', ar:'القطة نائمة تحت السرير.' },
+    wohin:{ sentence:'Die Katze läuft unter das Bett.', marked:'das Bett', ar:'تجري القطة إلى تحت السرير.' } },
+  { key:'vor', word:'vor', ar:'أمام', sceneLabel:'das Haus',
+    wo:{ sentence:'Das Auto steht vor dem Haus.', marked:'dem Haus', ar:'السيارة أمام البيت.' },
+    wohin:{ sentence:'Ich fahre das Auto vor das Haus.', marked:'das Haus', ar:'أقود السيارة إلى أمام البيت.' } },
+  { key:'zwischen', word:'zwischen', ar:'بين', sceneLabel:'die Eltern',
+    wo:{ sentence:'Das Kind sitzt zwischen den Eltern.', marked:'den Eltern', ar:'يجلس الطفل بين والديه.' },
+    wohin:{ sentence:'Das Kind setzt sich zwischen die Eltern.', marked:'die Eltern', ar:'يجلس الطفل بين والديه.' },
+    verbNote:'sitzen (سكون) / setzen (حركة).' }
+];
+
+var WECHSEL_SCENE = {
+  an:      { mode:'single', box:{x:66,y:18,w:14,h:112}, target:{x:88,y:74}, start:{x:175,y:22} },
+  auf:     { mode:'single', box:{x:40,y:92,w:120,h:12}, target:{x:100,y:76}, start:{x:20,y:20} },
+  hinter:  { mode:'single', box:{x:58,y:48,w:84,h:54}, target:{x:148,y:60}, start:{x:190,y:105}, behind:true },
+  'in':    { mode:'single', box:{x:55,y:38,w:90,h:74}, target:{x:100,y:75}, start:{x:14,y:14} },
+  neben:   { mode:'single', box:{x:48,y:48,w:70,h:58}, target:{x:152,y:77}, start:{x:152,y:14} },
+  ueber:   { mode:'single', box:{x:55,y:88,w:90,h:44}, target:{x:100,y:44}, start:{x:18,y:118} },
+  unter:   { mode:'single', box:{x:55,y:24,w:90,h:44}, target:{x:100,y:112}, start:{x:18,y:18} },
+  vor:     { mode:'single', box:{x:55,y:34,w:90,h:56}, target:{x:100,y:112}, start:{x:100,y:18} },
+  zwischen:{ mode:'double', box:{x:28,y:44,w:44,h:56}, box2:{x:128,y:44,w:44,h:56}, target:{x:100,y:72}, start:{x:100,y:12} }
+};
+
+var VERB_PAIRS = [
+  { akk:'legen', akkAr:'يضع (شيئًا) بشكل مستلقٍ', dat:'liegen', datAr:'يكون مستلقيًا / موجودًا' },
+  { akk:'stellen', akkAr:'يضع (شيئًا) بشكل واقف', dat:'stehen', datAr:'يقف / يكون واقفًا' },
+  { akk:'setzen', akkAr:'يُجلس (شخصًا/نفسه)', dat:'sitzen', datAr:'يجلس / يكون جالسًا' },
+  { akk:'hängen', akkAr:'يُعلّق (شيئًا) — فعل ضعيف: hängte, gehängt', dat:'hängen', datAr:'يكون معلّقًا — فعل قوي: hing, gehangen' },
+  { akk:'stecken', akkAr:'يُدخل (شيئًا) في مكان', dat:'stecken', datAr:'يكون داخل شيء / مغروزًا' }
+];
+
+var VOCAB_VERBS = [
+  { word:'helfen', ar:'يساعد (+Dativ)', color:'var(--prep-aus)', ex:'Ich helfe dir.' },
+  { word:'danken', ar:'يشكر (+Dativ)', color:'var(--prep-bei)', ex:'Ich danke Ihnen.' },
+  { word:'gefallen', ar:'يعجب (+Dativ)', color:'var(--prep-mit)', ex:'Das Kleid gefällt mir.' },
+  { word:'gehören', ar:'يخصّ / ينتمي إلى (+Dativ)', color:'var(--prep-nach)', ex:'Das Buch gehört ihm.' },
+  { word:'schmecken', ar:'يبدو طعمه (+Dativ)', color:'var(--prep-seit)', ex:'Der Kuchen schmeckt uns.' }
+];
+
+var CONTRACTIONS = [
+  { full:'in dem', short:'im', group:'dativ' },
+  { full:'an dem', short:'am', group:'dativ' },
+  { full:'bei dem', short:'beim', group:'dativ' },
+  { full:'von dem', short:'vom', group:'dativ' },
+  { full:'zu dem', short:'zum', group:'dativ' },
+  { full:'zu der', short:'zur', group:'dativ' },
+  { full:'in das', short:'ins', group:'akk' },
+  { full:'an das', short:'ans', group:'akk' },
+  { full:'auf das', short:'aufs', group:'akk' },
+  { full:'um das', short:'ums', group:'akk' },
+  { full:'durch das', short:'durchs', group:'akk' },
+  { full:'für das', short:'fürs', group:'akk' }
+];
+
+var MASTER_ROWS = [
+  { name:'Akkusativ', badge:'دائمًا Akkusativ', color:'var(--case-akk)', preps:'durch, für, gegen, ohne, um, bis, entlang', tip:'فقط der ← den تتغيّر' },
+  { name:'Dativ', badge:'دائمًا Dativ', color:'var(--case-dativ)', preps:'aus, bei, mit, nach, seit, von, zu', tip:'der←dem، die←der، das←dem' },
+  { name:'Genitiv', badge:'دائمًا Genitiv (أو Dativ بالعامية)', color:'var(--case-genitiv)', preps:'wegen, trotz, während, statt, innerhalb, außerhalb', tip:'الاسم المذكّر/المحايد +s / -es' },
+  { name:'Wechsel', badge:'Dativ أو Akkusativ', color:'var(--case-wechsel)', preps:'an, auf, hinter, in, neben, über, unter, vor, zwischen', tip:'اسأل: Wo؟ أم Wohin؟' }
+];
+
+var MISTAKES = [
+  { group:'akk', color:'var(--case-akk)', groupLabel:'Akkusativ',
+    wrong:'Ich gehe durch der Park.', right:'Ich gehe durch den Park.',
+    note:'durch يتطلّب Akkusativ دائمًا، والمذكّر يتحوّل من der إلى den.' },
+  { group:'akk', color:'var(--case-akk)', groupLabel:'Akkusativ',
+    wrong:'Das Geschenk ist für ich.', right:'Das Geschenk ist für mich.',
+    note:'بعد für نستخدم ضمير النصب mich، وليس ich.' },
+  { group:'dativ', color:'var(--case-dativ)', groupLabel:'Dativ',
+    wrong:'Ich fahre mit den Bus.', right:'Ich fahre mit dem Bus.',
+    note:'mit يتطلّب Dativ دائمًا: der يتحوّل إلى dem.' },
+  { group:'genitiv', color:'var(--case-genitiv)', groupLabel:'Genitiv',
+    wrong:'wegen des Regen', right:'wegen des Regens',
+    note:'الأسماء المذكّرة/المحايدة تحتاج نهاية -s أو -es في حالة Genitiv.' },
+  { group:'genitiv', color:'var(--case-genitiv)', groupLabel:'Genitiv',
+    wrong:'trotz dem Wetter (عامية)', right:'trotz des Wetters (فصيح)',
+    note:'في الكتابة الرسمية والامتحانات استخدم Genitiv وليس Dativ.' },
+  { group:'wechsel', color:'var(--case-wechsel)', groupLabel:'Wechsel',
+    wrong:'Ich gehe in der Schule.', right:'Ich gehe in die Schule.',
+    note:'الفعل gehen يدلّ على حركة، لذا نستخدم Akkusativ (Wohin؟) وليس Dativ.' },
+  { group:'wechsel', color:'var(--case-wechsel)', groupLabel:'Wechsel',
+    wrong:'Das Buch ist auf den Tisch.', right:'Das Buch ist auf dem Tisch.',
+    note:'الفعل sein يدلّ على سكون، لذا Dativ (Wo؟) هو الصحيح هنا.' },
+  { group:'wechsel', color:'var(--case-wechsel)', groupLabel:'Wechsel',
+    wrong:'Ich liege das Buch auf den Tisch.', right:'Ich lege das Buch auf den Tisch.',
+    note:'liegen فعل سكون ولا يأخذ مفعولاً به؛ الفعل الصحيح مع الحركة هو legen.' }
+];
+
+/* ==========================================================================
+   EXERCISE DATA
+   ========================================================================== */
+var MCQ = [
+  { sentence:'Ich gehe durch ___ Park.', options:['den','dem','der'], correct:'den', ar:'أنا أمشي عبر الحديقة.', explain:'durch + Akkusativ، وPark مذكّر ← den.' },
+  { sentence:'Das Geschenk ist für ___ Bruder.', options:['der','den','dem'], correct:'den', ar:'الهدية من أجل أخي.', explain:'für + Akkusativ دائمًا.' },
+  { sentence:'Wir spielen gegen ___ Mannschaft.', options:['die','der','den'], correct:'die', ar:'نلعب ضدّ الفريق.', explain:'Mannschaft مؤنثة، وتبقى die في Akkusativ.' },
+  { sentence:'Die Familie sitzt um ___ Tisch.', options:['den','dem','der'], correct:'den', ar:'تجلس العائلة حول الطاولة.', explain:'um + Akkusativ، وTisch مذكّر ← den.' },
+  { sentence:'Ich komme aus ___ Schweiz.', options:['die','der','den'], correct:'der', ar:'أنا قادم من سويسرا.', explain:'aus + Dativ، وSchweiz مؤنثة ← der.' },
+  { sentence:'Er fährt mit ___ Fahrrad.', options:['das','dem','den'], correct:'dem', ar:'يذهب بالدراجة.', explain:'mit + Dativ، وFahrrad محايد ← dem.' },
+  { sentence:'Wir wohnen seit ___ Jahr hier.', options:['ein','einem','einen'], correct:'einem', ar:'نسكن هنا منذ سنة.', explain:'seit + Dativ، فتصبح ein → einem.' },
+  { sentence:'Ich gehe zu ___ Ärztin.', options:['die','der','den'], correct:'der', ar:'أذهب إلى الطبيبة.', explain:'zu + Dativ، وÄrztin مؤنثة ← der.' },
+  { sentence:'Wegen ___ Wetters bleiben wir hier.', options:['der','des','dem'], correct:'des', ar:'بسبب الطقس نبقى هنا.', explain:'wegen + Genitiv، وWetter محايد ← des Wetters.' },
+  { sentence:'Trotz ___ Probleme kommt er.', options:['der','des','die'], correct:'der', ar:'رغم المشاكل يأتي.', explain:'الجمع في Genitiv يأخذ دائمًا der.' },
+  { sentence:'Während ___ Reise haben wir viel gesehen.', options:['der','des','die'], correct:'der', ar:'أثناء الرحلة رأينا الكثير.', explain:'Reise مؤنثة، فتصبح die → der في Genitiv.' },
+  { sentence:'Statt ___ Autos kauft er ein Fahrrad.', options:['der','des','dem'], correct:'des', ar:'بدلاً من السيارة يشتري دراجة.', explain:'Auto محايد، فيصبح das → des Autos في Genitiv.' },
+  { sentence:'Die Kinder gehen in ___ Schule.', options:['die','der','dem'], correct:'die', ar:'يذهب الأطفال إلى المدرسة.', explain:'gehen = حركة ← Wohin؟ ← Akkusativ ← die.' },
+  { sentence:'Das Buch liegt auf ___ Tisch.', options:['den','dem','der'], correct:'dem', ar:'الكتاب على الطاولة.', explain:'liegen = سكون ← Wo؟ ← Dativ ← dem.' },
+  { sentence:'Ich hänge das Bild an ___ Wand.', options:['die','der','dem'], correct:'die', ar:'أُعلّق اللوحة على الجدار.', explain:'hängen هنا فعل حركة (أنا أقوم بالتعليق) ← Akkusativ ← die.' },
+  { sentence:'Die Katze schläft unter ___ Bett.', options:['das','dem','den'], correct:'dem', ar:'القطة نائمة تحت السرير.', explain:'schlafen = سكون ← Wo؟ ← Dativ ← dem.' }
+];
+
+var FILL = [
+  { sentence:'Ich fahre ___ Auto zur Arbeit.', answer:'mit dem', ar:'أذهب بالسيارة إلى العمل.' },
+  { sentence:'Er kommt ___ Iran.', answer:'aus dem', ar:'يأتي من إيران.' },
+  { sentence:'Wir gehen ___ Kino.', answer:'ins', ar:'نذهب إلى السينما.' },
+  { sentence:'Das Auto steht ___ Haus.', answer:'vor dem', ar:'السيارة أمام البيت.' },
+  { sentence:'___ Regens bleiben wir zu Hause.', answer:'Wegen des', ar:'بسبب المطر نبقى في البيت.' },
+  { sentence:'Ich warte ___ Bushaltestelle.', answer:'an der', ar:'أنتظر عند موقف الحافلة.' },
+  { sentence:'Sie legt das Handy ___ Tisch.', answer:'auf den', ar:'تضع الهاتف على الطاولة.' },
+  { sentence:'___ Kälte gehen wir schwimmen.', answer:'Trotz der', ar:'رغم البرودة نذهب للسباحة.' },
+  { sentence:'Ich bleibe ___ nächsten Montag.', answer:'bis', ar:'سأبقى حتى الاثنين القادم.' },
+  { sentence:'Das Geschenk ist ___ dich.', answer:'für', ar:'الهدية لك.' },
+  { sentence:'Wir laufen ___ Fluss entlang.', answer:'den', ar:'نمشي على طول النهر.' },
+  { sentence:'Er wohnt schon ___ zehn Jahren hier.', answer:'seit', ar:'يسكن هنا منذ عشر سنوات.' },
+  { sentence:'___ einer Woche antworte ich dir.', answer:'Innerhalb', ar:'خلال أسبوع سأرد عليك.' },
+  { sentence:'Die Lampe hängt ___ Tisch.', answer:'über dem', ar:'المصباح معلّق فوق الطاولة.' }
+];
+
+var BUILDER = [
+  { words:['Ich','gehe','durch','den','Park','.'], ar:'أنا أمشي عبر الحديقة.' },
+  { words:['Wir','wohnen','seit','zwei','Jahren','hier','.'], ar:'نسكن هنا منذ سنتين.' },
+  { words:['Wegen','des','Regens','bleiben','wir','zu','Hause','.'], ar:'بسبب المطر نبقى في البيت.' },
+  { words:['Die','Kinder','gehen','in','die','Schule','.'], ar:'يذهب الأطفال إلى المدرسة.' },
+  { words:['Das','Buch','liegt','auf','dem','Tisch','.'], ar:'الكتاب على الطاولة.' },
+  { words:['Trotz','der','Kälte','gehen','wir','spazieren','.'], ar:'رغم البرودة نتمشّى.' },
+  { words:['Ich','fahre','mit','dem','Bus','zur','Arbeit','.'], ar:'أذهب بالحافلة إلى العمل.' },
+  { words:['Das','Auto','steht','vor','dem','Haus','.'], ar:'السيارة أمام البيت.' }
+];
+
+var MATCH_ITEMS = [
+  { de:'durch', ar:'عبر / من خلال' },
+  { de:'für', ar:'من أجل' },
+  { de:'ohne', ar:'بدون' },
+  { de:'aus', ar:'من (أصل)' },
+  { de:'mit', ar:'مع' },
+  { de:'nach', ar:'إلى (مدينة) / بعد' },
+  { de:'zu', ar:'إلى (شخص/مكان)' },
+  { de:'wegen', ar:'بسبب' },
+  { de:'trotz', ar:'رغم' },
+  { de:'in', ar:'في / داخل' },
+  { de:'auf', ar:'على' },
+  { de:'unter', ar:'تحت' }
+];
+
+var WOWOHIN = [
+  { sentence:'Ich hänge das Bild an ___ Wand.', correctMode:'wohin', correctArticle:'die', ar:'أُعلّق اللوحة على الجدار.' },
+  { sentence:'Das Buch liegt auf ___ Tisch.', correctMode:'wo', correctArticle:'dem', ar:'الكتاب على الطاولة.' },
+  { sentence:'Der Ball rollt hinter ___ Haus.', correctMode:'wohin', correctArticle:'das', ar:'تتدحرج الكرة إلى خلف البيت.' },
+  { sentence:'Die Kinder sind in ___ Schule.', correctMode:'wo', correctArticle:'der', ar:'الأطفال في المدرسة.' },
+  { sentence:'Ich stelle den Stuhl neben ___ Schrank.', correctMode:'wohin', correctArticle:'den', ar:'أضع الكرسي بجانب الخزانة.' },
+  { sentence:'Die Lampe hängt über ___ Tisch.', correctMode:'wo', correctArticle:'dem', ar:'المصباح معلّق فوق الطاولة.' },
+  { sentence:'Die Katze läuft unter ___ Bett.', correctMode:'wohin', correctArticle:'das', ar:'تجري القطة إلى تحت السرير.' },
+  { sentence:'Das Auto steht vor ___ Haus.', correctMode:'wo', correctArticle:'dem', ar:'السيارة أمام البيت.' },
+  { sentence:'Das Kind setzt sich zwischen ___ Eltern.', correctMode:'wohin', correctArticle:'die', ar:'يجلس الطفل بين والديه.' }
+];
+
+/* ==========================================================================
+   ARTICLE / PRONOUN TABLE DATA
+   ========================================================================== */
+var ARTICLE_AKK = { headers:['','Nominativ','Akkusativ'], rows:[
+  ['مذكّر','der / ein','den / einen'],
+  ['مؤنث','die / eine','die / eine'],
+  ['محايد','das / ein','das / ein'],
+  ['جمع','die','die']
+]};
+var ARTICLE_DAT = { headers:['','Nominativ','Dativ'], rows:[
+  ['مذكّر','der / ein','dem / einem'],
+  ['مؤنث','die / eine','der / einer'],
+  ['محايد','das / ein','dem / einem'],
+  ['جمع','die','den (+n)']
+]};
+var PRONOUN_DAT = { headers:['Nominativ','Dativ'], rows:[
+  ['ich','mir'],['du','dir'],['er','ihm'],['sie','ihr'],['es','ihm'],['wir','uns'],['ihr','euch'],['sie / Sie','ihnen / Ihnen']
+]};
+var ARTICLE_GEN = { headers:['','Nominativ','Genitiv'], rows:[
+  ['مذكّر','der','des (+s/es)'],
+  ['مؤنث','die','der'],
+  ['محايد','das','des (+s/es)'],
+  ['جمع','die','der']
+]};
+
+/* ==========================================================================
+   GENERIC RENDER HELPERS
+   ========================================================================== */
+function renderTable(el, data, opts){
+  opts = opts || {};
+  var html = '<tr>' + data.headers.map(function(h){ return '<th>'+h+'</th>'; }).join('') + '</tr>';
+  data.rows.forEach(function(row){
+    html += '<tr>' + row.map(function(cell, i){
+      var isDe = opts.deCols ? opts.deCols.indexOf(i) !== -1 : i>0;
+      return '<td class="'+(isDe?'de':'')+'"'+(isDe?' data-speak="'+cell.replace(/"/g,'')+'"':'')+'>'+cell+'</td>';
+    }).join('') + '</tr>';
+  });
+  el.innerHTML = html;
+}
+
+function renderCaseSentence(container, sentence, marked, color, ar, opts){
+  opts = opts || {};
+  container.innerHTML = '';
+  var wrap = ce('div','route-sentence');
+  var idx = sentence.indexOf(marked);
+  var before = idx>=0 ? sentence.slice(0, idx).trim() : '';
+  var after = idx>=0 ? sentence.slice(idx+marked.length).trim() : sentence;
+  function addWords(text){
+    if(!text) return;
+    text.split(' ').forEach(function(w){
+      if(!w) return;
+      var span = ce('span','rs-word', w);
+      span.addEventListener('click', function(){ Speech.speak(w, {els:[span]}); });
+      wrap.appendChild(span);
+    });
+  }
+  addWords(before);
+  if(idx>=0){
+    var markedSpan = ce('span','rs-case-noun', marked);
+    markedSpan.style.setProperty('--case-marker', color);
+    markedSpan.addEventListener('click', function(){ Speech.speak(marked, {els:[markedSpan]}); });
+    wrap.appendChild(markedSpan);
+  }
+  addWords(after);
+  container.appendChild(wrap);
+  if(ar){
+    var arP = ce('p','route-ar', ar);
+    arP.style.marginTop = '14px';
+    container.appendChild(arP);
+  }
+  var playBtn = ce('button','btn btn-primary btn-sm', '<svg class="icon" style="width:16px;height:16px"><use href="#i-speaker"/></svg> استمع للجملة كاملة');
+  playBtn.style.marginTop = '14px';
+  playBtn.addEventListener('click', function(){ Speech.speak(sentence, {label:sentence}); });
+  container.appendChild(playBtn);
+  if(opts.note){
+    var noteEl = ce('div','route-note', opts.note);
+    container.appendChild(noteEl);
+  }
+}
+
+function renderRouteCard(container, item, color, caseLabel){
+  container.innerHTML = '';
+  var tag = ce('span','route-tag', caseLabel);
+  tag.style.background = color;
+  container.appendChild(tag);
+  var title = ce('div','route-title de', item.word);
+  title.addEventListener('click', function(){ Speech.speak(item.word, {els:[title]}); });
+  container.appendChild(title);
+  var ar = ce('div','route-ar', item.ar);
+  container.appendChild(ar);
+  var box = ce('div','route-sentence-box');
+  container.appendChild(box);
+  renderCaseSentence(box, item.ex.sentence, item.ex.marked, color, item.ex.ar, { note:item.note });
+}
+
+/* ==========================================================================
+   GENERIC COMPASS (reused for Akkusativ / Dativ / Genitiv)
+   ========================================================================== */
+function buildCompass(faceEl, cardEl, items, defaultColor, caseLabel){
+  faceEl.innerHTML = '';
+  var ring = ce('div','compass-ring'); faceEl.appendChild(ring);
+  var needle = ce('div','compass-needle'); needle.style.background = defaultColor; faceEl.appendChild(needle);
+  var n = items.length;
+  var points = [];
+  items.forEach(function(item, i){
+    var angle = (360/n)*i - 90;
+    var rad = angle * Math.PI/180;
+    var x = 50 + 38*Math.cos(rad);
+    var y = 50 + 38*Math.sin(rad);
+    var pt = ce('button','compass-point', item.word);
+    pt.style.left = x+'%'; pt.style.top = y+'%';
+    pt.style.background = item.color || defaultColor;
+    pt.style.setProperty('--point-glow', (item.color||defaultColor));
+    pt.type = 'button';
+    pt.setAttribute('aria-label', item.word);
+    pt.addEventListener('click', function(){
+      qsa('.compass-point', faceEl).forEach(function(p){ p.classList.remove('active'); });
+      pt.classList.add('active');
+      needle.style.transform = 'translate(-50%,-100%) rotate('+(angle+90)+'deg)';
+      needle.style.background = item.color || defaultColor;
+      cardEl.classList.add('focusing');
+      setTimeout(function(){
+        renderRouteCard(cardEl, item, item.color||defaultColor, caseLabel);
+        cardEl.classList.remove('focusing');
+      }, 150);
+      markVisited('navigator');
+    });
+    faceEl.appendChild(pt);
+    points.push(pt);
+  });
+  var pivot = ce('div','compass-pivot'); faceEl.appendChild(pivot);
+  points[0].click();
+}
+
+/* ==========================================================================
+   WECHSEL — interactive Wo/Wohin scene
+   ========================================================================== */
+var wechselState = { key:'an', mode:'wo' };
+
+function renderWechselPicker(){
+  var wrap = qs('#wechselPicker');
+  wrap.innerHTML = '';
+  WECHSEL_PREPS.forEach(function(p){
+    var btn = ce('button','prep-picker-btn de', p.word);
+    btn.type = 'button';
+    if(p.key === wechselState.key) btn.classList.add('active');
+    btn.addEventListener('click', function(){
+      wechselState.key = p.key;
+      qsa('.prep-picker-btn', wrap).forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      updateWechselDisplay(true);
+      markVisited('navigator');
+    });
+    wrap.appendChild(btn);
+  });
+}
+
+function svgEl(tag, attrs){
+  var el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  Object.keys(attrs||{}).forEach(function(k){ el.setAttribute(k, attrs[k]); });
+  return el;
+}
+
+function drawWechselScene(){
+  var svg = qs('#wechselScene');
+  svg.innerHTML = '';
+  var cfg = WECHSEL_SCENE[wechselState.key];
+  var prep = WECHSEL_PREPS.filter(function(p){ return p.key===wechselState.key; })[0];
+
+  if(cfg.mode === 'double'){
+    svg.appendChild(svgEl('rect', Object.assign({class:'ws-box'}, {x:cfg.box.x,y:cfg.box.y,width:cfg.box.w,height:cfg.box.h,rx:6})));
+    svg.appendChild(svgEl('rect', Object.assign({class:'ws-box'}, {x:cfg.box2.x,y:cfg.box2.y,width:cfg.box2.w,height:cfg.box2.h,rx:6})));
+  } else {
+    var boxAttrs = {x:cfg.box.x, y:cfg.box.y, width:cfg.box.w, height:cfg.box.h, rx:6};
+    var boxEl = svgEl('rect', boxAttrs);
+    boxEl.setAttribute('class', 'ws-box' + (cfg.behind? ' behind':''));
+    if(cfg.behind){
+      // draw dot group first for a sense of depth, then box on top with reduced opacity
+    }
+    if(!cfg.behind) svg.appendChild(boxEl);
+  }
+  var label = svgEl('text', Object.assign({class:'ws-label', 'text-anchor':'middle'}, { x: cfg.mode==='double' ? 100 : (cfg.box.x+cfg.box.w/2), y: cfg.mode==='double' ? 138 : Math.min(cfg.box.y+cfg.box.h+14, 144) }));
+  label.textContent = prep.sceneLabel;
+  svg.appendChild(label);
+
+  var g = svgEl('g', {class:'ws-dot-g'});
+  var dot = svgEl('circle', {class:'ws-dot', r:11});
+  var pulse = svgEl('circle', {class:'ws-dot-pulse'});
+  g.appendChild(dot); g.appendChild(pulse);
+  svg.appendChild(g);
+  if(cfg.behind) svg.appendChild(boxEl);
+
+  var pos = wechselState.mode === 'wohin' ? cfg.start : cfg.target;
+  g.setAttribute('transform','translate('+pos.x+','+pos.y+')');
+  dot.setAttribute('class','ws-dot state-'+wechselState.mode);
+
+  if(wechselState.mode === 'wohin'){
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        g.style.transition = 'transform .85s cubic-bezier(.34,1.4,.4,1)';
+        g.setAttribute('transform','translate('+cfg.target.x+','+cfg.target.y+')');
+        g.classList.add('pulsing');
+        setTimeout(function(){ g.classList.remove('pulsing'); }, 1200);
+      });
+    });
+  }
+}
+
+function updateWechselDisplay(animate){
+  drawWechselScene();
+  var prep = WECHSEL_PREPS.filter(function(p){ return p.key===wechselState.key; })[0];
+  var data = wechselState.mode === 'wo' ? prep.wo : prep.wohin;
+  var color = wechselState.mode === 'wo' ? 'var(--case-dativ)' : 'var(--case-akk)';
+  var caseLabel = wechselState.mode === 'wo' ? 'Wo? → Dativ' : 'Wohin? → Akkusativ';
+  var card = qs('#wechselCard');
+  card.classList.add('focusing');
+  setTimeout(function(){
+    renderRouteCard(card, { word:prep.word, ar:prep.ar, ex:data, note:prep.verbNote }, color, caseLabel);
+    card.classList.remove('focusing');
+  }, animate ? 120 : 0);
+  qsa('.toggle-btn', qs('#woWohinToggle')).forEach(function(b){
+    b.classList.toggle('active', b.getAttribute('data-mode') === wechselState.mode);
+  });
+}
+
+qsa('.toggle-btn', qs('#woWohinToggle')).forEach(function(btn){
+  btn.addEventListener('click', function(){
+    wechselState.mode = btn.getAttribute('data-mode');
+    updateWechselDisplay(true);
+    markVisited('wechselMeister');
+  });
+});
+
+/* ==========================================================================
+   CONTRACTIONS / MASTER TABLE / VERB PAIRS
+   ========================================================================== */
+function renderContractions(){
+  var grid = qs('#contractionsGrid');
+  grid.innerHTML = '';
+  CONTRACTIONS.forEach(function(c){
+    var color = c.group === 'akk' ? 'var(--case-akk)' : 'var(--case-dativ)';
+    var label = c.group === 'akk' ? 'Akkusativ' : 'Dativ';
+    var card = ce('div','contraction-card');
+    var eq = ce('div','contraction-eq de', c.full+' = '+c.short);
+    eq.addEventListener('click', function(){ Speech.speak(c.short, {els:[eq]}); });
+    card.appendChild(eq);
+    card.appendChild(ce('div','contraction-parts', c.full+' → '+c.short));
+    var tag = ce('span','contraction-case-tag', label);
+    tag.style.background = color;
+    card.appendChild(tag);
+    grid.appendChild(card);
+  });
+}
+
+function renderMasterTable(){
+  var el = qs('#masterTable');
+  var html = '<tr><th>المجموعة</th><th>الحالة النحوية</th><th>حروف الجر</th><th>كيف تتذكّرها</th></tr>';
+  MASTER_ROWS.forEach(function(r){
+    html += '<tr><td><b style="color:'+r.color+'">'+r.name+'</b></td><td>'+r.badge+'</td><td class="de" style="direction:ltr;font-size:.92rem">'+r.preps+'</td><td>'+r.tip+'</td></tr>';
+  });
+  el.innerHTML = html;
+}
+
+function renderVerbPairsTable(){
+  var el = qs('#verbPairsTable');
+  var html = '<tr><th style="color:var(--case-akk)">فعل الحركة (Akkusativ)</th><th style="color:var(--case-dativ)">فعل السكون (Dativ)</th></tr>';
+  VERB_PAIRS.forEach(function(v){
+    html += '<tr><td class="de" data-speak="'+v.akk+'" style="font-size:1.1rem;font-weight:700;color:var(--case-akk)">'+v.akk+'<br><span style="font-family:var(--font-ar-body);font-size:.8rem;font-weight:400;color:var(--ink-soft)">'+v.akkAr+'</span></td>'+
+      '<td class="de" data-speak="'+v.dat+'" style="font-size:1.1rem;font-weight:700;color:var(--case-dativ)">'+v.dat+'<br><span style="font-family:var(--font-ar-body);font-size:.8rem;font-weight:400;color:var(--ink-soft)">'+v.datAr+'</span></td></tr>';
+  });
+  el.innerHTML = html;
+}
+
+/* ==========================================================================
+   VOCAB GRID (filterable flip cards)
+   ========================================================================== */
+var VOCAB_FILTERS = [
+  { key:'all', label:'الكل', color:'var(--ink)' },
+  { key:'akk', label:'Akkusativ', color:'var(--case-akk)' },
+  { key:'dativ', label:'Dativ', color:'var(--case-dativ)' },
+  { key:'genitiv', label:'Genitiv', color:'var(--case-genitiv)' },
+  { key:'wechsel', label:'Wechsel', color:'var(--case-wechsel)' },
+  { key:'verbs', label:'أفعال Dativ', color:'var(--prep-nach)' }
+];
+var vocabActiveFilter = 'all';
+
+function buildVocabItems(){
+  var items = [];
+  AKK_PREPS.forEach(function(p){ items.push({ group:'akk', color:p.color, word:p.word, ar:p.ar, ex:p.ex.sentence }); });
+  DAT_PREPS.forEach(function(p){ items.push({ group:'dativ', color:p.color, word:p.word, ar:p.ar, ex:p.ex.sentence }); });
+  GEN_PREPS.forEach(function(p){ items.push({ group:'genitiv', color:p.color, word:p.word, ar:p.ar, ex:p.ex.sentence }); });
+  WECHSEL_PREPS.forEach(function(p){ items.push({ group:'wechsel', color:'var(--case-wechsel)', word:p.word, ar:p.ar, ex:p.wo.sentence }); });
+  VOCAB_VERBS.forEach(function(v){ items.push({ group:'verbs', color:v.color, word:v.word, ar:v.ar, ex:v.ex }); });
+  return items;
+}
+var VOCAB_ITEMS = buildVocabItems();
+
+function renderVocabFilterBar(){
+  var bar = qs('#vocabFilterBar');
+  bar.innerHTML = '';
+  VOCAB_FILTERS.forEach(function(f){
+    var chip = ce('button','filter-chip', '<span class="dot"></span>'+f.label);
+    chip.style.setProperty('--dot-color', f.color);
+    chip.type = 'button';
+    if(f.key===vocabActiveFilter) chip.classList.add('active');
+    chip.addEventListener('click', function(){
+      vocabActiveFilter = f.key;
+      qsa('.filter-chip', bar).forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      renderVocabGrid();
+    });
+    bar.appendChild(chip);
+  });
+}
+
+function renderVocabGrid(){
+  var grid = qs('#vocabGrid');
+  grid.innerHTML = '';
+  VOCAB_ITEMS.forEach(function(item){
+    var visible = vocabActiveFilter === 'all' || item.group === vocabActiveFilter;
+    var card = ce('div','flip-card'+(visible?'':' hidden-item'));
+    var inner = ce('div','flip-card-inner');
+    var front = ce('div','flip-face flip-front');
+    var tag = ce('span','flip-case-tag', item.group==='verbs'?'فعل':item.group);
+    tag.style.background = item.color;
+    front.appendChild(tag);
+    front.appendChild(ce('div','de', item.word));
+    front.appendChild(ce('div','flip-hint','انقر للقلب ↺'));
+    var speakFront = ce('button','speak-dot', '<svg class="icon"><use href="#i-speaker"/></svg>');
+    speakFront.addEventListener('click', function(e){ e.stopPropagation(); Speech.speak(item.word, {els:[]}); });
+    front.appendChild(speakFront);
+    var back = ce('div','flip-face flip-back');
+    back.style.background = 'linear-gradient(155deg, '+item.color+', var(--ink))';
+    back.appendChild(ce('div','meaning-de de', item.ex));
+    back.appendChild(ce('div','meaning', item.ar));
+    var speakBack = ce('button','speak-dot', '<svg class="icon"><use href="#i-speaker"/></svg>');
+    speakBack.addEventListener('click', function(e){ e.stopPropagation(); Speech.speak(item.ex, {els:[]}); });
+    back.appendChild(speakBack);
+    inner.appendChild(front); inner.appendChild(back);
+    card.appendChild(inner);
+    card.addEventListener('click', function(){ card.classList.toggle('flipped'); markVisited('cards'); });
+    grid.appendChild(card);
+  });
+}
+
+/* ==========================================================================
+   EXAMPLES LIST (filterable)
+   ========================================================================== */
+var examplesActiveFilter = 'all';
+function buildExamplesItems(){
+  var items = [];
+  AKK_PREPS.forEach(function(p){ items.push({ group:'akk', color:p.color, label:'Akkusativ', word:p.word, ex:p.ex }); });
+  DAT_PREPS.forEach(function(p){ items.push({ group:'dativ', color:p.color, label:'Dativ', word:p.word, ex:p.ex }); });
+  GEN_PREPS.forEach(function(p){ items.push({ group:'genitiv', color:p.color, label:'Genitiv', word:p.word, ex:p.ex }); });
+  WECHSEL_PREPS.forEach(function(p){
+    items.push({ group:'wechsel', color:'var(--case-dativ)', label:'Wechsel · Wo؟', word:p.word, ex:p.wo });
+    items.push({ group:'wechsel', color:'var(--case-akk)', label:'Wechsel · Wohin؟', word:p.word, ex:p.wohin });
+  });
+  return items;
+}
+var EXAMPLES_ITEMS = buildExamplesItems();
+
+function renderExamplesFilterBar(){
+  var bar = qs('#examplesFilterBar');
+  bar.innerHTML = '';
+  VOCAB_FILTERS.filter(function(f){ return f.key!=='verbs'; }).forEach(function(f){
+    var chip = ce('button','filter-chip', '<span class="dot"></span>'+f.label);
+    chip.style.setProperty('--dot-color', f.color);
+    chip.type = 'button';
+    if(f.key===examplesActiveFilter) chip.classList.add('active');
+    chip.addEventListener('click', function(){
+      examplesActiveFilter = f.key;
+      qsa('.filter-chip', bar).forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      renderExamplesList();
+    });
+    bar.appendChild(chip);
+  });
+}
+
+function renderExamplesList(){
+  var list = qs('#examplesList');
+  list.innerHTML = '';
+  EXAMPLES_ITEMS.forEach(function(item){
+    if(examplesActiveFilter !== 'all' && item.group !== examplesActiveFilter) return;
+    var card = ce('div','info-card');
+    var head = ce('div');
+    head.style.cssText = 'display:flex;align-items:center;gap:10px;margin-bottom:12px';
+    var tag = ce('span','chip', item.label);
+    tag.style.background = item.color; tag.style.color = '#fff';
+    head.appendChild(tag);
+    head.appendChild(ce('span','de', '<b style="font-size:1.1rem">'+item.word+'</b>'));
+    card.appendChild(head);
+    var box = ce('div');
+    card.appendChild(box);
+    renderCaseSentence(box, item.ex.sentence, item.ex.marked, item.color, item.ex.ar);
+    list.appendChild(card);
+  });
+}
+
+/* ==========================================================================
+   MISTAKES
+   ========================================================================== */
+function renderMistakes(){
+  var list = qs('#mistakesList');
+  list.innerHTML = '';
+  MISTAKES.forEach(function(m){
+    var card = ce('div','mistake-card');
+    var wrong = ce('div','mistake-side mistake-wrong');
+    wrong.innerHTML = '<span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-x"/></svg>خطأ شائع</span><span class="mistake-sentence">'+m.wrong+'</span>';
+    var right = ce('div','mistake-side mistake-right');
+    right.innerHTML = '<span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg>الصحيح</span><span class="mistake-sentence">'+m.right+'</span>';
+    right.querySelector('.mistake-sentence').addEventListener('click', function(e){ Speech.speak(m.right, {els:[e.currentTarget]}); });
+    card.appendChild(wrong); card.appendChild(right);
+    var note = ce('div','mistake-note');
+    var grpTag = ce('span','grp-tag', m.groupLabel);
+    grpTag.style.background = m.color;
+    note.appendChild(grpTag);
+    note.appendChild(document.createTextNode(m.note));
+    card.appendChild(note);
+    list.appendChild(card);
+  });
+}
+
+/* ==========================================================================
+   EXERCISES — scoring
+   ========================================================================== */
+var exerciseScore = { mcq:0, fill:0, builder:0, match:0, wowohin:0 };
+var exerciseTotal = { mcq:MCQ.length, fill:FILL.length, builder:BUILDER.length, match:MATCH_ITEMS.length, wowohin:WOWOHIN.length };
+
+function updateScoreBar(){
+  var done = exerciseScore.mcq + exerciseScore.fill + exerciseScore.builder + exerciseScore.match + exerciseScore.wowohin;
+  var total = exerciseTotal.mcq + exerciseTotal.fill + exerciseTotal.builder + exerciseTotal.match + exerciseTotal.wowohin;
+  var pct = Math.round((done/total)*100);
+  qs('#scoreFill').style.width = pct+'%';
+  qs('#scoreLabel').textContent = toArabicDigits(pct)+'٪';
+  qs('#countMcq').textContent = toArabicDigits(exerciseScore.mcq)+'/'+toArabicDigits(exerciseTotal.mcq);
+  qs('#countFill').textContent = toArabicDigits(exerciseScore.fill)+'/'+toArabicDigits(exerciseTotal.fill);
+  qs('#countBuilder').textContent = toArabicDigits(exerciseScore.builder)+'/'+toArabicDigits(exerciseTotal.builder);
+  qs('#countMatch').textContent = toArabicDigits(exerciseScore.match)+'/'+toArabicDigits(exerciseTotal.match);
+  qs('#countWoWohin').textContent = toArabicDigits(exerciseScore.wowohin)+'/'+toArabicDigits(exerciseTotal.wowohin);
+  if(pct === 100) unlockBadge('champion');
+  refreshProgress();
+}
+
+function toArabicDigits(n){
+  var map = {'0':'٠','1':'١','2':'٢','3':'٣','4':'٤','5':'٥','6':'٦','7':'٧','8':'٨','9':'٩'};
+  return String(n).replace(/[0-9]/g, function(d){ return map[d]; });
+}
+
+/* --- MCQ --- */
+function renderMcqPanel(){
+  var panel = qs('#panelMcq');
+  panel.innerHTML = '';
+  MCQ.forEach(function(q, qi){
+    var block = ce('div','q-block');
+    var promptParts = q.sentence.split('___');
+    block.appendChild(ce('div','q-prompt de', promptParts[0]+'<span style="color:var(--primary);font-weight:700">___</span>'+(promptParts[1]||'')));
+    block.appendChild(ce('div','q-prompt-ar', q.ar));
+    var opts = ce('div','q-options');
+    var feedback = ce('div','q-feedback', q.explain);
+    q.options.forEach(function(opt){
+      var btn = ce('button','opt-btn de', opt);
+      btn.type = 'button';
+      btn.addEventListener('click', function(){
+        qsa('.opt-btn', opts).forEach(function(b){ b.disabled = true; });
+        if(opt === q.correct){
+          btn.classList.add('correct');
+          if(!block.dataset.done){ exerciseScore.mcq++; block.dataset.done='1'; updateScoreBar(); }
+        } else {
+          btn.classList.add('wrong');
+          qsa('.opt-btn', opts).forEach(function(b){ if(b.textContent===q.correct) b.classList.add('correct'); });
+        }
+        feedback.classList.add('show');
+        Speech.speak(promptParts[0]+' '+q.correct+' '+(promptParts[1]||''));
+      });
+      opts.appendChild(btn);
+    });
+    block.appendChild(opts);
+    block.appendChild(feedback);
+    panel.appendChild(block);
+  });
+}
+
+/* --- FILL --- */
+function renderFillPanel(){
+  var panel = qs('#panelFill');
+  panel.innerHTML = '';
+  FILL.forEach(function(q){
+    var block = ce('div','q-block');
+    var promptParts = q.sentence.split('___');
+    block.appendChild(ce('div','q-prompt de', promptParts[0]+' ______ '+(promptParts[1]||'')));
+    block.appendChild(ce('div','q-prompt-ar', q.ar));
+    var row = ce('div','fill-row');
+    var input = document.createElement('input');
+    input.type = 'text'; input.placeholder = '...'; input.setAttribute('dir','ltr');
+    var checkBtn = ce('button','fill-check','تحقّق');
+    checkBtn.type = 'button';
+    var result = ce('div','fill-result');
+    row.appendChild(input); row.appendChild(checkBtn); row.appendChild(result);
+    block.appendChild(row);
+    function check(){
+      var val = input.value.trim().toLowerCase();
+      var correct = q.answer.toLowerCase();
+      if(val === correct){
+        result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--success)"><use href="#i-check"/></svg>';
+        input.style.borderColor = 'var(--success)';
+        if(!block.dataset.done){ exerciseScore.fill++; block.dataset.done='1'; updateScoreBar(); }
+        Speech.speak(promptParts[0]+' '+q.answer+' '+(promptParts[1]||''));
+      } else {
+        result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--danger)"><use href="#i-x"/></svg>';
+        input.style.borderColor = 'var(--danger)';
+        toast('الإجابة الصحيحة: '+q.answer);
+      }
+    }
+    checkBtn.addEventListener('click', check);
+    input.addEventListener('keydown', function(e){ if(e.key==='Enter') check(); });
+    panel.appendChild(block);
+  });
+}
+
+/* --- BUILDER --- */
+function renderBuilderPanel(){
+  var panel = qs('#panelBuilder');
+  panel.innerHTML = '';
+  BUILDER.forEach(function(q, qi){
+    var block = ce('div','q-block');
+    block.appendChild(ce('div','q-prompt-ar', q.ar));
+    var answerZone = ce('div','builder-answer');
+    var pool = ce('div','builder-pool');
+    var shuffled = q.words.slice().sort(function(){ return Math.random()-0.5; });
+    var placed = [];
+    function refreshAnswerText(){
+      var text = placed.map(function(c){ return c.word; }).join(' ').replace(/ \./,'.');
+      return text;
+    }
+    shuffled.forEach(function(word){
+      var chip = ce('button','chip-word de', word);
+      chip.type = 'button';
+      chip.addEventListener('click', function(){
+        if(chip.classList.contains('used')) return;
+        chip.classList.add('used');
+        var placedChip = ce('span','chip-word de', word);
+        placedChip.style.cursor = 'default';
+        placedChip.addEventListener('click', function(){
+          placedChip.remove();
+          chip.classList.remove('used');
+          placed = placed.filter(function(p){ return p.el !== placedChip; });
+        });
+        answerZone.appendChild(placedChip);
+        placed.push({ word:word, el:placedChip });
+      });
+      pool.appendChild(chip);
+    });
+    var actions = ce('div','builder-actions');
+    var checkBtn = ce('button','btn btn-primary btn-sm','تحقّق من الترتيب');
+    var resetBtn = ce('button','btn btn-ghost btn-sm','إعادة');
+    var feedback = ce('div','q-feedback');
+    checkBtn.addEventListener('click', function(){
+      var userSentence = placed.map(function(p){ return p.word; }).join(' ');
+      var correctSentence = q.words.join(' ');
+      feedback.classList.add('show');
+      if(userSentence === correctSentence){
+        feedback.innerHTML = '<b style="color:var(--success)">✓ ممتاز! الترتيب صحيح.</b>';
+        if(!block.dataset.done){ exerciseScore.builder++; block.dataset.done='1'; updateScoreBar(); }
+        Speech.speak(correctSentence.replace(/ \./,'.'));
+      } else {
+        feedback.innerHTML = '<b style="color:var(--danger)">الترتيب الصحيح:</b> <span class="de" dir="ltr">'+correctSentence.replace(/ \./,'.')+'</span>';
+      }
+    });
+    resetBtn.addEventListener('click', function(){
+      placed = []; answerZone.innerHTML = '';
+      qsa('.chip-word', pool).forEach(function(c){ c.classList.remove('used'); });
+      feedback.classList.remove('show');
+    });
+    actions.appendChild(checkBtn); actions.appendChild(resetBtn);
+    block.appendChild(answerZone); block.appendChild(pool); block.appendChild(actions); block.appendChild(feedback);
+    panel.appendChild(block);
+  });
+}
+
+/* --- MATCH --- */
+function renderMatchPanel(){
+  var panel = qs('#panelMatch');
+  panel.innerHTML = '';
+  var intro = ce('p', null, 'اضغط على حرف الجر الألماني، ثم على معناه العربي المطابق.');
+  intro.style.cssText = 'margin-bottom:18px;color:var(--ink-soft)';
+  panel.appendChild(intro);
+  var grid = ce('div','match-grid');
+  var colDe = ce('div','match-col');
+  var colAr = ce('div','match-col');
+  var deShuffled = MATCH_ITEMS.slice();
+  var arShuffled = MATCH_ITEMS.slice().sort(function(){ return Math.random()-0.5; });
+  var selectedDe = null, selectedAr = null;
+  var matchedCount = 0;
+  deShuffled.forEach(function(item){
+    var el = ce('div','match-item de', item.de);
+    el.dataset.key = item.de;
+    el.addEventListener('click', function(){
+      if(el.classList.contains('matched')) return;
+      qsa('.match-item', colDe).forEach(function(x){ x.classList.remove('selected'); });
+      el.classList.add('selected'); selectedDe = el;
+      attemptMatch();
+    });
+    colDe.appendChild(el);
+  });
+  arShuffled.forEach(function(item){
+    var el = ce('div','match-item', item.ar);
+    el.dataset.key = item.de;
+    el.addEventListener('click', function(){
+      if(el.classList.contains('matched')) return;
+      qsa('.match-item', colAr).forEach(function(x){ x.classList.remove('selected'); });
+      el.classList.add('selected'); selectedAr = el;
+      attemptMatch();
+    });
+    colAr.appendChild(el);
+  });
+  function attemptMatch(){
+    if(!selectedDe || !selectedAr) return;
+    if(selectedDe.dataset.key === selectedAr.dataset.key){
+      selectedDe.classList.add('matched'); selectedAr.classList.add('matched');
+      selectedDe.classList.remove('selected'); selectedAr.classList.remove('selected');
+      matchedCount++;
+      if(matchedCount === MATCH_ITEMS.length){ exerciseScore.match = MATCH_ITEMS.length; updateScoreBar(); toast('أحسنت! طابقت كل الأزواج 🎉'); }
+      Speech.speak(selectedDe.textContent);
+    } else {
+      [selectedDe, selectedAr].forEach(function(el){ el.classList.add('shake'); setTimeout(function(){ el.classList.remove('shake','selected'); }, 420); });
+    }
+    selectedDe = null; selectedAr = null;
+  }
+  grid.appendChild(colDe); grid.appendChild(colAr);
+  panel.appendChild(grid);
+}
+
+/* --- WO/WOHIN --- */
+function renderWoWohinPanel(){
+  var panel = qs('#panelWoWohin');
+  panel.innerHTML = '';
+  WOWOHIN.forEach(function(q){
+    var block = ce('div','q-block');
+    var promptParts = q.sentence.split('___');
+    block.appendChild(ce('div','q-prompt de', promptParts[0]+'<span style="color:var(--case-wechsel);font-weight:700">___</span>'+(promptParts[1]||'')));
+    block.appendChild(ce('div','q-prompt-ar', q.ar));
+    var opts = ce('div','q-options');
+    var feedback = ce('div','q-feedback');
+    var woBtn = ce('button','opt-btn', '🧭 <span class="de">Wo?</span> (Dativ)');
+    var wohinBtn = ce('button','opt-btn', '🎯 <span class="de">Wohin?</span> (Akkusativ)');
+    [ [woBtn,'wo'], [wohinBtn,'wohin'] ].forEach(function(pair){
+      var btn = pair[0], mode = pair[1];
+      btn.type = 'button';
+      btn.addEventListener('click', function(){
+        qsa('.opt-btn', opts).forEach(function(b){ b.disabled = true; });
+        var full = promptParts[0]+' '+q.correctArticle+' '+(promptParts[1]||'');
+        if(mode === q.correctMode){
+          btn.classList.add('correct');
+          if(!block.dataset.done){ exerciseScore.wowohin++; block.dataset.done='1'; updateScoreBar(); }
+        } else {
+          btn.classList.add('wrong');
+          (mode==='wo'?wohinBtn:woBtn).classList.add('correct');
+        }
+        feedback.innerHTML = 'الجملة الكاملة: <span class="de" dir="ltr" style="font-weight:700">'+full+'</span>';
+        feedback.classList.add('show');
+        Speech.speak(full);
+      });
+      opts.appendChild(btn);
+    });
+    block.appendChild(opts);
+    block.appendChild(feedback);
+    panel.appendChild(block);
+  });
+}
+
+/* --- Tab switching --- */
+qsa('.exercise-tab').forEach(function(tab){
+  tab.addEventListener('click', function(){
+    qsa('.exercise-tab').forEach(function(t){ t.classList.remove('active'); });
+    qsa('.exercise-panel').forEach(function(p){ p.classList.remove('active'); });
+    tab.classList.add('active');
+    qs('#'+tab.dataset.panel).classList.add('active');
+  });
+});
+
+/* ==========================================================================
+   BADGES
+   ========================================================================== */
+var BADGES = [
+  { key:'explorer', label:'مستكشف الخريطة', icon:'i-compass' },
+  { key:'navigator', label:'ملاّح البوصلات', icon:'i-target-arrow' },
+  { key:'cards', label:'جامع البطاقات', icon:'i-cards' },
+  { key:'sharp', label:'مطابقة حادة', icon:'i-link' },
+  { key:'wechselMeister', label:'سيد Wo/Wohin', icon:'i-box-in' },
+  { key:'champion', label:'بطل التمارين', icon:'i-medal' }
+];
+var unlockedBadges = {};
+function renderBadges(){
+  var row = qs('#badgesRow');
+  row.innerHTML = '';
+  BADGES.forEach(function(b){
+    var el = ce('div','badge'+(unlockedBadges[b.key]?' unlocked':''));
+    el.id = 'badge-'+b.key;
+    el.innerHTML = '<div class="badge-icon"><svg class="icon" style="width:22px;height:22px;stroke:#fff"><use href="#'+b.icon+'"/></svg></div><div class="badge-name">'+b.label+'</div>';
+    row.appendChild(el);
+  });
+}
+function unlockBadge(key){
+  if(unlockedBadges[key]) return;
+  unlockedBadges[key] = true;
+  var el = qs('#badge-'+key);
+  if(el){ el.classList.add('unlocked','pop'); }
+  var def = BADGES.filter(function(b){ return b.key===key; })[0];
+  if(def) toast('إنجاز جديد: '+def.label+' 🏅', 'i-star');
+}
+
+var visitedSections = {};
+var cardsFlippedCount = 0;
+function markVisited(kind){
+  if(kind === 'navigator'){ unlockBadge('navigator'); }
+  if(kind === 'wechselMeister'){ unlockBadge('wechselMeister'); }
+  if(kind === 'cards'){
+    cardsFlippedCount++;
+    if(cardsFlippedCount >= 10) unlockBadge('cards');
+  }
+}
+
+/* ==========================================================================
+   ROAD NAV / SCROLLSPY / PROGRESS RING
+   ========================================================================== */
+var SECTION_META = [
+  {id:'hero', label:'البداية'},
+  {id:'why', label:'لماذا'},
+  {id:'map', label:'الخريطة'},
+  {id:'akkusativ', label:'Akkusativ'},
+  {id:'dativ', label:'Dativ'},
+  {id:'genitiv', label:'Genitiv'},
+  {id:'wechsel', label:'المزدوجة'},
+  {id:'contractions', label:'الاختصارات'},
+  {id:'compare', label:'الخلاصة'},
+  {id:'vocab', label:'المفردات'},
+  {id:'examples', label:'الأمثلة'},
+  {id:'mistakes', label:'الأخطاء'},
+  {id:'pronunciation', label:'النطق'},
+  {id:'exercises', label:'التمارين'},
+  {id:'summary', label:'الملخّص'}
+];
+function renderRoadNav(){
+  var track = qs('#roadTrack');
+  track.innerHTML = '';
+  SECTION_META.forEach(function(s){
+    var btn = ce('button','waypoint-btn', '<span class="waypoint-pin"></span><span class="lbl">'+s.label+'</span>');
+    btn.type = 'button';
+    btn.dataset.target = s.id;
+    btn.addEventListener('click', function(){ scrollToSection('#'+s.id); });
+    track.appendChild(btn);
+  });
+}
+function scrollToSection(sel){
+  var el = qs(sel);
+  if(el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+document.addEventListener('click', function(e){
+  var btn = e.target.closest ? e.target.closest('[data-scroll]') : null;
+  if(btn) scrollToSection(btn.getAttribute('data-scroll'));
+});
+
+var visitedSet = {};
+function refreshProgress(){
+  var total = SECTION_META.length;
+  var seen = Object.keys(visitedSet).length;
+  var pct = Math.max(seen? Math.round((seen/total)*100) : 0, 0);
+  var circumference = 113;
+  var offset = circumference - (pct/100)*circumference;
+  qs('#progressRingBar').style.strokeDashoffset = offset;
+  qs('#progressRingLabel').textContent = toArabicDigits(pct)+'٪';
+  if(seen === total) unlockBadge('explorer');
+}
+
+var spyObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    var id = entry.target.id;
+    if(entry.isIntersecting){
+      visitedSet[id] = true;
+      qsa('.waypoint-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.target===id); });
+      refreshProgress();
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+/* ==========================================================================
+   REVEAL ON SCROLL
+   ========================================================================== */
+var revealObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){ entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); }
+  });
+}, { threshold: 0.12 });
+
+/* ==========================================================================
+   SEARCH
+   ========================================================================== */
+function initSearch(){
+  var toggle = qs('#searchToggle');
+  var box = qs('#searchBoxDesktop');
+  var input = qs('#searchInputDesktop');
+  toggle.addEventListener('click', function(){
+    box.classList.toggle('open');
+    if(box.classList.contains('open')) input.focus();
+  });
+  var lastMarks = [];
+  input.addEventListener('input', function(){
+    lastMarks.forEach(function(m){ var parent=m.parentNode; if(parent){ parent.replaceChild(document.createTextNode(m.textContent), m); parent.normalize(); } });
+    lastMarks = [];
+    var term = input.value.trim();
+    if(term.length < 2) return;
+    var walker = document.createTreeWalker(qs('#mainContent'), NodeFilter.SHOW_TEXT, null);
+    var node, matches = 0;
+    var re = new RegExp('('+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+    var nodesToProcess = [];
+    while((node = walker.nextNode())){
+      if(re.test(node.nodeValue)) nodesToProcess.push(node);
+    }
+    nodesToProcess.forEach(function(n){
+      var span = document.createElement('span');
+      span.innerHTML = n.nodeValue.replace(re, '<mark class="hl">$1</mark>');
+      var frag = document.createDocumentFragment();
+      Array.prototype.slice.call(span.childNodes).forEach(function(c){ frag.appendChild(c); });
+      n.parentNode.replaceChild(frag, n);
+    });
+    lastMarks = qsa('mark.hl');
+    matches = lastMarks.length;
+    if(matches){ lastMarks[0].scrollIntoView({behavior:'smooth', block:'center'}); toast('تم العثور على '+toArabicDigits(matches)+' نتيجة'); }
+  });
+}
+
+/* ==========================================================================
+   FULLSCREEN / PRINT / BACK TO TOP
+   ========================================================================== */
+qs('#fullscreenToggle').addEventListener('click', function(){
+  if(!document.fullscreenElement){ document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+  else { document.exitFullscreen && document.exitFullscreen(); }
+});
+document.addEventListener('fullscreenchange', function(){
+  var use = qs('#fsIcon use');
+  use.setAttribute('href', document.fullscreenElement ? '#i-compress' : '#i-expand');
+});
+qs('#printBtn').addEventListener('click', function(){ window.print(); });
+
+var backBtn = qs('#backToTop');
+window.addEventListener('scroll', function(){
+  backBtn.classList.toggle('visible', window.scrollY > 800);
+}, { passive:true });
+backBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+/* ==========================================================================
+   INIT
+   ========================================================================== */
+function init(){
+  renderRoadNav();
+  qsa('.waypoint-btn').forEach(function(){});
+  renderTable(qs('#articleTableAkk'), ARTICLE_AKK);
+  renderTable(qs('#articleTable'), ARTICLE_DAT);
+  renderTable(qs('#pronounTable'), PRONOUN_DAT, { deCols:[0,1] });
+  renderTable(qs('#articleTableGen'), ARTICLE_GEN);
+  buildCompass(qs('#compassFaceAkk'), qs('#routeCardAkk'), AKK_PREPS, 'var(--case-akk)', 'Akkusativ');
+  buildCompass(qs('#compassFace'), qs('#routeCard'), DAT_PREPS, 'var(--case-dativ)', 'Dativ');
+  buildCompass(qs('#compassFaceGen'), qs('#routeCardGen'), GEN_PREPS, 'var(--case-genitiv)', 'Genitiv');
+  renderWechselPicker();
+  updateWechselDisplay(false);
+  renderVerbPairsTable();
+  renderContractions();
+  renderMasterTable();
+  renderVocabFilterBar();
+  renderVocabGrid();
+  renderExamplesFilterBar();
+  renderExamplesList();
+  renderMistakes();
+  renderMcqPanel();
+  renderFillPanel();
+  renderBuilderPanel();
+  renderMatchPanel();
+  renderWoWohinPanel();
+  updateScoreBar();
+  renderBadges();
+  initSearch();
+
+  qsa('section[id]').forEach(function(sec){ spyObserver.observe(sec); });
+  qsa('.reveal, .reveal-stagger').forEach(function(el){ revealObserver.observe(el); });
+
+  refreshProgress();
+}
+
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-guide-04b-praepositionen-komplett" data-category="a2" data-title="دليل حروف الجر الشامل" data-root="../../" defer></script>
+</body>
+</html>

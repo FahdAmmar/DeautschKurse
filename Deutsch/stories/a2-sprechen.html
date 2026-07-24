@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أهم أسئلة الـ A2 Sprechen - formelle Version</title>
+<style>
+  :root {
+    --bg: #f0f4f8;
+    --surface: #ffffff;
+    --text: #1a1a2e;
+    --text-muted: #5a6a7a;
+    --accent: #1a5276;
+    --accent2: #c0392b;
+    --accent-light: #d6eaf8;
+    --border: #d5e8f5;
+    --shadow: rgba(26,82,118,0.10);
+    --btn-copy: #1a5276;
+    --btn-listen: #1e8449;
+    --btn-hover-copy: #154360;
+    --btn-hover-listen: #196f3d;
+    --quiz-correct: #d5f5e3;
+    --quiz-wrong: #fadbd8;
+    --quiz-correct-border: #27ae60;
+    --quiz-wrong-border: #e74c3c;
+    --gold: #d4ac0d;
+  }
+  [data-theme="dark"] {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent2: #e05555;
+    --accent-light: #1c2d40;
+    --border: #21262d;
+    --shadow: rgba(0,0,0,0.5);
+    --btn-copy: #388bfd;
+    --btn-listen: #3fb950;
+    --btn-hover-copy: #1f6feb;
+    --btn-hover-listen: #2ea043;
+    --quiz-correct: #1a3a25;
+    --quiz-wrong: #3a1a1a;
+    --quiz-correct-border: #3fb950;
+    --quiz-wrong-border: #e05555;
+    --gold: #e3b341;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', 'Tahoma', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: linear-gradient(135deg, var(--accent) 0%, #154360 100%);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 16px rgba(0,0,0,0.25);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+  [data-theme="dark"] .site-header { background: linear-gradient(135deg, #0d2137 0%, #1c3a5e 100%); }
+  .header-left { display: flex; align-items: center; gap: 14px; }
+  .level-badge {
+    width: 52px; height: 52px;
+    background: var(--gold);
+    border-radius: 12px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+  }
+  .level-badge .lvl { font-size: 22px; font-weight: 900; color: #1a1a1a; line-height: 1; }
+  .level-badge .cefr { font-size: 9px; font-weight: 700; color: #333; letter-spacing: 0.5px; }
+  .header-titles .main-title {
+    font-size: clamp(15px, 3vw, 20px);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+  }
+  .header-titles .sub-title {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    direction: ltr;
+  }
+  .header-controls { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn-ctrl {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+    white-space: nowrap;
+    font-family: inherit;
+  }
+  .btn-ctrl:hover { background: rgba(255,255,255,0.28); }
+
+  /* ── NAV ── */
+  .nav-bar {
+    background: var(--surface);
+    border-bottom: 2px solid var(--border);
+    padding: 0 16px;
+    display: flex;
+    gap: 2px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .nav-bar::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    padding: 12px 15px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    background: none;
+    border-top: none; border-left: none; border-right: none;
+    font-family: inherit;
+  }
+  .nav-tab:hover { color: var(--accent); }
+  .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* ── MAIN ── */
+  .main-content { max-width: 920px; margin: 0 auto; padding: 28px 16px 70px; }
+
+  /* ── PAGE SECTIONS ── */
+  .page-section { display: none; }
+  .page-section.active { display: block; }
+
+  /* ── COVER ── */
+  .cover-hero {
+    background: linear-gradient(160deg, var(--accent) 0%, #0a3356 100%);
+    border-radius: 20px;
+    padding: 48px 32px;
+    text-align: center;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(26,82,118,0.3);
+  }
+  [data-theme="dark"] .cover-hero { background: linear-gradient(160deg, #0d2137 0%, #1a3a5c 100%); }
+  .cover-hero::before {
+    content: 'A2';
+    position: absolute;
+    right: -20px; top: -20px;
+    font-size: 200px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    font-family: 'Georgia', serif;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .cover-level-ring {
+    width: 100px; height: 100px;
+    border: 6px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212,172,13,0.2);
+  }
+  .cover-ar-title { font-size: clamp(26px, 5vw, 40px); font-weight: 900; color: #fff; margin-bottom: 6px; }
+  .cover-de-title { font-size: clamp(20px, 4vw, 30px); font-weight: 700; color: var(--gold); direction: ltr; margin-bottom: 16px; }
+  .cover-divider { width: 60px; height: 4px; background: var(--gold); margin: 16px auto; border-radius: 2px; }
+  .cover-desc { font-size: 14px; color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto; line-height: 1.9; }
+  .cover-tags { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+  .cover-tag {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* ── TOPIC HEADING ── */
+  .topic-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 36px 0 8px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+  }
+  .topic-header:first-child { margin-top: 0; }
+  .topic-icon-box {
+    width: 44px; height: 44px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .topic-title-block .topic-de { font-size: clamp(20px, 4vw, 28px); font-weight: 900; color: var(--accent); direction: ltr; font-family: 'Georgia', serif; }
+  .topic-title-block .topic-ar { font-size: 13px; color: var(--text-muted); direction: rtl; }
+  .topic-count { margin-right: auto; font-size: 11px; background: var(--accent-light); color: var(--accent); padding: 3px 10px; border-radius: 12px; font-weight: 700; white-space: nowrap; }
+  [data-theme="dark"] .topic-count { background: #1c3a5e; }
+
+  /* ── QA CARD ── */
+  .qa-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px var(--shadow);
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .qa-card:hover { box-shadow: 0 6px 20px var(--shadow); transform: translateY(-1px); }
+  .qa-question {
+    padding: 16px 18px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .qa-num {
+    min-width: 28px; height: 28px;
+    background: linear-gradient(135deg, var(--accent), #1a6fa8);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    box-shadow: 0 2px 6px rgba(26,82,118,0.3);
+  }
+  .qa-text-block { flex: 1; min-width: 0; }
+  .qa-german { font-size: 16px; font-weight: 700; color: var(--text); direction: ltr; margin-bottom: 5px; line-height: 1.4; }
+  .qa-arabic { font-size: 13px; color: var(--text-muted); direction: rtl; }
+  .qa-arrow { color: var(--accent); font-size: 16px; transition: transform 0.25s; flex-shrink: 0; margin-top: 4px; }
+  .qa-card.open .qa-arrow { transform: rotate(180deg); }
+
+  .qa-answer {
+    display: none;
+    padding: 14px 18px 18px;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .qa-card.open .qa-answer { display: block; }
+
+  .answer-label { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; direction: ltr; }
+
+  .answer-row {
+    margin-bottom: 10px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border-radius: 10px;
+    border-right: 4px solid var(--accent);
+    box-shadow: 0 1px 4px var(--shadow);
+  }
+  .answer-de { font-size: 15px; font-weight: 600; color: var(--text); direction: ltr; margin-bottom: 4px; }
+  .answer-ar { font-size: 13px; color: var(--text-muted); direction: rtl; }
+
+  .grammar-note {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--accent-light);
+    border-radius: 10px;
+    border-right: 3px solid var(--accent);
+  }
+  [data-theme="dark"] .grammar-note { background: #1c3a5e; }
+  .grammar-note-title { font-size: 11px; font-weight: 800; color: var(--accent); margin-bottom: 5px; direction: rtl; }
+  .grammar-note-text { font-size: 13px; color: var(--text-muted); direction: rtl; line-height: 1.8; }
+  .grammar-note-example { font-size: 13px; color: var(--text); direction: ltr; margin-top: 5px; padding: 5px 10px; background: var(--surface); border-radius: 6px; font-style: italic; }
+
+  .tip-box {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: rgba(192,57,43,0.07);
+    border-radius: 10px;
+    border-right: 3px solid var(--accent2);
+    font-size: 13px;
+    color: var(--text-muted);
+    direction: rtl;
+    line-height: 1.7;
+  }
+  .tip-box-title { font-size: 11px; font-weight: 800; color: var(--accent2); margin-bottom: 4px; }
+
+  .card-actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  .btn-action {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex; align-items: center; gap: 6px;
+    transition: all 0.2s;
+    font-family: inherit;
+    direction: rtl;
+  }
+  .btn-copy { background: var(--btn-copy); color: #fff; }
+  .btn-copy:hover { background: var(--btn-hover-copy); transform: translateY(-1px); }
+  .btn-listen { background: var(--btn-listen); color: #fff; }
+  .btn-listen:hover { background: var(--btn-hover-listen); transform: translateY(-1px); }
+  .btn-action.copied { background: #27ae60; }
+
+  /* ── GRAMMAR PAGE ── */
+  .grammar-section { background: var(--surface); border-radius: 16px; box-shadow: 0 4px 20px var(--shadow); overflow: hidden; margin-bottom: 24px; }
+  .grammar-section-header {
+    background: linear-gradient(135deg, var(--accent) 0%, #0a3356 100%);
+    color: #fff;
+    padding: 16px 22px;
+    font-size: 16px;
+    font-weight: 800;
+    display: flex; align-items: center; gap: 10px;
+  }
+  [data-theme="dark"] .grammar-section-header { background: linear-gradient(135deg, #0d2137, #1c3a5e); }
+  .grammar-section-body { padding: 22px; }
+  .grammar-block { margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--border); }
+  .grammar-block:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .grammar-block-title { font-size: 15px; font-weight: 800; color: var(--accent); margin-bottom: 8px; direction: rtl; }
+  .grammar-block-desc { font-size: 13px; color: var(--text-muted); direction: rtl; line-height: 1.8; margin-bottom: 10px; }
+  .grammar-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
+  .grammar-table th { background: var(--accent-light); color: var(--accent); padding: 8px 12px; text-align: right; font-weight: 700; border: 1px solid var(--border); }
+  [data-theme="dark"] .grammar-table th { background: #1c3a5e; }
+  .grammar-table td { padding: 7px 12px; border: 1px solid var(--border); color: var(--text); vertical-align: top; }
+  .grammar-table .de { direction: ltr; font-weight: 600; color: var(--accent); }
+  .grammar-table .ar { direction: rtl; color: var(--text-muted); }
+  .grammar-box-ex { padding: 8px 12px; background: var(--bg); border-radius: 7px; font-size: 13px; direction: ltr; color: var(--text); margin: 4px 0; border-right: 3px solid var(--gold); }
+  .grammar-wrong { padding: 8px 12px; background: rgba(231,76,60,0.08); border-radius: 7px; font-size: 13px; color: var(--accent2); direction: rtl; margin-top: 6px; border: 1px dashed var(--accent2); }
+
+  /* ── VOCAB ── */
+  .vocab-section { background: var(--surface); border-radius: 16px; box-shadow: 0 4px 20px var(--shadow); overflow: hidden; margin-bottom: 24px; }
+  .vocab-header { padding: 16px 22px; background: linear-gradient(135deg, #1e8449, #145a32); color: #fff; font-size: 16px; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+  .vocab-table { width: 100%; border-collapse: collapse; }
+  .vocab-table th { background: rgba(30,132,73,0.1); padding: 10px 14px; text-align: right; font-size: 12px; font-weight: 800; color: #1e8449; border-bottom: 2px solid var(--border); }
+  [data-theme="dark"] .vocab-table th { background: rgba(30,132,73,0.2); color: #3fb950; }
+  .vocab-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text); vertical-align: middle; }
+  .vocab-table tr:last-child td { border-bottom: none; }
+  .vocab-table tr:hover td { background: var(--bg); }
+  .v-de { font-weight: 700; direction: ltr; text-align: left; color: var(--accent); }
+  .v-en { direction: ltr; text-align: left; color: var(--text-muted); }
+  .v-ar { direction: rtl; }
+  .v-ex { font-size: 12px; color: var(--text-muted); direction: ltr; text-align: left; font-style: italic; }
+
+  /* ── SUMMARY CARDS ── */
+  .summary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; margin: 20px 0; }
+  .summary-card { background: var(--surface); border-radius: 14px; padding: 20px; box-shadow: 0 3px 12px var(--shadow); border-top: 4px solid var(--accent); }
+  .summary-card-title { font-size: 14px; font-weight: 800; color: var(--accent); margin-bottom: 14px; direction: rtl; }
+  .check-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 9px; font-size: 13px; color: var(--text); direction: rtl; line-height: 1.5; }
+  .check-icon { color: #27ae60; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
+
+  /* ── QUIZ ── */
+  .quiz-section { background: var(--surface); border-radius: 18px; box-shadow: 0 6px 28px var(--shadow); overflow: hidden; }
+  .quiz-header {
+    background: linear-gradient(135deg, var(--accent) 0%, #0a3356 100%);
+    color: #fff;
+    padding: 24px;
+    text-align: center;
+    position: relative;
+  }
+  [data-theme="dark"] .quiz-header { background: linear-gradient(135deg, #0d2137, #1c3a5e); }
+  .quiz-header::after { content: '🎓'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 40px; opacity: 0.5; }
+  .quiz-header h2 { font-size: 22px; font-weight: 900; margin-bottom: 4px; }
+  .quiz-header p { font-size: 13px; color: rgba(255,255,255,0.75); }
+  .quiz-body { padding: 26px; }
+  .quiz-progress-bar { height: 7px; background: var(--border); border-radius: 4px; margin-bottom: 20px; overflow: hidden; }
+  .quiz-progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--gold)); border-radius: 4px; transition: width 0.4s cubic-bezier(.4,0,.2,1); }
+  .quiz-counter { font-size: 13px; color: var(--text-muted); text-align: center; margin-bottom: 6px; font-weight: 600; }
+  .quiz-q-de { font-size: 18px; font-weight: 800; color: var(--text); text-align: center; margin-bottom: 5px; direction: ltr; line-height: 1.4; }
+  .quiz-q-ar { font-size: 13px; color: var(--text-muted); text-align: center; margin-bottom: 24px; direction: rtl; }
+  .quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+  .quiz-option {
+    padding: 13px 14px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--bg);
+    transition: all 0.18s;
+    text-align: center;
+    direction: ltr;
+    font-family: inherit;
+    line-height: 1.4;
+  }
+  .quiz-option:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+  [data-theme="dark"] .quiz-option:hover:not(:disabled) { background: #1c3a5e; }
+  .quiz-option.correct { border-color: var(--quiz-correct-border); background: var(--quiz-correct); color: #155724; }
+  [data-theme="dark"] .quiz-option.correct { color: #3fb950; }
+  .quiz-option.wrong { border-color: var(--quiz-wrong-border); background: var(--quiz-wrong); color: #721c24; }
+  [data-theme="dark"] .quiz-option.wrong { color: #e05555; }
+  .quiz-option:disabled { cursor: default; }
+  .quiz-feedback { text-align: center; font-size: 14px; font-weight: 700; min-height: 22px; margin-bottom: 16px; direction: rtl; color: var(--text-muted); }
+  .quiz-feedback.ok { color: #27ae60; }
+  .quiz-feedback.bad { color: #e74c3c; }
+  .quiz-btn {
+    display: block; width: 100%; padding: 14px;
+    border-radius: 10px; border: none;
+    font-size: 15px; font-weight: 800; cursor: pointer;
+    background: linear-gradient(135deg, var(--accent), #0a3356);
+    color: #fff; transition: all 0.2s; font-family: inherit;
+  }
+  [data-theme="dark"] .quiz-btn { background: linear-gradient(135deg, #388bfd, #1f6feb); }
+  .quiz-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+  .quiz-btn:disabled { opacity: 0.35; cursor: default; transform: none; }
+  .quiz-results { text-align: center; padding: 32px 20px; display: none; }
+  .score-ring {
+    width: 130px; height: 130px;
+    border-radius: 50%;
+    border: 8px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; font-weight: 900; color: var(--accent);
+    margin: 0 auto 22px;
+    box-shadow: 0 0 0 4px var(--accent-light);
+    transition: border-color 0.5s;
+  }
+  [data-theme="dark"] .score-ring { box-shadow: 0 0 0 4px #1c3a5e; }
+  .quiz-result-msg { font-size: 20px; font-weight: 900; color: var(--accent); direction: rtl; margin-bottom: 8px; }
+  .quiz-result-sub { font-size: 14px; color: var(--text-muted); direction: rtl; margin-bottom: 26px; line-height: 1.7; }
+  .quiz-restart { padding: 13px 36px; border-radius: 10px; border: none; background: var(--accent); color: #fff; font-size: 15px; font-weight: 800; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+  .quiz-restart:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* ── TOAST ── */
+  .toast { position: fixed; bottom: 24px; right: 24px; background: #27ae60; color: #fff; padding: 11px 20px; border-radius: 10px; font-size: 13px; font-weight: 700; box-shadow: 0 4px 18px rgba(0,0,0,0.22); z-index: 999; opacity: 0; transform: translateY(12px); transition: all 0.3s; direction: rtl; }
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+  /* ── PRINT ── */
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .site-header, .nav-bar, .card-actions, .btn-ctrl, .qa-arrow, .quiz-section { display: none !important; }
+    body { background: #fff; color: #000; }
+    .main-content { padding: 0; max-width: 100%; }
+    .qa-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; margin-bottom: 10px; }
+    .qa-answer { display: block !important; background: #f9f9f9; }
+    .cover-hero { page-break-after: always; }
+    .page-section { display: block !important; }
+    .topic-header { break-after: avoid; }
+    @page { size: A4 portrait; margin: 18mm 16mm; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 580px) {
+    .quiz-options { grid-template-columns: 1fr; }
+    .summary-grid { grid-template-columns: 1fr; }
+    .grammar-table td, .grammar-table th { font-size: 12px; padding: 6px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast">✓ تم النسخ!</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-left">
+    <div class="level-badge"><div class="lvl">A2</div><div class="cefr">CEFR</div></div>
+    <div class="header-titles">
+      <div class="main-title">أهم أسئلة الـ A2 Sprechen</div>
+      <div class="sub-title">formelle Version · Deutsch für Arabischsprachige · المستوى الثاني</div>
+    </div>
+  </div>
+  <div class="header-controls">
+    <button class="btn-ctrl" onclick="toggleTheme()" id="themeBtn">🌙 ليلي</button>
+    <button class="btn-ctrl" onclick="window.print()">🖨️ طباعة</button>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav-bar">
+  <button class="nav-tab active" onclick="showPage('cover',this)">🏠 الرئيسية</button>
+  <button class="nav-tab" onclick="showPage('beruf',this)">💼 العمل</button>
+  <button class="nav-tab" onclick="showPage('wohnung',this)">🏠 السكن</button>
+  <button class="nav-tab" onclick="showPage('gesundheit',this)">🏥 الصحة</button>
+  <button class="nav-tab" onclick="showPage('einkauf',this)">🛒 التسوق</button>
+  <button class="nav-tab" onclick="showPage('reise',this)">✈️ السفر</button>
+  <button class="nav-tab" onclick="showPage('alltag',this)">📅 الحياة اليومية</button>
+  <button class="nav-tab" onclick="showPage('meinung',this)">💬 الرأي والمشاعر</button>
+  <button class="nav-tab" onclick="showPage('vocab',this)">📖 المفردات</button>
+  <button class="nav-tab" onclick="showPage('grammar',this)">📐 القواعد</button>
+  <button class="nav-tab" onclick="showPage('quiz',this)">🎮 اختبار</button>
+</nav>
+
+<main class="main-content">
+
+<!-- ══ COVER ══ -->
+<div id="cover" class="page-section active">
+  <div class="cover-hero">
+    <div class="cover-level-ring">A2</div>
+    <div class="cover-ar-title">أهم أسئلة المستوى الثاني</div>
+    <div class="cover-de-title">A2 Sprechen — formelle Version</div>
+    <div class="cover-divider"></div>
+    <p class="cover-desc">
+      مجموعة شاملة ومتقدمة من أسئلة محادثة مستوى A2 مع أفضل الإجابات، شرح القواعد، والنطق الصحيح.
+      تغطي مواضيع العمل، السكن، الصحة، التسوق، السفر، والحياة اليومية.
+    </p>
+    <div class="cover-tags">
+      <span class="cover-tag">💼 Beruf & Arbeit</span>
+      <span class="cover-tag">🏠 Wohnung</span>
+      <span class="cover-tag">🏥 Gesundheit</span>
+      <span class="cover-tag">✈️ Reise</span>
+      <span class="cover-tag">📅 Alltag</span>
+      <span class="cover-tag">💬 Meinung</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BERUF ══ -->
+<div id="beruf" class="page-section">
+  <div class="topic-header">
+    <div class="topic-icon-box">💼</div>
+    <div class="topic-title-block">
+      <div class="topic-de">Beruf & Arbeit</div>
+      <div class="topic-ar">العمل والمهنة</div>
+    </div>
+    <div class="topic-count">10 أسئلة</div>
+  </div>
+  <div id="beruf-cards"></div>
+</div>
+
+<!-- ══ WOHNUNG ══ -->
+<div id="wohnung" class="page-section">
+  <div class="topic-header">
+    <div class="topic-icon-box">🏠</div>
+    <div class="topic-title-block">
+      <div class="topic-de">Wohnung & Umgebung</div>
+      <div class="topic-ar">الشقة والمحيط</div>
+    </div>
+    <div class="topic-count">9 أسئلة</div>
+  </div>
+  <div id="wohnung-cards"></div>
+</div>
+
+<!-- ══ GESUNDHEIT ══ -->
+<div id="gesundheit" class="page-section">
+  <div class="topic-header">
+    <div class="topic-icon-box">🏥</div>
+    <div class="topic-title-block">
+      <div class="topic-de">Gesundheit & Ernährung</div>
+      <div class="topic-ar">الصحة والتغذية</div>
+    </div>
+    <div class="topic-count">9 أسئلة</div>
+  </div>
+  <div id="gesundheit-cards"></div>
+</div>
+
+<!-- ══ EINKAUF ══ -->
+<div id="einkauf" class="page-section">
+  <div class="topic-header">
+    <div class="topic-icon-box">🛒</div>
+    <div class="topic-title-block">
+      <div class="topic-de">Einkaufen & Dienstleistungen</div>
+      <div class="topic-ar">التسوق والخدمات</div>
+    </div>
+    <div class="topic-count">8 أسئلة</div>
+  </div>
+  <div id="einkauf-cards"></div>
+</div>
+
+<!-- ══ REISE ══ -->
+<div id="reise" class="page-section">
+  <div class="topic-header">
+    <div class="topic-icon-box">✈️</div>
+    <div class="topic-title-block">
+      <div class="topic-de">Reise & Urlaub</div>
+      <div class="topic-ar">السفر والإجازة</div>
+    </div>
+    <div class="topic-count">9 أسئلة</div>
+  </div>
+  <div id="reise-cards"></div>
+</div>
+
+<!-- ══ ALLTAG ══ -->
+<div id="alltag" class="page-section">
+  <div class="topic-header">
+    <div class="topic-icon-box">📅</div>
+    <div class="topic-title-block">
+      <div class="topic-de">Alltag & Termine</div>
+      <div class="topic-ar">الحياة اليومية والمواعيد</div>
+    </div>
+    <div class="topic-count">9 أسئلة</div>
+  </div>
+  <div id="alltag-cards"></div>
+</div>
+
+<!-- ══ MEINUNG ══ -->
+<div id="meinung" class="page-section">
+  <div class="topic-header">
+    <div class="topic-icon-box">💬</div>
+    <div class="topic-title-block">
+      <div class="topic-de">Meinung & Gefühle</div>
+      <div class="topic-ar">الرأي والمشاعر</div>
+    </div>
+    <div class="topic-count">8 أسئلة</div>
+  </div>
+  <div id="meinung-cards"></div>
+</div>
+
+<!-- ══ VOCAB ══ -->
+<div id="vocab" class="page-section">
+  <div class="topic-header">
+    <div class="topic-icon-box">📖</div>
+    <div class="topic-title-block">
+      <div class="topic-de">Vokabelliste A2</div>
+      <div class="topic-ar">مفردات المستوى الثاني</div>
+    </div>
+  </div>
+  <div class="vocab-section">
+    <div class="vocab-header">📚 مفردات A2 الأساسية — Grundwortschatz</div>
+    <div style="overflow-x:auto;">
+      <table class="vocab-table">
+        <thead>
+          <tr>
+            <th>الألمانية</th>
+            <th>الإنجليزية</th>
+            <th>العربية</th>
+            <th>جملة مثال</th>
+          </tr>
+        </thead>
+        <tbody id="vocab-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══ GRAMMAR ══ -->
+<div id="grammar" class="page-section">
+  <div class="topic-header">
+    <div class="topic-icon-box">📐</div>
+    <div class="topic-title-block">
+      <div class="topic-de">Grammatik A2</div>
+      <div class="topic-ar">قواعد المستوى الثاني</div>
+    </div>
+  </div>
+
+  <div class="grammar-section">
+    <div class="grammar-section-header">🔷 الأفعال الناقصة — Modalverben</div>
+    <div class="grammar-section-body">
+      <div class="grammar-block">
+        <div class="grammar-block-title">الأفعال الناقصة الستة وتصريفها</div>
+        <div class="grammar-block-desc">الأفعال الناقصة تُغيّر معنى الجملة وتأتي مع المصدر في نهاية الجملة.</div>
+        <div style="overflow-x:auto;">
+          <table class="grammar-table">
+            <tr><th>الفعل</th><th>المعنى</th><th>ich</th><th>Sie</th><th>er/sie</th></tr>
+            <tr><td class="de">müssen</td><td class="ar">يجب/لازم</td><td class="de">muss</td><td class="de">müssen</td><td class="de">muss</td></tr>
+            <tr><td class="de">können</td><td class="ar">يستطيع</td><td class="de">kann</td><td class="de">können</td><td class="de">kann</td></tr>
+            <tr><td class="de">wollen</td><td class="ar">يريد</td><td class="de">will</td><td class="de">wollen</td><td class="de">will</td></tr>
+            <tr><td class="de">dürfen</td><td class="ar">يُسمح له</td><td class="de">darf</td><td class="de">dürfen</td><td class="de">darf</td></tr>
+            <tr><td class="de">sollen</td><td class="ar">يُفترض به</td><td class="de">soll</td><td class="de">sollen</td><td class="de">soll</td></tr>
+            <tr><td class="de">möchten</td><td class="ar">يودّ</td><td class="de">möchte</td><td class="de">möchten</td><td class="de">möchte</td></tr>
+          </table>
+        </div>
+        <div class="grammar-box-ex">Ich muss morgen früh aufstehen. — يجب عليّ الاستيقاظ مبكراً غداً.</div>
+        <div class="grammar-box-ex">Können Sie mir helfen? — هل يمكنك مساعدتي؟</div>
+      </div>
+
+      <div class="grammar-block">
+        <div class="grammar-block-title">الماضي البسيط للأفعال الناقصة</div>
+        <div class="grammar-block-desc">في الماضي نستخدم الصيغة البسيطة (Präteritum) للأفعال الناقصة:</div>
+        <div class="grammar-box-ex">Ich musste gestern arbeiten. — كان عليّ العمل أمس.</div>
+        <div class="grammar-box-ex">Ich konnte nicht schlafen. — لم أستطع النوم.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grammar-section">
+    <div class="grammar-section-header">🔷 الماضي المركب — Perfekt</div>
+    <div class="grammar-section-body">
+      <div class="grammar-block">
+        <div class="grammar-block-title">تركيب جملة الماضي المركب</div>
+        <div class="grammar-block-desc">الماضي المركب = haben/sein (مصرَّف) + Partizip II في نهاية الجملة. معظم الأفعال مع haben، وأفعال الحركة والتحول مع sein.</div>
+        <div class="grammar-box-ex">Ich habe gestern gearbeitet. — عملتُ أمس.</div>
+        <div class="grammar-box-ex">Wir sind nach Berlin gefahren. — ذهبنا إلى برلين.</div>
+        <div class="grammar-box-ex">Er hat das Buch gelesen. — قرأ الكتاب.</div>
+        <div class="grammar-wrong">❌ خطأ: Ich habe nach Berlin gefahren. → ✓ Ich bin nach Berlin gefahren.</div>
+      </div>
+      <div class="grammar-block">
+        <div class="grammar-block-title">أفعال شائعة بصيغة Partizip II</div>
+        <table class="grammar-table">
+          <tr><th>المصدر</th><th>Partizip II</th><th>المعنى</th><th>مع</th></tr>
+          <tr><td class="de">machen</td><td class="de">gemacht</td><td class="ar">يفعل</td><td class="de">haben</td></tr>
+          <tr><td class="de">kaufen</td><td class="de">gekauft</td><td class="ar">يشتري</td><td class="de">haben</td></tr>
+          <tr><td class="de">fahren</td><td class="de">gefahren</td><td class="ar">يسافر/يقود</td><td class="de">sein</td></tr>
+          <tr><td class="de">gehen</td><td class="de">gegangen</td><td class="ar">يذهب</td><td class="de">sein</td></tr>
+          <tr><td class="de">kommen</td><td class="de">gekommen</td><td class="ar">يأتي</td><td class="de">sein</td></tr>
+          <tr><td class="de">sprechen</td><td class="de">gesprochen</td><td class="ar">يتحدث</td><td class="de">haben</td></tr>
+          <tr><td class="de">schreiben</td><td class="de">geschrieben</td><td class="ar">يكتب</td><td class="de">haben</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="grammar-section">
+    <div class="grammar-section-header">🔷 حروف الجر مع الحالتين — Wechselpräpositionen</div>
+    <div class="grammar-section-body">
+      <div class="grammar-block">
+        <div class="grammar-block-title">حروف الجر الثنائية (Dativ للمكان / Akkusativ للاتجاه)</div>
+        <div class="grammar-block-desc">هذه الحروف تستخدم حالة المضاف إليه (Dativ) للإجابة على "أين؟" وحالة المفعول به (Akkusativ) للإجابة على "إلى أين؟"</div>
+        <div class="grammar-box-ex">Wo ist er? — Er ist im (in dem) Büro. [Dativ - المكان]</div>
+        <div class="grammar-box-ex">Wohin geht er? — Er geht ins (in das) Büro. [Akkusativ - الاتجاه]</div>
+        <div class="grammar-box-ex">حروف: in, an, auf, unter, über, vor, hinter, neben, zwischen</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grammar-section">
+    <div class="grammar-section-header">🔷 الجمل الثانوية — Nebensätze</div>
+    <div class="grammar-section-body">
+      <div class="grammar-block">
+        <div class="grammar-block-title">weil (لأن) — dass (أن) — wenn (عندما/إذا)</div>
+        <div class="grammar-block-desc">في الجملة الثانوية يذهب الفعل إلى نهاية الجملة تماماً.</div>
+        <div class="grammar-box-ex">Ich bin krank, weil ich zu viel gearbeitet habe.</div>
+        <div class="grammar-box-ex">Ich glaube, dass er Recht hat.</div>
+        <div class="grammar-box-ex">Wenn ich Zeit habe, gehe ich spazieren.</div>
+        <div class="grammar-wrong">❌ خطأ: Ich bin krank, weil ich habe zu viel gearbeitet.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="summary-card-title">💡 نصائح لامتحان A2</div>
+      <div class="check-item"><span class="check-icon">✓</span>استخدم جملاً كاملة ومعقدة، ليس فقط كلمات مفردة</div>
+      <div class="check-item"><span class="check-icon">✓</span>اربط الجمل بـ weil / dass / aber / und</div>
+      <div class="check-item"><span class="check-icon">✓</span>تحدث عن الماضي بـ Perfekt</div>
+      <div class="check-item"><span class="check-icon">✓</span>أعطِ آراء: "Ich finde, dass..." / "Meiner Meinung nach..."</div>
+      <div class="check-item"><span class="check-icon">✓</span>استخدم أفعالاً ناقصة: müssen / können / möchten</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-title">📋 قائمة مراجعة A2</div>
+      <div class="check-item"><span class="check-icon">☐</span> الماضي المركب — Perfekt</div>
+      <div class="check-item"><span class="check-icon">☐</span> الأفعال الناقصة — Modalverben</div>
+      <div class="check-item"><span class="check-icon">☐</span> الجمل الثانوية — weil / dass / wenn</div>
+      <div class="check-item"><span class="check-icon">☐</span> حروف الجر الثنائية</div>
+      <div class="check-item"><span class="check-icon">☐</span> الصفات وتصريفها</div>
+      <div class="check-item"><span class="check-icon">☐</span> مفردات المواضيع الستة</div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-title">🗣️ عبارات مفيدة في A2</div>
+      <div class="check-item"><span class="check-icon">→</span>Meiner Meinung nach... (برأيي...)</div>
+      <div class="check-item"><span class="check-icon">→</span>Ich finde, dass... (أجد أن...)</div>
+      <div class="check-item"><span class="check-icon">→</span>Es ist wichtig, dass... (من المهم أن...)</div>
+      <div class="check-item"><span class="check-icon">→</span>Ich habe ... gemacht / gegessen / gesehen</div>
+      <div class="check-item"><span class="check-icon">→</span>Können Sie das bitte wiederholen? (هل يمكنك الإعادة؟)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ QUIZ ══ -->
+<div id="quiz" class="page-section">
+  <div class="quiz-section">
+    <div class="quiz-header">
+      <h2>🎓 اختبار أسئلة الـ A2 Sprechen</h2>
+      <p>اختر الإجابة الصحيحة لاختبار مستواك</p>
+    </div>
+    <div class="quiz-body">
+      <div class="quiz-counter" id="quizCounter">السؤال 1 من 18</div>
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quizProgress" style="width:0%"></div>
+      </div>
+      <div id="quizQuestionBlock">
+        <div class="quiz-q-de" id="quizQ"></div>
+        <div class="quiz-q-ar" id="quizQAr"></div>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div class="quiz-feedback" id="quizFeedback"></div>
+        <button class="quiz-btn" id="quizNext" onclick="nextQuestion()" disabled>التالي ←</button>
+      </div>
+      <div class="quiz-results" id="quizResults">
+        <div class="score-ring" id="scoreRing">0%</div>
+        <div class="quiz-result-msg" id="quizMsg"></div>
+        <div class="quiz-result-sub" id="quizSubMsg"></div>
+        <button class="quiz-restart" onclick="restartQuiz()">🔄 إعادة الاختبار</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script>
+// ═══════════════════════════════════
+// DATA — A2 Questions
+// ═══════════════════════════════════
+const DATA = {
+
+  beruf: [
+    {
+      q: "Wo arbeiten Sie?",
+      ar_q: "أين تعمل؟",
+      answers: [
+        { de: "Ich arbeite in einer Firma in Berlin. Ich bin Ingenieur bei Siemens.", ar: "أعمل في شركة في برلين. أنا مهندس في سيمنس." }
+      ],
+      explain: "'in einer Firma' — Dativ مع حرف الجر 'in'. يمكنك ذكر اسم الشركة لإثراء إجابتك. 'bei + اسم شركة' = عند/في.",
+      tip: "في A2 يُتوقع منك إجابة كاملة مع تفاصيل، ليس مجرد 'in Berlin'."
+    },
+    {
+      q: "Seit wann arbeiten Sie dort?",
+      ar_q: "منذ متى تعمل هناك؟",
+      answers: [
+        { de: "Ich arbeite dort seit drei Jahren.", ar: "أعمل هناك منذ ثلاث سنوات." },
+        { de: "Seit Januar 2022 arbeite ich in dieser Firma.", ar: "منذ يناير 2022 أعمل في هذه الشركة." }
+      ],
+      explain: "'seit' + Dativ = منذ. 'seit drei Jahren' — سنوات بالجمع. يمكنك أيضاً ذكر شهر وسنة."
+    },
+    {
+      q: "Was gefällt Ihnen an Ihrer Arbeit?",
+      ar_q: "ماذا يعجبك في عملك؟",
+      answers: [
+        { de: "Mir gefällt, dass die Kollegen sehr freundlich sind. Die Arbeit ist interessant und abwechslungsreich.", ar: "يعجبني أن الزملاء ودودون جداً. العمل ممتع ومتنوع." }
+      ],
+      explain: "'mir gefällt' = يعجبني. 'dass' يبدأ جملة ثانوية — الفعل يذهب للنهاية. 'abwechslungsreich' = متنوع.",
+      tip: "استخدم 'weil' أو 'dass' لشرح السبب — هذا يُظهر مستواك الجيد."
+    },
+    {
+      q: "Wie viele Stunden pro Woche arbeiten Sie?",
+      ar_q: "كم ساعة في الأسبوع تعمل؟",
+      answers: [
+        { de: "Ich arbeite 40 Stunden pro Woche. Manchmal mache ich Überstunden.", ar: "أعمل 40 ساعة في الأسبوع. أحياناً أعمل ساعات إضافية." }
+      ],
+      explain: "'pro Woche' = في الأسبوع. 'Überstunden machen' = يعمل ساعات إضافية. 'manchmal' = أحياناً."
+    },
+    {
+      q: "Haben Sie früher einen anderen Beruf gehabt?",
+      ar_q: "هل كان لديك مهنة مختلفة سابقاً؟",
+      answers: [
+        { de: "Ja, früher habe ich als Lehrer gearbeitet, aber jetzt bin ich Programmierer.", ar: "نعم، في السابق عملتُ معلماً، لكن الآن أنا مبرمج." }
+      ],
+      explain: "Perfekt: 'habe ... gearbeitet'. 'als Lehrer' بدون أداة تعريف. 'früher' = في السابق، 'jetzt' = الآن."
+    },
+    {
+      q: "Was möchten Sie beruflich noch lernen?",
+      ar_q: "ماذا تريد أن تتعلم مهنياً في المستقبل؟",
+      answers: [
+        { de: "Ich möchte noch einen Computerkurs machen und mein Deutsch verbessern.", ar: "أريد أن أأخذ دورة حاسوب وأن أحسّن لغتي الألمانية." }
+      ],
+      explain: "'möchten' + Infinitiv في النهاية. 'noch' = أيضاً/بعد. 'verbessern' = يحسّن."
+    },
+    {
+      q: "Fahren Sie mit öffentlichen Verkehrsmitteln zur Arbeit?",
+      ar_q: "هل تذهب إلى العمل بوسائل النقل العامة؟",
+      answers: [
+        { de: "Ja, ich fahre jeden Tag mit der U-Bahn und dem Bus. Die Fahrt dauert ungefähr 45 Minuten.", ar: "نعم، أذهب كل يوم بالمترو والحافلة. الرحلة تستغرق حوالي 45 دقيقة." }
+      ],
+      explain: "'mit der U-Bahn' (Dativ مؤنث), 'mit dem Bus' (Dativ مذكر). 'dauern' = يستغرق."
+    },
+    {
+      q: "Arbeiten Sie lieber allein oder im Team?",
+      ar_q: "هل تفضل العمل وحدك أم في فريق؟",
+      answers: [
+        { de: "Ich arbeite lieber im Team, weil man zusammen mehr erreichen kann. Aber manchmal brauche ich auch Ruhe.", ar: "أفضل العمل في فريق، لأنه يمكن تحقيق أكثر معاً. لكن أحياناً أحتاج هدوءاً أيضاً." }
+      ],
+      explain: "'lieber' = يفضل. 'weil' يبدأ جملة سببية — الفعل للنهاية. 'man kann' = يمكن للشخص أن."
+    },
+    {
+      q: "Haben Sie Probleme bei der Arbeit?",
+      ar_q: "هل لديك مشاكل في العمل؟",
+      answers: [
+        { de: "Manchmal ist die Sprache ein Problem, aber ich lerne jeden Tag mehr Deutsch.", ar: "أحياناً تكون اللغة مشكلة، لكنني أتعلم الألمانية أكثر كل يوم." }
+      ],
+      explain: "كن صادقاً وطبيعياً. 'ein Problem' = مشكلة. 'jeden Tag mehr' = أكثر كل يوم."
+    },
+    {
+      q: "Wie ist Ihr Arbeitsweg?",
+      ar_q: "كيف هو طريق ذهابك للعمل؟",
+      answers: [
+        { de: "Mein Arbeitsweg ist nicht sehr lang. Es dauert etwa 30 Minuten mit der Bahn.", ar: "طريق ذهابي للعمل ليس طويلاً جداً. يستغرق حوالي 30 دقيقة بالقطار." }
+      ],
+      explain: "'Arbeitsweg' = طريق العمل. 'etwa/ungefähr' = تقريباً. 'mit der Bahn' = بالقطار."
+    }
+  ],
+
+  wohnung: [
+    {
+      q: "Beschreiben Sie Ihre Wohnung.",
+      ar_q: "صِف شقتك.",
+      answers: [
+        { de: "Ich wohne in einer 3-Zimmer-Wohnung im dritten Stock. Sie hat ein Wohnzimmer, zwei Schlafzimmer, eine Küche und ein Bad. Die Wohnung ist hell und ruhig.", ar: "أسكن في شقة من 3 غرف في الطابق الثالث. بها غرفة معيشة وغرفتا نوم ومطبخ وحمام. الشقة مشرقة وهادئة." }
+      ],
+      explain: "'im dritten Stock' = في الطابق الثالث. الأوصاف المهمة: hell (مشرق)، ruhig (هادئ)، groß/klein.",
+      tip: "في وصف الشقة استخدم أوصافاً إيجابية وسلبية لتبدو إجابتك طبيعية."
+    },
+    {
+      q: "Was gefällt Ihnen an Ihrer Wohnung? Was gefällt Ihnen nicht?",
+      ar_q: "ماذا يعجبك في شقتك؟ ماذا لا يعجبك؟",
+      answers: [
+        { de: "Mir gefällt, dass die Wohnung ruhig und zentral liegt. Aber ich finde, dass sie ein bisschen zu klein ist.", ar: "يعجبني أن الشقة هادئة وموقعها مركزي. لكن أجد أنها صغيرة قليلاً." }
+      ],
+      explain: "'ein bisschen' = قليلاً. 'zentral liegen' = في موقع مركزي. جملة 'dass' — الفعل للنهاية."
+    },
+    {
+      q: "Wie hoch ist Ihre Miete?",
+      ar_q: "كم إيجارك؟",
+      answers: [
+        { de: "Ich zahle 800 Euro Miete im Monat, inklusive Nebenkosten wie Strom und Wasser.", ar: "أدفع 800 يورو إيجاراً شهرياً، شاملاً المصاريف الإضافية كالكهرباء والماء." }
+      ],
+      explain: "'Miete zahlen' = يدفع الإيجار. 'inklusive' = شاملاً. 'Nebenkosten' = المصاريف الإضافية."
+    },
+    {
+      q: "In welcher Gegend wohnen Sie?",
+      ar_q: "في أي منطقة تسكن؟",
+      answers: [
+        { de: "Ich wohne in einem ruhigen Stadtteil im Norden von München. Es gibt viele Supermärkte und Parks in der Nähe.", ar: "أسكن في حي هادئ في شمال ميونيخ. يوجد الكثير من المتاجر والحدائق في المنطقة." }
+      ],
+      explain: "'in der Nähe' = في المنطقة/بالقرب. 'es gibt' = يوجد. أذكر مميزات المنطقة."
+    },
+    {
+      q: "Haben Sie Nachbarn? Wie sind sie?",
+      ar_q: "هل لديك جيران؟ كيف هم؟",
+      answers: [
+        { de: "Ja, ich habe Nachbarn. Sie sind meistens freundlich und ruhig. Manchmal gibt es etwas Lärm, aber das ist normal.", ar: "نعم، لدي جيران. هم في الغالب ودودون وهادئون. أحياناً يكون هناك بعض الضوضاء، لكن هذا طبيعي." }
+      ],
+      explain: "'Nachbarn' = الجيران. 'Lärm' = ضوضاء. 'meistens' = في الغالب."
+    },
+    {
+      q: "Haben Sie einen Balkon oder Garten?",
+      ar_q: "هل لديك شرفة أو حديقة؟",
+      answers: [
+        { de: "Ja, ich habe einen kleinen Balkon. Im Sommer sitze ich gern dort und trinke Kaffee.", ar: "نعم، لدي شرفة صغيرة. في الصيف أحب الجلوس هناك وشرب القهوة." }
+      ],
+      explain: "'im Sommer' = في الصيف. 'gern' = بكل سرور/يحب. 'sitzen' = يجلس."
+    },
+    {
+      q: "Was würden Sie an Ihrer Wohnung ändern?",
+      ar_q: "ماذا تريد أن تغيّر في شقتك؟",
+      answers: [
+        { de: "Ich würde gern ein größeres Badezimmer haben. Außerdem brauche ich mehr Stauraum für meine Sachen.", ar: "أود أن يكون لديّ حمام أكبر. علاوة على ذلك، أحتاج مساحة تخزين أكبر لأغراضي." }
+      ],
+      explain: "'würde + Infinitiv' = صيغة التمني. 'außerdem' = علاوة على ذلك. 'Stauraum' = مساحة تخزين."
+    },
+    {
+      q: "Wohnen Sie lieber in der Stadt oder auf dem Land?",
+      ar_q: "هل تفضل السكن في المدينة أم في الريف؟",
+      answers: [
+        { de: "Ich wohne lieber in der Stadt, weil es dort mehr Möglichkeiten gibt. Man kann leicht einkaufen, und die Verkehrsanbindung ist besser.", ar: "أفضل السكن في المدينة، لأن هناك فرصاً أكثر. يمكن التسوق بسهولة، وربط وسائل النقل أفضل." }
+      ],
+      explain: "'lieber' = يفضل. 'Möglichkeiten' = فرص/إمكانيات. 'Verkehrsanbindung' = ربط وسائل النقل."
+    },
+    {
+      q: "Seit wann wohnen Sie in dieser Stadt?",
+      ar_q: "منذ متى تسكن في هذه المدينة؟",
+      answers: [
+        { de: "Ich wohne seit zwei Jahren in Hamburg. Vorher habe ich in einer anderen Stadt gewohnt.", ar: "أسكن منذ سنتين في هامبورغ. قبل ذلك كنت أسكن في مدينة أخرى." }
+      ],
+      explain: "Perfekt: 'habe ... gewohnt'. 'vorher' = قبل ذلك. 'seit zwei Jahren' = منذ سنتين."
+    }
+  ],
+
+  gesundheit: [
+    {
+      q: "Wie ernähren Sie sich?",
+      ar_q: "كيف تتغذى؟",
+      answers: [
+        { de: "Ich versuche, mich gesund zu ernähren. Ich esse viel Gemüse und Obst und trinke wenig Alkohol.", ar: "أحاول أن آكل بشكل صحي. آكل كثيراً من الخضروات والفواكه وأشرب القليل من الكحول." }
+      ],
+      explain: "'sich ernähren' = يتغذى. 'versuchen zu + Infinitiv' = يحاول أن. 'gesund' = صحي.",
+      tip: "في A2 يمكنك إضافة: 'Manchmal esse ich auch Fastfood, aber nicht oft.'"
+    },
+    {
+      q: "Treiben Sie regelmäßig Sport?",
+      ar_q: "هل تمارس الرياضة بانتظام؟",
+      answers: [
+        { de: "Ja, ich gehe dreimal pro Woche ins Fitnessstudio. Außerdem fahre ich gern Fahrrad.", ar: "نعم، أذهب ثلاث مرات في الأسبوع إلى الجيم. علاوة على ذلك، أحب ركوب الدراجة." }
+      ],
+      explain: "'dreimal pro Woche' = ثلاث مرات في الأسبوع. 'ins Fitnessstudio gehen' = يذهب إلى الجيم."
+    },
+    {
+      q: "Was machen Sie, wenn Sie erkältet sind?",
+      ar_q: "ماذا تفعل عندما تصاب بنزلة برد؟",
+      answers: [
+        { de: "Wenn ich erkältet bin, bleibe ich zu Hause und ruhe mich aus. Ich trinke viel Tee mit Honig und nehme Medikamente.", ar: "عندما أُصاب بنزلة برد، أبقى في المنزل وأرتاح. أشرب كثيراً من الشاي بالعسل وأتناول أدوية." }
+      ],
+      explain: "'wenn'-Satz: الفعل في النهاية. 'sich ausruhen' = يرتاح. 'zu Hause bleiben' = يبقى في المنزل."
+    },
+    {
+      q: "Schlafen Sie gut? Wie viele Stunden schlafen Sie?",
+      ar_q: "هل تنام جيداً؟ كم ساعة تنام؟",
+      answers: [
+        { de: "Meistens schlafe ich gut. Ich schlafe ungefähr 7 bis 8 Stunden pro Nacht. Manchmal habe ich Stress und schlafe dann schlechter.", ar: "في الغالب أنام جيداً. أنام حوالي 7 إلى 8 ساعات في الليلة. أحياناً أتعرض للضغط وأنام بشكل أسوأ حينئذ." }
+      ],
+      explain: "'pro Nacht' = في الليلة. 'schlechter' = أسوأ (مقارنة). 'dann' = حينئذ/آنذاك."
+    },
+    {
+      q: "Haben Sie eine besondere Diät oder essen Sie kein Fleisch?",
+      ar_q: "هل تتبع نظاماً غذائياً خاصاً أو لا تأكل اللحم؟",
+      answers: [
+        { de: "Ich esse kein Schweinefleisch aus religiösen Gründen. Ich esse aber gern Geflügel und Fisch.", ar: "لا آكل لحم الخنزير لأسباب دينية. لكنني أحب الدجاج والسمك." }
+      ],
+      explain: "'aus religiösen Gründen' = لأسباب دينية. 'Schweinefleisch' = لحم الخنزير. 'Geflügel' = الدواجن."
+    },
+    {
+      q: "Was ist Ihr Lieblingsessen?",
+      ar_q: "ما طعامك المفضل؟",
+      answers: [
+        { de: "Mein Lieblingsessen ist Hummus mit Fladenbrot. Ich esse es sehr gern, weil es gesund und lecker ist.", ar: "طعامي المفضل هو الحمص مع الخبز. أحبه كثيراً لأنه صحي ولذيذ." }
+      ],
+      explain: "'Lieblingsessen' = الطعام المفضل. 'lecker' = لذيذ. 'weil' + جملة ثانوية."
+    },
+    {
+      q: "Wann waren Sie zuletzt beim Arzt?",
+      ar_q: "متى زرت الطبيب آخر مرة؟",
+      answers: [
+        { de: "Ich war vor einem Monat beim Arzt zur Vorsorgeuntersuchung. Zum Glück war alles in Ordnung.", ar: "زرت الطبيب منذ شهر للفحص الوقائي. لحسن الحظ كان كل شيء على ما يرام." }
+      ],
+      explain: "Perfekt/Präteritum: 'war' (ماضي sein). 'zum Glück' = لحسن الحظ. 'Vorsorgeuntersuchung' = الفحص الوقائي."
+    },
+    {
+      q: "Rauchen Sie?",
+      ar_q: "هل تدخّن؟",
+      answers: [
+        { de: "Nein, ich rauche nicht. Ich finde Rauchen sehr schädlich für die Gesundheit.", ar: "لا، لا أدخّن. أجد أن التدخين ضار جداً على الصحة." },
+        { de: "Früher habe ich geraucht, aber ich habe vor zwei Jahren aufgehört.", ar: "في السابق كنت أدخّن، لكنني توقفت منذ سنتين." }
+      ],
+      explain: "'aufhören' = يتوقف. Perfekt: 'habe aufgehört'. 'schädlich für' = ضار على. 'vor zwei Jahren' = منذ سنتين."
+    },
+    {
+      q: "Was machen Sie für Ihre Gesundheit?",
+      ar_q: "ماذا تفعل من أجل صحتك؟",
+      answers: [
+        { de: "Ich achte auf meine Ernährung, mache regelmäßig Sport und versuche, nicht zu viel Stress zu haben.", ar: "أهتم بتغذيتي، أمارس الرياضة بانتظام وأحاول ألا أتعرض لضغط كثير." }
+      ],
+      explain: "'auf etwas achten' = يهتم بـ / يُولي أهمية لـ. 'regelmäßig' = بانتظام."
+    }
+  ],
+
+  einkauf: [
+    {
+      q: "Wo kaufen Sie meistens ein?",
+      ar_q: "أين تتسوق في الغالب؟",
+      answers: [
+        { de: "Ich kaufe meistens im Supermarkt um die Ecke ein. Manchmal bestelle ich auch online, weil es bequemer ist.", ar: "أتسوق في الغالب في السوبرماركت القريب. أحياناً أطلب أيضاً عبر الإنترنت لأنه أكثر راحة." }
+      ],
+      explain: "'einkaufen' فعل منفصل. 'um die Ecke' = عند الزاوية/القريب. 'bestellen' = يطلب.",
+      tip: "أضف سبباً بـ 'weil' دائماً — هذا يُحسّن إجابتك في A2."
+    },
+    {
+      q: "Was kaufen Sie am häufigsten?",
+      ar_q: "ماذا تشتري في أغلب الأوقات؟",
+      answers: [
+        { de: "Am häufigsten kaufe ich Lebensmittel wie Brot, Gemüse und Milch. Manchmal kaufe ich auch Kleidung.", ar: "أشتري في الغالب المواد الغذائية كالخبز والخضروات والحليب. أحياناً أشتري ملابس أيضاً." }
+      ],
+      explain: "'am häufigsten' = في أغلب الأوقات. 'Lebensmittel' = المواد الغذائية (جمع). 'wie' = مثل."
+    },
+    {
+      q: "Vergleichen Sie Preise, bevor Sie kaufen?",
+      ar_q: "هل تقارن الأسعار قبل الشراء؟",
+      answers: [
+        { de: "Ja, ich vergleiche oft Preise im Internet, bevor ich etwas Teures kaufe. Das spart viel Geld.", ar: "نعم، أقارن الأسعار كثيراً على الإنترنت قبل شراء شيء غالٍ. هذا يوفر الكثير من المال." }
+      ],
+      explain: "'bevor' = قبل (جملة ثانوية، الفعل للنهاية). 'sparen' = يوفر. 'teuer' = غالٍ/مكلف."
+    },
+    {
+      q: "Haben Sie schon einmal etwas reklamiert?",
+      ar_q: "هل شكوت من منتج ما سابقاً؟",
+      answers: [
+        { de: "Ja, ich habe einmal ein Gerät reklamiert, weil es kaputt war. Der Kundenservice hat mir geholfen.", ar: "نعم، قدّمت شكوى مرة على جهاز كان معطوباً. خدمة العملاء ساعدتني." }
+      ],
+      explain: "Perfekt: 'habe reklamiert'. 'kaputt' = معطوب. 'Kundenservice' = خدمة العملاء."
+    },
+    {
+      q: "Was sind die Öffnungszeiten der Geschäfte bei Ihnen?",
+      ar_q: "ما هي ساعات عمل المحلات عندكم؟",
+      answers: [
+        { de: "Die meisten Geschäfte öffnen um 9 Uhr und schließen um 20 Uhr. Sonntags sind die meisten Läden geschlossen.", ar: "معظم المحلات تفتح في الساعة 9 وتغلق في الساعة 8 مساءً. أيام الأحد معظم المتاجر مغلقة." }
+      ],
+      explain: "'Öffnungszeiten' = ساعات العمل. 'öffnen/schließen' = يفتح/يغلق. 'sonntags' = أيام الأحد."
+    },
+    {
+      q: "Kaufen Sie lieber in Geschäften oder im Internet ein?",
+      ar_q: "هل تفضل التسوق في المحلات أم عبر الإنترنت؟",
+      answers: [
+        { de: "Ich kaufe lieber in Geschäften ein, weil ich die Produkte anfassen und ausprobieren kann. Aber für Bücher kaufe ich oft online.", ar: "أفضل التسوق في المحلات لأنني أستطيع لمس المنتجات وتجربتها. لكن للكتب أشتري كثيراً عبر الإنترنت." }
+      ],
+      explain: "'anfassen' = يلمس. 'ausprobieren' = يجرّب. إعطاء مثال استثنائي يُحسّن إجابتك."
+    },
+    {
+      q: "Was machen Sie mit alten Sachen, die Sie nicht mehr brauchen?",
+      ar_q: "ماذا تفعل بالأشياء القديمة التي لم تعد تحتاجها؟",
+      answers: [
+        { de: "Ich verkaufe sie auf Flohmärkten oder online. Manchmal gebe ich sie auch an Freunde oder spende sie.", ar: "أبيعها في أسواق القمامة أو عبر الإنترنت. أحياناً أعطيها لأصدقاء أو أتبرع بها." }
+      ],
+      explain: "'Flohmarkt' = سوق القمامة/البازار. 'spenden' = يتبرع. 'nicht mehr brauchen' = لم يعد يحتاج."
+    },
+    {
+      q: "Was haben Sie zuletzt gekauft?",
+      ar_q: "ما آخر شيء اشتريته؟",
+      answers: [
+        { de: "Zuletzt habe ich einen neuen Rucksack gekauft. Ich habe ihn im Internet bestellt und er war sehr günstig.", ar: "آخر شيء اشتريته كان حقيبة ظهر جديدة. طلبتها عبر الإنترنت وكانت رخيصة جداً." }
+      ],
+      explain: "Perfekt: 'habe gekauft / bestellt'. 'günstig' = رخيص/مناسب. 'zuletzt' = في آخر مرة."
+    }
+  ],
+
+  reise: [
+    {
+      q: "Wohin sind Sie zuletzt gereist?",
+      ar_q: "إلى أين سافرت آخر مرة؟",
+      answers: [
+        { de: "Zuletzt bin ich in die Türkei gereist. Ich war zwei Wochen dort und es hat mir sehr gut gefallen.", ar: "آخر مرة سافرتُ إلى تركيا. كنت هناك أسبوعين وأعجبني كثيراً." }
+      ],
+      explain: "Perfekt مع 'sein': 'bin gereist' (فعل حركة). 'es hat mir gefallen' = أعجبني. 'zwei Wochen' بدون حرف جر.",
+      tip: "في A2 أضف التفاصيل: متى، كم يوماً، ماذا فعلت."
+    },
+    {
+      q: "Wie haben Sie Ihren letzten Urlaub verbracht?",
+      ar_q: "كيف قضيت إجازتك الأخيرة؟",
+      answers: [
+        { de: "Ich habe meinen Urlaub am Meer verbracht. Ich habe viel geschwommen, die Sehenswürdigkeiten besichtigt und gutes Essen probiert.", ar: "قضيتُ إجازتي على البحر. سبحتُ كثيراً وزرتُ المعالم السياحية وجرّبتُ الطعام الجيد." }
+      ],
+      explain: "Perfekt: habe verbracht/geschwommen/besichtigt/probiert. 'Sehenswürdigkeiten' = المعالم السياحية."
+    },
+    {
+      q: "Mit wem reisen Sie am liebsten?",
+      ar_q: "مع من تحب السفر أكثر؟",
+      answers: [
+        { de: "Ich reise am liebsten mit meiner Familie oder mit Freunden. Zusammen macht Reisen mehr Spaß.", ar: "أحب السفر أكثر مع عائلتي أو مع الأصدقاء. السفر معاً أكثر متعة." }
+      ],
+      explain: "'am liebsten' = يحب أكثر من أي شيء. 'Spaß machen' = يكون ممتعاً. 'zusammen' = معاً."
+    },
+    {
+      q: "Was ist Ihr Traumreiseziel?",
+      ar_q: "ما وجهة سفرك الحلمية؟",
+      answers: [
+        { de: "Mein Traumreiseziel ist Japan. Ich möchte unbedingt die Kultur, das Essen und die Landschaft kennenlernen.", ar: "وجهة سفري الحلمية هي اليابان. أريد بشدة التعرف على الثقافة والطعام والمناظر الطبيعية." }
+      ],
+      explain: "'Traumreiseziel' = وجهة سفر حلم. 'unbedingt' = بالتأكيد/بشدة. 'kennenlernen' = يتعرف على."
+    },
+    {
+      q: "Wie buchen Sie Ihre Reisen?",
+      ar_q: "كيف تحجز رحلاتك؟",
+      answers: [
+        { de: "Meistens buche ich online. Ich vergleiche Preise auf verschiedenen Websites und suche nach Angeboten.", ar: "في الغالب أحجز عبر الإنترنت. أقارن الأسعار على مواقع مختلفة وأبحث عن العروض." }
+      ],
+      explain: "'buchen' = يحجز. 'Angebote' = عروض. 'auf verschiedenen Websites' = على مواقع مختلفة."
+    },
+    {
+      q: "Was nehmen Sie immer mit auf Reisen?",
+      ar_q: "ماذا تأخذ دائماً معك في السفر؟",
+      answers: [
+        { de: "Ich nehme immer meinen Pass, Medikamente, bequeme Kleidung und natürlich mein Handy mit.", ar: "دائماً أحمل معي جواز السفر والأدوية والملابس المريحة وبالطبع هاتفي." }
+      ],
+      explain: "'mitnehmen' فعل منفصل: 'nehme ... mit'. 'bequem' = مريح. 'natürlich' = بالطبع."
+    },
+    {
+      q: "Haben Sie schon mal ein Problem im Urlaub gehabt?",
+      ar_q: "هل واجهت مشكلة في الإجازة من قبل؟",
+      answers: [
+        { de: "Ja, einmal habe ich meinen Koffer verloren. Das war sehr stressig, aber das Hotel hat mir geholfen.", ar: "نعم، مرة فقدتُ حقيبتي. كان ذلك مرهقاً جداً، لكن الفندق ساعدني." }
+      ],
+      explain: "Perfekt: 'habe verloren'. 'einmal' = مرة واحدة/ذات مرة. 'stressig' = مرهق."
+    },
+    {
+      q: "Reisen Sie lieber in den Urlaub oder bleiben Sie gern zu Hause?",
+      ar_q: "هل تفضل السفر في الإجازة أم البقاء في المنزل؟",
+      answers: [
+        { de: "Ich reise sehr gern, aber manchmal ist es auch schön, zu Hause zu bleiben und sich zu erholen.", ar: "أحب السفر كثيراً، لكن أحياناً يكون البقاء في المنزل والراحة جميلاً أيضاً." }
+      ],
+      explain: "'sich erholen' = يستريح/يتعافى. 'es ist schön zu + Infinitiv' = من الجميل أن."
+    },
+    {
+      q: "Welche Transportmittel benutzen Sie auf Reisen?",
+      ar_q: "ما وسائل النقل التي تستخدمها في السفر؟",
+      answers: [
+        { de: "Für lange Strecken fliege ich am liebsten. Für kürzere Reisen fahre ich mit dem Zug, weil das umweltfreundlicher ist.", ar: "للمسافات الطويلة أفضل السفر بالطائرة. للرحلات الأقصر أسافر بالقطار لأنه أصدق للبيئة." }
+      ],
+      explain: "'für lange Strecken' = للمسافات الطويلة. 'umweltfreundlich' = صديق للبيئة. مقارنة بـ '-er'."
+    }
+  ],
+
+  alltag: [
+    {
+      q: "Wie sieht Ihr typischer Tag aus?",
+      ar_q: "كيف يبدو يومك الاعتيادي؟",
+      answers: [
+        { de: "Ich stehe um 7 Uhr auf, frühstücke und fahre dann zur Arbeit. Am Abend koche ich und sehe fern oder lese ein Buch.", ar: "أستيقظ في الساعة 7، آكل الإفطار ثم أذهب إلى العمل. في المساء أطبخ وأشاهد التلفاز أو أقرأ كتاباً." }
+      ],
+      explain: "الأفعال المنفصلة: aufstehen → ich stehe...auf. 'fernsehen' → ich sehe...fern. استخدم sequencers: dann / danach / am Abend.",
+      tip: "نظّم إجابتك بترتيب زمني: morgens → mittags → abends."
+    },
+    {
+      q: "Wann und wo essen Sie meistens zu Mittag?",
+      ar_q: "متى وأين تتناول الغداء في الغالب؟",
+      answers: [
+        { de: "Meistens esse ich um 12 Uhr in der Kantine zu Mittag. Manchmal gehe ich auch mit Kollegen in ein Restaurant.", ar: "في الغالب آكل الغداء في الساعة 12 في كافيتيريا العمل. أحياناً أذهب مع الزملاء إلى مطعم." }
+      ],
+      explain: "'zu Mittag essen' = يتناول الغداء. 'Kantine' = كافيتيريا/مطعم الشركة. 'Kollegen' = الزملاء."
+    },
+    {
+      q: "Wie oft putzen Sie Ihre Wohnung?",
+      ar_q: "كم مرة تنظف شقتك؟",
+      answers: [
+        { de: "Ich putze einmal pro Woche gründlich. Täglich mache ich nur die Küche sauber und sauge Staub.", ar: "أنظف مرة في الأسبوع بشكل شامل. يومياً أنظف المطبخ فقط وأمر المكنسة." }
+      ],
+      explain: "'gründlich' = بشكل شامل. 'Staub saugen' = يمر المكنسة. 'einmal pro Woche' = مرة في الأسبوع."
+    },
+    {
+      q: "Können Sie einen Termin absagen?",
+      ar_q: "هل يمكنك إلغاء موعد؟",
+      answers: [
+        { de: "Guten Tag, ich wollte meinen Termin am Dienstag leider absagen. Ich bin krank und kann nicht kommen. Können wir einen neuen Termin vereinbaren?", ar: "مرحباً، أردت للأسف إلغاء موعدي يوم الثلاثاء. أنا مريض ولا أستطيع القدوم. هل يمكننا تحديد موعد جديد؟" }
+      ],
+      explain: "'absagen' = يلغي. 'vereinbaren' = يتفق على/يحدد. 'wollte' = ماضي وولن (للأدب)."
+    },
+    {
+      q: "Was machen Sie am Wochenende?",
+      ar_q: "ماذا تفعل في عطلة نهاية الأسبوع؟",
+      answers: [
+        { de: "Am Wochenende schlafe ich etwas länger und unternehme etwas mit der Familie. Manchmal besuche ich Freunde oder mache Ausflüge.", ar: "في نهاية الأسبوع أنام أطول قليلاً وأقوم بنشاطات مع العائلة. أحياناً أزور أصدقاء أو أقوم برحلات." }
+      ],
+      explain: "'etwas unternehmen' = يقوم بنشاط/شيء ما. 'Ausflug machen' = يقوم برحلة. 'länger' = أطول (مقارنة)."
+    },
+    {
+      q: "Wie lernen Sie Deutsch?",
+      ar_q: "كيف تتعلم الألمانية؟",
+      answers: [
+        { de: "Ich besuche einen Deutschkurs zweimal pro Woche. Außerdem schaue ich deutsche Serien mit Untertiteln und lese einfache Texte.", ar: "أحضر دورة ألمانية مرتين في الأسبوع. علاوة على ذلك، أشاهد مسلسلات ألمانية مع ترجمة وأقرأ نصوصاً بسيطة." }
+      ],
+      explain: "'besuchen' هنا = يحضر. 'mit Untertiteln' = مع ترجمة. 'außerdem' = علاوة على ذلك."
+    },
+    {
+      q: "Helfen Sie anderen Menschen in Ihrem Alltag?",
+      ar_q: "هل تساعد الآخرين في حياتك اليومية؟",
+      answers: [
+        { de: "Ja, manchmal helfe ich Nachbarn beim Einkaufen oder übersetze für ältere Menschen. Das macht mir Freude.", ar: "نعم، أحياناً أساعد الجيران في التسوق أو أترجم لكبار السن. هذا يسعدني." }
+      ],
+      explain: "'beim Einkaufen helfen' = يساعد في التسوق. 'Freude machen' = يُسعد. 'ältere Menschen' = كبار السن."
+    },
+    {
+      q: "Haben Sie feste Gewohnheiten am Morgen?",
+      ar_q: "هل لديك عادات ثابتة في الصباح؟",
+      answers: [
+        { de: "Ja, ich stehe immer zur gleichen Zeit auf, dusche, frühstücke und lese kurz die Nachrichten.", ar: "نعم، أستيقظ دائماً في نفس الوقت، أستحم، آكل الإفطار وأقرأ الأخبار لفترة قصيرة." }
+      ],
+      explain: "'Gewohnheiten' = العادات. 'zur gleichen Zeit' = في نفس الوقت. 'kurz' = لفترة قصيرة."
+    },
+    {
+      q: "Was ist für Sie besonders wichtig im Alltag?",
+      ar_q: "ما الذي يهمك كثيراً في حياتك اليومية؟",
+      answers: [
+        { de: "Für mich ist es sehr wichtig, genug Zeit für die Familie zu haben. Außerdem lege ich Wert auf gutes Essen und ausreichend Schlaf.", ar: "بالنسبة لي، من المهم جداً أن يكون لدي وقت كافٍ للعائلة. كما أهتم بالطعام الجيد والنوم الكافي." }
+      ],
+      explain: "'lege Wert auf' = يهتم بـ / يُولي أهمية لـ. 'ausreichend' = كافٍ. 'für mich' = بالنسبة لي."
+    }
+  ],
+
+  meinung: [
+    {
+      q: "Was denken Sie über das Leben in Deutschland?",
+      ar_q: "ما رأيك في الحياة في ألمانيا؟",
+      answers: [
+        { de: "Ich finde, dass das Leben in Deutschland sehr organisiert ist. Die öffentlichen Verkehrsmittel funktionieren gut, aber das Leben ist manchmal teuer.", ar: "أجد أن الحياة في ألمانيا منظمة جداً. وسائل النقل العامة تعمل بشكل جيد، لكن الحياة أحياناً غالية." }
+      ],
+      explain: "'Ich finde, dass' + جملة ثانوية. 'organisiert' = منظم. 'funktionieren' = يعمل/يشتغل.",
+      tip: "أعطِ رأياً إيجابياً وسلبياً — هذا يُظهر إجابة متوازنة وطبيعية."
+    },
+    {
+      q: "Was ist Ihnen im Leben am wichtigsten?",
+      ar_q: "ما الأهم في حياتك؟",
+      answers: [
+        { de: "Das Wichtigste für mich ist die Gesundheit und die Familie. Ohne Gesundheit kann man alles andere nicht genießen.", ar: "الأهم بالنسبة لي هو الصحة والعائلة. بدون صحة لا يمكن الاستمتاع بكل شيء آخر." }
+      ],
+      explain: "'am wichtigsten' = الأهم. 'ohne + Akkusativ' = بدون. 'genießen' = يستمتع."
+    },
+    {
+      q: "Wie fühlen Sie sich in Deutschland?",
+      ar_q: "كيف تشعر في ألمانيا؟",
+      answers: [
+        { de: "Meistens fühle ich mich wohl hier. Die Menschen sind hilfsbereit. Manchmal vermisse ich meine Heimat, aber ich gewöhne mich immer mehr.", ar: "في الغالب أشعر بارتياح هنا. الناس متعاونون. أحياناً أشتاق لوطني، لكنني أتعود أكثر فأكثر." }
+      ],
+      explain: "'sich wohl fühlen' = يشعر بارتياح. 'vermissen' = يشتاق لـ. 'sich gewöhnen' = يتعود."
+    },
+    {
+      q: "Was finden Sie schwierig an der deutschen Sprache?",
+      ar_q: "ما الذي تجده صعباً في اللغة الألمانية؟",
+      answers: [
+        { de: "Ich finde die Grammatik manchmal schwierig, besonders die Artikel und die Fälle. Aber ich übe täglich und es wird besser.", ar: "أجد القواعد أحياناً صعبة، خاصةً أدوات التعريف وحالات الأسماء. لكنني أتدرب يومياً ويتحسن الأمر." }
+      ],
+      explain: "'schwierig' = صعب. 'besonders' = خاصةً. 'üben' = يتدرب. 'es wird besser' = يتحسن الأمر."
+    },
+    {
+      q: "Mögen Sie deutsche Traditionen und Feste?",
+      ar_q: "هل تحب التقاليد والأعياد الألمانية؟",
+      answers: [
+        { de: "Ja, ich finde das Oktoberfest sehr interessant. Weihnachtsmärkte sind auch schön, weil die Atmosphäre sehr festlich ist.", ar: "نعم، أجد مهرجان أكتوبر مثيراً للاهتمام. أسواق الميلاد جميلة أيضاً لأن الأجواء احتفالية جداً." }
+      ],
+      explain: "'Weihnachtsmarkt' = سوق الميلاد. 'festlich' = احتفالي. 'Atmosphäre' = الأجواء/المناخ."
+    },
+    {
+      q: "Was vermissen Sie aus Ihrem Heimatland?",
+      ar_q: "ماذا تشتاق إليه من وطنك؟",
+      answers: [
+        { de: "Ich vermisse am meisten meine Familie, das Essen aus der Heimat und das warme Klima. Das Essen hier ist anders.", ar: "أشتاق أكثر ما يكون لعائلتي وطعام الوطن والمناخ الدافئ. الطعام هنا مختلف." }
+      ],
+      explain: "'am meisten' = أكثر ما يكون. 'Heimatland' = الوطن. 'anders' = مختلف."
+    },
+    {
+      q: "Was würden Sie in Deutschland verbessern?",
+      ar_q: "ماذا ستُحسّن في ألمانيا لو استطعت؟",
+      answers: [
+        { de: "Ich würde gern die Bürokratie vereinfachen. Manchmal ist es sehr kompliziert, Formulare auszufüllen.", ar: "أود تبسيط البيروقراطية. أحياناً يكون من المعقد جداً ملء الاستمارات." }
+      ],
+      explain: "'Konjunktiv II': würde + Infinitiv. 'vereinfachen' = يبسّط. 'Formular ausfüllen' = يملأ استمارة."
+    },
+    {
+      q: "Haben Sie deutsche Freunde?",
+      ar_q: "هل لديك أصدقاء ألمان؟",
+      answers: [
+        { de: "Ja, ich habe ein paar deutsche Freunde. Wir treffen uns oft und reden auf Deutsch. Das hilft mir sehr beim Lernen.", ar: "نعم، لدي بعض الأصدقاء الألمان. نلتقي كثيراً ونتحدث بالألمانية. هذا يساعدني كثيراً في التعلم." }
+      ],
+      explain: "'ein paar' = بعض/قليل من. 'sich treffen' = يلتقي. 'beim Lernen helfen' = يساعد في التعلم."
+    }
+  ]
+};
+
+const VOCAB = [
+  { de: "die Stelle / der Job", en: "job / position", ar: "الوظيفة / العمل", ex: "Ich habe eine neue Stelle gefunden." },
+  { de: "der Vertrag", en: "contract", ar: "العقد", ex: "Ich habe einen Arbeitsvertrag." },
+  { de: "das Gehalt", en: "salary", ar: "الراتب", ex: "Das Gehalt ist gut." },
+  { de: "die Überstunden (Pl.)", en: "overtime", ar: "الساعات الإضافية", ex: "Ich mache oft Überstunden." },
+  { de: "die Miete", en: "rent", ar: "الإيجار", ex: "Die Miete kostet 800 Euro." },
+  { de: "die Nebenkosten (Pl.)", en: "utility costs", ar: "المصاريف الإضافية", ex: "Nebenkosten sind inklusive." },
+  { de: "der Stadtteil", en: "district / neighbourhood", ar: "الحي / المنطقة", ex: "Ich wohne in einem ruhigen Stadtteil." },
+  { de: "sich erholen", en: "to recover / relax", ar: "يستريح / يتعافى", ex: "Im Urlaub habe ich mich erholt." },
+  { de: "die Sehenswürdigkeit", en: "tourist attraction", ar: "المعلم السياحي", ex: "Wir haben Sehenswürdigkeiten besichtigt." },
+  { de: "das Angebot", en: "offer / deal", ar: "العرض", ex: "Ich suche nach günstigen Angeboten." },
+  { de: "die Gewohnheit", en: "habit", ar: "العادة", ex: "Das ist eine gute Gewohnheit." },
+  { de: "sich gewöhnen an", en: "to get used to", ar: "يتعود على", ex: "Ich gewöhne mich an das Wetter." },
+  { de: "vermissen", en: "to miss", ar: "يشتاق لـ", ex: "Ich vermisse meine Familie." },
+  { de: "vereinfachen", en: "to simplify", ar: "يبسّط", ex: "Wir müssen das Verfahren vereinfachen." },
+  { de: "die Ernährung", en: "nutrition / diet", ar: "التغذية / النظام الغذائي", ex: "Ich achte auf eine gesunde Ernährung." },
+  { de: "abwechslungsreich", en: "varied", ar: "متنوع", ex: "Meine Arbeit ist sehr abwechslungsreich." },
+  { de: "hilfsbereit", en: "helpful", ar: "متعاون / مساعد", ex: "Die Deutschen sind sehr hilfsbereit." },
+  { de: "das Formular", en: "form", ar: "الاستمارة", ex: "Bitte füllen Sie das Formular aus." },
+  { de: "Konjunktiv II (würde)", en: "conditional mood", ar: "صيغة التمني (كنت سأفعل)", ex: "Ich würde gern reisen." },
+  { de: "das Klima", en: "climate", ar: "المناخ / الجو", ex: "Das Klima hier ist kalt." },
+  { de: "der Ausflug", en: "trip / excursion", ar: "رحلة قصيرة", ex: "Wir machen einen Ausflug ins Grüne." },
+  { de: "die Bürokratie", en: "bureaucracy", ar: "البيروقراطية", ex: "Die Bürokratie ist manchmal kompliziert." },
+  { de: "sich wohl fühlen", en: "to feel comfortable", ar: "يشعر بارتياح", ex: "Ich fühle mich hier sehr wohl." },
+  { de: "regelmäßig", en: "regularly", ar: "بانتظام", ex: "Ich treibe regelmäßig Sport." },
+  { de: "umweltfreundlich", en: "eco-friendly", ar: "صديق للبيئة", ex: "Das Fahrrad ist umweltfreundlich." }
+];
+
+const QUIZ_Q = [
+  { q: "Seit wann arbeiten Sie dort?", ar: "منذ متى تعمل هناك؟", correct: "Ich arbeite dort seit drei Jahren.", options: ["Ich arbeite dort für drei Jahren.", "Ich arbeite dort seit drei Jahren.", "Ich arbeite dort von drei Jahren.", "Ich arbeite dort ab drei Jahren."] },
+  { q: "Was gefällt Ihnen an Ihrer Arbeit?", ar: "ماذا يعجبك في عملك؟", correct: "Mir gefällt, dass die Kollegen freundlich sind.", options: ["Mir gefällt, die Kollegen sind freundlich.", "Ich gefällt, dass die Kollegen freundlich sind.", "Mir gefällt, dass die Kollegen freundlich sind.", "Mir gefällt, weil die Kollegen freundlich sind."] },
+  { q: "Wir sind nach Berlin ___.", ar: "ذهبنا إلى برلين. (Perfekt)", correct: "gefahren", options: ["gefahrt", "geführt", "gefahren", "fahren"] },
+  { q: "Ich bin krank, ___ ich zu viel gearbeitet habe.", ar: "أنا مريض لأنني عملت كثيراً.", correct: "weil", options: ["dass", "wenn", "weil", "ob"] },
+  { q: "Wohin ___ Sie zuletzt gereist?", ar: "إلى أين سافرتَ آخر مرة؟", correct: "sind", options: ["haben", "sind", "sein", "war"] },
+  { q: "Ich ___ gern ein größeres Badezimmer haben.", ar: "أودّ أن يكون لدي حمام أكبر.", correct: "würde", options: ["werde", "will", "würde", "möchte"] },
+  { q: "Ich lebe in Deutschland ___ zwei Jahren.", ar: "أعيش في ألمانيا منذ سنتين.", correct: "seit", options: ["vor", "für", "seit", "ab"] },
+  { q: "Ich stehe jeden Morgen um 7 Uhr ___.", ar: "أستيقظ كل صباح في الساعة 7.", correct: "auf", options: ["auf", "an", "ab", "aus"] },
+  { q: "Was ___ Sie in Ihrer Freizeit gemacht?", ar: "ماذا فعلت في وقت فراغك؟ (Perfekt)", correct: "haben", options: ["sein", "haben", "sind", "hat"] },
+  { q: "Meiner ___ nach ist Gesundheit am wichtigsten.", ar: "برأيي الصحة هي الأهم.", correct: "Meinung", options: ["Idee", "Denken", "Meinung", "Sicht"] },
+  { q: "___ ich erkältet bin, bleibe ich zu Hause.", ar: "عندما أكون مريضاً بالزكام أبقى في المنزل.", correct: "Wenn", options: ["Als", "Weil", "Wenn", "Dass"] },
+  { q: "Die Wohnung liegt sehr ___ — in der Stadtmitte.", ar: "الشقة في موقع مركزي — في وسط المدينة.", correct: "zentral", options: ["zentrum", "zentralisch", "zentral", "zentriert"] },
+  { q: "Ich ___ mich immer mehr an das Leben hier.", ar: "أتعود أكثر فأكثر على الحياة هنا.", correct: "gewöhne", options: ["gewöhne", "gewöhne mich", "gewöhne mir", "gewöhne es"] },
+  { q: "Bitte füllen Sie das Formular ___.", ar: "من فضلك اكمل الاستمارة.", correct: "aus", options: ["aus", "ab", "an", "auf"] },
+  { q: "Das Fahrrad ist ___ als das Auto.", ar: "الدراجة أصدق للبيئة من السيارة.", correct: "umweltfreundlicher", options: ["umweltfreundlich mehr", "mehr umweltfreundlich", "umweltfreundlicher", "umweltfreundlichste"] },
+  { q: "Ich habe meinen Urlaub am Meer ___.", ar: "قضيتُ إجازتي على البحر. (Partizip II)", correct: "verbracht", options: ["verbraucht", "verbringt", "verbracht", "gebracht"] },
+  { q: "Was ___ Sie über das Leben in Deutschland?", ar: "ما رأيك في الحياة في ألمانيا؟", correct: "denken", options: ["meinen", "fühlen", "denken", "sagen"] },
+  { q: "Ich arbeite ___ im Team, weil es mehr Spaß macht.", ar: "أفضل العمل في فريق لأنه أكثر متعة.", correct: "lieber", options: ["mehr gern", "am liebsten", "lieber", "gerner"] }
+];
+
+// ═══════════════════════════════════
+// RENDER
+// ═══════════════════════════════════
+function buildCard(item, idx, containerId) {
+  const c = document.getElementById(containerId);
+  if (!c) return;
+  const card = document.createElement('div');
+  card.className = 'qa-card';
+  card.id = `card-${containerId}-${idx}`;
+
+  const answersHTML = item.answers.map(a => `
+    <div class="answer-row">
+      <div class="answer-de">${a.de}</div>
+      <div class="answer-ar">${a.ar}</div>
+    </div>`).join('');
+
+  const grammarBlock = item.explain ? `
+    <div class="grammar-note">
+      <div class="grammar-note-title">📌 ملاحظة نحوية</div>
+      <div class="grammar-note-text">${item.explain}</div>
+    </div>` : '';
+
+  const tipBlock = item.tip ? `
+    <div class="tip-box">
+      <div class="tip-box-title">💡 نصيحة للامتحان</div>
+      ${item.tip}
+    </div>` : '';
+
+  const allText = item.q + '\n' + item.answers.map(a => a.de + ' — ' + a.ar).join('\n');
+
+  card.innerHTML = `
+    <div class="qa-question" onclick="toggleCard('card-${containerId}-${idx}')">
+      <div class="qa-num">${idx+1}</div>
+      <div class="qa-text-block">
+        <div class="qa-german">${item.q}</div>
+        <div class="qa-arabic">← ${item.ar_q}</div>
+      </div>
+      <div class="qa-arrow">▾</div>
+    </div>
+    <div class="qa-answer">
+      <div class="answer-label">✅ الإجابة المثالية</div>
+      ${answersHTML}
+      ${grammarBlock}
+      ${tipBlock}
+      <div class="card-actions">
+        <button class="btn-action btn-copy" onclick="copyText(this,\`${allText.replace(/`/g,"'")}\`)">📋 نسخ السؤال والإجابة</button>
+        <button class="btn-action btn-listen" onclick="speak(\`${item.q + ' ' + item.answers[0].de}\`)">🔊 استمع للنطق</button>
+      </div>
+    </div>`;
+  c.appendChild(card);
+}
+
+function renderAll() {
+  Object.keys(DATA).forEach(key => {
+    DATA[key].forEach((item, i) => buildCard(item, i, key + '-cards'));
+  });
+
+  const tbody = document.getElementById('vocab-body');
+  VOCAB.forEach(v => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="v-de">${v.de}</td><td class="v-en">${v.en}</td><td class="v-ar">${v.ar}</td><td class="v-ex">${v.ex}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+// ═══════════════════════════════════
+// INTERACTIONS
+// ═══════════════════════════════════
+function toggleCard(id) { document.getElementById(id).classList.toggle('open'); }
+
+function copyText(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    btn.textContent = '✓ تم النسخ!';
+    showToast();
+    setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = '📋 نسخ السؤال والإجابة'; }, 2000);
+  });
+}
+
+function speak(text) {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'de-DE'; u.rate = 0.82; u.pitch = 1;
+    const v = window.speechSynthesis.getVoices().find(x => x.lang.startsWith('de'));
+    if (v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  }
+}
+
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+function showPage(id, tab) {
+  document.querySelectorAll('.page-section').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if (tab) tab.classList.add('active');
+  if (id === 'quiz') initQuiz();
+  window.scrollTo(0, 0);
+}
+
+// ═══════════════════════════════════
+// THEME
+// ═══════════════════════════════════
+function toggleTheme() {
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const t = dark ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', t);
+  localStorage.setItem('theme', t);
+  document.getElementById('themeBtn').textContent = t === 'dark' ? '☀️ نهاري' : '🌙 ليلي';
+}
+
+// ═══════════════════════════════════
+// QUIZ
+// ═══════════════════════════════════
+let qState = { cur: 0, score: 0, answered: false };
+
+function initQuiz() {
+  qState = { cur: 0, score: 0, answered: false };
+  document.getElementById('quizQuestionBlock').style.display = 'block';
+  document.getElementById('quizResults').style.display = 'none';
+  renderQ();
+}
+
+function renderQ() {
+  const q = QUIZ_Q[qState.cur];
+  const total = QUIZ_Q.length;
+  document.getElementById('quizCounter').textContent = `السؤال ${qState.cur + 1} من ${total}`;
+  document.getElementById('quizProgress').style.width = ((qState.cur / total) * 100) + '%';
+  document.getElementById('quizQ').textContent = q.q;
+  document.getElementById('quizQAr').textContent = q.ar;
+  document.getElementById('quizFeedback').textContent = '';
+  document.getElementById('quizFeedback').className = 'quiz-feedback';
+  document.getElementById('quizNext').disabled = true;
+  qState.answered = false;
+
+  const opts = [...q.options].sort(() => Math.random() - 0.5);
+  const c = document.getElementById('quizOptions');
+  c.innerHTML = '';
+  opts.forEach(o => {
+    const b = document.createElement('button');
+    b.className = 'quiz-option';
+    b.textContent = o;
+    b.onclick = () => selectAns(b, o, q.correct);
+    c.appendChild(b);
+  });
+}
+
+function selectAns(btn, sel, correct) {
+  if (qState.answered) return;
+  qState.answered = true;
+  document.querySelectorAll('.quiz-option').forEach(o => {
+    o.disabled = true;
+    if (o.textContent === correct) o.classList.add('correct');
+  });
+  const fb = document.getElementById('quizFeedback');
+  if (sel === correct) {
+    qState.score++;
+    btn.classList.add('correct');
+    fb.textContent = '🎉 ممتاز! إجابة صحيحة!';
+    fb.className = 'quiz-feedback ok';
+  } else {
+    btn.classList.add('wrong');
+    fb.textContent = `❌ الإجابة الصحيحة: ${correct}`;
+    fb.className = 'quiz-feedback bad';
+  }
+  document.getElementById('quizNext').disabled = false;
+}
+
+function nextQuestion() {
+  qState.cur++;
+  if (qState.cur >= QUIZ_Q.length) showResults();
+  else renderQ();
+}
+
+function showResults() {
+  document.getElementById('quizQuestionBlock').style.display = 'none';
+  document.getElementById('quizResults').style.display = 'block';
+  const pct = Math.round((qState.score / QUIZ_Q.length) * 100);
+  const ring = document.getElementById('scoreRing');
+  ring.textContent = pct + '%';
+  ring.style.borderColor = pct >= 70 ? 'var(--quiz-correct-border)' : pct >= 50 ? 'var(--gold)' : 'var(--quiz-wrong-border)';
+  document.getElementById('quizMsg').textContent = pct >= 90 ? '🏆 ممتاز! أنت جاهز لـ A2!' : pct >= 70 ? '👍 جيد جداً! استمر!' : pct >= 50 ? '📚 جيد، راجع القواعد!' : '💪 لا تستسلم! تدرّب أكثر!';
+  document.getElementById('quizSubMsg').textContent = `أجبت على ${qState.score} من ${QUIZ_Q.length} بشكل صحيح (${pct}%)`;
+  document.getElementById('quizProgress').style.width = '100%';
+}
+
+function restartQuiz() { initQuiz(); }
+
+// ═══════════════════════════════════
+// INIT
+// ═══════════════════════════════════
+window.speechSynthesis && window.speechSynthesis.getVoices();
+const saved = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', saved);
+document.getElementById('themeBtn').textContent = saved === 'dark' ? '☀️ نهاري' : '🌙 ليلي';
+renderAll();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="stories-a2-sprechen" data-category="stories" data-title="أهم أسئلة A2 Sprechen" data-root="../../" defer></script>
+</body>
+</html>

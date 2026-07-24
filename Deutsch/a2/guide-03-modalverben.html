@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الدرس ٣ · عدسات المعنى — الأفعال الناقصة | ألمانية A2</title>
+<meta name="description" content="الدرس الثالث من مستوى A2: تعلّم الأفعال الناقصة الألمانية (können, müssen, wollen, dürfen, sollen, möchten) عبر تجربة عدسة كاميرا تفاعلية، مع نطق صوتي وتمارين فورية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   0. RESET + BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+body { margin: 0; overflow-x: hidden; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+/* ==========================================================================
+   1. DESIGN TOKENS — fresh system for Lesson 3 (camera lens / focus theme)
+   ========================================================================== */
+:root {
+  color-scheme: light;
+  --bg: #F5F7FA;
+  --bg-alt: #EAEEF3;
+  --surface: #FFFFFF;
+  --surface-glass: rgba(255,255,255,.68);
+  --surface-glass-border: rgba(255,255,255,.5);
+  --ink: #1C2430;
+  --ink-soft: #545F6E;
+  --ink-faint: #8993A1;
+  --border: #E1E6EC;
+  --border-strong: #CCD3DC;
+
+  --primary: #2F5FA8;
+  --primary-ink: #234B87;
+  --primary-soft: #E4EDF7;
+  --primary-glow: rgba(47,95,168,.24);
+
+  --secondary: #B8434A;
+  --secondary-ink: #8F2F35;
+  --secondary-soft: #FBEAEB;
+  --secondary-glow: rgba(184,67,74,.22);
+
+  --success: #2E7D4F;
+  --success-soft: #E4F5EA;
+  --danger: #A93E45;
+  --danger-soft: #FBEAEB;
+
+  /* per-modal-verb lens colors — also used as the page's thematic palette */
+  --lens-koennen: #3E8E6D;
+  --lens-muessen: #B8434A;
+  --lens-wollen:  #A24D8E;
+  --lens-duerfen: #2F5FA8;
+  --lens-sollen:  #C1812E;
+  --lens-moechten:#4A8F94;
+
+  --shadow-sm: 0 1px 2px rgba(28,36,48,.06), 0 1px 1px rgba(28,36,48,.04);
+  --shadow-md: 0 8px 24px -8px rgba(28,36,48,.16), 0 2px 8px -2px rgba(28,36,48,.08);
+  --shadow-lg: 0 24px 60px -20px rgba(28,36,48,.28), 0 8px 20px -8px rgba(28,36,48,.12);
+  --shadow-glow-primary: 0 8px 30px -6px var(--primary-glow);
+
+  --r-sm: 10px; --r-md: 16px; --r-lg: 24px; --r-xl: 32px;
+
+  --font-ar-display: 'Changa', 'Segoe UI', sans-serif;
+  --font-ar-body: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-de-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
+
+  --nav-h: 72px;
+  --ease: cubic-bezier(.22,.9,.32,1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #12161D;
+  --bg-alt: #0D1015;
+  --surface: #1B222C;
+  --surface-glass: rgba(27,34,44,.62);
+  --surface-glass-border: rgba(255,255,255,.08);
+  --ink: #EDF1F5;
+  --ink-soft: #A6AFBB;
+  --ink-faint: #6C7684;
+  --border: #2A323C;
+  --border-strong: #38424E;
+
+  --primary: #6FA0DE;
+  --primary-ink: #A9C6EC;
+  --primary-soft: rgba(111,160,222,.14);
+  --primary-glow: rgba(111,160,222,.28);
+
+  --secondary: #E2838B;
+  --secondary-ink: #F0AEB3;
+  --secondary-soft: rgba(226,131,139,.14);
+  --secondary-glow: rgba(226,131,139,.24);
+
+  --success: #5FCB8C;
+  --success-soft: rgba(95,203,140,.14);
+  --danger: #E2836E;
+  --danger-soft: rgba(226,131,110,.14);
+
+  --lens-koennen: #5BB98A;
+  --lens-muessen: #E2838B;
+  --lens-wollen:  #C97BB8;
+  --lens-duerfen: #6FA0DE;
+  --lens-sollen:  #E0A257;
+  --lens-moechten:#7EC2C7;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3);
+  --shadow-md: 0 8px 24px -8px rgba(0,0,0,.5);
+  --shadow-lg: 0 24px 60px -20px rgba(0,0,0,.6);
+}
+
+body { background: var(--bg); color: var(--ink); font-family: var(--font-ar-body); line-height: 1.75; transition: background-color .5s var(--ease), color .5s var(--ease); }
+.de, [lang="de"] { font-family: var(--font-de-display); direction: ltr; unicode-bidi: isolate; }
+.mono { font-family: var(--font-mono); direction: ltr; unicode-bidi: isolate; }
+h1, h2, h3 { font-family: var(--font-ar-display); font-weight: 600; line-height: 1.3; margin: 0; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+::selection { background: var(--primary); color: #fff; }
+.perf-rule { height: 3px; background-image: repeating-linear-gradient(to right, var(--border-strong) 0 4px, transparent 4px 8px); border: none; }
+
+/* ==========================================================================
+   2. LAYOUT SHELL
+   ========================================================================== */
+.container { max-width: 1120px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); }
+.section { padding-block: clamp(56px, 8vw, 108px); position: relative; }
+.section-head { max-width: 720px; margin-bottom: clamp(28px, 5vw, 48px); }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .78rem; letter-spacing: .02em; color: var(--primary); background: var(--primary-soft); padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; }
+.section-title { font-size: clamp(1.6rem, 3.8vw, 2.5rem); }
+.section-sub { color: var(--ink-soft); font-size: clamp(.98rem, 1.6vw, 1.1rem); margin-top: 12px; max-width: 60ch; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(1){transition-delay:.03s} .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.09s}
+.reveal-stagger.is-visible > *:nth-child(3){transition-delay:.15s} .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.21s}
+.reveal-stagger.is-visible > *:nth-child(5){transition-delay:.27s} .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.33s}
+
+/* ==========================================================================
+   3. HEADER + FILMSTRIP NAV (new nav paradigm)
+   ========================================================================== */
+.site-header { position: sticky; top: 0; z-index: 100; background: var(--surface-glass); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); border-bottom: 1px solid var(--surface-glass-border); }
+.header-top { height: var(--nav-h); display: flex; align-items: center; }
+.header-inner { display: flex; align-items: center; gap: 18px; width: 100%; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; white-space: nowrap; }
+.brand-mark { width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; background: radial-gradient(circle at 35% 35%, #fff3, transparent 40%), conic-gradient(from 200deg, var(--lens-duerfen), var(--lens-koennen), var(--lens-sollen), var(--lens-wollen), var(--lens-muessen), var(--lens-moechten), var(--lens-duerfen)); box-shadow: var(--shadow-glow-primary); position: relative; }
+.brand-mark::after { content:""; position:absolute; inset:28%; border-radius:50%; background: var(--ink); opacity:.85; }
+.brand-text { font-family: var(--font-ar-display); font-size: 1.1rem; }
+.brand-text small { display: block; font-family: var(--font-ar-body); font-weight: 400; font-size: .68rem; color: var(--ink-faint); }
+.progress-ring-wrap { position: relative; width: 44px; height: 44px; flex-shrink: 0; }
+.progress-ring-wrap svg { transform: rotate(-90deg); }
+.progress-ring-track { fill: none; stroke: var(--border); stroke-width: 4; }
+.progress-ring-bar { fill: none; stroke: var(--primary); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset .6s var(--ease); }
+.progress-ring-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: .6rem; font-weight: 600; }
+.header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.icon-btn { width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .25s var(--ease); }
+.icon-btn:hover { color: var(--primary); border-color: var(--primary); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.icon-btn:active { transform: translateY(0) scale(.94); }
+.icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+.search-box { position: relative; display: none; align-items: center; }
+.search-box input { width: 0; opacity: 0; padding: 0; border: none; background: var(--surface); color: var(--ink); border-radius: 12px; transition: all .3s var(--ease); font-family: var(--font-ar-body); font-size: .88rem; }
+.search-box.open input { width: 190px; opacity: 1; padding: 9px 14px; border: 1px solid var(--border); }
+@media (min-width: 861px){ .search-box { display: flex; } }
+
+.reel-nav { overflow-x: auto; scrollbar-width: none; border-top: 1px dashed var(--border); }
+.reel-nav::-webkit-scrollbar { display: none; }
+.reel-track { display: flex; gap: 10px; padding: 10px clamp(18px,4vw,40px); min-width: max-content; }
+.reel-btn { position: relative; flex-shrink: 0; padding: 12px 16px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); font-size: .8rem; font-weight: 600; color: var(--ink-soft); cursor: pointer; transition: all .25s var(--ease); }
+.reel-btn::before, .reel-btn::after { content: ""; position: absolute; right: 6px; left: 6px; height: 3px; background-image: repeating-linear-gradient(to right, var(--border-strong) 0 4px, transparent 4px 8px); }
+.reel-btn::before { top: 3px; } .reel-btn::after { bottom: 3px; }
+.reel-btn:hover { color: var(--ink); border-color: var(--border-strong); }
+.reel-btn.active { color: #fff; background: var(--primary); border-color: transparent; }
+.reel-btn.active::before, .reel-btn.active::after { background-image: repeating-linear-gradient(to right, rgba(255,255,255,.6) 0 4px, transparent 4px 8px); }
+
+/* ==========================================================================
+   4. HERO
+   ========================================================================== */
+.hero { position: relative; padding-block: clamp(48px, 9vw, 96px) clamp(64px, 9vw, 110px); overflow: hidden; }
+.hero::before { content:""; position:absolute; inset:-20% -10% auto -10%; height:640px; z-index:-2; background: radial-gradient(560px 360px at 18% 15%, var(--primary-glow), transparent 70%), radial-gradient(520px 340px at 88% 20%, var(--secondary-glow), transparent 70%); filter: blur(10px); }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 56px); align-items: center; }
+@media (max-width: 940px){ .hero-grid { grid-template-columns: 1fr; } }
+.level-badge { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: .8rem; background: var(--surface); border: 1px solid var(--border); padding: 7px 8px 7px 16px; border-radius: 999px; box-shadow: var(--shadow-sm); margin-bottom: 22px; }
+.level-badge b { background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 999px; font-weight: 600; }
+.hero-title { font-size: clamp(2.1rem, 5vw, 3.3rem); }
+.hero-title .de { color: var(--primary); }
+.hero-lead { margin-top: 20px; font-size: clamp(1.02rem, 1.7vw, 1.2rem); color: var(--ink-soft); max-width: 56ch; }
+.hero-ctas { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 24px; border-radius: 14px; font-weight: 600; font-size: .96rem; cursor: pointer; border: 1px solid transparent; transition: all .25s var(--ease); }
+.btn:active { transform: scale(.97); }
+.btn-primary { background: linear-gradient(155deg, var(--primary), var(--primary-ink)); color: #fff; box-shadow: var(--shadow-glow-primary); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 34px -8px var(--primary-glow); }
+.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--border); }
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-3px); }
+
+/* ==========================================================================
+   5. LENS RACK + VIEWFINDER — signature component for Lesson 3
+   ========================================================================== */
+.lens-rack { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; padding-block: 6px 34px; }
+.lens-btn { position: relative; width: 62px; height: 62px; border-radius: 50%; border: 3px solid var(--surface); cursor: pointer; box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease); display: flex; align-items: center; justify-content: center; }
+.lens-btn::before { content:""; position:absolute; inset: 5px; border-radius: 50%; border: 2px solid rgba(255,255,255,.45); pointer-events: none; }
+.lens-btn svg { width: 22px; height: 22px; stroke: #fff; }
+.lens-btn:hover { transform: translateY(-4px) scale(1.05); }
+.lens-btn.active { transform: scale(1.16); box-shadow: 0 0 0 6px var(--lens-glow-color, var(--primary-soft)), var(--shadow-md); }
+.lens-caption { position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%); font-family: var(--font-mono); font-size: .68rem; white-space: nowrap; color: var(--ink-faint); }
+.lens-wrap { position: relative; padding-bottom: 26px; }
+
+.viewfinder-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: clamp(22px,3.4vw,34px); box-shadow: var(--shadow-lg); position: relative; }
+.vf-corner { position: absolute; width: 22px; height: 22px; border-color: var(--border-strong); opacity: .8; }
+.vf-corner.tl { top: 10px; inset-inline-start: 10px; border-top: 2.5px solid; border-inline-start: 2.5px solid; border-radius: 4px 0 0 0; }
+.vf-corner.tr { top: 10px; inset-inline-end: 10px; border-top: 2.5px solid; border-inline-end: 2.5px solid; border-radius: 0 4px 0 0; }
+.vf-corner.bl { bottom: 10px; inset-inline-start: 10px; border-bottom: 2.5px solid; border-inline-start: 2.5px solid; border-radius: 0 0 0 4px; }
+.vf-corner.br { bottom: 10px; inset-inline-end: 10px; border-bottom: 2.5px solid; border-inline-end: 2.5px solid; border-radius: 0 0 4px 0; }
+.viewfinder-content { transition: filter .35s var(--ease), opacity .35s var(--ease); }
+.viewfinder-content.focusing { filter: blur(7px); opacity: .35; }
+.vf-meaning-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .8rem; padding: 5px 14px; border-radius: 999px; color: #fff; margin-bottom: 14px; }
+.vf-verb-title { font-family: var(--font-de-display); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 6px; cursor: pointer; }
+.vf-verb-ar { color: var(--ink-soft); margin-bottom: 20px; }
+.vf-conj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 18px; margin-bottom: 22px; }
+@media (max-width: 560px){ .vf-conj-grid { grid-template-columns: 1fr; } }
+.vf-conj-row { display: flex; justify-content: space-between; background: var(--bg-alt); border-radius: 10px; padding: 8px 14px; }
+.vf-conj-row .de { cursor: pointer; font-weight: 600; }
+
+/* ==========================================================================
+   6. LENS SENTENCE (used in examples + inline in viewfinder)
+   ========================================================================== */
+.lens-sentence { direction: ltr; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-family: var(--font-de-display); font-size: clamp(1.05rem, 2.2vw, 1.4rem); }
+.ls-word { cursor: pointer; border-radius: 8px; padding: 3px 4px; transition: background-color .2s, color .2s; }
+.ls-word:hover { background: var(--bg-alt); }
+.ls-word.speaking { background: var(--primary); color: #fff; }
+.ls-modal-chip { border-radius: 999px; padding: 4px 14px; font-weight: 700; color: #fff; cursor: pointer; }
+.ls-focus { border: 2px solid; border-radius: 10px; padding: 3px 10px; font-weight: 700; cursor: pointer; }
+
+/* ==========================================================================
+   7. GENERIC CARDS / GRIDS / CALLOUTS
+   ========================================================================== */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 760px){ .grid-2 { grid-template-columns: 1fr; } }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 940px){ .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px){ .grid-3 { grid-template-columns: 1fr; } }
+.info-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px; box-shadow: var(--shadow-sm); transition: all .3s var(--ease); }
+.info-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--border-strong); }
+.info-card h3 { font-size: 1.1rem; margin-bottom: 10px; display: flex; align-items: center; gap: 9px; font-family: var(--font-ar-body); font-weight: 700; }
+.info-card h3 .icon-chip { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.info-card p, .info-card li { color: var(--ink-soft); font-size: .95rem; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: .78rem; padding: 4px 11px; border-radius: 999px; }
+.callout { display: flex; gap: 14px; align-items: flex-start; border-inline-start: 4px solid var(--primary); background: var(--surface); border-radius: var(--r-md); padding: 18px 20px; box-shadow: var(--shadow-sm); }
+.callout.secondary { border-inline-start-color: var(--secondary); }
+.callout svg { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+.callout.secondary svg { color: var(--secondary); }
+
+/* ==========================================================================
+   8. COMPARISON TABLE (all 6 modals side by side)
+   ========================================================================== */
+.compare-table-wrap { overflow-x: auto; }
+.compare-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); min-width: 560px; }
+.compare-table th, .compare-table td { padding: 12px 14px; text-align: center; border-bottom: 1px solid var(--border); font-size: .92rem; }
+.compare-table th { background: var(--bg-alt); font-family: var(--font-ar-body); font-weight: 700; }
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table td.de { cursor: pointer; font-weight: 600; }
+.compare-table tr:hover td { background: var(--bg-alt); }
+
+/* ==========================================================================
+   9. ACCORDION
+   ========================================================================== */
+.accordion-item { border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); margin-bottom: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
+.accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; background: none; border: none; cursor: pointer; text-align: right; color: var(--ink); }
+.accordion-trigger:hover { background: var(--bg-alt); }
+.accordion-trigger .chevron { transition: transform .35s var(--ease); flex-shrink: 0; color: var(--ink-faint); }
+.accordion-item.open .chevron { transform: rotate(180deg); }
+.accordion-title { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.accordion-panel { max-height: 0; overflow: hidden; transition: max-height .45s var(--ease); }
+.accordion-item.open .accordion-panel { max-height: 500px; }
+.accordion-body { padding: 0 22px 22px; color: var(--ink-soft); font-size: .95rem; }
+
+/* ==========================================================================
+   10. VOCAB — 3D flip cards
+   ========================================================================== */
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.flip-card { perspective: 1200px; height: 190px; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-shadow: var(--shadow-sm); }
+.flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
+.flip-front .de { font-size: 1.35rem; font-weight: 700; }
+.flip-back { color: #fff; transform: rotateY(180deg); gap: 6px; }
+.flip-back .meaning-de { font-family: var(--font-de-display); font-size: 1.1rem; font-weight: 600; }
+.flip-back .meaning { font-size: .92rem; opacity: .92; }
+.flip-hint { font-family: var(--font-mono); font-size: .66rem; color: var(--ink-faint); margin-top: 10px; }
+.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--primary); transition: all .2s; }
+.speak-dot:hover { transform: scale(1.1); }
+.flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
+.speak-dot .icon { width: 15px; height: 15px; }
+.speak-dot.speaking { animation: pulse-ring 1s var(--ease) infinite; }
+@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 var(--primary-glow)} 70%{box-shadow:0 0 0 10px transparent} 100%{box-shadow:0 0 0 0 transparent} }
+
+/* ==========================================================================
+   11. MISTAKES
+   ========================================================================== */
+.mistake-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+@media (max-width: 640px){ .mistake-card { grid-template-columns: 1fr; } }
+.mistake-side { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.mistake-wrong { background: var(--danger-soft); }
+.mistake-right { background: var(--success-soft); }
+.mistake-tag { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .82rem; }
+.mistake-wrong .mistake-tag { color: var(--danger); }
+.mistake-right .mistake-tag { color: var(--success); }
+.mistake-sentence { font-family: var(--font-de-display); direction: ltr; font-size: 1.05rem; }
+.mistake-note { grid-column: 1 / -1; padding: 12px 20px; font-size: .88rem; color: var(--ink-soft); border-top: 1px dashed var(--border); background: var(--surface); }
+
+/* ==========================================================================
+   12. EXERCISES
+   ========================================================================== */
+.exercise-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+.exercise-tabs { display: flex; overflow-x: auto; border-bottom: 1px solid var(--border); scrollbar-width: none; }
+.exercise-tabs::-webkit-scrollbar { display: none; }
+.exercise-tab { flex-shrink: 0; padding: 16px 20px; background: none; border: none; cursor: pointer; font-weight: 600; font-size: .92rem; color: var(--ink-faint); border-bottom: 3px solid transparent; display: flex; align-items: center; gap: 8px; transition: all .25s; }
+.exercise-tab:hover { color: var(--ink); }
+.exercise-tab.active { color: var(--primary); border-color: var(--primary); }
+.exercise-tab .count { font-family: var(--font-mono); font-size: .7rem; background: var(--bg-alt); padding: 1px 7px; border-radius: 999px; }
+.exercise-panels { padding: clamp(20px, 4vw, 34px); }
+.exercise-panel { display: none; }
+.exercise-panel.active { display: block; animation: fadeSlide .4s var(--ease); }
+@keyframes fadeSlide { from { opacity:0; transform:translateY(10px);} to { opacity:1; transform:translateY(0);} }
+.q-block { border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 20px; margin-bottom: 16px; background: var(--bg-alt); }
+.q-prompt { font-family: var(--font-de-display); direction: ltr; font-size: 1.06rem; margin-bottom: 14px; }
+.q-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.opt-btn { font-family: var(--font-de-display); direction: ltr; padding: 9px 20px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 1rem; transition: all .2s var(--ease); }
+.opt-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.opt-btn.correct { background: var(--success-soft); border-color: var(--success); color: var(--success); }
+.opt-btn.wrong { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
+.opt-btn:disabled { cursor: default; }
+.q-feedback { margin-top: 12px; font-size: .88rem; color: var(--ink-soft); display: none; padding-top: 10px; border-top: 1px dashed var(--border); }
+.q-feedback.show { display: block; }
+.fill-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.fill-row input { font-family: var(--font-de-display); direction: ltr; text-align: left; font-size: 1.05rem; padding: 9px 14px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink); width: 160px; max-width: 100%; }
+.fill-row input:focus { border-color: var(--primary); }
+.fill-check { border: none; background: var(--primary); color: #fff; padding: 9px 18px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+.fill-result { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+.builder-pool, .builder-answer { display: flex; flex-wrap: wrap; gap: 10px; min-height: 52px; align-items: center; }
+.builder-answer { border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: 10px 14px; margin-bottom: 14px; background: var(--surface); }
+.chip-word { font-family: var(--font-de-display); direction: ltr; padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 1rem; transition: all .2s var(--ease); box-shadow: var(--shadow-sm); }
+.chip-word:hover { transform: translateY(-2px); border-color: var(--primary); }
+.chip-word.used { opacity: .3; pointer-events: none; }
+.builder-actions { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.builder-actions .btn { padding: 9px 18px; font-size: .88rem; }
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 3vw, 40px); }
+.match-col { display: flex; flex-direction: column; gap: 10px; }
+.match-item { font-family: var(--font-de-display); direction: ltr; padding: 12px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; transition: all .2s var(--ease); text-align: center; }
+.match-item:hover:not(.matched) { border-color: var(--primary); transform: scale(1.02); }
+.match-item.selected { border-color: var(--primary); background: var(--primary-soft); }
+.match-item.matched { border-color: var(--success); background: var(--success-soft); color: var(--success); pointer-events: none; }
+.match-item.shake { animation: shake .4s; border-color: var(--danger); background: var(--danger-soft); }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+.score-bar-wrap { display: flex; align-items: center; gap: 16px; padding: 18px clamp(20px, 4vw, 34px); border-top: 1px solid var(--border); background: var(--bg-alt); flex-wrap: wrap; }
+.score-track { flex: 1; min-width: 140px; height: 10px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.score-fill { height: 100%; background: linear-gradient(to left, var(--primary), var(--secondary)); border-radius: 999px; width: 0%; transition: width .5s var(--ease); }
+.score-label { font-family: var(--font-mono); font-size: .82rem; white-space: nowrap; }
+
+/* ==========================================================================
+   13. AUDIO DOCK / TOAST / BADGES / FOOTER
+   ========================================================================== */
+.audio-dock { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(140%); z-index: 200; background: var(--surface-glass); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border: 1px solid var(--surface-glass-border); box-shadow: var(--shadow-lg); border-radius: 999px; padding: 8px 10px 8px 18px; display: flex; align-items: center; gap: 12px; max-width: min(92vw, 560px); transition: transform .45s var(--ease); }
+.audio-dock.visible { transform: translateX(-50%) translateY(0); }
+.audio-dock-text { font-family: var(--font-de-display); direction: ltr; font-size: .92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px; }
+.audio-dock-controls { display: flex; align-items: center; gap: 4px; }
+.audio-dock .icon-btn { width: 34px; height: 34px; border-radius: 50%; }
+.audio-dock input[type="range"] { width: 70px; accent-color: var(--primary); }
+.audio-dock-voice { font-family: var(--font-mono); font-size: .64rem; color: var(--ink-faint); display: none; }
+@media (min-width: 620px){ .audio-dock-voice { display: block; } }
+.summary-list { display: flex; flex-direction: column; gap: 12px; }
+.summary-list li { display: flex; gap: 12px; align-items: flex-start; }
+.summary-list .icon-chip { background: var(--primary-soft); color: var(--primary); flex-shrink: 0; }
+.badges-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; margin-top: 30px; }
+.badge { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 12px; text-align: center; filter: grayscale(1) opacity(.5); transition: filter .5s var(--ease); }
+.badge.unlocked { filter: none; opacity: 1; }
+.badge.pop { animation: badgePop .6s var(--ease); }
+@keyframes badgePop { 0%{transform:scale(.7) rotate(-8deg)} 60%{transform:scale(1.12) rotate(4deg)} 100%{transform:scale(1) rotate(0)} }
+.badge-icon { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(155deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: #fff; }
+.badge-name { font-size: .82rem; font-weight: 600; }
+.toast-wrap { position: fixed; top: calc(var(--nav-h) + 44px); left: 50%; transform: translateX(-50%); z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+.toast { background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-size: .88rem; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(-14px); transition: all .4s var(--ease); white-space: nowrap; }
+.toast.show { opacity: 1; transform: translateY(0); }
+.site-footer { border-top: 1px solid var(--border); padding-block: 36px; margin-top: 30px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--ink-faint); font-size: .86rem; }
+.back-to-top { position: fixed; bottom: 20px; inset-inline-end: 20px; z-index: 190; width: 46px; height: 46px; border-radius: 50%; background: var(--primary); color: #fff; border: none; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow-primary); cursor: pointer; opacity: 0; transform: translateY(20px) scale(.8); pointer-events: none; transition: all .35s var(--ease); }
+.back-to-top.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.back-to-top:hover { transform: translateY(-4px) scale(1.05); }
+mark.hl { background: var(--secondary-soft); color: var(--secondary-ink); border-radius: 4px; padding: 0 2px; }
+
+@media print {
+  .site-header, .audio-dock, .back-to-top, .exercise-tabs, .score-bar-wrap, .btn, .icon-btn, .toast-wrap { display: none !important; }
+  body { background: #fff; color: #000; }
+  .section { padding-block: 20px; break-inside: avoid; }
+  .exercise-panel { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><g stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/></g></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+<symbol id="i-speaker" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.3 5.7a9 9 0 0 1 0 12.6"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+<symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 4v6h6"/><path d="M4.6 15a8 8 0 1 0 1.5-9.4L4 9"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><polyline points="6,9 6,3 18,3 18,9"/><rect x="4" y="9" width="16" height="8" rx="1.2"/><rect x="8" y="14" width="8" height="6"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5"/><path d="M15 4h5v5"/><path d="M20 15v5h-5"/><path d="M9 20H4v-5"/></symbol>
+<symbol id="i-compress" viewBox="0 0 24 24"><path d="M9 4v5H4"/><path d="M15 4v5h5"/><path d="M20 20v-5h-5"/><path d="M4 20v-5h5"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="5,13 9,17 19,7"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></symbol>
+<symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 13.5 7 21l5-2.5L17 21l-2-7.5"/><path d="M12 6.5l.9 1.9 2.1.3-1.5 1.4.3 2.1-1.8-1-1.8 1 .3-2.1-1.5-1.4 2.1-.3z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2zM20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2z"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5a2.6 2.6 0 0 1 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></symbol>
+<symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 5.5 19 5.5a2 2 0 0 1 2 2L21 18"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M9 15L15 9"/><path d="M13.5 6.5l1-1a3.5 3.5 0 0 1 5 5l-1 1"/><path d="M10.5 17.5l-1 1a3.5 3.5 0 0 1-5-5l1-1"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.3-8.8C1.4 8 3 5 6 5c2 0 3.3 1.2 4 2.3.7-1.1 2-2.3 4-2.3 3 0 4.6 3 3.3 6.2C19 15.6 12 20 12 20z"/></symbol>
+<symbol id="i-unlock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.4-2"/></symbol>
+<symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 9h1.5a2.5 2.5 0 0 1 0 5H17"/><line x1="7" y1="3" x2="7" y2="5"/><line x1="10" y1="2.5" x2="10" y2="5"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="7" x2="12" y2="13"/><circle cx="12" cy="16.5" r="1"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.6-2h6.8L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+</defs>
+</svg>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<header class="site-header">
+  <div class="header-top">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">ألمانية A2<small>الدرس الثالث · عدسات المعنى</small></span>
+      </div>
+      <div style="flex:1"></div>
+      <div class="header-controls">
+        <div class="search-box" id="searchBoxDesktop"><input type="search" id="searchInputDesktop" placeholder="ابحث في الدرس…" aria-label="ابحث في الدرس"></div>
+        <button class="icon-btn" id="searchToggle" aria-label="بحث"><svg class="icon"><use href="#i-search"/></svg></button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري">
+          <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+        </button>
+        <button class="icon-btn" id="fullscreenToggle" aria-label="ملء الشاشة"><svg class="icon" id="fsIcon"><use href="#i-expand"/></svg></button>
+        <div class="progress-ring-wrap" title="تقدّمك في الدرس">
+          <svg width="44" height="44"><circle class="progress-ring-track" cx="22" cy="22" r="18"/><circle class="progress-ring-bar" id="progressRingBar" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="113"/></svg>
+          <span class="progress-ring-label" id="progressRingLabel">٠٪</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="reel-nav" aria-label="أقسام الدرس"><div class="reel-track" id="reelTrack"></div></nav>
+</header>
+
+<main id="mainContent">
+
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="reveal is-visible">
+      <span class="level-badge"><b>A2</b> الدرس رقم ٣ من مسار «الماضي في الألمانية»</span>
+      <h1 class="hero-title">عدسات المعنى: الأفعال <span class="de">Modalverben</span></h1>
+      <p class="hero-lead">فعل واحد صغير قادر على تغيير معنى الجملة كاملة: بين أن تكون قادرًا، أو مضطرًا، أو راغبًا، أو مسموحًا له. في هذا الدرس، كل فعل ناقص هو «عدسة» تُلوّن الفعل الأساسي بمعنى مختلف.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" data-scroll="#rule"><svg class="icon" style="width:18px;height:18px"><use href="#i-play"/></svg>ابدأ الدرس</button>
+        <button class="btn btn-ghost" data-scroll="#lenses"><svg class="icon" style="width:18px;height:18px"><use href="#i-camera"/></svg>جرّب العدسات</button>
+      </div>
+    </div>
+    <div class="reveal is-visible" style="transition-delay:.15s">
+      <div class="viewfinder-card" id="heroViewfinder"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>لماذا هذا الدرس</span>
+      <h2 class="section-title">لماذا نحتاج الأفعال الناقصة؟</h2>
+      <p class="section-sub">لأنها تضيف الدقة والمشاعر إلى كلامك: الفرق بين «أذهب» و«يجب أن أذهب» و«أريد أن أذهب» هائل.</p>
+    </div>
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--primary-soft);color:var(--primary)"><svg class="icon" style="width:18px;height:18px"><use href="#i-camera"/></svg></span>عدسة تُغيّر المعنى</h3>
+        <p>الفعل الأساسي (مثل <span class="de mono">gehen</span>) يبقى كما هو، لكن الفعل الناقص الذي يسبقه يُلوّن الجملة بمعنى القدرة أو الضرورة أو الرغبة.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--secondary-soft);color:var(--secondary-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-link"/></svg></span>يبني على ما تعلمته</h3>
+        <p>تمامًا كما رأيت في الدرس الأول أن <span class="mono">Partizip II</span> ينتقل إلى نهاية الجملة، هنا سينتقل الفعل الأساسي (بصيغته المصدرية) إلى النهاية أيضًا.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--primary-soft);color:var(--primary)"><svg class="icon" style="width:18px;height:18px"><use href="#i-star"/></svg></span>ستة أفعال فقط</h3>
+        <p>können, müssen, wollen, dürfen, sollen, و möchten — ستة أفعال تكفي للتعبير عن معظم مشاعرك تجاه أي فعل تقوم به.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="perf-rule">
+
+<section class="section" id="rule">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-link"/></svg>القاعدة الأساسية</span>
+      <h2 class="section-title">إطار الجملة يعود — بعدسة جديدة</h2>
+      <p class="section-sub">الفعل الناقص يحتل الموضع الثاني، والفعل الأساسي (بصيغته المصدرية دون تصريف) يُدفع إلى النهاية — بلا «zu» أبدًا.</p>
+    </div>
+    <div class="reveal">
+      <div class="viewfinder-card">
+        <span class="vf-corner tl"></span><span class="vf-corner tr"></span><span class="vf-corner bl"></span><span class="vf-corner br"></span>
+        <div class="lens-sentence" id="ruleSentence" dir="ltr"></div>
+        <p style="margin-top:16px;padding-top:16px;border-top:1px dashed var(--border);color:var(--ink-soft)">أستطيع السباحة جيدًا. — لاحظ أن <span class="mono">kann</span> في الموضع الثاني، و<span class="mono">schwimmen</span> (المصدر) في نهاية الجملة، بلا «zu».</p>
+      </div>
+    </div>
+    <div class="grid-2 reveal" style="margin-top:24px">
+      <div class="callout">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+        <p><b>لا «zu» مع الأفعال الناقصة:</b> بخلاف بعض التراكيب الأخرى التي ستقابلها لاحقًا، الفعل الناقص يتبعه المصدر مباشرة بلا «zu»: <span class="de" data-speak="Ich muss gehen">Ich muss gehen</span>، وليس «Ich muss zu gehen».</p>
+      </div>
+      <div class="callout secondary">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-link"/></svg>
+        <p><b>تذكّر الدرس الأول:</b> نفس فكرة «القوس»: الفعل المُصرَّف في البداية، والجزء غير المُصرَّف من الفعل (Partizip II هناك، والمصدر هنا) في النهاية دائمًا.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="perf-rule">
+
+<section class="section" id="lenses">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-camera"/></svg>جرّب بنفسك</span>
+      <h2 class="section-title">عدسات الأفعال الستة</h2>
+      <p class="section-sub">انقر على أي عدسة لترى معناها، تصريفها الكامل، وجملة توضيحية بلونها الخاص.</p>
+    </div>
+    <div class="reveal">
+      <div class="lens-rack" id="lensRack"></div>
+      <div class="viewfinder-card">
+        <span class="vf-corner tl"></span><span class="vf-corner tr"></span><span class="vf-corner bl"></span><span class="vf-corner br"></span>
+        <div class="viewfinder-content" id="mainViewfinder"></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:36px;font-size:1.2rem" class="reveal">مقارنة سريعة بين الأفعال الستة</h3>
+    <div class="reveal compare-table-wrap" style="margin-top:16px">
+      <table class="compare-table" id="compareTable"></table>
+    </div>
+  </div>
+</section>
+
+<hr class="perf-rule">
+
+<section class="section" id="vocab">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-cards"/></svg>١٢ فعلًا أساسيًا</span>
+      <h2 class="section-title">المفردات الأساسية</h2>
+      <p class="section-sub">الأفعال الملوّنة هي الأفعال الناقصة الستة، والبيضاء أفعال شائعة تُستخدم معها.</p>
+    </div>
+    <div class="vocab-grid" id="vocabGrid"></div>
+  </div>
+</section>
+
+<hr class="perf-rule">
+
+<section class="section" id="examples">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>تطبيق عملي</span>
+      <h2 class="section-title">جملة واحدة لكل عدسة</h2>
+    </div>
+    <div class="reveal-stagger reveal" id="examplesList" style="display:flex;flex-direction:column;gap:18px"></div>
+  </div>
+</section>
+
+<hr class="perf-rule">
+
+<section class="section" id="mistakes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>تجنّب الفخاخ الشائعة</span>
+      <h2 class="section-title">أخطاء يقع فيها معظم المتعلمين</h2>
+    </div>
+    <div class="reveal-stagger reveal" id="mistakesList" style="display:flex;flex-direction:column;gap:16px"></div>
+  </div>
+</section>
+
+<hr class="perf-rule">
+
+<section class="section" id="pronunciation">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-speaker"/></svg>نطق أصيل</span>
+      <h2 class="section-title">نصائح النطق وأسرار المتحدث الأصلي</h2>
+    </div>
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--primary-soft);color:var(--primary);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">تغيّر الحرف في المفرد</h3><p>غالبًا يفقد الفعل الناقص الحركة المزدوجة (Umlaut) في صيغة المفرد: <span class="de" data-speak="können, ich kann">können → kann</span>، <span class="de" data-speak="müssen, ich muss">müssen → muss</span>، <span class="de" data-speak="dürfen, ich darf">dürfen → darf</span>. لكن <span class="mono">wollen</span> و<span class="mono">sollen</span> يحتفظان بحركتهما.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--secondary-soft);color:var(--secondary-ink);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px"><span class="mono">möchten</span> أم <span class="mono">machen</span>؟</h3><p>لا تخلط بينهما: <span class="de" data-speak="möchten">möchten</span> بصوت "ch" أمامي ناعم (ich-Laut)، بينما <span class="de" data-speak="machen">machen</span> بصوت "ch" خلفي خشن (ach-Laut).</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--primary-soft);color:var(--primary);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">إيقاع الجملة</h3><p>النبرة تقع على الفعل الناقص لأنه يحمل المعنى العاطفي للجملة، بينما يُنطق المصدر في النهاية بإيقاع أسرع وأخف.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="perf-rule">
+
+<section class="section" id="exercises">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-camera"/></svg>وقت التطبيق</span>
+      <h2 class="section-title">تمارين تفاعلية فورية</h2>
+    </div>
+    <div class="exercise-shell reveal">
+      <div class="exercise-tabs" role="tablist">
+        <button class="exercise-tab active" data-panel="panelMcq" role="tab">اختر التصريف <span class="count" id="countMcq">٠/٦</span></button>
+        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الفعل <span class="count" id="countFill">٠/٦</span></button>
+        <button class="exercise-tab" data-panel="panelBuilder" role="tab">رتّب الجملة <span class="count" id="countBuilder">٠/٣</span></button>
+        <button class="exercise-tab" data-panel="panelMatch" role="tab">طابق العدسات <span class="count" id="countMatch">٠/٦</span></button>
+      </div>
+      <div class="exercise-panels">
+        <div class="exercise-panel active" id="panelMcq"></div>
+        <div class="exercise-panel" id="panelFill"></div>
+        <div class="exercise-panel" id="panelBuilder"></div>
+        <div class="exercise-panel" id="panelMatch"></div>
+      </div>
+      <div class="score-bar-wrap">
+        <span class="score-label">إتقانك للتمارين</span>
+        <div class="score-track"><div class="score-fill" id="scoreFill"></div></div>
+        <span class="score-label mono" id="scoreLabel">٠٪</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="perf-rule">
+
+<section class="section" id="summary">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-star"/></svg>ملخّص الدرس</span>
+      <h2 class="section-title">ما الذي أتقنته اليوم؟</h2>
+    </div>
+    <div class="grid-2 reveal">
+      <ul class="summary-list info-card">
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>ستة أفعال ناقصة: <span class="mono">können, müssen, wollen, dürfen, sollen, möchten</span>، كل واحد «عدسة» بمعنى مختلف.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>الفعل الناقص في الموضع الثاني، والمصدر في نهاية الجملة، بلا «zu».</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>صيغتا <span class="mono">ich</span> و<span class="mono">er/sie/es</span> متطابقتان دون أي نهاية إضافية.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><span class="mono">möchten</span> يمكن أن يتبعه اسم مباشرة (مثل طلب مشروب) دون الحاجة لفعل مصدر.</p></li>
+      </ul>
+      <div class="info-card" style="display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;background:linear-gradient(155deg, var(--primary-soft), var(--secondary-soft))">
+        <svg class="icon" style="width:40px;height:40px;margin:0 auto;color:var(--primary)"><use href="#i-compass"/></svg>
+        <h3 style="justify-content:center;font-size:1.2rem">الدرس القادم</h3>
+        <p>حالة الجر (Dativ) وحروف الجر مثل mit, bei, nach, seit — لتربط جملك بأشخاص وأماكن وأزمنة. قريبًا في الدرس الرابع.</p>
+        <button class="btn btn-ghost" disabled style="align-self:center;opacity:.6;cursor:not-allowed">الدرس ٤ (قريبًا)</button>
+      </div>
+    </div>
+    <h3 style="margin-top:40px;text-align:center;font-size:1.3rem" class="reveal">إنجازاتك في هذا الدرس</h3>
+    <div class="badges-row reveal" id="badgesRow"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>الدرس ٣ · مسار الألمانية A2 — الأفعال الناقصة وعدسات المعنى.</span>
+    <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس"><svg class="icon"><use href="#i-printer"/></svg></button>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى"><svg class="icon" style="width:20px;height:20px;stroke:#fff"><use href="#i-up"/></svg></button>
+
+<div class="audio-dock" id="audioDock">
+  <div class="audio-dock-controls">
+    <button class="icon-btn" id="dockPlayPause" aria-label="تشغيل/إيقاف مؤقت"><svg class="icon" id="dockPlayIcon"><use href="#i-pause"/></svg></button>
+    <button class="icon-btn" id="dockReplay" aria-label="إعادة"><svg class="icon"><use href="#i-replay"/></svg></button>
+  </div>
+  <span class="audio-dock-text" id="dockText" dir="ltr">…</span>
+  <input type="range" id="dockSpeed" min="0.6" max="1.3" step="0.05" value="0.95" aria-label="سرعة النطق">
+  <span class="audio-dock-voice" id="dockVoice">…</span>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ==========================================================================
+   DATA
+   ========================================================================== */
+const MODALS = [
+  {key:"koennen", inf:"können", ich:"kann", du:"kannst", er:"kann", wir:"können", ihr:"könnt", sie:"können", ar:"القدرة / الإمكان", meaning:"يستطيع", icon:"i-check"},
+  {key:"muessen", inf:"müssen", ich:"muss", du:"musst", er:"muss", wir:"müssen", ihr:"müsst", sie:"müssen", ar:"الضرورة / الإلزام", meaning:"يجب أن", icon:"i-alert"},
+  {key:"wollen", inf:"wollen", ich:"will", du:"willst", er:"will", wir:"wollen", ihr:"wollt", sie:"wollen", ar:"الرغبة / الإرادة", meaning:"يريد", icon:"i-heart"},
+  {key:"duerfen", inf:"dürfen", ich:"darf", du:"darfst", er:"darf", wir:"dürfen", ihr:"dürft", sie:"dürfen", ar:"الإذن / المسموح به", meaning:"يُسمح له", icon:"i-unlock"},
+  {key:"sollen", inf:"sollen", ich:"soll", du:"sollst", er:"soll", wir:"sollen", ihr:"sollt", sie:"sollen", ar:"النصيحة / الواجب", meaning:"ينبغي أن", icon:"i-bulb"},
+  {key:"moechten", inf:"möchten", ich:"möchte", du:"möchtest", er:"möchte", wir:"möchten", ihr:"möchtet", sie:"möchten", ar:"رغبة مهذبة", meaning:"يودّ", icon:"i-cup"}
+];
+
+const VOCAB_EXTRA = [
+  {de:"schwimmen", ar:"يسبح"}, {de:"kochen", ar:"يطبخ"}, {de:"tanzen", ar:"يرقص"},
+  {de:"singen", ar:"يغني"}, {de:"Auto fahren", ar:"يقود سيارة"}, {de:"Klavier spielen", ar:"يعزف البيانو"}
+];
+
+const EXAMPLES = [
+  {subject:"Ich", modal:"koennen", modalForm:"kann", mid:"gut", inf:"schwimmen", ar:"أستطيع السباحة جيدًا."},
+  {subject:"Ich", modal:"muessen", modalForm:"muss", mid:"früh", inf:"aufstehen", ar:"يجب أن أستيقظ باكرًا."},
+  {subject:"Wir", modal:"wollen", modalForm:"wollen", mid:"heute", inf:"tanzen", ar:"نريد أن نرقص اليوم."},
+  {subject:"Ihr", modal:"duerfen", modalForm:"dürft", mid:"hier", inf:"spielen", ar:"يُسمح لكم باللعب هنا."},
+  {subject:"Er", modal:"sollen", modalForm:"soll", mid:"mehr Wasser", inf:"trinken", ar:"ينبغي أن يشرب المزيد من الماء."},
+  {subject:"Ich", modal:"moechten", modalForm:"möchte", mid:"", inf:"einen Kaffee", ar:"أود فنجان قهوة.", noInfEnd:true}
+];
+
+const MISTAKES = [
+  {wrong:"Ich kann spielen Fußball.", right:"Ich kann Fußball spielen.", note:"المصدر يجب أن يبقى في نهاية الجملة تمامًا، وليس مباشرة بعد الفعل الناقص."},
+  {wrong:"Ich muss zu gehen.", right:"Ich muss gehen.", note:"لا تُستخدم «zu» أبدًا بعد الأفعال الناقصة — المصدر يأتي مباشرة."},
+  {wrong:"Du kannen Deutsch sprechen.", right:"Du kannst Deutsch sprechen.", note:"صيغة «du» تأخذ النهاية «-st»: kannst، وليس «kannen»."},
+  {wrong:"Ich möchte gehen nach Hause.", right:"Ich möchte nach Hause gehen.", note:"المصدر «gehen» يبقى في آخر الجملة، والتفاصيل قبله."},
+  {wrong:"Wir wollen zu spielen.", right:"Wir wollen spielen.", note:"مرة أخرى: بلا «zu» بعد الفعل الناقص مباشرة."}
+];
+
+const MCQ = [
+  {parts:["Ich ", "___", " gut schwimmen."], options:["kann","kannst"], correct:"kann", why:"صيغة «ich» لا تأخذ أي نهاية إضافية."},
+  {parts:["Du ", "___", " jetzt nach Hause gehen."], options:["musst","muss"], correct:"musst", why:"صيغة «du» تأخذ النهاية «-st»."},
+  {parts:["Wir ", "___", " heute Abend tanzen."], options:["wollen","will"], correct:"wollen", why:"صيغة الجمع «wir» تطابق صيغة المصدر: wollen."},
+  {parts:["", "___", " ich hier parken?"], options:["Darf","Dürft"], correct:"Darf", why:"صيغة «ich» في السؤال: darf، بلا نهاية."},
+  {parts:["Ihr ", "___", " mehr Gemüse essen."], options:["sollt","soll"], correct:"sollt", why:"صيغة الجمع المخاطب «ihr» تأخذ النهاية «-t»: sollt."},
+  {parts:["Sie ", "___", " einen Tee."], options:["möchte","möchten"], correct:"möchte", why:"«sie» هنا مفردة (هي)، فتأخذ صيغة الغائب المفرد: möchte."}
+];
+
+const FILL = [
+  {inf:"Ich ___ Deutsch sprechen.", correct:"kann", hint:"können — صيغة المتكلم"},
+  {inf:"Du ___ früh aufstehen.", correct:"musst", hint:"müssen — صيغة المخاطب"},
+  {inf:"Wir ___ ins Kino gehen.", correct:"wollen", hint:"wollen — صيغة الجمع"},
+  {inf:"Ihr ___ hier spielen.", correct:"dürft", hint:"dürfen — صيغة جمع المخاطب"},
+  {inf:"Er ___ mehr trinken.", correct:"soll", hint:"sollen — صيغة الغائب"},
+  {inf:"Ich ___ einen Kaffee.", correct:"möchte", hint:"möchten — صيغة المتكلم المهذبة"}
+];
+
+const BUILDER = [
+  {words:["schwimmen","Ich","kann","gut"], correct:["Ich","kann","gut","schwimmen"], ar:"أستطيع السباحة جيدًا."},
+  {words:["früh","musst","Du","aufstehen"], correct:["Du","musst","früh","aufstehen"], ar:"يجب أن تستيقظ باكرًا."},
+  {words:["tanzen","wollen","Wir","heute"], correct:["Wir","wollen","heute","tanzen"], ar:"نريد أن نرقص اليوم."}
+];
+
+/* ==========================================================================
+   THEME
+   ========================================================================== */
+const root = document.documentElement;
+function applyTheme(mode){ root.setAttribute('data-theme', mode); try{ localStorage.setItem('lesson3-theme', mode); }catch(e){} }
+(function initTheme(){
+  let stored = null;
+  try{ stored = localStorage.getItem('lesson3-theme'); }catch(e){}
+  if(stored){ applyTheme(stored); } else { applyTheme(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+})();
+document.getElementById('themeToggle').addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+
+/* ==========================================================================
+   SPEECH SYNTHESIS MANAGER
+   ========================================================================== */
+const Speech = (function(){
+  let voices = [], currentVoice = null, currentUtterance = null, currentEl = null, rate = 0.95;
+  function refreshVoices(){
+    voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+    const de = voices.filter(v => /^de/i.test(v.lang));
+    const pool = de.length ? de : voices;
+    if(pool.length){
+      pool.sort((a,b)=>{ const score = v => (/de-de/i.test(v.lang)?3:0) + (/google/i.test(v.name)?2:0) + (/natural|enhanced|premium|online/i.test(v.name)?2:0) + (v.default?1:0); return score(b)-score(a); });
+      currentVoice = pool[0];
+    }
+    const label = document.getElementById('dockVoice');
+    if(label) label.textContent = currentVoice ? currentVoice.name.replace('Microsoft ','').replace('Google ','') : 'صوت افتراضي';
+  }
+  if(window.speechSynthesis){ refreshVoices(); window.speechSynthesis.onvoiceschanged = refreshVoices; }
+  function clearHighlights(){ document.querySelectorAll('.ls-word.speaking, .speak-dot.speaking').forEach(el => el.classList.remove('speaking')); }
+  function speak(text, opts){
+    opts = opts || {};
+    if(!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    clearHighlights();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'de-DE';
+    if(currentVoice) utter.voice = currentVoice;
+    utter.rate = rate;
+    currentUtterance = utter; currentEl = opts.el || null;
+    utter.onstart = () => { showDock(text); if(opts.el) opts.el.classList.add('speaking'); setDockPlaying(true); };
+    utter.onend = () => { clearHighlights(); setDockPlaying(false); hideDockDelayed(); };
+    utter.onerror = () => setDockPlaying(false);
+    window.speechSynthesis.speak(utter);
+  }
+  function togglePause(){
+    if(!window.speechSynthesis) return;
+    if(window.speechSynthesis.speaking && !window.speechSynthesis.paused){ window.speechSynthesis.pause(); setDockPlaying(false); }
+    else if(window.speechSynthesis.paused){ window.speechSynthesis.resume(); setDockPlaying(true); }
+  }
+  function replay(){ if(currentUtterance) speak(currentUtterance.text, {el: currentEl}); }
+  function setRate(r){ rate = r; }
+  let dockTimeout = null;
+  function showDock(text){ clearTimeout(dockTimeout); const dock = document.getElementById('audioDock'); document.getElementById('dockText').textContent = text; dock.classList.add('visible'); }
+  function hideDockDelayed(){ dockTimeout = setTimeout(()=> document.getElementById('audioDock').classList.remove('visible'), 2600); }
+  function setDockPlaying(playing){ document.getElementById('dockPlayIcon').innerHTML = '<use href="#' + (playing?'i-pause':'i-play') + '"/>'; }
+  return { speak, togglePause, replay, setRate };
+})();
+document.getElementById('dockPlayPause').addEventListener('click', Speech.togglePause);
+document.getElementById('dockReplay').addEventListener('click', Speech.replay);
+document.getElementById('dockSpeed').addEventListener('input', e => Speech.setRate(parseFloat(e.target.value)));
+
+/* ==========================================================================
+   SHARED HELPER: click-to-speak accessibility wiring
+   ========================================================================== */
+function makeSpeakable(el, text, opts){
+  opts = opts || {};
+  el.style.cursor = 'pointer';
+  if(!el.getAttribute('role')) el.setAttribute('role','button');
+  if(!el.hasAttribute('tabindex')) el.tabIndex = 0;
+  if(!el.getAttribute('aria-label')) el.setAttribute('aria-label', 'استمع لـ ' + text);
+  el.addEventListener('click', () => Speech.speak(text, Object.assign({el}, opts)));
+  el.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); el.click(); } });
+}
+document.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+
+/* ==========================================================================
+   BADGES
+   (defined early — selectModal(), called during initial page setup below,
+   triggers unlockBadge() immediately, so these must exist before that runs)
+   ========================================================================== */
+const BADGES = [
+  {id:'explorer', name:'مستكشف الدرس', icon:'i-compass'},
+  {id:'vocab', name:'حافظ المفردات', icon:'i-cards'},
+  {id:'lenses', name:'مصوّر محترف', icon:'i-camera'},
+  {id:'sharp', name:'حادّ التفكير', icon:'i-medal'},
+  {id:'champion', name:'بطل الدرس الثالث', icon:'i-star'}
+];
+let unlockedBadges = {};
+try{ unlockedBadges = JSON.parse(localStorage.getItem('lesson3-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
+const badgesRow = document.getElementById('badgesRow');
+BADGES.forEach(b => {
+  const el = document.createElement('div'); el.className = 'badge' + (unlockedBadges[b.id]?' unlocked':''); el.id = 'badge-'+b.id;
+  el.innerHTML = `<div class="badge-icon"><svg class="icon" style="stroke:#fff;width:22px;height:22px"><use href="#${b.icon}"/></svg></div><div class="badge-name">${b.name}</div>`;
+  badgesRow.appendChild(el);
+});
+function unlockBadge(id){
+  if(unlockedBadges[id]) return;
+  unlockedBadges[id] = true;
+  try{ localStorage.setItem('lesson3-badges', JSON.stringify(unlockedBadges)); }catch(e){}
+  const el = document.getElementById('badge-'+id);
+  if(el){ el.classList.add('unlocked','pop'); setTimeout(()=>el.classList.remove('pop'), 650); }
+  const badge = BADGES.find(b=>b.id===id);
+  if(badge) showToast('🎉 إنجاز جديد: ' + badge.name);
+}
+function showToast(msg){
+  const wrap = document.getElementById('toastWrap'); const t = document.createElement('div'); t.className='toast'; t.textContent=msg; wrap.appendChild(t);
+  requestAnimationFrame(()=>t.classList.add('show'));
+  setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.remove(),400); }, 3200);
+}
+
+function modalColor(key){ return getComputedStyle(document.documentElement).getPropertyValue('--lens-' + key).trim(); }
+
+/* ==========================================================================
+   LENS SENTENCE COMPONENT
+   ========================================================================== */
+function buildLensSentence(container, data){
+  container.innerHTML = '';
+  const color = modalColor(data.modal);
+  const mk = (word) => { const s = document.createElement('span'); s.className = 'ls-word de'; s.textContent = word; makeSpeakable(s, word); return s; };
+  container.appendChild(mk(data.subject));
+  const chip = document.createElement('span');
+  chip.className = 'ls-modal-chip de';
+  chip.style.background = color;
+  chip.textContent = data.modalForm;
+  makeSpeakable(chip, data.modalForm);
+  container.appendChild(chip);
+  if(data.mid){ data.mid.split(' ').forEach(w => container.appendChild(mk(w))); }
+  const focus = document.createElement('span');
+  focus.className = 'ls-focus de';
+  focus.style.borderColor = color;
+  focus.style.color = color;
+  focus.textContent = data.inf;
+  makeSpeakable(focus, data.inf);
+  container.appendChild(focus);
+  const period = document.createElement('span'); period.textContent = '.'; container.appendChild(period);
+  const fullText = [data.subject, data.modalForm, data.mid, data.inf].filter(Boolean).join(' ') + '.';
+  container.dataset.fulltext = fullText;
+}
+buildLensSentence(document.getElementById('ruleSentence'), {subject:"Ich", modal:"koennen", modalForm:"kann", mid:"gut", inf:"schwimmen"});
+
+/* ==========================================================================
+   LENS RACK + VIEWFINDER (signature interactive component)
+   ========================================================================== */
+const lensRack = document.getElementById('lensRack');
+const mainViewfinder = document.getElementById('mainViewfinder');
+let activeModalKey = null;
+
+function renderViewfinder(target, modal){
+  const color = modalColor(modal.key);
+  target.innerHTML = `
+    <span class="vf-meaning-tag" style="background:${color}"><svg class="icon" style="width:14px;height:14px"><use href="#${modal.icon}"/></svg>${modal.ar}</span>
+    <div class="vf-verb-title de" data-speak="${modal.inf}" style="color:${color}">${modal.inf}</div>
+    <div class="vf-verb-ar">${modal.meaning}</div>
+    <div class="vf-conj-grid">
+      <div class="vf-conj-row"><span>ich</span><span class="de" data-speak="ich ${modal.ich}">${modal.ich}</span></div>
+      <div class="vf-conj-row"><span>du</span><span class="de" data-speak="du ${modal.du}">${modal.du}</span></div>
+      <div class="vf-conj-row"><span>er / sie / es</span><span class="de" data-speak="er ${modal.er}">${modal.er}</span></div>
+      <div class="vf-conj-row"><span>wir</span><span class="de" data-speak="wir ${modal.wir}">${modal.wir}</span></div>
+      <div class="vf-conj-row"><span>ihr</span><span class="de" data-speak="ihr ${modal.ihr}">${modal.ihr}</span></div>
+      <div class="vf-conj-row"><span>sie / Sie</span><span class="de" data-speak="sie ${modal.sie}">${modal.sie}</span></div>
+    </div>`;
+  // Build the example sentence as a direct element reference rather than an id
+  // round-trip: this component can render more than once for the same modal
+  // at the same time (hero preview + main viewer), and duplicate ids in the
+  // document make scoped querySelector lookups unreliable.
+  const sentenceEl = document.createElement('div');
+  sentenceEl.className = 'lens-sentence';
+  sentenceEl.setAttribute('dir', 'ltr');
+  target.appendChild(sentenceEl);
+  target.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  const ex = EXAMPLES.find(e => e.modal === modal.key);
+  if(ex) buildLensSentence(sentenceEl, ex);
+}
+
+function selectModal(key, wrapper, rackEl){
+  const modal = MODALS.find(m => m.key === key);
+  const content = wrapper.querySelector('.viewfinder-content') || wrapper;
+  if(rackEl){
+    rackEl.querySelectorAll('.lens-btn').forEach(b => b.classList.toggle('active', b.dataset.key === key));
+  }
+  content.classList.add('focusing');
+  setTimeout(() => { renderViewfinder(content, modal); content.classList.remove('focusing'); }, 180);
+  unlockBadge('lenses');
+}
+
+MODALS.forEach(modal => {
+  const btn = document.createElement('div');
+  btn.className = 'lens-btn';
+  btn.style.background = modalColor(modal.key) || '#888';
+  btn.style.setProperty('--lens-glow-color', modalColor(modal.key) + '55');
+  btn.innerHTML = `<svg class="icon"><use href="#${modal.icon}"/></svg><span class="lens-caption">${modal.inf}</span>`;
+  btn.dataset.key = modal.key;
+  btn.setAttribute('role','button'); btn.tabIndex = 0;
+  btn.setAttribute('aria-label', 'اختر عدسة ' + modal.inf);
+  btn.addEventListener('click', () => selectModal(modal.key, document.querySelector('#lenses .viewfinder-card'), lensRack));
+  btn.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); btn.click(); } });
+  lensRack.appendChild(btn);
+});
+selectModal('koennen', document.querySelector('#lenses .viewfinder-card'), lensRack);
+document.getElementById('heroViewfinder').innerHTML = '<span class="vf-corner tl"></span><span class="vf-corner tr"></span><span class="vf-corner bl"></span><span class="vf-corner br"></span><div class="viewfinder-content"></div>';
+renderViewfinder(document.querySelector('#heroViewfinder .viewfinder-content'), MODALS[0]);
+
+/* ==========================================================================
+   COMPARISON TABLE
+   ========================================================================== */
+const compareTable = document.getElementById('compareTable');
+compareTable.innerHTML = '<tr><th>المصدر</th><th>ich</th><th>du</th><th>er/sie/es</th><th>المعنى</th></tr>' +
+  MODALS.map(m => `<tr><td class="de" data-speak="${m.inf}" style="color:${modalColor(m.key)};font-weight:700">${m.inf}</td><td class="de" data-speak="ich ${m.ich}">${m.ich}</td><td class="de" data-speak="du ${m.du}">${m.du}</td><td class="de" data-speak="er ${m.er}">${m.er}</td><td>${m.ar}</td></tr>`).join('');
+compareTable.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+
+/* ==========================================================================
+   VOCAB — flip cards (6 modal + 6 plain infinitives)
+   ========================================================================== */
+const vocabGrid = document.getElementById('vocabGrid');
+const flippedSet = new Set();
+const vocabCombined = [
+  ...MODALS.map(m => ({de:m.inf, back:m.ich, ar:m.meaning, color:modalColor(m.key)})),
+  ...VOCAB_EXTRA.map(v => ({de:v.de, back:v.de, ar:v.ar, color:null}))
+];
+vocabCombined.forEach((v, i) => {
+  const card = document.createElement('div');
+  card.className = 'flip-card';
+  const backBg = v.color || 'var(--primary)';
+  card.innerHTML = `
+    <div class="flip-card-inner" tabindex="0" role="button" aria-label="بطاقة ${v.de}, انقر للقلب">
+      <div class="flip-face flip-front">
+        <span class="de">${v.de}</span>
+        <span class="flip-hint">انقر للقلب</span>
+        <span class="speak-dot" data-word="${v.de}" role="button" tabindex="0" aria-label="استمع لـ ${v.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+      </div>
+      <div class="flip-face flip-back" style="background:${backBg}">
+        <span class="meaning-de">${v.back}</span>
+        <span class="meaning">${v.ar}</span>
+        <span class="speak-dot" data-word="${v.back}" role="button" tabindex="0" aria-label="استمع لـ ${v.back}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+      </div>
+    </div>`;
+  const inner = card.querySelector('.flip-card-inner');
+  inner.addEventListener('click', e => { if(e.target.closest('.speak-dot')) return; card.classList.toggle('flipped'); if(!flippedSet.has(i)){ flippedSet.add(i); checkVocabAchievement(); } updateProgress(); });
+  inner.addEventListener('keydown', e => { if((e.key==='Enter'||e.key===' ') && !e.target.closest('.speak-dot')){ e.preventDefault(); inner.click(); } });
+  card.querySelectorAll('.speak-dot').forEach(dot => {
+    function trigger(e){ e.stopPropagation(); dot.classList.add('speaking'); Speech.speak(dot.dataset.word, {el: dot}); setTimeout(()=>dot.classList.remove('speaking'), 900); }
+    dot.addEventListener('click', trigger);
+    dot.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); trigger(e); } });
+  });
+  vocabGrid.appendChild(card);
+});
+function checkVocabAchievement(){ if(flippedSet.size >= vocabCombined.length) unlockBadge('vocab'); }
+
+/* ==========================================================================
+   EXAMPLES LIST
+   ========================================================================== */
+const examplesList = document.getElementById('examplesList');
+EXAMPLES.forEach(ex => {
+  const wrap = document.createElement('div');
+  wrap.className = 'viewfinder-card';
+  wrap.innerHTML = `<span class="vf-corner tl"></span><span class="vf-corner tr"></span><span class="vf-corner bl"></span><span class="vf-corner br"></span>
+    <div class="lens-sentence" dir="ltr"></div>
+    <p style="margin-top:14px;padding-top:14px;border-top:1px dashed var(--border);color:var(--ink-soft)"></p>
+    <button class="btn btn-ghost" style="padding:9px 16px;font-size:.85rem;margin-top:14px"><svg class="icon" style="width:15px;height:15px"><use href="#i-speaker"/></svg> استمع للجملة كاملة</button>`;
+  const sentEl = wrap.querySelector('.lens-sentence');
+  buildLensSentence(sentEl, ex);
+  wrap.querySelector('p').textContent = ex.ar;
+  wrap.querySelector('.btn').addEventListener('click', () => Speech.speak(sentEl.dataset.fulltext, {}));
+  examplesList.appendChild(wrap);
+});
+
+/* ==========================================================================
+   MISTAKES LIST
+   ========================================================================== */
+const mistakesList = document.getElementById('mistakesList');
+MISTAKES.forEach(m => {
+  const card = document.createElement('div');
+  card.className = 'mistake-card';
+  card.innerHTML = `
+    <div class="mistake-side mistake-wrong"><span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-x"/></svg> خطأ شائع</span><span class="mistake-sentence">${m.wrong}</span></div>
+    <div class="mistake-side mistake-right"><span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg> الصحيح</span><span class="mistake-sentence de" data-speak="${m.right}">${m.right}</span></div>
+    <div class="mistake-note">${m.note}</div>`;
+  const speakEl = card.querySelector('[data-speak]');
+  makeSpeakable(speakEl, speakEl.dataset.speak);
+  mistakesList.appendChild(card);
+});
+
+/* ==========================================================================
+   EXERCISES
+   ========================================================================== */
+const exState = { mcq:0, fill:0, builder:0, match:0 };
+const exTotals = { mcq: MCQ.length, fill: FILL.length, builder: BUILDER.length, match: 6 };
+function toAr(n){ return String(n).replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]); }
+function updateExerciseCounters(){
+  document.getElementById('countMcq').textContent = toAr(exState.mcq)+'/'+toAr(exTotals.mcq);
+  document.getElementById('countFill').textContent = toAr(exState.fill)+'/'+toAr(exTotals.fill);
+  document.getElementById('countBuilder').textContent = toAr(exState.builder)+'/'+toAr(exTotals.builder);
+  document.getElementById('countMatch').textContent = toAr(exState.match)+'/'+toAr(exTotals.match);
+  const total = exTotals.mcq+exTotals.fill+exTotals.builder+exTotals.match;
+  const done = exState.mcq+exState.fill+exState.builder+exState.match;
+  const pct = Math.round((done/total)*100);
+  document.getElementById('scoreFill').style.width = pct+'%';
+  document.getElementById('scoreLabel').textContent = toAr(pct)+'٪';
+  if(pct===100) unlockBadge('champion');
+  updateProgress();
+}
+document.querySelectorAll('.exercise-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.exercise-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.exercise-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active'); document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+const panelMcq = document.getElementById('panelMcq');
+MCQ.forEach(q => {
+  const block = document.createElement('div'); block.className = 'q-block';
+  block.innerHTML = `<div class="q-prompt de">${q.parts[0]}<b class="mono" style="color:var(--ink-faint)">[ ___ ]</b>${q.parts[2]}</div><div class="q-options"></div><div class="q-feedback"></div>`;
+  const optsWrap = block.querySelector('.q-options'); const feedback = block.querySelector('.q-feedback');
+  q.options.forEach(opt => {
+    const b = document.createElement('button'); b.className = 'opt-btn'; b.textContent = opt;
+    b.addEventListener('click', () => {
+      const correct = opt === q.correct;
+      optsWrap.querySelectorAll('.opt-btn').forEach(o=>o.disabled=true);
+      b.classList.add(correct?'correct':'wrong');
+      if(!correct){ optsWrap.querySelectorAll('.opt-btn').forEach(o=>{ if(o.textContent===q.correct) o.classList.add('correct'); }); }
+      feedback.textContent = q.why; feedback.classList.add('show');
+      exState.mcq++; updateExerciseCounters();
+    });
+    optsWrap.appendChild(b);
+  });
+  panelMcq.appendChild(block);
+});
+
+const panelFill = document.getElementById('panelFill');
+FILL.forEach(q => {
+  const block = document.createElement('div'); block.className = 'q-block';
+  const [before, after] = q.inf.split('___');
+  block.innerHTML = `<div class="q-prompt de">${before}<b class="mono" style="color:var(--ink-faint)">[ ___ ]</b>${after}</div>
+    <div class="fill-row"><input type="text" placeholder="…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل التصريف المناسب"><button class="fill-check">تحقّق</button><span class="fill-result"></span></div>
+    <div class="q-feedback">💡 ${q.hint}</div>`;
+  const input = block.querySelector('input'); const result = block.querySelector('.fill-result'); const feedback = block.querySelector('.q-feedback'); const check = block.querySelector('.fill-check');
+  let answered = false;
+  function doCheck(){
+    if(answered) return;
+    const val = input.value.trim().toLowerCase();
+    const correct = val === q.correct.toLowerCase();
+    answered = true; input.disabled = true; check.disabled = true;
+    if(correct){ result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--success)"><use href="#i-check"/></svg>'; input.style.borderColor='var(--success)'; }
+    else{ result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--danger)"><use href="#i-x"/></svg>'; input.style.borderColor='var(--danger)'; input.value=q.correct; }
+    feedback.classList.add('show'); exState.fill++; updateExerciseCounters();
+  }
+  check.addEventListener('click', doCheck);
+  input.addEventListener('keydown', e => { if(e.key==='Enter'){ e.preventDefault(); doCheck(); } });
+  panelFill.appendChild(block);
+});
+
+const panelBuilder = document.getElementById('panelBuilder');
+BUILDER.forEach(q => {
+  const block = document.createElement('div'); block.className = 'q-block';
+  const shuffled = [...q.words].sort(() => Math.random()-0.5);
+  block.innerHTML = `<div class="q-prompt">رتّب الكلمات لتكوين جملة صحيحة (${q.ar})</div><div class="builder-answer"></div><div class="builder-pool"></div>
+    <div class="builder-actions"><button class="btn btn-ghost btn-reset" style="padding:8px 16px;font-size:.85rem">إعادة الترتيب</button><button class="btn btn-primary btn-check" style="padding:8px 16px;font-size:.85rem">تحقّق</button></div>
+    <div class="q-feedback"></div>`;
+  const answerWrap = block.querySelector('.builder-answer'); const poolWrap = block.querySelector('.builder-pool'); const feedback = block.querySelector('.q-feedback');
+  let answer = [];
+  function renderAll(){
+    poolWrap.innerHTML = '';
+    shuffled.forEach((w, wi) => {
+      const chip = document.createElement('button'); chip.className = 'chip-word de'; chip.textContent = w;
+      if(answer.some(a=>a.idx===wi)) chip.classList.add('used');
+      chip.addEventListener('click', () => { if(chip.classList.contains('used')) return; answer.push({idx:wi, word:w}); renderAll(); });
+      poolWrap.appendChild(chip);
+    });
+    answerWrap.innerHTML = '';
+    if(!answer.length) answerWrap.innerHTML = '<span style="color:var(--ink-faint);font-size:.85rem">انقر على الكلمات أدناه بالترتيب الصحيح…</span>';
+    answer.forEach((a, ai) => {
+      const chip = document.createElement('button'); chip.className = 'chip-word de'; chip.style.background='var(--primary-soft)'; chip.style.borderColor='var(--primary)'; chip.textContent = a.word;
+      chip.addEventListener('click', () => { answer.splice(ai,1); renderAll(); });
+      answerWrap.appendChild(chip);
+    });
+  }
+  renderAll();
+  block.querySelector('.btn-reset').addEventListener('click', () => { answer=[]; feedback.classList.remove('show'); renderAll(); });
+  block.querySelector('.btn-check').addEventListener('click', function(){
+    const built = answer.map(a=>a.word);
+    const isCorrect = JSON.stringify(built) === JSON.stringify(q.correct);
+    feedback.textContent = isCorrect ? '✔ صحيح تمامًا! الجملة الصحيحة: ' + q.correct.join(' ') + '.' : '✘ ليس تمامًا. الترتيب الصحيح: ' + q.correct.join(' ') + '.';
+    feedback.classList.add('show');
+    Speech.speak(q.correct.join(' ') + '.', {});
+    if(!block.dataset.counted){ block.dataset.counted='1'; exState.builder++; updateExerciseCounters(); }
+  });
+  panelBuilder.appendChild(block);
+});
+
+const panelMatch = document.getElementById('panelMatch');
+(function initMatch(){
+  const pairs = MODALS.map(m => ({de:m.inf, ich:m.ich}));
+  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على فعل ناقص من العمود الأيمن، ثم صيغة <span class="mono">ich</span> المطابقة له من العمود الأيسر.</div><div class="match-grid"><div class="match-col" id="matchLeft"></div><div class="match-col" id="matchRight"></div></div>`;
+  const left = document.getElementById('matchLeft'); const right = document.getElementById('matchRight');
+  const shuffledRight = [...pairs].sort(() => Math.random()-0.5);
+  let selL=null, selR=null, matched=0;
+  pairs.forEach(p => {
+    const el = document.createElement('button'); el.className = 'match-item de'; el.textContent = p.de; el.dataset.key = p.de;
+    el.addEventListener('click', () => { if(el.classList.contains('matched')) return; left.querySelectorAll('.match-item').forEach(i=>i.classList.remove('selected')); el.classList.add('selected'); selL=el; tryMatch(); });
+    left.appendChild(el);
+  });
+  shuffledRight.forEach(p => {
+    const el = document.createElement('button'); el.className = 'match-item de mono'; el.textContent = p.ich; el.dataset.key = p.de;
+    el.addEventListener('click', () => { if(el.classList.contains('matched')) return; right.querySelectorAll('.match-item').forEach(i=>i.classList.remove('selected')); el.classList.add('selected'); selR=el; tryMatch(); });
+    right.appendChild(el);
+  });
+  function tryMatch(){
+    if(!selL || !selR) return;
+    if(selL.dataset.key === selR.dataset.key){
+      selL.classList.add('matched'); selR.classList.add('matched'); selL.classList.remove('selected'); selR.classList.remove('selected');
+      Speech.speak(selR.textContent, {});
+      matched++; exState.match = matched; updateExerciseCounters();
+      if(matched===6) unlockBadge('sharp');
+      selL=null; selR=null;
+    } else {
+      [selL, selR].forEach(el => { el.classList.add('shake'); setTimeout(()=>el.classList.remove('shake','selected'), 400); });
+      setTimeout(()=>{ selL=null; selR=null; }, 420);
+    }
+  }
+})();
+
+/* ==========================================================================
+   SCROLL REVEAL + FILMSTRIP NAV + PROGRESS
+   ========================================================================== */
+const revealObserver = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('is-visible'); }); }, {threshold:.15});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+const SECTION_META = [
+  {id:'hero', label:'البداية'}, {id:'why', label:'لماذا'}, {id:'rule', label:'القاعدة'}, {id:'lenses', label:'العدسات'},
+  {id:'vocab', label:'المفردات'}, {id:'examples', label:'أمثلة'}, {id:'mistakes', label:'أخطاء'},
+  {id:'pronunciation', label:'النطق'}, {id:'exercises', label:'التمارين'}, {id:'summary', label:'الخلاصة'}
+];
+const reelTrack = document.getElementById('reelTrack');
+SECTION_META.forEach(s => {
+  const btn = document.createElement('button'); btn.className = 'reel-btn'; btn.dataset.target = '#' + s.id; btn.textContent = s.label;
+  reelTrack.appendChild(btn);
+});
+const sections = SECTION_META.map(s => document.getElementById(s.id)).filter(Boolean);
+const visitedSections = new Set();
+const reelBtns = document.querySelectorAll('.reel-btn');
+function setActiveReel(id){ reelBtns.forEach(b => b.classList.toggle('active', b.dataset.target === id)); }
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if(entry.isIntersecting){ setActiveReel('#'+entry.target.id); visitedSections.add(entry.target.id); if(visitedSections.size===sections.length) unlockBadge('explorer'); updateProgress(); } });
+}, {rootMargin: '-40% 0px -50% 0px'});
+sections.forEach(s => sectionObserver.observe(s));
+document.querySelectorAll('[data-target], [data-scroll]').forEach(btn => {
+  btn.addEventListener('click', () => { const target = btn.dataset.target || btn.dataset.scroll; const el = document.querySelector(target); if(el) el.scrollIntoView({behavior:'smooth', block:'start'}); });
+});
+function updateProgress(){
+  const sectionPct = visitedSections.size / sections.length;
+  const exTotal = exTotals.mcq+exTotals.fill+exTotals.builder+exTotals.match;
+  const exDone = exState.mcq+exState.fill+exState.builder+exState.match;
+  const exPct = exTotal ? exDone/exTotal : 0;
+  const overall = Math.round((sectionPct*0.4 + exPct*0.6) * 100);
+  const circumference = 113;
+  document.getElementById('progressRingBar').style.strokeDashoffset = circumference - (overall/100)*circumference;
+  document.getElementById('progressRingLabel').textContent = toAr(overall)+'٪';
+}
+updateProgress(); updateExerciseCounters();
+
+/* ==========================================================================
+   SEARCH
+   ========================================================================== */
+function runSearch(query){
+  if(!query || query.trim().length < 2) return;
+  const q = query.trim().toLowerCase();
+  document.querySelectorAll('mark.hl').forEach(m => m.replaceWith(document.createTextNode(m.textContent)));
+  const walker = document.createTreeWalker(document.getElementById('mainContent'), NodeFilter.SHOW_TEXT, null);
+  const nodes = []; let n; while(n = walker.nextNode()) nodes.push(n);
+  let found = null;
+  for(const node of nodes){
+    const text = node.nodeValue; const idx = text.toLowerCase().indexOf(q);
+    if(idx > -1 && node.parentElement && !node.parentElement.closest('script,style')){
+      const before = text.slice(0,idx), match = text.slice(idx,idx+q.length), after = text.slice(idx+q.length);
+      const mark = document.createElement('mark'); mark.className='hl'; mark.textContent = match;
+      const frag = document.createDocumentFragment();
+      frag.appendChild(document.createTextNode(before)); frag.appendChild(mark); frag.appendChild(document.createTextNode(after));
+      node.parentElement.replaceChild(frag, node);
+      if(!found) found = mark;
+    }
+  }
+  if(found) found.scrollIntoView({behavior:'smooth', block:'center'});
+  else showToast('لم يتم العثور على «' + query + '» في هذا الدرس');
+}
+document.getElementById('searchToggle').addEventListener('click', () => { document.getElementById('searchBoxDesktop').classList.toggle('open'); document.getElementById('searchInputDesktop').focus(); });
+document.getElementById('searchInputDesktop').addEventListener('keydown', e => { if(e.key==='Enter') runSearch(e.target.value); });
+
+/* ==========================================================================
+   FULLSCREEN / PRINT / BACK TO TOP
+   ========================================================================== */
+document.getElementById('fullscreenToggle').addEventListener('click', () => {
+  if(!document.fullscreenElement){ document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+  else{ document.exitFullscreen && document.exitFullscreen(); }
+});
+document.addEventListener('fullscreenchange', () => { document.getElementById('fsIcon').innerHTML = '<use href="#' + (document.fullscreenElement?'i-compress':'i-expand') + '"/>'; });
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 640), {passive:true});
+backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-guide-03-modalverben" data-category="a2" data-title="عدسات المعنى — الأفعال الناقصة (الأساسية)" data-root="../../" defer></script>
+</body>
+</html>

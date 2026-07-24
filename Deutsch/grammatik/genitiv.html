@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>الجنيتيف (Genitiv) - شرح شامل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+
+<style>
+  :root {
+    --bg-primary: #0f1117;
+    --bg-secondary: #161b27;
+    --bg-card: #1a2035;
+    --bg-elevated: #212840;
+    --border: #2a3350;
+    --border-subtle: #1e2840;
+    --text-primary: #e8eaf0;
+    --text-secondary: #8b9bc8;
+    --text-muted: #5a6a8a;
+    --accent: #6c8ef7;
+    --accent-soft: rgba(108,142,247,0.12);
+    --accent-glow: rgba(108,142,247,0.25);
+    --green: #52c98a;
+    --green-soft: rgba(82,201,138,0.12);
+    --amber: #f5a623;
+    --amber-soft: rgba(245,166,35,0.12);
+    --rose: #f56565;
+    --rose-soft: rgba(245,101,101,0.12);
+    --violet: #a78bfa;
+    --violet-soft: rgba(167,139,250,0.12);
+    --masc-color: #60a5fa;
+    --masc-soft: rgba(96,165,250,0.12);
+    --fem-color: #f472b6;
+    --fem-soft: rgba(244,114,182,0.12);
+    --neut-color: #34d399;
+    --neut-soft: rgba(52,211,153,0.12);
+    --plur-color: #fbbf24;
+    --plur-soft: rgba(251,191,36,0.12);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
+  }
+  [data-theme="light"] {
+    --bg-primary: #f5f6fa;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-elevated: #f0f2f8;
+    --border: #dde1f0;
+    --border-subtle: #eaecf5;
+    --text-primary: #1a1f36;
+    --text-secondary: #4a5578;
+    --text-muted: #8a95b8;
+    --accent: #4f6ef5;
+    --accent-soft: rgba(79,110,245,0.08);
+    --accent-glow: rgba(79,110,245,0.15);
+    --green: #16a765;
+    --green-soft: rgba(22,167,101,0.08);
+    --amber: #d97706;
+    --amber-soft: rgba(217,119,6,0.08);
+    --rose: #dc2626;
+    --rose-soft: rgba(220,38,38,0.08);
+    --violet: #7c3aed;
+    --violet-soft: rgba(124,58,237,0.08);
+    --masc-color: #2563eb;
+    --masc-soft: rgba(37,99,235,0.08);
+    --fem-color: #db2777;
+    --fem-soft: rgba(219,39,119,0.08);
+    --neut-color: #059669;
+    --neut-soft: rgba(5,150,105,0.08);
+    --plur-color: #d97706;
+    --plur-soft: rgba(217,119,6,0.08);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+  }
+  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Cairo', 'Inter', system-ui, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    transition: background var(--transition), color var(--transition);
+    overflow-x: hidden;
+  }
+  #progress-bar {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+    background: linear-gradient(90deg, var(--accent), var(--violet));
+    z-index: 1000;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 12px var(--accent-glow);
+  }
+  nav {
+    position: fixed; top: 3px; left: 0; right: 0;
+    background: rgba(15,17,23,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+    z-index: 999;
+    padding: 0 24px;
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background var(--transition);
+  }
+  [data-theme="light"] nav { background: rgba(245,246,250,0.9); }
+  .nav-brand {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 1.1rem; font-weight: 700; color: var(--text-primary);
+    text-decoration: none;
+  }
+  .nav-badge {
+    background: var(--accent-soft); color: var(--accent);
+    border: 1px solid var(--accent-glow);
+    padding: 2px 8px; border-radius: 20px; font-size: 0.7rem; font-weight: 600;
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 4px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text-secondary); text-decoration: none; font-size: 0.82rem; font-weight: 500;
+    padding: 6px 12px; border-radius: 6px;
+    transition: all var(--transition);
+    white-space: nowrap;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    background: var(--accent-soft); color: var(--accent);
+  }
+  .nav-right { display: flex; align-items: center; gap: 8px; }
+  #theme-toggle {
+    background: var(--bg-elevated); border: 1px solid var(--border);
+    color: var(--text-secondary); cursor: pointer;
+    padding: 7px 10px; border-radius: 8px; font-size: 1rem;
+    transition: all var(--transition); display: flex; align-items: center; gap: 6px;
+  }
+  #theme-toggle:hover { background: var(--accent-soft); color: var(--accent); }
+  .hamburger {
+    display: none; flex-direction: column; gap: 4px; cursor: pointer;
+    background: none; border: none; padding: 8px;
+  }
+  .hamburger span {
+    width: 22px; height: 2px; background: var(--text-secondary);
+    border-radius: 2px; transition: all 0.3s;
+  }
+  main {
+    max-width: 1000px; margin: 0 auto;
+    padding: 90px 24px 60px;
+  }
+  .hero {
+    text-align: center; padding: 60px 0 48px;
+    opacity: 0; animation: fadeUp 0.7s 0.1s forwards;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent-soft); border: 1px solid var(--accent-glow);
+    color: var(--accent); padding: 6px 16px; border-radius: 20px;
+    font-size: 0.82rem; font-weight: 600; margin-bottom: 24px;
+    letter-spacing: 0.5px;
+  }
+  h1.hero-title {
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    font-weight: 800; line-height: 1.15;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; margin-bottom: 20px;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px;
+    font-family: 'Cairo', sans-serif;
+  }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  .stat-item {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 22px; text-align: center;
+    min-width: 100px;
+  }
+  .stat-num { font-size: 1.6rem; font-weight: 800; color: var(--accent); display: block; }
+  .stat-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+  section.content-section {
+    margin-bottom: 64px;
+    opacity: 0; animation: fadeUp 0.6s forwards;
+  }
+  section.content-section:nth-child(1) { animation-delay: 0.2s; }
+  section.content-section:nth-child(2) { animation-delay: 0.3s; }
+  section.content-section:nth-child(3) { animation-delay: 0.4s; }
+  section.content-section:nth-child(4) { animation-delay: 0.5s; }
+  .section-header {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
+    padding-bottom: 16px; border-bottom: 1px solid var(--border-subtle);
+  }
+  .section-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+  }
+  h2.section-title {
+    font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 700;
+    color: var(--text-primary);
+  }
+  .section-subtitle { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+  .card:hover { border-color: var(--accent-glow); box-shadow: var(--shadow-md); }
+  .card-grid { display: grid; gap: 16px; }
+  .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .info-box {
+    background: var(--accent-soft); border: 1px solid var(--accent-glow);
+    border-radius: var(--radius); padding: 20px 24px; margin-bottom: 20px;
+    border-right: 4px solid var(--accent);
+  }
+  .info-box.green { background: var(--green-soft); border-color: var(--green); border-right-color: var(--green); }
+  .info-box.amber { background: var(--amber-soft); border-color: rgba(245,166,35,0.3); border-right-color: var(--amber); }
+  .info-box.rose { background: var(--rose-soft); border-color: rgba(245,101,101,0.3); border-right-color: var(--rose); }
+  .info-box.violet { background: var(--violet-soft); border-color: rgba(167,139,250,0.3); border-right-color: var(--violet); }
+  .info-title { font-weight: 700; margin-bottom: 8px; font-size: 1rem; }
+  .info-text { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.8; }
+  table.grammar-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.92rem; margin-top: 8px;
+    border-radius: var(--radius); overflow: hidden;
+  }
+  .grammar-table th {
+    background: var(--bg-elevated); color: var(--text-secondary);
+    font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.5px; padding: 12px 16px; text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .grammar-table td {
+    padding: 12px 16px; text-align: center; border-bottom: 1px solid var(--border-subtle);
+    transition: background var(--transition);
+  }
+  .grammar-table tr:last-child td { border-bottom: none; }
+  .grammar-table tr:hover td { background: var(--bg-elevated); }
+  .grammar-table td:first-child { font-weight: 600; color: var(--text-secondary); text-align: right; }
+  .tag-masc { color: var(--masc-color); background: var(--masc-soft); padding: 3px 10px; border-radius: 6px; font-weight: 600; display: inline-block; }
+  .tag-fem { color: var(--fem-color); background: var(--fem-soft); padding: 3px 10px; border-radius: 6px; font-weight: 600; display: inline-block; }
+  .tag-neut { color: var(--neut-color); background: var(--neut-soft); padding: 3px 10px; border-radius: 6px; font-weight: 600; display: inline-block; }
+  .tag-plur { color: var(--plur-color); background: var(--plur-soft); padding: 3px 10px; border-radius: 6px; font-weight: 600; display: inline-block; }
+  .highlight-nom { color: var(--text-muted); font-size: 0.85rem; }
+  .highlight-gen { color: var(--accent); font-weight: 700; }
+  .german-text { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.05rem; }
+  .sentence-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 18px 20px; margin-bottom: 12px;
+    transition: all var(--transition);
+  }
+  .sentence-card:hover { border-color: var(--accent-glow); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+  .sentence-top {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+    flex-wrap: wrap;
+  }
+  .sentence-german {
+    font-family: 'Inter', sans-serif; font-weight: 700;
+    font-size: 1.1rem; color: var(--text-primary); flex: 1; min-width: 0;
+    direction: ltr; text-align: left;
+  }
+  .sentence-actions {
+    display: flex; gap: 6px; flex-shrink: 0;
+  }
+  .btn-action {
+    display: flex; align-items: center; gap: 5px;
+    padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 600;
+    border: 1px solid var(--border); cursor: pointer; transition: all var(--transition);
+    background: var(--bg-elevated); color: var(--text-secondary);
+    font-family: 'Cairo', sans-serif; white-space: nowrap;
+  }
+  .btn-action:hover { background: var(--accent-soft); color: var(--accent); border-color: var(--accent-glow); }
+  .btn-action.listen:hover { background: var(--green-soft); color: var(--green); border-color: rgba(82,201,138,0.3); }
+  .btn-action.copy:hover { background: var(--violet-soft); color: var(--violet); border-color: rgba(167,139,250,0.3); }
+  .btn-action.copied { background: var(--green-soft); color: var(--green); border-color: rgba(82,201,138,0.3); }
+  .sentence-arabic {
+    margin-top: 10px; color: var(--text-secondary);
+    font-size: 0.95rem; font-family: 'Cairo', sans-serif;
+    padding-top: 10px; border-top: 1px solid var(--border-subtle);
+    line-height: 1.6;
+  }
+  .sentence-english {
+    color: var(--text-muted); font-size: 0.82rem; margin-top: 4px;
+    font-family: 'Inter', sans-serif; direction: ltr; text-align: left;
+  }
+  .genitiv-highlight { color: var(--accent); font-weight: 700; text-decoration: underline; text-decoration-style: dotted; }
+  .nom-highlight { color: var(--text-muted); }
+  .ending-rule-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden; margin-bottom: 16px;
+  }
+  .ending-rule-header {
+    padding: 14px 20px; display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .ending-badge {
+    background: var(--accent); color: white; font-family: 'Fira Code', monospace;
+    padding: 4px 12px; border-radius: 6px; font-size: 0.9rem; font-weight: 600;
+  }
+  .ending-rule-body { padding: 16px 20px; }
+  .ending-trigger { color: var(--text-secondary); font-size: 0.9rem; direction: ltr; text-align: left; }
+  .ending-examples { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .ending-example {
+    background: var(--bg-elevated); border: 1px solid var(--border);
+    border-radius: 6px; padding: 6px 14px; font-family: 'Inter', sans-serif;
+    font-size: 0.88rem; direction: ltr;
+  }
+  .ending-example .from { color: var(--text-muted); }
+  .ending-example .arrow { color: var(--accent); margin: 0 6px; }
+  .ending-example .to { color: var(--green); font-weight: 600; }
+  .prep-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 22px; margin-bottom: 16px;
+    transition: all var(--transition);
+  }
+  .prep-card:hover { border-color: var(--accent-glow); }
+  .prep-word {
+    font-family: 'Fira Code', monospace; font-size: 1.3rem; font-weight: 700;
+    color: var(--accent); display: block; margin-bottom: 10px; direction: ltr;
+  }
+  .prep-meaning {
+    color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 14px;
+    padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle);
+  }
+  .toast {
+    position: fixed; bottom: 24px; right: 24px;
+    background: var(--green); color: white;
+    padding: 12px 20px; border-radius: 8px; font-size: 0.88rem; font-weight: 600;
+    opacity: 0; transform: translateY(10px);
+    transition: all 0.3s; z-index: 10000; pointer-events: none;
+    box-shadow: var(--shadow-lg); font-family: 'Cairo', sans-serif;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+  .question-box {
+    background: linear-gradient(135deg, var(--bg-elevated), var(--bg-card));
+    border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 28px; text-align: center; margin-bottom: 20px;
+  }
+  .question-german {
+    font-family: 'Inter', sans-serif; font-size: 1.6rem; font-weight: 800;
+    color: var(--accent); direction: ltr; margin-bottom: 8px;
+  }
+  .question-arabic { color: var(--text-secondary); font-size: 1rem; }
+  .answer-flow {
+    display: flex; align-items: center; gap: 12px;
+    margin-top: 16px; flex-wrap: wrap; justify-content: center;
+  }
+  .flow-item {
+    background: var(--bg-elevated); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 18px; font-family: 'Inter', sans-serif;
+    font-size: 0.9rem; direction: ltr;
+  }
+  .flow-arrow { color: var(--accent); font-size: 1.2rem; }
+  .mobile-nav { display: none; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .mobile-nav {
+      display: none; position: fixed; top: 63px; left: 0; right: 0;
+      background: var(--bg-secondary); border-bottom: 1px solid var(--border);
+      padding: 12px; z-index: 998; flex-direction: column; gap: 4px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;
+      padding: 10px 14px; border-radius: 8px; transition: all var(--transition);
+    }
+    .mobile-nav a:hover { background: var(--accent-soft); color: var(--accent); }
+    main { padding: 80px 16px 48px; }
+    .hero { padding: 40px 0 32px; }
+    .sentence-top { flex-direction: column; }
+    .sentence-actions { width: 100%; }
+    .btn-action { flex: 1; justify-content: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+  .divider { height: 1px; background: var(--border-subtle); margin: 48px 0; }
+  .tag {
+    display: inline-block; padding: 3px 10px; border-radius: 6px;
+    font-size: 0.78rem; font-weight: 600; margin-left: 6px;
+  }
+  .tag-a2 { background: var(--amber-soft); color: var(--amber); }
+  .tag-grammar { background: var(--accent-soft); color: var(--accent); }
+  .flex-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .comparison-table { overflow-x: auto; }
+  .name-rule-box {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px; margin-bottom: 20px;
+  }
+  .name-rule-title { font-size: 1rem; font-weight: 700; margin-bottom: 16px; color: var(--accent); }
+  .name-examples { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  .name-ex {
+    background: var(--bg-elevated); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 16px; font-family: 'Inter', sans-serif;
+    font-size: 0.9rem; direction: ltr;
+  }
+  .dativ-alternative {
+    background: var(--amber-soft); border: 1px solid rgba(245,166,35,0.3);
+    border-radius: var(--radius); padding: 20px 24px; margin-top: 16px;
+  }
+  .dativ-title { font-weight: 700; color: var(--amber); margin-bottom: 12px; font-size: 0.95rem; }
+  footer {
+    text-align: center; padding: 32px 24px;
+    color: var(--text-muted); font-size: 0.82rem;
+    border-top: 1px solid var(--border-subtle); margin-top: 32px;
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-bar" role="progressbar" aria-label="مؤشر التقدم في القراءة"></div>
+
+<nav aria-label="التنقل الرئيسي">
+  <a class="nav-brand" href="#top">
+    <span>🇩🇪</span>
+    <span>Genitiv</span>
+    <span class="nav-badge">A2</span>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="#what-is">ما هو Genitiv</a></li>
+    <li><a href="#articles">المقالات</a></li>
+    <li><a href="#noun-endings">نهايات الاسم</a></li>
+    <li><a href="#question">كيف نسأل</a></li>
+    <li><a href="#names">الأسماء الخاصة</a></li>
+    <li><a href="#dativ">البديل بالـ Dativ</a></li>
+    <li><a href="#prepositions">حروف الجر</a></li>
+  </ul>
+  <div class="nav-right">
+    <button id="theme-toggle" aria-label="تبديل المظهر" title="تبديل الوضع الفاتح/الداكن">☀️</button>
+    <button class="hamburger" id="hamburger" aria-label="القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="القائمة الجانبية">
+  <a href="#what-is">ما هو Genitiv</a>
+  <a href="#articles">المقالات</a>
+  <a href="#noun-endings">نهايات الاسم</a>
+  <a href="#question">كيف نسأل</a>
+  <a href="#names">الأسماء الخاصة</a>
+  <a href="#dativ">البديل بالـ Dativ</a>
+  <a href="#prepositions">حروف الجر</a>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">
+      <span>📚</span>
+      <span>النحو الألماني — مستوى A2</span>
+    </div>
+    <h1 class="hero-title">حالة الجنيتيف (Genitiv)</h1>
+    <p class="hero-sub">
+      الحالة الإعرابية التي تُعبّر عن الملكية والانتماء — دليلك الشامل من التأسيس إلى الاتقان
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">4</span>
+        <span class="stat-label">أنواع المؤنث والمذكر</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">4</span>
+        <span class="stat-label">حروف جر بالجنيتيف</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3</span>
+        <span class="stat-num">قواعد نهايات الاسم</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: WHAT IS GENITIV -->
+  <section class="content-section" id="what-is">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--accent-soft);color:var(--accent);">🔑</div>
+      <div>
+        <h2 class="section-title">ما هو Genitiv؟</h2>
+        <p class="section-subtitle">المفهوم والوظيفة الأساسية</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p class="info-title">🎯 التعريف الأساسي</p>
+      <p class="info-text">
+        <strong>الجنيتيف (Genitiv)</strong> هو إحدى الحالات الإعرابية الأربع في اللغة الألمانية، ويُستخدم أساساً للتعبير عن <strong>الملكية والانتماء</strong> بين اسمين. بمعنى آخر، يُجيب على السؤال <strong>"Wessen?"</strong> أي "لمن؟" أو "تاع من؟". يُعادل في العربية الإضافة — مثل "بيت المرأة" أو "سيارة الرجل".
+      </p>
+    </div>
+
+    <div class="card-grid card-grid-2" style="margin-top:20px;">
+      <div class="info-box green" style="margin-bottom:0;">
+        <p class="info-title" style="color:var(--green);">✅ وظيفة الجنيتيف</p>
+        <p class="info-text">يربط اسمًا بآخر للدلالة على الملكية أو الانتماء، مثلما نقول بالعربية "كتاب المعلم" أو "باب البيت".</p>
+      </div>
+      <div class="info-box violet" style="margin-bottom:0;">
+        <p class="info-title" style="color:var(--violet);">📌 موقعه في الجملة</p>
+        <p class="info-text">يأتي الاسم في الجنيتيف عادةً بعد الاسم الذي يصفه، على خلاف العربية التي تضع المضاف إليه بعد المضاف.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:28px;">
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px;color:var(--text-secondary);">أمثلة توضيحية — الملكية بالجنيتيف</h3>
+
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Das ist das Haus <span class="genitiv-highlight">des Mannes</span>.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Das ist das Haus des Mannes.')" aria-label="استمع للجملة">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Das ist das Haus des Mannes.', this)" aria-label="انسخ الجملة">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">هذا هو بيت الرجل. <span style="color:var(--text-muted);font-size:0.88rem;">(الرجل ← مذكر، تأخذ الأداة des)</span></div>
+        <div class="sentence-english">This is the man's house.</div>
+      </div>
+
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Das ist das Haus <span class="genitiv-highlight">der Frau</span>.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Das ist das Haus der Frau.')" aria-label="استمع للجملة">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Das ist das Haus der Frau.', this)" aria-label="انسخ الجملة">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">هذا هو بيت المرأة. <span style="color:var(--text-muted);font-size:0.88rem;">(المرأة ← مؤنث، تأخذ الأداة der)</span></div>
+        <div class="sentence-english">This is the woman's house.</div>
+      </div>
+
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Das Haus <span class="genitiv-highlight">der Kinder</span> ist groß.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Das Haus der Kinder ist groß.')" aria-label="استمع للجملة">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Das Haus der Kinder ist groß.', this)" aria-label="انسخ الجملة">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">بيت الأطفال كبير. <span style="color:var(--text-muted);font-size:0.88rem;">(الجمع ← تأخذ الأداة der)</span></div>
+        <div class="sentence-english">The children's house is big.</div>
+      </div>
+
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Die Zimmer <span class="genitiv-highlight">des Hotels</span> sind schön.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Die Zimmer des Hotels sind schön.')" aria-label="استمع للجملة">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Die Zimmer des Hotels sind schön.', this)" aria-label="انسخ الجملة">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">غرف الفندق جميلة. <span style="color:var(--text-muted);font-size:0.88rem;">(الفندق ← محايد، تأخذ الأداة des)</span></div>
+        <div class="sentence-english">The hotel's rooms are beautiful.</div>
+      </div>
+
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Der Mantel <span class="genitiv-highlight">der Frau</span> ist toll.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Der Mantel der Frau ist toll.')" aria-label="استمع للجملة">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Der Mantel der Frau ist toll.', this)" aria-label="انسخ الجملة">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">معطف المرأة رائع.</div>
+        <div class="sentence-english">The woman's coat is great.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 2: DEFINITE ARTICLES -->
+  <section class="content-section" id="articles">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--masc-soft);color:var(--masc-color);">📊</div>
+      <div>
+        <h2 class="section-title">المقالات (الأداة) في Genitiv</h2>
+        <p class="section-subtitle">تغيّر أدوات التعريف والملكية حسب الجنس والعدد</p>
+      </div>
+    </div>
+
+    <!-- Definite articles table -->
+    <div class="card" style="margin-bottom:20px;">
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px;">أدوات التعريف المحددة — bestimmter Artikel</h3>
+      <div class="comparison-table">
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th>الحالة</th>
+              <th><span class="tag-masc">المذكر</span></th>
+              <th><span class="tag-fem">المؤنث</span></th>
+              <th><span class="tag-neut">المحايد</span></th>
+              <th><span class="tag-plur">الجمع</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nominativ (المبتدأ)</td>
+              <td class="german-text highlight-nom">der</td>
+              <td class="german-text highlight-nom">die</td>
+              <td class="german-text highlight-nom">das</td>
+              <td class="german-text highlight-nom">die</td>
+            </tr>
+            <tr>
+              <td style="color:var(--accent);font-weight:700;">Genitiv (الملكية)</td>
+              <td class="german-text highlight-gen">des</td>
+              <td class="german-text" style="color:var(--fem-color);font-weight:700;">der</td>
+              <td class="german-text highlight-gen">des</td>
+              <td class="german-text" style="color:var(--fem-color);font-weight:700;">der</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="info-box" style="margin-top:16px;margin-bottom:0;">
+        <p class="info-text">
+          💡 <strong>ملاحظة مهمة:</strong> في الجنيتيف، المؤنث والجمع يأخذان <strong style="color:var(--fem-color);">der</strong>، بينما المذكر والمحايد يأخذان <strong style="color:var(--accent);">des</strong>. والفارق الأساسي بين الجنيتيف والنوميناتيف هو تغيّر <em>der</em> إلى <em>des</em> في المذكر والمحايد.
+        </p>
+      </div>
+    </div>
+
+    <!-- Possessive articles table -->
+    <div class="card">
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px;">أدوات الملكية — Possessivartikel (مثال: mein)</h3>
+      <div class="comparison-table">
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th>الحالة</th>
+              <th><span class="tag-masc">المذكر</span></th>
+              <th><span class="tag-fem">المؤنث</span></th>
+              <th><span class="tag-neut">المحايد</span></th>
+              <th><span class="tag-plur">الجمع</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nominativ</td>
+              <td class="german-text highlight-nom">mein</td>
+              <td class="german-text highlight-nom">meine</td>
+              <td class="german-text highlight-nom">mein</td>
+              <td class="german-text highlight-nom">meine</td>
+            </tr>
+            <tr>
+              <td style="color:var(--accent);font-weight:700;">Genitiv</td>
+              <td class="german-text highlight-gen">meines</td>
+              <td class="german-text" style="color:var(--fem-color);font-weight:700;">meiner</td>
+              <td class="german-text highlight-gen">meines</td>
+              <td class="german-text" style="color:var(--fem-color);font-weight:700;">meiner</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="info-box amber" style="margin-top:16px;margin-bottom:0;">
+        <p class="info-text">
+          🔄 نفس القاعدة تنطبق على: <strong>dein/deine, sein/seine, ihr/ihre, unser/unsere, euer/eure, Ihr/Ihre</strong> — اللاحقة <strong>-es</strong> للمذكر والمحايد، و<strong>-er</strong> للمؤنث والجمع.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 3: NOUN ENDINGS -->
+  <section class="content-section" id="noun-endings">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--green-soft);color:var(--green);">✏️</div>
+      <div>
+        <h2 class="section-title">نهايات الاسم في Genitiv</h2>
+        <p class="section-subtitle">قاعدة إضافة -s أو -es — فقط للمذكر والمحايد</p>
+      </div>
+    </div>
+
+    <div class="info-box rose">
+      <p class="info-title" style="color:var(--rose);">⚠️ قاعدة أساسية لا تُنسى!</p>
+      <p class="info-text">
+        نهاية <strong>-s أو -es</strong> تُضاف فقط إلى <strong>الأسماء المذكرة والمحايدة</strong> في Genitiv. الأسماء المؤنثة والجمع لا تتغير، وإنما تتغير الأداة فقط.
+      </p>
+    </div>
+
+    <div class="ending-rule-card">
+      <div class="ending-rule-header">
+        <span class="ending-badge">القاعدة الأولى: + -s</span>
+        <span style="color:var(--text-secondary);font-size:0.88rem;">النهايات: el، en، er + كلمات أجنبية كثيرة</span>
+      </div>
+      <div class="ending-rule-body">
+        <p class="ending-trigger">الأسماء التي تنتهي بـ <strong style="color:var(--accent);font-family:'Fira Code'">-el, -en, -er</strong> وكذلك الكلمات الأجنبية الكثيرة تأخذ <strong style="color:var(--green);">-s</strong> فقط</p>
+        <div class="ending-examples">
+          <div class="ending-example"><span class="from">der Mantel</span><span class="arrow">→</span><span class="to">des Mantels</span></div>
+          <div class="ending-example"><span class="from">der Wagen</span><span class="arrow">→</span><span class="to">des Wagens</span></div>
+          <div class="ending-example"><span class="from">das Hotel</span><span class="arrow">→</span><span class="to">des Hotels</span></div>
+          <div class="ending-example"><span class="from">der Computer</span><span class="arrow">→</span><span class="to">des Computers</span></div>
+        </div>
+        <p class="info-text" style="margin-top:12px;font-size:0.85rem;">
+          📌 السبب: هذه الأسماء تنتهي أصلاً بحرف قابل للنطق بسهولة، لذا يكفي حرف واحد فقط.
+        </p>
+      </div>
+    </div>
+
+    <div class="ending-rule-card">
+      <div class="ending-rule-header">
+        <span class="ending-badge" style="background:var(--rose);">القاعدة الثانية: + -es</span>
+        <span style="color:var(--text-secondary);font-size:0.88rem;">النهايات الصعبة: s، ss، ß، tz، x، z</span>
+      </div>
+      <div class="ending-rule-body">
+        <p class="ending-trigger">الأسماء التي تنتهي بأصوات صفير أو احتكاك: <strong style="color:var(--rose);font-family:'Fira Code'">-s, -ss, -ß, -tz, -x, -z</strong> تأخذ <strong style="color:var(--green);">-es</strong></p>
+        <div class="ending-examples">
+          <div class="ending-example"><span class="from">das Haus</span><span class="arrow">→</span><span class="to">des Hauses</span></div>
+          <div class="ending-example"><span class="from">der Satz</span><span class="arrow">→</span><span class="to">des Satzes</span></div>
+          <div class="ending-example"><span class="from">der Fuß</span><span class="arrow">→</span><span class="to">des Fußes</span></div>
+          <div class="ending-example"><span class="from">der Reflex</span><span class="arrow">→</span><span class="to">des Reflexes</span></div>
+        </div>
+        <p class="info-text" style="margin-top:12px;font-size:0.85rem;">
+          📌 السبب: إضافة -s وحدها بعد هذه الأصوات يجعل النطق صعباً، لذا تُضاف -es لتسهيل النطق.
+        </p>
+      </div>
+    </div>
+
+    <div class="ending-rule-card">
+      <div class="ending-rule-header">
+        <span class="ending-badge" style="background:var(--green);">القاعدة الثالثة: -s أو -es</span>
+        <span style="color:var(--text-secondary);font-size:0.88rem;">معظم الكلمات الأخرى</span>
+      </div>
+      <div class="ending-rule-body">
+        <p class="ending-trigger">تقريباً كل الكلمات الأخرى تقبل كلا الشكلين <strong style="color:var(--green);font-family:'Fira Code'">-s / -es</strong> مع تفضيل -s في اللغة الحديثة</p>
+        <div class="ending-examples">
+          <div class="ending-example"><span class="from">der Stift</span><span class="arrow">→</span><span class="to">des Stifts / des Stiftes</span></div>
+          <div class="ending-example"><span class="from">der Schrank</span><span class="arrow">→</span><span class="to">des Schranks / des Schrankes</span></div>
+          <div class="ending-example"><span class="from">das Kind</span><span class="arrow">→</span><span class="to">des Kinds / des Kindes</span></div>
+          <div class="ending-example"><span class="from">der Tisch</span><span class="arrow">→</span><span class="to">des Tischs / des Tisches</span></div>
+        </div>
+        <p class="info-text" style="margin-top:12px;font-size:0.85rem;">
+          📌 شكل -es أكثر رسمية وكلاسيكي، بينما -s شائع في اللغة المعاصرة. كلاهما صحيح.
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;">
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px;color:var(--text-secondary);">جمل تطبيقية — نهايات الاسم</h3>
+
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Die Zimmer <span class="genitiv-highlight">des Hotels</span> sind sehr komfortabel.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Die Zimmer des Hotels sind sehr komfortabel.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Die Zimmer des Hotels sind sehr komfortabel.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">غرف الفندق مريحة جداً. <span style="color:var(--text-muted);font-size:0.85rem;">(Hotel → Hotels: كلمة أجنبية + s)</span></div>
+        <div class="sentence-english">The hotel rooms are very comfortable.</div>
+      </div>
+
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Die Farbe <span class="genitiv-highlight">des Hauses</span> ist blau.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Die Farbe des Hauses ist blau.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Die Farbe des Hauses ist blau.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">لون البيت أزرق. <span style="color:var(--text-muted);font-size:0.85rem;">(Haus → Hauses: ينتهي بـ s → يأخذ -es)</span></div>
+        <div class="sentence-english">The color of the house is blue.</div>
+      </div>
+
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Der Mantel <span class="genitiv-highlight">des Mannes</span> ist schwarz.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Der Mantel des Mannes ist schwarz.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Der Mantel des Mannes ist schwarz.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">معطف الرجل أسود اللون. <span style="color:var(--text-muted);font-size:0.85rem;">(Mann → Mannes)</span></div>
+        <div class="sentence-english">The man's coat is black.</div>
+      </div>
+
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Das Ende <span class="genitiv-highlight">des Films</span> war überraschend.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Das Ende des Films war überraschend.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Das Ende des Films war überraschend.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">نهاية الفيلم كانت مفاجئة. <span style="color:var(--text-muted);font-size:0.85rem;">(Film → Films: كلمة أجنبية + s)</span></div>
+        <div class="sentence-english">The end of the film was surprising.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 4: HOW TO QUESTION -->
+  <section class="content-section" id="question">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--violet-soft);color:var(--violet);">❓</div>
+      <div>
+        <h2 class="section-title">كيف نسأل عن Genitiv؟</h2>
+        <p class="section-subtitle">كلمة الاستفهام Wessen — لمن؟</p>
+      </div>
+    </div>
+
+    <div class="question-box">
+      <div class="question-german">Wessen?</div>
+      <div class="question-arabic">لمن؟ — تاع مين؟ — ملكية من؟</div>
+    </div>
+
+    <div class="card-grid card-grid-2">
+
+      <div class="card">
+        <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:16px;direction:ltr;color:var(--text-secondary);">مثال 1: السيارة</h4>
+        <div class="sentence-card" style="border-color:var(--accent-glow);">
+          <div class="sentence-top">
+            <div class="sentence-german" dir="ltr">Wessen Auto ist das?</div>
+            <div class="sentence-actions">
+              <button class="btn-action listen" onclick="speak('Wessen Auto ist das?')" aria-label="استمع">🔊</button>
+              <button class="btn-action copy" onclick="copyText('Wessen Auto ist das?', this)" aria-label="انسخ">📋</button>
+            </div>
+          </div>
+          <div class="sentence-arabic">سيارة من هذه؟</div>
+        </div>
+        <div class="answer-flow">
+          <div class="flow-item" dir="ltr">Das ist das Auto <strong style="color:var(--accent)">des Mannes</strong>.</div>
+        </div>
+        <div style="margin-top:8px;">
+          <button class="btn-action listen" style="width:100%;justify-content:center;" onclick="speak('Das ist das Auto des Mannes.')" aria-label="استمع للجواب">🔊 استمع للجواب</button>
+        </div>
+        <div class="sentence-arabic" style="margin-top:8px;">هذه سيارة الرجل.</div>
+      </div>
+
+      <div class="card">
+        <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:16px;direction:ltr;color:var(--text-secondary);">مثال 2: البيت</h4>
+        <div class="sentence-card" style="border-color:var(--fem-color);">
+          <div class="sentence-top">
+            <div class="sentence-german" dir="ltr">Wessen Haus ist das?</div>
+            <div class="sentence-actions">
+              <button class="btn-action listen" onclick="speak('Wessen Haus ist das?')" aria-label="استمع">🔊</button>
+              <button class="btn-action copy" onclick="copyText('Wessen Haus ist das?', this)" aria-label="انسخ">📋</button>
+            </div>
+          </div>
+          <div class="sentence-arabic">بيت من هذا؟</div>
+        </div>
+        <div class="answer-flow">
+          <div class="flow-item" dir="ltr">Das ist das Haus <strong style="color:var(--fem-color)">der Frau</strong>.</div>
+        </div>
+        <div style="margin-top:8px;">
+          <button class="btn-action listen" style="width:100%;justify-content:center;" onclick="speak('Das ist das Haus der Frau.')" aria-label="استمع للجواب">🔊 استمع للجواب</button>
+        </div>
+        <div class="sentence-arabic" style="margin-top:8px;">هذا بيت المرأة.</div>
+      </div>
+
+      <div class="card">
+        <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:16px;direction:ltr;color:var(--text-secondary);">مثال 3: المعطف</h4>
+        <div class="sentence-card" style="border-color:var(--green);">
+          <div class="sentence-top">
+            <div class="sentence-german" dir="ltr">Wessen Mantel ist das?</div>
+            <div class="sentence-actions">
+              <button class="btn-action listen" onclick="speak('Wessen Mantel ist das?')" aria-label="استمع">🔊</button>
+              <button class="btn-action copy" onclick="copyText('Wessen Mantel ist das?', this)" aria-label="انسخ">📋</button>
+            </div>
+          </div>
+          <div class="sentence-arabic">معطف من هذا؟</div>
+        </div>
+        <div class="answer-flow">
+          <div class="flow-item" dir="ltr">Das ist der Mantel <strong style="color:var(--fem-color)">der Frau</strong>.</div>
+        </div>
+        <div style="margin-top:8px;">
+          <button class="btn-action listen" style="width:100%;justify-content:center;" onclick="speak('Das ist der Mantel der Frau.')" aria-label="استمع للجواب">🔊 استمع للجواب</button>
+        </div>
+        <div class="sentence-arabic" style="margin-top:8px;">هذا معطف المرأة.</div>
+      </div>
+
+      <div class="card">
+        <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:16px;direction:ltr;color:var(--text-secondary);">مثال 4: الهاتف</h4>
+        <div class="sentence-card" style="border-color:var(--amber);">
+          <div class="sentence-top">
+            <div class="sentence-german" dir="ltr">Wessen Handy ist das?</div>
+            <div class="sentence-actions">
+              <button class="btn-action listen" onclick="speak('Wessen Handy ist das?')" aria-label="استمع">🔊</button>
+              <button class="btn-action copy" onclick="copyText('Wessen Handy ist das?', this)" aria-label="انسخ">📋</button>
+            </div>
+          </div>
+          <div class="sentence-arabic">هاتف من هذا؟</div>
+        </div>
+        <div class="answer-flow">
+          <div class="flow-item" dir="ltr">Das ist das Handy <strong style="color:var(--accent)">des Mannes</strong>.</div>
+        </div>
+        <div style="margin-top:8px;">
+          <button class="btn-action listen" style="width:100%;justify-content:center;" onclick="speak('Das ist das Handy des Mannes.')" aria-label="استمع للجواب">🔊 استمع للجواب</button>
+        </div>
+        <div class="sentence-arabic" style="margin-top:8px;">هذا هاتف الرجل.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 5: PROPER NAMES -->
+  <section class="content-section" id="names">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--amber-soft);color:var(--amber);">👤</div>
+      <div>
+        <h2 class="section-title">الجنيتيف مع الأسماء الخاصة</h2>
+        <p class="section-subtitle">إضافة -s مباشرة إلى اسم الشخص</p>
+      </div>
+    </div>
+
+    <div class="name-rule-box">
+      <p class="name-rule-title">📌 القاعدة الأساسية</p>
+      <p class="info-text">
+        مع أسماء الأشخاص (الأسماء العلم)، لا نستخدم أدوات التعريف. بدلاً من ذلك، نضيف <strong style="color:var(--accent);">-s</strong> مباشرة في نهاية الاسم — تماماً كما نقول بالإنجليزية "Mira's car". هذه هي الطريقة الأكثر شيوعاً وبساطة في الألمانية اليومية.
+      </p>
+      <div class="name-examples">
+        <div class="name-ex"><span style="color:var(--text-muted)">Mira</span><span style="color:var(--accent)"> → </span><strong>Miras Auto</strong><span style="color:var(--text-muted);margin-right:6px;"> — سيارة ميرا</span></div>
+        <div class="name-ex"><span style="color:var(--text-muted)">Eva</span><span style="color:var(--accent)"> → </span><strong>Evas Mantel</strong><span style="color:var(--text-muted);margin-right:6px;"> — معطف إيفا</span></div>
+      </div>
+    </div>
+
+    <div class="info-box rose" style="margin-top:16px;">
+      <p class="info-title" style="color:var(--rose);">⚠️ استثناء مهم: الاسم المنتهي بـ -s</p>
+      <p class="info-text">
+        إذا انتهى الاسم بحرف <strong>s</strong> (مثل: Lia, Thomas, Klaus)، لا نضيف -s أخرى، بل نضع فاصلة عليا (Apostroph) فقط: <strong style="color:var(--accent); font-family:'Fira Code'">Lias' Mantel</strong> أو <strong style="color:var(--accent); font-family:'Fira Code'">Thomas' Auto</strong>.
+      </p>
+    </div>
+
+    <div style="margin-top:20px;">
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Das ist <span class="genitiv-highlight">Miras</span> Auto.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Das ist Miras Auto.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Das ist Miras Auto.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">هذه سيارة ميرا.</div>
+        <div class="sentence-english">This is Mira's car.</div>
+      </div>
+
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Das ist <span class="genitiv-highlight">Evas</span> Mantel.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Das ist Evas Mantel.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Das ist Evas Mantel.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">هذا معطف إيفا.</div>
+        <div class="sentence-english">This is Eva's coat.</div>
+      </div>
+
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Das ist <span class="genitiv-highlight">Lias'</span> Mantel.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Das ist Lias Mantel.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText("Das ist Lias' Mantel.", this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">هذا معطف ليا. <span style="color:var(--rose);font-size:0.85rem;">(Lia تنتهي بـ s → نضيف فاصلة عليا فقط)</span></div>
+        <div class="sentence-english">This is Lia's coat.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 6: DATIV ALTERNATIVE -->
+  <section class="content-section" id="dativ">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--amber-soft);color:var(--amber);">🔄</div>
+      <div>
+        <h2 class="section-title">بديل الجنيتيف: Dativ + von</h2>
+        <p class="section-subtitle">كيف نعبّر عن الملكية بطريقة أسهل في اللغة المحكية</p>
+      </div>
+    </div>
+
+    <div class="info-box amber">
+      <p class="info-title" style="color:var(--amber);">💬 الجنيتيف في اللغة المحكية</p>
+      <p class="info-text">
+        في الألمانية المحكية اليومية، كثيراً ما يُستبدل الجنيتيف بـ <strong>Dativ + حرف الجر "von"</strong>. هذا الأسلوب شائع جداً في الحديث اليومي، لكن الجنيتيف يبقى أكثر رسمية وشيوعاً في الكتابة والأسلوب الأكاديمي.
+      </p>
+    </div>
+
+    <div class="card-grid card-grid-2">
+      <div class="card" style="border-color:var(--accent-glow);">
+        <h4 style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:14px;direction:ltr;">Genitiv — الأسلوب الرسمي</h4>
+        <div class="sentence-card" style="background:var(--accent-soft);border-color:var(--accent-glow);">
+          <div class="sentence-top">
+            <div class="sentence-german" dir="ltr">Das ist das Haus <span class="genitiv-highlight">der Frau</span>.</div>
+            <div class="sentence-actions">
+              <button class="btn-action listen" onclick="speak('Das ist das Haus der Frau.')" aria-label="استمع">🔊</button>
+              <button class="btn-action copy" onclick="copyText('Das ist das Haus der Frau.', this)" aria-label="انسخ">📋</button>
+            </div>
+          </div>
+          <div class="sentence-arabic">هذا بيت المرأة. (رسمي)</div>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:rgba(245,166,35,0.3);">
+        <h4 style="font-size:0.9rem;font-weight:600;color:var(--amber);margin-bottom:14px;direction:ltr;">Dativ + von — الأسلوب المحكي</h4>
+        <div class="sentence-card" style="background:var(--amber-soft);border-color:rgba(245,166,35,0.3);">
+          <div class="sentence-top">
+            <div class="sentence-german" dir="ltr">Das ist das Haus <span style="color:var(--amber);font-weight:700;text-decoration:underline;text-decoration-style:dotted;">von der Frau</span>.</div>
+            <div class="sentence-actions">
+              <button class="btn-action listen" onclick="speak('Das ist das Haus von der Frau.')" aria-label="استمع">🔊</button>
+              <button class="btn-action copy" onclick="copyText('Das ist das Haus von der Frau.', this)" aria-label="انسخ">📋</button>
+            </div>
+          </div>
+          <div class="sentence-arabic">هذا بيت المرأة. (محكي)</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;">
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Das ist das Auto <span style="color:var(--amber);font-weight:700;">von meinem</span> Bruder.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Das ist das Auto von meinem Bruder.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Das ist das Auto von meinem Bruder.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">هذه سيارة أخي. (بديل Dativ)</div>
+        <div class="sentence-english">This is my brother's car.</div>
+      </div>
+    </div>
+
+    <div class="info-box green" style="margin-top:16px;">
+      <p class="info-text">
+        🎓 <strong>نصيحة أكاديمية:</strong> في الامتحانات والكتابة الرسمية، استخدم دائماً الجنيتيف الصحيح. في المحادثة اليومية، كلا الأسلوبين مقبول تماماً.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 7: PREPOSITIONS -->
+  <section class="content-section" id="prepositions">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--rose-soft);color:var(--rose);">🔗</div>
+      <div>
+        <h2 class="section-title">حروف الجر مع Genitiv</h2>
+        <p class="section-subtitle">Präpositionen mit Genitiv — أربعة حروف جر أساسية</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p class="info-text">
+        بعض حروف الجر في الألمانية تتطلب دائماً استخدام الجنيتيف بعدها. وهذه الحروف شائعة جداً في اللغة الرسمية والكتابة الأكاديمية، وتُضيف معاني دقيقة تختلف عن حروف الجر الأخرى.
+      </p>
+    </div>
+
+    <!-- wegen -->
+    <div class="prep-card">
+      <span class="prep-word">wegen</span>
+      <p class="prep-meaning">المعنى: بسبب — due to, because of</p>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Wegen <span class="genitiv-highlight">des schlechten Wetters</span> bleibt er zu Hause.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Wegen des schlechten Wetters bleibt er zu Hause.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Wegen des schlechten Wetters bleibt er zu Hause.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">بسبب الطقس السيئ، يبقى في البيت.</div>
+        <div class="sentence-english">Because of the bad weather, he stays at home.</div>
+      </div>
+      <div class="sentence-card" style="margin-top:8px;">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Wegen <span class="genitiv-highlight">meiner Arbeit</span> habe ich keine Zeit.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Wegen meiner Arbeit habe ich keine Zeit.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Wegen meiner Arbeit habe ich keine Zeit.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">بسبب عملي، ليس لدي وقت.</div>
+        <div class="sentence-english">Because of my work, I have no time.</div>
+      </div>
+    </div>
+
+    <!-- trotz -->
+    <div class="prep-card">
+      <span class="prep-word" style="color:var(--green);">trotz</span>
+      <p class="prep-meaning">المعنى: رغم — despite, in spite of</p>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Trotz <span class="genitiv-highlight">des schlechten Wetters</span> gehe ich spazieren.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Trotz des schlechten Wetters gehe ich spazieren.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Trotz des schlechten Wetters gehe ich spazieren.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">رغم الطقس السيئ، أذهب للمشي.</div>
+        <div class="sentence-english">Despite the bad weather, I go for a walk.</div>
+      </div>
+      <div class="sentence-card" style="margin-top:8px;">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Trotz <span class="genitiv-highlight">der Müdigkeit</span> arbeitet sie weiter.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Trotz der Müdigkeit arbeitet sie weiter.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Trotz der Müdigkeit arbeitet sie weiter.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">رغم التعب، تواصل العمل.</div>
+        <div class="sentence-english">Despite the tiredness, she continues to work.</div>
+      </div>
+    </div>
+
+    <!-- während -->
+    <div class="prep-card">
+      <span class="prep-word" style="color:var(--violet);">während</span>
+      <p class="prep-meaning">المعنى: خلال / أثناء — during, while</p>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Während <span class="genitiv-highlight">meiner Ausbildung</span> habe ich viel gelernt.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Während meiner Ausbildung habe ich viel gelernt.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Während meiner Ausbildung habe ich viel gelernt.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">خلال تدريبي / تأهيلي، تعلمت الكثير.</div>
+        <div class="sentence-english">During my training, I learned a lot.</div>
+      </div>
+      <div class="sentence-card" style="margin-top:8px;">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Während <span class="genitiv-highlight">des Unterrichts</span> ist Handy verboten.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Während des Unterrichts ist Handy verboten.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Während des Unterrichts ist Handy verboten.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">خلال الدرس، الهاتف ممنوع.</div>
+        <div class="sentence-english">During class, phones are forbidden.</div>
+      </div>
+    </div>
+
+    <!-- dank -->
+    <div class="prep-card">
+      <span class="prep-word" style="color:var(--amber);">dank</span>
+      <p class="prep-meaning">المعنى: بفضل — thanks to, owing to</p>
+      <div class="sentence-card">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Dank <span class="genitiv-highlight">meiner Ausbildung</span> habe ich schnell eine gute Arbeit gefunden.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Dank meiner Ausbildung habe ich schnell eine gute Arbeit gefunden.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Dank meiner Ausbildung habe ich schnell eine gute Arbeit gefunden.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">بفضل تأهيلي / تدريبي، وجدت عملاً جيداً بسرعة.</div>
+        <div class="sentence-english">Thanks to my training, I quickly found a good job.</div>
+      </div>
+      <div class="sentence-card" style="margin-top:8px;">
+        <div class="sentence-top">
+          <div class="sentence-german" dir="ltr">Dank <span class="genitiv-highlight">seiner Hilfe</span> haben wir das geschafft.</div>
+          <div class="sentence-actions">
+            <button class="btn-action listen" onclick="speak('Dank seiner Hilfe haben wir das geschafft.')" aria-label="استمع">🔊 استمع</button>
+            <button class="btn-action copy" onclick="copyText('Dank seiner Hilfe haben wir das geschafft.', this)" aria-label="انسخ">📋 انسخ</button>
+          </div>
+        </div>
+        <div class="sentence-arabic">بفضل مساعدته، تمكنّا من إنجاز ذلك.</div>
+        <div class="sentence-english">Thanks to his help, we managed to do it.</div>
+      </div>
+    </div>
+
+    <!-- Summary table -->
+    <div class="card" style="margin-top:24px;">
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px;">ملخص حروف الجر مع Genitiv</h3>
+      <div class="comparison-table">
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th>حرف الجر</th>
+              <th>المعنى بالعربية</th>
+              <th>المعنى بالإنجليزية</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span style="color:var(--accent);font-family:'Fira Code';font-weight:700;">wegen</span></td>
+              <td>بسبب</td>
+              <td style="direction:ltr;text-align:left;">because of, due to</td>
+            </tr>
+            <tr>
+              <td><span style="color:var(--green);font-family:'Fira Code';font-weight:700;">trotz</span></td>
+              <td>رغم / على الرغم من</td>
+              <td style="direction:ltr;text-align:left;">despite, in spite of</td>
+            </tr>
+            <tr>
+              <td><span style="color:var(--violet);font-family:'Fira Code';font-weight:700;">während</span></td>
+              <td>خلال / أثناء</td>
+              <td style="direction:ltr;text-align:left;">during, while</td>
+            </tr>
+            <tr>
+              <td><span style="color:var(--amber);font-family:'Fira Code';font-weight:700;">dank</span></td>
+              <td>بفضل</td>
+              <td style="direction:ltr;text-align:left;">thanks to, owing to</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FINAL SUMMARY -->
+  <section class="content-section">
+    <div class="section-header">
+      <div class="section-icon" style="background:var(--green-soft);color:var(--green);">📋</div>
+      <div>
+        <h2 class="section-title">ملخص شامل — Genitiv على نظرة واحدة</h2>
+        <p class="section-subtitle">كل ما تحتاج معرفته في جدول واحد</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="comparison-table">
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th>الجانب</th>
+              <th>المذكر</th>
+              <th>المؤنث</th>
+              <th>المحايد</th>
+              <th>الجمع</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>أداة التعريف</td>
+              <td class="german-text highlight-gen">des</td>
+              <td class="german-text" style="color:var(--fem-color);font-weight:700;">der</td>
+              <td class="german-text highlight-gen">des</td>
+              <td class="german-text" style="color:var(--fem-color);font-weight:700;">der</td>
+            </tr>
+            <tr>
+              <td>أداة الملكية (mein)</td>
+              <td class="german-text highlight-gen">meines</td>
+              <td class="german-text" style="color:var(--fem-color);font-weight:700;">meiner</td>
+              <td class="german-text highlight-gen">meines</td>
+              <td class="german-text" style="color:var(--fem-color);font-weight:700;">meiner</td>
+            </tr>
+            <tr>
+              <td>نهاية الاسم</td>
+              <td class="german-text" style="color:var(--green);font-weight:700;">-s / -es</td>
+              <td class="german-text" style="color:var(--text-muted);">لا تغيير</td>
+              <td class="german-text" style="color:var(--green);font-weight:700;">-s / -es</td>
+              <td class="german-text" style="color:var(--text-muted);">لا تغيير</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card-grid card-grid-2" style="margin-top:16px;">
+      <div class="info-box green" style="margin-bottom:0;">
+        <p class="info-title" style="color:var(--green);">✅ متى نستخدم Genitiv؟</p>
+        <p class="info-text">
+          • للتعبير عن الملكية بين اسمين<br/>
+          • مع السؤال Wessen?<br/>
+          • بعد حروف الجر: wegen, trotz, während, dank<br/>
+          • في الكتابة الرسمية والأكاديمية
+        </p>
+      </div>
+      <div class="info-box amber" style="margin-bottom:0;">
+        <p class="info-title" style="color:var(--amber);">⚡ النقاط الحرجة</p>
+        <p class="info-text">
+          • نهاية -s/-es: فقط للمذكر والمحايد<br/>
+          • أسماء بنهاية s → فاصلة عليا فقط (Lias')<br/>
+          • في المحكي: Dativ + von بديل مقبول<br/>
+          • المؤنث والجمع: تتغير الأداة فقط
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>🇩🇪 Genitiv — A2 Deutsch | تعلّم الألمانية بطريقة ممتعة ومنظّمة</p>
+  <p style="margin-top:8px;color:var(--text-muted);">مبني على مصادر أكاديمية موثوقة في تعليم اللغة الألمانية للناطقين بالعربية</p>
+</footer>
+
+<div class="toast" id="toast" role="alert" aria-live="polite">✅ تم النسخ بنجاح!</div>
+
+<script>
+  // Theme
+  const html = document.documentElement;
+  const toggle = document.getElementById('theme-toggle');
+  const stored = localStorage.getItem('genitiv-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  let isDark = stored ? stored === 'dark' : prefersDark;
+  function applyTheme() {
+    html.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    toggle.textContent = isDark ? '☀️' : '🌙';
+  }
+  applyTheme();
+  toggle.addEventListener('click', () => {
+    isDark = !isDark;
+    localStorage.setItem('genitiv-theme', isDark ? 'dark' : 'light');
+    applyTheme();
+  });
+
+  // Hamburger
+  const burger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  burger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => { mobileNav.classList.remove('open'); burger.setAttribute('aria-expanded', false); });
+  });
+
+  // Progress bar
+  const bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const max = document.body.scrollHeight - window.innerHeight;
+    bar.style.width = max > 0 ? (window.scrollY / max * 100) + '%' : '0%';
+  }, { passive: true });
+
+  // Active nav links
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  function setActive() {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+    });
+  }
+  window.addEventListener('scroll', setActive, { passive: true });
+
+  // TTS
+  function speak(text) {
+    if (!window.speechSynthesis) return;
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'de-DE'; u.rate = 0.82; u.pitch = 1;
+    speechSynthesis.speak(u);
+  }
+
+  // Copy with fallback
+  function copyText(text, btn) {
+    const orig = btn.innerHTML;
+    function success() {
+      btn.innerHTML = '✅ تم!';
+      btn.classList.add('copied');
+      showToast();
+      setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(success).catch(() => fallbackCopy(text, success));
+    } else { fallbackCopy(text, success); }
+  }
+  function fallbackCopy(text, cb) {
+    const el = document.createElement('textarea');
+    el.value = text; el.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;';
+    document.body.appendChild(el); el.focus(); el.select();
+    try { document.execCommand('copy'); cb(); } catch(e) {}
+    document.body.removeChild(el);
+  }
+  function showToast() {
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // Intersection Observer for animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.style.animationPlayState = 'running'; } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.content-section').forEach(s => {
+    s.style.animationPlayState = 'paused';
+    observer.observe(s);
+  });
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-genitiv" data-category="grammatik" data-title="الجنيتيف (Genitiv) — شرح شامل" data-root="../../" defer></script>
+</body>
+</html>

@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Backstube bei Nacht — دراسة عائلة الفعل backen</title>
+<meta name="description" content="نسخة موسّعة وأكثر جاذبية من درس عائلة الفعل الألماني backen: وضع ليلي مريح للعين، جمل وتراكيب أغنى، حوار حقيقي، ومقارنة أفعال الطبخ.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700;900&family=Work+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   1. DESIGN TOKENS — "Backstube bei Nacht" (Bakery at Night)
+   Dark mode is the hero mode: near-black, warm oven-glow accents.
+   ============================================================ */
+:root{
+  --font-display:'Fraunces',serif;
+  --font-latin:'Work Sans',sans-serif;
+  --font-ar:'Tajawal',sans-serif;
+
+  --radius-s:10px; --radius-m:16px; --radius-l:22px; --radius-xl:30px;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --t-fast:.2s var(--ease); --t-med:.4s var(--ease); --t-slow:.6s var(--ease);
+  --header-h:72px;
+
+  /* light mode (clean, closer to true white) */
+  --bg:#FAFAF8; --bg2:#F2F0EA;
+  --surface:#FFFFFF; --surface-2:#F5F3EE; --surface-a:rgba(255,255,255,.78);
+  --border:rgba(30,26,20,.11);
+  --text:#211C17; --text-2:#6B6055;
+  --glow:#C6791E; --glow-2:#C4451F;
+  --success:#4F8A47; --success-bg:#E9F2E5;
+  --error:#C0392B; --error-bg:#FBEAE7;
+  --shadow-s:0 2px 10px rgba(20,16,10,.09);
+  --shadow-m:0 10px 32px rgba(20,16,10,.13);
+  --shadow-l:0 24px 60px rgba(20,16,10,.17);
+  --glow-shadow:0 0 40px rgba(198,121,30,.25);
+}
+[data-theme="dark"]{
+  /* true near-black, minimal warm whisper, comfortable for long reading */
+  --bg:#060605; --bg2:#0B0A08;
+  --surface:#0F0D0A; --surface-2:#161310; --surface-a:rgba(10,9,7,.72);
+  --border:rgba(245,232,208,.08);
+  --text:#F1EADC; --text-2:#A69983;
+  --glow:#F5A83C; --glow-2:#FF7A45;
+  --success:#8FBF7A; --success-bg:rgba(143,191,122,.12);
+  --error:#E8807A; --error-bg:rgba(232,128,122,.12);
+  --shadow-s:0 2px 12px rgba(0,0,0,.55);
+  --shadow-m:0 12px 34px rgba(0,0,0,.65);
+  --shadow-l:0 26px 70px rgba(0,0,0,.75);
+  --glow-shadow:0 0 46px rgba(245,168,60,.2);
+}
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+}
+body{
+  font-family:var(--font-ar);
+  background:var(--bg);
+  background-image:radial-gradient(circle at 10% -10%, var(--bg2), transparent 55%),
+                    radial-gradient(circle at 92% 105%, var(--bg2), transparent 55%);
+  color:var(--text);
+  line-height:1.8;
+  overflow-x:hidden;
+  min-height:100vh;
+  transition:background-color var(--t-slow), color var(--t-slow);
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block; max-width:100%;}
+button{font:inherit; color:inherit; background:none; border:none; cursor:pointer;}
+ul{list-style:none;}
+a{color:inherit; text-decoration:none;}
+table{border-collapse:collapse; width:100%;}
+h1,h2,h3,h4{font-weight:800; line-height:1.3; font-family:var(--font-ar);}
+.de{font-family:var(--font-latin); direction:ltr; unicode-bidi:isolate; font-weight:600;}
+.de-display{font-family:var(--font-display); direction:ltr; unicode-bidi:isolate; font-weight:700;}
+.speak-el{padding:0; margin:0; display:inline; vertical-align:baseline; border-radius:4px;}
+.speak-el:hover, .speak-el:focus-visible{color:var(--glow);}
+
+:focus-visible{outline:3px solid var(--glow); outline-offset:3px; border-radius:4px;}
+.skip-link{
+  position:absolute; right:1rem; top:-60px; background:var(--glow); color:#1A1408;
+  padding:.8rem 1.4rem; border-radius:var(--radius-s); z-index:9999; font-weight:800;
+  transition:top var(--t-fast);
+}
+.skip-link:focus{top:1rem;}
+
+/* ============================================================
+   3. LAYOUT UTILITIES
+   ============================================================ */
+.wrap{max-width:1180px; margin-inline:auto; padding-inline:clamp(1.1rem,4vw,2.5rem);}
+.section{padding-block:clamp(3.5rem,8vw,6.5rem);}
+.section-head{max-width:760px; margin-inline:auto; text-align:center; margin-bottom:clamp(2.2rem,5vw,3.5rem);}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.5rem; font-family:var(--font-latin);
+  font-size:.8rem; letter-spacing:.14em; font-weight:700; color:var(--glow);
+  text-transform:uppercase; direction:ltr;
+}
+.section-head h2{font-size:clamp(1.6rem,3.4vw,2.5rem); margin-block:.6rem .8rem;}
+.section-head p{color:var(--text-2); font-size:clamp(.98rem,1.6vw,1.12rem);}
+.reveal{opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
+.reveal.in-view{opacity:1; transform:translateY(0);}
+.hidden{display:none !important;}
+.sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap;}
+
+/* ============================================================
+   4. PROGRESS BAR
+   ============================================================ */
+.progress-bar{
+  position:fixed; inset-inline:0; top:0; height:3px; z-index:1000;
+  background:linear-gradient(90deg, var(--glow), var(--glow-2));
+  width:0%; transition:width .1s linear; box-shadow:0 0 14px rgba(245,168,60,.5);
+}
+
+/* ============================================================
+   5. HEADER / NAV
+   ============================================================ */
+.site-header{
+  position:sticky; top:0; z-index:900; height:var(--header-h); display:flex; align-items:center;
+  background:var(--surface-a); backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%);
+  border-bottom:1px solid var(--border); transition:background-color var(--t-slow), border-color var(--t-slow);
+}
+.header-inner{
+  width:100%; max-width:1180px; margin-inline:auto; padding-inline:clamp(1.1rem,4vw,2.5rem);
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+}
+.brand{display:flex; align-items:center; gap:.6rem; font-weight:800; font-size:1.02rem; white-space:nowrap;}
+.brand-badge{
+  width:38px; height:38px; border-radius:12px; display:grid; place-items:center;
+  background:linear-gradient(145deg, var(--glow), var(--glow-2)); color:#1A1408; box-shadow:var(--shadow-s); flex-shrink:0;
+}
+.brand-badge svg{width:21px; height:21px;}
+.main-nav{display:flex; align-items:center; gap:1.5rem;}
+.main-nav a{font-size:.9rem; font-weight:700; color:var(--text-2); position:relative; padding-block:.3rem; transition:color var(--t-fast);}
+.main-nav a::after{content:''; position:absolute; bottom:-2px; inset-inline:0; height:2px; background:var(--glow); transform:scaleX(0); transition:transform var(--t-fast); border-radius:2px;}
+.main-nav a:hover, .main-nav a.active{color:var(--text);}
+.main-nav a:hover::after, .main-nav a.active::after{transform:scaleX(1);}
+.header-actions{display:flex; align-items:center; gap:.35rem;}
+.icon-btn{width:40px; height:40px; border-radius:12px; display:grid; place-items:center; color:var(--text); transition:background var(--t-fast), transform var(--t-fast); flex-shrink:0;}
+.icon-btn svg{width:19px; height:19px;}
+.icon-btn:hover{background:var(--border); transform:translateY(-1px);}
+.icon-btn:active{transform:translateY(0) scale(.94);}
+#themeToggle .icon-moon{display:none;}
+[data-theme="dark"] #themeToggle .icon-sun{display:none;}
+[data-theme="dark"] #themeToggle .icon-moon{display:block;}
+.nav-toggle{display:none;}
+.search-panel{
+  position:absolute; top:var(--header-h); inset-inline:0; background:var(--surface); border-bottom:1px solid var(--border);
+  padding:1rem clamp(1.1rem,4vw,2.5rem); box-shadow:var(--shadow-m); transform:translateY(-10px); opacity:0; pointer-events:none; transition:all var(--t-fast);
+}
+.search-panel.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+.search-panel input{width:100%; max-width:1180px; margin-inline:auto; display:block; padding:.85rem 1.1rem; border-radius:var(--radius-m); border:1.5px solid var(--border); background:var(--bg); color:var(--text); font-family:var(--font-ar); font-size:1rem;}
+.search-panel input:focus{border-color:var(--glow);}
+
+.speech-settings-wrap{position:relative;}
+.speech-popover{
+  position:absolute; top:calc(100% + 12px); inset-inline-end:0; width:250px; background:var(--surface);
+  border:1px solid var(--border); border-radius:var(--radius-m); padding:1.1rem; box-shadow:var(--shadow-l);
+  transform:translateY(-8px); opacity:0; pointer-events:none; transition:all var(--t-fast); z-index:960;
+}
+.speech-popover.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+.speech-popover label{display:block; font-size:.78rem; font-weight:700; margin-bottom:.4rem; color:var(--text-2);}
+.speech-popover label span{color:var(--glow); direction:ltr; display:inline-block;}
+.speech-popover input[type=range]{width:100%; margin-bottom:1rem; accent-color:var(--glow);}
+.speech-popover select{width:100%; padding:.55rem .6rem; border-radius:var(--radius-s); border:1.5px solid var(--border); background:var(--bg); color:var(--text); font-family:var(--font-ar); font-size:.85rem;}
+
+@media (max-width:860px){
+  .main-nav{
+    position:fixed; inset-block:var(--header-h) 0; inset-inline-start:0; width:min(78vw,320px);
+    background:var(--surface); flex-direction:column; align-items:flex-start; gap:0; padding:1.5rem;
+    box-shadow:var(--shadow-l); transform:translateX(105%); transition:transform var(--t-med); z-index:950; overflow-y:auto;
+  }
+  [dir="rtl"] .main-nav{transform:translateX(-105%);}
+  .main-nav.open{transform:translateX(0);}
+  .main-nav a{width:100%; padding:.9rem 0; border-bottom:1px solid var(--border); font-size:1.02rem;}
+  .nav-toggle{display:grid;}
+}
+
+/* ============================================================
+   6. BUTTONS & BADGES
+   ============================================================ */
+.btn{display:inline-flex; align-items:center; gap:.5rem; font-weight:700; font-size:.92rem; padding:.75rem 1.4rem; border-radius:999px; transition:transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast); white-space:nowrap;}
+.btn svg{width:16px; height:16px; flex-shrink:0;}
+.btn-primary{background:linear-gradient(135deg, var(--glow), var(--glow-2)); color:#1A1408; box-shadow:var(--shadow-s);}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-m);}
+.btn-ghost{background:var(--surface); border:1.5px solid var(--border); color:var(--text);}
+.btn-ghost:hover{border-color:var(--glow); color:var(--glow);}
+.btn-sm{padding:.5rem 1rem; font-size:.82rem; border-radius:999px;}
+.btn:active{transform:scale(.97);}
+.btn:disabled{opacity:.45; cursor:not-allowed; transform:none !important;}
+.badge{display:inline-flex; align-items:center; gap:.35rem; font-size:.74rem; font-weight:800; padding:.32rem .8rem; border-radius:999px; direction:ltr; letter-spacing:.02em;}
+
+/* ============================================================
+   7. HERO + STRING LIGHTS (Lichterkette)
+   ============================================================ */
+.hero{position:relative; padding-block:clamp(2.5rem,6vw,4rem) clamp(1rem,4vw,2rem); overflow:hidden;}
+.hero-content{position:relative; z-index:1; text-align:center; max-width:740px; margin-inline:auto;}
+.hero-content .eyebrow{justify-content:center;}
+.hero-content h1{font-family:var(--font-display); font-size:clamp(2rem,5.2vw,3.3rem); margin-block:.7rem .9rem; font-weight:700;}
+.hero-content h1 .de-display{color:var(--glow); font-size:1.06em;}
+.hero-content p{color:var(--text-2); font-size:clamp(1rem,2vw,1.15rem); max-width:600px; margin-inline:auto;}
+.lights{position:relative; z-index:1; width:min(96vw,860px); margin:clamp(2rem,6vw,3.5rem) auto 0; aspect-ratio:16/8;}
+.lights svg.lights-wire{position:absolute; inset:0; width:100%; height:100%; overflow:visible;}
+.lights-wire path{fill:none; stroke:var(--border); stroke-width:2;}
+.bulb-node{position:absolute; transform:translate(-50%,-50%); display:flex; flex-direction:column; align-items:center; gap:.5rem;}
+.bulb-node .bulb{
+  width:clamp(46px,8vw,66px); height:clamp(46px,8vw,66px); border-radius:50%;
+  background:var(--surface); border:2.5px solid var(--node-color,var(--glow));
+  display:grid; place-items:center; box-shadow:var(--shadow-m);
+  transition:transform var(--t-fast), box-shadow var(--t-fast);
+  color:var(--node-color,var(--glow));
+}
+.bulb-node .bulb svg{width:48%; height:48%;}
+.bulb-node:hover .bulb, .bulb-node:focus-visible .bulb{transform:scale(1.14); box-shadow:var(--shadow-l);}
+[data-theme="dark"] .bulb-node .bulb{
+  background:radial-gradient(circle at 35% 30%, #fff8ea, var(--node-color,var(--glow)) 60%, var(--node-color,var(--glow)));
+  border:none; box-shadow:none; color:#241a0c;
+  filter:drop-shadow(0 0 14px var(--node-color,var(--glow)));
+  animation:twinkle 3.2s ease-in-out infinite;
+}
+@keyframes twinkle{0%,100%{filter:drop-shadow(0 0 10px var(--node-color,var(--glow)));} 50%{filter:drop-shadow(0 0 22px var(--node-color,var(--glow)));}}
+.bulb-node .bulb-label{font-family:var(--font-latin); font-weight:700; font-size:clamp(.7rem,1.5vw,.92rem); direction:ltr; color:var(--text); background:var(--surface-a); backdrop-filter:blur(6px); padding:.15rem .55rem; border-radius:999px; white-space:nowrap;}
+@media(max-width:600px){.lights{aspect-ratio:16/13;}}
+
+/* ============================================================
+   8. INTRO / GRAMMAR CONCEPT
+   ============================================================ */
+.concept-grid{display:grid; grid-template-columns:1fr; gap:1.4rem; margin-bottom:1.6rem;}
+@media(min-width:840px){.concept-grid{grid-template-columns:1fr 1fr;}}
+.concept-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); padding:clamp(1.4rem,3vw,2rem); box-shadow:var(--shadow-s);}
+.concept-card h3{font-size:1.15rem; margin-bottom:.7rem; display:flex; align-items:center; gap:.5rem;}
+.concept-card h3 svg{width:22px; height:22px; color:var(--glow); flex-shrink:0;}
+.concept-card p{color:var(--text-2); font-size:.98rem; margin-bottom:.6rem;}
+.split-demo{margin-top:1.1rem; background:var(--bg); border-radius:var(--radius-m); padding:1.3rem 1rem; display:flex; flex-direction:column; align-items:center; gap:.7rem; overflow:hidden; border:1px dashed var(--border);}
+.split-demo .word-whole{font-family:var(--font-display); font-weight:700; font-size:1.5rem; direction:ltr; color:var(--text); transition:opacity .5s, transform .5s;}
+.split-demo .word-whole.faded{opacity:0; transform:scale(.85); position:absolute; pointer-events:none;}
+.split-demo .word-split{display:flex; gap:.6rem; font-family:var(--font-latin); font-weight:700; font-size:1.15rem; direction:ltr; opacity:0; transform:translateY(6px); transition:opacity .5s, transform .5s;}
+.split-demo .word-split.shown{opacity:1; transform:translateY(0);}
+.split-demo .stem-part{color:var(--text);}
+.split-demo .prefix-part{color:var(--glow-2); background:var(--error-bg); padding:.1rem .5rem; border-radius:8px;}
+.split-demo .word-split.shown .prefix-part{animation:flyToEnd .7s .3s both;}
+@keyframes flyToEnd{0%{transform:translateX(-140px) scale(1.15);} 100%{transform:translateX(0) scale(1);}}
+.split-demo .arrow-row{font-size:1.3rem; color:var(--text-2); direction:ltr;}
+
+.case-legend{display:grid; grid-template-columns:1fr; gap:1rem; margin-bottom:1.6rem;}
+@media(min-width:640px){.case-legend{grid-template-columns:1fr 1fr;}}
+.case-card{border-radius:var(--radius-m); padding:1.2rem 1.3rem; border:1.5px solid var(--border); background:var(--surface); display:flex; gap:.9rem; align-items:flex-start;}
+.case-card .case-icon{width:40px; height:40px; border-radius:12px; display:grid; place-items:center; flex-shrink:0; color:#1A1408;}
+.case-card .case-icon svg{width:20px; height:20px;}
+.case-card h4{font-size:1rem; margin-bottom:.3rem;}
+.case-card p{font-size:.9rem; color:var(--text-2);}
+.case-card .q-badge{direction:ltr; font-family:var(--font-latin); font-weight:700; color:var(--text);}
+
+.tip-box{display:flex; gap:.9rem; align-items:flex-start; background:linear-gradient(120deg, var(--success-bg), var(--surface)); border:1px solid var(--success); border-radius:var(--radius-m); padding:1.2rem 1.3rem;}
+.tip-box svg{width:26px; height:26px; color:var(--success); flex-shrink:0; margin-top:.1rem;}
+.tip-box p{font-size:.92rem; color:var(--text);}
+.tip-box strong{color:var(--success);}
+
+/* ============================================================
+   9. WORD FAMILY SECTION
+   ============================================================ */
+.family-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.1rem; margin-bottom:2rem;}
+.family-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); padding:1.3rem; text-align:center; box-shadow:var(--shadow-s); transition:transform var(--t-fast), box-shadow var(--t-fast);}
+.family-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-m);}
+.family-card .fam-icon{width:52px; height:52px; border-radius:14px; margin-inline:auto; display:grid; place-items:center; background:color-mix(in srgb, var(--glow) 15%, var(--surface)); color:var(--glow); margin-bottom:.8rem;}
+.family-card .fam-icon svg{width:26px; height:26px;}
+.family-card .de{font-size:1.1rem; display:block; margin-bottom:.3rem;}
+.family-card p{font-size:.85rem; color:var(--text-2);}
+
+.verbs-compare{overflow-x:auto; border-radius:var(--radius-l); border:1px solid var(--border);}
+.compare-table{min-width:560px; font-size:.92rem;}
+.compare-table th, .compare-table td{padding:.9rem 1.1rem; text-align:start; border-bottom:1px solid var(--border);}
+.compare-table thead th{background:var(--surface-2); font-weight:800;}
+.compare-table tbody tr:last-child td{border-bottom:none;}
+.compare-table td:first-child{font-family:var(--font-latin); font-weight:700; direction:ltr; color:var(--glow); white-space:nowrap;}
+.compare-table td:nth-child(2){color:var(--text-2); font-size:.85rem; white-space:nowrap;}
+
+/* ============================================================
+   10. VERB ACCORDIONS
+   ============================================================ */
+.verb-toolbar{display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-bottom:1.4rem;}
+.chip-filter{padding:.5rem 1.1rem; border-radius:999px; border:1.5px solid var(--border); font-size:.85rem; font-weight:700; background:var(--surface); color:var(--text-2); direction:ltr; transition:all var(--t-fast);}
+.chip-filter:hover{border-color:var(--glow); color:var(--text);}
+.chip-filter.active{background:var(--glow); border-color:var(--glow); color:#1A1408;}
+.verb-progress-label{text-align:center; font-size:.86rem; color:var(--text-2); margin-bottom:2rem; font-weight:600;}
+.verb-progress-label strong{color:var(--glow); direction:ltr; display:inline-block;}
+
+.verb-accordion-list{display:flex; flex-direction:column; gap:1rem;}
+.verb-item{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); overflow:hidden; box-shadow:var(--shadow-s); scroll-margin-top:calc(var(--header-h) + 16px); transition:box-shadow var(--t-fast);}
+.verb-item.open{box-shadow:var(--shadow-m);}
+.verb-item-header{width:100%; display:flex; align-items:stretch;}
+.verb-speak-icon-btn{flex-shrink:0; width:52px; display:grid; place-items:center; color:var(--text-2); transition:color var(--t-fast), background var(--t-fast);}
+.verb-speak-icon-btn:hover, .verb-speak-icon-btn:focus-visible{color:var(--card-accent,var(--glow)); background:var(--surface-2);}
+.verb-speak-icon-btn svg{width:19px; height:19px;}
+.verb-toggle-btn{flex:1; min-width:0; display:flex; align-items:center; gap:1rem; padding:1.1rem 1.3rem 1.1rem .2rem; text-align:start;}
+.verb-toggle-btn:hover{background:var(--surface-2);}
+.verb-icon{width:52px; height:52px; border-radius:14px; flex-shrink:0; display:grid; place-items:center; background:color-mix(in srgb, var(--card-accent,var(--glow)) 16%, var(--surface)); color:var(--card-accent,var(--glow));}
+.verb-icon svg{width:27px; height:27px;}
+.verb-header-text{flex:1; min-width:0; text-align:start;}
+.verb-prefix-eyebrow{font-family:var(--font-latin); font-size:.7rem; font-weight:800; letter-spacing:.1em; direction:ltr; color:var(--card-accent,var(--glow)); text-transform:uppercase;}
+.verb-infinitive{font-size:1.2rem; font-weight:700; display:block; margin-block:.1rem .2rem;}
+.verb-meaning-short{color:var(--text-2); font-size:.86rem; display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden;}
+.verb-header-right{display:flex; align-items:center; gap:.8rem; flex-shrink:0;}
+.case-tag{color:#1A1408; background:var(--card-accent,var(--glow));}
+.accordion-chevron{width:22px; height:22px; transition:transform var(--t-med); color:var(--text-2); flex-shrink:0;}
+.verb-item.open .accordion-chevron{transform:rotate(180deg); color:var(--card-accent,var(--glow));}
+
+.accordion-body{display:grid; grid-template-rows:0fr; transition:grid-template-rows var(--t-med);}
+.verb-item.open .accordion-body{grid-template-rows:1fr;}
+.accordion-body-inner{overflow:hidden;}
+.accordion-content-pad{padding:0 1.3rem 1.4rem;}
+
+.speak-trigger{display:inline-flex; align-items:center; gap:.4rem; direction:ltr; color:var(--text); border-radius:10px; transition:color var(--t-fast);}
+.speak-trigger:hover, .speak-trigger:focus-visible{color:var(--card-accent,var(--glow));}
+.speak-trigger svg{width:16px; height:16px; opacity:.55; flex-shrink:0;}
+.speak-trigger.speaking{color:var(--card-accent,var(--glow));}
+.speak-trigger.speaking svg{opacity:1; animation:wiggle .5s ease-in-out infinite;}
+@keyframes wiggle{0%,100%{transform:scale(1);} 50%{transform:scale(1.18);}}
+
+.table-scroll{overflow-x:auto; border-radius:var(--radius-m); border:1px solid var(--border); margin-block:1rem;}
+.conj-table{font-size:.86rem; min-width:480px;}
+.conj-table th, .conj-table td{padding:.6rem .8rem; text-align:center; border-bottom:1px solid var(--border); direction:ltr;}
+.conj-table thead th{background:color-mix(in srgb, var(--card-accent,var(--glow)) 12%, var(--surface-2)); font-family:var(--font-latin); font-weight:800; font-size:.8rem;}
+.conj-table tbody th{font-family:var(--font-latin); font-weight:700; text-align:right; color:var(--text-2); white-space:nowrap; font-size:.82rem;}
+.conj-table tbody tr:last-child td, .conj-table tbody tr:last-child th{border-bottom:none;}
+.conj-table td .de{cursor:pointer; border-radius:6px; padding:.2rem .5rem; transition:background var(--t-fast), color var(--t-fast);}
+.conj-table td .de:hover, .conj-table td .de:focus-visible{background:var(--bg); color:var(--card-accent,var(--glow));}
+
+.native-tip{display:flex; gap:.6rem; align-items:flex-start; background:var(--bg); border-radius:var(--radius-m); padding:.9rem 1rem; margin-bottom:1.2rem; font-size:.87rem; color:var(--text-2);}
+.native-tip svg{width:19px; height:19px; color:var(--glow); flex-shrink:0; margin-top:.15rem;}
+
+.examples-title{font-size:.95rem; font-weight:800; margin-bottom:.7rem; display:flex; align-items:center; gap:.4rem;}
+.examples-title svg{width:17px; height:17px; color:var(--card-accent,var(--glow));}
+.example-item{background:var(--bg); border-radius:var(--radius-m); padding:1rem 1.1rem; margin-bottom:.7rem; border:1px solid var(--border);}
+.example-tense-tag{font-size:.68rem; font-weight:800; color:var(--card-accent,var(--glow)); direction:ltr; letter-spacing:.05em; text-transform:uppercase;}
+.example-de{display:block; width:100%; text-align:start; font-family:var(--font-latin); font-weight:600; font-size:1.04rem; direction:ltr; margin-block:.35rem .3rem; cursor:pointer; line-height:1.6; border-radius:8px; padding:.2rem .3rem; transition:background var(--t-fast);}
+.example-de:hover, .example-de:focus-visible{background:var(--surface);}
+.example-de.speaking{background:color-mix(in srgb, var(--card-accent,var(--glow)) 10%, var(--surface));}
+.example-de .w{transition:background var(--t-fast), color var(--t-fast); border-radius:5px; padding:0 .12rem;}
+.example-de .w.speaking-word{background:var(--glow); color:#1A1408;}
+.example-ar{color:var(--text-2); font-size:.88rem; margin-bottom:.6rem;}
+.example-actions{display:flex; flex-wrap:wrap; gap:.5rem;}
+
+.bonus-examples{margin-top:1rem; padding-top:1rem; border-top:1px dashed var(--border);}
+.bonus-label{font-size:.8rem; font-weight:800; color:var(--text-2); margin-bottom:.6rem; display:flex; align-items:center; gap:.4rem;}
+.bonus-label svg{width:15px; height:15px; color:var(--card-accent,var(--glow));}
+.bonus-item{display:flex; align-items:flex-start; justify-content:space-between; gap:.8rem; padding:.6rem 0; border-bottom:1px solid var(--border);}
+.bonus-item:last-child{border-bottom:none;}
+.bonus-text{flex:1; min-width:0;}
+.bonus-de{display:block; font-family:var(--font-latin); font-weight:600; direction:ltr; text-align:start; cursor:pointer; font-size:.98rem; border-radius:6px;}
+.bonus-de:hover{color:var(--card-accent,var(--glow));}
+.bonus-ar{color:var(--text-2); font-size:.85rem; margin-top:.15rem;}
+.bonus-speak-btn{flex-shrink:0; width:34px; height:34px; border-radius:50%; display:grid; place-items:center; background:var(--surface); border:1px solid var(--border); color:var(--text-2); transition:all var(--t-fast);}
+.bonus-speak-btn:hover{color:var(--card-accent,var(--glow)); border-color:var(--card-accent,var(--glow));}
+.bonus-speak-btn svg{width:15px; height:15px;}
+
+.builder-widget{margin-top:.9rem; padding-top:.9rem; border-top:1px dashed var(--border);}
+.builder-zone{display:flex; flex-wrap:wrap; gap:.5rem; min-height:48px; padding:.6rem; border-radius:var(--radius-m); background:var(--surface); border:1.5px dashed var(--border); margin-bottom:.6rem; direction:ltr;}
+.builder-zone.answer-zone{background:color-mix(in srgb, var(--card-accent,var(--glow)) 7%, var(--surface));}
+.word-tile{font-family:var(--font-latin); font-weight:700; font-size:.92rem; padding:.45rem .85rem; border-radius:10px; background:var(--bg); border:1.5px solid var(--border); color:var(--text); cursor:pointer; transition:transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);}
+.word-tile:hover{transform:translateY(-2px); box-shadow:var(--shadow-s); border-color:var(--card-accent,var(--glow));}
+.builder-feedback{font-size:.86rem; font-weight:700; min-height:1.4em; margin-bottom:.4rem;}
+.builder-feedback.correct{color:var(--success);}
+.builder-feedback.wrong{color:var(--error);}
+.shake{animation:shake .4s;}
+@keyframes shake{10%,90%{transform:translateX(-2px);} 20%,80%{transform:translateX(4px);} 30%,50%,70%{transform:translateX(-7px);} 40%,60%{transform:translateX(7px);}}
+.pop-correct{animation:popcorrect .4s var(--ease);}
+@keyframes popcorrect{0%{transform:scale(1);} 45%{transform:scale(1.02);} 100%{transform:scale(1);}}
+
+/* ============================================================
+   11. DIALOGUE SECTION
+   ============================================================ */
+.dialogue-shell{max-width:720px; margin-inline:auto;}
+.dialogue-controls{display:flex; justify-content:center; margin-bottom:1.6rem;}
+.dialogue-list{display:flex; flex-direction:column; gap:.9rem;}
+.dlg-line{display:flex; gap:.8rem; max-width:88%;}
+.dlg-line.role-b{margin-inline-start:auto; flex-direction:row-reverse;}
+.dlg-avatar{width:38px; height:38px; border-radius:50%; flex-shrink:0; display:grid; place-items:center; color:#1A1408; font-weight:800; font-size:.8rem;}
+.dlg-line.role-a .dlg-avatar{background:linear-gradient(135deg,var(--glow),var(--glow-2));}
+.dlg-line.role-b .dlg-avatar{background:linear-gradient(135deg,#9BBF6B,#6B8F5A);}
+.dlg-bubble{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); padding:.85rem 1rem; box-shadow:var(--shadow-s); flex:1;}
+.dlg-line.role-b .dlg-bubble{background:color-mix(in srgb, var(--glow) 6%, var(--surface));}
+.dlg-de{display:block; width:100%; text-align:start; font-family:var(--font-latin); font-weight:600; direction:ltr; cursor:pointer; border-radius:6px; font-size:1rem; line-height:1.55;}
+.dlg-de .w{border-radius:4px; padding:0 .1rem; transition:background var(--t-fast);}
+.dlg-de .w.speaking-word{background:var(--glow); color:#1A1408;}
+.dlg-ar{color:var(--text-2); font-size:.86rem; margin-top:.3rem;}
+.dlg-name{font-size:.72rem; font-weight:800; color:var(--text-2); margin-bottom:.2rem; direction:ltr;}
+
+/* ============================================================
+   12. FLASHCARDS
+   ============================================================ */
+.fc-toolbar{display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:2rem; flex-wrap:wrap;}
+.fc-progress{font-family:var(--font-latin); font-weight:700; font-size:.9rem; color:var(--text-2); direction:ltr;}
+.flashcards-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1.4rem;}
+.flashcard{perspective:1400px; height:225px;}
+.flashcard-inner{position:relative; width:100%; height:100%; transition:transform .7s var(--ease); transform-style:preserve-3d; cursor:pointer;}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg);}
+.fc-face{position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:var(--radius-l); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.2rem; text-align:center; box-shadow:var(--shadow-m); border:1px solid var(--border);}
+.fc-front{background:linear-gradient(155deg, color-mix(in srgb, var(--card-accent,var(--glow)) 20%, var(--surface)), var(--surface));}
+.fc-front svg{width:34px; height:34px; color:var(--card-accent,var(--glow)); margin-bottom:.6rem;}
+.fc-front .de{font-size:1.28rem; font-weight:700;}
+.fc-front .fc-hint{font-size:.74rem; color:var(--text-2); margin-top:.5rem;}
+.fc-back{background:var(--card-accent,var(--glow)); color:#1A1408; transform:rotateY(180deg);}
+.fc-back p{font-size:.9rem; margin-bottom:.5rem;}
+.fc-back .fc-case{font-size:.72rem; font-weight:800; background:rgba(26,20,8,.18); padding:.25rem .7rem; border-radius:999px; direction:ltr;}
+
+/* ============================================================
+   13. QUIZ
+   ============================================================ */
+.quiz-shell{max-width:680px; margin-inline:auto;}
+.quiz-progress-row{display:flex; align-items:center; gap:.9rem; margin-bottom:1.6rem;}
+.quiz-progress-track{flex:1; height:8px; border-radius:999px; background:var(--border); overflow:hidden;}
+.quiz-progress-fill{height:100%; background:linear-gradient(90deg,var(--glow),var(--glow-2)); width:0%; transition:width var(--t-med); border-radius:999px;}
+.quiz-progress-label{font-size:.82rem; font-weight:700; color:var(--text-2); white-space:nowrap; direction:ltr;}
+.quiz-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:clamp(1.4rem,4vw,2.2rem); box-shadow:var(--shadow-m);}
+.quiz-question{font-size:1.1rem; font-weight:700; margin-bottom:1.3rem;}
+.quiz-options{display:grid; gap:.7rem;}
+.quiz-option{text-align:start; padding:.9rem 1.1rem; border-radius:var(--radius-m); border:1.5px solid var(--border); background:var(--bg); font-size:.96rem; transition:all var(--t-fast); display:flex; align-items:center; justify-content:space-between; gap:.6rem;}
+.quiz-option:hover:not(:disabled){border-color:var(--glow);}
+.quiz-option.correct{background:var(--success-bg); border-color:var(--success); color:var(--success);}
+.quiz-option.wrong{background:var(--error-bg); border-color:var(--error); color:var(--error);}
+.quiz-option svg{width:18px; height:18px; flex-shrink:0;}
+.quiz-footer{display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem; gap:1rem;}
+.quiz-result{text-align:center; padding:1.5rem 0;}
+.quiz-result svg{width:64px; height:64px; color:var(--glow); margin-inline:auto; margin-bottom:1rem;}
+.quiz-result .score-big{font-family:var(--font-display); font-size:2.6rem; font-weight:700; color:var(--glow); direction:ltr;}
+.quiz-result p{color:var(--text-2); margin-top:.5rem; max-width:420px; margin-inline:auto;}
+
+/* ============================================================
+   14. FOOTER & BACK-TO-TOP
+   ============================================================ */
+.site-footer{padding-block:3rem 2.2rem; text-align:center; border-top:1px solid var(--border); color:var(--text-2); font-size:.9rem;}
+.site-footer strong{color:var(--text); font-family:var(--font-latin); direction:ltr; display:inline-block;}
+.site-footer .foot-icons{display:flex; justify-content:center; gap:.8rem; margin-block:1rem; opacity:.5;}
+.site-footer .foot-icons svg{width:20px; height:20px;}
+.back-to-top{position:fixed; bottom:1.6rem; inset-inline-end:1.6rem; width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,var(--glow),var(--glow-2)); color:#1A1408; display:grid; place-items:center; box-shadow:var(--shadow-m); opacity:0; transform:translateY(16px) scale(.8); pointer-events:none; transition:all var(--t-fast); z-index:500;}
+.back-to-top.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
+.back-to-top svg{width:20px; height:20px;}
+.back-to-top:hover{transform:translateY(-3px) scale(1.05);}
+
+/* ============================================================
+   15. PRINT
+   ============================================================ */
+@media print{
+  .site-header,.back-to-top,.progress-bar,.search-panel,.example-actions,.builder-widget,.fc-toolbar,.flashcards-grid,.quiz-section,.verb-toolbar,.nav-toggle,.lights{display:none !important;}
+  body{background:#fff !important; color:#000 !important;}
+  .verb-item{box-shadow:none !important; border:1px solid #ccc !important; page-break-inside:avoid;}
+  .accordion-body{grid-template-rows:1fr !important;}
+}
+
+/* ============================================================
+   16. RESPONSIVE FINE-TUNING
+   ============================================================ */
+@media(max-width:480px){
+  .conj-table{font-size:.78rem;}
+  .quiz-footer{flex-direction:column; align-items:stretch;}
+  .flashcards-grid{grid-template-columns:1fr 1fr;}
+  .flashcard{height:195px;}
+  .dlg-line{max-width:96%;}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ============ SVG ICON SPRITE ============ -->
+<svg style="display:none" aria-hidden="true">
+<defs>
+<symbol id="icon-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M4.2 4.2l1.85 1.85M17.95 17.95l1.85 1.85M2.5 12h2.6M18.9 12h2.6M4.2 19.8l1.85-1.85M17.95 6.05l1.85-1.85"/></g></symbol>
+<symbol id="icon-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20.5 14.4A8.5 8.5 0 1 1 9.6 3.5a7 7 0 0 0 10.9 10.9z"/></symbol>
+<symbol id="icon-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.7-4.7"/></g></symbol>
+<symbol id="icon-menu" viewBox="0 0 24 24"><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></g></symbol>
+<symbol id="icon-close" viewBox="0 0 24 24"><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></g></symbol>
+<symbol id="icon-speaker" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.6l5 4V5.5l-5 4H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/><path d="M18.9 6.2a9 9 0 0 1 0 11.6"/></g></symbol>
+<symbol id="icon-replay" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 1 1 2.6 5.9M4 12V6.5M4 12h5.5"/></symbol>
+<symbol id="icon-shuffle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h3.6L15 18h5.5M3 18h3.6L15 6h5.5"/><path d="M17.5 3.5L21 6l-3.5 2.5M17.5 20.5L21 18l-3.5-2.5"/></g></symbol>
+<symbol id="icon-check-circle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="M7.8 12.3l2.7 2.7 5.6-6"/></g></symbol>
+<symbol id="icon-x-circle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="M9 9l6 6M15 9l-6 6"/></g></symbol>
+<symbol id="icon-arrow-up" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6"/><path d="M5.5 12.5L12 6l6.5 6.5"/></g></symbol>
+<symbol id="icon-lightbulb" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 2.5A6.5 6.5 0 0 0 8.2 14.3c.7.6 1.1 1.4 1.1 2.2h5.4c0-.8.4-1.6 1.1-2.2A6.5 6.5 0 0 0 12 2.5z"/></g></symbol>
+<symbol id="icon-puzzle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M9 4h3.2a1.6 1.6 0 0 1 1.5 2.2 1.6 1.6 0 0 0 1.5 2.2H18a2 2 0 0 1 2 2v3.2a1.6 1.6 0 0 0-2.2 1.5 1.6 1.6 0 0 0 2.2 1.5V19a2 2 0 0 1-2 2h-3.2a1.6 1.6 0 0 1 0-3.2 1.6 1.6 0 0 0-1.6-1.6H9a2 2 0 0 1-2-2v-3a1.6 1.6 0 0 0 0-3.2A1.6 1.6 0 0 1 8.6 6.2 1.6 1.6 0 0 0 9 4z"/></symbol>
+<symbol id="icon-chevron-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></symbol>
+<symbol id="icon-trophy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 6H4.5A2.5 2.5 0 0 0 7 9.5M17 6h2.5A2.5 2.5 0 0 1 17 9.5"/><path d="M12 14v3M9 20.5h6M9.5 20.5l.7-3.5h3.6l.7 3.5"/></g></symbol>
+<symbol id="icon-expand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H5a1 1 0 0 0-1 1v4M15 4h4a1 1 0 0 1 1 1v4M9 20H5a1 1 0 0 1-1-1v-4M15 20h4a1 1 0 0 0 1-1v-4"/></g></symbol>
+<symbol id="icon-book" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 6.5c-1.6-1.3-4-1.8-6.5-1.5v13c2.5-.3 4.9.2 6.5 1.5 1.6-1.3 4-1.8 6.5-1.5v-13c-2.5-.3-4.9.2-6.5 1.5zM12 6.5V19"/></symbol>
+<symbol id="icon-layers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l9 4.7-9 4.7-9-4.7L12 3z"/><path d="M3 12.3l9 4.7 9-4.7M3 17l9 4.7L21 17" stroke-linecap="round"/></g></symbol>
+<symbol id="icon-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H8l-4 4V5z"/></symbol>
+<symbol id="icon-hat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21v-6.5c0-3.6 2.7-6.5 6-6.5s6 2.9 6 6.5V21"/><path d="M4 21h16"/><path d="M9 8C8.3 5.8 9.5 3.5 12 3.5S15.7 5.8 15 8"/></g></symbol>
+<symbol id="icon-flame" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 2.5c1 3-3 4-3 8a3 3 0 0 0 6 0c1 .8 1.5 2 1.5 3.2A5.5 5.5 0 1 1 8 10.5c1.8 0 1-3 4-8z"/></symbol>
+<symbol id="icon-pot" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5h16l-1.2 7A2 2 0 0 1 16.8 19H7.2a2 2 0 0 1-2-1.5l-1.2-7z"/><path d="M2 10.5h20M8 10.5V8a4 4 0 0 1 8 0v2.5"/></g></symbol>
+<symbol id="icon-grill" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="8.5" rx="8" ry="3"/><path d="M4 8.5V15a8 3 0 0 0 16 0V8.5M8 4.5V2M12 4V1.5M16 4.5V2"/></g></symbol>
+<!-- food icons -->
+<symbol id="icon-bread" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 13.5c0-5 3.8-8.5 8.5-8.5s8.5 3.5 8.5 8.5-2 6-8.5 6-8.5-1-8.5-6z"/><path d="M9 8.5l1 6M12 7.5v7M15 8.5l-1 6"/></g></symbol>
+<symbol id="icon-donut" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="3"/><circle cx="9" cy="7.5" r=".6" fill="currentColor" stroke="none"/><circle cx="15.5" cy="8.5" r=".6" fill="currentColor" stroke="none"/><circle cx="16.5" cy="14.5" r=".6" fill="currentColor" stroke="none"/></g></symbol>
+<symbol id="icon-cake-slice" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l8-15 8 15z"/><path d="M6.6 15h10.8M7.9 10.3h8.2"/><circle cx="12" cy="3.6" r="1.1" fill="currentColor" stroke="none"/></g></symbol>
+<symbol id="icon-pie" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 11.5a8 8 0 0 1 16 0z"/><path d="M3 11.5h18l-1.3 8.5a1.5 1.5 0 0 1-1.5 1.3H5.8a1.5 1.5 0 0 1-1.5-1.3z"/><path d="M12 3.5v8M7.5 11.5L9 4.6M16.5 11.5L15 4.6"/></g></symbol>
+<symbol id="icon-mixing-bowl" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5h17c-.4 5-3.6 9-8.5 9s-8.1-4-8.5-9z"/><path d="M6.5 10.5C6.5 6.5 8.9 4 12 4s5.5 2.5 5.5 6.5"/><path d="M15 6.2l3-2.7"/></g></symbol>
+<symbol id="icon-oven" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="2"/><circle cx="12" cy="14" r="4.3"/><path d="M9.3 14c0-1.2 1.2-1.4 1.4-2.4M6.5 6.8h.01M9.5 6.8h.01"/></g></symbol>
+<symbol id="icon-pan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="11" cy="12.5" rx="7.5" ry="4"/><path d="M18.3 11.5L22 9.3M8.5 12.2c.6-.9 1.6-1.4 2.7-1.2M12.3 13.2c.6.6 1.6.8 2.5.5"/></g></symbol>
+</defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-badge"><svg><use href="#icon-flame"/></svg></span>
+      <span>Backstube <span class="de">bei Nacht</span></span>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="التنقل الرئيسي">
+      <a href="#hero">الرئيسية</a>
+      <a href="#intro">القاعدة</a>
+      <a href="#family">عائلة الكلمة</a>
+      <a href="#verbs">الأفعال</a>
+      <a href="#dialogue">حوار</a>
+      <a href="#flashcards">البطاقات</a>
+      <a href="#quiz">الاختبار</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="بحث" aria-expanded="false"><svg><use href="#icon-search"/></svg></button>
+      <button class="icon-btn" id="fullscreenToggle" aria-label="وضع ملء الشاشة"><svg><use href="#icon-expand"/></svg></button>
+      <div class="speech-settings-wrap">
+        <button class="icon-btn" id="speechSettingsToggle" aria-label="إعدادات النطق" aria-expanded="false"><svg><use href="#icon-speaker"/></svg></button>
+        <div class="speech-popover" id="speechPopover">
+          <label for="rateSlider">سرعة النطق: <span id="rateValue">0.9x</span></label>
+          <input type="range" id="rateSlider" min="0.6" max="1.3" step="0.1" value="0.9">
+          <label for="voiceSelect">الصوت الألماني المستخدم</label>
+          <select id="voiceSelect"><option>جارٍ البحث عن الأصوات…</option></select>
+        </div>
+      </div>
+      <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع الليلي والنهاري" aria-pressed="false">
+        <svg class="icon-sun"><use href="#icon-sun"/></svg>
+        <svg class="icon-moon"><use href="#icon-moon"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false"><svg><use href="#icon-menu"/></svg></button>
+    </div>
+  </div>
+  <div class="search-panel" id="searchPanel">
+    <input type="text" id="searchInput" placeholder="ابحث عن فعل، مثل: vorbacken أو تسخين..." aria-label="ابحث داخل الدرس">
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-content reveal in-view">
+      <span class="eyebrow"><svg width="14" height="14"><use href="#icon-layers"/></svg> Wortfeld · حقل كلمات</span>
+      <h1>عائلة الفعل <span class="de-display">backen</span> — إصدار الدراسة الليلية</h1>
+      <p>ثمانية أفعال ألمانية منفصلة، جمل وتراكيب أوسع، حوار حقيقي من داخل مخبز، ووضع ليلي داكن مصمَّم خصيصًا لجلسات التركيز الطويلة. انقر أي مصباح أدناه للانتقال إلى شرحه الكامل.</p>
+    </div>
+    <div class="lights reveal" id="lights" aria-label="سلسلة أضواء تمثل الأفعال الثمانية"></div>
+  </div>
+</section>
+
+<!-- ============ INTRO / GRAMMAR CONCEPT ============ -->
+<section class="section" id="intro">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">القاعدة النحوية</span>
+      <h2>كيف تعمل هذه الأفعال؟</h2>
+      <p>قبل الغوص في الأفعال الثمانية، إليك الأساس النحوي الذي يجمعها جميعًا.</p>
+    </div>
+    <div class="concept-grid reveal">
+      <div class="concept-card">
+        <h3><svg><use href="#icon-layers"/></svg> ما هو حقل الكلمات (Wortfeld)؟</h3>
+        <p><span class="de">Wortfeld</span> يعني مجموعة كلمات تدور حول فكرة مركزية واحدة. هنا، الفكرة المركزية هي الخَبز <span class="de">(backen)</span>، وكل بادئة تُضاف إليه لتنتج فعلًا جديدًا بمعنى أدق يخص مرحلة أو طريقة معيّنة من الخَبز.</p>
+        <p>هذه الطريقة في تعلّم الكلمات تساعدك على حفظ مفردات كثيرة دفعة واحدة وربطها ببعضها بدلاً من حفظها بشكل منفصل.</p>
+      </div>
+      <div class="concept-card">
+        <h3><svg><use href="#icon-puzzle"/></svg> الأفعال المنفصلة (trennbare Verben)</h3>
+        <p>كل الأفعال الثمانية «منفصلة»: في زمن <span class="de">Präsens</span> و<span class="de">Präteritum</span> ضمن الجملة الرئيسية، تنفصل البادئة عن جذر الفعل وتذهب إلى <strong>نهاية الجملة</strong>.</p>
+        <div class="split-demo">
+          <div class="word-whole de" id="splitWhole">aufbacken</div>
+          <div class="arrow-row">⬇</div>
+          <div class="word-split" id="splitParts">
+            <span class="stem-part">Ich backe die Brötchen ...</span>
+            <span class="prefix-part">auf!</span>
+          </div>
+          <button class="btn btn-ghost btn-sm" id="replaySplit"><svg><use href="#icon-replay"/></svg> إعادة العرض</button>
+        </div>
+        <p style="margin-top:.9rem;">أما في <span class="de">Perfekt</span>، فتلتصق البادئة قبل <span class="de">ge-</span> مباشرة: <span class="de">auf+ge+backt = aufgebacken</span>. وفي الجملة الثانوية (بعد <span class="de">weil, dass, wenn</span>) يتحد الفعل وبادئته معًا في النهاية.</p>
+      </div>
+    </div>
+    <div class="case-legend reveal">
+      <div class="case-card">
+        <span class="case-icon" style="background:var(--glow);"><svg><use href="#icon-check-circle"/></svg></span>
+        <div><h4>الأكوزاتيف <span class="q-badge">(Akkusativ)</span></h4>
+        <p>السؤال: <span class="q-badge">wen? / was?</span> — تحتاجه أغلب أفعال هذا الحقل لأنها متعدية. مثال: <button type="button" class="de speak-el" style="text-decoration:underline; text-underline-offset:3px;">Ich backe den Kuchen durch.</button></p></div>
+      </div>
+      <div class="case-card">
+        <span class="case-icon" style="background:var(--glow-2);"><svg><use href="#icon-layers"/></svg></span>
+        <div><h4>حرف الجر <span class="q-badge">an + Dativ</span></h4>
+        <p>السؤال: <span class="q-badge">wo?</span> — يظهر مع المعنى اللازم لفعل <span class="de">anbacken</span>. مثال: <button type="button" class="de speak-el" style="text-decoration:underline; text-underline-offset:3px;">Der Reis ist am Topf angebacken.</button></p></div>
+      </div>
+    </div>
+    <div class="tip-box reveal">
+      <svg><use href="#icon-lightbulb"/></svg>
+      <p><strong>نصيحة نحوية للمتحدث الأصلي:</strong> العديد من هذه الأفعال يُستخدم تصريفها الثالث (Partizip II) كصفة مع <span class="de">sein</span> لوصف حالة النتيجة، وليس فعل الخَبز نفسه: <span class="de">Der Kuchen ist durchgebacken</span> (وصف حالة) مقابل <span class="de">Ich habe den Kuchen durchgebacken</span> (فعل قام به شخص). كذلك صيغة الماضي الرسمية هي <span class="de">ich backte</span>، وتوجد صيغة قديمة نادرة <span class="de">ich buk</span> في النصوص الأدبية.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORD FAMILY SECTION ============ -->
+<section class="section" id="family" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">عائلة الكلمة</span>
+      <h2>ماذا يخرج من جذر backen؟</h2>
+      <p>أسماء مرتبطة، ومقارنة سريعة بين أفعال الطبخ الألمانية الأربعة الأكثر شيوعًا.</p>
+    </div>
+    <div class="family-grid reveal" id="familyGrid"></div>
+    <div class="verbs-compare reveal">
+      <table class="compare-table">
+        <thead><tr><th>Verb</th><th>السؤال</th><th>الشرح</th></tr></thead>
+        <tbody id="compareTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VERBS SECTION (accordion) ============ -->
+<section class="section" id="verbs">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">الأفعال الثمانية</span>
+      <h2>كل بادئة ومعناها الكامل</h2>
+      <p>انقر على أي فعل لفتح شرحه الكامل: التصريف، النصائح، والجمل التفاعلية.</p>
+    </div>
+    <div class="verb-toolbar reveal" id="verbToolbar"></div>
+    <p class="verb-progress-label reveal">تم استكشاف <strong id="verbProgressCount">0</strong> / 8 أفعال</p>
+    <div class="verb-accordion-list" id="verbCardsContainer"></div>
+  </div>
+</section>
+
+<!-- ============ DIALOGUE SECTION ============ -->
+<section class="section" id="dialogue" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">تطبيق واقعي</span>
+      <h2>حوار داخل المخبز</h2>
+      <p>محادثة قصيرة تجمع الأفعال الثمانية في سياق طبيعي. انقر أي سطر لسماعه، أو استمع للحوار كاملاً.</p>
+    </div>
+    <div class="dialogue-shell reveal">
+      <div class="dialogue-controls">
+        <button class="btn btn-primary" id="playDialogueBtn"><svg><use href="#icon-speaker"/></svg> استمع للحوار كاملاً</button>
+      </div>
+      <div class="dialogue-list" id="dialogueContainer"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLASHCARDS SECTION ============ -->
+<section class="section" id="flashcards">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">مراجعة سريعة</span>
+      <h2>بطاقات تعليمية قابلة للقلب</h2>
+      <p>انقر على أي بطاقة لقلبها ورؤية المعنى.</p>
+    </div>
+    <div class="fc-toolbar reveal">
+      <button class="btn btn-ghost" id="shuffleCards"><svg><use href="#icon-shuffle"/></svg> ترتيب عشوائي</button>
+      <span class="fc-progress" id="fcProgress">0 / 8 تمت مراجعتها</span>
+    </div>
+    <div class="flashcards-grid reveal" id="flashcardsContainer"></div>
+  </div>
+</section>
+
+<!-- ============ QUIZ SECTION ============ -->
+<section class="section" id="quiz" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">اختبر نفسك</span>
+      <h2>اختبار شامل على الدرس</h2>
+      <p>أسئلة تغطي المعنى، التصريف، الحالة الإعرابية، وعائلة الكلمة والحوار.</p>
+    </div>
+    <div class="quiz-shell reveal" id="quizContainer"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="foot-icons" aria-hidden="true"><svg><use href="#icon-bread"/></svg><svg><use href="#icon-cake-slice"/></svg><svg><use href="#icon-hat"/></svg></div>
+  <p>درس تفاعلي موسّع لعائلة الفعل <span class="de">backen</span> — صُمم لجلسات دراسة مريحة وعميقة في وضع ليلي مدروس.</p>
+  <p style="margin-top:.6rem;">إعداد: <strong>Herr Mohamed Yassin</strong></p>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى"><svg><use href="#icon-arrow-up"/></svg></button>
+
+<script>
+/* ============================================================
+   SHARED CONJUGATION PATTERNS
+   ============================================================ */
+const PRONOUNS = ['ich','du','er / sie / es','wir','ihr','sie / Sie'];
+const STEM_PRAESENS   = ['backe','backst','backt','backen','backt','backen'];
+const STEM_PRAETERITUM= ['backte','backtest','backte','backten','backtet','backten'];
+const HABEN           = ['habe','hast','hat','haben','habt','haben'];
+
+const verbsData = [
+  {
+    key:'aufbacken', prefix:'auf', icon:'icon-bread', color:'#F5A83C',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'تسخين أو تحميص الخبز الجاهز (المخبوز مسبقًا أو المجمَّد) في الفرن حتى يصبح طازجًا من جديد.',
+    partizip:'aufgebacken',
+    tip:'يُستخدم aufbacken حصرًا مع خبز مخبوز مسبقًا (طازج أو مجمّد) لإعادة تسخينه، وليس مع عجين نيء من الصفر — فالعجين النيء يُخبز بفعل backen العادي.',
+    sentences:[
+      {tense:'Präsens',    de:'Ich backe die Brötchen auf.',       ar:'أقوم بتسخين الخبز في الفرن.'},
+      {tense:'Präteritum', de:'Ich backte die Brötchen auf.',      ar:'قمتُ بتسخين الخبز في الفرن.'},
+      {tense:'Perfekt',    de:'Ich habe die Brötchen aufgebacken.',ar:'لقد قمتُ بتسخين الخبز في الفرن.'}
+    ],
+    bonus:[
+      {de:'Meine Mutter backt am Sonntag immer frische Brötchen auf.', ar:'تقوم أمي دائمًا بتسخين خبز طازج يوم الأحد.'},
+      {de:'Man kann tiefgekühltes Brot problemlos aufbacken.', ar:'يمكن تسخين الخبز المجمّد دون أي مشكلة.'}
+    ]
+  },
+  {
+    key:'ausbacken', prefix:'aus', icon:'icon-donut', color:'#FF8A3D',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'القلي العميق أو إتمام خَبز شيء حتى ينضج تمامًا من الخارج والداخل، مثل الدونتس والكرات المحشوة.',
+    partizip:'ausgebacken',
+    tip:'يرتبط ausbacken غالبًا بالقلي العميق في الزيت (Frittieren)، بينما durchbacken يرتبط بالفرن التقليدي — كلاهما يعني الإنضاج الكامل بوسيلتين مختلفتين.',
+    sentences:[
+      {tense:'Präsens',    de:'Der Bäcker backt die Krapfen aus.',       ar:'يقلي الخبّاز الكرات المحشوة حتى تنضج تمامًا.'},
+      {tense:'Präteritum', de:'Der Bäcker backte die Krapfen aus.',      ar:'قلى الخبّاز الكرات المحشوة حتى نضجت تمامًا.'},
+      {tense:'Perfekt',    de:'Der Bäcker hat die Krapfen ausgebacken.',ar:'لقد قلى الخبّاز الكرات المحشوة حتى نضجت تمامًا.'}
+    ],
+    bonus:[
+      {de:'Die Krapfen müssen goldbraun ausgebacken werden.', ar:'يجب أن تُقلى الكرات المحشوة حتى تصبح ذهبية اللون.'},
+      {de:'In vielen Ländern backt man Teigtaschen in Öl aus.', ar:'في العديد من الدول، تُقلى الفطائر المحشوة في الزيت.'}
+    ]
+  },
+  {
+    key:'durchbacken', prefix:'durch', icon:'icon-cake-slice', color:'#E8735C',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'إنضاج الشيء بالكامل من الداخل عبر الخَبز، بحيث لا يبقى العجين نيّئًا في المنتصف.',
+    partizip:'durchgebacken',
+    tip:'يمكن استخدام «durchgebacken» أيضًا كصفة مع sein لوصف حالة الشيء نفسه دون فاعل بشري: «Der Kuchen ist nicht durchgebacken» (لم تنضج جيدًا) — هنا الجملة تصف النتيجة لا فعل الخَبز.',
+    sentences:[
+      {tense:'Präsens',    de:'Ich backe den Kuchen durch.',        ar:'أخبز الكعكة حتى تنضج بالكامل من الداخل.'},
+      {tense:'Präteritum', de:'Ich backte den Kuchen durch.',       ar:'خبزتُ الكعكة حتى نضجت بالكامل من الداخل.'},
+      {tense:'Perfekt',    de:'Ich habe den Kuchen durchgebacken.', ar:'لقد أنضجتُ الكعكة بالكامل من الداخل.'}
+    ],
+    bonus:[
+      {de:'Bei 180 Grad backt der Kuchen in 40 Minuten durch.', ar:'عند 180 درجة، تنضج الكعكة تمامًا خلال 40 دقيقة.'},
+      {de:'Mit einem Holzstäbchen kannst du prüfen, ob der Kuchen durchgebacken ist.', ar:'يمكنك استخدام عود خشبي للتحقق مما إذا كانت الكعكة قد نضجت تمامًا.'}
+    ]
+  },
+  {
+    key:'nachbacken', prefix:'nach', icon:'icon-book', color:'#D4915C',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'إعادة خَبز وصفة موجودة أو تقليدها بنفس الطريقة، مثل وصفة رآها الشخص أو تذوّقها من قبل.',
+    partizip:'nachgebacken',
+    tip:'يصلح nachbacken حتى لو لم تكن الوصفة مكتوبة رسميًا، فهو يصف أي محاولة للوصول إلى نفس النتيجة التي رآها الشخص أو تذوّقها.',
+    sentences:[
+      {tense:'Präsens',    de:'Ich backe Omas Rezept nach.',        ar:'أُعيد خَبز وصفة جدتي (أُقلّدها).'},
+      {tense:'Präteritum', de:'Ich backte Omas Rezept nach.',       ar:'أعدتُ خَبز وصفة جدتي.'},
+      {tense:'Perfekt',    de:'Ich habe Omas Rezept nachgebacken.', ar:'لقد أعدتُ خَبز وصفة جدتي.'}
+    ],
+    bonus:[
+      {de:'Viele Hobbybäcker backen Rezepte von YouTube nach.', ar:'يقوم الكثير من هواة الخَبز بتقليد وصفات من يوتيوب.'},
+      {de:'Ich möchte dieses Rezept unbedingt nachbacken!', ar:'أرغب بشدة في تقليد هذه الوصفة!'}
+    ]
+  },
+  {
+    key:'vorbacken', prefix:'vor', icon:'icon-pie', color:'#F0C168',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'خَبز الشيء بشكل مسبق أو جزئي، على أن يُكمَل خَبزه لاحقًا قبل التقديم.',
+    partizip:'vorgebacken',
+    tip:'هذا الفعل مثالي في سياق التخطيط للمناسبات: تحضير جزء من العمل مسبقًا لتوفير الوقت لاحقًا.',
+    sentences:[
+      {tense:'Präsens',    de:'Der Bäcker backt die Brötchen vor.',       ar:'يخبز الخبّاز الخبز مسبقًا.'},
+      {tense:'Präteritum', de:'Der Bäcker backte die Brötchen vor.',      ar:'خبز الخبّاز الخبز مسبقًا.'},
+      {tense:'Perfekt',    de:'Der Bäcker hat die Brötchen vorgebacken.',ar:'لقد خبز الخبّاز الخبز مسبقًا.'}
+    ],
+    bonus:[
+      {de:'Pizzabäcker backen den Boden am Vortag vor.', ar:'يخبز صانعو البيتزا القاعدة مسبقًا في اليوم السابق.'},
+      {de:'Wenn du Gäste erwartest, kannst du das Brot vorbacken.', ar:'إذا كنتَ تنتظر ضيوفًا، يمكنك خَبز الخبز مسبقًا.'}
+    ]
+  },
+  {
+    key:'mitbacken', prefix:'mit', icon:'icon-mixing-bowl', color:'#9BBF6B',
+    caseLabel:'Akkusativ (اختياري)', caseType:'akk',
+    meaning:'خَبز شيء إضافي بالتزامن مع غيره، أو المشاركة في عملية الخَبز بشكل عام.',
+    partizip:'mitgebacken',
+    tip:'يمكن استخدام هذا الفعل بدون مفعول به أيضًا، بمعنى المشاركة في الخَبز بشكل عام: «Die Kinder backen begeistert mit» (يشارك الأطفال بحماس في الخَبز).',
+    sentences:[
+      {tense:'Präsens',    de:'Ich backe ein paar Kekse mit.',       ar:'أخبز أيضًا بعض قطع الكوكيز الإضافية.'},
+      {tense:'Präteritum', de:'Ich backte ein paar Kekse mit.',      ar:'خبزتُ أيضًا بعض قطع الكوكيز الإضافية.'},
+      {tense:'Perfekt',    de:'Ich habe ein paar Kekse mitgebacken.',ar:'لقد خبزتُ أيضًا بعض قطع الكوكيز الإضافية.'}
+    ],
+    bonus:[
+      {de:'Darf ich ein paar Muffins mitbacken?', ar:'هل يمكنني خَبز بعض المافن أيضًا؟'},
+      {de:'Die ganze Familie hat am Wochenende mitgebacken.', ar:'شاركت العائلة بأكملها في الخبز خلال عطلة نهاية الأسبوع.'}
+    ]
+  },
+  {
+    key:'fertigbacken', prefix:'fertig', icon:'icon-oven', color:'#E0985A',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'إتمام خَبز الشيء حتى يصبح جاهزًا تمامًا، غالبًا بعد توقف أو انتظار.',
+    partizip:'fertiggebacken',
+    tip:'يُستخدم عادة عندما تتوقف عملية الخبز لسبب ما (نفاد الوقت، عطل، انتظار) ثم تُستكمل لاحقًا حتى تكتمل تمامًا.',
+    sentences:[
+      {tense:'Präsens',    de:'Ich backe den Kuchen fertig.',         ar:'أُتمّ خَبز الكعكة الآن.'},
+      {tense:'Präteritum', de:'Ich backte den Kuchen fertig.',        ar:'أتممتُ خَبز الكعكة.'},
+      {tense:'Perfekt',    de:'Ich habe den Kuchen fertiggebacken.',  ar:'لقد أتممتُ خَبز الكعكة أخيرًا.'}
+    ],
+    bonus:[
+      {de:'Der Ofen war kaputt, also musste ich den Kuchen woanders fertigbacken.', ar:'كان الفرن معطلاً، لذلك اضطررت لإتمام خبز الكعكة في مكان آخر.'},
+      {de:'Kannst du den Braten fertigbacken, während ich einkaufen gehe?', ar:'هل يمكنك إتمام خبز اللحم بينما أذهب للتسوق؟'}
+    ]
+  },
+  {
+    key:'anbacken', prefix:'an', icon:'icon-pan', color:'#C97A9E',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'خَبز سطح الشيء قليلاً في البداية لتثبيت قوامه (تحمير خفيف)، غالبًا في الفرن أو المقلاة.',
+    partizip:'angebacken',
+    tip:'لهذا الفعل معنى آخر شائع: التصاق الطعام واحتراقه الخفيف بقاع الإناء أثناء الطهي (لازم، مع sein، وغالبًا مع an+Dativ): «Der Reis ist am Topfboden angebacken». ولا تخلط بينه وبين anbraten (من braten، أي القلي في المقلاة على الموقد) — anbacken أقرب إلى الفرن.',
+    sentences:[
+      {tense:'Präsens',    de:'Der Koch backt den Fisch an.',      ar:'يخبز الطاهي السمك قليلاً لتثبيت سطحه.'},
+      {tense:'Präteritum', de:'Der Koch backte den Fisch an.',     ar:'خبز الطاهي السمك قليلاً لتثبيت سطحه.'},
+      {tense:'Perfekt',    de:'Der Koch hat den Fisch angebacken.',ar:'لقد خبز الطاهي السمك قليلاً لتثبيت سطحه.'}
+    ],
+    bonus:[
+      {de:'Zuerst backt man den Fisch scharf an, dann reduziert man die Hitze.', ar:'أولاً يُحمَّر السمك على حرارة عالية، ثم تُخفَّض الحرارة.'},
+      {de:'Pass auf, dass der Reis nicht anbackt!', ar:'انتبه ألا يلتصق الأرز بقاع القدر!'}
+    ]
+  }
+];
+
+const familyData = [
+  {icon:'icon-hat', de:'der Bäcker / die Bäckerin', ar:'الخبّاز / الخبّازة — الشخص الذي يخبز مهنيًا.'},
+  {icon:'icon-oven', de:'die Bäckerei', ar:'المخبز — المكان الذي يُباع فيه الخبز والمعجنات.'},
+  {icon:'icon-cake-slice', de:'das Gebäck', ar:'المخبوزات — اسم جامع لكل ما يُخبز من حلويات ومعجنات.'},
+  {icon:'icon-flame', de:'der Backofen', ar:'فرن الخَبز — الجهاز المستخدم لعملية الخَبز.'},
+  {icon:'icon-bread', de:'die Backwaren', ar:'منتجات المخابز — مصطلح تجاري شائع في المتاجر الكبرى.'}
+];
+
+const compareData = [
+  {icon:'icon-oven', verb:'backen', q:'wie?', explain:'حرارة جافة داخل الفرن، للخبز والكعك والمعجنات.'},
+  {icon:'icon-pot', verb:'kochen', q:'wie?', explain:'الطبخ العام، وخاصة الغلي أو السلق في سائل.'},
+  {icon:'icon-pan', verb:'braten', q:'wie?', explain:'في دهن أو زيت، بمقلاة أو فرن، غالبًا للحوم.'},
+  {icon:'icon-grill', verb:'grillen', q:'wie?', explain:'حرارة مباشرة فوق شواية أو فحم.'}
+];
+
+const dialogueData = [
+  {role:'a', name:'Kundin', de:'Guten Tag! Haben Sie die Brötchen von gestern noch?', ar:'مرحبًا! هل ما زال لديكم خبز الأمس؟'},
+  {role:'b', name:'Bäcker', de:'Ja, aber die backe ich Ihnen gerne kurz auf, dann sind sie wieder frisch.', ar:'نعم، لكن سأقوم بتسخينه لكم قليلاً، وسيصبح طازجًا من جديد.'},
+  {role:'a', name:'Kundin', de:'Das wäre toll, danke! Und die Krapfen — sind die schon fertig?', ar:'هذا رائع، شكرًا! وماذا عن الكرات المحشوة — هل هي جاهزة؟'},
+  {role:'b', name:'Bäcker', de:'Fast! Wir backen sie gerade aus, in fünf Minuten sind sie goldbraun.', ar:'تقريبًا! نحن نقليها الآن، وستصبح ذهبية اللون خلال خمس دقائق.'},
+  {role:'a', name:'Kundin', de:'Perfekt. Können Sie mir auch das Rezept für Ihren Apfelkuchen verraten? Ich möchte ihn zu Hause nachbacken.', ar:'ممتاز. هل يمكنكم إخباري بوصفة كعكة التفاح؟ أرغب في تحضيرها في المنزل بتقليد وصفتكم.'},
+  {role:'b', name:'Bäcker', de:'Gerne! Wichtig ist nur: Backen Sie ihn lange genug durch, sonst bleibt die Mitte roh.', ar:'بكل سرور! المهم فقط: اخبزيها لوقت كافٍ حتى تنضج تمامًا، وإلا بقي المنتصف نيئًا.'},
+  {role:'a', name:'Kundin', de:'Danke für den Tipp! Dann fange ich am Wochenende an.', ar:'شكرًا على النصيحة! سأبدأ إذن في عطلة نهاية الأسبوع.'},
+  {role:'b', name:'Bäcker', de:'Viel Erfolg! Und wenn Sie möchten, backen Sie doch ein paar Kekse für die Kinder mit.', ar:'بالتوفيق! وإذا أردتِ، اخبزي أيضًا بعض قطع الكوكيز للأطفال بالتزامن مع الكعكة.'},
+  {role:'b', name:'Bäcker', de:'Übrigens, für das Fest morgen backe ich schon heute Abend ein paar Kuchen vor.', ar:'بالمناسبة، من أجل حفلة الغد، سأخبز بعض الكعكات مسبقًا مساء اليوم.'},
+  {role:'a', name:'Kundin', de:'Was für eine gute Idee! Dann müssen Sie morgen nur noch fertigbacken.', ar:'يا لها من فكرة رائعة! إذن لن يتبقى لكم غدًا سوى إتمام الخبز فقط.'},
+  {role:'b', name:'Bäcker', de:'Genau! Und zum Schluss backe ich den Teigrand noch kurz an, damit er schön golden wird.', ar:'بالضبط! وأخيرًا، سأخبز حافة العجين قليلاً لتصبح بلون ذهبي جميل.'}
+];
+
+const quizData = [
+  { q:'ماذا يعني الفعل «vorbacken»؟',
+    options:['الخَبز المسبق أو الجزئي مقدّمًا','تسخين الخبز الجاهز في الفرن','القلي حتى النضج الكامل','الالتصاق بقاع الإناء أثناء الطهي'], correct:0 },
+  { q:'ما الحالة الإعرابية (Fall) التي يحتاجها معظم أفعال هذا الحقل، بحكم أنها متعدية؟',
+    options:['Dativ','Genitiv','Akkusativ','Nominativ'], correct:2 },
+  { q:'أكمل بصيغة Präsens: «Ich ___ die Brötchen auf.»',
+    options:['backst','backt','backen','backe'], correct:3 },
+  { q:'ما هو Partizip II الصحيح للفعل «nachbacken»؟',
+    options:['genachbackt','nachgebacken','backgenacht','nachgebackt'], correct:1 },
+  { q:'أكمل بصيغة Präteritum: «Der Bäcker ___ die Brötchen gestern vor.»',
+    options:['backte','buk','backt','hat gebacken'], correct:0 },
+  { q:'أي جملة صحيحة نحويًا في زمن Perfekt لفعل «fertigbacken»؟',
+    options:['Ich bin den Kuchen fertiggebacken.','Ich habe den Kuchen fertigbackt.','Ich habe den Kuchen fertiggebacken.','Ich habe fertiggebacken den Kuchen.'], correct:2 },
+  { q:'ماذا يعني «anbacken» عندما يُستخدم فعلًا لازمًا (intransitiv) مع sein؟',
+    options:['التصاق الطعام واحتراقه الخفيف بقاع الإناء','تسخين الخبز الجاهز','تقليد وصفة قديمة','خَبز شيء إضافي مع غيره'], correct:0 },
+  { q:'أكمل بصيغة Präsens مع «wir»: «Wir ___ die Brötchen für das Fest vor.»',
+    options:['backt','backst','backen','backe'], correct:2 },
+  { q:'ما هي صيغة «ihr» في زمن Perfekt لفعل «durchbacken»؟',
+    options:['ihr seid durchgebacken','ihr habt durchgebacken','ihr durchhabt gebacken','ihr habt gebacken durch'], correct:1 },
+  { q:'أي فعل من هذه القائمة يعني «إعادة خَبز وصفة أو تقليدها»؟',
+    options:['ausbacken','vorbacken','nachbacken','mitbacken'], correct:2 },
+  { q:'في الجملة الثانوية (Nebensatz) بعد «weil»، أين يقع الفعل المنفصل مع بادئته؟',
+    options:['يتحدان معًا في نهاية الجملة','البادئة أولاً ثم الفعل بعد الفاعل مباشرة','الفعل أولاً ثم تختفي البادئة','يبقيان منفصلين دائمًا في مكانين مختلفين'], correct:0 },
+  { q:'أكمل بصيغة Perfekt: «Ich habe ein paar Kekse ___.»',
+    options:['gebackmit','mitgebackt','mitgebacken','backtmit'], correct:2 },
+  { q:'ماذا يعني الاسم «die Bäckerei»؟',
+    options:['المخبز (المكان)','الخبّاز (الشخص)','المخبوزات (المنتج)','فرن الخبز'], correct:0 },
+  { q:'أي فعل من أفعال الطبخ الأربعة يرتبط بالحرارة المباشرة كالشواء على الفحم؟',
+    options:['backen','kochen','grillen','braten'], correct:2 },
+  { q:'في حوار المخبز، ماذا طلبت الزبونة من الخبّاز بخصوص خبز الأمس؟',
+    options:['أن يرميه','أن يُعيد تسخينه (aufbacken)','أن يبيعه بسعر أقل','أن يخبز كمية جديدة فورًا'], correct:1 }
+];
+
+/* ============================================================
+   THEME MANAGEMENT
+   ============================================================ */
+function getPreferredTheme(){
+  const saved = localStorage.getItem('backenLesson2_theme');
+  if(saved) return saved;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  document.getElementById('themeToggle').setAttribute('aria-pressed', theme === 'dark');
+  localStorage.setItem('backenLesson2_theme', theme);
+}
+function initTheme(){
+  applyTheme(getPreferredTheme());
+  document.getElementById('themeToggle').addEventListener('click', ()=>{
+    const cur = document.documentElement.getAttribute('data-theme');
+    applyTheme(cur === 'dark' ? 'light' : 'dark');
+    localStorage.setItem('backenLesson2_theme_manual','1');
+  });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)=>{
+    if(!localStorage.getItem('backenLesson2_theme_manual')) applyTheme(e.matches ? 'dark' : 'light');
+  });
+}
+
+/* ============================================================
+   SPEECH SYNTHESIS
+   ============================================================ */
+let voicesList = [];
+let selectedVoice = null;
+let currentRate = 0.9;
+const supportsSpeech = 'speechSynthesis' in window;
+
+function loadVoices(){
+  if(!supportsSpeech) return;
+  voicesList = speechSynthesis.getVoices();
+  const deVoices = voicesList.filter(v => v.lang.toLowerCase().startsWith('de'));
+  selectedVoice = deVoices.find(v => v.lang.toLowerCase()==='de-de') || deVoices[0] || null;
+  populateVoiceSelect(deVoices);
+}
+function populateVoiceSelect(deVoices){
+  const sel = document.getElementById('voiceSelect');
+  if(!sel) return;
+  if(deVoices.length === 0){ sel.innerHTML = '<option>لا يوجد صوت ألماني مثبت على هذا الجهاز</option>'; return; }
+  sel.innerHTML = deVoices.map((v,i)=>`<option value="${i}">${v.name} — ${v.lang}</option>`).join('');
+  const idx = deVoices.indexOf(selectedVoice);
+  sel.value = idx >= 0 ? idx : 0;
+  sel.onchange = ()=>{ selectedVoice = deVoices[parseInt(sel.value,10)]; };
+}
+if(supportsSpeech){ loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
+
+function speak(text, opts={}){
+  if(!supportsSpeech) return;
+  speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'de-DE';
+  if(selectedVoice) utter.voice = selectedVoice;
+  utter.rate = opts.rate || currentRate;
+  if(opts.onStart) utter.onstart = opts.onStart;
+  if(opts.onEnd) utter.onend = opts.onEnd;
+  if(opts.onBoundary) utter.onboundary = (e)=>{ if(typeof e.charIndex === 'number') opts.onBoundary(e.charIndex); };
+  speechSynthesis.speak(utter);
+}
+function speakSimple(el){
+  const text = el.textContent.trim();
+  if(!text) return;
+  el.classList.add('speaking');
+  speak(text, { onEnd: ()=> el.classList.remove('speaking') });
+}
+function speakSentence(container, afterEnd){
+  const words = Array.from(container.querySelectorAll('.w'));
+  const text = container.textContent.trim();
+  const offsets = [];
+  let acc = 0;
+  words.forEach(w=>{ const len=w.textContent.length; offsets.push([acc, acc+len]); acc += len+1; });
+  container.classList.add('speaking');
+  speak(text, {
+    onBoundary:(ci)=> words.forEach((w,i)=> w.classList.toggle('speaking-word', ci >= offsets[i][0] && ci < offsets[i][1])),
+    onEnd:()=>{ words.forEach(w=>w.classList.remove('speaking-word')); container.classList.remove('speaking'); if(afterEnd) afterEnd(); }
+  });
+}
+function initSpeechDelegation(){
+  document.body.addEventListener('click', (e)=>{
+    const exDe = e.target.closest('.example-de, .dlg-de');
+    if(exDe){ speakSentence(exDe); return; }
+    const sBtn = e.target.closest('.speak-sentence-btn, .bonus-speak-btn');
+    if(sBtn){ const t = document.getElementById(sBtn.dataset.target); if(t) speakSimple(t); return; }
+    const bonusDe = e.target.closest('.bonus-de');
+    if(bonusDe){ speakSimple(bonusDe); return; }
+    const simple = e.target.closest('.speak-el');
+    if(simple){ speakSimple(simple); return; }
+  });
+}
+function initSpeechSettings(){
+  const toggle = document.getElementById('speechSettingsToggle');
+  const pop = document.getElementById('speechPopover');
+  toggle.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    const open = pop.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    if(open) document.getElementById('searchPanel').classList.remove('open');
+  });
+  const slider = document.getElementById('rateSlider');
+  const rateValue = document.getElementById('rateValue');
+  slider.addEventListener('input', ()=>{ currentRate = parseFloat(slider.value); rateValue.textContent = currentRate.toFixed(1) + 'x'; });
+}
+
+/* ============================================================
+   HERO STRING LIGHTS
+   ============================================================ */
+function renderLights(){
+  const el = document.getElementById('lights');
+  const n = verbsData.length;
+  const pts = verbsData.map((v,i)=>{
+    const t = n>1 ? i/(n-1) : 0;
+    const x = 6 + t*88;
+    const y = 46 + 22*Math.sin(t*Math.PI*2.4 + 0.3);
+    return {x,y,v};
+  });
+  let d = `M ${pts[0].x.toFixed(1)} ${pts[0].y.toFixed(1)}`;
+  for(let i=1;i<pts.length;i++){
+    const midX = (pts[i-1].x+pts[i].x)/2, midY = (pts[i-1].y+pts[i].y)/2;
+    d += ` Q ${pts[i-1].x.toFixed(1)} ${pts[i-1].y.toFixed(1)} ${midX.toFixed(1)} ${midY.toFixed(1)}`;
+  }
+  d += ` T ${pts[pts.length-1].x.toFixed(1)} ${pts[pts.length-1].y.toFixed(1)}`;
+
+  const nodes = pts.map((p,i)=>`
+    <button type="button" class="bulb-node" style="left:${p.x.toFixed(1)}%;top:${p.y.toFixed(1)}%;--node-color:${p.v.color}" data-goto="verb-${p.v.key}" aria-label="اذهب إلى شرح ${p.v.prefix}backen">
+      <span class="bulb" style="animation-delay:${(i*0.35).toFixed(2)}s"><svg><use href="#${p.v.icon}"/></svg></span>
+      <span class="bulb-label">${p.v.prefix}-</span>
+    </button>`).join('');
+
+  el.innerHTML = `<svg class="lights-wire" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="${d}"/></svg>${nodes}`;
+
+  el.querySelectorAll('.bulb-node').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const target = document.getElementById(btn.dataset.goto);
+      if(!target) return;
+      if(!target.classList.contains('open')) target.querySelector('.verb-toggle-btn').click();
+      setTimeout(()=> target.scrollIntoView({behavior:'smooth', block:'center'}), 60);
+    });
+  });
+}
+
+/* ============================================================
+   VERB ACCORDIONS
+   ============================================================ */
+const exploredSet = new Set();
+function updateVerbProgress(){
+  document.getElementById('verbProgressCount').textContent = exploredSet.size;
+}
+function verbItemHTML(v){
+  const infinitive = v.prefix + 'backen';
+  const rows = PRONOUNS.map((pn, idx)=>{
+    const praesens = STEM_PRAESENS[idx] + ' ' + v.prefix;
+    const praeteritum = STEM_PRAETERITUM[idx] + ' ' + v.prefix;
+    const perfekt = HABEN[idx] + ' ' + v.partizip;
+    return `<tr>
+      <th scope="row">${pn}</th>
+      <td><button type="button" class="de speak-el">${praesens}</button></td>
+      <td><button type="button" class="de speak-el">${praeteritum}</button></td>
+      <td><button type="button" class="de speak-el">${perfekt}</button></td>
+    </tr>`;
+  }).join('');
+
+  const examples = v.sentences.map((s,si)=>{
+    const id = `ex-${v.key}-${si}`;
+    const wordsHTML = s.de.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
+    return `<div class="example-item">
+      <span class="example-tense-tag">${s.tense}</span>
+      <button type="button" class="example-de de" id="${id}" aria-label="نطق الجملة: ${s.de}">${wordsHTML}</button>
+      <p class="example-ar">${s.ar}</p>
+      <div class="example-actions">
+        <button type="button" class="btn btn-ghost btn-sm speak-sentence-btn" data-target="${id}"><svg><use href="#icon-speaker"/></svg> استمع</button>
+        <button type="button" class="btn btn-ghost btn-sm builder-toggle-btn" data-builder="${id}-b"><svg><use href="#icon-puzzle"/></svg> كوّن الجملة</button>
+      </div>
+      <div class="builder-widget hidden" id="${id}-b" data-sentence="${s.de}"></div>
+    </div>`;
+  }).join('');
+
+  const bonusHTML = v.bonus.map((b,bi)=>{
+    const id = `bonus-${v.key}-${bi}`;
+    return `<div class="bonus-item">
+      <div class="bonus-text">
+        <button type="button" class="bonus-de de" id="${id}">${b.de}</button>
+        <p class="bonus-ar">${b.ar}</p>
+      </div>
+      <button type="button" class="bonus-speak-btn" data-target="${id}" aria-label="نطق الجملة"><svg><use href="#icon-speaker"/></svg></button>
+    </div>`;
+  }).join('');
+
+  return `<article class="verb-item" id="verb-${v.key}" data-prefix="${v.prefix}" style="--card-accent:${v.color}">
+    <div class="verb-item-header">
+      <button type="button" class="verb-speak-icon-btn speak-el" aria-label="نطق الفعل ${infinitive}"><svg><use href="#icon-speaker"/></svg></button>
+      <button type="button" class="verb-toggle-btn" aria-expanded="false" aria-controls="body-${v.key}">
+        <span class="verb-icon"><svg><use href="#${v.icon}"/></svg></span>
+        <span class="verb-header-text">
+          <span class="verb-prefix-eyebrow">${v.prefix}-</span>
+          <span class="verb-infinitive de">${infinitive}</span>
+          <span class="verb-meaning-short">${v.meaning}</span>
+        </span>
+        <span class="verb-header-right">
+          <span class="badge case-tag">${v.caseLabel}</span>
+          <svg class="accordion-chevron"><use href="#icon-chevron-down"/></svg>
+        </span>
+      </button>
+    </div>
+    <div class="accordion-body" id="body-${v.key}">
+      <div class="accordion-body-inner">
+        <div class="accordion-content-pad">
+          <div class="table-scroll">
+            <table class="conj-table">
+              <thead><tr><th scope="col">Pronomen</th><th scope="col">Präsens</th><th scope="col">Präteritum</th><th scope="col">Perfekt</th></tr></thead>
+              <tbody>${rows}</tbody>
+            </table>
+          </div>
+          ${v.tip ? `<div class="native-tip"><svg><use href="#icon-lightbulb"/></svg><p>${v.tip}</p></div>` : ''}
+          <div class="examples-block">
+            <h4 class="examples-title"><svg><use href="#icon-puzzle"/></svg>أمثلة على الأزمنة الثلاثة</h4>
+            ${examples}
+            <div class="bonus-examples">
+              <p class="bonus-label"><svg><use href="#icon-layers"/></svg>جمل إضافية للاستماع</p>
+              ${bonusHTML}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>`;
+}
+function renderVerbCards(){
+  document.getElementById('verbCardsContainer').innerHTML = verbsData.map(verbItemHTML).join('');
+}
+function initAccordions(){
+  document.getElementById('verbCardsContainer').addEventListener('click', (e)=>{
+    const btn = e.target.closest('.verb-toggle-btn');
+    if(!btn) return;
+    const item = btn.closest('.verb-item');
+    const isOpen = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    if(isOpen){ exploredSet.add(item.dataset.prefix); updateVerbProgress(); }
+  });
+}
+
+/* ============================================================
+   WORD FAMILY + COMPARISON TABLE
+   ============================================================ */
+function renderFamily(){
+  document.getElementById('familyGrid').innerHTML = familyData.map(f=>`
+    <div class="family-card">
+      <span class="fam-icon"><svg><use href="#${f.icon}"/></svg></span>
+      <button type="button" class="de speak-el" style="display:inline-block;">${f.de}</button>
+      <p>${f.ar}</p>
+    </div>`).join('');
+
+  document.getElementById('compareTableBody').innerHTML = compareData.map(c=>`
+    <tr>
+      <td><button type="button" class="speak-el" style="display:inline-flex; align-items:center; gap:.45rem; font-family:var(--font-latin); font-weight:700;"><svg width="16" height="16"><use href="#${c.icon}"/></svg>${c.verb}</button></td>
+      <td class="de">${c.q}</td>
+      <td>${c.explain}</td>
+    </tr>`).join('');
+}
+
+/* ============================================================
+   DIALOGUE
+   ============================================================ */
+function renderDialogue(){
+  document.getElementById('dialogueContainer').innerHTML = dialogueData.map((line,i)=>{
+    const wordsHTML = line.de.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
+    return `<div class="dlg-line role-${line.role}">
+      <span class="dlg-avatar">${line.name.charAt(0)}</span>
+      <div class="dlg-bubble">
+        <span class="dlg-name">${line.name}</span>
+        <button type="button" class="dlg-de" id="dlg-${i}" aria-label="نطق السطر">${wordsHTML}</button>
+        <p class="dlg-ar">${line.ar}</p>
+      </div>
+    </div>`;
+  }).join('');
+}
+let dialoguePlaying = false;
+function playDialogueSequential(index){
+  if(index >= dialogueData.length){ dialoguePlaying = false; return; }
+  const el = document.getElementById('dlg-'+index);
+  el.scrollIntoView({behavior:'smooth', block:'center'});
+  speakSentence(el, ()=> setTimeout(()=>playDialogueSequential(index+1), 250));
+}
+function initDialoguePlayAll(){
+  document.getElementById('playDialogueBtn').addEventListener('click', ()=>{
+    if(dialoguePlaying) return;
+    dialoguePlaying = true;
+    playDialogueSequential(0);
+  });
+}
+
+/* ============================================================
+   SENTENCE BUILDER
+   ============================================================ */
+function shuffleArray(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a;
+}
+function shuffleChildren(parent){ shuffleArray(Array.from(parent.children)).forEach(c=>parent.appendChild(c)); }
+function initSentenceBuilder(container){
+  const sentence = container.dataset.sentence;
+  const words = sentence.split(' ');
+  container.innerHTML = `
+    <div class="builder-zone bank-zone" role="list" aria-label="كلمات متاحة"></div>
+    <div class="builder-zone answer-zone" role="list" aria-label="ترتيبك للجملة"></div>
+    <p class="builder-feedback" aria-live="polite"></p>
+    <div class="example-actions">
+      <button type="button" class="btn btn-ghost btn-sm reset-builder-btn"><svg><use href="#icon-replay"/></svg> إعادة الترتيب</button>
+      <button type="button" class="btn btn-primary btn-sm check-builder-btn"><svg><use href="#icon-check-circle"/></svg> تحقّق</button>
+    </div>`;
+  const bank = container.querySelector('.bank-zone');
+  const answer = container.querySelector('.answer-zone');
+  const feedback = container.querySelector('.builder-feedback');
+  function makeTile(word){
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'word-tile de'; btn.textContent = word;
+    btn.addEventListener('click', ()=>{ (btn.parentElement===bank?answer:bank).appendChild(btn); feedback.textContent=''; feedback.className='builder-feedback'; });
+    return btn;
+  }
+  shuffleArray(words).forEach(w=>bank.appendChild(makeTile(w)));
+  container.querySelector('.reset-builder-btn').addEventListener('click', ()=>{
+    Array.from(answer.children).forEach(c=>bank.appendChild(c));
+    shuffleChildren(bank);
+    feedback.textContent=''; feedback.className='builder-feedback';
+  });
+  container.querySelector('.check-builder-btn').addEventListener('click', ()=>{
+    const order = Array.from(answer.children).map(c=>c.textContent).join(' ');
+    if(order === sentence && answer.children.length === words.length){
+      feedback.textContent = '✓ صحيح! أحسنت.'; feedback.className = 'builder-feedback correct';
+      container.classList.add('pop-correct'); setTimeout(()=>container.classList.remove('pop-correct'), 400);
+    } else {
+      feedback.textContent = '✗ ترتيب غير صحيح، حاول مجددًا.'; feedback.className = 'builder-feedback wrong';
+      container.classList.add('shake'); setTimeout(()=>container.classList.remove('shake'), 400);
+    }
+  });
+}
+function initBuilderToggles(){
+  document.body.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.builder-toggle-btn');
+    if(!btn) return;
+    const target = document.getElementById(btn.dataset.builder);
+    if(!target) return;
+    const isHidden = target.classList.contains('hidden');
+    if(isHidden){
+      target.classList.remove('hidden');
+      if(!target.dataset.initialized){ initSentenceBuilder(target); target.dataset.initialized = '1'; }
+      btn.innerHTML = '<svg><use href="#icon-chevron-down"/></svg> إخفاء التمرين';
+    } else {
+      target.classList.add('hidden');
+      btn.innerHTML = '<svg><use href="#icon-puzzle"/></svg> كوّن الجملة';
+    }
+  });
+}
+
+/* ============================================================
+   FLASHCARDS
+   ============================================================ */
+const reviewedSet = new Set();
+function flashcardHTML(v, idx){
+  const infinitive = v.prefix + 'backen';
+  return `<div class="flashcard" data-idx="${idx}" tabindex="0" role="button" aria-label="بطاقة الفعل ${infinitive}، انقر لقلبها ورؤية المعنى">
+    <div class="flashcard-inner">
+      <div class="fc-face fc-front" style="--card-accent:${v.color}">
+        <svg><use href="#${v.icon}"/></svg>
+        <span class="de">${infinitive}</span>
+        <span class="fc-hint">انقر لرؤية المعنى</span>
+      </div>
+      <div class="fc-face fc-back" style="--card-accent:${v.color}">
+        <p>${v.meaning}</p>
+        <span class="fc-case">${v.caseLabel}</span>
+      </div>
+    </div>
+  </div>`;
+}
+function updateFcProgress(){ document.getElementById('fcProgress').textContent = `${reviewedSet.size} / ${verbsData.length} تمت مراجعتها`; }
+function renderFlashcards(){
+  const container = document.getElementById('flashcardsContainer');
+  container.innerHTML = verbsData.map(flashcardHTML).join('');
+  container.querySelectorAll('.flashcard').forEach(card=>{
+    card.addEventListener('click', ()=>{ card.classList.toggle('flipped'); reviewedSet.add(card.dataset.idx); updateFcProgress(); });
+  });
+  container.addEventListener('keydown', (e)=>{
+    if(e.key==='Enter' || e.key===' '){ const card = e.target.closest('.flashcard'); if(card){ e.preventDefault(); card.click(); } }
+  });
+}
+function initFlashcardControls(){
+  document.getElementById('shuffleCards').addEventListener('click', ()=> shuffleChildren(document.getElementById('flashcardsContainer')));
+}
+
+/* ============================================================
+   QUIZ
+   ============================================================ */
+let quizIndex = 0, quizScore = 0, quizAnswered = false;
+function renderQuizQuestion(){
+  const container = document.getElementById('quizContainer');
+  if(quizIndex >= quizData.length){ renderQuizResult(); return; }
+  const q = quizData[quizIndex];
+  quizAnswered = false;
+  container.innerHTML = `
+    <div class="quiz-progress-row">
+      <span class="quiz-progress-label">${quizIndex+1} / ${quizData.length}</span>
+      <div class="quiz-progress-track"><div class="quiz-progress-fill" style="width:${(quizIndex/quizData.length)*100}%"></div></div>
+      <span class="quiz-progress-label" id="quizScoreLabel">النتيجة: ${quizScore}</span>
+    </div>
+    <div class="quiz-card">
+      <p class="quiz-question">${q.q}</p>
+      <div class="quiz-options" aria-live="polite">
+        ${q.options.map((opt,i)=>`<button type="button" class="quiz-option" data-i="${i}"><span>${opt}</span></button>`).join('')}
+      </div>
+      <div class="quiz-footer">
+        <button type="button" class="btn btn-ghost btn-sm" id="quizRestartBtn"><svg><use href="#icon-replay"/></svg> إعادة البدء</button>
+        <button type="button" class="btn btn-primary" id="quizNextBtn" disabled>التالي</button>
+      </div>
+    </div>`;
+  container.querySelectorAll('.quiz-option').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(quizAnswered) return;
+      quizAnswered = true;
+      const i = parseInt(btn.dataset.i,10);
+      container.querySelectorAll('.quiz-option').forEach((b,bi)=>{
+        b.disabled = true;
+        if(bi===q.correct){ b.classList.add('correct'); b.insertAdjacentHTML('beforeend','<svg><use href="#icon-check-circle"/></svg>'); }
+        else if(bi===i){ b.classList.add('wrong'); b.insertAdjacentHTML('beforeend','<svg><use href="#icon-x-circle"/></svg>'); }
+      });
+      if(i===q.correct) quizScore++;
+      document.getElementById('quizNextBtn').disabled = false;
+      document.getElementById('quizScoreLabel').textContent = `النتيجة: ${quizScore}`;
+    });
+  });
+  document.getElementById('quizNextBtn').addEventListener('click', ()=>{ quizIndex++; renderQuizQuestion(); });
+  document.getElementById('quizRestartBtn').addEventListener('click', resetQuiz);
+}
+function renderQuizResult(){
+  const container = document.getElementById('quizContainer');
+  const pct = Math.round((quizScore/quizData.length)*100);
+  const msg = pct>=90 ? 'ممتاز! أنت تتقن هذا الدرس بشكل رائع.' : pct>=70 ? 'جيد جدًا! راجع بعض النقاط ثم حاول مجددًا لتثبيت المعلومة.' : 'لا بأس، التكرار مفتاح الإتقان — راجع البطاقات والحوار ثم أعد المحاولة.';
+  container.innerHTML = `<div class="quiz-card"><div class="quiz-result">
+      <svg><use href="#icon-trophy"/></svg>
+      <div class="score-big">${quizScore}/${quizData.length}</div>
+      <p>${msg}</p>
+      <button type="button" class="btn btn-primary" id="quizRestartBtn2" style="margin-top:1.2rem;"><svg><use href="#icon-replay"/></svg> إعادة المحاولة</button>
+  </div></div>`;
+  document.getElementById('quizRestartBtn2').addEventListener('click', resetQuiz);
+}
+function resetQuiz(){ quizIndex=0; quizScore=0; renderQuizQuestion(); }
+
+/* ============================================================
+   TOOLBAR FILTER + SEARCH
+   ============================================================ */
+function renderVerbToolbar(){
+  const toolbar = document.getElementById('verbToolbar');
+  const allChip = `<button type="button" class="chip-filter active" data-prefix="all" aria-pressed="true">الكل</button>`;
+  const chips = verbsData.map(v=>`<button type="button" class="chip-filter" data-prefix="${v.prefix}" aria-pressed="false">${v.prefix}-</button>`).join('');
+  toolbar.innerHTML = allChip + chips;
+  toolbar.querySelectorAll('.chip-filter').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      toolbar.querySelectorAll('.chip-filter').forEach(c=>{ c.classList.remove('active'); c.setAttribute('aria-pressed','false'); });
+      chip.classList.add('active'); chip.setAttribute('aria-pressed','true');
+      filterVerbCards(chip.dataset.prefix);
+    });
+  });
+}
+function filterVerbCards(prefix){
+  document.querySelectorAll('.verb-item').forEach(card=>{
+    card.classList.toggle('hidden', prefix !== 'all' && card.dataset.prefix !== prefix);
+  });
+}
+function initSearch(){
+  const toggle = document.getElementById('searchToggle');
+  const panel = document.getElementById('searchPanel');
+  const input = document.getElementById('searchInput');
+  toggle.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    const open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    document.getElementById('speechPopover').classList.remove('open');
+    if(open) setTimeout(()=>input.focus(), 200);
+  });
+  input.addEventListener('input', ()=>{
+    const q = input.value.trim().toLowerCase();
+    document.querySelectorAll('.verb-item').forEach(card=>{
+      card.classList.toggle('hidden', q.length>0 && !card.textContent.toLowerCase().includes(q));
+    });
+    if(q.length>0){
+      const toolbar = document.getElementById('verbToolbar');
+      toolbar.querySelectorAll('.chip-filter').forEach(c=>{ c.classList.remove('active'); c.setAttribute('aria-pressed','false'); });
+      const allChip = toolbar.querySelector('[data-prefix="all"]');
+      allChip.classList.add('active'); allChip.setAttribute('aria-pressed','true');
+    }
+  });
+}
+
+/* ============================================================
+   SCROLL REVEAL, NAV, PROGRESS BAR, BACK-TO-TOP, FULLSCREEN
+   ============================================================ */
+function initScrollReveal(){
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in-view'); obs.unobserve(entry.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(item=>obs.observe(item));
+}
+function initNav(){
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  navToggle.addEventListener('click', ()=>{
+    const open = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+    navToggle.innerHTML = open ? '<svg><use href="#icon-close"/></svg>' : '<svg><use href="#icon-menu"/></svg>';
+  });
+  mainNav.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{ mainNav.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); navToggle.innerHTML = '<svg><use href="#icon-menu"/></svg>'; });
+  });
+  const sectionIds = ['hero','intro','family','verbs','dialogue','flashcards','quiz'];
+  const sections = sectionIds.map(id=>document.getElementById(id));
+  const links = Array.from(mainNav.querySelectorAll('a'));
+  const navObs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const idx = sections.indexOf(entry.target);
+        links.forEach(l=>l.classList.remove('active'));
+        if(links[idx]) links[idx].classList.add('active');
+      }
+    });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  sections.forEach(s=> s && navObs.observe(s));
+}
+function initScrollExtras(){
+  const bar = document.getElementById('progressBar');
+  const backBtn = document.getElementById('backToTop');
+  let ticking = false;
+  function onScroll(){
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(()=>{
+      const scrollTop = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (height>0 ? (scrollTop/height*100) : 0) + '%';
+      backBtn.classList.toggle('show', scrollTop > 500);
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+  onScroll();
+}
+function initFullscreen(){
+  document.getElementById('fullscreenToggle').addEventListener('click', ()=>{
+    if(!document.fullscreenElement) document.documentElement.requestFullscreen?.().catch(()=>{});
+    else document.exitFullscreen?.();
+  });
+}
+
+/* ============================================================
+   SPLIT DEMO
+   ============================================================ */
+function playSplitDemo(){
+  const whole = document.getElementById('splitWhole');
+  const split = document.getElementById('splitParts');
+  whole.classList.remove('faded'); split.classList.remove('shown');
+  void split.offsetWidth;
+  setTimeout(()=>{ whole.classList.add('faded'); split.classList.add('shown'); }, 900);
+}
+function initSplitDemo(){
+  document.getElementById('replaySplit').addEventListener('click', playSplitDemo);
+  const introSection = document.getElementById('intro');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting){ playSplitDemo(); obs.disconnect(); } });
+  }, {threshold:0.4});
+  obs.observe(introSection);
+}
+
+/* ============================================================
+   OUTSIDE CLICK HANDLERS
+   ============================================================ */
+function initOutsideClickHandlers(){
+  document.addEventListener('click', (e)=>{
+    const searchPanel = document.getElementById('searchPanel');
+    const searchToggle = document.getElementById('searchToggle');
+    if(searchPanel.classList.contains('open') && !searchPanel.contains(e.target) && !searchToggle.contains(e.target)){
+      searchPanel.classList.remove('open'); searchToggle.setAttribute('aria-expanded','false');
+    }
+    const pop = document.getElementById('speechPopover');
+    const popToggle = document.getElementById('speechSettingsToggle');
+    if(pop.classList.contains('open') && !pop.contains(e.target) && !popToggle.contains(e.target)){
+      pop.classList.remove('open'); popToggle.setAttribute('aria-expanded','false');
+    }
+  });
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', ()=>{
+  initTheme();
+  renderLights();
+  renderVerbCards();
+  initAccordions();
+  renderVerbToolbar();
+  updateVerbProgress();
+  renderFamily();
+  renderDialogue();
+  initDialoguePlayAll();
+  renderFlashcards();
+  updateFcProgress();
+  initFlashcardControls();
+  renderQuizQuestion();
+  initSpeechDelegation();
+  initSpeechSettings();
+  initBuilderToggles();
+  initSearch();
+  initNav();
+  initScrollReveal();
+  initScrollExtras();
+  initFullscreen();
+  initSplitDemo();
+  initOutsideClickHandlers();
+});
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="family-verben-backen" data-category="family-verben" data-title="Backstube bei Nacht — عائلة الفعل backen" data-root="../../" defer></script>
+</body>
+</html>

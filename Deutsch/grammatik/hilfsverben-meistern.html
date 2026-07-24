@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hilfsverben – Deutsch Meistern</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f0f4f8;
+    --bg2: #e8eef5;
+    --surface: rgba(255,255,255,0.82);
+    --surface2: rgba(255,255,255,0.6);
+    --border: rgba(0,0,0,0.08);
+    --text: #1a2332;
+    --text2: #4a5568;
+    --text3: #718096;
+    --accent: #2563eb;
+    --accent2: #1d4ed8;
+    --accent-soft: rgba(37,99,235,0.10);
+    --green: #059669;
+    --green-soft: rgba(5,150,105,0.10);
+    --amber: #d97706;
+    --amber-soft: rgba(217,119,6,0.10);
+    --red: #dc2626;
+    --red-soft: rgba(220,38,38,0.10);
+    --purple: #7c3aed;
+    --purple-soft: rgba(124,58,237,0.10);
+    --shadow: 0 4px 24px rgba(0,0,0,0.07);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
+  }
+  [data-theme="dark"] {
+    --bg: #0f1623;
+    --bg2: #1a2235;
+    --surface: rgba(30,42,60,0.90);
+    --surface2: rgba(25,35,52,0.70);
+    --border: rgba(255,255,255,0.08);
+    --text: #e8edf5;
+    --text2: #a0b0c8;
+    --text3: #6b7f9a;
+    --accent: #4d8bff;
+    --accent2: #3b7aed;
+    --accent-soft: rgba(77,139,255,0.12);
+    --green: #34d399;
+    --green-soft: rgba(52,211,153,0.10);
+    --amber: #fbbf24;
+    --amber-soft: rgba(251,191,36,0.10);
+    --red: #f87171;
+    --red-soft: rgba(248,113,113,0.10);
+    --purple: #a78bfa;
+    --purple-soft: rgba(167,139,250,0.10);
+    --shadow: 0 4px 24px rgba(0,0,0,0.30);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.45);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    transition: background var(--transition), color var(--transition);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--surface);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 0 clamp(1rem, 4vw, 2.5rem);
+  }
+  .header-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; align-items: center; gap: 1rem;
+    height: 64px; flex-wrap: wrap;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; font-size: 1.1rem; color: var(--accent);
+    text-decoration: none; flex-shrink: 0;
+  }
+  .logo svg { width: 32px; height: 32px; }
+  .lesson-title {
+    font-size: 0.82rem; font-weight: 600; color: var(--text2);
+    letter-spacing: 0.01em; flex: 1;
+  }
+  .header-badges { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    padding: 4px 12px; border-radius: 20px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em;
+  }
+  .badge-lang { background: var(--accent-soft); color: var(--accent); }
+  .badge-level { background: var(--amber-soft); color: var(--amber); }
+  .header-btn {
+    display: flex; align-items: center; gap: 6px;
+    padding: 7px 14px; border-radius: var(--radius-sm);
+    border: 1px solid var(--border); background: var(--surface2);
+    color: var(--text2); font-size: 0.78rem; font-weight: 500;
+    cursor: pointer; transition: all var(--transition);
+  }
+  .header-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .theme-toggle {
+    width: 44px; height: 24px; border-radius: 12px;
+    background: var(--bg2); border: 1px solid var(--border);
+    cursor: pointer; position: relative; transition: background var(--transition);
+    flex-shrink: 0;
+  }
+  .theme-toggle .knob {
+    position: absolute; top: 2px; left: 2px;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--accent); transition: transform var(--transition);
+    display: flex; align-items: center; justify-content: center;
+  }
+  [data-theme="dark"] .theme-toggle .knob { transform: translateX(20px); }
+  .theme-toggle .knob svg { width: 11px; height: 11px; color: #fff; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--purple) 100%);
+    padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2.5rem);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-inner { max-width: 900px; margin: 0 auto; position: relative; }
+  .hero-eyebrow {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9); padding: 5px 18px;
+    border-radius: 20px; font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.06em; margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800; color: #fff;
+    line-height: 1.2; margin-bottom: 1rem;
+  }
+  .hero-arabic {
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    color: rgba(255,255,255,0.85);
+    direction: rtl; margin-bottom: 1.5rem; line-height: 1.9;
+  }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num {
+    font-family: 'Poppins', sans-serif; font-size: 1.8rem;
+    font-weight: 700; color: #fff;
+  }
+  .hero-stat .lbl { font-size: 0.75rem; color: rgba(255,255,255,0.7); }
+
+  /* MAIN */
+  main { max-width: 1280px; margin: 0 auto; padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 4vw, 2.5rem); }
+
+  /* TOC */
+  .toc-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2.5rem;
+    box-shadow: var(--shadow);
+  }
+  .toc-title {
+    font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 700;
+    color: var(--text); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;
+  }
+  .toc-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .toc-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 12px; border-radius: var(--radius-sm);
+    background: var(--bg2); color: var(--text2);
+    font-size: 0.83rem; font-weight: 500;
+    text-decoration: none; transition: all var(--transition);
+    border: 1px solid transparent;
+  }
+  .toc-item:hover { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+  .toc-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  /* SECTION */
+  .section { margin-bottom: 3rem; }
+  .section-header {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 1.5rem; padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-icon {
+    width: 48px; height: 48px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-icon.blue { background: var(--accent-soft); color: var(--accent); }
+  .section-icon.green { background: var(--green-soft); color: var(--green); }
+  .section-icon.amber { background: var(--amber-soft); color: var(--amber); }
+  .section-icon.purple { background: var(--purple-soft); color: var(--purple); }
+  .section-icon svg { width: 26px; height: 26px; }
+  .section-title-wrap h2 {
+    font-family: 'Poppins', sans-serif; font-size: clamp(1.3rem, 3vw, 1.7rem);
+    font-weight: 700; color: var(--text);
+  }
+  .section-title-wrap p { font-size: 0.87rem; color: var(--text3); margin-top: 2px; direction: rtl; }
+
+  /* CARDS */
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem;
+    box-shadow: var(--shadow); transition: transform var(--transition), box-shadow var(--transition);
+    margin-bottom: 1.2rem;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+
+  /* VERB CONJUGATION TABLE */
+  .conj-table-wrap { overflow-x: auto; border-radius: var(--radius); }
+  .conj-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .conj-table th {
+    background: var(--accent); color: #fff;
+    padding: 11px 16px; text-align: left;
+    font-weight: 600; font-size: 0.82rem; letter-spacing: 0.03em;
+  }
+  .conj-table th:first-child { border-radius: 10px 0 0 0; }
+  .conj-table th:last-child { border-radius: 0 10px 0 0; }
+  .conj-table td { padding: 10px 16px; border-bottom: 1px solid var(--border); }
+  .conj-table tr:nth-child(even) td { background: var(--bg2); }
+  .conj-table tr:last-child td { border-bottom: none; }
+  .conj-table td:first-child { color: var(--accent); font-weight: 600; }
+  .german-form { font-weight: 700; color: var(--text); }
+  .arabic-form { color: var(--text3); font-size: 0.82rem; direction: rtl; }
+  .tense-tag {
+    display: inline-block; padding: 2px 10px; border-radius: 20px;
+    font-size: 0.72rem; font-weight: 600; margin-left: 6px;
+  }
+  .tag-pres { background: var(--accent-soft); color: var(--accent); }
+  .tag-prat { background: var(--amber-soft); color: var(--amber); }
+  .tag-perf { background: var(--green-soft); color: var(--green); }
+
+  /* GERMAN SENTENCE COMPONENT */
+  .sent-block {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.25rem 1.4rem;
+    margin-bottom: 1rem; box-shadow: var(--shadow);
+    transition: transform var(--transition);
+  }
+  .sent-block:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+  .sent-top { display: flex; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+  .sent-number {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.78rem; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+  .sent-content { flex: 1; min-width: 0; }
+  .sent-german {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    font-weight: 600; color: var(--text); line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  .sent-german .hilfsverb { color: var(--accent); background: var(--accent-soft); padding: 1px 5px; border-radius: 5px; }
+  .sent-german .partizip { color: var(--green); background: var(--green-soft); padding: 1px 5px; border-radius: 5px; }
+  .sent-german .infinitiv { color: var(--amber); background: var(--amber-soft); padding: 1px 5px; border-radius: 5px; }
+  .sent-meta { font-size: 0.78rem; color: var(--text3); margin-bottom: 8px; }
+  .sent-actions {
+    display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px;
+  }
+  .sent-btn {
+    display: flex; align-items: center; gap: 5px;
+    padding: 6px 13px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--bg2);
+    color: var(--text2); font-size: 0.75rem; font-weight: 500;
+    cursor: pointer; transition: all var(--transition); white-space: nowrap;
+  }
+  .sent-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .sent-btn svg { width: 14px; height: 14px; }
+  .sent-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .sent-btn.green:hover, .sent-btn.green.active { background: var(--green); border-color: var(--green); }
+  .sent-btn.amber:hover, .sent-btn.amber.active { background: var(--amber); border-color: var(--amber); }
+  .sent-btn.purple:hover, .sent-btn.purple.active { background: var(--purple); border-color: var(--purple); }
+  .sent-btn.red:hover, .sent-btn.red.active { background: var(--red); border-color: var(--red); }
+
+  /* EXPANDABLE PANELS */
+  .expand-panel {
+    display: none; margin-top: 10px; padding: 1rem 1.2rem;
+    border-radius: var(--radius-sm); border: 1px solid var(--border);
+    background: var(--bg2); animation: fadeSlideUp 0.25s ease;
+  }
+  .expand-panel.open { display: block; }
+  .expand-panel.arabic { direction: rtl; }
+  .expand-panel h4 { font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+  .expand-panel p { font-size: 0.87rem; color: var(--text2); line-height: 1.8; }
+  .expand-panel ul { padding-right: 1.2rem; }
+  .expand-panel li { font-size: 0.85rem; color: var(--text2); margin-bottom: 4px; }
+  .vocab-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px dashed var(--border); gap: 1rem; }
+  .vocab-row:last-child { border-bottom: none; }
+  .vocab-de { font-weight: 600; color: var(--text); font-size: 0.87rem; }
+  .vocab-ar { color: var(--text3); font-size: 0.84rem; direction: rtl; }
+
+  /* INFO BOXES */
+  .info-box {
+    padding: 1.1rem 1.3rem; border-radius: var(--radius-sm);
+    margin-bottom: 1.2rem; display: flex; gap: 12px; align-items: flex-start;
+  }
+  .info-box.blue { background: var(--accent-soft); border-left: 3px solid var(--accent); }
+  .info-box.green { background: var(--green-soft); border-left: 3px solid var(--green); }
+  .info-box.amber { background: var(--amber-soft); border-left: 3px solid var(--amber); }
+  .info-box.red { background: var(--red-soft); border-left: 3px solid var(--red); }
+  .info-box.purple { background: var(--purple-soft); border-left: 3px solid var(--purple); }
+  .info-box svg { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; }
+  .info-box.blue svg { color: var(--accent); }
+  .info-box.green svg { color: var(--green); }
+  .info-box.amber svg { color: var(--amber); }
+  .info-box.red svg { color: var(--red); }
+  .info-box.purple svg { color: var(--purple); }
+  .info-box-body h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 4px; }
+  .info-box-body p { font-size: 0.85rem; color: var(--text2); line-height: 1.7; }
+  .info-box-body p.arabic { direction: rtl; }
+
+  /* COMPARISON TABLE */
+  .compare-table-wrap { overflow-x: auto; border-radius: var(--radius); margin-bottom: 1.2rem; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.87rem; }
+  .compare-table th { padding: 10px 14px; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.03em; }
+  .compare-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:nth-child(even) td { background: var(--bg2); }
+  .compare-table .col-pres th, .compare-table .col-pres td:first-of-type { border-top: 2px solid var(--accent); }
+  .ct-header-pres { background: var(--accent); color: #fff; }
+  .ct-header-prat { background: var(--amber); color: #fff; }
+  .ct-header-perf { background: var(--green); color: #fff; }
+  .ct-header-pres th:first-child { border-radius: 10px 0 0 0; }
+  .ct-header-pres th:last-child { border-radius: 0 10px 0 0; }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 2rem; margin: 1.5rem 0; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--purple)); border-radius: 2px; }
+  .timeline-item { position: relative; margin-bottom: 1.5rem; }
+  .timeline-dot { position: absolute; left: -2.45rem; top: 4px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent); background: var(--bg); }
+  .timeline-content { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem 1.2rem; box-shadow: var(--shadow); }
+  .timeline-content h4 { font-size: 0.95rem; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+  .timeline-content p { font-size: 0.85rem; color: var(--text2); line-height: 1.7; }
+
+  /* GRID LAYOUT */
+  .three-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
+
+  /* TOAST */
+  .toast-container { position: fixed; top: 80px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+  .toast {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 10px 16px;
+    box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px;
+    font-size: 0.83rem; font-weight: 500; color: var(--text);
+    pointer-events: all; max-width: 300px;
+    animation: toastIn 0.3s ease forwards;
+  }
+  .toast.out { animation: toastOut 0.3s ease forwards; }
+  .toast-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  @keyframes toastIn { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes toastOut { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(30px); } }
+  @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* AUDIO CONTROLS */
+  .audio-panel { background: var(--accent-soft); border-radius: var(--radius-sm); padding: 10px 14px; margin-top: 8px; display: none; }
+  .audio-panel.open { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .audio-slider { flex: 1; min-width: 100px; accent-color: var(--accent); }
+  .audio-rate-label { font-size: 0.75rem; color: var(--text3); }
+
+  /* FORMULA BOX */
+  .formula-box {
+    background: linear-gradient(135deg, var(--accent-soft), var(--purple-soft));
+    border: 1px solid var(--accent); border-radius: var(--radius);
+    padding: 1.2rem 1.5rem; margin-bottom: 1.2rem; text-align: center;
+  }
+  .formula-box .formula {
+    font-family: 'Poppins', sans-serif; font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 700; color: var(--text); letter-spacing: 0.02em;
+    display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .formula-part { padding: 4px 14px; border-radius: 8px; font-size: 0.95rem; }
+  .fp-sub { background: var(--accent); color: #fff; }
+  .fp-hv { background: var(--green); color: #fff; }
+  .fp-inf { background: var(--amber); color: #fff; }
+  .fp-ptz { background: var(--purple); color: #fff; }
+  .fp-plus { color: var(--text3); font-size: 1.2rem; font-weight: 300; }
+  .formula-ar { font-size: 0.85rem; color: var(--text3); margin-top: 8px; direction: rtl; }
+
+  /* LEGEND */
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text2); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 2rem; color: var(--text3); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+
+  /* PRINT */
+  @media print {
+    header, .header-btn, .theme-toggle, .sent-actions, .toc-card, footer, .toast-container { display: none !important; }
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .hero { background: #1a2332 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .card, .sent-block { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+    main { padding: 0; }
+    .section { margin-bottom: 1.5rem; }
+    .expand-panel { display: block !important; }
+    .audio-panel { display: none !important; }
+  }
+  @media (max-width: 600px) {
+    .header-inner { height: auto; padding: 10px 0; flex-wrap: wrap; gap: 8px; }
+    .sent-actions { gap: 4px; }
+    .sent-btn { padding: 5px 9px; font-size: 0.7rem; }
+    .three-col { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOAST -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="10" fill="currentColor" opacity="0.12"/>
+        <text x="18" y="25" text-anchor="middle" font-family="Poppins" font-size="18" font-weight="800" fill="currentColor">D</text>
+      </svg>
+      DeutschMeister
+    </a>
+    <div class="lesson-title">الأفعال المساعدة — Hilfsverben</div>
+    <div class="header-badges">
+      <span class="badge badge-lang">🇩🇪 Deutsch</span>
+      <span class="badge badge-level">A1 → B1</span>
+      <button class="header-btn" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        طباعة
+      </button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <div class="knob">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 100 18A9 9 0 0012 3z" id="theme-icon"/></svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">📖 شرح تفصيلي ومنهجي</span>
+    <h1>Hilfsverben — الأفعال المساعدة</h1>
+    <p class="hero-arabic">دليلك الشامل لفهم أفعال <strong>sein</strong> و <strong>haben</strong> و <strong>werden</strong> عبر ثلاثة أزمنة أساسية:<br>Präsens · Präteritum · Perfekt</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">3</div><div class="lbl">أفعال مساعدة</div></div>
+      <div class="hero-stat"><div class="num">3</div><div class="lbl">أزمنة</div></div>
+      <div class="hero-stat"><div class="num">40+</div><div class="lbl">مثال تطبيقي</div></div>
+      <div class="hero-stat"><div class="num">∞</div><div class="lbl">تفاعل وصوت</div></div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc-card">
+    <div class="toc-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" color="var(--accent)"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      محتويات الدرس
+    </div>
+    <div class="toc-grid">
+      <a href="#intro" class="toc-item"><span class="toc-dot" style="background:var(--accent)"></span>مقدمة — ما هي الأفعال المساعدة؟</a>
+      <a href="#sein" class="toc-item"><span class="toc-dot" style="background:var(--green)"></span>الفعل sein (يكون)</a>
+      <a href="#haben" class="toc-item"><span class="toc-dot" style="background:var(--amber)"></span>الفعل haben (يملك/لديه)</a>
+      <a href="#werden" class="toc-item"><span class="toc-dot" style="background:var(--purple)"></span>الفعل werden (يصبح)</a>
+      <a href="#praesens" class="toc-item"><span class="toc-dot" style="background:var(--accent)"></span>Präsens — المضارع</a>
+      <a href="#praeteritum" class="toc-item"><span class="toc-dot" style="background:var(--amber)"></span>Präteritum — الماضي البسيط</a>
+      <a href="#perfekt" class="toc-item"><span class="toc-dot" style="background:var(--green)"></span>Perfekt — الماضي المركب</a>
+      <a href="#vergleich" class="toc-item"><span class="toc-dot" style="background:var(--purple)"></span>مقارنة شاملة بين الأزمنة</a>
+    </div>
+  </div>
+
+  <!-- SECTION 1: INTRO -->
+  <section class="section" id="intro">
+    <div class="section-header">
+      <div class="section-icon blue">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="section-title-wrap">
+        <h2>مقدمة — ما هي الأفعال المساعدة؟</h2>
+        <p>Was sind Hilfsverben? — لماذا نحتاجها وكيف تعمل؟</p>
+      </div>
+    </div>
+
+    <div class="info-box blue">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+      <div class="info-box-body">
+        <h4>تعريف الأفعال المساعدة</h4>
+        <p class="arabic">الأفعال المساعدة (Hilfsverben) هي أفعال تُستخدم مع الأفعال الأساسية لتكوين الأزمنة المركبة والمواقف النحوية المختلفة. في اللغة الألمانية، الأفعال المساعدة الثلاثة الرئيسية هي: <strong>sein</strong> (يكون) و<strong>haben</strong> (يملك/لديه) و<strong>werden</strong> (يصبح/سيكون).</p>
+      </div>
+    </div>
+
+    <div class="three-col">
+      <div class="card" style="border-top: 3px solid var(--green);">
+        <div style="font-size: 1.8rem; font-weight: 800; color: var(--green); font-family: Poppins;">sein</div>
+        <div style="font-size: 0.8rem; color: var(--text3); margin-bottom: 8px;">يكون / هو</div>
+        <p style="font-size: 0.85rem; color: var(--text2); direction: rtl;">يُستخدم في Perfekt مع أفعال الحركة والتحول. ويُستخدم وحده لوصف الحالة أو الهوية.</p>
+        <div style="margin-top: 10px; padding: 8px; background: var(--green-soft); border-radius: 8px; font-size: 0.82rem; direction: rtl; color: var(--text2);">مثال: Ich <strong>bin</strong> Lehrer. — أنا مُعلّم.</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--amber);">
+        <div style="font-size: 1.8rem; font-weight: 800; color: var(--amber); font-family: Poppins;">haben</div>
+        <div style="font-size: 0.8rem; color: var(--text3); margin-bottom: 8px;">يملك / لديه</div>
+        <p style="font-size: 0.85rem; color: var(--text2); direction: rtl;">يُستخدم في Perfekt مع معظم الأفعال المتعدية والأفعال الثابتة. ويُستخدم وحده للتعبير عن الملكية.</p>
+        <div style="margin-top: 10px; padding: 8px; background: var(--amber-soft); border-radius: 8px; font-size: 0.82rem; direction: rtl; color: var(--text2);">مثال: Ich <strong>habe</strong> ein Buch. — لدي كتاب.</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--purple);">
+        <div style="font-size: 1.8rem; font-weight: 800; color: var(--purple); font-family: Poppins;">werden</div>
+        <div style="font-size: 0.8rem; color: var(--text3); margin-bottom: 8px;">يصبح / سيكون</div>
+        <p style="font-size: 0.85rem; color: var(--text2); direction: rtl;">يُستخدم لتكوين المستقبل (Futur I) والمجهول (Passiv). ووحده يعني "يصبح".</p>
+        <div style="margin-top: 10px; padding: 8px; background: var(--purple-soft); border-radius: 8px; font-size: 0.82rem; direction: rtl; color: var(--text2);">مثال: Ich <strong>werde</strong> Arzt. — سأصبح طبيباً.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: PRÄSENS -->
+  <section class="section" id="praesens">
+    <div class="section-header">
+      <div class="section-icon blue">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="section-title-wrap">
+        <h2>Präsens — المضارع</h2>
+        <p>الفعل في الزمن الحاضر — الاستخدامات والتصريف الكامل</p>
+      </div>
+    </div>
+
+    <div class="info-box blue">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <div class="info-box-body">
+        <h4>متى نستخدم Präsens؟</h4>
+        <p class="arabic">يُستخدم Präsens للتعبير عن: الأحداث الجارية الآن، والحقائق العامة، والعادات المتكررة، والجداول الزمنية الثابتة، وكذلك للتعبير عن المستقبل القريب عند وجود ظرف زمني.</p>
+      </div>
+    </div>
+
+    <!-- SEIN PRÄSENS -->
+    <div class="card">
+      <h3 style="font-family: Poppins; font-weight: 700; color: var(--green); margin-bottom: 1rem; font-size: 1.1rem;">
+        <span class="tense-tag tag-pres">Präsens</span> تصريف الفعل <span style="font-size: 1.3rem;">sein</span>
+        <span style="font-size: 0.8rem; color: var(--text3); margin-right: 8px; direction: rtl;">(يكون)</span>
+      </h3>
+      <div class="conj-table-wrap">
+        <table class="conj-table">
+          <thead><tr><th>الضمير</th><th>التصريف</th><th>المعنى</th></tr></thead>
+          <tbody>
+            <tr><td>ich</td><td class="german-form">bin</td><td class="arabic-form">أنا أكون / أنا</td></tr>
+            <tr><td>du</td><td class="german-form">bist</td><td class="arabic-form">أنتَ/أنتِ تكون</td></tr>
+            <tr><td>er/sie/es</td><td class="german-form">ist</td><td class="arabic-form">هو/هي يكون/تكون</td></tr>
+            <tr><td>wir</td><td class="german-form">sind</td><td class="arabic-form">نحن نكون</td></tr>
+            <tr><td>ihr</td><td class="german-form">seid</td><td class="arabic-form">أنتم تكونون</td></tr>
+            <tr><td>sie/Sie</td><td class="german-form">sind</td><td class="arabic-form">هم يكونون / حضرتك تكون</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p style="font-family: Poppins; font-weight: 600; color: var(--text); margin: 1.2rem 0 0.8rem; font-size: 0.95rem;">📝 أمثلة على sein في Präsens</p>
+
+    <div id="sent-container-sein-pres"></div>
+
+    <!-- HABEN PRÄSENS -->
+    <div class="card" style="margin-top: 1.5rem;">
+      <h3 style="font-family: Poppins; font-weight: 700; color: var(--amber); margin-bottom: 1rem; font-size: 1.1rem;">
+        <span class="tense-tag tag-pres">Präsens</span> تصريف الفعل <span style="font-size: 1.3rem;">haben</span>
+        <span style="font-size: 0.8rem; color: var(--text3); margin-right: 8px; direction: rtl;">(يملك)</span>
+      </h3>
+      <div class="conj-table-wrap">
+        <table class="conj-table">
+          <thead><tr><th>الضمير</th><th>التصريف</th><th>المعنى</th></tr></thead>
+          <tbody>
+            <tr><td>ich</td><td class="german-form">habe</td><td class="arabic-form">أنا أملك / لديّ</td></tr>
+            <tr><td>du</td><td class="german-form">hast</td><td class="arabic-form">لديكَ/لديكِ</td></tr>
+            <tr><td>er/sie/es</td><td class="german-form">hat</td><td class="arabic-form">لديه/لديها</td></tr>
+            <tr><td>wir</td><td class="german-form">haben</td><td class="arabic-form">لدينا</td></tr>
+            <tr><td>ihr</td><td class="german-form">habt</td><td class="arabic-form">لديكم</td></tr>
+            <tr><td>sie/Sie</td><td class="german-form">haben</td><td class="arabic-form">لديهم / حضرتك لديه</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="sent-container-haben-pres"></div>
+
+    <!-- WERDEN PRÄSENS -->
+    <div class="card" style="margin-top: 1.5rem;">
+      <h3 style="font-family: Poppins; font-weight: 700; color: var(--purple); margin-bottom: 1rem; font-size: 1.1rem;">
+        <span class="tense-tag tag-pres">Präsens</span> تصريف الفعل <span style="font-size: 1.3rem;">werden</span>
+        <span style="font-size: 0.8rem; color: var(--text3); margin-right: 8px; direction: rtl;">(يصبح)</span>
+      </h3>
+      <div class="conj-table-wrap">
+        <table class="conj-table">
+          <thead><tr><th>الضمير</th><th>التصريف</th><th>المعنى</th></tr></thead>
+          <tbody>
+            <tr><td>ich</td><td class="german-form">werde</td><td class="arabic-form">أنا أصبح / سأكون</td></tr>
+            <tr><td>du</td><td class="german-form">wirst</td><td class="arabic-form">أنتَ تصبح / ستكون</td></tr>
+            <tr><td>er/sie/es</td><td class="german-form">wird</td><td class="arabic-form">هو/هي يصبح/تصبح</td></tr>
+            <tr><td>wir</td><td class="german-form">werden</td><td class="arabic-form">نحن نصبح / سنكون</td></tr>
+            <tr><td>ihr</td><td class="german-form">werdet</td><td class="arabic-form">أنتم تصبحون</td></tr>
+            <tr><td>sie/Sie</td><td class="german-form">werden</td><td class="arabic-form">هم يصبحون / حضرتك سيكون</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="sent-container-werden-pres"></div>
+  </section>
+
+  <!-- SECTION 3: PRÄTERITUM -->
+  <section class="section" id="praeteritum">
+    <div class="section-header">
+      <div class="section-icon amber">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="section-title-wrap">
+        <h2>Präteritum — الماضي البسيط</h2>
+        <p>الأفعال المساعدة في صيغة الماضي السردي — شائع في النصوص الكتابية</p>
+      </div>
+    </div>
+
+    <div class="info-box amber">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div class="info-box-body">
+        <h4>متى نستخدم Präteritum؟</h4>
+        <p class="arabic">يُستخدم Präteritum في الكتابة الأدبية والروايات والأخبار الرسمية. أما في المحادثة اليومية، فيُفضّل استخدام Perfekt للأفعال العادية. غير أن الأفعال المساعدة <strong>war, hatte, wurde</strong> شائعة جداً حتى في اللغة المحكية.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="font-family: Poppins; font-weight: 700; color: var(--amber); margin-bottom: 1rem; font-size: 1.1rem;">
+        <span class="tense-tag tag-prat">Präteritum</span> الأفعال المساعدة الثلاثة
+      </h3>
+      <div class="conj-table-wrap">
+        <table class="conj-table">
+          <thead><tr><th>الضمير</th><th>sein → war</th><th>haben → hatte</th><th>werden → wurde</th></tr></thead>
+          <tbody>
+            <tr><td>ich</td><td class="german-form">war</td><td class="german-form">hatte</td><td class="german-form">wurde</td></tr>
+            <tr><td>du</td><td class="german-form">warst</td><td class="german-form">hattest</td><td class="german-form">wurdest</td></tr>
+            <tr><td>er/sie/es</td><td class="german-form">war</td><td class="german-form">hatte</td><td class="german-form">wurde</td></tr>
+            <tr><td>wir</td><td class="german-form">waren</td><td class="german-form">hatten</td><td class="german-form">wurden</td></tr>
+            <tr><td>ihr</td><td class="german-form">wart</td><td class="german-form">hattet</td><td class="german-form">wurdet</td></tr>
+            <tr><td>sie/Sie</td><td class="german-form">waren</td><td class="german-form">hatten</td><td class="german-form">wurden</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p style="font-family: Poppins; font-weight: 600; color: var(--text); margin: 1.2rem 0 0.8rem; font-size: 0.95rem;">📝 أمثلة على Präteritum</p>
+    <div id="sent-container-praeteritum"></div>
+  </section>
+
+  <!-- SECTION 4: PERFEKT -->
+  <section class="section" id="perfekt">
+    <div class="section-header">
+      <div class="section-icon green">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="section-title-wrap">
+        <h2>Perfekt — الماضي المركب</h2>
+        <p>مساعد (sein أو haben) + Partizip II — الأكثر استخداماً في المحادثة</p>
+      </div>
+    </div>
+
+    <div class="info-box green">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <div class="info-box-body">
+        <h4>قاعدة Perfekt الأساسية</h4>
+        <p class="arabic">يتكوّن زمن Perfekt من فعلين: الفعل المساعد (sein أو haben) مصرّفاً في المضارع + الاسم الفعلي المفعول (Partizip II). الفعل المساعد يأتي في الرتبة الثانية، والـ Partizip II يأتي في نهاية الجملة دائماً.</p>
+      </div>
+    </div>
+
+    <!-- FORMULA -->
+    <div class="formula-box">
+      <div class="formula">
+        <span class="formula-part fp-sub">الفاعل</span>
+        <span class="fp-plus">+</span>
+        <span class="formula-part fp-hv">haben / sein</span>
+        <span class="fp-plus">+</span>
+        <span style="color: var(--text3); font-size: 1.1rem;">... (مكملات)</span>
+        <span class="fp-plus">+</span>
+        <span class="formula-part fp-ptz">Partizip II</span>
+      </div>
+      <div class="formula-ar">مثال: Ich <span style="color: var(--green); font-weight: 700;">habe</span> gestern ein Buch <span style="color: var(--purple); font-weight: 700;">gelesen</span>.</div>
+    </div>
+
+    <!-- SEIN vs HABEN -->
+    <div class="card">
+      <h3 style="font-family: Poppins; font-weight: 700; color: var(--text); margin-bottom: 1rem; font-size: 1rem;">
+        متى نستخدم sein؟ ومتى نستخدم haben؟
+      </h3>
+      <div class="card-grid">
+        <div style="background: var(--green-soft); border-radius: var(--radius-sm); padding: 1rem; border: 1px solid var(--green);">
+          <h4 style="color: var(--green); font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; direction: rtl;">✓ sein + Partizip II عندما:</h4>
+          <ul style="direction: rtl; padding-right: 1.2rem; font-size: 0.84rem; color: var(--text2); line-height: 1.9;">
+            <li>أفعال الحركة من مكان لآخر (gehen, fahren, kommen, fliegen...)</li>
+            <li>أفعال التحول والتغيير (werden, wachsen, einschlafen...)</li>
+            <li>أفعال محددة: sein, bleiben, passieren, geschehen</li>
+          </ul>
+        </div>
+        <div style="background: var(--amber-soft); border-radius: var(--radius-sm); padding: 1rem; border: 1px solid var(--amber);">
+          <h4 style="color: var(--amber); font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; direction: rtl;">✓ haben + Partizip II عندما:</h4>
+          <ul style="direction: rtl; padding-right: 1.2rem; font-size: 0.84rem; color: var(--text2); line-height: 1.9;">
+            <li>الأفعال المتعدية التي تأخذ مفعولاً به مباشراً (kaufen, essen, trinken...)</li>
+            <li>الأفعال الانعكاسية (sich freuen, sich erinnern...)</li>
+            <li>أفعال الحالة الثابتة (stehen, liegen, sitzen, schlafen...)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partizip II Formation -->
+    <div class="card">
+      <h3 style="font-family: Poppins; font-weight: 700; color: var(--text); margin-bottom: 1rem; font-size: 1rem;">
+        كيف نبني Partizip II؟
+      </h3>
+      <div class="three-col">
+        <div style="background: var(--bg2); border-radius: var(--radius-sm); padding: 1rem;">
+          <div style="font-weight: 700; color: var(--accent); font-size: 0.88rem; margin-bottom: 8px;">الأفعال النظامية (regelmäßig)</div>
+          <div style="font-family: Poppins; font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 4px;">ge + Stamm + t</div>
+          <div style="font-size: 0.82rem; color: var(--text3); direction: rtl; line-height: 1.8;">
+            kaufen → <strong>ge</strong>kauf<strong>t</strong><br>
+            spielen → <strong>ge</strong>spiel<strong>t</strong><br>
+            arbeiten → <strong>ge</strong>arbeit<strong>et</strong>
+          </div>
+        </div>
+        <div style="background: var(--bg2); border-radius: var(--radius-sm); padding: 1rem;">
+          <div style="font-weight: 700; color: var(--green); font-size: 0.88rem; margin-bottom: 8px;">الأفعال غير النظامية (unregelmäßig)</div>
+          <div style="font-family: Poppins; font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 4px;">ge + Stamm (verändert) + en</div>
+          <div style="font-size: 0.82rem; color: var(--text3); direction: rtl; line-height: 1.8;">
+            schreiben → <strong>ge</strong>schrieb<strong>en</strong><br>
+            lesen → <strong>ge</strong>les<strong>en</strong><br>
+            fahren → <strong>ge</strong>fahr<strong>en</strong>
+          </div>
+        </div>
+        <div style="background: var(--bg2); border-radius: var(--radius-sm); padding: 1rem;">
+          <div style="font-weight: 700; color: var(--purple); font-size: 0.88rem; margin-bottom: 8px;">الأفعال بـ be-/ver-/er- (keine ge-)</div>
+          <div style="font-family: Poppins; font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 4px;">Stamm + t/en (بدون ge-)</div>
+          <div style="font-size: 0.82rem; color: var(--text3); direction: rtl; line-height: 1.8;">
+            besuchen → besucht<br>
+            verstehen → verstanden<br>
+            erklären → erklärt
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-family: Poppins; font-weight: 600; color: var(--text); margin: 1.2rem 0 0.8rem; font-size: 0.95rem;">📝 أمثلة على Perfekt مع sein</p>
+    <div id="sent-container-perfekt-sein"></div>
+
+    <p style="font-family: Poppins; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.8rem; font-size: 0.95rem;">📝 أمثلة على Perfekt مع haben</p>
+    <div id="sent-container-perfekt-haben"></div>
+  </section>
+
+  <!-- SECTION 5: COMPARISON -->
+  <section class="section" id="vergleich">
+    <div class="section-header">
+      <div class="section-icon purple">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <div class="section-title-wrap">
+        <h2>مقارنة شاملة بين الأزمنة الثلاثة</h2>
+        <p>الفرق بين Präsens و Präteritum و Perfekt — بأمثلة متوازية</p>
+      </div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span>Präsens</div>
+      <div class="legend-item"><span class="legend-dot" style="background:var(--amber)"></span>Präteritum</div>
+      <div class="legend-item"><span class="legend-dot" style="background:var(--green)"></span>Perfekt</div>
+    </div>
+
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr class="ct-header-pres">
+            <th style="background: #555; color: #fff; border-radius: 10px 0 0 0;">الموقف</th>
+            <th style="background: var(--accent); color: #fff;">Präsens (الحاضر)</th>
+            <th style="background: var(--amber); color: #fff;">Präteritum (الماضي السردي)</th>
+            <th style="background: var(--green); color: #fff; border-radius: 0 10px 0 0;">Perfekt (الماضي المحكي)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="direction: rtl; font-size: 0.83rem; color: var(--text3); font-weight: 500;">وصف حالة (sein)</td>
+            <td style="font-weight: 700; color: var(--accent);">Ich bin müde.</td>
+            <td style="font-weight: 700; color: var(--amber);">Ich war müde.</td>
+            <td style="font-weight: 700; color: var(--green);">Ich bin müde gewesen.</td>
+          </tr>
+          <tr>
+            <td style="direction: rtl; font-size: 0.83rem; color: var(--text3); font-weight: 500;">ملكية (haben)</td>
+            <td style="font-weight: 700; color: var(--accent);">Er hat ein Auto.</td>
+            <td style="font-weight: 700; color: var(--amber);">Er hatte ein Auto.</td>
+            <td style="font-weight: 700; color: var(--green);">Er hat ein Auto gehabt.</td>
+          </tr>
+          <tr>
+            <td style="direction: rtl; font-size: 0.83rem; color: var(--text3); font-weight: 500;">حركة (gehen)</td>
+            <td style="font-weight: 700; color: var(--accent);">Sie geht zur Schule.</td>
+            <td style="font-weight: 700; color: var(--amber);">Sie ging zur Schule.</td>
+            <td style="font-weight: 700; color: var(--green);">Sie ist zur Schule gegangen.</td>
+          </tr>
+          <tr>
+            <td style="direction: rtl; font-size: 0.83rem; color: var(--text3); font-weight: 500;">فعل متعدٍّ (lesen)</td>
+            <td style="font-weight: 700; color: var(--accent);">Wir lesen ein Buch.</td>
+            <td style="font-weight: 700; color: var(--amber);">Wir lasen ein Buch.</td>
+            <td style="font-weight: 700; color: var(--green);">Wir haben ein Buch gelesen.</td>
+          </tr>
+          <tr>
+            <td style="direction: rtl; font-size: 0.83rem; color: var(--text3); font-weight: 500;">تحول (werden)</td>
+            <td style="font-weight: 700; color: var(--accent);">Das Kind wird groß.</td>
+            <td style="font-weight: 700; color: var(--amber);">Das Kind wurde groß.</td>
+            <td style="font-weight: 700; color: var(--green);">Das Kind ist groß geworden.</td>
+          </tr>
+          <tr>
+            <td style="direction: rtl; font-size: 0.83rem; color: var(--text3); font-weight: 500;">أكل (essen)</td>
+            <td style="font-weight: 700; color: var(--accent);">Ich esse Pizza.</td>
+            <td style="font-weight: 700; color: var(--amber);">Ich aß Pizza.</td>
+            <td style="font-weight: 700; color: var(--green);">Ich habe Pizza gegessen.</td>
+          </tr>
+          <tr>
+            <td style="direction: rtl; font-size: 0.83rem; color: var(--text3); font-weight: 500;">وصول (ankommen)</td>
+            <td style="font-weight: 700; color: var(--accent);">Der Zug kommt an.</td>
+            <td style="font-weight: 700; color: var(--amber);">Der Zug kam an.</td>
+            <td style="font-weight: 700; color: var(--green);">Der Zug ist angekommen.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="card" style="margin-top: 1.5rem;">
+      <h3 style="font-family: Poppins; font-weight: 700; font-size: 1rem; margin-bottom: 1rem;">متى نستخدم أيّ زمن؟ — دليل سريع</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot" style="border-color: var(--accent)"></div>
+          <div class="timeline-content">
+            <h4>Präsens — الآن وكل يوم</h4>
+            <p style="direction: rtl;">للأفعال التي تحدث الآن، أو بشكل منتظم، أو حقائق عامة. <em>Ich arbeite täglich. / Das Wasser kocht bei 100 Grad.</em></p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot" style="border-color: var(--amber)"></div>
+          <div class="timeline-content">
+            <h4>Präteritum — في الكتابة والروايات</h4>
+            <p style="direction: rtl;">يُستخدم في النصوص الأدبية والتقارير الرسمية. الأفعال المساعدة (war/hatte/wurde) تُستخدم في الحديث اليومي أيضاً. <em>Es war einmal ein König...</em></p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot" style="border-color: var(--green)"></div>
+          <div class="timeline-content">
+            <h4>Perfekt — في المحادثة اليومية</h4>
+            <p style="direction: rtl;">للتحدث عن أحداث ماضية في الحياة اليومية. هو الأكثر شيوعاً في اللغة المحكية. <em>Ich habe gestern Fußball gespielt.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-family: Poppins; font-weight: 600; color: var(--text); margin: 1.2rem 0 0.8rem; font-size: 0.95rem;">📝 أمثلة مقارنة موسعة</p>
+    <div id="sent-container-vergleich"></div>
+  </section>
+
+  <!-- SUMMARY -->
+  <section class="section">
+    <div class="card" style="background: linear-gradient(135deg, var(--accent-soft), var(--purple-soft)); border: 1px solid var(--accent);">
+      <h3 style="font-family: Poppins; font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; color: var(--text);">📋 ملخص نهائي — خريطة ذهنية</h3>
+      <div class="three-col">
+        <div style="background: var(--surface); border-radius: var(--radius-sm); padding: 1rem; border: 1px solid var(--accent);">
+          <div style="color: var(--accent); font-weight: 700; margin-bottom: 8px; font-size: 0.88rem;">Präsens</div>
+          <ul style="direction: rtl; padding-right: 1rem; font-size: 0.82rem; color: var(--text2); line-height: 1.9;">
+            <li>sein: bin/bist/ist/sind/seid</li>
+            <li>haben: habe/hast/hat/haben/habt</li>
+            <li>werden: werde/wirst/wird/werden/werdet</li>
+          </ul>
+        </div>
+        <div style="background: var(--surface); border-radius: var(--radius-sm); padding: 1rem; border: 1px solid var(--amber);">
+          <div style="color: var(--amber); font-weight: 700; margin-bottom: 8px; font-size: 0.88rem;">Präteritum</div>
+          <ul style="direction: rtl; padding-right: 1rem; font-size: 0.82rem; color: var(--text2); line-height: 1.9;">
+            <li>sein: war/warst/war/waren/wart</li>
+            <li>haben: hatte/hattest/hatte/hatten/hattet</li>
+            <li>werden: wurde/wurdest/wurde/wurden/wurdet</li>
+          </ul>
+        </div>
+        <div style="background: var(--surface); border-radius: var(--radius-sm); padding: 1rem; border: 1px solid var(--green);">
+          <div style="color: var(--green); font-weight: 700; margin-bottom: 8px; font-size: 0.88rem;">Perfekt</div>
+          <ul style="direction: rtl; padding-right: 1rem; font-size: 0.82rem; color: var(--text2); line-height: 1.9;">
+            <li>حركة/تحول: sein + Partizip II</li>
+            <li>معظم الأفعال: haben + Partizip II</li>
+            <li>Partizip II: ge...t أو ge...en</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 DeutschMeister — تعلّم الألمانية بأسلوب احترافي وتفاعلي</p>
+  <p style="margin-top: 4px; font-size: 0.73rem;">الألوان المميّزة: <span style="color:var(--accent);">■</span> sein &nbsp; <span style="color:var(--amber);">■</span> haben/Präteritum &nbsp; <span style="color:var(--green);">■</span> Partizip II &nbsp; <span style="color:var(--purple);">■</span> werden</p>
+</footer>
+
+<script>
+// ==================== DATA ====================
+const sentences = {
+  'sein-pres': [
+    { de: 'Ich <hl>bin</hl> Student.', ar: 'أنا طالب.', meta: 'sein · Präsens · ich', grammar: 'الفعل bin هو تصريف الشخص الأول (ich) من الفعل sein في Präsens. يُستخدم لوصف الهوية أو المهنة.', vocab: [['bin','أكون / أنا'],['Student','طالب']], pron: 'نطق: بِن — كلمة قصيرة وقوية. الـ b تُنطق بوضوح.' },
+    { de: 'Du <hl>bist</hl> sehr klug.', ar: 'أنتَ ذكيٌّ جداً.', meta: 'sein · Präsens · du', grammar: 'bist هو تصريف الشخص الثاني المفرد (du). klug تعني ذكي، وsehr تعني جداً.', vocab: [['bist','أنتَ تكون'],['sehr','جداً'],['klug','ذكي']], pron: 'نطق: بِست — الـ s تُنطق بوضوح. الـ t في النهاية مسموعة.' },
+    { de: 'Das Wetter <hl>ist</hl> schön heute.', ar: 'الطقس جميلٌ اليوم.', meta: 'sein · Präsens · er/sie/es', grammar: 'ist هو تصريف الشخص الثالث المفرد. das Wetter = الطقس (محايد النوع). schön = جميل. heute = اليوم.', vocab: [['Wetter','الطقس'],['ist','هو يكون'],['schön','جميل'],['heute','اليوم']], pron: 'نطق: إيست — الـ i قصيرة والـ st واضحة.' },
+    { de: 'Wir <hl>sind</hl> in Berlin.', ar: 'نحن في برلين.', meta: 'sein · Präsens · wir', grammar: 'sind يُستخدم مع wir وsie وSie. in + المكان يُعطي معنى "في" مكان ما.', vocab: [['sind','نحن نكون / نحن'],['in','في']], pron: 'نطق: زِند — الـ s تُنطق كـ z في الألمانية عند بداية الكلمة.' },
+    { de: 'Ihr <hl>seid</hl> meine Freunde.', ar: 'أنتم أصدقائي.', meta: 'sein · Präsens · ihr', grammar: 'seid يُستخدم مع ihr (أنتم). meine = أصدقائي (مؤنث الجمع من mein).', vocab: [['seid','أنتم تكونون'],['Freunde','أصدقاء']], pron: 'نطق: زايد — الـ ei تُنطق كـ "آي".' },
+    { de: 'Die Kinder <hl>sind</hl> glücklich.', ar: 'الأطفال سعداء.', meta: 'sein · Präsens · sie (pl)', grammar: 'الجمع يستخدم sind دائماً. die Kinder = الأطفال (جمع Kind). glücklich = سعيد.', vocab: [['Kinder','أطفال'],['glücklich','سعيد/سعداء']], pron: 'نطق كلمة glücklich: غليكليش — الـ ch بعد الـ ü تُنطق كـ "ش" خفيفة.' },
+  ],
+  'haben-pres': [
+    { de: 'Ich <hl>habe</hl> Hunger.', ar: 'أنا جائع. (لديّ جوع)', meta: 'haben · Präsens · ich', grammar: 'في الألمانية: "لديّ جوع" بدلاً من "أنا جائع". Hunger haben = أن تكون جائعاً. هذا تعبير اصطلاحي شائع.', vocab: [['habe','لديّ / أملك'],['Hunger','جوع']], pron: 'نطق: هابه — الـ h مسموعة في بداية الكلمة. الـ e الأخيرة خفيفة.' },
+    { de: 'Er <hl>hat</hl> ein neues Auto.', ar: 'لديه سيارة جديدة.', meta: 'haben · Präsens · er', grammar: 'hat هو تصريف er/sie/es. ein = أداة النكرة (المذكر). neues = جديد (منصوب). Auto = سيارة (محايد).', vocab: [['hat','لديه'],['neu','جديد'],['Auto','سيارة']], pron: 'نطق: هات — الـ t في النهاية واضحة.' },
+    { de: 'Wir <hl>haben</hl> keine Zeit.', ar: 'ليس لدينا وقت.', meta: 'haben · Präsens · wir', grammar: 'keine = النفي مع الاسم. keine Zeit = لا وقت. النفي في الألمانية يتغير حسب النوع النحوي.', vocab: [['keine','لا (نفي)'],['Zeit','وقت']], pron: 'نطق: هابن — الـ n في النهاية تُلفظ بوضوح.' },
+    { de: 'Sie <hl>hat</hl> lange Haare.', ar: 'لها شعر طويل.', meta: 'haben · Präsens · sie (sg)', grammar: 'sie المفرد = هي. Haare = شعر (جمع في الألمانية!). lange = طويل (جمع منصوب).', vocab: [['Haare','شعر (جمع)'],['lang','طويل']], pron: 'نطق: لانغه هاره — الـ H في Haare مسموعة.' },
+  ],
+  'werden-pres': [
+    { de: 'Ich <hl>werde</hl> Arzt.', ar: 'سأصبح طبيباً.', meta: 'werden · Präsens · ich', grammar: 'werden + اسم منصوب يعني "يصبح". هنا يدل على مهنة مستقبلية. لا يوجد مفعول به بل خبر.', vocab: [['werde','أصبح / سأكون'],['Arzt','طبيب']], pron: 'نطق: فيردِه — الـ w تُنطق كـ "ف".' },
+    { de: 'Es <hl>wird</hl> kalt draußen.', ar: 'يصبح البرد خارجاً. (الجو يبرد)', meta: 'werden · Präsens · es', grammar: 'الطقس في الألمانية يستخدم es (المحايد). kalt = بارد. draußen = خارج.', vocab: [['wird','يصبح'],['kalt','بارد'],['draußen','خارج']], pron: 'نطق: ڤيرت — قصيرة وواضحة.' },
+    { de: 'Sie <hl>wird</hl> morgen kommen.', ar: 'ستأتي غداً.', meta: 'werden + Infinitiv · Futur I', grammar: 'werden + Infinitiv = المستقبل (Futur I). الـ Infinitiv دائماً في نهاية الجملة. morgen = غداً.', vocab: [['wird','سـ (مستقبل)'],['morgen','غداً'],['kommen','يأتي']], pron: 'نطق: فيرت … كومن — الضغط على المقطع الأول.' },
+  ],
+  'praeteritum': [
+    { de: 'Als Kind <hl>war</hl> ich sehr schüchtern.', ar: 'كنتُ خجولاً جداً عندما كنت طفلاً.', meta: 'sein · Präteritum · ich', grammar: 'war = كنت (Präteritum من sein). Als Kind = عندما كنت طفلاً. schüchtern = خجول. شائع في السرد.', vocab: [['war','كان/كنت'],['als Kind','عندما كنت طفلاً'],['schüchtern','خجول']], pron: 'نطق: فار — الـ v تُنطق كـ "ف" أيضاً.' },
+    { de: 'Sie <hl>hatte</hl> gestern Kopfschmerzen.', ar: 'كانت لديها صداع أمس.', meta: 'haben · Präteritum · sie', grammar: 'hatte = كان لديه/كانت لديها. gestern = أمس. Kopfschmerzen = صداع (جمع). شائع في الكلام أيضاً.', vocab: [['hatte','كان لديه/لديها'],['gestern','أمس'],['Kopfschmerzen','صداع']], pron: 'نطق: هاتِه — الـ h مسموعة والـ t في المنتصف.' },
+    { de: 'Es <hl>wurde</hl> plötzlich dunkel.', ar: 'أصبح الجو مظلماً فجأة.', meta: 'werden · Präteritum · es', grammar: 'wurde = أصبح (Präteritum من werden). plötzlich = فجأة. dunkel = مظلم. يدل على تحول مفاجئ.', vocab: [['wurde','أصبح'],['plötzlich','فجأة'],['dunkel','مظلم']], pron: 'نطق: فورده — الـ ü تُنطق كـ "و" مستديرة.' },
+    { de: 'Die Soldaten <hl>waren</hl> erschöpft.', ar: 'كان الجنود منهكين.', meta: 'sein · Präteritum · sie (pl) — أسلوب سردي', grammar: 'waren = كانوا. erschöpft = منهك (Partizip II كـ صفة). يُستخدم كثيراً في الروايات والأخبار.', vocab: [['waren','كانوا'],['Soldaten','جنود'],['erschöpft','منهك/منهكون']], pron: 'نطق: فارن — الـ w كـ "ف".' },
+    { de: 'Das Museum <hl>hatte</hl> viele Besucher.', ar: 'كان المتحف يستقبل زواراً كثيرين.', meta: 'haben · Präteritum · es', grammar: 'das Museum = المتحف (محايد). hatte = كان لديه. viele = كثير. Besucher = زوار. أسلوب تقريري.', vocab: [['Museum','متحف'],['hatte','كان لديه'],['Besucher','زوار'],['viele','كثير']], pron: 'نطق: هاتِه فيله بِزوخِر — الضغط على المقاطع الأولى.' },
+  ],
+  'perfekt-sein': [
+    { de: 'Ich <hl class-ptz="partizip">bin</hl> nach Berlin <ptz>gefahren</ptz>.', ar: 'ذهبتُ إلى برلين. (بالسيارة/بالقطار)', meta: 'sein + gefahren · Perfekt — حركة', grammar: 'fahren (يسافر/يذهب) = حركة من مكان لآخر → يستخدم sein. gefahren هو Partizip II من fahren. الفعل المساعد في المركز الثاني.', vocab: [['bin gefahren','ذهبت (بمركبة)'],['nach','إلى (مدينة/بلد)'],['Berlin','برلين']], pron: 'نطق: بِن ... غِفارِن — الـ ge في بداية Partizip II.' },
+    { de: 'Er <hl>ist</hl> früh aufgewacht.', ar: 'استيقظ مبكراً.', meta: 'sein + aufgewacht · Perfekt — تحول', grammar: 'aufwachen = يستيقظ → تحول في الحالة → sein. aufgewacht: auf (بادئة) + ge + wach + t. البادئة القابلة للفصل تضع ge في الوسط.', vocab: [['ist aufgewacht','استيقظ'],['früh','مبكراً'],['aufwachen','يستيقظ']], pron: 'نطق: أوفغِفاخت — الـ ch في النهاية خفيفة.' },
+    { de: 'Wir <hl>sind</hl> zu Fuß gegangen.', ar: 'ذهبنا سيراً على الأقدام.', meta: 'sein + gegangen · Perfekt — حركة', grammar: 'gehen → sein (حركة). zu Fuß = سيراً. gegangen هو Partizip II غير نظامي من gehen.', vocab: [['sind gegangen','ذهبنا'],['zu Fuß','سيراً'],['gehen','يمشي']], pron: 'نطق: زِند ... غِغانغِن — الـ g في البداية والنهاية مسموعة.' },
+    { de: 'Das Baby <hl>ist</hl> eingeschlafen.', ar: 'نام الطفل الرضيع.', meta: 'sein + eingeschlafen · Perfekt — تحول', grammar: 'einschlafen = ينام → تحول → sein. eingeschlafen: ein + ge + schlaf + en. الـ ge تدخل بعد البادئة القابلة للفصل.', vocab: [['ist eingeschlafen','نام'],['Baby','طفل رضيع'],['einschlafen','ينام']], pron: 'نطق: آينغِشلافِن — البادئة ein واضحة.' },
+    { de: 'Sie <hl>ist</hl> schnell gewachsen.', ar: 'نمت بسرعة.', meta: 'sein + gewachsen · Perfekt — تغيير', grammar: 'wachsen = ينمو → تحول في الحالة → sein. gewachsen: ge + wachs + en. schnell = بسرعة.', vocab: [['ist gewachsen','نمت/نما'],['schnell','بسرعة'],['wachsen','ينمو']], pron: 'نطق: غِفاكسِن — الـ ch + s = ks.' },
+  ],
+  'perfekt-haben': [
+    { de: 'Ich <hl>habe</hl> das Buch gelesen.', ar: 'قرأتُ الكتاب.', meta: 'haben + gelesen · Perfekt — فعل متعدٍّ', grammar: 'lesen = يقرأ → فعل متعدٍّ → haben. gelesen: ge + les + en (غير نظامي، الجذر يتغير). das Buch = مفعول به.', vocab: [['habe gelesen','قرأت'],['Buch','كتاب'],['lesen','يقرأ']], pron: 'نطق: غِليزِن — الـ e في لـ ge قصيرة.' },
+    { de: 'Er <hl>hat</hl> Pizza gegessen.', ar: 'أكل بيتزا.', meta: 'haben + gegessen · Perfekt — فعل متعدٍّ', grammar: 'essen = يأكل → فعل متعدٍّ → haben. gegessen: ge + gess + en (غير نظامي). الـ ss تتضاعف في Partizip II.', vocab: [['hat gegessen','أكل'],['essen','يأكل'],['Pizza','بيتزا']], pron: 'نطق: غِغِسِن — الـ ss ممدودة قليلاً.' },
+    { de: 'Wir <hl>haben</hl> den Film gesehen.', ar: 'شاهدنا الفيلم.', meta: 'haben + gesehen · Perfekt — فعل متعدٍّ', grammar: 'sehen = يرى → متعدٍّ → haben. gesehen: ge + seh + en. den Film = مفعول به مذكر في حالة النصب.', vocab: [['haben gesehen','شاهدنا/رأينا'],['Film','فيلم'],['sehen','يرى']], pron: 'نطق: غِزيِن — الـ s تُنطق كـ z.' },
+    { de: 'Sie <hl>hat</hl> einen Brief geschrieben.', ar: 'كتبت رسالة.', meta: 'haben + geschrieben · Perfekt — فعل متعدٍّ', grammar: 'schreiben = يكتب → متعدٍّ → haben. geschrieben: ge + schrieb + en. einen Brief = رسالة (منصوب مذكر).', vocab: [['hat geschrieben','كتبت'],['Brief','رسالة'],['schreiben','يكتب']], pron: 'نطق: غِشريبِن — الـ ie تُنطق "إي" طويلة.' },
+    { de: 'Ich <hl>habe</hl> meine Schlüssel verloren.', ar: 'ضيّعتُ مفاتيحي.', meta: 'haben + verloren · Perfekt — فعل بـ ver-', grammar: 'verlieren = يفقد. فعل بالبادئة غير القابلة للفصل ver- → لا ge في Partizip II. verloren = verlor + en.', vocab: [['habe verloren','ضيّعت/فقدت'],['Schlüssel','مفتاح/مفاتيح'],['verlieren','يفقد']], pron: 'نطق: فيرلورن — البادئة ver تُنطق فير.' },
+  ],
+  'vergleich': [
+    { de: 'Ich <hl>bin</hl> müde. / Ich <hl>war</hl> müde. / Ich <hl>bin</hl> müde <ptz>gewesen</ptz>.', ar: 'أنا متعب. / كنتُ متعباً. / كنتُ متعباً. (محكي)', meta: 'sein — مقارنة الأزمنة الثلاثة', grammar: 'الجملة الأولى: الحاضر. الثانية: الماضي الكتابي. الثالثة: Perfekt من sein (sein + gewesen) نادر في المحادثة، يُستخدم غالباً كتابةً.', vocab: [['müde','متعب'],['gewesen','كان (Partizip II من sein)']], pron: 'نطق: ميوده، فار، غِفيزِن.' },
+    { de: 'Wir <hl>haben</hl> Zeit. / Wir <hl>hatten</hl> Zeit. / Wir <hl>haben</hl> Zeit <ptz>gehabt</ptz>.', ar: 'لدينا وقت. / كان لدينا وقت. / كان لدينا وقت. (محكي)', meta: 'haben — مقارنة الأزمنة الثلاثة', grammar: 'Perfekt من haben: haben + gehabt. في المحادثة اليومية يُفضّل hatten على haben... gehabt. كلاهما صحيح.', vocab: [['Zeit','وقت'],['gehabt','امتلك (Partizip II من haben)']], pron: 'نطق: هابِن، هاتِن، غِهابت.' },
+    { de: 'Das Kind <hl>wird</hl> groß. / Das Kind <hl>wurde</hl> groß. / Das Kind <hl>ist</hl> groß <ptz>geworden</ptz>.', ar: 'الطفل يكبر. / كبر الطفل. / لقد كبر الطفل.', meta: 'werden — مقارنة الأزمنة الثلاثة', grammar: 'Perfekt من werden: sein + geworden! ليس haben! لأن werden يدل على تحول → sein. geworden هو Partizip II من werden.', vocab: [['groß','كبير/طويل'],['geworden','أصبح (Partizip II من werden)']], pron: 'نطق: غِفوردِن — الـ ge + worden.' },
+  ],
+};
+
+// ==================== RENDER SENTENCES ====================
+function highlightDE(de) {
+  return de
+    .replace(/<hl>(.*?)<\/hl>/g, '<span class="hilfsverb">$1</span>')
+    .replace(/<ptz>(.*?)<\/ptz>/g, '<span class="partizip">$1</span>')
+    .replace(/<inf>(.*?)<\/inf>/g, '<span class="infinitiv">$1</span>')
+    .replace(/<hl class-ptz="partizip">(.*?)<\/hl>/g, '<span class="hilfsverb">$1</span>');
+}
+
+let globalSentId = 0;
+
+function renderSentences(containerId, key) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const data = sentences[key] || [];
+  container.innerHTML = '';
+  data.forEach((s, i) => {
+    const id = 'sent-' + (++globalSentId);
+    const block = document.createElement('div');
+    block.className = 'sent-block';
+    block.innerHTML = `
+      <div class="sent-top">
+        <div class="sent-number">${i+1}</div>
+        <div class="sent-content">
+          <div class="sent-german">${highlightDE(s.de)}</div>
+          <div class="sent-meta">${s.meta}</div>
+          <div class="sent-actions">
+            <button class="sent-btn" onclick="copySentence('${id}', this)" title="نسخ الجملة">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              نسخ
+            </button>
+            <button class="sent-btn green" onclick="toggleListen('${id}', this, ${JSON.stringify(s.de.replace(/<[^>]+>/g,''))})" title="استمع">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/></svg>
+              استمع
+            </button>
+            <button class="sent-btn amber" onclick="togglePanel('${id}-tr')" title="الترجمة">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>
+              الترجمة
+            </button>
+            <button class="sent-btn purple" onclick="togglePanel('${id}-gr')" title="القواعد">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              قواعد
+            </button>
+            <button class="sent-btn" onclick="togglePanel('${id}-vo')" title="المفردات">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+              مفردات
+            </button>
+            <button class="sent-btn red" onclick="togglePanel('${id}-pr')" title="النطق">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="8 12 12 8 16 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg>
+              نطق
+            </button>
+          </div>
+          <div class="audio-panel" id="${id}-audio"></div>
+          <div class="expand-panel arabic" id="${id}-tr">
+            <h4>🌍 الترجمة</h4><p>${s.ar}</p>
+          </div>
+          <div class="expand-panel" id="${id}-gr">
+            <h4>📚 شرح القواعد</h4><p style="direction:rtl">${s.grammar}</p>
+          </div>
+          <div class="expand-panel" id="${id}-vo">
+            <h4>📖 المفردات</h4>
+            ${s.vocab.map(([de,ar]) => `<div class="vocab-row"><span class="vocab-de">${de}</span><span class="vocab-ar">${ar}</span></div>`).join('')}
+          </div>
+          <div class="expand-panel" id="${id}-pr">
+            <h4>🗣 نصائح النطق</h4><p style="direction:rtl">${s.pron}</p>
+          </div>
+        </div>
+      </div>`;
+    container.appendChild(block);
+  });
+}
+
+// ==================== ACTIONS ====================
+function copySentence(id, btn) {
+  const block = btn.closest('.sent-block');
+  const text = block.querySelector('.sent-german').textContent.trim();
+  navigator.clipboard.writeText(text).then(() => {
+    toast('✓ تم النسخ!', 'var(--green)');
+  }).catch(() => toast('⚠ فشل النسخ', 'var(--red)'));
+}
+
+const speechInstances = {};
+
+function toggleListen(id, btn, text) {
+  if (!window.speechSynthesis) { toast('المتصفح لا يدعم النطق', 'var(--red)'); return; }
+  const audioPanel = document.getElementById(id + '-audio');
+  if (speechInstances[id] && window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+    delete speechInstances[id];
+    btn.classList.remove('active');
+    audioPanel.classList.remove('open');
+    toast('⏹ توقف النطق', 'var(--text3)');
+    return;
+  }
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'de-DE';
+  utter.rate = parseFloat(document.getElementById(id + '-rate')?.value || 0.85);
+  utter.onend = () => { btn.classList.remove('active'); audioPanel.classList.remove('open'); delete speechInstances[id]; };
+  speechInstances[id] = utter;
+  audioPanel.innerHTML = `
+    <span class="audio-rate-label">السرعة:</span>
+    <input type="range" id="${id}-rate" class="audio-slider" min="0.5" max="1.5" step="0.1" value="0.85"
+      oninput="document.getElementById('${id}-rateval').textContent=this.value">
+    <span class="audio-rate-label" id="${id}-rateval">0.85</span>
+    <button class="sent-btn" onclick="replayAudio('${id}', ${JSON.stringify(text)})">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+      إعادة
+    </button>`;
+  audioPanel.classList.add('open');
+  btn.classList.add('active');
+  window.speechSynthesis.speak(utter);
+  toast('🎧 يتم النطق...', 'var(--accent)');
+}
+
+function replayAudio(id, text) {
+  window.speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'de-DE';
+  utter.rate = parseFloat(document.getElementById(id + '-rate')?.value || 0.85);
+  window.speechSynthesis.speak(utter);
+}
+
+function togglePanel(id) {
+  const panel = document.getElementById(id);
+  if (!panel) return;
+  panel.classList.toggle('open');
+}
+
+// ==================== THEME ====================
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const theme = isDark ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  toast(theme === 'dark' ? '🌙 الوضع الليلي' : '☀️ الوضع النهاري', 'var(--accent)');
+}
+
+// ==================== TOAST ====================
+function toast(msg, color = 'var(--accent)') {
+  const c = document.getElementById('toastContainer');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.innerHTML = `<span class="toast-dot" style="background:${color}"></span>${msg}`;
+  c.appendChild(t);
+  setTimeout(() => { t.classList.add('out'); setTimeout(() => t.remove(), 300); }, 2500);
+}
+
+// ==================== INIT ====================
+(function init() {
+  const saved = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+
+  renderSentences('sent-container-sein-pres', 'sein-pres');
+  renderSentences('sent-container-haben-pres', 'haben-pres');
+  renderSentences('sent-container-werden-pres', 'werden-pres');
+  renderSentences('sent-container-praeteritum', 'praeteritum');
+  renderSentences('sent-container-perfekt-sein', 'perfekt-sein');
+  renderSentences('sent-container-perfekt-haben', 'perfekt-haben');
+  renderSentences('sent-container-vergleich', 'vergleich');
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-hilfsverben-meistern" data-category="grammatik" data-title="Hilfsverben — Deutsch Meistern" data-root="../../" defer></script>
+</body>
+</html>

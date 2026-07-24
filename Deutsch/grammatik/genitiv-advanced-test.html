@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>الجنيتيف المتقدم — مفاهيم جديدة + اختبار ذاتي شامل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg-primary:#0f1117; --bg-secondary:#161b27; --bg-card:#1a2035;
+  --bg-elevated:#212840; --border:#2a3350; --border-subtle:#1e2840;
+  --text-primary:#e8eaf0; --text-secondary:#8b9bc8; --text-muted:#5a6a8a;
+  --accent:#6c8ef7; --accent-soft:rgba(108,142,247,.12); --accent-glow:rgba(108,142,247,.25);
+  --green:#52c98a; --green-soft:rgba(82,201,138,.12);
+  --amber:#f5a623; --amber-soft:rgba(245,166,35,.12);
+  --rose:#f56565; --rose-soft:rgba(245,101,101,.12);
+  --violet:#a78bfa; --violet-soft:rgba(167,139,250,.12);
+  --cyan:#22d3ee; --cyan-soft:rgba(34,211,238,.12);
+  --orange:#fb923c; --orange-soft:rgba(251,146,60,.12);
+  --masc-color:#60a5fa; --masc-soft:rgba(96,165,250,.12);
+  --fem-color:#f472b6; --fem-soft:rgba(244,114,182,.12);
+  --neut-color:#34d399; --neut-soft:rgba(52,211,153,.12);
+  --plur-color:#fbbf24; --plur-soft:rgba(251,191,36,.12);
+  --shadow-sm:0 1px 3px rgba(0,0,0,.4); --shadow-md:0 4px 16px rgba(0,0,0,.5);
+  --shadow-lg:0 8px 32px rgba(0,0,0,.6);
+  --radius:14px; --radius-sm:8px; --transition:.25s cubic-bezier(.4,0,.2,1);
+}
+[data-theme="light"] {
+  --bg-primary:#f4f6fb; --bg-secondary:#ffffff; --bg-card:#ffffff;
+  --bg-elevated:#edf0f8; --border:#dde1f0; --border-subtle:#eaecf5;
+  --text-primary:#1a1f36; --text-secondary:#4a5578; --text-muted:#8a95b8;
+  --accent:#4f6ef5; --accent-soft:rgba(79,110,245,.08); --accent-glow:rgba(79,110,245,.2);
+  --green:#16a765; --green-soft:rgba(22,167,101,.08);
+  --amber:#d97706; --amber-soft:rgba(217,119,6,.08);
+  --rose:#dc2626; --rose-soft:rgba(220,38,38,.08);
+  --violet:#7c3aed; --violet-soft:rgba(124,58,237,.08);
+  --cyan:#0891b2; --cyan-soft:rgba(8,145,178,.08);
+  --orange:#ea580c; --orange-soft:rgba(234,88,12,.08);
+  --masc-color:#2563eb; --masc-soft:rgba(37,99,235,.08);
+  --fem-color:#db2777; --fem-soft:rgba(219,39,119,.08);
+  --neut-color:#059669; --neut-soft:rgba(5,150,105,.08);
+  --plur-color:#d97706; --plur-soft:rgba(217,119,6,.08);
+  --shadow-sm:0 1px 3px rgba(0,0,0,.08); --shadow-md:0 4px 16px rgba(0,0,0,.1);
+  --shadow-lg:0 8px 32px rgba(0,0,0,.12);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Cairo','Inter',system-ui,sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.75;transition:background var(--transition),color var(--transition);overflow-x:hidden;}
+
+/* PROGRESS BAR */
+#pbar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--accent),var(--violet),var(--cyan));z-index:1001;transition:width .1s linear;box-shadow:0 0 12px var(--accent-glow);}
+
+/* NAV */
+nav{position:fixed;top:3px;left:0;right:0;background:rgba(15,17,23,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border-subtle);z-index:999;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;transition:background var(--transition);}
+[data-theme="light"] nav{background:rgba(244,246,251,.92);}
+.nav-brand{display:flex;align-items:center;gap:10px;font-size:1.05rem;font-weight:700;color:var(--text-primary);text-decoration:none;}
+.nav-badge{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent-glow);padding:2px 8px;border-radius:20px;font-size:.7rem;font-weight:700;}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.78rem;font-weight:600;padding:5px 10px;border-radius:6px;transition:all var(--transition);white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{background:var(--accent-soft);color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:8px;}
+#theme-toggle{background:var(--bg-elevated);border:1px solid var(--border);color:var(--text-secondary);cursor:pointer;padding:7px 10px;border-radius:8px;font-size:1rem;transition:all var(--transition);}
+#theme-toggle:hover{background:var(--accent-soft);color:var(--accent);}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none;padding:8px;}
+.hamburger span{width:22px;height:2px;background:var(--text-secondary);border-radius:2px;transition:all .3s;}
+.mobile-nav{display:none;position:fixed;top:63px;left:0;right:0;background:var(--bg-secondary);border-bottom:1px solid var(--border);padding:12px 20px;z-index:998;flex-direction:column;gap:4px;}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{color:var(--text-secondary);text-decoration:none;font-size:.88rem;font-weight:600;padding:10px 14px;border-radius:8px;transition:all var(--transition);}
+.mobile-nav a:hover{background:var(--accent-soft);color:var(--accent);}
+
+/* LAYOUT */
+main{max-width:1020px;margin:0 auto;padding:90px 24px 80px;}
+
+/* HERO */
+.hero{text-align:center;padding:56px 0 44px;opacity:0;animation:fadeUp .7s .1s forwards;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);border:1px solid var(--accent-glow);color:var(--accent);padding:6px 18px;border-radius:20px;font-size:.82rem;font-weight:700;margin-bottom:22px;letter-spacing:.5px;}
+h1.hero-title{font-size:clamp(2rem,6vw,3.5rem);font-weight:800;line-height:1.15;background:linear-gradient(135deg,var(--text-primary) 0%,var(--accent) 50%,var(--violet) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:18px;}
+.hero-sub{font-size:clamp(.95rem,2.5vw,1.15rem);color:var(--text-secondary);max-width:620px;margin:0 auto 28px;}
+.hero-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:24px;}
+.chip{display:flex;align-items:center;gap:6px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:10px 18px;font-size:.82rem;font-weight:600;color:var(--text-secondary);}
+.chip span{font-size:1.1rem;}
+
+/* SECTIONS */
+section.cs{margin-bottom:68px;opacity:0;animation:fadeUp .6s forwards;animation-play-state:paused;}
+.sec-hdr{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--border-subtle);}
+.sec-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.35rem;flex-shrink:0;}
+h2.sec-title{font-size:clamp(1.25rem,3vw,1.75rem);font-weight:700;color:var(--text-primary);}
+.sec-sub{font-size:.84rem;color:var(--text-muted);margin-top:4px;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:40px 0;}
+
+/* CARDS */
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-sm);transition:border-color var(--transition),box-shadow var(--transition);}
+.card:hover{border-color:var(--accent-glow);box-shadow:var(--shadow-md);}
+.card-grid{display:grid;gap:16px;}
+.cg2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.cg3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+
+/* INFO BOXES */
+.ibox{border-radius:var(--radius);padding:18px 22px;margin-bottom:18px;border-right:4px solid;}
+.ibox.blue{background:var(--accent-soft);border-color:var(--accent);}
+.ibox.green{background:var(--green-soft);border-color:var(--green);}
+.ibox.amber{background:var(--amber-soft);border-color:var(--amber);}
+.ibox.rose{background:var(--rose-soft);border-color:var(--rose);}
+.ibox.violet{background:var(--violet-soft);border-color:var(--violet);}
+.ibox.cyan{background:var(--cyan-soft);border-color:var(--cyan);}
+.ibox.orange{background:var(--orange-soft);border-color:var(--orange);}
+.ititle{font-weight:700;margin-bottom:8px;font-size:.95rem;}
+.itext{color:var(--text-secondary);font-size:.9rem;line-height:1.85;}
+
+/* TABLES */
+table.gt{width:100%;border-collapse:collapse;font-size:.9rem;border-radius:var(--radius);overflow:hidden;}
+.gt th{background:var(--bg-elevated);color:var(--text-secondary);font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:12px 16px;text-align:center;border-bottom:1px solid var(--border);}
+.gt td{padding:12px 16px;text-align:center;border-bottom:1px solid var(--border-subtle);transition:background var(--transition);}
+.gt tr:last-child td{border-bottom:none;}
+.gt tr:hover td{background:var(--bg-elevated);}
+.gt td:first-child{font-weight:600;color:var(--text-secondary);text-align:right;}
+.tbl-wrap{overflow-x:auto;}
+.tag{padding:3px 10px;border-radius:6px;font-weight:700;display:inline-block;font-size:.85rem;}
+.tm{color:var(--masc-color);background:var(--masc-soft);}
+.tf{color:var(--fem-color);background:var(--fem-soft);}
+.tn{color:var(--neut-color);background:var(--neut-soft);}
+.tp{color:var(--plur-color);background:var(--plur-soft);}
+.tc{color:var(--cyan);background:var(--cyan-soft);}
+.ta{color:var(--accent);background:var(--accent-soft);}
+.tg{color:var(--green);background:var(--green-soft);}
+.tr2{color:var(--rose);background:var(--rose-soft);}
+.hlg{color:var(--accent);font-weight:700;}
+.hlf{color:var(--fem-color);font-weight:700;}
+.hln{color:var(--neut-color);font-weight:700;}
+.hla{color:var(--amber);font-weight:700;}
+.hlv{color:var(--violet);font-weight:700;}
+.de{font-family:'Inter',sans-serif;font-weight:600;font-size:1rem;}
+.de-lg{font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;}
+
+/* SENTENCE CARDS */
+.sc{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 20px;margin-bottom:12px;transition:all var(--transition);}
+.sc:hover{border-color:var(--accent-glow);transform:translateY(-1px);box-shadow:var(--shadow-md);}
+.sc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.sc-de{font-family:'Inter',sans-serif;font-weight:700;font-size:1.08rem;color:var(--text-primary);flex:1;min-width:0;direction:ltr;text-align:left;}
+.sc-ar{margin-top:10px;color:var(--text-secondary);font-size:.92rem;padding-top:10px;border-top:1px solid var(--border-subtle);line-height:1.6;}
+.sc-en{color:var(--text-muted);font-size:.8rem;margin-top:3px;direction:ltr;text-align:left;}
+.gh{color:var(--accent);font-weight:700;text-decoration:underline;text-decoration-style:dotted;}
+.gh2{color:var(--violet);font-weight:700;text-decoration:underline;text-decoration-style:dotted;}
+.gh3{color:var(--green);font-weight:700;}
+.sc-actions{display:flex;gap:6px;flex-shrink:0;}
+.btn{display:flex;align-items:center;gap:5px;padding:6px 11px;border-radius:6px;font-size:.76rem;font-weight:600;border:1px solid var(--border);cursor:pointer;transition:all var(--transition);background:var(--bg-elevated);color:var(--text-secondary);font-family:'Cairo',sans-serif;white-space:nowrap;}
+.btn:hover{background:var(--accent-soft);color:var(--accent);border-color:var(--accent-glow);}
+.btn.li:hover{background:var(--green-soft);color:var(--green);border-color:rgba(82,201,138,.3);}
+.btn.co:hover{background:var(--violet-soft);color:var(--violet);border-color:rgba(167,139,250,.3);}
+
+/* ADJECTIVE DECLENSION */
+.adj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px;}
+.adj-card{background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 18px;}
+.adj-title{font-size:.8rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;}
+.adj-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border-subtle);}
+.adj-row:last-child{border-bottom:none;}
+.adj-label{font-size:.82rem;color:var(--text-secondary);}
+.adj-form{font-family:'Inter',sans-serif;font-weight:700;color:var(--accent);font-size:.92rem;}
+
+/* CONCEPT BOXES */
+.concept{background:linear-gradient(135deg,var(--bg-elevated),var(--bg-card));border:1px solid var(--border);border-radius:var(--radius);padding:26px;margin-bottom:20px;position:relative;overflow:hidden;}
+.concept::before{content:'';position:absolute;top:0;right:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent),var(--violet));}
+.concept-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:10px;}
+.concept-title{font-size:1.05rem;font-weight:700;margin-bottom:12px;color:var(--text-primary);}
+.concept-body{color:var(--text-secondary);font-size:.9rem;line-height:1.9;}
+
+/* MORE PREPOSITIONS TABLE */
+.prep-row{display:grid;grid-template-columns:120px 1fr 1fr;gap:10px;align-items:start;padding:14px 0;border-bottom:1px solid var(--border-subtle);}
+.prep-row:last-child{border-bottom:none;}
+.prep-word-lg{font-family:'Fira Code',monospace;font-size:1.15rem;font-weight:700;}
+
+/* QUIZ SECTION */
+.quiz-container{margin-top:8px;}
+.q-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;margin-bottom:20px;transition:all var(--transition);position:relative;}
+.q-card:hover{border-color:var(--accent-glow);}
+.q-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent-glow);border-radius:50%;font-size:.82rem;font-weight:800;margin-bottom:14px;}
+.q-text{font-size:1rem;font-weight:600;color:var(--text-primary);margin-bottom:18px;line-height:1.65;}
+.q-de{font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:700;color:var(--cyan);direction:ltr;text-align:left;margin-bottom:14px;padding:12px 16px;background:var(--cyan-soft);border-radius:8px;border:1px solid rgba(34,211,238,.2);}
+.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:16px;}
+.opt{background:var(--bg-elevated);border:2px solid var(--border);border-radius:10px;padding:12px 16px;cursor:pointer;transition:all var(--transition);font-size:.9rem;font-weight:600;text-align:center;color:var(--text-secondary);font-family:'Inter',sans-serif;}
+.opt:hover{border-color:var(--accent-glow);background:var(--accent-soft);color:var(--accent);}
+.opt.correct{border-color:var(--green)!important;background:var(--green-soft)!important;color:var(--green)!important;}
+.opt.wrong{border-color:var(--rose)!important;background:var(--rose-soft)!important;color:var(--rose)!important;}
+.opt.show-correct{border-color:var(--green)!important;background:var(--green-soft)!important;color:var(--green)!important;animation:pulse .4s ease;}
+.opt:disabled,.opt.answered{cursor:default;}
+.answer-reveal{background:none;border:1px solid var(--border);color:var(--text-muted);cursor:pointer;padding:8px 18px;border-radius:8px;font-size:.82rem;font-weight:600;font-family:'Cairo',sans-serif;transition:all var(--transition);display:flex;align-items:center;gap:6px;}
+.answer-reveal:hover{border-color:var(--amber);color:var(--amber);background:var(--amber-soft);}
+.answer-box{display:none;margin-top:16px;padding:18px 20px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);border-right:4px solid var(--green);}
+.answer-box.open{display:block;}
+.answer-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--green);margin-bottom:10px;}
+.answer-text{color:var(--text-secondary);font-size:.9rem;line-height:1.85;}
+.answer-de{font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:700;color:var(--green);margin-bottom:6px;direction:ltr;}
+.q-type-badge{position:absolute;top:16px;left:16px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:3px 10px;border-radius:20px;}
+
+/* QUIZ PROGRESS */
+.quiz-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
+.quiz-score{background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:10px 20px;display:flex;align-items:center;gap:12px;}
+.score-num{font-size:1.4rem;font-weight:800;color:var(--accent);}
+.score-label{font-size:.8rem;color:var(--text-muted);}
+.progress-track{height:6px;background:var(--bg-elevated);border-radius:3px;overflow:hidden;flex:1;min-width:100px;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:3px;transition:width .5s ease;}
+.results-panel{display:none;background:linear-gradient(135deg,var(--bg-elevated),var(--bg-card));border:2px solid var(--accent-glow);border-radius:var(--radius);padding:32px;text-align:center;margin-top:24px;}
+.results-panel.show{display:block;}
+.results-emoji{font-size:3.5rem;margin-bottom:16px;}
+.results-title{font-size:1.5rem;font-weight:800;margin-bottom:10px;}
+.results-score{font-size:3rem;font-weight:800;color:var(--accent);margin-bottom:10px;}
+.results-msg{color:var(--text-secondary);font-size:1rem;margin-bottom:20px;}
+.restart-btn{background:var(--accent);color:white;border:none;padding:12px 28px;border-radius:10px;font-size:.95rem;font-weight:700;cursor:pointer;transition:all var(--transition);font-family:'Cairo',sans-serif;}
+.restart-btn:hover{opacity:.88;transform:translateY(-1px);}
+
+/* FILL IN BLANK */
+.fill-blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--accent);padding:0 8px;margin:0 4px;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--text-primary);direction:ltr;background:none;outline:none;text-align:center;transition:border-color var(--transition);}
+.fill-blank:focus{border-color:var(--cyan);}
+.fill-blank.correct-input{border-color:var(--green)!important;color:var(--green)!important;}
+.fill-blank.wrong-input{border-color:var(--rose)!important;color:var(--rose)!important;}
+.check-fill{background:var(--accent);color:white;border:none;padding:8px 20px;border-radius:8px;font-size:.85rem;font-weight:700;cursor:pointer;transition:all var(--transition);font-family:'Cairo',sans-serif;margin-top:10px;}
+.check-fill:hover{opacity:.88;}
+
+/* FOOTER */
+footer{text-align:center;padding:36px 24px;border-top:1px solid var(--border-subtle);color:var(--text-muted);font-size:.88rem;}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--green);color:white;padding:12px 20px;border-radius:8px;font-size:.88rem;font-weight:600;opacity:0;transform:translateY(10px);transition:all .3s;z-index:10000;pointer-events:none;box-shadow:var(--shadow-lg);}
+.toast.show{opacity:1;transform:translateY(0);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.03);}100%{transform:scale(1);}}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hamburger{display:flex;}
+  .nav-links{display:none;}
+  main{padding:78px 16px 60px;}
+  .cg2,.cg3{grid-template-columns:1fr;}
+  .options{grid-template-columns:1fr;}
+  .prep-row{grid-template-columns:1fr;gap:4px;}
+}
+
+/* PRINT */
+@media print{
+  #pbar,nav,.hamburger,.mobile-nav,.toast,.sc-actions,.btn,.answer-reveal,.check-fill,.restart-btn{display:none!important;}
+  body{background:white;color:#1a1f36;font-size:11pt;}
+  main{padding:0;max-width:100%;}
+  .card,.sc,.q-card,.concept,.ibox{border:1px solid #dde1f0;box-shadow:none;break-inside:avoid;}
+  section.cs{break-inside:avoid;margin-bottom:32pt;}
+  .answer-box{display:block!important;}
+  h1.hero-title{color:#1a1f36 !important;-webkit-text-fill-color:#1a1f36;}
+  .gh,.hlg,.hlf,.hln,.hla,.hlv{text-decoration:underline;}
+  footer{border-top:1pt solid #dde1f0;margin-top:24pt;}
+}
+
+/* ADJECTIV TABLE COMPACT */
+.adj-declension-wrap{overflow-x:auto;}
+.adj-note{font-size:.8rem;color:var(--text-muted);margin-top:10px;direction:rtl;}
+.strong-end{color:var(--accent);font-weight:700;}
+.weak-end{color:var(--green);font-weight:700;}
+.mixed-end{color:var(--violet);font-weight:700;}
+
+/* CONCEPT COMPARISON */
+.compare-row{display:flex;gap:12px;margin-bottom:12px;align-items:stretch;}
+.compare-box{flex:1;background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;}
+.compare-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+</style>
+</head>
+<body>
+
+<div id="pbar"></div>
+
+<nav>
+  <a class="nav-brand" href="#">
+    🇩🇪 Genitiv <span class="nav-badge">متقدم</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#adjektiv">صفة الجنيتيف</a></li>
+    <li><a href="#mehr-praep">حروف جر إضافية</a></li>
+    <li><a href="#kein">kein / ein</a></li>
+    <li><a href="#n-deklination">N-Deklination</a></li>
+    <li><a href="#doppelgenitiv">التكرار</a></li>
+    <li><a href="#quiz">الاختبار الذاتي</a></li>
+  </ul>
+  <div class="nav-right">
+    <button id="theme-toggle" aria-label="تبديل الوضع">☀️</button>
+    <button class="hamburger" id="hamburger" aria-label="القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#adjektiv">صفة الجنيتيف</a>
+  <a href="#mehr-praep">حروف جر إضافية</a>
+  <a href="#kein">kein / ein في الجنيتيف</a>
+  <a href="#n-deklination">N-Deklination</a>
+  <a href="#doppelgenitiv">الجنيتيف المزدوج</a>
+  <a href="#quiz">الاختبار الذاتي</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">✨ مفاهيم جديدة — غير موجودة في الملف السابق</div>
+  <h1 class="hero-title">الجنيتيف المتقدم<br/>+ اختبار ذاتي شامل</h1>
+  <p class="hero-sub">شرح تفصيلي لمفاهيم الجنيتيف التي لم تُغطَّ من قبل: تصريف الصفات، حروف الجر الإضافية، N-Deklination، والكثير أكثر — مع اختبار تفاعلي لقياس مستواك</p>
+  <div class="hero-chips">
+    <div class="chip"><span>📐</span> تصريف الصفة في الجنيتيف</div>
+    <div class="chip"><span>🔗</span> حروف جر إضافية (7 حروف جديدة)</div>
+    <div class="chip"><span>📌</span> N-Deklination الخاصة</div>
+    <div class="chip"><span>🔁</span> الجنيتيف المزدوج</div>
+    <div class="chip"><span>🧠</span> اختبار ذاتي — 20 سؤالاً</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1 — ADJECTIVE IN GENITIV
+═══════════════════════════════════════════════ -->
+<section class="cs" id="adjektiv">
+  <div class="sec-hdr">
+    <div class="sec-icon" style="background:var(--masc-soft);color:var(--masc-color);">📐</div>
+    <div>
+      <h2 class="sec-title">تصريف الصفة في الجنيتيف — Adjektivdeklination</h2>
+      <p class="sec-sub">هذا المفهوم لم يُشرح في الملف السابق — وهو ضروري جداً للكتابة الصحيحة</p>
+    </div>
+  </div>
+
+  <div class="ibox blue">
+    <p class="ititle">💡 لماذا يتغير شكل الصفة؟</p>
+    <p class="itext">في اللغة الألمانية، الصفة التي تأتي قبل اسم في حالة الجنيتيف تأخذ نهايات خاصة تعتمد على نوع الأداة (معرّفة، نكرة، بدون أداة). توجد ثلاثة أنواع من التصريف: <strong style="color:var(--accent)">schwache Deklination</strong> (ضعيف — بعد der/die/das)، <strong style="color:var(--violet)">gemischte Deklination</strong> (مختلط — بعد ein/kein)، و<strong style="color:var(--green)">starke Deklination</strong> (قوي — بدون أداة).</p>
+  </div>
+
+  <!-- 1A: After bestimmter Artikel -->
+  <div class="card" style="margin-bottom:18px;">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;">النوع الأول: Schwache Deklination (الأداة المعرّفة: der / die / das)</h3>
+    <p style="font-size:.84rem;color:var(--text-muted);margin-bottom:16px;">بعد der، die، das، des، der — الصفة تأخذ نهايتين فقط: <span class="strong-end">-en</span> في الجنيتيف دائماً.</p>
+    <div class="tbl-wrap">
+      <table class="gt">
+        <thead>
+          <tr><th>الجنس</th><th>الأداة (Genitiv)</th><th>شكل الصفة</th><th>مثال</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag tm">مذكر</span></td>
+            <td class="de hlg">des</td>
+            <td><span class="strong-end">الصفة + <strong>-en</strong></span></td>
+            <td class="de" style="direction:ltr;text-align:right;">des alt<strong class="hlg">en</strong> Mannes</td>
+          </tr>
+          <tr>
+            <td><span class="tag tf">مؤنث</span></td>
+            <td class="de hlf">der</td>
+            <td><span class="strong-end">الصفة + <strong>-en</strong></span></td>
+            <td class="de" style="direction:ltr;text-align:right;">der jung<strong class="hlg">en</strong> Frau</td>
+          </tr>
+          <tr>
+            <td><span class="tag tn">محايد</span></td>
+            <td class="de hlg">des</td>
+            <td><span class="strong-end">الصفة + <strong>-en</strong></span></td>
+            <td class="de" style="direction:ltr;text-align:right;">des klein<strong class="hlg">en</strong> Kindes</td>
+          </tr>
+          <tr>
+            <td><span class="tag tp">جمع</span></td>
+            <td class="de hlf">der</td>
+            <td><span class="strong-end">الصفة + <strong>-en</strong></span></td>
+            <td class="de" style="direction:ltr;text-align:right;">der neu<strong class="hlg">en</strong> Bücher</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ibox green" style="margin-top:16px;margin-bottom:0;">
+      <p class="itext">✅ <strong>قاعدة ذهبية:</strong> بعد الأداة المعرّفة في الجنيتيف (des / der) — الصفة تأخذ دائماً <strong style="color:var(--accent);">-en</strong> بدون استثناء، لجميع الأجناس والأعداد!</p>
+    </div>
+  </div>
+
+  <!-- Sentences with adjective after definite -->
+  <div style="margin-bottom:20px;">
+    <h4 style="font-size:.92rem;font-weight:700;color:var(--text-secondary);margin-bottom:12px;">جمل تطبيقية — Schwache Deklination</h4>
+    <div class="sc">
+      <div class="sc-top">
+        <div class="sc-de" dir="ltr">Die Meinung <span class="gh">des alt<strong>en</strong> Lehrers</span> ist wichtig.</div>
+        <div class="sc-actions">
+          <button class="btn li" onclick="speak('Die Meinung des alten Lehrers ist wichtig.')">🔊</button>
+          <button class="btn co" onclick="copyText('Die Meinung des alten Lehrers ist wichtig.',this)">📋</button>
+        </div>
+      </div>
+      <div class="sc-ar">رأي المعلم العجوز مهم. <span style="color:var(--text-muted);font-size:.84rem;">(Lehrer = مذكر → des alten)</span></div>
+      <div class="sc-en">The opinion of the old teacher is important.</div>
+    </div>
+    <div class="sc">
+      <div class="sc-top">
+        <div class="sc-de" dir="ltr">Das Haus <span class="gh">der jung<strong>en</strong> Familie</span> ist schön.</div>
+        <div class="sc-actions">
+          <button class="btn li" onclick="speak('Das Haus der jungen Familie ist schön.')">🔊</button>
+          <button class="btn co" onclick="copyText('Das Haus der jungen Familie ist schön.',this)">📋</button>
+        </div>
+      </div>
+      <div class="sc-ar">بيت الأسرة الشابة جميل. <span style="color:var(--text-muted);font-size:.84rem;">(Familie = مؤنث → der jungen)</span></div>
+      <div class="sc-en">The house of the young family is beautiful.</div>
+    </div>
+    <div class="sc">
+      <div class="sc-top">
+        <div class="sc-de" dir="ltr">Die Farbe <span class="gh">des neu<strong>en</strong> Autos</span> ist rot.</div>
+        <div class="sc-actions">
+          <button class="btn li" onclick="speak('Die Farbe des neuen Autos ist rot.')">🔊</button>
+          <button class="btn co" onclick="copyText('Die Farbe des neuen Autos ist rot.',this)">📋</button>
+        </div>
+      </div>
+      <div class="sc-ar">لون السيارة الجديدة أحمر. <span style="color:var(--text-muted);font-size:.84rem;">(Auto = محايد → des neuen)</span></div>
+      <div class="sc-en">The color of the new car is red.</div>
+    </div>
+    <div class="sc">
+      <div class="sc-top">
+        <div class="sc-de" dir="ltr">Die Qualität <span class="gh">der deutsch<strong>en</strong> Produkte</span> ist bekannt.</div>
+        <div class="sc-actions">
+          <button class="btn li" onclick="speak('Die Qualität der deutschen Produkte ist bekannt.')">🔊</button>
+          <button class="btn co" onclick="copyText('Die Qualität der deutschen Produkte ist bekannt.',this)">📋</button>
+        </div>
+      </div>
+      <div class="sc-ar">جودة المنتجات الألمانية معروفة. <span style="color:var(--text-muted);font-size:.84rem;">(Produkte = جمع → der deutschen)</span></div>
+      <div class="sc-en">The quality of German products is well known.</div>
+    </div>
+  </div>
+
+  <!-- 1B: After ein/kein (Mixed) -->
+  <div class="card" style="margin-bottom:18px;">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;">النوع الثاني: Gemischte Deklination (بعد ein / kein / أدوات الملكية)</h3>
+    <p style="font-size:.84rem;color:var(--text-muted);margin-bottom:16px;">بعد ein، mein، kein، dein، sein، ihr، unser، euer — تصريف مختلط حسب الجنس.</p>
+    <div class="tbl-wrap">
+      <table class="gt">
+        <thead>
+          <tr><th>الجنس</th><th>الأداة (Genitiv)</th><th>شكل الصفة</th><th>مثال</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag tm">مذكر</span></td>
+            <td class="de hlg">eines / meines</td>
+            <td><span class="mixed-end">الصفة + <strong>-en</strong></span></td>
+            <td class="de" style="direction:ltr;text-align:right;">eines alt<strong class="hlv">en</strong> Mannes</td>
+          </tr>
+          <tr>
+            <td><span class="tag tf">مؤنث</span></td>
+            <td class="de hlf">einer / meiner</td>
+            <td><span class="mixed-end">الصفة + <strong>-en</strong></span></td>
+            <td class="de" style="direction:ltr;text-align:right;">einer jung<strong class="hlv">en</strong> Frau</td>
+          </tr>
+          <tr>
+            <td><span class="tag tn">محايد</span></td>
+            <td class="de hlg">eines / meines</td>
+            <td><span class="mixed-end">الصفة + <strong>-en</strong></span></td>
+            <td class="de" style="direction:ltr;text-align:right;">eines klein<strong class="hlv">en</strong> Kindes</td>
+          </tr>
+          <tr>
+            <td><span class="tag tp">جمع</span></td>
+            <td class="de" style="color:var(--text-muted);">لا توجد "ein" للجمع</td>
+            <td><span style="color:var(--amber);font-weight:700;">الصفة + <strong>-en</strong></span></td>
+            <td class="de" style="direction:ltr;text-align:right;">meiner neu<strong class="hla">en</strong> Bücher</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ibox amber" style="margin-top:14px;margin-bottom:0;">
+      <p class="itext">⚡ في الجنيتيف، كلا التصريف (Schwach و Gemischt) تُعطيان نهاية <strong style="color:var(--amber)">-en</strong> — الجنيتيف هو الأسهل لأن الصفة تأخذ دائماً <strong>-en</strong>!</p>
+    </div>
+  </div>
+
+  <!-- 1C: Starke Deklination (no article) -->
+  <div class="card" style="margin-bottom:18px;">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;">النوع الثالث: Starke Deklination (بدون أداة)</h3>
+    <p style="font-size:.84rem;color:var(--text-muted);margin-bottom:16px;">عندما لا توجد أي أداة — الصفة تحمل كل المعلومات النحوية وتأخذ نهايات قوية.</p>
+    <div class="tbl-wrap">
+      <table class="gt">
+        <thead>
+          <tr><th>الجنس</th><th>نهاية الصفة (Genitiv)</th><th>مثال</th><th>المعنى</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag tm">مذكر</span></td>
+            <td><span class="weak-end">الصفة + <strong>-en</strong></span></td>
+            <td class="de" style="direction:ltr;">kalten Kaffees</td>
+            <td>قهوة بارد (مذكر)</td>
+          </tr>
+          <tr>
+            <td><span class="tag tf">مؤنث</span></td>
+            <td><span class="weak-end">الصفة + <strong>-er</strong></span></td>
+            <td class="de" style="direction:ltr;">frischer Milch</td>
+            <td>حليب طازج</td>
+          </tr>
+          <tr>
+            <td><span class="tag tn">محايد</span></td>
+            <td><span class="weak-end">الصفة + <strong>-en</strong></span></td>
+            <td class="de" style="direction:ltr;">frischen Wassers</td>
+            <td>ماء نقي</td>
+          </tr>
+          <tr>
+            <td><span class="tag tp">جمع</span></td>
+            <td><span class="weak-end">الصفة + <strong>-er</strong></span></td>
+            <td class="de" style="direction:ltr;">frischer Produkte</td>
+            <td>منتجات طازجة</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ibox rose" style="margin-top:14px;margin-bottom:0;">
+      <p class="itext">⚠️ التصريف القوي نادر الاستخدام في الحياة اليومية — يظهر أساساً في الكتابة الأدبية والأكاديمية. أمثلة شائعة: <strong style="direction:ltr;font-family:'Inter'">ein Glas kalten Wassers</strong> (كأس ماء بارد)، <strong style="direction:ltr;font-family:'Inter'">das Ergebnis harter Arbeit</strong> (نتيجة عمل شاق).</p>
+    </div>
+  </div>
+
+  <!-- Practical summary table -->
+  <div class="card">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:14px;">ملخص سريع — تصريف الصفة في الجنيتيف</h3>
+    <div class="tbl-wrap">
+      <table class="gt">
+        <thead>
+          <tr><th>النوع</th><th>الأداة</th><th>نهاية الصفة</th><th>ملاحظة</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Schwach</td>
+            <td class="de">der / des</td>
+            <td><strong class="hlg">-en دائماً</strong></td>
+            <td>الأسهل — قاعدة واحدة</td>
+          </tr>
+          <tr>
+            <td>Gemischt</td>
+            <td class="de">ein / mein / kein</td>
+            <td><strong class="hlv">-en دائماً</strong></td>
+            <td>نفس الأداة المعرّفة</td>
+          </tr>
+          <tr>
+            <td>Stark</td>
+            <td>بدون أداة</td>
+            <td><strong class="hln">-en (م/مح) / -er (مؤ/ج)</strong></td>
+            <td>نادر — أكاديمي فقط</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 2 — ADDITIONAL PREPOSITIONS
+═══════════════════════════════════════════════ -->
+<section class="cs" id="mehr-praep">
+  <div class="sec-hdr">
+    <div class="sec-icon" style="background:var(--rose-soft);color:var(--rose);">🔗</div>
+    <div>
+      <h2 class="sec-title">حروف الجر الإضافية مع الجنيتيف</h2>
+      <p class="sec-sub">الملف السابق تناول 4 حروف فقط — هنا نُضيف 7 حروف جديدة مهمة</p>
+    </div>
+  </div>
+
+  <div class="ibox violet">
+    <p class="ititle">📋 الحروف السابقة (للمراجعة)</p>
+    <p class="itext">الملف السابق غطّى: <strong style="font-family:'Fira Code'">wegen, trotz, während, dank</strong> — وهي أكثر الحروف شيوعاً في مستوى A2/B1. الحروف أدناه ضرورية لمستوى B2 وما فوق، وتظهر كثيراً في النصوص الرسمية والأكاديمية.</p>
+  </div>
+
+  <!-- Prep cards grid -->
+  <div class="card-grid cg2">
+
+    <div class="concept">
+      <div class="concept-label">حرف جر جديد</div>
+      <div class="concept-title"><span style="font-family:'Fira Code';color:var(--cyan);font-size:1.3rem;">außerhalb</span> — خارج / خارج نطاق</div>
+      <div class="concept-body">
+        يعني: خارج حدود شيء ما (مكانياً أو مجازياً).
+        <div class="sc" style="margin-top:12px;">
+          <div class="sc-de" dir="ltr">Er wohnt <span class="gh2">außerhalb der Stadt</span>.</div>
+          <div class="sc-ar">هو يسكن خارج المدينة.</div>
+          <div class="sc-en">He lives outside the city.</div>
+        </div>
+        <div class="sc" style="margin-top:8px;">
+          <div class="sc-de" dir="ltr">Das liegt <span class="gh2">außerhalb meiner Verantwortung</span>.</div>
+          <div class="sc-ar">هذا خارج نطاق مسؤوليتي.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept" style="--accent:var(--orange);">
+      <div class="concept-label">حرف جر جديد</div>
+      <div class="concept-title"><span style="font-family:'Fira Code';color:var(--orange);font-size:1.3rem;">innerhalb</span> — داخل / ضمن</div>
+      <div class="concept-body">
+        عكس außerhalb — داخل الحدود أو ضمن إطار زمني.
+        <div class="sc" style="margin-top:12px;">
+          <div class="sc-de" dir="ltr">Sie kommt <span style="color:var(--orange);font-weight:700;text-decoration:underline;text-decoration-style:dotted;">innerhalb einer Woche</span>.</div>
+          <div class="sc-ar">ستصل في غضون أسبوع واحد.</div>
+          <div class="sc-en">She will come within a week.</div>
+        </div>
+        <div class="sc" style="margin-top:8px;">
+          <div class="sc-de" dir="ltr"><span style="color:var(--orange);font-weight:700;">Innerhalb des Gebäudes</span> ist Rauchen verboten.</div>
+          <div class="sc-ar">التدخين ممنوع داخل المبنى.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept" style="--accent:var(--green);">
+      <div class="concept-label">حرف جر جديد</div>
+      <div class="concept-title"><span style="font-family:'Fira Code';color:var(--green);font-size:1.3rem;">statt / anstatt</span> — بدلاً من</div>
+      <div class="concept-body">
+        يعبّر عن الاستبدال أو البديل. كلاهما صحيح ويُستخدمان بشكل متساوٍ.
+        <div class="sc" style="margin-top:12px;">
+          <div class="sc-de" dir="ltr">Statt <span class="gh3">des Kaffees</span> trinke ich Tee.</div>
+          <div class="sc-ar">بدلاً من القهوة، أشرب الشاي.</div>
+          <div class="sc-en">Instead of coffee, I drink tea.</div>
+        </div>
+        <div class="sc" style="margin-top:8px;">
+          <div class="sc-de" dir="ltr">Anstatt <span class="gh3">einer langen E-Mail</span> rufe ich an.</div>
+          <div class="sc-ar">بدلاً من رسالة بريد إلكتروني طويلة، أتصل هاتفياً.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept" style="--accent:var(--amber);">
+      <div class="concept-label">حرف جر جديد</div>
+      <div class="concept-title"><span style="font-family:'Fira Code';color:var(--amber);font-size:1.3rem;">mithilfe</span> — بمساعدة / بواسطة</div>
+      <div class="concept-body">
+        يعبّر عن الوسيلة أو الأداة التي ساعدت في تحقيق شيء ما.
+        <div class="sc" style="margin-top:12px;">
+          <div class="sc-de" dir="ltr">Mithilfe <span style="color:var(--amber);font-weight:700;text-decoration:underline;text-decoration-style:dotted;">eines Wörterbuchs</span> lernt sie Deutsch.</div>
+          <div class="sc-ar">بمساعدة قاموس، تتعلم الألمانية.</div>
+          <div class="sc-en">With the help of a dictionary, she learns German.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept" style="--accent:var(--violet);">
+      <div class="concept-label">حرف جر جديد</div>
+      <div class="concept-title"><span style="font-family:'Fira Code';color:var(--violet);font-size:1.3rem;">aufgrund</span> — بسبب / نظراً لـ</div>
+      <div class="concept-body">
+        أقوى وأكثر رسمية من wegen — يُستخدم في السياقات الرسمية والأكاديمية.
+        <div class="sc" style="margin-top:12px;">
+          <div class="sc-de" dir="ltr">Aufgrund <span class="gh2">des schlechten Wetters</span> wurde das Spiel abgesagt.</div>
+          <div class="sc-ar">نظراً للطقس السيئ، تم إلغاء المباراة.</div>
+          <div class="sc-en">Due to bad weather, the game was cancelled.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept" style="--accent:var(--rose);">
+      <div class="concept-label">حرف جر جديد</div>
+      <div class="concept-title"><span style="font-family:'Fira Code';color:var(--rose);font-size:1.3rem;">angesichts</span> — في ضوء / بالنظر إلى</div>
+      <div class="concept-body">
+        يُستخدم للإشارة إلى واقع أو حقيقة ما. شائع جداً في الكتابة الأكاديمية والصحفية.
+        <div class="sc" style="margin-top:12px;">
+          <div class="sc-de" dir="ltr">Angesichts <span style="color:var(--rose);font-weight:700;text-decoration:underline;text-decoration-style:dotted;">der steigenden Preise</span> müssen wir sparen.</div>
+          <div class="sc-ar">في ظل الأسعار المتزايدة، يجب علينا التوفير.</div>
+          <div class="sc-en">In view of rising prices, we must save.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept" style="--accent:var(--neut-color);">
+      <div class="concept-label">حرف جر جديد</div>
+      <div class="concept-title"><span style="font-family:'Fira Code';color:var(--neut-color);font-size:1.3rem;">infolge</span> — نتيجةً لـ / إثر</div>
+      <div class="concept-body">
+        يُعبّر عن النتيجة المترتبة على شيء ما — رسمي جداً.
+        <div class="sc" style="margin-top:12px;">
+          <div class="sc-de" dir="ltr">Infolge <span class="hln">des Unfalls</span> war die Straße gesperrt.</div>
+          <div class="sc-ar">إثر الحادث، كان الطريق مغلقاً.</div>
+          <div class="sc-en">As a result of the accident, the road was closed.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Summary Table -->
+  <div class="card" style="margin-top:20px;">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px;">ملخص شامل — جميع حروف الجر مع الجنيتيف</h3>
+    <div class="tbl-wrap">
+      <table class="gt">
+        <thead>
+          <tr><th>حرف الجر</th><th>المعنى بالعربية</th><th>المعنى بالإنجليزية</th><th>المستوى</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="de" style="direction:ltr;text-align:right;color:var(--accent)!important;">wegen</td><td>بسبب</td><td style="direction:ltr;">because of</td><td><span class="tag ta">A2</span></td></tr>
+          <tr><td class="de" style="direction:ltr;text-align:right;color:var(--green)!important;">trotz</td><td>رغم</td><td style="direction:ltr;">despite</td><td><span class="tag ta">A2</span></td></tr>
+          <tr><td class="de" style="direction:ltr;text-align:right;color:var(--violet)!important;">während</td><td>خلال / أثناء</td><td style="direction:ltr;">during</td><td><span class="tag ta">A2</span></td></tr>
+          <tr><td class="de" style="direction:ltr;text-align:right;color:var(--amber)!important;">dank</td><td>بفضل</td><td style="direction:ltr;">thanks to</td><td><span class="tag ta">B1</span></td></tr>
+          <tr><td class="de" style="direction:ltr;text-align:right;color:var(--cyan)!important;">außerhalb</td><td>خارج</td><td style="direction:ltr;">outside of</td><td><span class="tag tg">B1</span></td></tr>
+          <tr><td class="de" style="direction:ltr;text-align:right;color:var(--orange)!important;">innerhalb</td><td>داخل / ضمن</td><td style="direction:ltr;">within / inside</td><td><span class="tag tg">B1</span></td></tr>
+          <tr><td class="de" style="direction:ltr;text-align:right;color:var(--green)!important;">statt / anstatt</td><td>بدلاً من</td><td style="direction:ltr;">instead of</td><td><span class="tag tg">B1</span></td></tr>
+          <tr><td class="de" style="direction:ltr;text-align:right;color:var(--amber)!important;">mithilfe</td><td>بمساعدة</td><td style="direction:ltr;">with the help of</td><td><span class="tag tg">B1</span></td></tr>
+          <tr><td class="de" style="direction:ltr;text-align:right;color:var(--violet)!important;">aufgrund</td><td>بسبب (رسمي)</td><td style="direction:ltr;">due to / because of</td><td><span class="tag tr2">B2</span></td></tr>
+          <tr><td class="de" style="direction:ltr;text-align:right;color:var(--rose)!important;">angesichts</td><td>في ضوء / بالنظر إلى</td><td style="direction:ltr;">in view of</td><td><span class="tag tr2">B2</span></td></tr>
+          <tr><td class="de" style="direction:ltr;text-align:right;color:var(--neut-color)!important;">infolge</td><td>نتيجةً لـ / إثر</td><td style="direction:ltr;">as a result of</td><td><span class="tag tr2">B2</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 3 — KEIN / EIN IN GENITIV
+═══════════════════════════════════════════════ -->
+<section class="cs" id="kein">
+  <div class="sec-hdr">
+    <div class="sec-icon" style="background:var(--amber-soft);color:var(--amber);">🔢</div>
+    <div>
+      <h2 class="sec-title">kein / ein والضمائر الملكية في الجنيتيف</h2>
+      <p class="sec-sub">جدول تفصيلي لجميع أدوات الملكية وnegation في حالة الجنيتيف</p>
+    </div>
+  </div>
+
+  <div class="ibox amber">
+    <p class="ititle">📖 ما الذي لم يُشرح في الملف السابق؟</p>
+    <p class="itext">الملف السابق أعطى مثالاً واحداً فقط على <strong>mein</strong>. هنا نُكمل الجدول الكامل لجميع الضمائر الملكية وأداة النفي <strong>kein</strong> في الجنيتيف، مع شرح كيفية استخدامها في الجمل.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:18px;">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px;">الجدول الكامل — أدوات الملكية في الجنيتيف</h3>
+    <div class="tbl-wrap">
+      <table class="gt">
+        <thead>
+          <tr><th>الضمير / الأداة</th><th><span class="tag tm">مذكر</span></th><th><span class="tag tf">مؤنث</span></th><th><span class="tag tn">محايد</span></th><th><span class="tag tp">جمع</span></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>kein (لا / لم يكن)</td><td class="de hlg">keines</td><td class="de hlf">keiner</td><td class="de hlg">keines</td><td class="de hlf">keiner</td></tr>
+          <tr><td>mein (ملكي / -i)</td><td class="de hlg">meines</td><td class="de hlf">meiner</td><td class="de hlg">meines</td><td class="de hlf">meiner</td></tr>
+          <tr><td>dein (ملكك / -k)</td><td class="de hlg">deines</td><td class="de hlf">deiner</td><td class="de hlg">deines</td><td class="de hlf">deiner</td></tr>
+          <tr><td>sein (ملكه)</td><td class="de hlg">seines</td><td class="de hlf">seiner</td><td class="de hlg">seines</td><td class="de hlf">seiner</td></tr>
+          <tr><td>ihr (ملكها)</td><td class="de hlg">ihres</td><td class="de hlf">ihrer</td><td class="de hlg">ihres</td><td class="de hlf">ihrer</td></tr>
+          <tr><td>unser (ملكنا)</td><td class="de hlg">unseres</td><td class="de hlf">unserer</td><td class="de hlg">unseres</td><td class="de hlf">unserer</td></tr>
+          <tr><td>euer (ملككم)</td><td class="de hlg">eures</td><td class="de hlf">eurer</td><td class="de hlg">eures</td><td class="de hlf">eurer</td></tr>
+          <tr><td>ihr (ملكهم)</td><td class="de hlg">ihres</td><td class="de hlf">ihrer</td><td class="de hlg">ihres</td><td class="de hlf">ihrer</td></tr>
+          <tr><td>Ihr (تعظيم)</td><td class="de hlg">Ihres</td><td class="de hlf">Ihrer</td><td class="de hlg">Ihres</td><td class="de hlf">Ihrer</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ibox green" style="margin-top:14px;margin-bottom:0;">
+      <p class="itext">✅ القاعدة واضحة: <strong style="color:var(--accent)">-es</strong> للمذكر والمحايد / <strong style="color:var(--fem-color)">-er</strong> للمؤنث والجمع — تنطبق على جميع الضمائر.</p>
+    </div>
+  </div>
+
+  <!-- Example sentences -->
+  <div>
+    <h4 style="font-size:.92rem;font-weight:700;color:var(--text-secondary);margin-bottom:12px;">جمل تطبيقية</h4>
+    <div class="sc">
+      <div class="sc-top">
+        <div class="sc-de" dir="ltr">Das ist das Ergebnis <span class="gh">keines Fehlers</span>.</div>
+        <div class="sc-actions"><button class="btn li" onclick="speak('Das ist das Ergebnis keines Fehlers.')">🔊</button></div>
+      </div>
+      <div class="sc-ar">هذه ليست نتيجة أي خطأ. <span style="color:var(--text-muted);font-size:.83rem;">(Fehler = مذكر → keines)</span></div>
+    </div>
+    <div class="sc">
+      <div class="sc-top">
+        <div class="sc-de" dir="ltr">Die Qualität <span class="gh">unseres Produktes</span> ist sehr hoch.</div>
+        <div class="sc-actions"><button class="btn li" onclick="speak('Die Qualität unseres Produktes ist sehr hoch.')">🔊</button></div>
+      </div>
+      <div class="sc-ar">جودة منتجنا عالية جداً. <span style="color:var(--text-muted);font-size:.83rem;">(Produkt = محايد → unseres)</span></div>
+    </div>
+    <div class="sc">
+      <div class="sc-top">
+        <div class="sc-de" dir="ltr">Das ist die Meinung <span class="gh">seiner Mutter</span>.</div>
+        <div class="sc-actions"><button class="btn li" onclick="speak('Das ist die Meinung seiner Mutter.')">🔊</button></div>
+      </div>
+      <div class="sc-ar">هذا رأي أمه. <span style="color:var(--text-muted);font-size:.83rem;">(Mutter = مؤنث → seiner)</span></div>
+    </div>
+    <div class="sc">
+      <div class="sc-top">
+        <div class="sc-de" dir="ltr">Ich kenne den Namen <span class="gh">eurer Schule</span> nicht.</div>
+        <div class="sc-actions"><button class="btn li" onclick="speak('Ich kenne den Namen eurer Schule nicht.')">🔊</button></div>
+      </div>
+      <div class="sc-ar">لا أعرف اسم مدرستكم. <span style="color:var(--text-muted);font-size:.83rem;">(Schule = مؤنث → eurer)</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 4 — N-DEKLINATION
+═══════════════════════════════════════════════ -->
+<section class="cs" id="n-deklination">
+  <div class="sec-hdr">
+    <div class="sec-icon" style="background:var(--rose-soft);color:var(--rose);">⚠️</div>
+    <div>
+      <h2 class="sec-title">N-Deklination — الأسماء الخاصة بالجنيتيف</h2>
+      <p class="sec-sub">فئة من الأسماء المذكرة تتصرّف بشكل مختلف تماماً — لم تُذكر في الملف السابق</p>
+    </div>
+  </div>
+
+  <div class="ibox rose">
+    <p class="ititle">⚠️ ما هي N-Deklination؟</p>
+    <p class="itext">مجموعة خاصة من الأسماء المذكرة تأخذ النهاية <strong style="color:var(--rose);font-family:'Fira Code'">-(e)n</strong> في جميع الحالات (Akkusativ، Dativ، Genitiv) ما عدا Nominativ. في الجنيتيف، بدلاً من إضافة <strong>-s/-es</strong> المعتادة، تأخذ هذه الأسماء <strong>-(e)n</strong>. هذا خطأ شائع جداً!</p>
+  </div>
+
+  <div class="card" style="margin-bottom:18px;">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:14px;">من هي هذه الأسماء؟ — أنواع الأسماء التي تتبع N-Deklination</h3>
+    <div class="tbl-wrap">
+      <table class="gt">
+        <thead>
+          <tr><th>النوع</th><th>الوصف</th><th>أمثلة</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>أسماء ذكور بشرية/حيوانية</td>
+            <td>تنتهي بـ <span class="de">-e</span> وتدل على كائن ذكر</td>
+            <td class="de" style="direction:ltr;">der Junge, der Hase, der Löwe, der Affe</td>
+          </tr>
+          <tr>
+            <td>أصول يونانية/لاتينية</td>
+            <td>تنتهي بـ <span class="de">-ist, -ent, -ant, -at, -oge</span></td>
+            <td class="de" style="direction:ltr;">der Journalist, der Student, der Präsident</td>
+          </tr>
+          <tr>
+            <td>أسماء من أصول أجنبية</td>
+            <td>تنتهي بـ <span class="de">-and, -aut</span> وغيرها</td>
+            <td class="de" style="direction:ltr;">der Mensch, der Held, der Graf</td>
+          </tr>
+          <tr>
+            <td>Herr (استثناء)</td>
+            <td>كلمة خاصة — تأخذ <span class="de">-n</span> في الجمع و<strong>-n/-en</strong> في الجنيتيف</td>
+            <td class="de" style="direction:ltr;">Herr → Herrn (Gen.)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:18px;">
+    <h3 style="font-size:1rem;font-weight:700;margin-bottom:14px;">مقارنة: N-Deklination في الجنيتيف vs الاسم العادي</h3>
+    <div class="tbl-wrap">
+      <table class="gt">
+        <thead>
+          <tr><th>الاسم (Nominativ)</th><th>جنيتيف عادي ❌</th><th>جنيتيف صحيح N-Dekl. ✅</th><th>مثال جملة</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="de">der Student</td>
+            <td class="de" style="color:var(--rose);">des Students ❌</td>
+            <td class="de hlg">des Student<strong>en</strong> ✅</td>
+            <td class="de" style="direction:ltr;font-size:.85rem;">die Note des Studenten</td>
+          </tr>
+          <tr>
+            <td class="de">der Junge</td>
+            <td class="de" style="color:var(--rose);">des Junges ❌</td>
+            <td class="de hlg">des Jung<strong>en</strong> ✅</td>
+            <td class="de" style="direction:ltr;font-size:.85rem;">das Fahrrad des Jungen</td>
+          </tr>
+          <tr>
+            <td class="de">der Präsident</td>
+            <td class="de" style="color:var(--rose);">des Präsidents ❌</td>
+            <td class="de hlg">des Präsident<strong>en</strong> ✅</td>
+            <td class="de" style="direction:ltr;font-size:.85rem;">die Rede des Präsidenten</td>
+          </tr>
+          <tr>
+            <td class="de">der Mensch</td>
+            <td class="de" style="color:var(--rose);">des Menschen ✅</td>
+            <td class="de hlg">des Mensch<strong>en</strong> ✅</td>
+            <td class="de" style="direction:ltr;font-size:.85rem;">die Rechte des Menschen</td>
+          </tr>
+          <tr>
+            <td class="de">der Held</td>
+            <td class="de" style="color:var(--rose);">des Helds ❌</td>
+            <td class="de hlg">des Held<strong>en</strong> ✅</td>
+            <td class="de" style="direction:ltr;font-size:.85rem;">die Geschichte des Helden</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Example sentences -->
+  <div>
+    <h4 style="font-size:.92rem;font-weight:700;color:var(--text-secondary);margin-bottom:12px;">جمل تطبيقية</h4>
+    <div class="sc">
+      <div class="sc-top">
+        <div class="sc-de" dir="ltr">Die Note <span class="gh">des Studenten</span> ist sehr gut.</div>
+        <div class="sc-actions"><button class="btn li" onclick="speak('Die Note des Studenten ist sehr gut.')">🔊</button></div>
+      </div>
+      <div class="sc-ar">درجة الطالب ممتازة. <span style="color:var(--text-muted);font-size:.83rem;">(Student → N-Dekl. → des Studenten)</span></div>
+    </div>
+    <div class="sc">
+      <div class="sc-top">
+        <div class="sc-de" dir="ltr">Das ist die Rede <span class="gh">des Präsidenten</span>.</div>
+        <div class="sc-actions"><button class="btn li" onclick="speak('Das ist die Rede des Präsidenten.')">🔊</button></div>
+      </div>
+      <div class="sc-ar">هذه خطاب الرئيس.</div>
+    </div>
+    <div class="sc">
+      <div class="sc-top">
+        <div class="sc-de" dir="ltr">Das Fahrrad <span class="gh">des Jungen</span> ist neu.</div>
+        <div class="sc-actions"><button class="btn li" onclick="speak('Das Fahrrad des Jungen ist neu.')">🔊</button></div>
+      </div>
+      <div class="sc-ar">دراجة الولد جديدة.</div>
+    </div>
+  </div>
+
+  <div class="ibox amber" style="margin-top:18px;">
+    <p class="ititle">🔑 نقطة الحفظ الذكي</p>
+    <p class="itext">إذا رأيت اسماً مذكراً ينتهي بـ <strong style="direction:ltr;font-family:'Fira Code'">-e, -ist, -ent, -ant, -oge, -at</strong> في الجنيتيف — لا تُضِف -s بل أضِف <strong style="color:var(--amber)">-en</strong> أو فقط <strong style="color:var(--amber)">-n</strong> إذا كان ينتهي بـ -e.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 5 — DOPPELGENITIV & SPECIAL USES
+═══════════════════════════════════════════════ -->
+<section class="cs" id="doppelgenitiv">
+  <div class="sec-hdr">
+    <div class="sec-icon" style="background:var(--cyan-soft);color:var(--cyan);">🔁</div>
+    <div>
+      <h2 class="sec-title">استخدامات خاصة للجنيتيف</h2>
+      <p class="sec-sub">الجنيتيف كموضوع للفعل (Genitivobjekt) + الجنيتيف المزدوج + تعابير ثابتة</p>
+    </div>
+  </div>
+
+  <!-- Genitiv as object -->
+  <div class="concept" style="--accent:var(--cyan);">
+    <div class="concept-label" style="color:var(--cyan);">الاستخدام الأول</div>
+    <div class="concept-title">الجنيتيف كمفعول به للفعل — Genitivobjekt</div>
+    <div class="concept-body">
+      بعض الأفعال في الألمانية تتطلب مفعولاً به في حالة الجنيتيف بدلاً من Akkusativ المعتاد. هذه الأفعال أكثر شيوعاً في الأدب والكتابة الرسمية.
+      <div class="card-grid cg2" style="margin-top:14px;">
+        <div>
+          <p style="font-size:.82rem;font-weight:700;color:var(--cyan);margin-bottom:8px;">أفعال شائعة تأخذ Genitiv</p>
+          <div class="sc">
+            <div class="sc-de" dir="ltr">Er bedarf <span style="color:var(--cyan);font-weight:700;">unserer Hilfe</span>.</div>
+            <div class="sc-ar">هو يحتاج إلى مساعدتنا. <span style="font-size:.82rem;">(bedürfen)</span></div>
+          </div>
+          <div class="sc" style="margin-top:8px;">
+            <div class="sc-de" dir="ltr">Er gedenkt <span style="color:var(--cyan);font-weight:700;">seiner Mutter</span>.</div>
+            <div class="sc-ar">هو يتذكر أمه بتبجيل. <span style="font-size:.82rem;">(gedenken)</span></div>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:.82rem;font-weight:700;color:var(--cyan);margin-bottom:8px;">أفعال أخرى</p>
+          <div style="display:grid;gap:6px;">
+            <div class="ibox cyan" style="padding:10px 14px;margin-bottom:0;">
+              <span class="de" style="direction:ltr;color:var(--cyan);">sich schämen + Gen.</span> — يشعر بالخجل من
+            </div>
+            <div class="ibox cyan" style="padding:10px 14px;margin-bottom:0;">
+              <span class="de" style="direction:ltr;color:var(--cyan);">sich erinnern + Gen.</span> — يتذكر (قديم)
+            </div>
+            <div class="ibox cyan" style="padding:10px 14px;margin-bottom:0;">
+              <span class="de" style="direction:ltr;color:var(--cyan);">anklagen + Gen.</span> — يتهم بـ
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Double Genitiv -->
+  <div class="concept" style="--accent:var(--violet);">
+    <div class="concept-label" style="color:var(--violet);">الاستخدام الثاني</div>
+    <div class="concept-title">الجنيتيف المزدوج — Doppelgenitiv</div>
+    <div class="concept-body">
+      أحياناً يمكن وضع جنيتيفين متتاليين في جملة واحدة — هذا مسموح به لكنه يجعل الجملة ثقيلة. الأفضل استخدام von لتبسيطها.
+      <div class="card-grid cg2" style="margin-top:14px;">
+        <div class="compare-box" style="border-color:var(--violet);">
+          <div class="compare-label" style="color:var(--violet);">الجنيتيف المزدوج (صحيح لكن ثقيل)</div>
+          <div class="sc-de" dir="ltr" style="font-size:.95rem;">Das Auto <strong style="color:var(--violet)">des Freundes meines Vaters</strong> ist kaputt.</div>
+          <div class="sc-ar" style="margin-top:8px;">سيارة صديق والدي معطوبة.</div>
+        </div>
+        <div class="compare-box" style="border-color:var(--green);">
+          <div class="compare-label" style="color:var(--green);">الصياغة الأفضل (باستخدام von)</div>
+          <div class="sc-de" dir="ltr" style="font-size:.95rem;">Das Auto <strong style="color:var(--green)">vom Freund meines Vaters</strong> ist kaputt.</div>
+          <div class="sc-ar" style="margin-top:8px;">نفس المعنى — أكثر سلاسة.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed expressions -->
+  <div class="concept" style="--accent:var(--amber);">
+    <div class="concept-label" style="color:var(--amber);">الاستخدام الثالث</div>
+    <div class="concept-title">تعابير ثابتة بالجنيتيف — Feste Ausdrücke</div>
+    <div class="concept-body">
+      توجد عبارات جاهزة في الألمانية تستخدم الجنيتيف وتُحفظ كوحدة كاملة.
+      <div class="card-grid cg2" style="margin-top:14px;">
+        <div class="sc">
+          <div class="sc-de" dir="ltr">meiner Meinung nach</div>
+          <div class="sc-ar">في رأيي / من وجهة نظري</div>
+        </div>
+        <div class="sc">
+          <div class="sc-de" dir="ltr">erster Klasse fahren</div>
+          <div class="sc-ar">السفر بالدرجة الأولى</div>
+        </div>
+        <div class="sc">
+          <div class="sc-de" dir="ltr">des Nachts / des Morgens</div>
+          <div class="sc-ar">في الليل / في الصباح (رسمي)</div>
+        </div>
+        <div class="sc">
+          <div class="sc-de" dir="ltr">guter Dinge sein</div>
+          <div class="sc-ar">أن تكون في حالة مزاجية جيدة</div>
+        </div>
+        <div class="sc">
+          <div class="sc-de" dir="ltr">schweren Herzens</div>
+          <div class="sc-ar">بقلب ثقيل / بصعوبة</div>
+        </div>
+        <div class="sc">
+          <div class="sc-de" dir="ltr">im Laufe des Jahres</div>
+          <div class="sc-ar">في غضون العام / خلال العام</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Genitiv in formal writing -->
+  <div class="ibox green">
+    <p class="ititle">🎓 الجنيتيف في الكتابة الأكاديمية</p>
+    <p class="itext">في النصوص الأكاديمية والرسمية، الجنيتيف هو الخيار الأول دائماً — ويُعطي انطباعاً بالاحترافية والدقة اللغوية. تجنّب الاستبدال بـ <strong>von + Dativ</strong> في الكتابة الرسمية قدر المستطاع.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 6 — SELF-TEST QUIZ
+═══════════════════════════════════════════════ -->
+<section class="cs" id="quiz">
+  <div class="sec-hdr">
+    <div class="sec-icon" style="background:var(--accent-soft);color:var(--accent);">🧠</div>
+    <div>
+      <h2 class="sec-title">الاختبار الذاتي الشامل — 20 سؤالاً</h2>
+      <p class="sec-sub">يغطي جميع مفاهيم الجنيتيف من الملف السابق والمفاهيم الجديدة</p>
+    </div>
+  </div>
+
+  <div class="quiz-header">
+    <div class="quiz-score">
+      <div>
+        <div class="score-num" id="score-display">0 / 0</div>
+        <div class="score-label">النقاط الحالية</div>
+      </div>
+      <div style="width:1px;height:36px;background:var(--border);"></div>
+      <div style="min-width:120px;">
+        <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+        <div class="score-label" style="margin-top:4px;" id="progress-label">0 من 20 سؤال</div>
+      </div>
+    </div>
+    <button class="restart-btn" onclick="restartQuiz()">🔄 إعادة الاختبار</button>
+  </div>
+
+  <div class="quiz-container" id="quiz-container">
+
+    <!-- Q1 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--accent-soft);color:var(--accent);">الأداة</span>
+      <div class="q-num">1</div>
+      <div class="q-text">ما هي أداة التعريف الصحيحة للمذكر في الجنيتيف؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')" data-val="der">der</div>
+        <div class="opt" onclick="answer(this,'correct')" data-val="des">des</div>
+        <div class="opt" onclick="answer(this,'wrong')" data-val="dem">dem</div>
+        <div class="opt" onclick="answer(this,'wrong')" data-val="den">den</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">des (Genitiv - Maskulin)</div>
+        <div class="answer-text">في الجنيتيف: المذكر والمحايد يأخذان <strong>des</strong>، بينما المؤنث والجمع يأخذان <strong>der</strong>. مثال: <span style="direction:ltr;font-family:'Inter'">das Buch des Mannes</span> (كتاب الرجل).</div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--green-soft);color:var(--green);">الأداة</span>
+      <div class="q-num">2</div>
+      <div class="q-text">أكمل الجملة باختيار الأداة الصحيحة:</div>
+      <div class="q-de">Das ist das Haus ___ Frau.</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">des</div>
+        <div class="opt" onclick="answer(this,'correct')">der</div>
+        <div class="opt" onclick="answer(this,'wrong')">dem</div>
+        <div class="opt" onclick="answer(this,'wrong')">die</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">Das ist das Haus der Frau.</div>
+        <div class="answer-text">Frau (امرأة) = مؤنث. في الجنيتيف، المؤنث يأخذ <strong style="color:var(--fem-color)">der</strong>. المعنى: هذا بيت المرأة.</div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--amber-soft);color:var(--amber);">نهاية الاسم</span>
+      <div class="q-num">3</div>
+      <div class="q-text">كيف تصبح كلمة "das Haus" في الجنيتيف؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">des Hauss</div>
+        <div class="opt" onclick="answer(this,'correct')">des Hauses</div>
+        <div class="opt" onclick="answer(this,'wrong')">des Haus</div>
+        <div class="opt" onclick="answer(this,'wrong')">des Hauses'</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">des Hauses</div>
+        <div class="answer-text">Haus تنتهي بـ <strong>-s</strong> — هذه نهاية صفيرية تجعل إضافة -s وحدها صعبة النطق. لذا تأخذ <strong>-es</strong> لتسهيل النطق: Haus → Hauses.</div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--violet-soft);color:var(--violet);">حرف الجر</span>
+      <div class="q-num">4</div>
+      <div class="q-text">أي حرف جر يعني "بدلاً من" ويتبعه الجنيتيف؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">wegen</div>
+        <div class="opt" onclick="answer(this,'wrong')">trotz</div>
+        <div class="opt" onclick="answer(this,'correct')">statt</div>
+        <div class="opt" onclick="answer(this,'wrong')">während</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">statt / anstatt</div>
+        <div class="answer-text"><strong>statt</strong> و<strong>anstatt</strong> كلاهما يعني "بدلاً من" ويتطلبان الجنيتيف. مثال: <span style="direction:ltr;font-family:'Inter'">Statt des Kaffees trinke ich Tee.</span> (بدلاً من القهوة أشرب الشاي).</div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--rose-soft);color:var(--rose);">N-Deklination</span>
+      <div class="q-num">5</div>
+      <div class="q-text">ما هو الشكل الصحيح للجنيتيف لكلمة "der Student"؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">des Students</div>
+        <div class="opt" onclick="answer(this,'correct')">des Studenten</div>
+        <div class="opt" onclick="answer(this,'wrong')">des Studentens</div>
+        <div class="opt" onclick="answer(this,'wrong')">des Student</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">des Studenten</div>
+        <div class="answer-text">Student ينتهي بـ <strong>-ent</strong> — وهذا يجعله من مجموعة N-Deklination. هذه الأسماء لا تأخذ -s/-es في الجنيتيف بل تأخذ <strong>-en</strong>: Student → Studenten. مثال: die Note des Studenten (درجة الطالب).</div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--cyan-soft);color:var(--cyan);">اسم خاص</span>
+      <div class="q-num">6</div>
+      <div class="q-text">كيف نعبّر عن ملكية اسم شخص "Thomas" (ينتهي بـ s)؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">Thomass Auto</div>
+        <div class="opt" onclick="answer(this,'correct')">Thomas' Auto</div>
+        <div class="opt" onclick="answer(this,'wrong')">des Thomas Auto</div>
+        <div class="opt" onclick="answer(this,'wrong')">Thomas Auto</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">Thomas' Auto</div>
+        <div class="answer-text">عندما ينتهي الاسم الخاص بـ <strong>s</strong>، نضع فاصلة عليا (Apostroph) فقط بدون إضافة s أخرى: Thomas' Auto (سيارة توماس). نفس القاعدة: Klaus' Haus, Lias' Mantel.</div>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--masc-soft);color:var(--masc-color);">صفة الجنيتيف</span>
+      <div class="q-num">7</div>
+      <div class="q-text">أكمل الجملة بالشكل الصحيح للصفة:</div>
+      <div class="q-de">Die Meinung des alt___ Lehrers ist wichtig.</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">-e</div>
+        <div class="opt" onclick="answer(this,'correct')">-en</div>
+        <div class="opt" onclick="answer(this,'wrong')">-er</div>
+        <div class="opt" onclick="answer(this,'wrong')">-em</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">alten — des alten Lehrers</div>
+        <div class="answer-text">بعد الأداة المعرّفة في الجنيتيف (des)، الصفة تأخذ دائماً <strong>-en</strong> بغض النظر عن الجنس. Lehrer = مذكر، des = أداة جنيتيف مذكر → الصفة: alt<strong>en</strong>.</div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--amber-soft);color:var(--amber);">حرف الجر</span>
+      <div class="q-num">8</div>
+      <div class="q-text">أي من هذه الجمل يستخدم حرف الجر "außerhalb" بشكل صحيح؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'correct')" style="font-family:'Inter';direction:ltr;">Er wohnt außerhalb der Stadt.</div>
+        <div class="opt" onclick="answer(this,'wrong')" style="font-family:'Inter';direction:ltr;">Er wohnt außerhalb die Stadt.</div>
+        <div class="opt" onclick="answer(this,'wrong')" style="font-family:'Inter';direction:ltr;">Er wohnt außerhalb dem Stadt.</div>
+        <div class="opt" onclick="answer(this,'wrong')" style="font-family:'Inter';direction:ltr;">Er wohnt außerhalb den Stadt.</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">außerhalb der Stadt</div>
+        <div class="answer-text"><strong>außerhalb</strong> يتطلب الجنيتيف. Stadt = مؤنث، لذا أداة الجنيتيف المؤنثة هي <strong>der</strong>. ترجمة: "هو يسكن خارج المدينة".</div>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--green-soft);color:var(--green);">الملكية</span>
+      <div class="q-num">9</div>
+      <div class="q-text">ما هو شكل "mein" (مذكر) في الجنيتيف؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">meinem</div>
+        <div class="opt" onclick="answer(this,'correct')">meines</div>
+        <div class="opt" onclick="answer(this,'wrong')">meinen</div>
+        <div class="opt" onclick="answer(this,'wrong')">meine</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">meines (مذكر / محايد)</div>
+        <div class="answer-text">الضمائر الملكية في الجنيتيف: <strong>-es</strong> للمذكر والمحايد، <strong>-er</strong> للمؤنث والجمع. مثال: wegen meines Bruders (بسبب أخي).</div>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--violet-soft);color:var(--violet);">البديل</span>
+      <div class="q-num">10</div>
+      <div class="q-text">ما هو البديل المحكي لـ "das Haus des Mannes"؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')" style="font-family:'Inter';direction:ltr;">das Haus des von Mann</div>
+        <div class="opt" onclick="answer(this,'correct')" style="font-family:'Inter';direction:ltr;">das Haus von dem Mann</div>
+        <div class="opt" onclick="answer(this,'wrong')" style="font-family:'Inter';direction:ltr;">das Haus von des Mannes</div>
+        <div class="opt" onclick="answer(this,'wrong')" style="font-family:'Inter';direction:ltr;">das Haus bei dem Mann</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">das Haus von dem Mann (= vom Mann)</div>
+        <div class="answer-text">في اللغة المحكية، يُستبدل الجنيتيف بـ <strong>von + Dativ</strong>. Mann = مذكر، Dativ مذكر = dem. وكثيراً ما ندمجهما: von dem = <strong>vom</strong>.</div>
+      </div>
+    </div>
+
+    <!-- Q11 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--orange-soft);color:var(--orange);">نهاية الاسم</span>
+      <div class="q-num">11</div>
+      <div class="q-text">كيف تصبح كلمة "der Mantel" في الجنيتيف؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">des Manteles</div>
+        <div class="opt" onclick="answer(this,'correct')">des Mantels</div>
+        <div class="opt" onclick="answer(this,'wrong')">des Mantels'</div>
+        <div class="opt" onclick="answer(this,'wrong')">des Mantel</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">des Mantels</div>
+        <div class="answer-text">Mantel ينتهي بـ <strong>-el</strong> — وهذه كلمات تأخذ <strong>-s</strong> فقط (ليس -es). القاعدة: الكلمات التي تنتهي بـ -el، -en، -er تأخذ -s. مثال: des Mantels (المعطف).</div>
+      </div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--accent-soft);color:var(--accent);">حرف الجر</span>
+      <div class="q-num">12</div>
+      <div class="q-text">أكمل الجملة بالشكل الصحيح:</div>
+      <div class="q-de">Aufgrund ___ schlechten Wetters blieb er zu Hause.</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">der</div>
+        <div class="opt" onclick="answer(this,'correct')">des</div>
+        <div class="opt" onclick="answer(this,'wrong')">dem</div>
+        <div class="opt" onclick="answer(this,'wrong')">die</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">des — aufgrund des schlechten Wetters</div>
+        <div class="answer-text"><strong>aufgrund</strong> يتطلب الجنيتيف. Wetter = محايد (das Wetter)، في الجنيتيف تصبح أداته <strong>des</strong>. المعنى: بسبب الطقس السيئ، بقي في المنزل.</div>
+      </div>
+    </div>
+
+    <!-- Q13 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--rose-soft);color:var(--rose);">N-Deklination</span>
+      <div class="q-num">13</div>
+      <div class="q-text">أي من هذه الأسماء ينتمي إلى N-Deklination؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">der Tisch</div>
+        <div class="opt" onclick="answer(this,'wrong')">das Kind</div>
+        <div class="opt" onclick="answer(this,'correct')">der Journalist</div>
+        <div class="opt" onclick="answer(this,'wrong')">die Frau</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">der Journalist (des Journalisten)</div>
+        <div class="answer-text">Journalist ينتهي بـ <strong>-ist</strong> — وهي من النهايات التي تضع الاسم في N-Deklination. لذا في الجنيتيف: des Journalist<strong>en</strong>. N-Deklination تشمل الأسماء المذكرة فقط.</div>
+      </div>
+    </div>
+
+    <!-- Q14 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--masc-soft);color:var(--masc-color);">الاستفهام</span>
+      <div class="q-num">14</div>
+      <div class="q-text">ما هي كلمة الاستفهام الخاصة بالجنيتيف؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">Wen?</div>
+        <div class="opt" onclick="answer(this,'wrong')">Wem?</div>
+        <div class="opt" onclick="answer(this,'correct')">Wessen?</div>
+        <div class="opt" onclick="answer(this,'wrong')">Wer?</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">Wessen? (لمن؟ / ملكية من؟)</div>
+        <div class="answer-text">الحالات الأربع وكلمات استفهامها: Wer؟ = Nominativ / Wen؟ = Akkusativ / Wem؟ = Dativ / <strong>Wessen؟ = Genitiv</strong>. مثال: Wessen Auto ist das? → Das ist Miras Auto.</div>
+      </div>
+    </div>
+
+    <!-- Q15 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--cyan-soft);color:var(--cyan);">حرف الجر</span>
+      <div class="q-num">15</div>
+      <div class="q-text">ما معنى حرف الجر "innerhalb" في الجملة: "innerhalb einer Woche"؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">خارج أسبوع</div>
+        <div class="opt" onclick="answer(this,'correct')">في غضون أسبوع / ضمن أسبوع</div>
+        <div class="opt" onclick="answer(this,'wrong')">بسبب الأسبوع</div>
+        <div class="opt" onclick="answer(this,'wrong')">رغم الأسبوع</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">innerhalb = داخل / في غضون (ضمن)</div>
+        <div class="answer-text"><strong>innerhalb</strong> يعني "داخل الحدود" أو "في غضون" للزمن. <strong>außerhalb</strong> = خارج. كلاهما يتطلب الجنيتيف. مثال: innerhalb des Gebäudes (داخل المبنى)، innerhalb einer Stunde (في غضون ساعة).</div>
+      </div>
+    </div>
+
+    <!-- Q16 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--green-soft);color:var(--green);">صفة الجنيتيف</span>
+      <div class="q-num">16</div>
+      <div class="q-text">أكمل الجملة: "Die Qualität ___ deutschen Produkte ist bekannt." (أدوات: der, des, dem, die)</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'correct')">der</div>
+        <div class="opt" onclick="answer(this,'wrong')">des</div>
+        <div class="opt" onclick="answer(this,'wrong')">die</div>
+        <div class="opt" onclick="answer(this,'wrong')">dem</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">der deutschen Produkte</div>
+        <div class="answer-text">Produkte = جمع، في الجنيتيف الجمع تأخذ الأداة <strong>der</strong>. الصفة بعد der = <strong>-en</strong>: deutschen. جودة المنتجات الألمانية معروفة.</div>
+      </div>
+    </div>
+
+    <!-- Q17 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--amber-soft);color:var(--amber);">تعبير ثابت</span>
+      <div class="q-num">17</div>
+      <div class="q-text">ما معنى التعبير الثابت "meiner Meinung nach"؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">بعد رأيي</div>
+        <div class="opt" onclick="answer(this,'correct')">في رأيي / من وجهة نظري</div>
+        <div class="opt" onclick="answer(this,'wrong')">دون رأيي</div>
+        <div class="opt" onclick="answer(this,'wrong')">رغم رأيي</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">meiner Meinung nach = في رأيي</div>
+        <div class="answer-text">هذا تعبير ثابت يُستخدم كثيراً في المحادثة والكتابة. يأتي حرف nach بعد الاسم المجرور: meiner Meinung<strong> nach</strong>. مثال: Meiner Meinung nach ist das richtig. (في رأيي هذا صحيح).</div>
+      </div>
+    </div>
+
+    <!-- Q18 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--violet-soft);color:var(--violet);">مقارنة</span>
+      <div class="q-num">18</div>
+      <div class="q-text">ما الفرق بين "wegen" و "aufgrund"؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">wegen يتطلب Dativ و aufgrund يتطلب Genitiv</div>
+        <div class="opt" onclick="answer(this,'correct')">كلاهما يتطلب Genitiv لكن aufgrund أكثر رسمية</div>
+        <div class="opt" onclick="answer(this,'wrong')">wegen أكثر رسمية من aufgrund</div>
+        <div class="opt" onclick="answer(this,'wrong')">لا فرق بينهما على الإطلاق</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">كلاهما Genitiv — aufgrund أكثر رسمية</div>
+        <div class="answer-text">كلا الحرفين يعنيان "بسبب" ويتطلبان الجنيتيف. الفرق: <strong>wegen</strong> شائع في اللغة اليومية والمحكية، بينما <strong>aufgrund</strong> أكثر رسمية وأكاديمية ويُستخدم في الكتابة الرسمية والتقارير.</div>
+      </div>
+    </div>
+
+    <!-- Q19 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--rose-soft);color:var(--rose);">صفة بلا أداة</span>
+      <div class="q-num">19</div>
+      <div class="q-text">في التعبير "ein Glas kalten Wassers" — لماذا الصفة "kalt" تأخذ "-en"؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')">لأن Wasser مذكر</div>
+        <div class="opt" onclick="answer(this,'wrong')">لأن الجملة استفهامية</div>
+        <div class="opt" onclick="answer(this,'correct')">لأن Wasser محايد وهذا Starke Deklination (بدون أداة)</div>
+        <div class="opt" onclick="answer(this,'wrong')">لأن الجملة في المضارع</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">Starke Deklination — Wasser محايد → -en</div>
+        <div class="answer-text">في التصريف القوي (Starke Deklination — بدون أداة)، في الجنيتيف: المحايد والمذكر يأخذان <strong>-en</strong>، المؤنث والجمع يأخذان <strong>-er</strong>. Wasser = محايد → kalt<strong>en</strong> Wassers.</div>
+      </div>
+    </div>
+
+    <!-- Q20 -->
+    <div class="q-card" data-answered="false">
+      <span class="q-type-badge" style="background:var(--accent-soft);color:var(--accent);">شامل</span>
+      <div class="q-num">20</div>
+      <div class="q-text">أي من هذه الجمل صحيحة نحوياً (Genitiv صحيح)؟</div>
+      <div class="options">
+        <div class="opt" onclick="answer(this,'wrong')" style="font-family:'Inter';direction:ltr;">Wegen dem Regen bleibe ich zu Hause.</div>
+        <div class="opt" onclick="answer(this,'correct')" style="font-family:'Inter';direction:ltr;">Trotz des Regens gehe ich spazieren.</div>
+        <div class="opt" onclick="answer(this,'wrong')" style="font-family:'Inter';direction:ltr;">Während die Arbeit hörte ich Musik.</div>
+        <div class="opt" onclick="answer(this,'wrong')" style="font-family:'Inter';direction:ltr;">Statt dem Kaffee trinke ich Tee.</div>
+      </div>
+      <button class="answer-reveal" onclick="toggleAnswer(this)">👁️ عرض الشرح</button>
+      <div class="answer-box">
+        <div class="answer-label">✅ الإجابة الصحيحة</div>
+        <div class="answer-de">Trotz des Regens gehe ich spazieren.</div>
+        <div class="answer-text">
+          تحليل الأخطاء:<br/>
+          ❌ <strong>Wegen dem Regen</strong> — خطأ شائع: wegen يتطلب الجنيتيف (des Regens)، ليس Dativ.<br/>
+          ✅ <strong>Trotz des Regens</strong> — صحيح: trotz + Genitiv.<br/>
+          ❌ <strong>Während die Arbeit</strong> — خطأ: während + Genitiv (der Arbeit)، ليس Nominativ.<br/>
+          ❌ <strong>Statt dem Kaffee</strong> — خطأ: statt + Genitiv (des Kaffees)، ليس Dativ.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end quiz-container -->
+
+  <!-- Results Panel -->
+  <div class="results-panel" id="results-panel">
+    <div class="results-emoji" id="results-emoji">🏆</div>
+    <div class="results-title" id="results-title">أحسنت!</div>
+    <div class="results-score" id="results-score">0 / 20</div>
+    <div class="results-msg" id="results-msg">استمر في التعلم!</div>
+    <button class="restart-btn" onclick="restartQuiz()">🔄 أعد الاختبار من جديد</button>
+  </div>
+
+</section>
+
+<!-- FINAL SUMMARY CARD -->
+<div class="divider"></div>
+<section class="cs">
+  <div class="sec-hdr">
+    <div class="sec-icon" style="background:var(--green-soft);color:var(--green);">📋</div>
+    <div>
+      <h2 class="sec-title">الملخص الكامل — كل ما تحتاج معرفته</h2>
+      <p class="sec-sub">المفاهيم الجديدة مقارنة بالملف السابق</p>
+    </div>
+  </div>
+  <div class="card-grid cg2">
+    <div class="ibox blue" style="margin-bottom:0;">
+      <p class="ititle" style="color:var(--accent);">📐 الجديد 1: تصريف الصفة</p>
+      <p class="itext">
+        • بعد der/des/der: الصفة + <strong>-en</strong> دائماً<br/>
+        • بعد ein/mein/kein: الصفة + <strong>-en</strong> دائماً<br/>
+        • بدون أداة: م/مح → -en، مؤ/ج → -er
+      </p>
+    </div>
+    <div class="ibox rose" style="margin-bottom:0;">
+      <p class="ititle" style="color:var(--rose);">⚠️ الجديد 2: N-Deklination</p>
+      <p class="itext">
+        • الأسماء: -ist، -ent، -ant، -oge، -e (ذكور)<br/>
+        • تأخذ -en في الجنيتيف بدلاً من -s<br/>
+        • مثال: Studenten، Journalisten، Jungen
+      </p>
+    </div>
+    <div class="ibox violet" style="margin-bottom:0;">
+      <p class="ititle" style="color:var(--violet);">🔗 الجديد 3: حروف جر إضافية</p>
+      <p class="itext">
+        • außerhalb (خارج)، innerhalb (داخل)<br/>
+        • statt/anstatt (بدلاً من)<br/>
+        • aufgrund (رسمي: بسبب)<br/>
+        • mithilfe، angesichts، infolge
+      </p>
+    </div>
+    <div class="ibox cyan" style="margin-bottom:0;">
+      <p class="ititle" style="color:var(--cyan);">🔢 الجديد 4: جدول كامل للملكية</p>
+      <p class="itext">
+        • كل الضمائر: mein، dein، sein، ihr، unser، euer<br/>
+        • + kein (النفي)<br/>
+        • م/مح: -es / مؤ/ج: -er
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>🇩🇪 الجنيتيف المتقدم — مفاهيم جديدة + اختبار ذاتي شامل | تعلم الألمانية بطريقة منهجية</p>
+  <p style="margin-top:6px;color:var(--text-muted);">يُكمّل هذا الملف شرح الجنيتيف السابق بمفاهيم لم تُغطَّ من قبل</p>
+</footer>
+
+<div class="toast" id="toast">✅ تم النسخ!</div>
+
+<script>
+// ── THEME ──────────────────────────────────────────────
+const html = document.documentElement;
+const toggle = document.getElementById('theme-toggle');
+const stored = localStorage.getItem('genitiv-adv-theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let isDark = stored ? stored === 'dark' : prefersDark;
+function applyTheme() {
+  html.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  toggle.textContent = isDark ? '☀️' : '🌙';
+}
+applyTheme();
+toggle.addEventListener('click', () => {
+  isDark = !isDark;
+  localStorage.setItem('genitiv-adv-theme', isDark ? 'dark' : 'light');
+  applyTheme();
+});
+
+// ── HAMBURGER ──────────────────────────────────────────
+const burger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+burger.addEventListener('click', () => {
+  const open = mobileNav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+});
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => { mobileNav.classList.remove('open'); burger.setAttribute('aria-expanded', false); });
+});
+
+// ── PROGRESS BAR ───────────────────────────────────────
+const bar = document.getElementById('pbar');
+window.addEventListener('scroll', () => {
+  const max = document.body.scrollHeight - window.innerHeight;
+  bar.style.width = max > 0 ? (window.scrollY / max * 100) + '%' : '0%';
+}, { passive: true });
+
+// ── ACTIVE NAV ──────────────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+function setActive() {
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+  navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+}
+window.addEventListener('scroll', setActive, { passive: true });
+
+// ── INTERSECTION OBSERVER ──────────────────────────────
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.style.animationPlayState = 'running'; });
+}, { threshold: 0.08 });
+document.querySelectorAll('.cs').forEach(s => {
+  s.style.animationPlayState = 'paused';
+  obs.observe(s);
+});
+
+// ── TTS ────────────────────────────────────────────────
+function speak(text) {
+  if (!window.speechSynthesis) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'de-DE'; u.rate = 0.82; u.pitch = 1;
+  speechSynthesis.speak(u);
+}
+
+// ── COPY ───────────────────────────────────────────────
+function copyText(text, btn) {
+  const orig = btn.innerHTML;
+  function ok() {
+    btn.innerHTML = '✅'; btn.classList.add('copied');
+    showToast();
+    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 2000);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(ok).catch(() => fallback(text, ok));
+  } else { fallback(text, ok); }
+}
+function fallback(text, cb) {
+  const el = document.createElement('textarea');
+  el.value = text; el.style.cssText = 'position:fixed;top:-9999px;opacity:0;';
+  document.body.appendChild(el); el.focus(); el.select();
+  try { document.execCommand('copy'); cb(); } catch(e) {}
+  document.body.removeChild(el);
+}
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+// ── QUIZ ───────────────────────────────────────────────
+let score = 0;
+let answered = 0;
+const TOTAL = 20;
+
+function answer(el, type) {
+  const card = el.closest('.q-card');
+  if (card.getAttribute('data-answered') === 'true') return;
+  card.setAttribute('data-answered', 'true');
+  const opts = card.querySelectorAll('.opt');
+  opts.forEach(o => { o.classList.add('answered'); o.disabled = true; });
+  if (type === 'correct') {
+    el.classList.add('correct');
+    score++;
+  } else {
+    el.classList.add('wrong');
+    // reveal correct
+    opts.forEach(o => {
+      if (o.getAttribute('data-val') !== el.getAttribute('data-val')) {
+        // Try to find the correct one dynamically
+      }
+    });
+    // Find and highlight correct option
+    const allOpts = card.querySelectorAll('.opt');
+    allOpts.forEach(o => {
+      if (o.onclick && o.onclick.toString().includes('correct')) {
+        o.classList.add('show-correct');
+      }
+    });
+  }
+  answered++;
+  updateProgress();
+  // Auto-open answer
+  const revealBtn = card.querySelector('.answer-reveal');
+  const answerBox = card.querySelector('.answer-box');
+  if (revealBtn && answerBox) {
+    setTimeout(() => { answerBox.classList.add('open'); }, 600);
+  }
+  if (answered === TOTAL) {
+    setTimeout(showResults, 800);
+  }
+}
+
+function updateProgress() {
+  document.getElementById('score-display').textContent = score + ' / ' + answered;
+  const pct = (answered / TOTAL * 100).toFixed(0);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = answered + ' من ' + TOTAL + ' سؤال';
+}
+
+function toggleAnswer(btn) {
+  const box = btn.nextElementSibling;
+  box.classList.toggle('open');
+  btn.textContent = box.classList.contains('open') ? '🙈 إخفاء الشرح' : '👁️ عرض الشرح';
+}
+
+function showResults() {
+  const panel = document.getElementById('results-panel');
+  panel.classList.add('show');
+  document.getElementById('results-score').textContent = score + ' / ' + TOTAL;
+  let emoji, title, msg;
+  const pct = (score / TOTAL * 100);
+  if (pct >= 90) { emoji = '🏆'; title = 'ممتاز! أنت محترف في الجنيتيف!'; msg = 'نتيجة رائعة — أنت تتقن مفاهيم الجنيتيف بشكل ممتاز. استمر هكذا!'; }
+  else if (pct >= 75) { emoji = '🌟'; title = 'جيد جداً! مستوى متقدم!'; msg = 'أداء قوي. راجع الأسئلة التي أخطأت فيها لتحقيق النتيجة الكاملة!'; }
+  else if (pct >= 60) { emoji = '👍'; title = 'جيد! مستوى متوسط.'; msg = 'أداء مقبول. راجع أقسام تصريف الصفة وN-Deklination وحروف الجر.'; }
+  else if (pct >= 40) { emoji = '📚'; title = 'يحتاج مراجعة.'; msg = 'راجع الملف بعناية، ركّز على قواعد الأدوات ونهايات الأسماء وتصريف الصفات.'; }
+  else { emoji = '💪'; title = 'لا تستسلم! ابدأ من جديد.'; msg = 'الجنيتيف موضوع يحتاج وقتاً. راجع الشرح من البداية وأعد الاختبار.'; }
+  document.getElementById('results-emoji').textContent = emoji;
+  document.getElementById('results-title').textContent = title;
+  document.getElementById('results-msg').textContent = msg;
+  panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function restartQuiz() {
+  score = 0; answered = 0;
+  document.getElementById('score-display').textContent = '0 / 0';
+  document.getElementById('progress-fill').style.width = '0%';
+  document.getElementById('progress-label').textContent = '0 من ' + TOTAL + ' سؤال';
+  document.getElementById('results-panel').classList.remove('show');
+  const cards = document.querySelectorAll('.q-card');
+  cards.forEach(card => {
+    card.setAttribute('data-answered', 'false');
+    const opts = card.querySelectorAll('.opt');
+    opts.forEach(o => {
+      o.classList.remove('correct', 'wrong', 'show-correct', 'answered');
+      o.disabled = false;
+    });
+    const box = card.querySelector('.answer-box');
+    const btn = card.querySelector('.answer-reveal');
+    if (box) box.classList.remove('open');
+    if (btn) btn.textContent = '👁️ عرض الشرح';
+  });
+  document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Fix: properly identify correct options by re-reading onclick
+document.querySelectorAll('.opt').forEach(opt => {
+  const fn = opt.getAttribute('onclick');
+  if (fn && fn.includes("'correct'")) {
+    opt._isCorrect = true;
+  }
+});
+
+// Override answer to properly show correct option
+const origAnswer = answer;
+window.answer = function(el, type) {
+  const card = el.closest('.q-card');
+  if (card.getAttribute('data-answered') === 'true') return;
+  card.setAttribute('data-answered', 'true');
+  const opts = card.querySelectorAll('.opt');
+  opts.forEach(o => { o.classList.add('answered'); o.disabled = true; });
+  if (type === 'correct') {
+    el.classList.add('correct');
+    score++;
+  } else {
+    el.classList.add('wrong');
+    // Find and show correct
+    opts.forEach(o => {
+      if (o._isCorrect) o.classList.add('show-correct');
+    });
+  }
+  answered++;
+  updateProgress();
+  const answerBox = card.querySelector('.answer-box');
+  if (answerBox) setTimeout(() => answerBox.classList.add('open'), 700);
+  if (answered === TOTAL) setTimeout(showResults, 800);
+};
+
+// Mark correct options at load time
+document.querySelectorAll('.opt').forEach(opt => {
+  const fn = opt.getAttribute('onclick') || '';
+  if (fn.includes("'correct'")) opt._isCorrect = true;
+});
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-genitiv-advanced-test" data-category="grammatik" data-title="الجنيتيف المتقدم — اختبار ذاتي" data-root="../../" defer></script>
+</body>
+</html>

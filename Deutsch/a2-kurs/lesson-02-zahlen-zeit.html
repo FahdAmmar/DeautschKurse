@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الألمانية A2 — الدرس الثاني: الأرقام والوقت</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080c10;
+  --bg2: #0e1420;
+  --bg3: #141c2e;
+  --bg4: #1c2640;
+  --card: #111827;
+  --border: rgba(99,179,255,0.08);
+  --border2: rgba(99,179,255,0.18);
+  --blue: #4fa8f5;
+  --blue2: #7ec3ff;
+  --blue-dim: rgba(79,168,245,0.1);
+  --mint: #3df5c4;
+  --mint-dim: rgba(61,245,196,0.1);
+  --amber: #f5b73d;
+  --amber-dim: rgba(245,183,61,0.1);
+  --rose: #f56c7a;
+  --rose-dim: rgba(245,108,122,0.1);
+  --violet: #b47df5;
+  --violet-dim: rgba(180,125,245,0.1);
+  --text: #e8eef8;
+  --text2: #8ba0be;
+  --text3: #4a607a;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 8px 40px rgba(0,0,0,0.6);
+  --glow: 0 0 40px rgba(79,168,245,0.12);
+}
+[data-theme="light"] {
+  --bg: #f0f4fa;
+  --bg2: #e4eaf5;
+  --bg3: #dae2f0;
+  --bg4: #cdd8ec;
+  --card: #ffffff;
+  --border: rgba(30,90,180,0.08);
+  --border2: rgba(30,90,180,0.16);
+  --blue: #1a6fd4;
+  --blue2: #0d55b0;
+  --blue-dim: rgba(26,111,212,0.08);
+  --mint: #0a9e7a;
+  --mint-dim: rgba(10,158,122,0.08);
+  --amber: #c07810;
+  --amber-dim: rgba(192,120,16,0.08);
+  --rose: #c4304a;
+  --rose-dim: rgba(196,48,74,0.08);
+  --violet: #7040c4;
+  --violet-dim: rgba(112,64,196,0.08);
+  --text: #0c1828;
+  --text2: #3a5070;
+  --text3: #8090a8;
+  --shadow: 0 4px 24px rgba(0,0,0,0.1);
+  --glow: none;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  direction: rtl;
+  transition: background 0.4s, color 0.4s;
+  overflow-x: hidden;
+}
+
+/* Animated background grid */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(79,168,245,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79,168,245,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="light"] body::before { opacity: 0.4; }
+
+#progress-bar {
+  position: fixed; top:0; right:0; left:0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--mint), var(--amber));
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: 1000;
+}
+
+nav {
+  position: sticky; top:0; z-index:100;
+  background: rgba(8,12,16,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border2);
+  padding: 0 2rem;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+[data-theme="light"] nav {
+  background: rgba(240,244,250,0.92);
+}
+
+.nav-brand {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-weight: 800; font-size: 1rem;
+}
+
+.nav-brand .lesson-num {
+  background: var(--blue-dim);
+  border: 1px solid var(--border2);
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+.nav-links { display:flex; gap:1.5rem; list-style:none; }
+.nav-links a {
+  font-size: 0.85rem; color: var(--text2);
+  text-decoration: none; font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--blue); }
+
+.theme-btn {
+  width:36px; height:36px; border-radius:50%;
+  border: 1px solid var(--border2);
+  background: var(--bg3); color: var(--text2);
+  cursor: pointer; display:flex; align-items:center;
+  justify-content:center; font-size:1rem;
+  transition: all 0.2s;
+}
+.theme-btn:hover { background:var(--bg4); color:var(--text); }
+
+/* Hero */
+.hero {
+  position: relative; z-index:1;
+  padding: 5rem 2rem 3.5rem;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.hero-chip {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--blue-dim);
+  border: 1px solid var(--border2);
+  color: var(--blue);
+  padding: 5px 18px;
+  border-radius: 30px;
+  font-size: 0.8rem; font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.04em;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  animation: fadeUp 0.7s ease 0.1s both;
+}
+
+.hero h1 .accent {
+  background: linear-gradient(135deg, var(--blue), var(--mint));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  color: var(--text2);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  animation: fadeUp 0.7s ease 0.2s both;
+}
+
+.hero-pills {
+  display: flex; justify-content:center; gap:0.75rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.7s ease 0.3s both;
+}
+
+.pill {
+  display: flex; align-items:center; gap:0.4rem;
+  padding: 7px 16px;
+  border-radius: 30px;
+  font-size: 0.82rem; font-weight: 600;
+  border: 1px solid;
+}
+.pill.blue { background: var(--blue-dim); color: var(--blue); border-color: rgba(79,168,245,0.25); }
+.pill.mint { background: var(--mint-dim); color: var(--mint); border-color: rgba(61,245,196,0.25); }
+.pill.amber { background: var(--amber-dim); color: var(--amber); border-color: rgba(245,183,61,0.25); }
+.pill.violet { background: var(--violet-dim); color: var(--violet); border-color: rgba(180,125,245,0.25); }
+
+/* Main */
+main {
+  position: relative; z-index:1;
+  max-width: 940px; margin: 0 auto;
+  padding: 1rem 2rem 4rem;
+  display: flex; flex-direction:column; gap:3rem;
+}
+
+/* Section header */
+.sec-header {
+  display: flex; align-items:center; gap:1rem;
+  margin-bottom: 1.5rem;
+}
+.sec-icon {
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  display: flex; align-items:center; justify-content:center;
+  font-size: 1.3rem; flex-shrink:0;
+}
+.si-blue { background:var(--blue-dim); border:1px solid rgba(79,168,245,0.2); }
+.si-mint { background:var(--mint-dim); border:1px solid rgba(61,245,196,0.2); }
+.si-amber { background:var(--amber-dim); border:1px solid rgba(245,183,61,0.2); }
+.si-rose { background:var(--rose-dim); border:1px solid rgba(245,108,122,0.2); }
+.si-violet { background:var(--violet-dim); border:1px solid rgba(180,125,245,0.2); }
+
+.sec-meta h2 { font-size:1.25rem; font-weight:800; }
+.sec-meta p { font-size:0.83rem; color:var(--text2); margin-top:2px; }
+
+/* Card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  animation: fadeUp 0.6s ease both;
+}
+.card:hover {
+  border-color: var(--border2);
+  box-shadow: var(--glow);
+}
+
+/* Numbers grid */
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+.num-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.num-card::after {
+  content: '';
+  position: absolute; bottom:0; left:0; right:0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--mint));
+  transform: scaleX(0);
+  transition: transform 0.25s;
+}
+.num-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+.num-card:hover::after { transform: scaleX(1); }
+
+.num-arabic { font-size: 1.6rem; font-weight: 900; color: var(--blue); display: block; line-height:1; }
+.num-de { font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; color: var(--text); margin: 6px 0 2px; display:block; direction:ltr; }
+.num-ar { font-size: 0.78rem; color: var(--text2); display:block; }
+
+/* Tip box */
+.tip {
+  display: flex; gap: 1rem; align-items:flex-start;
+  padding: 1.1rem 1.3rem;
+  border-radius: var(--radius-sm);
+  margin: 1rem 0;
+}
+.tip.blue { background: var(--blue-dim); border: 1px solid rgba(79,168,245,0.2); }
+.tip.amber { background: var(--amber-dim); border: 1px solid rgba(245,183,61,0.2); }
+.tip.mint { background: var(--mint-dim); border: 1px solid rgba(61,245,196,0.2); }
+.tip.violet { background: var(--violet-dim); border: 1px solid rgba(180,125,245,0.2); }
+.tip-ico { font-size:1.3rem; flex-shrink:0; margin-top:1px; }
+.tip h4 { font-size:0.88rem; font-weight:700; margin-bottom:4px; }
+.tip.blue h4 { color: var(--blue); }
+.tip.amber h4 { color: var(--amber); }
+.tip.mint h4 { color: var(--mint); }
+.tip.violet h4 { color: var(--violet); }
+.tip p { font-size:0.84rem; color:var(--text2); line-height:1.8; }
+
+/* Inline code */
+.de { font-family:'IBM Plex Mono',monospace; background:var(--bg3); border:1px solid var(--border2); padding:2px 9px; border-radius:5px; font-size:0.87em; color:var(--blue2); direction:ltr; display:inline-block; }
+
+/* Table */
+.tbl-wrap { overflow-x:auto; margin-top: 1rem; }
+table { width:100%; border-collapse:collapse; font-size:0.9rem; }
+th { background:var(--bg3); color:var(--text2); padding:10px 14px; text-align:right; font-weight:700; font-size:0.8rem; border-bottom:1px solid var(--border2); letter-spacing:0.04em; }
+td { padding:10px 14px; border-bottom:1px solid var(--border); color:var(--text); }
+tr:last-child td { border-bottom:none; }
+tr:hover td { background:var(--bg2); }
+.td-de { font-family:'IBM Plex Mono',monospace; color:var(--blue); font-weight:600; direction:ltr; text-align:left; }
+.td-ex { color:var(--text2); font-size:0.82rem; direction:ltr; text-align:left; }
+
+/* Clock widget */
+.clock-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.clock-face {
+  aspect-ratio: 1;
+  max-width: 220px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#clock-svg { width:100%; height:100%; }
+
+.time-cards {
+  display: flex; flex-direction:column; gap:0.75rem;
+  justify-content:center;
+}
+
+.time-example {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex; align-items:center; gap:0.8rem;
+}
+.time-example:hover { border-color: var(--mint); background: var(--mint-dim); }
+.time-icon { font-size: 1.2rem; flex-shrink:0; }
+.time-de { font-family:'IBM Plex Mono',monospace; font-size:0.95rem; color:var(--mint); font-weight:600; direction:ltr; display:block; }
+.time-ar { font-size:0.8rem; color:var(--text2); display:block; margin-top:2px; }
+
+/* Days grid */
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+.day-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.3rem;
+  text-align:center;
+  cursor:pointer;
+  transition:all 0.2s;
+}
+.day-card:hover { border-color:var(--amber); background:var(--amber-dim); transform:translateY(-2px); }
+.day-card.weekend { border-color:rgba(245,108,122,0.3); }
+.day-short { font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:var(--amber); font-weight:700; display:block; direction:ltr; }
+.day-ar { font-size:0.7rem; color:var(--text2); display:block; margin-top:3px; }
+.day-full { font-size:0.68rem; color:var(--text3); display:block; margin-top:2px; }
+
+/* Months */
+.months-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
+  gap: 0.6rem;
+}
+.month-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  cursor:pointer;
+  transition:all 0.2s;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.month-card:hover { border-color:var(--violet); background:var(--violet-dim); transform:translateY(-2px); }
+.month-num { font-size:1.4rem; font-weight:900; color:var(--violet); line-height:1; }
+.month-info { text-align:right; }
+.month-de { font-family:'IBM Plex Mono',monospace; font-size:0.88rem; color:var(--text); font-weight:600; display:block; direction:ltr; }
+.month-ar { font-size:0.75rem; color:var(--text2); display:block; }
+
+/* Ordinal numbers */
+.ordinal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: 0.75rem;
+}
+.ord-card {
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:1rem;
+  transition:all 0.2s;
+  cursor:pointer;
+}
+.ord-card:hover { border-color:var(--rose); transform:translateY(-2px); }
+.ord-num { font-size:0.75rem; color:var(--text3); display:block; }
+.ord-de { font-family:'IBM Plex Mono',monospace; font-size:1.05rem; color:var(--rose); font-weight:600; display:block; margin:3px 0; direction:ltr; }
+.ord-ar { font-size:0.83rem; color:var(--text2); display:block; }
+.ord-ex { font-size:0.75rem; color:var(--text3); display:block; margin-top:4px; direction:ltr; font-style:italic; }
+
+/* Interactive clock */
+.clock-builder {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align:center;
+}
+.clock-title { font-size:0.88rem; color:var(--text2); margin-bottom:1rem; }
+.time-inputs { display:flex; gap:0.5rem; justify-content:center; align-items:center; margin-bottom:1rem; }
+.time-inputs input {
+  width:70px; padding:10px; text-align:center;
+  background:var(--bg3); border:1px solid var(--border2);
+  border-radius:var(--radius-sm); color:var(--text);
+  font-family:'IBM Plex Mono',monospace; font-size:1.3rem; font-weight:600;
+  outline:none; transition:border 0.2s;
+}
+.time-inputs input:focus { border-color:var(--blue); }
+.time-sep { font-size:1.5rem; font-weight:700; color:var(--blue); }
+.time-result {
+  background:var(--bg3); border:1px solid var(--border);
+  border-radius:var(--radius-sm); padding:1rem;
+  font-family:'IBM Plex Mono',monospace;
+}
+.t-res-de { font-size:1.2rem; color:var(--mint); font-weight:700; display:block; direction:ltr; margin-bottom:4px; }
+.t-res-ar { font-size:0.85rem; color:var(--text2); display:block; }
+
+/* Dialogue */
+.dialogue { display:flex; flex-direction:column; gap:1.1rem; }
+.msg { display:flex; gap:1rem; align-items:flex-start; }
+.msg.l { flex-direction:row-reverse; }
+.avatar {
+  width:42px; height:42px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; flex-shrink:0;
+}
+.msg.r .avatar { background:var(--blue-dim); border:1px solid rgba(79,168,245,0.2); }
+.msg.l .avatar { background:var(--mint-dim); border:1px solid rgba(61,245,196,0.2); }
+.bubble-wrap { flex:1; max-width:78%; }
+.msg.r .bubble-wrap { text-align:right; }
+.bubble {
+  display:inline-block; padding:11px 16px;
+  border-radius:14px; font-size:0.92rem; line-height:1.75;
+  max-width:100%;
+}
+.msg.r .bubble { background:var(--blue-dim); border:1px solid rgba(79,168,245,0.18); border-radius:14px 4px 14px 14px; }
+.msg.l .bubble { background:var(--bg3); border:1px solid var(--border); border-radius:4px 14px 14px 14px; }
+.de-line { color:var(--mint); font-weight:700; display:block; font-size:0.97rem; margin-bottom:3px; direction:ltr; font-family:'IBM Plex Mono',monospace; }
+.who { font-size:0.72rem; color:var(--text3); margin-top:4px; display:block; }
+
+/* Quiz */
+.quiz-q {
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:1.2rem 1.4rem;
+  margin-bottom:1rem;
+}
+.q-label { font-size:0.72rem; color:var(--text3); font-weight:700; letter-spacing:0.06em; display:block; margin-bottom:0.5rem; }
+.q-text { font-weight:700; font-size:0.95rem; margin-bottom:0.9rem; }
+.q-de { color:var(--amber); font-family:'IBM Plex Mono',monospace; }
+.options { display:grid; grid-template-columns:1fr 1fr; gap:0.55rem; }
+.opt {
+  padding:9px 14px; border-radius:8px;
+  border:1px solid var(--border2); background:var(--bg3);
+  color:var(--text); cursor:pointer;
+  font-family:'Tajawal',sans-serif; font-size:0.87rem; font-weight:500;
+  transition:all 0.2s; text-align:center;
+}
+.opt:hover:not(:disabled) { border-color:var(--blue); background:var(--blue-dim); }
+.opt.correct { border-color:var(--mint) !important; background:var(--mint-dim) !important; color:var(--mint) !important; }
+.opt.wrong { border-color:var(--rose) !important; background:var(--rose-dim) !important; color:var(--rose) !important; }
+.opt:disabled { cursor:default; }
+.feedback {
+  font-size:0.82rem; padding:8px 12px;
+  border-radius:6px; margin-top:8px; display:none;
+}
+.feedback.show { display:block; }
+.feedback.ok { background:var(--mint-dim); color:var(--mint); border:1px solid rgba(61,245,196,0.2); }
+.feedback.err { background:var(--rose-dim); color:var(--rose); border:1px solid rgba(245,108,122,0.2); }
+
+/* Result */
+.result-box {
+  background: linear-gradient(135deg, var(--blue-dim), var(--mint-dim));
+  border:1px solid var(--border2);
+  border-radius:var(--radius);
+  padding:2rem; text-align:center;
+  display:none; margin-top:1.5rem;
+}
+.result-score { font-size:4rem; font-weight:900; color:var(--blue); line-height:1; margin-bottom:0.5rem; }
+.result-msg { color:var(--text2); margin-bottom:1.5rem; }
+.reset-btn {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  background:var(--blue); color:#fff; border:none;
+  padding:11px 28px; border-radius:30px;
+  font-family:'Tajawal',sans-serif; font-size:0.95rem; font-weight:700;
+  cursor:pointer; transition:all 0.25s;
+}
+.reset-btn:hover { opacity:0.88; transform:translateY(-2px); }
+
+/* Homework */
+.hw-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:0.75rem; margin-bottom:1.2rem;
+}
+.hw-item {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:var(--radius-sm); padding:0.9rem;
+  font-size:0.85rem;
+}
+.hw-item strong { display:block; margin-bottom:3px; }
+.hw-item span { color:var(--text2); font-size:0.8rem; }
+
+/* Footer */
+footer {
+  position:relative; z-index:1;
+  text-align:center; padding:2.5rem 2rem;
+  color:var(--text3); font-size:0.82rem;
+  border-top:1px solid var(--border);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(22px); }
+  to { opacity:1; transform:translateY(0); }
+}
+.a1{animation-delay:0.05s;}
+.a2{animation-delay:0.15s;}
+.a3{animation-delay:0.25s;}
+.a4{animation-delay:0.35s;}
+
+@media(max-width:700px){
+  nav{padding:0 1rem;}
+  .nav-links{display:none;}
+  main{padding:1rem 1rem 3rem;}
+  .hero{padding:3rem 1rem 2rem;}
+  .clock-section{grid-template-columns:1fr;}
+  .days-grid{grid-template-columns:repeat(4,1fr);}
+  .options{grid-template-columns:1fr;}
+  .numbers-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));}
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav>
+  <div class="nav-brand">
+    <span>🇩🇪</span>
+    <span>الألمانية للعرب</span>
+    <span class="lesson-num">الدرس 2 / A2</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#numbers">الأرقام</a></li>
+    <li><a href="#time">الوقت</a></li>
+    <li><a href="#days">الأيام</a></li>
+    <li><a href="#months">الأشهر</a></li>
+    <li><a href="#quiz">التدريب</a></li>
+  </ul>
+  <button class="theme-btn" onclick="toggleTheme()">☀</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-chip">📅 الدرس الثاني — الأرقام، التاريخ والوقت</div>
+  <h1>تعلّم <span class="accent">الأرقام والوقت</span><br>بالألمانية 🕐</h1>
+  <p>في هذا الدرس ستتعلم كيف تقول الأرقام، تقرأ الساعة، تذكر أيام الأسبوع والأشهر، وتحدد مواعيد باللغة الألمانية!</p>
+  <div class="hero-pills">
+    <div class="pill blue">🔢 الأرقام 1–100</div>
+    <div class="pill mint">🕐 قراءة الساعة</div>
+    <div class="pill amber">📅 أيام الأسبوع</div>
+    <div class="pill violet">🗓 الأشهر والتواريخ</div>
+  </div>
+</div>
+
+<main>
+
+<!-- SECTION 1: Numbers -->
+<section id="numbers">
+  <div class="sec-header">
+    <div class="sec-icon si-blue">🔢</div>
+    <div class="sec-meta">
+      <h2>الأرقام بالألمانية</h2>
+      <p>من الصفر حتى المئة — اضغط على أي رقم لسماع نطقه</p>
+    </div>
+  </div>
+
+  <div class="card a1">
+    <h3 style="font-size:0.95rem;font-weight:800;color:var(--blue);margin-bottom:1rem;">الأرقام من 0 إلى 19</h3>
+    <div class="numbers-grid" id="nums-grid">
+      <div class="num-card" onclick="speak('null')"><span class="num-arabic">0</span><span class="num-de">null</span><span class="num-ar">صفر</span></div>
+      <div class="num-card" onclick="speak('eins')"><span class="num-arabic">1</span><span class="num-de">eins</span><span class="num-ar">واحد</span></div>
+      <div class="num-card" onclick="speak('zwei')"><span class="num-arabic">2</span><span class="num-de">zwei</span><span class="num-ar">اثنان</span></div>
+      <div class="num-card" onclick="speak('drei')"><span class="num-arabic">3</span><span class="num-de">drei</span><span class="num-ar">ثلاثة</span></div>
+      <div class="num-card" onclick="speak('vier')"><span class="num-arabic">4</span><span class="num-de">vier</span><span class="num-ar">أربعة</span></div>
+      <div class="num-card" onclick="speak('fünf')"><span class="num-arabic">5</span><span class="num-de">fünf</span><span class="num-ar">خمسة</span></div>
+      <div class="num-card" onclick="speak('sechs')"><span class="num-arabic">6</span><span class="num-de">sechs</span><span class="num-ar">ستة</span></div>
+      <div class="num-card" onclick="speak('sieben')"><span class="num-arabic">7</span><span class="num-de">sieben</span><span class="num-ar">سبعة</span></div>
+      <div class="num-card" onclick="speak('acht')"><span class="num-arabic">8</span><span class="num-de">acht</span><span class="num-ar">ثمانية</span></div>
+      <div class="num-card" onclick="speak('neun')"><span class="num-arabic">9</span><span class="num-de">neun</span><span class="num-ar">تسعة</span></div>
+      <div class="num-card" onclick="speak('zehn')"><span class="num-arabic">10</span><span class="num-de">zehn</span><span class="num-ar">عشرة</span></div>
+      <div class="num-card" onclick="speak('elf')"><span class="num-arabic">11</span><span class="num-de">elf</span><span class="num-ar">أحد عشر</span></div>
+      <div class="num-card" onclick="speak('zwölf')"><span class="num-arabic">12</span><span class="num-de">zwölf</span><span class="num-ar">اثنا عشر</span></div>
+      <div class="num-card" onclick="speak('dreizehn')"><span class="num-arabic">13</span><span class="num-de">dreizehn</span><span class="num-ar">ثلاثة عشر</span></div>
+      <div class="num-card" onclick="speak('vierzehn')"><span class="num-arabic">14</span><span class="num-de">vierzehn</span><span class="num-ar">أربعة عشر</span></div>
+      <div class="num-card" onclick="speak('fünfzehn')"><span class="num-arabic">15</span><span class="num-de">fünfzehn</span><span class="num-ar">خمسة عشر</span></div>
+      <div class="num-card" onclick="speak('sechzehn')"><span class="num-arabic">16</span><span class="num-de">sechzehn</span><span class="num-ar">ستة عشر</span></div>
+      <div class="num-card" onclick="speak('siebzehn')"><span class="num-arabic">17</span><span class="num-de">siebzehn</span><span class="num-ar">سبعة عشر</span></div>
+      <div class="num-card" onclick="speak('achtzehn')"><span class="num-arabic">18</span><span class="num-de">achtzehn</span><span class="num-ar">ثمانية عشر</span></div>
+      <div class="num-card" onclick="speak('neunzehn')"><span class="num-arabic">19</span><span class="num-de">neunzehn</span><span class="num-ar">تسعة عشر</span></div>
+    </div>
+
+    <div class="tip blue" style="margin-top:1.2rem;">
+      <div class="tip-ico">💡</div>
+      <div>
+        <h4>قاعدة الأرقام 13–19</h4>
+        <p>لاحظ أن الأرقام من 13 إلى 19 تُشكَّل بإضافة <span class="de">-zehn</span> (عشرة) في النهاية. مثل: drei + zehn = dreizehn. استثناء: 16 = sechzehn (بدون s) و17 = siebzehn (بدون en).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card a2" style="margin-top:1rem;">
+    <h3 style="font-size:0.95rem;font-weight:800;color:var(--amber);margin-bottom:1rem;">العشرات من 20 إلى 100</h3>
+    <div class="numbers-grid">
+      <div class="num-card" onclick="speak('zwanzig')"><span class="num-arabic">20</span><span class="num-de">zwanzig</span><span class="num-ar">عشرون</span></div>
+      <div class="num-card" onclick="speak('dreißig')"><span class="num-arabic">30</span><span class="num-de">dreißig</span><span class="num-ar">ثلاثون</span></div>
+      <div class="num-card" onclick="speak('vierzig')"><span class="num-arabic">40</span><span class="num-de">vierzig</span><span class="num-ar">أربعون</span></div>
+      <div class="num-card" onclick="speak('fünfzig')"><span class="num-arabic">50</span><span class="num-de">fünfzig</span><span class="num-ar">خمسون</span></div>
+      <div class="num-card" onclick="speak('sechzig')"><span class="num-arabic">60</span><span class="num-de">sechzig</span><span class="num-ar">ستون</span></div>
+      <div class="num-card" onclick="speak('siebzig')"><span class="num-arabic">70</span><span class="num-de">siebzig</span><span class="num-ar">سبعون</span></div>
+      <div class="num-card" onclick="speak('achtzig')"><span class="num-arabic">80</span><span class="num-de">achtzig</span><span class="num-ar">ثمانون</span></div>
+      <div class="num-card" onclick="speak('neunzig')"><span class="num-arabic">90</span><span class="num-de">neunzig</span><span class="num-ar">تسعون</span></div>
+      <div class="num-card" onclick="speak('hundert')"><span class="num-arabic">100</span><span class="num-de">hundert</span><span class="num-ar">مئة</span></div>
+    </div>
+
+    <div class="tip amber" style="margin-top:1.2rem;">
+      <div class="tip-ico">⚡</div>
+      <div>
+        <h4>كيف تقول الأرقام المركبة؟</h4>
+        <p>في الألمانية، الترتيب معكوس! نقول الآحاد أولاً ثم العشرات بكلمة <span class="de">und</span>. مثال: 25 = <span class="de">fünfundzwanzig</span> (خمسة وعشرون). 47 = <span class="de">siebenundvierzig</span>. ملاحظة: الأرقام المركبة تُكتب كلمة واحدة!</p>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>الرقم</th><th>بالألمانية</th><th>التحليل</th></tr></thead>
+        <tbody>
+          <tr><td>21</td><td class="td-de">einundzwanzig</td><td class="td-ex">ein + und + zwanzig</td></tr>
+          <tr><td>35</td><td class="td-de">fünfunddreißig</td><td class="td-ex">fünf + und + dreißig</td></tr>
+          <tr><td>48</td><td class="td-de">achtundvierzig</td><td class="td-ex">acht + und + vierzig</td></tr>
+          <tr><td>73</td><td class="td-de">dreiundsiebzig</td><td class="td-ex">drei + und + siebzig</td></tr>
+          <tr><td>99</td><td class="td-de">neunundneunzig</td><td class="td-ex">neun + und + neunzig</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: Time -->
+<section id="time">
+  <div class="sec-header">
+    <div class="sec-icon si-mint">🕐</div>
+    <div class="sec-meta">
+      <h2>قراءة الساعة</h2>
+      <p>كيف تسأل عن الوقت وتجيب عليه بالألمانية</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div class="tip mint" style="margin-bottom:1.5rem;">
+      <div class="tip-ico">❓</div>
+      <div>
+        <h4>كيف تسأل عن الوقت؟</h4>
+        <p><span class="de">Wie spät ist es?</span> &nbsp;أو&nbsp; <span class="de">Wie viel Uhr ist es?</span> — كلاهما يعني: "كم الساعة؟" والجواب يبدأ بـ <span class="de">Es ist...</span></p>
+      </div>
+    </div>
+
+    <div class="clock-section">
+      <div>
+        <svg id="clock-svg" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="95" fill="none" stroke="rgba(79,168,245,0.2)" stroke-width="2"/>
+          <circle cx="100" cy="100" r="85" fill="var(--bg3)"/>
+          <!-- Hour markers -->
+          <g id="hour-markers"></g>
+          <!-- Hands -->
+          <line id="h-hand" x1="100" y1="100" x2="100" y2="50" stroke="var(--text)" stroke-width="4" stroke-linecap="round"/>
+          <line id="m-hand" x1="100" y1="100" x2="100" y2="30" stroke="var(--mint)" stroke-width="3" stroke-linecap="round"/>
+          <line id="s-hand" x1="100" y1="110" x2="100" y2="22" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="100" cy="100" r="4" fill="var(--blue)"/>
+          <!-- Labels -->
+          <text x="100" y="24" text-anchor="middle" font-size="11" fill="var(--text2)" font-family="IBM Plex Mono">12</text>
+          <text x="178" y="104" text-anchor="middle" font-size="11" fill="var(--text2)" font-family="IBM Plex Mono">3</text>
+          <text x="100" y="185" text-anchor="middle" font-size="11" fill="var(--text2)" font-family="IBM Plex Mono">6</text>
+          <text x="22" y="104" text-anchor="middle" font-size="11" fill="var(--text2)" font-family="IBM Plex Mono">9</text>
+          <!-- Digital -->
+          <text id="digital-time" x="100" y="140" text-anchor="middle" font-size="13" fill="var(--blue)" font-family="IBM Plex Mono" font-weight="600"></text>
+          <text id="german-time" x="100" y="156" text-anchor="middle" font-size="8" fill="var(--mint)" font-family="IBM Plex Mono"></text>
+        </svg>
+      </div>
+
+      <div class="time-cards">
+        <div class="time-example" onclick="speak('Es ist ein Uhr')">
+          <div class="time-icon">🕐</div>
+          <div><span class="time-de">Es ist ein Uhr.</span><span class="time-ar">الساعة الواحدة تماماً</span></div>
+        </div>
+        <div class="time-example" onclick="speak('Es ist halb drei')">
+          <div class="time-icon">🕑</div>
+          <div><span class="time-de">Es ist halb drei.</span><span class="time-ar">الساعة الثانية والنصف</span></div>
+        </div>
+        <div class="time-example" onclick="speak('Es ist Viertel nach vier')">
+          <div class="time-icon">🕓</div>
+          <div><span class="time-de">Es ist Viertel nach vier.</span><span class="time-ar">الرابعة والربع</span></div>
+        </div>
+        <div class="time-example" onclick="speak('Es ist Viertel vor sechs')">
+          <div class="time-icon">🕔</div>
+          <div><span class="time-de">Es ist Viertel vor sechs.</span><span class="time-ar">السادسة إلا ربعاً</span></div>
+        </div>
+        <div class="time-example" onclick="speak('Es ist zehn nach acht')">
+          <div class="time-icon">🕗</div>
+          <div><span class="time-de">Es ist zehn nach acht.</span><span class="time-ar">الثامنة وعشر دقائق</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap" style="margin-top:1.5rem;">
+      <table>
+        <thead><tr><th>الوقت</th><th>الصيغة الرسمية</th><th>الصيغة اليومية</th><th>المعنى</th></tr></thead>
+        <tbody>
+          <tr><td>8:00</td><td class="td-de">acht Uhr</td><td class="td-de">acht Uhr</td><td>الثامنة</td></tr>
+          <tr><td>8:15</td><td class="td-de">acht Uhr fünfzehn</td><td class="td-de">Viertel nach acht</td><td>الثامنة والربع</td></tr>
+          <tr><td>8:30</td><td class="td-de">acht Uhr dreißig</td><td class="td-de">halb neun</td><td>الثامنة والنصف ⚠️</td></tr>
+          <tr><td>8:45</td><td class="td-de">acht Uhr fünfundvierzig</td><td class="td-de">Viertel vor neun</td><td>التاسعة إلا ربعاً</td></tr>
+          <tr><td>8:50</td><td class="td-de">acht Uhr fünfzig</td><td class="td-de">zehn vor neun</td><td>التاسعة إلا عشراً</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip rose" style="margin-top:1.2rem;background:var(--rose-dim);border-color:rgba(245,108,122,0.2);">
+      <div class="tip-ico">⚠️</div>
+      <div>
+        <h4 style="color:var(--rose);">تنبيه مهم جداً!</h4>
+        <p><span class="de">halb neun</span> لا تعني "النصف التاسعة" بل تعني "نصف الطريق إلى التاسعة" = <strong>8:30</strong>. هذا أكثر ما يُربك المتعلمين العرب!</p>
+      </div>
+    </div>
+
+    <!-- Interactive clock builder -->
+    <div class="clock-builder" style="margin-top:1.5rem;">
+      <div class="clock-title">🎮 جرب بنفسك — أدخل الوقت وشاهد كيف يقال بالألمانية</div>
+      <div class="time-inputs">
+        <input type="number" id="inp-h" min="0" max="23" value="9" oninput="updateTimeBuilder()">
+        <span class="time-sep">:</span>
+        <input type="number" id="inp-m" min="0" max="59" value="30" oninput="updateTimeBuilder()">
+      </div>
+      <div class="time-result">
+        <span class="t-res-de" id="tb-de">Es ist halb zehn.</span>
+        <span class="t-res-ar" id="tb-ar">الساعة التاسعة والنصف</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: Days -->
+<section id="days">
+  <div class="sec-header">
+    <div class="sec-icon si-amber">📅</div>
+    <div class="sec-meta">
+      <h2>أيام الأسبوع</h2>
+      <p>اضغط على أي يوم لسماع نطقه</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div class="days-grid">
+      <div class="day-card" onclick="speak('Montag')">
+        <span class="day-short">Mo</span>
+        <span class="day-ar">الاثنين</span>
+        <span class="day-full">Montag</span>
+      </div>
+      <div class="day-card" onclick="speak('Dienstag')">
+        <span class="day-short">Di</span>
+        <span class="day-ar">الثلاثاء</span>
+        <span class="day-full">Dienstag</span>
+      </div>
+      <div class="day-card" onclick="speak('Mittwoch')">
+        <span class="day-short">Mi</span>
+        <span class="day-ar">الأربعاء</span>
+        <span class="day-full">Mittwoch</span>
+      </div>
+      <div class="day-card" onclick="speak('Donnerstag')">
+        <span class="day-short">Do</span>
+        <span class="day-ar">الخميس</span>
+        <span class="day-full">Donnerstag</span>
+      </div>
+      <div class="day-card" onclick="speak('Freitag')">
+        <span class="day-short">Fr</span>
+        <span class="day-ar">الجمعة</span>
+        <span class="day-full">Freitag</span>
+      </div>
+      <div class="day-card weekend" onclick="speak('Samstag')">
+        <span class="day-short" style="color:var(--rose)">Sa</span>
+        <span class="day-ar">السبت</span>
+        <span class="day-full">Samstag</span>
+      </div>
+      <div class="day-card weekend" onclick="speak('Sonntag')">
+        <span class="day-short" style="color:var(--rose)">So</span>
+        <span class="day-ar">الأحد</span>
+        <span class="day-full">Sonntag</span>
+      </div>
+    </div>
+
+    <div class="tip violet" style="margin-top:1.2rem;">
+      <div class="tip-ico">📌</div>
+      <div>
+        <h4>كيف تستخدم أيام الأسبوع؟</h4>
+        <p>
+          <span class="de">am Montag</span> = يوم الاثنين (am = في) &nbsp;|&nbsp;
+          <span class="de">jeden Dienstag</span> = كل ثلاثاء<br>
+          مثال: <span class="de">Ich habe am Mittwoch einen Termin.</span> = عندي موعد يوم الأربعاء.
+        </p>
+      </div>
+    </div>
+
+    <div class="tbl-wrap" style="margin-top:1rem;">
+      <table>
+        <thead><tr><th>اليوم (ألماني)</th><th>اليوم (عربي)</th><th>مثال</th></tr></thead>
+        <tbody>
+          <tr><td class="td-de">am Montag</td><td>يوم الاثنين</td><td class="td-ex">Am Montag arbeite ich.</td></tr>
+          <tr><td class="td-de">am Freitag</td><td>يوم الجمعة</td><td class="td-ex">Am Freitag gehe ich einkaufen.</td></tr>
+          <tr><td class="td-de">am Wochenende</td><td>في نهاية الأسبوع</td><td class="td-ex">Am Wochenende bin ich frei.</td></tr>
+          <tr><td class="td-de">werktags</td><td>أيام العمل (الاثنين–الجمعة)</td><td class="td-ex">Werktags bin ich beschäftigt.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: Months -->
+<section id="months">
+  <div class="sec-header">
+    <div class="sec-icon si-violet">🗓</div>
+    <div class="sec-meta">
+      <h2>الأشهر والتاريخ</h2>
+      <p>اثنا عشر شهراً + كيف تقول التاريخ كاملاً</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div class="months-grid">
+      <div class="month-card" onclick="speak('Januar')"><span class="month-num">1</span><div class="month-info"><span class="month-de">Januar</span><span class="month-ar">يناير</span></div></div>
+      <div class="month-card" onclick="speak('Februar')"><span class="month-num">2</span><div class="month-info"><span class="month-de">Februar</span><span class="month-ar">فبراير</span></div></div>
+      <div class="month-card" onclick="speak('März')"><span class="month-num">3</span><div class="month-info"><span class="month-de">März</span><span class="month-ar">مارس</span></div></div>
+      <div class="month-card" onclick="speak('April')"><span class="month-num">4</span><div class="month-info"><span class="month-de">April</span><span class="month-ar">أبريل</span></div></div>
+      <div class="month-card" onclick="speak('Mai')"><span class="month-num">5</span><div class="month-info"><span class="month-de">Mai</span><span class="month-ar">مايو</span></div></div>
+      <div class="month-card" onclick="speak('Juni')"><span class="month-num">6</span><div class="month-info"><span class="month-de">Juni</span><span class="month-ar">يونيو</span></div></div>
+      <div class="month-card" onclick="speak('Juli')"><span class="month-num">7</span><div class="month-info"><span class="month-de">Juli</span><span class="month-ar">يوليو</span></div></div>
+      <div class="month-card" onclick="speak('August')"><span class="month-num">8</span><div class="month-info"><span class="month-de">August</span><span class="month-ar">أغسطس</span></div></div>
+      <div class="month-card" onclick="speak('September')"><span class="month-num">9</span><div class="month-info"><span class="month-de">September</span><span class="month-ar">سبتمبر</span></div></div>
+      <div class="month-card" onclick="speak('Oktober')"><span class="month-num">10</span><div class="month-info"><span class="month-de">Oktober</span><span class="month-ar">أكتوبر</span></div></div>
+      <div class="month-card" onclick="speak('November')"><span class="month-num">11</span><div class="month-info"><span class="month-de">November</span><span class="month-ar">نوفمبر</span></div></div>
+      <div class="month-card" onclick="speak('Dezember')"><span class="month-num">12</span><div class="month-info"><span class="month-de">Dezember</span><span class="month-ar">ديسمبر</span></div></div>
+    </div>
+
+    <div class="tip blue" style="margin-top:1.2rem;">
+      <div class="tip-ico">📆</div>
+      <div>
+        <h4>كيف تقول التاريخ؟</h4>
+        <p>
+          <span class="de">am + (ordinal) + (Monat)</span><br>
+          مثال: <span class="de">am ersten Januar</span> = في أول يناير<br>
+          <span class="de">am fünfzehnten März</span> = في الخامس عشر من مارس<br>
+          للسؤال: <span class="de">Der Wievielte ist heute?</span> = كم تاريخ اليوم؟
+        </p>
+      </div>
+    </div>
+
+    <h3 style="font-size:0.95rem;font-weight:800;color:var(--rose);margin:1.5rem 0 1rem;">الأعداد الترتيبية (للتواريخ)</h3>
+    <div class="ordinal-grid">
+      <div class="ord-card" onclick="speak('erste')">
+        <span class="ord-num">1.</span>
+        <span class="ord-de">erste</span>
+        <span class="ord-ar">الأول / الأولى</span>
+        <span class="ord-ex">am ersten Mai</span>
+      </div>
+      <div class="ord-card" onclick="speak('zweite')">
+        <span class="ord-num">2.</span>
+        <span class="ord-de">zweite</span>
+        <span class="ord-ar">الثاني / الثانية</span>
+        <span class="ord-ex">am zweiten Juni</span>
+      </div>
+      <div class="ord-card" onclick="speak('dritte')">
+        <span class="ord-num">3.</span>
+        <span class="ord-de">dritte</span>
+        <span class="ord-ar">الثالث</span>
+        <span class="ord-ex">am dritten Juli</span>
+      </div>
+      <div class="ord-card" onclick="speak('vierte')">
+        <span class="ord-num">4.</span>
+        <span class="ord-de">vierte</span>
+        <span class="ord-ar">الرابع</span>
+        <span class="ord-ex">am vierten August</span>
+      </div>
+      <div class="ord-card" onclick="speak('fünfte')">
+        <span class="ord-num">5.–19.</span>
+        <span class="ord-de">-te</span>
+        <span class="ord-ar">من الخامس للتاسع عشر</span>
+        <span class="ord-ex">fünfte, sechste, siebte...</span>
+      </div>
+      <div class="ord-card" onclick="speak('zwanzigste')">
+        <span class="ord-num">20.+</span>
+        <span class="ord-de">-ste</span>
+        <span class="ord-ar">العشرون فما فوق</span>
+        <span class="ord-ex">zwanzigste, einundzwanzigste...</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: Dialogue -->
+<section id="dialogue">
+  <div class="sec-header">
+    <div class="sec-icon si-rose">💬</div>
+    <div class="sec-meta">
+      <h2>حوار: تحديد موعد</h2>
+      <p>مشهد حجز موعد عند الطبيب بالألمانية</p>
+    </div>
+  </div>
+
+  <div class="card a4">
+    <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);">
+      <span style="font-size:1.3rem;">🏥</span>
+      <div>
+        <div style="font-size:0.9rem;font-weight:800;">عيادة الطبيب</div>
+        <div style="font-size:0.78rem;color:var(--text2);">أحمد يتصل بالعيادة لحجز موعد</div>
+      </div>
+    </div>
+
+    <div class="dialogue">
+      <div class="msg r">
+        <div class="avatar">🧑‍💼</div>
+        <div class="bubble-wrap">
+          <div class="bubble">
+            <span class="de-line">Guten Morgen, Arztpraxis Müller. Was kann ich für Sie tun?</span>
+            صباح الخير، عيادة الدكتور مولر. كيف يمكنني مساعدتكم؟
+          </div>
+          <span class="who">موظفة العيادة</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="avatar">👨</div>
+        <div class="bubble-wrap">
+          <div class="bubble">
+            <span class="de-line">Guten Morgen! Ich möchte einen Termin machen, bitte.</span>
+            صباح الخير! أرغب في حجز موعد من فضلكم.
+          </div>
+          <span class="who" style="text-align:left;">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="avatar">🧑‍💼</div>
+        <div class="bubble-wrap">
+          <div class="bubble">
+            <span class="de-line">Natürlich. Wann passt es Ihnen? Haben Sie Zeit am Donnerstag?</span>
+            بالطبع. متى يناسبكم؟ هل لديكم وقت يوم الخميس؟
+          </div>
+          <span class="who">موظفة العيادة</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="avatar">👨</div>
+        <div class="bubble-wrap">
+          <div class="bubble">
+            <span class="de-line">Ja, Donnerstag ist gut. Um wie viel Uhr?</span>
+            نعم، الخميس مناسب. في أي ساعة؟
+          </div>
+          <span class="who" style="text-align:left;">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="avatar">🧑‍💼</div>
+        <div class="bubble-wrap">
+          <div class="bubble">
+            <span class="de-line">Wir haben einen Termin um halb drei, also um 14:30 Uhr. Geht das?</span>
+            لدينا موعد الساعة الثانية والنصف، أي الساعة 14:30. هل يناسبكم؟
+          </div>
+          <span class="who">موظفة العيادة</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="avatar">👨</div>
+        <div class="bubble-wrap">
+          <div class="bubble">
+            <span class="de-line">Ja, das passt mir gut. Und welches Datum ist Donnerstag?</span>
+            نعم، هذا يناسبني. وما هو تاريخ الخميس؟
+          </div>
+          <span class="who" style="text-align:left;">أحمد</span>
+        </div>
+      </div>
+
+      <div class="msg r">
+        <div class="avatar">🧑‍💼</div>
+        <div class="bubble-wrap">
+          <div class="bubble">
+            <span class="de-line">Das ist der fünfte Juni. Bis dann, Herr Ahmad!</span>
+            هذا هو الخامس من يونيو. إلى اللقاء يا السيد أحمد!
+          </div>
+          <span class="who">موظفة العيادة</span>
+        </div>
+      </div>
+
+      <div class="msg l">
+        <div class="avatar">👨</div>
+        <div class="bubble-wrap">
+          <div class="bubble">
+            <span class="de-line">Vielen Dank! Tschüss!</span>
+            شكراً جزيلاً! مع السلامة!
+          </div>
+          <span class="who" style="text-align:left;">أحمد</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);">
+      <h4 style="font-size:0.88rem;font-weight:800;color:var(--amber);margin-bottom:0.8rem;">🔑 تعابير مهمة من الحوار:</h4>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;font-size:0.82rem;align-items:center;">
+        <span class="de">Ich möchte einen Termin.</span><span style="color:var(--text2)"> أريد موعداً</span>
+        &nbsp;·&nbsp;
+        <span class="de">Wann passt es Ihnen?</span><span style="color:var(--text2)"> متى يناسبك؟</span>
+        &nbsp;·&nbsp;
+        <span class="de">Um wie viel Uhr?</span><span style="color:var(--text2)"> في أي ساعة؟</span>
+        &nbsp;·&nbsp;
+        <span class="de">Das passt mir gut.</span><span style="color:var(--text2)"> هذا يناسبني</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: Quiz -->
+<section id="quiz">
+  <div class="sec-header">
+    <div class="sec-icon si-blue">🎯</div>
+    <div class="sec-meta">
+      <h2>اختبر نفسك!</h2>
+      <p>6 أسئلة على ما تعلمته في هذا الدرس</p>
+    </div>
+  </div>
+
+  <div class="card">
+
+    <div class="quiz-q" id="q1">
+      <span class="q-label">سؤال 1 / 6</span>
+      <div class="q-text">كيف تكتب الرقم 45 بالألمانية؟</div>
+      <div class="options">
+        <div class="opt" onclick="ans(this,'q1','w')">vierzig und fünf</div>
+        <div class="opt" onclick="ans(this,'q1','c')">fünfundvierzig</div>
+        <div class="opt" onclick="ans(this,'q1','w')">fünfzehnvierzig</div>
+        <div class="opt" onclick="ans(this,'q1','w')">vierzig fünf</div>
+      </div>
+      <div class="feedback" id="fb-q1"></div>
+    </div>
+
+    <div class="quiz-q" id="q2">
+      <span class="q-label">سؤال 2 / 6</span>
+      <div class="q-text">ماذا تعني <span class="q-de">„halb neun"</span>؟</div>
+      <div class="options">
+        <div class="opt" onclick="ans(this,'q2','w')">9:30</div>
+        <div class="opt" onclick="ans(this,'q2','c')">8:30</div>
+        <div class="opt" onclick="ans(this,'q2','w')">9:00</div>
+        <div class="opt" onclick="ans(this,'q2','w')">8:00</div>
+      </div>
+      <div class="feedback" id="fb-q2"></div>
+    </div>
+
+    <div class="quiz-q" id="q3">
+      <span class="q-label">سؤال 3 / 6</span>
+      <div class="q-text">ما هو يوم الأربعاء بالألمانية؟</div>
+      <div class="options">
+        <div class="opt" onclick="ans(this,'q3','w')">Donnerstag</div>
+        <div class="opt" onclick="ans(this,'q3','w')">Dienstag</div>
+        <div class="opt" onclick="ans(this,'q3','c')">Mittwoch</div>
+        <div class="opt" onclick="ans(this,'q3','w')">Montag</div>
+      </div>
+      <div class="feedback" id="fb-q3"></div>
+    </div>
+
+    <div class="quiz-q" id="q4">
+      <span class="q-label">سؤال 4 / 6</span>
+      <div class="q-text">كيف تقول "يوم الخميس" في جملة بالألمانية؟</div>
+      <div class="options">
+        <div class="opt" onclick="ans(this,'q4','w')">in Donnerstag</div>
+        <div class="opt" onclick="ans(this,'q4','w')">bei Donnerstag</div>
+        <div class="opt" onclick="ans(this,'q4','c')">am Donnerstag</div>
+        <div class="opt" onclick="ans(this,'q4','w')">auf Donnerstag</div>
+      </div>
+      <div class="feedback" id="fb-q4"></div>
+    </div>
+
+    <div class="quiz-q" id="q5">
+      <span class="q-label">سؤال 5 / 6</span>
+      <div class="q-text">ما هو شهر أغسطس بالألمانية؟</div>
+      <div class="options">
+        <div class="opt" onclick="ans(this,'q5','w')">Oktober</div>
+        <div class="opt" onclick="ans(this,'q5','w')">Juli</div>
+        <div class="opt" onclick="ans(this,'q5','c')">August</div>
+        <div class="opt" onclick="ans(this,'q5','w')">September</div>
+      </div>
+      <div class="feedback" id="fb-q5"></div>
+    </div>
+
+    <div class="quiz-q" id="q6">
+      <span class="q-label">سؤال 6 / 6</span>
+      <div class="q-text">كيف تقول "في الخامس من مارس"؟</div>
+      <div class="options">
+        <div class="opt" onclick="ans(this,'q6','w')">am fünfzehnten März</div>
+        <div class="opt" onclick="ans(this,'q6','c')">am fünften März</div>
+        <div class="opt" onclick="ans(this,'q6','w')">in fünf März</div>
+        <div class="opt" onclick="ans(this,'q6','w')">am fünf März</div>
+      </div>
+      <div class="feedback" id="fb-q6"></div>
+    </div>
+
+    <div class="result-box" id="result-box">
+      <div class="result-score" id="r-score">0/6</div>
+      <div class="result-msg" id="r-msg"></div>
+      <button class="reset-btn" onclick="resetQuiz()">🔄 أعد التدريب</button>
+    </div>
+  </div>
+</section>
+
+<!-- Homework -->
+<section>
+  <div class="sec-header">
+    <div class="sec-icon si-mint">📝</div>
+    <div class="sec-meta">
+      <h2>واجب الدرس الثاني</h2>
+      <p>تطبيق عملي على ما تعلمته اليوم</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="hw-grid">
+      <div class="hw-item"><strong>✅ الأرقام</strong><span>اكتب عمرك وأرقام هاتفك بالألمانية</span></div>
+      <div class="hw-item"><strong>✅ الساعة</strong><span>قل وقت استيقاظك ووقت نومك بالألمانية</span></div>
+      <div class="hw-item"><strong>✅ الأيام</strong><span>اكتب جدول أسبوعك بالألمانية</span></div>
+      <div class="hw-item"><strong>✅ التاريخ</strong><span>اكتب تاريخ ميلادك كاملاً</span></div>
+    </div>
+    <div class="tip mint">
+      <div class="tip-ico">🚀</div>
+      <div>
+        <h4>الدرس الثالث القادم</h4>
+        <p>سنتعلم التسوق والمطعم — كيف تطلب طعاماً، تسأل عن السعر، وتتفاوض باللغة الألمانية! <span class="de">Bis zum nächsten Mal!</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>🇩🇪 الألمانية للعرب &nbsp;·&nbsp; المستوى A2 &nbsp;·&nbsp; الدرس 2 من 12</p>
+  <p style="margin-top:0.5rem;">الأرقام والوقت والتاريخ</p>
+</footer>
+
+<script>
+// Theme
+let dark = true;
+const root = document.documentElement;
+const tbtn = document.querySelector('.theme-btn');
+function applyTheme(d) {
+  dark = d;
+  root.setAttribute('data-theme', d ? 'dark' : 'light');
+  tbtn.textContent = d ? '☀' : '🌙';
+}
+function toggleTheme() { applyTheme(!dark); }
+const sys = window.matchMedia('(prefers-color-scheme: dark)');
+applyTheme(sys.matches);
+sys.addEventListener('change', e => applyTheme(e.matches));
+
+// Progress
+const pb = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const h = document.body.scrollHeight - window.innerHeight;
+  pb.style.transform = `scaleX(${window.scrollY / h})`;
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// Speech
+function speak(text) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'de-DE'; u.rate = 0.82;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+}
+
+// Clock
+function drawClock() {
+  const now = new Date();
+  const h = now.getHours() % 12, m = now.getMinutes(), s = now.getSeconds();
+  const hAngle = (h * 30) + (m * 0.5) - 90;
+  const mAngle = (m * 6) - 90;
+  const sAngle = (s * 6) - 90;
+
+  function pt(angle, r) {
+    return [100 + r * Math.cos(angle * Math.PI / 180), 100 + r * Math.sin(angle * Math.PI / 180)];
+  }
+
+  const [hx, hy] = pt(hAngle, 45);
+  const [mx, my] = pt(mAngle, 62);
+  const [sx, sy] = pt(sAngle, 70);
+  const [sx0, sy0] = pt(sAngle + 180, 12);
+
+  document.getElementById('h-hand').setAttribute('x2', hx);
+  document.getElementById('h-hand').setAttribute('y2', hy);
+  document.getElementById('m-hand').setAttribute('x2', mx);
+  document.getElementById('m-hand').setAttribute('y2', my);
+  document.getElementById('s-hand').setAttribute('x1', sx0);
+  document.getElementById('s-hand').setAttribute('y1', sy0);
+  document.getElementById('s-hand').setAttribute('x2', sx);
+  document.getElementById('s-hand').setAttribute('y2', sy);
+
+  const hh = now.getHours().toString().padStart(2,'0');
+  const mm = now.getMinutes().toString().padStart(2,'0');
+  const ss = now.getSeconds().toString().padStart(2,'0');
+  document.getElementById('digital-time').textContent = `${hh}:${mm}:${ss}`;
+  document.getElementById('german-time').textContent = timeToGerman(now.getHours(), now.getMinutes()).de;
+
+  setTimeout(drawClock, 1000);
+}
+drawClock();
+
+// Time to German
+function timeToGerman(h, m) {
+  const hh = h % 12 || 12;
+  const nextHh = (hh % 12) + 1;
+  const nums = ['null','ein','zwei','drei','vier','fünf','sechs','sieben','acht','neun','zehn','elf','zwölf'];
+  const numsG = ['null','eins','zwei','drei','vier','fünf','sechs','sieben','acht','neun','zehn','elf','zwölf'];
+
+  if (m === 0) return { de: `Es ist ${numsG[hh]} Uhr.`, ar: `الساعة ${h}:00 تماماً` };
+  if (m === 15) return { de: `Es ist Viertel nach ${nums[hh]}.`, ar: `الساعة ${hh} والربع` };
+  if (m === 30) return { de: `Es ist halb ${nums[nextHh]}.`, ar: `الساعة ${hh} والنصف` };
+  if (m === 45) return { de: `Es ist Viertel vor ${nums[nextHh]}.`, ar: `الساعة ${nextHh} إلا ربعاً` };
+
+  const minuteNums = ['null','ein','zwei','drei','vier','fünf','sechs','sieben','acht','neun','zehn',
+    'elf','zwölf','dreizehn','vierzehn','fünfzehn','sechzehn','siebzehn','achtzehn','neunzehn','zwanzig',
+    'einundzwanzig','zweiundzwanzig','dreiundzwanzig','vierundzwanzig','fünfundzwanzig',
+    'sechsundzwanzig','siebenundzwanzig','achtundzwanzig','neunundzwanzig'];
+
+  if (m < 30) return { de: `Es ist ${minuteNums[m]} nach ${nums[hh]}.`, ar: `الساعة ${hh} وdقيقة ${m}` };
+  const diff = 60 - m;
+  return { de: `Es ist ${minuteNums[diff]} vor ${nums[nextHh]}.`, ar: `الساعة ${nextHh} إلا ${diff} دقيقة` };
+}
+
+// Time builder
+function updateTimeBuilder() {
+  const h = parseInt(document.getElementById('inp-h').value) || 0;
+  const m = parseInt(document.getElementById('inp-m').value) || 0;
+  const clampH = Math.min(23, Math.max(0, h));
+  const clampM = Math.min(59, Math.max(0, m));
+  const res = timeToGerman(clampH, clampM);
+  document.getElementById('tb-de').textContent = res.de;
+  document.getElementById('tb-ar').textContent = res.ar;
+}
+updateTimeBuilder();
+
+// Quiz
+const correct_answers = {q1:'c',q2:'c',q3:'c',q4:'c',q5:'c',q6:'c'};
+const correct_fb = {
+  q1:'✅ ممتاز! في الألمانية نقول الآحاد أولاً: fünf + und + vierzig = fünfundvierzig.',
+  q2:'✅ صحيح! halb = نصف الطريق إلى الساعة التالية. halb neun = 8:30 وليس 9:30!',
+  q3:'✅ بالضبط! Mittwoch = الأربعاء. الاسم يعني حرفياً "منتصف الأسبوع".',
+  q4:'✅ رائع! am + يوم الأسبوع هي الصيغة الصحيحة للظرف الزماني.',
+  q5:'✅ ممتاز! August = أغسطس. لاحظ التشابه مع الإنجليزية!',
+  q6:'✅ صحيح! fünfte = الخامس (عدد ترتيبي يُشكّل بإضافة -te للأرقام 5-19).'
+};
+const wrong_fb = {
+  q1:'❌ في الألمانية الأرقام المركبة كلمة واحدة، والآحاد تأتي أولاً: fünf-und-vierzig.',
+  q2:'❌ انتبه! halb = نصف الساعة القادمة. halb neun = نصف الطريق إلى التاسعة = 8:30.',
+  q3:'❌ Mittwoch هو الأربعاء. Donnerstag = الخميس، Dienstag = الثلاثاء.',
+  q4:'❌ لأيام الأسبوع نستخدم حرف الجر am دائماً: am Montag، am Freitag.',
+  q5:'❌ August = أغسطس. September = سبتمبر، Oktober = أكتوبر، Juli = يوليو.',
+  q6:'❌ الأعداد الترتيبية 5-19 تنتهي بـ -te: fünfte (الخامس). fünfzehn = 15 وليس 5!'
+};
+
+let answers = {};
+function ans(btn, qid, result) {
+  if (answers[qid]) return;
+  const isCorrect = result === 'c';
+  answers[qid] = result;
+  document.querySelectorAll(`#${qid} .opt`).forEach(b => b.disabled = true);
+  btn.classList.add(isCorrect ? 'correct' : 'wrong');
+  const fb = document.getElementById('fb-'+qid);
+  fb.textContent = isCorrect ? correct_fb[qid] : wrong_fb[qid];
+  fb.className = 'feedback show ' + (isCorrect ? 'ok' : 'err');
+  if (Object.keys(answers).length === 6) showResult();
+}
+
+function showResult() {
+  const score = Object.values(answers).filter(v => v === 'c').length;
+  const msgs = ['حاول مرة أخرى، أنت قادر! 💪','تقدم جيد، راجع الأخطاء! 📖','جيد جداً! استمر! 🌟','ممتاز! مستواك رائع! 🏆','رائع جداً! تقريباً مثالي! 🎉','مثالي! درجة كاملة! 🥇'];
+  document.getElementById('r-score').textContent = score + '/6';
+  document.getElementById('r-msg').textContent = msgs[score];
+  const rb = document.getElementById('result-box');
+  rb.style.display = 'block';
+  rb.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function resetQuiz() {
+  answers = {};
+  document.querySelectorAll('.opt').forEach(b => { b.disabled = false; b.className = 'opt'; });
+  document.querySelectorAll('.feedback').forEach(f => f.className = 'feedback');
+  document.getElementById('result-box').style.display = 'none';
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-kurs-lesson-02-zahlen-zeit" data-category="a2-kurs" data-title="الأرقام والوقت" data-root="../../" defer></script>
+</body>
+</html>

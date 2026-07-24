@@ -1,0 +1,2936 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Das Perfekt - الماضي التام في الألمانية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0a0e1a;
+    --bg-secondary: #0f1629;
+    --bg-card: #131929;
+    --bg-card-hover: #1a2238;
+    --accent-gold: #f0c040;
+    --accent-blue: #4a9eff;
+    --accent-green: #2ecc71;
+    --accent-red: #e74c3c;
+    --accent-purple: #9b59b6;
+    --accent-orange: #e67e22;
+    --accent-teal: #1abc9c;
+    --text-primary: #e8eaf6;
+    --text-secondary: #8892b0;
+    --text-muted: #5a6480;
+    --border-color: #1e2d4a;
+    --border-glow: rgba(74, 158, 255, 0.3);
+    --shadow-deep: 0 20px 60px rgba(0,0,0,0.5);
+    --shadow-card: 0 8px 32px rgba(0,0,0,0.4);
+    --haben-color: #4a9eff;
+    --sein-color: #2ecc71;
+    --regular-color: #f0c040;
+    --irregular-color: #e74c3c;
+    --separable-color: #9b59b6;
+    --inseparable-color: #e67e22;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    direction: rtl;
+  }
+
+  /* Animated background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: 
+      radial-gradient(ellipse at 20% 20%, rgba(74,158,255,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(46,204,113,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(240,192,64,0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* HEADER */
+  header {
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(180deg, rgba(10,14,26,0.98) 0%, rgba(15,22,41,0.95) 100%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .header-hero {
+    position: relative;
+    padding: 60px 40px 40px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .header-hero::before {
+    content: 'PERFEKT';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(80px, 15vw, 200px);
+    font-weight: 900;
+    color: rgba(74,158,255,0.04);
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: 20px;
+  }
+
+  .video-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(74,158,255,0.15);
+    border: 1px solid rgba(74,158,255,0.4);
+    border-radius: 30px;
+    padding: 6px 20px;
+    font-size: 13px;
+    color: var(--accent-blue);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .video-badge::before {
+    content: '▶';
+    font-size: 10px;
+  }
+
+  h1.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #f0c040 0%, #4a9eff 50%, #2ecc71 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  /* Navigation */
+  nav {
+    background: rgba(10,14,26,0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  nav::-webkit-scrollbar { display: none; }
+
+  .nav-inner {
+    display: flex;
+    gap: 4px;
+    padding: 10px 0;
+    min-width: max-content;
+    justify-content: center;
+  }
+
+  .nav-btn {
+    background: none;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+
+  .nav-btn:hover, .nav-btn.active {
+    background: rgba(74,158,255,0.15);
+    border-color: rgba(74,158,255,0.4);
+    color: var(--accent-blue);
+  }
+
+  /* Main layout */
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  /* Section headers */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .section-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+
+  .section-number {
+    display: inline-block;
+    background: rgba(74,158,255,0.2);
+    border: 1px solid rgba(74,158,255,0.4);
+    color: var(--accent-blue);
+    border-radius: 6px;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card:hover {
+    border-color: var(--border-glow);
+    box-shadow: 0 0 30px rgba(74,158,255,0.1);
+    transform: translateY(-2px);
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    right: 0;
+    height: 2px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .card-blue::before { background: linear-gradient(90deg, var(--haben-color), transparent); }
+  .card-green::before { background: linear-gradient(90deg, var(--sein-color), transparent); }
+  .card-gold::before { background: linear-gradient(90deg, var(--accent-gold), transparent); }
+  .card-red::before { background: linear-gradient(90deg, var(--irregular-color), transparent); }
+  .card-purple::before { background: linear-gradient(90deg, var(--separable-color), transparent); }
+  .card-orange::before { background: linear-gradient(90deg, var(--inseparable-color), transparent); }
+  .card-teal::before { background: linear-gradient(90deg, var(--accent-teal), transparent); }
+
+  /* Grid layouts */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+
+  /* Formula box */
+  .formula-box {
+    background: linear-gradient(135deg, rgba(74,158,255,0.12) 0%, rgba(46,204,113,0.08) 100%);
+    border: 2px solid rgba(74,158,255,0.3);
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    margin: 24px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .formula-box::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(74,158,255,0.05) 0%, transparent 60%);
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  .formula-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .formula-text {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    direction: ltr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .formula-part {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 700;
+  }
+
+  .fp-subject { background: rgba(240,192,64,0.2); color: var(--accent-gold); border: 1px solid rgba(240,192,64,0.4); }
+  .fp-haben { background: rgba(74,158,255,0.2); color: var(--accent-blue); border: 1px solid rgba(74,158,255,0.4); }
+  .fp-sein { background: rgba(46,204,113,0.2); color: var(--accent-green); border: 1px solid rgba(46,204,113,0.4); }
+  .fp-rest { background: rgba(154,170,210,0.1); color: var(--text-secondary); border: 1px solid rgba(154,170,210,0.2); }
+  .fp-partizip { background: rgba(155,89,182,0.2); color: var(--accent-purple); border: 1px solid rgba(155,89,182,0.4); }
+  .fp-arrow { color: var(--text-muted); font-size: 1.5rem; }
+
+  /* Example boxes */
+  .example-box {
+    background: rgba(15,22,41,0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 12px 0;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .example-box:hover {
+    border-color: rgba(74,158,255,0.3);
+    background: rgba(20,30,55,0.8);
+  }
+
+  .example-present {
+    direction: ltr;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--border-color);
+  }
+
+  .example-past {
+    direction: ltr;
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  .example-translation {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    margin-top: 8px;
+    direction: rtl;
+  }
+
+  .highlight-haben { color: var(--haben-color); font-weight: 700; }
+  .highlight-sein { color: var(--sein-color); font-weight: 700; }
+  .highlight-partizip { color: var(--accent-purple); font-weight: 700; }
+  .highlight-ge { color: var(--accent-gold); font-weight: 700; }
+
+  /* Verb conjugation table */
+  .conj-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    direction: ltr;
+  }
+
+  .conj-table th {
+    background: rgba(74,158,255,0.15);
+    color: var(--accent-blue);
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: left;
+    border-bottom: 2px solid rgba(74,158,255,0.3);
+  }
+
+  .conj-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+  }
+
+  .conj-table tr:last-child td { border-bottom: none; }
+  .conj-table tr:hover td { background: rgba(74,158,255,0.05); }
+
+  .conj-pronoun { color: var(--accent-gold); font-weight: 600; }
+  .conj-verb { color: var(--text-primary); }
+  .conj-partizip { color: var(--accent-purple); font-weight: 700; }
+
+  /* Big verb cards */
+  .verb-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .verb-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+    border-color: rgba(74,158,255,0.3);
+  }
+
+  .verb-infinitiv {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    direction: ltr;
+    margin-bottom: 6px;
+  }
+
+  .verb-partizip-display {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-purple);
+    direction: ltr;
+    margin-bottom: 8px;
+  }
+
+  .verb-aux {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .aux-haben { background: rgba(74,158,255,0.2); color: var(--haben-color); }
+  .aux-sein { background: rgba(46,204,113,0.2); color: var(--sein-color); }
+
+  .verb-example {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    direction: ltr;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border-color);
+  }
+
+  .verb-meaning {
+    font-size: 0.82rem;
+    color: var(--accent-gold);
+    margin-top: 4px;
+    direction: rtl;
+  }
+
+  /* Rule boxes */
+  .rule-box {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin: 12px 0;
+    align-items: flex-start;
+    transition: all 0.3s;
+  }
+
+  .rule-box:hover { border-color: rgba(74,158,255,0.3); }
+
+  .rule-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .rule-content h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+  }
+
+  .rule-content p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* Info boxes */
+  .info-box {
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px 0;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .info-box.tip {
+    background: rgba(46,204,113,0.1);
+    border: 1px solid rgba(46,204,113,0.3);
+  }
+
+  .info-box.warning {
+    background: rgba(240,192,64,0.1);
+    border: 1px solid rgba(240,192,64,0.3);
+  }
+
+  .info-box.note {
+    background: rgba(74,158,255,0.1);
+    border: 1px solid rgba(74,158,255,0.3);
+  }
+
+  .info-box.important {
+    background: rgba(231,76,60,0.1);
+    border: 1px solid rgba(231,76,60,0.3);
+  }
+
+  .info-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+
+  .info-content h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .info-box.tip .info-content h4 { color: var(--accent-green); }
+  .info-box.warning .info-content h4 { color: var(--accent-gold); }
+  .info-box.note .info-content h4 { color: var(--accent-blue); }
+  .info-box.important .info-content h4 { color: var(--accent-red); }
+
+  .info-content p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* Suffix breakdown */
+  .suffix-visual {
+    direction: ltr;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 900;
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 3px;
+  }
+
+  .suf-ge { color: var(--accent-gold); }
+  .suf-root { color: var(--text-primary); }
+  .suf-t { color: var(--accent-blue); }
+  .suf-en { color: var(--accent-green); }
+
+  /* Percentage display */
+  .pct-display {
+    display: flex;
+    gap: 20px;
+    margin: 24px 0;
+  }
+
+  .pct-item {
+    flex: 1;
+    text-align: center;
+    padding: 24px 16px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pct-haben-bg {
+    background: linear-gradient(135deg, rgba(74,158,255,0.2) 0%, rgba(74,158,255,0.08) 100%);
+    border: 2px solid rgba(74,158,255,0.4);
+  }
+
+  .pct-sein-bg {
+    background: linear-gradient(135deg, rgba(46,204,113,0.2) 0%, rgba(46,204,113,0.08) 100%);
+    border: 2px solid rgba(46,204,113,0.4);
+  }
+
+  .pct-number {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .pct-haben-bg .pct-number { color: var(--haben-color); }
+  .pct-sein-bg .pct-number { color: var(--sein-color); }
+
+  .pct-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  .pct-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+  }
+
+  /* Quiz section */
+  .quiz-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px;
+    margin: 20px 0;
+  }
+
+  .quiz-question {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    direction: ltr;
+    padding: 16px;
+    background: rgba(74,158,255,0.08);
+    border-radius: 10px;
+    border-right: 3px solid var(--accent-blue);
+  }
+
+  .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .quiz-opt {
+    background: rgba(15,22,41,0.8);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 14px 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    direction: ltr;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .quiz-opt:hover { border-color: rgba(74,158,255,0.5); background: rgba(74,158,255,0.1); }
+  .quiz-opt.correct { border-color: var(--accent-green); background: rgba(46,204,113,0.15); color: var(--accent-green); }
+  .quiz-opt.wrong { border-color: var(--accent-red); background: rgba(231,76,60,0.15); color: var(--accent-red); }
+
+  .quiz-feedback {
+    display: none;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 12px;
+  }
+
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.correct-fb { background: rgba(46,204,113,0.15); border: 1px solid rgba(46,204,113,0.4); color: var(--accent-green); }
+  .quiz-feedback.wrong-fb { background: rgba(231,76,60,0.15); border: 1px solid rgba(231,76,60,0.4); color: var(--accent-red); }
+
+  /* Collapsible */
+  .collapsible-btn {
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: all 0.3s;
+    margin: 8px 0;
+  }
+
+  .collapsible-btn:hover {
+    border-color: rgba(74,158,255,0.4);
+    background: var(--bg-card-hover);
+  }
+
+  .collapsible-btn .arrow {
+    transition: transform 0.3s;
+    color: var(--accent-blue);
+    font-size: 1.1rem;
+  }
+
+  .collapsible-btn.open .arrow { transform: rotate(180deg); }
+
+  .collapsible-content {
+    display: none;
+    padding: 20px;
+    background: rgba(10,14,26,0.6);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    margin-top: -8px;
+    margin-bottom: 8px;
+  }
+
+  .collapsible-content.open { display: block; animation: slideDown 0.3s ease; }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Progress bar */
+  .progress-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 20px 0;
+  }
+
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .progress-bar-bg {
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    height: 10px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 1.5s cubic-bezier(0.4,0,0.2,1);
+    width: 0;
+  }
+
+  /* Color badges */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 2px;
+  }
+
+  .b-blue { background: rgba(74,158,255,0.2); color: var(--accent-blue); }
+  .b-green { background: rgba(46,204,113,0.2); color: var(--accent-green); }
+  .b-gold { background: rgba(240,192,64,0.2); color: var(--accent-gold); }
+  .b-red { background: rgba(231,76,60,0.2); color: var(--accent-red); }
+  .b-purple { background: rgba(155,89,182,0.2); color: var(--accent-purple); }
+  .b-orange { background: rgba(230,126,34,0.2); color: var(--accent-orange); }
+  .b-teal { background: rgba(26,188,156,0.2); color: var(--accent-teal); }
+
+  /* Separator */
+  .section-sep {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 48px 0;
+  }
+
+  /* Comparison table */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+  }
+
+  .compare-table th {
+    padding: 14px 18px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .compare-table td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .th-haben { color: var(--haben-color); }
+  .th-sein { color: var(--sein-color); }
+  .th-type { color: var(--accent-gold); }
+
+  /* Scrollable verb list */
+  .verb-list-container {
+    max-height: 500px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 4px;
+  }
+
+  .verb-list-container::-webkit-scrollbar { width: 6px; }
+  .verb-list-container::-webkit-scrollbar-track { background: transparent; }
+  .verb-list-container::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }
+
+  /* Modal-style big example */
+  .big-example {
+    background: linear-gradient(135deg, rgba(74,158,255,0.1) 0%, rgba(46,204,113,0.08) 100%);
+    border: 1px solid rgba(74,158,255,0.25);
+    border-radius: 14px;
+    padding: 24px;
+    margin: 16px 0;
+    direction: ltr;
+    text-align: center;
+  }
+
+  .big-example .present-line {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .big-example .past-line {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  .big-example .translation {
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    margin-top: 10px;
+    direction: rtl;
+  }
+
+  /* Separable verb visual */
+  .separable-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 800;
+    direction: ltr;
+    padding: 16px;
+  }
+
+  .sep-prefix { color: var(--accent-orange); }
+  .sep-ge { color: var(--accent-gold); }
+  .sep-root { color: var(--text-primary); }
+  .sep-ending { color: var(--accent-blue); }
+
+  /* Footer */
+  footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header-hero { padding: 40px 20px 30px; }
+    main { padding: 24px 16px; }
+    .quiz-options { grid-template-columns: 1fr; }
+    .pct-display { flex-direction: column; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .compare-table th, .compare-table td { padding: 10px 12px; font-size: 0.82rem; }
+  }
+
+  /* Section containers */
+  .section-block {
+    margin-bottom: 60px;
+  }
+
+  /* Tab system */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+
+  .tab-btn:hover, .tab-btn.active-tab {
+    background: rgba(74,158,255,0.15);
+    border-color: rgba(74,158,255,0.4);
+    color: var(--accent-blue);
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active-content { display: block; animation: fadeIn 0.3s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Smooth entrance animations */
+  .animate-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .animate-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Word builder */
+  .word-builder {
+    display: flex;
+    align-items: stretch;
+    direction: ltr;
+    margin: 12px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+  }
+
+  .wb-part {
+    flex: 1;
+    padding: 16px 12px;
+    text-align: center;
+    font-weight: 800;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+  }
+
+  .wb-ge { background: rgba(240,192,64,0.2); color: var(--accent-gold); }
+  .wb-root { background: rgba(154,170,210,0.1); color: var(--text-primary); }
+  .wb-t { background: rgba(74,158,255,0.2); color: var(--accent-blue); }
+  .wb-en { background: rgba(46,204,113,0.2); color: var(--accent-green); }
+  .wb-prefix { background: rgba(230,126,34,0.2); color: var(--accent-orange); }
+  .wb-label { font-size: 0.7rem; font-weight: 600; opacity: 0.8; display: block; margin-top: 4px; }
+
+  /* Praeteritum section */
+  .prateritum-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+
+  @media (max-width: 600px) { .prateritum-grid { grid-template-columns: 1fr; } }
+
+  .pr-card {
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    direction: ltr;
+  }
+
+  .pr-verb { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+  .pr-form { font-size: 0.9rem; color: var(--accent-purple); font-weight: 700; margin-bottom: 8px; }
+  .pr-desc { font-size: 0.82rem; color: var(--text-secondary); direction: rtl; }
+
+  /* Scroll to top */
+  .scroll-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 48px;
+    height: 48px;
+    background: rgba(74,158,255,0.2);
+    border: 2px solid rgba(74,158,255,0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--accent-blue);
+    transition: all 0.3s;
+    z-index: 200;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .scroll-top.visible { opacity: 1; pointer-events: all; }
+  .scroll-top:hover { background: rgba(74,158,255,0.35); transform: translateY(-3px); }
+</style>
+</head>
+<body>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+
+<!-- HEADER -->
+<header>
+  <div class="header-hero">
+    <div class="video-badge">الدروس 31 · 32 · 33 · 34</div>
+    <h1 class="main-title">Das Perfekt</h1>
+    <p class="subtitle">الماضي التام في اللغة الألمانية — شرح شامل ومفصّل</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px;">
+      <span class="badge b-blue">haben</span>
+      <span class="badge b-green">sein</span>
+      <span class="badge b-gold">Partizip II</span>
+      <span class="badge b-purple">Trennbare Verben</span>
+      <span class="badge b-orange">Untrennbare Verben</span>
+      <span class="badge b-red">Unregelmäßige Verben</span>
+    </div>
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="scrollToSection('intro')">مقدمة</button>
+    <button class="nav-btn" onclick="scrollToSection('formel')">الصيغة الأساسية</button>
+    <button class="nav-btn" onclick="scrollToSection('regular')">الأفعال المنتظمة</button>
+    <button class="nav-btn" onclick="scrollToSection('ieren')">أفعال -ieren</button>
+    <button class="nav-btn" onclick="scrollToSection('irregular')">الأفعال الشاذة</button>
+    <button class="nav-btn" onclick="scrollToSection('trennbar')">المنفصلة</button>
+    <button class="nav-btn" onclick="scrollToSection('untrennbar')">غير القابلة للانفصال</button>
+    <button class="nav-btn" onclick="scrollToSection('sein-rules')">قواعد sein</button>
+    <button class="nav-btn" onclick="scrollToSection('verblist')">قائمة الأفعال</button>
+    <button class="nav-btn" onclick="scrollToSection('prateritum')">Präteritum</button>
+    <button class="nav-btn" onclick="scrollToSection('quiz')">اختبار</button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ==================== INTRO ==================== -->
+  <div class="section-block animate-in" id="intro">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(74,158,255,0.15);border:1px solid rgba(74,158,255,0.3)">📖</div>
+      <div>
+        <div class="section-number">VIDEO 31 · 32 · 33 · 34</div>
+        <h2 class="section-title">ما هو Das Perfekt؟</h2>
+        <p class="section-subtitle">مقدمة وتعريف زمن الماضي التام في الألمانية</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card card-blue">
+        <h3 style="color:var(--accent-blue);font-size:1.1rem;margin-bottom:14px;">🎯 تعريف الزمن</h3>
+        <p style="color:var(--text-secondary);line-height:1.9;font-size:0.95rem;">
+          <strong style="color:var(--text-primary)">Das Perfekt</strong> هو زمن الماضي الأكثر استخداماً في المحادثات اليومية الألمانية. يُستخدم للتعبير عن أحداث وقعت في الماضي وانتهت، أو أحداث ماضية تؤثر على الحاضر. يتكون من فعلين: فعل مساعد (haben أو sein) + الفعل الرئيسي بصيغة Partizip II.
+        </p>
+      </div>
+      <div class="card card-green">
+        <h3 style="color:var(--accent-green);font-size:1.1rem;margin-bottom:14px;">💬 متى نستخدمه؟</h3>
+        <p style="color:var(--text-secondary);line-height:1.9;font-size:0.95rem;">
+          يُستخدم Perfekt أساساً في <strong style="color:var(--text-primary)">المحادثات الشفهية</strong> اليومية، وفي الرسائل غير الرسمية والإيميلات الشخصية. إنه الزمن المفضل عند الحديث عن الأحداث الماضية في اللغة الألمانية المحكية على عكس اللغة المكتوبة الرسمية.
+        </p>
+      </div>
+    </div>
+
+    <div class="big-example">
+      <div class="present-line">Ich mache einen Salat <span style="color:var(--text-muted)">(المضارع)</span></div>
+      <div class="past-line">Ich <span class="highlight-haben">habe</span> einen Salat <span class="highlight-partizip">gemacht</span></div>
+      <div class="translation">أنا صنعت سلطة ← (المثال الأساسي من الدرس)</div>
+    </div>
+
+    <div class="info-box tip">
+      <div class="info-icon">💡</div>
+      <div class="info-content">
+        <h4>نصيحة مهمة</h4>
+        <p>في المحادثات اليومية، 80% من الأفعال تستخدم الفعل المساعد <strong>haben</strong> و20% فقط تستخدم <strong>sein</strong>. لذلك إذا لم تكن متأكداً، فاستخدم haben وستكون على صواب في أغلب الحالات!</p>
+      </div>
+    </div>
+
+    <!-- Progress tracker -->
+    <div class="progress-section">
+      <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:16px;color:var(--text-primary)">📊 نسبة استخدام الأفعال المساعدة</h4>
+      <div class="progress-label">
+        <span style="color:var(--haben-color)">haben — أغلب الأفعال</span>
+        <span style="color:var(--haben-color)">80%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" style="width:0%;background:linear-gradient(90deg,var(--haben-color),#2980b9);" data-target="80" id="pb1"></div>
+      </div>
+      <div class="progress-label">
+        <span style="color:var(--sein-color)">sein — أفعال الحركة والتغيير</span>
+        <span style="color:var(--sein-color)">20%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" style="width:0%;background:linear-gradient(90deg,var(--sein-color),#27ae60);" data-target="20" id="pb2"></div>
+      </div>
+    </div>
+
+    <div class="pct-display">
+      <div class="pct-item pct-haben-bg">
+        <div class="pct-number">80%</div>
+        <div class="pct-label">haben</div>
+        <div class="pct-desc">الأفعال المتعدية، الانعكاسية، والمساعدة</div>
+      </div>
+      <div class="pct-item pct-sein-bg">
+        <div class="pct-number">20%</div>
+        <div class="pct-label">sein</div>
+        <div class="pct-desc">أفعال الحركة، التغيير، وأفعال خاصة</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-sep">
+
+  <!-- ==================== FORMEL ==================== -->
+  <div class="section-block animate-in" id="formel">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(240,192,64,0.15);border:1px solid rgba(240,192,64,0.3)">⚗️</div>
+      <div>
+        <div class="section-number">الصيغة الأساسية</div>
+        <h2 class="section-title">تركيب جملة Perfekt</h2>
+        <p class="section-subtitle">ترتيب عناصر الجملة في زمن الماضي</p>
+      </div>
+    </div>
+
+    <div class="formula-box">
+      <div class="formula-label">📐 الصيغة الأساسية لجملة Perfekt</div>
+      <div class="formula-text" style="direction:ltr;flex-direction:column;gap:20px;">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;">
+          <span class="formula-part fp-subject">الفاعل (Subjekt)</span>
+          <span class="fp-arrow">+</span>
+          <span class="formula-part fp-haben">haben / sein</span>
+          <span class="fp-arrow">+</span>
+          <span class="formula-part fp-rest">... تتمة الجملة ...</span>
+          <span class="fp-arrow">+</span>
+          <span class="formula-part fp-partizip">Partizip II</span>
+        </div>
+        <div style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">الفعل المساعد دائماً في المرتبة الثانية · Partizip II دائماً في نهاية الجملة</div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin:24px 0;">
+      <div>
+        <h4 style="color:var(--haben-color);margin-bottom:12px;font-size:1rem;">📘 مثال مع haben</h4>
+        <div class="big-example" style="background:rgba(74,158,255,0.08);border-color:rgba(74,158,255,0.25);">
+          <div class="present-line">① Ich &nbsp;&nbsp;&nbsp; ② habe &nbsp;&nbsp;&nbsp; ③ einen Salat &nbsp;&nbsp;&nbsp; ④ gemacht</div>
+          <div style="display:flex;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap;">
+            <span class="badge b-gold">① الفاعل</span>
+            <span class="badge b-blue">② haben</span>
+            <span class="badge" style="background:rgba(154,170,210,0.1);color:var(--text-secondary);">③ تتمة</span>
+            <span class="badge b-purple">④ Partizip II</span>
+          </div>
+          <div class="translation">أنا صنعتُ سلطة</div>
+        </div>
+      </div>
+      <div>
+        <h4 style="color:var(--sein-color);margin-bottom:12px;font-size:1rem;">📗 مثال مع sein</h4>
+        <div class="big-example" style="background:rgba(46,204,113,0.08);border-color:rgba(46,204,113,0.25);">
+          <div class="present-line">① Ich &nbsp;&nbsp;&nbsp; ② bin &nbsp;&nbsp;&nbsp; ③ nach Hause &nbsp;&nbsp;&nbsp; ④ gegangen</div>
+          <div style="display:flex;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap;">
+            <span class="badge b-gold">① الفاعل</span>
+            <span class="badge b-green">② sein</span>
+            <span class="badge" style="background:rgba(154,170,210,0.1);color:var(--text-secondary);">③ تتمة</span>
+            <span class="badge b-purple">④ Partizip II</span>
+          </div>
+          <div class="translation">أنا ذهبتُ إلى البيت</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- haben conjugation -->
+    <div class="grid-2" style="gap:20px;margin-top:24px;">
+      <div class="card card-blue">
+        <h4 style="color:var(--haben-color);margin-bottom:16px;font-size:1rem;">تصريف haben في المضارع</h4>
+        <table class="conj-table" style="direction:ltr;">
+          <tr><th>Pronomen</th><th>haben</th></tr>
+          <tr><td class="conj-pronoun">ich</td><td class="conj-verb" style="color:var(--haben-color);font-weight:700;">habe</td></tr>
+          <tr><td class="conj-pronoun">du</td><td class="conj-verb">hast</td></tr>
+          <tr><td class="conj-pronoun">er/sie/es</td><td class="conj-verb">hat</td></tr>
+          <tr><td class="conj-pronoun">wir</td><td class="conj-verb">haben</td></tr>
+          <tr><td class="conj-pronoun">ihr</td><td class="conj-verb">habt</td></tr>
+          <tr><td class="conj-pronoun">sie/Sie</td><td class="conj-verb">haben</td></tr>
+        </table>
+      </div>
+      <div class="card card-green">
+        <h4 style="color:var(--sein-color);margin-bottom:16px;font-size:1rem;">تصريف sein في المضارع</h4>
+        <table class="conj-table" style="direction:ltr;">
+          <tr><th>Pronomen</th><th>sein</th></tr>
+          <tr><td class="conj-pronoun">ich</td><td class="conj-verb" style="color:var(--sein-color);font-weight:700;">bin</td></tr>
+          <tr><td class="conj-pronoun">du</td><td class="conj-verb">bist</td></tr>
+          <tr><td class="conj-pronoun">er/sie/es</td><td class="conj-verb">ist</td></tr>
+          <tr><td class="conj-pronoun">wir</td><td class="conj-verb">sind</td></tr>
+          <tr><td class="conj-pronoun">ihr</td><td class="conj-verb">seid</td></tr>
+          <tr><td class="conj-pronoun">sie/Sie</td><td class="conj-verb">sind</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- When to use haben -->
+    <div class="card card-blue" style="margin-top:24px;">
+      <h3 style="color:var(--haben-color);margin-bottom:16px;font-size:1.1rem;">📘 متى نستخدم haben؟</h3>
+      <div class="rule-box">
+        <div class="rule-number" style="background:rgba(74,158,255,0.2);color:var(--haben-color);">١</div>
+        <div class="rule-content">
+          <h4>مع الأفعال المتعدية (تأخذ Akkusativ)</h4>
+          <p>كل فعل يأخذ مفعولاً به مباشراً في حالة الاكوزاتيف يستخدم haben. مثل: kaufen, machen, essen, schreiben, lesen, sehen</p>
+        </div>
+      </div>
+      <div class="rule-box">
+        <div class="rule-number" style="background:rgba(74,158,255,0.2);color:var(--haben-color);">٢</div>
+        <div class="rule-content">
+          <h4>مع الأفعال الانعكاسية (Reflexivverben)</h4>
+          <p>الأفعال التي تأتي مع ضمير انعكاسي مثل sich treffen, sich waschen, sich freuen, sich erinnern</p>
+        </div>
+      </div>
+      <div class="rule-box">
+        <div class="rule-number" style="background:rgba(74,158,255,0.2);color:var(--haben-color);">٣</div>
+        <div class="rule-content">
+          <h4>مع أفعال الوضع والحالة الثابتة (Positionsverben)</h4>
+          <p>أفعال مثل: liegen, stehen, sitzen, hängen — تعبر عن حالة ثابتة وليس حركة أو تغيير</p>
+        </div>
+      </div>
+      <div class="rule-box">
+        <div class="rule-number" style="background:rgba(74,158,255,0.2);color:var(--haben-color);">٤</div>
+        <div class="rule-content">
+          <h4>مع الأفعال المساعدة والشكلية (Modalverben)</h4>
+          <p>können, müssen, dürfen, sollen, wollen, mögen — تستخدم haben في Perfekt</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-sep">
+
+  <!-- ==================== PARTIZIP II FORMATION ==================== -->
+  <div class="section-block animate-in" id="regular">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(240,192,64,0.15);border:1px solid rgba(240,192,64,0.3)">📝</div>
+      <div>
+        <div class="section-number">VIDEO 31</div>
+        <h2 class="section-title">الأفعال المنتظمة — Regelmäßige Verben</h2>
+        <p class="section-subtitle">كيف نكوّن Partizip II للأفعال المنتظمة (الصحيحة)</p>
+      </div>
+    </div>
+
+    <div class="formula-box" style="margin-bottom:28px;">
+      <div class="formula-label">📐 صيغة Partizip II للأفعال المنتظمة</div>
+      <div class="formula-text">
+        <span class="formula-part" style="background:rgba(240,192,64,0.2);color:var(--accent-gold);border:1px solid rgba(240,192,64,0.4);">ge-</span>
+        <span class="fp-arrow">+</span>
+        <span class="formula-part fp-rest">جذر الفعل</span>
+        <span class="fp-arrow">+</span>
+        <span class="formula-part" style="background:rgba(74,158,255,0.2);color:var(--accent-blue);border:1px solid rgba(74,158,255,0.4);">-t</span>
+      </div>
+    </div>
+
+    <!-- Visual word builders -->
+    <h4 style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:16px;font-weight:600;">🔨 بناء Partizip II خطوة بخطوة:</h4>
+    
+    <div class="card card-gold" style="margin-bottom:20px;">
+      <h4 style="color:var(--accent-gold);margin-bottom:16px;">الفعل: machen (يفعل / يصنع)</h4>
+      <div class="word-builder">
+        <div class="wb-part wb-ge">ge<span class="wb-label">البادئة</span></div>
+        <div class="wb-part wb-root">mach<span class="wb-label">الجذر</span></div>
+        <div class="wb-part wb-t">t<span class="wb-label">اللاحقة</span></div>
+      </div>
+      <div style="text-align:center;font-size:1.5rem;font-weight:800;direction:ltr;color:var(--accent-gold);margin:12px 0;">= gemacht</div>
+      <div class="grid-2" style="gap:12px;">
+        <div class="example-box">
+          <div class="example-present">Ich mache einen Salat.</div>
+          <div class="example-past">Ich <span class="highlight-haben">habe</span> einen Salat <span class="highlight-partizip">gemacht</span>.</div>
+          <div class="example-translation">أنا صنعتُ سلطة</div>
+        </div>
+        <div class="example-box">
+          <div class="example-present">Sie macht Hausaufgaben.</div>
+          <div class="example-past">Sie <span class="highlight-haben">hat</span> Hausaufgaben <span class="highlight-partizip">gemacht</span>.</div>
+          <div class="example-translation">هي أنجزت الواجبات المنزلية</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-gold" style="margin-bottom:20px;">
+      <h4 style="color:var(--accent-gold);margin-bottom:16px;">الفعل: kaufen (يشتري)</h4>
+      <div class="word-builder">
+        <div class="wb-part wb-ge">ge<span class="wb-label">البادئة</span></div>
+        <div class="wb-part wb-root">kauf<span class="wb-label">الجذر</span></div>
+        <div class="wb-part wb-t">t<span class="wb-label">اللاحقة</span></div>
+      </div>
+      <div style="text-align:center;font-size:1.5rem;font-weight:800;direction:ltr;color:var(--accent-gold);margin:12px 0;">= gekauft</div>
+      <div class="grid-2" style="gap:12px;">
+        <div class="example-box">
+          <div class="example-present">Ich kaufe ein Auto.</div>
+          <div class="example-past">Ich <span class="highlight-haben">habe</span> ein Auto <span class="highlight-partizip">gekauft</span>.</div>
+          <div class="example-translation">أنا اشتريتُ سيارة</div>
+        </div>
+        <div class="example-box">
+          <div class="example-present">Er kauft Lebensmittel.</div>
+          <div class="example-past">Er <span class="highlight-haben">hat</span> Lebensmittel <span class="highlight-partizip">gekauft</span>.</div>
+          <div class="example-translation">هو اشترى مواد غذائية</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- arbeiten special case -->
+    <div class="card card-gold" style="margin-bottom:20px;">
+      <h4 style="color:var(--accent-gold);margin-bottom:10px;">الفعل: arbeiten (يعمل) — حالة خاصة!</h4>
+      <div class="info-box warning" style="margin-bottom:12px;">
+        <div class="info-icon">⚠️</div>
+        <div class="info-content">
+          <h4>قاعدة مهمة</h4>
+          <p>الأفعال التي تنتهي بـ <strong>-ten، -den، -cken، -gnen</strong> في جذرها — نضيف <strong>-et</strong> بدلاً من <strong>-t</strong> لتسهيل النطق</p>
+        </div>
+      </div>
+      <div class="word-builder">
+        <div class="wb-part wb-ge">ge<span class="wb-label">البادئة</span></div>
+        <div class="wb-part wb-root">arbeit<span class="wb-label">الجذر</span></div>
+        <div class="wb-part wb-t">et<span class="wb-label">اللاحقة</span></div>
+      </div>
+      <div style="text-align:center;font-size:1.5rem;font-weight:800;direction:ltr;color:var(--accent-gold);margin:12px 0;">= gearbeitet</div>
+      <div class="grid-2" style="gap:12px;">
+        <div class="example-box">
+          <div class="example-present">Er arbeitet am Mittwoch.</div>
+          <div class="example-past">Er <span class="highlight-haben">hat</span> am Mittwoch <span class="highlight-partizip">gearbeitet</span>.</div>
+          <div class="example-translation">هو عمل يوم الأربعاء</div>
+        </div>
+        <div class="example-box">
+          <div class="example-present">Wir arbeiten viel.</div>
+          <div class="example-past">Wir <span class="highlight-haben">haben</span> viel <span class="highlight-partizip">gearbeitet</span>.</div>
+          <div class="example-translation">نحن عملنا كثيراً</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- More regular verbs -->
+    <h4 style="color:var(--text-secondary);font-size:0.95rem;margin:24px 0 16px;font-weight:700;">✅ مزيد من الأفعال المنتظمة الشائعة:</h4>
+    <div class="grid-3">
+      <!-- lernen -->
+      <div class="verb-card">
+        <div class="verb-infinitiv">lernen</div>
+        <div class="verb-partizip-display">gelernt</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Ich habe Deutsch gelernt.</div>
+        <div class="verb-meaning">أنا تعلمت الألمانية</div>
+      </div>
+      <!-- spielen -->
+      <div class="verb-card">
+        <div class="verb-infinitiv">spielen</div>
+        <div class="verb-partizip-display">gespielt</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Er hat Fußball gespielt.</div>
+        <div class="verb-meaning">هو لعب كرة القدم</div>
+      </div>
+      <!-- kochen -->
+      <div class="verb-card">
+        <div class="verb-infinitiv">kochen</div>
+        <div class="verb-partizip-display">gekocht</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Sie hat das Essen gekocht.</div>
+        <div class="verb-meaning">هي طبخت الطعام</div>
+      </div>
+      <!-- fragen -->
+      <div class="verb-card">
+        <div class="verb-infinitiv">fragen</div>
+        <div class="verb-partizip-display">gefragt</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Er hat mich gefragt.</div>
+        <div class="verb-meaning">هو سألني</div>
+      </div>
+      <!-- wohnen -->
+      <div class="verb-card">
+        <div class="verb-infinitiv">wohnen</div>
+        <div class="verb-partizip-display">gewohnt</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Ich habe in Berlin gewohnt.</div>
+        <div class="verb-meaning">أنا سكنت في برلين</div>
+      </div>
+      <!-- hören -->
+      <div class="verb-card">
+        <div class="verb-infinitiv">hören</div>
+        <div class="verb-partizip-display">gehört</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Wir haben Musik gehört.</div>
+        <div class="verb-meaning">نحن استمعنا إلى الموسيقى</div>
+      </div>
+      <!-- warten -->
+      <div class="verb-card">
+        <div class="verb-infinitiv">warten</div>
+        <div class="verb-partizip-display">gewartet</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Sie hat lange gewartet.</div>
+        <div class="verb-meaning">هي انتظرت طويلاً</div>
+      </div>
+      <!-- sagen -->
+      <div class="verb-card">
+        <div class="verb-infinitiv">sagen</div>
+        <div class="verb-partizip-display">gesagt</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Er hat nichts gesagt.</div>
+        <div class="verb-meaning">هو لم يقل شيئاً</div>
+      </div>
+      <!-- tanzen -->
+      <div class="verb-card">
+        <div class="verb-infinitiv">tanzen</div>
+        <div class="verb-partizip-display">getanzt</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Wir haben getanzt.</div>
+        <div class="verb-meaning">نحن رقصنا</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-sep">
+
+  <!-- ==================== -IEREN ==================== -->
+  <div class="section-block animate-in" id="ieren">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(26,188,156,0.15);border:1px solid rgba(26,188,156,0.3)">🔤</div>
+      <div>
+        <div class="section-number">VIDEO 31 — قاعدة خاصة</div>
+        <h2 class="section-title">أفعال -ieren</h2>
+        <p class="section-subtitle">الأفعال المنتهية بـ -ieren لا تأخذ البادئة ge-</p>
+      </div>
+    </div>
+
+    <div class="info-box important">
+      <div class="info-icon">🚨</div>
+      <div class="info-content">
+        <h4>قاعدة استثنائية مهمة جداً!</h4>
+        <p>الأفعال المنتهية بـ <strong>-ieren</strong> لا تأخذ البادئة <strong>ge-</strong> في Partizip II. تنتهي فقط بـ <strong>-iert</strong></p>
+      </div>
+    </div>
+
+    <div class="formula-box" style="border-color:rgba(26,188,156,0.4);background:rgba(26,188,156,0.08);">
+      <div class="formula-label" style="color:var(--accent-teal)">📐 صيغة -ieren أفعال</div>
+      <div class="formula-text">
+        <span style="color:var(--text-muted);text-decoration:line-through;padding:8px 16px;font-size:1rem;">ge-</span>
+        <span class="fp-arrow">❌</span>
+        <span class="formula-part fp-rest">جذر الفعل بدون -ieren</span>
+        <span class="fp-arrow">+</span>
+        <span class="formula-part" style="background:rgba(26,188,156,0.2);color:var(--accent-teal);border:1px solid rgba(26,188,156,0.4);">-iert</span>
+      </div>
+    </div>
+
+    <div class="grid-2" style="gap:20px;margin-top:24px;">
+      <div class="card card-teal">
+        <h4 style="color:var(--accent-teal);margin-bottom:14px;">telefonieren (يتصل هاتفياً)</h4>
+        <div class="word-builder">
+          <div class="wb-part wb-root">telefon<span class="wb-label">الجذر</span></div>
+          <div class="wb-part" style="background:rgba(26,188,156,0.2);color:var(--accent-teal);">iert<span class="wb-label">اللاحقة</span></div>
+        </div>
+        <div style="text-align:center;font-size:1.3rem;font-weight:800;color:var(--accent-teal);margin:12px 0;direction:ltr;">= telefoniert</div>
+        <div class="example-box">
+          <div class="example-past">Ich <span class="highlight-haben">habe</span> mit dir <span class="highlight-partizip">telefoniert</span>.</div>
+          <div class="example-translation">أنا اتصلت بك</div>
+        </div>
+      </div>
+      <div class="card card-teal">
+        <h4 style="color:var(--accent-teal);margin-bottom:14px;">studieren (يدرس)</h4>
+        <div class="word-builder">
+          <div class="wb-part wb-root">studi<span class="wb-label">الجذر</span></div>
+          <div class="wb-part" style="background:rgba(26,188,156,0.2);color:var(--accent-teal);">ert<span class="wb-label">اللاحقة</span></div>
+        </div>
+        <div style="text-align:center;font-size:1.3rem;font-weight:800;color:var(--accent-teal);margin:12px 0;direction:ltr;">= studiert</div>
+        <div class="example-box">
+          <div class="example-past">Sie <span class="highlight-haben">hat</span> Kunst <span class="highlight-partizip">studiert</span>.</div>
+          <div class="example-translation">هي درست الفنون</div>
+        </div>
+      </div>
+    </div>
+
+    <h4 style="color:var(--text-secondary);font-size:0.95rem;margin:24px 0 16px;font-weight:700;">🌍 مزيد من أفعال -ieren الشائعة:</h4>
+    <div class="grid-3">
+      <div class="verb-card">
+        <div class="verb-infinitiv">fotografieren</div>
+        <div class="verb-partizip-display">fotografiert</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Er hat viel fotografiert.</div>
+        <div class="verb-meaning">هو صوّر كثيراً</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">passieren</div>
+        <div class="verb-partizip-display">passiert</div>
+        <div class="verb-aux aux-sein">sein</div>
+        <div class="verb-example">Was ist passiert?</div>
+        <div class="verb-meaning">ماذا حدث؟ (مع sein!)</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">reparieren</div>
+        <div class="verb-partizip-display">repariert</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Er hat das Auto repariert.</div>
+        <div class="verb-meaning">هو أصلح السيارة</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">trainieren</div>
+        <div class="verb-partizip-display">trainiert</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Sie hat täglich trainiert.</div>
+        <div class="verb-meaning">هي تدربت يومياً</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">organisieren</div>
+        <div class="verb-partizip-display">organisiert</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Wir haben alles organisiert.</div>
+        <div class="verb-meaning">نحن نظمنا كل شيء</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">reservieren</div>
+        <div class="verb-partizip-display">reserviert</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Ich habe einen Tisch reserviert.</div>
+        <div class="verb-meaning">أنا حجزت طاولة</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-sep">
+
+  <!-- ==================== IRREGULAR ==================== -->
+  <div class="section-block animate-in" id="irregular">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(231,76,60,0.15);border:1px solid rgba(231,76,60,0.3)">⚡</div>
+      <div>
+        <div class="section-number">VIDEO 31</div>
+        <h2 class="section-title">الأفعال الشاذة — Unregelmäßige Verben</h2>
+        <p class="section-subtitle">أفعال تتغير فيها القاعدة الجذرية وتنتهي بـ -en</p>
+      </div>
+    </div>
+
+    <div class="formula-box" style="border-color:rgba(231,76,60,0.4);background:rgba(231,76,60,0.08);">
+      <div class="formula-label" style="color:var(--accent-red)">📐 صيغة Partizip II للأفعال الشاذة</div>
+      <div class="formula-text">
+        <span class="formula-part" style="background:rgba(240,192,64,0.2);color:var(--accent-gold);border:1px solid rgba(240,192,64,0.4);">ge-</span>
+        <span class="fp-arrow">+</span>
+        <span class="formula-part" style="background:rgba(231,76,60,0.2);color:var(--accent-red);border:1px solid rgba(231,76,60,0.4);">جذر متغير أحياناً</span>
+        <span class="fp-arrow">+</span>
+        <span class="formula-part" style="background:rgba(46,204,113,0.2);color:var(--accent-green);border:1px solid rgba(46,204,113,0.4);">-en</span>
+      </div>
+    </div>
+
+    <div class="info-box note">
+      <div class="info-icon">📌</div>
+      <div class="info-content">
+        <h4>الفرق بين المنتظم والشاذ</h4>
+        <p>المنتظم ينتهي بـ <strong>-t</strong> (gemacht, gekauft) — الشاذ ينتهي بـ <strong>-en</strong> (gegangen, geschrieben) وغالباً يتغير جذره</p>
+      </div>
+    </div>
+
+    <!-- schreiben example -->
+    <div class="card card-red" style="margin:20px 0;">
+      <h4 style="color:var(--accent-red);margin-bottom:14px;">مثال: schreiben (يكتب) — فعل منتظم لكن جذره يتغير!</h4>
+      <div class="word-builder">
+        <div class="wb-part wb-ge">ge<span class="wb-label">البادئة</span></div>
+        <div class="wb-part" style="background:rgba(231,76,60,0.15);color:var(--accent-red);">schrieb<span class="wb-label">جذر متغير</span></div>
+        <div class="wb-part wb-en">en<span class="wb-label">اللاحقة</span></div>
+      </div>
+      <div style="text-align:center;font-size:1.3rem;font-weight:800;direction:ltr;color:var(--accent-red);margin:12px 0;">= geschrieben</div>
+      <div class="grid-2" style="gap:12px;">
+        <div class="example-box">
+          <div class="example-present">Ich schreibe einen Brief.</div>
+          <div class="example-past">Ich <span class="highlight-haben">habe</span> einen Brief <span class="highlight-partizip">geschrieben</span>.</div>
+          <div class="example-translation">أنا كتبت رسالة</div>
+        </div>
+        <div class="example-box">
+          <div class="example-present">Er schreibt eine E-Mail.</div>
+          <div class="example-past">Er <span class="highlight-haben">hat</span> eine E-Mail <span class="highlight-partizip">geschrieben</span>.</div>
+          <div class="example-translation">هو كتب إيميلاً</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Irregular verbs from lesson -->
+    <h4 style="color:var(--text-secondary);font-size:0.95rem;margin:24px 0 16px;font-weight:700;">📚 الأفعال الشاذة الواردة في الدرس:</h4>
+
+    <div class="tabs">
+      <button class="tab-btn active-tab" onclick="switchTab('irr-tab', 'tab-haben-irr', this)">مع haben</button>
+      <button class="tab-btn" onclick="switchTab('irr-tab', 'tab-sein-irr', this)">مع sein</button>
+      <button class="tab-btn" onclick="switchTab('irr-tab', 'tab-special-irr', this)">أفعال خاصة</button>
+    </div>
+
+    <div id="irr-tab">
+      <div id="tab-haben-irr" class="tab-content active-content">
+        <div class="grid-3">
+          <div class="verb-card">
+            <div class="verb-infinitiv">sehen</div>
+            <div class="verb-partizip-display">gesehen</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Ich habe den Film gesehen.</div>
+            <div class="verb-meaning">أنا شاهدت الفيلم</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">geben</div>
+            <div class="verb-partizip-display">gegeben</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Er hat mir ein Buch gegeben.</div>
+            <div class="verb-meaning">هو أعطاني كتاباً</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">finden</div>
+            <div class="verb-partizip-display">gefunden</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Ich habe meinen Schlüssel gefunden.</div>
+            <div class="verb-meaning">أنا وجدتُ مفتاحي</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">halten</div>
+            <div class="verb-partizip-display">gehalten</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Er hat eine Rede gehalten.</div>
+            <div class="verb-meaning">هو ألقى خطاباً</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">helfen</div>
+            <div class="verb-partizip-display">geholfen</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Ich habe ihm geholfen.</div>
+            <div class="verb-meaning">أنا ساعدته</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">lassen</div>
+            <div class="verb-partizip-display">gelassen</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Ich habe ihn gehen gelassen.</div>
+            <div class="verb-meaning">أنا تركته يذهب</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">entscheiden</div>
+            <div class="verb-partizip-display">entschieden</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Sie hat schnell entschieden.</div>
+            <div class="verb-meaning">هي قررت بسرعة</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">bieten</div>
+            <div class="verb-partizip-display">geboten</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Er hat viel geboten.</div>
+            <div class="verb-meaning">هو عرض الكثير</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">gewinnen</div>
+            <div class="verb-partizip-display">gewonnen</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Wir haben gewonnen!</div>
+            <div class="verb-meaning">نحن فزنا!</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">heißen</div>
+            <div class="verb-partizip-display">geheißen</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Er hat Max geheißen.</div>
+            <div class="verb-meaning">كان اسمه ماكس</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">beginnen</div>
+            <div class="verb-partizip-display">begonnen</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Der Film hat begonnen.</div>
+            <div class="verb-meaning">بدأ الفيلم</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">liegen</div>
+            <div class="verb-partizip-display">gelegen</div>
+            <div class="verb-aux aux-haben">haben / sein</div>
+            <div class="verb-example">Das Buch hat auf dem Tisch gelegen.</div>
+            <div class="verb-meaning">كان الكتاب على الطاولة</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-sein-irr" class="tab-content">
+        <div class="grid-3">
+          <div class="verb-card">
+            <div class="verb-infinitiv">gehen</div>
+            <div class="verb-partizip-display">gegangen</div>
+            <div class="verb-aux aux-sein">sein</div>
+            <div class="verb-example">Wir sind nach Hause gegangen.</div>
+            <div class="verb-meaning">نحن ذهبنا إلى البيت</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">kommen</div>
+            <div class="verb-partizip-display">gekommen</div>
+            <div class="verb-aux aux-sein">sein</div>
+            <div class="verb-example">Er ist um 9:00 Uhr gekommen.</div>
+            <div class="verb-meaning">هو جاء الساعة التاسعة</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">bleiben</div>
+            <div class="verb-partizip-display">geblieben</div>
+            <div class="verb-aux aux-sein">sein</div>
+            <div class="verb-example">Wir sind zu Hause geblieben.</div>
+            <div class="verb-meaning">نحن بقينا في البيت</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">fallen</div>
+            <div class="verb-partizip-display">gefallen</div>
+            <div class="verb-aux aux-sein">sein</div>
+            <div class="verb-example">Die Blätter sind gefallen.</div>
+            <div class="verb-meaning">سقطت الأوراق</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">laufen</div>
+            <div class="verb-partizip-display">gelaufen</div>
+            <div class="verb-aux aux-sein">sein</div>
+            <div class="verb-example">Er ist schnell gelaufen.</div>
+            <div class="verb-meaning">هو ركض بسرعة</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">schwimmen</div>
+            <div class="verb-partizip-display">geschwommen</div>
+            <div class="verb-aux aux-sein">sein</div>
+            <div class="verb-example">Sie ist im See geschwommen.</div>
+            <div class="verb-meaning">هي سبحت في البحيرة</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">fliegen</div>
+            <div class="verb-partizip-display">geflogen</div>
+            <div class="verb-aux aux-sein">sein</div>
+            <div class="verb-example">Sie ist nach Italien geflogen.</div>
+            <div class="verb-meaning">هي سافرت إلى إيطاليا بالطائرة</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">fahren</div>
+            <div class="verb-partizip-display">gefahren</div>
+            <div class="verb-aux aux-sein">sein</div>
+            <div class="verb-example">Wir sind nach Italien gefahren.</div>
+            <div class="verb-meaning">نحن سافرنا إلى إيطاليا</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">reisen</div>
+            <div class="verb-partizip-display">gereist</div>
+            <div class="verb-aux aux-sein">sein</div>
+            <div class="verb-example">Ich bin nach Italien gereist.</div>
+            <div class="verb-meaning">أنا سافرت إلى إيطاليا</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-special-irr" class="tab-content">
+        <div class="grid-3">
+          <div class="verb-card">
+            <div class="verb-infinitiv">riechen</div>
+            <div class="verb-partizip-display">gerochen</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Das Essen hat gut gerochen.</div>
+            <div class="verb-meaning">كانت رائحة الطعام جيدة</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">schweigen</div>
+            <div class="verb-partizip-display">geschwiegen</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">So lange habe ich geschwiegen.</div>
+            <div class="verb-meaning">صمتُّ طويلاً</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">schließen</div>
+            <div class="verb-partizip-display">geschlossen</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Sie hat das Fenster geschlossen.</div>
+            <div class="verb-meaning">هي أغلقت النافذة</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">denken</div>
+            <div class="verb-partizip-display">gedacht</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Ich habe an meine Familie gedacht.</div>
+            <div class="verb-meaning">أنا فكرت في عائلتي</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">bringen</div>
+            <div class="verb-partizip-display">gebracht</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Ich habe sie nach Hause gebracht.</div>
+            <div class="verb-meaning">أنا أوصلتها إلى البيت</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">singen</div>
+            <div class="verb-partizip-display">gesungen</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Ich habe ein Lied gesungen.</div>
+            <div class="verb-meaning">أنا غنيتُ أغنية</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">treffen</div>
+            <div class="verb-partizip-display">getroffen</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Ich habe Freunde getroffen.</div>
+            <div class="verb-meaning">أنا التقيتُ بأصدقاء</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">sprechen</div>
+            <div class="verb-partizip-display">gesprochen</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Sie hat mit dir gesprochen.</div>
+            <div class="verb-meaning">هي تكلمت معك</div>
+          </div>
+          <div class="verb-card">
+            <div class="verb-infinitiv">trinken</div>
+            <div class="verb-partizip-display">getrunken</div>
+            <div class="verb-aux aux-haben">haben</div>
+            <div class="verb-example">Er hat einen Saft getrunken.</div>
+            <div class="verb-meaning">هو شرب عصيراً</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-sep">
+
+  <!-- ==================== TRENNBARE VERBEN ==================== -->
+  <div class="section-block animate-in" id="trennbar">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(155,89,182,0.15);border:1px solid rgba(155,89,182,0.3)">🔀</div>
+      <div>
+        <div class="section-number">VIDEO 31</div>
+        <h2 class="section-title">الأفعال المنفصلة — Trennbare Verben</h2>
+        <p class="section-subtitle">الأفعال ذات البادئات المنفصلة وكيفية تكوين Partizip II</p>
+      </div>
+    </div>
+
+    <div class="info-box note">
+      <div class="info-icon">📌</div>
+      <div class="info-content">
+        <h4>قاعدة الأفعال المنفصلة</h4>
+        <p>في Partizip II تُدمج البادئة المنفصلة مع <strong>ge-</strong> والفعل: البادئة + ge + جذر الفعل + t/en</p>
+      </div>
+    </div>
+
+    <div class="formula-box" style="border-color:rgba(155,89,182,0.4);background:rgba(155,89,182,0.08);">
+      <div class="formula-label" style="color:var(--accent-purple)">📐 صيغة الأفعال المنفصلة</div>
+      <div class="formula-text" style="flex-direction:column;gap:16px;">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;">
+          <span class="formula-part" style="background:rgba(230,126,34,0.2);color:var(--accent-orange);border:1px solid rgba(230,126,34,0.4);">البادئة</span>
+          <span class="fp-arrow">+</span>
+          <span class="formula-part" style="background:rgba(240,192,64,0.2);color:var(--accent-gold);border:1px solid rgba(240,192,64,0.4);">ge</span>
+          <span class="fp-arrow">+</span>
+          <span class="formula-part fp-rest">جذر الفعل</span>
+          <span class="fp-arrow">+</span>
+          <span class="formula-part fp-partizip">t / en</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- aufmachen -->
+    <div class="card card-purple" style="margin:20px 0;">
+      <h4 style="color:var(--accent-purple);margin-bottom:14px;">auf + machen = aufmachen (يفتح)</h4>
+      <div class="separable-visual">
+        <span class="sep-prefix">auf</span>
+        <span class="sep-ge">ge</span>
+        <span class="sep-root">mach</span>
+        <span class="sep-ending">t</span>
+      </div>
+      <div style="text-align:center;font-size:1.3rem;font-weight:800;direction:ltr;color:var(--accent-purple);margin:8px 0;">= aufgemacht</div>
+      <div class="example-box">
+        <div class="example-present">Er macht die Tür auf.</div>
+        <div class="example-past">Er <span class="highlight-haben">hat</span> die Tür <span class="highlight-partizip">aufgemacht</span>.</div>
+        <div class="example-translation">هو فتح الباب</div>
+      </div>
+    </div>
+
+    <!-- einkaufen -->
+    <div class="card card-purple" style="margin:20px 0;">
+      <h4 style="color:var(--accent-purple);margin-bottom:14px;">ein + kaufen = einkaufen (يتسوق)</h4>
+      <div class="separable-visual">
+        <span class="sep-prefix">ein</span>
+        <span class="sep-ge">ge</span>
+        <span class="sep-root">kauf</span>
+        <span class="sep-ending">t</span>
+      </div>
+      <div style="text-align:center;font-size:1.3rem;font-weight:800;direction:ltr;color:var(--accent-purple);margin:8px 0;">= eingekauft</div>
+      <div class="example-box">
+        <div class="example-present">Er kauft im Supermarkt ein.</div>
+        <div class="example-past">Er <span class="highlight-haben">hat</span> im Supermarkt <span class="highlight-partizip">eingekauft</span>.</div>
+        <div class="example-translation">هو تسوّق في السوبرماركت</div>
+      </div>
+    </div>
+
+    <!-- anrufen -->
+    <div class="card card-purple" style="margin:20px 0;">
+      <h4 style="color:var(--accent-purple);margin-bottom:14px;">an + rufen = anrufen (يتصل)</h4>
+      <div class="separable-visual">
+        <span class="sep-prefix">an</span>
+        <span class="sep-ge">ge</span>
+        <span class="sep-root">ruf</span>
+        <span class="sep-ending">en</span>
+      </div>
+      <div style="text-align:center;font-size:1.3rem;font-weight:800;direction:ltr;color:var(--accent-purple);margin:8px 0;">= angerufen</div>
+      <div class="example-box">
+        <div class="example-present">Er ruft seine Mutter an.</div>
+        <div class="example-past">Er <span class="highlight-haben">hat</span> seine Mutter <span class="highlight-partizip">angerufen</span>.</div>
+        <div class="example-translation">هو اتصل بأمه</div>
+      </div>
+    </div>
+
+    <!-- aufstehen -->
+    <div class="card card-purple" style="margin:20px 0;">
+      <h4 style="color:var(--accent-purple);margin-bottom:14px;">auf + stehen = aufstehen (يستيقظ / يقوم) — مع sein!</h4>
+      <div class="separable-visual">
+        <span class="sep-prefix">auf</span>
+        <span class="sep-ge">ge</span>
+        <span class="sep-root">stand</span>
+        <span class="sep-ending">en</span>
+      </div>
+      <div style="text-align:center;font-size:1.3rem;font-weight:800;direction:ltr;color:var(--accent-purple);margin:8px 0;">= aufgestanden</div>
+      <div class="example-box">
+        <div class="example-past">Ich <span class="highlight-sein">bin</span> heute um 8:00 Uhr <span class="highlight-partizip">aufgestanden</span>.</div>
+        <div class="example-translation">أنا استيقظت اليوم الساعة الثامنة</div>
+      </div>
+    </div>
+
+    <h4 style="color:var(--text-secondary);font-size:0.95rem;margin:24px 0 16px;font-weight:700;">📚 المزيد من الأفعال المنفصلة الشائعة:</h4>
+    <div class="grid-3">
+      <div class="verb-card">
+        <div class="verb-infinitiv">abfahren</div>
+        <div class="verb-partizip-display">abgefahren</div>
+        <div class="verb-aux aux-sein">sein</div>
+        <div class="verb-example">Der Zug ist abgefahren.</div>
+        <div class="verb-meaning">القطار انطلق</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">ankommen</div>
+        <div class="verb-partizip-display">angekommen</div>
+        <div class="verb-aux aux-sein">sein</div>
+        <div class="verb-example">Wir sind angekommen.</div>
+        <div class="verb-meaning">نحن وصلنا</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">einschlafen</div>
+        <div class="verb-partizip-display">eingeschlafen</div>
+        <div class="verb-aux aux-sein">sein</div>
+        <div class="verb-example">Das Kind ist eingeschlafen.</div>
+        <div class="verb-meaning">نام الطفل</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">aufwachen</div>
+        <div class="verb-partizip-display">aufgewacht</div>
+        <div class="verb-aux aux-sein">sein</div>
+        <div class="verb-example">Ich bin früh aufgewacht.</div>
+        <div class="verb-meaning">أنا استيقظت مبكراً</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">mitnehmen</div>
+        <div class="verb-partizip-display">mitgenommen</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Ich habe es mitgenommen.</div>
+        <div class="verb-meaning">أنا أخذته معي</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">zurückkommen</div>
+        <div class="verb-partizip-display">zurückgekommen</div>
+        <div class="verb-aux aux-sein">sein</div>
+        <div class="verb-example">Er ist zurückgekommen.</div>
+        <div class="verb-meaning">هو عاد</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-sep">
+
+  <!-- ==================== UNTRENNBAR ==================== -->
+  <div class="section-block animate-in" id="untrennbar">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(230,126,34,0.15);border:1px solid rgba(230,126,34,0.3)">🔒</div>
+      <div>
+        <div class="section-number">VIDEO 31</div>
+        <h2 class="section-title">الأفعال غير القابلة للانفصال — Untrennbare Verben</h2>
+        <p class="section-subtitle">الأفعال ذات البادئات الثابتة — لا تأخذ ge- في Partizip II</p>
+      </div>
+    </div>
+
+    <div class="info-box important">
+      <div class="info-icon">🚨</div>
+      <div class="info-content">
+        <h4>قاعدة مهمة جداً!</h4>
+        <p>الأفعال التي تبدأ بالبادئات: <strong>be-, ver-, er-, ent-, ge-, zer-, miss-, emp-</strong> لا تأخذ البادئة <strong>ge-</strong> في Partizip II. تبقى كما هي + t أو en</p>
+      </div>
+    </div>
+
+    <div class="formula-box" style="border-color:rgba(230,126,34,0.4);background:rgba(230,126,34,0.08);">
+      <div class="formula-label" style="color:var(--accent-orange)">البادئات غير القابلة للانفصال</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:12px;">
+        <span class="badge b-orange" style="font-size:1rem;padding:6px 16px;">be-</span>
+        <span class="badge b-orange" style="font-size:1rem;padding:6px 16px;">ver-</span>
+        <span class="badge b-orange" style="font-size:1rem;padding:6px 16px;">er-</span>
+        <span class="badge b-orange" style="font-size:1rem;padding:6px 16px;">ent-</span>
+        <span class="badge b-orange" style="font-size:1rem;padding:6px 16px;">ge-</span>
+        <span class="badge b-orange" style="font-size:1rem;padding:6px 16px;">zer-</span>
+        <span class="badge b-orange" style="font-size:1rem;padding:6px 16px;">miss-</span>
+        <span class="badge b-orange" style="font-size:1rem;padding:6px 16px;">emp-</span>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:24px;">
+      <!-- besuchen -->
+      <div class="card card-orange">
+        <h4 style="color:var(--accent-orange);margin-bottom:12px;">besuchen (يزور)</h4>
+        <div class="word-builder">
+          <div class="wb-part wb-prefix">be<span class="wb-label">البادئة</span></div>
+          <div class="wb-part wb-root">such<span class="wb-label">الجذر</span></div>
+          <div class="wb-part wb-t">t<span class="wb-label">اللاحقة</span></div>
+        </div>
+        <div style="text-align:center;font-size:1.2rem;font-weight:800;direction:ltr;color:var(--accent-orange);margin:10px 0;">= besucht (بدون ge!)</div>
+        <div class="example-box">
+          <div class="example-past">Ich <span class="highlight-haben">habe</span> meine Oma <span class="highlight-partizip">besucht</span>.</div>
+          <div class="example-translation">أنا زرتُ جدتي</div>
+        </div>
+      </div>
+      <!-- verkaufen -->
+      <div class="card card-orange">
+        <h4 style="color:var(--accent-orange);margin-bottom:12px;">verkaufen (يبيع)</h4>
+        <div class="word-builder">
+          <div class="wb-part wb-prefix">ver<span class="wb-label">البادئة</span></div>
+          <div class="wb-part wb-root">kauf<span class="wb-label">الجذر</span></div>
+          <div class="wb-part wb-t">t<span class="wb-label">اللاحقة</span></div>
+        </div>
+        <div style="text-align:center;font-size:1.2rem;font-weight:800;direction:ltr;color:var(--accent-orange);margin:10px 0;">= verkauft (بدون ge!)</div>
+        <div class="example-box">
+          <div class="example-past">Er <span class="highlight-haben">hat</span> sein Auto <span class="highlight-partizip">verkauft</span>.</div>
+          <div class="example-translation">هو باع سيارته</div>
+        </div>
+      </div>
+      <!-- vergessen -->
+      <div class="card card-orange">
+        <h4 style="color:var(--accent-orange);margin-bottom:12px;">vergessen (ينسى)</h4>
+        <div class="word-builder">
+          <div class="wb-part wb-prefix">ver<span class="wb-label">البادئة</span></div>
+          <div class="wb-part wb-root">gess<span class="wb-label">الجذر</span></div>
+          <div class="wb-part wb-en">en<span class="wb-label">اللاحقة</span></div>
+        </div>
+        <div style="text-align:center;font-size:1.2rem;font-weight:800;direction:ltr;color:var(--accent-orange);margin:10px 0;">= vergessen (بدون ge!)</div>
+        <div class="example-box">
+          <div class="example-past">Ich <span class="highlight-haben">habe</span> es <span class="highlight-partizip">vergessen</span>.</div>
+          <div class="example-translation">أنا نسيته</div>
+        </div>
+      </div>
+    </div>
+
+    <h4 style="color:var(--text-secondary);font-size:0.95rem;margin:24px 0 16px;font-weight:700;">📚 المزيد من الأفعال غير القابلة للانفصال:</h4>
+    <div class="grid-3">
+      <div class="verb-card">
+        <div class="verb-infinitiv">erklären</div>
+        <div class="verb-partizip-display">erklärt</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Er hat es erklärt.</div>
+        <div class="verb-meaning">هو شرحه</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">entscheiden</div>
+        <div class="verb-partizip-display">entschieden</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Sie hat entschieden.</div>
+        <div class="verb-meaning">هي قررت</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">bezahlen</div>
+        <div class="verb-partizip-display">bezahlt</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Ich habe bezahlt.</div>
+        <div class="verb-meaning">أنا دفعت</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">verstehen</div>
+        <div class="verb-partizip-display">verstanden</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Ich habe es verstanden.</div>
+        <div class="verb-meaning">أنا فهمته</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">beantworten</div>
+        <div class="verb-partizip-display">beantwortet</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Er hat die Frage beantwortet.</div>
+        <div class="verb-meaning">هو أجاب على السؤال</div>
+      </div>
+      <div class="verb-card">
+        <div class="verb-infinitiv">empfehlen</div>
+        <div class="verb-partizip-display">empfohlen</div>
+        <div class="verb-aux aux-haben">haben</div>
+        <div class="verb-example">Er hat das Restaurant empfohlen.</div>
+        <div class="verb-meaning">هو أوصى بالمطعم</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-sep">
+
+  <!-- ==================== SEIN RULES ==================== -->
+  <div class="section-block animate-in" id="sein-rules">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(46,204,113,0.15);border:1px solid rgba(46,204,113,0.3)">🚀</div>
+      <div>
+        <div class="section-number">VIDEO 32 — Das Perfekt mit sein</div>
+        <h2 class="section-title">متى نستخدم sein؟</h2>
+        <p class="section-subtitle">القواعد الثلاث لاستخدام sein كفعل مساعد في Perfekt</p>
+      </div>
+    </div>
+
+    <div class="big-example" style="background:rgba(46,204,113,0.08);border-color:rgba(46,204,113,0.3);">
+      <div class="present-line">Ich reise nach Italien. (المضارع)</div>
+      <div class="past-line">Ich <span class="highlight-sein">bin</span> nach Italien <span class="highlight-partizip">gereist</span>. (الماضي)</div>
+      <div class="translation">أنا سافرتُ إلى إيطاليا</div>
+    </div>
+
+    <!-- Three rules -->
+    <h3 style="color:var(--sein-color);font-size:1.2rem;margin:28px 0 16px;font-weight:800;">📏 القواعد الثلاث لاستخدام sein:</h3>
+
+    <!-- Rule 1 -->
+    <div class="card card-green" style="margin:16px 0;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+        <div class="rule-number" style="background:rgba(46,204,113,0.25);color:var(--sein-color);width:44px;height:44px;font-size:1.2rem;">١</div>
+        <div>
+          <h4 style="color:var(--sein-color);font-size:1.05rem;">أفعال الحركة التي لا تأخذ مفعولاً به (Akkusativ)</h4>
+          <p style="color:var(--text-secondary);font-size:0.88rem;margin-top:4px;">حركة من مكان إلى مكان — بشرط عدم وجود مفعول به</p>
+        </div>
+      </div>
+      <div class="grid-3" style="gap:12px;margin-bottom:16px;">
+        <div style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:10px;padding:12px;direction:ltr;">
+          <div style="color:var(--sein-color);font-weight:800;font-size:1rem;">kommen → gekommen</div>
+          <div style="color:var(--text-secondary);font-size:0.82rem;margin-top:4px;">جاء — قدم</div>
+        </div>
+        <div style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:10px;padding:12px;direction:ltr;">
+          <div style="color:var(--sein-color);font-weight:800;font-size:1rem;">gehen → gegangen</div>
+          <div style="color:var(--text-secondary);font-size:0.82rem;margin-top:4px;">ذهب</div>
+        </div>
+        <div style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:10px;padding:12px;direction:ltr;">
+          <div style="color:var(--sein-color);font-weight:800;font-size:1rem;">fahren → gefahren</div>
+          <div style="color:var(--text-secondary);font-size:0.82rem;margin-top:4px;">سافر / ذهب بالسيارة</div>
+        </div>
+        <div style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:10px;padding:12px;direction:ltr;">
+          <div style="color:var(--sein-color);font-weight:800;font-size:1rem;">reisen → gereist</div>
+          <div style="color:var(--text-secondary);font-size:0.82rem;margin-top:4px;">سافر</div>
+        </div>
+        <div style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:10px;padding:12px;direction:ltr;">
+          <div style="color:var(--sein-color);font-weight:800;font-size:1rem;">fliegen → geflogen</div>
+          <div style="color:var(--text-secondary);font-size:0.82rem;margin-top:4px;">طار / سافر بالطائرة</div>
+        </div>
+        <div style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:10px;padding:12px;direction:ltr;">
+          <div style="color:var(--sein-color);font-weight:800;font-size:1rem;">laufen → gelaufen</div>
+          <div style="color:var(--text-secondary);font-size:0.82rem;margin-top:4px;">جرى / مشى</div>
+        </div>
+      </div>
+      <!-- fahren special case -->
+      <div class="info-box warning">
+        <div class="info-icon">⚠️</div>
+        <div class="info-content">
+          <h4>حالة استثنائية مهمة: fahren</h4>
+          <p>إذا كان fahren متبوعاً بمفعول به في الاكوزاتيف فيأخذ haben!</p>
+        </div>
+      </div>
+      <div class="grid-2" style="gap:12px;margin-top:12px;">
+        <div class="example-box">
+          <div style="font-size:0.8rem;color:var(--sein-color);margin-bottom:6px;font-weight:700;">✅ مع sein (بدون مفعول به)</div>
+          <div class="example-past">Ich <span class="highlight-sein">bin</span> zum Flughafen <span class="highlight-partizip">gefahren</span>.</div>
+          <div class="example-translation">أنا ذهبتُ إلى المطار</div>
+        </div>
+        <div class="example-box">
+          <div style="font-size:0.8rem;color:var(--haben-color);margin-bottom:6px;font-weight:700;">✅ مع haben (مع مفعول به)</div>
+          <div class="example-past">Ich <span class="highlight-haben">habe</span> meinen Vater zum Flughafen <span class="highlight-partizip">gefahren</span>.</div>
+          <div class="example-translation">أنا أوصلتُ أبي إلى المطار</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rule 2 -->
+    <div class="card card-green" style="margin:16px 0;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+        <div class="rule-number" style="background:rgba(46,204,113,0.25);color:var(--sein-color);width:44px;height:44px;font-size:1.2rem;">٢</div>
+        <div>
+          <h4 style="color:var(--sein-color);font-size:1.05rem;">أفعال تغيير الحالة</h4>
+          <p style="color:var(--text-secondary);font-size:0.88rem;margin-top:4px;">أفعال تعبر عن تحول من حالة إلى حالة أخرى</p>
+        </div>
+      </div>
+      <div class="grid-2" style="gap:12px;">
+        <div class="example-box">
+          <div class="example-past">Er <span class="highlight-sein">ist</span> gestern <span class="highlight-partizip">gestorben</span>.</div>
+          <div class="example-translation">هو مات بالأمس (sterben → gestorben)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-past">Das Eis <span class="highlight-sein">ist</span> <span class="highlight-partizip">geschmolzen</span>.</div>
+          <div class="example-translation">الجليد ذاب (schmelzen → geschmolzen)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-past">Das Kind <span class="highlight-sein">ist</span> <span class="highlight-partizip">eingeschlafen</span>.</div>
+          <div class="example-translation">الطفل نام (einschlafen → eingeschlafen)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-past">Er <span class="highlight-sein">ist</span> nass <span class="highlight-partizip">geworden</span>.</div>
+          <div class="example-translation">هو ابتلّ / أصبح مبللاً (werden → geworden)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-past">Das Kind <span class="highlight-sein">ist</span> <span class="highlight-partizip">gewachsen</span>.</div>
+          <div class="example-translation">الطفل نما (wachsen → gewachsen)</div>
+        </div>
+        <div class="example-box">
+          <div class="example-past">Die Gasleitung <span class="highlight-sein">ist</span> <span class="highlight-partizip">explodiert</span>.</div>
+          <div class="example-translation">خط الغاز انفجر (explodieren → explodiert)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rule 3 -->
+    <div class="card card-green" style="margin:16px 0;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+        <div class="rule-number" style="background:rgba(46,204,113,0.25);color:var(--sein-color);width:44px;height:44px;font-size:1.2rem;">٣</div>
+        <div>
+          <h4 style="color:var(--sein-color);font-size:1.05rem;">أفعال خاصة تأتي دائماً مع sein</h4>
+          <p style="color:var(--text-secondary);font-size:0.88rem;margin-top:4px;">تُحفظ هذه الأفعال لأنها استثناء</p>
+        </div>
+      </div>
+      <div class="grid-2" style="gap:12px;">
+        <div style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:12px;padding:16px;direction:ltr;">
+          <div style="font-size:1rem;font-weight:800;color:var(--sein-color);">bleiben → geblieben</div>
+          <div style="font-size:0.85rem;color:var(--text-secondary);margin:6px 0;">يبقى</div>
+          <div style="font-size:0.88rem;color:var(--text-primary);">Wir sind zu Hause geblieben.</div>
+          <div style="font-size:0.8rem;color:var(--accent-gold);margin-top:4px;">نحن بقينا في البيت</div>
+        </div>
+        <div style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:12px;padding:16px;direction:ltr;">
+          <div style="font-size:1rem;font-weight:800;color:var(--sein-color);">werden → geworden</div>
+          <div style="font-size:0.85rem;color:var(--text-secondary);margin:6px 0;">يصبح</div>
+          <div style="font-size:0.88rem;color:var(--text-primary);">Er ist Arzt geworden.</div>
+          <div style="font-size:0.8rem;color:var(--accent-gold);margin-top:4px;">هو أصبح طبيباً</div>
+        </div>
+        <div style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:12px;padding:16px;direction:ltr;">
+          <div style="font-size:1rem;font-weight:800;color:var(--sein-color);">sein → gewesen</div>
+          <div style="font-size:0.85rem;color:var(--text-secondary);margin:6px 0;">يكون</div>
+          <div style="font-size:0.88rem;color:var(--text-primary);">Ich bin in der Schweiz gewesen.</div>
+          <div style="font-size:0.8rem;color:var(--accent-gold);margin-top:4px;">أنا كنتُ في سويسرا</div>
+        </div>
+        <div style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:12px;padding:16px;direction:ltr;">
+          <div style="font-size:1rem;font-weight:800;color:var(--sein-color);">passieren → passiert</div>
+          <div style="font-size:0.85rem;color:var(--text-secondary);margin:6px 0;">يحدث</div>
+          <div style="font-size:0.88rem;color:var(--text-primary);">Was ist passiert?</div>
+          <div style="font-size:0.8rem;color:var(--accent-gold);margin-top:4px;">ماذا حدث؟</div>
+        </div>
+        <div style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:12px;padding:16px;direction:ltr;">
+          <div style="font-size:1rem;font-weight:800;color:var(--sein-color);">geschehen → geschehen</div>
+          <div style="font-size:0.85rem;color:var(--text-secondary);margin:6px 0;">يحدث / يجري</div>
+          <div style="font-size:0.88rem;color:var(--text-primary);">Es ist geschehen.</div>
+          <div style="font-size:0.8rem;color:var(--accent-gold);margin-top:4px;">لقد حدث</div>
+        </div>
+        <div style="background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.25);border-radius:12px;padding:16px;direction:ltr;">
+          <div style="font-size:1rem;font-weight:800;color:var(--sein-color);">verschwinden → verschwunden</div>
+          <div style="font-size:0.85rem;color:var(--text-secondary);margin:6px 0;">يختفي</div>
+          <div style="font-size:0.88rem;color:var(--text-primary);">Er ist verschwunden.</div>
+          <div style="font-size:0.8rem;color:var(--accent-gold);margin-top:4px;">هو اختفى</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-sep">
+
+  <!-- ==================== FULL VERB TABLE ==================== -->
+  <div class="section-block animate-in" id="verblist">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(155,89,182,0.15);border:1px solid rgba(155,89,182,0.3)">📋</div>
+      <div>
+        <div class="section-number">VIDEO 33 & 34 — القائمة الكاملة</div>
+        <h2 class="section-title">قائمة الأفعال الشاملة</h2>
+        <p class="section-subtitle">جميع الأفعال من الدروس مع Partizip II والفعل المساعد والأمثلة</p>
+      </div>
+    </div>
+
+    <div class="verb-list-container">
+      <table class="compare-table" style="width:100%;min-width:600px;">
+        <thead>
+          <tr>
+            <th class="th-type">الفعل</th>
+            <th class="th-type">المعنى</th>
+            <th class="th-haben" style="color:var(--accent-purple)">Partizip II</th>
+            <th class="th-haben">الفعل المساعد</th>
+            <th class="th-type">مثال</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">werden</td>
+            <td style="font-size:0.85rem;">يصبح</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">geworden</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Er ist nass geworden</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">fahren</td>
+            <td style="font-size:0.85rem;">يسافر / يقود</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gefahren</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Wir sind nach Italien gefahren</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">bleiben</td>
+            <td style="font-size:0.85rem;">يبقى</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">geblieben</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Wir sind zu Hause geblieben</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">schwellen</td>
+            <td style="font-size:0.85rem;">ينتفخ</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">geschwollen</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Mein Knie ist geschwollen</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">sterben</td>
+            <td style="font-size:0.85rem;">يموت</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gestorben</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Meine Katze ist gestorben</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">verschwinden</td>
+            <td style="font-size:0.85rem;">يختفي</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">verschwunden</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Er ist verschwunden</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">wachsen</td>
+            <td style="font-size:0.85rem;">ينمو</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gewachsen</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Das Kind ist gewachsen</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">explodieren</td>
+            <td style="font-size:0.85rem;">ينفجر</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">explodiert</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Die Gasleitung ist explodiert</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">fehlschlagen</td>
+            <td style="font-size:0.85rem;">يفشل</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">fehlgeschlagen</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Der Versuch ist fehlgeschlagen</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">sein</td>
+            <td style="font-size:0.85rem;">يكون</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gewesen</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Sie ist in Gefahr gewesen</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">gehen</td>
+            <td style="font-size:0.85rem;">يذهب</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gegangen</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Wir sind nach Hause gegangen</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">kommen</td>
+            <td style="font-size:0.85rem;">يأتي</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gekommen</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Er ist um 9 Uhr gekommen</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">aufstehen</td>
+            <td style="font-size:0.85rem;">يقوم / يستيقظ</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">aufgestanden</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Ich bin um 8 Uhr aufgestanden</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">fliegen</td>
+            <td style="font-size:0.85rem;">يطير</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">geflogen</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Sie ist nach Italien geflogen</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">fallen</td>
+            <td style="font-size:0.85rem;">يسقط</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gefallen</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Die Blätter sind gefallen</td>
+          </tr>
+          <tr>
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">schwimmen</td>
+            <td style="font-size:0.85rem;">يسبح</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">geschwommen</td>
+            <td><span class="badge b-green">sein</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Sie ist im See geschwommen</td>
+          </tr>
+          <tr style="background:rgba(74,158,255,0.03);">
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">helfen</td>
+            <td style="font-size:0.85rem;">يساعد</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">geholfen</td>
+            <td><span class="badge b-blue">haben</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Ich habe ihm geholfen</td>
+          </tr>
+          <tr style="background:rgba(74,158,255,0.03);">
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">riechen</td>
+            <td style="font-size:0.85rem;">يشم</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gerochen</td>
+            <td><span class="badge b-blue">haben</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Das Essen hat gut gerochen</td>
+          </tr>
+          <tr style="background:rgba(74,158,255,0.03);">
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">schweigen</td>
+            <td style="font-size:0.85rem;">يصمت</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">geschwiegen</td>
+            <td><span class="badge b-blue">haben</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">So lange habe ich geschwiegen</td>
+          </tr>
+          <tr style="background:rgba(74,158,255,0.03);">
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">schließen</td>
+            <td style="font-size:0.85rem;">يغلق</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">geschlossen</td>
+            <td><span class="badge b-blue">haben</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Sie hat das Fenster geschlossen</td>
+          </tr>
+          <tr style="background:rgba(74,158,255,0.03);">
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">denken</td>
+            <td style="font-size:0.85rem;">يفكر</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gedacht</td>
+            <td><span class="badge b-blue">haben</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Ich habe an meine Familie gedacht</td>
+          </tr>
+          <tr style="background:rgba(74,158,255,0.03);">
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">bringen</td>
+            <td style="font-size:0.85rem;">يحضر / يوصل</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gebracht</td>
+            <td><span class="badge b-blue">haben</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Ich habe sie nach Hause gebracht</td>
+          </tr>
+          <tr style="background:rgba(74,158,255,0.03);">
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">singen</td>
+            <td style="font-size:0.85rem;">يغني</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gesungen</td>
+            <td><span class="badge b-blue">haben</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Ich habe ein Lied gesungen</td>
+          </tr>
+          <tr style="background:rgba(74,158,255,0.03);">
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">treffen</td>
+            <td style="font-size:0.85rem;">يلتقي</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">getroffen</td>
+            <td><span class="badge b-blue">haben</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Ich habe Freunde getroffen</td>
+          </tr>
+          <tr style="background:rgba(74,158,255,0.03);">
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">sprechen</td>
+            <td style="font-size:0.85rem;">يتكلم</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gesprochen</td>
+            <td><span class="badge b-blue">haben</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Sie hat mit dir gesprochen</td>
+          </tr>
+          <tr style="background:rgba(74,158,255,0.03);">
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">trinken</td>
+            <td style="font-size:0.85rem;">يشرب</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">getrunken</td>
+            <td><span class="badge b-blue">haben</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Er hat einen Saft getrunken</td>
+          </tr>
+          <tr style="background:rgba(74,158,255,0.03);">
+            <td style="direction:ltr;font-weight:700;color:var(--text-primary);">haben</td>
+            <td style="font-size:0.85rem;">يملك</td>
+            <td style="direction:ltr;color:var(--accent-purple);font-weight:700;">gehabt</td>
+            <td><span class="badge b-blue">haben</span></td>
+            <td style="direction:ltr;font-size:0.82rem;color:var(--text-secondary);">Ich habe ein Auto gehabt</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Summary of verb types -->
+    <div class="info-box tip" style="margin-top:24px;">
+      <div class="info-icon">📊</div>
+      <div class="info-content">
+        <h4>ملخص أنواع الأفعال وصيغ Partizip II</h4>
+        <p>
+          <strong>المنتظمة:</strong> ge + جذر + t (gemacht, gekauft) |
+          <strong>المنتظمة بـ-ten:</strong> ge + جذر + et (gearbeitet) |
+          <strong>-ieren:</strong> جذر + iert (telefoniert) |
+          <strong>الشاذة:</strong> ge + جذر متغير + en (gegangen, geschrieben) |
+          <strong>المنفصلة:</strong> بادئة + ge + جذر + t/en (aufgemacht) |
+          <strong>غير القابلة للانفصال:</strong> جذر + t/en بدون ge (besucht)
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-sep">
+
+  <!-- ==================== PRÄTERITUM ==================== -->
+  <div class="section-block animate-in" id="prateritum">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(231,76,60,0.15);border:1px solid rgba(231,76,60,0.3)">✍️</div>
+      <div>
+        <div class="section-number">ملاحظة من الدرس</div>
+        <h2 class="section-title">Präteritum — متى لا نستخدم Perfekt؟</h2>
+        <p class="section-subtitle">الحالات التي يُفضل فيها استخدام زمن الماضي البسيط</p>
+      </div>
+    </div>
+
+    <div class="info-box warning">
+      <div class="info-icon">📖</div>
+      <div class="info-content">
+        <h4>الفرق بين Perfekt و Präteritum</h4>
+        <p>بعض الأفعال تُستخدم في Präteritum بدلاً من Perfekt في المحادثات اليومية لأنها أسهل في النطق وأكثر شيوعاً. وكذلك في الكتابة الرسمية والأدبية.</p>
+      </div>
+    </div>
+
+    <div class="grid-2" style="gap:20px;margin:20px 0;">
+      <div class="card card-gold">
+        <h4 style="color:var(--accent-gold);margin-bottom:16px;">🗣️ في المحادثات اليومية — نستخدم Präteritum مع:</h4>
+        <div class="prateritum-grid">
+          <div class="pr-card">
+            <div class="pr-verb">sein</div>
+            <div class="pr-form">war / waren</div>
+            <div class="pr-desc">Ich war gestern krank. (أنا كنت مريضاً أمس)</div>
+          </div>
+          <div class="pr-card">
+            <div class="pr-verb">haben</div>
+            <div class="pr-form">hatte / hatten</div>
+            <div class="pr-desc">Er hatte Hunger. (كان جائعاً)</div>
+          </div>
+          <div class="pr-card">
+            <div class="pr-verb">werden</div>
+            <div class="pr-form">wurde / wurden</div>
+            <div class="pr-desc">Es wurde kalt. (أصبح بارداً)</div>
+          </div>
+          <div class="pr-card">
+            <div class="pr-verb">Modalverben</div>
+            <div class="pr-form">konnte, musste...</div>
+            <div class="pr-desc">Ich konnte nicht kommen. (لم أتمكن من المجيء)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-red">
+        <h4 style="color:var(--accent-red);margin-bottom:16px;">📚 في اللغة الكتابية والأدبية — نستخدم Präteritum في:</h4>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div class="rule-box" style="margin:0;padding:14px;">
+            <div style="font-size:1.3rem;">📰</div>
+            <div>
+              <div style="font-weight:700;color:var(--text-primary);font-size:0.95rem;">الأخبار والجرائد</div>
+              <div style="color:var(--text-secondary);font-size:0.85rem;">Die Regierung entschied... (قررت الحكومة...)</div>
+            </div>
+          </div>
+          <div class="rule-box" style="margin:0;padding:14px;">
+            <div style="font-size:1.3rem;">📚</div>
+            <div>
+              <div style="font-weight:700;color:var(--text-primary);font-size:0.95rem;">الكتب والروايات</div>
+              <div style="color:var(--text-secondary);font-size:0.85rem;">Es war einmal... (كان يا ما كان...)</div>
+            </div>
+          </div>
+          <div class="rule-box" style="margin:0;padding:14px;">
+            <div style="font-size:1.3rem;">📖</div>
+            <div>
+              <div style="font-weight:700;color:var(--text-primary);font-size:0.95rem;">القصص والأدب</div>
+              <div style="color:var(--text-secondary);font-size:0.85rem;">Der König sprach... (قال الملك...)</div>
+            </div>
+          </div>
+          <div class="rule-box" style="margin:0;padding:14px;">
+            <div style="font-size:1.3rem;">🗞️</div>
+            <div>
+              <div style="font-weight:700;color:var(--text-primary);font-size:0.95rem;">التقارير والوثائق</div>
+              <div style="color:var(--text-secondary);font-size:0.85rem;">Das Ereignis fand statt... (جرت الحادثة...)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison table -->
+    <h4 style="color:var(--text-secondary);font-size:0.95rem;margin:24px 0 16px;font-weight:700;">⚖️ مقارنة: Perfekt vs Präteritum</h4>
+    <div style="overflow-x:auto;">
+      <table class="compare-table" style="min-width:500px;">
+        <thead>
+          <tr>
+            <th></th>
+            <th style="color:var(--accent-blue);">Perfekt</th>
+            <th style="color:var(--accent-red);">Präteritum</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700;color:var(--accent-gold);">الاستخدام الأساسي</td>
+            <td>المحادثات اليومية</td>
+            <td>اللغة الكتابية والأدبية</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:var(--accent-gold);">التركيب</td>
+            <td style="direction:ltr;">haben/sein + Partizip II</td>
+            <td style="direction:ltr;">فعل واحد مصرّف</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:var(--accent-gold);">مثال (كان)</td>
+            <td style="direction:ltr;">Ich bin krank gewesen</td>
+            <td style="direction:ltr;">Ich war krank</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:var(--accent-gold);">مثال (ذهب)</td>
+            <td style="direction:ltr;">Ich bin gegangen</td>
+            <td style="direction:ltr;">Ich ging</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700;color:var(--accent-gold);">الاستخدام في الجنوب</td>
+            <td style="color:var(--accent-green);">✅ النمسا وجنوب ألمانيا</td>
+            <td style="color:var(--text-secondary);">نادر في المحادثات</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr class="section-sep">
+
+  <!-- ==================== EXERCISES ==================== -->
+  <div class="section-block animate-in" id="quiz">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(240,192,64,0.15);border:1px solid rgba(240,192,64,0.3)">🎯</div>
+      <div>
+        <div class="section-number">تدريبات تفاعلية</div>
+        <h2 class="section-title">اختبر معلوماتك</h2>
+        <p class="section-subtitle">تمارين على Perfekt — تدريبات من الدروس</p>
+      </div>
+    </div>
+
+    <!-- Exercises from the lesson -->
+    <div class="card card-gold" style="margin-bottom:24px;">
+      <h4 style="color:var(--accent-gold);margin-bottom:16px;font-size:1rem;">📝 تمارين الدرس (من الفيديو)</h4>
+      <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:16px;">أكمل الجمل التالية بالشكل الصحيح:</p>
+      <div style="direction:ltr;background:rgba(15,22,41,0.8);border-radius:12px;padding:20px;border:1px solid var(--border-color);">
+        <div style="margin-bottom:12px;font-size:1rem;color:var(--text-primary);border-bottom:1px dashed var(--border-color);padding-bottom:10px;">
+          1- Ich ... nach Berlin ..... <span style="color:var(--accent-teal);">(fahren)</span>
+          <div style="margin-top:6px;font-size:0.9rem;color:var(--accent-green);">الحل: Ich <strong>bin</strong> nach Berlin <strong>gefahren</strong>.</div>
+        </div>
+        <div style="margin-bottom:12px;font-size:1rem;color:var(--text-primary);border-bottom:1px dashed var(--border-color);padding-bottom:10px;">
+          2- Er ... nach Polen ..... <span style="color:var(--accent-teal);">(reisen)</span>
+          <div style="margin-top:6px;font-size:0.9rem;color:var(--accent-green);">الحل: Er <strong>ist</strong> nach Polen <strong>gereist</strong>.</div>
+        </div>
+        <div style="font-size:1rem;color:var(--text-primary);">
+          3- Wir ... durch den Park ..... <span style="color:var(--accent-teal);">(spazieren)</span>
+          <div style="margin-top:6px;font-size:0.9rem;color:var(--accent-green);">الحل: Wir <strong>sind</strong> durch den Park <strong>spaziert</strong>.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Quiz -->
+    <div class="quiz-card">
+      <h4 style="color:var(--accent-gold);margin-bottom:20px;font-size:1.1rem;">🎮 اختبر نفسك — اختر الإجابة الصحيحة:</h4>
+      <div id="quiz-container"></div>
+      <div style="text-align:center;margin-top:20px;">
+        <button onclick="resetQuiz()" style="background:rgba(74,158,255,0.2);border:1px solid rgba(74,158,255,0.4);color:var(--accent-blue);padding:10px 24px;border-radius:10px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:0.95rem;font-weight:700;transition:all 0.3s;">🔄 إعادة الاختبار</button>
+      </div>
+    </div>
+
+    <!-- Summary box -->
+    <div class="card card-blue" style="margin-top:24px;">
+      <h4 style="color:var(--accent-blue);margin-bottom:16px;font-size:1.1rem;">📌 ملخص سريع — كل ما تحتاجه لتتذكر</h4>
+      <div class="grid-2" style="gap:16px;">
+        <div>
+          <h5 style="color:var(--accent-gold);margin-bottom:10px;font-size:0.9rem;">✅ نقاط أساسية:</h5>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+            <li style="color:var(--text-secondary);font-size:0.88rem;padding-right:16px;position:relative;">
+              <span style="position:absolute;right:0;color:var(--accent-green);">→</span>
+              Perfekt = haben/sein + Partizip II
+            </li>
+            <li style="color:var(--text-secondary);font-size:0.88rem;padding-right:16px;position:relative;">
+              <span style="position:absolute;right:0;color:var(--accent-green);">→</span>
+              المنتظم: ge + جذر + t
+            </li>
+            <li style="color:var(--text-secondary);font-size:0.88rem;padding-right:16px;position:relative;">
+              <span style="position:absolute;right:0;color:var(--accent-green);">→</span>
+              الشاذ: ge + جذر متغير + en
+            </li>
+            <li style="color:var(--text-secondary);font-size:0.88rem;padding-right:16px;position:relative;">
+              <span style="position:absolute;right:0;color:var(--accent-green);">→</span>
+              -ieren: جذر + iert (بدون ge)
+            </li>
+            <li style="color:var(--text-secondary);font-size:0.88rem;padding-right:16px;position:relative;">
+              <span style="position:absolute;right:0;color:var(--accent-green);">→</span>
+              المنفصل: بادئة + ge + جذر + t/en
+            </li>
+            <li style="color:var(--text-secondary);font-size:0.88rem;padding-right:16px;position:relative;">
+              <span style="position:absolute;right:0;color:var(--accent-green);">→</span>
+              be-/ver-: بدون ge في Partizip II
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 style="color:var(--accent-gold);margin-bottom:10px;font-size:0.9rem;">🎯 متى نستخدم sein؟</h5>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+            <li style="color:var(--text-secondary);font-size:0.88rem;padding-right:16px;position:relative;">
+              <span style="position:absolute;right:0;color:var(--sein-color);">→</span>
+              أفعال الحركة (بدون Akkusativ)
+            </li>
+            <li style="color:var(--text-secondary);font-size:0.88rem;padding-right:16px;position:relative;">
+              <span style="position:absolute;right:0;color:var(--sein-color);">→</span>
+              أفعال تغيير الحالة
+            </li>
+            <li style="color:var(--text-secondary);font-size:0.88rem;padding-right:16px;position:relative;">
+              <span style="position:absolute;right:0;color:var(--sein-color);">→</span>
+              bleiben, werden, sein, passieren, geschehen
+            </li>
+            <li style="color:var(--text-secondary);font-size:0.88rem;padding-right:16px;position:relative;">
+              <span style="position:absolute;right:0;color:var(--haben-color);">→</span>
+              الباقي = haben (80%)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div style="font-size:1.5rem;margin-bottom:12px;">🇩🇪</div>
+  <p style="color:var(--text-secondary);font-size:1rem;font-weight:600;margin-bottom:8px;">Das Perfekt — الماضي التام</p>
+  <p>شرح شامل للدروس 31 · 32 · 33 · 34 | Viel Erfolg beim Lernen! 🌟</p>
+  <p style="margin-top:12px;font-size:0.8rem;color:var(--text-muted);">Perfekt · Partizip II · haben · sein · Trennbare & Untrennbare Verben</p>
+</footer>
+
+<script>
+  // Quiz data
+  const quizData = [
+    {
+      q: "Ich ___ gestern ins Kino ___. (gehen)",
+      options: ["habe ... gegangen", "bin ... gegangen", "habe ... gegangt", "bin ... gegangt"],
+      correct: 1,
+      explanation: "gehen = فعل حركة → sein + gegangen (شاذ)"
+    },
+    {
+      q: "Sie ___ das Buch ___. (lesen)",
+      options: ["ist ... gelesen", "hat ... gelesen", "hat ... gelest", "ist ... gelest"],
+      correct: 1,
+      explanation: "lesen = فعل متعدي يأخذ Akkusativ → haben + gelesen (شاذ)"
+    },
+    {
+      q: "Wir ___ in Berlin ___. (wohnen)",
+      options: ["sind ... gewohnt", "haben ... gewohnt", "haben ... wohnt", "sind ... wohnt"],
+      correct: 1,
+      explanation: "wohnen = فعل منتظم → haben + ge+wohn+t = gewohnt"
+    },
+    {
+      q: "Das Kind ___. (einschlafen)",
+      options: ["hat eingeschlafen", "ist eingeschlafen", "hat eingeschlaft", "ist eingeschlaft"],
+      correct: 1,
+      explanation: "einschlafen = تغيير حالة (صحيان → نائم) → sein + eingeschlafen"
+    },
+    {
+      q: "Ich ___ mit dir ___. (telefonieren)",
+      options: ["habe ... telefoniert", "bin ... telefoniert", "habe ... getelefoniert", "bin ... getelefoniert"],
+      correct: 0,
+      explanation: "telefonieren ينتهي بـ -ieren → haben + telefoniert (بدون ge!)"
+    },
+    {
+      q: "Er ___ das Fenster ___. (aufmachen)",
+      options: ["hat ... aufgemacht", "ist ... aufgemacht", "hat ... aufmacht", "ist ... aufmacht"],
+      correct: 0,
+      explanation: "aufmachen = فعل منفصل منتظم → haben + aufgemacht (auf+ge+mach+t)"
+    },
+    {
+      q: "Sie ___ nach Paris ___. (fliegen)",
+      options: ["hat ... geflogen", "ist ... geflogen", "hat ... geflegt", "ist ... geflegt"],
+      correct: 1,
+      explanation: "fliegen = فعل حركة → sein + geflogen (شاذ)"
+    },
+    {
+      q: "Ich ___ meine Oma ___. (besuchen)",
+      options: ["habe ... besucht", "bin ... besucht", "habe ... gebesucht", "bin ... gebesucht"],
+      correct: 0,
+      explanation: "besuchen = فعل غير قابل للانفصال → haben + besucht (بدون ge!)"
+    }
+  ];
+
+  let quizState = [];
+
+  function renderQuiz() {
+    const container = document.getElementById('quiz-container');
+    quizState = quizData.map(() => ({ answered: false, selected: null }));
+    container.innerHTML = '';
+    quizData.forEach((q, i) => {
+      const card = document.createElement('div');
+      card.className = 'quiz-card';
+      card.style.marginBottom = '16px';
+      card.style.padding = '20px';
+      card.innerHTML = `
+        <div class="quiz-question">${i + 1}. ${q.q}</div>
+        <div class="quiz-options" id="opts-${i}">
+          ${q.options.map((opt, j) => `
+            <button class="quiz-opt" onclick="selectAnswer(${i}, ${j})" id="opt-${i}-${j}">
+              ${opt}
+            </button>
+          `).join('')}
+        </div>
+        <div class="quiz-feedback" id="fb-${i}"></div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function selectAnswer(qIdx, optIdx) {
+    if (quizState[qIdx].answered) return;
+    quizState[qIdx].answered = true;
+    quizState[qIdx].selected = optIdx;
+
+    const q = quizData[qIdx];
+    const isCorrect = optIdx === q.correct;
+
+    for (let j = 0; j < q.options.length; j++) {
+      const btn = document.getElementById(`opt-${qIdx}-${j}`);
+      if (j === q.correct) {
+        btn.classList.add('correct');
+      } else if (j === optIdx && !isCorrect) {
+        btn.classList.add('wrong');
+      }
+      btn.style.pointerEvents = 'none';
+    }
+
+    const fb = document.getElementById(`fb-${qIdx}`);
+    fb.className = `quiz-feedback show ${isCorrect ? 'correct-fb' : 'wrong-fb'}`;
+    fb.innerHTML = isCorrect
+      ? `✅ ممتاز! ${q.explanation}`
+      : `❌ الإجابة الصحيحة: "${q.options[q.correct]}" — ${q.explanation}`;
+  }
+
+  function resetQuiz() {
+    renderQuiz();
+  }
+
+  // Tab switching
+  function switchTab(containerId, tabId, btn) {
+    const container = document.getElementById(containerId);
+    container.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active-content'));
+    document.getElementById(tabId).classList.add('active-content');
+    btn.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active-tab'));
+    btn.classList.add('active-tab');
+  }
+
+  // Scroll section
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Scroll to top visibility
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTop');
+    if (window.scrollY > 400) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+
+    // Animate in elements
+    document.querySelectorAll('.animate-in').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 80) el.classList.add('visible');
+    });
+  });
+
+  // Progress bars
+  function animateProgressBars() {
+    document.querySelectorAll('.progress-bar-fill[data-target]').forEach(bar => {
+      const target = bar.getAttribute('data-target');
+      setTimeout(() => { bar.style.width = target + '%'; }, 500);
+    });
+  }
+
+  // Nav active state on scroll
+  const navBtns = document.querySelectorAll('.nav-btn');
+  const sections = ['intro','formel','regular','ieren','irregular','trennbar','untrennbar','sein-rules','verblist','prateritum','quiz'];
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 120) current = id;
+    });
+    navBtns.forEach((btn, i) => {
+      btn.classList.toggle('active', sections[i] === current);
+    });
+  });
+
+  // Init
+  renderQuiz();
+  animateProgressBars();
+
+  // Initial animate-in for visible elements
+  setTimeout(() => {
+    document.querySelectorAll('.animate-in').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) el.classList.add('visible');
+    });
+  }, 100);
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-das-perfekt" data-category="grammatik" data-title="Das Perfekt — الماضي التام في الألمانية" data-root="../../" defer></script>
+</body>
+</html>

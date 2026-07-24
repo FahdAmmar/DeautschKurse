@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutsche Dativ-Verben | German Dative Verbs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Serif:wght@400;700;900&family=Noto+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ──────────────────────────────────────────
+   DESIGN TOKENS — DARK
+────────────────────────────────────────── */
+:root {
+  --bg-primary:   #090c12;
+  --bg-secondary: #0e1219;
+  --bg-card:      #111620;
+  --bg-card-hover:#161d2c;
+  --bg-header:    #0d111a;
+
+  --border:         rgba(255,255,255,0.07);
+  --border-accent:  rgba(99,160,255,0.32);
+  --border-strong:  rgba(255,255,255,0.11);
+
+  --text-primary:   #dce8f8;
+  --text-secondary: #7e97b8;
+  --text-muted:     #3f5470;
+
+  /* accent */
+  --accent:       #5b9cf6;
+  --accent-soft:  rgba(91,156,246,0.10);
+  --accent-glow:  rgba(91,156,246,0.18);
+
+  /* tense colours — softer, warm palette */
+  --praesens:     #6ee7b7;   /* soft mint  */
+  --praeteritum:  #fbbf24;   /* amber      */
+  --perfekt:      #c084fc;   /* soft violet*/
+
+  /* tense header backgrounds */
+  --pr-bg:   rgba(110,231,183,0.09);
+  --pt-bg:   rgba(251,191,36,0.09);
+  --pf-bg:   rgba(192,132,252,0.09);
+
+  /* tense header borders */
+  --pr-border: rgba(110,231,183,0.25);
+  --pt-border: rgba(251,191,36,0.25);
+  --pf-border: rgba(192,132,252,0.25);
+
+  /* sentence colours */
+  --german-color:  #facc15;
+  --english-color: #34d399;
+  --arabic-color:  #fb7185;
+
+  --shadow:      0 12px 48px rgba(0,0,0,0.65);
+  --shadow-card: 0 2px 20px rgba(0,0,0,0.40);
+
+  --progress-bg: rgba(255,255,255,0.04);
+  --scroll-thumb:rgba(91,156,246,0.38);
+  --nav-bg:      rgba(9,12,18,0.90);
+  --row-even:    rgba(255,255,255,0.023);
+  --example-bg:  rgba(255,255,255,0.025);
+
+  --radius:    14px;
+  --radius-sm: 9px;
+
+  /* print page dimensions — match reference A4 edition */
+  --a4-w: 210mm;
+  --a4-h: 300mm;
+  --page-margin: 14mm;
+}
+
+/* ──────────────────────────────────────────
+   DESIGN TOKENS — LIGHT
+────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg-primary:   #f2f5fa;
+  --bg-secondary: #e8ecf3;
+  --bg-card:      #ffffff;
+  --bg-card-hover:#f4f7fd;
+  --bg-header:    #f9fafc;
+
+  --border:         rgba(0,0,0,0.08);
+  --border-accent:  rgba(37,99,235,0.28);
+  --border-strong:  rgba(0,0,0,0.12);
+
+  --text-primary:   #111827;
+  --text-secondary: #4b5c72;
+  --text-muted:     #94a3b8;
+
+  --accent:       #2563eb;
+  --accent-soft:  rgba(37,99,235,0.08);
+  --accent-glow:  rgba(37,99,235,0.14);
+
+  --praesens:     #059669;
+  --praeteritum:  #b45309;
+  --perfekt:      #7c3aed;
+
+  --pr-bg:   rgba(5,150,105,0.07);
+  --pt-bg:   rgba(180,83,9,0.07);
+  --pf-bg:   rgba(124,58,237,0.07);
+
+  --pr-border: rgba(5,150,105,0.22);
+  --pt-border: rgba(180,83,9,0.22);
+  --pf-border: rgba(124,58,237,0.22);
+
+  --german-color:  #92400e;
+  --english-color: #065f46;
+  --arabic-color:  #9f1239;
+
+  --shadow:      0 12px 48px rgba(0,0,0,0.10);
+  --shadow-card: 0 2px 20px rgba(0,0,0,0.07);
+
+  --progress-bg: rgba(0,0,0,0.04);
+  --scroll-thumb:rgba(37,99,235,0.35);
+  --nav-bg:      rgba(242,245,250,0.92);
+  --row-even:    rgba(0,0,0,0.022);
+  --example-bg:  rgba(0,0,0,0.022);
+}
+
+/* ──────────────────────────────────────────
+   RESET & BASE
+────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Noto Sans','Segoe UI',Arial,sans-serif;
+  background:var(--bg-primary);color:var(--text-primary);
+  line-height:1.65;min-height:100vh;overflow-x:hidden;
+  transition:background .35s ease,color .35s ease;
+  -webkit-font-smoothing:antialiased;
+}
+.rtl{direction:rtl;font-family:'Noto Sans Arabic','Noto Sans',sans-serif;text-align:right;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--progress-bg);}
+::-webkit-scrollbar-thumb{background:var(--scroll-thumb);border-radius:10px;}
+
+/* ──────────────────────────────────────────
+   PROGRESS BAR
+────────────────────────────────────────── */
+#progress-bar{
+  position:fixed;top:0;left:0;height:3px;
+  background:linear-gradient(90deg,var(--accent),#a78bfa,var(--praesens));
+  width:0%;z-index:1000;transition:width .1s linear;
+  box-shadow:0 0 10px var(--accent-glow);
+}
+
+/* ──────────────────────────────────────────
+   NAV
+────────────────────────────────────────── */
+nav{
+  position:fixed;top:3px;left:0;right:0;z-index:900;
+  background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:0 clamp(12px,4vw,48px);height:58px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s;
+}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-primary);}
+.nav-brand .flag{font-size:1.45rem;}
+.brand-text{font-family:'Noto Serif',Georgia,serif;font-size:1.02rem;font-weight:700;letter-spacing:-.01em;}
+.brand-sub{font-size:.65rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.verb-count-badge{
+  background:var(--accent-soft);border:1px solid var(--border-accent);
+  color:var(--accent);font-size:.70rem;font-weight:600;
+  padding:4px 11px;border-radius:20px;letter-spacing:.04em;
+}
+.theme-toggle{
+  background:var(--bg-card);border:1px solid var(--border);
+  color:var(--text-primary);width:38px;height:38px;border-radius:9px;
+  cursor:pointer;font-size:1rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.theme-toggle:hover{border-color:var(--border-accent);background:var(--bg-card-hover);transform:rotate(15deg);}
+
+/* ──────────────────────────────────────────
+   HERO
+────────────────────────────────────────── */
+.hero{
+  padding:clamp(86px,12vw,130px) clamp(14px,5vw,64px) clamp(44px,6vw,68px);
+  text-align:center;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 75% 50% at 50% -5%,var(--accent-glow),transparent 68%);
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent-soft);border:1px solid var(--border-accent);
+  color:var(--accent);font-size:.76rem;font-weight:600;letter-spacing:.08em;
+  padding:5px 16px;border-radius:20px;margin-bottom:24px;
+  animation:fadeSlideUp .6s ease both;
+}
+.hero h1{
+  font-family:'Noto Serif',Georgia,serif;
+  font-size:clamp(2rem,6vw,4.5rem);font-weight:900;
+  line-height:1.1;margin-bottom:16px;letter-spacing:-.02em;
+  animation:fadeSlideUp .6s .1s ease both;
+}
+.hero h1 .hl{color:var(--accent);}
+.hero-sub{
+  font-size:clamp(.9rem,2vw,1.10rem);color:var(--text-secondary);
+  max-width:640px;margin:0 auto 32px;line-height:1.85;
+  font-family:'Noto Sans Arabic','Noto Sans',sans-serif;
+  animation:fadeSlideUp .6s .2s ease both;
+}
+
+/* ── Legend ── */
+.legend{
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+  margin-bottom:44px;animation:fadeSlideUp .6s .25s ease both;
+}
+.legend-item{
+  display:flex;align-items:center;gap:7px;
+  background:var(--bg-card);border:1px solid var(--border);
+  padding:6px 13px;border-radius:7px;font-size:.78rem;font-weight:500;
+  transition:border-color .2s;
+}
+.legend-item:hover{border-color:var(--border-accent);}
+.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* ── Search ── */
+.search-container{
+  max-width:520px;margin:0 auto;position:relative;
+  animation:fadeSlideUp .6s .3s ease both;
+}
+.search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--text-muted);pointer-events:none;font-size:1rem;}
+#search-input{
+  width:100%;padding:13px 18px 13px 44px;
+  background:var(--bg-card);border:1px solid var(--border);border-radius:11px;
+  color:var(--text-primary);font-family:'Noto Sans',sans-serif;font-size:.93rem;
+  outline:none;transition:all .2s ease;
+}
+#search-input:focus{border-color:var(--border-accent);box-shadow:0 0 0 3px var(--accent-soft);}
+#search-input::placeholder{color:var(--text-muted);}
+
+/* ──────────────────────────────────────────
+   MAIN CONTENT
+────────────────────────────────────────── */
+.main-content{max-width:1440px;margin:0 auto;padding:44px clamp(12px,4vw,48px) 100px;}
+
+.stats-row{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:12px;margin-bottom:48px;animation:fadeSlideUp .6s .35s ease both;
+}
+.stat-card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px 20px;text-align:center;transition:all .25s ease;cursor:default;
+}
+.stat-card:hover{border-color:var(--border-accent);transform:translateY(-3px);box-shadow:var(--shadow-card);}
+.stat-number{font-family:'Noto Serif',Georgia,serif;font-size:2rem;font-weight:700;color:var(--accent);line-height:1;}
+.stat-label{font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.09em;margin-top:6px;font-weight:500;}
+
+.section-title{font-family:'Noto Serif',Georgia,serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;margin-bottom:6px;}
+.section-sub{
+  color:var(--text-secondary);font-size:.88rem;margin-bottom:28px;
+  font-family:'Noto Sans Arabic','Noto Sans',sans-serif;
+  direction:rtl;text-align:right;line-height:1.85;
+}
+
+/* ──────────────────────────────────────────
+   VERB CARDS GRID
+────────────────────────────────────────── */
+.verbs-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,580px),1fr));
+  gap:22px;
+}
+.verb-card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;transition:all .3s ease;animation:fadeSlideUp .5s ease both;position:relative;
+}
+.verb-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--praesens),var(--accent),var(--perfekt));
+  opacity:0;transition:opacity .3s;
+}
+.verb-card:hover{border-color:var(--border-accent);transform:translateY(-4px);box-shadow:var(--shadow);}
+.verb-card:hover::before{opacity:1;}
+.verb-card.hidden{display:none;}
+
+/* ── Card header ── */
+.card-header{
+  padding:16px 18px 13px;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:10px;
+  border-bottom:1px solid var(--border);
+  background:var(--bg-header);
+}
+.card-header-left{display:flex;align-items:center;gap:8px;}
+.verb-number{
+  font-family:'Noto Sans Mono',monospace;font-size:.68rem;color:var(--text-muted);
+  background:var(--progress-bg);padding:3px 8px;border-radius:5px;flex-shrink:0;
+}
+.dativ-badge{
+  background:var(--accent-soft);border:1px solid var(--border-accent);
+  color:var(--accent);font-size:.58rem;font-weight:700;padding:2px 8px;border-radius:4px;
+  letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;
+}
+.verb-infinitiv{
+  font-family:'Noto Serif',Georgia,serif;font-size:1.75rem;font-weight:700;
+  color:var(--text-primary);line-height:1.1;
+}
+.verb-arabic{
+  font-size:.88rem;color:var(--text-secondary);margin-top:3px;
+  font-family:'Noto Sans Arabic','Noto Sans',sans-serif;direction:rtl;text-align:right;font-weight:400;
+}
+
+/* ──────────────────────────────────────────
+   CONJUGATION TABLE — 3 COLUMNS ALWAYS
+   Pronoun | Präsens | Präteritum | Perfekt
+────────────────────────────────────────── */
+.conj-section{padding:0;}
+
+.conj-table-wrap{
+  width:100%;
+  overflow-x:auto; /* fallback for extremely tiny screens */
+  -webkit-overflow-scrolling:touch;
+}
+
+.conj-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.80rem;
+  /* min-width keeps columns readable even at 320px */
+  min-width:300px;
+}
+
+/* ── Column group widths ── */
+.conj-table col.col-pro  {width:22%;}
+.conj-table col.col-pr   {width:26%;}
+.conj-table col.col-pt   {width:26%;}
+.conj-table col.col-pf   {width:26%;}
+
+/* ── Tense header row ── */
+.conj-table thead tr.tense-header th{
+  padding:7px 8px 5px;
+  font-size:.60rem;font-weight:800;letter-spacing:.10em;text-transform:uppercase;
+  font-family:'Noto Sans',sans-serif;border-bottom:1px solid var(--border);
+  text-align:left;position:relative;
+}
+.conj-table thead tr.tense-header th.th-blank{background:var(--bg-header);}
+.conj-table thead tr.tense-header th.th-pr{
+  color:var(--praesens);background:var(--pr-bg);
+  border-left:2px solid var(--pr-border);
+}
+.conj-table thead tr.tense-header th.th-pt{
+  color:var(--praeteritum);background:var(--pt-bg);
+  border-left:2px solid var(--pt-border);
+}
+.conj-table thead tr.tense-header th.th-pf{
+  color:var(--perfekt);background:var(--pf-bg);
+  border-left:2px solid var(--pf-border);
+}
+
+/* ── Perfekt header sub-label ── */
+.th-pf-sub{
+  display:block;font-size:.52rem;font-weight:500;
+  color:var(--text-muted);margin-top:2px;letter-spacing:.04em;
+  text-transform:none;font-style:italic;font-family:'Noto Sans',sans-serif;
+}
+
+/* ── Data rows ── */
+.conj-table tbody tr{transition:background .15s;}
+.conj-table tbody tr.row-even{background:var(--row-even);}
+.conj-table tbody tr:hover{background:var(--bg-card-hover);}
+
+.conj-table tbody td{
+  padding:6px 8px;
+  vertical-align:middle;line-height:1.35;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+[data-theme="light"] .conj-table tbody td{border-bottom-color:rgba(0,0,0,0.04);}
+.conj-table tbody tr:last-child td{border-bottom:none;}
+
+/* pronoun cell */
+.td-pro{
+  font-family:'Noto Sans Mono',monospace;font-size:.70rem;
+  color:var(--text-muted);
+}
+/* Präsens */
+.td-pr{
+  font-family:'Noto Sans Mono',monospace;font-size:.79rem;
+  color:var(--praesens);font-weight:600;
+  border-left:2px solid var(--pr-border);
+  background:var(--pr-bg);
+}
+/* Präteritum */
+.td-pt{
+  font-family:'Noto Sans Mono',monospace;font-size:.79rem;
+  color:var(--praeteritum);font-weight:600;
+  border-left:2px solid var(--pt-border);
+  background:var(--pt-bg);
+}
+/* Perfekt — the full participle form */
+.td-pf{
+  font-family:'Noto Sans Mono',monospace;font-size:.75rem;
+  color:var(--perfekt);font-weight:600;
+  border-left:2px solid var(--pf-border);
+  background:var(--pf-bg);
+  white-space:nowrap;
+}
+/* Perfekt helper text: "haben/sein + Partizip II" */
+.td-pf-wrap{display:flex;flex-direction:column;gap:1px;}
+.td-pf-helper{
+  font-size:.52rem;color:var(--text-muted);
+  font-style:italic;font-family:'Noto Sans',sans-serif;
+  font-weight:400;letter-spacing:.02em;
+  white-space:normal;
+}
+
+/* ──────────────────────────────────────────
+   EXAMPLE SENTENCES
+────────────────────────────────────────── */
+.example-section{
+  padding:14px 16px 18px;
+  border-top:1px solid var(--border);
+}
+.example-section-label{
+  font-size:.65rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.12em;color:var(--text-muted);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;font-family:'Noto Sans',sans-serif;
+}
+.example-section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+.sentence-group{
+  background:var(--example-bg);border:1px solid var(--border);
+  border-radius:var(--radius-sm);overflow:hidden;margin-bottom:9px;
+  transition:border-color .2s;
+}
+.sentence-group:last-child{margin-bottom:0;}
+.sentence-group:hover{border-color:var(--border-accent);}
+
+.s-german{
+  padding:9px 12px 8px;
+  display:flex;justify-content:space-between;align-items:flex-start;gap:7px;
+  border-bottom:1px solid var(--border);
+  border-left:3px solid var(--german-color);
+  background:rgba(250,204,21,0.04);
+}
+[data-theme="light"] .s-german{background:rgba(146,64,14,0.04);}
+.s-german-text{
+  font-family:'Noto Sans',sans-serif;font-size:.92rem;font-weight:600;
+  color:var(--german-color);line-height:1.55;flex:1;
+  user-select:text;-webkit-user-select:text;
+}
+.s-actions{display:flex;align-items:center;gap:4px;flex-shrink:0;padding-top:1px;}
+.lang-tag{
+  font-family:'Noto Sans',sans-serif;font-size:.57rem;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;
+  color:var(--text-muted);background:var(--progress-bg);
+  padding:2px 5px;border-radius:4px;flex-shrink:0;
+}
+.s-english{
+  padding:7px 12px 6px;border-bottom:1px solid var(--border);
+  border-left:3px solid var(--english-color);
+  display:flex;align-items:flex-start;gap:7px;
+  background:rgba(52,211,153,0.03);
+}
+[data-theme="light"] .s-english{background:rgba(6,95,70,0.03);}
+.s-en-tag{
+  font-family:'Noto Sans',sans-serif;font-size:.57rem;font-weight:700;
+  color:var(--english-color);background:var(--progress-bg);
+  padding:2px 5px;border-radius:4px;flex-shrink:0;margin-top:2px;
+  letter-spacing:.06em;text-transform:uppercase;
+}
+.s-english-text{
+  font-family:'Noto Sans',sans-serif;font-size:.84rem;
+  color:var(--english-color);line-height:1.55;flex:1;
+}
+.s-arabic{
+  padding:7px 12px 8px;
+  border-right:3px solid var(--arabic-color);border-left:none;
+  display:flex;align-items:flex-start;gap:7px;direction:rtl;
+  background:rgba(251,113,133,0.03);
+}
+[data-theme="light"] .s-arabic{background:rgba(159,18,57,0.03);}
+.s-ar-tag{
+  font-family:'Noto Sans Arabic',sans-serif;font-size:.57rem;font-weight:700;
+  color:var(--arabic-color);background:var(--progress-bg);
+  padding:2px 5px;border-radius:4px;flex-shrink:0;margin-top:2px;
+  letter-spacing:.04em;text-transform:uppercase;direction:ltr;
+}
+.s-arabic-text{
+  font-family:'Noto Sans Arabic','Noto Sans',sans-serif;
+  font-size:.88rem;color:var(--arabic-color);line-height:1.80;
+  flex:1;text-align:right;font-weight:400;
+  user-select:text;-webkit-user-select:text;
+}
+
+/* ──────────────────────────────────────────
+   ICON BUTTONS
+────────────────────────────────────────── */
+.icon-btn{
+  -webkit-appearance:none;appearance:none;
+  background:none;border:none;outline:none;
+  display:flex;align-items:center;justify-content:center;
+  width:32px;height:32px;border-radius:7px;
+  cursor:pointer;flex-shrink:0;color:var(--text-muted);
+  transition:color .2s,background .2s,transform .15s;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;-webkit-user-select:none;user-select:none;
+}
+.icon-btn:hover{color:var(--accent);background:var(--accent-soft);}
+.icon-btn:active{transform:scale(.86);}
+.icon-btn.ok{color:#34d399;}
+.icon-btn.speaking{color:var(--accent);animation:speakPulse .8s ease-in-out infinite alternate;}
+.icon-btn svg{width:14px;height:14px;pointer-events:none;display:block;}
+@keyframes speakPulse{from{opacity:1;}to{opacity:.3;}}
+
+/* ──────────────────────────────────────────
+   TOAST
+────────────────────────────────────────── */
+#g-toast{
+  position:fixed;bottom:28px;left:50%;
+  transform:translateX(-50%) translateY(16px);
+  background:var(--bg-card);border:1px solid var(--border-accent);
+  color:#34d399;font-size:.81rem;font-family:'Noto Sans',sans-serif;
+  padding:8px 22px;border-radius:22px;
+  pointer-events:none;opacity:0;
+  transition:opacity .22s,transform .22s;z-index:9999;
+  white-space:nowrap;box-shadow:0 6px 24px rgba(0,0,0,.5);
+}
+#g-toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
+
+.no-results{text-align:center;padding:56px 20px;color:var(--text-muted);display:none;grid-column:1/-1;}
+.no-results.show{display:block;}
+.no-results .icon{font-size:2.8rem;margin-bottom:10px;}
+
+footer{
+  text-align:center;padding:36px 20px;border-top:1px solid var(--border);
+  color:var(--text-muted);font-size:.78rem;font-family:'Noto Sans',sans-serif;
+}
+
+/* ──────────────────────────────────────────
+   ANIMATIONS
+────────────────────────────────────────── */
+@keyframes fadeSlideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ──────────────────────────────────────────
+   RESPONSIVE
+────────────────────────────────────────── */
+@media(max-width:640px){
+  .verb-infinitiv{font-size:1.45rem;}
+  .card-header{padding:13px 13px 10px;}
+  .example-section{padding:11px 12px 14px;}
+  nav{padding:0 12px;}
+  .verb-count-badge{display:none;}
+  .conj-table col.col-pro{width:20%;}
+  .conj-table col.col-pr,.conj-table col.col-pt,.conj-table col.col-pf{width:26.6%;}
+  .conj-table{font-size:.75rem;}
+  .td-pr,.td-pt,.td-pf{font-size:.74rem;}
+  .td-pf-helper{font-size:.50rem;}
+  .s-german-text{font-size:.86rem;}
+  .s-english-text{font-size:.79rem;}
+  .s-arabic-text{font-size:.82rem;}
+}
+@media(max-width:380px){
+  .stats-row{grid-template-columns:repeat(2,1fr);}
+  .conj-table{font-size:.71rem;min-width:0;}
+  .td-pro{display:none;}  /* hide pronoun col on truly tiny screens to save space */
+  .th-blank{display:none;}
+  .conj-table col.col-pro{width:0;display:none;}
+  .conj-table col.col-pr,.conj-table col.col-pt,.conj-table col.col-pf{width:33.3%;}
+}
+@media(min-width:1280px){.verbs-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1800px){.verbs-grid{grid-template-columns:repeat(3,1fr);}}
+
+/* ══════════════════════════════════════════════════════════════
+   PRINT BUTTON — SCREEN ONLY
+══════════════════════════════════════════════════════════════ */
+.print-btn{
+  background:var(--bg-card);border:1px solid var(--border);
+  color:var(--text-primary);height:38px;padding:0 14px;border-radius:9px;
+  cursor:pointer;font-size:.76rem;font-weight:600;letter-spacing:.04em;
+  display:flex;align-items:center;gap:6px;
+  transition:all .2s ease;-webkit-tap-highlight-color:transparent;
+  font-family:'Noto Sans',sans-serif;
+}
+.print-btn:hover{border-color:var(--border-accent);background:var(--bg-card-hover);}
+.print-btn svg{width:14px;height:14px;flex-shrink:0;}
+
+/* ══════════════════════════════════════════════════════════════
+   A4 PRINT STYLES
+   A4 = 210mm × 297mm
+   Printable area (20mm margin each side): 170mm × 257mm
+   At 96dpi:  A4 width = 793.7px, height = 1122.5px
+   At 300dpi: A4 width = 2480px,  height = 3508px
+   CSS uses mm units for precision — browser converts correctly.
+══════════════════════════════════════════════════════════════ */
+@media print {
+
+  /* ── Reset page ── */
+  @page {
+    size: A4 portrait;
+    margin: 14mm 14mm 16mm 14mm;
+  }
+  @page :first { margin-top: 10mm; }
+
+  /* ── Hide screen-only chrome ── */
+  #progress-bar,
+  nav,
+  .hero-badge,
+  .search-container,
+  .theme-toggle,
+  .print-btn,
+  .verb-count-badge,
+  #g-toast,
+  footer,
+  .icon-btn,
+  .s-actions,
+  .speak-btn,
+  .copy-btn,
+  .lang-tag {
+    display: none !important;
+  }
+
+  /* ── Base print reset ── */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  html, body {
+    width: 210mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 8.5pt !important;
+    line-height: 1.45 !important;
+    font-family: 'Noto Sans', Arial, sans-serif !important;
+  }
+
+  /* ── Print cover page — matches reference 182mm cover exactly ── */
+  .print-cover {
+    display: block !important;
+    width: 182mm;
+    margin: 0 auto 10mm;
+    page-break-after: always; break-after: page;
+    text-align: center;
+    padding: 30mm 10mm 20mm;
+    border: 2px solid #1d4ed8;
+    border-radius: 8px;
+    background: #f8faff !important;
+  }
+  .print-cover .cov-flag { font-size: 52pt; display: block; margin-bottom: 8mm; }
+  .print-cover .cov-title {
+    font-family: 'Noto Serif', Georgia, serif !important;
+    font-size: 28pt; font-weight: 900; letter-spacing: -.02em;
+    color: #111827 !important; line-height: 1.1; margin-bottom: 4mm;
+  }
+  .print-cover .cov-title span { color: #1d4ed8 !important; }
+  .print-cover .cov-sub { font-size: 11pt; color: #374151 !important; line-height: 1.6; margin-bottom: 8mm; }
+  .print-cover .cov-meta { display: inline-flex; align-items: center; gap: 6mm; flex-wrap: wrap; justify-content: center; margin-bottom: 6mm; }
+  .print-cover .cov-tag {
+    background: rgba(29,78,216,0.08) !important; border: 1px solid #1d4ed8;
+    border-radius: 4px; padding: 2pt 8pt; font-size: 8.5pt; font-weight: 600; color: #1d4ed8 !important;
+  }
+  .print-cover .cov-legend {
+    margin-top: 10mm; padding-top: 6mm; border-top: 1pt solid #dde2ee;
+    display: flex; justify-content: center; gap: 8mm; flex-wrap: wrap;
+  }
+  .print-cover .cov-legend-item { display: flex; align-items: center; gap: 3mm; font-size: 8.5pt; color: #374151 !important; }
+  .print-cover .cov-legend-dot { width: 8pt; height: 8pt; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+
+  /* ── Override dark theme tokens for print ── */
+  :root,
+  [data-theme="dark"],
+  [data-theme="light"] {
+    --bg-primary:   #ffffff;
+    --bg-secondary: #f5f5f5;
+    --bg-card:      #ffffff;
+    --bg-card-hover:#f9f9f9;
+    --bg-header:    #f0f4f8;
+
+    --border:         rgba(0,0,0,0.15);
+    --border-accent:  rgba(37,99,235,0.35);
+    --border-strong:  rgba(0,0,0,0.20);
+
+    --text-primary:   #111827;
+    --text-secondary: #374151;
+    --text-muted:     #6b7280;
+
+    --accent:       #1d4ed8;
+    --accent-soft:  rgba(29,78,216,0.08);
+    --accent-glow:  rgba(29,78,216,0.10);
+
+    --praesens:     #047857;
+    --praeteritum:  #92400e;
+    --perfekt:      #5b21b6;
+
+    --pr-bg:   rgba(4,120,87,0.06);
+    --pt-bg:   rgba(146,64,14,0.06);
+    --pf-bg:   rgba(91,33,182,0.06);
+
+    --pr-border: rgba(4,120,87,0.25);
+    --pt-border: rgba(146,64,14,0.25);
+    --pf-border: rgba(91,33,182,0.25);
+
+    --german-color:  #78350f;
+    --english-color: #064e3b;
+    --arabic-color:  #881337;
+
+    --shadow:      none;
+    --shadow-card: none;
+    --progress-bg: rgba(0,0,0,0.05);
+    --row-even:    rgba(0,0,0,0.025);
+    --example-bg:  rgba(0,0,0,0.02);
+
+    --radius:    6px;
+    --radius-sm: 4px;
+  }
+
+  /* ── Hero — compact for print ── */
+  .hero {
+    padding: 0 0 10mm 0 !important;
+    text-align: center;
+    page-break-after: avoid;
+  }
+  .hero::before { display: none !important; }
+
+  .hero h1 {
+    font-size: 22pt !important;
+    margin-bottom: 4mm !important;
+    color: #111827 !important;
+    font-family: 'Noto Serif', Georgia, serif;
+    page-break-after: avoid;
+  }
+  .hero h1 .hl { color: #1d4ed8 !important; }
+
+  .hero-sub {
+    font-size: 9pt !important;
+    color: #374151 !important;
+    margin-bottom: 5mm !important;
+    page-break-after: avoid;
+  }
+
+  .legend {
+    margin-bottom: 6mm !important;
+    page-break-after: avoid;
+    justify-content: center;
+  }
+  .legend-item {
+    font-size: 7.5pt !important;
+    padding: 3px 8px !important;
+    border: 1px solid rgba(0,0,0,0.12) !important;
+    background: #f9f9f9 !important;
+  }
+  .legend-dot { width: 7px !important; height: 7px !important; }
+
+  /* ── Stats row ── */
+  .stats-row {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 4mm !important;
+    margin-bottom: 6mm !important;
+    page-break-after: avoid;
+  }
+  .stat-card {
+    padding: 4mm 3mm !important;
+    border: 1px solid rgba(0,0,0,0.15) !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+  }
+  .stat-number {
+    font-size: 16pt !important;
+    color: #1d4ed8 !important;
+  }
+  .stat-label {
+    font-size: 6.5pt !important;
+    color: #6b7280 !important;
+  }
+
+  /* ── Section headings ── */
+  .section-title {
+    font-size: 14pt !important;
+    margin-bottom: 2mm !important;
+    page-break-after: avoid;
+    color: #111827 !important;
+  }
+  .section-sub {
+    font-size: 8pt !important;
+    color: #374151 !important;
+    margin-bottom: 5mm !important;
+    page-break-after: avoid;
+  }
+
+  /* ── Main content ── */
+  .main-content {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* ── Verb grid — 2 columns on A4, centered 182mm print column ── */
+  .verbs-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 5mm !important;
+    padding: 0 !important;
+    max-width: 182mm !important;
+    margin: 0 auto !important;
+    width: 182mm !important;
+  }
+
+  /* ── Verb card ── */
+  .verb-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.18) !important;
+    border-radius: 5px !important;
+    overflow: hidden !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .verb-card::before { display: none !important; }
+
+  /* ── Card header ── */
+  .card-header {
+    padding: 3mm 3.5mm 2.5mm !important;
+    background: #f0f4f8 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.15) !important;
+  }
+  .verb-number {
+    font-size: 6pt !important;
+    color: #6b7280 !important;
+    background: rgba(0,0,0,0.06) !important;
+    padding: 1.5px 5px !important;
+  }
+  .dativ-badge {
+    font-size: 5.5pt !important;
+    padding: 1.5px 5px !important;
+    background: rgba(29,78,216,0.08) !important;
+    border: 1px solid rgba(29,78,216,0.25) !important;
+    color: #1d4ed8 !important;
+  }
+  .verb-infinitiv {
+    font-size: 13pt !important;
+    color: #111827 !important;
+    font-family: 'Noto Serif', Georgia, serif;
+    line-height: 1.1 !important;
+    hyphens: auto !important;
+    -webkit-hyphens: auto !important;
+  }
+  .verb-arabic {
+    font-size: 8pt !important;
+    color: #374151 !important;
+  }
+
+  /* ── Conjugation table ── */
+  .conj-section { padding: 0 !important; }
+  .conj-table-wrap { overflow: visible !important; }
+  .conj-table {
+    width: 100% !important;
+    font-size: 6.5pt !important;
+    min-width: 0 !important;
+    border-collapse: collapse !important;
+  }
+  .conj-table col.col-pro  { width: 20% !important; }
+  .conj-table col.col-pr   { width: 27% !important; }
+  .conj-table col.col-pt   { width: 27% !important; }
+  .conj-table col.col-pf   { width: 26% !important; }
+
+  .conj-table thead tr.tense-header th {
+    padding: 2.5px 4px !important;
+    font-size: 5pt !important;
+    font-weight: 800 !important;
+    letter-spacing: .08em !important;
+    border-bottom: 1px solid rgba(0,0,0,0.15) !important;
+  }
+  .conj-table thead tr.tense-header th.th-blank {
+    background: #f0f4f8 !important;
+  }
+  .conj-table thead tr.tense-header th.th-pr {
+    color: #047857 !important;
+    background: rgba(4,120,87,0.06) !important;
+    border-left: 2px solid rgba(4,120,87,0.30) !important;
+  }
+  .conj-table thead tr.tense-header th.th-pt {
+    color: #92400e !important;
+    background: rgba(146,64,14,0.06) !important;
+    border-left: 2px solid rgba(146,64,14,0.30) !important;
+  }
+  .conj-table thead tr.tense-header th.th-pf {
+    color: #5b21b6 !important;
+    background: rgba(91,33,182,0.06) !important;
+    border-left: 2px solid rgba(91,33,182,0.30) !important;
+  }
+  .th-pf-sub {
+    font-size: 4.5pt !important;
+    display: block !important;
+    color: #6b7280 !important;
+    font-style: italic !important;
+    margin-top: 1px !important;
+  }
+
+  .conj-table tbody td {
+    padding: 2.5px 4px !important;
+    font-size: 6.5pt !important;
+    border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+    line-height: 1.3 !important;
+  }
+  .conj-table tbody tr.row-even {
+    background: rgba(0,0,0,0.025) !important;
+  }
+  .td-pro {
+    color: #6b7280 !important;
+    font-family: 'Noto Sans', Arial, sans-serif !important;
+    letter-spacing: -0.01em !important;
+    font-size: 6pt !important;
+  }
+  .td-pr {
+    color: #047857 !important;
+    font-weight: 700 !important;
+    background: rgba(4,120,87,0.05) !important;
+    border-left: 2px solid rgba(4,120,87,0.25) !important;
+    font-family: 'Noto Sans', Arial, sans-serif !important;
+    letter-spacing: -0.01em !important;
+    hyphens: auto !important;
+    -webkit-hyphens: auto !important;
+  }
+  .td-pt {
+    color: #92400e !important;
+    font-weight: 700 !important;
+    background: rgba(146,64,14,0.05) !important;
+    border-left: 2px solid rgba(146,64,14,0.25) !important;
+    font-family: 'Noto Sans', Arial, sans-serif !important;
+    letter-spacing: -0.01em !important;
+    hyphens: auto !important;
+    -webkit-hyphens: auto !important;
+  }
+  .td-pf {
+    color: #5b21b6 !important;
+    font-weight: 700 !important;
+    background: rgba(91,33,182,0.05) !important;
+    border-left: 2px solid rgba(91,33,182,0.25) !important;
+    font-family: 'Noto Sans', Arial, sans-serif !important;
+    letter-spacing: -0.01em !important;
+    white-space: normal !important;
+    hyphens: auto !important;
+    -webkit-hyphens: auto !important;
+    font-size: 6pt !important;
+  }
+  .td-pf-wrap { gap: 0 !important; }
+
+  /* ── Example sentences ── */
+  .example-section {
+    padding: 2.5mm 3mm 3mm !important;
+    border-top: 1px solid rgba(0,0,0,0.10) !important;
+  }
+  .example-section-label {
+    font-size: 5.5pt !important;
+    letter-spacing: .08em !important;
+    margin-bottom: 2mm !important;
+    color: #6b7280 !important;
+  }
+  .example-section-label::after {
+    background: rgba(0,0,0,0.12) !important;
+  }
+
+  .sentence-group {
+    margin-bottom: 1.5mm !important;
+    border: 1px solid rgba(0,0,0,0.10) !important;
+    border-radius: 3px !important;
+  }
+  .s-german {
+    padding: 2px 5px !important;
+    background: rgba(120,53,15,0.04) !important;
+    border-left: 2.5px solid #78350f !important;
+    border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+  }
+  .s-german-text {
+    font-size: 7pt !important;
+    color: #78350f !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    hyphens: auto !important;
+    -webkit-hyphens: auto !important;
+    orphans: 3 !important;
+    widows: 3 !important;
+  }
+  .s-english {
+    padding: 2px 5px !important;
+    background: rgba(6,78,59,0.03) !important;
+    border-left: 2.5px solid #064e3b !important;
+    border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+    gap: 5px !important;
+  }
+  .s-en-tag {
+    font-size: 5pt !important;
+    color: #064e3b !important;
+    background: rgba(0,0,0,0.05) !important;
+    padding: 1px 3px !important;
+  }
+  .s-english-text {
+    font-size: 6.5pt !important;
+    color: #064e3b !important;
+    line-height: 1.4 !important;
+    orphans: 3 !important;
+    widows: 3 !important;
+  }
+  .s-arabic {
+    padding: 2px 5px !important;
+    background: rgba(136,19,55,0.03) !important;
+    border-right: 2.5px solid #881337 !important;
+    border-left: none !important;
+    gap: 5px !important;
+  }
+  .s-ar-tag {
+    font-size: 5pt !important;
+    color: #881337 !important;
+    background: rgba(0,0,0,0.05) !important;
+    padding: 1px 3px !important;
+  }
+  .s-arabic-text {
+    font-size: 7pt !important;
+    color: #881337 !important;
+    line-height: 1.6 !important;
+    orphans: 3 !important;
+    widows: 3 !important;
+  }
+
+  /* ── Break control: don't split a conjugation row or a sentence block across pages ── */
+  .conj-table tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  .sentence-group {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  .hero h1, .section-title, .card-header {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+  .verb-card  { page-break-inside: avoid !important; break-inside: avoid !important; }
+
+  /* ── Scrollbar hidden ── */
+  ::-webkit-scrollbar { display: none; }
+
+  /* ── Hover states off for print ── */
+  .verb-card:hover,
+  .sentence-group:hover {
+    border-color: rgba(0,0,0,0.18) !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* ── Running page footer with page numbers — matches reference ── */
+  @page {
+    @bottom-right { content: counter(page) " / " counter(pages); font-family: 'Noto Sans', Arial, sans-serif; font-size: 8pt; color: #9ca3af; }
+    @bottom-center { content: "Dativ Verben · A1–A2 · Deutsch lernen"; font-family: 'Noto Sans', Arial, sans-serif; font-size: 7pt; color: #9ca3af; }
+  }
+  .card-header { flex-wrap: nowrap !important; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+
+.print-cover { display: none; }
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<div id="g-toast">&#10003; تم النسخ &middot; Copied!</div>
+
+<nav>
+  <a class="nav-brand" href="#">
+    <span class="flag">&#127465;&#127466;</span>
+    <div>
+      <div class="brand-text">Dativ-Verben</div>
+      <div class="brand-sub">German Grammar Reference</div>
+    </div>
+  </a>
+  <div class="nav-right">
+    <span class="verb-count-badge">85 Verben</span>
+    <button class="print-btn" onclick="window.print()" aria-label="Print A4">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      طباعة A4
+    </button>
+    <button class="theme-toggle" id="theme-btn" aria-label="Toggle theme">&#127769;</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">&#127891; Grammatik &middot; Dativ &middot; A1 &amp; A2</div>
+  <h1>German <span class="hl">Dative</span> Verbs</h1>
+  <p class="hero-sub rtl">المرجع الكامل للأفعال التي تأخذ حالة الداتيف &mdash; مع تصريف كامل وثلاث جمل لكل فعل باللغات الثلاث (ألمانية &middot; إنجليزية &middot; عربية) بمستوى A1&ndash;A2</p>
+  <div class="legend">
+    <div class="legend-item"><span class="legend-dot" style="background:var(--praesens)"></span>Präsens &middot; المضارع</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--praeteritum)"></span>Präteritum &middot; الماضي البسيط</div>
+    <div class="legend-item"><span class="legend-dot" style="background:var(--perfekt)"></span>Perfekt &middot; الماضي التام</div>
+  </div>
+  <div class="search-container">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" id="search-input" placeholder="Search verb (e.g. helfen, danken, glauben)&hellip;" autocomplete="off" aria-label="Search verbs">
+  </div>
+</section>
+
+<!-- ═══════════════ PRINT COVER ═══════════════ -->
+<div class="print-cover" role="doc-cover" aria-hidden="true">
+  <span class="cov-flag">&#127465;&#127466;</span>
+  <div class="cov-title">German <span>Dative</span> Verbs</div>
+  <div class="cov-sub">
+    المرجع الكامل للأفعال التي تأخذ حالة الداتيف — 85 فعلاً<br>
+    Präsens · Präteritum · Perfekt<br>
+    مع أمثلة بالعربية والإنجليزية
+  </div>
+  <div class="cov-meta">
+    <span class="cov-tag">85 Verben</span>
+    <span class="cov-tag">A1–A2</span>
+    <span class="cov-tag">DIN A4</span>
+  </div>
+  <div class="cov-legend">
+    <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#047857"></span>Präsens (المضارع)</span>
+    <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#92400e"></span>Präteritum (الماضي البسيط)</span>
+    <span class="cov-legend-item"><span class="cov-legend-dot" style="background:#5b21b6"></span>Perfekt (الماضي التام)</span>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="stats-row">
+    <div class="stat-card"><div class="stat-number">85</div><div class="stat-label">Dativ Verben</div></div>
+    <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Konjugationszeiten</div></div>
+    <div class="stat-card"><div class="stat-number">255</div><div class="stat-label">Beispielsätze</div></div>
+    <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Sprachen</div></div>
+  </div>
+  <div class="section-title">Alle Dativ-Verben &mdash; جميع أفعال الداتيف</div>
+  <p class="section-sub">جميع الأفعال الخمسة والثمانون مع تصريف كامل وثلاث جمل أمثلة ثلاثية اللغة بمستوى A1&ndash;A2. اضغط زر الصوت للاستماع وزر النسخ لنسخ الجملة.</p>
+  <div class="verbs-grid" id="verbs-grid"></div>
+  <div class="no-results" id="no-results">
+    <div class="icon">&#128270;</div>
+    <p>No verbs found for &ldquo;<span id="search-term"></span>&rdquo;</p>
+  </div>
+</div>
+<footer>أفعال Dativ &mdash; التصريف الكامل (Präsens | Präteritum | Perfekt) &middot; &#127465;&#127466; Deutsch &middot; A1&ndash;A2</footer>
+
+<script>
+const VERBS=[
+{n:1,inf:"antworten",ar:"يُجيب / يَرُد",pf:"hat geantwortet",pfH:"haben + geantwortet",
+conj:[["ich","antworte","antwortete"],["du","antwortest","antwortetest"],["er/sie/es","antwortet","antwortete"],["wir","antworten","antworteten"],["ihr","antwortet","antwortetet"],["sie/Sie","antworten","antworteten"]],
+sents:[{de:"Bitte antworte mir schnell!",en:"Please answer me quickly!",ar:"من فضلك أجبني بسرعة!"},
+{de:"Ich antworte dir morgen.",en:"I will answer you tomorrow.",ar:"سأجيبك غداً."},
+{de:"Er antwortet dem Lehrer.",en:"He answers the teacher.",ar:"يجيب على المعلم."}]},
+
+{n:2,inf:"begegnen",ar:"يَلتَقي / يُصادِف",pf:"ist begegnet",pfH:"sein + begegnet",
+conj:[["ich","begegne","begegnete"],["du","begegnest","begegnetest"],["er/sie/es","begegnet","begegnete"],["wir","begegnen","begegneten"],["ihr","begegnet","begegnetet"],["sie/Sie","begegnen","begegneten"]],
+sents:[{de:"Ich begegne dir oft im Park.",en:"I often meet you in the park.",ar:"كثيراً ما أصادفك في الحديقة."},
+{de:"Er ist mir heute begegnet.",en:"He met me today.",ar:"قابلني اليوم."},
+{de:"Wir begegnen uns zufällig.",en:"We meet by chance.",ar:"نتقابل بالصدفة."}]},
+
+{n:3,inf:"danken",ar:"يَشكُر / يُعبِّر عن الامتنان",pf:"hat gedankt",pfH:"haben + gedankt",
+conj:[["ich","danke","dankte"],["du","dankst","danktest"],["er/sie/es","dankt","dankte"],["wir","danken","dankten"],["ihr","dankt","danktet"],["sie/Sie","danken","dankten"]],
+sents:[{de:"Ich danke dir für deine Hilfe.",en:"I thank you for your help.",ar:"أشكرك على مساعدتك."},
+{de:"Er dankt ihr herzlich.",en:"He thanks her warmly.",ar:"يشكرها بحرارة."},
+{de:"Wir danken euch sehr.",en:"We thank you very much.",ar:"نشكركم جزيل الشكر."}]},
+
+{n:4,inf:"dienen",ar:"يَخدُم / يُفيد",pf:"hat gedient",pfH:"haben + gedient",
+conj:[["ich","diene","diente"],["du","dienst","dientest"],["er/sie/es","dient","diente"],["wir","dienen","dienten"],["ihr","dient","dientet"],["sie/Sie","dienen","dienten"]],
+sents:[{de:"Ich diene dir gern.",en:"I am happy to serve you.",ar:"أنا سعيد بخدمتك."},
+{de:"Das dient uns allen.",en:"That serves all of us.",ar:"هذا يفيد الجميع."},
+{de:"Er diente dem König treu.",en:"He served the king faithfully.",ar:"خدم الملك بإخلاص."}]},
+
+{n:5,inf:"drohen",ar:"يُهَدِّد",pf:"hat gedroht",pfH:"haben + gedroht",
+conj:[["ich","drohe","drohte"],["du","drohst","drohtest"],["er/sie/es","droht","drohte"],["wir","drohen","drohten"],["ihr","droht","drohtet"],["sie/Sie","drohen","drohten"]],
+sents:[{de:"Er droht mir mit Konsequenzen.",en:"He threatens me with consequences.",ar:"يهددني بالعواقب."},
+{de:"Drohst du mir?",en:"Are you threatening me?",ar:"هل تهددني؟"},
+{de:"Sie drohte mir mit dem Finger.",en:"She wagged her finger at me.",ar:"هددتني بإصبعها."}]},
+
+{n:6,inf:"einfallen",ar:"يَخطُر على البال",pf:"ist eingefallen",pfH:"sein + eingefallen",
+conj:[["ich","falle ein","fiel ein"],["du","fällst ein","fielst ein"],["er/sie/es","fällt ein","fiel ein"],["wir","fallen ein","fielen ein"],["ihr","fallt ein","fielt ein"],["sie/Sie","fallen ein","fielen ein"]],
+sents:[{de:"Mir fällt keine neue Idee ein.",en:"No new idea comes to my mind.",ar:"لا تخطر على بالي أي فكرة جديدة."},
+{de:"Fällt dir ein gutes Wort ein?",en:"Can you think of a good word?",ar:"هل يخطر ببالك كلمة جيدة؟"},
+{de:"Ihm fiel der Name nicht ein.",en:"He could not recall the name.",ar:"لم يتذكر الاسم."}]},
+
+{n:7,inf:"gefallen",ar:"يُعجِب",pf:"hat gefallen",pfH:"haben + gefallen",
+conj:[["ich","gefalle","gefiel"],["du","gefällst","gefielst"],["er/sie/es","gefällt","gefiel"],["wir","gefallen","gefielen"],["ihr","gefallt","gefielt"],["sie/Sie","gefallen","gefielen"]],
+sents:[{de:"Deine neue Frisur gefällt mir.",en:"I like your new hairstyle.",ar:"تعجبني تسريحة شعرك الجديدة."},
+{de:"Das Buch gefällt mir sehr.",en:"I like the book very much.",ar:"يعجبني الكتاب جداً."},
+{de:"Gefällt dir die Stadt?",en:"Do you like the city?",ar:"هل تعجبك المدينة؟"}]},
+
+{n:8,inf:"gehorchen",ar:"يُطيع / يَمتَثِل",pf:"hat gehorcht",pfH:"haben + gehorcht",
+conj:[["ich","gehorche","gehorchte"],["du","gehorchst","gehorchtest"],["er/sie/es","gehorcht","gehorchte"],["wir","gehorchen","gehorchten"],["ihr","gehorcht","gehorchtet"],["sie/Sie","gehorchen","gehorchten"]],
+sents:[{de:"Der Hund gehorcht mir gut.",en:"The dog obeys me well.",ar:"الكلب يطيعني جيداً."},
+{de:"Das Kind gehorcht den Eltern.",en:"The child obeys the parents.",ar:"يطيع الطفل الوالدين."},
+{de:"Er gehorcht dem Lehrer immer.",en:"He always obeys the teacher.",ar:"يطيع المعلم دائماً."}]},
+
+{n:9,inf:"gehören",ar:"يَنتَمي إلى / يَملِكُه",pf:"hat gehört",pfH:"haben + gehört",
+conj:[["ich","gehöre","gehörte"],["du","gehörst","gehörtest"],["er/sie/es","gehört","gehörte"],["wir","gehören","gehörten"],["ihr","gehört","gehörtet"],["sie/Sie","gehören","gehörten"]],
+sents:[{de:"Das Buch gehört mir.",en:"The book belongs to me.",ar:"الكتاب ملكي."},
+{de:"Wem gehört diese Tasche?",en:"Whose bag is this?",ar:"لمن هذه الحقيبة؟"},
+{de:"Das Fahrrad gehört meiner Schwester.",en:"The bike belongs to my sister.",ar:"الدراجة ملك لأختي."}]},
+
+{n:10,inf:"gelingen",ar:"يَنجَح / يَتَحَقَّق",pf:"ist gelungen",pfH:"sein + gelungen",
+conj:[["ich","gelinge","gelang"],["du","gelingst","gelangst"],["er/sie/es","gelingt","gelang"],["wir","gelingen","gelangen"],["ihr","gelingt","gelangt"],["sie/Sie","gelingen","gelangen"]],
+sents:[{de:"Diesmal gelingt mir der Kuchen.",en:"This time the cake turns out well for me.",ar:"هذه المرة ينجح معي الكيك."},
+{de:"Gelingt dir die Aufgabe?",en:"Are you succeeding with the task?",ar:"هل تنجح في المهمة؟"},
+{de:"Es ist mir gut gelungen.",en:"It worked out well for me.",ar:"نجح الأمر معي بشكل جيد."}]},
+
+{n:11,inf:"genügen",ar:"يَكفي / يُلَبِّي",pf:"hat genügt",pfH:"haben + genügt",
+conj:[["ich","genüge","genügte"],["du","genügst","genügtest"],["er/sie/es","genügt","genügte"],["wir","genügen","genügten"],["ihr","genügt","genügtet"],["sie/Sie","genügen","genügten"]],
+sents:[{de:"Dein Versprechen genügt mir nicht.",en:"Your promise is not enough for me.",ar:"وعدك لا يكفيني."},
+{de:"Ein Stück Brot genügt mir.",en:"One piece of bread is enough for me.",ar:"قطعة خبز واحدة تكفيني."},
+{de:"Das genügt uns für heute.",en:"That is enough for us today.",ar:"هذا يكفينا لليوم."}]},
+
+{n:12,inf:"glauben",ar:"يُصَدِّق / يَثِق",pf:"hat geglaubt",pfH:"haben + geglaubt",
+conj:[["ich","glaube","glaubte"],["du","glaubst","glaubtest"],["er/sie/es","glaubt","glaubte"],["wir","glauben","glaubten"],["ihr","glaubt","glaubtet"],["sie/Sie","glauben","glaubten"]],
+sents:[{de:"Ich glaube dir nicht.",en:"I do not believe you.",ar:"لا أصدقك."},
+{de:"Glaubst du mir?",en:"Do you believe me?",ar:"هل تصدقني؟"},
+{de:"Er glaubt ihr immer.",en:"He always believes her.",ar:"يصدقها دائماً."}]},
+
+{n:13,inf:"gratulieren",ar:"يُهَنِّئ",pf:"hat gratuliert",pfH:"haben + gratuliert",
+conj:[["ich","gratuliere","gratulierte"],["du","gratulierst","gratuliertest"],["er/sie/es","gratuliert","gratulierte"],["wir","gratulieren","gratulierten"],["ihr","gratuliert","gratuliertet"],["sie/Sie","gratulieren","gratulierten"]],
+sents:[{de:"Ich gratuliere dir zum Geburtstag!",en:"Happy birthday!",ar:"أهنئك بعيد ميلادك!"},
+{de:"Wir gratulieren euch zur Hochzeit.",en:"We congratulate you on your wedding.",ar:"نهنئكما بالزفاف."},
+{de:"Er gratuliert ihr zum Erfolg.",en:"He congratulates her on her success.",ar:"يهنئها على نجاحها."}]},
+
+{n:14,inf:"helfen",ar:"يُساعِد",pf:"hat geholfen",pfH:"haben + geholfen",
+conj:[["ich","helfe","half"],["du","hilfst","halfst"],["er/sie/es","hilft","half"],["wir","helfen","halfen"],["ihr","helft","halft"],["sie/Sie","helfen","halfen"]],
+sents:[{de:"Kann ich dir helfen?",en:"Can I help you?",ar:"هل يمكنني مساعدتك؟"},
+{de:"Er hilft mir bei den Hausaufgaben.",en:"He helps me with the homework.",ar:"يساعدني في الواجبات المنزلية."},
+{de:"Wir helfen euch gern.",en:"We are happy to help you.",ar:"نحن سعداء بمساعدتكم."}]},
+
+{n:15,inf:"leidtun",ar:"يُؤسِف / يَندَم",pf:"hat leidgetan",pfH:"haben + leidgetan",
+conj:[["ich","tue leid","tat leid"],["du","tust leid","tatest leid"],["er/sie/es","tut leid","tat leid"],["wir","tun leid","taten leid"],["ihr","tut leid","tatet leid"],["sie/Sie","tun leid","taten leid"]],
+sents:[{de:"Es tut mir leid, ich bin zu spät.",en:"I am sorry, I am late.",ar:"أنا آسف، تأخرت."},
+{de:"Tut es dir leid?",en:"Are you sorry about it?",ar:"هل أنت آسف؟"},
+{de:"Das tut mir sehr leid.",en:"I am very sorry about that.",ar:"أنا آسف جداً على ذلك."}]},
+
+{n:16,inf:"nachgehen",ar:"يَتبَع / يَسير خلف",pf:"ist nachgegangen",pfH:"sein + nachgegangen",
+conj:[["ich","gehe nach","ging nach"],["du","gehst nach","gingst nach"],["er/sie/es","geht nach","ging nach"],["wir","gehen nach","gingen nach"],["ihr","geht nach","gingt nach"],["sie/Sie","gehen nach","gingen nach"]],
+sents:[{de:"Ich gehe dem Mann nach.",en:"I follow the man.",ar:"أتبع الرجل."},
+{de:"Geh dem Hund bitte nach!",en:"Please follow the dog!",ar:"تبع الكلب من فضلك!"},
+{de:"Sie geht dem Kind nach.",en:"She follows the child.",ar:"تتبع الطفل."}]},
+
+{n:17,inf:"passen",ar:"يُناسِب / يَلائِم",pf:"hat gepasst",pfH:"haben + gepasst",
+conj:[["ich","passe","passte"],["du","passt","passtest"],["er/sie/es","passt","passte"],["wir","passen","passten"],["ihr","passt","passtet"],["sie/Sie","passen","passten"]],
+sents:[{de:"Der Termin passt mir nicht.",en:"The appointment does not suit me.",ar:"الموعد لا يناسبني."},
+{de:"Passt dir Montag?",en:"Does Monday suit you?",ar:"هل يناسبك الاثنين؟"},
+{de:"Das Hemd passt mir gut.",en:"The shirt fits me well.",ar:"القميص يناسبني جيداً."}]},
+
+{n:18,inf:"raten",ar:"يَنصَح / يُوصي",pf:"hat geraten",pfH:"haben + geraten",
+conj:[["ich","rate","riet"],["du","rätst","rietst"],["er/sie/es","rät","riet"],["wir","raten","rieten"],["ihr","ratet","rietet"],["sie/Sie","raten","rieten"]],
+sents:[{de:"Ich rate dir, mehr zu schlafen.",en:"I advise you to sleep more.",ar:"أنصحك بالنوم أكثر."},
+{de:"Was rätst du mir?",en:"What do you advise me?",ar:"ماذا تنصحني؟"},
+{de:"Der Arzt rät mir, Sport zu machen.",en:"The doctor advises me to do sport.",ar:"ينصحني الطبيب بممارسة الرياضة."}]},
+
+{n:19,inf:"schaden",ar:"يَضُر / يُلحِق الأذى",pf:"hat geschadet",pfH:"haben + geschadet",
+conj:[["ich","schade","schadete"],["du","schadest","schadetest"],["er/sie/es","schadet","schadete"],["wir","schaden","schadeten"],["ihr","schadet","schadetet"],["sie/Sie","schaden","schadeten"]],
+sents:[{de:"Das Rauchen schadet dir.",en:"Smoking is bad for you.",ar:"التدخين يضرك."},
+{de:"Zu viel Zucker schadet dem Körper.",en:"Too much sugar is bad for the body.",ar:"الكثير من السكر يضر الجسم."},
+{de:"Es schadet mir nicht.",en:"It does not harm me.",ar:"لا يضرني."}]},
+
+{n:20,inf:"schmecken",ar:"يُعجِب مَذاقُه",pf:"hat geschmeckt",pfH:"haben + geschmeckt",
+conj:[["ich","schmecke","schmeckte"],["du","schmeckst","schmecktest"],["er/sie/es","schmeckt","schmeckte"],["wir","schmecken","schmeckten"],["ihr","schmeckt","schmecktet"],["sie/Sie","schmecken","schmeckten"]],
+sents:[{de:"Die Suppe schmeckt mir sehr gut.",en:"The soup tastes very good to me.",ar:"طعم الشوربة يعجبني جداً."},
+{de:"Schmeckt dir das Brot?",en:"Do you like the taste of the bread?",ar:"هل يعجبك طعم الخبز؟"},
+{de:"Der Kuchen schmeckt uns allen.",en:"The cake tastes good to all of us.",ar:"طعم الكيك يعجبنا جميعاً."}]},
+
+{n:21,inf:"verzeihen",ar:"يَغفِر / يَسامِح",pf:"hat verziehen",pfH:"haben + verziehen",
+conj:[["ich","verzeihe","verzieh"],["du","verzeihst","verziehst"],["er/sie/es","verzeiht","verzieh"],["wir","verzeihen","verziehen"],["ihr","verzeiht","verzieht"],["sie/Sie","verzeihen","verziehen"]],
+sents:[{de:"Ich verzeihe dir.",en:"I forgive you.",ar:"أسامحك."},
+{de:"Verzeihst du mir bitte?",en:"Will you please forgive me?",ar:"هل ستسامحني من فضلك؟"},
+{de:"Sie verzieh ihm sofort.",en:"She forgave him immediately.",ar:"سامحته على الفور."}]},
+
+{n:22,inf:"wehtun",ar:"يُؤلِم / يُسبِّب الألم",pf:"hat wehgetan",pfH:"haben + wehgetan",
+conj:[["ich","tue weh","tat weh"],["du","tust weh","tatest weh"],["er/sie/es","tut weh","tat weh"],["wir","tun weh","taten weh"],["ihr","tut weh","tatet weh"],["sie/Sie","tun weh","taten weh"]],
+sents:[{de:"Mein Kopf tut mir weh.",en:"My head hurts.",ar:"رأسي يؤلمني."},
+{de:"Tut dir der Bauch weh?",en:"Does your stomach hurt?",ar:"هل يؤلمك بطنك؟"},
+{de:"Das Knie tut ihr weh.",en:"Her knee hurts.",ar:"ركبتها تؤلمها."}]},
+
+{n:23,inf:"widersprechen",ar:"يَعتَرِض / يُناقِض",pf:"hat widersprochen",pfH:"haben + widersprochen",
+conj:[["ich","widerspreche","widersprach"],["du","widersprichst","widersprach\u00adst"],["er/sie/es","widerspricht","widersprach"],["wir","widersprechen","widersprachen"],["ihr","widersprecht","widersprach\u00adt"],["sie/Sie","widersprechen","widersprachen"]],
+sents:[{de:"Ich widerspreche dir.",en:"I disagree with you.",ar:"أعترض عليك."},
+{de:"Er widerspricht ihr nie.",en:"He never contradicts her.",ar:"لا يعترض عليها أبداً."},
+{de:"Darf ich dir widersprechen?",en:"May I disagree with you?",ar:"هل يجوز لي أن أعارضك؟"}]},
+
+{n:24,inf:"winken",ar:"يُلَوِّح / يُشير",pf:"hat gewinkt",pfH:"haben + gewinkt",
+conj:[["ich","winke","winkte"],["du","winkst","winktest"],["er/sie/es","winkt","winkte"],["wir","winken","winkten"],["ihr","winkt","winktet"],["sie/Sie","winken","winkten"]],
+sents:[{de:"Ich winke dir zum Abschied.",en:"I wave goodbye to you.",ar:"أُلوِّح لك وداعاً."},
+{de:"Das Kind winkt dem Vater.",en:"The child waves to the father.",ar:"يلوِّح الطفل للأب."},
+{de:"Wink mir bitte!",en:"Please wave to me!",ar:"لوِّح لي من فضلك!"}]},
+
+{n:25,inf:"zuhören",ar:"يُنصِت / يَستَمِع",pf:"hat zugehört",pfH:"haben + zugehört",
+conj:[["ich","höre zu","hörte zu"],["du","hörst zu","hörtest zu"],["er/sie/es","hört zu","hörte zu"],["wir","hören zu","hörten zu"],["ihr","hört zu","hörtet zu"],["sie/Sie","hören zu","hörten zu"]],
+sents:[{de:"Hör mir bitte zu!",en:"Please listen to me!",ar:"أنصت إليّ من فضلك!"},
+{de:"Ich höre dir aufmerksam zu.",en:"I listen to you carefully.",ar:"أنصت إليك باهتمام."},
+{de:"Er hört dem Lehrer nicht zu.",en:"He does not listen to the teacher.",ar:"لا ينصت للمعلم."}]},
+
+{n:26,inf:"zuschauen",ar:"يُشاهِد / يُراقِب",pf:"hat zugeschaut",pfH:"haben + zugeschaut",
+conj:[["ich","schaue zu","schaute zu"],["du","schaust zu","schautest zu"],["er/sie/es","schaut zu","schaute zu"],["wir","schauen zu","schauten zu"],["ihr","schaut zu","schautet zu"],["sie/Sie","schauen zu","schauten zu"]],
+sents:[{de:"Ich schaue dem Koch zu.",en:"I watch the cook.",ar:"أشاهد الطباخ."},
+{de:"Schau mir bitte zu!",en:"Please watch me!",ar:"راقبني من فضلك!"},
+{de:"Wir schauen dem Spiel zu.",en:"We watch the game.",ar:"نشاهد اللعبة."}]},
+
+{n:27,inf:"zustimmen",ar:"يُوافِق / يُقِر",pf:"hat zugestimmt",pfH:"haben + zugestimmt",
+conj:[["ich","stimme zu","stimmte zu"],["du","stimmst zu","stimmtest zu"],["er/sie/es","stimmt zu","stimmte zu"],["wir","stimmen zu","stimmten zu"],["ihr","stimmt zu","stimmtet zu"],["sie/Sie","stimmen zu","stimmten zu"]],
+sents:[{de:"Ich stimme dir zu.",en:"I agree with you.",ar:"أوافقك."},
+{de:"Stimmst du mir zu?",en:"Do you agree with me?",ar:"هل توافقني؟"},
+{de:"Wir stimmen dem Plan zu.",en:"We agree with the plan.",ar:"نوافق على الخطة."}]},
+
+{n:28,inf:"berichten",ar:"يُخبِر / يُبلِّغ",pf:"hat berichtet",pfH:"haben + berichtet",
+conj:[["ich","berichte","berichtete"],["du","berichtest","berichtetest"],["er/sie/es","berichtet","berichtete"],["wir","berichten","berichteten"],["ihr","berichtet","berichtetet"],["sie/Sie","berichten","berichteten"]],
+sents:[{de:"Ich berichte dir später.",en:"I will tell you later.",ar:"سأخبرك لاحقاً."},
+{de:"Er berichtet dem Chef alles.",en:"He reports everything to the boss.",ar:"يُبلِّغ المدير بكل شيء."},
+{de:"Bitte berichte mir davon!",en:"Please tell me about it!",ar:"أخبرني عن ذلك من فضلك!"}]},
+
+{n:29,inf:"fehlen",ar:"يَشتاق إليه / يَنقُصه",pf:"hat gefehlt",pfH:"haben + gefehlt",
+conj:[["ich","fehle","fehlte"],["du","fehlst","fehltest"],["er/sie/es","fehlt","fehlte"],["wir","fehlen","fehlten"],["ihr","fehlt","fehltet"],["sie/Sie","fehlen","fehlten"]],
+sents:[{de:"Du fehlst mir sehr.",en:"I miss you a lot.",ar:"أنا أشتاق إليك كثيراً."},
+{de:"Was fehlt dir?",en:"What is wrong with you?",ar:"ماذا ينقصك؟"},
+{de:"Mir fehlt ein Euro.",en:"I am one euro short.",ar:"ينقصني يورو واحد."}]},
+
+{n:30,inf:"geschehen",ar:"يَحدُث / يَقَع",pf:"ist geschehen",pfH:"sein + geschehen",
+conj:[["ich","geschehe","geschah"],["du","geschehst","geschahst"],["er/sie/es","geschieht","geschah"],["wir","geschehen","geschahen"],["ihr","gescheht","geschaht"],["sie/Sie","geschehen","geschahen"]],
+sents:[{de:"Was ist dir geschehen?",en:"What happened to you?",ar:"ماذا حدث لك؟"},
+{de:"Das geschieht mir recht.",en:"That serves me right.",ar:"هذا يستحقه مني."},
+{de:"Ihm ist nichts geschehen.",en:"Nothing happened to him.",ar:"لم يحدث له شيء."}]},
+
+{n:31,inf:"vertrauen",ar:"يَثِق / يَأتَمِن",pf:"hat vertraut",pfH:"haben + vertraut",
+conj:[["ich","vertraue","vertraute"],["du","vertraust","vertrautest"],["er/sie/es","vertraut","vertraute"],["wir","vertrauen","vertrauten"],["ihr","vertraut","vertrautet"],["sie/Sie","vertrauen","vertrauten"]],
+sents:[{de:"Ich vertraue dir.",en:"I trust you.",ar:"أنا أثق بك."},
+{de:"Vertraust du mir?",en:"Do you trust me?",ar:"هل تثق بي؟"},
+{de:"Sie vertraut dem Arzt.",en:"She trusts the doctor.",ar:"تثق بالطبيب."}]},
+
+{n:32,inf:"ähneln",ar:"يُشبِه",pf:"hat geähnelt",pfH:"haben + geähnelt",
+conj:[["ich","ähnele","ähnelte"],["du","ähnelst","ähneltest"],["er/sie/es","ähnelt","ähnelte"],["wir","ähneln","ähnelten"],["ihr","ähnelt","ähneltet"],["sie/Sie","ähneln","ähnelten"]],
+sents:[{de:"Er ähnelt seinem Vater.",en:"He resembles his father.",ar:"إنه يشبه والده."},
+{de:"Sie ähnelt ihrer Mutter sehr.",en:"She looks very much like her mother.",ar:"تشبه أمها كثيراً."},
+{de:"Ähnelst du deinem Bruder?",en:"Do you look like your brother?",ar:"هل تشبه أخاك؟"}]},
+
+{n:33,inf:"applaudieren",ar:"يُصَفِّق / يَهتِف",pf:"hat applaudiert",pfH:"haben + applaudiert",
+conj:[["ich","applaudiere","applaudierte"],["du","applaudierst","applaudiertest"],["er/sie/es","applaudiert","applaudierte"],["wir","applaudieren","applaudierten"],["ihr","applaudiert","applaudiertet"],["sie/Sie","applaudieren","applaudierten"]],
+sents:[{de:"Wir applaudieren dir.",en:"We applaud you.",ar:"نصفق لك."},
+{de:"Das Publikum applaudiert ihm.",en:"The audience applauds him.",ar:"الجمهور يصفق له."},
+{de:"Applaudiert ihr ihr?",en:"Are you applauding her?",ar:"هل تصفقون لها؟"}]},
+
+{n:34,inf:"Bescheid sagen",ar:"يُعلِم / يُبلِّغ",pf:"hat Bescheid gesagt",pfH:"haben + Bescheid gesagt",
+conj:[["ich","sage Bescheid","sagte Bescheid"],["du","sagst Bescheid","sagtest Bescheid"],["er/sie/es","sagt Bescheid","sagte Bescheid"],["wir","sagen Bescheid","sagten Bescheid"],["ihr","sagt Bescheid","sagtet Bescheid"],["sie/Sie","sagen Bescheid","sagten Bescheid"]],
+sents:[{de:"Sag mir Bescheid, wenn du fertig bist.",en:"Let me know when you are done.",ar:"أعلمني حين تنتهي."},
+{de:"Ich sage dir morgen Bescheid.",en:"I will let you know tomorrow.",ar:"سأخبرك غداً."},
+{de:"Sagt ihr ihm Bescheid?",en:"Will you let him know?",ar:"هل ستبلغونه؟"}]},
+
+{n:35,inf:"misslingen",ar:"يَفشَل / لا يَنجَح",pf:"ist misslungen",pfH:"sein + misslungen",
+conj:[["ich","missling(e)","misslang"],["du","misslingsst","misslangst"],["er/sie/es","misslingt","misslang"],["wir","misslingen","misslangen"],["ihr","misslingt","misslangt"],["sie/Sie","misslingen","misslangen"]],
+sents:[{de:"Der Versuch ist mir misslungen.",en:"The attempt failed for me.",ar:"فشلت في المحاولة."},
+{de:"Der Kuchen ist ihr misslungen.",en:"The cake did not turn out well for her.",ar:"فشل الكيك معها."},
+{de:"Ist dir das Projekt misslungen?",en:"Did your project fail?",ar:"هل فشل مشروعك؟"}]},
+
+{n:36,inf:"sich nähern",ar:"يَقتَرِب من",pf:"hat sich genähert",pfH:"haben + sich genähert",
+conj:[["ich","nähere mich","näherte mich"],["du","näherst dich","nähertest dich"],["er/sie/es","nähert sich","näherte sich"],["wir","nähern uns","näherten uns"],["ihr","nähert euch","nähert euch"],["sie/Sie","nähern sich","näherten sich"]],
+sents:[{de:"Ich nähere mich dem Haus.",en:"I am approaching the house.",ar:"أقترب من المنزل."},
+{de:"Das Auto nähert sich der Schule.",en:"The car is approaching the school.",ar:"تقترب السيارة من المدرسة."},
+{de:"Wir nähern uns dem Ende.",en:"We are getting close to the end.",ar:"نقترب من النهاية."}]},
+
+{n:37,inf:"passieren",ar:"يَحدُث لـ / يَقَع لـ",pf:"ist passiert",pfH:"sein + passiert",
+conj:[["ich","passiere","passierte"],["du","passierst","passiertest"],["er/sie/es","passiert","passierte"],["wir","passieren","passierten"],["ihr","passiert","passiertet"],["sie/Sie","passieren","passierten"]],
+sents:[{de:"Was ist dir passiert?",en:"What happened to you?",ar:"ماذا حدث لك؟"},
+{de:"Mir ist nichts passiert.",en:"Nothing happened to me.",ar:"لم يحدث لي شيء."},
+{de:"Ihm passiert oft etwas.",en:"Something often happens to him.",ar:"كثيراً ما يحدث له شيء."}]},
+
+{n:38,inf:"beistehen",ar:"يُساند / يَقِف إلى جانب",pf:"hat beigestanden",pfH:"haben + beigestanden",
+conj:[["ich","stehe bei","stand bei"],["du","stehst bei","standst bei"],["er/sie/es","steht bei","stand bei"],["wir","stehen bei","standen bei"],["ihr","steht bei","standet bei"],["sie/Sie","stehen bei","standen bei"]],
+sents:[{de:"Ich stehe dir immer bei.",en:"I always stand by you.",ar:"أنا دائماً إلى جانبك."},
+{de:"Kannst du mir beistehen?",en:"Can you stand by me?",ar:"هل يمكنك أن تساندني؟"},
+{de:"Wir stehen euch in dieser Zeit bei.",en:"We stand by you during this time.",ar:"نساندكم في هذا الوقت."}]},
+
+{n:39,inf:"nachrennen",ar:"يَجري خلف / يَطارِد",pf:"ist nachgerannt",pfH:"sein + nachgerannt",
+conj:[["ich","renne nach","rannte nach"],["du","rennst nach","ranntest nach"],["er/sie/es","rennt nach","rannte nach"],["wir","rennen nach","rannten nach"],["ihr","rennt nach","ranntet nach"],["sie/Sie","rennen nach","rannten nach"]],
+sents:[{de:"Ich renne dem Bus nach.",en:"I run after the bus.",ar:"أركض خلف الحافلة."},
+{de:"Der Hund rennt dem Ball nach.",en:"The dog runs after the ball.",ar:"يركض الكلب خلف الكرة."},
+{de:"Rennst du ihm nach?",en:"Are you running after him?",ar:"هل تركض خلفه؟"}]},
+
+{n:40,inf:"beitreten",ar:"يَنضَم إلى",pf:"ist beigetreten",pfH:"sein + beigetreten",
+conj:[["ich","trete bei","trat bei"],["du","trittst bei","tratst bei"],["er/sie/es","tritt bei","trat bei"],["wir","treten bei","traten bei"],["ihr","tretet bei","tratet bei"],["sie/Sie","treten bei","traten bei"]],
+sents:[{de:"Ich trete dem Verein bei.",en:"I am joining the club.",ar:"أنضم إلى النادي."},
+{de:"Trittst du dem Team bei?",en:"Are you joining the team?",ar:"هل ستنضم إلى الفريق؟"},
+{de:"Wir treten der Gruppe bei.",en:"We are joining the group.",ar:"ننضم إلى المجموعة."}]},
+
+{n:41,inf:"befehlen",ar:"يَأمُر / يُصدِر أمراً",pf:"hat befohlen",pfH:"haben + befohlen",
+conj:[["ich","befehle","befahl"],["du","befiehlst","befahlst"],["er/sie/es","befiehlt","befahl"],["wir","befehlen","befahlen"],["ihr","befehlt","befahlt"],["sie/Sie","befehlen","befahlen"]],
+sents:[{de:"Er befiehlt mir, still zu sein.",en:"He orders me to be quiet.",ar:"يأمرني بالصمت."},
+{de:"Niemand befiehlt mir etwas.",en:"Nobody orders me around.",ar:"لا أحد يأمرني بشيء."},
+{de:"Der Chef befiehlt den Mitarbeitern.",en:"The boss gives orders to the employees.",ar:"يأمر الرئيس الموظفين."}]},
+
+{n:42,inf:"entgegenkommen",ar:"يَلتَقي في المنتصف / يَتَساهَل",pf:"ist entgegengekommen",pfH:"sein + entgegengekommen",
+conj:[["ich","komme entgegen","kam entgegen"],["du","kommst entgegen","kamst entgegen"],["er/sie/es","kommt entgegen","kam entgegen"],["wir","kommen entgegen","kamen entgegen"],["ihr","kommt entgegen","kamt entgegen"],["sie/Sie","kommen entgegen","kamen entgegen"]],
+sents:[{de:"Kannst du mir entgegenkommen?",en:"Can you meet me halfway?",ar:"هل يمكنك أن تلقاني في المنتصف؟"},
+{de:"Er kommt mir ein bisschen entgegen.",en:"He meets me a little halfway.",ar:"يجتمع معي في المنتصف قليلاً."},
+{de:"Ich komme dir gern entgegen.",en:"I am happy to meet you halfway.",ar:"أنا سعيد بمقابلتك في المنتصف."}]},
+
+{n:43,inf:"guttun",ar:"يُفيد / يَنفَع",pf:"hat gutgetan",pfH:"haben + gutgetan",
+conj:[["ich","tue gut","tat gut"],["du","tust gut","tatest gut"],["er/sie/es","tut gut","tat gut"],["wir","tun gut","taten gut"],["ihr","tut gut","tatet gut"],["sie/Sie","tun gut","taten gut"]],
+sents:[{de:"Der Spaziergang tut mir gut.",en:"The walk does me good.",ar:"التنزه يُفيدني."},
+{de:"Tut dir der Schlaf gut?",en:"Does sleep do you good?",ar:"هل ينفعك النوم؟"},
+{de:"Frische Luft tut uns allen gut.",en:"Fresh air is good for all of us.",ar:"الهواء النقي يُفيدنا جميعاً."}]},
+
+{n:44,inf:"missfallen",ar:"يَستاء / لا يُعجِب",pf:"hat missfallen",pfH:"haben + missfallen",
+conj:[["ich","missfalle","missfiel"],["du","missfällst","missfielst"],["er/sie/es","missfällt","missfiel"],["wir","missfallen","missfielen"],["ihr","missfallt","missfielt"],["sie/Sie","missfallen","missfielen"]],
+sents:[{de:"Das Verhalten missfällt mir.",en:"The behaviour displeases me.",ar:"يُزعجني هذا السلوك."},
+{de:"Missfällt dir meine Idee?",en:"Does my idea displease you?",ar:"هل تزعجك فكرتي؟"},
+{de:"Der Lärm missfällt uns sehr.",en:"The noise displeases us a lot.",ar:"يُزعجنا الضجيج كثيراً."}]},
+
+{n:45,inf:"nachlaufen",ar:"يَجري وراء / يَلاحِق",pf:"ist nachgelaufen",pfH:"sein + nachgelaufen",
+conj:[["ich","laufe nach","lief nach"],["du","läufst nach","liefst nach"],["er/sie/es","läuft nach","lief nach"],["wir","laufen nach","liefen nach"],["ihr","lauft nach","lieft nach"],["sie/Sie","laufen nach","liefen nach"]],
+sents:[{de:"Ich laufe dem Zug nach.",en:"I run after the train.",ar:"أركض وراء القطار."},
+{de:"Läufst du ihr noch immer nach?",en:"Are you still chasing after her?",ar:"هل ما زلت تجري وراءها؟"},
+{de:"Das Kind läuft dem Ball nach.",en:"The child chases after the ball.",ar:"يجري الطفل وراء الكرة."}]},
+
+{n:46,inf:"nützen",ar:"يُفيد / ذو فائدة",pf:"hat genützt",pfH:"haben + genützt",
+conj:[["ich","nütze","nützte"],["du","nützt","nütztest"],["er/sie/es","nützt","nützte"],["wir","nützen","nützten"],["ihr","nützt","nütztet"],["sie/Sie","nützen","nützten"]],
+sents:[{de:"Das nützt mir nichts.",en:"That is of no use to me.",ar:"هذا لا يفيدني شيئاً."},
+{de:"Nützt dir das Buch?",en:"Is the book useful to you?",ar:"هل يفيدك الكتاب؟"},
+{de:"Die Übung nützt uns viel.",en:"The exercise is very useful to us.",ar:"التمرين يفيدنا كثيراً."}]},
+
+{n:47,inf:"lauschen",ar:"يُنصِت باهتمام / يَتَسمَّع",pf:"hat gelauscht",pfH:"haben + gelauscht",
+conj:[["ich","lausche","lauschte"],["du","lauschst","lauschtest"],["er/sie/es","lauscht","lauschte"],["wir","lauschen","lauschten"],["ihr","lauscht","lauschtet"],["sie/Sie","lauschen","lauschten"]],
+sents:[{de:"Ich lausche dir gerne.",en:"I love listening to you.",ar:"أحب الإنصات إليك."},
+{de:"Das Kind lauscht dem Märchen.",en:"The child listens intently to the fairy tale.",ar:"ينصت الطفل بانتباه للحكاية."},
+{de:"Lauscht ihr mir?",en:"Are you listening to me?",ar:"هل تنصتون إليّ؟"}]},
+
+{n:48,inf:"gleichen",ar:"يُشابِه / يُماثِل",pf:"hat geglichen",pfH:"haben + geglichen",
+conj:[["ich","gleiche","glich"],["du","gleichst","glichst"],["er/sie/es","gleicht","glich"],["wir","gleichen","glichen"],["ihr","gleicht","glicht"],["sie/Sie","gleichen","glichen"]],
+sents:[{de:"Er gleicht seinem Bruder sehr.",en:"He looks very much like his brother.",ar:"يشبه أخاه كثيراً."},
+{de:"Ihre Stimmen gleichen einander.",en:"Their voices are similar.",ar:"أصواتهما تتشابه."},
+{de:"Gleicht sie dir?",en:"Does she look like you?",ar:"هل تشبهك؟"}]},
+
+{n:49,inf:"auffallen",ar:"يَلفِت الانتباه / يَبرُز",pf:"ist aufgefallen",pfH:"sein + aufgefallen",
+conj:[["ich","falle auf","fiel auf"],["du","fällst auf","fielst auf"],["er/sie/es","fällt auf","fiel auf"],["wir","fallen auf","fielen auf"],["ihr","fallt auf","fielt auf"],["sie/Sie","fallen auf","fielen auf"]],
+sents:[{de:"Du fällst mir positiv auf.",en:"You stand out positively to me.",ar:"تلفت انتباهي بشكل إيجابي."},
+{de:"Ist dir etwas aufgefallen?",en:"Did you notice anything?",ar:"هل لاحظت شيئاً؟"},
+{de:"Ihre Stimme fällt uns sofort auf.",en:"Her voice stands out to us immediately.",ar:"صوتها يلفت انتباهنا فوراً."}]},
+
+{n:50,inf:"folgen",ar:"يَتبَع / يُطيع",pf:"ist gefolgt",pfH:"sein + gefolgt",
+conj:[["ich","folge","folgte"],["du","folgst","folgtest"],["er/sie/es","folgt","folgte"],["wir","folgen","folgten"],["ihr","folgt","folgtet"],["sie/Sie","folgen","folgten"]],
+sents:[{de:"Ich folge dir auf Instagram.",en:"I follow you on Instagram.",ar:"أتابعك على إنستغرام."},
+{de:"Folge mir bitte!",en:"Please follow me!",ar:"اتبعني من فضلك!"},
+{de:"Er ist dem Rat gefolgt.",en:"He followed the advice.",ar:"اتبع النصيحة."}]},
+
+{n:51,inf:"trotzen",ar:"يَتَحَدّى / يُقاوِم",pf:"hat getrotzt",pfH:"haben + getrotzt",
+conj:[["ich","trotze","trotzte"],["du","trotzt","trotztest"],["er/sie/es","trotzt","trotzte"],["wir","trotzen","trotzten"],["ihr","trotzt","trotztet"],["sie/Sie","trotzen","trotzten"]],
+sents:[{de:"Sie trotzt der Kälte und geht spazieren.",en:"She braves the cold and goes for a walk.",ar:"تتحدى البرد وتذهب للتنزه."},
+{de:"Er trotzt allen Schwierigkeiten.",en:"He defies all difficulties.",ar:"يتحدى كل الصعوبات."},
+{de:"Wir trotzen dem Sturm.",en:"We brave the storm.",ar:"نتحدى العاصفة."}]},
+
+{n:52,inf:"widerstehen",ar:"يُقاوِم / يَصمُد أمام",pf:"hat widerstanden",pfH:"haben + widerstanden",
+conj:[["ich","widerstehe","widerstand"],["du","widerstehst","widerstandest"],["er/sie/es","widersteht","widerstand"],["wir","widerstehen","widerstanden"],["ihr","widersteht","widerstandet"],["sie/Sie","widerstehen","widerstanden"]],
+sents:[{de:"Ich kann der Versuchung nicht widerstehen.",en:"I cannot resist the temptation.",ar:"لا أستطيع مقاومة الإغراء."},
+{de:"Sie widersteht dem Druck.",en:"She resists the pressure.",ar:"تقاوم الضغط."},
+{de:"Er widerstand allen Angeboten.",en:"He resisted all offers.",ar:"قاوم جميع العروض."}]},
+
+{n:53,inf:"schmeicheln",ar:"يَتَمَلَّق / يُجامِل",pf:"hat geschmeichelt",pfH:"haben + geschmeichelt",
+conj:[["ich","schmeichle","schmeichelte"],["du","schmeichelst","schmeicheltest"],["er/sie/es","schmeichelt","schmeichelte"],["wir","schmeicheln","schmeichelten"],["ihr","schmeichelt","schmeicheltet"],["sie/Sie","schmeicheln","schmeichelten"]],
+sents:[{de:"Er schmeichelt seiner Chefin oft.",en:"He often flatters his boss.",ar:"يتملق رئيسته كثيراً."},
+{de:"Das Kleid schmeichelt dir.",en:"The dress flatters you.",ar:"الفستان يُجمّلك."},
+{de:"Schmeichelst du mir nur?",en:"Are you just flattering me?",ar:"هل أنت فقط تجاملني؟"}]},
+
+{n:54,inf:"zureden",ar:"يُشَجِّع / يُقنِع بالكلام",pf:"hat zugeredet",pfH:"haben + zugeredet",
+conj:[["ich","rede zu","redete zu"],["du","redest zu","redetest zu"],["er/sie/es","redet zu","redete zu"],["wir","reden zu","redeten zu"],["ihr","redet zu","redetet zu"],["sie/Sie","reden zu","redeten zu"]],
+sents:[{de:"Ich rede ihm gut zu.",en:"I encourage him kindly.",ar:"أشجعه بلطف."},
+{de:"Die Freunde redeten ihr zu, mitzukommen.",en:"The friends encouraged her to come along.",ar:"شجعها الأصدقاء على المجيء."},
+{de:"Redest du ihm manchmal zu?",en:"Do you sometimes encourage him?",ar:"هل تشجعه أحياناً؟"}]},
+
+{n:55,inf:"entsprechen",ar:"يُطابِق / يَتوافَق مع",pf:"hat entsprochen",pfH:"haben + entsprochen",
+conj:[["ich","entspreche","entsprach"],["du","entsprichst","entsprachst"],["er/sie/es","entspricht","entsprach"],["wir","entsprechen","entsprachen"],["ihr","entsprecht","entspracht"],["sie/Sie","entsprechen","entsprachen"]],
+sents:[{de:"Das entspricht nicht meinen Erwartungen.",en:"That does not meet my expectations.",ar:"هذا لا يتوافق مع توقعاتي."},
+{de:"Die Wohnung entspricht unseren Wünschen.",en:"The apartment matches our wishes.",ar:"الشقة تتوافق مع رغباتنا."},
+{de:"Entspricht das den Regeln?",en:"Does that correspond to the rules?",ar:"هل يتوافق هذا مع القواعد؟"}]},
+
+{n:56,inf:"unterliegen",ar:"يَخسَر أمام / يَخضَع لـ",pf:"ist unterlegen",pfH:"sein + unterlegen",
+conj:[["ich","unterliege","unterlag"],["du","unterliegst","unterlagst"],["er/sie/es","unterliegt","unterlag"],["wir","unterliegen","unterlagen"],["ihr","unterliegt","unterlagt"],["sie/Sie","unterliegen","unterlagen"]],
+sents:[{de:"Unsere Mannschaft unterliegt dem Gegner.",en:"Our team is losing to the opponent.",ar:"يخسر فريقنا أمام الخصم."},
+{de:"Er ist seinem Rivalen unterlegen.",en:"He lost to his rival.",ar:"خسر أمام منافسه."},
+{de:"Der Plan unterliegt strengen Regeln.",en:"The plan is subject to strict rules.",ar:"تخضع الخطة لقواعد صارمة."}]},
+
+{n:57,inf:"ausweichen",ar:"يَتَجَنَّب / يُراوِغ",pf:"ist ausgewichen",pfH:"sein + ausgewichen",
+conj:[["ich","weiche aus","wich aus"],["du","weichst aus","wichst aus"],["er/sie/es","weicht aus","wich aus"],["wir","weichen aus","wichen aus"],["ihr","weicht aus","wicht aus"],["sie/Sie","weichen aus","wichen aus"]],
+sents:[{de:"Ich weiche der Frage aus.",en:"I avoid the question.",ar:"أتجنب السؤال."},
+{de:"Er ist mir auf der Straße ausgewichen.",en:"He swerved to avoid me on the street.",ar:"تجنبني في الشارع."},
+{de:"Weichst du dem Problem aus?",en:"Are you avoiding the problem?",ar:"هل تتجنب المشكلة؟"}]},
+
+{n:58,inf:"zumuten",ar:"يُحَمِّل عبئاً / يَفرِض على",pf:"hat zugemutet",pfH:"haben + zugemutet",
+conj:[["ich","mute zu","mutete zu"],["du","mutest zu","mutetest zu"],["er/sie/es","mutet zu","mutete zu"],["wir","muten zu","muteten zu"],["ihr","mutet zu","mutetet zu"],["sie/Sie","muten zu","muteten zu"]],
+sents:[{de:"Das kann ich dir nicht zumuten.",en:"I cannot impose that on you.",ar:"لا أستطيع أن أحمّلك هذا العبء."},
+{de:"Sie mutet sich zu viel zu.",en:"She expects too much of herself.",ar:"تحمّل نفسها الكثير."},
+{de:"Mutest du mir das wirklich zu?",en:"Are you really expecting that of me?",ar:"هل تفرض هذا عليّ حقاً؟"}]},
+
+{n:59,inf:"imponieren",ar:"يُثير الإعجاب / يَبهَر",pf:"hat imponiert",pfH:"haben + imponiert",
+conj:[["ich","imponiere","imponierte"],["du","imponierst","imponiertest"],["er/sie/es","imponiert","imponierte"],["wir","imponieren","imponierten"],["ihr","imponiert","imponiertet"],["sie/Sie","imponieren","imponierten"]],
+sents:[{de:"Sein Mut imponiert mir.",en:"His courage impresses me.",ar:"شجاعته تثير إعجابي."},
+{de:"Das imponiert mir sehr.",en:"That impresses me a lot.",ar:"هذا يبهرني كثيراً."},
+{de:"Imponiert dir seine Leistung?",en:"Are you impressed by his performance?",ar:"هل أداؤه يثير إعجابك؟"}]},
+
+{n:60,inf:"einleuchten",ar:"يَتَّضِح لـ / يَبدو منطقياً لـ",pf:"hat eingeleuchtet",pfH:"haben + eingeleuchtet",
+conj:[["ich","leuchte ein","leuchtete ein"],["du","leuchtest ein","leuchtetest ein"],["er/sie/es","leuchtet ein","leuchtete ein"],["wir","leuchten ein","leuchteten ein"],["ihr","leuchtet ein","leuchtetet ein"],["sie/Sie","leuchten ein","leuchteten ein"]],
+sents:[{de:"Das leuchtet mir ein.",en:"That makes sense to me.",ar:"هذا واضح بالنسبة لي."},
+{de:"Leuchtet dir der Grund ein?",en:"Does the reason make sense to you?",ar:"هل السبب واضح بالنسبة لك؟"},
+{de:"Seine Erklärung leuchtet uns nicht ein.",en:"His explanation does not make sense to us.",ar:"تفسيره غير واضح بالنسبة لنا."}]},
+
+{n:61,inf:"zustehen",ar:"يَستَحِق / يَحِق لـ",pf:"hat zugestanden",pfH:"haben + zugestanden",
+conj:[["ich","stehe zu","stand zu"],["du","stehst zu","standest zu"],["er/sie/es","steht zu","stand zu"],["wir","stehen zu","standen zu"],["ihr","steht zu","standet zu"],["sie/Sie","stehen zu","standen zu"]],
+sents:[{de:"Das Geld steht mir zu.",en:"The money is rightfully mine.",ar:"هذا المال من حقي."},
+{de:"Dir steht eine Pause zu.",en:"You are entitled to a break.",ar:"من حقك أخذ استراحة."},
+{de:"Welche Rechte stehen uns zu?",en:"What rights are we entitled to?",ar:"ما الحقوق التي نستحقها؟"}]},
+
+{n:62,inf:"entfallen",ar:"يَغيب عن الذهن / يُنسى",pf:"ist entfallen",pfH:"sein + entfallen",
+conj:[["ich","entfalle","entfiel"],["du","entfällst","entfielst"],["er/sie/es","entfällt","entfiel"],["wir","entfallen","entfielen"],["ihr","entfallt","entfielt"],["sie/Sie","entfallen","entfielen"]],
+sents:[{de:"Der Name ist mir entfallen.",en:"The name has slipped my mind.",ar:"نسيت الاسم (غاب عن ذهني)."},
+{de:"Der Termin entfällt mir oft.",en:"The appointment often slips my mind.",ar:"كثيراً ما ينسى الموعد عن ذهني."},
+{de:"Ist dir das Passwort entfallen?",en:"Has the password slipped your mind?",ar:"هل نسيت كلمة المرور؟"}]},
+
+{n:63,inf:"vorkommen",ar:"يَبدو لـ / يَخيَّل لـ",pf:"ist vorgekommen",pfH:"sein + vorgekommen",
+conj:[["ich","komme vor","kam vor"],["du","kommst vor","kamst vor"],["er/sie/es","kommt vor","kam vor"],["wir","kommen vor","kamen vor"],["ihr","kommt vor","kamt vor"],["sie/Sie","kommen vor","kamen vor"]],
+sents:[{de:"Das kommt mir bekannt vor.",en:"That seems familiar to me.",ar:"يبدو هذا مألوفاً بالنسبة لي."},
+{de:"Die Zeit kommt ihm sehr lang vor.",en:"Time seems very long to him.",ar:"يبدو الوقت طويلاً جداً بالنسبة له."},
+{de:"Kommt dir das seltsam vor?",en:"Does that seem strange to you?",ar:"هل يبدو هذا غريباً بالنسبة لك؟"}]},
+
+{n:64,inf:"gleichkommen",ar:"يُعادِل / يَرقى إلى مستوى",pf:"ist gleichgekommen",pfH:"sein + gleichgekommen",
+conj:[["ich","komme gleich","kam gleich"],["du","kommst gleich","kamst gleich"],["er/sie/es","kommt gleich","kam gleich"],["wir","kommen gleich","kamen gleich"],["ihr","kommt gleich","kamt gleich"],["sie/Sie","kommen gleich","kamen gleich"]],
+sents:[{de:"Das kommt einem Wunder gleich.",en:"That amounts to a miracle.",ar:"هذا يعادل معجزة."},
+{de:"Sein Mut kommt dem eines Helden gleich.",en:"His courage equals that of a hero.",ar:"شجاعته تعادل شجاعة البطل."},
+{de:"Nichts kommt diesem Erlebnis gleich.",en:"Nothing compares to this experience.",ar:"لا شيء يعادل هذه التجربة."}]},
+
+{n:65,inf:"nachsehen",ar:"يَغفِر / يَتَغاضى عن",pf:"hat nachgesehen",pfH:"haben + nachgesehen",
+conj:[["ich","sehe nach","sah nach"],["du","siehst nach","sahst nach"],["er/sie/es","sieht nach","sah nach"],["wir","sehen nach","sahen nach"],["ihr","seht nach","saht nach"],["sie/Sie","sehen nach","sahen nach"]],
+sents:[{de:"Ich sehe dir diesen Fehler nach.",en:"I'll overlook this mistake of yours.",ar:"سأتغاضى عن هذا الخطأ منك."},
+{de:"Er sieht ihr immer alles nach.",en:"He always overlooks everything for her.",ar:"يتغاضى لها عن كل شيء دائماً."},
+{de:"Siehst du mir das nach?",en:"Will you forgive me for that?",ar:"هل ستتغاضى عن هذا بالنسبة لي؟"}]},
+
+{n:66,inf:"beipflichten",ar:"يُوافِق / يُؤيِّد",pf:"hat beigepflichtet",pfH:"haben + beigepflichtet",
+conj:[["ich","pflichte bei","pflichtete bei"],["du","pflichtest bei","pflichtetest bei"],["er/sie/es","pflichtet bei","pflichtete bei"],["wir","pflichten bei","pflichteten bei"],["ihr","pflichtet bei","pflichtetet bei"],["sie/Sie","pflichten bei","pflichteten bei"]],
+sents:[{de:"Ich pflichte dir voll und ganz bei.",en:"I fully agree with you.",ar:"أوافقك تماماً."},
+{de:"Er pflichtete ihrem Vorschlag bei.",en:"He agreed with her suggestion.",ar:"أيّد اقتراحها."},
+{de:"Pflichtest du mir bei?",en:"Do you agree with me?",ar:"هل توافقني؟"}]},
+
+{n:67,inf:"entgegentreten",ar:"يُواجِه / يَتَصَدّى لـ",pf:"ist entgegengetreten",pfH:"sein + entgegengetreten",
+conj:[["ich","trete entgegen","trat entgegen"],["du","trittst entgegen","tratst entgegen"],["er/sie/es","tritt entgegen","trat entgegen"],["wir","treten entgegen","traten entgegen"],["ihr","tretet entgegen","tratet entgegen"],["sie/Sie","treten entgegen","traten entgegen"]],
+sents:[{de:"Sie tritt der Gefahr mutig entgegen.",en:"She bravely confronts the danger.",ar:"تواجه الخطر بشجاعة."},
+{de:"Wir treten den Vorurteilen entgegen.",en:"We stand up against the prejudices.",ar:"نتصدى للتحيزات."},
+{de:"Ist er dem Kritiker entgegengetreten?",en:"Did he confront the critic?",ar:"هل واجه الناقد؟"}]},
+
+{n:68,inf:"bekommen",ar:"يُلائِم (الصحة) / يَتَوافَق معه",pf:"ist bekommen",pfH:"sein + bekommen",
+conj:[["ich","bekomme","bekam"],["du","bekommst","bekamst"],["er/sie/es","bekommt","bekam"],["wir","bekommen","bekamen"],["ihr","bekommt","bekamt"],["sie/Sie","bekommen","bekamen"]],
+sents:[{de:"Das Essen bekommt mir nicht gut.",en:"The food does not agree with me.",ar:"الطعام لا يلائمني."},
+{de:"Der Kaffee bekommt ihr schlecht.",en:"Coffee does not suit her.",ar:"القهوة لا تلائمها."},
+{de:"Ist dir das Klima gut bekommen?",en:"Did the climate agree with you?",ar:"هل لاءمك المناخ؟"}]},
+
+{n:69,inf:"vorausgehen",ar:"يَسبِق / يَتَقَدَّم على",pf:"ist vorausgegangen",pfH:"sein + vorausgegangen",
+conj:[["ich","gehe voraus","ging voraus"],["du","gehst voraus","gingst voraus"],["er/sie/es","geht voraus","ging voraus"],["wir","gehen voraus","gingen voraus"],["ihr","geht voraus","gingt voraus"],["sie/Sie","gehen voraus","gingen voraus"]],
+sents:[{de:"Eine lange Vorbereitung geht dem Projekt voraus.",en:"A long preparation precedes the project.",ar:"تسبق المشروعَ استعداداتٌ طويلة."},
+{de:"Er ging mir auf dem Weg voraus.",en:"He went ahead of me on the path.",ar:"تقدمني في الطريق."},
+{de:"Geht die Theorie der Praxis immer voraus?",en:"Does theory always precede practice?",ar:"هل تسبق النظرية الممارسة دائماً؟"}]},
+
+{n:70,inf:"zujubeln",ar:"يَهتِف لـ / يُصَفِّق ابتهاجاً لـ",pf:"hat zugejubelt",pfH:"haben + zugejubelt",
+conj:[["ich","juble zu","jubelte zu"],["du","jubelst zu","jubeltest zu"],["er/sie/es","jubelt zu","jubelte zu"],["wir","jubeln zu","jubelten zu"],["ihr","jubelt zu","jubeltet zu"],["sie/Sie","jubeln zu","jubelten zu"]],
+sents:[{de:"Die Fans jubeln ihrem Team zu.",en:"The fans cheer for their team.",ar:"يهتف المشجعون لفريقهم."},
+{de:"Wir jubelten dem Sieger zu.",en:"We cheered for the winner.",ar:"هتفنا للفائز."},
+{de:"Jubelt das Publikum dem Star zu?",en:"Is the audience cheering for the star?",ar:"هل يهتف الجمهور للنجم؟"}]},
+
+{n:71,inf:"entkommen",ar:"يَهرُب من / يُفلِت من",pf:"ist entkommen",pfH:"sein + entkommen",
+conj:[["ich","entkomme","entkam"],["du","entkommst","entkamst"],["er/sie/es","entkommt","entkam"],["wir","entkommen","entkamen"],["ihr","entkommt","entkamt"],["sie/Sie","entkommen","entkamen"]],
+sents:[{de:"Der Dieb ist der Polizei entkommen.",en:"The thief escaped the police.",ar:"أفلت اللص من الشرطة."},
+{de:"Wir entkommen der Gefahr knapp.",en:"We narrowly escape the danger.",ar:"نفلت من الخطر بالكاد."},
+{de:"Niemand entkommt dem Schicksal.",en:"No one escapes fate.",ar:"لا أحد يفلت من القدر."}]},
+
+{n:72,inf:"entgehen",ar:"يَفوت على / يُفلِت من انتباه",pf:"ist entgangen",pfH:"sein + entgangen",
+conj:[["ich","entgehe","entging"],["du","entgehst","entgingst"],["er/sie/es","entgeht","entging"],["wir","entgehen","entgingen"],["ihr","entgeht","entgingt"],["sie/Sie","entgehen","entgingen"]],
+sents:[{de:"Das ist mir leider entgangen.",en:"Unfortunately, that slipped past me.",ar:"للأسف فاتني ذلك."},
+{de:"Ihm entgeht kein Detail.",en:"No detail escapes him.",ar:"لا يفوته أي تفصيل."},
+{de:"Die Chance ist uns entgangen.",en:"The opportunity slipped away from us.",ar:"فاتتنا الفرصة."}]},
+
+{n:73,inf:"misstrauen",ar:"يَرتاب بـ / لا يَثِق بـ",pf:"hat misstraut",pfH:"haben + misstraut",
+conj:[["ich","misstraue","misstraute"],["du","misstraust","misstrautest"],["er/sie/es","misstraut","misstraute"],["wir","misstrauen","misstrauten"],["ihr","misstraut","misstrautet"],["sie/Sie","misstrauen","misstrauten"]],
+sents:[{de:"Ich misstraue ihm ein wenig.",en:"I distrust him a little.",ar:"أرتاب به قليلاً."},
+{de:"Sie misstraut fremden Menschen.",en:"She distrusts strangers.",ar:"لا تثق بالغرباء."},
+{de:"Warum misstraust du mir?",en:"Why do you distrust me?",ar:"لماذا لا تثق بي؟"}]},
+
+{n:74,inf:"abraten",ar:"يَنصَح بِعَدَم / يُحذِّر من",pf:"hat abgeraten",pfH:"haben + abgeraten",
+conj:[["ich","rate ab","riet ab"],["du","rätst ab","rietst ab"],["er/sie/es","rät ab","riet ab"],["wir","raten ab","rieten ab"],["ihr","ratet ab","rietet ab"],["sie/Sie","raten ab","rieten ab"]],
+sents:[{de:"Der Arzt rät mir von der Reise ab.",en:"The doctor advises me against the trip.",ar:"ينصحني الطبيب بعدم السفر."},
+{de:"Ich rate dir dringend davon ab.",en:"I strongly advise you against it.",ar:"أنصحك بشدة بعدم فعل ذلك."},
+{de:"Sie haben uns von diesem Plan abgeraten.",en:"They advised us against this plan.",ar:"نصحونا بعدم تنفيذ هذه الخطة."}]},
+
+{n:75,inf:"zuraten",ar:"يَنصَح بـ / يُشَجِّع على",pf:"hat zugeraten",pfH:"haben + zugeraten",
+conj:[["ich","rate zu","riet zu"],["du","rätst zu","rietst zu"],["er/sie/es","rät zu","riet zu"],["wir","raten zu","rieten zu"],["ihr","ratet zu","rietet zu"],["sie/Sie","raten zu","rieten zu"]],
+sents:[{de:"Der Berater rät mir zu diesem Vertrag zu.",en:"The advisor recommends this contract to me.",ar:"يشجعني المستشار على هذا العقد."},
+{de:"Ich rate dir zu einer Pause.",en:"I recommend you take a break.",ar:"أنصحك بأخذ استراحة."},
+{de:"Hat sie euch zu diesem Schritt zugeraten?",en:"Did she advise you in favor of this step?",ar:"هل نصحتكم بهذه الخطوة؟"}]},
+
+{n:76,inf:"zusehen",ar:"يُشاهِد / يُتابِع بالنظر",pf:"hat zugesehen",pfH:"haben + zugesehen",
+conj:[["ich","sehe zu","sah zu"],["du","siehst zu","sahst zu"],["er/sie/es","sieht zu","sah zu"],["wir","sehen zu","sahen zu"],["ihr","seht zu","saht zu"],["sie/Sie","sehen zu","sahen zu"]],
+sents:[{de:"Ich sehe den Kindern beim Spielen zu.",en:"I watch the children play.",ar:"أشاهد الأطفال وهم يلعبون."},
+{de:"Er sieht ihr beim Kochen zu.",en:"He watches her cook.",ar:"يشاهدها وهي تطبخ."},
+{de:"Siehst du mir bitte kurz zu?",en:"Will you watch me for a moment, please?",ar:"هل يمكنك مشاهدتي قليلاً من فضلك؟"}]},
+
+{n:77,inf:"nachschauen",ar:"يُتابِع ببَصَرِه / يُحَدِّق خَلفَ",pf:"hat nachgeschaut",pfH:"haben + nachgeschaut",
+conj:[["ich","schaue nach","schaute nach"],["du","schaust nach","schautest nach"],["er/sie/es","schaut nach","schaute nach"],["wir","schauen nach","schauten nach"],["ihr","schaut nach","schautet nach"],["sie/Sie","schauen nach","schauten nach"]],
+sents:[{de:"Sie schaute ihm lange nach.",en:"She gazed after him for a long time.",ar:"تابعته ببصرها طويلاً."},
+{de:"Ich schaue dem Zug nach, bis er verschwindet.",en:"I watch the train until it disappears.",ar:"أتابع القطار حتى يختفي."},
+{de:"Schaust du mir nach, wenn ich gehe?",en:"Will you watch me as I leave?",ar:"هل ستتابعني ببصرك عندما أرحل؟"}]},
+
+{n:78,inf:"mangeln",ar:"يَنقُص / يُعوِزُه (الشيء)",pf:"hat gemangelt",pfH:"haben + gemangelt",
+conj:[["ich","mangle","mangelte"],["du","mangelst","mangeltest"],["er/sie/es","mangelt","mangelte"],["wir","mangeln","mangelten"],["ihr","mangelt","mangeltet"],["sie/Sie","mangeln","mangelten"]],
+sents:[{de:"Es mangelt ihm an Erfahrung.",en:"He lacks experience.",ar:"تنقصه الخبرة."},
+{de:"Der Stadt mangelt es an Grünflächen.",en:"The city lacks green spaces.",ar:"تنقص المدينة المساحات الخضراء."},
+{de:"Mangelt es dir an Zeit?",en:"Are you lacking time?",ar:"هل ينقصك الوقت؟"}]},
+
+{n:79,inf:"zulächeln",ar:"يَبتَسِم لـ",pf:"hat zugelächelt",pfH:"haben + zugelächelt",
+conj:[["ich","lächle zu","lächelte zu"],["du","lächelst zu","lächeltest zu"],["er/sie/es","lächelt zu","lächelte zu"],["wir","lächeln zu","lächelten zu"],["ihr","lächelt zu","lächeltet zu"],["sie/Sie","lächeln zu","lächelten zu"]],
+sents:[{de:"Sie lächelt mir freundlich zu.",en:"She smiles at me kindly.",ar:"تبتسم لي بود."},
+{de:"Er lächelte ihr aus der Ferne zu.",en:"He smiled at her from a distance.",ar:"ابتسم لها من بعيد."},
+{de:"Lächelst du mir zu?",en:"Are you smiling at me?",ar:"هل تبتسم لي؟"}]},
+
+{n:80,inf:"nachjagen",ar:"يُطارِد / يَسعى وراء",pf:"ist nachgejagt",pfH:"sein + nachgejagt",
+conj:[["ich","jage nach","jagte nach"],["du","jagst nach","jagtest nach"],["er/sie/es","jagt nach","jagte nach"],["wir","jagen nach","jagten nach"],["ihr","jagt nach","jagtet nach"],["sie/Sie","jagen nach","jagten nach"]],
+sents:[{de:"Er jagt dem Erfolg nach.",en:"He chases after success.",ar:"يسعى وراء النجاح."},
+{de:"Der Hund jagt dem Ball nach.",en:"The dog chases after the ball.",ar:"يطارد الكلب الكرة."},
+{de:"Wir sind dem Bus nachgejagt.",en:"We chased after the bus.",ar:"طاردنا الحافلة."}]},
+
+{n:81,inf:"sich anschließen",ar:"يَنضَمّ إلى",pf:"hat sich angeschlossen",pfH:"haben + sich angeschlossen",
+conj:[["ich","schließe mich an","schloss mich an"],["du","schließt dich an","schlossest dich an"],["er/sie/es","schließt sich an","schloss sich an"],["wir","schließen uns an","schlossen uns an"],["ihr","schließt euch an","schlosst euch an"],["sie/Sie","schließen sich an","schlossen sich an"]],
+sents:[{de:"Ich schließe mich eurer Gruppe an.",en:"I'm joining your group.",ar:"أنضم إلى مجموعتكم."},
+{de:"Er schloss sich der Diskussion an.",en:"He joined the discussion.",ar:"انضم إلى النقاش."},
+{de:"Schließt du dich uns an?",en:"Will you join us?",ar:"هل ستنضم إلينا؟"}]},
+
+{n:82,inf:"sich zuwenden",ar:"يَتَوَجَّه نَحْوَ / يَلتَفِت إلى",pf:"hat sich zugewandt",pfH:"haben + sich zugewandt",
+conj:[["ich","wende mich zu","wandte mich zu"],["du","wendest dich zu","wandtest dich zu"],["er/sie/es","wendet sich zu","wandte sich zu"],["wir","wenden uns zu","wandten uns zu"],["ihr","wendet euch zu","wandtet euch zu"],["sie/Sie","wenden sich zu","wandten sich zu"]],
+sents:[{de:"Sie wendet sich den Kindern zu.",en:"She turns her attention to the children.",ar:"تتوجه باهتمامها نحو الأطفال."},
+{de:"Er wandte sich mir zu und lächelte.",en:"He turned towards me and smiled.",ar:"التفت نحوي وابتسم."},
+{de:"Wendest du dich uns endlich zu?",en:"Will you finally turn your attention to us?",ar:"هل ستتوجه إلينا أخيراً؟"}]},
+
+{n:83,inf:"sich widmen",ar:"يُكَرِّس نَفسَه لـ / يَتَفَرَّغ لـ",pf:"hat sich gewidmet",pfH:"haben + sich gewidmet",
+conj:[["ich","widme mich","widmete mich"],["du","widmest dich","widmetest dich"],["er/sie/es","widmet sich","widmete sich"],["wir","widmen uns","widmeten uns"],["ihr","widmet euch","widmetet euch"],["sie/Sie","widmen sich","widmeten sich"]],
+sents:[{de:"Sie widmet sich ihrer Familie.",en:"She dedicates herself to her family.",ar:"تكرس نفسها لعائلتها."},
+{de:"Er widmet sich ganz der Forschung.",en:"He devotes himself entirely to research.",ar:"يتفرغ تماماً للبحث."},
+{de:"Widmest du dich diesem Projekt?",en:"Are you dedicating yourself to this project?",ar:"هل تكرس نفسك لهذا المشروع؟"}]},
+
+{n:84,inf:"entgegenwirken",ar:"يَتَصَدّى لـ / يُقاوِم تأثير",pf:"hat entgegengewirkt",pfH:"haben + entgegengewirkt",
+conj:[["ich","wirke entgegen","wirkte entgegen"],["du","wirkst entgegen","wirktest entgegen"],["er/sie/es","wirkt entgegen","wirkte entgegen"],["wir","wirken entgegen","wirkten entgegen"],["ihr","wirkt entgegen","wirktet entgegen"],["sie/Sie","wirken entgegen","wirkten entgegen"]],
+sents:[{de:"Die Regierung wirkt der Inflation entgegen.",en:"The government counteracts inflation.",ar:"تتصدى الحكومة للتضخم."},
+{de:"Sport wirkt dem Stress entgegen.",en:"Sport counteracts stress.",ar:"تقاوم الرياضة تأثير التوتر."},
+{de:"Wie können wir dieser Entwicklung entgegenwirken?",en:"How can we counteract this development?",ar:"كيف يمكننا التصدي لهذا التطور؟"}]},
+
+{n:85,inf:"huldigen",ar:"يُكَرِّم / يُجِلّ (رسمي)",pf:"hat gehuldigt",pfH:"haben + gehuldigt",
+conj:[["ich","huldige","huldigte"],["du","huldigst","huldigtest"],["er/sie/es","huldigt","huldigte"],["wir","huldigen","huldigten"],["ihr","huldigt","huldigtet"],["sie/Sie","huldigen","huldigten"]],
+sents:[{de:"Das Volk huldigte dem neuen König.",en:"The people paid homage to the new king.",ar:"كرّم الشعب الملك الجديد."},
+{de:"Sie huldigen alten Traditionen.",en:"They pay homage to old traditions.",ar:"يُجِلّون التقاليد القديمة."},
+{de:"Wem huldigt diese Statue?",en:"Who does this statue honor?",ar:"لمن تكرّم هذه التمثال؟"}]}
+];
+
+/* ────────────────────────────────────────
+   UTILITIES
+──────────────────────────────────────── */
+let toastTid=null;
+function showToast(){const t=document.getElementById('g-toast');t.classList.add('on');clearTimeout(toastTid);toastTid=setTimeout(()=>t.classList.remove('on'),2000);}
+
+function doCopy(btn,text){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(()=>{flashOK(btn);showToast();}).catch(()=>legacyCopy(btn,text));return;
+  }
+  legacyCopy(btn,text);
+}
+function legacyCopy(btn,text){
+  try{
+    const el=document.createElement('textarea');el.value=text;
+    el.setAttribute('readonly','');
+    el.style.cssText='position:fixed;top:0;left:0;width:2px;height:2px;opacity:0;z-index:-1';
+    document.body.appendChild(el);el.select();
+    const ok=document.execCommand('copy');document.body.removeChild(el);
+    if(ok){flashOK(btn);showToast();}
+  }catch(e){}
+}
+
+const SVG_COPY=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+const SVG_CHECK=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+const SVG_SPEAK=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>`;
+
+function flashOK(btn){btn.classList.add('ok');btn.innerHTML=SVG_CHECK;setTimeout(()=>{btn.innerHTML=SVG_COPY;btn.classList.remove('ok');},1800);}
+function h(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+/* ────────────────────────────────────────
+   TTS
+──────────────────────────────────────── */
+let activeSpeakBtn=null;
+function speakText(btn,text,lang){
+  if(!window.speechSynthesis){return;}
+  if(activeSpeakBtn===btn){window.speechSynthesis.cancel();btn.classList.remove('speaking');activeSpeakBtn=null;return;}
+  if(activeSpeakBtn){window.speechSynthesis.cancel();activeSpeakBtn.classList.remove('speaking');}
+  const u=new SpeechSynthesisUtterance(text);u.lang=lang;u.rate=0.85;u.pitch=1;
+  btn.classList.add('speaking');activeSpeakBtn=btn;
+  u.onend=()=>{btn.classList.remove('speaking');if(activeSpeakBtn===btn)activeSpeakBtn=null;};
+  u.onerror=()=>{btn.classList.remove('speaking');if(activeSpeakBtn===btn)activeSpeakBtn=null;};
+  window.speechSynthesis.speak(u);
+}
+
+/* ────────────────────────────────────────
+   RENDER
+   Layout per card:
+   [Pronoun | Präsens | Präteritum | Perfekt(full)]
+   All 4 columns always visible side-by-side.
+──────────────────────────────────────── */
+function renderCards(list){
+  const grid=document.getElementById('verbs-grid');
+  grid.innerHTML='';
+  list.forEach((v,ci)=>{
+    const card=document.createElement('div');
+    card.className='verb-card';
+    card.style.animationDelay=(ci*0.035)+'s';
+    card.dataset.verb=v.inf.toLowerCase();
+
+    /* Build conjugation rows.
+       v.conj rows: [pronoun, Präsens, Präteritum]
+       Perfekt = Hilfsverb (haben/sein extracted from v.pf) + Partizip II
+       We show the full perfekt string from v.pf for each row,
+       highlighting the Hilfsverb part. */
+    const pfParts = v.pf.split(' '); // e.g. ["hat","geantwortet"] or ["ist","gegangen"]
+    const hilfsverb = pfParts[0];    // haben/ist/hat/sein
+    const partizip  = pfParts.slice(1).join(' ');
+
+    // Map pronoun -> correct Hilfsverb form for Perfekt
+    const hvMap={
+      'ich'       :{hat:'habe',  ist:'bin'},
+      'du'        :{hat:'hast',  ist:'bist'},
+      'er/sie/es' :{hat:'hat',   ist:'ist'},
+      'wir'       :{hat:'haben', ist:'sind'},
+      'ihr'       :{hat:'habt',  ist:'seid'},
+      'sie/Sie'   :{hat:'haben', ist:'sind'}
+    };
+    const isHaben = hilfsverb==='hat'||hilfsverb==='haben';
+    const hvKey   = isHaben ? 'hat' : 'ist';
+
+    let rowsHTML='';
+    v.conj.forEach((row,ri)=>{
+      const pro   = row[0]; // pronoun
+      const prSen = row[1]; // Präsens form
+      const ptSen = row[2]; // Präteritum form
+      const hvForm= (hvMap[pro]&&hvMap[pro][hvKey]) || hilfsverb;
+      const ec    = ri%2===0?'':' row-even';
+      rowsHTML+=`
+        <tr class="${ec}">
+          <td class="td-pro">${h(pro)}</td>
+          <td class="td-pr" lang="de">${h(prSen)}</td>
+          <td class="td-pt" lang="de">${h(ptSen)}</td>
+          <td class="td-pf" lang="de">
+            <div class="td-pf-wrap">
+              <span><strong>${h(hvForm)}</strong> ${h(partizip)}</span>
+            </div>
+          </td>
+        </tr>`;
+    });
+
+    /* Sentence blocks */
+    let sentsHTML='';
+    v.sents.forEach((s,si)=>{
+      sentsHTML+=`
+      <div class="sentence-group">
+        <div class="s-german">
+          <span class="s-german-text" lang="de">${h(s.de)}</span>
+          <div class="s-actions">
+            <span class="lang-tag">DE</span>
+            <button class="icon-btn speak-btn" data-text="${h(s.de)}" data-lang="de-DE" aria-label="Vorlesen">${SVG_SPEAK}</button>
+            <button class="icon-btn copy-btn" data-text="${h(s.de)}" aria-label="Kopieren">${SVG_COPY}</button>
+          </div>
+        </div>
+        <div class="s-english">
+          <span class="s-en-tag">EN</span>
+          <span class="s-english-text">${h(s.en)}</span>
+        </div>
+        <div class="s-arabic">
+          <span class="s-ar-tag">AR</span>
+          <span class="s-arabic-text rtl">${h(s.ar)}</span>
+        </div>
+      </div>`;
+    });
+
+    card.innerHTML=`
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="verb-number">#${String(v.n).padStart(2,'0')}</span>
+          <span class="dativ-badge">DATIV</span>
+        </div>
+        <div style="text-align:right;">
+          <div class="verb-infinitiv" lang="de">${h(v.inf)}</div>
+          <div class="verb-arabic">${h(v.ar)}</div>
+        </div>
+      </div>
+      <div class="conj-section">
+        <div class="conj-table-wrap">
+          <table class="conj-table">
+            <colgroup>
+              <col class="col-pro">
+              <col class="col-pr">
+              <col class="col-pt">
+              <col class="col-pf">
+            </colgroup>
+            <thead>
+              <tr class="tense-header">
+                <th class="th-blank"></th>
+                <th class="th-pr">PRÄSENS</th>
+                <th class="th-pt">PRÄTERITUM</th>
+                <th class="th-pf">PERFEKT<span class="th-pf-sub">${h(v.pfH)}</span></th>
+              </tr>
+            </thead>
+            <tbody>${rowsHTML}</tbody>
+          </table>
+        </div>
+      </div>
+      <div class="example-section">
+        <div class="example-section-label">&#128218; Beispielsätze &middot; جمل مثال</div>
+        ${sentsHTML}
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+/* ────────────────────────────────────────
+   EVENT DELEGATION
+──────────────────────────────────────── */
+document.addEventListener('pointerup',function(e){
+  let el=e.target;
+  for(let i=0;i<6;i++){
+    if(!el)break;
+    if(el.classList&&el.classList.contains('copy-btn')){doCopy(el,el.getAttribute('data-text')||'');return;}
+    if(el.classList&&el.classList.contains('speak-btn')){speakText(el,el.getAttribute('data-text')||'',el.getAttribute('data-lang')||'de-DE');return;}
+    el=el.parentElement;
+  }
+});
+
+/* ────────────────────────────────────────
+   SEARCH
+──────────────────────────────────────── */
+document.getElementById('search-input').addEventListener('input',function(){
+  const q=this.value.toLowerCase().trim();
+  const noRes=document.getElementById('no-results');
+  let vis=0;
+  document.querySelectorAll('.verb-card').forEach(c=>{
+    const m=c.dataset.verb.includes(q);c.classList.toggle('hidden',!m);if(m)vis++;
+  });
+  if(q&&vis===0){noRes.classList.add('show');document.getElementById('search-term').textContent=q;}
+  else noRes.classList.remove('show');
+});
+
+/* ────────────────────────────────────────
+   THEME
+──────────────────────────────────────── */
+document.getElementById('theme-btn').addEventListener('click',function(){
+  const html=document.documentElement;
+  const isDark=html.dataset.theme==='dark';
+  html.dataset.theme=isDark?'light':'dark';
+  this.textContent=isDark?'☀️':'🌙';
+  try{localStorage.setItem('theme',html.dataset.theme);}catch(e){}
+});
+
+/* ────────────────────────────────────────
+   SCROLL PROGRESS
+──────────────────────────────────────── */
+window.addEventListener('scroll',function(){
+  const el=document.documentElement;
+  document.getElementById('progress-bar').style.width=(el.scrollTop/(el.scrollHeight-el.clientHeight)*100)+'%';
+},{passive:true});
+
+/* ────────────────────────────────────────
+   INIT
+──────────────────────────────────────── */
+(function(){
+  let saved;try{saved=localStorage.getItem('theme');}catch(e){}
+  const btn=document.getElementById('theme-btn');
+  if(saved){document.documentElement.dataset.theme=saved;btn.textContent=saved==='dark'?'🌙':'☀️';}
+  else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){
+    document.documentElement.dataset.theme='light';btn.textContent='☀️';
+  }
+  renderCards(VERBS);
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-dativ-verben-print" data-category="grammatik" data-title="Deutsche Dativ-Verben" data-root="../../" defer></script>
+</body>
+</html>

@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الألمانية A2 — الدرس الحادي عشر: التكنولوجيا والرقمنة</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Scheherazade+New:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════
+   DESIGN: Neon Cyberpunk Terminal
+   
+   The concept: you're learning German inside a
+   futuristic Berlin hacker space, 2047. Dark OLED
+   black canvas with electric neon cyan, magenta,
+   and chartreuse — the colours of digital screens
+   and holographic displays. Grid scanlines, glitch
+   effects, terminal-style data cards.
+   
+   Fonts: Orbitron (futuristic display) +
+          Scheherazade New (elegant Arabic) +
+          Share Tech Mono (terminal/code)
+   
+   UNFORGETTABLE ELEMENT: a live "chat interface"
+   that simulates texting in German, scanline overlay
+   on the hero, and tech vocabulary cards that look
+   like app icons on a holographic screen.
+══════════════════════════════════════════════════ */
+:root {
+  --void:    #03040a;
+  --void2:   #070d18;
+  --void3:   #0c1428;
+  --void4:   #111e38;
+  --card:    #060d1c;
+
+  --cyan:    #00e5ff;
+  --cyan2:   #40f0ff;
+  --cyan-d:  rgba(0,229,255,0.1);
+  --cyan-d2: rgba(0,229,255,0.18);
+
+  --mag:     #ff00c8;
+  --mag2:    #ff40d8;
+  --mag-d:   rgba(255,0,200,0.1);
+
+  --lime:    #a8ff00;
+  --lime2:   #c8ff40;
+  --lime-d:  rgba(168,255,0,0.1);
+
+  --amber:   #ff9500;
+  --amber2:  #ffb540;
+  --amber-d: rgba(255,149,0,0.1);
+
+  --text:    #c8e8ff;
+  --text2:   #5080a8;
+  --text3:   #2a4060;
+
+  --border:  rgba(0,229,255,0.12);
+  --border2: rgba(0,229,255,0.28);
+
+  --r:  6px;
+  --rs: 4px;
+  --sh: 0 0 24px rgba(0,229,255,0.15);
+  --sh2:0 0 48px rgba(0,229,255,0.25);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: 'Scheherazade New', Georgia, serif;
+  background: var(--void);
+  color: var(--text);
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+/* Scanline overlay */
+body::before {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px, transparent 3px,
+    rgba(0,229,255,0.015) 3px, rgba(0,229,255,0.015) 4px
+  );
+}
+
+/* Vignette */
+body::after {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background: radial-gradient(ellipse 80% 80% at 50% 50%,
+    transparent 40%, rgba(3,4,10,0.6) 100%);
+}
+
+/* ── Progress bar ── */
+#spb {
+  position:fixed; top:0; left:0; right:0; height:2px;
+  background: linear-gradient(90deg, var(--mag), var(--cyan), var(--lime));
+  transform-origin:right; transform:scaleX(0);
+  z-index:1001;
+  box-shadow: 0 0 10px var(--cyan);
+}
+
+/* ══ NAV ══ */
+nav {
+  position:sticky; top:0; z-index:100;
+  background: rgba(3,4,10,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border2);
+  padding: 0 2rem; height:60px;
+  display:flex; align-items:center; justify-content:space-between;
+  box-shadow: 0 1px 20px rgba(0,229,255,0.1);
+}
+
+.nav-brand {
+  display:flex; align-items:center; gap:.8rem;
+  font-family:'Orbitron',sans-serif;
+  font-weight:700; font-size:.85rem;
+  color: var(--cyan); letter-spacing:.08em;
+}
+.nav-chip {
+  font-family:'Share Tech Mono',monospace;
+  background: var(--cyan-d); border:1px solid var(--border2);
+  color:var(--cyan); font-size:.62rem; font-weight:400;
+  padding:3px 8px; border-radius:var(--rs); letter-spacing:.1em;
+}
+.nav-links { display:flex; gap:1.5rem; list-style:none; }
+.nav-links a {
+  font-size:.78rem; color:var(--text2);
+  text-decoration:none; font-weight:600;
+  font-family:'Orbitron',sans-serif;
+  letter-spacing:.04em; transition:color .2s;
+}
+.nav-links a:hover { color:var(--cyan); text-shadow:0 0 8px var(--cyan); }
+.tbtn {
+  width:34px; height:34px; border-radius:var(--rs);
+  border:1px solid var(--border2); background:transparent;
+  color:var(--cyan); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; font-size:.9rem;
+  transition:all .2s;
+}
+.tbtn:hover { background:var(--cyan-d); box-shadow:var(--sh); }
+
+/* ══ HERO ══ */
+.hero {
+  position:relative; z-index:1;
+  background: var(--void2);
+  border-bottom: 1px solid var(--border2);
+  overflow:hidden;
+  padding: 5rem 2rem 4rem;
+}
+
+/* Matrix-rain-like background shimmer */
+.hero-bg {
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,229,255,0.06), transparent),
+    radial-gradient(ellipse 40% 60% at 85% 20%, rgba(255,0,200,0.05), transparent),
+    radial-gradient(ellipse 50% 50% at 50% 90%, rgba(168,255,0,0.04), transparent);
+}
+
+/* Glitch animation on headline */
+@keyframes glitch {
+  0%,94%,100%{ transform:none; text-shadow:0 0 20px var(--cyan); }
+  95%{ transform:translateX(-3px); text-shadow:-3px 0 var(--mag),3px 0 var(--lime); }
+  97%{ transform:translateX(3px); text-shadow:3px 0 var(--mag),-3px 0 var(--lime); }
+}
+@keyframes flicker {
+  0%,100%{opacity:1;} 92%{opacity:1;} 93%{opacity:.6;} 94%{opacity:1;}
+}
+
+.hero-inner {
+  position:relative; z-index:1;
+  max-width:900px; margin:0 auto; text-align:center;
+}
+
+.hero-terminal {
+  font-family:'Share Tech Mono',monospace;
+  font-size:.72rem; letter-spacing:.12em;
+  color:var(--cyan); opacity:.7;
+  display:block; margin-bottom:1.2rem;
+  animation: fadeUp .5s ease both;
+}
+.hero-terminal::before { content:'> '; }
+.hero-terminal::after  { content:' _'; animation:flicker 2s infinite; }
+
+.hero h1 {
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(2rem,5.5vw,3.6rem);
+  font-weight:900; line-height:1.1;
+  letter-spacing:.04em; margin-bottom:1rem;
+  color:var(--cyan);
+  animation: glitch 6s infinite, fadeUp .7s ease .1s both;
+}
+.hero h1 em { color:var(--mag); font-style:normal; }
+
+.hero-deck {
+  color:var(--text2); font-size:1.05rem; line-height:1.9;
+  max-width:650px; margin:0 auto 2.5rem;
+  animation: fadeUp .7s ease .2s both;
+}
+
+.hero-pills {
+  display:flex; justify-content:center; gap:.5rem; flex-wrap:wrap;
+  animation: fadeUp .7s ease .3s both;
+}
+.pill {
+  display:flex; align-items:center; gap:.4rem;
+  padding:5px 13px; border-radius:var(--rs);
+  font-size:.78rem; font-weight:600; border:1px solid;
+  font-family:'Orbitron',sans-serif; letter-spacing:.04em;
+}
+.pc { background:var(--cyan-d);  color:var(--cyan);  border-color:rgba(0,229,255,.3); }
+.pm { background:var(--mag-d);   color:var(--mag2);  border-color:rgba(255,0,200,.3); }
+.pl { background:var(--lime-d);  color:var(--lime2); border-color:rgba(168,255,0,.3); }
+.pa { background:var(--amber-d); color:var(--amber2);border-color:rgba(255,149,0,.3); }
+
+/* ══ MAIN ══ */
+main {
+  position:relative; z-index:1;
+  max-width:980px; margin:0 auto;
+  padding:2rem 2rem 5rem;
+  display:flex; flex-direction:column; gap:3rem;
+}
+
+/* Section header — terminal style */
+.sh {
+  display:flex; align-items:center; gap:1rem;
+  margin-bottom:1.5rem;
+  border-bottom:1px solid var(--border2);
+  padding-bottom:.6rem;
+}
+.sh-num {
+  font-family:'Share Tech Mono',monospace;
+  font-size:.72rem; color:var(--cyan); letter-spacing:.1em;
+  background:var(--cyan-d); border:1px solid var(--border2);
+  padding:4px 10px; border-radius:var(--rs); flex-shrink:0;
+}
+.sh-text h2 {
+  font-family:'Orbitron',sans-serif;
+  font-size:1.1rem; font-weight:700;
+  color:var(--cyan); letter-spacing:.04em;
+}
+.sh-text p { font-size:.82rem; color:var(--text2); margin-top:2px; }
+
+/* Card */
+.card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:1.75rem;
+  box-shadow:var(--sh);
+  animation: fadeUp .55s ease both;
+  transition:border-color .25s, box-shadow .25s;
+}
+.card:hover { border-color:var(--border2); box-shadow:var(--sh2); }
+
+.quiz-card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:1.75rem;
+  box-shadow:var(--sh);
+}
+
+/* Tip */
+.tip {
+  display:flex; gap:1rem; align-items:flex-start;
+  padding:1rem 1.2rem; border-radius:var(--rs); margin:1rem 0;
+  border-right:3px solid;
+  font-family:'Scheherazade New',serif;
+}
+.tip.cy { background:var(--cyan-d);  border-color:var(--cyan);  }
+.tip.mg { background:var(--mag-d);   border-color:var(--mag2);  }
+.tip.lm { background:var(--lime-d);  border-color:var(--lime2); }
+.tip.am { background:var(--amber-d); border-color:var(--amber2);}
+.tpic { font-size:1.2rem; flex-shrink:0; margin-top:3px; }
+.tip h4 {
+  font-family:'Orbitron',sans-serif; font-size:.82rem;
+  font-weight:700; margin-bottom:4px; letter-spacing:.04em;
+}
+.tip.cy h4{color:var(--cyan);}  .tip.mg h4{color:var(--mag2);}
+.tip.lm h4{color:var(--lime2);} .tip.am h4{color:var(--amber2);}
+.tip p { font-size:.85rem; color:var(--text2); line-height:1.8; }
+
+/* Code / de inline */
+.de {
+  font-family:'Share Tech Mono',monospace;
+  background:var(--void3); border:1px solid var(--border2);
+  padding:2px 7px; border-radius:var(--rs);
+  font-size:.87em; color:var(--cyan2);
+  direction:ltr; display:inline-block;
+}
+
+/* Table */
+.tw { overflow-x:auto; margin-top:.75rem; }
+table { width:100%; border-collapse:collapse; font-size:.9rem; }
+th {
+  background:var(--void3); color:var(--cyan);
+  padding:9px 14px; text-align:right;
+  font-weight:700; font-size:.75rem;
+  font-family:'Orbitron',sans-serif; letter-spacing:.06em;
+  border-bottom:1px solid var(--border2);
+}
+td { padding:9px 14px; border-bottom:1px solid var(--border); }
+tr:last-child td{border-bottom:none;} tr:hover td{background:var(--void3);}
+.tde { font-family:'Share Tech Mono',monospace; color:var(--cyan2); font-weight:600; direction:ltr; text-align:left; }
+.tex { color:var(--text2); font-size:.82rem; direction:ltr; text-align:left; }
+.tmag { font-family:'Share Tech Mono',monospace; color:var(--mag2); direction:ltr; text-align:left; font-weight:600; }
+
+/* ══ TECH VOCAB APP GRID ══ */
+.app-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(160px,1fr));
+  gap:.8rem;
+}
+.app-card {
+  background:var(--void3);
+  border:1px solid var(--border);
+  border-radius:10px; /* app icon feel */
+  padding:1.1rem;
+  text-align:center;
+  cursor:pointer;
+  transition:all .25s;
+  position:relative;
+  overflow:hidden;
+}
+.app-card::before {
+  content:'';
+  position:absolute; top:-50%; left:-50%;
+  width:200%; height:200%;
+  background:conic-gradient(from 0deg,
+    transparent 0deg,
+    rgba(0,229,255,0.04) 90deg,
+    transparent 180deg
+  );
+  animation:appSpin 8s linear infinite;
+  opacity:0; transition:opacity .3s;
+}
+@keyframes appSpin { from{transform:rotate(0deg);}to{transform:rotate(360deg);} }
+.app-card:hover { border-color:var(--cyan2); transform:translateY(-4px); box-shadow:0 8px 32px rgba(0,229,255,0.2); }
+.app-card:hover::before { opacity:1; }
+.app-icon { font-size:2rem; display:block; margin-bottom:.5rem; position:relative; z-index:1; }
+.app-de { font-family:'Share Tech Mono',monospace; font-size:.82rem; color:var(--cyan); font-weight:600; display:block; direction:ltr; margin-bottom:3px; position:relative; z-index:1; }
+.app-ar { font-size:.82rem; color:var(--text2); display:block; position:relative; z-index:1; }
+.app-ex { font-size:.7rem; color:var(--text3); direction:ltr; font-style:italic; margin-top:3px; position:relative; z-index:1; }
+
+/* ══ LIVE CHAT SIMULATOR ══ */
+.chat-sim {
+  background:var(--void2);
+  border:1px solid var(--border2);
+  border-radius:var(--r);
+  overflow:hidden;
+}
+.chat-header {
+  background:var(--void3);
+  border-bottom:1px solid var(--border2);
+  padding:.8rem 1.2rem;
+  display:flex; align-items:center; gap:.8rem;
+}
+.chat-avatar { font-size:1.3rem; }
+.chat-name {
+  font-family:'Orbitron',sans-serif;
+  font-size:.8rem; color:var(--cyan); letter-spacing:.05em;
+}
+.chat-status { font-size:.68rem; color:var(--lime2); }
+.chat-status::before { content:'● '; }
+
+.chat-body {
+  padding:1rem;
+  height:280px;
+  overflow-y:auto;
+  display:flex; flex-direction:column; gap:.7rem;
+  scroll-behavior:smooth;
+}
+/* Scrollbar styling */
+.chat-body::-webkit-scrollbar { width:4px; }
+.chat-body::-webkit-scrollbar-track { background:var(--void2); }
+.chat-body::-webkit-scrollbar-thumb { background:var(--border2); border-radius:2px; }
+
+.chat-msg {
+  display:flex; gap:.6rem; align-items:flex-end;
+  animation:fadeUp .3s ease both;
+}
+.chat-msg.me { flex-direction:row-reverse; }
+.chat-av {
+  width:30px; height:30px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.85rem; flex-shrink:0;
+  background:var(--void3); border:1px solid var(--border2);
+}
+.chat-bubble {
+  max-width:70%; padding:8px 12px; border-radius:10px;
+  font-size:.85rem; line-height:1.6;
+}
+.chat-msg.them .chat-bubble {
+  background:var(--void3); border:1px solid var(--border2); color:var(--text);
+  border-bottom-left-radius:2px;
+}
+.chat-msg.me .chat-bubble {
+  background:var(--cyan-d2); border:1px solid rgba(0,229,255,.3); color:var(--cyan2);
+  border-bottom-right-radius:2px; text-align:left; direction:ltr;
+}
+.chat-time { font-size:.62rem; color:var(--text3); flex-shrink:0; }
+.chat-de { font-family:'Share Tech Mono',monospace; font-size:.8rem; color:var(--cyan2); direction:ltr; display:block; margin-bottom:2px; }
+.chat-ar { font-size:.78rem; color:var(--text2); }
+
+.chat-input-area {
+  border-top:1px solid var(--border2);
+  padding:.8rem 1rem;
+  display:flex; gap:.6rem; align-items:center;
+}
+.chat-suggestions { display:flex; gap:.4rem; flex-wrap:wrap; flex:1; }
+.chat-suggest {
+  font-family:'Share Tech Mono',monospace;
+  font-size:.72rem; padding:5px 10px;
+  background:var(--void3); border:1px solid var(--border2);
+  color:var(--cyan); cursor:pointer;
+  border-radius:20px; transition:all .18s;
+  direction:ltr;
+}
+.chat-suggest:hover { border-color:var(--cyan); background:var(--cyan-d); }
+.chat-send {
+  width:36px; height:36px; border-radius:50%;
+  background:var(--cyan); color:var(--void); border:none;
+  cursor:pointer; font-size:.9rem; flex-shrink:0;
+  transition:all .2s; display:flex; align-items:center; justify-content:center;
+}
+.chat-send:hover { background:var(--cyan2); transform:scale(1.1); }
+
+/* ══ SOCIAL MEDIA VOCAB ══ */
+.social-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:.8rem;
+}
+.social-card {
+  background:var(--void3); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1rem;
+  cursor:pointer; transition:all .22s;
+  display:flex; align-items:center; gap:.8rem;
+}
+.social-card:hover { border-color:var(--mag2); background:var(--mag-d); transform:translateY(-2px); }
+.sc-icon { font-size:1.8rem; flex-shrink:0; }
+.sc-de { font-family:'Share Tech Mono',monospace; font-size:.85rem; color:var(--mag2); font-weight:600; display:block; direction:ltr; }
+.sc-ar { font-size:.8rem; color:var(--text2); display:block; }
+.sc-ex { font-size:.72rem; color:var(--text3); direction:ltr; font-style:italic; margin-top:2px; display:block; }
+
+/* ══ INTERACTIVE VERB CONJUGATOR ══ */
+.conjugator {
+  background:var(--void2); border:1px solid var(--border2);
+  border-radius:var(--rs);
+}
+.conj-header {
+  background:var(--void3); padding:.8rem 1.2rem;
+  border-bottom:1px solid var(--border2);
+  font-family:'Orbitron',sans-serif; font-size:.85rem;
+  color:var(--lime2); letter-spacing:.05em;
+  display:flex; align-items:center; gap:1rem; flex-wrap:wrap;
+}
+.verb-selector {
+  display:flex; gap:.4rem; flex-wrap:wrap;
+}
+.verb-btn {
+  font-family:'Share Tech Mono',monospace; font-size:.78rem;
+  padding:4px 10px; border:1px solid var(--border2);
+  background:transparent; color:var(--text2);
+  cursor:pointer; border-radius:3px; transition:all .18s;
+}
+.verb-btn:hover { border-color:var(--lime2); color:var(--lime2); }
+.verb-btn.active { background:var(--lime-d); border-color:var(--lime2); color:var(--lime2); }
+
+.conj-body { padding:1.2rem; }
+.conj-info {
+  display:flex; align-items:center; gap:1rem;
+  margin-bottom:1rem; padding-bottom:.8rem;
+  border-bottom:1px solid var(--border);
+}
+.conj-verb-name { font-family:'Share Tech Mono',monospace; font-size:1.6rem; color:var(--lime2); direction:ltr; }
+.conj-meaning   { font-size:.88rem; color:var(--text2); }
+.conj-type      { font-family:'Orbitron',monospace; font-size:.68rem; padding:3px 8px; border-radius:3px; letter-spacing:.06em; }
+.ct-reg { background:var(--cyan-d);  color:var(--cyan);  border:1px solid rgba(0,229,255,.2); }
+.ct-sep { background:var(--mag-d);   color:var(--mag2);  border:1px solid rgba(255,0,200,.2); }
+
+.conj-grid { display:grid; grid-template-columns:1fr 1fr; gap:.4rem; }
+.conj-row {
+  display:flex; align-items:center; gap:.7rem;
+  background:var(--void3); border-radius:var(--rs);
+  padding:.55rem .8rem; cursor:pointer; transition:background .18s;
+}
+.conj-row:hover { background:var(--void4); }
+.cr-pron { font-family:'Share Tech Mono',monospace; font-size:.75rem; color:var(--text2); flex-shrink:0; width:50px; direction:ltr; }
+.cr-form { font-family:'Share Tech Mono',monospace; font-size:.95rem; color:var(--lime2); font-weight:600; flex:1; direction:ltr; }
+.cr-ar   { font-size:.72rem; color:var(--text3); }
+.conj-example {
+  margin-top:.8rem; padding:.6rem .9rem;
+  background:var(--void3); border-radius:var(--rs);
+  font-family:'Share Tech Mono',monospace;
+  font-size:.82rem; color:var(--amber2);
+  direction:ltr; cursor:pointer;
+  transition:background .18s;
+}
+.conj-example:hover { background:var(--void4); }
+
+/* ══ DIALOGUE — WhatsApp style ══ */
+.wa-sim {
+  background:var(--void2);
+  border:1px solid var(--border2);
+  border-radius:var(--r);
+  overflow:hidden;
+}
+.wa-header {
+  background:var(--void3);
+  border-bottom:1px solid var(--border2);
+  padding:.9rem 1.2rem;
+  display:flex; align-items:center; gap:.8rem;
+}
+.wa-name {
+  font-family:'Orbitron',sans-serif;
+  font-size:.82rem; color:var(--text); letter-spacing:.03em;
+}
+.wa-sub { font-size:.7rem; color:var(--lime2); font-family:'Share Tech Mono',monospace; }
+.wa-body {
+  padding:1.2rem;
+  display:flex; flex-direction:column; gap:.8rem;
+}
+.wm { display:flex; flex-direction:column; max-width:72%; }
+.wm.me { align-self:flex-end; align-items:flex-end; }
+.wm.them { align-self:flex-start; }
+.wm-bub {
+  padding:10px 14px; border-radius:12px;
+  font-size:.88rem; line-height:1.7;
+}
+.wm.them .wm-bub { background:var(--void3); border:1px solid var(--border); border-bottom-left-radius:2px; }
+.wm.me .wm-bub { background:var(--cyan-d2); border:1px solid rgba(0,229,255,.25); border-bottom-right-radius:2px; }
+.wm-de { font-family:'Share Tech Mono',monospace; font-size:.82rem; color:var(--cyan2); direction:ltr; display:block; margin-bottom:3px; }
+.wm.me .wm-de { color:var(--lime2); }
+.wm-ar { font-size:.8rem; color:var(--text2); display:block; }
+.wm-time { font-size:.64rem; color:var(--text3); font-family:'Share Tech Mono',monospace; margin-top:3px; }
+.wm-label { font-family:'Orbitron',sans-serif; font-size:.62rem; color:var(--text3); letter-spacing:.04em; margin-bottom:3px; }
+
+/* ══ QUIZ ══ */
+.qblock {
+  background:var(--void3); border:1px solid var(--border);
+  border-radius:var(--rs); padding:1.1rem 1.3rem; margin-bottom:.8rem;
+}
+.qlabel {
+  font-family:'Share Tech Mono',monospace; font-size:.65rem;
+  color:var(--cyan); font-weight:400; letter-spacing:.1em;
+  display:block; margin-bottom:.4rem;
+}
+.qtext { font-weight:600; font-size:.93rem; margin-bottom:.8rem; line-height:1.6; }
+.qde { color:var(--cyan2); font-family:'Share Tech Mono',monospace; }
+.opts { display:grid; grid-template-columns:1fr 1fr; gap:.45rem; }
+.opt {
+  padding:9px 12px; border:1px solid var(--border2);
+  background:var(--void2); color:var(--text);
+  cursor:pointer; font-family:'Scheherazade New',serif;
+  font-size:.88rem; font-weight:500;
+  transition:all .18s; text-align:center;
+  width:100%; display:block; outline:none; appearance:none;
+  border-radius:var(--rs);
+}
+.opt:hover { border-color:var(--cyan); background:var(--cyan-d); color:var(--cyan); }
+.opt:disabled { cursor:not-allowed; pointer-events:none; opacity:.55; }
+.opt.correct { border-color:var(--lime2)!important; background:var(--lime-d)!important; color:var(--lime2)!important; font-weight:700; }
+.opt.wrong   { border-color:var(--mag2)!important;  background:var(--mag-d)!important;  color:var(--mag2)!important; }
+.qfb { font-size:.81rem; padding:7px 10px; margin-top:7px; display:none; border-right:3px solid; font-family:'Scheherazade New',serif; }
+.qfb.show { display:block; }
+.qfb.ok  { border-color:var(--lime2); background:var(--lime-d); color:var(--lime2); }
+.qfb.err { border-color:var(--mag2);  background:var(--mag-d);  color:var(--mag2); }
+
+/* Result */
+.result-wrap {
+  background:var(--void2);
+  border:1px solid var(--cyan);
+  border-radius:var(--r);
+  padding:2.5rem; text-align:center;
+  display:none; margin-top:1.5rem;
+  box-shadow: 0 0 40px rgba(0,229,255,0.2);
+}
+.r-score {
+  font-family:'Orbitron',sans-serif;
+  font-size:5rem; font-weight:900;
+  color:var(--cyan); line-height:1;
+  margin-bottom:.5rem;
+  text-shadow: 0 0 30px var(--cyan);
+}
+.r-msg { color:var(--text2); margin-bottom:1.5rem; }
+.r-btn {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--cyan); color:var(--void);
+  border:none; padding:11px 30px; border-radius:var(--rs);
+  font-family:'Orbitron',sans-serif; font-size:.88rem;
+  font-weight:700; letter-spacing:.06em;
+  cursor:pointer; transition:all .25s;
+}
+.r-btn:hover { background:var(--cyan2); box-shadow:var(--sh2); }
+
+/* Homework */
+.hw-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(185px,1fr)); gap:.7rem; margin-bottom:1.2rem; }
+.hw-item {
+  background:var(--void3); border:1px solid var(--border);
+  border-radius:var(--rs); padding:.9rem;
+  border-right:3px solid var(--cyan);
+}
+.hw-item strong { display:block; margin-bottom:3px; color:var(--cyan); font-family:'Orbitron',sans-serif; font-size:.78rem; letter-spacing:.04em; }
+.hw-item span { color:var(--text2); font-size:.78rem; }
+
+footer {
+  position:relative; z-index:1; text-align:center;
+  padding:2rem 2rem; color:var(--text3); font-size:.78rem;
+  border-top:1px solid var(--border2);
+  font-family:'Share Tech Mono',monospace; letter-spacing:.06em;
+}
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
+.a1{animation-delay:.05s;} .a2{animation-delay:.12s;}
+.a3{animation-delay:.2s;}  .a4{animation-delay:.28s;}
+
+@media(max-width:768px){
+  nav{padding:0 1rem;} .nav-links{display:none;}
+  main{padding:1rem 1rem 3rem;}
+  .opts{grid-template-columns:1fr;}
+  .conj-grid{grid-template-columns:1fr;}
+  .app-grid{grid-template-columns:repeat(3,1fr);}
+}
+</style>
+</head>
+<body>
+<div id="spb"></div>
+
+<nav>
+  <div class="nav-brand">
+    <span>🇩🇪</span>
+    <span>DE::LERNEN</span>
+    <span class="nav-chip">LEK_11 / A2</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#tech">التكنولوجيا</a></li>
+    <li><a href="#social">التواصل</a></li>
+    <li><a href="#verbs">الأفعال</a></li>
+    <li><a href="#chat">المحادثة</a></li>
+    <li><a href="#quiz">الاختبار</a></li>
+  </ul>
+  <button class="tbtn" onclick="toggleTheme()">☀</button>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <span class="hero-terminal">LEKTION_11.init() → التكنولوجيا والحياة الرقمية</span>
+    <h1>الألمانية في <em>العالم الرقمي</em></h1>
+    <p class="hero-deck">اليوم ستتقن الحديث عن التكنولوجيا، وسائل التواصل الاجتماعي، الإنترنت، والتواصل الرقمي باللغة الألمانية — المهارات الأساسية للحياة في ألمانيا الحديثة!</p>
+    <div class="hero-pills">
+      <div class="pill pc">💻 التكنولوجيا</div>
+      <div class="pill pm">📱 التواصل الاجتماعي</div>
+      <div class="pill pl">⌨️ الأفعال الرقمية</div>
+      <div class="pill pa">💬 الدردشة الألمانية</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ══════ SECTION 1: TECH VOCABULARY ══════ -->
+<section id="tech">
+  <div class="sh">
+    <div class="sh-num">SYS::01</div>
+    <div class="sh-text">
+      <h2>مفردات التكنولوجيا — Technologie</h2>
+      <p>اضغط على أي أيقونة لسماع نطقها</p>
+    </div>
+  </div>
+
+  <div class="card a1">
+    <div class="tip cy" style="margin-bottom:1.2rem;">
+      <div class="tpic">💡</div>
+      <div>
+        <h4>الألمانية والتكنولوجيا — ملاحظة مهمة</h4>
+        <p>كثير من كلمات التكنولوجيا في الألمانية مستعارة مباشرة من الإنجليزية! مثل: <span class="de">das Internet</span>، <span class="de">das Smartphone</span>، <span class="de">die App</span>. لكن هناك كلمات ألمانية خاصة لا تعرفها بعد — ستتعلمها اليوم!</p>
+      </div>
+    </div>
+
+    <div class="app-grid" id="tech-grid">
+      <div class="app-card" onclick="speak('das Smartphone')"><span class="app-icon">📱</span><span class="app-de">das Smartphone</span><span class="app-ar">الهاتف الذكي</span><span class="app-ex">Mein Smartphone ist neu.</span></div>
+      <div class="app-card" onclick="speak('der Computer')"><span class="app-icon">💻</span><span class="app-de">der Computer</span><span class="app-ar">الحاسوب</span><span class="app-ex">Ich arbeite am Computer.</span></div>
+      <div class="app-card" onclick="speak('das Internet')"><span class="app-icon">🌐</span><span class="app-de">das Internet</span><span class="app-ar">الإنترنت</span><span class="app-ex">Das Internet ist schnell.</span></div>
+      <div class="app-card" onclick="speak('die App')"><span class="app-icon">📲</span><span class="app-de">die App /-s</span><span class="app-ar">التطبيق</span><span class="app-ex">Ich lade eine App herunter.</span></div>
+      <div class="app-card" onclick="speak('die E-Mail')"><span class="app-icon">📧</span><span class="app-de">die E-Mail</span><span class="app-ar">البريد الإلكتروني</span><span class="app-ex">Ich schreibe eine E-Mail.</span></div>
+      <div class="app-card" onclick="speak('das Passwort')"><span class="app-icon">🔐</span><span class="app-de">das Passwort</span><span class="app-ar">كلمة المرور</span><span class="app-ex">Vergiss das Passwort nicht!</span></div>
+      <div class="app-card" onclick="speak('das WLAN')"><span class="app-icon">📶</span><span class="app-de">das WLAN</span><span class="app-ar">الواي فاي</span><span class="app-ex">Haben Sie WLAN hier?</span></div>
+      <div class="app-card" onclick="speak('der Akku')"><span class="app-icon">🔋</span><span class="app-de">der Akku</span><span class="app-ar">البطارية</span><span class="app-ex">Der Akku ist leer!</span></div>
+      <div class="app-card" onclick="speak('die Tastatur')"><span class="app-icon">⌨️</span><span class="app-de">die Tastatur</span><span class="app-ar">لوحة المفاتيح</span><span class="app-ex">Die Tastatur ist kaputt.</span></div>
+      <div class="app-card" onclick="speak('der Bildschirm')"><span class="app-icon">🖥️</span><span class="app-de">der Bildschirm</span><span class="app-ar">الشاشة</span><span class="app-ex">Der Bildschirm ist zu dunkel.</span></div>
+      <div class="app-card" onclick="speak('die Datei')"><span class="app-icon">📁</span><span class="app-de">die Datei /-en</span><span class="app-ar">الملف</span><span class="app-ex">Ich speichere die Datei.</span></div>
+      <div class="app-card" onclick="speak('das Update')"><span class="app-icon">🔄</span><span class="app-de">das Update</span><span class="app-ar">التحديث</span><span class="app-ex">Ich mache ein Update.</span></div>
+    </div>
+
+    <div class="tw" style="margin-top:1.2rem;">
+      <table>
+        <thead><tr><th>الموقف</th><th>الألمانية</th><th>المعنى</th></tr></thead>
+        <tbody>
+          <tr><td>WLAN كلمة المرور</td><td class="tde">Was ist das WLAN-Passwort?</td><td>ما كلمة مرور الواي فاي؟</td></tr>
+          <tr><td>البطارية فارغة</td><td class="tde">Mein Handy hat keinen Akku mehr.</td><td>هاتفي لا يملك بطارية بعد</td></tr>
+          <tr><td>الإنترنت بطيء</td><td class="tde">Das Internet ist sehr langsam.</td><td>الإنترنت بطيء جداً</td></tr>
+          <tr><td>تنزيل تطبيق</td><td class="tde">Ich lade die App herunter.</td><td>أُنزّل التطبيق (فعل منفصل!)</td></tr>
+          <tr><td>الشاشة تالفة</td><td class="tde">Der Bildschirm ist kaputt.</td><td>الشاشة تالفة</td></tr>
+          <tr><td>نسيت كلمة المرور</td><td class="tde">Ich habe das Passwort vergessen.</td><td>نسيت كلمة المرور</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 2: SOCIAL MEDIA ══════ -->
+<section id="social">
+  <div class="sh">
+    <div class="sh-num">SYS::02</div>
+    <div class="sh-text">
+      <h2>التواصل الاجتماعي — Soziale Medien</h2>
+      <p>كيف تتحدث عن وسائل التواصل والحياة الرقمية</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div class="social-grid">
+      <div class="social-card" onclick="speak('ein Foto posten')"><span class="sc-icon">📸</span><div><span class="sc-de">ein Foto posten</span><span class="sc-ar">نشر صورة</span><span class="sc-ex">Ich poste ein Foto auf Instagram.</span></div></div>
+      <div class="social-card" onclick="speak('liken')"><span class="sc-icon">❤️</span><div><span class="sc-de">liken / einen Like geben</span><span class="sc-ar">وضع إعجاب</span><span class="sc-ex">Ich habe dein Foto geliket.</span></div></div>
+      <div class="social-card" onclick="speak('kommentieren')"><span class="sc-icon">💬</span><div><span class="sc-de">kommentieren</span><span class="sc-ar">التعليق</span><span class="sc-ex">Ich kommentiere den Beitrag.</span></div></div>
+      <div class="social-card" onclick="speak('teilen')"><span class="sc-icon">🔁</span><div><span class="sc-de">teilen / sharen</span><span class="sc-ar">المشاركة / إعادة النشر</span><span class="sc-ex">Kannst du das teilen?</span></div></div>
+      <div class="social-card" onclick="speak('folgen')"><span class="sc-icon">➕</span><div><span class="sc-de">folgen / abonnieren</span><span class="sc-ar">المتابعة / الاشتراك</span><span class="sc-ex">Ich folge dir auf Instagram.</span></div></div>
+      <div class="social-card" onclick="speak('eine Nachricht schicken')"><span class="sc-icon">📨</span><div><span class="sc-de">eine Nachricht schicken</span><span class="sc-ar">إرسال رسالة</span><span class="sc-ex">Schick mir eine Nachricht!</span></div></div>
+      <div class="social-card" onclick="speak('der Beitrag')"><span class="sc-icon">📝</span><div><span class="sc-de">der Beitrag / Post</span><span class="sc-ar">المنشور</span><span class="sc-ex">Dein Beitrag ist super!</span></div></div>
+      <div class="social-card" onclick="speak('der Follower')"><span class="sc-icon">👥</span><div><span class="sc-de">der Follower / -in</span><span class="sc-ar">المتابع / المتابعة</span><span class="sc-ex">Ich habe 500 Follower.</span></div></div>
+      <div class="social-card" onclick="speak('hochladen')"><span class="sc-icon">⬆️</span><div><span class="sc-de">hochladen / uploaden</span><span class="sc-ar">الرفع / التحميل للإنترنت</span><span class="sc-ex">Ich lade das Video hoch.</span></div></div>
+      <div class="social-card" onclick="speak('herunterladen')"><span class="sc-icon">⬇️</span><div><span class="sc-de">herunterladen / downloaden</span><span class="sc-ar">التنزيل</span><span class="sc-ex">Ich lade den Song herunter.</span></div></div>
+    </div>
+
+    <div class="tip mg" style="margin-top:1.2rem;">
+      <div class="tpic">📱</div>
+      <div>
+        <h4>الأفعال المنفصلة في التكنولوجيا</h4>
+        <p>في الألمانية كثير من أفعال التكنولوجيا أفعال منفصلة! تذكّر أن البادئة تذهب لنهاية الجملة:<br>
+        <span class="de">hoch|laden</span> → <span class="de">Ich lade das Foto hoch.</span><br>
+        <span class="de">herunter|laden</span> → <span class="de">Ich lade den Film herunter.</span><br>
+        <span class="de">an|rufen</span> → <span class="de">Ich rufe dich an.</span></p>
+      </div>
+    </div>
+
+    <!-- Live chat simulator -->
+    <h3 style="font-family:'Orbitron',sans-serif;font-size:.9rem;color:var(--mag2);letter-spacing:.04em;margin:1.5rem 0 .8rem;padding-bottom:.4rem;border-bottom:1px solid var(--border2);">📱 محاكي الدردشة — Chat mit Ahmad</h3>
+    <div class="chat-sim">
+      <div class="chat-header">
+        <div class="chat-avatar">👨</div>
+        <div>
+          <div class="chat-name">Ahmad Al-Rashid</div>
+          <div class="chat-status">Online</div>
+        </div>
+      </div>
+      <div class="chat-body" id="chat-body">
+        <div class="chat-msg them">
+          <div class="chat-av">👨</div>
+          <div class="chat-bubble">
+            <span class="chat-de">Hey! Hast du schon WhatsApp?</span>
+            <span class="chat-ar">مرحباً! هل عندك واتساب؟</span>
+          </div>
+          <span class="chat-time">10:32</span>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <div class="chat-suggestions" id="chat-suggestions">
+          <!-- filled by JS -->
+        </div>
+        <button class="chat-send" onclick="sendCustomMsg()">➤</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 3: DIGITAL VERBS ══════ -->
+<section id="verbs">
+  <div class="sh">
+    <div class="sh-num">SYS::03</div>
+    <div class="sh-text">
+      <h2>الأفعال الرقمية — Digitale Verben</h2>
+      <p>اختر فعلاً لتشاهد تصريفه الكامل</p>
+    </div>
+  </div>
+
+  <div class="card a2">
+    <div class="tip lm" style="margin-bottom:1.2rem;">
+      <div class="tpic">⌨️</div>
+      <div>
+        <h4>كيف تتصرّف الأفعال الإنجليزية في الألمانية؟</h4>
+        <p>عندما تُستعار أفعال من الإنجليزية، تُصرَّف كأفعال ألمانية منتظمة! فقط أضف نهايات الألمانية. مثال: <span class="de">googeln</span> → ich google، du googlest، er googelt. وتُكتب في الماضي: <span class="de">Ich habe gegoogelt.</span></p>
+      </div>
+    </div>
+
+    <div class="conjugator">
+      <div class="conj-header">
+        <span>VERB_CONJUGATOR.exe</span>
+        <div class="verb-selector" id="verb-selector">
+          <button class="verb-btn active" onclick="showVerb('surfen',this)">surfen</button>
+          <button class="verb-btn" onclick="showVerb('schreiben',this)">schreiben</button>
+          <button class="verb-btn" onclick="showVerb('anrufen',this)">anrufen</button>
+          <button class="verb-btn" onclick="showVerb('speichern',this)">speichern</button>
+          <button class="verb-btn" onclick="showVerb('googeln',this)">googeln</button>
+          <button class="verb-btn" onclick="showVerb('chatten',this)">chatten</button>
+        </div>
+      </div>
+      <div class="conj-body" id="conj-body">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 4: WHATSAPP DIALOGUE ══════ -->
+<section id="chat">
+  <div class="sh">
+    <div class="sh-num">SYS::04</div>
+    <div class="sh-text">
+      <h2>محادثة واتساب ألمانية</h2>
+      <p>مشهد واقعي — أحمد وزميله Tobias يتراسلان</p>
+    </div>
+  </div>
+
+  <div class="card a3">
+    <div class="wa-sim">
+      <div class="wa-header">
+        <span style="font-size:1.3rem;">👤</span>
+        <div>
+          <div class="wa-name">Tobias Müller</div>
+          <div class="wa-sub">Online • WhatsApp</div>
+        </div>
+      </div>
+      <div class="wa-body">
+
+        <div class="wm them">
+          <div class="wm-label">Tobias</div>
+          <div class="wm-bub">
+            <span class="wm-de">Hey Ahmad! Hast du die E-Mail von Chef gesehen? Er will morgen eine Videokonferenz machen.</span>
+            <span class="wm-ar">مرحباً أحمد! هل رأيت الإيميل من المدير؟ يريد عمل مؤتمر فيديو غداً.</span>
+          </div>
+          <span class="wm-time">14:23 ✓✓</span>
+        </div>
+
+        <div class="wm me">
+          <div class="wm-label">أحمد</div>
+          <div class="wm-bub">
+            <span class="wm-de">Ja, ich habe sie gerade gelesen! Weißt du, welches Programm wir benutzen? Zoom oder Teams?</span>
+            <span class="wm-ar">نعم، قرأتها للتو! هل تعرف أي برنامج سنستخدم؟ زووم أم تيمز؟</span>
+          </div>
+          <span class="wm-time">14:25 ✓✓</span>
+        </div>
+
+        <div class="wm them">
+          <div class="wm-label">Tobias</div>
+          <div class="wm-bub">
+            <span class="wm-de">Ich glaube Teams. Hast du die App schon installiert?</span>
+            <span class="wm-ar">أعتقد تيمز. هل ثبّتّ التطبيق مسبقاً؟</span>
+          </div>
+          <span class="wm-time">14:26 ✓✓</span>
+        </div>
+
+        <div class="wm me">
+          <div class="wm-label">أحمد</div>
+          <div class="wm-bub">
+            <span class="wm-de">Nein, ich muss sie noch herunterladen. Kannst du mir den Link schicken?</span>
+            <span class="wm-ar">لا، لا يزال يجب عليّ تنزيلها. هل يمكنك إرسال الرابط لي؟</span>
+          </div>
+          <span class="wm-time">14:27 ✓✓</span>
+        </div>
+
+        <div class="wm them">
+          <div class="wm-label">Tobias</div>
+          <div class="wm-bub">
+            <span class="wm-de">Klar! Ich schicke dir den Link gleich. Übrigens, wann beginnt die Konferenz genau?</span>
+            <span class="wm-ar">بالتأكيد! سأرسل لك الرابط الآن. بالمناسبة، متى يبدأ الاجتماع بالضبط؟</span>
+          </div>
+          <span class="wm-time">14:28 ✓✓</span>
+        </div>
+
+        <div class="wm me">
+          <div class="wm-label">أحمد</div>
+          <div class="wm-bub">
+            <span class="wm-de">Um 10 Uhr. Stell dir einen Wecker! 😄 Danke für die Hilfe, Tobias!</span>
+            <span class="wm-ar">الساعة العاشرة. اضبط منبهاً! 😄 شكراً على المساعدة يا Tobias!</span>
+          </div>
+          <span class="wm-time">14:29 ✓✓</span>
+        </div>
+
+        <div class="wm them">
+          <div class="wm-label">Tobias</div>
+          <div class="wm-bub">
+            <span class="wm-de">Kein Problem! Bis morgen! 👋</span>
+            <span class="wm-ar">لا مشكلة! إلى الغد! 👋</span>
+          </div>
+          <span class="wm-time">14:30 ✓✓</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="margin-top:1.2rem;padding:1rem;background:var(--void3);border:1px solid var(--border);border-radius:var(--rs);">
+      <h4 style="font-family:'Orbitron',sans-serif;font-size:.8rem;color:var(--cyan);letter-spacing:.04em;margin-bottom:.7rem;">🔑 تعابير المحادثة الرقمية:</h4>
+      <div style="display:flex;flex-wrap:wrap;gap:.4rem;font-size:.79rem;">
+        <span class="de">Hast du ... gesehen?</span><span style="color:var(--text2)"> هل رأيت...؟</span>&nbsp;·&nbsp;
+        <span class="de">Kannst du mir ... schicken?</span><span style="color:var(--text2)"> هل يمكنك إرسال ... لي؟</span>&nbsp;·&nbsp;
+        <span class="de">Ich muss ... noch herunterladen.</span><span style="color:var(--text2)"> لا يزال يجب عليّ تنزيل...</span>&nbsp;·&nbsp;
+        <span class="de">Kein Problem!</span><span style="color:var(--text2)"> لا مشكلة!</span>&nbsp;·&nbsp;
+        <span class="de">Klar!</span><span style="color:var(--text2)"> بالتأكيد!</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SECTION 5: QUIZ ══════ -->
+<section id="quiz">
+  <div class="sh">
+    <div class="sh-num">SYS::05</div>
+    <div class="sh-text">
+      <h2>الاختبار — Quiz.exe</h2>
+      <p>8 أسئلة على التكنولوجيا والحياة الرقمية</p>
+    </div>
+  </div>
+
+  <div class="quiz-card">
+
+    <div class="qblock" id="q1">
+      <span class="qlabel">QUERY_01 / 08</span>
+      <div class="qtext">كيف تقول "هل عندك واي فاي؟" بالألمانية؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q1" data-val="w">Haben Sie Internet hier?</button>
+        <button class="opt" type="button" data-qid="q1" data-val="c">Haben Sie WLAN hier?</button>
+        <button class="opt" type="button" data-qid="q1" data-val="w">Wo ist das WiFi?</button>
+        <button class="opt" type="button" data-qid="q1" data-val="w">Gibt es Netz hier?</button>
+      </div>
+      <div class="qfb" id="fb-q1"></div>
+    </div>
+
+    <div class="qblock" id="q2">
+      <span class="qlabel">QUERY_02 / 08</span>
+      <div class="qtext">ما معنى <span class="qde">hochladen</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q2" data-val="w">تنزيل من الإنترنت</button>
+        <button class="opt" type="button" data-qid="q2" data-val="c">رفع / تحميل للإنترنت</button>
+        <button class="opt" type="button" data-qid="q2" data-val="w">فتح ملف</button>
+        <button class="opt" type="button" data-qid="q2" data-val="w">حذف ملف</button>
+      </div>
+      <div class="qfb" id="fb-q2"></div>
+    </div>
+
+    <div class="qblock" id="q3">
+      <span class="qlabel">QUERY_03 / 08</span>
+      <div class="qtext">أكمل الجملة: <span class="qde">Ich ___ die App ___.</span> (herunterladen)</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q3" data-val="w">herunterladen ... nichts</button>
+        <button class="opt" type="button" data-qid="q3" data-val="c">lade ... herunter</button>
+        <button class="opt" type="button" data-qid="q3" data-val="w">downloade ... herunter</button>
+        <button class="opt" type="button" data-qid="q3" data-val="w">herlade ... unter</button>
+      </div>
+      <div class="qfb" id="fb-q3"></div>
+    </div>
+
+    <div class="qblock" id="q4">
+      <span class="qlabel">QUERY_04 / 08</span>
+      <div class="qtext">ما معنى <span class="qde">der Akku ist leer</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q4" data-val="w">الإنترنت بطيء</button>
+        <button class="opt" type="button" data-qid="q4" data-val="w">الذاكرة ممتلئة</button>
+        <button class="opt" type="button" data-qid="q4" data-val="c">البطارية فارغة</button>
+        <button class="opt" type="button" data-qid="q4" data-val="w">الشاشة مُعتِمة</button>
+      </div>
+      <div class="qfb" id="fb-q4"></div>
+    </div>
+
+    <div class="qblock" id="q5">
+      <span class="qlabel">QUERY_05 / 08</span>
+      <div class="qtext">كيف تقول "أرسل لي رسالة" بالألمانية؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q5" data-val="w">Schreib mir eine E-Mail sofort!</button>
+        <button class="opt" type="button" data-qid="q5" data-val="c">Schick mir eine Nachricht!</button>
+        <button class="opt" type="button" data-qid="q5" data-val="w">Gib mir eine Nachricht!</button>
+        <button class="opt" type="button" data-qid="q5" data-val="w">Lass mir eine Botschaft!</button>
+      </div>
+      <div class="qfb" id="fb-q5"></div>
+    </div>
+
+    <div class="qblock" id="q6">
+      <span class="qlabel">QUERY_06 / 08</span>
+      <div class="qtext">ما هو <span class="qde">das Passwort</span>؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q6" data-val="w">اسم المستخدم</button>
+        <button class="opt" type="button" data-qid="q6" data-val="c">كلمة المرور</button>
+        <button class="opt" type="button" data-qid="q6" data-val="w">البريد الإلكتروني</button>
+        <button class="opt" type="button" data-qid="q6" data-val="w">الشبكة</button>
+      </div>
+      <div class="qfb" id="fb-q6"></div>
+    </div>
+
+    <div class="qblock" id="q7">
+      <span class="qlabel">QUERY_07 / 08</span>
+      <div class="qtext">كيف تقول "أنا متابعك على إنستغرام"؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q7" data-val="w">Ich sehe dir auf Instagram.</button>
+        <button class="opt" type="button" data-qid="q7" data-val="w">Ich schaue dich auf Instagram.</button>
+        <button class="opt" type="button" data-qid="q7" data-val="c">Ich folge dir auf Instagram.</button>
+        <button class="opt" type="button" data-qid="q7" data-val="w">Ich gehe dir auf Instagram nach.</button>
+      </div>
+      <div class="qfb" id="fb-q7"></div>
+    </div>
+
+    <div class="qblock" id="q8">
+      <span class="qlabel">QUERY_08 / 08</span>
+      <div class="qtext">ما معنى <span class="qde">teilen</span> في سياق التواصل الاجتماعي؟</div>
+      <div class="opts">
+        <button class="opt" type="button" data-qid="q8" data-val="w">الحذف</button>
+        <button class="opt" type="button" data-qid="q8" data-val="w">التعليق</button>
+        <button class="opt" type="button" data-qid="q8" data-val="c">المشاركة / إعادة النشر</button>
+        <button class="opt" type="button" data-qid="q8" data-val="w">الإعجاب</button>
+      </div>
+      <div class="qfb" id="fb-q8"></div>
+    </div>
+
+    <div class="result-wrap" id="result-wrap">
+      <div class="r-score" id="r-score">0/8</div>
+      <div class="r-msg" id="r-msg"></div>
+      <button class="r-btn" onclick="resetQuiz()">↺ RESTART — أعد التدريب</button>
+    </div>
+  </div>
+</section>
+
+<!-- HOMEWORK -->
+<section>
+  <div class="sh">
+    <div class="sh-num">SYS::06</div>
+    <div class="sh-text">
+      <h2>الواجب — Hausaufgaben.txt</h2>
+      <p>تطبيق عملي لمهارات التكنولوجيا بالألمانية</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="hw-grid">
+      <div class="hw-item"><strong>پروفايل اجتماعي</strong><span>اكتب وصف بيو لحسابك على وسائل التواصل بالألمانية</span></div>
+      <div class="hw-item"><strong>إيميل ألماني</strong><span>اكتب بريداً إلكترونياً قصيراً لزميل تسأله فيه عن موعد اجتماع</span></div>
+      <div class="hw-item"><strong>الأفعال المنفصلة</strong><span>اصنع 5 جمل باستخدام: hochladen، herunterladen، anrufen</span></div>
+      <div class="hw-item"><strong>المحادثة الرقمية</strong><span>دردش مع نفسك! اكتب محادثة واتساب ألمانية قصيرة بينك وبين صديق</span></div>
+    </div>
+    <div class="tip cy">
+      <div class="tpic">🚀</div>
+      <div>
+        <h4>الدرس الثاني عشر والأخير القادم!</h4>
+        <p>الدرس الأخير في رحلتنا — سنتعلم <strong>السفر والسياحة وحجز الفنادق</strong>، ثم مراجعة شاملة لكل ما تعلمته في الدورة! ستكون جاهزاً للحياة في ألمانيا! <span class="de">Bis dann! 🌐</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  LEKTION_11.complete() &nbsp;|&nbsp; TECHNOLOGIE :: SOZIALE_MEDIEN :: DIGITALES_LEBEN<br>
+  الألمانية للعرب &nbsp;·&nbsp; الدرس 11 من 12 &nbsp;·&nbsp; A2 Level
+</footer>
+
+<script>
+// ── Theme toggle (dark-only theme, toggle brightens)
+let brightMode = false;
+const root = document.documentElement;
+const tbtn = document.querySelector('.tbtn');
+function toggleTheme() {
+  brightMode = !brightMode;
+  // In this cyberpunk theme, "light" just reduces contrast slightly
+  document.body.style.filter = brightMode ? 'brightness(1.15)' : '';
+  tbtn.textContent = brightMode ? '🌙' : '☀';
+}
+
+// ── Scroll progress
+const spb = document.getElementById('spb');
+window.addEventListener('scroll', () => {
+  const h = document.body.scrollHeight - window.innerHeight;
+  spb.style.transform = `scaleX(${window.scrollY / h})`;
+});
+
+// ── Speech
+function speak(t) {
+  if (!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(t);
+  u.lang = 'de-DE'; u.rate = 0.82;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+}
+
+// ── Verb conjugation data
+const verbs = {
+  surfen: {
+    de:'surfen', ar:'يتصفح الإنترنت', type:'reg',
+    forms:[['ich','surfe','أتصفح'],['du','surfst','تتصفح'],['er/sie','surft','يتصفح'],['wir','surfen','نتصفح'],['ihr','surft','تتصفحون'],['sie/Sie','surfen','يتصفحون']],
+    example:'Ich surfe jeden Abend im Internet.'
+  },
+  schreiben: {
+    de:'schreiben', ar:'يكتب', type:'irr',
+    forms:[['ich','schreibe','أكتب'],['du','schreibst','تكتب'],['er/sie','schreibt','يكتب'],['wir','schreiben','نكتب'],['ihr','schreibt','تكتبون'],['sie/Sie','schreiben','يكتبون']],
+    example:'Ich schreibe eine E-Mail an den Chef.'
+  },
+  anrufen: {
+    de:'anrufen', ar:'يتصل بـ (هاتف)', type:'sep',
+    forms:[['ich','rufe ... an','أتصل'],['du','rufst ... an','تتصل'],['er/sie','ruft ... an','يتصل'],['wir','rufen ... an','نتصل'],['ihr','ruft ... an','تتصلون'],['sie/Sie','rufen ... an','يتصلون']],
+    example:'Ich rufe dich morgen an.'
+  },
+  speichern: {
+    de:'speichern', ar:'يحفظ / يخزّن', type:'reg',
+    forms:[['ich','speichere','أحفظ'],['du','speicherst','تحفظ'],['er/sie','speichert','يحفظ'],['wir','speichern','نحفظ'],['ihr','speichert','تحفظون'],['sie/Sie','speichern','يحفظون']],
+    example:'Ich speichere die Datei auf dem Desktop.'
+  },
+  googeln: {
+    de:'googeln', ar:'يبحث على جوجل', type:'reg',
+    forms:[['ich','google','أبحث على جوجل'],['du','googlest','تبحث'],['er/sie','googelt','يبحث'],['wir','googeln','نبحث'],['ihr','googelt','تبحثون'],['sie/Sie','googeln','يبحثون']],
+    example:'Ich habe die Adresse gegoogelt.'
+  },
+  chatten: {
+    de:'chatten', ar:'يتدردش / يُرسل رسائل', type:'reg',
+    forms:[['ich','chatte','أتدردش'],['du','chattest','تتدردش'],['er/sie','chattet','يتدردش'],['wir','chatten','نتدردش'],['ihr','chattet','تتدردشون'],['sie/Sie','chatten','يتدردشون']],
+    example:'Wir chatten den ganzen Abend auf WhatsApp.'
+  }
+};
+
+function showVerb(key, el) {
+  document.querySelectorAll('.verb-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  const v = verbs[key];
+  const typeLabel = v.type==='reg'?'منتظم':(v.type==='sep'?'منفصل':'شاذ');
+  const typeClass = v.type==='reg'?'ct-reg':(v.type==='sep'?'ct-sep':'ct-reg');
+  document.getElementById('conj-body').innerHTML = `
+    <div class="conj-info">
+      <div class="conj-verb-name">${v.de}</div>
+      <div>
+        <div class="conj-meaning">${v.ar}</div>
+        <span class="conj-type ${typeClass}">${typeLabel}</span>
+      </div>
+    </div>
+    <div class="conj-grid">
+      ${v.forms.map(([p,f,ar])=>`
+        <div class="conj-row" onclick="speak('${f.replace('...','').trim()}')">
+          <span class="cr-pron">${p}</span>
+          <span class="cr-form">${f}</span>
+          <span class="cr-ar">${ar}</span>
+        </div>
+      `).join('')}
+    </div>
+    <div class="conj-example" onclick="speak('${v.example}')">
+      💬 ${v.example} 🔊
+    </div>
+  `;
+}
+showVerb('surfen', document.querySelector('.verb-btn.active'));
+
+// ── Chat simulator
+const chatFlow = [
+  { me:'Ja, natürlich! Meine Nummer ist auf WhatsApp.', ar:'نعم، بالطبع! رقمي على واتساب.' },
+  { them_de:'Super! Kannst du mir deine Nummer schicken?', them_ar:'رائع! هل يمكنك إرسال رقمك لي؟' },
+  { me:'Klar! Ich schicke sie dir gleich.', ar:'بالتأكيد! سأرسله لك الآن.' },
+  { them_de:'Danke! Ich schreibe dir dann auf WhatsApp.', them_ar:'شكراً! سأكتب لك على واتساب إذاً.' },
+  { me:'Gut! Bis dann. 👍', ar:'ممتاز! إلى اللقاء. 👍' },
+];
+let chatIdx = 0;
+
+const suggestions = [
+  'Ja, natürlich!',
+  'Klar! Ich schicke sie dir gleich.',
+  'Gut! Bis dann. 👍',
+  'Nein, noch nicht.',
+];
+
+function buildSuggestions() {
+  const el = document.getElementById('chat-suggestions');
+  el.innerHTML = suggestions.map((s,i) => `
+    <button class="chat-suggest" onclick="sendMsg('${s.replace(/'/g,"\\'")}')">${s}</button>
+  `).join('');
+}
+buildSuggestions();
+
+function sendMsg(text) {
+  if (chatIdx >= chatFlow.length) return;
+  const body = document.getElementById('chat-body');
+  const now = new Date();
+  const time = `${now.getHours()}:${String(now.getMinutes()).padStart(2,'0')}`;
+
+  // Add user message
+  const step = chatFlow[chatIdx];
+  if (step.me) {
+    addChatMsg(body, 'me', text, '', time);
+    chatIdx++;
+    // Add their response after delay
+    if (chatIdx < chatFlow.length && chatFlow[chatIdx].them_de) {
+      setTimeout(()=>{
+        const t2 = chatFlow[chatIdx];
+        addChatMsg(body, 'them', t2.them_de, t2.them_ar, time);
+        chatIdx++;
+        speak(t2.them_de);
+      }, 800);
+    }
+  }
+}
+
+function sendCustomMsg() {
+  if (chatIdx < chatFlow.length) {
+    sendMsg(chatFlow[chatIdx].me || 'OK!');
+  }
+}
+
+function addChatMsg(body, side, de, ar, time) {
+  const div = document.createElement('div');
+  div.className = `chat-msg ${side === 'me' ? 'me' : 'them'}`;
+  const avEmoji = side === 'me' ? '🧑' : '👨';
+  div.innerHTML = `
+    ${side==='them'?`<div class="chat-av">${avEmoji}</div>`:''}
+    <div class="chat-bubble">
+      ${side==='them'?`<span class="chat-de">${de}</span><span class="chat-ar">${ar}</span>`:de}
+    </div>
+    <span class="chat-time">${time}</span>
+    ${side==='me'?`<div class="chat-av">${avEmoji}</div>`:''}
+  `;
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+// ── Quiz — event delegation (clean, proven pattern)
+const fb_c = {
+  q1:'✅ صحيح! WLAN هي الكلمة الألمانية للواي فاي (Wireless Local Area Network). تُقرأ: ڤيلان.',
+  q2:'✅ ممتاز! hochladen = رفع ملف للإنترنت (upload). العكس: herunterladen = تنزيل (download).',
+  q3:'✅ رائع! herunterladen فعل منفصل: Ich LADE die App HERUNTER. البادئة herunter تذهب للنهاية!',
+  q4:'✅ بالضبط! der Akku ist leer = البطارية فارغة. leer = فارغ، voll = ممتلئ.',
+  q5:'✅ صحيح! schicken = يُرسل. Schick mir = أرسل لي (أمر). eine Nachricht = رسالة.',
+  q6:'✅ ممتاز! das Passwort = كلمة المرور. من Pass (تصريح) + Wort (كلمة).',
+  q7:'✅ بالضبط! folgen + Dativ = يتابع. Ich folge DIR (Dativ) وليس Ich folge DICH.',
+  q8:'✅ صحيح! teilen = يشارك / يُعيد النشر في السياق الرقمي. نفس الكلمة تعني "يُقسّم" أيضاً!',
+};
+const fb_w = {
+  q1:'❌ الكلمة الصحيحة: WLAN (ڤيلان) — هذا هو الاسم الألماني الرسمي للواي فاي.',
+  q2:'❌ hochladen = رفع للإنترنت (upload). herunterladen = تنزيل من الإنترنت (download).',
+  q3:'❌ herunterladen فعل منفصل. في الجملة: Ich LADE die App HERUNTER. البادئة تنفصل وتذهب للنهاية.',
+  q4:'❌ leer = فارغ. der Akku ist leer = البطارية فارغة. Akku = البطارية (مختصر Akkumulator).',
+  q5:'❌ الصحيح: Schick mir eine Nachricht! الفعل schicken يعني يُرسل، وhier في صيغة الأمر.',
+  q6:'❌ das Passwort = كلمة المرور. der Benutzername = اسم المستخدم. die E-Mail = البريد الإلكتروني.',
+  q7:'❌ الصحيح: Ich folge DIR auf Instagram. folgen يأتي مع Dativ (dir وليس dich).',
+  q8:'❌ teilen في السياق الرقمي = يشارك / يُعيد النشر. liken = إعجاب، kommentieren = تعليق.',
+};
+
+let answers = {};
+
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('button.opt');
+  if (!btn) return;
+  const qid = btn.getAttribute('data-qid');
+  const val = btn.getAttribute('data-val');
+  if (qid && val) ans(btn, qid, val);
+});
+
+function ans(btn, qid, r) {
+  if (answers[qid]) return;
+  answers[qid] = r;
+  document.getElementById(qid).querySelectorAll('button.opt').forEach(b => { b.disabled = true; });
+  btn.classList.add(r === 'c' ? 'correct' : 'wrong');
+  const fb = document.getElementById('fb-' + qid);
+  fb.textContent = r === 'c' ? fb_c[qid] : fb_w[qid];
+  fb.className = 'qfb show ' + (r === 'c' ? 'ok' : 'err');
+  if (Object.keys(answers).length === 8) showResult();
+}
+
+function showResult() {
+  const s = Object.values(answers).filter(v => v === 'c').length;
+  const msgs = [
+    'ERROR: حاول مجدداً! 💪','DEBUG: راجع المفردات 📱',
+    'LOADING: تقدم جيد! 🌐','SYNC: جيد جداً! ⌨️',
+    'UPLOAD: ممتاز! 🚀','BACKUP: رائع جداً! ⭐',
+    'VERSION: شبه مثالي! 🔋','UPDATE: مثالي تقريباً! 📲',
+    'SUCCESS: هاكر الألمانية! 💻'
+  ];
+  document.getElementById('r-score').textContent = s + '/8';
+  document.getElementById('r-msg').textContent = msgs[s] || '';
+  const rb = document.getElementById('result-wrap');
+  rb.style.display = 'block';
+  rb.scrollIntoView({ behavior:'smooth', block:'center' });
+}
+
+function resetQuiz() {
+  answers = {};
+  document.querySelectorAll('button.opt').forEach(b => { b.disabled = false; b.className = 'opt'; });
+  document.querySelectorAll('.qfb').forEach(f => { f.className = 'qfb'; });
+  document.getElementById('result-wrap').style.display = 'none';
+}
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-kurs-lesson-11-technologie" data-category="a2-kurs" data-title="التكنولوجيا والرقمنة" data-root="../../" defer></script>
+</body>
+</html>

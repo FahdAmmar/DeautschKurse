@@ -1,0 +1,2419 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الطبيعة بالألمانية – Natur auf Deutsch</title>
+<meta name="description" content="تعلّم أسماء الطبيعة باللغة الألمانية مع رسومات توضيحية ونطق صحيح">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================
+   CSS VARIABLES & THEME SYSTEM
+   ========================================== */
+:root {
+  --forest-dark:    #0d2418;
+  --forest-mid:     #1a3a2a;
+  --forest-green:   #2d5a3d;
+  --sage:           #4a7c59;
+  --mint:           #7ab893;
+  --sky-deep:       #1a4a6b;
+  --sky-mid:        #2e7bb5;
+  --sky-light:      #87ceeb;
+  --earth-dark:     #5c3d2e;
+  --earth-mid:      #8b5e3c;
+  --sand:           #e8d5a3;
+  --sand-light:     #f5ecd4;
+  --sun:            #f0c040;
+  --sun-warm:       #e8a020;
+  --snow:           #dff0ff;
+  --river-blue:     #4ab8d4;
+  --mountain-gray:  #7a8a9a;
+  --card-bg:        #ffffff;
+  --page-bg:        #f0f4f0;
+  --text-primary:   #1a2e1a;
+  --text-secondary: #4a5a4a;
+  --text-muted:     #7a8a7a;
+  --border-subtle:  #d4e4d4;
+  --shadow-card:    0 4px 20px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-hover:   0 12px 40px rgba(0,0,0,0.14), 0 4px 12px rgba(0,0,0,0.08);
+  --radius-card:    20px;
+  --radius-sm:      10px;
+  --transition:     all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  --card-bg:        #161f2e;
+  --page-bg:        #0b1220;
+  --text-primary:   #f3f4f6;
+  --text-secondary: #c3cad6;
+  --text-muted:     #9ca3af;
+  --border-subtle:  #263449;
+  --shadow-card:    0 4px 20px rgba(0,0,0,0.45), 0 1px 4px rgba(0,0,0,0.25);
+  --shadow-hover:   0 12px 40px rgba(0,0,0,0.65), 0 4px 12px rgba(0,0,0,0.35);
+  --sand-light:     #1e293b;
+  --sand:           #29374d;
+}
+
+/* ==========================================
+   RESET & BASE
+   ========================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+  background: var(--page-bg);
+  color: var(--text-primary);
+  direction: rtl;
+  transition: var(--transition);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Comfortable, generous line-height for Arabic reading blocks —
+   Arabic letterforms need more vertical breathing room than Latin text
+   at the same font-size to stay easy on the eye. */
+.hero-subtitle,
+.category-title-ar,
+.category-count,
+.word-ar,
+.filter-btn,
+.quiz-header p,
+.quiz-hint,
+.quiz-question-label,
+.quiz-feedback,
+.quiz-option,
+.score-label,
+.result-subtitle,
+.toast,
+.page-footer p {
+  line-height: 1.7;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus across all interactive elements —
+   outline-offset keeps the ring clear of each shape's own radius */
+:focus-visible {
+  outline: 3px solid var(--sky-mid);
+  outline-offset: 3px;
+}
+[data-theme="dark"] :focus-visible {
+  outline-color: var(--mint);
+}
+.vocab-card:focus-visible {
+  outline-offset: 2px;
+  border-radius: var(--radius-card);
+}
+.theme-btn:focus-visible,
+.action-btn:focus-visible {
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   HERO HEADER
+   ========================================== */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--forest-dark) 0%, var(--forest-mid) 40%, var(--sky-deep) 100%);
+  color: white;
+  padding: 60px 24px 80px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='800' height='200' viewBox='0 0 800 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,160 L60,120 L120,140 L200,80 L280,110 L360,60 L440,90 L520,50 L600,70 L680,40 L760,55 L800,45 L800,200 L0,200Z' fill='%232d5a3d' opacity='0.4'/%3E%3Cpath d='M0,180 L80,155 L160,165 L240,130 L320,150 L400,110 L480,135 L560,100 L640,120 L720,95 L800,105 L800,200 L0,200Z' fill='%234a7c59' opacity='0.3'/%3E%3C/svg%3E") bottom center/cover no-repeat;
+  opacity: 0.6;
+}
+
+/* Night sky: a quiet CSS-only starfield that fades in only in dark mode,
+   so switching themes reveals stars over the same mountain skyline.
+   A hard color stop (not a soft 100% falloff) keeps each star a crisp
+   point of light instead of a faint blur at this small size. */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2.6px 2.6px at 12% 20%, #fff 30%, transparent 72%),
+    radial-gradient(2px 2px at 24% 52%, #fff 30%, transparent 72%),
+    radial-gradient(3px 3px at 37% 13%, #fff 30%, transparent 72%),
+    radial-gradient(2.2px 2.2px at 49% 38%, #fff 30%, transparent 72%),
+    radial-gradient(2.6px 2.6px at 62% 18%, #fff 30%, transparent 72%),
+    radial-gradient(2px 2px at 71% 48%, #fff 30%, transparent 72%),
+    radial-gradient(3px 3px at 83% 25%, #fff 30%, transparent 72%),
+    radial-gradient(2.2px 2.2px at 91% 10%, #fff 30%, transparent 72%),
+    radial-gradient(2.4px 2.4px at 8% 38%, #fff 30%, transparent 72%),
+    radial-gradient(2px 2px at 56% 7%, #fff 30%, transparent 72%),
+    radial-gradient(2.4px 2.4px at 44% 24%, #fff 30%, transparent 72%),
+    radial-gradient(2px 2px at 18% 8%, #fff 30%, transparent 72%);
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+}
+[data-theme="dark"] .hero::after {
+  opacity: 0.9;
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+@keyframes twinkle {
+  from { opacity: 0.6; }
+  to   { opacity: 0.95; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  color: #e8f4e8;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.hero h1 .de { color: #87ceeb; }
+.hero h1 .ar {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-size: 0.75em;
+  display: block;
+  color: rgba(255,255,255,0.85);
+  font-weight: 400;
+  margin-top: 8px;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 16px;
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+  padding: 0 22px;
+}
+
+.stat + .stat {
+  border-inline-start: 1px solid rgba(255,255,255,0.18);
+}
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--sun);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  font-family: 'Noto Sans Arabic', sans-serif;
+  margin-top: 4px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   TOOLBAR
+   ========================================== */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: var(--transition);
+}
+
+[data-theme="dark"] .toolbar {
+  box-shadow: 0 2px 16px rgba(0,0,0,0.45);
+}
+
+.toolbar-left {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 50px;
+  border: 1.5px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-family: 'Noto Sans Arabic', sans-serif;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.filter-btn:hover { border-color: var(--sage); color: var(--sage); }
+.filter-btn.active {
+  background: var(--forest-green);
+  border-color: var(--forest-green);
+  color: white;
+}
+
+.toolbar-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.theme-btn {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-subtle);
+  background: var(--card-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.theme-btn:hover { border-color: var(--sage); transform: rotate(20deg); }
+
+/* A quiet warm glow marks dark mode as active — echoes the moonlit/
+   sunlit toggle icon rather than just swapping a flat color */
+[data-theme="dark"] .theme-btn {
+  border-color: rgba(240,192,64,0.35);
+  box-shadow: 0 0 14px rgba(240,192,64,0.2);
+}
+[data-theme="dark"] .theme-btn:hover {
+  border-color: var(--sun);
+  box-shadow: 0 0 20px rgba(240,192,64,0.35);
+}
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* ==========================================
+   CATEGORY SECTIONS
+   ========================================== */
+.category-section {
+  margin-bottom: 60px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border-subtle);
+  direction: rtl;
+}
+
+.category-icon-wrap {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.category-info { flex: 1; }
+
+.category-title-ar {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.category-title-de {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.category-count {
+  font-size: 0.78rem;
+  color: var(--forest-green);
+  font-weight: 600;
+  background: var(--sand-light);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 6px;
+  display: inline-block;
+  font-family: 'Noto Sans Arabic', sans-serif;
+  transition: var(--transition);
+}
+
+[data-theme="dark"] .category-count { color: var(--mint); }
+
+/* ==========================================
+   VOCABULARY GRID
+   ========================================== */
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+/* ==========================================
+   VOCABULARY CARD
+   ========================================== */
+.vocab-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1.5px solid var(--border-subtle);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.vocab-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: transparent;
+}
+
+.vocab-card:active { transform: translateY(-2px); }
+
+/* Dark mode: shadows alone barely register against a near-black page,
+   so the card gets a soft top highlight to read as "raised", and a
+   gentle themed glow on hover stands in for the light-mode shadow lift. */
+[data-theme="dark"] .vocab-card {
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset, var(--shadow-card);
+}
+[data-theme="dark"] .vocab-card:hover {
+  border-color: var(--sage);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 0 0 1px rgba(122,184,147,0.3), var(--shadow-hover), 0 0 28px rgba(122,184,147,0.14);
+}
+
+/* Article color strip */
+.article-strip {
+  height: 5px;
+  width: 100%;
+}
+
+.der { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+.die { background: linear-gradient(90deg, #ec4899, #f472b6); }
+.das { background: linear-gradient(90deg, #10b981, #34d399); }
+.no-article { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+
+/* Illustration area */
+.card-illustration {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* In dark mode the illustrations are painted for daylight (bright sky
+   blues, whites); a light dimming keeps them legible and comfortable
+   next to the dark card body instead of looking like a pasted-in
+   light-mode screenshot. */
+[data-theme="dark"] .card-illustration {
+  filter: brightness(0.82) saturate(0.9);
+}
+
+/* Soft fade where illustration meets the card body, for a
+   polished, print-shop finish rather than a hard cut line */
+.card-illustration::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 28px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), var(--card-bg));
+  pointer-events: none;
+}
+
+/* Real-photo illustrations: fills the frame like a photograph.
+   A quiet shimmer shows while the photo loads; it fades in smoothly
+   once ready. If the hotlinked photo fails to load (offline, broken
+   link, or a preview sandbox blocking external requests), the onerror
+   handler reveals the original SVG illustration beneath it instead —
+   the card never shows a broken-image icon. */
+.illus-photo-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.illus-photo-wrap.is-loading {
+  background: linear-gradient(100deg, var(--sand-light) 30%, var(--card-bg) 50%, var(--sand-light) 70%);
+  background-size: 300% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0%   { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+.illus-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.illus-photo.loaded { opacity: 1; }
+
+.illus-svg-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card text content */
+.card-body {
+  padding: 16px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.article-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  width: fit-content;
+}
+
+.badge-der { background: #eff6ff; color: #3b82f6; }
+.badge-die { background: #fdf2f8; color: #ec4899; }
+.badge-das { background: #ecfdf5; color: #10b981; }
+.badge-pl  { background: #f5f3ff; color: #8b5cf6; }
+
+[data-theme="dark"] .badge-der { background: #1e3a5f; color: #60a5fa; }
+[data-theme="dark"] .badge-die { background: #4a1228; color: #f472b6; }
+[data-theme="dark"] .badge-das { background: #064e3b; color: #34d399; }
+[data-theme="dark"] .badge-pl  { background: #2e1065; color: #a78bfa; }
+
+.word-de {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  direction: ltr;
+  text-align: left;
+}
+
+.word-plural {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  direction: ltr;
+  text-align: left;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.word-en {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  direction: ltr;
+  text-align: left;
+  margin-top: 2px;
+  line-height: 1.5;
+}
+
+.word-ar {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--forest-green);
+  direction: rtl;
+  text-align: right;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+[data-theme="dark"] .word-ar { color: var(--mint); }
+
+/* Card actions */
+.card-actions {
+  display: flex;
+  gap: 6px;
+  padding: 0 14px 14px;
+  justify-content: flex-end;
+}
+
+.action-btn {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-subtle);
+  background: var(--page-bg);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.action-btn:hover { background: var(--forest-green); color: white; border-color: var(--forest-green); transform: scale(1.1); }
+.action-btn.playing { background: var(--sky-mid); color: white; border-color: var(--sky-mid); }
+.action-btn.copied { background: var(--mint); color: white; border-color: var(--mint); }
+
+/* Speaking indicator */
+.speaking-wave {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--sky-mid);
+  animation: wave 1s ease-out infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.playing .speaking-wave { opacity: 1; }
+
+@keyframes wave {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* ==========================================
+   CATEGORY COLOR THEMES
+   ========================================== */
+.cat-mountains .card-illustration { background: linear-gradient(180deg, #c9d6e3 0%, #a8bbd0 50%, #8fa8c0 100%); }
+.cat-water .card-illustration     { background: linear-gradient(180deg, #b8e0f7 0%, #6ec6e8 50%, #3ba8d4 100%); }
+.cat-sky .card-illustration       { background: linear-gradient(180deg, #87ceeb 0%, #b0d8f0 50%, #d4edfa 100%); }
+.cat-forest .card-illustration    { background: linear-gradient(180deg, #a8d8b0 0%, #6ab87a 50%, #4a9a5a 100%); }
+.cat-earth .card-illustration     { background: linear-gradient(180deg, #d4b896 0%, #b89070 50%, #9a7050 100%); }
+.cat-weather .card-illustration   { background: linear-gradient(180deg, #c0c8d8 0%, #9aaac0 50%, #7a8aa8 100%); }
+.cat-coast .card-illustration     { background: linear-gradient(180deg, #b0d8e8 0%, #7ab8d8 50%, #fad8a0 100%); }
+.cat-rocks .card-illustration     { background: linear-gradient(180deg, #c8c0b8 0%, #a8a098 50%, #888078 100%); }
+
+/* ==========================================
+   QUIZ SECTION
+   ========================================== */
+.quiz-section {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: var(--shadow-card);
+  border: 1.5px solid var(--border-subtle);
+  margin-top: 60px;
+}
+
+[data-theme="dark"] .quiz-section {
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset, var(--shadow-card);
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.quiz-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.quiz-header p {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
+
+.quiz-progress-bar {
+  background: var(--border-subtle);
+  border-radius: 10px;
+  height: 8px;
+  margin: 20px auto;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--sage), var(--sky-mid));
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  width: 0%;
+}
+
+.quiz-score {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.score-box {
+  text-align: center;
+  background: var(--page-bg);
+  padding: 12px 24px;
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+}
+
+.score-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.score-num.correct-score { color: #10b981; }
+.score-num.wrong-score   { color: #ef4444; }
+.score-num.total-score   { color: var(--sage); }
+
+.score-label {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.quiz-card {
+  background: var(--page-bg);
+  border-radius: 20px;
+  padding: 36px;
+  text-align: center;
+  border: 1.5px solid var(--border-subtle);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.quiz-question-label {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+}
+
+.quiz-illustration {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--border-subtle);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.quiz-word {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.quiz-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quiz-option {
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 2px solid var(--border-subtle);
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--sage);
+  background: #e8f4e8;
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .quiz-option:hover:not(:disabled) { background: #1a3a2a; }
+
+.quiz-option.correct { background: #ecfdf5; border-color: #10b981; color: #065f46; font-weight: 600; }
+.quiz-option.wrong   { background: #fef2f2; border-color: #ef4444; color: #991b1b; }
+
+[data-theme="dark"] .quiz-option.correct { background: #064e3b; color: #6ee7b7; }
+[data-theme="dark"] .quiz-option.wrong   { background: #450a0a; color: #fca5a5; }
+
+.quiz-option:disabled { cursor: default; }
+
+.quiz-feedback {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-align: center;
+  display: none;
+}
+
+.quiz-feedback.show { display: block; }
+.quiz-feedback.correct-fb { background: #ecfdf5; color: #065f46; border: 1px solid #10b981; }
+.quiz-feedback.wrong-fb   { background: #fef2f2; color: #991b1b; border: 1px solid #ef4444; }
+
+[data-theme="dark"] .quiz-feedback.correct-fb { background: #064e3b; color: #6ee7b7; }
+[data-theme="dark"] .quiz-feedback.wrong-fb   { background: #450a0a; color: #fca5a5; }
+
+.quiz-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, var(--forest-green), var(--sage));
+  color: white;
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(45,90,61,0.3);
+}
+
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(45,90,61,0.4); }
+
+.btn-secondary {
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: 2px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-primary);
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover { border-color: var(--sage); color: var(--sage); }
+
+.quiz-result {
+  text-align: center;
+  padding: 40px 20px;
+  display: none;
+}
+
+.quiz-result.show { display: block; }
+
+.result-emoji { font-size: 4rem; margin-bottom: 16px; }
+
+.result-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.result-subtitle {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+
+.result-score-big {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--sage);
+}
+
+/* ==========================================
+   TOAST NOTIFICATION
+   ========================================== */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--forest-dark);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-size: 0.85rem;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.page-footer {
+  background: var(--forest-dark);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 28px 24px;
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-size: 0.82rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Echoes the hero's mountain silhouette, upside down, to close the
+   page with the same visual motif it opened with */
+.page-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 34px;
+  background: url("data:image/svg+xml,%3Csvg width='800' height='40' viewBox='0 0 800 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,10 L60,28 L120,18 L200,34 L280,22 L360,36 L440,24 L520,38 L600,26 L680,36 L760,30 L800,32 L800,0 L0,0Z' fill='%232d5a3d' opacity='0.5'/%3E%3C/svg%3E") top center/cover no-repeat;
+}
+
+.page-footer span { color: #7ab893; }
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+@media print {
+  body { background: white !important; color: black !important; direction: rtl; }
+  .toolbar, .theme-btn, .card-actions, .quiz-section, .page-footer { display: none !important; }
+  .hero { background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 30px; }
+  .vocab-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  .vocab-grid { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .category-section { break-inside: avoid-page; }
+  .main-content { padding: 20px; }
+  @page { size: A4; margin: 15mm; }
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.vocab-card {
+  animation: fadeInUp 0.4s ease both;
+}
+
+.vocab-grid .vocab-card:nth-child(1)  { animation-delay: 0.02s; }
+.vocab-grid .vocab-card:nth-child(2)  { animation-delay: 0.04s; }
+.vocab-grid .vocab-card:nth-child(3)  { animation-delay: 0.06s; }
+.vocab-grid .vocab-card:nth-child(4)  { animation-delay: 0.08s; }
+.vocab-grid .vocab-card:nth-child(5)  { animation-delay: 0.10s; }
+.vocab-grid .vocab-card:nth-child(6)  { animation-delay: 0.12s; }
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  .vocab-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+  .toolbar { padding: 10px 16px; }
+  .quiz-options { grid-template-columns: 1fr; }
+  .main-content { padding: 24px 16px 60px; }
+  .quiz-section { padding: 24px 20px; }
+}
+
+@media (max-width: 480px) {
+  .vocab-grid { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 40px 16px 60px; }
+}
+
+/* hidden category sections */
+.category-section.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">A1 – A2 · Deutsch lernen</div>
+    <h1>
+      <span class="de">Die Natur</span>
+      <span class="ar">الطبيعة باللغة الألمانية</span>
+    </h1>
+    <p class="hero-subtitle">اضغط على أي كلمة لسماع النطق الصحيح • انقر للنسخ</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">60+</div><div class="stat-label">كلمة</div></div>
+      <div class="stat"><div class="stat-num">8</div><div class="stat-label">فئة</div></div>
+      <div class="stat"><div class="stat-num">A1–A2</div><div class="stat-label">المستوى</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- TOOLBAR -->
+<nav class="toolbar">
+  <div class="toolbar-left">
+    <button class="filter-btn active" data-cat="all">🌍 الكل</button>
+    <button class="filter-btn" data-cat="mountains">⛰️ جبال</button>
+    <button class="filter-btn" data-cat="water">💧 مياه</button>
+    <button class="filter-btn" data-cat="sky">☁️ سماء</button>
+    <button class="filter-btn" data-cat="forest">🌲 غابة</button>
+    <button class="filter-btn" data-cat="earth">🏜️ أرض</button>
+    <button class="filter-btn" data-cat="weather">⛅ طقس</button>
+    <button class="filter-btn" data-cat="coast">🏖️ ساحل</button>
+    <button class="filter-btn" data-cat="rocks">🪨 صخور</button>
+  </div>
+  <div class="toolbar-right">
+    <button class="theme-btn" id="themeBtn" title="تبديل الوضع">🌙</button>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+
+  <!-- =====================================
+       CATEGORY 1: MOUNTAINS
+       ===================================== -->
+  <section class="category-section" data-cat="mountains">
+    <div class="category-header">
+      <div class="category-icon-wrap" style="background:linear-gradient(135deg,#7a8a9a,#a8bbd0)">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M2 26L10 10L16 18L22 8L30 26Z" fill="white" opacity="0.9"/></svg>
+      </div>
+      <div class="category-info">
+        <div class="category-title-ar">الجبال والمرتفعات</div>
+        <div class="category-title-de">Berge und Gebirge</div>
+        <span class="category-count">8 كلمات</span>
+      </div>
+    </div>
+    <div class="vocab-grid" id="grid-mountains"></div>
+  </section>
+
+  <!-- =====================================
+       CATEGORY 2: WATER
+       ===================================== -->
+  <section class="category-section" data-cat="water">
+    <div class="category-header">
+      <div class="category-icon-wrap" style="background:linear-gradient(135deg,#2e7bb5,#87ceeb)">
+        <svg width="32" height="32" viewBox="0 0 32 32"><path d="M16 4C16 4 6 14 6 20a10 10 0 0020 0C26 14 16 4 16 4Z" fill="white" opacity="0.9"/></svg>
+      </div>
+      <div class="category-info">
+        <div class="category-title-ar">المياه والأنهار</div>
+        <div class="category-title-de">Wasser und Flüsse</div>
+        <span class="category-count">9 كلمات</span>
+      </div>
+    </div>
+    <div class="vocab-grid" id="grid-water"></div>
+  </section>
+
+  <!-- =====================================
+       CATEGORY 3: SKY
+       ===================================== -->
+  <section class="category-section" data-cat="sky">
+    <div class="category-header">
+      <div class="category-icon-wrap" style="background:linear-gradient(135deg,#87ceeb,#b0d8f0)">
+        <svg width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="8" fill="#f0c040"/><path d="M16 2v4M16 26v4M2 16h4M26 16h4M6 6l3 3M23 23l3 3M6 26l3-3M23 9l3-3" stroke="#f0a020" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="category-info">
+        <div class="category-title-ar">السماء والفضاء</div>
+        <div class="category-title-de">Himmel und Weltraum</div>
+        <span class="category-count">7 كلمات</span>
+      </div>
+    </div>
+    <div class="vocab-grid" id="grid-sky"></div>
+  </section>
+
+  <!-- =====================================
+       CATEGORY 4: FOREST
+       ===================================== -->
+  <section class="category-section" data-cat="forest">
+    <div class="category-header">
+      <div class="category-icon-wrap" style="background:linear-gradient(135deg,#2d5a3d,#4a9a5a)">
+        <svg width="32" height="32" viewBox="0 0 32 32"><path d="M16 2L8 14h4L6 24h20L20 14h4Z" fill="white" opacity="0.9"/><rect x="14" y="24" width="4" height="6" fill="white" opacity="0.7"/></svg>
+      </div>
+      <div class="category-info">
+        <div class="category-title-ar">الغابات والأشجار</div>
+        <div class="category-title-de">Wälder und Bäume</div>
+        <span class="category-count">8 كلمات</span>
+      </div>
+    </div>
+    <div class="vocab-grid" id="grid-forest"></div>
+  </section>
+
+  <!-- =====================================
+       CATEGORY 5: EARTH / LAND
+       ===================================== -->
+  <section class="category-section" data-cat="earth">
+    <div class="category-header">
+      <div class="category-icon-wrap" style="background:linear-gradient(135deg,#8b5e3c,#d4b896)">
+        <svg width="32" height="32" viewBox="0 0 32 32"><ellipse cx="16" cy="20" rx="14" ry="8" fill="white" opacity="0.9"/><path d="M4 22q6-12 24 0" fill="none" stroke="white" stroke-width="2" opacity="0.5"/></svg>
+      </div>
+      <div class="category-info">
+        <div class="category-title-ar">الأرض والتضاريس</div>
+        <div class="category-title-de">Land und Landformen</div>
+        <span class="category-count">8 كلمات</span>
+      </div>
+    </div>
+    <div class="vocab-grid" id="grid-earth"></div>
+  </section>
+
+  <!-- =====================================
+       CATEGORY 6: WEATHER
+       ===================================== -->
+  <section class="category-section" data-cat="weather">
+    <div class="category-header">
+      <div class="category-icon-wrap" style="background:linear-gradient(135deg,#7a8aa8,#c0c8d8)">
+        <svg width="32" height="32" viewBox="0 0 32 32"><ellipse cx="16" cy="14" rx="10" ry="7" fill="white" opacity="0.9"/><path d="M10 22l-2 6M16 22v6M22 22l2 6" stroke="#6a8ab8" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="category-info">
+        <div class="category-title-ar">الطقس والمناخ</div>
+        <div class="category-title-de">Wetter und Klima</div>
+        <span class="category-count">8 كلمات</span>
+      </div>
+    </div>
+    <div class="vocab-grid" id="grid-weather"></div>
+  </section>
+
+  <!-- =====================================
+       CATEGORY 7: COAST
+       ===================================== -->
+  <section class="category-section" data-cat="coast">
+    <div class="category-header">
+      <div class="category-icon-wrap" style="background:linear-gradient(135deg,#2e7bb5,#fad8a0)">
+        <svg width="32" height="32" viewBox="0 0 32 32"><path d="M2 24C6 18 12 22 16 18C20 14 26 18 30 24Z" fill="white" opacity="0.9"/><circle cx="24" cy="10" r="5" fill="#f0c040" opacity="0.9"/></svg>
+      </div>
+      <div class="category-info">
+        <div class="category-title-ar">الساحل والبحر</div>
+        <div class="category-title-de">Küste und Meer</div>
+        <span class="category-count">7 كلمات</span>
+      </div>
+    </div>
+    <div class="vocab-grid" id="grid-coast"></div>
+  </section>
+
+  <!-- =====================================
+       CATEGORY 8: ROCKS
+       ===================================== -->
+  <section class="category-section" data-cat="rocks">
+    <div class="category-header">
+      <div class="category-icon-wrap" style="background:linear-gradient(135deg,#888078,#c8c0b8)">
+        <svg width="32" height="32" viewBox="0 0 32 32"><polygon points="8,26 4,20 12,10 20,14 28,8 28,26" fill="white" opacity="0.9"/></svg>
+      </div>
+      <div class="category-info">
+        <div class="category-title-ar">الصخور والتكوينات</div>
+        <div class="category-title-de">Felsen und Formationen</div>
+        <span class="category-count">7 كلمات</span>
+      </div>
+    </div>
+    <div class="vocab-grid" id="grid-rocks"></div>
+  </section>
+
+  <!-- =====================================
+       QUIZ SECTION
+       ===================================== -->
+  <section class="quiz-section" id="quizSection">
+    <div class="quiz-header">
+      <h2>🧠 اختبر معلوماتك</h2>
+      <p>اختر الترجمة الصحيحة للكلمة الألمانية</p>
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quizProgress"></div>
+      </div>
+    </div>
+
+    <div class="quiz-score">
+      <div class="score-box"><div class="score-num correct-score" id="scoreCorrect">0</div><div class="score-label">صحيح ✓</div></div>
+      <div class="score-box"><div class="score-num wrong-score"   id="scoreWrong">0</div><div class="score-label">خطأ ✗</div></div>
+      <div class="score-box"><div class="score-num total-score"   id="scoreTotal">0</div><div class="score-label">الإجمالي</div></div>
+    </div>
+
+    <div id="quizMain">
+      <div class="quiz-card" id="quizCard">
+        <div class="quiz-question-label" id="quizCounter">سؤال 1 من 10</div>
+        <div class="quiz-illustration" id="quizIllustration"></div>
+        <div class="quiz-word" id="quizWord">–</div>
+        <div class="quiz-hint" id="quizHint"></div>
+      </div>
+
+      <div class="quiz-feedback" id="quizFeedback"></div>
+
+      <div class="quiz-options" id="quizOptions"></div>
+
+      <div class="quiz-controls">
+        <button class="btn-primary" id="nextBtn" style="display:none" onclick="nextQuestion()">السؤال التالي ⟵</button>
+        <button class="btn-secondary" onclick="restartQuiz()">🔄 إعادة</button>
+      </div>
+    </div>
+
+    <div class="quiz-result" id="quizResult">
+      <div class="result-emoji" id="resultEmoji">🎉</div>
+      <div class="result-title" id="resultTitle">أحسنت!</div>
+      <div class="result-subtitle" id="resultSubtitle">لقد أنهيت الاختبار</div>
+      <div class="result-score-big" id="resultScore">10/10</div>
+      <br><br>
+      <div class="quiz-controls">
+        <button class="btn-primary" onclick="restartQuiz()">🔄 حاول مرة أخرى</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+  <p>🌿 الطبيعة باللغة الألمانية · <span>Die Natur auf Deutsch</span> · A1–A2</p>
+  <p style="margin-top:6px;font-size:0.75rem">اضغط على الكلمة لسماع النطق · انقر زر النسخ للحفظ</p>
+  <p style="margin-top:10px;font-size:0.68rem;opacity:0.75">صور فئة الجبال من <span>Wikimedia Commons</span> (تراخيص حرة) · بقية الفئات برسوم توضيحية أصلية</p>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ==========================================
+     SVG ILLUSTRATION LIBRARY
+     ========================================== -->
+<script>
+// Victor-style flat SVG illustrations for each nature word
+const ILLUSTRATIONS = {
+  // MOUNTAINS
+  'der Berg': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="none"/>
+    <polygon points="60,10 15,80 105,80" fill="#7a8a9a"/>
+    <polygon points="60,10 40,45 80,45" fill="#dff0ff"/>
+    <polygon points="30,55 5,80 55,80" fill="#8fa8c0"/>
+    <ellipse cx="60" cy="80" rx="55" ry="8" fill="#4a7c59" opacity="0.4"/>
+  </svg>`,
+
+  'das Gebirge': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="25,75 5,75 20,30" fill="#8fa8c0"/>
+    <polygon points="60,10 20,75 100,75" fill="#7a8a9a"/>
+    <polygon points="60,10 45,40 75,40" fill="#dff0ff"/>
+    <polygon points="95,75 75,75 95,35 115,75" fill="#9aafc0"/>
+    <ellipse cx="60" cy="76" rx="55" ry="7" fill="#4a7c59" opacity="0.35"/>
+  </svg>`,
+
+  'das Tal': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="0,20 0,100 120,100 120,20 80,55 40,55" fill="#7a8a9a"/>
+    <path d="M0,20 Q30,60 60,70 Q90,60 120,20" fill="#6ab87a"/>
+    <ellipse cx="60" cy="75" rx="30" ry="8" fill="#87ceeb" opacity="0.6"/>
+    <path d="M30,72 Q60,85 90,72" fill="none" stroke="#4ab8d4" stroke-width="2"/>
+  </svg>`,
+
+  'der Gipfel': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="60,5 20,80 100,80" fill="#9aafc0"/>
+    <polygon points="60,5 45,32 75,32" fill="#dff0ff"/>
+    <circle cx="60" cy="5" r="4" fill="#f0c040"/>
+    <line x1="60" y1="1" x2="60" y2="18" stroke="#e8a020" stroke-width="1.5"/>
+    <ellipse cx="60" cy="81" rx="45" ry="7" fill="#4a7c59" opacity="0.4"/>
+  </svg>`,
+
+  'der Hang': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,20 Q60,25 120,80 L120,100 L0,100Z" fill="#7a8a9a"/>
+    <path d="M0,20 Q60,25 120,80" fill="none" stroke="#dff0ff" stroke-width="2"/>
+    <path d="M0,25 Q60,30 120,85 L120,100 L0,100Z" fill="#6ab87a" opacity="0.6"/>
+  </svg>`,
+
+  'der Pass': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="0,10 0,100 50,100 50,50" fill="#7a8a9a"/>
+    <polygon points="120,10 120,100 70,100 70,50" fill="#9aafc0"/>
+    <path d="M50,50 Q60,40 70,50" fill="#6ab87a"/>
+    <path d="M50,50 L70,50" stroke="#a8d8b0" stroke-width="3"/>
+    <path d="M20,55 Q60,38 100,55" stroke="white" stroke-width="1.5" fill="none" stroke-dasharray="3,3"/>
+  </svg>`,
+
+  'der Gletscher': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="60,5 10,85 110,85" fill="#8fa8c0"/>
+    <polygon points="60,5 35,50 85,50" fill="#dff0ff"/>
+    <polygon points="30,50 10,85 75,85" fill="#b8d8f0"/>
+    <path d="M30,50 Q50,58 75,50" fill="#87ceeb" opacity="0.7"/>
+  </svg>`,
+
+  'der Vulkan': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="60,15 15,85 105,85" fill="#5a4a5a"/>
+    <path d="M50,15 Q60,5 70,15" fill="#c05030"/>
+    <path d="M55,8 Q58,2 60,8" fill="#f0a020"/>
+    <path d="M62,6 Q65,0 67,6" fill="#f0c040"/>
+    <ellipse cx="60" cy="85" rx="50" ry="7" fill="#3a3030" opacity="0.4"/>
+  </svg>`,
+
+  // WATER
+  'der Fluss': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="none"/>
+    <path d="M0,40 Q20,35 40,45 Q60,55 80,45 Q100,35 120,40 L120,60 Q100,55 80,65 Q60,75 40,65 Q20,55 0,60Z" fill="#4ab8d4"/>
+    <path d="M0,45 Q30,40 60,50 Q90,60 120,45" fill="none" stroke="#87ceeb" stroke-width="1.5" opacity="0.6"/>
+    <ellipse cx="60" cy="50" rx="55" ry="5" fill="#2e9ab8" opacity="0.3"/>
+  </svg>`,
+
+  'der See': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="60" cy="60" rx="50" ry="28" fill="#3baac0"/>
+    <ellipse cx="60" cy="60" rx="50" ry="28" fill="none" stroke="#87ceeb" stroke-width="1.5"/>
+    <ellipse cx="60" cy="55" rx="35" ry="14" fill="#6ec6e8" opacity="0.5"/>
+    <path d="M20,65 Q40,60 60,65 Q80,70 100,65" fill="none" stroke="#dff0ff" stroke-width="1" opacity="0.7"/>
+    <polygon points="15,55 5,35 30,45" fill="#4a7c59" opacity="0.7"/>
+    <polygon points="105,55 115,35 90,45" fill="#4a7c59" opacity="0.7"/>
+  </svg>`,
+
+  'das Meer': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="40" width="120" height="60" fill="#1a6a9a"/>
+    <path d="M0,42 Q15,36 30,42 Q45,48 60,42 Q75,36 90,42 Q105,48 120,42 L120,52 Q105,58 90,52 Q75,46 60,52 Q45,58 30,52 Q15,46 0,52Z" fill="#2e8ab8"/>
+    <path d="M0,58 Q20,54 40,58 Q60,62 80,58 Q100,54 120,58" fill="none" stroke="#87ceeb" stroke-width="1.2" opacity="0.6"/>
+    <circle cx="85" cy="20" r="14" fill="#f0c040"/>
+    <path d="M85,4 Q90,20 85,36" fill="none" stroke="#f0a020" stroke-width="1" opacity="0.4"/>
+  </svg>`,
+
+  'der Bach': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="70" width="120" height="30" fill="#4a7c59"/>
+    <path d="M0,70 Q30,60 60,70 Q90,80 120,70" fill="#6ab87a"/>
+    <path d="M5,72 Q15,65 25,72 Q35,79 45,72 Q55,65 65,72 Q75,79 85,72 Q95,65 105,72" fill="none" stroke="#4ab8d4" stroke-width="5" stroke-linecap="round"/>
+    <path d="M5,72 Q15,65 25,72 Q35,79 45,72 Q55,65 65,72 Q75,79 85,72 Q95,65 105,72" fill="none" stroke="#87ceeb" stroke-width="2" opacity="0.5"/>
+    <polygon points="20,70 10,20 35,40" fill="#5a7a5a"/>
+    <polygon points="80,70 70,30 95,50" fill="#4a6a4a"/>
+  </svg>`,
+
+  'der Wasserfall': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="45" fill="#7a8a9a"/>
+    <rect x="40" y="0" width="40" height="45" fill="#9aafc0"/>
+    <path d="M45,45 Q48,55 46,65 Q44,75 47,85 Q49,92 50,98" stroke="#87ceeb" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M60,45 Q63,58 61,70 Q59,80 62,90 Q64,96 65,100" stroke="#4ab8d4" stroke-width="5" fill="none"/>
+    <path d="M74,45 Q72,55 74,65 Q76,76 73,86" stroke="#87ceeb" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <ellipse cx="60" cy="98" rx="22" ry="6" fill="#3baac0" opacity="0.6"/>
+  </svg>`,
+
+  'der Teich': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="60" width="120" height="40" fill="#4a7c59"/>
+    <ellipse cx="60" cy="68" rx="42" ry="18" fill="#3baac0"/>
+    <ellipse cx="60" cy="68" rx="35" ry="12" fill="#6ec6e8" opacity="0.5"/>
+    <circle cx="30" cy="70" r="4" fill="#6ab87a"/>
+    <circle cx="30" cy="70" r="7" fill="none" stroke="#4a9a5a" stroke-width="1"/>
+    <circle cx="90" cy="66" r="3" fill="#6ab87a"/>
+    <circle cx="90" cy="66" r="6" fill="none" stroke="#4a9a5a" stroke-width="1"/>
+  </svg>`,
+
+  'das Moor': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="55" width="120" height="45" fill="#4a5a3a"/>
+    <ellipse cx="40" cy="62" rx="25" ry="10" fill="#3a5040" opacity="0.8"/>
+    <ellipse cx="85" cy="70" rx="20" ry="8" fill="#2a4030" opacity="0.9"/>
+    <path d="M0,58 Q30,52 60,58 Q90,64 120,58" fill="none" stroke="#6a7a5a" stroke-width="1.5"/>
+    <path d="M10,66 Q15,58 20,66" stroke="#7a9a5a" stroke-width="2" fill="none"/>
+    <path d="M95,58 Q98,50 101,58" stroke="#7a9a5a" stroke-width="2" fill="none"/>
+  </svg>`,
+
+  'die Quelle': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="50" width="120" height="50" fill="#6ab87a"/>
+    <circle cx="60" cy="55" r="18" fill="#4ab8d4"/>
+    <circle cx="60" cy="52" r="10" fill="#87ceeb"/>
+    <path d="M60,34 Q65,42 60,52" stroke="#dff0ff" stroke-width="2" fill="none"/>
+    <path d="M50,55 Q70,58 80,70 Q90,80 120,78" stroke="#4ab8d4" stroke-width="3" fill="none"/>
+  </svg>`,
+
+  'der Sumpf': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#3a5030"/>
+    <ellipse cx="35" cy="65" rx="25" ry="12" fill="#2a6a5a" opacity="0.9"/>
+    <ellipse cx="85" cy="55" rx="28" ry="10" fill="#1a5a4a" opacity="0.9"/>
+    <path d="M15,60 Q18,45 21,60" stroke="#5a8a5a" stroke-width="3" fill="none"/>
+    <path d="M50,58 Q53,42 56,58" stroke="#5a8a5a" stroke-width="3" fill="none"/>
+    <path d="M90,50 Q93,34 96,50" stroke="#5a8a5a" stroke-width="3" fill="none"/>
+    <path d="M20,62 Q25,55 30,62" stroke="#6aaa6a" stroke-width="1.5" fill="none"/>
+  </svg>`,
+
+  // SKY
+  'der Himmel': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="none"/>
+    <defs><linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a6aaa"/><stop offset="100%" stop-color="#87ceeb"/></linearGradient></defs>
+    <rect x="0" y="0" width="120" height="100" fill="url(#skyG)"/>
+    <ellipse cx="30" cy="35" rx="22" ry="10" fill="white" opacity="0.85"/>
+    <ellipse cx="40" cy="30" rx="16" ry="12" fill="white" opacity="0.9"/>
+    <ellipse cx="85" cy="25" rx="18" ry="8" fill="white" opacity="0.8"/>
+    <ellipse cx="95" cy="20" rx="12" ry="10" fill="white" opacity="0.9"/>
+    <circle cx="95" cy="12" r="10" fill="#f0c040"/>
+  </svg>`,
+
+  'die Wolke': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="skyG2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#87ceeb"/><stop offset="100%" stop-color="#b8e0f8"/></linearGradient></defs>
+    <rect x="0" y="0" width="120" height="100" fill="url(#skyG2)"/>
+    <ellipse cx="60" cy="45" rx="40" ry="18" fill="white"/>
+    <ellipse cx="45" cy="38" rx="22" ry="20" fill="white"/>
+    <ellipse cx="78" cy="40" rx="18" ry="16" fill="white"/>
+    <ellipse cx="60" cy="52" rx="40" ry="10" fill="#e0eef8"/>
+  </svg>`,
+
+  'die Sonne': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="sunSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#87ceeb"/><stop offset="100%" stop-color="#fad898"/></linearGradient></defs>
+    <rect x="0" y="0" width="120" height="100" fill="url(#sunSky)"/>
+    <circle cx="60" cy="45" r="22" fill="#f0c040"/>
+    <circle cx="60" cy="45" r="16" fill="#f8d840"/>
+    <path d="M60,14 v8 M60,68 v8 M29,45 h8 M83,45 h8 M38,24 l6,6 M76,64 l6,6 M38,66 l6-6 M76,26 l6-6" stroke="#f0a020" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>`,
+
+  'der Mond': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#0a1a3a"/>
+    <circle cx="65" cy="45" r="20" fill="#f8e8a0"/>
+    <circle cx="72" cy="38" r="18" fill="#0a1a3a"/>
+    <circle cx="30" cy="20" r="1.5" fill="white" opacity="0.9"/>
+    <circle cx="90" cy="15" r="2" fill="white" opacity="0.8"/>
+    <circle cx="15" cy="50" r="1" fill="white" opacity="0.7"/>
+    <circle cx="105" cy="60" r="1.5" fill="white" opacity="0.9"/>
+    <circle cx="50" cy="75" r="1" fill="white" opacity="0.6"/>
+  </svg>`,
+
+  'der Stern': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#0a1a3a"/>
+    <polygon points="60,15 64,30 80,30 67,40 72,55 60,45 48,55 53,40 40,30 56,30" fill="#f0c040"/>
+    <circle cx="20" cy="25" r="1.5" fill="white" opacity="0.8"/>
+    <circle cx="95" cy="18" r="2" fill="white" opacity="0.7"/>
+    <circle cx="110" cy="45" r="1" fill="white" opacity="0.9"/>
+    <circle cx="10" cy="60" r="1.5" fill="white" opacity="0.6"/>
+    <circle cx="85" cy="70" r="1" fill="white" opacity="0.8"/>
+  </svg>`,
+
+  'der Regenbogen': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="50" width="120" height="50" fill="#6ab87a"/>
+    <path d="M5,80 Q60,10 115,80" fill="none" stroke="#e03030" stroke-width="5"/>
+    <path d="M10,80 Q60,17 110,80" fill="none" stroke="#f0a020" stroke-width="5"/>
+    <path d="M15,80 Q60,24 105,80" fill="none" stroke="#f0e020" stroke-width="5"/>
+    <path d="M20,80 Q60,31 100,80" fill="none" stroke="#30b030" stroke-width="5"/>
+    <path d="M25,80 Q60,38 95,80" fill="none" stroke="#3080f0" stroke-width="5"/>
+    <path d="M30,80 Q60,45 90,80" fill="none" stroke="#8030d0" stroke-width="5"/>
+  </svg>`,
+
+  'das Gewitter': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#2a3a5a"/>
+    <ellipse cx="55" cy="35" rx="45" ry="22" fill="#4a5a7a"/>
+    <ellipse cx="45" cy="25" rx="28" ry="22" fill="#5a6a8a"/>
+    <ellipse cx="75" cy="28" rx="22" ry="18" fill="#4a5a7a"/>
+    <polygon points="62,46 50,65 60,62 48,82 75,58 63,62" fill="#f0e040"/>
+  </svg>`,
+
+  // FOREST
+  'der Wald': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="60" width="120" height="40" fill="#3a6a3a"/>
+    <path d="M20,65 L10,20 L30,20Z" fill="#2d5a2d"/>
+    <path d="M20,60 L8,35 L32,35Z" fill="#4a7a3a"/>
+    <rect x="17" y="65" width="6" height="15" fill="#6a4a2a"/>
+    <path d="M60,65 L47,15 L73,15Z" fill="#2d5a2d"/>
+    <path d="M60,58 L45,32 L75,32Z" fill="#3a6a2a"/>
+    <rect x="56" y="65" width="7" height="15" fill="#5a3a2a"/>
+    <path d="M98,65 L86,22 L110,22Z" fill="#2d5a2d"/>
+    <path d="M98,60 L84,38 L112,38Z" fill="#4a7a3a"/>
+    <rect x="94" y="65" width="7" height="15" fill="#6a4a2a"/>
+  </svg>`,
+
+  'der Baum': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="75" width="120" height="25" fill="#4a7c59"/>
+    <rect x="54" y="55" width="12" height="30" fill="#8b5e3c"/>
+    <circle cx="60" cy="35" r="28" fill="#2d7a3a"/>
+    <circle cx="45" cy="40" r="20" fill="#3a8a4a"/>
+    <circle cx="75" cy="38" r="18" fill="#3a8a4a"/>
+    <circle cx="60" cy="25" r="16" fill="#4a9a5a"/>
+  </svg>`,
+
+  'das Gras': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="65" width="120" height="35" fill="#3a7a3a"/>
+    <path d="M10,65 Q8,50 12,40" stroke="#4a9a3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M10,65 Q15,50 18,38" stroke="#5aaa4a" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M30,65 Q28,48 32,36" stroke="#4a9a3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M50,65 Q48,52 52,40" stroke="#5aaa4a" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M70,65 Q68,50 72,38" stroke="#4a9a3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M90,65 Q88,48 92,36" stroke="#4a9a3a" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M108,65 Q106,52 110,40" stroke="#5aaa4a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </svg>`,
+
+  'die Wiese': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="55" width="120" height="45" fill="#4a8a3a"/>
+    <path d="M0,55 Q30,48 60,55 Q90,62 120,55" fill="#5a9a4a"/>
+    <circle cx="25" cy="55" r="6" fill="#f0c040"/>
+    <circle cx="25" cy="55" r="3" fill="#f0a020"/>
+    <circle cx="65" cy="52" r="5" fill="#f87070"/>
+    <circle cx="65" cy="52" r="2.5" fill="#e05050"/>
+    <circle cx="95" cy="56" r="6" fill="#ffffff"/>
+    <circle cx="95" cy="56" r="3" fill="#f8e040"/>
+    <path d="M20,58 Q22,50 24,55" stroke="#2a7a2a" stroke-width="1.5" fill="none"/>
+    <path d="M80,60 Q82,52 84,58" stroke="#2a7a2a" stroke-width="1.5" fill="none"/>
+  </svg>`,
+
+  'der Busch': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="72" width="120" height="28" fill="#4a7c59"/>
+    <circle cx="45" cy="62" r="24" fill="#3a7a3a"/>
+    <circle cx="30" cy="68" r="18" fill="#4a8a4a"/>
+    <circle cx="60" cy="58" r="20" fill="#3a8a3a"/>
+    <circle cx="78" cy="65" r="22" fill="#2d7a3a"/>
+    <circle cx="92" cy="70" r="16" fill="#4a8a4a"/>
+    <circle cx="40" cy="50" r="4" fill="#e04040"/>
+    <circle cx="72" cy="52" r="3" fill="#e04040"/>
+    <circle cx="85" cy="58" r="4" fill="#e04040"/>
+  </svg>`,
+
+  'die Pflanze': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="80" width="120" height="20" fill="#6ab87a"/>
+    <rect x="56" y="50" width="8" height="35" fill="#5a8a3a"/>
+    <path d="M60,60 Q80,40 90,20" stroke="#4a8a3a" stroke-width="2" fill="none"/>
+    <ellipse cx="85" cy="28" rx="18" ry="10" transform="rotate(-30 85 28)" fill="#5aaa4a"/>
+    <path d="M60,70 Q40,55 30,35" stroke="#4a8a3a" stroke-width="2" fill="none"/>
+    <ellipse cx="35" cy="43" rx="18" ry="10" transform="rotate(30 35 43)" fill="#4a9a3a"/>
+    <path d="M60,50 Q75,35 78,18" stroke="#3a7a3a" stroke-width="1.5" fill="none"/>
+    <ellipse cx="78" cy="22" rx="14" ry="8" transform="rotate(-20 78 22)" fill="#6aaa5a"/>
+  </svg>`,
+
+  'das Moos': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="45" width="120" height="55" fill="#3a6a2a"/>
+    <path d="M0,45 Q20,38 40,45 Q60,52 80,45 Q100,38 120,45" fill="#4a7a3a"/>
+    <circle cx="20" cy="44" r="8" fill="#3a8a3a"/>
+    <circle cx="35" cy="40" r="6" fill="#4a9a3a"/>
+    <circle cx="55" cy="42" r="9" fill="#3a8a3a"/>
+    <circle cx="75" cy="39" r="7" fill="#4a9a3a"/>
+    <circle cx="95" cy="43" r="8" fill="#3a8a3a"/>
+    <circle cx="110" cy="40" r="6" fill="#4a9a3a"/>
+  </svg>`,
+
+  'der Farn': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="80" width="120" height="20" fill="#4a7c59"/>
+    <path d="M60,80 Q55,60 50,40 Q45,20 48,5" stroke="#3a7a3a" stroke-width="2.5" fill="none"/>
+    <path d="M50,55 Q38,48 30,45" stroke="#4a8a3a" stroke-width="1.5" fill="none"/>
+    <ellipse cx="34" cy="45" rx="12" ry="5" transform="rotate(-20 34 45)" fill="#5aaa4a" opacity="0.8"/>
+    <path d="M50,45 Q38,35 32,30" stroke="#4a8a3a" stroke-width="1.5" fill="none"/>
+    <ellipse cx="34" cy="31" rx="10" ry="4" transform="rotate(-30 34 31)" fill="#5aaa4a" opacity="0.8"/>
+    <path d="M52,65 Q65,55 72,50" stroke="#4a8a3a" stroke-width="1.5" fill="none"/>
+    <ellipse cx="70" cy="50" rx="12" ry="5" transform="rotate(20 70 50)" fill="#5aaa4a" opacity="0.8"/>
+  </svg>`,
+
+  // EARTH / LAND
+  'das Feld': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="55" width="120" height="45" fill="#c8a870"/>
+    <line x1="0" y1="65" x2="120" y2="65" stroke="#a87840" stroke-width="1"/>
+    <line x1="0" y1="75" x2="120" y2="75" stroke="#a87840" stroke-width="1"/>
+    <line x1="0" y1="85" x2="120" y2="85" stroke="#a87840" stroke-width="1"/>
+    <path d="M10,64 Q11,58 12,64" stroke="#6aaa3a" stroke-width="1.5" fill="none"/>
+    <path d="M25,64 Q26,56 27,64" stroke="#6aaa3a" stroke-width="1.5" fill="none"/>
+    <path d="M40,64 Q41,58 42,64" stroke="#6aaa3a" stroke-width="1.5" fill="none"/>
+    <path d="M55,64 Q56,56 57,64" stroke="#6aaa3a" stroke-width="1.5" fill="none"/>
+    <path d="M70,64 Q71,58 72,64" stroke="#6aaa3a" stroke-width="1.5" fill="none"/>
+    <path d="M85,64 Q86,56 87,64" stroke="#6aaa3a" stroke-width="1.5" fill="none"/>
+    <path d="M100,64 Q101,58 102,64" stroke="#6aaa3a" stroke-width="1.5" fill="none"/>
+    <rect x="0" y="0" width="120" height="55" fill="#87ceeb"/>
+  </svg>`,
+
+  'die Wüste': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#e8c870"/>
+    <path d="M0,60 Q30,50 60,58 Q90,66 120,55" fill="#d4a850"/>
+    <path d="M0,75 Q25,65 50,72 Q75,79 120,70" fill="#c89840"/>
+    <circle cx="80" cy="20" r="12" fill="#f0c040"/>
+    <path d="M30,55 Q32,40 36,55" fill="#c89840"/>
+    <path d="M75,58 Q78,42 82,58" fill="#c89840"/>
+  </svg>`,
+
+  'die Ebene': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="55" fill="#87ceeb"/>
+    <rect x="0" y="55" width="120" height="45" fill="#5a9a3a"/>
+    <path d="M0,55 Q60,50 120,55" fill="#6aaa4a"/>
+    <line x1="0" y1="55" x2="120" y2="55" stroke="#4a8a2a" stroke-width="0.5"/>
+    <path d="M40,55 L40,20" stroke="#6a4a3a" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <path d="M40,20 L80,20" stroke="#6a4a3a" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <path d="M80,20 L80,55" stroke="#6a4a3a" stroke-width="1.5" stroke-dasharray="3,3"/>
+  </svg>`,
+
+  'der Hügel': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="70" width="120" height="30" fill="#4a8a3a"/>
+    <path d="M0,70 Q30,30 60,25 Q90,20 120,70Z" fill="#5a9a4a"/>
+    <path d="M0,70 Q30,35 60,30 Q90,25 120,70" fill="none" stroke="#6aaa5a" stroke-width="1"/>
+    <circle cx="20" cy="60" r="5" fill="#3a8a3a"/>
+    <circle cx="95" cy="55" r="6" fill="#3a8a3a"/>
+  </svg>`,
+
+  'die Landschaft': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="landscapeSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#87ceeb"/><stop offset="100%" stop-color="#dff0ff"/></linearGradient></defs>
+    <rect x="0" y="0" width="120" height="60" fill="url(#landscapeSky)"/>
+    <circle cx="95" cy="18" r="11" fill="#f0c040"/>
+    <path d="M0,55 Q30,30 60,42 Q90,54 120,38 L120,100 L0,100Z" fill="#6ab87a"/>
+    <path d="M0,62 Q30,48 60,55 Q90,62 120,50 L120,100 L0,100Z" fill="#4a9a5a"/>
+    <path d="M20,58 L18,38" stroke="#5c3d2e" stroke-width="2"/>
+    <path d="M18,38 Q26,28 34,38" fill="#3a8a4a"/>
+    <path d="M18,45 Q28,36 38,45" fill="#4a9a5a"/>
+    <path d="M85,62 L83,46" stroke="#5c3d2e" stroke-width="1.5"/>
+    <path d="M83,46 Q89,39 95,46" fill="#3a8a4a"/>
+  </svg>`,
+
+  'das Moor2': null, // skip duplicate
+
+  'die Steppe': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="55" fill="#c0d8e8"/>
+    <rect x="0" y="55" width="120" height="45" fill="#c8a850"/>
+    <path d="M0,55 Q60,50 120,55" fill="#b89840"/>
+    <path d="M15,55 Q16,45 18,55" stroke="#8a7030" stroke-width="2" fill="none"/>
+    <path d="M40,55 Q42,43 44,55" stroke="#8a7030" stroke-width="2" fill="none"/>
+    <path d="M65,55 Q67,46 69,55" stroke="#8a7030" stroke-width="2" fill="none"/>
+    <path d="M90,55 Q92,44 94,55" stroke="#8a7030" stroke-width="2" fill="none"/>
+    <path d="M110,55 Q112,47 114,55" stroke="#8a7030" stroke-width="2" fill="none"/>
+  </svg>`,
+
+  'die Höhle': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#7a8a9a"/>
+    <path d="M20,100 Q20,50 60,40 Q100,50 100,100Z" fill="#2a2a3a"/>
+    <path d="M25,100 Q25,52 60,43 Q95,52 95,100Z" fill="#1a1a2a"/>
+    <path d="M25,100 Q25,55 60,46 Q95,55 95,100Z" fill="#151525"/>
+    <circle cx="30" cy="55" r="3" fill="#f0c040" opacity="0.4"/>
+    <circle cx="90" cy="65" r="2" fill="#f0c040" opacity="0.3"/>
+    <path d="M48,43 Q50,38 52,43" fill="#9aafc0"/>
+    <path d="M62,40 Q64,34 66,40" fill="#9aafc0"/>
+    <path d="M74,43 Q76,37 78,43" fill="#9aafc0"/>
+  </svg>`,
+
+  'der Krater': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="60" cy="55" rx="55" ry="35" fill="#6a5a5a"/>
+    <ellipse cx="60" cy="55" rx="40" ry="25" fill="#4a3a3a"/>
+    <ellipse cx="60" cy="60" rx="28" ry="18" fill="#2a2030"/>
+    <ellipse cx="60" cy="63" rx="20" ry="12" fill="#1a1020"/>
+    <path d="M20,45 Q60,38 100,45" fill="none" stroke="#8a7a7a" stroke-width="1.5"/>
+  </svg>`,
+
+  'das Tal2': null,
+
+  // WEATHER
+  'der Regen': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#6a7a9a"/>
+    <ellipse cx="60" cy="30" rx="50" ry="22" fill="#5a6a8a"/>
+    <ellipse cx="50" cy="20" rx="32" ry="22" fill="#6a7a9a"/>
+    <ellipse cx="78" cy="22" rx="26" ry="20" fill="#5a6a8a"/>
+    <line x1="25" y1="55" x2="20" y2="75" stroke="#87ceeb" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="45" y1="52" x2="40" y2="72" stroke="#87ceeb" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="65" y1="55" x2="60" y2="75" stroke="#87ceeb" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="85" y1="52" x2="80" y2="72" stroke="#87ceeb" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="105" y1="55" x2="100" y2="75" stroke="#87ceeb" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="35" y1="72" x2="30" y2="92" stroke="#87ceeb" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="75" y1="70" x2="70" y2="90" stroke="#87ceeb" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>`,
+
+  'der Schnee': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#c0d0e8"/>
+    <rect x="0" y="65" width="120" height="35" fill="#dff0ff"/>
+    <path d="M0,65 Q30,60 60,65 Q90,70 120,65" fill="#f0f8ff"/>
+    <g opacity="0.8">
+      <line x1="25" y1="30" x2="25" y2="50" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="15" y1="40" x2="35" y2="40" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="18" y1="33" x2="32" y2="47" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="32" y1="33" x2="18" y2="47" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    <g opacity="0.8">
+      <line x1="65" y1="20" x2="65" y2="38" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="56" y1="29" x2="74" y2="29" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="59" y1="23" x2="71" y2="35" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="71" y1="23" x2="59" y2="35" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    <g opacity="0.7">
+      <line x1="95" y1="40" x2="95" y2="54" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="88" y1="47" x2="102" y2="47" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="90" y1="42" x2="100" y2="52" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="100" y1="42" x2="90" y2="52" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </svg>`,
+
+  'der Wind': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#d0dcea"/>
+    <path d="M5,35 Q35,30 60,38 Q85,46 110,38" fill="none" stroke="#8aaac0" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M5,50 Q40,43 70,52 Q100,61 118,50" fill="none" stroke="#9abbd0" stroke-width="2" stroke-linecap="round"/>
+    <path d="M5,65 Q30,58 55,66 Q80,74 115,63" fill="none" stroke="#8aaac0" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="110" cy="35" r="5" fill="#b0c8da"/>
+    <path d="M110,35 Q100,28 105,38" fill="#c0d8e8"/>
+  </svg>`,
+
+  'der Sturm': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#2a3040"/>
+    <ellipse cx="55" cy="30" rx="50" ry="24" fill="#3a4060"/>
+    <ellipse cx="40" cy="18" rx="30" ry="24" fill="#4a5070"/>
+    <polygon points="65,42 50,65 62,60 48,85 80,55 66,62" fill="#f0e040"/>
+    <line x1="20" y1="55" x2="8" y2="75" stroke="#87ceeb" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="95" y1="50" x2="83" y2="70" stroke="#87ceeb" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="110" y1="58" x2="98" y2="78" stroke="#87ceeb" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>`,
+
+  'der Nebel': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#c8d0da"/>
+    <rect x="0" y="60" width="120" height="40" fill="#a0a8b0"/>
+    <path d="M0,35 Q120,35 120,35" stroke="white" stroke-width="10" opacity="0.6"/>
+    <path d="M0,52 Q120,52 120,52" stroke="white" stroke-width="8" opacity="0.5"/>
+    <path d="M0,68 Q120,68 120,68" stroke="white" stroke-width="6" opacity="0.4"/>
+    <polygon points="55,65 45,25 70,40" fill="#8a9090" opacity="0.4"/>
+    <rect x="0" y="62" width="120" height="38" fill="#b0bcc8" opacity="0.6"/>
+  </svg>`,
+
+  'das Eis': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#b0d0e8"/>
+    <rect x="0" y="55" width="120" height="45" fill="#c8e8f8"/>
+    <path d="M0,55 Q40,50 80,55 Q100,58 120,54" fill="#dff8ff"/>
+    <line x1="20" y1="55" x2="100" y2="55" stroke="#87ceeb" stroke-width="0.5" opacity="0.6"/>
+    <circle cx="30" cy="40" r="8" fill="#dff0ff" opacity="0.8"/>
+    <circle cx="60" cy="35" r="10" fill="#c8e8f8" opacity="0.9"/>
+    <circle cx="90" cy="42" r="7" fill="#dff0ff" opacity="0.8"/>
+  </svg>`,
+
+  'der Frost': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#e0eef8"/>
+    <rect x="0" y="70" width="120" height="30" fill="#c8e0f0"/>
+    <path d="M0,70 Q60,65 120,70" fill="#d8eaf8"/>
+    <path d="M10,68 Q12,62 14,68 M14,62 Q12,66 10,62" stroke="#a0c8e0" stroke-width="1" fill="none"/>
+    <path d="M40,65 Q42,59 44,65 M44,59 Q42,63 40,59" stroke="#a0c8e0" stroke-width="1" fill="none"/>
+    <path d="M70,67 Q72,61 74,67 M74,61 Q72,65 70,61" stroke="#a0c8e0" stroke-width="1" fill="none"/>
+    <path d="M100,65 Q102,59 104,65 M104,59 Q102,63 100,59" stroke="#a0c8e0" stroke-width="1" fill="none"/>
+  </svg>`,
+
+  'der Tau': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#c8e0b0"/>
+    <path d="M10,70 Q15,55 25,70" stroke="#4a8a3a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="20" cy="52" r="4" fill="#87ceeb" opacity="0.8"/>
+    <path d="M50,65 Q55,48 65,65" stroke="#4a8a3a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="58" cy="45" r="5" fill="#87ceeb" opacity="0.9"/>
+    <path d="M85,68 Q90,52 100,68" stroke="#4a8a3a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="93" cy="49" r="4" fill="#87ceeb" opacity="0.8"/>
+    <rect x="0" y="80" width="120" height="20" fill="#5aaa4a"/>
+  </svg>`,
+
+  // COAST
+  'die Küste': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="45" width="120" height="55" fill="#2e8ab8"/>
+    <path d="M0,45 Q15,50 30,45 Q45,40 60,45 Q75,50 90,45 Q105,40 120,45" fill="#3baac8"/>
+    <path d="M0,58 Q20,54 40,58 Q60,62 80,58 Q100,54 120,58" fill="none" stroke="#87ceeb" stroke-width="1.2" opacity="0.5"/>
+    <path d="M0,45 Q30,42 60,45 Q90,48 120,45" fill="#e8d8a0"/>
+    <ellipse cx="60" cy="43" rx="55" ry="8" fill="#f0e0a0"/>
+    <path d="M5,38 Q8,28 11,38" stroke="#d4b870" stroke-width="2" fill="none"/>
+    <path d="M20,35 Q23,24 26,35" stroke="#c4a860" stroke-width="2" fill="none"/>
+  </svg>`,
+
+  'der Strand': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="55" width="120" height="45" fill="#f0d880"/>
+    <rect x="0" y="20" width="120" height="38" fill="#2e8ab8"/>
+    <path d="M0,58 Q20,52 40,58 Q60,64 80,58 Q100,52 120,58" fill="#3baac8"/>
+    <path d="M0,58 Q60,50 120,58" fill="#e8c870"/>
+    <circle cx="85" cy="18" r="12" fill="#f0c040"/>
+    <path d="M55,58 L52,30" stroke="#c89040" stroke-width="2"/>
+    <path d="M52,30 Q60,22 68,30" fill="#f03030" opacity="0.8"/>
+    <path d="M52,30 Q60,38 68,30" fill="#f0f0f0" opacity="0.8"/>
+  </svg>`,
+
+  'die Insel': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#2e8ab8"/>
+    <path d="M20,65 Q40,40 60,38 Q80,36 100,65Z" fill="#6ab87a"/>
+    <ellipse cx="60" cy="64" rx="45" ry="12" fill="#4a9a5a"/>
+    <path d="M60,60 L58,30" stroke="#8b5e3c" stroke-width="2.5"/>
+    <path d="M58,30 Q68,22 78,30" fill="#3a9a4a"/>
+    <path d="M58,38 Q66,30 74,38" fill="#4aaa5a"/>
+    <path d="M5,65 Q30,60 60,65 Q90,70 115,62" fill="none" stroke="#87ceeb" stroke-width="1" opacity="0.6"/>
+  </svg>`,
+
+  'das Kap': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#2e7ab5"/>
+    <path d="M0,100 L0,45 Q20,30 50,35 Q70,38 80,60 Q90,80 120,70 L120,100Z" fill="#6ab87a"/>
+    <path d="M0,45 Q20,30 50,35 Q70,38 80,60 Q90,80 120,70" fill="none" stroke="#4a9a5a" stroke-width="2"/>
+    <path d="M5,60 Q15,55 25,60 Q35,65 45,58" fill="none" stroke="#87ceeb" stroke-width="1.5" opacity="0.6"/>
+  </svg>`,
+
+  'die Bucht': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#5a9a4a"/>
+    <path d="M0,30 Q0,80 60,85 Q120,80 120,30" fill="#2e8ab8"/>
+    <path d="M5,32 Q5,76 60,81 Q115,76 115,32" fill="#3baac8"/>
+    <path d="M10,45 Q30,40 50,45 Q70,50 90,45 Q110,40 115,45" fill="none" stroke="#87ceeb" stroke-width="1" opacity="0.5"/>
+    <ellipse cx="60" cy="82" rx="50" ry="6" fill="#6aaa5a"/>
+  </svg>`,
+
+  'die Klippe': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="65" width="120" height="35" fill="#2e8ab8"/>
+    <path d="M0,0 L0,65 Q20,60 35,65 L35,10Z" fill="#7a8a9a"/>
+    <path d="M35,10 L35,65 Q50,58 60,65 L60,20Z" fill="#9aafc0"/>
+    <rect x="0" y="0" width="35" height="12" fill="#6ab87a"/>
+    <rect x="35" y="10" width="25" height="12" fill="#6ab87a"/>
+    <path d="M0,68 Q15,64 30,68 Q45,72 60,68" fill="none" stroke="#87ceeb" stroke-width="1.5" opacity="0.5"/>
+  </svg>`,
+
+  'die Lagune': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#5a9a4a"/>
+    <ellipse cx="60" cy="55" rx="45" ry="32" fill="#3baac8"/>
+    <ellipse cx="60" cy="55" rx="38" ry="26" fill="#4abcd8"/>
+    <ellipse cx="60" cy="55" rx="28" ry="18" fill="#6ecce8" opacity="0.7"/>
+    <path d="M25,48 Q40,42 60,48 Q80,54 95,48" fill="none" stroke="#dff0ff" stroke-width="1" opacity="0.7"/>
+    <ellipse cx="60" cy="55" rx="45" ry="32" fill="none" stroke="#6ab87a" stroke-width="3"/>
+  </svg>`,
+
+  // ROCKS
+  'der Felsen': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="68" width="120" height="32" fill="#4a7c59"/>
+    <polygon points="20,70 5,70 25,30 45,50 35,70" fill="#7a8a9a"/>
+    <polygon points="75,70 45,70 60,20 85,45 90,70" fill="#8a9aaa"/>
+    <polygon points="110,70 80,70 95,40 115,55" fill="#7a8a9a"/>
+    <path d="M25,45 Q35,38 40,48" fill="none" stroke="#9aafc0" stroke-width="1.5"/>
+    <path d="M65,35 Q72,28 78,38" fill="none" stroke="#9aafc0" stroke-width="1.5"/>
+  </svg>`,
+
+  'der Stein': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="70" width="120" height="30" fill="#4a7c59"/>
+    <ellipse cx="40" cy="65" rx="28" ry="18" fill="#8a9aaa"/>
+    <ellipse cx="40" cy="62" rx="26" ry="15" fill="#9aafc0"/>
+    <ellipse cx="85" cy="68" rx="22" ry="14" fill="#7a8a9a"/>
+    <ellipse cx="85" cy="65" rx="20" ry="11" fill="#8a9aaa"/>
+    <path d="M20,58 Q30,52 48,58" fill="none" stroke="#aabbc8" stroke-width="1"/>
+  </svg>`,
+
+  'die Kluft': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="50" height="100" fill="#7a8a9a"/>
+    <rect x="70" y="0" width="50" height="100" fill="#8a9aaa"/>
+    <path d="M50,0 Q60,-5 70,0 L70,100 Q60,105 50,100Z" fill="#1a1a2a"/>
+    <path d="M50,0 Q55,10 60,0" fill="none" stroke="#9aafc0" stroke-width="1"/>
+    <circle cx="58" cy="80" r="3" fill="#4ab8d4" opacity="0.6"/>
+    <circle cx="62" cy="90" r="2" fill="#4ab8d4" opacity="0.5"/>
+  </svg>`,
+
+  'der Sand': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#e8d080"/>
+    <path d="M0,30 Q20,25 40,30 Q60,35 80,30 Q100,25 120,30" fill="#d8c070" opacity="0.8"/>
+    <path d="M0,55 Q30,48 60,55 Q90,62 120,55" fill="#f0d890" opacity="0.6"/>
+    <circle cx="20" cy="45" r="1" fill="#c8b060" opacity="0.7"/>
+    <circle cx="50" cy="38" r="1.5" fill="#c8b060" opacity="0.7"/>
+    <circle cx="80" cy="50" r="1" fill="#c8b060" opacity="0.7"/>
+    <circle cx="100" cy="35" r="1" fill="#c8b060" opacity="0.7"/>
+  </svg>`,
+
+  'der Schlamm': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#6a5040"/>
+    <path d="M0,30 Q20,22 40,30 Q60,38 80,30 Q100,22 120,30" fill="#7a6050" opacity="0.9"/>
+    <path d="M0,55 Q30,46 60,55 Q90,64 120,55" fill="#5a4030" opacity="0.8"/>
+    <ellipse cx="30" cy="45" rx="12" ry="5" fill="#4a3025" opacity="0.7"/>
+    <ellipse cx="80" cy="60" rx="15" ry="6" fill="#4a3025" opacity="0.7"/>
+    <ellipse cx="60" cy="38" rx="10" ry="4" fill="#8a7060" opacity="0.6"/>
+  </svg>`,
+
+  'der Kieselstein': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="65" width="120" height="35" fill="#4a7c59"/>
+    <ellipse cx="25" cy="67" rx="14" ry="9" fill="#9aafc0"/>
+    <ellipse cx="55" cy="70" rx="11" ry="7" fill="#8a9aaa"/>
+    <ellipse cx="82" cy="67" rx="13" ry="8" fill="#aabbc0"/>
+    <ellipse cx="105" cy="70" rx="10" ry="6" fill="#9aaab8"/>
+    <ellipse cx="40" cy="72" rx="9" ry="6" fill="#8a9a9a"/>
+    <ellipse cx="70" cy="73" rx="8" ry="5" fill="#9aaab0"/>
+  </svg>`,
+
+  'die Schlucht': `<svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="100" fill="#8a9aaa"/>
+    <polygon points="0,0 0,100 35,100 45,0" fill="#7a8a9a"/>
+    <polygon points="120,0 120,100 85,100 75,0" fill="#9aaab8"/>
+    <path d="M35,100 Q60,90 85,100 L85,0 Q60,10 35,0Z" fill="#2a1a1a"/>
+    <path d="M38,100 Q60,92 82,100" fill="#3a2a2a"/>
+    <circle cx="60" cy="95" r="3" fill="#4ab8d4" opacity="0.5"/>
+  </svg>`,
+};
+
+// ==========================================
+// VOCABULARY DATA
+// ==========================================
+const VOCAB_DATA = {
+  mountains: [
+    { de:'der Berg', pl:'(-e)', en:'Mountain', ar:'الجبل', article:'der', cat:'mountains' },
+    { de:'das Gebirge', pl:'(-)', en:'Mountain range', ar:'سلسلة الجبال', article:'das', cat:'mountains' },
+    { de:'das Tal', pl:'(Täler)', en:'Valley', ar:'الوادي', article:'das', cat:'mountains' },
+    { de:'der Gipfel', pl:'(-)', en:'Summit / Peak', ar:'القمة', article:'der', cat:'mountains' },
+    { de:'der Hang', pl:'(Hänge)', en:'Slope / Hillside', ar:'المنحدر', article:'der', cat:'mountains' },
+    { de:'der Pass', pl:'(Pässe)', en:'Mountain pass', ar:'مضيق الجبل', article:'der', cat:'mountains' },
+    { de:'der Gletscher', pl:'(-)', en:'Glacier', ar:'النهر الجليدي', article:'der', cat:'mountains' },
+    { de:'der Vulkan', pl:'(Vulkane)', en:'Volcano', ar:'البركان', article:'der', cat:'mountains' },
+  ],
+  water: [
+    { de:'der Fluss', pl:'(Flüsse)', en:'River', ar:'النهر', article:'der', cat:'water' },
+    { de:'der See', pl:'(Seen)', en:'Lake', ar:'البحيرة', article:'der', cat:'water' },
+    { de:'das Meer', pl:'(Meere)', en:'Sea / Ocean', ar:'البحر', article:'das', cat:'water' },
+    { de:'der Bach', pl:'(Bäche)', en:'Stream / Creek', ar:'الجدول', article:'der', cat:'water' },
+    { de:'der Wasserfall', pl:'(Wasserfälle)', en:'Waterfall', ar:'الشلال', article:'der', cat:'water' },
+    { de:'der Teich', pl:'(Teiche)', en:'Pond', ar:'البركة', article:'der', cat:'water' },
+    { de:'das Moor', pl:'(Moore)', en:'Bog / Fen', ar:'المستنقع الخثي', article:'das', cat:'water' },
+    { de:'die Quelle', pl:'(-n)', en:'Spring / Source', ar:'الينبوع', article:'die', cat:'water' },
+    { de:'der Sumpf', pl:'(Sümpfe)', en:'Swamp / Marsh', ar:'المستنقع', article:'der', cat:'water' },
+  ],
+  sky: [
+    { de:'der Himmel', pl:'(-)', en:'Sky / Heaven', ar:'السماء', article:'der', cat:'sky' },
+    { de:'die Wolke', pl:'(-n)', en:'Cloud', ar:'الغيمة', article:'die', cat:'sky' },
+    { de:'die Sonne', pl:'(-n)', en:'Sun', ar:'الشمس', article:'die', cat:'sky' },
+    { de:'der Mond', pl:'(Monde)', en:'Moon', ar:'القمر', article:'der', cat:'sky' },
+    { de:'der Stern', pl:'(Sterne)', en:'Star', ar:'النجم', article:'der', cat:'sky' },
+    { de:'der Regenbogen', pl:'(Regenbögen)', en:'Rainbow', ar:'قوس قزح', article:'der', cat:'sky' },
+    { de:'das Gewitter', pl:'(-)', en:'Thunderstorm', ar:'العاصفة الرعدية', article:'das', cat:'sky' },
+  ],
+  forest: [
+    { de:'der Wald', pl:'(Wälder)', en:'Forest / Woods', ar:'الغابة', article:'der', cat:'forest' },
+    { de:'der Baum', pl:'(Bäume)', en:'Tree', ar:'الشجرة', article:'der', cat:'forest' },
+    { de:'das Gras', pl:'(Gräser)', en:'Grass', ar:'العشب', article:'das', cat:'forest' },
+    { de:'die Wiese', pl:'(-n)', en:'Meadow', ar:'المرج', article:'die', cat:'forest' },
+    { de:'der Busch', pl:'(Büsche)', en:'Bush / Shrub', ar:'الشجيرة', article:'der', cat:'forest' },
+    { de:'die Pflanze', pl:'(-n)', en:'Plant', ar:'النبتة', article:'die', cat:'forest' },
+    { de:'das Moos', pl:'(-)', en:'Moss', ar:'الطحلب', article:'das', cat:'forest' },
+    { de:'der Farn', pl:'(Farne)', en:'Fern', ar:'السرخس', article:'der', cat:'forest' },
+  ],
+  earth: [
+    { de:'das Feld', pl:'(Felder)', en:'Field', ar:'الحقل', article:'das', cat:'earth' },
+    { de:'die Wüste', pl:'(-n)', en:'Desert', ar:'الصحراء', article:'die', cat:'earth' },
+    { de:'die Ebene', pl:'(-n)', en:'Plain / Flatland', ar:'السهل', article:'die', cat:'earth' },
+    { de:'der Hügel', pl:'(-)', en:'Hill', ar:'التل', article:'der', cat:'earth' },
+    { de:'die Steppe', pl:'(-n)', en:'Steppe', ar:'السهل العشبي', article:'die', cat:'earth' },
+    { de:'die Höhle', pl:'(-n)', en:'Cave', ar:'الكهف', article:'die', cat:'earth' },
+    { de:'der Krater', pl:'(-)', en:'Crater', ar:'الحفرة البركانية', article:'der', cat:'earth' },
+    { de:'die Landschaft', pl:'(-en)', en:'Landscape', ar:'المشهد الطبيعي', article:'die', cat:'earth' },
+  ],
+  weather: [
+    { de:'der Regen', pl:'(-)', en:'Rain', ar:'المطر', article:'der', cat:'weather' },
+    { de:'der Schnee', pl:'(-)', en:'Snow', ar:'الثلج', article:'der', cat:'weather' },
+    { de:'der Wind', pl:'(Winde)', en:'Wind', ar:'الريح', article:'der', cat:'weather' },
+    { de:'der Sturm', pl:'(Stürme)', en:'Storm', ar:'العاصفة', article:'der', cat:'weather' },
+    { de:'der Nebel', pl:'(-)', en:'Fog / Mist', ar:'الضباب', article:'der', cat:'weather' },
+    { de:'das Eis', pl:'(Eise)', en:'Ice', ar:'الجليد', article:'das', cat:'weather' },
+    { de:'der Frost', pl:'(Fröste)', en:'Frost', ar:'الصقيع', article:'der', cat:'weather' },
+    { de:'der Tau', pl:'(-)', en:'Dew', ar:'الندى', article:'der', cat:'weather' },
+  ],
+  coast: [
+    { de:'die Küste', pl:'(-n)', en:'Coast / Coastline', ar:'الساحل', article:'die', cat:'coast' },
+    { de:'der Strand', pl:'(Strände)', en:'Beach', ar:'الشاطئ', article:'der', cat:'coast' },
+    { de:'die Insel', pl:'(-n)', en:'Island', ar:'الجزيرة', article:'die', cat:'coast' },
+    { de:'das Kap', pl:'(Kaps)', en:'Cape / Headland', ar:'الرأس', article:'das', cat:'coast' },
+    { de:'die Bucht', pl:'(-en)', en:'Bay / Cove', ar:'الخليج الصغير', article:'die', cat:'coast' },
+    { de:'die Klippe', pl:'(-n)', en:'Cliff', ar:'المنحدر الصخري', article:'die', cat:'coast' },
+    { de:'die Lagune', pl:'(-n)', en:'Lagoon', ar:'البحيرة الساحلية', article:'die', cat:'coast' },
+  ],
+  rocks: [
+    { de:'der Felsen', pl:'(-)', en:'Rock / Cliff face', ar:'الصخرة الكبيرة', article:'der', cat:'rocks' },
+    { de:'der Stein', pl:'(Steine)', en:'Stone / Rock', ar:'الحجر', article:'der', cat:'rocks' },
+    { de:'die Kluft', pl:'(Klüfte)', en:'Crevice / Gorge', ar:'الشق الصخري', article:'die', cat:'rocks' },
+    { de:'der Sand', pl:'(-e)', en:'Sand', ar:'الرمل', article:'der', cat:'rocks' },
+    { de:'der Schlamm', pl:'(Schlämme)', en:'Mud / Silt', ar:'الطين', article:'der', cat:'rocks' },
+    { de:'der Kieselstein', pl:'(-e)', en:'Pebble', ar:'الحصى', article:'der', cat:'rocks' },
+    { de:'die Schlucht', pl:'(-en)', en:'Gorge / Canyon', ar:'الوادي الضيق', article:'die', cat:'rocks' },
+  ]
+};
+
+// ==========================================
+// BUILD VOCABULARY CARDS
+// ==========================================
+function getArticleBadge(article) {
+  const map = { der:'der', die:'die', das:'das' };
+  return map[article] || '';
+}
+
+function getBadgeClass(article) {
+  const map = { der:'badge-der', die:'badge-die', das:'badge-das' };
+  return map[article] || 'badge-pl';
+}
+
+function getIllustration(wordDe, cat) {
+  if (ILLUSTRATIONS[wordDe]) return ILLUSTRATIONS[wordDe];
+  // Fallback by category
+  const fallbacks = {
+    mountains: ILLUSTRATIONS['der Berg'],
+    water: ILLUSTRATIONS['der Fluss'],
+    sky: ILLUSTRATIONS['der Himmel'],
+    forest: ILLUSTRATIONS['der Wald'],
+    earth: ILLUSTRATIONS['die Ebene'],
+    weather: ILLUSTRATIONS['der Regen'],
+    coast: ILLUSTRATIONS['die Küste'],
+    rocks: ILLUSTRATIONS['der Stein'],
+  };
+  return fallbacks[cat] || ILLUSTRATIONS['der Berg'];
+}
+
+// Real photographs from Wikimedia Commons (freely licensed — CC0 / CC-BY / CC-BY-SA),
+// hotlinked via the stable Special:FilePath redirect. If a photo fails to load
+// (offline use, a renamed/removed source file), buildCards() automatically
+// falls back to the original illustration, so the card is never left broken.
+const COMMONS_BASE = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
+function commonsPhoto(filename, width) {
+  return `${COMMONS_BASE}${encodeURIComponent(filename).replace(/%2C/g, ',')}?width=${width || 500}`;
+}
+
+const PHOTO_URLS = {
+  // Mountains
+  'der Berg':       commonsPhoto('Mountain tops.jpg'),
+  'das Gebirge':    commonsPhoto('Mountain range.jpg'),
+  'das Tal':        commonsPhoto('Green valley view.jpg'),
+  'der Gipfel':     commonsPhoto('Longs Peak with Lenticular Clouds, Rocky Mountain National Park.jpg'),
+  'der Hang':       commonsPhoto('Slope Mountain.jpg'),
+  'der Pass':       commonsPhoto('View from the mountain pass, Mountains of Nepal, Himalayas.jpg'),
+  'der Gletscher':  commonsPhoto('Perito Moreno Glacier ice fall.jpg'),
+  'der Vulkan':     commonsPhoto('Red Lava at Main Crater of Taal Volcano.jpg'),
+
+  // Water
+  'der Fluss':      commonsPhoto('River flowing through hills (Unsplash).jpg'),
+  'der See':        commonsPhoto('Calm lakeside sunset (Unsplash).jpg'),
+  'das Meer':       commonsPhoto('Aguirangan Island in a Vast Ocean.jpg'),
+  'der Bach':       commonsPhoto('Small stream in a dell.jpg'),
+  'der Wasserfall': commonsPhoto('White Bridges Waterfall.jpg'),
+  'der Teich':      commonsPhoto('Small Pond in a Forest PLC-CW-10.jpg'),
+  'das Moor':       commonsPhoto('Mohos Peat Bog 4.jpg'),
+  'die Quelle':     commonsPhoto('Natural Water Spring locally know as DHARA PANI- means spring of naturalwater.jpg'),
+  'der Sumpf':      commonsPhoto('Fallen Tree in Swamp.jpg'),
+
+  // Sky
+  'der Himmel':     commonsPhoto('Blue sky and clouds.jpg'),
+  'die Wolke':      commonsPhoto('Blue sky with white cloud.jpg'),
+  'die Sonne':      commonsPhoto('Bright-sun.jpg'),
+  'der Mond':       commonsPhoto('Full Moon Night Sky.jpg'),
+  'der Stern':      commonsPhoto('Bright Night Sky.jpg'),
+  'der Regenbogen': commonsPhoto('Rainbow in the sky.jpg'),
+  'das Gewitter':   commonsPhoto('Yellow clouds before thunderstorm 3.JPG'),
+
+  // Forest
+  'der Wald':       commonsPhoto('Beautiful green forest.jpg'),
+  'der Baum':       commonsPhoto('A magnificent tree at Horton Plains National Park.jpg'),
+  'das Gras':       commonsPhoto('Grass texture.jpg'),
+  'die Wiese':      commonsPhoto('Wild flower meadow, Bradford University (28645179172).jpg'),
+  'der Busch':      commonsPhoto('The Guinea Savannah bush.jpg'),
+  'die Pflanze':    commonsPhoto('Plant.jpeg'),
+  'das Moos':       commonsPhoto('Moss, Forest Floor, Vermont.jpg'),
+  'der Farn':       commonsPhoto('Christmas Fern Polystichum acrostichoides Early Plant 2448px.jpg'),
+
+  // Earth
+  'das Feld':       commonsPhoto('A Green field in the countryside - geograph.org.uk - 193455.jpg'),
+  'die Wüste':      commonsPhoto('Sand dune in the desert, Sahara Desert, Egypt.jpg'),
+  'die Ebene':      commonsPhoto('Plain Landscape.jpg'),
+  'der Hügel':      commonsPhoto('A hill covered with green grass.jpg'),
+  'die Steppe':     commonsPhoto('Steppe, Grassland, Rostov-on-Don, Russia.jpg'),
+  'die Höhle':      commonsPhoto('Cave entrance.jpg'),
+  'der Krater':     commonsPhoto('Inside Vesuvius crater.JPG'),
+  'die Landschaft': commonsPhoto('Sunset over hills.jpg'),
+
+  // Weather
+  'der Regen':      commonsPhoto('Raindrops on the window.jpg'),
+  'der Schnee':     commonsPhoto('Winter landscape with snow and bridge Russia 2025.jpg'),
+  'der Wind':       commonsPhoto('Palm trees wind (Unsplash).jpg'),
+  'der Sturm':      commonsPhoto('Dark storm clouds.jpg'),
+  'der Nebel':      commonsPhoto('Foggy forest.jpg'),
+  'das Eis':        commonsPhoto('Frozen rocks at mount Helags.JPG'),
+  'der Frost':      commonsPhoto('Frost covered grass 1.jpg'),
+  'der Tau':        commonsPhoto('Dew drops on blade of grass in the morning.jpg'),
+
+  // Coast
+  'die Küste':      commonsPhoto('Marin coastline.JPG'),
+  'der Strand':     commonsPhoto('White sandy beach at Nungwi, Zanzibar.jpg'),
+  'die Insel':      commonsPhoto('Tropical island coastline scenic image.jpg'),
+  'das Kap':        commonsPhoto('Cape Laem Son.jpg'),
+  'die Bucht':      commonsPhoto('Beautiful Bay of Bengal with blue water.JPG'),
+  'die Klippe':     commonsPhoto('Molokai Sea Cliffs.jpg'),
+  'die Lagune':     commonsPhoto('Aerial view of Elafonisi Lagoon and Beach in Greece.jpg'),
+
+  // Rocks
+  'der Felsen':     commonsPhoto('Rock cliff - panoramio.jpg'),
+  'der Stein':      commonsPhoto('River side pebbles and rocks.jpg'),
+  'die Kluft':      commonsPhoto('Geiranger fjord, fissure in the rock walls.jpg'),
+  'der Sand':       commonsPhoto('A scene of river sand.JPG'),
+  'der Schlamm':    commonsPhoto('Mud puddle off Sedgwick Lane, Nuthurst, West Sussex.jpg'),
+  'der Kieselstein':commonsPhoto('Small gray pebbles.jpg'),
+  'die Schlucht':   commonsPhoto('A deep gorge.jpg'),
+};
+
+function buildCards() {
+  Object.entries(VOCAB_DATA).forEach(([cat, words]) => {
+    // deduplicate (earth has a duplicate)
+    const seen = new Set();
+    const unique = words.filter(w => {
+      if (seen.has(w.de + w.ar)) return false;
+      seen.add(w.de + w.ar);
+      return true;
+    });
+
+    const grid = document.getElementById(`grid-${cat}`);
+    if (!grid) return;
+
+    unique.forEach((w, idx) => {
+      const card = document.createElement('div');
+      card.className = `vocab-card cat-${cat}`;
+      card.dataset.article = w.article;
+      card.style.animationDelay = `${idx * 0.05}s`;
+      card.tabIndex = 0;
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-label', `${w.de}، ${w.ar} — اضغط للاستماع للنطق`);
+
+      const svgIllus = getIllustration(w.de, cat);
+      const photoUrl = PHOTO_URLS[w.de];
+      const badgeLabel = getArticleBadge(w.article);
+      const badgeClass = getBadgeClass(w.article);
+
+      const illusMarkup = photoUrl
+        ? `<div class="illus-photo-wrap is-loading">
+             <img class="illus-photo" src="${photoUrl}" alt="${w.de} — ${w.ar}" loading="lazy"
+               onload="this.classList.add('loaded'); this.parentElement.classList.remove('is-loading');"
+               onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+           </div>
+           <div class="illus-svg-fallback" style="display:none;">${svgIllus}</div>`
+        : svgIllus;
+
+      card.innerHTML = `
+        <div class="article-strip ${w.article || 'no-article'}"></div>
+        <div class="card-illustration">${illusMarkup}</div>
+        <div class="card-body">
+          <span class="article-badge ${badgeClass}">${badgeLabel}</span>
+          <div class="word-de">${w.de}</div>
+          <div class="word-plural">${w.pl}</div>
+          <div class="word-en">${w.en}</div>
+          <div class="word-ar">${w.ar}</div>
+        </div>
+        <div class="card-actions">
+          <button class="action-btn speak-btn" title="استمع للنطق" onclick="speakWord(this,'${w.de.replace(/'/g,"\\'")}')">
+            <span class="speaking-wave"></span>
+            🔊
+          </button>
+          <button class="action-btn copy-btn" title="نسخ الكلمة" onclick="copyWord(this,'${w.de.replace(/'/g,"\\'")}')">📋</button>
+        </div>
+      `;
+
+      // Click card to speak
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('.action-btn')) return;
+        const btn = card.querySelector('.speak-btn');
+        speakWord(btn, w.de);
+      });
+
+      // Keyboard: Enter / Space to speak, same as a click
+      card.addEventListener('keydown', function(e) {
+        if (e.target.closest('.action-btn')) return;
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const btn = card.querySelector('.speak-btn');
+          speakWord(btn, w.de);
+        }
+      });
+
+      grid.appendChild(card);
+    });
+  });
+}
+
+// ==========================================
+// TEXT TO SPEECH
+// ==========================================
+let currentUtterance = null;
+
+function speakWord(btn, text) {
+  if (!window.speechSynthesis) {
+    showToast('المتصفح لا يدعم النطق الصوتي');
+    return;
+  }
+
+  // Stop current
+  if (currentUtterance) {
+    window.speechSynthesis.cancel();
+    document.querySelectorAll('.action-btn.playing').forEach(b => b.classList.remove('playing'));
+  }
+
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'de-DE';
+  utter.rate = 0.85;
+  utter.pitch = 1;
+
+  // Try to get German voice
+  const voices = window.speechSynthesis.getVoices();
+  const deVoice = voices.find(v => v.lang.startsWith('de'));
+  if (deVoice) utter.voice = deVoice;
+
+  btn.classList.add('playing');
+  currentUtterance = utter;
+
+  utter.onend = () => { btn.classList.remove('playing'); currentUtterance = null; };
+  utter.onerror = () => { btn.classList.remove('playing'); currentUtterance = null; };
+
+  window.speechSynthesis.speak(utter);
+}
+
+// ==========================================
+// COPY TO CLIPBOARD
+// ==========================================
+function copyWord(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    btn.textContent = '✓';
+    showToast(`تم نسخ: ${text}`);
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '📋'; }, 2000);
+  }).catch(() => {
+    showToast('تعذّر النسخ');
+  });
+}
+
+// ==========================================
+// TOAST
+// ==========================================
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ==========================================
+// FILTER BY CATEGORY
+// ==========================================
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.category-section').forEach(sec => {
+      if (cat === 'all' || sec.dataset.cat === cat) {
+        sec.classList.remove('hidden');
+      } else {
+        sec.classList.add('hidden');
+      }
+    });
+  });
+});
+
+// ==========================================
+// THEME SWITCHER
+// ==========================================
+const themeBtn = document.getElementById('themeBtn');
+let darkMode = localStorage.getItem('nature-theme') === 'dark';
+
+function applyTheme() {
+  document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
+  themeBtn.textContent = darkMode ? '☀️' : '🌙';
+  localStorage.setItem('nature-theme', darkMode ? 'dark' : 'light');
+}
+
+themeBtn.addEventListener('click', () => { darkMode = !darkMode; applyTheme(); });
+applyTheme();
+
+// ==========================================
+// QUIZ APP
+// ==========================================
+const ALL_WORDS = Object.values(VOCAB_DATA).flat();
+// Deduplicate for quiz
+const uniqueWords = [];
+const seenQ = new Set();
+ALL_WORDS.forEach(w => {
+  const key = w.de + w.ar;
+  if (!seenQ.has(key)) { seenQ.add(key); uniqueWords.push(w); }
+});
+
+let quizQuestions = [];
+let quizIndex = 0;
+let quizCorrect = 0;
+let quizWrong = 0;
+const TOTAL_Q = 10;
+
+function shuffle(arr) {
+  return [...arr].sort(() => Math.random() - 0.5);
+}
+
+function generateQuiz() {
+  const pool = shuffle(uniqueWords).slice(0, TOTAL_Q);
+  quizQuestions = pool.map(w => {
+    // Generate 3 wrong options from same category or random
+    const wrong = shuffle(uniqueWords.filter(x => x.de !== w.de)).slice(0, 3);
+    const options = shuffle([w, ...wrong]);
+    return { word: w, options };
+  });
+}
+
+function showQuestion() {
+  const q = quizQuestions[quizIndex];
+  const w = q.word;
+
+  // Update counter & progress
+  document.getElementById('quizCounter').textContent = `سؤال ${quizIndex + 1} من ${TOTAL_Q}`;
+  document.getElementById('quizProgress').style.width = `${(quizIndex / TOTAL_Q) * 100}%`;
+
+  // Illustration
+  const illusDiv = document.getElementById('quizIllustration');
+  illusDiv.innerHTML = getIllustration(w.de, w.cat);
+
+  // Word
+  document.getElementById('quizWord').textContent = w.de;
+  document.getElementById('quizHint').textContent = `${w.pl} · ${w.article}`;
+
+  // Options
+  const optsDiv = document.getElementById('quizOptions');
+  optsDiv.innerHTML = '';
+  q.options.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-option';
+    btn.innerHTML = `<span style="font-size:1.1rem">${opt.ar}</span><br><small style="color:var(--text-muted)">${opt.en}</small>`;
+    btn.addEventListener('click', () => checkAnswer(btn, opt, w, optsDiv));
+    optsDiv.appendChild(btn);
+  });
+
+  // Hide feedback & next
+  const fb = document.getElementById('quizFeedback');
+  fb.className = 'quiz-feedback';
+  fb.textContent = '';
+  document.getElementById('nextBtn').style.display = 'none';
+}
+
+function checkAnswer(btn, chosen, correct, optsDiv) {
+  // Disable all
+  optsDiv.querySelectorAll('.quiz-option').forEach(b => b.disabled = true);
+
+  const fb = document.getElementById('quizFeedback');
+  const isCorrect = chosen.de === correct.de;
+
+  if (isCorrect) {
+    btn.classList.add('correct');
+    quizCorrect++;
+    fb.textContent = `✅ ممتاز! ${correct.de} تعني "${correct.ar}"`;
+    fb.className = 'quiz-feedback correct-fb show';
+  } else {
+    btn.classList.add('wrong');
+    quizWrong++;
+    // Highlight correct
+    optsDiv.querySelectorAll('.quiz-option').forEach(b => {
+      if (b.textContent.includes(correct.ar)) b.classList.add('correct');
+    });
+    fb.textContent = `❌ الإجابة الصحيحة: ${correct.de} = ${correct.ar}`;
+    fb.className = 'quiz-feedback wrong-fb show';
+  }
+
+  document.getElementById('scoreCorrect').textContent = quizCorrect;
+  document.getElementById('scoreWrong').textContent = quizWrong;
+  document.getElementById('scoreTotal').textContent = quizIndex + 1;
+
+  const nextBtn = document.getElementById('nextBtn');
+  if (quizIndex < TOTAL_Q - 1) {
+    nextBtn.style.display = 'inline-block';
+    nextBtn.textContent = 'السؤال التالي ⟵';
+  } else {
+    nextBtn.style.display = 'inline-block';
+    nextBtn.textContent = 'عرض النتيجة 🏆';
+    nextBtn.onclick = showResult;
+  }
+}
+
+function nextQuestion() {
+  quizIndex++;
+  showQuestion();
+}
+
+function showResult() {
+  document.getElementById('quizMain').style.display = 'none';
+  const result = document.getElementById('quizResult');
+  result.classList.add('show');
+
+  const pct = Math.round((quizCorrect / TOTAL_Q) * 100);
+  let emoji = '🎉', title = 'ممتاز!', sub = 'أداء رائع، استمر!';
+  if (pct < 40) { emoji = '📚'; title = 'تحتاج مزيداً من التدريب'; sub = 'راجع المفردات وحاول مجدداً'; }
+  else if (pct < 70) { emoji = '👍'; title = 'جيد!'; sub = 'يمكنك التحسين أكثر'; }
+  else if (pct < 90) { emoji = '🌟'; title = 'ممتاز!'; sub = 'أداء قوي جداً'; }
+
+  document.getElementById('resultEmoji').textContent = emoji;
+  document.getElementById('resultTitle').textContent = title;
+  document.getElementById('resultSubtitle').textContent = sub;
+  document.getElementById('resultScore').textContent = `${quizCorrect}/${TOTAL_Q} (${pct}%)`;
+  document.getElementById('quizProgress').style.width = '100%';
+}
+
+function restartQuiz() {
+  quizIndex = 0; quizCorrect = 0; quizWrong = 0;
+  document.getElementById('scoreCorrect').textContent = '0';
+  document.getElementById('scoreWrong').textContent = '0';
+  document.getElementById('scoreTotal').textContent = '0';
+  document.getElementById('quizProgress').style.width = '0%';
+  document.getElementById('nextBtn').style.display = 'none';
+  document.getElementById('nextBtn').onclick = nextQuestion;
+
+  const result = document.getElementById('quizResult');
+  result.classList.remove('show');
+  document.getElementById('quizMain').style.display = 'block';
+
+  generateQuiz();
+  showQuestion();
+}
+
+// ==========================================
+// INIT
+// ==========================================
+window.addEventListener('load', () => {
+  // Load voices
+  if (window.speechSynthesis) {
+    window.speechSynthesis.onvoiceschanged = () => {};
+    window.speechSynthesis.getVoices();
+  }
+
+  buildCards();
+  generateQuiz();
+  showQuestion();
+});
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="wortschatz-natur" data-category="wortschatz" data-title="Natur auf Deutsch — الطبيعة" data-root="../../" defer></script>
+</body>
+</html>
