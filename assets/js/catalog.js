@@ -29,25 +29,25 @@ window.DEUTSCH_CATALOG = {
     "subtitle": "غوص عميق في أهم قواعد A2: الماضي، الانعكاسية، الناقصة، والجر",
     "level": "A2",
     "icon": "compass",
-    "count": 6
+    "count": 7
   },
   {
     "key": "grammatik",
     "folder": "grammatik",
     "title": "مرجع القواعد — دفتر الملاحظات الكامل",
-    "subtitle": "١٧ مرجعًا تفاعليًا لأدق تفاصيل القواعد الألمانية",
+    "subtitle": "١٩ مرجعًا تفاعليًا لأدق تفاصيل القواعد الألمانية",
     "level": "A2–B1",
     "icon": "book",
-    "count": 17
+    "count": 19
   },
   {
     "key": "family-verben",
     "folder": "family-verben",
     "title": "عائلات الأفعال — إصدار الليل",
-    "subtitle": "أربع عائلات أفعال أساسية، بأسلوب سردي هادئ ووضع ليلي أنيق",
+    "subtitle": "خمس عائلات أفعال أساسية، بأسلوب سردي هادئ ووضع ليلي أنيق",
     "level": "A2",
     "icon": "moon",
-    "count": 4
+    "count": 5
   },
   {
     "key": "wortschatz",
@@ -76,7 +76,8 @@ window.DEUTSCH_CATALOG = {
     "title": "الحروف الألمانية — Das deutsche Alphabet",
     "desc": "الأبجدية الألمانية كاملة، الحروف الخاصة Ä Ö Ü ß، ونطق صوتي تفاعلي.",
     "badges": [],
-    "path": "Deutsch/a1/lesson-01-alphabet.html"
+    "path": "Deutsch/a1/lesson-01-alphabet.html",
+    "thumb": "assets/thumbnails/a1-lesson-01-alphabet.jpg"
   },
   {
     "id": "a1-lesson-02-begruessung",
@@ -85,7 +86,8 @@ window.DEUTSCH_CATALOG = {
     "title": "التحيات وتقديم النفس — Begrüßung & Vorstellung",
     "desc": "تحيات الوقت، الرسمية وغير الرسمية، صيغتا du وSie، وحوارات كاملة.",
     "badges": [],
-    "path": "Deutsch/a1/lesson-02-begruessung.html"
+    "path": "Deutsch/a1/lesson-02-begruessung.html",
+    "thumb": "assets/thumbnails/a1-lesson-02-begruessung.jpg"
   },
   {
     "id": "a2-kurs-lesson-01-willkommen",
@@ -94,7 +96,8 @@ window.DEUTSCH_CATALOG = {
     "title": "الدرس الأول — مرحبًا بك في عالم الألمانية",
     "desc": "نقطة انطلاق مسار A2: تعارف أولي وتهيئة لبقية الدورة.",
     "badges": [],
-    "path": "Deutsch/a2-kurs/lesson-01-willkommen.html"
+    "path": "Deutsch/a2-kurs/lesson-01-willkommen.html",
+    "thumb": "assets/thumbnails/a2-kurs-lesson-01-willkommen.jpg"
   },
   {
     "id": "a2-kurs-lesson-02-zahlen-zeit",
@@ -103,7 +106,8 @@ window.DEUTSCH_CATALOG = {
     "title": "الأرقام والوقت",
     "desc": "عدّ الأرقام وقراءة الساعة والتعبير عن التوقيت بثقة.",
     "badges": [],
-    "path": "Deutsch/a2-kurs/lesson-02-zahlen-zeit.html"
+    "path": "Deutsch/a2-kurs/lesson-02-zahlen-zeit.html",
+    "thumb": "assets/thumbnails/a2-kurs-lesson-02-zahlen-zeit.jpg"
   },
   {
     "id": "a2-kurs-lesson-03-einkaufen",
@@ -112,7 +116,8 @@ window.DEUTSCH_CATALOG = {
     "title": "التسوق والمطعم",
     "desc": "مفردات وتراكيب لطلب الطعام والتسوق في المتاجر.",
     "badges": [],
-    "path": "Deutsch/a2-kurs/lesson-03-einkaufen.html"
+    "path": "Deutsch/a2-kurs/lesson-03-einkaufen.html",
+    "thumb": "assets/thumbnails/a2-kurs-lesson-03-einkaufen.jpg"
   },
   {
     "id": "a2-kurs-lesson-04-zuhause-familie",
@@ -121,7 +126,8 @@ window.DEUTSCH_CATALOG = {
     "title": "المنزل والعائلة",
     "desc": "وصف المنزل وأفراد العائلة والعلاقات الأسرية.",
     "badges": [],
-    "path": "Deutsch/a2-kurs/lesson-04-zuhause-familie.html"
+    "path": "Deutsch/a2-kurs/lesson-04-zuhause-familie.html",
+    "thumb": "assets/thumbnails/a2-kurs-lesson-04-zuhause-familie.jpg"
   },
   {
     "id": "a2-kurs-lesson-05-alltag",
@@ -130,7 +136,8 @@ window.DEUTSCH_CATALOG = {
     "title": "الروتين اليومي والأفعال",
     "desc": "أفعال اليوم المعتاد وترتيبها في جملة زمنية متسلسلة.",
     "badges": [],
-    "path": "Deutsch/a2-kurs/lesson-05-alltag.html"
+    "path": "Deutsch/a2-kurs/lesson-05-alltag.html",
+    "thumb": "assets/thumbnails/a2-kurs-lesson-05-alltag.jpg"
   },
   {
     "id": "a2-kurs-lesson-06-verkehr",
@@ -139,7 +146,8 @@ window.DEUTSCH_CATALOG = {
     "title": "المواصلات والاتجاهات",
     "desc": "السؤال عن الاتجاهات ووسائل المواصلات المختلفة.",
     "badges": [],
-    "path": "Deutsch/a2-kurs/lesson-06-verkehr.html"
+    "path": "Deutsch/a2-kurs/lesson-06-verkehr.html",
+    "thumb": "assets/thumbnails/a2-kurs-lesson-06-verkehr.jpg"
   },
   {
     "id": "a2-kurs-lesson-07-wetter-gefuehle",
@@ -148,7 +156,8 @@ window.DEUTSCH_CATALOG = {
     "title": "الطقس والمشاعر",
     "desc": "وصف حالة الطقس والتعبير عن المشاعر المختلفة.",
     "badges": [],
-    "path": "Deutsch/a2-kurs/lesson-07-wetter-gefuehle.html"
+    "path": "Deutsch/a2-kurs/lesson-07-wetter-gefuehle.html",
+    "thumb": "assets/thumbnails/a2-kurs-lesson-07-wetter-gefuehle.jpg"
   },
   {
     "id": "a2-kurs-lesson-08-gesundheit",
@@ -157,7 +166,8 @@ window.DEUTSCH_CATALOG = {
     "title": "الصحة والجسم",
     "desc": "أجزاء الجسم، الأعراض، وزيارة الطبيب.",
     "badges": [],
-    "path": "Deutsch/a2-kurs/lesson-08-gesundheit.html"
+    "path": "Deutsch/a2-kurs/lesson-08-gesundheit.html",
+    "thumb": "assets/thumbnails/a2-kurs-lesson-08-gesundheit.jpg"
   },
   {
     "id": "a2-kurs-lesson-09-arbeit",
@@ -166,7 +176,8 @@ window.DEUTSCH_CATALOG = {
     "title": "العمل والمهن",
     "desc": "المهن المختلفة والحديث عن بيئة العمل.",
     "badges": [],
-    "path": "Deutsch/a2-kurs/lesson-09-arbeit.html"
+    "path": "Deutsch/a2-kurs/lesson-09-arbeit.html",
+    "thumb": "assets/thumbnails/a2-kurs-lesson-09-arbeit.jpg"
   },
   {
     "id": "a2-kurs-lesson-10-bildung",
@@ -175,7 +186,8 @@ window.DEUTSCH_CATALOG = {
     "title": "التعليم والمدرسة",
     "desc": "النظام التعليمي والمفردات المرتبطة بالمدرسة والجامعة.",
     "badges": [],
-    "path": "Deutsch/a2-kurs/lesson-10-bildung.html"
+    "path": "Deutsch/a2-kurs/lesson-10-bildung.html",
+    "thumb": "assets/thumbnails/a2-kurs-lesson-10-bildung.jpg"
   },
   {
     "id": "a2-kurs-lesson-11-technologie",
@@ -184,7 +196,8 @@ window.DEUTSCH_CATALOG = {
     "title": "التكنولوجيا والرقمنة",
     "desc": "مفردات العصر الرقمي والأجهزة والإنترنت.",
     "badges": [],
-    "path": "Deutsch/a2-kurs/lesson-11-technologie.html"
+    "path": "Deutsch/a2-kurs/lesson-11-technologie.html",
+    "thumb": "assets/thumbnails/a2-kurs-lesson-11-technologie.jpg"
   },
   {
     "id": "a2-kurs-lesson-12-reisen",
@@ -193,7 +206,8 @@ window.DEUTSCH_CATALOG = {
     "title": "السفر والختام 🎓",
     "desc": "مفردات السفر، وخلاصة ختامية لمسار A2 الكامل.",
     "badges": [],
-    "path": "Deutsch/a2-kurs/lesson-12-reisen.html"
+    "path": "Deutsch/a2-kurs/lesson-12-reisen.html",
+    "thumb": "assets/thumbnails/a2-kurs-lesson-12-reisen.jpg"
   },
   {
     "id": "a2-guide-01-perfekt",
@@ -204,7 +218,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "شامل"
     ],
-    "path": "Deutsch/a2/guide-01-perfekt.html"
+    "path": "Deutsch/a2/guide-01-perfekt.html",
+    "thumb": "assets/thumbnails/a2-guide-01-perfekt.jpg"
   },
   {
     "id": "a2-guide-02-reflexive-verben",
@@ -213,7 +228,8 @@ window.DEUTSCH_CATALOG = {
     "title": "يومي المعتاد — الأفعال الانعكاسية",
     "desc": "١٦ فعلًا انعكاسيًا، حالتا Akkusativ وDativ، وساعة يوم تفاعلية.",
     "badges": [],
-    "path": "Deutsch/a2/guide-02-reflexive-verben.html"
+    "path": "Deutsch/a2/guide-02-reflexive-verben.html",
+    "thumb": "assets/thumbnails/a2-guide-02-reflexive-verben.jpg"
   },
   {
     "id": "a2-guide-03-modalverben",
@@ -224,7 +240,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "النسخة الأساسية"
     ],
-    "path": "Deutsch/a2/guide-03-modalverben.html"
+    "path": "Deutsch/a2/guide-03-modalverben.html",
+    "thumb": "assets/thumbnails/a2-guide-03-modalverben.jpg"
   },
   {
     "id": "a2-guide-03b-modalverben-komplett",
@@ -235,7 +252,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "نسخة موسّعة"
     ],
-    "path": "Deutsch/a2/guide-03b-modalverben-komplett.html"
+    "path": "Deutsch/a2/guide-03b-modalverben-komplett.html",
+    "thumb": "assets/thumbnails/a2-guide-03b-modalverben-komplett.jpg"
   },
   {
     "id": "a2-guide-04-dativ",
@@ -244,7 +262,8 @@ window.DEUTSCH_CATALOG = {
     "title": "بوصلة حروف الجر — حالة الجر Dativ",
     "desc": "حروف الجر السبعة (aus, bei, mit, nach, seit, von, zu) عبر بوصلة تفاعلية.",
     "badges": [],
-    "path": "Deutsch/a2/guide-04-dativ.html"
+    "path": "Deutsch/a2/guide-04-dativ.html",
+    "thumb": "assets/thumbnails/a2-guide-04-dativ.jpg"
   },
   {
     "id": "a2-guide-04b-praepositionen-komplett",
@@ -255,7 +274,20 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "نسخة موسّعة"
     ],
-    "path": "Deutsch/a2/guide-04b-praepositionen-komplett.html"
+    "path": "Deutsch/a2/guide-04b-praepositionen-komplett.html",
+    "thumb": "assets/thumbnails/a2-guide-04b-praepositionen-komplett.jpg"
+  },
+  {
+    "id": "a2-guide-05-praeteritum",
+    "category": "a2",
+    "order": 7,
+    "title": "الدرس ٥ — الماضي البسيط الشامل (Präteritum)",
+    "desc": "الأفعال الضعيفة والقوية وsein/haben/werden والناقصة في الماضي البسيط، ومتى نستخدمه بدل Perfekt — مع معمل تصريف تفاعلي.",
+    "badges": [
+      "شامل"
+    ],
+    "path": "Deutsch/a2/guide-05-praeteritum.html",
+    "thumb": "assets/thumbnails/a2-guide-05-praeteritum.jpg"
   },
   {
     "id": "grammatik-das-perfekt",
@@ -264,7 +296,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Das Perfekt — الماضي التام في الألمانية",
     "desc": "شرح شامل لتكوين واستخدام زمن الماضي التام.",
     "badges": [],
-    "path": "Deutsch/grammatik/das-perfekt.html"
+    "path": "Deutsch/grammatik/das-perfekt.html",
+    "thumb": "assets/thumbnails/grammatik-das-perfekt.jpg"
   },
   {
     "id": "grammatik-perfekt-uebersicht",
@@ -273,7 +306,8 @@ window.DEUTSCH_CATALOG = {
     "title": "الزمن الماضي Perfekt",
     "desc": "نظرة عامة مبسطة على زمن الـ Perfekt.",
     "badges": [],
-    "path": "Deutsch/grammatik/perfekt-uebersicht.html"
+    "path": "Deutsch/grammatik/perfekt-uebersicht.html",
+    "thumb": "assets/thumbnails/grammatik-perfekt-uebersicht.jpg"
   },
   {
     "id": "grammatik-perfekt-mit-modalverben",
@@ -284,7 +318,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "الجزء ٢"
     ],
-    "path": "Deutsch/grammatik/perfekt-mit-modalverben.html"
+    "path": "Deutsch/grammatik/perfekt-mit-modalverben.html",
+    "thumb": "assets/thumbnails/grammatik-perfekt-mit-modalverben.jpg"
   },
   {
     "id": "grammatik-hilfsverben",
@@ -293,7 +328,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Hilfsverben — الأفعال المساعدة",
     "desc": "haben و sein و werden: الاستخدامات والتصريف.",
     "badges": [],
-    "path": "Deutsch/grammatik/hilfsverben.html"
+    "path": "Deutsch/grammatik/hilfsverben.html",
+    "thumb": "assets/thumbnails/grammatik-hilfsverben.jpg"
   },
   {
     "id": "grammatik-hilfsverben-meistern",
@@ -302,7 +338,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Hilfsverben — Deutsch Meistern",
     "desc": "نسخة أخرى متعمقة في إتقان الأفعال المساعدة.",
     "badges": [],
-    "path": "Deutsch/grammatik/hilfsverben-meistern.html"
+    "path": "Deutsch/grammatik/hilfsverben-meistern.html",
+    "thumb": "assets/thumbnails/grammatik-hilfsverben-meistern.jpg"
   },
   {
     "id": "grammatik-modalverben-praeteritum",
@@ -311,7 +348,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Modalverben im Präteritum",
     "desc": "تصريف الأفعال الناقصة في الماضي البسيط، مع تمارين محلولة.",
     "badges": [],
-    "path": "Deutsch/grammatik/modalverben-praeteritum.html"
+    "path": "Deutsch/grammatik/modalverben-praeteritum.html",
+    "thumb": "assets/thumbnails/grammatik-modalverben-praeteritum.jpg"
   },
   {
     "id": "grammatik-reflexive-verben-print",
@@ -322,7 +360,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "قابل للطباعة"
     ],
-    "path": "Deutsch/grammatik/reflexive-verben-print.html"
+    "path": "Deutsch/grammatik/reflexive-verben-print.html",
+    "thumb": "assets/thumbnails/grammatik-reflexive-verben-print.jpg"
   },
   {
     "id": "grammatik-trennbare-verben",
@@ -333,7 +372,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "قابل للطباعة"
     ],
-    "path": "Deutsch/grammatik/trennbare-verben.html"
+    "path": "Deutsch/grammatik/trennbare-verben.html",
+    "thumb": "assets/thumbnails/grammatik-trennbare-verben.jpg"
   },
   {
     "id": "grammatik-dativ-verben-print",
@@ -344,7 +384,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "قابل للطباعة"
     ],
-    "path": "Deutsch/grammatik/dativ-verben-print.html"
+    "path": "Deutsch/grammatik/dativ-verben-print.html",
+    "thumb": "assets/thumbnails/grammatik-dativ-verben-print.jpg"
   },
   {
     "id": "grammatik-akkusativ-verben-print",
@@ -355,7 +396,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "قابل للطباعة"
     ],
-    "path": "Deutsch/grammatik/akkusativ-verben-print.html"
+    "path": "Deutsch/grammatik/akkusativ-verben-print.html",
+    "thumb": "assets/thumbnails/grammatik-akkusativ-verben-print.jpg"
   },
   {
     "id": "grammatik-genitiv",
@@ -364,7 +406,8 @@ window.DEUTSCH_CATALOG = {
     "title": "الجنيتيف (Genitiv) — شرح شامل",
     "desc": "حالة الإضافة/الملكية في الألمانية بشرح شامل.",
     "badges": [],
-    "path": "Deutsch/grammatik/genitiv.html"
+    "path": "Deutsch/grammatik/genitiv.html",
+    "thumb": "assets/thumbnails/grammatik-genitiv.jpg"
   },
   {
     "id": "grammatik-genitiv-advanced-test",
@@ -375,7 +418,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "اختبار ذاتي"
     ],
-    "path": "Deutsch/grammatik/genitiv-advanced-test.html"
+    "path": "Deutsch/grammatik/genitiv-advanced-test.html",
+    "thumb": "assets/thumbnails/grammatik-genitiv-advanced-test.jpg"
   },
   {
     "id": "grammatik-possessivpronomen",
@@ -384,7 +428,8 @@ window.DEUTSCH_CATALOG = {
     "title": "الضمائر الملكية — Possessivpronomen",
     "desc": "mein, dein, sein... وتصريفها حسب الحالة والجنس.",
     "badges": [],
-    "path": "Deutsch/grammatik/possessivpronomen.html"
+    "path": "Deutsch/grammatik/possessivpronomen.html",
+    "thumb": "assets/thumbnails/grammatik-possessivpronomen.jpg"
   },
   {
     "id": "grammatik-konnektoren-weil-denn",
@@ -393,7 +438,8 @@ window.DEUTSCH_CATALOG = {
     "title": "weil · denn · nämlich · wann",
     "desc": "الفروق الدقيقة بين أدوات الربط الأربع، مع ترتيب الجملة.",
     "badges": [],
-    "path": "Deutsch/grammatik/konnektoren-weil-denn.html"
+    "path": "Deutsch/grammatik/konnektoren-weil-denn.html",
+    "thumb": "assets/thumbnails/grammatik-konnektoren-weil-denn.jpg"
   },
   {
     "id": "grammatik-dass-konnektor",
@@ -402,7 +448,8 @@ window.DEUTSCH_CATALOG = {
     "title": "محطة dass — أداة الربط",
     "desc": "الفرق بين dass و das و ob و weil و damit.",
     "badges": [],
-    "path": "Deutsch/grammatik/dass-konnektor.html"
+    "path": "Deutsch/grammatik/dass-konnektor.html",
+    "thumb": "assets/thumbnails/grammatik-dass-konnektor.jpg"
   },
   {
     "id": "grammatik-praepositionen-konnektoren",
@@ -411,7 +458,8 @@ window.DEUTSCH_CATALOG = {
     "title": "حروف الجر وأدوات الربط",
     "desc": "مرجع تفاعلي شامل مع أمثلة ونطق وترجمة ثلاثية اللغة.",
     "badges": [],
-    "path": "Deutsch/grammatik/praepositionen-konnektoren.html"
+    "path": "Deutsch/grammatik/praepositionen-konnektoren.html",
+    "thumb": "assets/thumbnails/grammatik-praepositionen-konnektoren.jpg"
   },
   {
     "id": "grammatik-komparativ-superlativ",
@@ -420,7 +468,28 @@ window.DEUTSCH_CATALOG = {
     "title": "سلّم المقارنة — Komparativ & Superlativ",
     "desc": "قواعد المقارنة والتفضيل مع تصريف الصفة في حالة Dativ.",
     "badges": [],
-    "path": "Deutsch/grammatik/komparativ-superlativ.html"
+    "path": "Deutsch/grammatik/komparativ-superlativ.html",
+    "thumb": "assets/thumbnails/grammatik-komparativ-superlativ.jpg"
+  },
+  {
+    "id": "grammatik-konnektoren-obwohl-trotzdem-damit",
+    "category": "grammatik",
+    "order": 18,
+    "title": "obwohl · trotzdem · damit · um…zu — التنازل والغاية",
+    "desc": "الفرق بين أدوات التنازل والغاية الأربع، مع مخطط قرار وأمثلة صوتية وتمارين.",
+    "badges": [],
+    "path": "Deutsch/grammatik/konnektoren-obwohl-trotzdem-damit.html",
+    "thumb": "assets/thumbnails/grammatik-konnektoren-obwohl-trotzdem-damit.jpg"
+  },
+  {
+    "id": "grammatik-demonstrativpronomen-dieser-diese-dieses",
+    "category": "grammatik",
+    "order": 19,
+    "title": "دائرة الضوء — أدوات الإشارة dieser · diese · dieses",
+    "desc": "أدوات الإشارة الألمانية بالتفصيل: dieser، diese، dieses، dies، das — مع نطق وبطاقات تفاعلية.",
+    "badges": [],
+    "path": "Deutsch/grammatik/demonstrativpronomen-dieser-diese-dieses.html",
+    "thumb": "assets/thumbnails/grammatik-demonstrativpronomen-dieser-diese-dieses.jpg"
   },
   {
     "id": "family-verben-backen",
@@ -431,7 +500,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "وضع ليلي"
     ],
-    "path": "Deutsch/family-verben/backen.html"
+    "path": "Deutsch/family-verben/backen.html",
+    "thumb": "assets/thumbnails/family-verben-backen.jpg"
   },
   {
     "id": "family-verben-fuehlen",
@@ -442,7 +512,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "وضع ليلي"
     ],
-    "path": "Deutsch/family-verben/fuehlen.html"
+    "path": "Deutsch/family-verben/fuehlen.html",
+    "thumb": "assets/thumbnails/family-verben-fuehlen.jpg"
   },
   {
     "id": "family-verben-hoeren",
@@ -453,7 +524,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "وضع ليلي"
     ],
-    "path": "Deutsch/family-verben/hoeren.html"
+    "path": "Deutsch/family-verben/hoeren.html",
+    "thumb": "assets/thumbnails/family-verben-hoeren.jpg"
   },
   {
     "id": "family-verben-stehen",
@@ -464,7 +536,20 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "وضع ليلي"
     ],
-    "path": "Deutsch/family-verben/stehen.html"
+    "path": "Deutsch/family-verben/stehen.html",
+    "thumb": "assets/thumbnails/family-verben-stehen.jpg"
+  },
+  {
+    "id": "family-verben-stellen",
+    "category": "family-verben",
+    "order": 5,
+    "title": "Galerie bei Nacht — عائلة الفعل stellen",
+    "desc": "أكثر من عشرين فعلًا مشتقًا من stellen، بالحالة الإعرابية لكل فعل ونطق وجمل حقيقية.",
+    "badges": [
+      "وضع ليلي"
+    ],
+    "path": "Deutsch/family-verben/stellen.html",
+    "thumb": "assets/thumbnails/family-verben-stellen.jpg"
   },
   {
     "id": "wortschatz-tiere",
@@ -473,7 +558,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Deutsche Tiere — الحيوانات",
     "desc": "أسماء الحيوانات بالألمانية مع رسومات ونطق.",
     "badges": [],
-    "path": "Deutsch/wortschatz/tiere.html"
+    "path": "Deutsch/wortschatz/tiere.html",
+    "thumb": "assets/thumbnails/wortschatz-tiere.jpg"
   },
   {
     "id": "wortschatz-kleidung",
@@ -482,7 +568,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Deutsche Kleidung — الملابس",
     "desc": "مفردات الملابس والإكسسوارات اليومية.",
     "badges": [],
-    "path": "Deutsch/wortschatz/kleidung.html"
+    "path": "Deutsch/wortschatz/kleidung.html",
+    "thumb": "assets/thumbnails/wortschatz-kleidung.jpg"
   },
   {
     "id": "wortschatz-elektronik",
@@ -491,7 +578,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Elektrogeräte — الأجهزة الإلكترونية",
     "desc": "أسماء الأجهزة الكهربائية والإلكترونية الشائعة.",
     "badges": [],
-    "path": "Deutsch/wortschatz/elektronik.html"
+    "path": "Deutsch/wortschatz/elektronik.html",
+    "thumb": "assets/thumbnails/wortschatz-elektronik.jpg"
   },
   {
     "id": "wortschatz-obst-gemuese",
@@ -500,7 +588,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Obst und Gemüse — الفواكه والخضروات",
     "desc": "مفردات الفواكه والخضروات مع الأرتيكل.",
     "badges": [],
-    "path": "Deutsch/wortschatz/obst-gemuese.html"
+    "path": "Deutsch/wortschatz/obst-gemuese.html",
+    "thumb": "assets/thumbnails/wortschatz-obst-gemuese.jpg"
   },
   {
     "id": "wortschatz-moebel",
@@ -509,7 +598,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Deutsche Möbel — الأثاث",
     "desc": "أثاث المنزل الأساسي وتسمياته بالألمانية.",
     "badges": [],
-    "path": "Deutsch/wortschatz/moebel.html"
+    "path": "Deutsch/wortschatz/moebel.html",
+    "thumb": "assets/thumbnails/wortschatz-moebel.jpg"
   },
   {
     "id": "wortschatz-kueche",
@@ -518,7 +608,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Küchengeräte — أدوات المطبخ",
     "desc": "أدوات المطبخ مع الأرتيكل والنطق والرسومات.",
     "badges": [],
-    "path": "Deutsch/wortschatz/kueche.html"
+    "path": "Deutsch/wortschatz/kueche.html",
+    "thumb": "assets/thumbnails/wortschatz-kueche.jpg"
   },
   {
     "id": "wortschatz-natur",
@@ -527,7 +618,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Natur auf Deutsch — الطبيعة",
     "desc": "مفردات الطبيعة والمناظر الطبيعية مع رسومات توضيحية.",
     "badges": [],
-    "path": "Deutsch/wortschatz/natur.html"
+    "path": "Deutsch/wortschatz/natur.html",
+    "thumb": "assets/thumbnails/wortschatz-natur.jpg"
   },
   {
     "id": "stories-alltagsdeutsch",
@@ -536,7 +628,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Alltagsdeutsch — محادثات يومية",
     "desc": "منصة تفاعلية لمحادثات ألمانية يومية مع الترجمة والنطق.",
     "badges": [],
-    "path": "Deutsch/stories/alltagsdeutsch.html"
+    "path": "Deutsch/stories/alltagsdeutsch.html",
+    "thumb": "assets/thumbnails/stories-alltagsdeutsch.jpg"
   },
   {
     "id": "stories-a1-sprechen",
@@ -547,7 +640,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "تحضير اختبار"
     ],
-    "path": "Deutsch/stories/a1-sprechen.html"
+    "path": "Deutsch/stories/a1-sprechen.html",
+    "thumb": "assets/thumbnails/stories-a1-sprechen.jpg"
   },
   {
     "id": "stories-a2-sprechen",
@@ -558,7 +652,8 @@ window.DEUTSCH_CATALOG = {
     "badges": [
       "تحضير اختبار"
     ],
-    "path": "Deutsch/stories/a2-sprechen.html"
+    "path": "Deutsch/stories/a2-sprechen.html",
+    "thumb": "assets/thumbnails/stories-a2-sprechen.jpg"
   },
   {
     "id": "stories-deutsch-mit-mira",
@@ -567,7 +662,8 @@ window.DEUTSCH_CATALOG = {
     "title": "Deutsch mit Mira — A2",
     "desc": "محتوى قصصي متكامل لتعلم الألمانية بمستوى A2.",
     "badges": [],
-    "path": "Deutsch/stories/deutsch-mit-mira.html"
+    "path": "Deutsch/stories/deutsch-mit-mira.html",
+    "thumb": "assets/thumbnails/stories-deutsch-mit-mira.jpg"
   }
 ]
 };

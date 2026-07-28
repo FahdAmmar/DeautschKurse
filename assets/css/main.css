@@ -357,13 +357,34 @@ body { font-size: 16px; line-height: 1.75; }
 @media (min-width: 1536px) { .c-grid { grid-template-columns: repeat(4, 1fr); } }
 
 .c-card {
-  position: relative; display: flex; flex-direction: column; gap: var(--sp-3);
+  position: relative; display: flex; flex-direction: column;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
-  padding: var(--sp-5); opacity: 0; transform: translateY(14px);
+  overflow: hidden; opacity: 0; transform: translateY(14px);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
 }
 .c-card.is-visible { opacity: 1; transform: translateY(0); transition: opacity .5s ease, transform .5s ease; }
 .c-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
+
+/* -- صندوق المعاينة المصغّرة: لقطة حقيقية من أعلى صفحة الدرس -- */
+.c-card__thumb {
+  position: relative; aspect-ratio: 8 / 5; overflow: hidden;
+  background: var(--surface-hover); border-bottom: 1px solid var(--border);
+}
+.c-card__thumb img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top center;
+  display: block; opacity: 0; transition: opacity .35s ease, transform .5s ease;
+}
+.c-card__thumb img.is-loaded { opacity: 1; }
+.c-card:hover .c-card__thumb img { transform: scale(1.045); }
+.c-card__thumb.has-error { display: none; }
+.c-card__thumb::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,.28), transparent 45%);
+  opacity: 0; transition: opacity var(--transition-fast);
+}
+.c-card:hover .c-card__thumb::after { opacity: 1; }
+
+.c-card__body { display: flex; flex-direction: column; gap: var(--sp-3); padding: var(--sp-5); flex: 1; }
 .c-card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--sp-2); }
 .c-card__badges { display: flex; flex-wrap: wrap; gap: 6px; }
 .c-badge {
@@ -413,15 +434,27 @@ body { font-size: 16px; line-height: 1.75; }
 .c-timeline__item.is-done .c-timeline__node { background: var(--success-soft); border-color: var(--success); color: var(--success); }
 .c-timeline__card {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
-  padding: var(--sp-4) var(--sp-5); display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4);
+  padding: var(--sp-3); display: flex; align-items: center; gap: var(--sp-4);
   transition: border-color var(--transition-fast), transform var(--transition-fast);
 }
+.c-timeline__thumb {
+  flex: none; width: 88px; aspect-ratio: 8 / 5; border-radius: var(--r-sm); overflow: hidden;
+  background: var(--surface-hover); border: 1px solid var(--border);
+}
+.c-timeline__thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0; transition: opacity .35s ease; }
+.c-timeline__thumb img.is-loaded { opacity: 1; }
+.c-timeline__thumb.has-error { display: none; }
+.c-timeline__text { flex: 1; min-width: 0; }
 .c-timeline__card:hover { border-color: var(--teal); transform: translateX(4px); }
 [dir="rtl"] .c-timeline__card:hover { transform: translateX(-4px); }
 .c-timeline__card h3 { font-size: .98rem; font-weight: 600; margin-bottom: 2px; }
 .c-timeline__card p { font-size: .84rem; color: var(--ink-faint); }
 .c-timeline__arrow { flex: none; width: 18px; height: 18px; color: var(--ink-faint); }
 [dir="rtl"] .c-timeline__arrow { transform: scaleX(-1); }
+
+@media (max-width: 420px) {
+  .c-timeline__thumb { display: none; }
+}
 
 /* --- تذييل الصفحة ------------------------------------------------------------ */
 .c-footer { border-top: 1px solid var(--border); margin-top: var(--sp-11); padding-block: var(--sp-8); }

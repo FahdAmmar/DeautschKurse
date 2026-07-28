@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>دائرة الضوء | dieser · diese · dieses · dies · das — درس تفاعلي شامل</title>
+<meta name="description" content="درس تفاعلي شامل عن أدوات الإشارة الألمانية dieser وdiese وdieses وdies وdas: القاعدة، الأمثلة، النطق الصوتي، ونسخ الجمل، مع بطاقات وألعاب تفاعلية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Rubik:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   درس: أدوات الإشارة dieser · diese · dieses · dies · das
+   نظام تصميم "دائرة الضوء" — Spotlight Design System
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+h1,h2,h3,h4,p { margin: 0; }
+a { color: inherit; }
+
+:root{
+  --bg: #F3EEEE;
+  --bg-soft: #E9E1E2;
+  --bg-elevated: #FFFFFF;
+  --surface: rgba(255,255,255,0.62);
+  --surface-strong: rgba(255,255,255,0.88);
+  --border: rgba(40,26,44,0.13);
+  --border-strong: rgba(40,26,44,0.24);
+  --text: #241A28;
+  --text-muted: #61535F;
+  --text-faint: #948A91;
+
+  --primary: #4A2E52;
+  --primary-2: #6B4574;
+  --primary-soft: #EBE1EC;
+  --accent: #D9785C;
+  --accent-soft: #F7E1D6;
+
+  --signal-green: #3E8E5B;
+  --signal-green-soft: #DFF0E5;
+  --signal-red: #C1443F;
+  --signal-red-soft: #F8E1DF;
+
+  /* grammar-gender colour code — kept consistent across the whole course */
+  --case-der: #2C6CA6;
+  --case-der-soft: #DDEAF6;
+  --case-die: #B4426A;
+  --case-die-soft: #F7E1E9;
+  --case-das: #3E8F63;
+  --case-das-soft: #DEF0E5;
+  --case-plural: #7D5BA6;
+  --case-plural-soft: #EAE1F2;
+
+  --shadow-sm: 0 1px 2px rgba(30,18,32,0.08), 0 1px 1px rgba(30,18,32,0.05);
+  --shadow-md: 0 8px 24px -8px rgba(30,18,32,0.22), 0 2px 8px rgba(30,18,32,0.08);
+  --shadow-lg: 0 24px 60px -16px rgba(30,18,32,0.32), 0 8px 24px rgba(30,18,32,0.1);
+  --shadow-glow-accent: 0 0 0 1px rgba(217,120,92,0.28), 0 12px 32px -8px rgba(217,120,92,0.4);
+  --shadow-glow-primary: 0 0 0 1px rgba(74,46,82,0.24), 0 12px 32px -8px rgba(74,46,82,0.32);
+
+  --radius-sm: 9px;
+  --radius-md: 15px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+
+  --font-display: 'Lalezar', 'Rubik', sans-serif;
+  --font-body: 'Rubik', sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  --header-h: 72px;
+  --trail-w: 84px;
+  --content-max: 980px;
+
+  --dur-fast: 160ms;
+  --dur-med: 340ms;
+  --dur-slow: 620ms;
+  --ease: cubic-bezier(.22,.8,.28,1);
+
+  color-scheme: light;
+}
+
+html[data-theme="dark"]{
+  --bg: #150F17;
+  --bg-soft: #1C1520;
+  --bg-elevated: #211826;
+  --surface: rgba(255,255,255,0.05);
+  --surface-strong: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.10);
+  --border-strong: rgba(255,255,255,0.18);
+  --text: #F1EAF2;
+  --text-muted: #AE9FAC;
+  --text-faint: #766a74;
+
+  --primary: #C6A6CC;
+  --primary-2: #9B76A6;
+  --primary-soft: #2A1E30;
+  --accent: #EAA080;
+  --accent-soft: #3A2620;
+
+  --signal-green: #6BC28C;
+  --signal-green-soft: #10291d;
+  --signal-red: #E27A76;
+  --signal-red-soft: #2c1414;
+
+  --case-der: #6FA8DD;
+  --case-der-soft: #13233a;
+  --case-die: #E68FAE;
+  --case-die-soft: #2c1620;
+  --case-das: #6BC28C;
+  --case-das-soft: #10291d;
+  --case-plural: #B79CE0;
+  --case-plural-soft: #241c33;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md: 0 8px 24px -8px rgba(0,0,0,0.6);
+  --shadow-lg: 0 24px 60px -16px rgba(0,0,0,0.7);
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.75;
+  overflow-x: hidden;
+  transition: background var(--dur-slow) var(--ease), color var(--dur-slow) var(--ease);
+  background-image:
+    radial-gradient(620px 420px at 10% -6%, var(--case-der-soft), transparent 60%),
+    radial-gradient(620px 420px at 92% 4%, var(--accent-soft), transparent 58%),
+    radial-gradient(680px 460px at 50% 118%, var(--case-plural-soft), transparent 60%);
+  background-attachment: fixed;
+}
+
+.spot-bg{ position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .6; }
+html[data-theme="dark"] .spot-bg{ opacity: .38; }
+
+.de, bdi.de{ font-family: 'Rubik', sans-serif; unicode-bidi: isolate; }
+.mono{ font-family: var(--font-mono); letter-spacing: 0.02em; }
+
+.de-speak{
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 1px 7px 2px; border-radius: 8px;
+  background: var(--primary-soft);
+  color: var(--primary-2);
+  cursor: pointer; border: 1px solid transparent;
+  font-weight: 600;
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+  line-height: 1.5;
+}
+html[data-theme="dark"] .de-speak{ color: var(--primary); }
+.de-speak svg{ width: 12px; height: 12px; opacity: .7; flex-shrink:0; }
+.de-speak:hover, .de-speak:focus-visible{ transform: translateY(-1px); box-shadow: var(--shadow-sm); background: var(--accent-soft); }
+.de-speak.speaking{ background: var(--accent-soft); color: var(--accent); animation: speakPulse 0.9s ease-in-out infinite; }
+.de-speak.big{ font-family: var(--font-display); font-size: clamp(1.2rem, 2.2vw, 1.7rem); padding: 5px 16px 7px; border-radius: 12px; }
+@keyframes speakPulse{ 0%,100%{ box-shadow: 0 0 0 0 rgba(217,120,92,.35); } 50%{ box-shadow: 0 0 0 6px rgba(217,120,92,0); } }
+
+:focus-visible{ outline: 2.5px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.skip-link{ position: fixed; top: -100px; right: 12px; z-index: 999; background: var(--accent); color: #fff; padding: 10px 18px; border-radius: 0 0 10px 10px; font-weight: 700; transition: top var(--dur-fast) var(--ease); }
+.skip-link:focus{ top: 0; }
+
+.scroll-progress{ position: fixed; top: 0; inset-inline: 0; height: 3px; z-index: 200; }
+.scroll-progress-bar{ height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary-2), var(--accent)); transition: width 80ms linear; }
+
+/* ---------- Header ---------- */
+.site-header{ position: sticky; top: 0; z-index: 150; height: var(--header-h); display: flex; align-items: center; padding-inline: clamp(14px, 4vw, 36px); gap: 14px; background: var(--surface-strong); backdrop-filter: blur(18px) saturate(160%); -webkit-backdrop-filter: blur(18px) saturate(160%); border-bottom: 1px solid var(--border); }
+.brand{ display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 400; font-size: 1.2rem; white-space: nowrap; }
+.brand-mark{ width: 36px; height: 36px; flex-shrink:0; }
+.brand small{ display:block; font-family: var(--font-body); font-weight: 400; font-size: .66rem; color: var(--text-muted); }
+.header-spacer{ flex: 1; }
+.header-search{ position: relative; display: flex; align-items: center; max-width: 230px; width: 100%; }
+.header-search input{ width: 100%; padding: 9px 34px 9px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text); font-family: var(--font-body); font-size: .82rem; transition: box-shadow var(--dur-fast) var(--ease), border-color var(--dur-fast); }
+.header-search input:focus{ border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.header-search svg{ position: absolute; inset-inline-start: 10px; width: 15px; height: 15px; color: var(--text-faint); pointer-events:none; }
+.icon-btn{ width: 38px; height: 38px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text); cursor: pointer; flex-shrink: 0; transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast), background var(--dur-fast); }
+.icon-btn:hover{ transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.icon-btn svg{ width: 18px; height: 18px; }
+.theme-toggle{ position: relative; }
+.theme-toggle svg{ position:absolute; transition: opacity var(--dur-med) var(--ease), transform var(--dur-med) var(--ease); }
+.icon-sun{ opacity: 1; transform: rotate(0deg) scale(1); }
+.icon-moon{ opacity: 0; transform: rotate(-60deg) scale(.5); }
+html[data-theme="dark"] .icon-sun{ opacity: 0; transform: rotate(60deg) scale(.5); }
+html[data-theme="dark"] .icon-moon{ opacity: 1; transform: rotate(0deg) scale(1); }
+.progress-pill{ display:flex; align-items:center; gap:8px; padding: 6px 14px; border-radius: 999px; background: var(--primary-soft); color: var(--primary-2); font-size: .76rem; font-weight: 700; white-space: nowrap; }
+html[data-theme="dark"] .progress-pill{ color: var(--primary); }
+.progress-pill .ring{ width:18px; height:18px; }
+@media(max-width:600px){ .progress-pill{ display:none; } }
+
+/* ---------- Trail nav ---------- */
+.trail-nav{ position: fixed; inset-inline-start: 14px; top: 50%; transform: translateY(-50%); z-index: 140; width: var(--trail-w); display: flex; flex-direction: column; align-items: center; }
+.trail-line{ position: absolute; top: 8px; bottom: 8px; inset-inline-start: 50%; width: 2px; background: var(--border-strong); transform: translateX(-50%); border-radius: 2px; overflow: hidden; }
+html[dir="rtl"] .trail-line{ transform: translateX(50%); }
+.trail-fill{ position: absolute; top:0; inset-inline:0; height: 0%; background: linear-gradient(180deg, var(--primary-2), var(--accent)); transition: height 200ms linear; }
+.trail-stops{ position: relative; display:flex; flex-direction: column; gap: 0; width: 100%; }
+.trail-stop{ position: relative; width: 100%; padding-block: 11.7px; display:flex; justify-content:center; cursor:pointer; background:none; border:none; }
+.trail-dot{ width: 12px; height: 12px; border-radius: 50%; background: var(--bg-elevated); border: 2.5px solid var(--border-strong); transition: all var(--dur-med) var(--ease); position: relative; z-index: 2; box-shadow: 0 0 0 0 transparent; }
+.trail-stop[data-visited="true"] .trail-dot{ border-color: var(--primary-2); background: var(--primary-2); }
+.trail-stop[data-active="true"] .trail-dot{ border-color: var(--accent); background: var(--accent); box-shadow: 0 0 10px 3px var(--accent-soft); transform: scale(1.3); }
+.trail-tip{ position: absolute; inset-inline-end: calc(100% + 12px); top: 50%; transform: translateY(-50%) translateX(6px); background: var(--text); color: var(--bg); font-size: .74rem; font-weight:700; padding: 6px 12px; border-radius: 8px; white-space: nowrap; opacity: 0; pointer-events: none; transition: all var(--dur-fast) var(--ease); }
+html[dir="rtl"] .trail-tip{ inset-inline-end: auto; inset-inline-start: calc(100% + 12px); }
+.trail-stop:hover .trail-tip, .trail-stop:focus-visible .trail-tip{ opacity: 1; transform: translateY(-50%) translateX(0); }
+@media (max-width: 1180px){ .trail-nav{ display: none; } }
+
+/* ---------- Layout ---------- */
+main{ display:block; }
+.section{ max-width: var(--content-max); margin-inline: auto; padding: clamp(50px, 8vw, 96px) clamp(18px, 4vw, 32px); scroll-margin-top: calc(var(--header-h) + 14px); }
+.section-eyebrow{ display:inline-flex; align-items:center; gap:8px; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); font-weight: 700; background: var(--accent-soft); padding: 5px 13px; border-radius: 999px; margin-bottom: 16px; }
+.section-title{ font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 4.4vw, 2.7rem); line-height: 1.3; margin-bottom: 14px; }
+.section-sub{ color: var(--text-muted); font-size: clamp(.95rem, 1.6vw, 1.08rem); max-width: 68ch; margin-bottom: 34px; }
+
+.reveal{ opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.in-view{ opacity: 1; transform: translateY(0); }
+.reveal-stagger > *{ transition-delay: calc(var(--i, 0) * 70ms); }
+
+.card{ background: var(--surface); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: clamp(18px, 3vw, 30px); }
+.card-solid{ background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: clamp(18px,3vw,30px); }
+
+/* ---------- Buttons ---------- */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; padding: 11px 22px; border-radius: 999px; font-weight: 700; font-size: .92rem; border: 1px solid transparent; cursor: pointer; transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease), background var(--dur-fast); font-family: var(--font-body); }
+.btn svg{ width:16px; height:16px; }
+.btn:active{ transform: scale(.96); }
+.btn-primary{ background: linear-gradient(135deg, var(--primary-2), var(--primary)); color: #fff; box-shadow: var(--shadow-glow-primary); }
+.btn-primary:hover{ transform: translateY(-2px); }
+.btn-gold{ background: linear-gradient(135deg, var(--accent), #b5573a); color: #fff; box-shadow: var(--shadow-glow-accent); }
+.btn-gold:hover{ transform: translateY(-2px); }
+.btn-ghost{ background: var(--bg-elevated); border-color: var(--border); color: var(--text); }
+.btn-ghost:hover{ border-color: var(--border-strong); transform: translateY(-2px); }
+.btn:disabled{ opacity: .45; cursor: not-allowed; transform:none !important; }
+.btn-sm{ padding: 7px 14px; font-size: .78rem; }
+
+/* ---------- Hero: stage & spotlights ---------- */
+.hero{ position: relative; padding-block: clamp(50px, 10vw, 90px); max-width: var(--content-max); margin-inline:auto; padding-inline: clamp(18px,4vw,32px); display: grid; gap: 40px; align-items:center; }
+@media(min-width: 900px){ .hero{ grid-template-columns: 1fr 1.1fr; } }
+.hero-eyebrow{ font-family: var(--font-mono); font-size: .78rem; color: var(--primary-2); letter-spacing: .1em; display:flex; align-items:center; gap:10px; margin-bottom: 18px; text-transform: uppercase; }
+html[data-theme="dark"] .hero-eyebrow{ color: var(--primary); }
+.hero-eyebrow::before{ content:''; width:26px; height:2px; background: var(--accent); }
+.hero h1{ font-family: var(--font-display); font-weight: 400; font-size: clamp(2.1rem, 5.4vw, 3.5rem); line-height: 1.28; margin-bottom: 20px; }
+.hero h1 em{ font-style: normal; color: var(--accent); }
+.hero p.lead{ color: var(--text-muted); font-size: clamp(1rem, 1.8vw, 1.15rem); max-width: 54ch; margin-bottom: 28px; }
+.hero-ctas{ display:flex; flex-wrap:wrap; gap: 12px; margin-bottom: 30px; }
+.hero-stats{ display:flex; flex-wrap:wrap; gap: 22px; }
+.hero-stat b{ font-family: var(--font-display); font-weight:400; font-size: 1.7rem; color: var(--primary-2); display:block; }
+html[data-theme="dark"] .hero-stat b{ color: var(--primary); }
+.hero-stat span{ font-size: .78rem; color: var(--text-muted); }
+
+.float-badge{ position:absolute; padding: 8px 14px; border-radius: 14px; background: var(--surface-strong); backdrop-filter: blur(14px); border: 1px solid var(--border); box-shadow: var(--shadow-md); font-size: .78rem; font-weight: 700; display:flex; align-items:center; gap:6px; animation: floatY 5s ease-in-out infinite; }
+.float-badge.b2{ animation-delay: -2s; }
+.float-badge.b3{ animation-delay: -3.4s; }
+@keyframes floatY{ 0%,100%{ transform: translateY(0px);} 50%{ transform: translateY(-9px);} }
+
+.hero-visual{ position: relative; }
+
+.stage-wrap{ position:relative; }
+.stage-prop{ cursor:pointer; transition: transform var(--dur-fast) var(--ease), filter var(--dur-fast); }
+.stage-prop:hover, .stage-prop:focus-visible{ transform: translateY(-4px); }
+@keyframes beamPulse{ 0%,100%{ opacity: .55; } 50%{ opacity: .9; } }
+.beam-anim{ animation: beamPulse 2.6s ease-in-out infinite; }
+
+/* ---------- Tables ---------- */
+.grammar-table{ width:100%; border-collapse: separate; border-spacing:0; font-size: .95rem; }
+.grammar-table th, .grammar-table td{ padding: 13px 14px; text-align: start; border-bottom: 1px solid var(--border); vertical-align:top; }
+.grammar-table thead th{ font-family: var(--font-mono); font-size: .68rem; letter-spacing:.06em; text-transform: uppercase; color: var(--text-muted); background: var(--bg-soft); font-weight: 700; }
+.grammar-table thead th:first-child{ border-start-start-radius: var(--radius-sm); border-end-start-radius: var(--radius-sm); }
+.grammar-table thead th:last-child{ border-start-end-radius: var(--radius-sm); border-end-end-radius: var(--radius-sm); }
+.grammar-table tbody tr{ transition: background var(--dur-fast); }
+.grammar-table tbody tr:hover{ background: var(--bg-soft); }
+.table-scroll{ overflow-x:auto; border-radius: var(--radius-md); border: 1px solid var(--border); }
+.table-scroll .grammar-table thead th{ border-radius:0; }
+.tag{ display:inline-flex; align-items:center; justify-content:center; font-family: var(--font-mono); font-weight: 700; font-size: .74rem; padding: 3px 10px; border-radius: 7px; }
+
+/* ---------- Callouts ---------- */
+.callout{ border-radius: var(--radius-md); padding: 18px 20px; border: 1px solid var(--border); display:flex; gap: 14px; margin-block: 20px; }
+.callout svg{ width: 22px; height:22px; flex-shrink:0; margin-top:2px; }
+.callout-tip{ background: var(--case-der-soft); border-color: transparent; } .callout-tip svg{ color: var(--case-der); }
+.callout-warn{ background: var(--signal-red-soft); border-color: transparent; } .callout-warn svg{ color: var(--signal-red); }
+.callout-gold{ background: var(--accent-soft); border-color: transparent; } .callout-gold svg{ color: var(--accent); }
+.callout h4{ font-weight: 800; margin-bottom: 4px; font-size: .95rem; }
+.callout p{ color: var(--text-muted); font-size: .89rem; margin:0; }
+
+details.tips{ border: 1px solid var(--border); border-radius: var(--radius-md); overflow:hidden; margin-block: 16px; background: var(--bg-elevated); }
+details.tips > summary{ cursor: pointer; padding: 14px 18px; font-weight: 700; list-style:none; display:flex; align-items:center; gap:10px; user-select:none; }
+details.tips > summary::-webkit-details-marker{ display:none; }
+details.tips > summary .chev{ transition: transform var(--dur-med) var(--ease); margin-inline-start:auto; width:16px;height:16px; }
+details.tips[open] > summary .chev{ transform: rotate(180deg); }
+details.tips .tips-body{ padding: 0 18px 18px; color: var(--text-muted); font-size:.9rem; }
+details.tips .tips-body ul{ display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+details.tips .tips-body li{ padding-inline-start: 18px; position:relative; }
+details.tips .tips-body li::before{ content:'✕'; position:absolute; inset-inline-start:0; color: var(--signal-red); font-weight:800; font-size:.75rem; top:3px; }
+
+/* ---------- Rule card ---------- */
+.rule-card{ border-radius: var(--radius-lg); padding: 22px; border: 1.5px solid var(--border); background: var(--bg-elevated); position: relative; overflow: hidden; }
+.rule-card::before{ content:''; position:absolute; inset-inline-start:0; top:0; bottom:0; width:5px; background: var(--rule-color, var(--accent)); }
+.rule-card .rule-formula{ font-family: var(--font-mono); font-size: .92rem; background: var(--bg-soft); padding: 12px 16px; border-radius: var(--radius-sm); margin-block: 12px; overflow-x:auto; white-space:nowrap; }
+
+/* ---------- Sentence card (speak + copy + translation) — used everywhere ---------- */
+.sentence-card{ background: var(--bg-soft); border-radius: var(--radius-md); padding: 14px 16px; margin-block: 10px; }
+.sentence-card .sc-row{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.sentence-card .sc-text{ font-size: 1.02rem; font-weight: 700; flex:1; }
+.sentence-card .sc-ar{ color: var(--text-muted); font-size: .87rem; margin-top: 6px; }
+.copy-btn{ flex-shrink:0; width: 32px; height: 32px; border-radius: 9px; display:flex; align-items:center; justify-content:center; background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-muted); cursor:pointer; transition: all var(--dur-fast) var(--ease); }
+.copy-btn svg{ width: 15px; height: 15px; }
+.copy-btn:hover{ transform: translateY(-2px); box-shadow: var(--shadow-sm); color: var(--text); }
+.copy-btn.copied{ background: var(--signal-green-soft); border-color: var(--signal-green); color: var(--signal-green); }
+
+/* ---------- Gender legend / mapping diagram ---------- */
+.gender-legend{ display:flex; flex-wrap:wrap; gap:14px; margin-block:14px; }
+.gender-legend span{ display:flex; align-items:center; gap:7px; font-size:.82rem; font-weight:700; }
+.gender-dot{ width:12px; height:12px; border-radius:50%; display:inline-block; }
+
+.map-diagram{ display:flex; flex-direction:column; gap:10px; }
+.map-row{ display:grid; grid-template-columns: 1fr auto 1fr; align-items:center; gap:14px; }
+.map-node{ padding: 12px 18px; border-radius: var(--radius-md); font-family: var(--font-mono); font-weight:800; text-align:center; }
+.map-arrow{ color: var(--text-faint); }
+.map-arrow svg{ width:22px; height:22px; }
+@media(max-width:520px){ .map-arrow svg{ transform: rotate(90deg);} }
+
+/* ---------- Flashcards ---------- */
+.flash-deck{ display:grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.flash-card{ perspective: 1400px; height: 210px; }
+.flash-inner{ position:relative; width:100%; height:100%; transition: transform .7s var(--ease); transform-style: preserve-3d; cursor:pointer; }
+.flash-card.flipped .flash-inner{ transform: rotateY(180deg); }
+.flash-face{ position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius: var(--radius-lg); border:1px solid var(--border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding: 18px; text-align:center; box-shadow: var(--shadow-md); }
+.flash-front{ background: linear-gradient(160deg, var(--bg-elevated), var(--case-der-soft)); }
+.flash-back{ background: linear-gradient(160deg, var(--accent-soft), var(--bg-elevated)); transform: rotateY(180deg); }
+.flash-badge{ position:absolute; top:12px; inset-inline-start:12px; font-family:var(--font-mono); font-size:.62rem; color: var(--text-faint); }
+.flash-hint{ position:absolute; bottom:10px; inset-inline-end:12px; font-size:.65rem; color: var(--text-faint); display:flex; align-items:center; gap:4px; }
+.flash-word{ font-family: var(--font-display); font-weight:400; font-size: 1.8rem; }
+.flash-ar{ color: var(--text-muted); font-size:.85rem; }
+.flash-sentence{ font-size:.82rem; color: var(--text-muted); margin-top:6px; line-height:1.5; }
+
+/* ---------- Memory match (spotlight game) ---------- */
+.memory-toolbar{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px; }
+.memory-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; }
+@media(max-width:640px){ .memory-grid{ grid-template-columns: repeat(2,1fr); } }
+.mem-card{ perspective: 1000px; height: 88px; cursor:pointer; }
+.mem-inner{ position:relative; width:100%; height:100%; transition: transform .5s var(--ease); transform-style:preserve-3d; }
+.mem-card.flipped .mem-inner, .mem-card.matched .mem-inner{ transform: rotateY(180deg); }
+.mem-face{ position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius: var(--radius-md); display:flex; align-items:center; justify-content:center; text-align:center; padding:6px; font-weight:800; border:1.5px solid var(--border); }
+.mem-back{ background: linear-gradient(160deg, var(--primary), var(--primary-2)); color:#fff; font-family: var(--font-display); font-size:1.3rem; }
+.mem-front{ background: var(--bg-elevated); transform: rotateY(180deg); font-family: var(--font-mono); font-size:.86rem; }
+.mem-card.matched .mem-front{ background: var(--signal-green-soft); border-color: var(--signal-green); color: var(--signal-green); }
+.mem-card.wrong-flash .mem-front{ background: var(--signal-red-soft); border-color: var(--signal-red); animation: shakeX .4s var(--ease); }
+@keyframes shakeX{ 0%,100%{transform:translateX(0) rotateY(180deg);} 25%{transform:translateX(-5px) rotateY(180deg);} 75%{transform:translateX(5px) rotateY(180deg);} }
+.memory-status{ font-weight:700; font-size:.85rem; color: var(--text-muted); }
+
+/* ---------- Sentence Studio (fill + copy/speak reveal) ---------- */
+.studio-card{ background: var(--bg-elevated); border:1.5px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin-bottom:16px; box-shadow: var(--shadow-sm); }
+.studio-sentence{ font-family: var(--font-display); font-weight:400; font-size: clamp(1.2rem,2.8vw,1.6rem); direction:ltr; text-align:center; line-height:1.6; }
+.studio-blank{ display:inline-block; min-width:90px; border-bottom:3px dotted var(--border-strong); color:var(--text-faint); }
+.studio-hint{ text-align:center; color:var(--text-muted); font-size:.85rem; margin-top:8px; }
+.studio-opts{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:20px; }
+.studio-opt{ padding: 11px 20px; border-radius: 999px; border:1.5px solid var(--border); background: var(--bg-soft); font-family: var(--font-mono); font-weight:700; cursor:pointer; transition: all var(--dur-fast) var(--ease); }
+.studio-opt:hover{ transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.studio-opt.correct{ background: var(--signal-green-soft); border-color: var(--signal-green); color: var(--signal-green); }
+.studio-opt.wrong{ background: var(--signal-red-soft); border-color: var(--signal-red); color: var(--signal-red); animation: shakeX2 .4s var(--ease); }
+.studio-opt:disabled{ cursor:default; }
+@keyframes shakeX2{ 0%,100%{transform:translateX(0);} 25%{transform:translateX(-6px);} 75%{transform:translateX(6px);} }
+.studio-reveal{ margin-top:18px; display:none; }
+.studio-reveal.show{ display:block; }
+.studio-nav{ display:flex; justify-content:center; margin-top:18px; }
+
+/* ---------- Quiz ---------- */
+.quiz-shell{ position:relative; }
+.quiz-progress-track{ height:6px; border-radius:999px; background: var(--border); overflow:hidden; margin-bottom:22px; }
+.quiz-progress-fill{ height:100%; background: linear-gradient(90deg, var(--primary-2), var(--accent)); transition: width var(--dur-med) var(--ease); }
+.quiz-q{ font-family: var(--font-display); font-weight:400; font-size: 1.35rem; margin-bottom: 18px; }
+.quiz-opts{ display:flex; flex-direction:column; gap:10px; }
+.quiz-opt{ text-align: start; padding: 14px 18px; border-radius: var(--radius-md); border: 1.5px solid var(--border); background: var(--bg-elevated); cursor:pointer; display:flex; align-items:center; gap:12px; transition: all var(--dur-fast) var(--ease); font-family: var(--font-body); font-size: .95rem; }
+.quiz-opt:hover{ border-color: var(--accent); }
+.quiz-opt .opt-letter{ width:26px; height:26px; border-radius:50%; background: var(--bg-soft); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.78rem; font-family: var(--font-mono); }
+.quiz-opt.correct{ border-color: var(--signal-green); background: var(--signal-green-soft); }
+.quiz-opt.correct .opt-letter{ background: var(--signal-green); color:#fff; }
+.quiz-opt.wrong{ border-color: var(--signal-red); background: var(--signal-red-soft); animation: shakeX2 .4s var(--ease); }
+.quiz-opt.wrong .opt-letter{ background: var(--signal-red); color:#fff; }
+.quiz-opt:disabled{ cursor:default; }
+.quiz-feedback{ margin-top: 16px; padding: 14px 18px; border-radius: var(--radius-md); font-size:.88rem; display:none; gap:10px; align-items:flex-start; }
+.quiz-feedback.show{ display:flex; }
+.quiz-feedback.ok{ background: var(--signal-green-soft); color: var(--signal-green); }
+.quiz-feedback.no{ background: var(--signal-red-soft); color: var(--signal-red); }
+.quiz-nav{ display:flex; justify-content:space-between; margin-top:24px; }
+.quiz-result{ text-align:center; padding: 30px 10px; }
+.quiz-result .score-num{ font-family:var(--font-display); font-weight:400; font-size: 3.6rem; color: var(--accent); }
+
+/* ---------- Pronunciation Lab ---------- */
+.lab{ border-radius: var(--radius-xl); overflow:hidden; position:relative; }
+.lab-sentence{ font-family: var(--font-display); font-weight:400; font-size: clamp(1.25rem, 3.2vw, 1.85rem); line-height: 1.8; text-align:center; padding: 30px 10px 10px; direction:ltr; }
+.lab-word{ display:inline-block; padding: 2px 6px; border-radius: 8px; transition: all .15s; margin-inline: 1px; }
+.lab-word.active{ background: var(--accent); color:#fff; transform: scale(1.08); }
+.lab-controls{ display:flex; align-items:center; justify-content:center; gap: 14px; flex-wrap:wrap; padding: 18px 20px 26px; }
+.lab-speed{ display:flex; align-items:center; gap:8px; font-size:.8rem; color: var(--text-muted); }
+.lab-speed input[type=range]{ width: 110px; accent-color: var(--primary-2); }
+.lab-voice{ font-size:.72rem; color: var(--text-faint); text-align:center; padding-bottom: 14px; display:flex; align-items:center; justify-content:center; gap:6px; }
+.lab-wave{ display:flex; align-items:center; gap:3px; height:16px; }
+.lab-wave span{ width:3px; border-radius:2px; background: var(--primary-2); height: 4px; transition: height .12s; }
+.lab.playing .lab-wave span{ animation: wave 1s ease-in-out infinite; }
+.lab-wave span:nth-child(2){ animation-delay: .1s;} .lab-wave span:nth-child(3){ animation-delay:.2s;} .lab-wave span:nth-child(4){ animation-delay:.3s;} .lab-wave span:nth-child(5){ animation-delay:.4s;}
+@keyframes wave{ 0%,100%{height:4px;} 50%{height:16px;} }
+.sentence-list{ display:flex; flex-direction:column; gap:8px; margin-top:18px; }
+.sentence-pick{ display:flex; align-items:center; gap:12px; padding: 11px 16px; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg-elevated); cursor:pointer; text-align:start; transition: all var(--dur-fast); }
+.sentence-pick:hover{ border-color: var(--accent); }
+.sentence-pick.active-pick{ border-color: var(--accent); background: var(--accent-soft); }
+.sentence-pick .de{ font-weight:700; }
+.sentence-pick .ar{ color: var(--text-muted); font-size:.82rem; }
+
+/* ---------- Achievements ---------- */
+.ach-grid{ display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); }
+.ach-badge{ text-align:center; padding: 20px 12px; border-radius: var(--radius-lg); border: 1px solid var(--border); background: var(--bg-elevated); transition: all var(--dur-med) var(--ease); filter: grayscale(1) opacity(.5); }
+.ach-badge.unlocked{ filter:none; background: linear-gradient(160deg, var(--accent-soft), var(--bg-elevated)); border-color: color-mix(in srgb, var(--accent) 45%, transparent); box-shadow: var(--shadow-md); }
+.ach-badge .ach-icon{ font-size: 2rem; margin-bottom:8px; }
+.ach-badge h5{ font-size:.82rem; font-weight:800; margin-bottom:4px; }
+.ach-badge p{ font-size:.7rem; color: var(--text-muted); margin:0; }
+
+.toast{ position: fixed; bottom: 24px; inset-inline-start: 50%; transform: translateX(-50%) translateY(120%); background: var(--text); color: var(--bg); padding: 14px 22px; border-radius: 999px; display:flex; align-items:center; gap:10px; font-weight:700; z-index: 300; box-shadow: var(--shadow-lg); transition: transform var(--dur-med) var(--ease); font-size:.88rem; }
+html[dir="rtl"] .toast{ transform: translateX(50%) translateY(120%); }
+.toast.show{ transform: translateX(-50%) translateY(0); }
+html[dir="rtl"] .toast.show{ transform: translateX(50%) translateY(0); }
+
+.back-top{ position: fixed; bottom: 26px; inset-inline-end: 22px; z-index: 140; width: 46px; height:46px; border-radius:50%; display:flex; align-items:center; justify-content:center; background: var(--bg-elevated); border:1px solid var(--border); box-shadow: var(--shadow-md); opacity:0; pointer-events:none; transform: translateY(10px) scale(.85); transition: all var(--dur-med) var(--ease); cursor:pointer; }
+.back-top.show{ opacity:1; pointer-events:auto; transform:translateY(0) scale(1); }
+.back-top svg{ width:20px; height:20px; }
+
+footer.site-footer{ border-top: 1px solid var(--border); padding: 40px clamp(18px,4vw,32px) 60px; max-width: var(--content-max); margin-inline:auto; text-align:center; color: var(--text-muted); font-size:.85rem; }
+footer.site-footer .foot-actions{ display:flex; justify-content:center; gap:12px; margin-bottom: 18px; flex-wrap:wrap; }
+
+.mobile-jump{ display:none; position: sticky; top: var(--header-h); z-index: 120; overflow-x:auto; white-space:nowrap; padding: 10px 14px; gap:8px; background: var(--surface-strong); backdrop-filter: blur(14px); border-bottom:1px solid var(--border); }
+.mobile-jump::-webkit-scrollbar{ display:none; }
+.mobile-jump a{ display:inline-flex; padding: 7px 14px; border-radius:999px; font-size:.78rem; font-weight:700; background: var(--bg-elevated); border:1px solid var(--border); margin-inline-end:8px; }
+.mobile-jump a.active-jump{ background: var(--accent); color:#fff; border-color:transparent; }
+@media(max-width:1180px){ .mobile-jump{ display:flex; } }
+
+.section.search-hidden{ display:none; }
+.no-results{ text-align:center; padding: 60px 20px; color: var(--text-muted); display:none; }
+.no-results.show{ display:block; }
+
+.grid-2{ display:grid; gap: 22px; } @media(min-width:760px){ .grid-2{ grid-template-columns: 1fr 1fr; } }
+.grid-3{ display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(170px,1fr)); }
+.center-text{ text-align:center; }
+.mt-16{ margin-top:16px; } .mt-24{ margin-top:24px; } .mb-16{ margin-bottom:16px; }
+.pill-row{ display:flex; flex-wrap:wrap; gap:10px; }
+.small-note{ font-size:.8rem; color: var(--text-faint); }
+
+@media print{
+  .site-header, .trail-nav, .mobile-jump, .back-top, .toast, .scroll-progress, .hero-ctas, .icon-btn, footer .foot-actions, .header-search, .copy-btn{ display:none !important; }
+  body{ background: #fff !important; color:#000 !important; }
+  .card, .card-solid{ box-shadow:none !important; border: 1px solid #ccc !important; break-inside: avoid; }
+  .section{ padding-block: 20px; }
+}
+
+@media (max-width: 480px){ :root{ --header-h: 64px; } .header-search{ display:none; } .hero-stats{ gap: 14px; } }
+@media (min-width: 1600px){ :root{ --content-max: 1180px; } }
+
+</style>
+<script>
+  (function(){
+    try{
+      var saved = localStorage.getItem('dem-theme');
+      var theme = saved ? JSON.parse(saved) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    }catch(e){ document.documentElement.setAttribute('data-theme','light'); }
+  })();
+</script>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">تخطَّ إلى المحتوى الرئيسي</a>
+
+<svg class="spot-bg" viewBox="0 0 1600 1400" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="spotBlue" cx="50%" cy="0%" r="75%">
+      <stop offset="0%" stop-color="var(--case-der)" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="var(--case-der)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spotRose" cx="50%" cy="0%" r="75%">
+      <stop offset="0%" stop-color="var(--case-die)" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="var(--case-die)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spotGreen" cx="50%" cy="0%" r="75%">
+      <stop offset="0%" stop-color="var(--case-das)" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="var(--case-das)" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spotViolet" cx="50%" cy="0%" r="75%">
+      <stop offset="0%" stop-color="var(--case-plural)" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="var(--case-plural)" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="420" height="500" fill="url(#spotBlue)"/>
+  <rect x="500" y="200" width="420" height="520" fill="url(#spotRose)"/>
+  <rect x="1050" y="60" width="480" height="520" fill="url(#spotGreen)"/>
+  <rect x="200" y="750" width="480" height="560" fill="url(#spotViolet)"/>
+  <rect x="900" y="820" width="500" height="560" fill="url(#spotBlue)"/>
+</svg>
+
+<div class="scroll-progress"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+
+<header class="site-header">
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <polygon points="20,3 26,15 6,15" fill="var(--accent)" opacity="0.85"/>
+      <ellipse cx="20" cy="32" rx="11" ry="4" fill="var(--primary-2)" opacity="0.35"/>
+      <circle cx="20" cy="24" r="4.2" fill="var(--accent)"/>
+    </svg>
+    <span>دائرة الضوء<small>Demonstrativpronomen</small></span>
+  </div>
+
+  <div class="header-spacer"></div>
+
+  <div class="header-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <input type="search" id="lessonSearch" placeholder="ابحث في الدرس… (مثال: dieses)" aria-label="بحث داخل الدرس">
+  </div>
+
+  <div class="progress-pill" title="نسبة إنجاز الدرس">
+    <svg class="ring" viewBox="0 0 36 36" aria-hidden="true">
+      <circle cx="18" cy="18" r="15" fill="none" stroke="var(--border)" stroke-width="3"/>
+      <circle id="progressRingFg" cx="18" cy="18" r="15" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+    </svg>
+    <span id="progressPct">0٪</span>
+  </div>
+
+  <button class="icon-btn" id="fullscreenToggle" aria-label="وضع ملء الشاشة" title="ملء الشاشة">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+  </button>
+  <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس" title="طباعة">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+  </button>
+  <button class="icon-btn theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري" aria-pressed="false" title="تبديل السمة">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+  </button>
+</header>
+
+<nav class="mobile-jump" aria-label="التنقل بين الأقسام">
+  <a href="#das-general" data-target="das-general">das العامة</a>
+  <a href="#dieser" data-target="dieser">dieser</a>
+  <a href="#diese" data-target="diese">diese</a>
+  <a href="#dieses" data-target="dieses">dieses</a>
+  <a href="#dies" data-target="dies">dies</a>
+  <a href="#das-vs-dies" data-target="das-vs-dies">das أم dies</a>
+  <a href="#mapping" data-target="mapping">المخطط السريع</a>
+  <a href="#declension" data-target="declension">التصريف الكامل</a>
+  <a href="#lab" data-target="lab">معمل النطق</a>
+  <a href="#flashcards" data-target="flashcards">البطاقات</a>
+  <a href="#practice" data-target="practice">تمارين</a>
+  <a href="#quiz" data-target="quiz">الاختبار</a>
+  <a href="#summary" data-target="summary">الملخص</a>
+</nav>
+
+<nav class="trail-nav" aria-label="مسار الدرس">
+  <div class="trail-line"><div class="trail-fill" id="trailFill"></div></div>
+  <div class="trail-stops">
+    <button class="trail-stop" data-target="das-general"><span class="trail-dot"></span><span class="trail-tip">das العامة</span></button>
+    <button class="trail-stop" data-target="dieser"><span class="trail-dot"></span><span class="trail-tip">dieser (مذكر)</span></button>
+    <button class="trail-stop" data-target="diese"><span class="trail-dot"></span><span class="trail-tip">diese (مؤنث/جمع)</span></button>
+    <button class="trail-stop" data-target="dieses"><span class="trail-dot"></span><span class="trail-tip">dieses (محايد)</span></button>
+    <button class="trail-stop" data-target="dies"><span class="trail-dot"></span><span class="trail-tip">dies (رسمي)</span></button>
+    <button class="trail-stop" data-target="das-vs-dies"><span class="trail-dot"></span><span class="trail-tip">das أم dies؟</span></button>
+    <button class="trail-stop" data-target="mapping"><span class="trail-dot"></span><span class="trail-tip">المخطط السريع</span></button>
+    <button class="trail-stop" data-target="declension"><span class="trail-dot"></span><span class="trail-tip">التصريف الكامل</span></button>
+    <button class="trail-stop" data-target="lab"><span class="trail-dot"></span><span class="trail-tip">معمل النطق</span></button>
+    <button class="trail-stop" data-target="flashcards"><span class="trail-dot"></span><span class="trail-tip">البطاقات</span></button>
+    <button class="trail-stop" data-target="practice"><span class="trail-dot"></span><span class="trail-tip">تمارين</span></button>
+    <button class="trail-stop" data-target="quiz"><span class="trail-dot"></span><span class="trail-tip">الاختبار</span></button>
+    <button class="trail-stop" data-target="summary"><span class="trail-dot"></span><span class="trail-tip">الملخص</span></button>
+  </div>
+</nav>
+
+<main id="main-content">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div>
+      <div class="hero-eyebrow">درس تفاعلي · Grammatik</div>
+      <h1>سلّط الضوء على<br><em>الكلمة الصحيحة</em></h1>
+      <p class="lead">dieser، diese، dieses، dies، das — خمس كلمات تعني كلها "هذا/هذه" تقريبًا، لكن كل واحدة تُضيء اسمًا مختلفًا. في هذا الدرس نوضّح متى تُشير كل أداة، بقاعدة صريحة وأمثلة كثيرة، مع نطق صوتي وزر نسخ لكل جملة.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-gold" onclick="document.getElementById('dieser').scrollIntoView({behavior:'smooth'})">
+          ابدأ العرض
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+        <button class="btn btn-ghost" onclick="document.getElementById('lab').scrollIntoView({behavior:'smooth'})">🔊 جرّب معمل النطق</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>5</b><span>أدوات إشارة</span></div>
+        <div class="hero-stat"><b>13</b><span>قسمًا تفاعليًا</span></div>
+        <div class="hero-stat"><b>de-DE</b><span>نطق أصلي فوري</span></div>
+        <div class="hero-stat"><b>📋</b><span>نسخ كل جملة بنقرة</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float-badge" style="top:0; inset-inline-start:6%;">💡 يُشير إلى شيء محدد</div>
+      <div class="float-badge b2" style="top:36%; inset-inline-end:0%;">🎯 يطابق الجنس النحوي</div>
+      <div class="float-badge b3" style="bottom:0; inset-inline-start:16%;">🔊 انقر لتسمع</div>
+
+      <svg class="stage-wrap" viewBox="0 0 560 320" role="group" aria-label="مسرح إضاءة: كل كشّاف يُشير إلى اسم بلون مطابق لجنسه النحوي">
+        <rect x="20" y="230" width="520" height="20" rx="10" fill="var(--text)" opacity="0.08"/>
+
+        <!-- dieser (masc / blue) -->
+        <g class="stage-prop" data-de="dieser Mann" tabindex="0" role="button" aria-label="استمع: dieser Mann">
+          <polygon points="80,20 45,225 115,225" fill="var(--case-der)" opacity="0.16" class="beam-anim"/>
+          <circle cx="80" cy="225" r="16" fill="var(--case-der-soft)" stroke="var(--case-der)" stroke-width="2"/>
+          <text x="80" y="230" text-anchor="middle" font-size="15" fill="var(--case-der)">🧑</text>
+          <text x="80" y="258" text-anchor="middle" class="de" font-size="16" font-weight="800" fill="var(--case-der)">dieser</text>
+        </g>
+
+        <!-- diese (fem / rose) -->
+        <g class="stage-prop" data-de="diese Frau" tabindex="0" role="button" aria-label="استمع: diese Frau">
+          <polygon points="210,20 175,225 245,225" fill="var(--case-die)" opacity="0.16" class="beam-anim"/>
+          <circle cx="210" cy="225" r="16" fill="var(--case-die-soft)" stroke="var(--case-die)" stroke-width="2"/>
+          <text x="210" y="230" text-anchor="middle" font-size="15" fill="var(--case-die)">👩</text>
+          <text x="210" y="258" text-anchor="middle" class="de" font-size="16" font-weight="800" fill="var(--case-die)">diese</text>
+        </g>
+
+        <!-- dieses (neut / green) -->
+        <g class="stage-prop" data-de="dieses Auto" tabindex="0" role="button" aria-label="استمع: dieses Auto">
+          <polygon points="340,20 305,225 375,225" fill="var(--case-das)" opacity="0.16" class="beam-anim"/>
+          <circle cx="340" cy="225" r="16" fill="var(--case-das-soft)" stroke="var(--case-das)" stroke-width="2"/>
+          <text x="340" y="230" text-anchor="middle" font-size="15" fill="var(--case-das)">🚗</text>
+          <text x="340" y="258" text-anchor="middle" class="de" font-size="16" font-weight="800" fill="var(--case-das)">dieses</text>
+        </g>
+
+        <!-- diese Plural (violet) -->
+        <g class="stage-prop" data-de="diese Bücher" tabindex="0" role="button" aria-label="استمع: diese Bücher">
+          <polygon points="460,20 425,225 495,225" fill="var(--case-plural)" opacity="0.16" class="beam-anim"/>
+          <circle cx="460" cy="225" r="16" fill="var(--case-plural-soft)" stroke="var(--case-plural)" stroke-width="2"/>
+          <text x="460" y="230" text-anchor="middle" font-size="15" fill="var(--case-plural)">📚</text>
+          <text x="460" y="258" text-anchor="middle" class="de" font-size="16" font-weight="800" fill="var(--case-plural)">diese</text>
+        </g>
+
+        <text x="280" y="290" text-anchor="middle" class="de" font-size="13" fill="var(--text-faint)">der → dieser · die → diese · das → dieses · Plural → diese</text>
+      </svg>
+      <p class="center-text small-note mt-16">انقر على أي كشّاف ضوء لسماع نطقه.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 1. DAS GENERAL ===================== -->
+  <section class="section" id="das-general" data-search="das عام general verwendung bedeutung اداة تعريف">
+    <span class="section-eyebrow">01 · نقطة الانطلاق</span>
+    <h2 class="section-title reveal">das — الإشارة العامة الشائعة</h2>
+    <p class="section-sub reveal">قبل أن نغوص في التفاصيل، لنبدأ بأشهر كلمة إشارة على الإطلاق: <span class="de">das</span>. تُستخدم بشكل عام للإشارة إلى شيء ما دون أن تتغيّر حسب جنس الاسم الذي يليها — وهذا ما يجعلها الخيار الافتراضي في جمل التعريف.</p>
+
+    <div class="rule-card reveal" style="--rule-color: var(--accent);">
+      <div class="tag" style="background:var(--accent-soft); color:var(--accent);">استخدام عام</div>
+      <div class="rule-formula">das + ist/sind + Nomen (بغض النظر عن جنس الاسم)</div>
+    </div>
+
+    <div class="card reveal mt-16">
+      <div class="sentence-card">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Das ist ein Buch." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Das ist ein Buch.</bdi>
+          <button class="copy-btn" data-copy="Das ist ein Buch." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">هذا كتاب.</div>
+      </div>
+      <div class="sentence-card">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Das ist meine Schwester." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Das ist meine Schwester.</bdi>
+          <button class="copy-btn" data-copy="Das ist meine Schwester." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">هذه أختي.</div>
+      </div>
+      <div class="sentence-card">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Das sind meine Freunde." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Das sind meine Freunde.</bdi>
+          <button class="copy-btn" data-copy="Das sind meine Freunde." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">هؤلاء أصدقائي. <span class="small-note">(das + sind مع الجمع)</span></div>
+      </div>
+    </div>
+
+    <div class="callout callout-tip reveal">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg></span>
+      <div>
+        <h4>لماذا لا تتغيّر das هنا؟</h4>
+        <p>في جمل مثل "Das ist..."، لا تصف <span class="de">das</span> جنس الاسم الذي يليها — بل تُشير إلى الموقف ككل ("هذا الشيء الذي أراه/أقصده"). لهذا تبقى ثابتة سواء تلاها اسم مذكر أو مؤنث أو محايد أو جمع.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. DIESER ===================== -->
+  <section class="section" id="dieser" data-search="dieser مذكر maskulin der mann tisch lehrer">
+    <span class="section-eyebrow">02 · المذكر</span>
+    <h2 class="section-title reveal">dieser — حين يكون الاسم مذكرًا</h2>
+    <p class="section-sub reveal">إذا كان الاسم يأخذ أداة التعريف <span class="de" style="color:var(--case-der); font-weight:800;">der</span>، فاستخدم <span class="de" style="color:var(--case-der); font-weight:800;">dieser</span> قبله للإشارة إليه.</p>
+
+    <div class="rule-card reveal" style="--rule-color: var(--case-der);">
+      <div class="tag" style="background:var(--case-der-soft); color:var(--case-der);">der ← dieser</div>
+      <div class="rule-formula">dieser + Nomen (maskulin)</div>
+    </div>
+
+    <div class="card reveal mt-16">
+      <div class="sentence-card">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Dieser Mann ist freundlich." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Dieser Mann ist freundlich.</bdi>
+          <button class="copy-btn" data-copy="Dieser Mann ist freundlich." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">هذا الرجل لطيف. <span class="small-note">(der Mann)</span></div>
+      </div>
+      <div class="sentence-card">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Dieser Tisch ist alt." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Dieser Tisch ist alt.</bdi>
+          <button class="copy-btn" data-copy="Dieser Tisch ist alt." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">هذه الطاولة قديمة. <span class="small-note">(der Tisch)</span></div>
+      </div>
+      <div class="sentence-card">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Dieser Lehrer erklärt sehr gut." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Dieser Lehrer erklärt sehr gut.</bdi>
+          <button class="copy-btn" data-copy="Dieser Lehrer erklärt sehr gut." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">هذا المعلم يشرح جيدًا جدًا. <span class="small-note">(der Lehrer)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3. DIESE ===================== -->
+  <section class="section" id="diese" data-search="diese مؤنث جمع feminin plural frau tasche bucher kinder">
+    <span class="section-eyebrow">03 · المؤنث والجمع</span>
+    <h2 class="section-title reveal">diese — للمؤنث وللجمع معًا</h2>
+    <p class="section-sub reveal">هذه الكلمة تخدم دورين: تُستخدم مع الأسماء المؤنثة (die)، <b>وأيضًا</b> مع أي اسم في صيغة الجمع بغض النظر عن جنسه الأصلي.</p>
+
+    <div class="grid-2 reveal">
+      <div class="rule-card" style="--rule-color: var(--case-die);">
+        <div class="tag" style="background:var(--case-die-soft); color:var(--case-die);">die ← diese</div>
+        <div class="rule-formula">diese + Nomen (feminin)</div>
+        <div class="sentence-card" style="margin-top:14px;">
+          <div class="sc-row">
+            <bdi class="de-speak sc-text" data-de="Diese Frau ist Ärztin." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Diese Frau ist Ärztin.</bdi>
+            <button class="copy-btn" data-copy="Diese Frau ist Ärztin." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          </div>
+          <div class="sc-ar">هذه المرأة طبيبة. <span class="small-note">(die Frau)</span></div>
+        </div>
+        <div class="sentence-card">
+          <div class="sc-row">
+            <bdi class="de-speak sc-text" data-de="Diese Tasche ist neu." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Diese Tasche ist neu.</bdi>
+            <button class="copy-btn" data-copy="Diese Tasche ist neu." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          </div>
+          <div class="sc-ar">هذه الحقيبة جديدة. <span class="small-note">(die Tasche)</span></div>
+        </div>
+      </div>
+
+      <div class="rule-card" style="--rule-color: var(--case-plural);">
+        <div class="tag" style="background:var(--case-plural-soft); color:var(--case-plural);">Plural ← diese</div>
+        <div class="rule-formula">diese + Nomen (Plural، أي جنس)</div>
+        <div class="sentence-card" style="margin-top:14px;">
+          <div class="sc-row">
+            <bdi class="de-speak sc-text" data-de="Diese Bücher sind neu." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Diese Bücher sind neu.</bdi>
+            <button class="copy-btn" data-copy="Diese Bücher sind neu." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          </div>
+          <div class="sc-ar">هذه الكتب جديدة. <span class="small-note">(das Buch → die Bücher)</span></div>
+        </div>
+        <div class="sentence-card">
+          <div class="sc-row">
+            <bdi class="de-speak sc-text" data-de="Diese Kinder spielen im Park." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Diese Kinder spielen im Park.</bdi>
+            <button class="copy-btn" data-copy="Diese Kinder spielen im Park." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          </div>
+          <div class="sc-ar">هؤلاء الأطفال يلعبون في الحديقة. <span class="small-note">(das Kind → die Kinder)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-tip reveal">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg></span>
+      <div>
+        <h4>لماذا نفس الكلمة للدورين؟</h4>
+        <p>لأن أداة التعريف نفسها <span class="de">die</span> تُستخدم في الألمانية لكل من المؤنث المفرد وصيغة الجمع (بغض النظر عن الجنس الأصلي) — فمن الطبيعي أن تتبعها diese نفس المنطق.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. DIESES ===================== -->
+  <section class="section" id="dieses" data-search="dieses محايد neutrum das auto kind haus">
+    <span class="section-eyebrow">04 · المحايد</span>
+    <h2 class="section-title reveal">dieses — حين يكون الاسم محايدًا</h2>
+    <p class="section-sub reveal">إذا كان الاسم يأخذ أداة التعريف <span class="de" style="color:var(--case-das); font-weight:800;">das</span> (في المفرد)، فاستخدم <span class="de" style="color:var(--case-das); font-weight:800;">dieses</span> قبله.</p>
+
+    <div class="rule-card reveal" style="--rule-color: var(--case-das);">
+      <div class="tag" style="background:var(--case-das-soft); color:var(--case-das);">das ← dieses</div>
+      <div class="rule-formula">dieses + Nomen (neutrum)</div>
+    </div>
+
+    <div class="card reveal mt-16">
+      <div class="sentence-card">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Dieses Auto ist schnell." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Dieses Auto ist schnell.</bdi>
+          <button class="copy-btn" data-copy="Dieses Auto ist schnell." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">هذه السيارة سريعة. <span class="small-note">(das Auto)</span></div>
+      </div>
+      <div class="sentence-card">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Dieses Kind ist klein." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Dieses Kind ist klein.</bdi>
+          <button class="copy-btn" data-copy="Dieses Kind ist klein." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">هذا الطفل صغير. <span class="small-note">(das Kind)</span></div>
+      </div>
+      <div class="sentence-card">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Dieses Haus ist sehr groß." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Dieses Haus ist sehr groß.</bdi>
+          <button class="copy-btn" data-copy="Dieses Haus ist sehr groß." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">هذا المنزل كبير جدًا. <span class="small-note">(das Haus)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. DIES ===================== -->
+  <section class="section" id="dies" data-search="dies رسمي formal كتابي geschrieben haus">
+    <span class="section-eyebrow">05 · الصيغة الرسمية</span>
+    <h2 class="section-title reveal">dies — الصيغة المختصرة والرسمية</h2>
+    <p class="section-sub reveal"><span class="de">dies</span> صيغة مختصرة من <span class="de">dieses</span>، تُستخدم غالبًا في بداية الجملة بمعنى "هذا/هذه" العام، وتشيع أكثر في اللغة المكتوبة أو الرسمية أو الأدبية منها في الحديث اليومي.</p>
+
+    <div class="rule-card reveal" style="--rule-color: var(--case-plural);">
+      <div class="tag" style="background:var(--case-plural-soft); color:var(--case-plural);">لغة مكتوبة / رسمية</div>
+      <div class="rule-formula">dies + ist/sind + Nomen (بديل أنيق لـ das)</div>
+    </div>
+
+    <div class="card reveal mt-16">
+      <div class="sentence-card">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Dies ist mein Haus." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Dies ist mein Haus.</bdi>
+          <button class="copy-btn" data-copy="Dies ist mein Haus." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">هذا هو منزلي.</div>
+      </div>
+      <div class="sentence-card">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Dies zeigt, dass die Methode funktioniert." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Dies zeigt, dass die Methode funktioniert.</bdi>
+          <button class="copy-btn" data-copy="Dies zeigt, dass die Methode funktioniert." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">هذا يُظهر أن الطريقة تعمل. <span class="small-note">(أسلوب كتابي/تحليلي)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. DAS vs DIES ===================== -->
+  <section class="section" id="das-vs-dies" data-search="das مقابل dies فرق مقارنة formal spoken كتابي شفهي">
+    <span class="section-eyebrow">06 · مقارنة دقيقة</span>
+    <h2 class="section-title reveal">das أم dies؟</h2>
+    <p class="section-sub reveal">كلاهما يُستخدمان في جمل التعريف العامة بمعنى "هذا/هذه"، فما الفرق إذن؟</p>
+
+    <div class="grid-2 reveal">
+      <div class="rule-card" style="--rule-color: var(--accent);">
+        <span class="tag" style="background:var(--accent-soft); color:var(--accent); margin-bottom:10px;">شفهي / يومي</span>
+        <h3 class="de-speak" data-de="das" tabindex="0" role="button" style="font-family:var(--font-display); font-weight:400; font-size:1.6rem; margin-bottom:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> das</h3>
+        <p style="color:var(--text-muted); font-size:.88rem;">الخيار الافتراضي في الحديث اليومي والكتابة العادية — شائع جدًا وطبيعي في كل السياقات غير الرسمية.</p>
+        <div class="sentence-card" style="margin:10px 0 0;">
+          <div class="sc-row">
+            <bdi class="de-speak sc-text" data-de="Das ist mein Auto." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Das ist mein Auto.</bdi>
+            <button class="copy-btn" data-copy="Das ist mein Auto." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          </div>
+          <div class="sc-ar">هذه سيارتي. <span class="small-note">(في محادثة عادية)</span></div>
+        </div>
+      </div>
+      <div class="rule-card" style="--rule-color: var(--case-plural);">
+        <span class="tag" style="background:var(--case-plural-soft); color:var(--case-plural); margin-bottom:10px;">كتابي / رسمي</span>
+        <h3 class="de-speak" data-de="dies" tabindex="0" role="button" style="font-family:var(--font-display); font-weight:400; font-size:1.6rem; margin-bottom:8px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> dies</h3>
+        <p style="color:var(--text-muted); font-size:.88rem;">أكثر دقة وأناقة في الكتابة الرسمية أو الأدبية أو التحليلية — نادرًا ما تُستخدم في الحديث اليومي العفوي.</p>
+        <div class="sentence-card" style="margin:10px 0 0;">
+          <div class="sc-row">
+            <bdi class="de-speak sc-text" data-de="Dies ist mein Auto." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Dies ist mein Auto.</bdi>
+            <button class="copy-btn" data-copy="Dies ist mein Auto." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          </div>
+          <div class="sc-ar">هذه سيارتي. <span class="small-note">(في تقرير أو نص رسمي)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-warn reveal">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4M12 17h.01"/></svg></span>
+      <div>
+        <h4>ملاحظة مهمة</h4>
+        <p><span class="de">das</span> كلمة متعددة الوظائف أيضًا (أداة تعريف، ضمير موصول) — بينما <span class="de">dies</span> تُستخدم حصرًا كأداة إشارة، مما يجعلها أوضح وأقل غموضًا في النصوص الرسمية الدقيقة.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. MAPPING DIAGRAM ===================== -->
+  <section class="section" id="mapping" data-search="مخطط سريع مطابقة der die das plural merke dir">
+    <span class="section-eyebrow">07 · للحفظ السريع</span>
+    <h2 class="section-title reveal">المخطط السريع: من أداة التعريف إلى أداة الإشارة</h2>
+    <p class="section-sub reveal">أبسط طريقة لتذكّر القاعدة كلها في نظرة واحدة:</p>
+
+    <div class="card reveal">
+      <div class="gender-legend">
+        <span><span class="gender-dot" style="background:var(--case-der)"></span> der</span>
+        <span><span class="gender-dot" style="background:var(--case-die)"></span> die</span>
+        <span><span class="gender-dot" style="background:var(--case-das)"></span> das</span>
+        <span><span class="gender-dot" style="background:var(--case-plural)"></span> Plural</span>
+      </div>
+      <div class="map-diagram mt-16">
+        <div class="map-row">
+          <div class="map-node de-speak" data-de="der" tabindex="0" role="button" style="background:var(--case-der-soft); color:var(--case-der);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> der</div>
+          <div class="map-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+          <div class="map-node de-speak" data-de="dieser" tabindex="0" role="button" style="background:var(--case-der-soft); color:var(--case-der);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> dieser</div>
+        </div>
+        <div class="map-row">
+          <div class="map-node de-speak" data-de="die" tabindex="0" role="button" style="background:var(--case-die-soft); color:var(--case-die);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> die</div>
+          <div class="map-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+          <div class="map-node de-speak" data-de="diese" tabindex="0" role="button" style="background:var(--case-die-soft); color:var(--case-die);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> diese</div>
+        </div>
+        <div class="map-row">
+          <div class="map-node de-speak" data-de="das" tabindex="0" role="button" style="background:var(--case-das-soft); color:var(--case-das);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> das</div>
+          <div class="map-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+          <div class="map-node de-speak" data-de="dieses" tabindex="0" role="button" style="background:var(--case-das-soft); color:var(--case-das);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> dieses</div>
+        </div>
+        <div class="map-row">
+          <div class="map-node de-speak" data-de="Plural" tabindex="0" role="button" style="background:var(--case-plural-soft); color:var(--case-plural);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Plural</div>
+          <div class="map-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+          <div class="map-node de-speak" data-de="diese" tabindex="0" role="button" style="background:var(--case-plural-soft); color:var(--case-plural);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> diese</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-solid reveal mt-16">
+      <div class="table-scroll">
+        <table class="grammar-table">
+          <thead><tr><th>الأداة</th><th>المعنى</th><th>الاستخدام</th></tr></thead>
+          <tbody>
+            <tr><td><span class="de" style="font-weight:800;">das</span></td><td>هذا/هذه (عام)</td><td>استخدام عام، بغض النظر عن الجنس</td></tr>
+            <tr><td><span class="de" style="font-weight:800; color:var(--case-plural);">dies</span></td><td>هذا/هذه (رسمي)</td><td>اللغة المكتوبة والرسمية</td></tr>
+            <tr><td><span class="de" style="font-weight:800; color:var(--case-der);">dieser</span></td><td>هذا (مذكر)</td><td>قبل اسم مذكر (der)</td></tr>
+            <tr><td><span class="de" style="font-weight:800; color:var(--case-die);">diese</span></td><td>هذه / هؤلاء</td><td>قبل اسم مؤنث (die) أو جمع</td></tr>
+            <tr><td><span class="de" style="font-weight:800; color:var(--case-das);">dieses</span></td><td>هذا (محايد)</td><td>قبل اسم محايد (das)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 8. DECLENSION (advanced) ===================== -->
+  <section class="section" id="declension" data-search="تصريف كامل حالات nominativ akkusativ dativ genitiv der wörter">
+    <span class="section-eyebrow">08 · للمستوى المتقدّم</span>
+    <h2 class="section-title reveal">التصريف الكامل عبر الحالات الأربع</h2>
+    <p class="section-sub reveal">المخطط السابق يعرض حالة Nominativ فقط. لكن dieser فعليًا كلمة من عائلة "der-Wörter" — أي أنها تتصرّف تمامًا بنفس نمط أداة التعريف عبر كل الحالات الأربع.</p>
+
+    <div class="card reveal">
+      <div class="table-scroll">
+        <table class="grammar-table">
+          <thead><tr><th>الحالة</th><th><span style="color:var(--case-der)">Maskulin</span></th><th><span style="color:var(--case-die)">Feminin</span></th><th><span style="color:var(--case-das)">Neutrum</span></th><th><span style="color:var(--case-plural)">Plural</span></th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag" style="background:var(--primary-soft); color:var(--primary-2);">N</span></td>
+              <td class="de-speak" data-de="dieser" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> dieser</td>
+              <td class="de-speak" data-de="diese" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> diese</td>
+              <td class="de-speak" data-de="dieses" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> dieses</td>
+              <td class="de-speak" data-de="diese" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> diese</td></tr>
+            <tr><td><span class="tag" style="background:var(--accent-soft); color:var(--accent);">A</span></td>
+              <td class="de-speak" data-de="diesen" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> diesen</td>
+              <td class="de-speak" data-de="diese" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> diese</td>
+              <td class="de-speak" data-de="dieses" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> dieses</td>
+              <td class="de-speak" data-de="diese" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> diese</td></tr>
+            <tr><td><span class="tag" style="background:var(--case-der-soft); color:var(--case-der);">D</span></td>
+              <td class="de-speak" data-de="diesem" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> diesem</td>
+              <td class="de-speak" data-de="dieser" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> dieser</td>
+              <td class="de-speak" data-de="diesem" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> diesem</td>
+              <td class="de-speak" data-de="diesen" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> diesen</td></tr>
+            <tr><td><span class="tag" style="background:var(--case-plural-soft); color:var(--case-plural);">G</span></td>
+              <td class="de-speak" data-de="dieses" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> dieses</td>
+              <td class="de-speak" data-de="dieser" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> dieser</td>
+              <td class="de-speak" data-de="dieses" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> dieses</td>
+              <td class="de-speak" data-de="dieser" tabindex="0" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> dieser</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card-solid reveal mt-16">
+      <div class="sentence-card" style="margin-top:0;">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Ich sehe diesen Mann." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Ich sehe diesen Mann.</bdi>
+          <button class="copy-btn" data-copy="Ich sehe diesen Mann." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">أرى هذا الرجل. <span class="small-note">(Akkusativ)</span></div>
+      </div>
+      <div class="sentence-card">
+        <div class="sc-row">
+          <bdi class="de-speak sc-text" data-de="Ich helfe diesem Mann." tabindex="0" role="button" dir="ltr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg> Ich helfe diesem Mann.</bdi>
+          <button class="copy-btn" data-copy="Ich helfe diesem Mann." aria-label="نسخ الجملة" title="نسخ الجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        </div>
+        <div class="sc-ar">أساعد هذا الرجل. <span class="small-note">(Dativ — helfen يتطلب Dativ)</span></div>
+      </div>
+    </div>
+
+    <details class="tips reveal">
+      <summary>لماذا تُشبه dieser أداة التعريف تمامًا؟
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </summary>
+      <div class="tips-body">
+        <p>كلمات مثل dieser وjeder وjener وwelcher وmanche وsolche تُسمّى جميعًا "der-Wörter" لأنها تتصرّف بنفس نهايات أداة التعريف تمامًا (der/dieser، dem/diesem، des/dieses...). إتقان تصريف dieser يعني أنك أتقنت تلقائيًا تصريف هذه العائلة كاملة.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ===================== 9. PRONUNCIATION LAB ===================== -->
+  <section class="section" id="lab" data-search="معمل النطق استماع صوت نطق sentence speech">
+    <span class="section-eyebrow">09 · معمل النطق</span>
+    <h2 class="section-title reveal">تدرّب على نطق جُمل كاملة</h2>
+    <p class="section-sub reveal">اختر جملة، ثم استمع إليها كلمةً كلمة مع تمييز الكلمة المنطوقة حاليًا. يمكنك التحكّم في سرعة النطق أيضًا.</p>
+
+    <div class="card lab reveal" id="pronunciationLab">
+      <div class="lab-sentence" id="labSentence" dir="ltr" lang="de"></div>
+      <p class="center-text" style="direction:rtl;" id="labSentenceAr"></p>
+      <div class="lab-controls">
+        <button class="btn btn-gold" id="labPlayBtn" aria-label="تشغيل النطق"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><span>استماع</span></button>
+        <button class="btn btn-ghost" id="labReplayBtn" aria-label="إعادة من البداية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg><span>إعادة</span></button>
+        <div class="lab-speed">
+          <span>السرعة</span>
+          <input type="range" id="labSpeed" min="0.5" max="1.5" step="0.05" value="0.95" aria-label="سرعة النطق">
+          <span id="labSpeedVal" class="mono">0.95×</span>
+        </div>
+      </div>
+      <div class="lab-voice">
+        <span class="lab-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+        الصوت المستخدم: <span id="labVoiceName">جارِ التحديد…</span> (de-DE)
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-weight:400; font-size:1.2rem; margin:22px 0 10px;" class="reveal">اختر جملة أخرى</h3>
+    <div class="sentence-list reveal" id="labSentenceList" role="list"></div>
+  </section>
+
+  <!-- ===================== 10. FLASHCARDS ===================== -->
+  <section class="section" id="flashcards" data-search="بطاقات تعليمية flashcards اسماء nomen مفردات">
+    <span class="section-eyebrow">10 · البطاقات التعليمية</span>
+    <h2 class="section-title reveal">راجع مطابقة الأسماء مع أدوات الإشارة</h2>
+    <p class="section-sub reveal">انقر على أي بطاقة لقلبها ورؤية الشكل الصحيح مع مثال. انقر على أي كلمة لسماع نطقها.</p>
+    <div class="flash-deck reveal" id="flashDeck"></div>
+  </section>
+
+  <!-- ===================== 11. PRACTICE ===================== -->
+  <section class="section" id="practice" data-search="تمارين ذاكرة استوديو memory studio تدريب لعبة">
+    <span class="section-eyebrow">11 · تمارين تفاعلية</span>
+    <h2 class="section-title reveal">اختبر فهمك بالممارسة</h2>
+    <p class="section-sub reveal">لعبتان: مطابقة الذاكرة الضوئية، واستوديو تكوين الجمل مع نطق ونسخ فوري.</p>
+
+    <h3 style="font-family:var(--font-display); font-weight:400; font-size:1.3rem; margin-bottom:6px;" class="reveal">🧠 لعبة الذاكرة الضوئية</h3>
+    <p class="small-note reveal mb-16">اقلب بطاقتين في كل مرة — إن كانتا متطابقتين (اسم ↔ أداة إشارة صحيحة) تبقيان مكشوفتين.</p>
+    <div class="card reveal">
+      <div class="memory-toolbar">
+        <span class="memory-status" id="memoryStatus"></span>
+        <button class="btn btn-ghost btn-sm" id="memoryReset"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg><span>لعبة جديدة</span></button>
+      </div>
+      <div class="memory-grid" id="memoryGrid"></div>
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-weight:400; font-size:1.3rem; margin:34px 0 6px;" class="reveal">✍️ استوديو تكوين الجمل</h3>
+    <p class="small-note reveal mb-16">اختر أداة الإشارة الصحيحة لإكمال كل جملة — بعد الإجابة ستحصل على الجملة كاملة جاهزة للاستماع والنسخ.</p>
+    <div class="reveal" id="studioShell"></div>
+  </section>
+
+  <!-- ===================== 12. QUIZ ===================== -->
+  <section class="section" id="quiz" data-search="اختبار quiz اسئلة اختيار من متعدد">
+    <span class="section-eyebrow">12 · اختبار تفاعلي</span>
+    <h2 class="section-title reveal">اختبر معلوماتك في القواعد كلها</h2>
+    <p class="section-sub reveal">تسعة أسئلة تغطي كل ما تعلّمته — نتيجتك تُحفظ محليًا على جهازك.</p>
+    <div class="card reveal quiz-shell" id="quizShell"></div>
+  </section>
+
+  <!-- ===================== 13. SUMMARY ===================== -->
+  <section class="section" id="summary" data-search="ملخص انجازات achievements تقدم مراجعة">
+    <span class="section-eyebrow">13 · الملخص</span>
+    <h2 class="section-title reveal">ملخّص أدوات الإشارة الخمس</h2>
+    <div class="grid-3 reveal reveal-stagger">
+      <div class="card-solid" style="--i:0"><b class="de">das</b><p class="small-note mt-16">استخدام عام يومي — بغض النظر عن الجنس.</p></div>
+      <div class="card-solid" style="--i:1"><b class="de" style="color:var(--case-plural)">dies</b><p class="small-note mt-16">بديل رسمي/كتابي لـ das.</p></div>
+      <div class="card-solid" style="--i:2"><b class="de" style="color:var(--case-der)">dieser</b><p class="small-note mt-16">مع الأسماء المذكرة (der).</p></div>
+      <div class="card-solid" style="--i:3"><b class="de" style="color:var(--case-die)">diese</b><p class="small-note mt-16">مع المؤنث (die) أو الجمع.</p></div>
+      <div class="card-solid" style="--i:4"><b class="de" style="color:var(--case-das)">dieses</b><p class="small-note mt-16">مع الأسماء المحايدة (das).</p></div>
+      <div class="card-solid" style="--i:5"><b class="de">der-Wörter</b><p class="small-note mt-16">dieser تتصرّف مثل أداة التعريف تمامًا.</p></div>
+    </div>
+
+    <h3 style="font-family:var(--font-display); font-weight:400; font-size:1.3rem; margin:34px 0 14px;" class="reveal">🏅 إنجازاتك</h3>
+    <div class="ach-grid reveal" id="achGrid" role="list"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="foot-actions">
+    <button class="btn btn-ghost btn-sm" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg><span>العودة للأعلى</span></button>
+    <button class="btn btn-ghost btn-sm" onclick="window.print()">🖨️ <span>نسخة للطباعة</span></button>
+  </div>
+  <p>دائرة الضوء — درس تفاعلي في أدوات الإشارة الألمانية · <span id="yearNow"></span></p>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="العودة إلى الأعلى">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<p class="no-results" id="noResults">لا توجد نتائج مطابقة لبحثك داخل الدرس.</p>
+
+<script>
+/* ============================================================
+   محرك درس أدوات الإشارة — Spotlight Lesson Engine
+   ============================================================ */
+(function(){
+  "use strict";
+
+  const ICONS = {
+    speaker: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>',
+    copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
+    play: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',
+    pause: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>',
+    replay: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>',
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+    x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
+    refresh: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>',
+  };
+
+  const $ = (sel, ctx) => (ctx||document).querySelector(sel);
+  const $$ = (sel, ctx) => Array.from((ctx||document).querySelectorAll(sel));
+  const store = {
+    get(k, fallback){ try{ const v = localStorage.getItem(k); return v===null? fallback : JSON.parse(v); }catch(e){ return fallback; } },
+    set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+  };
+
+  /* ================= THEME ================= */
+  const ThemeMod = (function(){
+    const root = document.documentElement;
+    function apply(theme){
+      root.setAttribute('data-theme', theme);
+      const btn = $('#themeToggle');
+      if (btn) btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    }
+    function init(){
+      const saved = store.get('dem-theme', null);
+      if (saved === 'light' || saved === 'dark'){ apply(saved); }
+      else {
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        apply(prefersDark ? 'dark' : 'light');
+      }
+      if (window.matchMedia){
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)=>{
+          if (store.get('dem-theme', null) === null) apply(e.matches ? 'dark' : 'light');
+        });
+      }
+    }
+    function toggle(){
+      const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      apply(next);
+      store.set('dem-theme', next);
+    }
+    return { init, toggle };
+  })();
+
+  /* ================= SPEECH ================= */
+  const Speech = (function(){
+    let voices = [];
+    let bestVoice = null;
+    let currentEl = null;
+
+    function loadVoices(){
+      voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+      const de = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith('de'));
+      const exact = de.filter(v => v.lang.toLowerCase() === 'de-de');
+      const pool = exact.length ? exact : de;
+      pool.sort((a,b) => (b.localService === true) - (a.localService === true));
+      bestVoice = pool[0] || null;
+      const indicator = $('#labVoiceName');
+      if (indicator) indicator.textContent = bestVoice ? bestVoice.name : 'صوت المتصفح الافتراضي';
+    }
+    if ('speechSynthesis' in window){ loadVoices(); window.speechSynthesis.onvoiceschanged = loadVoices; }
+
+    function speak(text, opts){
+      opts = opts || {};
+      if (!('speechSynthesis' in window)){ console.warn('SpeechSynthesis غير مدعوم'); return null; }
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'de-DE';
+      if (bestVoice) utter.voice = bestVoice;
+      utter.rate = opts.rate || 0.95;
+      utter.pitch = 1;
+      if (opts.onboundary) utter.onboundary = opts.onboundary;
+      if (opts.onend) utter.onend = opts.onend;
+      if (opts.onstart) utter.onstart = opts.onstart;
+      window.speechSynthesis.speak(utter);
+      return utter;
+    }
+    function bindGlobalClickToSpeak(){
+      document.addEventListener('click', (e)=>{
+        const el = e.target.closest('.de-speak');
+        if (!el) return;
+        e.preventDefault();
+        speakElement(el);
+      });
+      document.addEventListener('keydown', (e)=>{
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        const el = e.target.closest && e.target.closest('.de-speak');
+        if (!el) return;
+        e.preventDefault();
+        speakElement(el);
+      });
+    }
+    function speakElement(el){
+      const text = el.getAttribute('data-de') || el.textContent.trim();
+      if (currentEl) currentEl.classList.remove('speaking');
+      currentEl = el;
+      el.classList.add('speaking');
+      speak(text, { onend: () => { el.classList.remove('speaking'); if (currentEl===el) currentEl=null; } });
+    }
+    return { speak, bindGlobalClickToSpeak };
+  })();
+
+  /* ================= COPY TO CLIPBOARD ================= */
+  const Copy = (function(){
+    async function copyText(text){
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        try{ await navigator.clipboard.writeText(text); return true; }catch(e){ /* fall through */ }
+      }
+      try{
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        return true;
+      }catch(e){ return false; }
+    }
+    function showCopied(btn){
+      const original = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = ICONS.check;
+      btn.setAttribute('aria-label', 'تم النسخ');
+      clearTimeout(btn._copyTimer);
+      btn._copyTimer = setTimeout(()=>{
+        btn.classList.remove('copied');
+        btn.innerHTML = ICONS.copy;
+        btn.setAttribute('aria-label', 'نسخ الجملة');
+      }, 1500);
+    }
+    function bindGlobal(){
+      document.addEventListener('click', (e)=>{
+        const btn = e.target.closest('.copy-btn');
+        if (!btn) return;
+        e.preventDefault();
+        e.stopPropagation();
+        const text = btn.getAttribute('data-copy') || '';
+        copyText(text).then(()=> showCopied(btn));
+      });
+    }
+    return { bindGlobal, copyText };
+  })();
+
+  /* ================= PRONUNCIATION LAB ================= */
+  const Lab = (function(){
+    const sentences = [
+      { de: "Dieser Mann ist freundlich.", ar: "هذا الرجل لطيف." },
+      { de: "Diese Frau ist Ärztin.", ar: "هذه المرأة طبيبة." },
+      { de: "Dieses Auto ist schnell.", ar: "هذه السيارة سريعة." },
+      { de: "Diese Bücher sind neu.", ar: "هذه الكتب جديدة." },
+      { de: "Dies ist mein Haus.", ar: "هذا هو منزلي." },
+      { de: "Das ist ein Buch.", ar: "هذا كتاب." }
+    ];
+    let activeIndex = 0;
+    let isPaused = false;
+    let wordEls = [];
+
+    function renderSentenceList(){
+      const list = $('#labSentenceList');
+      if (!list) return;
+      list.innerHTML = sentences.map((s,i)=>`
+        <button class="sentence-pick${i===activeIndex?' active-pick':''}" data-idx="${i}" role="listitem" aria-label="اختر الجملة: ${s.de}">
+          <span><span class="de">${s.de}</span><br/><span class="ar">${s.ar}</span></span>
+        </button>`).join('');
+      $$('.sentence-pick', list).forEach(btn=> btn.addEventListener('click', ()=> setActive(parseInt(btn.dataset.idx,10))));
+    }
+    function renderSentence(){
+      const wrap = $('#labSentence');
+      const s = sentences[activeIndex];
+      const words = s.de.split(' ');
+      wrap.innerHTML = words.map((w,i)=> `<span class="lab-word" data-i="${i}">${w}</span>`).join(' ');
+      wordEls = $$('.lab-word', wrap);
+      $('#labSentenceAr').textContent = s.ar;
+    }
+    function setActive(i){
+      activeIndex = i;
+      window.speechSynthesis && window.speechSynthesis.cancel();
+      setPlayingState(false);
+      renderSentence();
+      renderSentenceList();
+    }
+    function setPlayingState(playing){
+      const lab = $('#pronunciationLab');
+      const playBtn = $('#labPlayBtn');
+      if (!lab || !playBtn) return;
+      lab.classList.toggle('playing', playing);
+      playBtn.innerHTML = playing ? (ICONS.pause + '<span>إيقاف مؤقت</span>') : (ICONS.play + '<span>استماع</span>');
+    }
+    function highlightWord(charIndex){
+      const s = sentences[activeIndex].de;
+      let acc = 0;
+      for (let i=0;i<wordEls.length;i++){
+        const w = wordEls[i].textContent;
+        const start = s.indexOf(w, acc);
+        const end = start + w.length;
+        if (charIndex >= start && charIndex <= end){
+          wordEls.forEach(el=>el.classList.remove('active'));
+          wordEls[i].classList.add('active');
+          return;
+        }
+        acc = end;
+      }
+    }
+    function play(){
+      if (!('speechSynthesis' in window)) return;
+      if (isPaused){ window.speechSynthesis.resume(); isPaused=false; setPlayingState(true); return; }
+      const rate = parseFloat($('#labSpeed').value || '0.95');
+      const s = sentences[activeIndex];
+      wordEls.forEach(el=>el.classList.remove('active'));
+      Speech.speak(s.de, {
+        rate,
+        onstart: ()=> setPlayingState(true),
+        onboundary: (e)=>{ if (e.charIndex !== undefined) highlightWord(e.charIndex); },
+        onend: ()=>{ setPlayingState(false); wordEls.forEach(el=>el.classList.remove('active')); }
+      });
+    }
+    function pauseToggle(){
+      if (!('speechSynthesis' in window)) return;
+      if (window.speechSynthesis.speaking && !isPaused){ window.speechSynthesis.pause(); isPaused=true; setPlayingState(false); }
+      else { play(); }
+    }
+    function replay(){ window.speechSynthesis && window.speechSynthesis.cancel(); isPaused=false; play(); }
+    function init(){
+      if (!$('#pronunciationLab')) return;
+      renderSentence(); renderSentenceList();
+      $('#labPlayBtn').addEventListener('click', pauseToggle);
+      $('#labReplayBtn').addEventListener('click', replay);
+      $('#labSpeed').addEventListener('input', (e)=>{ $('#labSpeedVal').textContent = parseFloat(e.target.value).toFixed(2)+'×'; });
+    }
+    return { init };
+  })();
+
+  /* ================= TRAIL / PROGRESS / SCROLL ================= */
+  const Trail = (function(){
+    let visited = new Set(store.get('dem-progress', []));
+    function updateScrollBar(){
+      const doc = document.documentElement;
+      const scrollTop = window.scrollY || doc.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const pct = height > 0 ? (scrollTop/height)*100 : 0;
+      const bar = $('#scrollProgressBar');
+      if (bar) bar.style.width = pct + '%';
+    }
+    function updateProgressRing(){
+      const sections = $$('.section[id]');
+      const total = sections.length;
+      const pct = total ? Math.round((visited.size/total)*100) : 0;
+      const label = $('#progressPct');
+      if (label) label.textContent = pct + '٪';
+      const fg = $('#progressRingFg');
+      if (fg){
+        const circumference = 2*Math.PI*15;
+        fg.style.strokeDasharray = circumference;
+        fg.style.strokeDashoffset = circumference - (pct/100)*circumference;
+      }
+      Achievements.check('progress', pct);
+    }
+    function markVisited(id){
+      if (visited.has(id)) return;
+      visited.add(id);
+      store.set('dem-progress', Array.from(visited));
+      updateProgressRing();
+      const stop = $(`.trail-stop[data-target="${id}"]`);
+      if (stop) stop.setAttribute('data-visited','true');
+    }
+    function setActiveTrail(id){
+      $$('.trail-stop').forEach(s=> s.setAttribute('data-active', s.dataset.target===id ? 'true':'false'));
+      $$('.mobile-jump a').forEach(a=> a.classList.toggle('active-jump', a.getAttribute('href')==='#'+id));
+      const fill = $('#trailFill');
+      if (fill){
+        const stops = $$('.trail-stop');
+        const idx = stops.findIndex(s=>s.dataset.target===id);
+        if (idx>-1){ const pct = stops.length>1 ? (idx/(stops.length-1))*100 : 0; fill.style.height = pct + '%'; }
+      }
+    }
+    function initObservers(){
+      const sections = $$('.section[id]');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{ if (entry.isIntersecting && entry.intersectionRatio > 0.45) markVisited(entry.target.id); });
+        let best = null, bestRatio = 0;
+        sections.forEach(sec=>{
+          const rect = sec.getBoundingClientRect();
+          const visibleTop = Math.max(rect.top, 80);
+          const visibleBottom = Math.min(rect.bottom, window.innerHeight);
+          const visible = Math.max(0, visibleBottom - visibleTop);
+          const ratio = visible / Math.min(rect.height, window.innerHeight);
+          if (ratio > bestRatio){ bestRatio = ratio; best = sec.id; }
+        });
+        if (best) setActiveTrail(best);
+      }, { threshold: [0,0.15,0.3,0.45,0.6,0.8] });
+      sections.forEach(s=>io.observe(s));
+    }
+    function initRevealAnimations(){
+      const els = $$('.reveal');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{ if (entry.isIntersecting){ entry.target.classList.add('in-view'); io.unobserve(entry.target); } });
+      }, { threshold: 0.15 });
+      els.forEach(el=>io.observe(el));
+    }
+    function initClicks(){
+      $$('.trail-stop, .mobile-jump a').forEach(el=>{
+        el.addEventListener('click', (e)=>{
+          e.preventDefault();
+          const target = el.dataset.target ? document.getElementById(el.dataset.target) : document.querySelector(el.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+        });
+      });
+    }
+    function restoreVisitedDots(){
+      visited.forEach(id=>{ const stop = $(`.trail-stop[data-target="${id}"]`); if (stop) stop.setAttribute('data-visited','true'); });
+      updateProgressRing();
+    }
+    function init(){
+      window.addEventListener('scroll', updateScrollBar, { passive:true });
+      updateScrollBar(); initObservers(); initRevealAnimations(); initClicks(); restoreVisitedDots();
+    }
+    return { init };
+  })();
+
+  /* ================= SEARCH ================= */
+  const Search = (function(){
+    function run(query){
+      const q = query.trim().toLowerCase();
+      const sections = $$('.section[data-search]');
+      let anyVisible = false;
+      sections.forEach(sec=>{
+        const hay = sec.dataset.search.toLowerCase();
+        const match = q.length < 2 || hay.includes(q);
+        sec.classList.toggle('search-hidden', !match);
+        if (match) anyVisible = true;
+      });
+      const noRes = $('#noResults');
+      if (noRes) noRes.classList.toggle('show', q.length>=2 && !anyVisible);
+    }
+    function init(){
+      const input = $('#lessonSearch');
+      if (!input) return;
+      let t;
+      input.addEventListener('input', (e)=>{ clearTimeout(t); t = setTimeout(()=> run(e.target.value), 150); });
+    }
+    return { init };
+  })();
+
+  /* ================= CHROME ================= */
+  const Chrome = (function(){
+    function toggleFullscreen(){
+      if (!document.fullscreenElement){ document.documentElement.requestFullscreen().catch(()=>{}); }
+      else { document.exitFullscreen().catch(()=>{}); }
+    }
+    function initBackTop(){
+      const btn = $('#backTop');
+      if (!btn) return;
+      window.addEventListener('scroll', ()=>{ btn.classList.toggle('show', window.scrollY > 700); }, { passive:true });
+      btn.addEventListener('click', ()=> window.scrollTo({ top:0, behavior:'smooth' }));
+    }
+    function init(){
+      const fsBtn = $('#fullscreenToggle');
+      if (fsBtn) fsBtn.addEventListener('click', toggleFullscreen);
+      const printBtn = $('#printBtn');
+      if (printBtn) printBtn.addEventListener('click', ()=> window.print());
+      initBackTop();
+    }
+    return { init };
+  })();
+
+  /* ================= ACHIEVEMENTS ================= */
+  const Achievements = (function(){
+    const DEFS = {
+      start:  { icon:'💡', title:'أُضيء أول كشّاف', desc:'فتحت الدرس وبدأت القراءة' },
+      half:   { icon:'🔦', title:'منتصف المسرح', desc:'اطّلعت على نصف أقسام الدرس' },
+      summit: { icon:'🎭', title:'ستارة النهاية', desc:'أكملت جميع أقسام الدرس' },
+      flash:  { icon:'🃏', title:'خبير البطاقات', desc:'قلّبت كل بطاقات الأسماء' },
+      memory: { icon:'🧠', title:'ذاكرة الأضواء', desc:'أكملت لعبة الذاكرة الضوئية' },
+      studio: { icon:'✍️', title:'كاتب المسرحية', desc:'أكملت استوديو تكوين الجمل' },
+      quiz:   { icon:'🏆', title:'نجم العرض', desc:'حققت 80٪ أو أكثر في الاختبار' }
+    };
+    let unlocked = new Set(store.get('dem-achievements', []));
+    function render(){
+      const grid = $('#achGrid');
+      if (!grid) return;
+      grid.innerHTML = Object.keys(DEFS).map(key=>{
+        const d = DEFS[key];
+        const isUnlocked = unlocked.has(key);
+        return `<div class="ach-badge${isUnlocked?' unlocked':''}" role="listitem" aria-label="${d.title}${isUnlocked?' — تم الحصول عليه':' — مقفل'}">
+          <div class="ach-icon" aria-hidden="true">${d.icon}</div><h5>${d.title}</h5><p>${d.desc}</p></div>`;
+      }).join('');
+    }
+    function toast(key){
+      const d = DEFS[key];
+      const t = $('#toast');
+      if (!t) return;
+      t.innerHTML = `<span style="font-size:1.3rem">${d.icon}</span><span>إنجاز جديد: ${d.title}</span>`;
+      t.classList.add('show');
+      clearTimeout(t._timer);
+      t._timer = setTimeout(()=> t.classList.remove('show'), 3200);
+    }
+    function unlock(key){
+      if (unlocked.has(key)) return;
+      unlocked.add(key);
+      store.set('dem-achievements', Array.from(unlocked));
+      render(); toast(key);
+    }
+    function check(kind, value){
+      if (kind==='progress'){
+        if (value>0) unlock('start');
+        if (value>=50) unlock('half');
+        if (value>=100) unlock('summit');
+      }
+      if (kind==='flash' && value===true) unlock('flash');
+      if (kind==='memory' && value===true) unlock('memory');
+      if (kind==='studio' && value===true) unlock('studio');
+      if (kind==='quiz' && value>=80) unlock('quiz');
+    }
+    function init(){ render(); }
+    return { init, check };
+  })();
+
+  /* ================= FLASHCARDS (nouns -> demonstrative form) ================= */
+  const Flashcards = (function(){
+    const data = [
+      { ar:'الرجل', de:'der Mann', target:'dieser Mann', sentence:'Dieser Mann ist freundlich.', sentenceAr:'هذا الرجل لطيف.' },
+      { ar:'الطاولة', de:'der Tisch', target:'dieser Tisch', sentence:'Dieser Tisch ist alt.', sentenceAr:'هذه الطاولة قديمة.' },
+      { ar:'المعلم', de:'der Lehrer', target:'dieser Lehrer', sentence:'Dieser Lehrer erklärt gut.', sentenceAr:'هذا المعلم يشرح جيدًا.' },
+      { ar:'المرأة', de:'die Frau', target:'diese Frau', sentence:'Diese Frau ist Ärztin.', sentenceAr:'هذه المرأة طبيبة.' },
+      { ar:'الحقيبة', de:'die Tasche', target:'diese Tasche', sentence:'Diese Tasche ist neu.', sentenceAr:'هذه الحقيبة جديدة.' },
+      { ar:'الزهرة', de:'die Blume', target:'diese Blume', sentence:'Diese Blume riecht gut.', sentenceAr:'هذه الزهرة رائحتها جميلة.' },
+      { ar:'السيارة', de:'das Auto', target:'dieses Auto', sentence:'Dieses Auto ist schnell.', sentenceAr:'هذه السيارة سريعة.' },
+      { ar:'الطفل', de:'das Kind', target:'dieses Kind', sentence:'Dieses Kind ist klein.', sentenceAr:'هذا الطفل صغير.' },
+      { ar:'المنزل', de:'das Haus', target:'dieses Haus', sentence:'Dieses Haus ist groß.', sentenceAr:'هذا المنزل كبير.' },
+      { ar:'الكتب (جمع)', de:'die Bücher', target:'diese Bücher', sentence:'Diese Bücher sind neu.', sentenceAr:'هذه الكتب جديدة.' },
+      { ar:'الأطفال (جمع)', de:'die Kinder', target:'diese Kinder', sentence:'Diese Kinder spielen im Park.', sentenceAr:'هؤلاء الأطفال يلعبون في الحديقة.' },
+      { ar:'السيارات (جمع)', de:'die Autos', target:'diese Autos', sentence:'Diese Autos sind teuer.', sentenceAr:'هذه السيارات غالية.' }
+    ];
+    let flippedSet = new Set(store.get('dem-flash-flipped', []));
+    function render(){
+      const deck = $('#flashDeck');
+      if (!deck) return;
+      deck.innerHTML = data.map((c,i)=>`
+        <div class="flash-card" data-i="${i}" role="button" tabindex="0" aria-label="بطاقة: ${c.de}. انقر للقلب">
+          <div class="flash-inner">
+            <div class="flash-face flash-front">
+              <span class="flash-badge">NOMEN</span>
+              <div class="flash-word de">${c.de}</div>
+              <div class="flash-ar">${c.ar}</div>
+              <span class="flash-hint">${ICONS.replay}اقلب البطاقة</span>
+            </div>
+            <div class="flash-face flash-back">
+              <span class="flash-badge">DEMONSTRATIV</span>
+              <div class="flash-word de" style="font-size:1.3rem; color:var(--accent)">${c.target}</div>
+              <div class="flash-sentence de" style="font-weight:700">${c.sentence}</div>
+              <div class="flash-sentence">${c.sentenceAr}</div>
+            </div>
+          </div>
+        </div>`).join('');
+      $$('.flash-card', deck).forEach(card=>{
+        const i = card.dataset.i;
+        if (flippedSet.has(i)) card.classList.add('flipped');
+        const flip = (e)=>{
+          if (e.target.closest('.de-speak')) return;
+          card.classList.toggle('flipped');
+          flippedSet.add(i);
+          store.set('dem-flash-flipped', Array.from(flippedSet));
+          if (flippedSet.size >= data.length) Achievements.check('flash', true);
+        };
+        card.addEventListener('click', flip);
+        card.addEventListener('keydown', (e)=>{ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); flip(e); } });
+        $$('.de', card).forEach(w=>{
+          w.classList.add('de-speak');
+          w.setAttribute('tabindex','0'); w.setAttribute('role','button');
+          w.setAttribute('data-de', w.textContent.trim());
+          w.addEventListener('click', (e)=> e.stopPropagation());
+        });
+      });
+    }
+    function init(){ render(); }
+    return { init };
+  })();
+
+  /* ================= MEMORY MATCH — spotlight game ================= */
+  const Memory = (function(){
+    const pairs = [
+      { noun:'Mann', badge:'der', answer:'dieser' },
+      { noun:'Frau', badge:'die', answer:'diese' },
+      { noun:'Auto', badge:'das', answer:'dieses' },
+      { noun:'Tisch', badge:'der', answer:'dieser' },
+      { noun:'Blume', badge:'die', answer:'diese' },
+      { noun:'Kind', badge:'das', answer:'dieses' },
+      { noun:'Bücher', badge:'Plural', answer:'diese' },
+      { noun:'Häuser', badge:'Plural', answer:'diese' }
+    ];
+    let cards = [];
+    let flippedCards = [];
+    let matchedCount = 0;
+    let lock = false;
+    let moves = 0;
+
+    function shuffle(arr){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+    function buildDeck(){
+      const nounCards = pairs.map((p,i)=> ({ id:'n'+i, type:'noun', label:p.noun, badge:p.badge, answer:p.answer }));
+      const answerCards = pairs.map((p,i)=> ({ id:'a'+i, type:'answer', label:p.answer, badge:'', answer:p.answer }));
+      cards = shuffle(nounCards.concat(answerCards));
+    }
+
+    function render(){
+      buildDeck();
+      flippedCards = []; matchedCount = 0; lock = false; moves = 0;
+      const grid = $('#memoryGrid');
+      grid.innerHTML = cards.map(c=>`
+        <div class="mem-card" data-id="${c.id}" data-answer="${c.answer}" data-type="${c.type}" tabindex="0" role="button" aria-label="بطاقة مقلوبة">
+          <div class="mem-inner">
+            <div class="mem-face mem-back">؟</div>
+            <div class="mem-face mem-front">${c.type==='noun' ? `<span>${c.label}<br><small style="opacity:.6">(${c.badge})</small></span>` : `<span class="de">${c.label}</span>`}</div>
+          </div>
+        </div>`).join('');
+      $$('.mem-card', grid).forEach(el=>{
+        el.addEventListener('click', ()=> flip(el));
+        el.addEventListener('keydown', (e)=>{ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); flip(el); } });
+      });
+      updateStatus();
+    }
+
+    function updateStatus(){
+      const status = $('#memoryStatus');
+      if (status) status.textContent = `${matchedCount} / ${pairs.length} أزواج · ${moves} محاولة`;
+    }
+
+    function flip(el){
+      if (lock) return;
+      if (el.classList.contains('flipped') || el.classList.contains('matched')) return;
+      if (flippedCards.length === 2) return;
+      el.classList.add('flipped');
+      flippedCards.push(el);
+      if (flippedCards.length === 2){
+        moves++;
+        lock = true;
+        const [a,b] = flippedCards;
+        const aType = a.dataset.type, bType = b.dataset.type;
+        const isPair = aType !== bType && a.dataset.answer === b.dataset.answer;
+        if (isPair){
+          setTimeout(()=>{
+            a.classList.add('matched'); b.classList.add('matched');
+            matchedCount++;
+            flippedCards = []; lock = false;
+            updateStatus();
+            if (matchedCount === pairs.length){
+              Achievements.check('memory', true);
+              const status = $('#memoryStatus');
+              if (status) status.innerHTML = `🎉 أحسنت! أكملت كل الأزواج في ${moves} محاولة`;
+            }
+          }, 500);
+        } else {
+          a.querySelector('.mem-front').parentElement.classList.add('wrong-flash');
+          b.querySelector('.mem-front').parentElement.classList.add('wrong-flash');
+          setTimeout(()=>{
+            a.classList.remove('flipped','wrong-flash'); b.classList.remove('flipped','wrong-flash');
+            flippedCards = []; lock = false;
+            updateStatus();
+          }, 800);
+        }
+      }
+    }
+
+    function init(){
+      if (!$('#memoryGrid')) return;
+      render();
+      const resetBtn = $('#memoryReset');
+      if (resetBtn) resetBtn.addEventListener('click', render);
+    }
+    return { init };
+  })();
+
+  /* ================= SENTENCE STUDIO — fill + reveal copyable sentence ================= */
+  const Studio = (function(){
+    const items = [
+      { pre:'', post:'Mann ist mein Vater.', ar:'هذا الرجل هو أبي.', answer:'dieser', full:'Dieser Mann ist mein Vater.', fullAr:'هذا الرجل هو أبي.', hint:'الاسم: der Mann (مذكر)' },
+      { pre:'', post:'ist ein Buch.', ar:'هذا كتاب.', answer:'das', full:'Das ist ein Buch.', fullAr:'هذا كتاب.', hint:'جملة تعريف عامة' },
+      { pre:'', post:'Frau arbeitet als Ärztin.', ar:'هذه المرأة تعمل طبيبة.', answer:'diese', full:'Diese Frau arbeitet als Ärztin.', fullAr:'هذه المرأة تعمل طبيبة.', hint:'الاسم: die Frau (مؤنث)' },
+      { pre:'', post:'Auto gehört meinem Bruder.', ar:'هذه السيارة ملك أخي.', answer:'dieses', full:'Dieses Auto gehört meinem Bruder.', fullAr:'هذه السيارة ملك أخي.', hint:'الاسم: das Auto (محايد)' },
+      { pre:'', post:'Kinder spielen im Garten.', ar:'هؤلاء الأطفال يلعبون في الحديقة.', answer:'diese', full:'Diese Kinder spielen im Garten.', fullAr:'هؤلاء الأطفال يلعبون في الحديقة.', hint:'الاسم: die Kinder (جمع)' },
+      { pre:'', post:'ist mein Haus.', ar:'هذا هو منزلي. (سياق رسمي/مكتوب)', answer:'dies', full:'Dies ist mein Haus.', fullAr:'هذا هو منزلي.', hint:'سياق رسمي أو مكتوب — بديل أنيق عن das' }
+    ];
+    let idx = 0;
+
+    function render(){
+      if (idx >= items.length){ renderDone(); return; }
+      const it = items[idx];
+      $('#studioShell').innerHTML = `
+        <p class="small-note mb-16">الجملة ${idx+1} من ${items.length}</p>
+        <div class="studio-card">
+          <div class="studio-sentence"><span class="studio-blank">____</span> ${it.post}</div>
+          <p class="studio-hint">${it.hint}</p>
+          <div class="studio-opts" id="studioOpts">
+            ${['dieser','diese','dieses','dies','das'].map(w=> `<button class="studio-opt" data-w="${w}">${w}</button>`).join('')}
+          </div>
+          <div class="studio-reveal" id="studioReveal"></div>
+        </div>
+        <div class="studio-nav">
+          <button class="btn btn-primary" id="studioNextBtn" style="display:none;">التالي</button>
+        </div>
+      `;
+      $$('#studioOpts .studio-opt').forEach(btn=> btn.addEventListener('click', ()=> pick(btn, it)));
+    }
+
+    function pick(btn, it){
+      $$('#studioOpts .studio-opt').forEach(b=> b.disabled = true);
+      const correct = btn.dataset.w === it.answer;
+      if (correct){ btn.classList.add('correct'); }
+      else {
+        btn.classList.add('wrong');
+        $(`#studioOpts .studio-opt[data-w="${it.answer}"]`).classList.add('correct');
+      }
+      const reveal = $('#studioReveal');
+      reveal.classList.add('show');
+      reveal.innerHTML = `
+        <div class="sentence-card">
+          <div class="sc-row">
+            <bdi class="de-speak sc-text" data-de="${it.full}" tabindex="0" role="button" dir="ltr">${ICONS.speaker} ${it.full}</bdi>
+            <button class="copy-btn" data-copy="${it.full}" aria-label="نسخ الجملة" title="نسخ الجملة">${ICONS.copy}</button>
+          </div>
+          <div class="sc-ar">${it.fullAr}</div>
+        </div>`;
+      $('#studioNextBtn').style.display = 'inline-flex';
+      $('#studioNextBtn').onclick = ()=>{ idx++; render(); };
+    }
+
+    function renderDone(){
+      $('#studioShell').innerHTML = `
+        <div class="studio-card" style="text-align:center;">
+          <div style="font-family:var(--font-display); font-size:1.8rem; color:var(--accent);">🎬 انتهى العرض!</div>
+          <p class="mt-16" style="font-weight:700;">أكملت جميع جُمل الاستوديو (${items.length}/${items.length})</p>
+          <button class="btn btn-gold mt-24" id="studioRestart">${ICONS.refresh}<span>إعادة من البداية</span></button>
+        </div>`;
+      $('#studioRestart').addEventListener('click', ()=>{ idx=0; render(); });
+      Achievements.check('studio', true);
+    }
+    function init(){ if (!$('#studioShell')) return; render(); }
+    return { init };
+  })();
+
+  /* ================= QUIZ ================= */
+  const Quiz = (function(){
+    const questions = [
+      { q:'ما الشكل الصحيح لأداة الإشارة قبل اسم مذكر مثل "Mann"؟', opts:['diese Mann','dieser Mann','dieses Mann','dies Mann'], correct:1,
+        exp:'الأسماء المذكرة (der) تأخذ dieser: dieser Mann.' },
+      { q:'متى نستخدم diese بدل dieser؟', opts:['مع كل الأسماء دائمًا','مع الأسماء المؤنثة (die) أو الجمع','مع الأسماء المحايدة فقط','لا تُستخدم إطلاقًا'], correct:1,
+        exp:'diese تُستخدم مع الأسماء المؤنثة (die) وأيضًا مع صيغة الجمع بغض النظر عن الجنس.' },
+      { q:'dieses تُستخدم مع أي نوع من الأسماء؟', opts:['المذكرة (der)','المؤنثة (die)','المحايدة (das)','الجمع'], correct:2,
+        exp:'dieses تطابق الأسماء المحايدة التي تأخذ أداة التعريف das، مثل das Auto ← dieses Auto.' },
+      { q:'ما الفرق الرئيسي بين das وdies؟', opts:['لا فرق بينهما إطلاقًا','das للاستخدام العام اليومي، وdies صيغة أكثر رسمية/كتابية','dies تُستخدم فقط مع الجمع','das تُستخدم فقط في الأسئلة'], correct:1,
+        exp:'كلاهما يفيد "هذا/هذه" بشكل عام، لكن dies أكثر شيوعًا في الكتابة الرسمية والأدبية، بينما das هو الشكل الشائع في الحديث اليومي.' },
+      { q:'أي جملة صحيحة نحويًا؟', opts:['Dieses Frau ist Ärztin.','Diese Frau ist Ärztin.','Dieser Frau ist Ärztin.','Dies Frau ist Ärztin.'], correct:1,
+        exp:'Frau اسم مؤنث (die Frau)، لذلك تأخذ diese: Diese Frau ist Ärztin.' },
+      { q:'ما الكلمة المستخدمة دائمًا مع صيغة الجمع، بغض النظر عن جنس الاسم المفرد؟', opts:['dieser','diese','dieses','dies'], correct:1,
+        exp:'diese هي الشكل الموحّد لكل الأسماء في صيغة الجمع: diese Bücher, diese Kinder, diese Autos.' },
+      { q:'أكمل الجملة الصحيحة: "___ Auto ist sehr schnell."', opts:['Dieser','Diese','Dieses','Dies'], correct:2,
+        exp:'Auto اسم محايد (das Auto)، لذلك تأخذ dieses: Dieses Auto ist sehr schnell.' },
+      { q:'في الكتابة الرسمية أو الأدبية، أي كلمة تحل غالبًا محل das في جملة تعريف عامة؟', opts:['dieser','diese','dieses','dies'], correct:3,
+        exp:'dies هي الصيغة الرسمية الشائعة في الكتابة، تحل محل das في جمل مثل "Dies ist mein Haus."' },
+      { q:'أداة الإشارة dieser تتبع نفس نمط تصريف أي أداة أخرى في الألمانية؟', opts:['الضمائر الشخصية','أداة التعريف (der/die/das)','حروف الجر','الأفعال الشكلية'], correct:1,
+        exp:'dieser من "der-Wörter"، أي تتصرّف عبر الحالات الأربع بنفس نمط أداة التعريف تمامًا (dieser مثل der، diesem مثل dem...).' }
+    ];
+    let current = 0, score = 0, answered = false;
+
+    function renderQuestion(){
+      const item = questions[current];
+      answered = false;
+      $('#quizQuestion').textContent = item.q;
+      const letters = ['أ','ب','ج','د'];
+      $('#quizOptions').innerHTML = item.opts.map((opt,i)=>`
+        <button class="quiz-opt" data-i="${i}">
+          <span class="opt-letter mono">${letters[i]}.</span>
+          <span class="${/^[a-zA-ZäöüßÄÖÜ]/.test(opt)? 'de':''}">${opt}</span>
+        </button>`).join('');
+      $('#quizFeedback').className = 'quiz-feedback';
+      $('#quizFeedback').innerHTML = '';
+      $$('.quiz-opt').forEach(btn=> btn.addEventListener('click', ()=> selectAnswer(btn, item)));
+      $('#quizProgressFill').style.width = ((current)/questions.length*100) + '%';
+      $('#quizCounter').textContent = `السؤال ${current+1} من ${questions.length}`;
+      $('#quizNextBtn').textContent = current === questions.length-1 ? 'عرض النتيجة' : 'السؤال التالي';
+      $('#quizNextBtn').disabled = true;
+    }
+    function selectAnswer(btn, item){
+      if (answered) return;
+      answered = true;
+      const chosen = parseInt(btn.dataset.i,10);
+      const opts = $$('.quiz-opt');
+      opts.forEach(o=> o.disabled = true);
+      if (chosen === item.correct){ btn.classList.add('correct'); score++; showFeedback(true, item.exp); }
+      else { btn.classList.add('wrong'); opts[item.correct].classList.add('correct'); showFeedback(false, item.exp); }
+      $('#quizNextBtn').disabled = false;
+    }
+    function showFeedback(ok, exp){
+      const fb = $('#quizFeedback');
+      fb.className = 'quiz-feedback show ' + (ok?'ok':'no');
+      fb.innerHTML = (ok? ICONS.check : ICONS.x) + `<span>${ok? 'إجابة صحيحة! ' : 'إجابة غير صحيحة. '}${exp}</span>`;
+    }
+    function next(){
+      if (current < questions.length-1){ current++; renderQuestion(); }
+      else { showResult(); }
+    }
+    function showResult(){
+      const pct = Math.round((score/questions.length)*100);
+      const best = Math.max(store.get('dem-quiz-best', 0), pct);
+      store.set('dem-quiz-best', best);
+      $('#quizShell').innerHTML = `
+        <div class="quiz-result">
+          <div class="score-num">${pct}٪</div>
+          <p style="font-weight:700; margin-top:8px;">${score} من ${questions.length} إجابات صحيحة</p>
+          <p class="small-note mt-16">أفضل نتيجة محفوظة: ${best}٪</p>
+          <button class="btn btn-gold mt-24" id="quizRestart">${ICONS.refresh}<span>إعادة المحاولة</span></button>
+        </div>`;
+      $('#quizRestart').addEventListener('click', restart);
+      Achievements.check('quiz', pct);
+    }
+    function restart(){
+      current = 0; score = 0;
+      $('#quizShell').innerHTML = `
+        <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+        <p class="small-note mb-16" id="quizCounter"></p>
+        <div class="quiz-q" id="quizQuestion" aria-live="polite"></div>
+        <div class="quiz-opts" id="quizOptions"></div>
+        <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
+        <div class="quiz-nav"><span></span><button class="btn btn-primary" id="quizNextBtn" disabled>السؤال التالي</button></div>
+      `;
+      $('#quizNextBtn').addEventListener('click', next);
+      renderQuestion();
+    }
+    function init(){ if (!$('#quizShell')) return; restart(); }
+    return { init };
+  })();
+
+  /* ================= HERO STAGE — click to speak ================= */
+  function initStage(){
+    $$('.stage-prop').forEach(p=>{
+      p.addEventListener('click', ()=>{
+        const text = p.getAttribute('data-de');
+        Speech.speak(text);
+        p.animate([{ transform:'translateY(0)' },{ transform:'translateY(-6px)' },{ transform:'translateY(0)' }], { duration: 380, easing:'ease-out' });
+      });
+      p.addEventListener('keydown', (e)=>{ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); p.click(); } });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    ThemeMod.init();
+    $('#themeToggle') && $('#themeToggle').addEventListener('click', ThemeMod.toggle);
+    Speech.bindGlobalClickToSpeak();
+    Copy.bindGlobal();
+    Lab.init();
+    Trail.init();
+    Search.init();
+    Chrome.init();
+    Achievements.init();
+    Flashcards.init();
+    Memory.init();
+    Studio.init();
+    Quiz.init();
+    initStage();
+    const y = $('#yearNow');
+    if (y) y.textContent = new Date().getFullYear();
+  });
+})();
+
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-demonstrativpronomen-dieser-diese-dieses" data-category="grammatik" data-title="دائرة الضوء — أدوات الإشارة dieser · diese · dieses" data-root="../../" defer></script>
+</body>
+</html>

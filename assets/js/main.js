@@ -132,17 +132,38 @@
     el.dataset.category = lesson.category;
     el.dataset.search = (lesson.title + " " + lesson.desc).toLowerCase();
     el.innerHTML =
-      '<div class="c-card__top">' +
-        '<div class="c-card__badges">' + renderBadges(lesson.badges) + "</div>" +
-        '<div class="c-card__done" aria-hidden="true">' + icon("check") + "</div>" +
+      '<div class="c-card__thumb">' +
+        '<img alt="معاينة درس: ' + lesson.title + '" loading="lazy" decoding="async">' +
       "</div>" +
-      "<h3>" + lesson.title + "</h3>" +
-      "<p>" + lesson.desc + "</p>" +
-      '<div class="c-card__footer">' +
-        '<span class="c-card__go">فتح الدرس ' + icon("arrow") + "</span>" +
+      '<div class="c-card__body">' +
+        '<div class="c-card__top">' +
+          '<div class="c-card__badges">' + renderBadges(lesson.badges) + "</div>" +
+          '<div class="c-card__done" aria-hidden="true">' + icon("check") + "</div>" +
+        "</div>" +
+        "<h3>" + lesson.title + "</h3>" +
+        "<p>" + lesson.desc + "</p>" +
+        '<div class="c-card__footer">' +
+          '<span class="c-card__go">فتح الدرس ' + icon("arrow") + "</span>" +
+        "</div>" +
       "</div>" +
       '<a class="c-card__link" href="' + lesson.path + '" target="_blank" rel="noopener noreferrer" aria-label="فتح درس: ' + lesson.title + ' (في تبويب جديد)"></a>';
+    wireThumb(el.querySelector(".c-card__thumb"), lesson.thumb, lesson.title);
     return el;
+  }
+
+  /**
+   * ربط صورة المعاينة المصغّرة بشكل آمن: تحميل كسول، تلاشٍ عند النجاح،
+   * وإخفاء الصندوق بالكامل عند الفشل (بدل إظهار أيقونة صورة معطوبة).
+   * نستخدم addEventListener بدل onload/onerror المضمّنة لتوافق CSP الصارمة.
+   */
+  function wireThumb(thumbEl, src, title) {
+    if (!thumbEl) return;
+    var img = thumbEl.querySelector("img");
+    if (!img || !src) { thumbEl.classList.add("has-error"); return; }
+    img.addEventListener("load", function () { img.classList.add("is-loaded"); });
+    img.addEventListener("error", function () { thumbEl.classList.add("has-error"); });
+    img.src = src;
+    img.alt = "معاينة درس: " + title;
   }
 
   function renderTimelineItem(lesson, progress) {
@@ -155,9 +176,11 @@
     li.innerHTML =
       '<div class="c-timeline__node">' + (isDone ? icon("check") : String(lesson.order).padStart(2, "0")) + "</div>" +
       '<a class="c-timeline__card" href="' + lesson.path + '" target="_blank" rel="noopener noreferrer" aria-label="فتح درس: ' + lesson.title + ' (في تبويب جديد)">' +
-        "<div><h3>" + lesson.title + "</h3><p>" + lesson.desc + "</p></div>" +
+        '<div class="c-timeline__thumb"><img alt="" loading="lazy" decoding="async"></div>' +
+        '<div class="c-timeline__text"><h3>' + lesson.title + "</h3><p>" + lesson.desc + "</p></div>" +
         '<span class="c-timeline__arrow">' + icon("arrow") + "</span>" +
       "</a>";
+    wireThumb(li.querySelector(".c-timeline__thumb"), lesson.thumb, lesson.title);
     return li;
   }
 

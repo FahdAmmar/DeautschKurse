@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Galerie bei Nacht — دراسة عائلة الفعل stellen</title>
+<meta name="description" content="درس شامل عن عائلة الفعل الألماني stellen: أكثر من عشرين فعلًا مشتقًا، الحالة الإعرابية لكل فعل، جمل كثيرة بالنطق والنسخ، ووضع ليلي أنيق.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Outfit:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   1. DESIGN TOKENS — "Galerie bei Nacht" (Gallery at Night)
+   Brass spotlight + burgundy velvet on warm near-black.
+   ============================================================ */
+:root{
+  --font-display:'Cormorant',serif;
+  --font-latin:'Outfit',sans-serif;
+  --font-ar:'Tajawal',sans-serif;
+
+  --radius-s:10px; --radius-m:16px; --radius-l:22px; --radius-xl:30px;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --t-fast:.2s var(--ease); --t-med:.4s var(--ease); --t-slow:.6s var(--ease);
+  --header-h:72px;
+
+  /* light mode — gallery foyer by day */
+  --bg:#FAF8F5; --bg2:#F0EADE;
+  --surface:#FFFFFF; --surface-2:#F3EEE6; --surface-a:rgba(255,255,255,.78);
+  --border:rgba(36,31,26,.11);
+  --text:#241F1A; --text-2:#6B6055;
+  --glow:#96702A; --glow-2:#7A2E36;
+  --success:#4F8A47; --success-bg:#E9F2E5;
+  --error:#C0392B; --error-bg:#FBEAE7;
+  --shadow-s:0 2px 10px rgba(30,24,16,.09);
+  --shadow-m:0 10px 32px rgba(30,24,16,.13);
+  --shadow-l:0 24px 60px rgba(30,24,16,.17);
+  --glow-shadow:0 0 40px rgba(150,112,42,.25);
+}
+[data-theme="dark"]{
+  /* warm near-black gallery hall, brass spotlight + wine glow */
+  --bg:#0C0A08; --bg2:#110E0B;
+  --surface:#17130F; --surface-2:#1E1812; --surface-a:rgba(12,10,8,.72);
+  --border:rgba(237,230,217,.08);
+  --text:#EDE6D9; --text-2:#A89A85;
+  --glow:#D4A857; --glow-2:#C9636D;
+  --success:#8FBF7A; --success-bg:rgba(143,191,122,.12);
+  --error:#E8807A; --error-bg:rgba(232,128,122,.12);
+  --shadow-s:0 2px 12px rgba(0,0,0,.55);
+  --shadow-m:0 12px 34px rgba(0,0,0,.65);
+  --shadow-l:0 26px 70px rgba(0,0,0,.75);
+  --glow-shadow:0 0 46px rgba(212,168,87,.22);
+}
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+}
+body{
+  font-family:var(--font-ar);
+  background:var(--bg);
+  background-image:radial-gradient(circle at 10% -10%, var(--bg2), transparent 55%),
+                    radial-gradient(circle at 92% 105%, var(--bg2), transparent 55%);
+  color:var(--text);
+  line-height:1.8;
+  overflow-x:hidden;
+  min-height:100vh;
+  transition:background-color var(--t-slow), color var(--t-slow);
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block; max-width:100%;}
+button{font:inherit; color:inherit; background:none; border:none; cursor:pointer;}
+ul{list-style:none;}
+a{color:inherit; text-decoration:none;}
+table{border-collapse:collapse; width:100%;}
+h1,h2,h3,h4{font-weight:800; line-height:1.3; font-family:var(--font-ar);}
+.de{font-family:var(--font-latin); direction:ltr; unicode-bidi:isolate; font-weight:600;}
+.de-display{font-family:var(--font-display); direction:ltr; unicode-bidi:isolate; font-weight:700;}
+.speak-el{padding:0; margin:0; display:inline; vertical-align:baseline; border-radius:4px;}
+.speak-el:hover, .speak-el:focus-visible{color:var(--glow);}
+
+:focus-visible{outline:3px solid var(--glow); outline-offset:3px; border-radius:4px;}
+.skip-link{
+  position:absolute; right:1rem; top:-60px; background:var(--glow); color:#1A1408;
+  padding:.8rem 1.4rem; border-radius:var(--radius-s); z-index:9999; font-weight:800;
+  transition:top var(--t-fast);
+}
+.skip-link:focus{top:1rem;}
+
+/* ============================================================
+   3. LAYOUT UTILITIES
+   ============================================================ */
+.wrap{max-width:1180px; margin-inline:auto; padding-inline:clamp(1.1rem,4vw,2.5rem);}
+.section{padding-block:clamp(3.5rem,8vw,6.5rem);}
+.section-head{max-width:760px; margin-inline:auto; text-align:center; margin-bottom:clamp(2.2rem,5vw,3.5rem);}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.5rem; font-family:var(--font-latin);
+  font-size:.8rem; letter-spacing:.14em; font-weight:700; color:var(--glow);
+  text-transform:uppercase; direction:ltr;
+}
+.section-head h2{font-size:clamp(1.6rem,3.4vw,2.5rem); margin-block:.6rem .8rem;}
+.section-head p{color:var(--text-2); font-size:clamp(.98rem,1.6vw,1.12rem);}
+.reveal{opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease);}
+.reveal.in-view{opacity:1; transform:translateY(0);}
+.hidden{display:none !important;}
+.sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap;}
+
+/* ============================================================
+   4. PROGRESS BAR
+   ============================================================ */
+.progress-bar{
+  position:fixed; inset-inline:0; top:0; height:3px; z-index:1000;
+  background:linear-gradient(90deg, var(--glow), var(--glow-2));
+  width:0%; transition:width .1s linear; box-shadow:0 0 14px rgba(245,168,60,.5);
+}
+
+/* ============================================================
+   5. HEADER / NAV
+   ============================================================ */
+.site-header{
+  position:sticky; top:0; z-index:900; height:var(--header-h); display:flex; align-items:center;
+  background:var(--surface-a); backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%);
+  border-bottom:1px solid var(--border); transition:background-color var(--t-slow), border-color var(--t-slow);
+}
+.header-inner{
+  width:100%; max-width:1180px; margin-inline:auto; padding-inline:clamp(1.1rem,4vw,2.5rem);
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+}
+.brand{display:flex; align-items:center; gap:.6rem; font-weight:800; font-size:1.02rem; white-space:nowrap;}
+.brand-badge{
+  width:38px; height:38px; border-radius:12px; display:grid; place-items:center;
+  background:linear-gradient(145deg, var(--glow), var(--glow-2)); color:#1A1408; box-shadow:var(--shadow-s); flex-shrink:0;
+}
+.brand-badge svg{width:21px; height:21px;}
+.main-nav{display:flex; align-items:center; gap:1.5rem;}
+.main-nav a{font-size:.9rem; font-weight:700; color:var(--text-2); position:relative; padding-block:.3rem; transition:color var(--t-fast);}
+.main-nav a::after{content:''; position:absolute; bottom:-2px; inset-inline:0; height:2px; background:var(--glow); transform:scaleX(0); transition:transform var(--t-fast); border-radius:2px;}
+.main-nav a:hover, .main-nav a.active{color:var(--text);}
+.main-nav a:hover::after, .main-nav a.active::after{transform:scaleX(1);}
+.header-actions{display:flex; align-items:center; gap:.35rem;}
+.icon-btn{width:40px; height:40px; border-radius:12px; display:grid; place-items:center; color:var(--text); transition:background var(--t-fast), transform var(--t-fast); flex-shrink:0;}
+.icon-btn svg{width:19px; height:19px;}
+.icon-btn:hover{background:var(--border); transform:translateY(-1px);}
+.icon-btn:active{transform:translateY(0) scale(.94);}
+#themeToggle .icon-moon{display:none;}
+[data-theme="dark"] #themeToggle .icon-sun{display:none;}
+[data-theme="dark"] #themeToggle .icon-moon{display:block;}
+.nav-toggle{display:none;}
+.search-panel{
+  position:absolute; top:var(--header-h); inset-inline:0; background:var(--surface); border-bottom:1px solid var(--border);
+  padding:1rem clamp(1.1rem,4vw,2.5rem); box-shadow:var(--shadow-m); transform:translateY(-10px); opacity:0; pointer-events:none; transition:all var(--t-fast);
+}
+.search-panel.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+.search-panel input{width:100%; max-width:1180px; margin-inline:auto; display:block; padding:.85rem 1.1rem; border-radius:var(--radius-m); border:1.5px solid var(--border); background:var(--bg); color:var(--text); font-family:var(--font-ar); font-size:1rem;}
+.search-panel input:focus{border-color:var(--glow);}
+
+.speech-settings-wrap{position:relative;}
+.speech-popover{
+  position:absolute; top:calc(100% + 12px); inset-inline-end:0; width:250px; background:var(--surface);
+  border:1px solid var(--border); border-radius:var(--radius-m); padding:1.1rem; box-shadow:var(--shadow-l);
+  transform:translateY(-8px); opacity:0; pointer-events:none; transition:all var(--t-fast); z-index:960;
+}
+.speech-popover.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+.speech-popover label{display:block; font-size:.78rem; font-weight:700; margin-bottom:.4rem; color:var(--text-2);}
+.speech-popover label span{color:var(--glow); direction:ltr; display:inline-block;}
+.speech-popover input[type=range]{width:100%; margin-bottom:1rem; accent-color:var(--glow);}
+.speech-popover select{width:100%; padding:.55rem .6rem; border-radius:var(--radius-s); border:1.5px solid var(--border); background:var(--bg); color:var(--text); font-family:var(--font-ar); font-size:.85rem;}
+
+@media (max-width:860px){
+  .main-nav{
+    position:fixed; inset-block:var(--header-h) 0; inset-inline-start:0; width:min(78vw,320px);
+    background:var(--surface); flex-direction:column; align-items:flex-start; gap:0; padding:1.5rem;
+    box-shadow:var(--shadow-l); transform:translateX(105%); transition:transform var(--t-med); z-index:950; overflow-y:auto;
+  }
+  [dir="rtl"] .main-nav{transform:translateX(-105%);}
+  .main-nav.open{transform:translateX(0);}
+  .main-nav a{width:100%; padding:.9rem 0; border-bottom:1px solid var(--border); font-size:1.02rem;}
+  .nav-toggle{display:grid;}
+}
+
+/* ============================================================
+   6. BUTTONS & BADGES
+   ============================================================ */
+.btn{display:inline-flex; align-items:center; gap:.5rem; font-weight:700; font-size:.92rem; padding:.75rem 1.4rem; border-radius:999px; transition:transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast); white-space:nowrap;}
+.btn svg{width:16px; height:16px; flex-shrink:0;}
+.btn-primary{background:linear-gradient(135deg, var(--glow), var(--glow-2)); color:#1A1408; box-shadow:var(--shadow-s);}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-m);}
+.btn-ghost{background:var(--surface); border:1.5px solid var(--border); color:var(--text);}
+.btn-ghost:hover{border-color:var(--glow); color:var(--glow);}
+.btn-sm{padding:.5rem 1rem; font-size:.82rem; border-radius:999px;}
+.btn:active{transform:scale(.97);}
+.btn:disabled{opacity:.45; cursor:not-allowed; transform:none !important;}
+.badge{display:inline-flex; align-items:center; gap:.35rem; font-size:.74rem; font-weight:800; padding:.32rem .8rem; border-radius:999px; direction:ltr; letter-spacing:.02em;}
+
+/* ============================================================
+   7. HERO + PEDESTALS (gallery exhibits at night)
+   ============================================================ */
+.hero{position:relative; padding-block:clamp(2.5rem,6vw,4rem) clamp(1rem,4vw,2rem); overflow:hidden;}
+.hero-content{position:relative; z-index:1; text-align:center; max-width:740px; margin-inline:auto;}
+.hero-content .eyebrow{justify-content:center;}
+.hero-content h1{font-family:var(--font-display); font-size:clamp(2.1rem,5.6vw,3.6rem); margin-block:.7rem .9rem; font-weight:600;}
+.hero-content h1 .de-display{color:var(--glow); font-size:1.08em; font-style:italic;}
+.hero-content p{color:var(--text-2); font-size:clamp(1rem,2vw,1.15rem); max-width:640px; margin-inline:auto;}
+.pedestals{
+  position:relative; z-index:1; width:min(96vw,980px); margin:clamp(2rem,6vw,3.5rem) auto 0;
+  display:flex; flex-wrap:wrap; justify-content:center; align-items:flex-end;
+  gap:clamp(1.1rem,2.6vw,1.6rem) clamp(.7rem,1.8vw,1.2rem); padding-bottom:.5rem;
+}
+.pedestal-node{display:flex; flex-direction:column; align-items:center; width:60px; flex-shrink:0;}
+.pedestal-spot{
+  width:clamp(28px,4.6vw,40px); height:clamp(28px,4.6vw,40px); border-radius:50%; margin-bottom:.5rem; position:relative; z-index:2; flex-shrink:0;
+  background:var(--surface); border:2px solid var(--node-color,var(--glow));
+  display:grid; place-items:center; color:var(--node-color,var(--glow));
+  box-shadow:var(--shadow-s); transition:transform var(--t-fast);
+}
+.pedestal-spot svg{width:52%; height:52%;}
+[data-theme="dark"] .pedestal-spot{
+  background:radial-gradient(circle at 35% 30%, #fff6dd, var(--node-color,var(--glow)) 60%, var(--node-color,var(--glow)));
+  border:none; color:#241a08;
+  filter:drop-shadow(0 0 10px var(--node-color,var(--glow)));
+}
+.pedestal-node:hover .pedestal-spot, .pedestal-node:focus-visible .pedestal-spot{transform:scale(1.18);}
+.pedestal-stand{width:26px; height:30px; background:linear-gradient(180deg, var(--surface-2), var(--surface)); border-inline:1px solid var(--border); flex-shrink:0;}
+.pedestal-base{width:40px; height:6px; background:var(--surface-2); border:1px solid var(--border); border-radius:0 0 3px 3px; margin-top:-1px; flex-shrink:0;}
+.pedestal-label{font-family:var(--font-latin); font-weight:600; font-size:.64rem; direction:ltr; color:var(--text-2); margin-top:.4rem; white-space:nowrap;}
+
+/* ============================================================
+   8. INTRO / GRAMMAR CONCEPT
+   ============================================================ */
+.concept-grid{display:grid; grid-template-columns:1fr; gap:1.4rem; margin-bottom:1.6rem;}
+@media(min-width:840px){.concept-grid{grid-template-columns:1fr 1fr;}}
+.concept-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); padding:clamp(1.4rem,3vw,2rem); box-shadow:var(--shadow-s);}
+.concept-card h3{font-size:1.15rem; margin-bottom:.7rem; display:flex; align-items:center; gap:.5rem;}
+.concept-card h3 svg{width:22px; height:22px; color:var(--glow); flex-shrink:0;}
+.concept-card p{color:var(--text-2); font-size:.98rem; margin-bottom:.6rem;}
+.split-demo{margin-top:1.1rem; background:var(--bg); border-radius:var(--radius-m); padding:1.3rem 1rem; display:flex; flex-direction:column; align-items:center; gap:.7rem; overflow:hidden; border:1px dashed var(--border);}
+.split-demo .word-whole{font-family:var(--font-display); font-weight:700; font-size:1.5rem; direction:ltr; color:var(--text); transition:opacity .5s, transform .5s;}
+.split-demo .word-whole.faded{opacity:0; transform:scale(.85); position:absolute; pointer-events:none;}
+.split-demo .word-split{display:flex; gap:.6rem; font-family:var(--font-latin); font-weight:700; font-size:1.15rem; direction:ltr; opacity:0; transform:translateY(6px); transition:opacity .5s, transform .5s;}
+.split-demo .word-split.shown{opacity:1; transform:translateY(0);}
+.split-demo .stem-part{color:var(--text);}
+.split-demo .prefix-part{color:var(--glow-2); background:var(--error-bg); padding:.1rem .5rem; border-radius:8px;}
+.split-demo .word-split.shown .prefix-part{animation:flyToEnd .7s .3s both;}
+@keyframes flyToEnd{0%{transform:translateX(-140px) scale(1.15);} 100%{transform:translateX(0) scale(1);}}
+.split-demo .arrow-row{font-size:1.3rem; color:var(--text-2); direction:ltr;}
+
+.case-legend{display:grid; grid-template-columns:1fr; gap:1rem; margin-bottom:1.6rem;}
+@media(min-width:640px){.case-legend{grid-template-columns:1fr 1fr;}}
+.case-card{border-radius:var(--radius-m); padding:1.2rem 1.3rem; border:1.5px solid var(--border); background:var(--surface); display:flex; gap:.9rem; align-items:flex-start;}
+.case-card .case-icon{width:40px; height:40px; border-radius:12px; display:grid; place-items:center; flex-shrink:0; color:#1A1408;}
+.case-card .case-icon svg{width:20px; height:20px;}
+.case-card h4{font-size:1rem; margin-bottom:.3rem;}
+.case-card p{font-size:.9rem; color:var(--text-2);}
+.case-card .q-badge{direction:ltr; font-family:var(--font-latin); font-weight:700; color:var(--text);}
+
+.tip-box{display:flex; gap:.9rem; align-items:flex-start; background:linear-gradient(120deg, var(--success-bg), var(--surface)); border:1px solid var(--success); border-radius:var(--radius-m); padding:1.2rem 1.3rem;}
+.tip-box svg{width:26px; height:26px; color:var(--success); flex-shrink:0; margin-top:.1rem;}
+.tip-box p{font-size:.92rem; color:var(--text);}
+.tip-box strong{color:var(--success);}
+
+/* ============================================================
+   9. WORD FAMILY SECTION
+   ============================================================ */
+.family-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.1rem; margin-bottom:2rem;}
+.family-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); padding:1.3rem; text-align:center; box-shadow:var(--shadow-s); transition:transform var(--t-fast), box-shadow var(--t-fast);}
+.family-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-m);}
+.family-card .fam-icon{width:52px; height:52px; border-radius:14px; margin-inline:auto; display:grid; place-items:center; background:color-mix(in srgb, var(--glow) 15%, var(--surface)); color:var(--glow); margin-bottom:.8rem;}
+.family-card .fam-icon svg{width:26px; height:26px;}
+.family-card .de{font-size:1.1rem; display:block; margin-bottom:.3rem;}
+.family-card p{font-size:.85rem; color:var(--text-2);}
+
+.verbs-compare{overflow-x:auto; border-radius:var(--radius-l); border:1px solid var(--border);}
+.compare-table{min-width:560px; font-size:.92rem;}
+.compare-table th, .compare-table td{padding:.9rem 1.1rem; text-align:start; border-bottom:1px solid var(--border);}
+.compare-table thead th{background:var(--surface-2); font-weight:800;}
+.compare-table tbody tr:last-child td{border-bottom:none;}
+.compare-table td:first-child{font-family:var(--font-latin); font-weight:700; direction:ltr; color:var(--glow); white-space:nowrap;}
+.compare-table td:nth-child(2){color:var(--text-2); font-size:.85rem; white-space:nowrap;}
+
+/* ============================================================
+   10. VERB ACCORDIONS
+   ============================================================ */
+.verb-toolbar{display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-bottom:1.4rem;}
+.chip-filter{padding:.5rem 1.1rem; border-radius:999px; border:1.5px solid var(--border); font-size:.85rem; font-weight:700; background:var(--surface); color:var(--text-2); direction:ltr; transition:all var(--t-fast);}
+.chip-filter:hover{border-color:var(--glow); color:var(--text);}
+.chip-filter.active{background:var(--glow); border-color:var(--glow); color:#1A1408;}
+.verb-progress-label{text-align:center; font-size:.86rem; color:var(--text-2); margin-bottom:2rem; font-weight:600;}
+.verb-progress-label strong{color:var(--glow); direction:ltr; display:inline-block;}
+
+.verb-accordion-list{display:flex; flex-direction:column; gap:1rem;}
+.verb-item{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-l); overflow:hidden; box-shadow:var(--shadow-s); scroll-margin-top:calc(var(--header-h) + 16px); transition:box-shadow var(--t-fast);}
+.verb-item.open{box-shadow:var(--shadow-m);}
+.verb-item-header{width:100%; display:flex; align-items:stretch;}
+.verb-speak-icon-btn{flex-shrink:0; width:52px; display:grid; place-items:center; color:var(--text-2); transition:color var(--t-fast), background var(--t-fast);}
+.verb-speak-icon-btn:hover, .verb-speak-icon-btn:focus-visible{color:var(--card-accent,var(--glow)); background:var(--surface-2);}
+.verb-speak-icon-btn svg{width:19px; height:19px;}
+.verb-toggle-btn{flex:1; min-width:0; display:flex; align-items:center; gap:1rem; padding:1.1rem 1.3rem 1.1rem .2rem; text-align:start;}
+.verb-toggle-btn:hover{background:var(--surface-2);}
+.verb-icon{width:52px; height:52px; border-radius:14px; flex-shrink:0; display:grid; place-items:center; background:color-mix(in srgb, var(--card-accent,var(--glow)) 16%, var(--surface)); color:var(--card-accent,var(--glow));}
+.verb-icon svg{width:27px; height:27px;}
+.verb-header-text{flex:1; min-width:0; text-align:start;}
+.verb-prefix-eyebrow{font-family:var(--font-latin); font-size:.7rem; font-weight:800; letter-spacing:.1em; direction:ltr; color:var(--card-accent,var(--glow)); text-transform:uppercase;}
+.verb-infinitive{font-size:1.2rem; font-weight:700; display:block; margin-block:.1rem .2rem;}
+.verb-meaning-short{color:var(--text-2); font-size:.86rem; display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden;}
+.verb-header-right{display:flex; align-items:center; gap:.8rem; flex-shrink:0;}
+.case-tag{color:#1A1408; background:var(--card-accent,var(--glow));}
+.accordion-chevron{width:22px; height:22px; transition:transform var(--t-med); color:var(--text-2); flex-shrink:0;}
+.verb-item.open .accordion-chevron{transform:rotate(180deg); color:var(--card-accent,var(--glow));}
+
+.accordion-body{display:grid; grid-template-rows:0fr; transition:grid-template-rows var(--t-med);}
+.verb-item.open .accordion-body{grid-template-rows:1fr;}
+.accordion-body-inner{overflow:hidden;}
+.accordion-content-pad{padding:0 1.3rem 1.4rem;}
+
+.speak-trigger{display:inline-flex; align-items:center; gap:.4rem; direction:ltr; color:var(--text); border-radius:10px; transition:color var(--t-fast);}
+.speak-trigger:hover, .speak-trigger:focus-visible{color:var(--card-accent,var(--glow));}
+.speak-trigger svg{width:16px; height:16px; opacity:.55; flex-shrink:0;}
+.speak-trigger.speaking{color:var(--card-accent,var(--glow));}
+.speak-trigger.speaking svg{opacity:1; animation:wiggle .5s ease-in-out infinite;}
+@keyframes wiggle{0%,100%{transform:scale(1);} 50%{transform:scale(1.18);}}
+
+.table-scroll{overflow-x:auto; border-radius:var(--radius-m); border:1px solid var(--border); margin-block:1rem;}
+.conj-table{font-size:.86rem; min-width:480px;}
+.conj-table th, .conj-table td{padding:.6rem .8rem; text-align:center; border-bottom:1px solid var(--border); direction:ltr;}
+.conj-table thead th{background:color-mix(in srgb, var(--card-accent,var(--glow)) 12%, var(--surface-2)); font-family:var(--font-latin); font-weight:800; font-size:.8rem;}
+.conj-table tbody th{font-family:var(--font-latin); font-weight:700; text-align:right; color:var(--text-2); white-space:nowrap; font-size:.82rem;}
+.conj-table tbody tr:last-child td, .conj-table tbody tr:last-child th{border-bottom:none;}
+.conj-table td .de{cursor:pointer; border-radius:6px; padding:.2rem .5rem; transition:background var(--t-fast), color var(--t-fast);}
+.conj-table td .de:hover, .conj-table td .de:focus-visible{background:var(--bg); color:var(--card-accent,var(--glow));}
+
+.native-tip{display:flex; gap:.6rem; align-items:flex-start; background:var(--bg); border-radius:var(--radius-m); padding:.9rem 1rem; margin-bottom:1.2rem; font-size:.87rem; color:var(--text-2);}
+.native-tip svg{width:19px; height:19px; color:var(--glow); flex-shrink:0; margin-top:.15rem;}
+
+.examples-title{font-size:.95rem; font-weight:800; margin-bottom:.7rem; display:flex; align-items:center; gap:.4rem;}
+.examples-title svg{width:17px; height:17px; color:var(--card-accent,var(--glow));}
+.example-item{background:var(--bg); border-radius:var(--radius-m); padding:1rem 1.1rem; margin-bottom:.7rem; border:1px solid var(--border);}
+.example-tense-tag{font-size:.68rem; font-weight:800; color:var(--card-accent,var(--glow)); direction:ltr; letter-spacing:.05em; text-transform:uppercase;}
+.example-de{display:block; width:100%; text-align:start; font-family:var(--font-latin); font-weight:600; font-size:1.04rem; direction:ltr; margin-block:.35rem .3rem; cursor:pointer; line-height:1.6; border-radius:8px; padding:.2rem .3rem; transition:background var(--t-fast);}
+.example-de:hover, .example-de:focus-visible{background:var(--surface);}
+.example-de.speaking{background:color-mix(in srgb, var(--card-accent,var(--glow)) 10%, var(--surface));}
+.example-de .w{transition:background var(--t-fast), color var(--t-fast); border-radius:5px; padding:0 .12rem;}
+.example-de .w.speaking-word{background:var(--glow); color:#1A1408;}
+.example-ar{color:var(--text-2); font-size:.88rem; margin-bottom:.6rem;}
+.example-actions{display:flex; flex-wrap:wrap; gap:.5rem;}
+.copy-sentence-btn.copied{background:var(--success-bg); border-color:var(--success); color:var(--success);}
+
+.bonus-examples{margin-top:1rem; padding-top:1rem; border-top:1px dashed var(--border);}
+.bonus-label{font-size:.8rem; font-weight:800; color:var(--text-2); margin-bottom:.6rem; display:flex; align-items:center; gap:.4rem;}
+.bonus-label svg{width:15px; height:15px; color:var(--card-accent,var(--glow));}
+.bonus-item{display:flex; align-items:flex-start; justify-content:space-between; gap:.8rem; padding:.6rem 0; border-bottom:1px solid var(--border);}
+.bonus-item:last-child{border-bottom:none;}
+.bonus-text{flex:1; min-width:0;}
+.bonus-de{display:block; font-family:var(--font-latin); font-weight:600; direction:ltr; text-align:start; cursor:pointer; font-size:.98rem; border-radius:6px;}
+.bonus-de:hover{color:var(--card-accent,var(--glow));}
+.bonus-ar{color:var(--text-2); font-size:.85rem; margin-top:.15rem;}
+.bonus-speak-btn{flex-shrink:0; width:34px; height:34px; border-radius:50%; display:grid; place-items:center; background:var(--surface); border:1px solid var(--border); color:var(--text-2); transition:all var(--t-fast);}
+.bonus-speak-btn:hover{color:var(--card-accent,var(--glow)); border-color:var(--card-accent,var(--glow));}
+.bonus-speak-btn svg{width:15px; height:15px;}
+
+.builder-widget{margin-top:.9rem; padding-top:.9rem; border-top:1px dashed var(--border);}
+.builder-zone{display:flex; flex-wrap:wrap; gap:.5rem; min-height:48px; padding:.6rem; border-radius:var(--radius-m); background:var(--surface); border:1.5px dashed var(--border); margin-bottom:.6rem; direction:ltr;}
+.builder-zone.answer-zone{background:color-mix(in srgb, var(--card-accent,var(--glow)) 7%, var(--surface));}
+.word-tile{font-family:var(--font-latin); font-weight:700; font-size:.92rem; padding:.45rem .85rem; border-radius:10px; background:var(--bg); border:1.5px solid var(--border); color:var(--text); cursor:pointer; transition:transform var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);}
+.word-tile:hover{transform:translateY(-2px); box-shadow:var(--shadow-s); border-color:var(--card-accent,var(--glow));}
+.builder-feedback{font-size:.86rem; font-weight:700; min-height:1.4em; margin-bottom:.4rem;}
+.builder-feedback.correct{color:var(--success);}
+.builder-feedback.wrong{color:var(--error);}
+.shake{animation:shake .4s;}
+@keyframes shake{10%,90%{transform:translateX(-2px);} 20%,80%{transform:translateX(4px);} 30%,50%,70%{transform:translateX(-7px);} 40%,60%{transform:translateX(7px);}}
+.pop-correct{animation:popcorrect .4s var(--ease);}
+@keyframes popcorrect{0%{transform:scale(1);} 45%{transform:scale(1.02);} 100%{transform:scale(1);}}
+
+/* ============================================================
+   11. DIALOGUE SECTION
+   ============================================================ */
+.dialogue-shell{max-width:720px; margin-inline:auto;}
+.dialogue-controls{display:flex; justify-content:center; margin-bottom:1.6rem;}
+.dialogue-list{display:flex; flex-direction:column; gap:.9rem;}
+.dlg-line{display:flex; gap:.8rem; max-width:88%;}
+.dlg-line.role-b{margin-inline-start:auto; flex-direction:row-reverse;}
+.dlg-avatar{width:38px; height:38px; border-radius:50%; flex-shrink:0; display:grid; place-items:center; color:#1A1408; font-weight:800; font-size:.8rem;}
+.dlg-line.role-a .dlg-avatar{background:linear-gradient(135deg,var(--glow),var(--glow-2));}
+.dlg-line.role-b .dlg-avatar{background:linear-gradient(135deg,#9BBF6B,#6B8F5A);}
+.dlg-bubble{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-m); padding:.85rem 1rem; box-shadow:var(--shadow-s); flex:1;}
+.dlg-line.role-b .dlg-bubble{background:color-mix(in srgb, var(--glow) 6%, var(--surface));}
+.dlg-de{display:block; width:100%; text-align:start; font-family:var(--font-latin); font-weight:600; direction:ltr; cursor:pointer; border-radius:6px; font-size:1rem; line-height:1.55;}
+.dlg-de .w{border-radius:4px; padding:0 .1rem; transition:background var(--t-fast);}
+.dlg-de .w.speaking-word{background:var(--glow); color:#1A1408;}
+.dlg-ar{color:var(--text-2); font-size:.86rem; margin-top:.3rem;}
+.dlg-name{font-size:.72rem; font-weight:800; color:var(--text-2); margin-bottom:.2rem; direction:ltr;}
+
+/* ============================================================
+   12. FLASHCARDS
+   ============================================================ */
+.fc-toolbar{display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:2rem; flex-wrap:wrap;}
+.fc-progress{font-family:var(--font-latin); font-weight:700; font-size:.9rem; color:var(--text-2); direction:ltr;}
+.flashcards-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1.4rem;}
+.flashcard{perspective:1400px; height:225px;}
+.flashcard-inner{position:relative; width:100%; height:100%; transition:transform .7s var(--ease); transform-style:preserve-3d; cursor:pointer;}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg);}
+.fc-face{position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:var(--radius-l); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1.2rem; text-align:center; box-shadow:var(--shadow-m); border:1px solid var(--border);}
+.fc-front{background:linear-gradient(155deg, color-mix(in srgb, var(--card-accent,var(--glow)) 20%, var(--surface)), var(--surface));}
+.fc-front svg{width:34px; height:34px; color:var(--card-accent,var(--glow)); margin-bottom:.6rem;}
+.fc-front .de{font-size:1.28rem; font-weight:700;}
+.fc-front .fc-hint{font-size:.74rem; color:var(--text-2); margin-top:.5rem;}
+.fc-back{background:var(--card-accent,var(--glow)); color:#1A1408; transform:rotateY(180deg);}
+.fc-back p{font-size:.9rem; margin-bottom:.5rem;}
+.fc-back .fc-case{font-size:.72rem; font-weight:800; background:rgba(26,20,8,.18); padding:.25rem .7rem; border-radius:999px; direction:ltr;}
+
+/* ============================================================
+   13. QUIZ
+   ============================================================ */
+.quiz-shell{max-width:680px; margin-inline:auto;}
+.quiz-progress-row{display:flex; align-items:center; gap:.9rem; margin-bottom:1.6rem;}
+.quiz-progress-track{flex:1; height:8px; border-radius:999px; background:var(--border); overflow:hidden;}
+.quiz-progress-fill{height:100%; background:linear-gradient(90deg,var(--glow),var(--glow-2)); width:0%; transition:width var(--t-med); border-radius:999px;}
+.quiz-progress-label{font-size:.82rem; font-weight:700; color:var(--text-2); white-space:nowrap; direction:ltr;}
+.quiz-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-xl); padding:clamp(1.4rem,4vw,2.2rem); box-shadow:var(--shadow-m);}
+.quiz-question{font-size:1.1rem; font-weight:700; margin-bottom:1.3rem;}
+.quiz-options{display:grid; gap:.7rem;}
+.quiz-option{text-align:start; padding:.9rem 1.1rem; border-radius:var(--radius-m); border:1.5px solid var(--border); background:var(--bg); font-size:.96rem; transition:all var(--t-fast); display:flex; align-items:center; justify-content:space-between; gap:.6rem;}
+.quiz-option:hover:not(:disabled){border-color:var(--glow);}
+.quiz-option.correct{background:var(--success-bg); border-color:var(--success); color:var(--success);}
+.quiz-option.wrong{background:var(--error-bg); border-color:var(--error); color:var(--error);}
+.quiz-option svg{width:18px; height:18px; flex-shrink:0;}
+.quiz-footer{display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem; gap:1rem;}
+.quiz-result{text-align:center; padding:1.5rem 0;}
+.quiz-result svg{width:64px; height:64px; color:var(--glow); margin-inline:auto; margin-bottom:1rem;}
+.quiz-result .score-big{font-family:var(--font-display); font-size:2.6rem; font-weight:700; color:var(--glow); direction:ltr;}
+.quiz-result p{color:var(--text-2); margin-top:.5rem; max-width:420px; margin-inline:auto;}
+
+/* ============================================================
+   14. FOOTER & BACK-TO-TOP
+   ============================================================ */
+.site-footer{padding-block:3rem 2.2rem; text-align:center; border-top:1px solid var(--border); color:var(--text-2); font-size:.9rem;}
+.site-footer strong{color:var(--text); font-family:var(--font-latin); direction:ltr; display:inline-block;}
+.site-footer .foot-icons{display:flex; justify-content:center; gap:.8rem; margin-block:1rem; opacity:.5;}
+.site-footer .foot-icons svg{width:20px; height:20px;}
+.back-to-top{position:fixed; bottom:1.6rem; inset-inline-end:1.6rem; width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,var(--glow),var(--glow-2)); color:#1A1408; display:grid; place-items:center; box-shadow:var(--shadow-m); opacity:0; transform:translateY(16px) scale(.8); pointer-events:none; transition:all var(--t-fast); z-index:500;}
+.back-to-top.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
+.back-to-top svg{width:20px; height:20px;}
+.back-to-top:hover{transform:translateY(-3px) scale(1.05);}
+
+/* ============================================================
+   15. PRINT
+   ============================================================ */
+@media print{
+  .site-header,.back-to-top,.progress-bar,.search-panel,.example-actions,.builder-widget,.fc-toolbar,.flashcards-grid,.quiz-section,.verb-toolbar,.nav-toggle,.pedestals{display:none !important;}
+  body{background:#fff !important; color:#000 !important;}
+  .verb-item{box-shadow:none !important; border:1px solid #ccc !important; page-break-inside:avoid;}
+  .accordion-body{grid-template-rows:1fr !important;}
+}
+
+/* ============================================================
+   16. RESPONSIVE FINE-TUNING
+   ============================================================ */
+@media(max-width:480px){
+  .conj-table{font-size:.78rem;}
+  .quiz-footer{flex-direction:column; align-items:stretch;}
+  .flashcards-grid{grid-template-columns:1fr 1fr;}
+  .flashcard{height:195px;}
+  .dlg-line{max-width:96%;}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ============ SVG ICON SPRITE ============ -->
+<svg style="display:none" aria-hidden="true">
+<defs>
+<symbol id="icon-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M4.2 4.2l1.85 1.85M17.95 17.95l1.85 1.85M2.5 12h2.6M18.9 12h2.6M4.2 19.8l1.85-1.85M17.95 6.05l1.85-1.85"/></g></symbol>
+<symbol id="icon-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M20.5 14.4A8.5 8.5 0 1 1 9.6 3.5a7 7 0 0 0 10.9 10.9z"/></symbol>
+<symbol id="icon-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.7-4.7"/></g></symbol>
+<symbol id="icon-menu" viewBox="0 0 24 24"><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></g></symbol>
+<symbol id="icon-close" viewBox="0 0 24 24"><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></g></symbol>
+<symbol id="icon-speaker" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.6l5 4V5.5l-5 4H4z"/><path d="M16.2 8.8a5 5 0 0 1 0 6.4"/><path d="M18.9 6.2a9 9 0 0 1 0 11.6"/></g></symbol>
+<symbol id="icon-replay" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 1 1 2.6 5.9M4 12V6.5M4 12h5.5"/></symbol>
+<symbol id="icon-shuffle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h3.6L15 18h5.5M3 18h3.6L15 6h5.5"/><path d="M17.5 3.5L21 6l-3.5 2.5M17.5 20.5L21 18l-3.5-2.5"/></g></symbol>
+<symbol id="icon-check-circle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="M7.8 12.3l2.7 2.7 5.6-6"/></g></symbol>
+<symbol id="icon-x-circle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><path d="M9 9l6 6M15 9l-6 6"/></g></symbol>
+<symbol id="icon-arrow-up" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6"/><path d="M5.5 12.5L12 6l6.5 6.5"/></g></symbol>
+<symbol id="icon-lightbulb" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 2.5A6.5 6.5 0 0 0 8.2 14.3c.7.6 1.1 1.4 1.1 2.2h5.4c0-.8.4-1.6 1.1-2.2A6.5 6.5 0 0 0 12 2.5z"/></g></symbol>
+<symbol id="icon-puzzle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M9 4h3.2a1.6 1.6 0 0 1 1.5 2.2 1.6 1.6 0 0 0 1.5 2.2H18a2 2 0 0 1 2 2v3.2a1.6 1.6 0 0 0-2.2 1.5 1.6 1.6 0 0 0 2.2 1.5V19a2 2 0 0 1-2 2h-3.2a1.6 1.6 0 0 1 0-3.2 1.6 1.6 0 0 0-1.6-1.6H9a2 2 0 0 1-2-2v-3a1.6 1.6 0 0 0 0-3.2A1.6 1.6 0 0 1 8.6 6.2 1.6 1.6 0 0 0 9 4z"/></symbol>
+<symbol id="icon-chevron-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></symbol>
+<symbol id="icon-trophy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 6H4.5A2.5 2.5 0 0 0 7 9.5M17 6h2.5A2.5 2.5 0 0 1 17 9.5"/><path d="M12 14v3M9 20.5h6M9.5 20.5l.7-3.5h3.6l.7 3.5"/></g></symbol>
+<symbol id="icon-expand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H5a1 1 0 0 0-1 1v4M15 4h4a1 1 0 0 1 1 1v4M9 20H5a1 1 0 0 1-1-1v-4M15 20h4a1 1 0 0 0 1-1v-4"/></g></symbol>
+<symbol id="icon-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2"/><path d="M15.5 8.5V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7.5a2 2 0 0 0 2 2h2.5"/></g></symbol>
+<symbol id="icon-layers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l9 4.7-9 4.7-9-4.7L12 3z"/><path d="M3 12.3l9 4.7 9-4.7M3 17l9 4.7L21 17" stroke-linecap="round"/></g></symbol>
+<!-- placement / stellen-family icons -->
+<symbol id="icon-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.2-5.7-6.2-10.3a6.2 6.2 0 1 1 12.4 0C18.2 15.3 12 21 12 21z"/><circle cx="12" cy="10.6" r="2.1"/></g></symbol>
+<symbol id="icon-power" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 4v7"/><path d="M7 6.5a7 7 0 1 0 10 0"/></g></symbol>
+<symbol id="icon-arrow-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 4v15M6 13l6 6 6-6"/></symbol>
+<symbol id="icon-dial" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 3.5v2.4M12 18.1v2.4M3.5 12h2.4M18.1 12h2.4M6.1 6.1l1.7 1.7M16.2 16.2l1.7 1.7M6.1 17.9l1.7-1.7M16.2 7.8l1.7-1.7"/></g></symbol>
+<symbol id="icon-frame" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><rect x="7.3" y="7.3" width="9.4" height="9.4" rx=".8"/></g></symbol>
+<symbol id="icon-shelter" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3 12.5L12 4l9 8.5M5.5 12v7.5h13V12"/></symbol>
+<symbol id="icon-quote-bubble" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4V5z"/><path d="M8.3 10.2c0-1.1.6-1.7 1.7-1.7M13.3 10.2c0-1.1.6-1.7 1.7-1.7"/></g></symbol>
+<symbol id="icon-sliders" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h7M17 7h3M4 17h3M11 17h9"/><circle cx="13" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></g></symbol>
+<symbol id="icon-handshake" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9.5" cy="12" r="6"/><circle cx="15.5" cy="12" r="6"/></g></symbol>
+<symbol id="icon-scatter" viewBox="0 0 24 24"><g fill="currentColor" stroke="none"><circle cx="6" cy="6" r="1.7"/><circle cx="17.5" cy="6.5" r="1.7"/><circle cx="6.5" cy="17.5" r="1.7"/><circle cx="18" cy="17" r="1.7"/><circle cx="12" cy="11.5" r="1.7"/></g></symbol>
+<symbol id="icon-compare-arrows" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h13M12.5 4.5l3.5 3.5-3.5 3.5"/><path d="M21 16H8M11.5 12.5L8 16l3.5 3.5"/></g></symbol>
+<symbol id="icon-pause" viewBox="0 0 24 24"><g fill="currentColor"><rect x="6" y="4.5" width="4.2" height="15" rx="1"/><rect x="13.8" y="4.5" width="4.2" height="15" rx="1"/></g></symbol>
+<symbol id="icon-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+<symbol id="icon-arrow-back" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+<symbol id="icon-transfer" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="6" height="6" rx="1"/><rect x="16" y="9" width="6" height="6" rx="1"/><path d="M8.5 12h7M13 9.5l2.5 2.5-2.5 2.5"/></g></symbol>
+<symbol id="icon-insert-between" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 4v16M19 4v16"/><rect x="9.5" y="9" width="5" height="6" rx="1"/></g></symbol>
+<symbol id="icon-supply-box" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3 8l9-4 9 4-9 4-9-4zM3 8v8l9 4 9-4V8M12 12v8"/></symbol>
+</defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-badge"><svg><use href="#icon-pin"/></svg></span>
+      <span>Galerie <span class="de">bei Nacht</span></span>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="التنقل الرئيسي">
+      <a href="#hero">الرئيسية</a>
+      <a href="#intro">القاعدة</a>
+      <a href="#verbs">الأفعال</a>
+      <a href="#flashcards">البطاقات</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="بحث" aria-expanded="false"><svg><use href="#icon-search"/></svg></button>
+      <button class="icon-btn" id="fullscreenToggle" aria-label="وضع ملء الشاشة"><svg><use href="#icon-expand"/></svg></button>
+      <div class="speech-settings-wrap">
+        <button class="icon-btn" id="speechSettingsToggle" aria-label="إعدادات النطق" aria-expanded="false"><svg><use href="#icon-speaker"/></svg></button>
+        <div class="speech-popover" id="speechPopover">
+          <label for="rateSlider">سرعة النطق: <span id="rateValue">0.9x</span></label>
+          <input type="range" id="rateSlider" min="0.6" max="1.3" step="0.1" value="0.9">
+          <label for="voiceSelect">الصوت الألماني المستخدم</label>
+          <select id="voiceSelect"><option>جارٍ البحث عن الأصوات…</option></select>
+        </div>
+      </div>
+      <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع الليلي والنهاري" aria-pressed="false">
+        <svg class="icon-sun"><use href="#icon-sun"/></svg>
+        <svg class="icon-moon"><use href="#icon-moon"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false"><svg><use href="#icon-menu"/></svg></button>
+    </div>
+  </div>
+  <div class="search-panel" id="searchPanel">
+    <input type="text" id="searchInput" placeholder="ابحث عن فعل، مثل: vorstellen أو تقديم..." aria-label="ابحث داخل الدرس">
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-content reveal in-view">
+      <span class="eyebrow"><svg width="14" height="14"><use href="#icon-layers"/></svg> Wortfeld · حقل كلمات</span>
+      <h1>عائلة الفعل <span class="de-display">stellen</span> — المعرض الكامل</h1>
+      <p>أكثر من عشرين فعلًا مشتقًا من stellen، كل واحد بحالته الإعرابية ومعناه وجملًا عديدة بالنطق والنسخ. انقر أي منصة عرض أدناه للانتقال إلى شرحها الكامل.</p>
+    </div>
+    <div class="pedestals reveal" id="pedestals" aria-label="منصات عرض تمثل الأفعال المشتقة"></div>
+  </div>
+</section>
+
+<!-- ============ INTRO / GRAMMAR CONCEPT ============ -->
+<section class="section" id="intro">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">القاعدة النحوية</span>
+      <h2>كيف تعمل هذه الأفعال؟</h2>
+      <p>قبل استكشاف كل الأفعال، إليك الأساس الذي يجمعها — وفعل واحد له وجهان مختلفان تمامًا.</p>
+    </div>
+    <div class="concept-grid reveal">
+      <div class="concept-card">
+        <h3><svg><use href="#icon-layers"/></svg> ما هو حقل الكلمات (Wortfeld)؟</h3>
+        <p><span class="de">Wortfeld</span> يعني مجموعة كلمات تدور حول فكرة مركزية واحدة. هنا، الفكرة المركزية هي الوضع والتموضع <span class="de">(stellen)</span>، وكل بادئة تُضاف إليه تُنتج فعلًا جديدًا: من نصب خيمة إلى تقديم شخص أو استعادة ملف محذوف.</p>
+        <p>هذه الطريقة في تعلّم الكلمات تساعدك على حفظ مفردات كثيرة دفعة واحدة وربطها ببعضها بدلاً من حفظها بشكل منفصل.</p>
+      </div>
+      <div class="concept-card">
+        <h3><svg><use href="#icon-puzzle"/></svg> فعل واحد بوجهين: unterstellen</h3>
+        <p>معظم أفعال هذا الحقل منفصلة وتأخذ Akkusativ، لكن <span class="de">unterstellen</span> استثنائي: له معنيان مختلفان تمامًا حسب طريقة استخدامه.</p>
+        <div class="split-demo">
+          <div class="word-whole de" id="splitWhole">unterstellen</div>
+          <div class="arrow-row">⬇</div>
+          <div class="word-split" id="splitParts">
+            <span class="stem-part">Ich stelle das Fahrrad im Hof ...</span>
+            <span class="prefix-part">unter!</span>
+          </div>
+          <button class="btn btn-ghost btn-sm" id="replaySplit"><svg><use href="#icon-replay"/></svg> إعادة العرض</button>
+        </div>
+        <p style="margin-top:.9rem;">فعندما يكون <strong>منفصلًا</strong> يعني «وضع شيء تحت مأوى» (Akkusativ)، وعندما يكون <strong>غير منفصل</strong> — <span class="de">Sie unterstellt mir etwas</span> — يعني «توحي/تتّهم بشيء دون دليل» (Dativ + Akkusativ). التفاصيل الكاملة في بطاقته أدناه.</p>
+      </div>
+    </div>
+    <div class="case-legend reveal">
+      <div class="case-card">
+        <span class="case-icon" style="background:var(--glow);"><svg><use href="#icon-pin"/></svg></span>
+        <div><h4>الأكوزاتيف <span class="q-badge">(Akkusativ)</span></h4>
+        <p>السؤال: <span class="q-badge">wohin? / was?</span> — الحالة الافتراضية لمعظم أفعال هذا الحقل، لأن stellen فعل وضع/تموضع متعدٍ بطبيعته. مثال: <button type="button" class="de speak-el" style="text-decoration:underline; text-underline-offset:3px;">Ich stelle das Buch auf den Tisch.</button></p></div>
+      </div>
+      <div class="case-card">
+        <span class="case-icon" style="background:var(--glow-2);"><svg><use href="#icon-supply-box"/></svg></span>
+        <div><h4>الداتيف + أكوزاتيف <span class="q-badge">(Dativ + Akk)</span></h4>
+        <p>يظهر مع أفعال مثل <span class="de">beistellen</span> و<span class="de">unterstellen</span> (بمعناها الثاني) للتعبير عن شخص يُقدَّم له شيء. مثال: <button type="button" class="de speak-el" style="text-decoration:underline; text-underline-offset:3px;">Sie unterstellt mir eine schlechte Absicht.</button></p></div>
+      </div>
+    </div>
+    <div class="tip-box reveal">
+      <svg><use href="#icon-lightbulb"/></svg>
+      <p><strong>نصيحة نحوية للمتحدث الأصلي:</strong> <span class="de">stellen</span> فعل منتظم تمامًا (stellte, gestellt)، فينطبق هذا النمط على كل الأفعال المشتقة منه. لهذا السبب ركّزنا هذا الدرس على الحالة الإعرابية والمعنى وأمثلة كثيرة لكل فعل، بدلاً من تكرار جدول تصريف متطابق عشرين مرة — فبمجرد إتقانك للنمط، يمكنك تطبيقه على أي فعل من العائلة فورًا.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VERBS SECTION (accordion) ============ -->
+<section class="section" id="verbs">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">المعرض الكامل</span>
+      <h2>كل فعل، حالته الإعرابية، وأمثلته</h2>
+      <p>انقر على أي فعل لفتح شرحه؛ كل جملة قابلة للنطق والنسخ بزر واحد.</p>
+    </div>
+    <div class="verb-toolbar reveal" id="verbToolbar"></div>
+    <p class="verb-progress-label reveal">تم استكشاف <strong id="verbProgressCount">0</strong> / <span id="verbTotalCount">21</span> فعلًا</p>
+    <div class="verb-accordion-list" id="verbCardsContainer"></div>
+  </div>
+</section>
+
+<!-- ============ FLASHCARDS SECTION ============ -->
+<section class="section" id="flashcards" style="background:var(--bg2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">مراجعة سريعة</span>
+      <h2>بطاقات تعليمية قابلة للقلب</h2>
+      <p>انقر على أي بطاقة لقلبها ورؤية المعنى والحالة الإعرابية.</p>
+    </div>
+    <div class="fc-toolbar reveal">
+      <button class="btn btn-ghost" id="shuffleCards"><svg><use href="#icon-shuffle"/></svg> ترتيب عشوائي</button>
+      <span class="fc-progress" id="fcProgress">0 / 21 تمت مراجعتها</span>
+    </div>
+    <div class="flashcards-grid reveal" id="flashcardsContainer"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="foot-icons" aria-hidden="true"><svg><use href="#icon-pin"/></svg><svg><use href="#icon-frame"/></svg><svg><use href="#icon-layers"/></svg></div>
+  <p>درس شامل لعائلة الفعل <span class="de">stellen</span> — يضم أكثر من عشرين فعلًا مشتقًا مع حالتها الإعرابية وأمثلة موسّعة.</p>
+  <p style="margin-top:.6rem; font-size:.82rem;">ملاحظة دقة: تم استبعاد ثلاث كلمات (weiterstellen, hinderstellen, losstellen) لعدم توثيقها في القواميس الألمانية الموثوقة، واستُبدلت zwischenstellen بصيغتها الصحيحة dazwischenstellen.</p>
+  <p style="margin-top:.6rem;">إعداد: <strong>Herr Mohamed Yassin</strong></p>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى"><svg><use href="#icon-arrow-up"/></svg></button>
+
+<script>
+/* ============================================================
+   VERB DATA
+   stellen is fully regular (stellte, gestellt). Since the whole
+   family shares this one predictable pattern, each card focuses
+   on case government, meaning, and rich examples rather than
+   repeating an identical conjugation table 21 times.
+   ============================================================ */
+const verbsData = [
+  {
+    key:'stellen', prefix:'', icon:'icon-pin', color:'#D4A857',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'وضع شيء في مكان ما بشكل عمودي أو قائم — الفعل الأساسي لكل هذه العائلة.',
+    tip:null,
+    sentences:[
+      {de:'Ich stelle das Buch auf den Tisch.', ar:'أضع الكتاب على الطاولة.'},
+      {de:'Er stellte die Flasche in den Kühlschrank.', ar:'وضع الزجاجة في الثلاجة.'},
+      {de:'Sie hat die Vase auf das Regal gestellt.', ar:'وضعت المزهرية على الرف.'}
+    ]
+  },
+  {
+    key:'aufstellen', prefix:'auf', icon:'icon-arrow-up', color:'#C9A15A',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'نصب شيء أو إقامته (خيمة، جهاز)، أو وضع خطة أو قائمة.',
+    tip:null,
+    sentences:[
+      {de:'Wir stellen das Zelt im Garten auf.', ar:'ننصب الخيمة في الحديقة.'},
+      {de:'Der Trainer stellte eine neue Mannschaft auf.', ar:'شكّل المدرب فريقًا جديدًا.'},
+      {de:'Ich habe einen genauen Plan aufgestellt.', ar:'وضعتُ خطة دقيقة.'}
+    ]
+  },
+  {
+    key:'abstellen', prefix:'ab', icon:'icon-power', color:'#B8823E',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'ركن شيء أو وضعه جانبًا، أو إطفاء جهاز.',
+    tip:null,
+    sentences:[
+      {de:'Ich stelle mein Fahrrad vor der Tür ab.', ar:'أركن دراجتي أمام الباب.'},
+      {de:'Bitte stell den Fernseher ab, es ist spät.', ar:'رجاءً أطفئ التلفاز، الوقت متأخر.'},
+      {de:'Er hat den Motor sofort abgestellt.', ar:'أوقف المحرك فورًا.'}
+    ]
+  },
+  {
+    key:'einstellen', prefix:'ein', icon:'icon-dial', color:'#A6702E',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'توظيف شخص، أو ضبط جهاز، أو إيقاف عملية مؤقتًا أو نهائيًا.',
+    tip:'يحمل هذا الفعل ثلاثة معانٍ شائعة يجب تمييزها من السياق: التوظيف، وضبط الأجهزة، وإيقاف نشاط.',
+    sentences:[
+      {de:'Die Firma stellt zehn neue Mitarbeiter ein.', ar:'توظّف الشركة عشرة موظفين جدد.'},
+      {de:'Ich stelle den Wecker auf sechs Uhr ein.', ar:'أضبط المنبه على الساعة السادسة.'},
+      {de:'Wir haben die Produktion vorübergehend eingestellt.', ar:'أوقفنا الإنتاج مؤقتًا.'}
+    ]
+  },
+  {
+    key:'ausstellen', prefix:'aus', icon:'icon-frame', color:'#C67B3D',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'عرض شيء (فن، بضاعة)، أو إصدار وثيقة رسمية.',
+    tip:null,
+    sentences:[
+      {de:'Das Museum stellt moderne Kunst aus.', ar:'يعرض المتحف فنًا حديثًا.'},
+      {de:'Der Arzt stellte mir ein Rezept aus.', ar:'أصدر لي الطبيب وصفة طبية.'},
+      {de:'Die Galerie hat drei neue Künstler ausgestellt.', ar:'عرضت الصالة أعمال ثلاثة فنانين جدد.'}
+    ]
+  },
+  {
+    key:'unterstellen', prefix:'unter', icon:'icon-shelter', color:'#9B5A4A',
+    caseLabel:'وجهان: Akkusativ / Dativ+Akk', caseType:'dat',
+    meaning:'معنيان مختلفان تمامًا: (منفصل) وضع شيء تحت مأوى — (غير منفصل) الإيحاء باتهام شخص دون دليل، أو إخضاعه إداريًا لجهة أعلى.',
+    tip:'حين يكون منفصلًا (stellt...unter) فمعناه حرفي ومادي (Akkusativ). حين يكون غير منفصل (unterstellt) فمعناه مجازي: الإيحاء بتهمة (Dativ للشخص + Akkusativ للتهمة)، أو sich unterstellen = الخضوع لجهة أعلى (Dativ).',
+    sentences:[
+      {de:'Ich stelle das Fahrrad im Hof unter.', ar:'أضع الدراجة تحت المظلة في الفناء.'},
+      {de:'Er hat den Koffer beim Nachbarn untergestellt.', ar:'وضع الحقيبة عند الجار مؤقتًا.'},
+      {de:'Sie unterstellt mir eine schlechte Absicht.', ar:'توحي بأن نيّتي سيئة (تتّهمني دون دليل).'},
+      {de:'Die Abteilung unterstellt sich dem neuen Direktor.', ar:'يخضع القسم لإدارة المدير الجديد.'}
+    ]
+  },
+  {
+    key:'verstellen', prefix:'ver', icon:'icon-sliders', color:'#B06B4E',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'تغيير ضبط شيء (غالبًا بالخطأ)، سدّ طريق، أو التظاهر (sich verstellen).',
+    tip:'sich verstellen (انعكاسي) تعني التظاهر أو التصنّع لإخفاء المشاعر أو النوايا الحقيقية.',
+    sentences:[
+      {de:'Bitte verstell den Spiegel nicht!', ar:'رجاءً لا تُغيّر وضع المرآة!'},
+      {de:'Ein Lastwagen verstellte die ganze Straße.', ar:'سدّت شاحنة الطريق بأكمله.'},
+      {de:'Er verstellt sich, um nett zu wirken.', ar:'يتظاهر ليبدو لطيفًا.'}
+    ]
+  },
+  {
+    key:'vorstellen', prefix:'vor', icon:'icon-handshake', color:'#C9636D',
+    caseLabel:'Akkusativ (+ Dativ اختياري)', caseType:'akk',
+    meaning:'تقديم شخص لآخر، أو تخيّل شيء ذهنيًا (sich etwas vorstellen).',
+    tip:'من أكثر أفعال هذه العائلة استخدامًا. لاحظ الفرق: jemanden vorstellen (تقديم شخص) مقابل sich etwas vorstellen (تخيّل شيء).',
+    sentences:[
+      {de:'Darf ich Ihnen meinen Kollegen vorstellen?', ar:'هل لي أن أقدّم لكم زميلي؟'},
+      {de:'Ich kann mir das gut vorstellen.', ar:'أستطيع تخيّل ذلك جيدًا.'},
+      {de:'Er stellte sich der neuen Klasse vor.', ar:'قدّم نفسه للصف الجديد.'}
+    ]
+  },
+  {
+    key:'zusammenstellen', prefix:'zusammen', icon:'icon-layers', color:'#A87A4A',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'تجميع أو تركيب عناصر مختلفة معًا لتكوين مجموعة واحدة.',
+    tip:null,
+    sentences:[
+      {de:'Ich stelle eine Playlist für die Party zusammen.', ar:'أُجمّع قائمة أغانٍ للحفلة.'},
+      {de:'Der Lehrer stellte die Prüfungsfragen zusammen.', ar:'جمّع المعلم أسئلة الامتحان.'},
+      {de:'Wir haben alle Informationen zusammengestellt.', ar:'جمّعنا كل المعلومات.'}
+    ]
+  },
+  {
+    key:'herunterstellen', prefix:'herunter', icon:'icon-arrow-down', color:'#8B6239',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'تخفيض شيء (مستوى، حرارة)، أو إنزاله من مكان مرتفع بحذر.',
+    tip:null,
+    sentences:[
+      {de:'Stell bitte die Heizung herunter.', ar:'رجاءً اخفض التدفئة.'},
+      {de:'Sie stellte die Kiste vorsichtig herunter.', ar:'أنزلت الصندوق بحذر.'},
+      {de:'Ich habe die Lautstärke heruntergestellt.', ar:'خفّضتُ مستوى الصوت.'}
+    ]
+  },
+  {
+    key:'herumstellen', prefix:'herum', icon:'icon-scatter', color:'#BF8B4F',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'وضع أشياء في أماكن متفرقة أو توزيعها حول مكان ما.',
+    tip:null,
+    sentences:[
+      {de:'Stell deine Sachen nicht überall herum!', ar:'لا تضع أغراضك في كل مكان!'},
+      {de:'Er stellte die Stühle im Kreis herum.', ar:'وضع الكراسي بشكل دائري.'},
+      {de:'Wir haben Kerzen im ganzen Raum herumgestellt.', ar:'وضعنا شموعًا في أنحاء الغرفة.'}
+    ]
+  },
+  {
+    key:'gegenüberstellen', prefix:'gegenüber', icon:'icon-compare-arrows', color:'#A45C5C',
+    caseLabel:'Akkusativ + Dativ', caseType:'dat',
+    meaning:'مقارنة أو مقابلة شيئين أو شخصين وجهًا لوجه.',
+    tip:null,
+    sentences:[
+      {de:'Der Lehrer stellt die zwei Theorien gegenüber.', ar:'يقارن المعلم بين النظريتين.'},
+      {de:'Man muss die Vor- und Nachteile gegenüberstellen.', ar:'يجب مقارنة الإيجابيات والسلبيات.'},
+      {de:'Er wurde dem Zeugen gegenübergestellt.', ar:'تمت مواجهته بالشاهد.'}
+    ]
+  },
+  {
+    key:'stillstellen', prefix:'still', icon:'icon-pause', color:'#7A6248',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'إيقاف حركة شيء أو تعطيله مؤقتًا، غالبًا في سياق تقني أو طبي.',
+    tip:null,
+    sentences:[
+      {de:'Der Arzt stellt das verletzte Gelenk still.', ar:'يُثبّت الطبيب المفصل المصاب.'},
+      {de:'Die Fabrik stellte die Maschinen still.', ar:'أوقف المصنع الآلات.'},
+      {de:'Die Uhr wurde für die Reparatur stillgestellt.', ar:'تم تعطيل الساعة من أجل الإصلاح.'}
+    ]
+  },
+  {
+    key:'wiederherstellen', prefix:'wiederher', icon:'icon-replay', color:'#C4995C',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'استعادة شيء إلى حالته الأصلية أو السابقة.',
+    tip:null,
+    sentences:[
+      {de:'Ich stelle die gelöschte Datei wieder her.', ar:'أستعيد الملف المحذوف.'},
+      {de:'Der Arzt konnte seine Gesundheit wiederherstellen.', ar:'تمكّن الطبيب من استعادة صحته.'},
+      {de:'Wir haben den Frieden wiederhergestellt.', ar:'أعدنا السلام.'}
+    ]
+  },
+  {
+    key:'dazustellen', prefix:'dazu', icon:'icon-plus', color:'#9E7A3F',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'إضافة شيء ووضعه بجانب أشياء أخرى موجودة.',
+    tip:null,
+    sentences:[
+      {de:'Kannst du noch einen Stuhl dazustellen?', ar:'هل يمكنك إضافة كرسي آخر بجانبه؟'},
+      {de:'Sie stellte eine zweite Lampe dazu.', ar:'أضافت مصباحًا ثانيًا بجانبه.'},
+      {de:'Wir haben noch einen Tisch dazugestellt.', ar:'أضفنا طاولة أخرى بجانبها.'}
+    ]
+  },
+  {
+    key:'zurückstellen', prefix:'zurück', icon:'icon-arrow-back', color:'#8C6F4E',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'تأجيل قرار أو حدث، أو إرجاع شيء (كالساعة) إلى وضعه السابق.',
+    tip:null,
+    sentences:[
+      {de:'Wir stellen die Entscheidung zurück.', ar:'نؤجّل القرار.'},
+      {de:'Er stellte die Uhr eine Stunde zurück.', ar:'أرجع الساعة ساعة إلى الوراء.'},
+      {de:'Die Prüfung wurde auf nächste Woche zurückgestellt.', ar:'أُجّل الامتحان إلى الأسبوع القادم.'}
+    ]
+  },
+  {
+    key:'hinaufstellen', prefix:'hinauf', icon:'icon-arrow-up', color:'#D1A968',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'وضع شيء في مكان أعلى أو مرتفع.',
+    tip:null,
+    sentences:[
+      {de:'Ich stelle die Bücher ins obere Fach hinauf.', ar:'أضع الكتب في الرف العلوي.'},
+      {de:'Er stellte die Kiste auf den Schrank hinauf.', ar:'وضع الصندوق فوق الخزانة.'},
+      {de:'Wir haben die Pflanzen aufs Fensterbrett hinaufgestellt.', ar:'وضعنا النباتات على حافة النافذة المرتفعة.'}
+    ]
+  },
+  {
+    key:'überstellen', prefix:'über', icon:'icon-transfer', color:'#B57355',
+    caseLabel:'Akkusativ (+ Dativ للجهة)', caseType:'akk',
+    meaning:'نقل أو تحويل شخص أو شيء رسميًا إلى جهة أخرى.',
+    tip:'غير منفصل غالبًا في هذا المعنى الرسمي: überstellt، وليس stellt...über.',
+    sentences:[
+      {de:'Der Patient wird in eine andere Klinik überstellt.', ar:'يُنقل المريض إلى عيادة أخرى.'},
+      {de:'Man überstellte ihn in ein anderes Gefängnis.', ar:'نقلوه إلى سجن آخر.'},
+      {de:'Die Firma hat die Akten der neuen Abteilung überstellt.', ar:'حوّلت الشركة الملفات إلى القسم الجديد.'}
+    ]
+  },
+  {
+    key:'dazwischenstellen', prefix:'dazwischen', icon:'icon-insert-between', color:'#966B54',
+    caseLabel:'Akkusativ (reflexiv)', caseType:'akk',
+    meaning:'وضع شيء أو الوقوف بين طرفين، غالبًا للتدخّل أو الفصل بينهما.',
+    tip:null,
+    sentences:[
+      {de:'Er stellt sich schnell dazwischen.', ar:'يقف بسرعة بينهما (يتدخّل).'},
+      {de:'Sie stellte einen Stuhl dazwischen.', ar:'وضعت كرسيًا بينهما.'},
+      {de:'Ich habe mich sofort dazwischengestellt, um zu helfen.', ar:'وقفتُ بينهما فورًا للمساعدة.'}
+    ]
+  },
+  {
+    key:'beistellen', prefix:'bei', icon:'icon-supply-box', color:'#AD7F3E',
+    caseLabel:'Dativ + Akkusativ', caseType:'dat',
+    meaning:'توفير شيء أو إرفاقه لشخص أو جهة، خاصة في السياق الرسمي أو التجاري.',
+    tip:'استخدام هذا الفعل أكثر شيوعًا في الألمانية النمساوية وسياقات الأعمال الرسمية.',
+    sentences:[
+      {de:'Die Firma stellt den Mitarbeitern Werkzeug bei.', ar:'توفّر الشركة الأدوات للموظفين.'},
+      {de:'Man stellte dem Team einen Berater bei.', ar:'أُرفق مستشار بالفريق.'},
+      {de:'Wir haben ihr eine Assistentin beigestellt.', ar:'وفّرنا لها مساعدة.'}
+    ]
+  },
+  {
+    key:'mitstellen', prefix:'mit', icon:'icon-plus', color:'#C28A5A',
+    caseLabel:'Akkusativ', caseType:'akk',
+    meaning:'وضع شيء إضافي بالتزامن مع أشياء أخرى.',
+    tip:null,
+    sentences:[
+      {de:'Ich stelle noch einen Teller mit.', ar:'أضع طبقًا إضافيًا أيضًا.'},
+      {de:'Kannst du bitte auch dieses Glas mitstellen?', ar:'هل يمكنك وضع هذا الكوب أيضًا؟'},
+      {de:'Wir haben noch eine Kerze mitgestellt.', ar:'وضعنا شمعة إضافية أيضًا.'}
+    ]
+  }
+];
+
+/* ============================================================
+   THEME MANAGEMENT
+   ============================================================ */
+function getPreferredTheme(){
+  const saved = localStorage.getItem('stellenLesson_theme');
+  if(saved) return saved;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  document.getElementById('themeToggle').setAttribute('aria-pressed', theme === 'dark');
+  localStorage.setItem('stellenLesson_theme', theme);
+}
+function initTheme(){
+  applyTheme(getPreferredTheme());
+  document.getElementById('themeToggle').addEventListener('click', ()=>{
+    const cur = document.documentElement.getAttribute('data-theme');
+    applyTheme(cur === 'dark' ? 'light' : 'dark');
+    localStorage.setItem('stellenLesson_theme_manual','1');
+  });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)=>{
+    if(!localStorage.getItem('stellenLesson_theme_manual')) applyTheme(e.matches ? 'dark' : 'light');
+  });
+}
+
+/* ============================================================
+   SPEECH SYNTHESIS
+   ============================================================ */
+let voicesList = [];
+let selectedVoice = null;
+let currentRate = 0.9;
+const supportsSpeech = 'speechSynthesis' in window;
+
+function loadVoices(){
+  if(!supportsSpeech) return;
+  voicesList = speechSynthesis.getVoices();
+  const deVoices = voicesList.filter(v => v.lang.toLowerCase().startsWith('de'));
+  selectedVoice = deVoices.find(v => v.lang.toLowerCase()==='de-de') || deVoices[0] || null;
+  populateVoiceSelect(deVoices);
+}
+function populateVoiceSelect(deVoices){
+  const sel = document.getElementById('voiceSelect');
+  if(!sel) return;
+  if(deVoices.length === 0){ sel.innerHTML = '<option>لا يوجد صوت ألماني مثبت على هذا الجهاز</option>'; return; }
+  sel.innerHTML = deVoices.map((v,i)=>`<option value="${i}">${v.name} — ${v.lang}</option>`).join('');
+  const idx = deVoices.indexOf(selectedVoice);
+  sel.value = idx >= 0 ? idx : 0;
+  sel.onchange = ()=>{ selectedVoice = deVoices[parseInt(sel.value,10)]; };
+}
+if(supportsSpeech){ loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
+
+function speak(text, opts={}){
+  if(!supportsSpeech) return;
+  speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'de-DE';
+  if(selectedVoice) utter.voice = selectedVoice;
+  utter.rate = opts.rate || currentRate;
+  if(opts.onStart) utter.onstart = opts.onStart;
+  if(opts.onEnd) utter.onend = opts.onEnd;
+  if(opts.onBoundary) utter.onboundary = (e)=>{ if(typeof e.charIndex === 'number') opts.onBoundary(e.charIndex); };
+  speechSynthesis.speak(utter);
+}
+function speakSimple(el){
+  const text = el.textContent.trim();
+  if(!text) return;
+  el.classList.add('speaking');
+  speak(text, { onEnd: ()=> el.classList.remove('speaking') });
+}
+function speakSentence(container, afterEnd){
+  const words = Array.from(container.querySelectorAll('.w'));
+  const text = container.textContent.trim();
+  const offsets = [];
+  let acc = 0;
+  words.forEach(w=>{ const len=w.textContent.length; offsets.push([acc, acc+len]); acc += len+1; });
+  container.classList.add('speaking');
+  speak(text, {
+    onBoundary:(ci)=> words.forEach((w,i)=> w.classList.toggle('speaking-word', ci >= offsets[i][0] && ci < offsets[i][1])),
+    onEnd:()=>{ words.forEach(w=>w.classList.remove('speaking-word')); container.classList.remove('speaking'); if(afterEnd) afterEnd(); }
+  });
+}
+function initSpeechDelegation(){
+  document.body.addEventListener('click', (e)=>{
+    const exDe = e.target.closest('.example-de');
+    if(exDe){ speakSentence(exDe); return; }
+    const sBtn = e.target.closest('.speak-sentence-btn');
+    if(sBtn){ const t = document.getElementById(sBtn.dataset.target); if(t) speakSentence(t); return; }
+    const simple = e.target.closest('.speak-el');
+    if(simple){ speakSimple(simple); return; }
+  });
+}
+function initCopyButtons(){
+  document.body.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.copy-sentence-btn');
+    if(!btn) return;
+    const target = document.getElementById(btn.dataset.target);
+    if(!target) return;
+    const text = target.textContent.trim();
+    const showCopied = ()=>{
+      const original = btn.innerHTML;
+      btn.innerHTML = '<svg><use href="#icon-check-circle"/></svg> تم النسخ';
+      btn.classList.add('copied');
+      setTimeout(()=>{ btn.innerHTML = original; btn.classList.remove('copied'); }, 1600);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(showCopied).catch(()=>{
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+        document.body.appendChild(ta); ta.select();
+        try{ document.execCommand('copy'); showCopied(); }catch(err){}
+        document.body.removeChild(ta);
+      });
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); showCopied(); }catch(err){}
+      document.body.removeChild(ta);
+    }
+  });
+}
+function initSpeechSettings(){
+  const toggle = document.getElementById('speechSettingsToggle');
+  const pop = document.getElementById('speechPopover');
+  toggle.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    const open = pop.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    if(open) document.getElementById('searchPanel').classList.remove('open');
+  });
+  const slider = document.getElementById('rateSlider');
+  const rateValue = document.getElementById('rateValue');
+  slider.addEventListener('input', ()=>{ currentRate = parseFloat(slider.value); rateValue.textContent = currentRate.toFixed(1) + 'x'; });
+}
+
+/* ============================================================
+   HERO PEDESTALS
+   ============================================================ */
+function renderPedestals(){
+  const el = document.getElementById('pedestals');
+  const nodes = verbsData.map((v,i)=>{
+    return `<button type="button" class="pedestal-node" style="--node-color:${v.color}" data-goto="verb-${v.key}" aria-label="اذهب إلى شرح ${v.prefix ? v.prefix+'stellen' : 'stellen'}">
+      <span class="pedestal-spot"><svg><use href="#${v.icon}"/></svg></span>
+      <span class="pedestal-stand"></span>
+      <span class="pedestal-base"></span>
+      <span class="pedestal-label">${v.prefix || 'stellen'}${v.prefix ? '-' : ''}</span>
+    </button>`;
+  }).join('');
+
+  el.innerHTML = nodes;
+
+  el.querySelectorAll('.pedestal-node').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const target = document.getElementById(btn.dataset.goto);
+      if(!target) return;
+      if(!target.classList.contains('open')) target.querySelector('.verb-toggle-btn').click();
+      setTimeout(()=> target.scrollIntoView({behavior:'smooth', block:'center'}), 60);
+    });
+  });
+}
+
+/* ============================================================
+   VERB ACCORDIONS
+   ============================================================ */
+const exploredSet = new Set();
+function updateVerbProgress(){
+  document.getElementById('verbProgressCount').textContent = exploredSet.size;
+}
+function verbItemHTML(v){
+  const infinitive = v.prefix ? (v.prefix + 'stellen') : 'stellen';
+
+  const examples = v.sentences.map((s,si)=>{
+    const id = `ex-${v.key}-${si}`;
+    const wordsHTML = s.de.split(' ').map(w=>`<span class="w">${w}</span>`).join(' ');
+    return `<div class="example-item">
+      <button type="button" class="example-de de" id="${id}" aria-label="نطق الجملة: ${s.de}">${wordsHTML}</button>
+      <p class="example-ar">${s.ar}</p>
+      <div class="example-actions">
+        <button type="button" class="btn btn-ghost btn-sm speak-sentence-btn" data-target="${id}"><svg><use href="#icon-speaker"/></svg> استمع</button>
+        <button type="button" class="btn btn-ghost btn-sm copy-sentence-btn" data-target="${id}"><svg><use href="#icon-copy"/></svg> نسخ</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  return `<article class="verb-item" id="verb-${v.key}" data-prefix="${v.prefix || 'stellen'}" style="--card-accent:${v.color}">
+    <div class="verb-item-header">
+      <button type="button" class="verb-speak-icon-btn speak-el" aria-label="نطق الفعل ${infinitive}"><svg><use href="#icon-speaker"/></svg></button>
+      <button type="button" class="verb-toggle-btn" aria-expanded="false" aria-controls="body-${v.key}">
+        <span class="verb-icon"><svg><use href="#${v.icon}"/></svg></span>
+        <span class="verb-header-text">
+          ${v.prefix ? `<span class="verb-prefix-eyebrow">${v.prefix}-</span>` : `<span class="verb-prefix-eyebrow">الفعل الأساسي</span>`}
+          <span class="verb-infinitive de">${infinitive}</span>
+          <span class="verb-meaning-short">${v.meaning}</span>
+        </span>
+        <span class="verb-header-right">
+          <span class="badge case-tag">${v.caseLabel}</span>
+          <svg class="accordion-chevron"><use href="#icon-chevron-down"/></svg>
+        </span>
+      </button>
+    </div>
+    <div class="accordion-body" id="body-${v.key}">
+      <div class="accordion-body-inner">
+        <div class="accordion-content-pad">
+          ${v.tip ? `<div class="native-tip"><svg><use href="#icon-lightbulb"/></svg><p>${v.tip}</p></div>` : ''}
+          <div class="examples-block">
+            <h4 class="examples-title"><svg><use href="#icon-puzzle"/></svg>أمثلة</h4>
+            ${examples}
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>`;
+}
+function renderVerbCards(){
+  document.getElementById('verbCardsContainer').innerHTML = verbsData.map(verbItemHTML).join('');
+}
+function initAccordions(){
+  document.getElementById('verbCardsContainer').addEventListener('click', (e)=>{
+    const btn = e.target.closest('.verb-toggle-btn');
+    if(!btn) return;
+    const item = btn.closest('.verb-item');
+    const isOpen = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    if(isOpen){ exploredSet.add(item.dataset.prefix); updateVerbProgress(); }
+  });
+}
+
+/* ============================================================
+   SHUFFLE UTILITIES (used by flashcards)
+   ============================================================ */
+function shuffleArray(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a;
+}
+function shuffleChildren(parent){ shuffleArray(Array.from(parent.children)).forEach(c=>parent.appendChild(c)); }
+
+/* ============================================================
+   FLASHCARDS
+   ============================================================ */
+const reviewedSet = new Set();
+function flashcardHTML(v, idx){
+  const infinitive = v.prefix ? (v.prefix + 'stellen') : 'stellen';
+  return `<div class="flashcard" data-idx="${idx}" tabindex="0" role="button" aria-label="بطاقة الفعل ${infinitive}، انقر لقلبها ورؤية المعنى">
+    <div class="flashcard-inner">
+      <div class="fc-face fc-front" style="--card-accent:${v.color}">
+        <svg><use href="#${v.icon}"/></svg>
+        <span class="de">${infinitive}</span>
+        <span class="fc-hint">انقر لرؤية المعنى</span>
+      </div>
+      <div class="fc-face fc-back" style="--card-accent:${v.color}">
+        <p>${v.meaning}</p>
+        <span class="fc-case">${v.caseLabel}</span>
+      </div>
+    </div>
+  </div>`;
+}
+function updateFcProgress(){ document.getElementById('fcProgress').textContent = `${reviewedSet.size} / ${verbsData.length} تمت مراجعتها`; }
+function renderFlashcards(){
+  const container = document.getElementById('flashcardsContainer');
+  container.innerHTML = verbsData.map(flashcardHTML).join('');
+  container.querySelectorAll('.flashcard').forEach(card=>{
+    card.addEventListener('click', ()=>{ card.classList.toggle('flipped'); reviewedSet.add(card.dataset.idx); updateFcProgress(); });
+  });
+  container.addEventListener('keydown', (e)=>{
+    if(e.key==='Enter' || e.key===' '){ const card = e.target.closest('.flashcard'); if(card){ e.preventDefault(); card.click(); } }
+  });
+}
+function initFlashcardControls(){
+  document.getElementById('shuffleCards').addEventListener('click', ()=> shuffleChildren(document.getElementById('flashcardsContainer')));
+}
+
+/* ============================================================
+   TOOLBAR FILTER + SEARCH
+   ============================================================ */
+function renderVerbToolbar(){
+  const toolbar = document.getElementById('verbToolbar');
+  const allChip = `<button type="button" class="chip-filter active" data-prefix="all" aria-pressed="true">الكل</button>`;
+  const chips = verbsData.map(v=>`<button type="button" class="chip-filter" data-prefix="${v.prefix}" aria-pressed="false">${v.prefix}-</button>`).join('');
+  toolbar.innerHTML = allChip + chips;
+  toolbar.querySelectorAll('.chip-filter').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      toolbar.querySelectorAll('.chip-filter').forEach(c=>{ c.classList.remove('active'); c.setAttribute('aria-pressed','false'); });
+      chip.classList.add('active'); chip.setAttribute('aria-pressed','true');
+      filterVerbCards(chip.dataset.prefix);
+    });
+  });
+}
+function filterVerbCards(prefix){
+  document.querySelectorAll('.verb-item').forEach(card=>{
+    card.classList.toggle('hidden', prefix !== 'all' && card.dataset.prefix !== prefix);
+  });
+}
+function initSearch(){
+  const toggle = document.getElementById('searchToggle');
+  const panel = document.getElementById('searchPanel');
+  const input = document.getElementById('searchInput');
+  toggle.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    const open = panel.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    document.getElementById('speechPopover').classList.remove('open');
+    if(open) setTimeout(()=>input.focus(), 200);
+  });
+  input.addEventListener('input', ()=>{
+    const q = input.value.trim().toLowerCase();
+    document.querySelectorAll('.verb-item').forEach(card=>{
+      card.classList.toggle('hidden', q.length>0 && !card.textContent.toLowerCase().includes(q));
+    });
+    if(q.length>0){
+      const toolbar = document.getElementById('verbToolbar');
+      toolbar.querySelectorAll('.chip-filter').forEach(c=>{ c.classList.remove('active'); c.setAttribute('aria-pressed','false'); });
+      const allChip = toolbar.querySelector('[data-prefix="all"]');
+      allChip.classList.add('active'); allChip.setAttribute('aria-pressed','true');
+    }
+  });
+}
+
+/* ============================================================
+   SCROLL REVEAL, NAV, PROGRESS BAR, BACK-TO-TOP, FULLSCREEN
+   ============================================================ */
+function initScrollReveal(){
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in-view'); obs.unobserve(entry.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(item=>obs.observe(item));
+}
+function initNav(){
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  navToggle.addEventListener('click', ()=>{
+    const open = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+    navToggle.innerHTML = open ? '<svg><use href="#icon-close"/></svg>' : '<svg><use href="#icon-menu"/></svg>';
+  });
+  mainNav.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{ mainNav.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); navToggle.innerHTML = '<svg><use href="#icon-menu"/></svg>'; });
+  });
+  const sectionIds = ['hero','intro','verbs','flashcards'];
+  const sections = sectionIds.map(id=>document.getElementById(id));
+  const links = Array.from(mainNav.querySelectorAll('a'));
+  const navObs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const idx = sections.indexOf(entry.target);
+        links.forEach(l=>l.classList.remove('active'));
+        if(links[idx]) links[idx].classList.add('active');
+      }
+    });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  sections.forEach(s=> s && navObs.observe(s));
+}
+function initScrollExtras(){
+  const bar = document.getElementById('progressBar');
+  const backBtn = document.getElementById('backToTop');
+  let ticking = false;
+  function onScroll(){
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(()=>{
+      const scrollTop = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (height>0 ? (scrollTop/height*100) : 0) + '%';
+      backBtn.classList.toggle('show', scrollTop > 500);
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+  onScroll();
+}
+function initFullscreen(){
+  document.getElementById('fullscreenToggle').addEventListener('click', ()=>{
+    if(!document.fullscreenElement) document.documentElement.requestFullscreen?.().catch(()=>{});
+    else document.exitFullscreen?.();
+  });
+}
+
+/* ============================================================
+   SPLIT DEMO
+   ============================================================ */
+function playSplitDemo(){
+  const whole = document.getElementById('splitWhole');
+  const split = document.getElementById('splitParts');
+  whole.classList.remove('faded'); split.classList.remove('shown');
+  void split.offsetWidth;
+  setTimeout(()=>{ whole.classList.add('faded'); split.classList.add('shown'); }, 900);
+}
+function initSplitDemo(){
+  document.getElementById('replaySplit').addEventListener('click', playSplitDemo);
+  const introSection = document.getElementById('intro');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting){ playSplitDemo(); obs.disconnect(); } });
+  }, {threshold:0.4});
+  obs.observe(introSection);
+}
+
+/* ============================================================
+   OUTSIDE CLICK HANDLERS
+   ============================================================ */
+function initOutsideClickHandlers(){
+  document.addEventListener('click', (e)=>{
+    const searchPanel = document.getElementById('searchPanel');
+    const searchToggle = document.getElementById('searchToggle');
+    if(searchPanel.classList.contains('open') && !searchPanel.contains(e.target) && !searchToggle.contains(e.target)){
+      searchPanel.classList.remove('open'); searchToggle.setAttribute('aria-expanded','false');
+    }
+    const pop = document.getElementById('speechPopover');
+    const popToggle = document.getElementById('speechSettingsToggle');
+    if(pop.classList.contains('open') && !pop.contains(e.target) && !popToggle.contains(e.target)){
+      pop.classList.remove('open'); popToggle.setAttribute('aria-expanded','false');
+    }
+  });
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', ()=>{
+  initTheme();
+  renderPedestals();
+  renderVerbCards();
+  initAccordions();
+  renderVerbToolbar();
+  updateVerbProgress();
+  renderFlashcards();
+  updateFcProgress();
+  initFlashcardControls();
+  initSpeechDelegation();
+  initSpeechSettings();
+  initCopyButtons();
+  initSearch();
+  initNav();
+  initScrollReveal();
+  initScrollExtras();
+  initFullscreen();
+  initSplitDemo();
+  initOutsideClickHandlers();
+});
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="family-verben-stellen" data-category="family-verben" data-title="Galerie bei Nacht — عائلة الفعل stellen" data-root="../../" defer></script>
+</body>
+</html>
