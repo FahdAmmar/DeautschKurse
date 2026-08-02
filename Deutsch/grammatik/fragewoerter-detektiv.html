@@ -1,0 +1,2132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="درس تفاعلي شامل عن أدوات الاستفهام الألمانية — تعلّم wer, was, wo, wann, warum, wie, welche وأكثر بأسلوب المحقق اللغوي">
+<meta name="theme-color" content="#f6f6f4" id="metaThemeColor">
+<title>ملف القضية: أدوات الاستفهام الألمانية | Fragewörter-Detektiv</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Poppins:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+/* =========================================================================
+   1. DESIGN TOKENS — "ملف القضية" (The Case File) visual system, v2
+   Crisp, high-contrast "white room" for light mode and a deep "night
+   investigation room" for dark mode. Gold "brass" stays the signature
+   accent for both, with a red thread for attention and teal as a calm
+   secondary accent — but the neutrals are now clean white/near-black
+   rather than sepia paper, and every accent colour is tuned to pass
+   WCAG AA (4.5:1) when used as text.
+   ========================================================================= */
+:root{
+  --bg-0:#f6f6f4;
+  --bg-1:#eef0ee;
+  --bg-card:#ffffff;
+  --bg-raised:#ffffff;
+  --ink-1:#14171f;
+  --ink-2:#454955;
+  --ink-3:#686c77;
+  --gold:#8a5a00;
+  --gold-2:#b8790a;
+  --gold-fill:#d99a2e;
+  --gold-soft:#f0d9a8;
+  --red:#9c3226;
+  --red-2:#c2493a;
+  --teal:#1f6e69;
+  --teal-2:#2f8a83;
+  --line:rgba(20,23,31,.10);
+  --line-strong:rgba(20,23,31,.22);
+  --shadow-1:0 1px 2px rgba(20,23,31,.05), 0 6px 18px -8px rgba(20,23,31,.12);
+  --shadow-2:0 4px 12px rgba(20,23,31,.07), 0 26px 50px -18px rgba(20,23,31,.22);
+  --paper-noise: radial-gradient(circle at 15% 0%, rgba(184,121,10,.05), transparent 42%), radial-gradient(circle at 88% 65%, rgba(156,50,38,.045), transparent 40%);
+  --focus-ring: 0 0 0 3px rgba(184,121,10,.45);
+  --success:#1f7a4d;
+  --error:#b23327;
+  --font-ar:'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+  --font-de:'Poppins', 'Segoe UI', sans-serif;
+  --font-stamp:'Special Elite', 'Courier New', monospace;
+  color-scheme: light;
+}
+[data-theme="dark"]{
+  /* ---------------------------------------------------------------------
+     لوحة داكنة منقّحة (v3) — "غرفة تحقيق ليلية" أكثر رقيًا وراحة للعين:
+     • خلفيات غرافيتية دافئة قليلة التشبّع بدل الأزرق الملكي الصريح،
+       مع سلّم ارتفاع (bg-0 → bg-raised) تدريجي وهادئ.
+     • ألوان تمييز (ذهبي/أحمر/تركواز) أقل بريقًا نيونيًا من النسخة السابقة
+       لتقليل الوهج والإجهاد البصري في الجلسات الطويلة، مع بقائها واضحة الهوية.
+     • أبيض غير نقي (ivory) للنصوص بدل الأبيض الخالص لتفادي "توهّج" الحواف.
+     • كل زوج نص/خلفية هنا تم اختباره ليتجاوز نسبة تباين WCAG AA (٤٫٥:١ فأكثر).
+     --------------------------------------------------------------------- */
+  --bg-0:#08090d;
+  --bg-1:#0d0f15;
+  --bg-card:#14161e;
+  --bg-raised:#1c1f29;
+  --ink-1:#f0ede4;
+  --ink-2:#babdc9;
+  --ink-3:#868a99;
+  --gold:#eeb454;
+  --gold-2:#f7cf82;
+  --gold-fill:#f7cf82;
+  --gold-soft:#caa057;
+  --red:#e2695a;
+  --red-2:#f0968a;
+  --teal:#45c9bd;
+  --teal-2:#8fe0d6;
+  --line:rgba(255,255,255,.09);
+  --line-strong:rgba(255,255,255,.18);
+  /* طبقة "inset" علوية خفيفة تمنح البطاقات حافة زجاجية أنيقة، إضافة لظل ناعم مموّه بدل ظل قاتم فج */
+  --shadow-1: inset 0 1px 0 rgba(255,255,255,.05), 0 1px 2px rgba(0,0,0,.4), 0 10px 24px -12px rgba(0,0,0,.65);
+  --shadow-2: inset 0 1px 0 rgba(255,255,255,.06), 0 14px 28px rgba(0,0,0,.5), 0 42px 80px -24px rgba(0,0,0,.8);
+  --paper-noise: radial-gradient(circle at 15% 0%, rgba(238,180,84,.09), transparent 45%), radial-gradient(circle at 88% 70%, rgba(69,201,189,.07), transparent 42%);
+  --focus-ring: 0 0 0 3px rgba(238,180,84,.5);
+  --success:#4fd399;
+  --error:#ef6355;
+  color-scheme: dark;
+}
+
+/* =========================================================================
+   2. RESET
+   ========================================================================= */
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+}
+
+/* =========================================================================
+   1b. THEME-AWARE CHROME — تحديد النص وشريط التمرير بهوية التصميم بدل
+   الألوان الافتراضية للمتصفح (غالبًا أزرق فاقع يتصادم مع لوحة الألوان)،
+   بالإضافة إلى انتقال سلس بين الوضعين الداكن/الفاتح عند التبديل بينهما
+   ========================================================================= */
+::selection{background:color-mix(in srgb, var(--gold) 38%, transparent);color:var(--ink-1);}
+html{scrollbar-width:thin;scrollbar-color:var(--line-strong) var(--bg-1);}
+::-webkit-scrollbar{width:12px;height:12px;}
+::-webkit-scrollbar-track{background:var(--bg-1);}
+::-webkit-scrollbar-thumb{background-color:var(--line-strong);border-radius:99px;border:3px solid var(--bg-1);background-clip:padding-box;}
+::-webkit-scrollbar-thumb:hover{background-color:var(--gold-soft);}
+input::placeholder,textarea::placeholder{color:var(--ink-3);opacity:1;}
+
+/* تُضاف هذه الفئة مؤقتًا على <html> عبر JS عند الضغط على زر تبديل المظهر فقط
+   (وليس عند التحميل الأول لتفادي "وميض" غير مرغوب)، فتُكسِب كل الألوان
+   والخلفيات والحدود والظلال انتقالًا ناعمًا موحّدًا، ثم تُزال بعد انتهائه
+   حتى لا تُبقي تحويلات إضافية تؤثر على أداء التمرير أو تفاعلات الفأرة العادية */
+.theme-transition,
+.theme-transition *{
+  transition:background-color .45s ease, border-color .45s ease, color .45s ease,
+             box-shadow .45s ease, fill .45s ease, stroke .45s ease !important;
+}
+body{
+  margin:0;
+  background-color:var(--bg-0);
+  background-image:var(--paper-noise);
+  color:var(--ink-1);
+  font-family:var(--font-ar);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  transition:background-color .5s ease, color .5s ease;
+  overflow-x:hidden;
+}
+/* تباعد أحرف طفيف في الوضع الداكن فقط: النص الفاتح على خلفية قاتمة يميل بصريًا
+   للتكتّل بسبب ظاهرة "الإشعاع البصري"، وإضافة تباعد ضئيل جدًا يحسّن وضوح القراءة
+   دون أن يُلاحَظ كتغيير متعمّد في الطباعة */
+[data-theme="dark"] body{letter-spacing:.003em;}
+h1,h2,h3,h4{margin:0;font-family:var(--font-ar);font-weight:800;color:var(--ink-1);}
+p{margin:0;}
+ul,ol{margin:0;padding:0;list-style:none;}
+button{font-family:inherit;cursor:pointer;background:none;border:none;color:inherit;}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;}
+:focus-visible{outline:none;box-shadow:var(--focus-ring);border-radius:6px;}
+
+/* German inline text always LTR regardless of surrounding RTL context */
+.de{direction:ltr;unicode-bidi:isolate;font-family:var(--font-de);}
+.ar{direction:rtl;unicode-bidi:isolate;}
+
+/* =========================================================================
+   3. LAYOUT PRIMITIVES
+   ========================================================================= */
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px);}
+.section{padding-block:clamp(56px,9vw,110px);position:relative;}
+.section-head{max-width:760px;margin-bottom:clamp(28px,4vw,48px);}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-stamp);
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--red);
+  border:1.5px dashed var(--red);
+  padding:5px 14px;border-radius:999px;
+  transform:rotate(-1.2deg);
+  margin-bottom:16px;
+  background:color-mix(in srgb, var(--red) 6%, transparent);
+}
+.section-title{font-size:clamp(1.6rem,3.4vw,2.5rem);line-height:1.25;letter-spacing:-.01em;}
+.section-title .hl{
+  background:linear-gradient(120deg, var(--gold-2), var(--red-2) 88%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.section-sub{margin-top:14px;color:var(--ink-2);font-size:1.02rem;max-width:64ch;}
+.grid{display:grid;gap:20px;}
+.grid-2{grid-template-columns:repeat(2,1fr);}
+.grid-3{grid-template-columns:repeat(3,1fr);}
+.grid-4{grid-template-columns:repeat(4,1fr);}
+@media (max-width:900px){.grid-3{grid-template-columns:repeat(2,1fr);} .grid-4{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:620px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr;}}
+
+.card{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:var(--shadow-1);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-2);border-color:var(--line-strong);}
+
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:12px;
+  font-weight:700;font-size:.95rem;
+  border:1px solid transparent;
+  transition:transform .2s ease, box-shadow .2s ease, background .25s ease, color .25s ease;
+  white-space:nowrap;
+}
+.btn:active{transform:scale(.96);}
+.btn-gold{background:linear-gradient(155deg,var(--gold-2),var(--gold-fill));color:#241800;box-shadow:0 10px 24px -10px rgba(169,116,24,.6);}
+.btn-gold:hover{filter:brightness(1.06);box-shadow:0 14px 30px -10px rgba(169,116,24,.75);}
+.btn-ghost{background:transparent;border-color:var(--line-strong);color:var(--ink-1);}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+.btn-teal{background:linear-gradient(155deg,var(--teal-2),var(--teal));color:#062522;}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none !important;}
+.btn-sm{padding:8px 14px;font-size:.82rem;border-radius:10px;}
+.btn-icon{width:40px;height:40px;padding:0;justify-content:center;border-radius:50%;border:1px solid var(--line-strong);}
+.btn-icon:hover{border-color:var(--gold);color:var(--gold);}
+
+/* =========================================================================
+   4. HEADER / STICKY NAV
+   ========================================================================= */
+.skip-link{
+  position:fixed;top:-60px;right:16px;z-index:999;
+  background:var(--gold-fill);color:#241800;padding:10px 18px;border-radius:0 0 10px 10px;
+  transition:top .25s ease;font-weight:800;
+}
+.skip-link:focus{top:0;}
+
+.topbar{
+  position:sticky;top:0;z-index:200;
+  backdrop-filter:blur(14px) saturate(1.4);
+  background:color-mix(in srgb, var(--bg-0) 82%, transparent);
+  border-bottom:1px solid var(--line);
+}
+.topbar::after{
+  content:'';position:absolute;inset-inline:0;bottom:-1px;height:2px;
+  background:linear-gradient(90deg, transparent, var(--gold-2) 20%, var(--red-2) 50%, var(--teal-2) 80%, transparent);
+  opacity:.55;
+}
+[data-theme="dark"] .topbar::after{opacity:.85;height:2.5px;}
+.topbar-inner{
+  display:flex;align-items:center;gap:14px;
+  padding-block:10px;max-width:1180px;margin-inline:auto;padding-inline:clamp(14px,4vw,40px);
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;flex-shrink:0;}
+.brand-badge{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(155deg,var(--gold-2),var(--red-2));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 14px -4px rgba(156,58,46,.5);
+  font-size:1.1rem;
+}
+.brand-text{font-size:.95rem;line-height:1.15;}
+.brand-text small{display:block;font-size:.66rem;color:var(--ink-3);font-weight:500;letter-spacing:.03em;}
+
+.nav-scroll{flex:1;overflow-x:auto;display:flex;gap:4px;scrollbar-width:none;-ms-overflow-style:none;}
+.nav-scroll::-webkit-scrollbar{display:none;}
+.nav-link{
+  padding:8px 13px;border-radius:9px;font-size:.83rem;font-weight:700;color:var(--ink-2);
+  white-space:nowrap;transition:background .2s ease,color .2s ease;
+}
+.nav-link:hover{color:var(--gold);}
+.nav-link.active{background:var(--bg-raised);color:var(--gold);box-shadow:var(--shadow-1);}
+
+.top-controls{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.progress-ring-wrap{position:relative;width:40px;height:40px;flex-shrink:0;}
+.progress-ring-wrap svg{transform:rotate(-90deg);}
+.progress-ring-track{fill:none;stroke:var(--line);stroke-width:4;}
+.progress-ring-bar{fill:none;stroke:var(--gold);stroke-width:4;stroke-linecap:round;transition:stroke-dashoffset .6s ease;}
+.progress-ring-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:var(--gold);}
+
+.speed-select{
+  border:1px solid var(--line-strong);background:var(--bg-raised);color:var(--ink-1);
+  border-radius:9px;padding:7px 8px;font-size:.78rem;font-weight:700;
+}
+
+/* =========================================================================
+   5. HERO
+   ========================================================================= */
+.hero{padding-block:clamp(48px,8vw,88px) clamp(60px,9vw,100px);position:relative;overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,5vw,60px);align-items:center;}
+@media (max-width:880px){.hero-grid{grid-template-columns:1fr;}}
+.case-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--font-stamp);font-size:.78rem;letter-spacing:.08em;
+  color:var(--red);border:2px solid var(--red);padding:6px 16px;border-radius:4px;
+  transform:rotate(-2deg);margin-bottom:22px;
+}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.18;letter-spacing:-.015em;}
+.hero h1 .gold{
+  background:linear-gradient(120deg, var(--gold-2), var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero h1 .de{display:inline-block;color:var(--red);font-weight:700;}
+.hero-desc{margin-top:20px;font-size:1.08rem;color:var(--ink-2);max-width:56ch;}
+.hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;}
+.hero-stats{display:flex;gap:26px;margin-top:38px;flex-wrap:wrap;}
+.hero-stat b{display:block;font-size:1.5rem;color:var(--gold);font-family:var(--font-de);}
+.hero-stat span{font-size:.78rem;color:var(--ink-3);}
+
+.evidence-board{
+  position:relative;aspect-ratio:1/1;max-width:460px;margin-inline:auto;
+}
+.evidence-board::before{
+  content:'';position:absolute;inset:-8%;z-index:-1;border-radius:50%;
+  background:radial-gradient(circle, color-mix(in srgb, var(--gold) 16%, transparent), transparent 70%);
+  filter:blur(6px);
+}
+.evidence-board svg{width:100%;height:100%;filter:drop-shadow(0 18px 34px rgba(0,0,0,.14));}
+
+/* =========================================================================
+   6. SPEAKABLE ELEMENTS (Rule 7/8 — click to hear German)
+   ========================================================================= */
+.speakable{
+  cursor:pointer;position:relative;border-radius:8px;
+  padding:1px 5px;margin-inline:-2px;
+  transition:background .25s ease, box-shadow .25s ease;
+  border-bottom:1.5px dotted var(--gold-soft);
+}
+.speakable:hover{background:color-mix(in srgb, var(--gold) 12%, transparent);}
+.speakable:focus-visible{box-shadow:var(--focus-ring);}
+.speakable::after{
+  content:'🔊';font-size:.68em;opacity:.55;margin-inline-start:4px;vertical-align:middle;
+}
+.speakable.is-speaking{
+  background:color-mix(in srgb, var(--gold) 22%, transparent);
+  box-shadow:0 0 0 2px var(--gold-soft);
+}
+.speakable.is-speaking::after{content:'🔈';animation:pulseIcon 1s ease-in-out infinite;}
+@keyframes pulseIcon{0%,100%{opacity:.5;}50%{opacity:1;}}
+.speakable .w{transition:background .15s ease, color .15s ease;border-radius:4px;padding:0 1px;}
+.speakable .w.active-word{background:var(--gold-fill);color:#241800;}
+
+.now-playing{
+  position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(140%);
+  background:var(--bg-raised);border:1px solid var(--line-strong);
+  border-radius:16px;box-shadow:var(--shadow-2);
+  padding:10px 14px;display:flex;align-items:center;gap:10px;
+  z-index:300;transition:transform .4s cubic-bezier(.2,.9,.25,1);
+  max-width:min(92vw,420px);
+}
+.now-playing.show{transform:translateX(-50%) translateY(0);}
+.now-playing .np-icon{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(155deg,var(--gold-2),var(--gold));
+  display:flex;align-items:center;justify-content:center;color:#241800;
+  animation:npSpin 3s linear infinite;
+}
+@keyframes npSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.now-playing .np-text{font-size:.78rem;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:170px;}
+.now-playing .np-text b{display:block;color:var(--ink-1);font-family:var(--font-de);direction:ltr;font-size:.9rem;}
+.np-btns{display:flex;gap:4px;}
+
+/* =========================================================================
+   7. GOLDEN RULE / EVIDENCE DIAGRAM SECTION
+   ========================================================================= */
+.rule-diagram{margin-top:10px;}
+.rule-diagram svg{width:100%;height:auto;}
+.branch-path{stroke-dasharray:400;stroke-dashoffset:400;transition:stroke-dashoffset 1.4s ease;}
+.reveal.in-view .branch-path{stroke-dashoffset:0;}
+
+.two-col-compare{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px;}
+@media (max-width:700px){.two-col-compare{grid-template-columns:1fr;}}
+.compare-card{padding:24px;position:relative;overflow:hidden;}
+.compare-card.person{border-top:4px solid var(--teal);}
+.compare-card.thing{border-top:4px solid var(--red);}
+[data-theme="dark"] .compare-card.person{box-shadow:var(--shadow-1), 0 -22px 48px -32px var(--teal);}
+[data-theme="dark"] .compare-card.thing{box-shadow:var(--shadow-1), 0 -22px 48px -32px var(--red);}
+.compare-card .ctag{
+  font-family:var(--font-stamp);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:6px;display:block;
+}
+.compare-card h3{font-size:1.25rem;margin-bottom:4px;}
+.compare-card .icon-big{font-size:2.2rem;margin-bottom:10px;}
+.word-chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.word-chip{
+  font-family:var(--font-de);font-weight:700;font-size:.95rem;
+  padding:8px 14px;border-radius:10px;border:1.5px solid var(--line-strong);
+  background:var(--bg-raised);
+}
+.compare-card.person .word-chip{
+  border-color:color-mix(in srgb, var(--teal) 60%, var(--line-strong));
+  background:color-mix(in srgb, var(--teal) 15%, var(--bg-raised));
+  color:var(--teal);
+}
+.compare-card.thing .word-chip{
+  border-color:color-mix(in srgb, var(--red) 60%, var(--line-strong));
+  background:color-mix(in srgb, var(--red) 15%, var(--bg-raised));
+  color:var(--red);
+}
+
+/* =========================================================================
+   8. DECLENSION TABLES
+   ========================================================================= */
+.table-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow-1);}
+table.grammar{width:100%;border-collapse:collapse;background:var(--bg-card);min-width:560px;}
+table.grammar th,table.grammar td{padding:14px 18px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top;}
+table.grammar thead th{
+  background:var(--bg-1);font-family:var(--font-stamp);font-size:.72rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:400;
+}
+table.grammar tbody tr:last-child td{border-bottom:none;}
+table.grammar tbody tr{transition:background .2s ease;}
+table.grammar tbody tr:hover{background:color-mix(in srgb, var(--gold) 6%, transparent);}
+table.grammar .case-word{font-family:var(--font-de);font-weight:800;color:var(--gold);font-size:1.05rem;}
+table.grammar .ex{color:var(--ink-2);font-size:.92rem;}
+table.grammar .ex .de{color:var(--ink-1);font-weight:600;}
+
+/* =========================================================================
+   9. FLOWCHART (wo(r)- rule)
+   ========================================================================= */
+.flow-wrap{display:flex;justify-content:center;margin-top:10px;}
+.flow-wrap svg{max-width:640px;width:100%;height:auto;}
+.flow-box{fill:var(--bg-raised);stroke:var(--line-strong);stroke-width:1.5;}
+.flow-box.yes{stroke:var(--teal);}
+.flow-box.no{stroke:var(--red);}
+.flow-txt{font-family:var(--font-ar);font-size:13px;fill:var(--ink-1);}
+.flow-de{font-family:var(--font-de);font-weight:700;font-size:13px;}
+
+/* =========================================================================
+   10. LOCATION DIAGRAM (wo/wohin/woher)
+   ========================================================================= */
+.loc-diagram{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px;}
+@media (max-width:700px){.loc-diagram{grid-template-columns:1fr;}}
+.loc-card{padding:22px;text-align:center;}
+.loc-card svg{margin-inline:auto;margin-bottom:14px;height:90px;}
+.loc-card h4{font-family:var(--font-de);color:var(--gold);font-size:1.15rem;margin-bottom:6px;}
+
+/* =========================================================================
+   11. WORD ORDER BLOCKS
+   ========================================================================= */
+.order-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center;}
+.order-block{
+  padding:12px 16px;border-radius:10px;font-family:var(--font-de);font-weight:700;font-size:.92rem;
+  color:#fff;box-shadow:var(--shadow-1);
+}
+.ob-1{background:var(--red-2);}
+.ob-2{background:var(--gold-2);color:#241800;}
+.ob-3{background:var(--teal-2);color:#062522;}
+.ob-4{background:var(--ink-3);}
+/* في الوضع الداكن يصبح --red-2 و --ink-3 أفتح بكثير (لضمان وضوحهما كلون تمييز)،
+   ما يجعل النص الأبيض الافتراضي ضعيف التباين فوقهما؛ نمنحهما نصًا داكنًا هنا فقط */
+[data-theme="dark"] .ob-1{color:#241800;}
+[data-theme="dark"] .ob-4{color:#12131a;}
+.order-label{font-size:.7rem;color:var(--ink-3);margin-top:4px;text-align:center;}
+.order-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:.82rem;color:var(--ink-2);}
+.order-legend span{display:inline-flex;align-items:center;gap:6px;}
+.dot{width:11px;height:11px;border-radius:3px;display:inline-block;}
+
+/* =========================================================================
+   12. MISTAKE CARDS
+   ========================================================================= */
+.mistake-card{padding:20px;}
+.mistake-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;}
+.mistake-row .mark{flex-shrink:0;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;}
+.mistake-row.bad .mark{background:color-mix(in srgb, var(--error) 18%, transparent);color:var(--error);}
+.mistake-row.good .mark{background:color-mix(in srgb, var(--success) 18%, transparent);color:var(--success);}
+.mistake-row p{font-size:.95rem;}
+.mistake-note{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line-strong);font-size:.85rem;color:var(--ink-2);}
+
+/* =========================================================================
+   13. SPEECH LAB
+   ========================================================================= */
+.speechlab{
+  padding:clamp(20px,3vw,34px);position:relative;overflow:hidden;
+}
+.speechlab-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:18px;padding-top:18px;border-top:1px dashed var(--line-strong);}
+.voice-indicator{font-size:.8rem;color:var(--ink-3);display:flex;align-items:center;gap:6px;}
+.voice-indicator b{color:var(--teal);}
+.sentence-list{display:flex;flex-direction:column;gap:10px;margin-top:16px;}
+.sentence-item{
+  display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;
+  background:var(--bg-raised);border:1px solid var(--line);
+}
+.sentence-item .txt{flex:1;}
+.sentence-item .txt .de{display:block;font-weight:700;font-size:1.02rem;}
+.sentence-item .txt .ar{display:block;font-size:.82rem;color:var(--ink-3);margin-top:2px;}
+
+/* =========================================================================
+   14. TABS (exercises)
+   ========================================================================= */
+.tabbar{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:0;margin-bottom:28px;}
+.tab-btn{
+  padding:11px 18px;border-radius:12px 12px 0 0;font-weight:700;font-size:.88rem;color:var(--ink-3);
+  border:1px solid transparent;border-bottom:none;position:relative;top:1px;
+}
+.tab-btn.active{color:var(--gold);background:var(--bg-card);border-color:var(--line);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;animation:fadeUp .4s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+/* Flashcards */
+.flashcard-stage{display:flex;flex-direction:column;align-items:center;gap:20px;}
+.flashcard{
+  width:min(90vw,360px);height:230px;perspective:1400px;
+}
+.flashcard-inner{
+  position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.2,.8,.2,1);
+  transform-style:preserve-3d;cursor:pointer;
+}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg);}
+.fc-face{
+  position:absolute;inset:0;backface-visibility:hidden;border-radius:20px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:22px;box-shadow:var(--shadow-2);border:1px solid var(--line);
+}
+.fc-front{background:linear-gradient(160deg,var(--bg-raised),var(--bg-card));}
+.fc-back{background:linear-gradient(160deg,var(--gold-2),var(--gold-fill));color:#241800;transform:rotateY(180deg);}
+.fc-word{font-family:var(--font-de);font-size:2.1rem;font-weight:800;direction:ltr;}
+.fc-hint{font-size:.78rem;color:var(--ink-3);margin-top:10px;}
+.fc-back .fc-hint{color:#5a4108;}
+.fc-meaning{font-size:1.15rem;font-weight:800;margin-bottom:10px;}
+.fc-example{font-size:.85rem;line-height:1.6;}
+.flashcard-nav{display:flex;align-items:center;gap:14px;}
+.flashcard-counter{font-size:.85rem;color:var(--ink-3);font-variant-numeric:tabular-nums;}
+.fc-progress-dots{display:flex;gap:5px;flex-wrap:wrap;max-width:320px;justify-content:center;}
+.fc-dot{width:7px;height:7px;border-radius:50%;background:var(--line-strong);transition:background .3s ease,transform .3s ease;}
+.fc-dot.done{background:var(--success);}
+.fc-dot.current{background:var(--gold);transform:scale(1.4);}
+
+/* Memory game */
+.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:560px;margin-inline:auto;}
+@media (max-width:560px){.memory-grid{grid-template-columns:repeat(3,1fr);}}
+.mem-card{aspect-ratio:1/1;perspective:900px;}
+.mem-inner{position:relative;width:100%;height:100%;transition:transform .5s ease;transform-style:preserve-3d;border-radius:12px;cursor:pointer;}
+.mem-card.flip .mem-inner{transform:rotateY(180deg);}
+.mem-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:6px;text-align:center;font-size:.78rem;font-weight:700;border:1px solid var(--line);}
+.mem-back{background:linear-gradient(155deg,var(--teal-2),var(--teal));display:flex;align-items:center;justify-content:center;font-size:1.4rem;}
+.mem-front{background:var(--bg-raised);transform:rotateY(180deg);color:var(--ink-1);}
+.mem-card.matched .mem-face.mem-front{background:color-mix(in srgb, var(--success) 22%, var(--bg-raised));border-color:var(--success);}
+.mem-card.matched{animation:matchPop .5s ease;}
+@keyframes matchPop{0%{transform:scale(1);}40%{transform:scale(1.08);}100%{transform:scale(1);}}
+.mem-stats{display:flex;gap:22px;justify-content:center;margin-top:18px;font-size:.85rem;color:var(--ink-2);}
+.mem-stats b{color:var(--gold);font-variant-numeric:tabular-nums;}
+
+/* Quiz */
+.quiz-box{max-width:640px;margin-inline:auto;}
+.quiz-progress{height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin-bottom:22px;}
+.quiz-progress-bar{height:100%;background:linear-gradient(90deg,var(--gold-2),var(--gold));border-radius:99px;transition:width .4s ease;}
+.quiz-question{font-size:1.1rem;font-weight:700;margin-bottom:6px;}
+.quiz-question .de{font-weight:800;}
+.quiz-sub{font-size:.82rem;color:var(--ink-3);margin-bottom:18px;}
+.quiz-options{display:grid;gap:10px;}
+.quiz-opt{
+  text-align:right;padding:14px 18px;border-radius:12px;border:1.5px solid var(--line-strong);
+  background:var(--bg-raised);font-family:var(--font-de);font-weight:700;font-size:1rem;direction:ltr;text-align:left;
+  transition:border-color .2s ease, background .2s ease, transform .15s ease;
+}
+.quiz-opt:hover:not(:disabled){border-color:var(--gold);}
+.quiz-opt.correct{border-color:var(--success);background:color-mix(in srgb, var(--success) 16%, var(--bg-raised));}
+.quiz-opt.wrong{border-color:var(--error);background:color-mix(in srgb, var(--error) 14%, var(--bg-raised));animation:shake .4s ease;}
+.quiz-opt:disabled{cursor:default;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+.quiz-feedback{margin-top:14px;font-size:.9rem;min-height:1.4em;color:var(--ink-2);}
+.quiz-score-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.score-pill{
+  display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:99px;
+  background:var(--bg-raised);border:1px solid var(--line-strong);font-weight:800;font-size:.85rem;color:var(--gold);
+}
+.quiz-result{text-align:center;padding:30px 10px;}
+.quiz-result .big{font-size:2.4rem;font-weight:800;color:var(--gold);font-family:var(--font-de);}
+
+/* Sentence builder */
+.sb-sentence-num{font-size:.8rem;color:var(--ink-3);margin-bottom:14px;}
+.sb-bank,.sb-answer{display:flex;flex-wrap:wrap;gap:10px;min-height:56px;padding:14px;border-radius:14px;}
+.sb-bank{background:var(--bg-1);border:1px dashed var(--line-strong);}
+.sb-answer{background:var(--bg-raised);border:2px solid var(--line-strong);margin-top:14px;}
+.sb-answer.drag-over{border-color:var(--gold);}
+.sb-chip{
+  font-family:var(--font-de);font-weight:700;padding:10px 16px;border-radius:10px;
+  background:var(--bg-raised);border:1.5px solid var(--line-strong);cursor:grab;
+  transition:transform .15s ease, box-shadow .15s ease, opacity .2s ease;
+  direction:ltr;user-select:none;
+}
+.sb-chip:hover{transform:translateY(-2px);box-shadow:var(--shadow-1);border-color:var(--gold);}
+.sb-chip.placed{background:linear-gradient(155deg,var(--gold-2),var(--gold-fill));color:#241800;border-color:transparent;cursor:pointer;}
+.sb-chip.dragging{opacity:.35;}
+.sb-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+.sb-feedback{margin-top:12px;font-size:.9rem;}
+.sb-feedback.ok{color:var(--success);font-weight:700;}
+.sb-feedback.bad{color:var(--error);font-weight:700;}
+
+/* Typing practice */
+.type-item{padding:20px;margin-bottom:16px;}
+.type-item .prompt{font-size:1.02rem;margin-bottom:12px;}
+.type-item .prompt .de{font-weight:700;}
+.type-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.type-input{
+  flex:1;min-width:160px;padding:11px 14px;border-radius:10px;border:1.5px solid var(--line-strong);
+  background:var(--bg-raised);color:var(--ink-1);font-family:var(--font-de);font-size:1rem;direction:ltr;text-align:left;
+}
+.type-input:focus{border-color:var(--gold);}
+.type-input.correct{border-color:var(--success);background:color-mix(in srgb, var(--success) 12%, var(--bg-raised));}
+.type-input.wrong{border-color:var(--error);background:color-mix(in srgb, var(--error) 10%, var(--bg-raised));}
+.type-fb{font-size:.82rem;margin-top:8px;color:var(--ink-3);min-height:1.3em;}
+
+/* =========================================================================
+   15. BADGES / TOASTS / SUMMARY
+   ========================================================================= */
+.badge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px;}
+@media (max-width:760px){.badge-grid{grid-template-columns:repeat(2,1fr);}}
+.badge{
+  padding:20px 14px;text-align:center;opacity:.4;filter:grayscale(1);
+  transition:opacity .5s ease, filter .5s ease, transform .5s ease;
+}
+.badge.earned{opacity:1;filter:grayscale(0);transform:translateY(-3px);}
+.badge .bicon{font-size:2rem;margin-bottom:8px;}
+.badge b{display:block;font-size:.85rem;}
+.badge span{font-size:.72rem;color:var(--ink-3);}
+
+.toast-wrap{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:400;display:flex;flex-direction:column;gap:8px;pointer-events:none;}
+.toast{
+  background:var(--bg-raised);border:1px solid var(--gold);border-radius:14px;box-shadow:var(--shadow-2);
+  padding:12px 20px;display:flex;align-items:center;gap:10px;font-size:.88rem;font-weight:700;
+  transform:translateY(-30px);opacity:0;transition:transform .4s cubic-bezier(.2,.9,.25,1),opacity .4s ease;
+}
+.toast.show{transform:translateY(0);opacity:1;}
+
+/* =========================================================================
+   16. MISC UI: fab back-to-top, search, theme toggle icon states
+   ========================================================================= */
+.fab-top{
+  position:fixed;bottom:18px;inset-inline-end:18px;z-index:250;
+  width:46px;height:46px;border-radius:50%;background:var(--gold-fill);color:#241800;
+  display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-2);
+  opacity:0;pointer-events:none;transform:translateY(10px);
+  transition:opacity .3s ease, transform .3s ease;
+}
+.fab-top.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+
+.theme-toggle{position:relative;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong);flex-shrink:0;}
+.theme-toggle:hover{border-color:var(--gold);}
+.theme-toggle svg{position:absolute;inset:0;margin:auto;transition:opacity .3s ease, transform .5s ease;}
+.theme-toggle .icon-sun{opacity:1;transform:rotate(0deg) scale(1);}
+.theme-toggle .icon-moon{opacity:0;transform:rotate(-90deg) scale(.5);}
+[data-theme="dark"] .theme-toggle .icon-sun{opacity:0;transform:rotate(90deg) scale(.5);}
+[data-theme="dark"] .theme-toggle .icon-moon{opacity:1;transform:rotate(0deg) scale(1);}
+
+.search-box{position:relative;display:none;align-items:center;}
+.search-box input{
+  width:0;opacity:0;padding:0;border:none;background:var(--bg-raised);color:var(--ink-1);
+  border-radius:10px;transition:width .3s ease,opacity .3s ease,padding .3s ease;font-size:.85rem;
+}
+.search-box.open input{width:150px;opacity:1;padding:8px 12px;border:1px solid var(--line-strong);}
+mark.search-hit{background:var(--gold-soft);color:#241800;border-radius:3px;padding:0 2px;}
+
+/* =========================================================================
+   17. FOOTER
+   ========================================================================= */
+footer{border-top:1px solid var(--line);padding-block:36px;text-align:center;color:var(--ink-3);font-size:.85rem;}
+footer .de{color:var(--gold);}
+
+/* =========================================================================
+   18. SCROLL-REVEAL
+   ========================================================================= */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1);}
+.reveal.in-view{opacity:1;transform:translateY(0);}
+
+/* =========================================================================
+   19. FLOATING PIN / TAPE decorations
+   ========================================================================= */
+.pin{position:absolute;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8a7a,var(--red));box-shadow:0 3px 5px rgba(0,0,0,.35);}
+.tape{position:absolute;width:70px;height:22px;background:color-mix(in srgb, var(--gold-soft) 70%, transparent);opacity:.55;box-shadow:0 2px 4px rgba(0,0,0,.15);}
+
+/* =========================================================================
+   20. RESPONSIVE FINE-TUNING
+   ========================================================================= */
+@media (max-width:640px){
+  .hero-stats{gap:16px;}
+  .order-row{gap:8px;}
+  table.grammar th, table.grammar td{padding:10px 12px;font-size:.85rem;}
+}
+
+/* =========================================================================
+   21. PRINT
+   ========================================================================= */
+@media print{
+  .topbar,.now-playing,.fab-top,.toast-wrap,.tabbar,.hero-cta,.speakable::after{display:none !important;}
+  body{background:#fff;color:#000;}
+  .section{padding-block:20px;page-break-inside:avoid;}
+  .card{box-shadow:none;border:1px solid #999;}
+}
+</style>
+</head>
+<body data-theme="light">
+
+<a href="#main" class="skip-link">تخطَّ إلى المحتوى الرئيسي</a>
+
+<!-- =========================================================================
+     TOP BAR
+     ========================================================================= -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-badge">🕵️</div>
+      <div class="brand-text">
+        محقق الأسئلة<small>Fragewörter-Detektiv</small>
+      </div>
+    </div>
+
+    <nav class="nav-scroll" id="navScroll" aria-label="تنقّل بين أقسام الدرس">
+      <a class="nav-link" href="#sec-golden" data-nav>القاعدة الذهبية</a>
+      <a class="nav-link" href="#sec-personen" data-nav>wer/wen/wem</a>
+      <a class="nav-link" href="#sec-was" data-nav>was</a>
+      <a class="nav-link" href="#sec-prep" data-nav>حروف الجر</a>
+      <a class="nav-link" href="#sec-ort" data-nav>المكان</a>
+      <a class="nav-link" href="#sec-zeit" data-nav>الزمان والسبب</a>
+      <a class="nav-link" href="#sec-wie" data-nav>wie</a>
+      <a class="nav-link" href="#sec-welche" data-nav>welche</a>
+      <a class="nav-link" href="#sec-order" data-nav>ترتيب الجملة</a>
+      <a class="nav-link" href="#sec-mistakes" data-nav>أخطاء شائعة</a>
+      <a class="nav-link" href="#sec-lab" data-nav>معمل النطق</a>
+      <a class="nav-link" href="#sec-exercises" data-nav>التمارين</a>
+    </nav>
+
+    <div class="top-controls">
+      <div class="search-box" id="searchBox">
+        <button class="btn-icon" id="searchToggle" aria-label="بحث داخل الدرس" title="بحث داخل الدرس">🔎</button>
+        <input type="search" id="searchInput" placeholder="ابحث في الدرس…" aria-label="نص البحث">
+      </div>
+      <select class="speed-select" id="speedSelect" aria-label="سرعة النطق" title="سرعة نطق الصوت الألماني">
+        <option value="0.75">0.75×</option>
+        <option value="1" selected>1×</option>
+        <option value="1.25">1.25×</option>
+      </select>
+      <button class="btn-icon" id="fullscreenBtn" aria-label="وضع ملء الشاشة" title="ملء الشاشة">⛶</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري" title="تبديل المظهر">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+        <svg class="icon-moon" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 14.7A8.6 8.6 0 1 1 9.3 3.6a7 7 0 0 0 11.1 11.1Z"/></svg>
+      </button>
+      <div class="progress-ring-wrap" title="تقدّمك في الدرس">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <circle class="progress-ring-track" cx="20" cy="20" r="16"/>
+          <circle class="progress-ring-bar" id="progressRingBar" cx="20" cy="20" r="16" stroke-dasharray="100.5" stroke-dashoffset="100.5"/>
+        </svg>
+        <span class="progress-ring-label" id="progressRingLabel">0%</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =========================================================================
+     HERO
+     ========================================================================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="case-tag">ملف رقم 07 — قيد التحقيق</span>
+      <h1>كيف تُصبح <span class="gold">محقّقًا</span> في أدوات الاستفهام الألمانية؟</h1>
+      <p class="hero-desc">
+        كل جملة استفهام هي "قضية" تحتاج إلى الأداة الصحيحة لحلّها. في هذا الملف التفاعلي
+        ستتعلّم جميع أدوات الاستفهام الألمانية — <span class="de speakable" data-speak data-lang="de">wer, was, wo, wann, warum, wie, welche</span> —
+        وكيف تُميّز بين استخدامها مع <b>الأسماء العاقلة</b> (الأشخاص) و<b>غير العاقلة</b> (الأشياء)، خطوة بخطوة، بأمثلة حقيقية ونطق أصلي.
+      </p>
+      <div class="hero-cta">
+        <button class="btn btn-gold" id="startBtn">🔍 ابدأ التحقيق</button>
+        <button class="btn btn-ghost" id="jumpExercises">🎯 اذهب مباشرة إلى التمارين</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>14</b><span>أداة استفهام</span></div>
+        <div class="hero-stat"><b>12</b><span>قسمًا تفاعليًا</span></div>
+        <div class="hero-stat"><b>5</b><span>تمارين وألعاب</span></div>
+        <div class="hero-stat"><b>4</b><span>شارات إنجاز</span></div>
+      </div>
+    </div>
+
+    <div class="evidence-board reveal" aria-hidden="true">
+      <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="corkGrad" cx="50%" cy="45%" r="70%">
+            <stop offset="0%" stop-color="var(--bg-card)"/>
+            <stop offset="100%" stop-color="var(--bg-0)"/>
+          </radialGradient>
+        </defs>
+        <rect x="6" y="6" width="408" height="408" rx="26" fill="url(#corkGrad)" stroke="var(--line-strong)" stroke-width="2"/>
+        <!-- central node -->
+        <circle cx="210" cy="210" r="46" fill="var(--bg-raised)" stroke="var(--gold)" stroke-width="2.5"/>
+        <text x="210" y="205" text-anchor="middle" class="flow-txt" font-weight="700">أدوات</text>
+        <text x="210" y="224" text-anchor="middle" class="flow-txt" font-weight="700">الاستفهام</text>
+        <!-- person branch -->
+        <path class="branch-path" d="M180 185 C140 140 100 110 70 90" stroke="var(--teal)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="70" cy="90" r="34" fill="var(--bg-raised)" stroke="var(--teal)" stroke-width="2.5"/>
+        <text x="70" y="86" text-anchor="middle" font-size="20">🧑</text>
+        <text x="70" y="106" text-anchor="middle" class="flow-txt" font-size="11">عاقل</text>
+        <text x="70" y="140" text-anchor="middle" class="flow-de" fill="var(--teal)" font-size="12">wer · wen</text>
+        <text x="70" y="156" text-anchor="middle" class="flow-de" fill="var(--teal)" font-size="12">wem · wessen</text>
+        <!-- thing branch -->
+        <path class="branch-path" d="M240 185 C280 140 320 110 350 90" stroke="var(--red)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="350" cy="90" r="34" fill="var(--bg-raised)" stroke="var(--red)" stroke-width="2.5"/>
+        <text x="350" y="86" text-anchor="middle" font-size="20">📦</text>
+        <text x="350" y="106" text-anchor="middle" class="flow-txt" font-size="11">غير عاقل</text>
+        <text x="350" y="140" text-anchor="middle" class="flow-de" fill="var(--red)" font-size="12">was</text>
+        <text x="350" y="156" text-anchor="middle" class="flow-de" fill="var(--red)" font-size="12">wo(r)+Präp.</text>
+        <!-- place branch -->
+        <path class="branch-path" d="M195 250 C160 290 130 310 95 325" stroke="var(--gold)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="90" cy="335" r="30" fill="var(--bg-raised)" stroke="var(--gold)" stroke-width="2.5"/>
+        <text x="90" y="331" text-anchor="middle" font-size="18">📍</text>
+        <text x="90" y="366" text-anchor="middle" class="flow-de" fill="var(--gold-2)" font-size="12">wo·wohin·woher</text>
+        <!-- time/reason branch -->
+        <path class="branch-path" d="M225 250 C260 290 290 310 325 325" stroke="var(--gold)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="330" cy="335" r="30" fill="var(--bg-raised)" stroke="var(--gold)" stroke-width="2.5"/>
+        <text x="330" y="331" text-anchor="middle" font-size="18">⏱️</text>
+        <text x="330" y="366" text-anchor="middle" class="flow-de" fill="var(--gold-2)" font-size="12">wann·warum·wie</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: GOLDEN RULE
+     ========================================================================= -->
+<section class="section" id="sec-golden">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">القاعدة رقم 1</span>
+      <h2 class="section-title">القاعدة الذهبية: <span class="hl">من هو المشتبه به؟</span> عاقل أم غير عاقل</h2>
+      <p class="section-sub">
+        قبل اختيار أداة الاستفهام، اسأل نفسك دائمًا سؤالًا واحدًا: <b>"هل أسأل عن شخص أم عن شيء؟"</b>
+        هذا القرار هو مفتاح القضية بأكملها، لأن الألمانية تخصّص عائلة كاملة من الأدوات للأشخاص (wer)
+        وأداة أخرى مختلفة تمامًا للأشياء (was).
+      </p>
+    </div>
+
+    <div class="two-col-compare">
+      <div class="card compare-card person reveal">
+        <span class="ctag">الفئة أ — Personen</span>
+        <div class="icon-big">🧑‍🤝‍🧑</div>
+        <h3>أسماء عاقلة (أشخاص)</h3>
+        <p class="ar" style="color:var(--ink-2);font-size:.92rem;">تُستخدم معها عائلة <span class="de speakable" data-speak>wer</span> بجميع حالاتها الأربع.</p>
+        <div class="word-chip-row">
+          <span class="word-chip de speakable" data-speak>wer</span>
+          <span class="word-chip de speakable" data-speak>wen</span>
+          <span class="word-chip de speakable" data-speak>wem</span>
+          <span class="word-chip de speakable" data-speak>wessen</span>
+        </div>
+      </div>
+      <div class="card compare-card thing reveal">
+        <span class="ctag">الفئة ب — Sachen</span>
+        <div class="icon-big">📦</div>
+        <h3>أسماء غير عاقلة (أشياء / أفكار)</h3>
+        <p class="ar" style="color:var(--ink-2);font-size:.92rem;">تُستخدم معها أداة واحدة ثابتة لا تتصرّف: <span class="de speakable" data-speak>was</span>.</p>
+        <div class="word-chip-row">
+          <span class="word-chip de speakable" data-speak>was</span>
+          <span class="word-chip de speakable" data-speak>womit</span>
+          <span class="word-chip de speakable" data-speak>wofür</span>
+          <span class="word-chip de speakable" data-speak>woran</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule-diagram reveal">
+      <p class="ar" style="margin-top:26px;color:var(--ink-2);font-size:.92rem;">
+        💡 <b>نصيحة المحقق:</b> إن كان بإمكانك الإجابة عن السؤال باسم إنسان (أبي، صديقتي، المعلّم) فاستخدم عائلة
+        <span class="de speakable" data-speak>wer</span>. وإن كانت الإجابة شيئًا أو فكرة (كتاب، فكرة، طقس) فاستخدم
+        <span class="de speakable" data-speak>was</span> أو أحد مركّباتها.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: PERSONEN — wer/wen/wem/wessen
+     ========================================================================= -->
+<section class="section" id="sec-personen" style="background:var(--bg-1);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">ملف الأشخاص</span>
+      <h2 class="section-title">عائلة <span class="hl de">wer</span> — أربع حالات لأربعة أدوار</h2>
+      <p class="section-sub">
+        بخلاف اللغة العربية التي تستخدم "مَن" لكل الحالات، الألمانية "تُصرّف" أداة السؤال عن الأشخاص حسب دورها
+        النحوي في الجملة (فاعل، مفعول به مباشر، مفعول به غير مباشر، أو ملكية). هذا التصريف هو نفسه تصريف أداة
+        التعريف <span class="de">der</span> تقريبًا — فإن أتقنت حالات الاسم، ستتقن هذا الجدول فورًا.
+      </p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="grammar">
+        <thead>
+          <tr><th>الحالة (Kasus)</th><th>الأداة</th><th>السؤال بالعربية</th><th>مثال ونطق</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nominativ<br><span style="color:var(--ink-3);font-size:.78rem;">فاعل</span></td>
+            <td class="case-word de speakable" data-speak>wer</td>
+            <td>مَن (فاعل الجملة)؟</td>
+            <td class="ex">
+              <span class="de speakable" data-speak>Wer ist das?</span> — من هذا؟<br>
+              <span class="de speakable" data-speak>Das ist mein Bruder.</span> — هذا أخي.
+            </td>
+          </tr>
+          <tr>
+            <td>Akkusativ<br><span style="color:var(--ink-3);font-size:.78rem;">مفعول به مباشر</span></td>
+            <td class="case-word de speakable" data-speak>wen</td>
+            <td>مَن (مفعول به مباشر)؟</td>
+            <td class="ex">
+              <span class="de speakable" data-speak>Wen siehst du?</span> — من ترى؟<br>
+              <span class="de speakable" data-speak>Ich sehe meinen Bruder.</span> — أرى أخي.
+            </td>
+          </tr>
+          <tr>
+            <td>Dativ<br><span style="color:var(--ink-3);font-size:.78rem;">مفعول به غير مباشر</span></td>
+            <td class="case-word de speakable" data-speak>wem</td>
+            <td>لِمَن؟</td>
+            <td class="ex">
+              <span class="de speakable" data-speak>Wem hilfst du?</span> — لمن تساعد؟<br>
+              <span class="de speakable" data-speak>Ich helfe meinem Bruder.</span> — أساعد أخي.
+            </td>
+          </tr>
+          <tr>
+            <td>Genitiv<br><span style="color:var(--ink-3);font-size:.78rem;">ملكية</span></td>
+            <td class="case-word de speakable" data-speak>wessen</td>
+            <td>ملك مَن؟ / مَن صاحب...؟</td>
+            <td class="ex">
+              <span class="de speakable" data-speak>Wessen Buch ist das?</span> — كتاب مَن هذا؟<br>
+              <span class="de speakable" data-speak>Das ist das Buch meines Bruders.</span> — هذا كتاب أخي.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="ar reveal" style="margin-top:18px;color:var(--ink-2);font-size:.92rem;">
+      🎯 <b>كيف تعرف أي حالة تحتاجها؟</b> اسأل: هل الشخص هو من يقوم بالفعل؟ ← <span class="de">wer</span>.
+      هل الفعل يقع عليه مباشرة؟ ← <span class="de">wen</span>. هل هناك حرف جر أو فعل يتطلّب "لِمَن"؟ ← <span class="de">wem</span>.
+      هل تسأل عن مالك شيء؟ ← <span class="de">wessen</span>.
+    </p>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: WAS
+     ========================================================================= -->
+<section class="section" id="sec-was">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">ملف الأشياء</span>
+      <h2 class="section-title">أداة <span class="hl de">was</span> — الشاهد الوحيد الذي لا يتغيّر</h2>
+      <p class="section-sub">
+        بينما تتصرّف عائلة <span class="de">wer</span> بأربعة أشكال، تبقى <span class="de">was</span> ثابتة في كل من حالتي
+        Nominativ وAkkusativ. هذه بساطتها — وأيضًا نقطة ضعفها، لأنها لا تعمل بشكل صحيح مع حروف الجر (سنرى الحلّ في القسم التالي).
+      </p>
+    </div>
+
+    <div class="grid grid-2 reveal">
+      <div class="card" style="padding:22px;">
+        <span class="ctag" style="font-family:var(--font-stamp);font-size:.72rem;color:var(--ink-3);">Nominativ — فاعل</span>
+        <p style="margin-top:8px;" class="de speakable" data-speak>Was ist das?</p>
+        <p class="ar" style="color:var(--ink-2);font-size:.9rem;">ما هذا؟</p>
+        <p style="margin-top:10px;" class="de speakable" data-speak>Das ist ein Tisch.</p>
+        <p class="ar" style="color:var(--ink-2);font-size:.9rem;">هذه طاولة.</p>
+      </div>
+      <div class="card" style="padding:22px;">
+        <span class="ctag" style="font-family:var(--font-stamp);font-size:.72rem;color:var(--ink-3);">Akkusativ — مفعول به مباشر</span>
+        <p style="margin-top:8px;" class="de speakable" data-speak>Was siehst du?</p>
+        <p class="ar" style="color:var(--ink-2);font-size:.9rem;">ماذا ترى؟</p>
+        <p style="margin-top:10px;" class="de speakable" data-speak>Ich sehe einen Tisch.</p>
+        <p class="ar" style="color:var(--ink-2);font-size:.9rem;">أرى طاولة.</p>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:20px;padding:20px 24px;border-inline-start:4px solid var(--red);">
+      <p class="ar" style="font-size:.92rem;color:var(--ink-2);">
+        ⚠️ <b>تحذير المحقق:</b> لا تستخدم <span class="de">was</span> أبدًا للسؤال عن شخص. الجملة
+        <span class="de" style="color:var(--error);">Was siehst du?</span> صحيحة فقط إن كانت الإجابة شيئًا.
+        فإن كانت الإجابة شخصًا، القاعدة الذهبية تُلزمك بالتحوّل فورًا إلى <span class="de">wen</span>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: PREPOSITIONS — mit wem vs womit
+     ========================================================================= -->
+<section class="section" id="sec-prep" style="background:var(--bg-1);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">أصعب دليل في القضية</span>
+      <h2 class="section-title">حروف الجر: <span class="hl de">mit wem</span> أم <span class="hl de">womit</span>؟</h2>
+      <p class="section-sub">
+        هذه هي النقطة التي يخطئ فيها معظم المتعلّمين. عندما يسبق أداةَ الاستفهام حرفُ جر، تنقسم الطريقة تمامًا
+        حسب القاعدة الذهبية: <b>للأشخاص</b> يبقى حرف الجر في مكانه أمام <span class="de">wen/wem</span>،
+        و<b>للأشياء</b> يندمج حرف الجر مع <span class="de">wo</span> ليُكوّن كلمة واحدة.
+      </p>
+    </div>
+
+    <div class="two-col-compare reveal">
+      <div class="card compare-card person" style="padding:24px;">
+        <span class="ctag">أشخاص → حرف الجر + wen/wem</span>
+        <h3>Präposition + wen / wem</h3>
+        <div class="sentence-list" style="margin-top:14px;">
+          <div class="sentence-item"><div class="txt"><span class="de speakable" data-speak>Mit wem gehst du ins Kino?</span><span class="ar">مع مَن تذهب إلى السينما؟</span></div></div>
+          <div class="sentence-item"><div class="txt"><span class="de speakable" data-speak>Für wen ist das Geschenk?</span><span class="ar">لمن هذه الهدية؟</span></div></div>
+          <div class="sentence-item"><div class="txt"><span class="de speakable" data-speak>An wen denkst du?</span><span class="ar">في مَن تفكّر؟</span></div></div>
+        </div>
+      </div>
+      <div class="card compare-card thing" style="padding:24px;">
+        <span class="ctag">أشياء → wo(r) + حرف الجر</span>
+        <h3>wo(r) + Präposition</h3>
+        <div class="sentence-list" style="margin-top:14px;">
+          <div class="sentence-item"><div class="txt"><span class="de speakable" data-speak>Womit schreibst du?</span><span class="ar">بماذا تكتب؟</span></div></div>
+          <div class="sentence-item"><div class="txt"><span class="de speakable" data-speak>Wofür ist das?</span><span class="ar">لماذا (لأي غرض) هذا؟</span></div></div>
+          <div class="sentence-item"><div class="txt"><span class="de speakable" data-speak>Woran denkst du?</span><span class="ar">في ماذا تفكّر؟</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-wrap reveal">
+      <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg">
+        <rect class="flow-box" x="220" y="10" width="200" height="56" rx="12"/>
+        <text x="320" y="34" text-anchor="middle" class="flow-txt">حرف الجر يبدأ بحرف علّة؟</text>
+        <text x="320" y="52" text-anchor="middle" class="flow-txt" font-size="11" fill="var(--ink-3)">(a, e, i, o, u, ä, ö, ü)</text>
+
+        <line x1="270" y1="66" x2="130" y2="120" stroke="var(--teal)" stroke-width="2"/>
+        <text x="185" y="98" class="flow-txt" fill="var(--teal)" font-weight="700">نعم</text>
+        <rect class="flow-box yes" x="20" y="120" width="220" height="66" rx="12"/>
+        <text x="130" y="146" text-anchor="middle" class="flow-txt">أضف حرف <tspan class="flow-de">r</tspan> ليسهُل النطق</text>
+        <text x="130" y="168" text-anchor="middle" class="flow-de" font-size="13" fill="var(--teal)">wor + Präposition</text>
+
+        <line x1="370" y1="66" x2="500" y2="120" stroke="var(--red)" stroke-width="2"/>
+        <text x="430" y="98" class="flow-txt" fill="var(--red)" font-weight="700">لا</text>
+        <rect class="flow-box no" x="400" y="120" width="220" height="66" rx="12"/>
+        <text x="510" y="146" text-anchor="middle" class="flow-txt">اربط <tspan class="flow-de">wo</tspan> مباشرة بحرف الجر</text>
+        <text x="510" y="168" text-anchor="middle" class="flow-de" font-size="13" fill="var(--red)">wo + Präposition</text>
+
+        <text x="130" y="215" text-anchor="middle" class="flow-de" font-size="13">worauf · woran · worüber</text>
+        <text x="510" y="215" text-anchor="middle" class="flow-de" font-size="13">womit · wofür · wovon</text>
+        <text x="320" y="245" text-anchor="middle" class="flow-txt" font-size="11" fill="var(--ink-3)">مثال: über → worüber (يبدأ بـ ü) | mit → womit (يبدأ بـ m)</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: ORT — wo / wohin / woher
+     ========================================================================= -->
+<section class="section" id="sec-ort">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">أدوات المكان</span>
+      <h2 class="section-title"><span class="hl de">wo</span> · <span class="hl de">wohin</span> · <span class="hl de">woher</span> — ثلاث لقطات لموقع واحد</h2>
+      <p class="section-sub">
+        تخيّل كاميرا مراقبة: هل تُصوّر شخصًا واقفًا في مكانه، أم متّجهًا إلى مكان، أم قادمًا من مكان؟ هذا بالضبط
+        الفرق بين الأدوات الثلاث.
+      </p>
+    </div>
+
+    <div class="loc-diagram reveal">
+      <div class="card loc-card">
+        <svg viewBox="0 0 100 70"><circle cx="50" cy="45" r="8" fill="var(--gold)"/><line x1="50" y1="20" x2="50" y2="37" stroke="var(--line-strong)" stroke-width="2" stroke-dasharray="3 3"/><text x="50" y="15" text-anchor="middle" font-size="20">📍</text></svg>
+        <h4 class="de speakable" data-speak>wo?</h4>
+        <p class="ar" style="color:var(--ink-2);font-size:.85rem;">أين؟ (مكان ثابت — Dativ غالبًا)</p>
+        <p class="de speakable" data-speak style="margin-top:10px;font-weight:700;">Wo wohnst du?</p>
+        <p class="ar" style="font-size:.85rem;color:var(--ink-3);">أين تسكن؟</p>
+        <p class="de speakable" data-speak style="margin-top:4px;">Ich wohne in Berlin.</p>
+      </div>
+      <div class="card loc-card">
+        <svg viewBox="0 0 100 70"><line x1="15" y1="45" x2="75" y2="45" stroke="var(--teal)" stroke-width="2.5" marker-end="url(#arrow1)"/><defs><marker id="arrow1" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--teal)"/></marker></defs><text x="82" y="50" font-size="20">🏛️</text></svg>
+        <h4 class="de speakable" data-speak>wohin?</h4>
+        <p class="ar" style="color:var(--ink-2);font-size:.85rem;">إلى أين؟ (حركة نحو مكان — Akkusativ غالبًا)</p>
+        <p class="de speakable" data-speak style="margin-top:10px;font-weight:700;">Wohin gehst du?</p>
+        <p class="ar" style="font-size:.85rem;color:var(--ink-3);">إلى أين تذهب؟</p>
+        <p class="de speakable" data-speak style="margin-top:4px;">Ich gehe ins Kino.</p>
+      </div>
+      <div class="card loc-card">
+        <svg viewBox="0 0 100 70"><line x1="75" y1="45" x2="15" y2="45" stroke="var(--red)" stroke-width="2.5" marker-end="url(#arrow2)"/><defs><marker id="arrow2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--red)"/></marker></defs><text x="82" y="50" font-size="20">🌍</text></svg>
+        <h4 class="de speakable" data-speak>woher?</h4>
+        <p class="ar" style="color:var(--ink-2);font-size:.85rem;">من أين؟ (أصل الحركة)</p>
+        <p class="de speakable" data-speak style="margin-top:10px;font-weight:700;">Woher kommst du?</p>
+        <p class="ar" style="font-size:.85rem;color:var(--ink-3);">من أين أنت؟</p>
+        <p class="de speakable" data-speak style="margin-top:4px;">Ich komme aus Ägypten.</p>
+      </div>
+    </div>
+    <p class="ar reveal" style="margin-top:18px;color:var(--ink-2);font-size:.88rem;">
+      💬 في اللغة المحكية يسمع المرء أحيانًا <span class="de">"Wo gehst du hin?"</span> بدلًا من <span class="de">"Wohin gehst du?"</span> —
+      لكن في الكتابة والاختبارات الرسمية يُفضَّل استخدام <span class="de">wohin</span> و<span class="de">woher</span> كاملتين.
+    </p>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: ZEIT & GRUND — wann / warum / weshalb / wieso
+     ========================================================================= -->
+<section class="section" id="sec-zeit" style="background:var(--bg-1);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">التوقيت والدافع</span>
+      <h2 class="section-title">متى؟ ولماذا؟ — <span class="hl de">wann</span> و<span class="hl de">warum / weshalb / wieso</span></h2>
+    </div>
+
+    <div class="grid grid-2 reveal">
+      <div class="card" style="padding:22px;">
+        <h3 class="de speakable" data-speak style="color:var(--gold);">wann?</h3>
+        <p class="ar" style="color:var(--ink-2);margin-top:4px;">متى؟ — للسؤال عن الزمن.</p>
+        <p class="de speakable" data-speak style="margin-top:14px;font-weight:700;">Wann beginnt der Unterricht?</p>
+        <p class="ar" style="font-size:.85rem;color:var(--ink-3);">متى يبدأ الدرس؟</p>
+        <p class="de speakable" data-speak style="margin-top:6px;">Der Unterricht beginnt um 9 Uhr.</p>
+      </div>
+      <div class="card" style="padding:22px;">
+        <h3 style="color:var(--gold);">ثلاثة أدوات بمعنى "لماذا؟"</h3>
+        <div class="word-chip-row" style="margin-top:10px;">
+          <span class="word-chip de speakable" data-speak>warum</span>
+          <span class="word-chip de speakable" data-speak>weshalb</span>
+          <span class="word-chip de speakable" data-speak>wieso</span>
+        </div>
+        <ul style="margin-top:14px;display:flex;flex-direction:column;gap:8px;font-size:.88rem;color:var(--ink-2);">
+          <li>▪️ <span class="de">warum</span> — الأكثر شيوعًا وحيادية، تصلح في كل سياق.</li>
+          <li>▪️ <span class="de">weshalb</span> — أقرب إلى "لأي سبب"، أسلوب أكثر رسمية قليلًا.</li>
+          <li>▪️ <span class="de">wieso</span> — أكثر عفوية وقربًا من نبرة الفضول أو الاستغراب.</li>
+        </ul>
+        <p class="de speakable" data-speak style="margin-top:14px;font-weight:700;">Warum lernst du Deutsch?</p>
+        <p class="ar" style="font-size:.85rem;color:var(--ink-3);">لماذا تتعلّم الألمانية؟</p>
+        <p class="de speakable" data-speak style="margin-top:6px;">Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: WIE
+     ========================================================================= -->
+<section class="section" id="sec-wie">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">الكيفية والكمّية</span>
+      <h2 class="section-title">أداة <span class="hl de">wie</span> — الأداة متعدّدة الاستخدامات</h2>
+      <p class="section-sub"><span class="de">wie</span> وحدها تعني "كيف"، لكنها تتحوّل إلى أداة جديدة كل مرة تلتقي فيها بصفة أو ظرف.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card" style="padding:18px;"><p class="de speakable" data-speak style="font-weight:800;color:var(--gold);">Wie geht es dir?</p><p class="ar" style="font-size:.85rem;color:var(--ink-3);">كيف حالك؟</p></div>
+      <div class="card" style="padding:18px;"><p class="de speakable" data-speak style="font-weight:800;color:var(--gold);">Wie alt bist du?</p><p class="ar" style="font-size:.85rem;color:var(--ink-3);">كم عمرك؟</p></div>
+      <div class="card" style="padding:18px;"><p class="de speakable" data-speak style="font-weight:800;color:var(--gold);">Wie lange dauert das?</p><p class="ar" style="font-size:.85rem;color:var(--ink-3);">كم يستغرق هذا؟</p></div>
+      <div class="card" style="padding:18px;"><p class="de speakable" data-speak style="font-weight:800;color:var(--gold);">Wie oft trainierst du?</p><p class="ar" style="font-size:.85rem;color:var(--ink-3);">كم مرة تتدرّب؟</p></div>
+      <div class="card" style="padding:18px;"><p class="de speakable" data-speak style="font-weight:800;color:var(--gold);">Wie viel kostet das?</p><p class="ar" style="font-size:.85rem;color:var(--ink-3);">كم سعر هذا؟ (لا يُعدّ)</p></div>
+      <div class="card" style="padding:18px;"><p class="de speakable" data-speak style="font-weight:800;color:var(--gold);">Wie viele Bücher hast du?</p><p class="ar" style="font-size:.85rem;color:var(--ink-3);">كم كتابًا لديك؟ (يُعدّ)</p></div>
+    </div>
+    <p class="ar reveal" style="margin-top:16px;color:var(--ink-2);font-size:.88rem;">
+      🔑 <b>فرّق بين:</b> <span class="de">wie viel</span> تُستخدم مع الأسماء غير المعدودة (المال، الوقت)، بينما
+      <span class="de">wie viele</span> تُستخدم مع الأسماء المعدودة الجمع (كتب، أشخاص، أيام).
+    </p>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: WELCHE
+     ========================================================================= -->
+<section class="section" id="sec-welche" style="background:var(--bg-1);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">أداة الاختيار</span>
+      <h2 class="section-title"><span class="hl de">welche / welcher / welches</span> — عندما يكون هناك خيارات محدّدة</h2>
+      <p class="section-sub">
+        بينما تسأل <span class="de">was</span> سؤالًا مفتوحًا، تُستخدم <span class="de">welche</span> عندما تختار من بين مجموعة معروفة —
+        وهي تتصرّف تمامًا مثل أداة التعريف <span class="de">der/die/das</span> حسب الجنس والعدد والحالة.
+      </p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="grammar">
+        <thead><tr><th>الجنس</th><th>Nominativ</th><th>Akkusativ</th><th>مثال</th></tr></thead>
+        <tbody>
+          <tr><td>مذكّر (der)</td><td class="case-word de speakable" data-speak>welcher</td><td class="case-word de speakable" data-speak>welchen</td><td class="ex"><span class="de speakable" data-speak>Welcher Mann ist dein Lehrer?</span></td></tr>
+          <tr><td>مؤنث (die)</td><td class="case-word de speakable" data-speak>welche</td><td class="case-word de speakable" data-speak>welche</td><td class="ex"><span class="de speakable" data-speak>Welche Frau kennst du?</span></td></tr>
+          <tr><td>محايد (das)</td><td class="case-word de speakable" data-speak>welches</td><td class="case-word de speakable" data-speak>welches</td><td class="ex"><span class="de speakable" data-speak>Welches Buch möchtest du lesen?</span></td></tr>
+          <tr><td>جمع (die)</td><td class="case-word de speakable" data-speak>welche</td><td class="case-word de speakable" data-speak>welche</td><td class="ex"><span class="de speakable" data-speak>Welche Kinder spielen dort?</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="ar reveal" style="margin-top:16px;color:var(--ink-2);font-size:.88rem;">
+      🎯 <b>مقارنة سريعة:</b> <span class="de speakable" data-speak>Was möchtest du trinken?</span> (سؤال مفتوح تمامًا)
+      مقابل <span class="de speakable" data-speak>Welches Getränk möchtest du?</span> (اختيار من قائمة مشروبات محدّدة أمامك).
+    </p>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: WORD ORDER
+     ========================================================================= -->
+<section class="section" id="sec-order">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">بروتوكول التحقيق</span>
+      <h2 class="section-title">ترتيب الجملة: أين يقف كل شاهد؟</h2>
+      <p class="section-sub">قاعدة صارمة لا استثناء لها: في جملة الاستفهام بأداة (W-Frage)، يأتي الفعل المُصرَّف مباشرة بعد أداة الاستفهام — في المرتبة الثانية دائمًا.</p>
+    </div>
+
+    <div class="card reveal" style="padding:24px;">
+      <p class="ar" style="font-weight:700;margin-bottom:6px;">١) سؤال بأداة استفهام (W-Frage)</p>
+      <div class="order-row">
+        <div><div class="order-block ob-1 de">Wo</div><div class="order-label">أداة الاستفهام</div></div>
+        <div><div class="order-block ob-2 de">wohnst</div><div class="order-label">الفعل المُصرَّف</div></div>
+        <div><div class="order-block ob-3 de">du</div><div class="order-label">الفاعل</div></div>
+        <div><div class="order-block ob-4 de">?</div><div class="order-label">علامة الاستفهام</div></div>
+      </div>
+      <p class="ar" style="font-weight:700;margin:26px 0 6px;">٢) سؤال بنعم/لا (Ja/Nein-Frage) — بلا أداة</p>
+      <div class="order-row">
+        <div><div class="order-block ob-2 de">Wohnst</div><div class="order-label">الفعل أولًا</div></div>
+        <div><div class="order-block ob-3 de">du</div><div class="order-label">الفاعل</div></div>
+        <div><div class="order-block ob-4 de">in Berlin?</div><div class="order-label">بقية الجملة</div></div>
+      </div>
+      <div class="order-legend">
+        <span><i class="dot" style="background:var(--red-2);"></i> أداة الاستفهام</span>
+        <span><i class="dot" style="background:var(--gold-2);"></i> الفعل المُصرَّف (المرتبة ٢ دائمًا)</span>
+        <span><i class="dot" style="background:var(--teal-2);"></i> الفاعل</span>
+        <span><i class="dot" style="background:var(--ink-3);"></i> بقية عناصر الجملة</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: COMMON MISTAKES
+     ========================================================================= -->
+<section class="section" id="sec-mistakes" style="background:var(--bg-1);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">تقرير الأخطاء</span>
+      <h2 class="section-title">أخطاء شائعة يقع فيها المتعلّمون — ونصائح النطق</h2>
+    </div>
+
+    <div class="grid grid-2 reveal">
+      <div class="card mistake-card">
+        <div class="mistake-row bad"><span class="mark">✕</span><p class="de">Was siehst du? <span class="ar" style="color:var(--ink-3);font-size:.85rem;">(إن كانت الإجابة شخصًا)</span></p></div>
+        <div class="mistake-row good"><span class="mark">✓</span><p class="de">Wen siehst du?</p></div>
+        <div class="mistake-note">لا تستخدم <span class="de">was</span> أبدًا عندما تكون الإجابة عن شخص — طبّق القاعدة الذهبية دائمًا.</div>
+      </div>
+      <div class="card mistake-card">
+        <div class="mistake-row bad"><span class="mark">✕</span><p class="de">Woan denkst du?</p></div>
+        <div class="mistake-row good"><span class="mark">✓</span><p class="de">Woran denkst du?</p></div>
+        <div class="mistake-note">لا تنسَ حرف <span class="de">r</span> الرابط عندما يبدأ حرف الجر بحرف علّة: <span class="de">an → woran</span>.</div>
+      </div>
+      <div class="card mistake-card">
+        <div class="mistake-row bad"><span class="mark">✕</span><p class="de">Mit was schreibst du? <span class="ar" style="color:var(--ink-3);font-size:.85rem;">(عامّية)</span></p></div>
+        <div class="mistake-row good"><span class="mark">✓</span><p class="de">Womit schreibst du?</p></div>
+        <div class="mistake-note">في اللغة الفصيحة والكتابة، استخدم مركّب <span class="de">wo(r)-</span> بدل حرف الجر + <span class="de">was</span>.</div>
+      </div>
+      <div class="card mistake-card">
+        <div class="mistake-row bad"><span class="mark">✕</span><p class="de">Wo du wohnst?</p></div>
+        <div class="mistake-row good"><span class="mark">✓</span><p class="de">Wo wohnst du?</p></div>
+        <div class="mistake-note">الفعل المُصرَّف يأتي دائمًا في المرتبة الثانية مباشرة بعد أداة الاستفهام، وليس في نهاية الجملة.</div>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:24px;padding:24px;">
+      <h3 style="font-size:1.1rem;margin-bottom:14px;">🗣️ نصائح النطق الأساسية</h3>
+      <ul style="display:flex;flex-direction:column;gap:10px;font-size:.92rem;color:var(--ink-2);">
+        <li>▪️ حرف <span class="de">w</span> يُلفظ دائمًا مثل <b>V</b> الإنجليزية، وليس مثل W: <span class="de speakable" data-speak>wer</span> تُلفظ "فير" وليس "ور".</li>
+        <li>▪️ <span class="de">ie</span> تُلفظ ياء طويلة ممدودة: <span class="de speakable" data-speak>wie</span> = "في" ممدودة.</li>
+        <li>▪️ ميّز جيدًا بين <span class="de speakable" data-speak>wer</span> (فير) و<span class="de speakable" data-speak>wo</span> (فو) و<span class="de speakable" data-speak>wie</span> (في) — فروقها الصوتية دقيقة لكنها تُغيّر المعنى كليًا.</li>
+        <li>▪️ في <span class="de speakable" data-speak>warum</span> يقع النبر (التشديد) على المقطع الثاني: <b>wa-RUM</b>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: SPEECH LAB
+     ========================================================================= -->
+<section class="section" id="sec-lab">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">غرفة الاستماع</span>
+      <h2 class="section-title">🎙️ معمل النطق — استمع، تحكّم، كرّر</h2>
+      <p class="section-sub">اضغط على أي جملة أدناه لسماعها بصوت ألماني أصلي، مع تظليل الكلمة أثناء نطقها. تحكّم بالسرعة من الأعلى، وأوقف/استأنف/أعد من الشريط الذي يظهر أسفل الشاشة.</p>
+    </div>
+
+    <div class="card speechlab reveal">
+      <div class="sentence-list">
+        <div class="sentence-item"><div class="txt"><span class="de speakable" data-speak>Wer ist dein bester Freund?</span><span class="ar">من هو أفضل صديق لك؟</span></div></div>
+        <div class="sentence-item"><div class="txt"><span class="de speakable" data-speak>Was machst du am Wochenende?</span><span class="ar">ماذا تفعل في نهاية الأسبوع؟</span></div></div>
+        <div class="sentence-item"><div class="txt"><span class="de speakable" data-speak>Wohin fährst du im Sommer?</span><span class="ar">إلى أين تسافر في الصيف؟</span></div></div>
+        <div class="sentence-item"><div class="txt"><span class="de speakable" data-speak>Warum bist du heute so müde?</span><span class="ar">لماذا أنت متعب جدًا اليوم؟</span></div></div>
+        <div class="sentence-item"><div class="txt"><span class="de speakable" data-speak>Welches Fach magst du am meisten?</span><span class="ar">ما هي المادة الدراسية التي تفضّلها أكثر؟</span></div></div>
+      </div>
+      <div class="speechlab-controls">
+        <div class="voice-indicator" id="voiceIndicator">🎧 الصوت المستخدم: <b id="voiceName">جارٍ التحميل…</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: EXERCISES
+     ========================================================================= -->
+<section class="section" id="sec-exercises" style="background:var(--bg-1);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">غرفة التدريب</span>
+      <h2 class="section-title">🎯 حان وقت التحقيق العملي — التمارين التفاعلية</h2>
+      <p class="section-sub">أكمل التمارين الخمسة لتفتح جميع الشارات وتُثبت أنّك محقّق حقيقي في أدوات الاستفهام الألمانية.</p>
+    </div>
+
+    <div class="tabbar" role="tablist" aria-label="أنواع التمارين">
+      <button class="tab-btn active" data-tab="tab-flash" role="tab" aria-selected="true">🃏 بطاقات</button>
+      <button class="tab-btn" data-tab="tab-memory" role="tab" aria-selected="false">🧠 لعبة الذاكرة</button>
+      <button class="tab-btn" data-tab="tab-quiz" role="tab" aria-selected="false">❓ اختبار سريع</button>
+      <button class="tab-btn" data-tab="tab-sentence" role="tab" aria-selected="false">🧩 ترتيب الجملة</button>
+      <button class="tab-btn" data-tab="tab-type" role="tab" aria-selected="false">⌨️ تدريب الكتابة</button>
+    </div>
+
+    <!-- FLASHCARDS -->
+    <div class="tab-panel active card" id="tab-flash" style="padding:clamp(20px,3vw,34px);">
+      <div class="flashcard-stage">
+        <div class="flashcard" id="flashcard">
+          <div class="flashcard-inner" id="flashcardInner" tabindex="0" role="button" aria-label="اضغط لقلب البطاقة">
+            <div class="fc-face fc-front">
+              <p class="fc-word" id="fcWord">wer</p>
+              <p class="fc-hint">اضغط للقلب 🔄</p>
+            </div>
+            <div class="fc-face fc-back">
+              <p class="fc-meaning" id="fcMeaning">مَن (فاعل)</p>
+              <p class="fc-example" id="fcExample">Wer ist das?</p>
+              <p class="fc-hint">اضغط للرجوع 🔄</p>
+            </div>
+          </div>
+        </div>
+        <div class="flashcard-nav">
+          <button class="btn-icon" id="fcPrev" aria-label="البطاقة السابقة">▶</button>
+          <span class="flashcard-counter"><span id="fcIndex">1</span> / <span id="fcTotal">16</span></span>
+          <button class="btn-icon" id="fcNext" aria-label="البطاقة التالية">◀</button>
+          <button class="btn btn-sm btn-teal" id="fcSpeak">🔊 استمع</button>
+          <button class="btn btn-sm btn-ghost" id="fcKnown">✔️ أعرفها</button>
+        </div>
+        <div class="fc-progress-dots" id="fcDots"></div>
+      </div>
+    </div>
+
+    <!-- MEMORY -->
+    <div class="tab-panel card" id="tab-memory" style="padding:clamp(20px,3vw,34px);">
+      <div class="mem-stats">
+        <span>المحاولات: <b id="memMoves">0</b></span>
+        <span>الأزواج المكتشفة: <b id="memFound">0</b> / <b id="memTotal">8</b></span>
+      </div>
+      <div class="memory-grid" id="memoryGrid" style="margin-top:18px;"></div>
+      <div style="display:flex;justify-content:center;margin-top:18px;">
+        <button class="btn btn-ghost btn-sm" id="memReset">🔁 إعادة اللعبة</button>
+      </div>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="tab-panel card" id="tab-quiz" style="padding:clamp(20px,3vw,34px);">
+      <div class="quiz-box">
+        <div class="quiz-score-row">
+          <span class="score-pill">⭐ <span id="quizScore">0</span> / <span id="quizTotal">8</span></span>
+          <span class="score-pill" id="quizCounter">سؤال 1 من 8</span>
+        </div>
+        <div class="quiz-progress"><div class="quiz-progress-bar" id="quizProgressBar" style="width:0%"></div></div>
+        <div id="quizActive">
+          <p class="quiz-question" id="quizQuestionText"></p>
+          <p class="quiz-sub" id="quizQuestionSub"></p>
+          <div class="quiz-options" id="quizOptions"></div>
+          <p class="quiz-feedback" id="quizFeedback"></p>
+        </div>
+        <div id="quizResult" class="quiz-result" style="display:none;">
+          <p class="big" id="quizFinalScore"></p>
+          <p class="ar" id="quizFinalMsg" style="margin-top:8px;color:var(--ink-2);"></p>
+          <button class="btn btn-gold" id="quizRestart" style="margin-top:18px;">🔁 أعد الاختبار</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SENTENCE BUILDER -->
+    <div class="tab-panel card" id="tab-sentence" style="padding:clamp(20px,3vw,34px);">
+      <p class="sb-sentence-num">الجملة <span id="sbIndex">1</span> من <span id="sbTotal">5</span> — اسحب الكلمات أو اضغط عليها بالترتيب الصحيح</p>
+      <p class="ar" id="sbTranslation" style="color:var(--ink-2);margin-bottom:14px;"></p>
+      <div class="sb-answer" id="sbAnswer" aria-label="مكان إجابتك"></div>
+      <div class="sb-bank" id="sbBank" aria-label="بنك الكلمات" style="margin-top:14px;"></div>
+      <div class="sb-actions">
+        <button class="btn btn-gold btn-sm" id="sbCheck">✅ تحقّق</button>
+        <button class="btn btn-ghost btn-sm" id="sbReset">↺ إعادة</button>
+        <button class="btn btn-ghost btn-sm" id="sbNext">التالي ◀</button>
+      </div>
+      <p class="sb-feedback" id="sbFeedback"></p>
+    </div>
+
+    <!-- TYPING -->
+    <div class="tab-panel card" id="tab-type" style="padding:clamp(20px,3vw,34px);">
+      <div id="typeList"></div>
+      <button class="btn btn-gold btn-sm" id="typeCheckAll">✅ تحقّق من الكل</button>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     SECTION: SUMMARY & BADGES
+     ========================================================================= -->
+<section class="section" id="sec-summary">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">خاتمة الملف</span>
+      <h2 class="section-title">🏅 لوحة شارات المحقق</h2>
+      <p class="section-sub">تُفتح كل شارة تلقائيًا عند إتمام التمرين المرتبط بها، ويُحفظ تقدّمك محليًا في متصفّحك.</p>
+    </div>
+    <div class="badge-grid reveal">
+      <div class="card badge" id="badgeFlash"><div class="bicon">🃏</div><b>المحقق المبتدئ</b><span>أكمل جميع البطاقات</span></div>
+      <div class="card badge" id="badgeMemory"><div class="bicon">🧠</div><b>خبير المطابقة</b><span>أكمل لعبة الذاكرة</span></div>
+      <div class="card badge" id="badgeQuiz"><div class="bicon">🎯</div><b>قنّاص الأسئلة</b><span>حقّق 80% في الاختبار</span></div>
+      <div class="card badge" id="badgeAll"><div class="bicon">🕵️</div><b>المحقق الأسطوري</b><span>أكمل جميع التمارين</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>ملف القضية أُغلق بنجاح — <span class="de">Fragewörter-Detektiv</span> · درس تفاعلي لتعلّم أدوات الاستفهام الألمانية</p>
+  </div>
+</footer>
+
+<!-- floating widgets -->
+<button class="fab-top btn-icon" id="fabTop" aria-label="العودة إلى الأعلى">↑</button>
+<div class="now-playing" id="nowPlaying">
+  <div class="np-icon">🔊</div>
+  <div class="np-text"><span class="ar">الآن يُنطق</span><b id="npText">—</b></div>
+  <div class="np-btns">
+    <button class="btn-icon btn-sm" id="npPause" style="width:32px;height:32px;" aria-label="إيقاف مؤقت">⏸</button>
+    <button class="btn-icon btn-sm" id="npReplay" style="width:32px;height:32px;" aria-label="إعادة">🔁</button>
+    <button class="btn-icon btn-sm" id="npStop" style="width:32px;height:32px;" aria-label="إيقاف">⏹</button>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script>
+'use strict';
+/* =========================================================================
+   MODULE: THEME (light/dark + system detection + localStorage)
+   ========================================================================= */
+const ThemeModule = (() => {
+  const KEY = 'fragewoerter_theme';
+  const root = document.documentElement;
+  const metaTheme = document.getElementById('metaThemeColor');
+  function apply(theme){
+    document.body.setAttribute('data-theme', theme);
+    metaTheme.setAttribute('content', theme === 'dark' ? '#08090d' : '#f6f6f4');
+  }
+  function init(){
+    const saved = localStorage.getItem(KEY);
+    if(saved){ apply(saved); }
+    else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      apply(prefersDark ? 'dark' : 'light');
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if(!localStorage.getItem(KEY)) apply(e.matches ? 'dark' : 'light');
+    });
+  }
+  function toggle(){
+    const current = document.body.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    // انتقال سلس بين الوضعين: تُفعَّل فئة الانتقال قبل التبديل مباشرة وتُزال
+    // بعد اكتمال أطول انتقال (٤٥٠ ملل ثانية) — تُستخدم فقط عند التبديل اليدوي
+    // حتى لا تُسبِّب أي وميض عند أول تحميل للصفحة
+    root.classList.add('theme-transition');
+    apply(next);
+    localStorage.setItem(KEY, next);
+    window.setTimeout(() => root.classList.remove('theme-transition'), 480);
+  }
+  return { init, toggle };
+})();
+ThemeModule.init();
+document.getElementById('themeToggle').addEventListener('click', ThemeModule.toggle);
+
+/* =========================================================================
+   MODULE: SPEECH (SpeechSynthesis — click-to-speak, word highlighting,
+   play/pause/replay, speed control, voice indicator)
+   ========================================================================= */
+const SpeechModule = (() => {
+  let voices = [];
+  let germanVoice = null;
+  let currentUtterance = null;
+  let currentEl = null;
+  let lastText = '';
+  const nowPlaying = document.getElementById('nowPlaying');
+  const npText = document.getElementById('npText');
+  const voiceNameEl = document.getElementById('voiceName');
+  const speedSelect = document.getElementById('speedSelect');
+
+  function pickGermanVoice(){
+    if(!voices.length) return null;
+    const scored = voices.map(v => {
+      let score = 0;
+      const lang = (v.lang || '').toLowerCase();
+      if(lang === 'de-de') score += 10;
+      else if(lang.startsWith('de')) score += 7;
+      if(/google/i.test(v.name)) score += 3;
+      if(/natural|neural|premium/i.test(v.name)) score += 2;
+      if(v.localService) score += 1;
+      return { v, score };
+    }).filter(s => s.score > 0);
+    scored.sort((a,b) => b.score - a.score);
+    return scored.length ? scored[0].v : null;
+  }
+
+  function refreshVoices(){
+    voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+    germanVoice = pickGermanVoice();
+    voiceNameEl.textContent = germanVoice ? (germanVoice.name + ' (' + germanVoice.lang + ')') : 'الصوت الافتراضي للنظام (de-DE)';
+  }
+
+  if('speechSynthesis' in window){
+    refreshVoices();
+    window.speechSynthesis.onvoiceschanged = refreshVoices;
+  } else {
+    voiceNameEl.textContent = 'غير مدعوم في هذا المتصفح';
+  }
+
+  function wrapWords(el){
+    if(el.dataset.wrapped) return;
+    const text = el.textContent;
+    const words = text.split(/(\s+)/);
+    el.innerHTML = words.map(w => /\s+/.test(w) ? w : '<span class="w">' + w + '</span>').join('');
+    el.dataset.wrapped = '1';
+  }
+  function unwrapWords(el){
+    // leave wrapped (harmless), just clear active state
+    el.querySelectorAll('.w.active-word').forEach(w => w.classList.remove('active-word'));
+  }
+
+  function stopAll(){
+    if('speechSynthesis' in window) window.speechSynthesis.cancel();
+    if(currentEl){ currentEl.classList.remove('is-speaking'); unwrapWords(currentEl); }
+    currentEl = null; currentUtterance = null;
+    nowPlaying.classList.remove('show');
+  }
+
+  function speakElement(el){
+    if(!('speechSynthesis' in window)){
+      alert('عذرًا، متصفّحك لا يدعم خاصية النطق الصوتي (SpeechSynthesis).');
+      return;
+    }
+    const text = el.textContent.replace(/\s+/g,' ').trim();
+    // toggle: clicking the currently-speaking element stops it
+    if(currentEl === el && window.speechSynthesis.speaking){
+      stopAll();
+      return;
+    }
+    stopAll();
+    wrapWords(el);
+    currentEl = el;
+    lastText = text;
+    el.classList.add('is-speaking');
+
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'de-DE';
+    if(germanVoice) utter.voice = germanVoice;
+    utter.rate = parseFloat(speedSelect.value) || 1;
+
+    const wordSpans = el.querySelectorAll('.w');
+    utter.onboundary = (ev) => {
+      if(ev.name !== 'word') return;
+      wordSpans.forEach(w => w.classList.remove('active-word'));
+      let acc = 0;
+      for(const w of wordSpans){
+        const len = w.textContent.length;
+        if(ev.charIndex >= acc && ev.charIndex < acc + len + 1){
+          w.classList.add('active-word');
+          break;
+        }
+        acc += len + 1;
+      }
+    };
+    utter.onend = () => {
+      el.classList.remove('is-speaking');
+      unwrapWords(el);
+      nowPlaying.classList.remove('show');
+      currentEl = null;
+    };
+    utter.onerror = utter.onend;
+
+    npText.textContent = text;
+    nowPlaying.classList.add('show');
+    currentUtterance = utter;
+    window.speechSynthesis.speak(utter);
+  }
+
+  function initClickables(root=document){
+    root.querySelectorAll('.speakable[data-speak]').forEach(el => {
+      if(el.dataset.speakBound) return;
+      el.dataset.speakBound = '1';
+      el.setAttribute('tabindex','0');
+      el.setAttribute('role','button');
+      el.setAttribute('aria-label','اضغط لسماع النطق الألماني');
+      el.addEventListener('click', () => speakElement(el));
+      el.addEventListener('keydown', e => {
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); speakElement(el); }
+      });
+    });
+  }
+
+  // now-playing controls
+  document.getElementById('npStop').addEventListener('click', stopAll);
+  document.getElementById('npReplay').addEventListener('click', () => {
+    if(currentEl) speakElement(currentEl);
+  });
+  document.getElementById('npPause').addEventListener('click', (e) => {
+    if(!('speechSynthesis' in window)) return;
+    if(window.speechSynthesis.speaking && !window.speechSynthesis.paused){
+      window.speechSynthesis.pause();
+      e.currentTarget.textContent = '▶';
+    } else if(window.speechSynthesis.paused){
+      window.speechSynthesis.resume();
+      e.currentTarget.textContent = '⏸';
+    }
+  });
+
+  return { initClickables, speakElement, stopAll, get germanVoice(){ return germanVoice; } };
+})();
+SpeechModule.initClickables();
+
+/* =========================================================================
+   MODULE: NAV — sticky scroll-spy + smooth scroll + fullscreen + search
+   ========================================================================= */
+(() => {
+  const links = Array.from(document.querySelectorAll('.nav-link[data-nav]'));
+  const sections = links.map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+  function onScroll(){
+    let activeIndex = 0;
+    const y = window.scrollY + 140;
+    sections.forEach((sec, i) => { if(sec.offsetTop <= y) activeIndex = i; });
+    links.forEach((l,i) => l.classList.toggle('active', i === activeIndex));
+    document.getElementById('fabTop').classList.toggle('show', window.scrollY > 600);
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  document.getElementById('fabTop').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+  document.getElementById('startBtn').addEventListener('click', () => document.getElementById('sec-golden').scrollIntoView({behavior:'smooth'}));
+  document.getElementById('jumpExercises').addEventListener('click', () => document.getElementById('sec-exercises').scrollIntoView({behavior:'smooth'}));
+
+  // Fullscreen
+  document.getElementById('fullscreenBtn').addEventListener('click', () => {
+    if(!document.fullscreenElement){ document.documentElement.requestFullscreen().catch(()=>{}); }
+    else { document.exitFullscreen().catch(()=>{}); }
+  });
+
+  // Search within lesson
+  const searchBox = document.getElementById('searchBox');
+  const searchToggle = document.getElementById('searchToggle');
+  const searchInput = document.getElementById('searchInput');
+  let marks = [];
+  searchToggle.addEventListener('click', () => {
+    searchBox.style.display = 'flex';
+    searchBox.classList.toggle('open');
+    if(searchBox.classList.contains('open')) searchInput.focus();
+  });
+  function clearMarks(){
+    marks.forEach(m => { const parent = m.parentNode; parent.replaceChild(document.createTextNode(m.textContent), m); parent.normalize(); });
+    marks = [];
+  }
+  searchInput.addEventListener('input', () => {
+    clearMarks();
+    const q = searchInput.value.trim();
+    if(q.length < 2) return;
+    const walker = document.createTreeWalker(document.getElementById('main'), NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        if(!node.nodeValue.toLowerCase().includes(q.toLowerCase())) return NodeFilter.FILTER_REJECT;
+        if(node.parentElement.closest('script,style')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const nodes = [];
+    let n; while((n = walker.nextNode())) nodes.push(n);
+    nodes.slice(0,60).forEach(node => {
+      const idx = node.nodeValue.toLowerCase().indexOf(q.toLowerCase());
+      if(idx === -1) return;
+      const range = document.createRange();
+      range.setStart(node, idx);
+      range.setEnd(node, idx + q.length);
+      const mark = document.createElement('mark');
+      mark.className = 'search-hit';
+      try{ range.surroundContents(mark); marks.push(mark); }catch(e){}
+    });
+    if(marks.length) marks[0].scrollIntoView({behavior:'smooth', block:'center'});
+  });
+})();
+
+/* =========================================================================
+   MODULE: SCROLL REVEAL (IntersectionObserver)
+   ========================================================================= */
+(() => {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); } });
+  }, { threshold:.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+
+/* =========================================================================
+   MODULE: PROGRESS TRACKING + BADGES + TOASTS
+   ========================================================================= */
+const ProgressModule = (() => {
+  const KEY = 'fragewoerter_progress_v1';
+  const defaults = { flash:false, memory:false, quiz:false, quizScore:0, sentence:false, typing:false };
+  let state = Object.assign({}, defaults, JSON.parse(localStorage.getItem(KEY) || '{}'));
+
+  function save(){ localStorage.setItem(KEY, JSON.stringify(state)); render(); }
+  function set(key, value){
+    const wasFalse = !state[key];
+    state[key] = value;
+    save();
+    if(wasFalse && value === true){
+      const labels = { flash:'🃏 المحقق المبتدئ', memory:'🧠 خبير المطابقة', quiz:'🎯 قنّاص الأسئلة', sentence:'🧩 مُنظّم الجمل', typing:'⌨️ خبير الكتابة' };
+      if(labels[key]) toast('شارة جديدة مفتوحة: ' + labels[key]);
+    }
+  }
+  function toast(msg){
+    const wrap = document.getElementById('toastWrap');
+    const t = document.createElement('div');
+    t.className = 'toast';
+    t.innerHTML = '🏅 <span>' + msg + '</span>';
+    wrap.appendChild(t);
+    requestAnimationFrame(() => t.classList.add('show'));
+    setTimeout(() => { t.classList.remove('show'); setTimeout(()=>t.remove(),450); }, 3200);
+  }
+  function render(){
+    const total = 5;
+    let done = 0;
+    if(state.flash) done++;
+    if(state.memory) done++;
+    if(state.quiz && state.quizScore >= 0.8) done++;
+    if(state.sentence) done++;
+    if(state.typing) done++;
+    const pct = Math.round((done/total)*100);
+    const bar = document.getElementById('progressRingBar');
+    const circumference = 2 * Math.PI * 16;
+    bar.setAttribute('stroke-dasharray', circumference.toFixed(1));
+    bar.setAttribute('stroke-dashoffset', (circumference * (1 - pct/100)).toFixed(1));
+    document.getElementById('progressRingLabel').textContent = pct + '%';
+
+    document.getElementById('badgeFlash').classList.toggle('earned', state.flash);
+    document.getElementById('badgeMemory').classList.toggle('earned', state.memory);
+    document.getElementById('badgeQuiz').classList.toggle('earned', state.quiz && state.quizScore >= 0.8);
+    document.getElementById('badgeAll').classList.toggle('earned', done === total);
+  }
+  render();
+  return { set, toast, get state(){ return state; } };
+})();
+
+/* =========================================================================
+   DATA: question-word vocabulary
+   ========================================================================= */
+const QWORDS = [
+  { de:'wer', meaning:'مَن (فاعل)', example:'Wer ist das?', cat:'person' },
+  { de:'wen', meaning:'مَن (مفعول به مباشر)', example:'Wen siehst du?', cat:'person' },
+  { de:'wem', meaning:'لِمَن', example:'Wem hilfst du?', cat:'person' },
+  { de:'wessen', meaning:'ملك مَن', example:'Wessen Buch ist das?', cat:'person' },
+  { de:'was', meaning:'ماذا / ما', example:'Was ist das?', cat:'thing' },
+  { de:'wo', meaning:'أين (مكان ثابت)', example:'Wo wohnst du?', cat:'place' },
+  { de:'wohin', meaning:'إلى أين', example:'Wohin gehst du?', cat:'place' },
+  { de:'woher', meaning:'من أين', example:'Woher kommst du?', cat:'place' },
+  { de:'wann', meaning:'متى', example:'Wann beginnt der Film?', cat:'time' },
+  { de:'warum', meaning:'لماذا', example:'Warum lachst du?', cat:'reason' },
+  { de:'wieso', meaning:'لماذا (عفوية)', example:'Wieso denn nicht?', cat:'reason' },
+  { de:'wie', meaning:'كيف', example:'Wie geht es dir?', cat:'manner' },
+  { de:'wie viel', meaning:'كم (لا يُعدّ)', example:'Wie viel kostet das?', cat:'manner' },
+  { de:'welcher', meaning:'أيّ (مذكّر)', example:'Welcher Tag ist heute?', cat:'choice' },
+  { de:'womit', meaning:'بماذا (لشيء)', example:'Womit schreibst du?', cat:'thing' },
+  { de:'wofür', meaning:'لماذا/لأي غرض (لشيء)', example:'Wofür ist das?', cat:'thing' },
+];
+
+/* =========================================================================
+   EXERCISE 1: FLASHCARDS
+   ========================================================================= */
+const FlashModule = (() => {
+  let idx = 0;
+  const known = new Set(JSON.parse(localStorage.getItem('fw_known') || '[]'));
+  const card = document.getElementById('flashcard');
+  const inner = document.getElementById('flashcardInner');
+  const wordEl = document.getElementById('fcWord');
+  const meaningEl = document.getElementById('fcMeaning');
+  const exampleEl = document.getElementById('fcExample');
+  const indexEl = document.getElementById('fcIndex');
+  const dotsEl = document.getElementById('fcDots');
+
+  function buildDots(){
+    dotsEl.innerHTML = QWORDS.map((_,i) => '<span class="fc-dot" data-i="'+i+'"></span>').join('');
+  }
+  function renderDots(){
+    dotsEl.querySelectorAll('.fc-dot').forEach((d,i) => {
+      d.classList.toggle('current', i === idx);
+      d.classList.toggle('done', known.has(i));
+    });
+  }
+  function render(){
+    card.classList.remove('flipped');
+    const q = QWORDS[idx];
+    wordEl.textContent = q.de;
+    meaningEl.textContent = q.meaning;
+    exampleEl.textContent = q.example;
+    indexEl.textContent = idx + 1;
+    renderDots();
+  }
+  function flip(){ card.classList.toggle('flipped'); }
+  function next(){ idx = (idx + 1) % QWORDS.length; render(); }
+  function prev(){ idx = (idx - 1 + QWORDS.length) % QWORDS.length; render(); }
+  function markKnown(){
+    known.add(idx);
+    localStorage.setItem('fw_known', JSON.stringify([...known]));
+    renderDots();
+    if(known.size >= QWORDS.length) ProgressModule.set('flash', true);
+    if(idx < QWORDS.length - 1) next();
+  }
+  function init(){
+    document.getElementById('fcTotal').textContent = QWORDS.length;
+    buildDots();
+    render();
+    inner.addEventListener('click', flip);
+    inner.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); flip(); } });
+    document.getElementById('fcNext').addEventListener('click', next);
+    document.getElementById('fcPrev').addEventListener('click', prev);
+    document.getElementById('fcKnown').addEventListener('click', markKnown);
+    document.getElementById('fcSpeak').addEventListener('click', () => SpeechModule.speakElement(wordEl.classList.contains('speakable') ? wordEl : (()=>{ wordEl.classList.add('speakable'); wordEl.dataset.speak=''; return wordEl; })()));
+    if(known.size >= QWORDS.length) ProgressModule.set('flash', true);
+  }
+  return { init };
+})();
+FlashModule.init();
+
+/* =========================================================================
+   EXERCISE 2: MEMORY MATCHING GAME
+   ========================================================================= */
+const MemoryModule = (() => {
+  const grid = document.getElementById('memoryGrid');
+  const movesEl = document.getElementById('memMoves');
+  const foundEl = document.getElementById('memFound');
+  let pairs = [];
+  let flipped = [];
+  let moves = 0;
+  let found = 0;
+  let lock = false;
+
+  function shuffle(arr){
+    const a = arr.slice();
+    for(let i=a.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+    return a;
+  }
+
+  function build(){
+    const chosen = shuffle(QWORDS).slice(0,8);
+    document.getElementById('memTotal').textContent = chosen.length;
+    let cards = [];
+    chosen.forEach((q, i) => {
+      cards.push({ pairId:i, type:'de', label:q.de });
+      cards.push({ pairId:i, type:'ar', label:q.meaning });
+    });
+    cards = shuffle(cards);
+    grid.innerHTML = '';
+    moves = 0; found = 0; flipped = []; lock = false;
+    movesEl.textContent = moves; foundEl.textContent = found;
+    cards.forEach((c, i) => {
+      const el = document.createElement('div');
+      el.className = 'mem-card';
+      el.setAttribute('tabindex','0');
+      el.setAttribute('role','button');
+      el.dataset.pairId = c.pairId;
+      el.dataset.i = i;
+      el.innerHTML = '<div class="mem-inner"><div class="mem-face mem-back">🕵️</div><div class="mem-face mem-front ' + (c.type==='de'?'de':'ar') + '">' + c.label + '</div></div>';
+      el.addEventListener('click', () => handleFlip(el));
+      el.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); handleFlip(el); } });
+      grid.appendChild(el);
+    });
+  }
+
+  function handleFlip(el){
+    if(lock || el.classList.contains('flip') || el.classList.contains('matched')) return;
+    el.classList.add('flip');
+    flipped.push(el);
+    if(flipped.length === 2){
+      lock = true;
+      moves++; movesEl.textContent = moves;
+      const [a,b] = flipped;
+      if(a.dataset.pairId === b.dataset.pairId){
+        setTimeout(() => {
+          a.classList.add('matched'); b.classList.add('matched');
+          found++; foundEl.textContent = found;
+          flipped = []; lock = false;
+          if(found === QWORDS.length && found === Number(document.getElementById('memTotal').textContent)){}
+          if(found === parseInt(document.getElementById('memTotal').textContent,10)){
+            ProgressModule.set('memory', true);
+          }
+        }, 350);
+      } else {
+        setTimeout(() => {
+          a.classList.remove('flip'); b.classList.remove('flip');
+          flipped = []; lock = false;
+        }, 800);
+      }
+    }
+  }
+
+  function init(){
+    build();
+    document.getElementById('memReset').addEventListener('click', build);
+  }
+  return { init };
+})();
+MemoryModule.init();
+
+/* =========================================================================
+   EXERCISE 3: MULTIPLE-CHOICE QUIZ
+   ========================================================================= */
+const QUIZ_DATA = [
+  { q:'___ ist deine Schwester?', sub:'اختر الأداة الصحيحة (تسأل عن شخص، فاعل)', options:['Wer','Was','Wo','Wie'], answer:'Wer' },
+  { q:'___ Buch liest du gerade?', sub:'اختيار من بين كتب محدّدة', options:['Was','Welches','Wer','Wann'], answer:'Welches' },
+  { q:'Mit ___ gehst du ins Kino?', sub:'حرف جر + شخص', options:['was','wen','wem','wessen'], answer:'wem' },
+  { q:'___ schreibst du? (mit einem Stift)', sub:'حرف الجر يندمج مع الشيء', options:['Mit was','Womit','Wen','Wer'], answer:'Womit' },
+  { q:'___ kommst du?', sub:'أصل الحركة', options:['Wo','Wohin','Woher','Wann'], answer:'Woher' },
+  { q:'___ kostet das Ticket?', sub:'كمّية لا تُعدّ', options:['Wie viele','Wie viel','Wie','Was für'], answer:'Wie viel' },
+  { q:'___ ist das Auto? (Frage nach dem Besitzer)', sub:'ملكية', options:['Wer','Wen','Wessen','Wem'], answer:'Wessen' },
+  { q:'___ denkst du? (an das Problem)', sub:'حرف جر يبدأ بحرف علّة + شيء', options:['Woran','Woan','An wen','Woauf'], answer:'Woran' },
+];
+const QuizModule = (() => {
+  let idx = 0, score = 0;
+  const qText = document.getElementById('quizQuestionText');
+  const qSub = document.getElementById('quizQuestionSub');
+  const optsEl = document.getElementById('quizOptions');
+  const feedback = document.getElementById('quizFeedback');
+  const scoreEl = document.getElementById('quizScore');
+  const counterEl = document.getElementById('quizCounter');
+  const progressBar = document.getElementById('quizProgressBar');
+  const activeBox = document.getElementById('quizActive');
+  const resultBox = document.getElementById('quizResult');
+
+  function shuffle(arr){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+
+  function render(){
+    const item = QUIZ_DATA[idx];
+    qText.innerHTML = 'أكمل الجملة: <span class="de">' + item.q + '</span>';
+    qSub.textContent = item.sub;
+    feedback.textContent = '';
+    counterEl.textContent = 'سؤال ' + (idx+1) + ' من ' + QUIZ_DATA.length;
+    progressBar.style.width = ((idx)/QUIZ_DATA.length*100) + '%';
+    optsEl.innerHTML = '';
+    shuffle(item.options).forEach(opt => {
+      const b = document.createElement('button');
+      b.className = 'quiz-opt';
+      b.innerHTML = opt;
+      b.addEventListener('click', () => choose(b, opt, item.answer));
+      optsEl.appendChild(b);
+    });
+  }
+  function choose(btn, opt, answer){
+    Array.from(optsEl.children).forEach(b => b.disabled = true);
+    if(opt === answer){
+      btn.classList.add('correct');
+      feedback.textContent = '✅ صحيح! أحسنت أيها المحقق.';
+      feedback.style.color = 'var(--success)';
+      score++;
+      scoreEl.textContent = score;
+    } else {
+      btn.classList.add('wrong');
+      feedback.textContent = '❌ غير صحيح. الإجابة الصحيحة: ' + answer;
+      feedback.style.color = 'var(--error)';
+      Array.from(optsEl.children).forEach(b => { if(b.textContent === answer) b.classList.add('correct'); });
+    }
+    setTimeout(() => {
+      idx++;
+      if(idx < QUIZ_DATA.length) render();
+      else finish();
+    }, 1300);
+  }
+  function finish(){
+    activeBox.style.display = 'none';
+    resultBox.style.display = 'block';
+    progressBar.style.width = '100%';
+    const pct = score / QUIZ_DATA.length;
+    document.getElementById('quizFinalScore').textContent = score + ' / ' + QUIZ_DATA.length;
+    document.getElementById('quizFinalMsg').textContent = pct >= 0.8
+      ? 'ممتاز! لقد أثبتّ أنك محقق بارع في أدوات الاستفهام 🎉'
+      : 'أداء جيد! راجع الأقسام أعلاه وحاول مرة أخرى لرفع نتيجتك.';
+    ProgressModule.state.quiz = true;
+    ProgressModule.state.quizScore = pct;
+    ProgressModule.set('quiz', true);
+  }
+  function restart(){
+    idx = 0; score = 0; scoreEl.textContent = 0;
+    activeBox.style.display = 'block';
+    resultBox.style.display = 'none';
+    render();
+  }
+  function init(){
+    document.getElementById('quizTotal').textContent = QUIZ_DATA.length;
+    render();
+    document.getElementById('quizRestart').addEventListener('click', restart);
+  }
+  return { init };
+})();
+QuizModule.init();
+
+/* =========================================================================
+   EXERCISE 4: SENTENCE BUILDER (click + drag & drop)
+   ========================================================================= */
+const SENTENCES = [
+  { words:['Wo','wohnst','du','?'], translation:'أين تسكن؟' },
+  { words:['Wen','siehst','du','?'], translation:'من ترى؟' },
+  { words:['Womit','schreibst','du','?'], translation:'بماذا تكتب؟' },
+  { words:['Wohin','gehst','du','?'], translation:'إلى أين تذهب؟' },
+  { words:['Wessen','Buch','ist','das','?'], translation:'كتاب مَن هذا؟' },
+];
+const SentenceModule = (() => {
+  let idx = 0;
+  const bank = document.getElementById('sbBank');
+  const answer = document.getElementById('sbAnswer');
+  const feedback = document.getElementById('sbFeedback');
+  const translation = document.getElementById('sbTranslation');
+  let dragSrc = null;
+
+  function shuffle(arr){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+
+  function makeChip(word){
+    const c = document.createElement('div');
+    c.className = 'sb-chip';
+    c.textContent = word;
+    c.draggable = true;
+    c.addEventListener('click', () => {
+      if(c.parentElement === bank){ answer.appendChild(c); c.classList.add('placed'); }
+      else { bank.appendChild(c); c.classList.remove('placed'); }
+    });
+    c.addEventListener('dragstart', () => { dragSrc = c; c.classList.add('dragging'); });
+    c.addEventListener('dragend', () => c.classList.remove('dragging'));
+    return c;
+  }
+
+  function render(){
+    feedback.textContent = '';
+    document.getElementById('sbIndex').textContent = idx + 1;
+    const item = SENTENCES[idx];
+    translation.textContent = '💬 ' + item.translation;
+    bank.innerHTML = ''; answer.innerHTML = '';
+    shuffle(item.words).forEach(w => bank.appendChild(makeChip(w)));
+  }
+
+  function check(){
+    const chosen = Array.from(answer.children).map(c => c.textContent).join(' ').replace(/\s+\?/,'?');
+    const correct = SENTENCES[idx].words.join(' ').replace(/\s+\?/,'?');
+    if(chosen.trim() === correct.trim()){
+      feedback.textContent = '✅ ترتيب صحيح تمامًا! ' + correct;
+      feedback.className = 'sb-feedback ok';
+      if(idx === SENTENCES.length - 1) ProgressModule.set('sentence', true);
+    } else {
+      feedback.textContent = '❌ ليس تمامًا — حاول مرة أخرى. تذكّر: الفعل يأتي مباشرة بعد أداة الاستفهام.';
+      feedback.className = 'sb-feedback bad';
+    }
+  }
+  function reset(){ render(); }
+  function next(){ idx = (idx + 1) % SENTENCES.length; render(); }
+
+  function init(){
+    document.getElementById('sbTotal').textContent = SENTENCES.length;
+    render();
+    document.getElementById('sbCheck').addEventListener('click', check);
+    document.getElementById('sbReset').addEventListener('click', reset);
+    document.getElementById('sbNext').addEventListener('click', next);
+    [bank, answer].forEach(zone => {
+      zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
+      zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+      zone.addEventListener('drop', e => {
+        e.preventDefault(); zone.classList.remove('drag-over');
+        if(dragSrc){ zone.appendChild(dragSrc); dragSrc.classList.toggle('placed', zone === answer); }
+      });
+    });
+  }
+  return { init };
+})();
+SentenceModule.init();
+
+/* =========================================================================
+   EXERCISE 5: TYPING PRACTICE (fill in the blank)
+   ========================================================================= */
+const TYPING_DATA = [
+  { prompt:'___ ist dein Name? <span class="ar">(تسأل عن اسم شخص)</span>', accept:['wie'] },
+  { prompt:'___ alt bist du? <span class="ar">(كم عمرك)</span>', accept:['wie'] },
+  { prompt:'___ wohnst du? <span class="ar">(أين تسكن)</span>', accept:['wo'] },
+  { prompt:'___ machst du das? <span class="ar">(لماذا)</span>', accept:['warum','weshalb','wieso'] },
+  { prompt:'___ ist das Auto vor der Tür? <span class="ar">(ملكية — مَن صاحبه)</span>', accept:['wessen'] },
+];
+const TypingModule = (() => {
+  const listEl = document.getElementById('typeList');
+  function normalize(s){ return s.trim().toLowerCase(); }
+  function render(){
+    listEl.innerHTML = '';
+    TYPING_DATA.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'card type-item';
+      div.innerHTML = `
+        <p class="prompt de">${item.prompt}</p>
+        <div class="type-row">
+          <input class="type-input" type="text" data-i="${i}" placeholder="اكتب الأداة هنا…" aria-label="اكتب أداة الاستفهام">
+          <button class="btn btn-sm btn-teal" data-check="${i}">تحقّق</button>
+        </div>
+        <p class="type-fb" id="typeFb${i}"></p>
+      `;
+      listEl.appendChild(div);
+    });
+    listEl.querySelectorAll('[data-check]').forEach(btn => {
+      btn.addEventListener('click', () => checkOne(parseInt(btn.dataset.check,10)));
+    });
+    listEl.querySelectorAll('.type-input').forEach(inp => {
+      inp.addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); checkOne(parseInt(inp.dataset.i,10)); } });
+    });
+  }
+  function checkOne(i){
+    const input = listEl.querySelector('.type-input[data-i="'+i+'"]');
+    const fb = document.getElementById('typeFb'+i);
+    const val = normalize(input.value);
+    const ok = TYPING_DATA[i].accept.includes(val);
+    input.classList.remove('correct','wrong');
+    input.classList.add(ok ? 'correct' : 'wrong');
+    fb.textContent = ok ? '✅ صحيح!' : '❌ حاول مرة أخرى (الإجابات المقبولة: ' + TYPING_DATA[i].accept.join(' / ') + ')';
+    fb.style.color = ok ? 'var(--success)' : 'var(--error)';
+    return ok;
+  }
+  function checkAll(){
+    let allOk = true;
+    TYPING_DATA.forEach((_, i) => { if(!checkOne(i)) allOk = false; });
+    if(allOk) ProgressModule.set('typing', true);
+  }
+  function init(){
+    render();
+    document.getElementById('typeCheckAll').addEventListener('click', checkAll);
+  }
+  return { init };
+})();
+TypingModule.init();
+
+/* =========================================================================
+   MODULE: TABS
+   ========================================================================= */
+(() => {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-fragewoerter-detektiv" data-category="grammatik" data-title="ملف القضية — أدوات الاستفهام الألمانية" data-root="../../" defer></script>
+</body>
+</html>

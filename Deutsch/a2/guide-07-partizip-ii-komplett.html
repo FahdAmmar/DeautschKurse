@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الدرس ٧ · الحاضر التام الشامل (Perfekt) | ألمانية A2</title>
+<meta name="description" content="الدرس السابع من مستوى A2: الحاضر التام الألماني (Perfekt) بالتفصيل — haben أم sein، صيغة Partizip II للأفعال الضعيفة والقوية، الأفعال بلا ge- والأفعال المنفصلة، مع معمل بناء تفاعلي ونطق صوتي ومئات الأمثلة والتمارين.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+body { margin: 0; overflow-x: hidden; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+:root {
+  color-scheme: light;
+  --bg: #F7F6F3;
+  --bg-alt: #EFEDE7;
+  --surface: #FFFFFF;
+  --surface-glass: rgba(255,255,255,.68);
+  --surface-glass-border: rgba(255,255,255,.5);
+  --ink: #23291F;
+  --ink-soft: #57604F;
+  --ink-faint: #8B927F;
+  --border: #E3E1D8;
+  --border-strong: #CCC9BC;
+
+  --primary: #3D8A5F;
+  --primary-ink: #2C6746;
+  --primary-soft: #E3F0E8;
+  --primary-glow: rgba(61,138,95,.24);
+
+  --secondary: #C4732E;
+  --secondary-ink: #9A5A23;
+  --secondary-soft: #FBEEE2;
+  --secondary-glow: rgba(196,115,46,.22);
+
+  --success: #2E7D4F;
+  --success-soft: #E4F5EA;
+  --danger: #B8493C;
+  --danger-soft: #FBEAE7;
+
+  /* four Partizip-formation categories + two auxiliary colors */
+  --perf-schwach: #3D74B0;
+  --perf-stark: #3D8A5F;
+  --perf-ohnege: #7A5FB8;
+  --perf-trennbar: #C4732E;
+  --perf-haben: #B0507A;
+  --perf-sein: #2E8B87;
+  --perf-schwach-soft: #E7EFF9;
+  --perf-stark-soft: #E3F0E8;
+  --perf-ohnege-soft: #EFEBFA;
+  --perf-trennbar-soft: #FBEEE2;
+  --perf-haben-soft: #FBE7EF;
+  --perf-sein-soft: #E3F3F2;
+
+  --shadow-sm: 0 1px 2px rgba(35,41,31,.06), 0 1px 1px rgba(35,41,31,.04);
+  --shadow-md: 0 8px 24px -8px rgba(35,41,31,.16), 0 2px 8px -2px rgba(35,41,31,.08);
+  --shadow-lg: 0 24px 60px -20px rgba(35,41,31,.28), 0 8px 20px -8px rgba(35,41,31,.12);
+  --shadow-glow-primary: 0 8px 30px -6px var(--primary-glow);
+
+  --r-sm: 10px; --r-md: 16px; --r-lg: 24px; --r-xl: 32px;
+
+  --font-ar-display: 'Markazi Text', 'Segoe UI', sans-serif;
+  --font-ar-body: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-de-display: 'Newsreader', Georgia, serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  --nav-h: 72px;
+  --ease: cubic-bezier(.22,.9,.32,1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #14180F;
+  --bg-alt: #0F120B;
+  --surface: #1C2317;
+  --surface-glass: rgba(28,35,23,.62);
+  --surface-glass-border: rgba(255,255,255,.08);
+  --ink: #EEF1E9;
+  --ink-soft: #ACB59F;
+  --ink-faint: #6E7663;
+  --border: #2C3524;
+  --border-strong: #3A4630;
+
+  --primary: #6FC291;
+  --primary-ink: #A4DEBD;
+  --primary-soft: rgba(111,194,145,.14);
+  --primary-glow: rgba(111,194,145,.28);
+
+  --secondary: #E29A5C;
+  --secondary-ink: #F0BE8E;
+  --secondary-soft: rgba(226,154,92,.14);
+  --secondary-glow: rgba(226,154,92,.24);
+
+  --success: #5FCB8C;
+  --success-soft: rgba(95,203,140,.14);
+  --danger: #E2836E;
+  --danger-soft: rgba(226,131,110,.14);
+
+  --perf-schwach: #7FA8DE;
+  --perf-stark: #6FC291;
+  --perf-ohnege: #AE97DE;
+  --perf-trennbar: #E29A5C;
+  --perf-haben: #E28CB0;
+  --perf-sein: #6FC2BC;
+  --perf-schwach-soft: rgba(127,168,222,.14);
+  --perf-stark-soft: rgba(111,194,145,.14);
+  --perf-ohnege-soft: rgba(174,151,222,.14);
+  --perf-trennbar-soft: rgba(226,154,92,.14);
+  --perf-haben-soft: rgba(226,140,176,.14);
+  --perf-sein-soft: rgba(111,194,188,.14);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3);
+  --shadow-md: 0 8px 24px -8px rgba(0,0,0,.5);
+  --shadow-lg: 0 24px 60px -20px rgba(0,0,0,.6);
+}
+
+body { background: var(--bg); color: var(--ink); font-family: var(--font-ar-body); line-height: 1.75; transition: background-color .5s var(--ease), color .5s var(--ease); }
+.de, [lang="de"] { font-family: var(--font-de-display); direction: ltr; unicode-bidi: isolate; }
+.mono { font-family: var(--font-mono); direction: ltr; unicode-bidi: isolate; }
+h1, h2, h3 { font-family: var(--font-ar-display); font-weight: 600; line-height: 1.3; margin: 0; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+::selection { background: var(--primary); color: #fff; }
+.road-rule { height: 3px; background-image: repeating-linear-gradient(to right, var(--border-strong) 0 10px, transparent 10px 20px); border: none; }
+
+.container { max-width: 1120px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); }
+.section { padding-block: clamp(56px, 8vw, 108px); position: relative; }
+.section-head { max-width: 720px; margin-bottom: clamp(28px, 5vw, 48px); }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .76rem; letter-spacing: .01em; color: var(--primary); background: var(--primary-soft); padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; }
+.section-title { font-size: clamp(1.7rem, 3.9vw, 2.6rem); }
+.section-sub { color: var(--ink-soft); font-size: clamp(.98rem, 1.6vw, 1.1rem); margin-top: 12px; max-width: 64ch; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(1){transition-delay:.03s} .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.09s}
+.reveal-stagger.is-visible > *:nth-child(3){transition-delay:.15s} .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.21s}
+.reveal-stagger.is-visible > *:nth-child(5){transition-delay:.27s} .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.33s}
+.reveal-stagger.is-visible > *:nth-child(7){transition-delay:.39s} .reveal-stagger.is-visible > *:nth-child(8){transition-delay:.45s}
+.reveal-stagger.is-visible > *:nth-child(9){transition-delay:.51s}
+
+.site-header { position: sticky; top: 0; z-index: 100; background: var(--surface-glass); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); border-bottom: 1px solid var(--surface-glass-border); }
+.header-top { height: var(--nav-h); display: flex; align-items: center; }
+.header-inner { display: flex; align-items: center; gap: 18px; width: 100%; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; white-space: nowrap; }
+.brand-mark { width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; background: conic-gradient(from 0deg, var(--perf-schwach), var(--perf-stark), var(--perf-ohnege), var(--perf-trennbar), var(--perf-schwach)); box-shadow: var(--shadow-glow-primary); position: relative; }
+.brand-mark::after { content:""; position:absolute; inset:30%; border-radius:50%; background: var(--surface); }
+.brand-mark::before { content:"P"; font-family: var(--font-de-display); position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; font-style:italic; color:var(--ink); }
+.brand-text { font-family: var(--font-ar-display); font-size: 1.15rem; }
+.brand-text small { display: block; font-family: var(--font-ar-body); font-weight: 400; font-size: .68rem; color: var(--ink-faint); }
+.progress-ring-wrap { position: relative; width: 44px; height: 44px; flex-shrink: 0; }
+.progress-ring-wrap svg { transform: rotate(-90deg); }
+.progress-ring-track { fill: none; stroke: var(--border); stroke-width: 4; }
+.progress-ring-bar { fill: none; stroke: var(--primary); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset .6s var(--ease); }
+.progress-ring-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: .6rem; font-weight: 600; }
+.header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.icon-btn { width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .25s var(--ease); }
+.icon-btn:hover { color: var(--primary); border-color: var(--primary); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.icon-btn:active { transform: translateY(0) scale(.94); }
+.icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+.search-box { position: relative; display: none; align-items: center; }
+.search-box input { width: 0; opacity: 0; padding: 0; border: none; background: var(--surface); color: var(--ink); border-radius: 12px; transition: all .3s var(--ease); font-family: var(--font-ar-body); font-size: .88rem; }
+.search-box.open input { width: 190px; opacity: 1; padding: 9px 14px; border: 1px solid var(--border); }
+@media (min-width: 861px){ .search-box { display: flex; } }
+
+.road-nav { overflow-x: auto; scrollbar-width: none; border-top: 1px dashed var(--border); position: relative; }
+.road-nav::-webkit-scrollbar { display: none; }
+.road-track { display: flex; align-items: flex-end; min-width: max-content; padding: 12px clamp(18px,4vw,40px) 10px; position: relative; }
+.road-track::before { content:""; position:absolute; right: clamp(18px,4vw,40px); left: clamp(18px,4vw,40px); bottom: 18px; height: 2px; background-image: repeating-linear-gradient(to left, var(--border-strong) 0 8px, transparent 8px 14px); }
+.waypoint-btn { display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: none; cursor: pointer; padding: 0 13px; flex-shrink: 0; color: var(--ink-faint); position: relative; z-index: 1; }
+.waypoint-pin { width: 14px; height: 14px; border-radius: 50% 50% 50% 0; background: var(--border-strong); transform: rotate(-45deg); margin-bottom: 6px; transition: all .25s var(--ease); }
+.waypoint-btn span.lbl { font-size: .72rem; font-weight: 500; white-space: nowrap; }
+.waypoint-btn:hover .waypoint-pin { background: var(--primary); transform: rotate(-45deg) scale(1.2); }
+.waypoint-btn:hover { color: var(--ink); }
+.waypoint-btn.active .waypoint-pin { background: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft); transform: rotate(-45deg) scale(1.25); }
+.waypoint-btn.active { color: var(--primary); }
+
+.hero { position: relative; padding-block: clamp(48px, 9vw, 96px) clamp(64px, 9vw, 110px); overflow: hidden; }
+.hero::before { content:""; position:absolute; inset:-20% -10% auto -10%; height:640px; z-index:-2; background: radial-gradient(560px 360px at 18% 15%, var(--perf-schwach-soft), transparent 70%), radial-gradient(520px 340px at 88% 20%, var(--perf-trennbar-soft), transparent 70%); filter: blur(10px); }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 56px); align-items: center; }
+@media (max-width: 940px){ .hero-grid { grid-template-columns: 1fr; } }
+.level-badge { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: .8rem; background: var(--surface); border: 1px solid var(--border); padding: 7px 8px 7px 16px; border-radius: 999px; box-shadow: var(--shadow-sm); margin-bottom: 22px; }
+.level-badge b { background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 999px; font-weight: 600; }
+.hero-title { font-size: clamp(2rem, 4.6vw, 3.1rem); }
+.hero-title .de { color: var(--primary); }
+.hero-lead { margin-top: 20px; font-size: clamp(1.02rem, 1.7vw, 1.2rem); color: var(--ink-soft); max-width: 58ch; }
+.hero-ctas { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 24px; border-radius: 14px; font-weight: 600; font-size: .96rem; cursor: pointer; border: 1px solid transparent; transition: all .25s var(--ease); }
+.btn:active { transform: scale(.97); }
+.btn-primary { background: linear-gradient(155deg, var(--primary), var(--primary-ink)); color: #fff; box-shadow: var(--shadow-glow-primary); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 34px -8px var(--primary-glow); }
+.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--border); }
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-3px); }
+.btn-sm { padding: 8px 16px; font-size: .85rem; }
+
+.hero-quad-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: clamp(18px,3vw,26px); box-shadow: var(--shadow-lg); }
+.hero-quad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.hero-quad-item { border-radius: var(--r-md); padding: 14px 12px; text-align: center; color: #fff; box-shadow: var(--shadow-sm); }
+.hero-quad-item .hq-case { font-family: var(--font-mono); font-size: .68rem; opacity: .88; }
+.hero-quad-item .hq-name { font-family: var(--font-de-display); font-weight: 700; font-size: 1.15rem; margin-top: 2px; }
+.hero-quad-item .hq-list { font-size: .74rem; opacity: .92; margin-top: 6px; direction: ltr; }
+
+/* ==========================================================================
+   PARTIZIP WORKSHOP — building-blocks visual + picker
+   ========================================================================== */
+.workshop-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: clamp(20px,3.4vw,32px); box-shadow: var(--shadow-lg); }
+.verb-picker { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 24px; }
+.verb-picker-btn { font-family: var(--font-de-display); direction: ltr; font-weight: 700; font-size: .98rem; padding: 9px 20px; border-radius: 999px; border: 2px solid var(--border-strong); background: var(--surface); color: var(--ink); cursor: pointer; transition: all .22s var(--ease); }
+.verb-picker-btn:hover { transform: translateY(-2px); }
+.verb-picker-btn.active { color: #fff; box-shadow: var(--shadow-sm); }
+.workshop-layout { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 4vw, 40px); align-items: start; }
+@media (max-width: 800px){ .workshop-layout { grid-template-columns: 1fr; } }
+.conj-card.focusing { filter: blur(6px); opacity: .35; transition: filter .3s var(--ease), opacity .3s var(--ease); }
+.conj-card:not(.focusing) { transition: filter .3s var(--ease), opacity .3s var(--ease); }
+.conj-title { font-family: var(--font-de-display); font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 700; margin-bottom: 4px; cursor: pointer; }
+.conj-ar { color: var(--ink-soft); margin-bottom: 16px; }
+.conj-rule-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .8rem; padding: 5px 14px; border-radius: 999px; color: #fff; margin-bottom: 14px; margin-inline-end: 6px; }
+.example-box { background: var(--bg-alt); border-radius: var(--r-md); padding: 16px 20px; margin-top: 18px; }
+
+/* participle building blocks */
+.blocks-row { display: flex; align-items: stretch; justify-content: center; gap: 4px; flex-wrap: wrap; margin: 18px 0; direction: ltr; }
+.p-block { font-family: var(--font-de-display); font-weight: 700; font-size: clamp(1.1rem, 2.4vw, 1.5rem); padding: 12px 16px; border-radius: 10px; color: #fff; display: flex; align-items: center; box-shadow: var(--shadow-sm); }
+.p-block.type-prefix { background: var(--ink-faint); opacity: .75; }
+.p-block.type-ge { background: var(--secondary); }
+.p-block.type-stem { background: var(--block-color, var(--primary)); }
+.p-block.type-ending { background: var(--block-color, var(--primary)); opacity: .8; font-style: italic; }
+.blocks-caption { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; font-size: .78rem; color: var(--ink-faint); margin-bottom: 10px; }
+.blocks-caption span { display: flex; align-items: center; gap: 6px; }
+.blocks-caption i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+/* haben/sein aux badge in sentences */
+.aux-badge { display: inline-flex; align-items: center; padding: 3px 12px; border-radius: 999px; color: #fff; font-weight: 700; font-family: var(--font-de-display); cursor: pointer; }
+
+/* route sentence — reused word-click component */
+.route-sentence { direction: ltr; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-family: var(--font-de-display); font-size: clamp(1.05rem, 2.2vw, 1.35rem); }
+.rs-word { cursor: pointer; border-radius: 8px; padding: 3px 4px; transition: background-color .2s, color .2s; }
+.rs-word:hover { background: var(--surface); }
+.rs-word.speaking { background: var(--primary); color: #fff; }
+.rs-verb { border-bottom: 3px solid var(--verb-marker, var(--ink-faint)); font-weight: 700; cursor: pointer; padding-bottom: 1px; color: var(--verb-marker, var(--ink)); }
+.rs-verb:hover, .rs-verb.speaking { background: var(--bg-alt); }
+.rs-aux { border-radius: 8px; padding: 2px 10px; font-weight: 700; cursor: pointer; color: #fff; background: var(--aux-marker, var(--ink-faint)); }
+.route-ar { color: var(--ink-soft); margin-top: 8px; }
+
+.flow-mini-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: stretch; }
+@media (max-width: 700px){ .flow-mini-grid { grid-template-columns: 1fr; } .flow-mini-arrow { transform: rotate(90deg); margin: 0 auto; } }
+.flow-mini-arrow { display: flex; align-items: center; justify-content: center; color: var(--ink-faint); }
+.flow-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 20px; box-shadow: var(--shadow-sm); }
+.flow-card .fc-q { font-weight: 700; margin-bottom: 10px; }
+.flow-card .fc-result { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-family: var(--font-mono); font-size: .82rem; color: #fff; margin-top: 8px; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 760px){ .grid-2 { grid-template-columns: 1fr; } }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 940px){ .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px){ .grid-3 { grid-template-columns: 1fr; } }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media (max-width: 760px){ .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+.info-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px; box-shadow: var(--shadow-sm); transition: all .3s var(--ease); }
+.info-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--border-strong); }
+.info-card h3 { font-size: 1.1rem; margin-bottom: 10px; display: flex; align-items: center; gap: 9px; font-family: var(--font-ar-body); font-weight: 700; }
+.info-card h3 .icon-chip { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.info-card p, .info-card li { color: var(--ink-soft); font-size: .95rem; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: .78rem; padding: 4px 11px; border-radius: 999px; }
+.callout { display: flex; gap: 14px; align-items: flex-start; border-inline-start: 4px solid var(--primary); background: var(--surface); border-radius: var(--r-md); padding: 18px 20px; box-shadow: var(--shadow-sm); }
+.callout.ohnege { border-inline-start-color: var(--perf-ohnege); }
+.callout.trennbar { border-inline-start-color: var(--perf-trennbar); }
+.callout.sein { border-inline-start-color: var(--perf-sein); }
+.callout svg { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+.callout.ohnege svg { color: var(--perf-ohnege); }
+.callout.trennbar svg { color: var(--perf-trennbar); }
+.callout.sein svg { color: var(--perf-sein); }
+.simple-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+.simple-table th, .simple-table td { padding: 12px 16px; text-align: center; border-bottom: 1px solid var(--border); }
+.simple-table th { background: var(--bg-alt); font-family: var(--font-ar-body); font-weight: 700; font-size: .88rem; }
+.simple-table tr:last-child td { border-bottom: none; }
+.simple-table td.de { font-size: 1.02rem; cursor: pointer; font-weight: 600; }
+.simple-table tr:hover td { background: var(--bg-alt); }
+.simple-table.compact th, .simple-table.compact td { padding: 10px 12px; font-size: .86rem; }
+
+.filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+.filter-chip { font-family: var(--font-ar-body); font-size: .86rem; font-weight: 600; padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink-soft); cursor: pointer; transition: all .22s var(--ease); display: inline-flex; align-items: center; gap: 7px; }
+.filter-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--dot-color, var(--ink-faint)); }
+.filter-chip:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+.filter-chip.active { background: var(--dot-color, var(--primary)); border-color: var(--dot-color, var(--primary)); color: #fff; }
+.filter-chip.active .dot { background: #fff; }
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.flip-card { perspective: 1200px; height: 190px; }
+.flip-card.hidden-item { display: none; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-shadow: var(--shadow-sm); }
+.flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
+.flip-front .de { font-size: 1.25rem; font-weight: 700; }
+.flip-front .flip-case-tag { position:absolute; top:10px; inset-inline-start:10px; font-family: var(--font-mono); font-size:.6rem; padding:2px 9px; border-radius:999px; color:#fff; }
+.flip-back { color: #fff; transform: rotateY(180deg); gap: 6px; }
+.flip-back .meaning-de { font-family: var(--font-de-display); font-size: .96rem; font-weight: 600; }
+.flip-back .meaning { font-size: .88rem; opacity: .92; }
+.flip-hint { font-family: var(--font-mono); font-size: .64rem; color: var(--ink-faint); margin-top: 8px; }
+.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--primary); transition: all .2s; }
+.speak-dot:hover { transform: scale(1.1); }
+.flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
+.speak-dot .icon { width: 15px; height: 15px; }
+
+.mistake-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+@media (max-width: 640px){ .mistake-card { grid-template-columns: 1fr; } }
+.mistake-side { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.mistake-wrong { background: var(--danger-soft); }
+.mistake-right { background: var(--success-soft); }
+.mistake-tag { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .82rem; }
+.mistake-wrong .mistake-tag { color: var(--danger); }
+.mistake-right .mistake-tag { color: var(--success); }
+.mistake-sentence { font-family: var(--font-de-display); direction: ltr; font-size: 1.02rem; }
+.mistake-note { grid-column: 1 / -1; padding: 12px 20px; font-size: .88rem; color: var(--ink-soft); border-top: 1px dashed var(--border); background: var(--surface); display:flex; align-items:center; gap:8px; }
+.mistake-note .grp-tag { font-family: var(--font-mono); font-size: .64rem; padding: 2px 8px; border-radius: 999px; color: #fff; flex-shrink:0; }
+
+.exercise-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+.exercise-tabs { display: flex; overflow-x: auto; border-bottom: 1px solid var(--border); scrollbar-width: none; }
+.exercise-tabs::-webkit-scrollbar { display: none; }
+.exercise-tab { flex-shrink: 0; padding: 16px 18px; background: none; border: none; cursor: pointer; font-weight: 600; font-size: .88rem; color: var(--ink-faint); border-bottom: 3px solid transparent; display: flex; align-items: center; gap: 8px; transition: all .25s; }
+.exercise-tab:hover { color: var(--ink); }
+.exercise-tab.active { color: var(--primary); border-color: var(--primary); }
+.exercise-tab .count { font-family: var(--font-mono); font-size: .68rem; background: var(--bg-alt); padding: 1px 7px; border-radius: 999px; }
+.exercise-panels { padding: clamp(20px, 4vw, 34px); }
+.exercise-panel { display: none; }
+.exercise-panel.active { display: block; animation: fadeSlide .4s var(--ease); }
+@keyframes fadeSlide { from { opacity:0; transform:translateY(10px);} to { opacity:1; transform:translateY(0);} }
+.q-block { border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 20px; margin-bottom: 16px; background: var(--bg-alt); }
+.q-prompt { font-family: var(--font-de-display); direction: ltr; font-size: 1.06rem; margin-bottom: 14px; }
+.q-prompt-ar { font-family: var(--font-ar-body); direction: rtl; font-size: .86rem; color: var(--ink-soft); margin-bottom: 12px; }
+.q-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.opt-btn { font-family: var(--font-de-display); direction: ltr; padding: 9px 20px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 1rem; transition: all .2s var(--ease); }
+.opt-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.opt-btn.correct { background: var(--success-soft); border-color: var(--success); color: var(--success); }
+.opt-btn.wrong { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
+.opt-btn:disabled { cursor: default; }
+.q-feedback { margin-top: 12px; font-size: .88rem; color: var(--ink-soft); display: none; padding-top: 10px; border-top: 1px dashed var(--border); }
+.q-feedback.show { display: block; }
+.fill-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.fill-row input { font-family: var(--font-de-display); direction: ltr; text-align: left; font-size: 1.05rem; padding: 9px 14px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink); width: 140px; max-width: 100%; }
+.fill-row input:focus { border-color: var(--primary); }
+.fill-check { border: none; background: var(--primary); color: #fff; padding: 9px 18px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+.fill-result { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+.builder-pool, .builder-answer { display: flex; flex-wrap: wrap; gap: 10px; min-height: 52px; align-items: center; }
+.builder-answer { border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: 10px 14px; margin-bottom: 14px; background: var(--surface); }
+.chip-word { font-family: var(--font-de-display); direction: ltr; padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 1rem; transition: all .2s var(--ease); box-shadow: var(--shadow-sm); }
+.chip-word:hover { transform: translateY(-2px); border-color: var(--primary); }
+.chip-word.used { opacity: .3; pointer-events: none; }
+.builder-actions { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.builder-actions .btn { padding: 9px 18px; font-size: .88rem; }
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 3vw, 40px); }
+.match-col { display: flex; flex-direction: column; gap: 10px; }
+.match-item { font-family: var(--font-de-display); direction: ltr; padding: 12px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; transition: all .2s var(--ease); text-align: center; }
+.match-item:hover:not(.matched) { border-color: var(--primary); transform: scale(1.02); }
+.match-item.selected { border-color: var(--primary); background: var(--primary-soft); }
+.match-item.matched { border-color: var(--success); background: var(--success-soft); color: var(--success); pointer-events: none; }
+.match-item.shake { animation: shake .4s; border-color: var(--danger); background: var(--danger-soft); }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+.score-bar-wrap { display: flex; align-items: center; gap: 16px; padding: 18px clamp(20px, 4vw, 34px); border-top: 1px solid var(--border); background: var(--bg-alt); flex-wrap: wrap; }
+.score-track { flex: 1; min-width: 140px; height: 10px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.score-fill { height: 100%; background: linear-gradient(to left, var(--perf-schwach), var(--perf-stark), var(--perf-ohnege), var(--perf-trennbar)); border-radius: 999px; width: 0%; transition: width .5s var(--ease); }
+.score-label { font-family: var(--font-mono); font-size: .82rem; white-space: nowrap; }
+
+.audio-dock { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(140%); z-index: 200; background: var(--surface-glass); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border: 1px solid var(--surface-glass-border); box-shadow: var(--shadow-lg); border-radius: 999px; padding: 8px 10px 8px 18px; display: flex; align-items: center; gap: 12px; max-width: min(92vw, 560px); transition: transform .45s var(--ease); }
+.audio-dock.visible { transform: translateX(-50%) translateY(0); }
+.audio-dock-text { font-family: var(--font-de-display); direction: ltr; font-size: .92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px; }
+.audio-dock-controls { display: flex; align-items: center; gap: 4px; }
+.audio-dock .icon-btn { width: 34px; height: 34px; border-radius: 50%; }
+.audio-dock input[type="range"] { width: 70px; accent-color: var(--primary); }
+.audio-dock-voice { font-family: var(--font-mono); font-size: .64rem; color: var(--ink-faint); display: none; }
+@media (min-width: 620px){ .audio-dock-voice { display: block; } }
+.summary-list { display: flex; flex-direction: column; gap: 12px; }
+.summary-list li { display: flex; gap: 12px; align-items: flex-start; }
+.summary-list .icon-chip { flex-shrink: 0; }
+.badges-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 14px; margin-top: 30px; }
+.badge { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 10px; text-align: center; filter: grayscale(1) opacity(.5); transition: filter .5s var(--ease); }
+.badge.unlocked { filter: none; opacity: 1; }
+.badge.pop { animation: badgePop .6s var(--ease); }
+@keyframes badgePop { 0%{transform:scale(.7) rotate(-8deg)} 60%{transform:scale(1.12) rotate(4deg)} 100%{transform:scale(1) rotate(0)} }
+.badge-icon { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(155deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: #fff; }
+.badge-name { font-size: .8rem; font-weight: 600; }
+.toast-wrap { position: fixed; top: calc(var(--nav-h) + 44px); left: 50%; transform: translateX(-50%); z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+.toast { background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-size: .88rem; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(-14px); transition: all .4s var(--ease); white-space: nowrap; }
+.toast.show { opacity: 1; transform: translateY(0); }
+.site-footer { border-top: 1px solid var(--border); padding-block: 36px; margin-top: 30px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--ink-faint); font-size: .86rem; }
+.back-to-top { position: fixed; bottom: 20px; inset-inline-end: 20px; z-index: 190; width: 46px; height: 46px; border-radius: 50%; background: var(--primary); color: #fff; border: none; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow-primary); cursor: pointer; opacity: 0; transform: translateY(20px) scale(.8); pointer-events: none; transition: all .35s var(--ease); }
+.back-to-top.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.back-to-top:hover { transform: translateY(-4px) scale(1.05); }
+mark.hl { background: var(--secondary-soft); color: var(--secondary-ink); border-radius: 4px; padding: 0 2px; }
+
+@media print {
+  .site-header, .audio-dock, .back-to-top, .exercise-tabs, .score-bar-wrap, .btn, .icon-btn, .toast-wrap, .filter-bar, .verb-picker { display: none !important; }
+  body { background: #fff; color: #000; }
+  .section { padding-block: 20px; break-inside: avoid; }
+  .exercise-panel { display: block !important; }
+  .flip-card.hidden-item { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><g stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/></g></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+<symbol id="i-speaker" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.3 5.7a9 9 0 0 1 0 12.6"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+<symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 4v6h6"/><path d="M4.6 15a8 8 0 1 0 1.5-9.4L4 9"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><polyline points="6,9 6,3 18,3 18,9"/><rect x="4" y="9" width="16" height="8" rx="1.2"/><rect x="8" y="14" width="8" height="6"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5"/><path d="M15 4h5v5"/><path d="M20 15v5h-5"/><path d="M9 20H4v-5"/></symbol>
+<symbol id="i-compress" viewBox="0 0 24 24"><path d="M9 4v5H4"/><path d="M15 4v5h5"/><path d="M20 20v-5h-5"/><path d="M4 20v-5h5"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="5,13 9,17 19,7"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></symbol>
+<symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 13.5 7 21l5-2.5L17 21l-2-7.5"/><path d="M12 6.5l.9 1.9 2.1.3-1.5 1.4.3 2.1-1.8-1-1.8 1 .3-2.1-1.5-1.4 2.1-.3z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2zM20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2z"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5a2.6 2.6 0 0 1 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 5.5 19 5.5a2 2 0 0 1 2 2L21 18"/></symbol>
+<symbol id="i-scroll" viewBox="0 0 24 24"><path d="M6 3h13a2 2 0 0 1 2 2v3H8"/><path d="M6 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3H8a2 2 0 0 0-2 2"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M9 15L15 9"/><path d="M13.5 6.5l1-1a3.5 3.5 0 0 1 5 5l-1 1"/><path d="M10.5 17.5l-1 1a3.5 3.5 0 0 1-5-5l1-1"/></symbol>
+<symbol id="i-hammer" viewBox="0 0 24 24"><path d="M14.7 6.3 18 3l3 3-3.3 3.3"/><path d="M13 8l-9 9v3h3l9-9"/><line x1="11" y1="10" x2="14" y2="13"/></symbol>
+<symbol id="i-arrows-swap" viewBox="0 0 24 24"><path d="M4 8h13"/><polyline points="13,4 17,8 13,12"/><path d="M20 16H7"/><polyline points="11,20 7,16 11,12"/></symbol>
+<symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M5 3h4v2a2 2 0 0 0 4 0V3h4v4h-2a2 2 0 0 0 0 4h2v4h-4v-2a2 2 0 0 0-4 0v2H5v-4h2a2 2 0 0 0 0-4H5z"/></symbol>
+<symbol id="i-split" viewBox="0 0 24 24"><path d="M6 3v6a4 4 0 0 0 4 4h4a4 4 0 0 0 4-4V3"/><line x1="12" y1="13" x2="12" y2="21"/></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></symbol>
+</defs>
+</svg>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<header class="site-header">
+  <div class="header-top">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">ألمانية A2<small>الدرس السابع · الحاضر التام الشامل</small></span>
+      </div>
+      <div style="flex:1"></div>
+      <div class="header-controls">
+        <div class="search-box" id="searchBoxDesktop"><input type="search" id="searchInputDesktop" placeholder="ابحث في الدرس…" aria-label="ابحث في الدرس"></div>
+        <button class="icon-btn" id="searchToggle" aria-label="بحث"><svg class="icon"><use href="#i-search"/></svg></button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري">
+          <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+        </button>
+        <button class="icon-btn" id="fullscreenToggle" aria-label="ملء الشاشة"><svg class="icon" id="fsIcon"><use href="#i-expand"/></svg></button>
+        <div class="progress-ring-wrap" title="تقدّمك في الدرس">
+          <svg width="44" height="44"><circle class="progress-ring-track" cx="22" cy="22" r="18"/><circle class="progress-ring-bar" id="progressRingBar" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="113"/></svg>
+          <span class="progress-ring-label" id="progressRingLabel">٠٪</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="road-nav" aria-label="أقسام الدرس"><div class="road-track" id="roadTrack"></div></nav>
+</header>
+
+<main id="mainContent">
+
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="reveal is-visible">
+      <span class="level-badge"><b>A2</b> الدرس رقم ٧ من مسار «الألمانية خطوة بخطوة»</span>
+      <h1 class="hero-title">الحاضر التام الألماني <span class="de">Perfekt</span></h1>
+      <p class="hero-lead">الزمن الذي يُهيمن على كل محادثة يومية في الألمانية. صيغته بسيطة: فعل مساعد (haben أو sein) في المكان الثاني، وPartizip II في نهاية الجملة. في هذا الدرس نبني كل نوع من Partizip II خطوة بخطوة، مع معمل بناء تفاعلي يُظهر لك مكوّناته.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" data-scroll="#haben-sein"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg>haben أم sein؟</button>
+        <button class="btn btn-ghost" data-scroll="#workshop"><svg class="icon" style="width:18px;height:18px"><use href="#i-hammer"/></svg>جرّب معمل البناء</button>
+      </div>
+    </div>
+    <div class="reveal is-visible" style="transition-delay:.15s">
+      <div class="hero-quad-card">
+        <div class="hero-quad-grid">
+          <div class="hero-quad-item" style="background:linear-gradient(155deg, var(--perf-schwach), #26456f)">
+            <div class="hq-case">Schwach</div><div class="hq-name">ضعيف</div>
+            <div class="hq-list">ge + mach + t</div>
+          </div>
+          <div class="hero-quad-item" style="background:linear-gradient(155deg, var(--perf-stark), var(--primary-ink))">
+            <div class="hq-case">Stark</div><div class="hq-name">قوي</div>
+            <div class="hq-list">ge + gang + en</div>
+          </div>
+          <div class="hero-quad-item" style="background:linear-gradient(155deg, var(--perf-ohnege), #4a3873)">
+            <div class="hq-case">ohne ge-</div><div class="hq-name">بلا ge-</div>
+            <div class="hq-list">studier + t</div>
+          </div>
+          <div class="hero-quad-item" style="background:linear-gradient(155deg, var(--perf-trennbar), var(--secondary-ink))">
+            <div class="hq-case">Trennbar</div><div class="hq-name">منفصل</div>
+            <div class="hq-list">auf + ge + stand + en</div>
+          </div>
+        </div>
+        <p style="color:var(--ink-soft);font-size:.86rem;margin-top:14px;text-align:center">أربع طرق فقط لبناء Partizip II — وطريقتان فقط لاختيار الفعل المساعد.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="haben-sein">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>الخطوة الأولى</span>
+      <h2 class="section-title">haben <span class="de">أم</span> sein؟</h2>
+      <p class="section-sub">قبل أي شيء آخر، اسأل نفسك: هل هذا فعل حركة أو تغيّر حالة بلا مفعول به مباشر؟</p>
+    </div>
+    <div class="flow-mini-grid reveal">
+      <div class="flow-card">
+        <div class="fc-q">🚶 حركة من مكان لآخر، أو تغيّر حالة</div>
+        <p style="color:var(--ink-soft);font-size:.92rem">مثل <span class="mono">gehen, kommen, fahren, fliegen, aufstehen, sterben, werden</span> — بلا مفعول به مباشر.</p>
+        <span class="fc-result" style="background:var(--perf-sein)">→ sein</span>
+      </div>
+      <div class="flow-mini-arrow"><svg class="icon" style="width:28px;height:28px"><use href="#i-arrows-swap"/></svg></div>
+      <div class="flow-card">
+        <div class="fc-q">📦 كل الأفعال الأخرى</div>
+        <p style="color:var(--ink-soft);font-size:.92rem">كل فعل متعدٍ (يأخذ مفعولاً به)، وكل فعل انعكاسي، وكل فعل ثابت — الأغلبية الساحقة من الأفعال.</p>
+        <span class="fc-result" style="background:var(--perf-haben)">→ haben</span>
+      </div>
+    </div>
+    <div class="callout sein reveal" style="margin-top:20px">
+      <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+      <p><b>استثناءان يجب حفظهما:</b> <span class="de" data-speak="sein → ist gewesen">sein → ist gewesen</span> و<span class="de" data-speak="bleiben → ist geblieben">bleiben → ist geblieben</span> يستخدمان sein رغم عدم وجود حركة. وعلى النقيض، <span class="de" data-speak="schlafen → hat geschlafen">schlafen → hat geschlafen</span> يستخدم haben رغم أنه يصف حالة.</p>
+    </div>
+    <table class="simple-table reveal" id="habenSeinTable" style="margin-top:20px"></table>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="schwach">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--perf-schwach);background:var(--perf-schwach-soft)"><svg class="icon" style="width:14px;height:14px"><use href="#i-book"/></svg>الطريقة الأولى</span>
+      <h2 class="section-title">Partizip II للأفعال <span class="de" style="color:var(--perf-schwach)">الضعيفة</span></h2>
+      <p class="section-sub">القاعدة الأبسط: <span class="mono">ge</span> + الجذر + <span class="mono">t</span>. جذر الفعل لا يتغيّر أبدًا.</p>
+    </div>
+    <div class="grid-3 reveal-stagger reveal" id="schwachExamplesGrid"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="stark">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--perf-stark);background:var(--perf-stark-soft)"><svg class="icon" style="width:14px;height:14px"><use href="#i-split"/></svg>الطريقة الثانية</span>
+      <h2 class="section-title">Partizip II للأفعال <span class="de" style="color:var(--perf-stark)">القوية</span></h2>
+      <p class="section-sub"><span class="mono">ge</span> + الجذر (قد يتغيّر حرف علّته) + <span class="mono">en</span> — تربطك مباشرة بمجموعات الإبدال الصوتي من الدرس الخامس.</p>
+    </div>
+    <div class="callout reveal">
+      <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+      <p><b>تنبيه مهم:</b> حرف العلّة في Partizip II ليس بالضرورة نفسه في Präteritum! مثال: <span class="de" data-speak="essen → aß → gegessen">essen (المصدر) → aß (الماضي البسيط) → gegessen (Partizip II)</span> — ثلاث صيغ مختلفة أحيانًا.</p>
+    </div>
+    <div class="grid-3 reveal-stagger reveal" style="margin-top:20px" id="starkExamplesGrid"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="ohnege">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--perf-ohnege);background:var(--perf-ohnege-soft)"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>الطريقة الثالثة</span>
+      <h2 class="section-title">أفعال <span class="de" style="color:var(--perf-ohnege)">بلا ge-</span></h2>
+      <p class="section-sub">مجموعتان لا تأخذان بادئة <span class="mono">ge-</span> إطلاقًا.</p>
+    </div>
+    <div class="grid-2 reveal">
+      <div class="callout ohnege">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+        <p><b>الأفعال المنتهية بـ -ieren:</b> دائمًا ضعيفة، وPartizip II لها هو الجذر + <span class="mono">t</span> فقط، بلا ge-: <span class="de" data-speak="studieren → studiert">studieren → studiert</span>.</p>
+      </div>
+      <div class="callout ohnege">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+        <p><b>الأفعال ببادئة غير منفصلة:</b> <span class="mono">be-, ge-, er-, ver-, zer-, ent-, emp-, miss-</span> — هذه البادئات غير منبورة، فلا تُضاف ge- إضافية: <span class="de" data-speak="verstehen → verstanden">verstehen → verstanden</span>.</p>
+      </div>
+    </div>
+    <div class="grid-3 reveal-stagger reveal" style="margin-top:20px" id="ohnegeExamplesGrid"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="trennbar">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="color:var(--perf-trennbar);background:var(--perf-trennbar-soft)"><svg class="icon" style="width:14px;height:14px"><use href="#i-puzzle"/></svg>الطريقة الرابعة</span>
+      <h2 class="section-title">الأفعال <span class="de" style="color:var(--perf-trennbar)">المنفصلة</span></h2>
+      <p class="section-sub">البادئة المنفصلة تبقى في مكانها، وتُدرَج <span class="mono">ge-</span> بينها وبين الجذر مباشرة.</p>
+    </div>
+    <div class="callout trennbar reveal">
+      <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+      <p><b>الصيغة:</b> البادئة + <span class="mono">ge</span> + الجذر + <span class="mono">t/en</span>: <span class="de" data-speak="aufstehen → aufgestanden">aufstehen → auf + ge + standen</span>. لاحظ أن البادئة تبقى منبورة ومنفصلة عن باقي الكلمة في النطق.</p>
+    </div>
+    <div class="grid-3 reveal-stagger reveal" style="margin-top:20px" id="trennbarExamplesGrid"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="workshop">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-hammer"/></svg>الأداة التفاعلية الرئيسية</span>
+      <h2 class="section-title">معمل بناء Partizip II</h2>
+      <p class="section-sub">اختر فعلاً من أي فئة، وشاهد مكوّناته تتجمّع أمامك — البادئة، وge-، والجذر، والنهاية — مع جملة كاملة ونطق صوتي.</p>
+    </div>
+    <div class="workshop-shell reveal">
+      <div class="verb-picker" id="workshopPicker"></div>
+      <div class="blocks-caption">
+        <span><i style="background:var(--ink-faint)"></i> بادئة منفصلة</span>
+        <span><i style="background:var(--secondary)"></i> ge-</span>
+        <span><i style="background:var(--primary)"></i> الجذر والنهاية</span>
+      </div>
+      <div class="blocks-row" id="blocksRow"></div>
+      <div class="workshop-layout" style="margin-top:10px">
+        <div class="conj-card" id="workshopInfoCard"></div>
+        <div class="conj-card" id="workshopExampleCard"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="reference">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-book"/></svg>مرجع شامل</span>
+      <h2 class="section-title">قائمة الأفعال الشائعة في الحاضر التام</h2>
+      <p class="section-sub">أكثر من ٢٥ فعلاً مع الفعل المساعد وPartizip II — انقر لسماع النطق.</p>
+    </div>
+    <div class="filter-bar reveal" id="referenceFilterBar"></div>
+    <table class="simple-table reveal" id="referenceTable"></table>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="vocab">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-cards"/></svg>حفظ سريع</span>
+      <h2 class="section-title">بطاقات كل الأفعال</h2>
+      <p class="section-sub">صفّها حسب طريقة التكوين، انقر لتقلب البطاقة، وانقر على الصوت للاستماع.</p>
+    </div>
+    <div class="filter-bar reveal" id="vocabFilterBar"></div>
+    <div class="vocab-grid reveal-stagger reveal" id="vocabGrid"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="examples">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>تطبيق عملي</span>
+      <h2 class="section-title">جمل كثيرة من كل الفئات</h2>
+      <p class="section-sub">فلترة حسب الفئة، مع تمييز الفعل المساعد والـ Partizip II بألوانهما.</p>
+    </div>
+    <div class="filter-bar reveal" id="examplesFilterBar"></div>
+    <div class="reveal-stagger reveal" id="examplesList" style="display:flex;flex-direction:column;gap:18px"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="mistakes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>تجنّب الفخاخ الشائعة</span>
+      <h2 class="section-title">أخطاء يقع فيها معظم المتعلمين</h2>
+    </div>
+    <div class="reveal-stagger reveal" id="mistakesList" style="display:flex;flex-direction:column;gap:16px"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="pronunciation">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-mic"/></svg>نطق أصيل</span>
+      <h2 class="section-title">نصائح النطق وأسرار المتحدث الأصلي</h2>
+    </div>
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--perf-haben-soft);color:var(--perf-haben);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">اختصار الفعل المساعد</h3><p>في الحديث السريع، <span class="de" data-speak="ich habe">ich habe</span> غالبًا تُنطق <span class="de" data-speak="ich hab'">"ich hab'"</span> بحذف الـ e الأخيرة.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--perf-trennbar-soft);color:var(--perf-trennbar);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">النبرة على البادئة</h3><p>في الأفعال المنفصلة، النبرة دائمًا على البادئة: <span class="de" data-speak="AUFgestanden">AUFgestanden</span>، وليس على ge-.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--perf-ohnege-soft);color:var(--perf-ohnege);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">لا نبرة على البادئة غير المنفصلة</h3><p>في <span class="de" data-speak="verSTANden">verstanden</span>، النبرة على الجذر وليس على ver-، بعكس الأفعال المنفصلة.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--perf-stark-soft);color:var(--perf-stark);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">قف عند نهاية الجملة</h3><p>الـ Partizip II يحمل معلومة أساسية، فلا تُسرع في نطقه رغم أنه يأتي في آخر الجملة.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--perf-sein-soft);color:var(--perf-sein);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">ist أم ihst؟</h3><p><span class="de" data-speak="ist">ist</span> قصيرة وحادة — لا تُطِلها كأنها كلمة منفصلة بارزة، فهي أداة نحوية غير منبورة.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--primary-soft);color:var(--primary);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">تدرّب بالقصص الشفهية</h3><p>احكِ يومك بصوت عالٍ باستخدام Perfekt فقط — فهذا التمرين الأقرب لواقع المحادثة الألمانية.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="exercises">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-scroll"/></svg>وقت التطبيق</span>
+      <h2 class="section-title">تمارين تفاعلية شاملة</h2>
+      <p class="section-sub">خمسة أنواع من التمارين، بما فيها تمرين خاص باختيار الفعل المساعد الصحيح.</p>
+    </div>
+    <div class="exercise-shell reveal">
+      <div class="exercise-tabs" role="tablist">
+        <button class="exercise-tab active" data-panel="panelMcq" role="tab">اختر الصيغة <span class="count" id="countMcq">٠/٠</span></button>
+        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الفراغ <span class="count" id="countFill">٠/٠</span></button>
+        <button class="exercise-tab" data-panel="panelBuilder" role="tab">رتّب الجملة <span class="count" id="countBuilder">٠/٠</span></button>
+        <button class="exercise-tab" data-panel="panelMatch" role="tab">طابق Partizip II <span class="count" id="countMatch">٠/٠</span></button>
+        <button class="exercise-tab" data-panel="panelAux" role="tab">haben أم sein؟ <span class="count" id="countAux">٠/٠</span></button>
+      </div>
+      <div class="exercise-panels">
+        <div class="exercise-panel active" id="panelMcq"></div>
+        <div class="exercise-panel" id="panelFill"></div>
+        <div class="exercise-panel" id="panelBuilder"></div>
+        <div class="exercise-panel" id="panelMatch"></div>
+        <div class="exercise-panel" id="panelAux"></div>
+      </div>
+      <div class="score-bar-wrap">
+        <span class="score-label">إتقانك للتمارين</span>
+        <div class="score-track"><div class="score-fill" id="scoreFill"></div></div>
+        <span class="score-label mono" id="scoreLabel">٠٪</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="summary">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-star"/></svg>ملخّص الدرس</span>
+      <h2 class="section-title">ما الذي أتقنته اليوم؟</h2>
+    </div>
+    <div class="grid-2 reveal">
+      <ul class="summary-list info-card">
+        <li><span class="icon-chip" style="background:var(--perf-haben-soft);color:var(--perf-haben)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>haben أم sein:</b> حركة أو تغيّر حالة بلا مفعول به ← sein؛ كل الباقي ← haben.</p></li>
+        <li><span class="icon-chip" style="background:var(--perf-schwach-soft);color:var(--perf-schwach)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>ضعيف:</b> ge + الجذر + t.</p></li>
+        <li><span class="icon-chip" style="background:var(--perf-stark-soft);color:var(--perf-stark)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>قوي:</b> ge + الجذر (متغيّر أحيانًا) + en.</p></li>
+        <li><span class="icon-chip" style="background:var(--perf-ohnege-soft);color:var(--perf-ohnege)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>بلا ge-:</b> أفعال -ieren، والأفعال ببادئة غير منفصلة (be-, ver-, er-...).</p></li>
+        <li><span class="icon-chip" style="background:var(--perf-trennbar-soft);color:var(--perf-trennbar)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>منفصل:</b> البادئة + ge + الجذر + t/en.</p></li>
+      </ul>
+      <div class="info-card" style="display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;background:linear-gradient(155deg, var(--perf-schwach-soft), var(--perf-trennbar-soft))">
+        <svg class="icon" style="width:40px;height:40px;margin:0 auto;color:var(--primary)"><use href="#i-hammer"/></svg>
+        <h3 style="justify-content:center;font-size:1.2rem">الدرس القادم</h3>
+        <p>الجمل الفرعية: السبب والشرط والتنازل (weil, dass, wenn, obwohl) — ترتيب الفعل في نهاية الجملة الفرعية، وكيفية بناء جمل مركّبة كاملة. قريبًا في الدرس الثامن.</p>
+        <button class="btn btn-ghost" disabled style="align-self:center;opacity:.6;cursor:not-allowed">الدرس ٨ (قريبًا)</button>
+      </div>
+    </div>
+    <h3 style="margin-top:40px;text-align:center;font-size:1.3rem" class="reveal">إنجازاتك في هذا الدرس</h3>
+    <div class="badges-row reveal" id="badgesRow"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>الدرس ٧ · مسار الألمانية A2 — الحاضر التام الشامل: Schwach · Stark · ohne ge- · Trennbar.</span>
+    <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس"><svg class="icon"><use href="#i-printer"/></svg></button>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى"><svg class="icon" style="width:20px;height:20px;stroke:#fff"><use href="#i-up"/></svg></button>
+
+<div class="audio-dock" id="audioDock">
+  <div class="audio-dock-controls">
+    <button class="icon-btn" id="dockPlayPause" aria-label="تشغيل/إيقاف مؤقت"><svg class="icon" id="dockPlayIcon"><use href="#i-pause"/></svg></button>
+    <button class="icon-btn" id="dockReplay" aria-label="إعادة"><svg class="icon"><use href="#i-replay"/></svg></button>
+  </div>
+  <span class="audio-dock-text" id="dockText" dir="ltr">…</span>
+  <input type="range" id="dockSpeed" min="0.6" max="1.3" step="0.05" value="0.95" aria-label="سرعة النطق">
+  <span class="audio-dock-voice" id="dockVoice">…</span>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+function qs(sel, el){ return (el||document).querySelector(sel); }
+function qsa(sel, el){ return Array.prototype.slice.call((el||document).querySelectorAll(sel)); }
+function ce(tag, cls, html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!==undefined) e.innerHTML=html; return e; }
+
+var toastWrap = qs('#toastWrap');
+function toast(msg, icon){
+  var t = ce('div','toast', (icon? '<svg class="icon" style="width:16px;height:16px;stroke:var(--bg)"><use href="#'+icon+'"/></svg>':'')+'<span>'+msg+'</span>');
+  toastWrap.appendChild(t);
+  requestAnimationFrame(function(){ t.classList.add('show'); });
+  setTimeout(function(){ t.classList.remove('show'); setTimeout(function(){ t.remove(); }, 400); }, 2600);
+}
+
+var root = document.documentElement;
+function applyTheme(mode){
+  root.setAttribute('data-theme', mode);
+  try{ localStorage.setItem('perfekt-guide-theme', mode); }catch(e){}
+}
+(function initTheme(){
+  var saved = null;
+  try{ saved = localStorage.getItem('perfekt-guide-theme'); }catch(e){}
+  if(saved){ applyTheme(saved); }
+  else{
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
+})();
+qs('#themeToggle').addEventListener('click', function(){
+  var cur = root.getAttribute('data-theme');
+  applyTheme(cur === 'dark' ? 'light' : 'dark');
+});
+
+var Speech = (function(){
+  var voices = [];
+  var chosenVoice = null;
+  var currentUtterance = null;
+  var currentEls = [];
+  var rate = 0.95;
+  var isPaused = false;
+
+  function loadVoices(){
+    voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+    var de = voices.filter(function(v){ return /de-DE|de_DE|German/i.test(v.lang); });
+    if(!de.length) de = voices.filter(function(v){ return /^de/i.test(v.lang); });
+    var preferredNames = ['Google Deutsch','Anna','Markus','Petra','Yannick','Amala'];
+    var found = null;
+    for(var i=0;i<preferredNames.length && !found;i++){
+      found = de.find(function(v){ return v.name.indexOf(preferredNames[i]) !== -1; });
+    }
+    chosenVoice = found || de[0] || null;
+    var dockVoice = qs('#dockVoice');
+    if(dockVoice) dockVoice.textContent = chosenVoice ? chosenVoice.name : 'صوت النظام الافتراضي';
+  }
+  if(window.speechSynthesis){
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+  }
+
+  function clearHighlights(){
+    currentEls.forEach(function(el){ el.classList.remove('speaking'); });
+    currentEls = [];
+  }
+
+  function speak(text, opts){
+    if(!window.speechSynthesis) { toast('متصفحك لا يدعم النطق الصوتي'); return; }
+    opts = opts || {};
+    window.speechSynthesis.cancel();
+    clearHighlights();
+    if(opts.els) currentEls = opts.els;
+    currentEls.forEach(function(el){ el.classList.add('speaking'); });
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'de-DE';
+    if(chosenVoice) u.voice = chosenVoice;
+    u.rate = rate;
+    u.onend = function(){ clearHighlights(); showDock(false); if(opts.onend) opts.onend(); };
+    u.onerror = function(){ clearHighlights(); };
+    currentUtterance = u;
+    window.speechSynthesis.speak(u);
+    showDock(true, opts.label || text);
+  }
+
+  function replay(){ if(currentUtterance){ speak(currentUtterance.text, {els:currentEls, label: qs('#dockText').textContent}); } }
+  function togglePause(){
+    if(!window.speechSynthesis) return;
+    if(window.speechSynthesis.speaking && !isPaused){ window.speechSynthesis.pause(); isPaused = true; qs('#dockPlayIcon use').setAttribute('href','#i-play'); }
+    else if(isPaused){ window.speechSynthesis.resume(); isPaused = false; qs('#dockPlayIcon use').setAttribute('href','#i-pause'); }
+  }
+  function setRate(r){ rate = r; }
+
+  var dock = qs('#audioDock'), dockText = qs('#dockText');
+  function showDock(visible, label){
+    if(visible){ dock.classList.add('visible'); dockText.textContent = label || ''; qs('#dockPlayIcon use').setAttribute('href','#i-pause'); isPaused=false; }
+    else { dock.classList.remove('visible'); }
+  }
+  qs('#dockPlayPause').addEventListener('click', togglePause);
+  qs('#dockReplay').addEventListener('click', replay);
+  qs('#dockSpeed').addEventListener('input', function(e){ setRate(parseFloat(e.target.value)); if(window.speechSynthesis && window.speechSynthesis.speaking) replay(); });
+
+  return { speak: speak, replay: replay };
+})();
+
+document.addEventListener('click', function(e){
+  var target = e.target.closest ? e.target.closest('[data-speak]') : null;
+  if(target){
+    Speech.speak(target.getAttribute('data-speak'), { els:[target], label: target.getAttribute('data-speak') });
+  }
+});
+
+function toArabicDigits(n){
+  var map = {'0':'٠','1':'١','2':'٢','3':'٣','4':'٤','5':'٥','6':'٦','7':'٧','8':'٨','9':'٩'};
+  return String(n).replace(/[0-9]/g, function(d){ return map[d]; });
+}
+
+/* ==========================================================================
+   DATA — Perfekt verbs across four Partizip-formation categories
+   ========================================================================== */
+var CAT_LABELS = { schwach:'Schwach', stark:'Stark', ohnege:'ohne ge-', trennbar:'Trennbar' };
+var CAT_COLORS = { schwach:'var(--perf-schwach)', stark:'var(--perf-stark)', ohnege:'var(--perf-ohnege)', trennbar:'var(--perf-trennbar)' };
+var AUX_COLORS = { haben:'var(--perf-haben)', sein:'var(--perf-sein)' };
+
+var PERFEKT_VERBS = {
+  schwach: [
+    { key:'machen', word:'machen', ar:'يفعل / يصنع', aux:'haben', partizip:'gemacht',
+      blocks:[{t:'ge',ty:'ge'},{t:'mach',ty:'stem'},{t:'t',ty:'ending'}],
+      ex:{ sentence:'Ich habe meine Hausaufgaben gemacht.', aux:'habe', marked:'gemacht', ar:'أنجزت واجباتي.' } },
+    { key:'spielen', word:'spielen', ar:'يلعب', aux:'haben', partizip:'gespielt',
+      blocks:[{t:'ge',ty:'ge'},{t:'spiel',ty:'stem'},{t:'t',ty:'ending'}],
+      ex:{ sentence:'Er hat den ganzen Tag Fußball gespielt.', aux:'hat', marked:'gespielt', ar:'لعب كرة القدم طوال اليوم.' } },
+    { key:'kaufen', word:'kaufen', ar:'يشتري', aux:'haben', partizip:'gekauft',
+      blocks:[{t:'ge',ty:'ge'},{t:'kauf',ty:'stem'},{t:'t',ty:'ending'}],
+      ex:{ sentence:'Wir haben ein neues Auto gekauft.', aux:'haben', marked:'gekauft', ar:'اشترينا سيارة جديدة.' } },
+    { key:'lernen', word:'lernen', ar:'يتعلّم', aux:'haben', partizip:'gelernt',
+      blocks:[{t:'ge',ty:'ge'},{t:'lern',ty:'stem'},{t:'t',ty:'ending'}],
+      ex:{ sentence:'Sie hat drei Jahre Englisch gelernt.', aux:'hat', marked:'gelernt', ar:'تعلّمت الإنجليزية لثلاث سنوات.' } },
+    { key:'hoeren', word:'hören', ar:'يسمع', aux:'haben', partizip:'gehört',
+      blocks:[{t:'ge',ty:'ge'},{t:'hör',ty:'stem'},{t:'t',ty:'ending'}],
+      ex:{ sentence:'Wir haben laute Musik gehört.', aux:'haben', marked:'gehört', ar:'استمعنا إلى موسيقى صاخبة.' } },
+    { key:'arbeiten', word:'arbeiten', ar:'يعمل', aux:'haben', partizip:'gearbeitet',
+      blocks:[{t:'ge',ty:'ge'},{t:'arbeit',ty:'stem'},{t:'et',ty:'ending'}],
+      ex:{ sentence:'Ich habe bis spät gearbeitet.', aux:'habe', marked:'gearbeitet', ar:'عملت حتى وقت متأخر.' },
+      note:'حرف e إضافي لأن الجذر ينتهي بـ -t.' },
+    { key:'wohnen', word:'wohnen', ar:'يسكن', aux:'haben', partizip:'gewohnt',
+      blocks:[{t:'ge',ty:'ge'},{t:'wohn',ty:'stem'},{t:'t',ty:'ending'}],
+      ex:{ sentence:'Ich habe fünf Jahre in Berlin gewohnt.', aux:'habe', marked:'gewohnt', ar:'سكنت في برلين خمس سنوات.' } }
+  ],
+  stark: [
+    { key:'gehen', word:'gehen', ar:'يذهب', aux:'sein', partizip:'gegangen',
+      blocks:[{t:'ge',ty:'ge'},{t:'gang',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Ich bin gestern ins Kino gegangen.', aux:'bin', marked:'gegangen', ar:'ذهبت أمس إلى السينما.' } },
+    { key:'sehen', word:'sehen', ar:'يرى', aux:'haben', partizip:'gesehen',
+      blocks:[{t:'ge',ty:'ge'},{t:'seh',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Wir haben einen interessanten Film gesehen.', aux:'haben', marked:'gesehen', ar:'شاهدنا فيلمًا مثيرًا.' } },
+    { key:'essen', word:'essen', ar:'يأكل', aux:'haben', partizip:'gegessen',
+      blocks:[{t:'ge',ty:'ge'},{t:'gess',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Wir haben Pizza gegessen.', aux:'haben', marked:'gegessen', ar:'أكلنا بيتزا.' } },
+    { key:'fahren', word:'fahren', ar:'يقود / يسافر', aux:'sein', partizip:'gefahren',
+      blocks:[{t:'ge',ty:'ge'},{t:'fahr',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Er ist nach Berlin gefahren.', aux:'ist', marked:'gefahren', ar:'سافر إلى برلين.' } },
+    { key:'nehmen', word:'nehmen', ar:'يأخذ', aux:'haben', partizip:'genommen',
+      blocks:[{t:'ge',ty:'ge'},{t:'nomm',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Ich habe den Bus genommen.', aux:'habe', marked:'genommen', ar:'أخذت الحافلة.' } },
+    { key:'kommen', word:'kommen', ar:'يأتي', aux:'sein', partizip:'gekommen',
+      blocks:[{t:'ge',ty:'ge'},{t:'komm',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Er ist zu spät gekommen.', aux:'ist', marked:'gekommen', ar:'وصل متأخرًا.' } },
+    { key:'trinken', word:'trinken', ar:'يشرب', aux:'haben', partizip:'getrunken',
+      blocks:[{t:'ge',ty:'ge'},{t:'trunk',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Sie hat ein Glas Wasser getrunken.', aux:'hat', marked:'getrunken', ar:'شربت كوب ماء.' } }
+  ],
+  ohnege: [
+    { key:'studieren', word:'studieren', ar:'يدرس (بالجامعة)', aux:'haben', partizip:'studiert',
+      blocks:[{t:'studier',ty:'stem'},{t:'t',ty:'ending'}],
+      ex:{ sentence:'Ich habe in München studiert.', aux:'habe', marked:'studiert', ar:'درست في ميونخ.' } },
+    { key:'telefonieren', word:'telefonieren', ar:'يتصل هاتفيًا', aux:'haben', partizip:'telefoniert',
+      blocks:[{t:'telefonier',ty:'stem'},{t:'t',ty:'ending'}],
+      ex:{ sentence:'Wir haben lange telefoniert.', aux:'haben', marked:'telefoniert', ar:'تحدّثنا هاتفيًا طويلاً.' } },
+    { key:'besuchen', word:'besuchen', ar:'يزور', aux:'haben', partizip:'besucht',
+      blocks:[{t:'be',ty:'prefix'},{t:'such',ty:'stem'},{t:'t',ty:'ending'}],
+      ex:{ sentence:'Ich habe meine Oma besucht.', aux:'habe', marked:'besucht', ar:'زرت جدتي.' } },
+    { key:'verstehen', word:'verstehen', ar:'يفهم', aux:'haben', partizip:'verstanden',
+      blocks:[{t:'ver',ty:'prefix'},{t:'stand',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Sie hat das Problem verstanden.', aux:'hat', marked:'verstanden', ar:'فهمت المشكلة.' } },
+    { key:'erklaeren', word:'erklären', ar:'يشرح', aux:'haben', partizip:'erklärt',
+      blocks:[{t:'er',ty:'prefix'},{t:'klär',ty:'stem'},{t:'t',ty:'ending'}],
+      ex:{ sentence:'Der Lehrer hat die Regel erklärt.', aux:'hat', marked:'erklärt', ar:'شرح المعلم القاعدة.' } },
+    { key:'vergessen', word:'vergessen', ar:'ينسى', aux:'haben', partizip:'vergessen',
+      blocks:[{t:'ver',ty:'prefix'},{t:'gess',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Ich habe deinen Namen vergessen.', aux:'habe', marked:'vergessen', ar:'نسيت اسمك.' },
+      note:'صدفة لغوية: صيغة المصدر وPartizip II متطابقتان هنا.' }
+  ],
+  trennbar: [
+    { key:'aufstehen', word:'aufstehen', ar:'يستيقظ', aux:'sein', partizip:'aufgestanden',
+      blocks:[{t:'auf',ty:'prefix'},{t:'ge',ty:'ge'},{t:'stand',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Sie ist um 7 Uhr aufgestanden.', aux:'ist', marked:'aufgestanden', ar:'استيقظت الساعة السابعة.' } },
+    { key:'einkaufen', word:'einkaufen', ar:'يتسوّق', aux:'haben', partizip:'eingekauft',
+      blocks:[{t:'ein',ty:'prefix'},{t:'ge',ty:'ge'},{t:'kauf',ty:'stem'},{t:'t',ty:'ending'}],
+      ex:{ sentence:'Wir haben im Supermarkt eingekauft.', aux:'haben', marked:'eingekauft', ar:'تسوّقنا في السوبرماركت.' } },
+    { key:'anrufen', word:'anrufen', ar:'يتصل هاتفيًا (بشخص)', aux:'haben', partizip:'angerufen',
+      blocks:[{t:'an',ty:'prefix'},{t:'ge',ty:'ge'},{t:'ruf',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Er hat mich gestern angerufen.', aux:'hat', marked:'angerufen', ar:'اتصل بي أمس.' } },
+    { key:'mitbringen', word:'mitbringen', ar:'يُحضر معه', aux:'haben', partizip:'mitgebracht',
+      blocks:[{t:'mit',ty:'prefix'},{t:'ge',ty:'ge'},{t:'brach',ty:'stem'},{t:'t',ty:'ending'}],
+      ex:{ sentence:'Sie hat mir ein Geschenk mitgebracht.', aux:'hat', marked:'mitgebracht', ar:'أحضرت لي هدية.' } },
+    { key:'ankommen', word:'ankommen', ar:'يصل', aux:'sein', partizip:'angekommen',
+      blocks:[{t:'an',ty:'prefix'},{t:'ge',ty:'ge'},{t:'komm',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Der Zug ist pünktlich angekommen.', aux:'ist', marked:'angekommen', ar:'وصل القطار في موعده.' } },
+    { key:'einladen', word:'einladen', ar:'يدعو', aux:'haben', partizip:'eingeladen',
+      blocks:[{t:'ein',ty:'prefix'},{t:'ge',ty:'ge'},{t:'lad',ty:'stem'},{t:'en',ty:'ending'}],
+      ex:{ sentence:'Wir haben unsere Freunde eingeladen.', aux:'haben', marked:'eingeladen', ar:'دعونا أصدقاءنا.' } }
+  ]
+};
+
+var HABEN_SEIN_TABLE = { headers:['أفعال sein (حركة / تغيّر حالة)','أفعال haben (كل الباقي)'], rows:[
+  ['gehen, kommen, fahren, fliegen','machen, kaufen, lernen, hören'],
+  ['aufstehen, aufwachen, einschlafen','sehen, lesen, essen, trinken'],
+  ['werden, bleiben, sein (استثناءان)','schlafen (استثناء)'],
+  ['sterben, wachsen, passieren','كل الأفعال الانعكاسية والمتعدية']
+]};
+
+/* ==========================================================================
+   MISTAKES
+   ========================================================================== */
+var MISTAKES = [
+  { cat:'stark', color:'var(--perf-stark)', groupLabel:'Stark',
+    wrong:'Ich habe gegeht.', right:'Ich bin gegangen.',
+    note:'gehen فعل حركة يستخدم sein، وPartizip II الصحيح هو gegangen وليس صيغة منتظمة.' },
+  { cat:'haben-sein', color:'var(--perf-haben)', groupLabel:'haben/sein',
+    wrong:'Er ist das Buch gelesen.', right:'Er hat das Buch gelesen.',
+    note:'lesen فعل متعدٍ (يأخذ مفعولاً به مباشرًا)، فيستخدم haben دائمًا وليس sein.' },
+  { cat:'ohnege', color:'var(--perf-ohnege)', groupLabel:'ohne ge-',
+    wrong:'Ich habe gestudiert.', right:'Ich habe studiert.',
+    note:'الأفعال المنتهية بـ -ieren لا تأخذ بادئة ge- أبدًا.' },
+  { cat:'trennbar', color:'var(--perf-trennbar)', groupLabel:'Trennbar',
+    wrong:'Wir haben angekauft.', right:'Wir haben eingekauft.',
+    note:'البادئة المنفصلة تبقى قبل ge- كما هي، وليس بعدها: ein+ge+kauft.' },
+  { cat:'ohnege', color:'var(--perf-ohnege)', groupLabel:'ohne ge-',
+    wrong:'Sie hat das Problem verstehen.', right:'Sie hat das Problem verstanden.',
+    note:'verstehen فعل ببادئة غير منفصلة (ver-) وقوي، فصيغة Partizip II الصحيحة هي verstanden.' },
+  { cat:'haben-sein', color:'var(--perf-haben)', groupLabel:'haben/sein',
+    wrong:'Ich bin geschlafen.', right:'Ich habe geschlafen.',
+    note:'رغم أن النوم يبدو حالة، الفعل schlafen يستخدم haben وليس sein (استثناء).' },
+  { cat:'schwach', color:'var(--perf-schwach)', groupLabel:'ترتيب الجملة',
+    wrong:'Er hat besucht mich.', right:'Er hat mich besucht.',
+    note:'يجب أن يأتي Partizip II في نهاية الجملة دائمًا، وليس مباشرة بعد الفعل المساعد.' },
+  { cat:'stark', color:'var(--perf-stark)', groupLabel:'Stark',
+    wrong:'Das Kind ist gewachst.', right:'Das Kind ist gewachsen.',
+    note:'wachsen فعل قوي، والصيغة الصحيحة gewachsen وليس المنتظمة gewachst.' }
+];
+
+/* ==========================================================================
+   EXERCISE DATA
+   ========================================================================== */
+var MCQ = [
+  { sentence:'Ich ___ gestern ins Kino gegangen.', options:['bin','habe','hat'], correct:'bin', ar:'ذهبت أمس إلى السينما.', explain:'gehen فعل حركة، يستخدم sein.' },
+  { sentence:'Er hat das Buch ___.', options:['gelesen','gelest','gelesent'], correct:'gelesen', ar:'قرأ الكتاب.', explain:'lesen فعل قوي: lesen → gelesen.' },
+  { sentence:'Wir haben Pizza ___.', options:['gegessen','geesst','gegesst'], correct:'gegessen', ar:'أكلنا بيتزا.', explain:'essen فعل قوي: essen → gegessen.' },
+  { sentence:'Ich habe ___.', options:['studiert','gestudiert','studierte'], correct:'studiert', ar:'درست بالجامعة.', explain:'الأفعال بـ -ieren لا تأخذ ge-.' },
+  { sentence:'Sie ist um 7 Uhr ___.', options:['aufgestanden','aufgestehen','gestanden'], correct:'aufgestanden', ar:'استيقظت الساعة السابعة.', explain:'فعل منفصل: auf + ge + standen.' },
+  { sentence:'Wir haben das Auto ___.', options:['gekauft','gekaufen','kaufte'], correct:'gekauft', ar:'اشترينا السيارة.', explain:'kaufen فعل ضعيف: kaufen → gekauft.' },
+  { sentence:'Er ___ nach Berlin gefahren.', options:['ist','hat','war'], correct:'ist', ar:'سافر إلى برلين.', explain:'fahren هنا حركة بلا مفعول به، فيستخدم sein.' },
+  { sentence:'Ich habe meine Hausaufgaben ___.', options:['gemacht','gemachen','machte'], correct:'gemacht', ar:'أنجزت واجباتي.', explain:'machen فعل ضعيف: machen → gemacht.' },
+  { sentence:'Sie hat das Problem ___.', options:['verstanden','vergestanden','versteht'], correct:'verstanden', ar:'فهمت المشكلة.', explain:'verstehen فعل ببادئة غير منفصلة، بلا ge- إضافية.' },
+  { sentence:'Er hat mich gestern ___.', options:['angerufen','anrufen','gerufen'], correct:'angerufen', ar:'اتصل بي أمس.', explain:'فعل منفصل: an + ge + rufen.' },
+  { sentence:'Das Kind ist sehr schnell ___.', options:['gewachsen','gewachst','wuchs'], correct:'gewachsen', ar:'نما الطفل بسرعة كبيرة.', explain:'wachsen فعل قوي: wachsen → gewachsen.' },
+  { sentence:'Ich bin gestern zu Hause ___.', options:['geblieben','gebleibt','blieb'], correct:'geblieben', ar:'بقيت في البيت أمس.', explain:'bleiben استثناء يستخدم sein رغم عدم وجود حركة.' },
+  { sentence:'Wir haben viel Wasser ___.', options:['getrunken','getrinkt','trank'], correct:'getrunken', ar:'شربنا ماءً كثيرًا.', explain:'trinken فعل قوي: trinken → getrunken.' },
+  { sentence:'Er hat mir ein Buch ___.', options:['mitgebracht','mitgebringt','gebracht'], correct:'mitgebracht', ar:'أحضر لي كتابًا.', explain:'فعل منفصل + واسطة: mit + ge + bracht.' },
+  { sentence:'Ich habe dich nicht ___.', options:['vergessen','vergesst','vergaß'], correct:'vergessen', ar:'لم أنسك.', explain:'vergessen فعل ببادئة غير منفصلة وقوي؛ المصدر وPartizip II متطابقان صدفة.' },
+  { sentence:'Sie ___ letztes Jahr gestorben.', options:['ist','hat','war'], correct:'ist', ar:'توفيت العام الماضي.', explain:'sterben فعل تغيّر حالة، يستخدم sein.' }
+];
+
+var FILL = [
+  { sentence:'Ich ___ gestern ins Kino gegangen.', answer:'bin', ar:'ذهبت أمس إلى السينما.' },
+  { sentence:'Er hat das Buch ___.', answer:'gelesen', ar:'قرأ الكتاب.' },
+  { sentence:'Wir haben Pizza ___.', answer:'gegessen', ar:'أكلنا بيتزا.' },
+  { sentence:'Ich habe ___.', answer:'studiert', ar:'درست بالجامعة.' },
+  { sentence:'Sie ist um 7 Uhr ___.', answer:'aufgestanden', ar:'استيقظت الساعة السابعة.' },
+  { sentence:'Wir haben das Auto ___.', answer:'gekauft', ar:'اشترينا السيارة.' },
+  { sentence:'Er ___ nach Berlin gefahren.', answer:'ist', ar:'سافر إلى برلين.' },
+  { sentence:'Ich habe meine Hausaufgaben ___.', answer:'gemacht', ar:'أنجزت واجباتي.' },
+  { sentence:'Sie hat das Problem ___.', answer:'verstanden', ar:'فهمت المشكلة.' },
+  { sentence:'Er hat mich gestern ___.', answer:'angerufen', ar:'اتصل بي أمس.' },
+  { sentence:'Das Kind ist sehr schnell ___.', answer:'gewachsen', ar:'نما الطفل بسرعة كبيرة.' },
+  { sentence:'Ich bin gestern zu Hause ___.', answer:'geblieben', ar:'بقيت في البيت أمس.' },
+  { sentence:'Wir haben viel Wasser ___.', answer:'getrunken', ar:'شربنا ماءً كثيرًا.' },
+  { sentence:'Ich habe dich nicht ___.', answer:'vergessen', ar:'لم أنسك.' }
+];
+
+var BUILDER = [
+  { words:['Ich','bin','gestern','ins','Kino','gegangen','.'], ar:'ذهبت أمس إلى السينما.' },
+  { words:['Er','hat','das','Buch','gelesen','.'], ar:'قرأ الكتاب.' },
+  { words:['Wir','haben','das','Auto','gekauft','.'], ar:'اشترينا السيارة.' },
+  { words:['Sie','ist','um','7','Uhr','aufgestanden','.'], ar:'استيقظت الساعة السابعة.' },
+  { words:['Er','hat','mich','gestern','angerufen','.'], ar:'اتصل بي أمس.' },
+  { words:['Ich','habe','das','Problem','verstanden','.'], ar:'فهمت المشكلة.' },
+  { words:['Das','Kind','ist','sehr','schnell','gewachsen','.'], ar:'نما الطفل بسرعة كبيرة.' },
+  { words:['Wir','haben','viel','Wasser','getrunken','.'], ar:'شربنا ماءً كثيرًا.' }
+];
+
+var MATCH_ITEMS = [
+  { de:'gehen', pa:'gegangen' },
+  { de:'sehen', pa:'gesehen' },
+  { de:'machen', pa:'gemacht' },
+  { de:'kaufen', pa:'gekauft' },
+  { de:'essen', pa:'gegessen' },
+  { de:'trinken', pa:'getrunken' },
+  { de:'kommen', pa:'gekommen' },
+  { de:'studieren', pa:'studiert' },
+  { de:'verstehen', pa:'verstanden' },
+  { de:'aufstehen', pa:'aufgestanden' },
+  { de:'anrufen', pa:'angerufen' },
+  { de:'bleiben', pa:'geblieben' }
+];
+
+var AUX_ITEMS = [
+  { verb:'gehen', mode:'sein', note:'فعل حركة من مكان إلى آخر.' },
+  { verb:'machen', mode:'haben', note:'فعل متعدٍ عادي.' },
+  { verb:'kommen', mode:'sein', note:'فعل حركة.' },
+  { verb:'essen', mode:'haben', note:'فعل متعدٍ.' },
+  { verb:'sterben', mode:'sein', note:'تغيّر حالة.' },
+  { verb:'schlafen', mode:'haben', note:'استثناء رغم أنه يصف حالة.' },
+  { verb:'bleiben', mode:'sein', note:'استثناء رغم عدم وجود حركة.' },
+  { verb:'sehen', mode:'haben', note:'فعل متعدٍ.' },
+  { verb:'aufstehen', mode:'sein', note:'تغيّر حالة.' },
+  { verb:'kaufen', mode:'haben', note:'فعل متعدٍ.' }
+];
+
+/* ==========================================================================
+   GENERIC RENDER HELPERS
+   ========================================================================== */
+function renderTable(el, data){
+  var html = '<tr>' + data.headers.map(function(h){ return '<th>'+h+'</th>'; }).join('') + '</tr>';
+  data.rows.forEach(function(row){
+    html += '<tr>' + row.map(function(cell){ return '<td>'+cell+'</td>'; }).join('') + '</tr>';
+  });
+  el.innerHTML = html;
+}
+
+function renderMultiMarkSentence(container, sentence, marks, ar){
+  container.innerHTML = '';
+  var wrap = ce('div','route-sentence');
+  var words = sentence.split(' ');
+  words.forEach(function(w){
+    var clean = w.replace(/[.,]+$/,'');
+    var punct = w.slice(clean.length);
+    var mark = marks.filter(function(m){ return m.word === clean; })[0];
+    var span;
+    if(mark){
+      span = ce('span', mark.cls, clean);
+      span.style.setProperty(mark.cls==='rs-aux' ? '--aux-marker' : '--verb-marker', mark.color);
+    } else {
+      span = ce('span','rs-word', clean);
+    }
+    span.addEventListener('click', function(){ Speech.speak(clean, {els:[span]}); });
+    wrap.appendChild(span);
+    wrap.appendChild(document.createTextNode(punct ? punct+' ' : ' '));
+  });
+  container.appendChild(wrap);
+  if(ar){ container.appendChild(ce('p','route-ar', ar)); }
+  var playBtn = ce('button','btn btn-primary btn-sm', '<svg class="icon" style="width:16px;height:16px"><use href="#i-speaker"/></svg> استمع للجملة كاملة');
+  playBtn.style.marginTop = '14px';
+  playBtn.addEventListener('click', function(){ Speech.speak(sentence, {label:sentence}); });
+  container.appendChild(playBtn);
+}
+
+function renderBlocks(container, blocks, color){
+  container.innerHTML = '';
+  blocks.forEach(function(b){
+    var block = ce('div','p-block type-'+b.ty, b.t);
+    if(b.ty === 'stem' || b.ty === 'ending'){ block.style.setProperty('--block-color', color); }
+    block.addEventListener('click', function(){ Speech.speak(b.t, {els:[block]}); });
+    container.appendChild(block);
+  });
+}
+
+/* ==========================================================================
+   CATEGORY EXAMPLES GRIDS (static overview per section)
+   ========================================================================== */
+function renderCategoryExamplesGrid(elId, cat){
+  var grid = qs('#'+elId);
+  grid.innerHTML = '';
+  PERFEKT_VERBS[cat].forEach(function(v){
+    var card = ce('div','info-card');
+    card.style.textAlign = 'center';
+    var title = ce('div','de', '<b style="font-size:1.05rem">'+v.word+'</b>');
+    card.appendChild(title);
+    var partizip = ce('div','de', v.partizip);
+    partizip.style.cssText = 'margin-top:8px;font-size:1.15rem;font-weight:700;color:'+CAT_COLORS[cat]+';cursor:pointer';
+    partizip.addEventListener('click', function(){ Speech.speak(v.partizip, {els:[partizip]}); });
+    card.appendChild(partizip);
+    var auxTag = ce('div', null, v.aux);
+    auxTag.style.cssText = 'margin-top:6px;font-size:.78rem;font-family:var(--font-mono);color:'+AUX_COLORS[v.aux];
+    card.appendChild(auxTag);
+    var arLine = ce('div', null, v.ar);
+    arLine.style.cssText = 'margin-top:6px;font-size:.82rem;color:var(--ink-soft)';
+    card.appendChild(arLine);
+    grid.appendChild(card);
+  });
+}
+
+/* ==========================================================================
+   WORKSHOP — participle building blocks
+   ========================================================================== */
+function buildAllVerbsFlat(){
+  var flat = [];
+  Object.keys(PERFEKT_VERBS).forEach(function(cat){
+    PERFEKT_VERBS[cat].forEach(function(v){
+      var copy = {}; for(var k in v){ copy[k] = v[k]; }
+      copy.cat = cat;
+      flat.push(copy);
+    });
+  });
+  return flat;
+}
+var ALL_VERBS = buildAllVerbsFlat();
+
+function renderWorkshopPicker(){
+  var wrap = qs('#workshopPicker');
+  wrap.innerHTML = '';
+  var buttons = [];
+  ALL_VERBS.forEach(function(v){
+    var btn = ce('button','verb-picker-btn de', v.word);
+    btn.type = 'button';
+    btn.addEventListener('click', function(){
+      buttons.forEach(function(b){ b.classList.remove('active'); b.style.background=''; b.style.borderColor=''; });
+      btn.classList.add('active'); btn.style.background = CAT_COLORS[v.cat]; btn.style.borderColor = CAT_COLORS[v.cat];
+      showWorkshopVerb(v);
+      markVisited('workshop');
+    });
+    wrap.appendChild(btn);
+    buttons.push(btn);
+  });
+  buttons[0].click();
+}
+
+function showWorkshopVerb(v){
+  var blocksRow = qs('#blocksRow');
+  var infoCard = qs('#workshopInfoCard');
+  var exampleCard = qs('#workshopExampleCard');
+  infoCard.classList.add('focusing'); exampleCard.classList.add('focusing');
+  setTimeout(function(){
+    renderBlocks(blocksRow, v.blocks, CAT_COLORS[v.cat]);
+
+    infoCard.innerHTML = '';
+    var tag1 = ce('span','conj-rule-tag', CAT_LABELS[v.cat]);
+    tag1.style.background = CAT_COLORS[v.cat];
+    infoCard.appendChild(tag1);
+    var tag2 = ce('span','conj-rule-tag de', v.aux);
+    tag2.style.background = AUX_COLORS[v.aux];
+    infoCard.appendChild(tag2);
+    var title = ce('div','conj-title de', v.word);
+    title.addEventListener('click', function(){ Speech.speak(v.word, {els:[title]}); });
+    infoCard.appendChild(title);
+    infoCard.appendChild(ce('div','conj-ar', v.ar));
+    var partizipLine = ce('div','de', '<b style="font-size:1.3rem;color:'+CAT_COLORS[v.cat]+'">'+v.partizip+'</b>');
+    partizipLine.style.marginTop = '10px';
+    partizipLine.style.cursor = 'pointer';
+    partizipLine.addEventListener('click', function(){ Speech.speak(v.partizip, {els:[partizipLine]}); });
+    infoCard.appendChild(partizipLine);
+    if(v.note){
+      var noteEl = ce('p', null, v.note);
+      noteEl.style.cssText = 'margin-top:10px;font-size:.84rem;color:var(--ink-faint)';
+      infoCard.appendChild(noteEl);
+    }
+
+    exampleCard.innerHTML = '';
+    exampleCard.appendChild(ce('h3', null, 'مثال كامل'));
+    var box = ce('div','example-box');
+    exampleCard.appendChild(box);
+    renderMultiMarkSentence(box, v.ex.sentence, [
+      { word: v.ex.aux, color: AUX_COLORS[v.aux], cls:'rs-aux' },
+      { word: v.ex.marked, color: CAT_COLORS[v.cat], cls:'rs-verb' }
+    ], v.ex.ar);
+
+    infoCard.classList.remove('focusing'); exampleCard.classList.remove('focusing');
+  }, 150);
+}
+
+/* ==========================================================================
+   REFERENCE TABLE (filterable)
+   ========================================================================== */
+var CAT_FILTERS = [
+  { key:'all', label:'الكل', color:'var(--ink)' },
+  { key:'schwach', label:'Schwach', color:'var(--perf-schwach)' },
+  { key:'stark', label:'Stark', color:'var(--perf-stark)' },
+  { key:'ohnege', label:'ohne ge-', color:'var(--perf-ohnege)' },
+  { key:'trennbar', label:'Trennbar', color:'var(--perf-trennbar)' }
+];
+var referenceActiveFilter = 'all';
+
+function renderReferenceFilterBar(){
+  var bar = qs('#referenceFilterBar');
+  bar.innerHTML = '';
+  CAT_FILTERS.forEach(function(f){
+    var chip = ce('button','filter-chip','<span class="dot"></span>'+f.label);
+    chip.style.setProperty('--dot-color', f.color);
+    chip.type = 'button';
+    if(f.key===referenceActiveFilter) chip.classList.add('active');
+    chip.addEventListener('click', function(){
+      referenceActiveFilter = f.key;
+      qsa('.filter-chip', bar).forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      renderReferenceTable();
+    });
+    bar.appendChild(chip);
+  });
+}
+
+function renderReferenceTable(){
+  var el = qs('#referenceTable');
+  var html = '<tr><th>Infinitiv</th><th>Hilfsverb</th><th>Partizip II</th><th>المعنى</th></tr>';
+  ALL_VERBS.forEach(function(v){
+    if(referenceActiveFilter !== 'all' && v.cat !== referenceActiveFilter) return;
+    html += '<tr><td class="de" data-speak="'+v.word+'" style="font-weight:700">'+v.word+'</td>'+
+      '<td class="de" style="color:'+AUX_COLORS[v.aux]+';font-weight:700">'+v.aux+'</td>'+
+      '<td class="de" data-speak="'+v.partizip+'" style="color:'+CAT_COLORS[v.cat]+';font-weight:700">'+v.partizip+'</td>'+
+      '<td>'+v.ar+'</td></tr>';
+  });
+  el.innerHTML = html;
+}
+
+/* ==========================================================================
+   VOCAB GRID (filterable flip cards)
+   ========================================================================== */
+var vocabActiveFilter = 'all';
+function renderVocabFilterBar(){
+  var bar = qs('#vocabFilterBar');
+  bar.innerHTML = '';
+  CAT_FILTERS.forEach(function(f){
+    var chip = ce('button','filter-chip','<span class="dot"></span>'+f.label);
+    chip.style.setProperty('--dot-color', f.color);
+    chip.type = 'button';
+    if(f.key===vocabActiveFilter) chip.classList.add('active');
+    chip.addEventListener('click', function(){
+      vocabActiveFilter = f.key;
+      qsa('.filter-chip', bar).forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      renderVocabGrid();
+    });
+    bar.appendChild(chip);
+  });
+}
+
+function renderVocabGrid(){
+  var grid = qs('#vocabGrid');
+  grid.innerHTML = '';
+  ALL_VERBS.forEach(function(v){
+    var visible = vocabActiveFilter === 'all' || v.cat === vocabActiveFilter;
+    var color = CAT_COLORS[v.cat];
+    var card = ce('div','flip-card'+(visible?'':' hidden-item'));
+    var inner = ce('div','flip-card-inner');
+    var front = ce('div','flip-face flip-front');
+    var tag = ce('span','flip-case-tag', CAT_LABELS[v.cat]);
+    tag.style.background = color;
+    front.appendChild(tag);
+    front.appendChild(ce('div','de', v.word));
+    front.appendChild(ce('div','flip-hint','انقر للقلب ↺'));
+    var speakFront = ce('button','speak-dot', '<svg class="icon"><use href="#i-speaker"/></svg>');
+    speakFront.addEventListener('click', function(e){ e.stopPropagation(); Speech.speak(v.word, {els:[]}); });
+    front.appendChild(speakFront);
+    var back = ce('div','flip-face flip-back');
+    back.style.background = 'linear-gradient(155deg, '+color+', var(--ink))';
+    back.appendChild(ce('div','meaning-de de', v.aux+' '+v.partizip));
+    back.appendChild(ce('div','meaning', v.ar));
+    var speakBack = ce('button','speak-dot', '<svg class="icon"><use href="#i-speaker"/></svg>');
+    speakBack.addEventListener('click', function(e){ e.stopPropagation(); Speech.speak(v.aux+' '+v.partizip, {els:[]}); });
+    back.appendChild(speakBack);
+    inner.appendChild(front); inner.appendChild(back);
+    card.appendChild(inner);
+    card.addEventListener('click', function(){ card.classList.toggle('flipped'); markVisited('cards'); });
+    grid.appendChild(card);
+  });
+}
+
+/* ==========================================================================
+   EXAMPLES LIST (filterable)
+   ========================================================================== */
+var examplesActiveFilter = 'all';
+function renderExamplesFilterBar(){
+  var bar = qs('#examplesFilterBar');
+  bar.innerHTML = '';
+  CAT_FILTERS.forEach(function(f){
+    var chip = ce('button','filter-chip','<span class="dot"></span>'+f.label);
+    chip.style.setProperty('--dot-color', f.color);
+    chip.type = 'button';
+    if(f.key===examplesActiveFilter) chip.classList.add('active');
+    chip.addEventListener('click', function(){
+      examplesActiveFilter = f.key;
+      qsa('.filter-chip', bar).forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      renderExamplesList();
+    });
+    bar.appendChild(chip);
+  });
+}
+
+function renderExamplesList(){
+  var list = qs('#examplesList');
+  list.innerHTML = '';
+  ALL_VERBS.forEach(function(v){
+    if(examplesActiveFilter !== 'all' && v.cat !== examplesActiveFilter) return;
+    var card = ce('div','info-card');
+    var head = ce('div');
+    head.style.cssText = 'display:flex;align-items:center;gap:10px;margin-bottom:12px';
+    var tag = ce('span','chip', CAT_LABELS[v.cat]);
+    tag.style.background = CAT_COLORS[v.cat]; tag.style.color = '#fff';
+    head.appendChild(tag);
+    head.appendChild(ce('span','de', '<b style="font-size:1.1rem">'+v.word+'</b>'));
+    card.appendChild(head);
+    var box = ce('div');
+    card.appendChild(box);
+    renderMultiMarkSentence(box, v.ex.sentence, [
+      { word: v.ex.aux, color: AUX_COLORS[v.aux], cls:'rs-aux' },
+      { word: v.ex.marked, color: CAT_COLORS[v.cat], cls:'rs-verb' }
+    ], v.ex.ar);
+    list.appendChild(card);
+  });
+}
+
+/* ==========================================================================
+   MISTAKES
+   ========================================================================== */
+function renderMistakes(){
+  var list = qs('#mistakesList');
+  list.innerHTML = '';
+  MISTAKES.forEach(function(m){
+    var card = ce('div','mistake-card');
+    var wrong = ce('div','mistake-side mistake-wrong');
+    wrong.innerHTML = '<span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-x"/></svg>خطأ شائع</span><span class="mistake-sentence">'+m.wrong+'</span>';
+    var right = ce('div','mistake-side mistake-right');
+    right.innerHTML = '<span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg>الصحيح</span><span class="mistake-sentence">'+m.right+'</span>';
+    right.querySelector('.mistake-sentence').addEventListener('click', function(e){ Speech.speak(m.right, {els:[e.currentTarget]}); });
+    card.appendChild(wrong); card.appendChild(right);
+    var note = ce('div','mistake-note');
+    var grpTag = ce('span','grp-tag', m.groupLabel);
+    grpTag.style.background = m.color;
+    note.appendChild(grpTag);
+    note.appendChild(document.createTextNode(m.note));
+    card.appendChild(note);
+    list.appendChild(card);
+  });
+}
+
+/* ==========================================================================
+   EXERCISES — scoring
+   ========================================================================== */
+var exerciseScore = { mcq:0, fill:0, builder:0, match:0, aux:0 };
+var exerciseTotal = { mcq:MCQ.length, fill:FILL.length, builder:BUILDER.length, match:MATCH_ITEMS.length, aux:AUX_ITEMS.length };
+
+function updateScoreBar(){
+  var done = exerciseScore.mcq + exerciseScore.fill + exerciseScore.builder + exerciseScore.match + exerciseScore.aux;
+  var total = exerciseTotal.mcq + exerciseTotal.fill + exerciseTotal.builder + exerciseTotal.match + exerciseTotal.aux;
+  var pct = Math.round((done/total)*100);
+  qs('#scoreFill').style.width = pct+'%';
+  qs('#scoreLabel').textContent = toArabicDigits(pct)+'٪';
+  qs('#countMcq').textContent = toArabicDigits(exerciseScore.mcq)+'/'+toArabicDigits(exerciseTotal.mcq);
+  qs('#countFill').textContent = toArabicDigits(exerciseScore.fill)+'/'+toArabicDigits(exerciseTotal.fill);
+  qs('#countBuilder').textContent = toArabicDigits(exerciseScore.builder)+'/'+toArabicDigits(exerciseTotal.builder);
+  qs('#countMatch').textContent = toArabicDigits(exerciseScore.match)+'/'+toArabicDigits(exerciseTotal.match);
+  qs('#countAux').textContent = toArabicDigits(exerciseScore.aux)+'/'+toArabicDigits(exerciseTotal.aux);
+  if(pct === 100) unlockBadge('champion');
+  refreshProgress();
+}
+
+function renderMcqPanel(){
+  var panel = qs('#panelMcq');
+  panel.innerHTML = '';
+  MCQ.forEach(function(q){
+    var block = ce('div','q-block');
+    var promptParts = q.sentence.split('___');
+    block.appendChild(ce('div','q-prompt de', promptParts[0]+'<span style="color:var(--primary);font-weight:700">___</span>'+(promptParts[1]||'')));
+    block.appendChild(ce('div','q-prompt-ar', q.ar));
+    var opts = ce('div','q-options');
+    var feedback = ce('div','q-feedback', q.explain);
+    q.options.forEach(function(opt){
+      var btn = ce('button','opt-btn de', opt);
+      btn.type = 'button';
+      btn.addEventListener('click', function(){
+        qsa('.opt-btn', opts).forEach(function(b){ b.disabled = true; });
+        if(opt === q.correct){
+          btn.classList.add('correct');
+          if(!block.dataset.done){ exerciseScore.mcq++; block.dataset.done='1'; updateScoreBar(); }
+        } else {
+          btn.classList.add('wrong');
+          qsa('.opt-btn', opts).forEach(function(b){ if(b.textContent===q.correct) b.classList.add('correct'); });
+        }
+        feedback.classList.add('show');
+        Speech.speak(promptParts[0]+' '+q.correct+' '+(promptParts[1]||''));
+      });
+      opts.appendChild(btn);
+    });
+    block.appendChild(opts);
+    block.appendChild(feedback);
+    panel.appendChild(block);
+  });
+}
+
+function renderFillPanel(){
+  var panel = qs('#panelFill');
+  panel.innerHTML = '';
+  FILL.forEach(function(q){
+    var block = ce('div','q-block');
+    var promptParts = q.sentence.split('___');
+    block.appendChild(ce('div','q-prompt de', promptParts[0]+' ______ '+(promptParts[1]||'')));
+    block.appendChild(ce('div','q-prompt-ar', q.ar));
+    var row = ce('div','fill-row');
+    var input = document.createElement('input');
+    input.type = 'text'; input.placeholder = '...'; input.setAttribute('dir','ltr');
+    var checkBtn = ce('button','fill-check','تحقّق');
+    checkBtn.type = 'button';
+    var result = ce('div','fill-result');
+    row.appendChild(input); row.appendChild(checkBtn); row.appendChild(result);
+    block.appendChild(row);
+    function check(){
+      var val = input.value.trim().toLowerCase();
+      var correct = q.answer.toLowerCase();
+      if(val === correct){
+        result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--success)"><use href="#i-check"/></svg>';
+        input.style.borderColor = 'var(--success)';
+        if(!block.dataset.done){ exerciseScore.fill++; block.dataset.done='1'; updateScoreBar(); }
+        Speech.speak(promptParts[0]+' '+q.answer+' '+(promptParts[1]||''));
+      } else {
+        result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--danger)"><use href="#i-x"/></svg>';
+        input.style.borderColor = 'var(--danger)';
+        toast('الإجابة الصحيحة: '+q.answer);
+      }
+    }
+    checkBtn.addEventListener('click', check);
+    input.addEventListener('keydown', function(e){ if(e.key==='Enter') check(); });
+    panel.appendChild(block);
+  });
+}
+
+function renderBuilderPanel(){
+  var panel = qs('#panelBuilder');
+  panel.innerHTML = '';
+  BUILDER.forEach(function(q){
+    var block = ce('div','q-block');
+    block.appendChild(ce('div','q-prompt-ar', q.ar));
+    var answerZone = ce('div','builder-answer');
+    var pool = ce('div','builder-pool');
+    var shuffled = q.words.slice().sort(function(){ return Math.random()-0.5; });
+    var placed = [];
+    shuffled.forEach(function(word){
+      var chip = ce('button','chip-word de', word);
+      chip.type = 'button';
+      chip.addEventListener('click', function(){
+        if(chip.classList.contains('used')) return;
+        chip.classList.add('used');
+        var placedChip = ce('span','chip-word de', word);
+        placedChip.style.cursor = 'default';
+        placedChip.addEventListener('click', function(){
+          placedChip.remove();
+          chip.classList.remove('used');
+          placed = placed.filter(function(p){ return p.el !== placedChip; });
+        });
+        answerZone.appendChild(placedChip);
+        placed.push({ word:word, el:placedChip });
+      });
+      pool.appendChild(chip);
+    });
+    var actions = ce('div','builder-actions');
+    var checkBtn = ce('button','btn btn-primary btn-sm','تحقّق من الترتيب');
+    var resetBtn = ce('button','btn btn-ghost btn-sm','إعادة');
+    var feedback = ce('div','q-feedback');
+    checkBtn.addEventListener('click', function(){
+      var userSentence = placed.map(function(p){ return p.word; }).join(' ');
+      var correctSentence = q.words.join(' ');
+      feedback.classList.add('show');
+      if(userSentence === correctSentence){
+        feedback.innerHTML = '<b style="color:var(--success)">✓ ممتاز! الترتيب صحيح.</b>';
+        if(!block.dataset.done){ exerciseScore.builder++; block.dataset.done='1'; updateScoreBar(); }
+        Speech.speak(correctSentence.replace(/ \./,'.'));
+      } else {
+        feedback.innerHTML = '<b style="color:var(--danger)">الترتيب الصحيح:</b> <span class="de" dir="ltr">'+correctSentence.replace(/ \./,'.')+'</span>';
+      }
+    });
+    resetBtn.addEventListener('click', function(){
+      placed = []; answerZone.innerHTML = '';
+      qsa('.chip-word', pool).forEach(function(c){ c.classList.remove('used'); });
+      feedback.classList.remove('show');
+    });
+    actions.appendChild(checkBtn); actions.appendChild(resetBtn);
+    block.appendChild(answerZone); block.appendChild(pool); block.appendChild(actions); block.appendChild(feedback);
+    panel.appendChild(block);
+  });
+}
+
+function renderMatchPanel(){
+  var panel = qs('#panelMatch');
+  panel.innerHTML = '';
+  var intro = ce('p', null, 'اضغط على المصدر الألماني، ثم على صيغة Partizip II المطابقة له.');
+  intro.style.cssText = 'margin-bottom:18px;color:var(--ink-soft)';
+  panel.appendChild(intro);
+  var grid = ce('div','match-grid');
+  var colDe = ce('div','match-col');
+  var colPa = ce('div','match-col');
+  var deShuffled = MATCH_ITEMS.slice();
+  var paShuffled = MATCH_ITEMS.slice().sort(function(){ return Math.random()-0.5; });
+  var selectedDe = null, selectedPa = null;
+  var matchedCount = 0;
+  deShuffled.forEach(function(item){
+    var el = ce('div','match-item de', item.de);
+    el.dataset.key = item.de;
+    el.addEventListener('click', function(){
+      if(el.classList.contains('matched')) return;
+      qsa('.match-item', colDe).forEach(function(x){ x.classList.remove('selected'); });
+      el.classList.add('selected'); selectedDe = el;
+      attemptMatch();
+    });
+    colDe.appendChild(el);
+  });
+  paShuffled.forEach(function(item){
+    var el = ce('div','match-item de', item.pa);
+    el.dataset.key = item.de;
+    el.addEventListener('click', function(){
+      if(el.classList.contains('matched')) return;
+      qsa('.match-item', colPa).forEach(function(x){ x.classList.remove('selected'); });
+      el.classList.add('selected'); selectedPa = el;
+      attemptMatch();
+    });
+    colPa.appendChild(el);
+  });
+  function attemptMatch(){
+    if(!selectedDe || !selectedPa) return;
+    if(selectedDe.dataset.key === selectedPa.dataset.key){
+      selectedDe.classList.add('matched'); selectedPa.classList.add('matched');
+      selectedDe.classList.remove('selected'); selectedPa.classList.remove('selected');
+      matchedCount++;
+      if(matchedCount === MATCH_ITEMS.length){ exerciseScore.match = MATCH_ITEMS.length; updateScoreBar(); toast('أحسنت! طابقت كل الأزواج 🎉'); }
+      Speech.speak(selectedDe.textContent+', '+selectedPa.textContent);
+    } else {
+      [selectedDe, selectedPa].forEach(function(el){ el.classList.add('shake'); setTimeout(function(){ el.classList.remove('shake','selected'); }, 420); });
+    }
+    selectedDe = null; selectedPa = null;
+  }
+  grid.appendChild(colDe); grid.appendChild(colPa);
+  panel.appendChild(grid);
+}
+
+function renderAuxPanel(){
+  var panel = qs('#panelAux');
+  panel.innerHTML = '';
+  AUX_ITEMS.forEach(function(q){
+    var block = ce('div','q-block');
+    block.appendChild(ce('div','q-prompt de', q.verb));
+    var opts = ce('div','q-options');
+    var feedback = ce('div','q-feedback', q.note);
+    var habenBtn = ce('button','opt-btn de','haben');
+    var seinBtn = ce('button','opt-btn de','sein');
+    [ [habenBtn,'haben'], [seinBtn,'sein'] ].forEach(function(pair){
+      var btn = pair[0], mode = pair[1];
+      btn.type = 'button';
+      btn.addEventListener('click', function(){
+        qsa('.opt-btn', opts).forEach(function(b){ b.disabled = true; });
+        if(mode === q.mode){
+          btn.classList.add('correct');
+          if(!block.dataset.done){ exerciseScore.aux++; block.dataset.done='1'; updateScoreBar(); }
+        } else {
+          btn.classList.add('wrong');
+          (mode==='haben'?seinBtn:habenBtn).classList.add('correct');
+        }
+        feedback.classList.add('show');
+      });
+      opts.appendChild(btn);
+    });
+    block.appendChild(opts);
+    block.appendChild(feedback);
+    panel.appendChild(block);
+  });
+}
+
+qsa('.exercise-tab').forEach(function(tab){
+  tab.addEventListener('click', function(){
+    qsa('.exercise-tab').forEach(function(t){ t.classList.remove('active'); });
+    qsa('.exercise-panel').forEach(function(p){ p.classList.remove('active'); });
+    tab.classList.add('active');
+    qs('#'+tab.dataset.panel).classList.add('active');
+  });
+});
+
+/* ==========================================================================
+   BADGES
+   ========================================================================== */
+var BADGES = [
+  { key:'explorer', label:'مستكشف الدرس', icon:'i-book' },
+  { key:'workshop', label:'بنّاء الأفعال', icon:'i-hammer' },
+  { key:'cards', label:'جامع البطاقات', icon:'i-cards' },
+  { key:'sharp', label:'مطابقة حادة', icon:'i-link' },
+  { key:'champion', label:'بطل التمارين', icon:'i-medal' }
+];
+var unlockedBadges = {};
+function renderBadges(){
+  var row = qs('#badgesRow');
+  row.innerHTML = '';
+  BADGES.forEach(function(b){
+    var el = ce('div','badge'+(unlockedBadges[b.key]?' unlocked':''));
+    el.id = 'badge-'+b.key;
+    el.innerHTML = '<div class="badge-icon"><svg class="icon" style="width:22px;height:22px;stroke:#fff"><use href="#'+b.icon+'"/></svg></div><div class="badge-name">'+b.label+'</div>';
+    row.appendChild(el);
+  });
+}
+function unlockBadge(key){
+  if(unlockedBadges[key]) return;
+  unlockedBadges[key] = true;
+  var el = qs('#badge-'+key);
+  if(el){ el.classList.add('unlocked','pop'); }
+  var def = BADGES.filter(function(b){ return b.key===key; })[0];
+  if(def) toast('إنجاز جديد: '+def.label+' 🏅', 'i-star');
+}
+var workshopUsedCount = 0;
+var cardsFlippedCount = 0;
+function markVisited(kind){
+  if(kind === 'workshop'){ workshopUsedCount++; if(workshopUsedCount >= 6) unlockBadge('workshop'); }
+  if(kind === 'cards'){ cardsFlippedCount++; if(cardsFlippedCount >= 10) unlockBadge('cards'); }
+}
+
+/* ==========================================================================
+   ROAD NAV / SCROLLSPY / PROGRESS RING
+   ========================================================================== */
+var SECTION_META = [
+  {id:'hero', label:'البداية'},
+  {id:'haben-sein', label:'haben/sein'},
+  {id:'schwach', label:'ضعيف'},
+  {id:'stark', label:'قوي'},
+  {id:'ohnege', label:'بلا ge-'},
+  {id:'trennbar', label:'منفصل'},
+  {id:'workshop', label:'المعمل'},
+  {id:'reference', label:'المرجع'},
+  {id:'vocab', label:'البطاقات'},
+  {id:'examples', label:'الأمثلة'},
+  {id:'mistakes', label:'الأخطاء'},
+  {id:'pronunciation', label:'النطق'},
+  {id:'exercises', label:'التمارين'},
+  {id:'summary', label:'الملخّص'}
+];
+function renderRoadNav(){
+  var track = qs('#roadTrack');
+  track.innerHTML = '';
+  SECTION_META.forEach(function(s){
+    var btn = ce('button','waypoint-btn', '<span class="waypoint-pin"></span><span class="lbl">'+s.label+'</span>');
+    btn.type = 'button';
+    btn.dataset.target = s.id;
+    btn.addEventListener('click', function(){ scrollToSection('#'+s.id); });
+    track.appendChild(btn);
+  });
+}
+function scrollToSection(sel){
+  var el = qs(sel);
+  if(el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+document.addEventListener('click', function(e){
+  var btn = e.target.closest ? e.target.closest('[data-scroll]') : null;
+  if(btn) scrollToSection(btn.getAttribute('data-scroll'));
+});
+
+var visitedSet = {};
+function refreshProgress(){
+  var total = SECTION_META.length;
+  var seen = Object.keys(visitedSet).length;
+  var pct = Math.max(seen? Math.round((seen/total)*100) : 0, 0);
+  var circumference = 113;
+  var offset = circumference - (pct/100)*circumference;
+  qs('#progressRingBar').style.strokeDashoffset = offset;
+  qs('#progressRingLabel').textContent = toArabicDigits(pct)+'٪';
+  if(seen === total) unlockBadge('explorer');
+}
+
+var spyObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    var id = entry.target.id;
+    if(entry.isIntersecting){
+      visitedSet[id] = true;
+      qsa('.waypoint-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.target===id); });
+      refreshProgress();
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+var revealObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){ entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); }
+  });
+}, { threshold: 0.12 });
+
+/* ==========================================================================
+   SEARCH
+   ========================================================================== */
+function initSearch(){
+  var toggle = qs('#searchToggle');
+  var box = qs('#searchBoxDesktop');
+  var input = qs('#searchInputDesktop');
+  toggle.addEventListener('click', function(){
+    box.classList.toggle('open');
+    if(box.classList.contains('open')) input.focus();
+  });
+  var lastMarks = [];
+  input.addEventListener('input', function(){
+    lastMarks.forEach(function(m){ var parent=m.parentNode; if(parent){ parent.replaceChild(document.createTextNode(m.textContent), m); parent.normalize(); } });
+    lastMarks = [];
+    var term = input.value.trim();
+    if(term.length < 2) return;
+    var walker = document.createTreeWalker(qs('#mainContent'), NodeFilter.SHOW_TEXT, null);
+    var node, matches = 0;
+    var re = new RegExp('('+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+    var nodesToProcess = [];
+    while((node = walker.nextNode())){
+      if(re.test(node.nodeValue)) nodesToProcess.push(node);
+    }
+    nodesToProcess.forEach(function(n){
+      var span = document.createElement('span');
+      span.innerHTML = n.nodeValue.replace(re, '<mark class="hl">$1</mark>');
+      var frag = document.createDocumentFragment();
+      Array.prototype.slice.call(span.childNodes).forEach(function(c){ frag.appendChild(c); });
+      n.parentNode.replaceChild(frag, n);
+    });
+    lastMarks = qsa('mark.hl');
+    matches = lastMarks.length;
+    if(matches){ lastMarks[0].scrollIntoView({behavior:'smooth', block:'center'}); toast('تم العثور على '+toArabicDigits(matches)+' نتيجة'); }
+  });
+}
+
+/* ==========================================================================
+   FULLSCREEN / PRINT / BACK TO TOP
+   ========================================================================== */
+qs('#fullscreenToggle').addEventListener('click', function(){
+  if(!document.fullscreenElement){ document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+  else { document.exitFullscreen && document.exitFullscreen(); }
+});
+document.addEventListener('fullscreenchange', function(){
+  var use = qs('#fsIcon use');
+  use.setAttribute('href', document.fullscreenElement ? '#i-compress' : '#i-expand');
+});
+qs('#printBtn').addEventListener('click', function(){ window.print(); });
+
+var backBtn = qs('#backToTop');
+window.addEventListener('scroll', function(){
+  backBtn.classList.toggle('visible', window.scrollY > 800);
+}, { passive:true });
+backBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+/* ==========================================================================
+   INIT
+   ========================================================================== */
+function init(){
+  renderRoadNav();
+  renderTable(qs('#habenSeinTable'), HABEN_SEIN_TABLE);
+
+  renderCategoryExamplesGrid('schwachExamplesGrid', 'schwach');
+  renderCategoryExamplesGrid('starkExamplesGrid', 'stark');
+  renderCategoryExamplesGrid('ohnegeExamplesGrid', 'ohnege');
+  renderCategoryExamplesGrid('trennbarExamplesGrid', 'trennbar');
+
+  renderWorkshopPicker();
+  renderReferenceFilterBar();
+  renderReferenceTable();
+  renderVocabFilterBar();
+  renderVocabGrid();
+  renderExamplesFilterBar();
+  renderExamplesList();
+  renderMistakes();
+
+  renderMcqPanel();
+  renderFillPanel();
+  renderBuilderPanel();
+  renderMatchPanel();
+  renderAuxPanel();
+  updateScoreBar();
+  renderBadges();
+  initSearch();
+
+  qsa('section[id]').forEach(function(sec){ spyObserver.observe(sec); });
+  qsa('.reveal, .reveal-stagger').forEach(function(el){ revealObserver.observe(el); });
+
+  refreshProgress();
+}
+
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-guide-07-partizip-ii-komplett" data-category="a2" data-title="الدرس ٧ — الحاضر التام الشامل (Perfekt)" data-root="../../" defer></script>
+</body>
+</html>

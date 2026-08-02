@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الاتجاهات والمواقع في ألمانيا — Wegbeschreibungen &amp; Orte | A2</title>
+<meta name="description" content="درس تفاعلي لمستوى A2 حول السؤال عن الاتجاهات ووصف المواقع باللغة الألمانية">
+
+<!-- Theme init before paint (avoid flash of wrong theme) -->
+<script>
+(function(){
+  try{
+    var saved = localStorage.getItem('weg-lesson-theme');
+    var theme = saved ? saved : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  }catch(e){}
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   DESIGN TOKENS — "Atlas & Kompass" system
+   Subject: asking for / giving directions, locations in Germany & Europe.
+   Signature element: a compass rose that doubles as the direction-vocabulary
+   diagram and as the lesson's wayfinding metaphor (waypoints, route line).
+   ========================================================================== */
+:root{
+  /* -- light theme (aged travel atlas) -- */
+  --bg: #F1E6CC;
+  --bg-elevated: #FBF4E1;
+  --bg-sunken: #E4D3AC;
+  --ink: #16302B;
+  --ink-soft: #3F564F;
+  --ink-faint: #6C7D74;
+  --rust: #B0492A;
+  --rust-soft: #D8794F;
+  --gold: #A9781E;
+  --gold-bright: #C7952B;
+  --teal: #24625C;
+  --teal-deep: #143432;
+  --border: rgba(22,48,43,0.16);
+  --border-soft: rgba(22,48,43,0.09);
+  --shadow-rgb: 22,48,43;
+  --success: #2F6B3D;
+  --success-bg: rgba(47,107,61,0.12);
+  --error: #A8332A;
+  --error-bg: rgba(168,51,42,0.12);
+  --paper-line: rgba(22,48,43,0.06);
+
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-ar: 'Cairo', 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur-med: 360ms;
+  --dur-slow: 720ms;
+
+  --nav-h: 72px;
+  --container: 1140px;
+
+  color-scheme: light;
+}
+
+html[data-theme="dark"]{
+  --bg: #0B1A20;
+  --bg-elevated: #12262E;
+  --bg-sunken: #081319;
+  --ink: #ECE3CB;
+  --ink-soft: #B9C7C2;
+  --ink-faint: #7E948E;
+  --rust: #E17A50;
+  --rust-soft: #F0A57E;
+  --gold: #E3B658;
+  --gold-bright: #F0C878;
+  --teal: #6FC7BC;
+  --teal-deep: #A6DED6;
+  --border: rgba(236,227,203,0.16);
+  --border-soft: rgba(236,227,203,0.08);
+  --shadow-rgb: 0,0,0;
+  --success: #6FCB82;
+  --success-bg: rgba(111,203,130,0.14);
+  --error: #F0837A;
+  --error-bg: rgba(240,131,122,0.14);
+  --paper-line: rgba(236,227,203,0.05);
+  color-scheme: dark;
+}
+
+*,*::before,*::after{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *,*::before,*::after{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+body{
+  margin: 0;
+  background:
+    radial-gradient(ellipse 900px 600px at 12% -8%, var(--bg-sunken) 0%, transparent 55%),
+    radial-gradient(ellipse 900px 700px at 105% 15%, var(--bg-sunken) 0%, transparent 50%),
+    var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ar);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--dur-slow) var(--ease), color var(--dur-med) var(--ease);
+  overflow-x: hidden;
+}
+
+/* subtle paper texture via repeating lines */
+body::before{
+  content:"";
+  position: fixed; inset:0;
+  pointer-events:none;
+  z-index:0;
+  opacity:0.5;
+  background-image: repeating-linear-gradient(0deg, var(--paper-line) 0px, var(--paper-line) 1px, transparent 1px, transparent 3px);
+  mix-blend-mode: multiply;
+}
+html[data-theme="dark"] body::before{ mix-blend-mode: overlay; opacity:0.3; }
+
+.de{ font-family: var(--font-body); direction: ltr; unicode-bidi: isolate; }
+.de-serif{ font-family: var(--font-display); direction: ltr; unicode-bidi: isolate; }
+
+h1,h2,h3,h4{ font-family: var(--font-ar); color: var(--ink); margin: 0 0 .5em; line-height: 1.3; }
+p{ margin: 0 0 1em; color: var(--ink-soft); }
+a{ color: var(--teal); }
+button{ font-family: inherit; }
+
+.skip-link{
+  position: fixed; top: -60px; inset-inline-start: 12px; z-index: 999;
+  background: var(--rust); color: #fff; padding: 12px 20px; border-radius: var(--radius-sm);
+  transition: top var(--dur-fast) var(--ease); font-weight: 700;
+}
+.skip-link:focus{ top: 12px; }
+
+:focus-visible{ outline: 3px solid var(--gold-bright); outline-offset: 3px; border-radius: 4px; }
+
+.container{ max-width: var(--container); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+/* ==========================================================================
+   NAV
+   ========================================================================== */
+.topnav{
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--bg-elevated) 88%, transparent);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  border-bottom: 1px solid var(--border-soft);
+  transition: background var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease);
+}
+.topnav-inner{
+  display:flex; align-items:center; gap:16px;
+  height: var(--nav-h);
+  max-width: var(--container); margin:0 auto; padding: 0 20px;
+}
+.brand{ display:flex; align-items:center; gap:10px; font-weight:800; color:var(--ink); white-space:nowrap; }
+.brand-mark{ width:38px; height:38px; flex-shrink:0; }
+.brand-text{ font-size: 15px; }
+.brand-text small{ display:block; font-family:var(--font-mono); font-size:10px; letter-spacing:.08em; color:var(--ink-faint); font-weight:600; text-transform:uppercase; }
+
+.progress-ring-wrap{ position:relative; width:44px; height:44px; flex-shrink:0; }
+.progress-ring-wrap svg{ transform: rotate(-90deg); width:44px; height:44px; }
+.progress-ring-bg{ fill:none; stroke: var(--border); stroke-width:4; }
+.progress-ring-fg{ fill:none; stroke: var(--rust); stroke-width:4; stroke-linecap:round; transition: stroke-dashoffset var(--dur-slow) var(--ease); }
+.progress-ring-label{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:10px; font-weight:700; color:var(--ink); }
+
+.section-nav{
+  flex:1; min-width:0; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+.section-nav::-webkit-scrollbar{ display:none; }
+.section-nav a{
+  display:flex; align-items:center; gap:6px;
+  padding: 8px 12px; border-radius: 999px; white-space:nowrap;
+  text-decoration:none; color: var(--ink-soft); font-size:13px; font-weight:600;
+  border:1px solid transparent; transition: all var(--dur-fast) var(--ease);
+}
+.section-nav a .waypoint-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:18px; height:18px; border-radius:50%; background:var(--border-soft);
+  font-family:var(--font-mono); font-size:9px; color:var(--ink-faint); flex-shrink:0;
+}
+.section-nav a.visited .waypoint-num{ background: var(--success-bg); color: var(--success); }
+.section-nav a.visited .waypoint-num::after{ content:"✓"; }
+.section-nav a:hover{ background: var(--border-soft); color: var(--ink); }
+.section-nav a[aria-current="true"]{ background: var(--teal); color:#fff; }
+.section-nav a[aria-current="true"] .waypoint-num{ background:rgba(255,255,255,.25); color:#fff; }
+
+.nav-tools{ display:flex; align-items:center; gap:6px; flex-shrink:0; }
+.icon-btn{
+  width:40px; height:40px; border-radius:12px; border:1px solid var(--border);
+  background: var(--bg-elevated); color: var(--ink); cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition: transform var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+.icon-btn:hover{ transform: translateY(-2px); box-shadow: 0 6px 16px -8px rgba(var(--shadow-rgb),.4); }
+.icon-btn:active{ transform: translateY(0); }
+.icon-btn svg{ width:19px; height:19px; }
+
+.search-pop{
+  position:absolute; top:calc(100% + 8px); left:0; right:0;
+  margin: 0 20px; background:var(--bg-elevated); border:1px solid var(--border);
+  border-radius: var(--radius-md); padding:10px; box-shadow: 0 20px 40px -12px rgba(var(--shadow-rgb),.35);
+  display:none; z-index:120;
+}
+.search-pop.open{ display:block; }
+.search-pop input{
+  width:100%; padding:10px 14px; border-radius: var(--radius-sm); border:1px solid var(--border);
+  background: var(--bg); color:var(--ink); font-family:var(--font-ar); font-size:14px;
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero{ position:relative; padding: 64px 0 40px; overflow:hidden; }
+.hero-grid{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:40px; align-items:center; }
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono);
+  font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--rust);
+  background: var(--error-bg); padding:6px 12px; border-radius:999px; margin-bottom:18px; font-weight:700;
+}
+.hero h1{ font-family: var(--font-ar); font-size: clamp(28px, 4.2vw, 46px); font-weight:800; letter-spacing:-.01em; }
+.hero .de-serif{ display:block; font-size: clamp(20px,2.6vw,28px); font-style:italic; color:var(--teal); font-weight:600; margin-top:6px; }
+.hero p.lead{ font-size:17px; max-width:52ch; }
+.hero-cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 26px; }
+.btn{
+  display:inline-flex; align-items:center; gap:10px; padding:14px 24px; border-radius:14px;
+  font-weight:700; font-size:14.5px; cursor:pointer; border:none; text-decoration:none;
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+}
+.btn-primary{ background: linear-gradient(155deg, var(--rust), var(--rust-soft)); color:#fff; box-shadow: 0 12px 28px -10px rgba(176,73,42,.55); }
+.btn-primary:hover{ transform: translateY(-3px) scale(1.01); box-shadow: 0 18px 34px -10px rgba(176,73,42,.6); }
+.btn-ghost{ background: var(--bg-elevated); color:var(--ink); border:1px solid var(--border); }
+.btn-ghost:hover{ background: var(--border-soft); transform: translateY(-2px); }
+
+.hero-stats{ display:flex; gap:22px; margin-top:30px; flex-wrap:wrap; }
+.hero-stat b{ display:block; font-family:var(--font-mono); font-size:22px; color:var(--ink); }
+.hero-stat span{ font-size:12px; color:var(--ink-faint); }
+
+/* compass rose (hero + richtungen section) */
+.compass-wrap{ position:relative; aspect-ratio:1/1; max-width:420px; margin:0 auto; }
+.compass-wrap svg{ width:100%; height:100%; overflow:visible; }
+.compass-face{ transform-origin: 200px 200px; }
+.compass-rose{ animation: compass-drift 18s ease-in-out infinite; transform-origin:200px 200px; }
+@keyframes compass-drift{ 0%,100%{ transform: rotate(-4deg);} 50%{ transform: rotate(4deg);} }
+.compass-needle{ transform-origin:200px 200px; transition: transform 900ms var(--ease); }
+.route-dot{ animation: route-pulse 2.4s ease-in-out infinite; }
+@keyframes route-pulse{ 0%,100%{ r:5; opacity:1;} 50%{ r:8; opacity:.55;} }
+.compass-pin{ animation: pin-float 4s ease-in-out infinite; }
+@keyframes pin-float{ 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-8px);} }
+
+/* ==========================================================================
+   SECTIONS shared
+   ========================================================================== */
+section{ padding: 76px 0; position:relative; scroll-margin-top: calc(var(--nav-h) + 14px); }
+.section-head{ max-width: 640px; margin-bottom: 40px; }
+.section-head .waypoint{
+  display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono);
+  font-size:11px; letter-spacing:.1em; color:var(--teal); font-weight:700; text-transform:uppercase; margin-bottom:12px;
+}
+.section-head .waypoint::before{
+  content:""; width:26px; height:1px; background: var(--teal); display:inline-block;
+}
+.section-head h2{ font-size: clamp(24px,3vw,34px); font-weight:800; }
+.section-head p{ font-size:15.5px; }
+
+.reveal{ opacity:0; transform: translateY(28px); transition: opacity 900ms var(--ease), transform 900ms var(--ease); }
+.reveal.in{ opacity:1; transform: translateY(0); }
+.reveal-stagger.in > *{ transition-delay: calc(var(--i,0) * 70ms); }
+
+.divider-route{
+  height:2px; margin: 8px auto 0; max-width:var(--container);
+  background: repeating-linear-gradient(90deg, var(--border) 0 10px, transparent 10px 18px);
+}
+
+/* alt background band for zebra rhythm */
+.band{ background: color-mix(in srgb, var(--bg-sunken) 55%, transparent); }
+.band::before, .band::after{
+  content:""; position:absolute; left:0; right:0; height:1px; background: var(--border-soft);
+}
+.band::before{ top:0; } .band::after{ bottom:0; }
+
+/* ==========================================================================
+   VOCAB — flip cards (3D)
+   ========================================================================== */
+.vocab-toolbar{ display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:22px; flex-wrap:wrap; }
+.chip-filter{ display:flex; gap:8px; flex-wrap:wrap; }
+.chip-filter button{
+  padding:7px 14px; border-radius:999px; border:1px solid var(--border); background:var(--bg-elevated);
+  color:var(--ink-soft); font-size:12.5px; font-weight:600; cursor:pointer; transition: all var(--dur-fast) var(--ease);
+}
+.chip-filter button[aria-pressed="true"]{ background:var(--teal); border-color:var(--teal); color:#fff; }
+
+.vocab-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(190px,1fr)); gap:18px; perspective: 1400px; }
+.flip-card{ position:relative; height:220px; }
+.flip-card-inner{
+  position:relative; width:100%; height:100%; transition: transform var(--dur-slow) var(--ease);
+  transform-style: preserve-3d; cursor:pointer; border-radius: var(--radius-md);
+}
+.flip-card.flipped .flip-card-inner{ transform: rotateY(180deg); }
+.flip-face{
+  position:absolute; inset:0; backface-visibility:hidden; border-radius: var(--radius-md);
+  border:1px solid var(--border); padding:18px; display:flex; flex-direction:column;
+  box-shadow: 0 10px 26px -14px rgba(var(--shadow-rgb),.35);
+}
+.flip-front{ background: var(--bg-elevated); align-items:center; justify-content:center; text-align:center; gap:10px; }
+.flip-front .vocab-icon{ width:48px; height:48px; color:var(--teal); }
+.flip-front .vocab-word{ font-family: var(--font-display); font-size:21px; font-weight:600; font-style:italic; color:var(--ink); direction:ltr; }
+.flip-front .vocab-article{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.08em; color:var(--ink-faint); text-transform:uppercase; }
+.flip-back{
+  background: linear-gradient(155deg, var(--teal-deep), var(--teal));
+  color:#fff; transform: rotateY(180deg); justify-content:center; gap:8px;
+}
+html[data-theme="dark"] .flip-back{ color: var(--bg); }
+.flip-back .vocab-ar{ font-size:17px; font-weight:700; }
+.flip-back .vocab-example{ font-size:12.5px; opacity:.92; direction:ltr; font-family:var(--font-body); }
+.flip-back .vocab-speak{
+  margin-top:auto; align-self:flex-start; display:inline-flex; align-items:center; gap:6px;
+  background: rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.35); color:inherit;
+  padding:6px 12px; border-radius:999px; font-size:12px; font-weight:700; cursor:pointer;
+}
+.flip-back .vocab-speak:hover{ background: rgba(255,255,255,.3); }
+.flip-back .vocab-speak.speaking{ animation: speak-pulse 900ms ease-in-out infinite; }
+@keyframes speak-pulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(255,255,255,.5);} 50%{ box-shadow:0 0 0 8px rgba(255,255,255,0);} }
+.flip-hint{ position:absolute; bottom:8px; inset-inline-end:10px; font-size:10px; color:var(--ink-faint); }
+
+/* ==========================================================================
+   RICHTUNGEN diagram
+   ========================================================================== */
+.richtungen-layout{ display:grid; grid-template-columns: 0.9fr 1.1fr; gap:40px; align-items:center; }
+.dir-diagram-wrap{ position:relative; }
+.dir-word-list{ display:flex; flex-direction:column; gap:10px; }
+.dir-word{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  background: var(--bg-elevated); border:1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 12px 16px; cursor:pointer; transition: all var(--dur-fast) var(--ease);
+}
+.dir-word:hover, .dir-word.active{ border-color: var(--rust); background: color-mix(in srgb, var(--rust) 10%, var(--bg-elevated)); transform: translateX(-3px); }
+html[dir="rtl"] .dir-word:hover, html[dir="rtl"] .dir-word.active{ transform: translateX(3px); }
+.dir-word .de{ font-weight:700; font-size:15.5px; }
+.dir-word .ar-mean{ font-size:12.5px; color:var(--ink-faint); }
+.dir-word .speaker-dot{
+  width:30px; height:30px; border-radius:50%; background:var(--bg-sunken); display:flex; align-items:center;
+  justify-content:center; flex-shrink:0;
+}
+.dir-word .speaker-dot svg{ width:14px; height:14px; color:var(--teal); }
+
+/* ==========================================================================
+   PHRASE cards / speech bubbles
+   ========================================================================== */
+.phrase-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:22px; }
+.phrase-col h3{ font-size:16px; display:flex; align-items:center; gap:8px; margin-bottom:16px; }
+.phrase-col h3 .tag{ font-family:var(--font-mono); font-size:10px; padding:3px 8px; border-radius:6px; text-transform:uppercase; letter-spacing:.06em; }
+.tag-ask{ background: var(--error-bg); color: var(--rust); }
+.tag-give{ background: var(--success-bg); color: var(--success); }
+.bubble{
+  position:relative; background: var(--bg-elevated); border:1px solid var(--border);
+  border-radius: var(--radius-md); padding:14px 16px; margin-bottom:12px; cursor:pointer;
+  transition: all var(--dur-fast) var(--ease); display:flex; align-items:center; gap:12px;
+}
+.bubble:hover{ box-shadow: 0 10px 24px -14px rgba(var(--shadow-rgb),.4); transform: translateY(-2px); border-color:var(--teal); }
+.bubble.speaking{ border-color: var(--rust); background: color-mix(in srgb, var(--rust) 8%, var(--bg-elevated)); }
+.bubble .bubble-icon{
+  width:34px; height:34px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+  background: var(--teal); color:#fff;
+}
+.bubble .bubble-icon svg{ width:15px; height:15px; }
+.bubble .bubble-text .de{ display:block; font-weight:600; font-size:14.5px; }
+.bubble .bubble-text .ar{ display:block; font-size:12.5px; color:var(--ink-faint); margin-top:2px; }
+
+/* ==========================================================================
+   GRAMMAR
+   ========================================================================== */
+.grammar-table-wrap{ overflow-x:auto; border-radius: var(--radius-md); border:1px solid var(--border); }
+table.grammar-table{ width:100%; border-collapse:collapse; min-width:560px; background: var(--bg-elevated); }
+table.grammar-table th, table.grammar-table td{ padding:12px 16px; text-align:center; border-bottom:1px solid var(--border-soft); font-size:13.5px; }
+table.grammar-table th{ background: var(--bg-sunken); font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); }
+table.grammar-table td.de{ font-weight:600; }
+table.grammar-table tr:last-child td{ border-bottom:none; }
+table.grammar-table td.hl{ color: var(--rust); font-weight:800; }
+
+.accordion{ border:1px solid var(--border); border-radius: var(--radius-md); overflow:hidden; margin-top:18px; background:var(--bg-elevated); }
+.accordion-item + .accordion-item{ border-top:1px solid var(--border-soft); }
+.accordion-btn{
+  width:100%; text-align:inherit; background:none; border:none; padding:16px 18px;
+  display:flex; align-items:center; justify-content:space-between; cursor:pointer; color:var(--ink); font-weight:700; font-size:14.5px;
+}
+.accordion-btn .chev{ transition: transform var(--dur-fast) var(--ease); width:16px; height:16px; flex-shrink:0; color:var(--ink-faint); }
+.accordion-item[aria-expanded="true"] .chev{ transform: rotate(180deg); }
+.accordion-panel{ max-height:0; overflow:hidden; transition: max-height var(--dur-med) var(--ease); }
+.accordion-panel-inner{ padding: 0 18px 18px; font-size:13.5px; }
+
+.mistake-card{
+  display:flex; gap:12px; align-items:flex-start; background: var(--error-bg); border:1px solid rgba(168,51,42,.25);
+  border-radius: var(--radius-md); padding:14px 16px; margin-top:12px;
+}
+.mistake-card .x{ color:var(--error); font-weight:800; flex-shrink:0; }
+.mistake-card .ok{ color:var(--success); font-weight:800; }
+
+/* ==========================================================================
+   DIALOG
+   ========================================================================== */
+.dialog-player{
+  background: var(--bg-elevated); border:1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 24px; box-shadow: 0 20px 50px -24px rgba(var(--shadow-rgb),.4);
+}
+.dialog-controls{ display:flex; align-items:center; gap:10px; margin-bottom:20px; flex-wrap:wrap; padding-bottom:18px; border-bottom:1px dashed var(--border); }
+.dialog-controls .speed-wrap{ display:flex; align-items:center; gap:8px; margin-inline-start:auto; font-size:12px; color:var(--ink-faint); }
+.dialog-controls input[type=range]{ width:100px; accent-color: var(--rust); }
+.dialog-voice-indicator{ font-family:var(--font-mono); font-size:11px; color:var(--ink-faint); display:flex; align-items:center; gap:6px; }
+.dialog-voice-indicator .dot{ width:8px; height:8px; border-radius:50%; background:var(--ink-faint); }
+.dialog-voice-indicator.active .dot{ background: var(--success); animation: speak-pulse 900ms ease-in-out infinite; }
+
+.dialog-line{ display:flex; gap:12px; margin-bottom:16px; align-items:flex-start; }
+.dialog-line.right{ flex-direction: row-reverse; }
+.dialog-avatar{
+  width:38px; height:38px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:13px; color:#fff;
+}
+.dialog-line.left .dialog-avatar{ background: var(--teal); }
+.dialog-line.right .dialog-avatar{ background: var(--rust); }
+.dialog-bubble{
+  background: var(--bg); border:1px solid var(--border); border-radius: var(--radius-md); padding:12px 16px; max-width:74%;
+  transition: all var(--dur-fast) var(--ease); cursor:pointer;
+}
+.dialog-line.right .dialog-bubble{ background: color-mix(in srgb, var(--rust) 7%, var(--bg)); }
+.dialog-bubble.current{ border-color: var(--gold-bright); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold-bright) 25%, transparent); }
+.dialog-bubble .de{ font-size:14.5px; font-weight:600; }
+.dialog-bubble .de .word{ transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease); border-radius:4px; padding:0 1px; }
+.dialog-bubble .de .word.word-active{ background: var(--gold-bright); color: var(--teal-deep); }
+.dialog-bubble .ar{ font-size:12px; color:var(--ink-faint); margin-top:4px; }
+
+/* ==========================================================================
+   EUROPE MAP
+   ========================================================================== */
+.europe-layout{ display:grid; grid-template-columns: 1fr 1fr; gap:40px; align-items:center; }
+.map-wrap svg{ width:100%; height:auto; }
+.map-country{ transition: fill var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease); transform-origin:center; cursor:pointer; }
+.map-country:hover{ transform: translateY(-4px); }
+.map-legend-line{ display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid var(--border-soft); }
+.map-legend-line .de{ font-weight:700; min-width:150px; }
+.map-legend-line .swatch{ width:14px; height:14px; border-radius:4px; flex-shrink:0; }
+
+/* ==========================================================================
+   EXERCISES
+   ========================================================================== */
+.exercise-tabs{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:26px; }
+.exercise-tabs button{
+  padding:10px 18px; border-radius:12px; border:1px solid var(--border); background:var(--bg-elevated);
+  color:var(--ink-soft); font-weight:700; font-size:13.5px; cursor:pointer; display:flex; align-items:center; gap:8px;
+}
+.exercise-tabs button .num{ width:20px;height:20px;border-radius:50%;background:var(--border-soft);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:10px; }
+.exercise-tabs button[aria-selected="true"]{ background: var(--rust); border-color:var(--rust); color:#fff; }
+.exercise-tabs button[aria-selected="true"] .num{ background: rgba(255,255,255,.25); color:#fff; }
+.exercise-tabs button.done .num::after{ content:"✓"; }
+.exercise-panel{ display:none; }
+.exercise-panel.active{ display:block; }
+
+.exercise-card{
+  background: var(--bg-elevated); border:1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 28px; box-shadow: 0 20px 50px -26px rgba(var(--shadow-rgb),.4);
+}
+.fill-item{ margin-bottom:18px; }
+.fill-item .de{ font-size:15px; line-height:2; }
+.fill-item input{
+  width:150px; padding:6px 10px; border-radius:8px; border:2px solid var(--border);
+  background: var(--bg); color:var(--ink); font-family:var(--font-body); font-size:14px; text-align:center;
+  direction:ltr;
+}
+.fill-item input.correct{ border-color: var(--success); background: var(--success-bg); }
+.fill-item input.incorrect{ border-color: var(--error); background: var(--error-bg); }
+.fill-item .fb-icon{ font-weight:800; margin-inline-start:6px; }
+.fill-item .fb-icon.ok{ color:var(--success); }
+.fill-item .fb-icon.bad{ color:var(--error); }
+
+.match-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.match-item{
+  padding:14px 16px; border:2px solid var(--border); border-radius: var(--radius-sm); background:var(--bg);
+  cursor:pointer; font-size:13.5px; text-align:center; transition: all var(--dur-fast) var(--ease);
+}
+.match-item.selected{ border-color: var(--gold-bright); background: color-mix(in srgb, var(--gold-bright) 15%, var(--bg)); }
+.match-item.matched{ border-color: var(--success); background: var(--success-bg); cursor:default; opacity:.75; }
+.match-item.wrong-flash{ animation: shake 400ms; border-color: var(--error); }
+@keyframes shake{ 0%,100%{transform:translateX(0);} 25%{transform:translateX(-6px);} 75%{transform:translateX(6px);} }
+
+.convo-scenario{ background: var(--bg-sunken); border-radius: var(--radius-md); padding:16px 18px; margin-bottom:20px; font-size:13.5px; }
+.convo-step .de{ font-size:15px; font-weight:600; margin-bottom:14px; }
+.convo-options{ display:grid; gap:10px; }
+.convo-option{
+  text-align:inherit; padding:12px 16px; border:2px solid var(--border); border-radius: var(--radius-sm);
+  background:var(--bg); cursor:pointer; font-size:13.5px; transition: all var(--dur-fast) var(--ease);
+}
+.convo-option:hover{ border-color: var(--teal); }
+.convo-option.correct{ border-color: var(--success); background: var(--success-bg); }
+.convo-option.incorrect{ border-color: var(--error); background: var(--error-bg); }
+.convo-option:disabled{ cursor:default; }
+
+.quiz-progress{ display:flex; gap:6px; margin-bottom:20px; }
+.quiz-progress span{ flex:1; height:5px; border-radius:3px; background: var(--border); }
+.quiz-progress span.done{ background: var(--success); }
+.quiz-progress span.current{ background: var(--gold-bright); }
+.quiz-q .de{ font-size:16px; font-weight:600; margin-bottom:16px; }
+.quiz-choices{ display:grid; gap:10px; }
+.quiz-choice{
+  text-align:inherit; padding:13px 16px; border:2px solid var(--border); border-radius: var(--radius-sm);
+  background:var(--bg); cursor:pointer; font-size:14px; direction:ltr; font-family:var(--font-body);
+}
+.quiz-choice:hover{ border-color: var(--teal); }
+.quiz-choice.correct{ border-color: var(--success); background: var(--success-bg); }
+.quiz-choice.incorrect{ border-color: var(--error); background: var(--error-bg); }
+.quiz-summary{ text-align:center; padding: 20px 0; }
+.quiz-summary .score-big{ font-family: var(--font-mono); font-size:48px; font-weight:700; color:var(--rust); }
+
+.score-hud{ display:flex; align-items:center; gap:14px; margin-bottom:22px; flex-wrap:wrap; }
+.score-hud .pill{
+  display:inline-flex; align-items:center; gap:8px; background: var(--bg-elevated); border:1px solid var(--border);
+  padding:8px 14px; border-radius:999px; font-size:12.5px; font-weight:700; color:var(--ink-soft);
+}
+.score-hud .pill b{ color:var(--rust); font-family:var(--font-mono); }
+
+/* badges */
+.badge-shelf{ display:flex; gap:16px; flex-wrap:wrap; margin-top:16px; }
+.badge{
+  display:flex; flex-direction:column; align-items:center; gap:8px; width:110px; text-align:center;
+  opacity:.35; filter: grayscale(1); transition: all var(--dur-med) var(--ease);
+}
+.badge.unlocked{ opacity:1; filter:none; }
+.badge.unlocked .badge-icon{ animation: badge-pop 600ms var(--ease); }
+@keyframes badge-pop{ 0%{ transform: scale(0.3) rotate(-20deg);} 60%{ transform: scale(1.15) rotate(6deg);} 100%{ transform: scale(1) rotate(0);} }
+.badge-icon{
+  width:64px; height:64px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px;
+  background: linear-gradient(155deg, var(--gold-bright), var(--rust)); box-shadow: 0 10px 22px -10px rgba(176,73,42,.6);
+}
+.badge span{ font-size:11.5px; font-weight:700; color:var(--ink-soft); }
+
+/* ==========================================================================
+   TIPS
+   ========================================================================== */
+.tips-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:20px; }
+.tip-card{
+  background: var(--bg-elevated); border:1px solid var(--border); border-radius: var(--radius-lg); padding:22px;
+  transition: transform var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+.tip-card:hover{ transform: translateY(-4px); box-shadow: 0 16px 34px -18px rgba(var(--shadow-rgb),.4); }
+.tip-card .tip-icon{
+  width:44px; height:44px; border-radius:12px; background: var(--teal); color:#fff; display:flex; align-items:center;
+  justify-content:center; margin-bottom:14px;
+}
+.tip-card .tip-icon svg{ width:22px; height:22px; }
+.tip-card h4{ font-size:15px; font-weight:800; }
+.tip-card p{ font-size:13.5px; }
+.tip-card .de{ display:inline-block; background: var(--bg-sunken); padding:2px 8px; border-radius:6px; font-size:12.5px; }
+
+/* ==========================================================================
+   FOOTER / FLOATING CONTROLS
+   ========================================================================== */
+footer{ padding: 50px 0 100px; text-align:center; color:var(--ink-faint); font-size:13px; }
+footer .de{ color: var(--ink-faint); }
+
+.back-to-top{
+  position:fixed; bottom:24px; inset-inline-end:24px; z-index:90; width:50px; height:50px; border-radius:50%;
+  background: var(--rust); color:#fff; border:none; display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 14px 30px -10px rgba(176,73,42,.6); cursor:pointer; opacity:0; pointer-events:none;
+  transform: translateY(20px) scale(.8); transition: all var(--dur-med) var(--ease);
+}
+.back-to-top.show{ opacity:1; pointer-events:auto; transform: translateY(0) scale(1); }
+.back-to-top svg{ width:20px; height:20px; }
+
+.speech-toolbar{
+  position:fixed; bottom:24px; inset-inline-start:24px; z-index:90;
+  background: color-mix(in srgb, var(--bg-elevated) 92%, transparent); backdrop-filter: blur(10px);
+  border:1px solid var(--border); border-radius:999px; padding:8px 16px 8px 8px; display:flex; align-items:center; gap:10px;
+  box-shadow: 0 14px 30px -10px rgba(var(--shadow-rgb),.35); font-size:11.5px; color:var(--ink-faint);
+  transform: translateY(80px); opacity:0; transition: all var(--dur-med) var(--ease); max-width: calc(100vw - 100px);
+}
+.speech-toolbar.show{ transform: translateY(0); opacity:1; }
+.speech-toolbar .say-icon{
+  width:34px; height:34px; border-radius:50%; background:var(--teal); color:#fff; display:flex; align-items:center;
+  justify-content:center; flex-shrink:0;
+}
+.speech-toolbar .say-icon svg{ width:15px; height:15px; }
+.speech-toolbar.speaking .say-icon{ animation: speak-pulse 900ms ease-in-out infinite; }
+.speech-toolbar .now-text{ font-family: var(--font-body); direction:ltr; font-weight:600; color:var(--ink); font-size:12.5px; max-width:220px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+/* interaction feedback states */
+.speakable{ cursor:pointer; }
+.speakable.speaking{ background: var(--gold-bright); color: var(--teal-deep); border-radius:4px; padding:0 3px; }
+.map-country{ }
+.map-country.speaking circle{ fill: var(--rust) !important; }
+.flip-card-inner.speaking{ box-shadow: 0 0 0 3px var(--gold-bright); }
+.match-item:focus-visible, .quiz-choice:focus-visible, .convo-option:focus-visible{ outline: 3px solid var(--gold-bright); outline-offset:2px; }
+
+/* live region visually hidden */
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 900px){
+  .hero-grid, .richtungen-layout, .europe-layout{ grid-template-columns: 1fr; }
+  .compass-wrap{ max-width:280px; order:-1; }
+  .match-grid{ grid-template-columns:1fr; }
+  .brand-text{ display:none; }
+}
+@media (max-width: 600px){
+  section{ padding: 52px 0; }
+  .container{ padding: 0 16px; }
+  .hero{ padding: 40px 0 28px; }
+  .vocab-grid{ grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); }
+  .flip-card{ height:190px; }
+  .dialog-bubble{ max-width:86%; }
+  .speech-toolbar .now-text{ max-width:110px; }
+  .hero-stats{ gap:14px; }
+}
+@media (min-width: 1600px){
+  .container{ max-width:1320px; }
+}
+
+/* print */
+@media print{
+  .topnav, .back-to-top, .speech-toolbar, .search-pop, .nav-tools{ display:none !important; }
+  section{ padding: 18px 0; break-inside: avoid; }
+  body::before{ display:none; }
+  .accordion-panel{ max-height:none !important; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطَّ إلى محتوى الدرس</a>
+
+<header class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" stroke="var(--rust)" stroke-width="2"/>
+        <path d="M20 8 L23 20 L20 32 L17 20 Z" fill="var(--rust)"/>
+        <circle cx="20" cy="20" r="2.5" fill="var(--gold-bright)"/>
+      </svg>
+      <span class="brand-text">دروس الألمانية<small>A2 · Wegbeschreibung</small></span>
+    </div>
+
+    <nav class="section-nav" id="sectionNav" aria-label="أقسام الدرس"></nav>
+
+    <div class="nav-tools">
+      <div class="progress-ring-wrap" title="نسبة إكمال الدرس">
+        <svg viewBox="0 0 44 44">
+          <circle class="progress-ring-bg" cx="22" cy="22" r="18"/>
+          <circle class="progress-ring-fg" id="progressRingFg" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="113"/>
+        </svg>
+        <span class="progress-ring-label" id="progressLabel">0%</span>
+      </div>
+      <button class="icon-btn" id="searchToggle" aria-label="بحث داخل الدرس" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+      <button class="icon-btn" id="themeToggle" aria-label="تبديل المظهر الليلي/النهاري">
+        <svg id="themeIconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+        <svg id="themeIconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn" id="fullscreenToggle" aria-label="وضع ملء الشاشة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3M16 3h3a2 2 0 012 2v3M8 21H5a2 2 0 01-2-2v-3M16 21h3a2 2 0 002-2v-3"/></svg>
+      </button>
+      <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+      </button>
+    </div>
+    <div class="search-pop" id="searchPop">
+      <input type="text" id="searchInput" placeholder="ابحث عن كلمة... مثال: Straße أو جسر" aria-label="بحث في مفردات الدرس">
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================== HERO ============================== -->
+<section id="hero" class="hero" data-waypoint="0" data-title="البداية">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2.2 6.6-6.6 2.2 2.2-6.6z"/></svg>
+        المستوى A2 · درس تفاعلي
+      </span>
+      <h1>كيف تسأل عن الطريق وتصف المواقع بالألمانية؟
+        <span class="de-serif">Wegbeschreibungen &amp; Orte in Deutschland</span>
+      </h1>
+      <p class="lead">في هذا الدرس ستتعلّم مفردات الأماكن والشوارع، وكيفية السؤال عن الاتجاهات وفهم الإجابات، بالإضافة إلى وصف موقع ألمانيا داخل أوروبا — كل ذلك عبر بطاقات صوتية، مخطط بوصلة تفاعلي، حوار واقعي، وتمارين فورية.</p>
+      <div class="hero-cta">
+        <a href="#vokabeln" class="btn btn-primary" data-nav-link>
+          ابدأ الدرس
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </a>
+        <a href="#uebungen" class="btn btn-ghost" data-nav-link>اذهب مباشرة إلى التمارين</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>12+</b><span>مفردة أساسية</span></div>
+        <div class="hero-stat"><b>8</b><span>محطات تعلّم</span></div>
+        <div class="hero-stat"><b>4</b><span>تمارين تفاعلية</span></div>
+        <div class="hero-stat"><b>de-DE</b><span>نطق أصلي بالصوت</span></div>
+      </div>
+    </div>
+
+    <div class="compass-wrap" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <circle cx="200" cy="200" r="185" fill="none" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="2 6"/>
+        <g class="compass-rose">
+          <circle cx="200" cy="200" r="150" fill="none" stroke="var(--border)" stroke-width="1"/>
+          <path d="M200 70 L215 200 L200 330 L185 200 Z" fill="var(--gold-bright)" opacity="0.85"/>
+          <path d="M70 200 L200 185 L330 200 L200 215 Z" fill="var(--teal)" opacity="0.85"/>
+          <circle cx="200" cy="200" r="16" fill="var(--rust)"/>
+        </g>
+        <g class="compass-pin" style="animation-delay:-1s">
+          <path d="M120 120c0-11 9-20 20-20s20 9 20 20c0 15-20 34-20 34s-20-19-20-34z" fill="var(--rust)"/>
+          <circle cx="140" cy="119" r="7" fill="var(--bg-elevated)"/>
+        </g>
+        <g class="compass-pin" style="animation-delay:-2.4s">
+          <path d="M260 270c0-11 9-20 20-20s20 9 20 20c0 15-20 34-20 34s-20-19-20-34z" fill="var(--teal)"/>
+          <circle cx="280" cy="269" r="7" fill="var(--bg-elevated)"/>
+        </g>
+        <path d="M90 300 Q200 260 320 110" fill="none" stroke="var(--ink-faint)" stroke-width="2" stroke-dasharray="1 9" stroke-linecap="round"/>
+        <circle class="route-dot" cx="320" cy="110" r="6" fill="var(--rust)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== VOKABELN: ORTE ============================== -->
+<section id="vokabeln" data-waypoint="1" data-title="مفردات الأماكن">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="waypoint">Wegpunkt 1 · محطة 1</span>
+      <h2>مفردات الأماكن والشوارع</h2>
+      <p>اضغط على البطاقة لقلبها ورؤية المعنى، ثم اضغط على أيقونة السمّاعة للاستماع إلى النطق الصحيح. حاول تكرار الكلمة بصوت عالٍ بعد الاستماع إليها.</p>
+    </div>
+
+    <div class="vocab-toolbar reveal">
+      <div class="chip-filter" role="group" aria-label="تصفية المفردات">
+        <button type="button" aria-pressed="true" data-filter="all">الكل</button>
+        <button type="button" aria-pressed="false" data-filter="orte">أماكن وطرق</button>
+        <button type="button" aria-pressed="false" data-filter="gebaeude">مبانٍ ومحطات</button>
+      </div>
+    </div>
+
+    <div class="vocab-grid reveal-stagger reveal" id="vocabGrid">
+      <!-- cards injected by JS from VOCAB data, see script -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================== RICHTUNGEN ============================== -->
+<section id="richtungen" class="band" data-waypoint="2" data-title="الاتجاهات">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="waypoint">Wegpunkt 2 · محطة 2</span>
+      <h2>عجلة الاتجاهات — Die Kompass-Wörter</h2>
+      <p>كل كلمة اتجاه لها مكانها على البوصلة: الاتجاهات الأربعة الأساسية في الأعلى والأسفل واليمين واليسار، وحروف الجر المكانية بينها. اضغط على أي كلمة من القائمة لتسمعها وترى مكانها على البوصلة.</p>
+    </div>
+
+    <div class="richtungen-layout">
+      <div class="dir-word-list reveal" id="dirWordList">
+        <!-- injected by JS from DIRECTIONS data -->
+      </div>
+
+      <div class="dir-diagram-wrap reveal">
+        <div class="compass-wrap" style="max-width:380px">
+          <svg viewBox="0 0 400 400" id="dirCompassSvg">
+            <circle cx="200" cy="200" r="178" fill="none" stroke="var(--border)" stroke-width="1"/>
+            <circle cx="200" cy="200" r="150" fill="none" stroke="var(--border-soft)" stroke-width="1"/>
+            <g id="dirTicks"></g>
+            <g id="dirLabels"></g>
+            <g class="compass-needle" id="dirNeedle">
+              <path d="M200 90 L212 200 L200 240 L188 200 Z" fill="var(--rust)"/>
+              <path d="M200 240 L212 200 L200 310 L188 200 Z" fill="var(--ink-faint)" opacity="0.6"/>
+              <circle cx="200" cy="200" r="14" fill="var(--gold-bright)"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== WICHTIGE SÄTZE ============================== -->
+<section id="saetze" data-waypoint="3" data-title="عبارات مهمة">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="waypoint">Wegpunkt 3 · محطة 3</span>
+      <h2>عبارات جاهزة للسؤال والإجابة</h2>
+      <p>هذه هي الجمل التي ستحتاجها فعليًا في الشارع: عمود للسؤال عن الطريق، وعمود لفهم الإجابة عند إعطائك الاتجاهات. اضغط على أي جملة للاستماع إليها.</p>
+    </div>
+
+    <div class="phrase-grid reveal-stagger reveal">
+      <div class="phrase-col">
+        <h3><span class="tag tag-ask">Fragen</span> كيف تسأل عن الطريق</h3>
+        <div id="phrasesAsk"></div>
+      </div>
+      <div class="phrase-col">
+        <h3><span class="tag tag-give">Antworten</span> كيف تفهم الاتجاهات</h3>
+        <div id="phrasesGive"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== GRAMMATIK ============================== -->
+<section id="grammatik" class="band" data-waypoint="4" data-title="القواعد">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="waypoint">Wegpunkt 4 · محطة 4</span>
+      <h2>القواعد: حروف الجر المكانية والأمر المهذّب</h2>
+      <p>حروف مثل <span class="de speakable" data-de="an, in, neben, hinter, vor, zwischen" tabindex="0" role="button">an, in, neben, hinter, vor, zwischen</span> تسمّى "حروف جر متغيّرة" (Wechselpräpositionen): تأخذ حالة الجر <b>Dativ</b> عند السؤال بـ <span class="de">Wo?</span> (أين؟ — مكان ثابت)، وتأخذ حالة النصب <b>Akkusativ</b> عند السؤال بـ <span class="de">Wohin?</span> (إلى أين؟ — حركة باتجاه مكان).</p>
+    </div>
+
+    <div class="grammar-table-wrap reveal">
+      <table class="grammar-table">
+        <thead>
+          <tr><th>Präposition</th><th>مثال (Wo? — Dativ)</th><th>المعنى</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="de hl">an → am</td><td class="de speakable" tabindex="0" role="button" data-de="Die Bank ist am Marktplatz.">Die Bank ist am Marktplatz.</td><td>البنك يقع عند ساحة السوق.</td></tr>
+          <tr><td class="de hl">in → im</td><td class="de speakable" tabindex="0" role="button" data-de="Das Café ist im Zentrum.">Das Café ist im Zentrum.</td><td>المقهى يقع في وسط المدينة.</td></tr>
+          <tr><td class="de hl">neben</td><td class="de speakable" tabindex="0" role="button" data-de="Die Post ist neben der Kirche.">Die Post ist neben der Kirche.</td><td>مكتب البريد بجانب الكنيسة.</td></tr>
+          <tr><td class="de hl">hinter</td><td class="de speakable" tabindex="0" role="button" data-de="Der Parkplatz ist hinter dem Supermarkt.">Der Parkplatz ist hinter dem Supermarkt.</td><td>الموقف خلف السوبرماركت.</td></tr>
+          <tr><td class="de hl">vor</td><td class="de speakable" tabindex="0" role="button" data-de="Der Bus hält vor dem Bahnhof.">Der Bus hält vor dem Bahnhof.</td><td>تتوقف الحافلة أمام المحطة.</td></tr>
+          <tr><td class="de hl">zwischen</td><td class="de speakable" tabindex="0" role="button" data-de="Die Bäckerei ist zwischen der Bank und der Post.">Die Bäckerei ist zwischen der Bank und der Post.</td><td>المخبز بين البنك والبريد.</td></tr>
+          <tr><td class="de hl">gegenüber</td><td class="de speakable" tabindex="0" role="button" data-de="Der Dom ist gegenüber vom Bahnhof.">Der Dom ist gegenüber vom Bahnhof.</td><td>الكاتدرائية مقابل المحطة (يأخذ Dativ دائمًا).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grammar-table-wrap reveal" style="margin-top:16px;">
+      <table class="grammar-table">
+        <thead><tr><th>السؤال</th><th class="de">مثال</th><th>الحالة</th></tr></thead>
+        <tbody>
+          <tr><td>Wo? (ثابت)</td><td class="de speakable" tabindex="0" role="button" data-de="Ich bin in der Stadt.">Ich bin in der Stadt.</td><td class="hl">Dativ</td></tr>
+          <tr><td>Wohin? (حركة)</td><td class="de speakable" tabindex="0" role="button" data-de="Ich gehe in die Stadt.">Ich gehe in die Stadt.</td><td class="hl">Akkusativ</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="accordion reveal" id="grammarAccordion">
+      <div class="accordion-item" aria-expanded="false">
+        <button class="accordion-btn"><span>zum أم zur؟ كيف تختار الصيغة الصحيحة</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="accordion-panel"><div class="accordion-panel-inner">
+          <p><span class="de">zu + dem = zum</span> (مع der و das)، و<span class="de">zu + der = zur</span> (مع die). هذا الاختصار إلزامي عمليًا في اللغة المحكية:</p>
+          <p>✓ <span class="de speakable" tabindex="0" role="button" data-de="Wie komme ich zum Bahnhof?">Wie komme ich zum Bahnhof?</span> (der Bahnhof)</p>
+          <p>✓ <span class="de speakable" tabindex="0" role="button" data-de="Wie komme ich zum Rathaus?">Wie komme ich zum Rathaus?</span> (das Rathaus)</p>
+          <p>✓ <span class="de speakable" tabindex="0" role="button" data-de="Wie komme ich zur Post?">Wie komme ich zur Post?</span> (die Post)</p>
+        </div></div>
+      </div>
+      <div class="accordion-item" aria-expanded="false">
+        <button class="accordion-btn"><span>الفعل المنفصل: abbiegen (الانعطاف)</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="accordion-panel"><div class="accordion-panel-inner">
+          <p><span class="de">abbiegen</span> فعل منفصل (ab + biegen). في صيغة الأمر المهذّب ينتقل الجزء <span class="de">ab</span> إلى نهاية الجملة دائمًا:</p>
+          <p class="de speakable" tabindex="0" role="button" data-de="Biegen Sie links ab.">✓ Biegen Sie links ab.</p>
+          <p>وليس: <span class="de" style="opacity:.7;text-decoration:line-through">Biegen Sie ab links.</span></p>
+        </div></div>
+      </div>
+      <div class="accordion-item" aria-expanded="false">
+        <button class="accordion-btn"><span>أخطاء شائعة يقع فيها المتعلمون</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="accordion-panel"><div class="accordion-panel-inner">
+          <div class="mistake-card"><span class="x">✗</span><div><span class="de" style="text-decoration:line-through">neben die Post</span><br><span class="ok">✓</span> <span class="de speakable" tabindex="0" role="button" data-de="neben der Post">neben der Post</span> — بعد neben عند السؤال بـ Wo نستخدم Dativ.</div></div>
+          <div class="mistake-card"><span class="x">✗</span><div><span class="de" style="text-decoration:line-through">Biegen Sie ab rechts.</span><br><span class="ok">✓</span> <span class="de speakable" tabindex="0" role="button" data-de="Biegen Sie rechts ab.">Biegen Sie rechts ab.</span> — ab يبقى دائمًا في آخر الجملة.</div></div>
+          <div class="mistake-card"><span class="x">✗</span><div><span class="de" style="text-decoration:line-through">Ich gehe in der Stadt.</span><br><span class="ok">✓</span> <span class="de speakable" tabindex="0" role="button" data-de="Ich gehe in die Stadt.">Ich gehe in die Stadt.</span> — هذه حركة (Wohin) وليست موقعًا ثابتًا.</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== DIALOG ============================== -->
+<section id="dialog" data-waypoint="5" data-title="حوار">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="waypoint">Wegpunkt 5 · محطة 5</span>
+      <h2>حوار حقيقي: السؤال عن كاتدرائية كولونيا</h2>
+      <p>استمع إلى الحوار كاملاً بالضغط على زر التشغيل، أو اضغط على أي فقاعة كلام بمفردها لسماعها. الكلمة التي يتم نطقها حاليًا تُضاء باللون الذهبي.</p>
+    </div>
+
+    <div class="dialog-player reveal">
+      <div class="dialog-controls">
+        <button class="btn btn-primary" id="dialogPlayAll" type="button">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          تشغيل الحوار كاملاً
+        </button>
+        <button class="btn btn-ghost" id="dialogPause" type="button">إيقاف مؤقت</button>
+        <button class="btn btn-ghost" id="dialogReplay" type="button">إعادة من البداية</button>
+        <div class="dialog-voice-indicator" id="dialogVoiceIndicator"><span class="dot"></span><span>بانتظار التشغيل</span></div>
+        <div class="speed-wrap">
+          <span>السرعة</span>
+          <input type="range" id="dialogRate" min="0.6" max="1.3" step="0.05" value="0.9">
+        </div>
+      </div>
+      <div id="dialogLines"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== DEUTSCHLAND IN EUROPA ============================== -->
+<section id="europa" class="band" data-waypoint="6" data-title="ألمانيا وأوروبا">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="waypoint">Wegpunkt 6 · محطة 6</span>
+      <h2>أين تقع ألمانيا في أوروبا؟</h2>
+      <p>مخطط مبسّط (غير دقيق جغرافيًا) يوضح جيران ألمانيا التسعة. اضغط على اسم أي دولة لسماع نطقها، واقرأ الجمل البسيطة بجانبه لوصف الموقع.</p>
+    </div>
+
+    <div class="europe-layout">
+      <div class="map-wrap reveal" id="europeMapWrap">
+        <svg viewBox="0 0 400 400" id="europeMapSvg" role="img" aria-label="مخطط جيران ألمانيا التسعة">
+          <g id="europeSpokes"></g>
+          <polygon points="200,150 245,175 245,225 200,250 155,225 155,175" fill="var(--rust)" opacity="0.9" class="map-country" tabindex="0" role="button" data-de="Deutschland" data-ar="ألمانيا"></polygon>
+          <text x="200" y="196" text-anchor="middle" class="de" style="font-size:15px;font-weight:800;fill:#fff;pointer-events:none;">Deutschland</text>
+          <text x="200" y="213" text-anchor="middle" style="font-size:10px;fill:#fff;pointer-events:none;">ألمانيا</text>
+          <g style="pointer-events:none">
+            <path d="M222 172l3-9 3 9-3-2z" fill="var(--gold-bright)"/>
+            <text x="225" y="168" text-anchor="middle" style="font-size:8px;fill:var(--gold-bright);font-weight:700;">★ Berlin</text>
+          </g>
+          <g id="europeNodes"></g>
+        </svg>
+      </div>
+
+      <div class="reveal" id="europeSentences"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ÜBUNGEN ============================== -->
+<section id="uebungen" data-waypoint="7" data-title="تمارين">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="waypoint">Wegpunkt 7 · محطة 7</span>
+      <h2>تمارين تفاعلية</h2>
+      <p>أربعة تمارين قصيرة لتثبيت ما تعلمته. أكمِلها كلها لفتح شارات الإنجاز الثلاث في نهاية الدرس.</p>
+    </div>
+
+    <div class="score-hud reveal">
+      <span class="pill">النقاط الإجمالية: <b id="totalScoreLabel">0</b></span>
+      <span class="pill">التمارين المكتملة: <b id="doneExercisesLabel">0</b> / 4</span>
+    </div>
+
+    <div class="exercise-tabs reveal" id="exerciseTabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="fill"><span class="num">1</span> إكمال الفراغات</button>
+      <button role="tab" aria-selected="false" data-tab="match"><span class="num">2</span> التوصيل</button>
+      <button role="tab" aria-selected="false" data-tab="quiz"><span class="num">3</span> اختبار قصير</button>
+      <button role="tab" aria-selected="false" data-tab="convo"><span class="num">4</span> محاكاة محادثة</button>
+    </div>
+
+    <div class="exercise-panel active reveal" id="panel-fill" role="tabpanel">
+      <div class="exercise-card">
+        <p style="margin-bottom:20px;">اكتب الكلمة المناسبة في كل فراغ، ثم اضغط "تحقق من الإجابات". <span class="de" style="direction:ltr;display:inline-block">geradeaus · links · rechts · neben · hinter · zwischen</span></p>
+        <div id="fillItems"></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+          <button class="btn btn-primary" id="fillCheck" type="button">تحقق من الإجابات</button>
+          <button class="btn btn-ghost" id="fillReset" type="button">إعادة المحاولة</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise-panel reveal" id="panel-match" role="tabpanel">
+      <div class="exercise-card">
+        <p style="margin-bottom:20px;">اضغط على سؤال ثم اضغط على الإجابة المناسبة له لتكوين زوج مطابق.</p>
+        <div class="match-grid">
+          <div id="matchQuestions"></div>
+          <div id="matchAnswers"></div>
+        </div>
+        <button class="btn btn-ghost" id="matchReset" type="button" style="margin-top:20px;">إعادة الخلط</button>
+      </div>
+    </div>
+
+    <div class="exercise-panel reveal" id="panel-quiz" role="tabpanel">
+      <div class="exercise-card">
+        <div class="quiz-progress" id="quizProgress"></div>
+        <div id="quizBody"></div>
+      </div>
+    </div>
+
+    <div class="exercise-panel reveal" id="panel-convo" role="tabpanel">
+      <div class="exercise-card">
+        <div class="convo-scenario">🎭 السيناريو: أنت سائح في مدينة ألمانية وتسأل أحد المارّة عن الطريق إلى المتحف.</div>
+        <div id="convoBody"></div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:32px;">
+      <h3 style="font-size:16px;">🏅 شارات الإنجاز</h3>
+      <div class="badge-shelf" id="badgeShelf">
+        <div class="badge" data-badge="explorer"><div class="badge-icon">🧭</div><span>مبتدئ الاتجاهات</span></div>
+        <div class="badge" data-badge="local"><div class="badge-icon">🗺️</div><span>خبير المواقع</span></div>
+        <div class="badge" data-badge="master"><div class="badge-icon">🏆</div><span>بطل الملاحة</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TIPPS ============================== -->
+<section id="tipps" class="band" data-waypoint="8" data-title="نصائح">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="waypoint">Wegpunkt 8 · محطة 8</span>
+      <h2>نصائح النطق ونصائح المتحدث الأصلي</h2>
+      <p>تفاصيل صغيرة تصنع فرقًا كبيرًا في وضوح كلامك عندما تسأل عن الطريق فعليًا في ألمانيا.</p>
+    </div>
+
+    <div class="tips-grid reveal-stagger reveal" id="tipsGrid"></div>
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="container">
+    <p>Wegbeschreibungen &amp; Orte in Deutschland — <span class="de">A2</span> · جزء من سلسلة دروس اللغة الألمانية التفاعلية</p>
+    <p style="font-size:11.5px;">اضغط على أي كلمة أو جملة ألمانية في أي مكان بالدرس لسماع نطقها بصوت طبيعي (de-DE).</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="speech-toolbar" id="speechToolbar">
+  <button class="say-icon" id="speechToggleBtn" aria-label="إيقاف/استئناف النطق">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+  </button>
+  <span class="now-text" id="speechNowText">جاهز للنطق</span>
+  <span aria-hidden="true">·</span>
+  <label style="display:flex;align-items:center;gap:6px;">
+    <span>السرعة</span>
+    <input type="range" id="globalRate" min="0.6" max="1.3" step="0.05" value="0.9" style="width:70px;accent-color:var(--rust)">
+  </label>
+</div>
+
+<div class="sr-only" role="status" aria-live="polite" id="liveRegion"></div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ========================================================================
+     1. LESSON DATA
+     ==================================================================== */
+  const VOCAB = [
+    {word:'die Stadt', ar:'المدينة', example:'Ich wohne in einer großen Stadt.', exAr:'أنا أسكن في مدينة كبيرة.', cat:'orte', icon:'stadt'},
+    {word:'die Straße', ar:'الشارع', example:'Die Straße ist sehr lang.', exAr:'الشارع طويل جدًا.', cat:'orte', icon:'strasse'},
+    {word:'die Ecke', ar:'الزاوية / الركن', example:'Der Kiosk ist an der Ecke.', exAr:'الكشك يقع عند الزاوية.', cat:'orte', icon:'ecke'},
+    {word:'die Brücke', ar:'الجسر', example:'Wir gehen über die Brücke.', exAr:'نحن نعبر الجسر.', cat:'orte', icon:'bruecke'},
+    {word:'die Kreuzung', ar:'التقاطع', example:'An der Kreuzung biegen wir rechts ab.', exAr:'عند التقاطع ننعطف يمينًا.', cat:'orte', icon:'kreuzung'},
+    {word:'die Ampel', ar:'إشارة المرور', example:'Warten Sie an der Ampel.', exAr:'انتظر عند إشارة المرور.', cat:'orte', icon:'ampel'},
+    {word:'der Platz', ar:'الساحة', example:'Der Marktplatz ist im Zentrum.', exAr:'ساحة السوق تقع في وسط المدينة.', cat:'orte', icon:'platz'},
+    {word:'das Gebäude', ar:'المبنى', example:'Das Gebäude ist sehr modern.', exAr:'هذا المبنى حديث جدًا.', cat:'gebaeude', icon:'gebaeude'},
+    {word:'der Parkplatz', ar:'موقف السيارات', example:'Der Parkplatz ist hinter dem Supermarkt.', exAr:'الموقف يقع خلف السوبرماركت.', cat:'gebaeude', icon:'parkplatz'},
+    {word:'der Bahnhof', ar:'محطة القطار', example:'Der Bahnhof ist gleich um die Ecke.', exAr:'محطة القطار خلف الزاوية مباشرة.', cat:'gebaeude', icon:'bahnhof'},
+    {word:'die Haltestelle', ar:'موقف الحافلة', example:'Die Haltestelle ist neben der Apotheke.', exAr:'موقف الحافلة بجانب الصيدلية.', cat:'gebaeude', icon:'haltestelle'},
+    {word:'das Rathaus', ar:'مبنى البلدية', example:'Das Rathaus liegt am Marktplatz.', exAr:'مبنى البلدية يقع عند ساحة السوق.', cat:'gebaeude', icon:'rathaus'}
+  ];
+
+  const DIRECTIONS = [
+    {word:'geradeaus', ar:'إلى الأمام مباشرة', angle:0},
+    {word:'vor', ar:'أمام (شيء ما)', angle:45},
+    {word:'rechts', ar:'يمين', angle:90},
+    {word:'neben', ar:'بجانب', angle:135},
+    {word:'hinter', ar:'خلف', angle:180},
+    {word:'gegenüber', ar:'مقابل', angle:225},
+    {word:'links', ar:'يسار', angle:270},
+    {word:'zwischen', ar:'بين (شيئين)', angle:315}
+  ];
+
+  const PHRASES_ASK = [
+    {de:'Entschuldigung, wie komme ich zum Bahnhof?', ar:'عفوًا، كيف أصل إلى المحطة؟'},
+    {de:'Entschuldigung, wie komme ich zur Post?', ar:'عفوًا، كيف أصل إلى مكتب البريد؟'},
+    {de:'Wo ist der Marktplatz?', ar:'أين تقع ساحة السوق؟'},
+    {de:'Ich suche die Bäckerei.', ar:'أنا أبحث عن المخبز.'},
+    {de:'Gibt es hier in der Nähe eine Apotheke?', ar:'هل توجد صيدلية قريبة من هنا؟'},
+    {de:'Wie weit ist es bis zum Museum?', ar:'كم تبعد المسافة حتى المتحف؟'},
+    {de:'Können Sie mir bitte helfen?', ar:'هل يمكنك مساعدتي من فضلك؟'}
+  ];
+
+  const PHRASES_GIVE = [
+    {de:'Gehen Sie geradeaus.', ar:'اذهب مباشرة إلى الأمام.'},
+    {de:'Gehen Sie die erste Straße rechts.', ar:'اذهب في أول شارع إلى اليمين.'},
+    {de:'Nehmen Sie die zweite Straße links.', ar:'خذ الشارع الثاني إلى اليسار.'},
+    {de:'Biegen Sie an der Ampel links ab.', ar:'انعطف يسارًا عند إشارة المرور.'},
+    {de:'Überqueren Sie die Brücke.', ar:'اعبر الجسر.'},
+    {de:'Es ist gleich um die Ecke.', ar:'إنه خلف الزاوية مباشرة.'},
+    {de:'Das ist ungefähr fünf Minuten zu Fuß.', ar:'تبعد المسافة نحو خمس دقائق سيرًا على الأقدام.'}
+  ];
+
+  const DIALOG = [
+    {who:'S', side:'right', de:'Entschuldigung, können Sie mir helfen?', ar:'عفوًا، هل يمكنك مساعدتي؟'},
+    {who:'K', side:'left', de:'Ja, natürlich. Was suchen Sie?', ar:'نعم بالطبع، ماذا تبحثين؟'},
+    {who:'S', side:'right', de:'Ich suche den Kölner Dom. Wie komme ich dorthin?', ar:'أبحث عن كاتدرائية كولونيا. كيف أصل إلى هناك؟'},
+    {who:'K', side:'left', de:'Gehen Sie hier geradeaus bis zur Ampel.', ar:'اذهبي هنا مباشرة حتى إشارة المرور.'},
+    {who:'S', side:'right', de:'Geradeaus, verstanden. Und dann?', ar:'إلى الأمام، فهمت. وبعد ذلك؟'},
+    {who:'K', side:'left', de:'Dann biegen Sie links ab und gehen Sie über die Brücke.', ar:'بعدها انعطفي يسارًا واعبري الجسر.'},
+    {who:'S', side:'right', de:'Über die Brücke, okay.', ar:'عبر الجسر، حسنًا.'},
+    {who:'K', side:'left', de:'Danach sehen Sie den Dom schon. Er ist direkt neben dem Bahnhof.', ar:'بعدها سترين الكاتدرائية مباشرة. إنها بجانب المحطة تمامًا.'},
+    {who:'S', side:'right', de:'Wie weit ist das ungefähr?', ar:'كم تبعد هذه المسافة تقريبًا؟'},
+    {who:'K', side:'left', de:'Nur zehn Minuten zu Fuß.', ar:'فقط عشر دقائق سيرًا على الأقدام.'},
+    {who:'S', side:'right', de:'Vielen Dank für Ihre Hilfe!', ar:'شكرًا جزيلًا على مساعدتك!'},
+    {who:'K', side:'left', de:'Gern geschehen! Guten Tag noch!', ar:'على الرحب والسعة! أتمنى لك يومًا طيبًا!'}
+  ];
+
+  const EUROPE_NEIGHBORS = [
+    {name:'Dänemark', ar:'الدنمارك'},
+    {name:'Polen', ar:'بولندا'},
+    {name:'Tschechien', ar:'التشيك'},
+    {name:'Österreich', ar:'النمسا'},
+    {name:'Schweiz', ar:'سويسرا'},
+    {name:'Frankreich', ar:'فرنسا'},
+    {name:'Luxemburg', ar:'لوكسمبورغ'},
+    {name:'Belgien', ar:'بلجيكا'},
+    {name:'Niederlande', ar:'هولندا'}
+  ];
+
+  const EUROPE_SENTENCES = [
+    {de:'Deutschland liegt in Mitteleuropa.', ar:'تقع ألمانيا في وسط أوروبا.'},
+    {de:'Deutschland hat neun Nachbarländer.', ar:'لدى ألمانيا تسع دول مجاورة.'},
+    {de:'Im Norden liegt Dänemark.', ar:'في الشمال تقع الدنمارك.'},
+    {de:'Im Westen liegen die Niederlande, Belgien, Luxemburg und Frankreich.', ar:'في الغرب تقع هولندا وبلجيكا ولوكسمبورغ وفرنسا.'},
+    {de:'Im Süden liegen die Schweiz und Österreich.', ar:'في الجنوب تقع سويسرا والنمسا.'},
+    {de:'Im Osten liegen Polen und Tschechien.', ar:'في الشرق تقع بولندا وجمهورية التشيك.'},
+    {de:'Die Hauptstadt von Deutschland ist Berlin.', ar:'عاصمة ألمانيا هي برلين.'},
+    {de:'Berlin liegt im Nordosten von Deutschland.', ar:'تقع برلين في شمال شرق ألمانيا.'}
+  ];
+
+  const FILL_ITEMS = [
+    {before:'Gehen Sie ', answer:'geradeaus', after:' bis zur Ampel.', ar:'امشِ مباشرة حتى إشارة المرور.'},
+    {before:'Die Bäckerei ist ', answer:'zwischen', after:' der Bank und der Post.', ar:'المخبز يقع بين البنك والبريد.'},
+    {before:'Der Parkplatz ist ', answer:'hinter', after:' dem Supermarkt.', ar:'الموقف يقع خلف السوبرماركت.'},
+    {before:'Biegen Sie an der Kreuzung ', answer:'links', after:' ab.', ar:'انعطف يسارًا عند التقاطع.'},
+    {before:'Die Apotheke ist ', answer:'neben', after:' der Kirche.', ar:'الصيدلية بجانب الكنيسة.'},
+    {before:'Nehmen Sie die erste Straße ', answer:'rechts', after:'.', ar:'خذ أول شارع إلى اليمين.'}
+  ];
+
+  const MATCH_PAIRS = [
+    {q:'Wie komme ich zum Bahnhof?', a:'Gehen Sie geradeaus, dann rechts.'},
+    {q:'Wo ist die Apotheke?', a:'Sie ist neben der Kirche.'},
+    {q:'Wie weit ist es bis zum Museum?', a:'Ungefähr zehn Minuten zu Fuß.'},
+    {q:'Entschuldigung, wie komme ich zur Post?', a:'Nehmen Sie die zweite Straße links.'},
+    {q:'Gibt es hier eine Bäckerei in der Nähe?', a:'Ja, sie ist gleich um die Ecke.'}
+  ];
+
+  const QUIZ = [
+    {q:'Die Kirche ist ___ dem Rathaus.', choices:['neben','für','ohne','durch'], correct:0},
+    {q:'zu + dem = ?', choices:['zur','zum','zud','zun'], correct:1},
+    {q:'Was bedeutet "geradeaus"?', choices:['يمين','يسار','إلى الأمام مباشرة','خلف'], correct:2},
+    {q:'Wähle den richtigen Satz:', choices:['Biegen Sie ab links.','Biegen Sie links ab.','Links Sie biegen ab.','Sie biegen links, Gehen.'], correct:1},
+    {q:'Ich gehe ___ Stadt. (Bewegung)', choices:['in der','in die','im','an der'], correct:1}
+  ];
+
+  const CONVO = [
+    {npc:'Guten Tag! Wie kann ich Ihnen helfen?', npcAr:'مساء الخير! كيف يمكنني مساعدتك؟',
+     options:[
+       {de:'Ich suche das Museum.', ar:'أبحث عن المتحف.', correct:true},
+       {de:'Ich bin müde.', ar:'أنا متعب.', correct:false},
+       {de:'Wie heißen Sie?', ar:'ما اسمك؟', correct:false}
+     ]},
+    {npc:'Kein Problem. Gehen Sie geradeaus und dann links.', npcAr:'لا مشكلة. اذهب مباشرة ثم انعطف يسارًا.',
+     options:[
+       {de:'Geradeaus und dann links, verstanden. Danke!', ar:'إلى الأمام ثم يسارًا، فهمت. شكرًا!', correct:true},
+       {de:'Ich weiß nicht.', ar:'لا أعرف.', correct:false},
+       {de:'Auf Wiedersehen.', ar:'مع السلامة.', correct:false}
+     ]},
+    {npc:'Gern geschehen! Noch einen schönen Tag!', npcAr:'على الرحب والسعة! أتمنى لك يومًا سعيدًا!',
+     options:[
+       {de:'Ihnen auch, vielen Dank!', ar:'ولك أيضًا، شكرًا جزيلًا!', correct:true},
+       {de:'Wie viel kostet das?', ar:'كم يكلف هذا؟', correct:false}
+     ]}
+  ];
+
+  const TIPS = [
+    {icon:'ear', title:'نطق حرف ß', body:'حرف <span class="de">ß</span> يُلفظ دائمًا كصوت "س" حاد وممدود، كما في <span class="de speakable" tabindex="0" role="button" data-de="Straße">Straße</span> — وليس أبدًا كصوت B.'},
+    {icon:'wave', title:'حرف الـ R الألماني', body:'حرف <span class="de">r</span> يُنطق غالبًا من الحلق (أقرب إلى الخاء الخفيفة)، جرّب الفرق في <span class="de speakable" tabindex="0" role="button" data-de="rechts">rechts</span> و<span class="de speakable" tabindex="0" role="button" data-de="geradeaus">geradeaus</span>.'},
+    {icon:'speed', title:'geradeaus في الحديث السريع', body:'في اللغة المحكية اليومية يختصرها الألمان أحيانًا لتصبح أقرب لـ "gradeaus"، مع دمج المقاطع الأولى.'},
+    {icon:'chat', title:'immer geradeaus', body:'عبارة شائعة جدًا بمعنى "استمر إلى الأمام دائمًا"، يستخدمها الألمان بثقة حتى لو كانت المسافة طويلة نسبيًا.'},
+    {icon:'hand', title:'الإشارة تكمّل الكلام', body:'من الطبيعي جدًا أن يرافق المتحدث الأصلي كلمتي <span class="de speakable" tabindex="0" role="button" data-de="rechts">rechts</span> و<span class="de speakable" tabindex="0" role="button" data-de="links">links</span> بإشارة يد بدلاً من شرح مطوّل.'},
+    {icon:'bulb', title:'تمييز zum/zur بسرعة', body:'تذكّر بسرعة: الأسماء المؤنثة (die) ← <span class="de">zur</span>. باقي الأسماء (der/das) ← <span class="de">zum</span>. كرّر الأمثلة بصوت عالٍ حتى تصبح تلقائية.'}
+  ];
+
+  const SECTION_IDS = ['vokabeln','richtungen','saetze','grammatik','dialog','europa','uebungen','tipps'];
+  const MAXES = { fill: FILL_ITEMS.length, match: MATCH_PAIRS.length, quiz: QUIZ.length, convo: CONVO.length };
+  const STORAGE_KEY = 'weg-lesson-progress-v1';
+
+  /* ========================================================================
+     2. ICONS (inline SVG fragments — no external assets)
+     ==================================================================== */
+  const VOCAB_ICONS = {
+    stadt: '<rect x="6" y="26" width="9" height="16"/><rect x="19" y="16" width="10" height="26"/><rect x="33" y="22" width="9" height="20"/><line x1="4" y1="42" x2="44" y2="42"/>',
+    strasse: '<path d="M14 42 L20 6 M34 42 L28 6"/><line x1="24" y1="10" x2="24" y2="15" stroke-width="2.5"/><line x1="24" y1="20" x2="24" y2="25" stroke-width="2.5"/><line x1="24" y1="30" x2="24" y2="35" stroke-width="2.5"/>',
+    ecke: '<path d="M10 10 L10 34 L34 34"/><circle cx="10" cy="34" r="3" fill="currentColor" stroke="none"/>',
+    bruecke: '<path d="M6 30 Q24 8 42 30"/><line x1="12" y1="30" x2="12" y2="40"/><line x1="36" y1="30" x2="36" y2="40"/><line x1="6" y1="40" x2="42" y2="40"/>',
+    kreuzung: '<line x1="24" y1="4" x2="24" y2="44"/><line x1="4" y1="24" x2="44" y2="24"/>',
+    ampel: '<rect x="17" y="6" width="14" height="34" rx="4"/><circle cx="24" cy="14" r="3" fill="currentColor" stroke="none"/><circle cx="24" cy="23" r="3" fill="currentColor" stroke="none" opacity="0.45"/><circle cx="24" cy="32" r="3" fill="currentColor" stroke="none" opacity="0.45"/><line x1="24" y1="40" x2="24" y2="44"/>',
+    platz: '<circle cx="24" cy="24" r="8"/><circle cx="24" cy="6" r="2" fill="currentColor" stroke="none"/><circle cx="24" cy="42" r="2" fill="currentColor" stroke="none"/><circle cx="6" cy="24" r="2" fill="currentColor" stroke="none"/><circle cx="42" cy="24" r="2" fill="currentColor" stroke="none"/>',
+    gebaeude: '<rect x="10" y="8" width="28" height="34"/><line x1="17" y1="16" x2="17" y2="20"/><line x1="24" y1="16" x2="24" y2="20"/><line x1="31" y1="16" x2="31" y2="20"/><line x1="17" y1="26" x2="17" y2="30"/><line x1="24" y1="26" x2="24" y2="30"/><line x1="31" y1="26" x2="31" y2="30"/>',
+    parkplatz: '<rect x="8" y="6" width="32" height="36" rx="5"/><path d="M19 34V14h7a6 6 0 010 12h-7"/>',
+    bahnhof: '<rect x="10" y="12" width="28" height="20" rx="8"/><circle cx="17" cy="36" r="3"/><circle cx="31" cy="36" r="3"/><line x1="16" y1="20" x2="32" y2="20"/>',
+    haltestelle: '<line x1="24" y1="6" x2="24" y2="42"/><rect x="14" y="6" width="20" height="14" rx="2"/><line x1="18" y1="13" x2="30" y2="13"/>',
+    rathaus: '<path d="M6 20 L24 6 L42 20"/><rect x="9" y="20" width="30" height="22"/><line x1="16" y1="20" x2="16" y2="42"/><line x1="24" y1="20" x2="24" y2="42"/><line x1="32" y1="20" x2="32" y2="42"/>'
+  };
+  const TIP_ICONS = {
+    ear: '<path d="M8 12a6 6 0 0112 0c0 4-3 5-3 8a3 3 0 01-6 0"/><path d="M8 12a6 6 0 00-2 4.5"/>',
+    wave: '<path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/>',
+    speed: '<circle cx="12" cy="13" r="8"/><path d="M12 13l4-4M12 5v2"/>',
+    chat: '<path d="M4 5h16v10H8l-4 4z"/>',
+    hand: '<path d="M9 12V5a1.5 1.5 0 013 0v6M12 11V4a1.5 1.5 0 013 0v7M15 12V6a1.5 1.5 0 013 0v8c0 4-2 7-6 7s-6-2-7-5l-2-4a1.4 1.4 0 012.4-1.4L7 14"/>',
+    bulb: '<path d="M9 18h6M10 21h4M12 3a6 6 0 00-3 11c1 .7 1 1.6 1 2h4c0-.4 0-1.3 1-2a6 6 0 00-3-11z"/>'
+  };
+  function svgIcon(key){ return '<svg class="vocab-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(VOCAB_ICONS[key]||'')+'</svg>'; }
+  function tipIcon(key){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(TIP_ICONS[key]||'')+'</svg>'; }
+  function speakerSvg(){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 010 7"/></svg>'; }
+
+  /* ========================================================================
+     3. PROGRESS STATE (localStorage)
+     ==================================================================== */
+  let progress = loadProgress();
+  function loadProgress(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(raw){
+        const parsed = JSON.parse(raw);
+        if(parsed && parsed.sections && parsed.exercises) return parsed;
+      }
+    }catch(e){}
+    return { sections:{}, exercises:{}, badges:[] };
+  }
+  function saveProgress(){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); }catch(e){} }
+
+  /* ========================================================================
+     4. SPEECH SYNTHESIS
+     ==================================================================== */
+  function getGermanVoice(){
+    if(!('speechSynthesis' in window)) return null;
+    const voices = window.speechSynthesis.getVoices() || [];
+    const deVoices = voices.filter(v=> v.lang && v.lang.toLowerCase().indexOf('de') === 0);
+    if(!deVoices.length) return null;
+    const preferred = ['google deutsch','anna','markus','helena','petra','deutschland'];
+    const byName = deVoices.find(v=> preferred.some(n=> v.name.toLowerCase().indexOf(n) !== -1));
+    if(byName) return byName;
+    const exact = deVoices.find(v=> v.lang.toLowerCase()==='de-de');
+    return exact || deVoices[0];
+  }
+
+  function currentRate(){
+    const el = document.getElementById('globalRate');
+    const v = el ? parseFloat(el.value) : 0.9;
+    return isNaN(v) ? 0.9 : v;
+  }
+
+  function speak(text, el){
+    if(!text) return;
+    if(!('speechSynthesis' in window)){
+      announce('النطق الصوتي غير مدعوم في هذا المتصفح.');
+      return;
+    }
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'de-DE';
+    const voice = getGermanVoice();
+    if(voice) utter.voice = voice;
+    utter.rate = currentRate();
+    document.querySelectorAll('.speaking').forEach(n=> n.classList.remove('speaking'));
+    if(el) el.classList.add('speaking');
+    updateSpeechToolbar(true, text);
+    utter.onend = function(){ if(el) el.classList.remove('speaking'); updateSpeechToolbar(false, text); };
+    utter.onerror = function(){ if(el) el.classList.remove('speaking'); updateSpeechToolbar(false, text); };
+    window.speechSynthesis.speak(utter);
+  }
+
+  function updateSpeechToolbar(active, text){
+    const toolbar = document.getElementById('speechToolbar');
+    const nowText = document.getElementById('speechNowText');
+    if(!toolbar || !nowText) return;
+    toolbar.classList.add('show');
+    toolbar.classList.toggle('speaking', active);
+    nowText.textContent = active ? text : 'جاهز للنطق';
+  }
+
+  function bindSpeakables(){
+    document.querySelectorAll('.speakable[data-de]').forEach(el=>{
+      if(el.dataset.bound) return;
+      el.dataset.bound = '1';
+      el.addEventListener('click', function(){ speak(el.dataset.de, el); });
+      el.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); speak(el.dataset.de, el); } });
+    });
+  }
+
+  function announce(msg){
+    const live = document.getElementById('liveRegion');
+    if(!live) return;
+    live.textContent = '';
+    setTimeout(function(){ live.textContent = msg; }, 60);
+  }
+
+  /* ========================================================================
+     5. RENDER: VOCABULARY
+     ==================================================================== */
+  function renderVocab(){
+    const grid = document.getElementById('vocabGrid');
+    grid.innerHTML = VOCAB.map(function(v,i){
+      const parts = v.word.split(' ');
+      const article = parts[0];
+      const noun = parts.slice(1).join(' ');
+      return '<div class="flip-card" style="--i:'+i+'" data-cat="'+v.cat+'" data-search="'+v.word+' '+v.ar+'">'
+        + '<div class="flip-card-inner" tabindex="0" role="button" data-de="'+v.word+'" aria-label="بطاقة مفردة: '+v.word+'">'
+          + '<div class="flip-face flip-front">'
+            + svgIcon(v.icon)
+            + '<span class="vocab-article">'+article+'</span>'
+            + '<span class="vocab-word">'+noun+'</span>'
+          + '</div>'
+          + '<div class="flip-face flip-back">'
+            + '<span class="vocab-ar">'+v.ar+'</span>'
+            + '<span class="vocab-example de">'+v.example+'</span>'
+            + '<span class="vocab-example" style="opacity:.85">'+v.exAr+'</span>'
+            + '<button type="button" class="vocab-speak" data-de="'+v.example+'">'+speakerSvg()+' استمع للمثال</button>'
+          + '</div>'
+        + '</div>'
+      + '</div>';
+    }).join('');
+
+    grid.querySelectorAll('.flip-card-inner').forEach(function(card){
+      card.addEventListener('click', function(){
+        speak(card.dataset.de, card);
+        card.parentElement.classList.toggle('flipped');
+      });
+      card.addEventListener('keydown', function(e){
+        if(e.key==='Enter'||e.key===' '){
+          e.preventDefault();
+          speak(card.dataset.de, card);
+          card.parentElement.classList.toggle('flipped');
+        }
+      });
+    });
+    grid.querySelectorAll('.vocab-speak').forEach(function(btn){
+      btn.addEventListener('click', function(e){ e.stopPropagation(); speak(btn.dataset.de, btn); });
+    });
+  }
+
+  function initVocabFilter(){
+    document.querySelectorAll('.chip-filter button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        document.querySelectorAll('.chip-filter button').forEach(function(b){ b.setAttribute('aria-pressed', b===btn ? 'true':'false'); });
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('#vocabGrid .flip-card').forEach(function(card){
+          card.style.display = (filter==='all' || card.dataset.cat===filter) ? '' : 'none';
+        });
+      });
+    });
+  }
+
+  /* ========================================================================
+     6. RENDER: DIRECTIONS COMPASS
+     ==================================================================== */
+  function renderDirections(){
+    const list = document.getElementById('dirWordList');
+    list.innerHTML = DIRECTIONS.map(function(d){
+      return '<div class="dir-word" data-angle="'+d.angle+'" data-de="'+d.word+'" tabindex="0" role="button" data-search="'+d.word+' '+d.ar+'">'
+        + '<div><span class="de">'+d.word+'</span><br><span class="ar-mean">'+d.ar+'</span></div>'
+        + '<span class="speaker-dot">'+speakerSvg()+'</span>'
+      + '</div>';
+    }).join('');
+
+    list.querySelectorAll('.dir-word').forEach(function(row){
+      row.addEventListener('click', function(){ activateDirection(row); });
+      row.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); activateDirection(row); } });
+    });
+
+    const ticksEl = document.getElementById('dirTicks');
+    const labelsEl = document.getElementById('dirLabels');
+    const rTick1 = 150, rTick2 = 163, rLabel = 178;
+    let ticksHtml = '', labelsHtml = '';
+    DIRECTIONS.forEach(function(d){
+      const rad = (d.angle - 90) * Math.PI / 180;
+      const x1 = 200 + rTick1*Math.cos(rad), y1 = 200 + rTick1*Math.sin(rad);
+      const x2 = 200 + rTick2*Math.cos(rad), y2 = 200 + rTick2*Math.sin(rad);
+      const lx = 200 + rLabel*Math.cos(rad), ly = 200 + rLabel*Math.sin(rad);
+      ticksHtml += '<line x1="'+x1.toFixed(1)+'" y1="'+y1.toFixed(1)+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'" stroke="var(--ink-faint)" stroke-width="2"/>';
+      labelsHtml += '<text class="compass-label de" data-angle="'+d.angle+'" x="'+lx.toFixed(1)+'" y="'+ly.toFixed(1)+'" text-anchor="middle" dominant-baseline="middle" style="font-family:var(--font-mono);font-size:12px;font-weight:700;fill:var(--ink-soft);cursor:pointer;">'+d.word+'</text>';
+    });
+    ticksEl.innerHTML = ticksHtml;
+    labelsEl.innerHTML = labelsHtml;
+    labelsEl.querySelectorAll('.compass-label').forEach(function(t){
+      t.addEventListener('click', function(){
+        const angle = t.dataset.angle;
+        const row = list.querySelector('.dir-word[data-angle="'+angle+'"]');
+        if(row) activateDirection(row);
+      });
+    });
+  }
+
+  function activateDirection(row){
+    document.querySelectorAll('.dir-word').forEach(function(r){ r.classList.remove('active'); });
+    row.classList.add('active');
+    const angle = parseFloat(row.dataset.angle);
+    const needle = document.getElementById('dirNeedle');
+    if(needle) needle.style.transform = 'rotate('+angle+'deg)';
+    document.querySelectorAll('.compass-label').forEach(function(l){
+      l.style.fill = (parseFloat(l.dataset.angle)===angle) ? 'var(--rust)' : 'var(--ink-soft)';
+    });
+    speak(row.dataset.de, row);
+  }
+
+  /* ========================================================================
+     7. RENDER: PHRASES
+     ==================================================================== */
+  function bubbleHtml(p){
+    const safe = p.de.replace(/"/g, '&quot;');
+    return '<div class="bubble" tabindex="0" role="button" data-de="'+safe+'" data-search="'+p.de+' '+p.ar+'">'
+      + '<span class="bubble-icon">'+speakerSvg()+'</span>'
+      + '<span class="bubble-text"><span class="de">'+p.de+'</span><span class="ar">'+p.ar+'</span></span>'
+    + '</div>';
+  }
+  function renderPhrases(){
+    document.getElementById('phrasesAsk').innerHTML = PHRASES_ASK.map(bubbleHtml).join('');
+    document.getElementById('phrasesGive').innerHTML = PHRASES_GIVE.map(bubbleHtml).join('');
+    document.querySelectorAll('#phrasesAsk .bubble, #phrasesGive .bubble').forEach(function(b){
+      b.addEventListener('click', function(){ speak(b.dataset.de, b); });
+      b.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); speak(b.dataset.de, b); } });
+    });
+  }
+
+  /* ========================================================================
+     8. RENDER: DIALOG PLAYER
+     ==================================================================== */
+  let dialogPlaying = false;
+  let dialogPlayIndex = 0;
+
+  function renderDialog(){
+    const wrap = document.getElementById('dialogLines');
+    wrap.innerHTML = DIALOG.map(function(line){
+      const words = line.de.split(' ');
+      let offset = 0;
+      const wordSpans = words.map(function(w){
+        const span = '<span class="word" data-start="'+offset+'">'+w+'</span>';
+        offset += w.length + 1;
+        return span;
+      }).join(' ');
+      const safe = line.de.replace(/"/g, '&quot;');
+      return '<div class="dialog-line '+line.side+'">'
+        + '<div class="dialog-avatar">'+line.who+'</div>'
+        + '<div class="dialog-bubble" data-de="'+safe+'" tabindex="0" role="button" aria-label="نطق سطر الحوار">'
+          + '<div class="de">'+wordSpans+'</div>'
+          + '<div class="ar">'+line.ar+'</div>'
+        + '</div>'
+      + '</div>';
+    }).join('');
+
+    const bubbles = wrap.querySelectorAll('.dialog-bubble');
+    bubbles.forEach(function(b, i){
+      b.addEventListener('click', function(){ dialogPlaying = false; speakDialogLine(i, false); });
+      b.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dialogPlaying=false; speakDialogLine(i, false); } });
+    });
+  }
+
+  function updateDialogVoiceIndicator(active){
+    const ind = document.getElementById('dialogVoiceIndicator');
+    if(!ind) return;
+    ind.classList.toggle('active', active);
+    const label = ind.querySelector('span:last-child');
+    if(label) label.textContent = active ? 'جارٍ النطق الآن...' : 'بانتظار التشغيل';
+  }
+
+  function speakDialogLine(index, chained){
+    const bubbles = document.querySelectorAll('.dialog-bubble');
+    if(index >= bubbles.length){
+      dialogPlaying = false;
+      updateDialogVoiceIndicator(false);
+      return;
+    }
+    if(!('speechSynthesis' in window)){ announce('النطق الصوتي غير مدعوم في هذا المتصفح.'); return; }
+    const bubble = bubbles[index];
+    document.querySelectorAll('.dialog-bubble.current').forEach(function(n){ n.classList.remove('current'); });
+    bubble.classList.add('current');
+    bubble.scrollIntoView({behavior:'smooth', block:'nearest'});
+
+    window.speechSynthesis.cancel();
+    const text = bubble.dataset.de;
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'de-DE';
+    const voice = getGermanVoice();
+    if(voice) utter.voice = voice;
+    const rateEl = document.getElementById('dialogRate');
+    utter.rate = rateEl ? parseFloat(rateEl.value) : 0.9;
+
+    const wordEls = bubble.querySelectorAll('.word');
+    utter.onboundary = function(e){
+      if(e.name && e.name !== 'word') return;
+      let active = null;
+      wordEls.forEach(function(w){ if(parseInt(w.dataset.start,10) <= e.charIndex) active = w; });
+      wordEls.forEach(function(w){ w.classList.remove('word-active'); });
+      if(active) active.classList.add('word-active');
+    };
+    utter.onstart = function(){ updateDialogVoiceIndicator(true); updateSpeechToolbar(true, text); };
+    utter.onend = function(){
+      wordEls.forEach(function(w){ w.classList.remove('word-active'); });
+      updateDialogVoiceIndicator(false);
+      updateSpeechToolbar(false, text);
+      if(chained && dialogPlaying){ dialogPlayIndex = index + 1; speakDialogLine(dialogPlayIndex, true); }
+    };
+    utter.onerror = function(){ updateDialogVoiceIndicator(false); };
+    window.speechSynthesis.speak(utter);
+  }
+
+  /* ========================================================================
+     9. RENDER: EUROPE SPOKE DIAGRAM
+     ==================================================================== */
+  function renderEuropeMap(){
+    const spokes = document.getElementById('europeSpokes');
+    const nodes = document.getElementById('europeNodes');
+    const R = 150;
+    let spokesHtml = '', nodesHtml = '';
+    EUROPE_NEIGHBORS.forEach(function(c, i){
+      const angleDeg = -90 + i*40;
+      const rad = angleDeg * Math.PI/180;
+      const x = 200 + R*Math.cos(rad), y = 200 + R*Math.sin(rad);
+      spokesHtml += '<line x1="200" y1="200" x2="'+x.toFixed(1)+'" y2="'+y.toFixed(1)+'" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="1 6"/>';
+      nodesHtml += '<g class="map-country" tabindex="0" role="button" data-de="'+c.name+'" data-ar="'+c.ar+'" data-search="'+c.name+' '+c.ar+'">'
+        + '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="30" fill="var(--teal)" opacity="0.85"/>'
+        + '<text x="'+x.toFixed(1)+'" y="'+(y-2).toFixed(1)+'" text-anchor="middle" class="de" style="font-size:11px;font-weight:700;fill:#fff;pointer-events:none;">'+c.name+'</text>'
+        + '<text x="'+x.toFixed(1)+'" y="'+(y+12).toFixed(1)+'" text-anchor="middle" style="font-size:9px;fill:#fff;pointer-events:none;">'+c.ar+'</text>'
+      + '</g>';
+    });
+    spokes.innerHTML = spokesHtml;
+    nodes.innerHTML = nodesHtml;
+    document.querySelectorAll('.map-country').forEach(function(g){
+      g.addEventListener('click', function(){ speak(g.dataset.de, g); });
+      g.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); speak(g.dataset.de, g); } });
+    });
+
+    const capitalNode = document.querySelector('#europeMapSvg polygon.map-country');
+    if(capitalNode){
+      capitalNode.addEventListener('click', function(){ speak(capitalNode.dataset.de, capitalNode); });
+      capitalNode.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); speak(capitalNode.dataset.de, capitalNode); } });
+    }
+  }
+
+  function renderEuropeSentences(){
+    const wrap = document.getElementById('europeSentences');
+    wrap.innerHTML = EUROPE_SENTENCES.map(bubbleHtml).join('');
+    wrap.querySelectorAll('.bubble').forEach(function(b){
+      b.addEventListener('click', function(){ speak(b.dataset.de, b); });
+      b.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); speak(b.dataset.de, b); } });
+    });
+  }
+
+  /* ========================================================================
+     10. EXERCISE 1 — FILL IN THE BLANK
+     ==================================================================== */
+  function renderFill(){
+    const wrap = document.getElementById('fillItems');
+    wrap.innerHTML = FILL_ITEMS.map(function(f, i){
+      const fullSentence = f.before + f.answer + f.after;
+      return '<div class="fill-item" data-index="'+i+'">'
+        + '<span class="de">'+f.before+'<input type="text" data-answer="'+f.answer+'" aria-label="أدخل الكلمة المناسبة" autocomplete="off" spellcheck="false">'+f.after+
+          ' <button type="button" class="vocab-speak fill-speak" style="background:var(--bg-sunken);color:var(--ink-soft);border:1px solid var(--border);display:inline-flex;" data-de="'+fullSentence+'">'+speakerSvg()+'</button>'
+          + '<span class="fb-icon" aria-hidden="true"></span>'
+        + '</span>'
+        + '<div class="ar" style="font-size:12.5px;color:var(--ink-faint);margin-top:4px;">'+f.ar+'</div>'
+      + '</div>';
+    }).join('');
+    wrap.querySelectorAll('.fill-speak').forEach(function(btn){
+      btn.addEventListener('click', function(){ speak(btn.dataset.de, btn); });
+    });
+  }
+
+  function initFillExercise(){
+    document.getElementById('fillCheck').addEventListener('click', function(){
+      let correct = 0;
+      document.querySelectorAll('#fillItems .fill-item').forEach(function(item){
+        const input = item.querySelector('input');
+        const icon = item.querySelector('.fb-icon');
+        const val = (input.value || '').trim().toLowerCase();
+        const expected = input.dataset.answer.toLowerCase();
+        if(val === expected){
+          input.classList.add('correct'); input.classList.remove('incorrect');
+          icon.textContent = '✓'; icon.className = 'fb-icon ok';
+          correct++;
+        } else {
+          input.classList.add('incorrect'); input.classList.remove('correct');
+          icon.textContent = '✗'; icon.className = 'fb-icon bad';
+        }
+      });
+      markExerciseProgress('fill', correct, FILL_ITEMS.length);
+      announce('النتيجة: ' + correct + ' من ' + FILL_ITEMS.length + ' إجابات صحيحة');
+    });
+    document.getElementById('fillReset').addEventListener('click', function(){
+      document.querySelectorAll('#fillItems input').forEach(function(i){ i.value=''; i.classList.remove('correct','incorrect'); });
+      document.querySelectorAll('#fillItems .fb-icon').forEach(function(i){ i.textContent=''; i.className='fb-icon'; });
+    });
+  }
+
+  /* ========================================================================
+     11. EXERCISE 2 — MATCHING
+     ==================================================================== */
+  let matchState = { firstPick:null, matchedCount:0 };
+  function shuffled(arr){ return arr.slice().sort(function(){ return Math.random() - 0.5; }); }
+
+  function renderMatch(){
+    matchState = { firstPick:null, matchedCount:0 };
+    const qWrap = document.getElementById('matchQuestions');
+    const aWrap = document.getElementById('matchAnswers');
+    const tagged = MATCH_PAIRS.map(function(p, i){ return {q:p.q, a:p.a, id:i}; });
+    const qs = shuffled(tagged);
+    const as = shuffled(tagged);
+    qWrap.innerHTML = qs.map(function(p){ return '<div class="match-item" data-id="'+p.id+'" data-role="q" data-de="'+p.q+'">'+p.q+'</div>'; }).join('');
+    aWrap.innerHTML = as.map(function(p){ return '<div class="match-item" data-id="'+p.id+'" data-role="a" data-de="'+p.a+'">'+p.a+'</div>'; }).join('');
+    document.querySelectorAll('#panel-match .match-item').forEach(function(el){
+      el.addEventListener('click', function(){ handleMatchClick(el); });
+    });
+  }
+
+  function handleMatchClick(el){
+    if(el.classList.contains('matched')) return;
+    speak(el.dataset.de);
+    if(!matchState.firstPick){
+      matchState.firstPick = el;
+      el.classList.add('selected');
+      return;
+    }
+    if(matchState.firstPick === el) return;
+    const first = matchState.firstPick;
+    if(first.dataset.role === el.dataset.role){
+      first.classList.remove('selected');
+      matchState.firstPick = el;
+      el.classList.add('selected');
+      return;
+    }
+    if(first.dataset.id === el.dataset.id){
+      first.classList.remove('selected');
+      first.classList.add('matched');
+      el.classList.add('matched');
+      matchState.matchedCount++;
+      matchState.firstPick = null;
+      if(matchState.matchedCount === MATCH_PAIRS.length){
+        markExerciseProgress('match', MATCH_PAIRS.length, MATCH_PAIRS.length);
+        announce('أحسنت! تم توصيل جميع الأزواج بنجاح.');
+      }
+    } else {
+      el.classList.add('wrong-flash');
+      first.classList.add('wrong-flash');
+      const firstRef = first;
+      setTimeout(function(){ el.classList.remove('wrong-flash'); firstRef.classList.remove('selected','wrong-flash'); }, 420);
+      matchState.firstPick = null;
+    }
+  }
+
+  /* ========================================================================
+     12. EXERCISE 3 — QUIZ
+     ==================================================================== */
+  let quizIndex = 0, quizScore = 0, quizAnswered = false;
+
+  function updateQuizProgressBar(){
+    const bar = document.getElementById('quizProgress');
+    bar.innerHTML = QUIZ.map(function(_, i){
+      return '<span class="'+(i<quizIndex?'done':(i===quizIndex?'current':''))+'"></span>';
+    }).join('');
+  }
+
+  function renderQuiz(){
+    quizIndex = 0; quizScore = 0;
+    showQuizQuestion();
+  }
+
+  function showQuizQuestion(){
+    updateQuizProgressBar();
+    const body = document.getElementById('quizBody');
+    if(quizIndex >= QUIZ.length){
+      body.innerHTML = '<div class="quiz-summary"><div class="score-big">'+quizScore+'/'+QUIZ.length+'</div><p>'
+        + (quizScore===QUIZ.length ? 'ممتاز! إجابات مثالية 🎉' : 'أحسنت! يمكنك إعادة المحاولة لتحسين نتيجتك.')
+        + '</p><button class="btn btn-primary" id="quizRestart" type="button">إعادة الاختبار</button></div>';
+      document.getElementById('quizRestart').addEventListener('click', renderQuiz);
+      markExerciseProgress('quiz', quizScore, QUIZ.length);
+      return;
+    }
+    quizAnswered = false;
+    const q = QUIZ[quizIndex];
+    body.innerHTML = '<div class="quiz-q"><p class="de">'+q.q+'</p><div class="quiz-choices">'
+      + q.choices.map(function(c,i){ return '<button type="button" class="quiz-choice" data-i="'+i+'">'+c+'</button>'; }).join('')
+      + '</div></div>';
+    const choiceEls = body.querySelectorAll('.quiz-choice');
+    choiceEls.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(quizAnswered) return;
+        quizAnswered = true;
+        const i = parseInt(btn.dataset.i, 10);
+        speak(btn.textContent);
+        if(i === q.correct){
+          btn.classList.add('correct');
+          quizScore++;
+        } else {
+          btn.classList.add('incorrect');
+          choiceEls[q.correct].classList.add('correct');
+        }
+        setTimeout(function(){ quizIndex++; showQuizQuestion(); }, 1100);
+      });
+    });
+  }
+
+  /* ========================================================================
+     13. EXERCISE 4 — CONVERSATION SIMULATOR
+     ==================================================================== */
+  let convoIndex = 0;
+
+  function renderConvo(){
+    convoIndex = 0;
+    showConvoStep();
+  }
+
+  function showConvoStep(){
+    const body = document.getElementById('convoBody');
+    if(convoIndex >= CONVO.length){
+      body.innerHTML = '<div class="quiz-summary"><div class="score-big">✓</div><p>أحسنت! أكملت المحادثة بنجاح 🎉</p><button class="btn btn-primary" id="convoRestart" type="button">إعادة المحاكاة</button></div>';
+      document.getElementById('convoRestart').addEventListener('click', renderConvo);
+      markExerciseProgress('convo', CONVO.length, CONVO.length);
+      return;
+    }
+    const step = CONVO[convoIndex];
+    body.innerHTML = '<div class="convo-step">'
+      + '<div class="bubble" style="cursor:default;margin-bottom:16px;">'
+        + '<span class="bubble-icon">🧑</span>'
+        + '<span class="bubble-text"><span class="de">'+step.npc+'</span><span class="ar">'+step.npcAr+'</span></span>'
+      + '</div>'
+      + '<div class="convo-options">'
+      + step.options.map(function(o,i){
+          return '<button type="button" class="convo-option" data-i="'+i+'"><span class="de" style="display:block;font-weight:600;">'+o.de+'</span><span style="font-size:12px;color:var(--ink-faint);">'+o.ar+'</span></button>';
+        }).join('')
+      + '</div></div>';
+    body.querySelectorAll('.convo-option').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        const i = parseInt(btn.dataset.i, 10);
+        const opt = step.options[i];
+        speak(opt.de);
+        if(opt.correct){
+          btn.classList.add('correct');
+          body.querySelectorAll('.convo-option').forEach(function(b){ b.disabled = true; });
+          setTimeout(function(){ convoIndex++; showConvoStep(); }, 1000);
+        } else {
+          btn.classList.add('incorrect');
+          btn.disabled = true;
+        }
+      });
+    });
+  }
+
+  /* ========================================================================
+     14. EXERCISE TABS + PROGRESS / SCORE / BADGES
+     ==================================================================== */
+  function initExerciseTabs(){
+    document.querySelectorAll('#exerciseTabs button').forEach(function(tabBtn){
+      tabBtn.addEventListener('click', function(){
+        document.querySelectorAll('#exerciseTabs button').forEach(function(b){ b.setAttribute('aria-selected', b===tabBtn ? 'true':'false'); });
+        document.querySelectorAll('.exercise-panel').forEach(function(p){ p.classList.remove('active'); });
+        document.getElementById('panel-'+tabBtn.dataset.tab).classList.add('active');
+      });
+    });
+  }
+
+  function markExerciseProgress(key, score, max){
+    progress.exercises[key] = { done:true, score:score, max:max };
+    saveProgress();
+    const tabBtn = document.querySelector('#exerciseTabs button[data-tab="'+key+'"]');
+    if(tabBtn) tabBtn.classList.add('done');
+    updateScoreHud();
+    updateOverallProgress();
+  }
+
+  function updateScoreHud(){
+    let scoreSum = 0, maxSum = 0, doneCount = 0;
+    Object.keys(MAXES).forEach(function(k){
+      maxSum += MAXES[k];
+      const e = progress.exercises[k];
+      if(e && e.done){ scoreSum += e.score; doneCount++; }
+    });
+    const scoreLabel = document.getElementById('totalScoreLabel');
+    const doneLabel = document.getElementById('doneExercisesLabel');
+    if(scoreLabel) scoreLabel.textContent = scoreSum + ' / ' + maxSum;
+    if(doneLabel) doneLabel.textContent = doneCount;
+  }
+
+  function updateOverallProgress(){
+    const sectionsVisitedCount = SECTION_IDS.filter(function(id){ return !!progress.sections[id]; }).length;
+    const exercisesDoneCount = Object.keys(MAXES).filter(function(k){ return progress.exercises[k] && progress.exercises[k].done; }).length;
+    const totalTasks = SECTION_IDS.length + Object.keys(MAXES).length;
+    const doneTasks = sectionsVisitedCount + exercisesDoneCount;
+    const pct = Math.round((doneTasks/totalTasks)*100);
+
+    const circumference = 113;
+    const fg = document.getElementById('progressRingFg');
+    if(fg) fg.style.strokeDashoffset = String(circumference - (circumference*pct/100));
+    const label = document.getElementById('progressLabel');
+    if(label) label.textContent = pct + '%';
+
+    updateBadges(sectionsVisitedCount, exercisesDoneCount, pct);
+    saveProgress();
+  }
+
+  function updateBadges(sectionsVisitedCount, exercisesDoneCount, pct){
+    const rules = {
+      explorer: sectionsVisitedCount >= SECTION_IDS.length,
+      local: exercisesDoneCount >= 3,
+      master: pct >= 100
+    };
+    Object.keys(rules).forEach(function(key){
+      const el = document.querySelector('.badge[data-badge="'+key+'"]');
+      if(!el) return;
+      if(rules[key]){
+        const wasLocked = !el.classList.contains('unlocked');
+        el.classList.add('unlocked');
+        if(wasLocked && progress.badges.indexOf(key) === -1){
+          progress.badges.push(key);
+          const label = el.querySelector('span');
+          announce('تم فتح شارة جديدة: ' + (label ? label.textContent : ''));
+        }
+      }
+    });
+  }
+
+  /* ========================================================================
+     15. RENDER: TIPS
+     ==================================================================== */
+  function renderTips(){
+    const grid = document.getElementById('tipsGrid');
+    grid.innerHTML = TIPS.map(function(t, i){
+      return '<div class="tip-card" style="--i:'+i+'"><div class="tip-icon">'+tipIcon(t.icon)+'</div><h4>'+t.title+'</h4><p>'+t.body+'</p></div>';
+    }).join('');
+  }
+
+  /* ========================================================================
+     16. NAV / THEME / FULLSCREEN / SEARCH / SCROLL / REVEAL
+     ==================================================================== */
+  function initSectionNavAndTracking(){
+    const sections = document.querySelectorAll('main section[data-waypoint]');
+    const navEl = document.getElementById('sectionNav');
+    navEl.innerHTML = Array.prototype.map.call(sections, function(sec){
+      return '<a href="#'+sec.id+'" data-target="'+sec.id+'"><span class="waypoint-num">'+sec.dataset.waypoint+'</span>'+sec.dataset.title+'</a>';
+    }).join('');
+
+    const linkEls = navEl.querySelectorAll('a');
+    linkEls.forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        const target = document.getElementById(a.dataset.target);
+        if(target) target.scrollIntoView({behavior:'smooth'});
+      });
+      const id = a.dataset.target;
+      if(progress.sections[id]) a.classList.add('visited');
+    });
+
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        const id = entry.target.id;
+        const link = navEl.querySelector('a[data-target="'+id+'"]');
+        if(entry.isIntersecting){
+          linkEls.forEach(function(l){ l.removeAttribute('aria-current'); });
+          if(link) link.setAttribute('aria-current', 'true');
+          if(id !== 'hero' && !progress.sections[id]){
+            progress.sections[id] = true;
+            if(link) link.classList.add('visited');
+            updateOverallProgress();
+          }
+        }
+      });
+    }, { rootMargin: '-35% 0px -50% 0px', threshold: 0 });
+
+    sections.forEach(function(sec){ io.observe(sec); });
+  }
+
+  function initReveal(){
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          if(entry.target.classList.contains('reveal-stagger')){
+            Array.prototype.forEach.call(entry.target.children, function(child, i){ child.style.setProperty('--i', i); });
+          }
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  function initTheme(){
+    const root = document.documentElement;
+    const sun = document.getElementById('themeIconSun');
+    const moon = document.getElementById('themeIconMoon');
+    function reflect(){
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if(sun) sun.style.display = isDark ? 'none' : 'block';
+      if(moon) moon.style.display = isDark ? 'block' : 'none';
+    }
+    reflect();
+    document.getElementById('themeToggle').addEventListener('click', function(){
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try{ localStorage.setItem('weg-lesson-theme', next); }catch(e){}
+      reflect();
+    });
+    if(window.matchMedia){
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
+        let saved = null;
+        try{ saved = localStorage.getItem('weg-lesson-theme'); }catch(err){}
+        if(!saved){
+          root.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+          reflect();
+        }
+      });
+    }
+  }
+
+  function initFullscreen(){
+    document.getElementById('fullscreenToggle').addEventListener('click', function(){
+      if(!document.fullscreenElement){
+        if(document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
+      } else {
+        if(document.exitFullscreen) document.exitFullscreen();
+      }
+    });
+  }
+
+  function initSearch(){
+    const toggle = document.getElementById('searchToggle');
+    const pop = document.getElementById('searchPop');
+    const input = document.getElementById('searchInput');
+    toggle.addEventListener('click', function(){
+      const open = pop.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if(open) input.focus();
+    });
+    input.addEventListener('input', function(){
+      const q = input.value.trim().toLowerCase();
+      document.querySelectorAll('[data-search]').forEach(function(el){
+        const hay = (el.dataset.search || '').toLowerCase();
+        const show = !q || hay.indexOf(q) !== -1;
+        el.style.display = show ? '' : 'none';
+      });
+    });
+    document.addEventListener('click', function(e){
+      if(!pop.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)){
+        pop.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  function initBackToTop(){
+    const btn = document.getElementById('backToTop');
+    window.addEventListener('scroll', function(){
+      btn.classList.toggle('show', window.scrollY > 600);
+    }, { passive:true });
+    btn.addEventListener('click', function(){ window.scrollTo({ top:0, behavior:'smooth' }); });
+  }
+
+  function initAccordion(){
+    document.querySelectorAll('.accordion-item').forEach(function(item){
+      const btn = item.querySelector('.accordion-btn');
+      const panel = item.querySelector('.accordion-panel');
+      btn.addEventListener('click', function(){
+        const expanded = item.getAttribute('aria-expanded') === 'true';
+        item.setAttribute('aria-expanded', String(!expanded));
+        panel.style.maxHeight = (!expanded) ? (panel.scrollHeight + 'px') : '0px';
+      });
+    });
+  }
+
+  function initPrint(){
+    document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+  }
+
+  function initGlobalSpeechToggle(){
+    document.getElementById('speechToggleBtn').addEventListener('click', function(){
+      if(!('speechSynthesis' in window)) return;
+      if(window.speechSynthesis.speaking && !window.speechSynthesis.paused){ window.speechSynthesis.pause(); }
+      else if(window.speechSynthesis.paused){ window.speechSynthesis.resume(); }
+    });
+  }
+
+  function initDialogControls(){
+    document.getElementById('dialogPlayAll').addEventListener('click', function(){
+      dialogPlaying = true; dialogPlayIndex = 0; speakDialogLine(0, true);
+    });
+    document.getElementById('dialogPause').addEventListener('click', function(){
+      if(!('speechSynthesis' in window)) return;
+      if(window.speechSynthesis.speaking && !window.speechSynthesis.paused){ window.speechSynthesis.pause(); dialogPlaying = false; }
+      else if(window.speechSynthesis.paused){ window.speechSynthesis.resume(); dialogPlaying = true; }
+    });
+    document.getElementById('dialogReplay').addEventListener('click', function(){
+      if('speechSynthesis' in window) window.speechSynthesis.cancel();
+      dialogPlaying = true; dialogPlayIndex = 0; speakDialogLine(0, true);
+    });
+  }
+
+  function restoreExerciseUI(){
+    Object.keys(progress.exercises).forEach(function(k){
+      const e = progress.exercises[k];
+      if(e && e.done){
+        const tabBtn = document.querySelector('#exerciseTabs button[data-tab="'+k+'"]');
+        if(tabBtn) tabBtn.classList.add('done');
+      }
+    });
+    updateScoreHud();
+  }
+
+  /* ========================================================================
+     17. INIT
+     ==================================================================== */
+  function init(){
+    renderVocab();
+    renderDirections();
+    renderPhrases();
+    renderDialog();
+    renderEuropeMap();
+    renderEuropeSentences();
+    renderFill();
+    renderMatch();
+    renderQuiz();
+    renderConvo();
+    renderTips();
+
+    initVocabFilter();
+    initExerciseTabs();
+    initFillExercise();
+    document.getElementById('matchReset').addEventListener('click', renderMatch);
+    initTheme();
+    initFullscreen();
+    initSearch();
+    initBackToTop();
+    initAccordion();
+    initPrint();
+    initGlobalSpeechToggle();
+    initDialogControls();
+    initSectionNavAndTracking();
+    initReveal();
+
+    bindSpeakables();
+    restoreExerciseUI();
+    updateOverallProgress();
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-wegbeschreibungen-orte" data-category="grammatik" data-title="الاتجاهات والمواقع — Wegbeschreibungen & Orte" data-root="../../" defer></script>
+</body>
+</html>

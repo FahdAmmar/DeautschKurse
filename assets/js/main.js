@@ -107,11 +107,32 @@
 
   /* ------------------------------------------------------------------------
      5) بناء الواجهة من الفهرس (window.DEUTSCH_CATALOG)
+     ملاحظة: كل الدوال هنا تمرّ عبر enabledCategories()/enabledLessons()
+     فقط — أي عنصر بقيمة "enabled": false في catalog.js يختفي تلقائيًا من
+     كل مكان (البطاقات، الرقائق، الإحصاءات، شريط التقدّم، والبحث) دون أي
+     تعديل إضافي مطلوب هنا.
   ------------------------------------------------------------------------ */
   var CATALOG = window.DEUTSCH_CATALOG || { categories: [], lessons: [] };
 
+  function enabledCategories() {
+    return CATALOG.categories
+      .filter(function (c) { return c.enabled !== false; })
+      .sort(function (a, b) { return (a.order || 0) - (b.order || 0); });
+  }
+
+  function enabledLessons() {
+    var enabledCatKeys = {};
+    CATALOG.categories.forEach(function (c) {
+      if (c.enabled !== false) enabledCatKeys[c.key] = true;
+    });
+    // درس يُحتسب "ظاهرًا" فقط إذا كان هو نفسه مُفعَّلًا *و* قسمه الأب مُفعَّلًا أيضًا
+    return CATALOG.lessons.filter(function (l) {
+      return l.enabled !== false && enabledCatKeys[l.category];
+    });
+  }
+
   function lessonsByCategory(key) {
-    return CATALOG.lessons
+    return enabledLessons()
       .filter(function (l) { return l.category === key; })
       .sort(function (a, b) { return a.order - b.order; });
   }
@@ -197,8 +218,10 @@
     var progress = readProgress();
     root.innerHTML = "";
 
-    CATALOG.categories.forEach(function (cat) {
+    enabledCategories().forEach(function (cat) {
       var items = lessonsByCategory(cat.key);
+      if (!items.length) return; // قسم أُخفيت كل دروسه — لا داعي لعرض رأس فارغ
+
       var section = document.createElement("section");
       section.className = "c-section";
       section.id = "sec-" + cat.key;
@@ -212,7 +235,7 @@
           "<h2>" + cat.title + "</h2>" +
           "<p>" + cat.subtitle + "</p>" +
         "</div>" +
-        '<span class="c-section__count mono">' + cat.count + " دروس · " + cat.level + "</span>";
+        '<span class="c-section__count mono">' + items.length + " دروس · " + cat.level + "</span>";
       section.appendChild(head);
 
       if (cat.key === "a2-kurs") {
@@ -235,19 +258,22 @@
   function renderChips() {
     var wrap = document.getElementById("categoryChips");
     if (!wrap) return;
-    var chips = ['<button class="c-chip" data-filter="all" aria-pressed="true">الكل <span class="count mono">' + CATALOG.lessons.length + "</span></button>"];
-    CATALOG.categories.forEach(function (cat) {
+    var total = enabledLessons().length;
+    var chips = ['<button class="c-chip" data-filter="all" aria-pressed="true">الكل <span class="count mono">' + total + "</span></button>"];
+    enabledCategories().forEach(function (cat) {
+      var count = lessonsByCategory(cat.key).length;
+      if (!count) return; // لا داعي لرقاقة فلترة لقسم فارغ بالكامل
       chips.push(
         '<button class="c-chip" data-filter="' + cat.key + '" aria-pressed="false">' +
-        cat.title.split("—")[0].trim() + ' <span class="count mono">' + cat.count + "</span></button>"
+        cat.title.split("—")[0].trim() + ' <span class="count mono">' + count + "</span></button>"
       );
     });
     wrap.innerHTML = chips.join("");
   }
 
   function renderStats() {
-    var total = CATALOG.lessons.length;
-    var cats = CATALOG.categories.length;
+    var total = enabledLessons().length;
+    var cats = enabledCategories().length;
     var elTotal = document.getElementById("statTotal");
     var elCats = document.getElementById("statCategories");
     if (elTotal) elTotal.textContent = total;
@@ -314,9 +340,14 @@
   ------------------------------------------------------------------------ */
   function renderProgressPanel() {
     var progress = readProgress();
-    var total = CATALOG.lessons.length;
+    var visible = enabledLessons();
+    var visibleIds = {};
+    visible.forEach(function (l) { visibleIds[l.id] = true; });
+
+    var total = visible.length;
     var doneCount = 0, lastVisited = null;
     Object.keys(progress).forEach(function (id) {
+      if (!visibleIds[id]) return; // تجاهل أي تقدّم محفوظ لدرس أصبح مخفيًا الآن
       var e = progress[id];
       if (e.done) doneCount++;
       if (e.visited && (!lastVisited || e.lastVisit > lastVisited.lastVisit)) {
@@ -335,7 +366,7 @@
     var continueBtn = document.getElementById("continueLearning");
     if (continueBtn) {
       if (lastVisited && !lastVisited.done) {
-        var lesson = CATALOG.lessons.find(function (l) { return l.id === lastVisited.id; });
+        var lesson = visible.find(function (l) { return l.id === lastVisited.id; });
         if (lesson) {
           continueBtn.href = lesson.path;
           continueBtn.hidden = false;
@@ -416,7 +447,7 @@
 
     // إعادة رسم التموضع عند تغيّر حجم الفهرس بعد أي تفاعل غير متوقع مستقبلًا
     window.addEventListener("deutsch:refresh", function () {
-      renderSections(); renderProgressPanel(); applyFilters(); revealOnScroll();
+      renderStats(); renderChips(); renderSections(); renderProgressPanel(); applyFilters(); revealOnScroll();
     });
   }
 

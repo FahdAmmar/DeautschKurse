@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>أطلس الكلمات الألمانية | ٣٠ كلمة لا تُترجم حرفياً</title>
+<meta name="description" content="دليل تفاعلي شامل لثلاثين كلمة ألمانية مستحيلة الترجمة الحرفية، مع شرح عربي مفصّل، جمل توضيحية، ونطق صوتي أصلي.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   أطلس الكلمات الألمانية — Wortatlas
+   نظام التصميم: بطاقات فهرسة (Karteikarten) مستوحاة من القواميس الورقية
+   ============================================================ */
+
+/* ---------- 1. إعادة الضبط الأساسية (Reset) ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body { margin: 0; min-height: 100vh; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; cursor: pointer; }
+input { font: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+a { color: inherit; }
+
+/* ---------- 2. متغيرات التصميم (Design Tokens) ---------- */
+:root {
+  /* --- الوضع الفاتح: ورق عاجي دافئ --- */
+  --bg: #FBF7EF;
+  --bg-grad: radial-gradient(ellipse 120% 80% at 50% -10%, #FDF9F1 0%, #F7F1E4 55%, #F1E9D8 100%);
+  --surface: #FFFFFF;
+  --surface-alt: #FFFDF8;
+  --surface-raised: #FFFFFF;
+  --ink: #221C30;
+  --ink-soft: #5C5468;
+  --ink-faint: #8B839A;
+  --border: rgba(34, 28, 48, 0.11);
+  --border-strong: rgba(34, 28, 48, 0.20);
+
+  --accent-amber: #C6791F;
+  --accent-amber-soft: #F3DFB8;
+  --accent-rose: #C14664;
+  --accent-rose-soft: #F3D4DC;
+  --accent-teal: #16645F;
+  --accent-teal-soft: #CFE3DF;
+  --accent-sage: #4C7A5A;
+  --accent-sage-soft: #DCE8DD;
+  --accent-indigo: #3A3268;
+
+  --der-color: #2F5FA3;
+  --der-soft: #DCE6F4;
+  --die-color: #A63A63;
+  --die-soft: #F3DDE5;
+  --das-color: #B27B1E;
+  --das-soft: #F2E3C4;
+  --other-color: #45715A;
+  --other-soft: #DCE8DE;
+
+  --shadow-sm: 0 1px 2px rgba(40, 30, 20, 0.06), 0 1px 1px rgba(40, 30, 20, 0.04);
+  --shadow-md: 0 6px 16px rgba(40, 30, 20, 0.08), 0 2px 6px rgba(40, 30, 20, 0.05);
+  --shadow-lg: 0 20px 45px rgba(40, 30, 20, 0.14), 0 6px 14px rgba(40, 30, 20, 0.07);
+  --shadow-card-hover: 0 22px 40px rgba(40, 30, 20, 0.16), 0 8px 16px rgba(40, 30, 20, 0.08);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-ar: 'Noto Sans Arabic', 'Segoe UI', sans-serif;
+  --font-ui: 'Manrope', 'Noto Sans Arabic', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --header-h: 76px;
+  --transition-theme: background-color .45s ease, color .45s ease, border-color .45s ease;
+}
+
+html[data-theme="dark"] {
+  --bg: #191426;
+  --bg-grad: radial-gradient(ellipse 120% 80% at 50% -10%, #221B36 0%, #17121F 55%, #120E1A 100%);
+  --surface: #241E38;
+  --surface-alt: #2A2340;
+  --surface-raised: #2C2540;
+  --ink: #F3EEE6;
+  --ink-soft: #C3BBD1;
+  --ink-faint: #8F87A3;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --accent-amber: #E8A33D;
+  --accent-amber-soft: rgba(232, 163, 61, 0.18);
+  --accent-rose: #E8788F;
+  --accent-rose-soft: rgba(232, 120, 143, 0.18);
+  --accent-teal: #3CB3A8;
+  --accent-teal-soft: rgba(60, 179, 168, 0.16);
+  --accent-sage: #83C093;
+  --accent-sage-soft: rgba(131, 192, 147, 0.16);
+  --accent-indigo: #9B8FE0;
+
+  --der-color: #7CA6E3;
+  --der-soft: rgba(124, 166, 227, 0.18);
+  --die-color: #E68CAB;
+  --die-soft: rgba(230, 140, 171, 0.18);
+  --das-color: #E3B45C;
+  --das-soft: rgba(227, 180, 92, 0.18);
+  --other-color: #86C79A;
+  --other-soft: rgba(134, 199, 154, 0.16);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 50px rgba(0, 0, 0, 0.45);
+  --shadow-card-hover: 0 26px 46px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- 3. الأساسيات العامة ---------- */
+body {
+  background: var(--bg-grad), var(--bg);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--font-ar);
+  line-height: 1.75;
+  transition: var(--transition-theme);
+  overflow-x: hidden;
+}
+[lang="de"] {
+  font-family: var(--font-display);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.mono { font-family: var(--font-mono); }
+
+::selection { background: var(--accent-amber-soft); color: var(--ink); }
+
+/* شريط تمرير أنيق */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-faint); }
+
+/* رابط تخطي المحتوى لإمكانية الوصول */
+.skip-link {
+  position: fixed; top: -100px; right: 16px; z-index: 999;
+  background: var(--accent-indigo); color: #fff; padding: 12px 20px;
+  border-radius: var(--radius-sm); font-weight: 700; transition: top .25s ease;
+}
+.skip-link:focus { top: 16px; }
+
+/* تركيز واضح لإمكانية الوصول عبر لوحة المفاتيح */
+:focus-visible {
+  outline: 3px solid var(--accent-indigo);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ============================================================
+   4. شريط التقدم العلوي (Scroll Progress)
+   ============================================================ */
+.scroll-progress {
+  position: fixed; top: 0; right: 0; left: 0; height: 3px; z-index: 1000;
+  background: transparent;
+}
+.scroll-progress__bar {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--accent-amber), var(--accent-rose));
+  transition: width .1s linear;
+}
+
+/* ============================================================
+   5. الرأس (Header)
+   ============================================================ */
+.site-header {
+  position: sticky; top: 0; z-index: 900;
+  height: var(--header-h);
+  display: flex; align-items: center;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition-theme);
+}
+.header-inner {
+  width: 100%; max-width: 1280px; margin: 0 auto;
+  padding: 0 24px;
+  display: flex; align-items: center; gap: 18px;
+}
+.brand {
+  display: flex; align-items: center; gap: 12px;
+  font-weight: 800; font-size: 1.05rem; white-space: nowrap;
+  text-decoration: none;
+}
+.brand__mark {
+  width: 40px; height: 40px; border-radius: 12px;
+  background: linear-gradient(150deg, var(--accent-amber), var(--accent-rose));
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+.brand__mark svg { width: 22px; height: 22px; }
+.brand__text { color: var(--ink); }
+.brand__text small { display: block; font-weight: 500; font-size: .72rem; color: var(--ink-faint); margin-top: 1px; }
+
+.header-search {
+  flex: 1; max-width: 420px; position: relative;
+  display: none;
+}
+.header-search input {
+  width: 100%; height: 44px; border-radius: 999px;
+  border: 1.5px solid var(--border); background: var(--surface);
+  color: var(--ink); padding: 0 46px 0 18px; font-size: .95rem;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.header-search input:focus { border-color: var(--accent-amber); box-shadow: 0 0 0 4px var(--accent-amber-soft); }
+.header-search svg {
+  position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; color: var(--ink-faint); pointer-events: none;
+}
+.header-search input::placeholder { color: var(--ink-faint); }
+
+.header-actions { display: flex; align-items: center; gap: 8px; margin-inline-start: auto; }
+.icon-btn {
+  width: 42px; height: 42px; border-radius: 12px;
+  border: 1.5px solid var(--border); background: var(--surface);
+  color: var(--ink); display: flex; align-items: center; justify-content: center;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+  position: relative;
+}
+.icon-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); border-color: var(--border-strong); }
+.icon-btn:active { transform: translateY(0); }
+.icon-btn svg { width: 20px; height: 20px; }
+.icon-btn .icon-sun { display: none; }
+html[data-theme="dark"] .icon-btn .icon-moon { display: none; }
+html[data-theme="dark"] .icon-btn .icon-sun { display: block; }
+
+.progress-chip {
+  display: flex; align-items: center; gap: 8px;
+  border: 1.5px solid var(--border); background: var(--surface);
+  border-radius: 999px; padding: 6px 8px 6px 14px; height: 42px;
+  font-size: .82rem; font-weight: 700; color: var(--ink-soft);
+  white-space: nowrap;
+}
+.progress-chip__ring { width: 26px; height: 26px; flex-shrink: 0; }
+.progress-chip__ring circle.track { stroke: var(--border-strong); }
+.progress-chip__ring circle.fill {
+  stroke: var(--accent-sage); transition: stroke-dashoffset .5s ease;
+}
+
+/* ============================================================
+   6. القسم الرئيسي (Hero)
+   ============================================================ */
+.hero {
+  position: relative; isolation: isolate; overflow: hidden; border-radius: var(--radius-xl);
+  max-width: 1280px; margin: 0 auto; padding: 64px 24px 40px;
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+}
+.hero__aurora { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.hero__aurora span {
+  position: absolute; border-radius: 50%; filter: blur(80px); opacity: .28;
+  animation: auroraDrift 20s ease-in-out infinite;
+}
+.hero__aurora span:nth-child(1) { width: 340px; height: 340px; background: var(--accent-amber); top: -120px; inset-inline-end: -60px; }
+.hero__aurora span:nth-child(2) { width: 300px; height: 300px; background: var(--accent-rose); bottom: -150px; inset-inline-start: 6%; opacity: .22; animation-delay: -7s; }
+.hero__aurora span:nth-child(3) { width: 240px; height: 240px; background: var(--accent-teal); top: 20%; inset-inline-start: 42%; opacity: .14; animation-delay: -13s; }
+@keyframes auroraDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(18px, -14px) scale(1.08); }
+  66% { transform: translate(-14px, 12px) scale(.95); }
+}
+@media (prefers-reduced-motion: reduce) { .hero__aurora span { animation: none; } }
+.hero__eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: .78rem; letter-spacing: .04em;
+  color: var(--accent-teal); background: var(--accent-teal-soft);
+  padding: 7px 14px; border-radius: 999px; font-weight: 600; margin-bottom: 20px;
+}
+.hero__eyebrow svg { width: 14px; height: 14px; }
+.hero h1 {
+  font-family: var(--font-ar); font-weight: 800;
+  font-size: clamp(1.9rem, 4vw, 3.1rem); line-height: 1.28; margin: 0 0 20px;
+  color: var(--ink);
+}
+.hero h1 .hl {
+  background: linear-gradient(100deg, var(--accent-amber), var(--accent-rose));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero p.lede {
+  font-size: 1.08rem; color: var(--ink-soft); max-width: 56ch; margin: 0 0 28px;
+}
+.hero__stats { display: flex; gap: 28px; flex-wrap: wrap; }
+.stat b {
+  display: block; font-family: var(--font-display); font-size: 2.1rem; font-weight: 700;
+  color: var(--ink); line-height: 1;
+}
+.stat span { font-size: .82rem; color: var(--ink-faint); font-weight: 600; }
+
+/* بطاقة العرض التوضيحية بجانب العنوان: كومة بطاقات فهرسة */
+.hero__visual { position: relative; height: 320px; perspective: 1400px; }
+.stack-card {
+  position: absolute; inset: 0; margin: auto; width: 240px; height: 150px;
+  background: var(--surface); border-radius: var(--radius-md);
+  border: 1px solid var(--border); box-shadow: var(--shadow-md);
+  padding: 20px 22px; transform-style: preserve-3d;
+  animation: floatCard 7s ease-in-out infinite;
+}
+.stack-card:nth-child(1) { transform: rotate(-9deg) translate(-70px, -18px); z-index: 1; animation-delay: 0s; }
+.stack-card:nth-child(2) { transform: rotate(4deg) translate(60px, 10px); z-index: 2; animation-delay: .6s; }
+.stack-card:nth-child(3) { transform: rotate(-2deg) translate(-6px, 42px); z-index: 3; animation-delay: 1.2s; box-shadow: var(--shadow-lg); }
+.stack-card .tab { position: absolute; top: -9px; right: 22px; width: 34px; height: 14px; border-radius: 6px 6px 0 0; }
+.stack-card:nth-child(1) .tab { background: var(--accent-rose); }
+.stack-card:nth-child(2) .tab { background: var(--accent-amber); }
+.stack-card:nth-child(3) .tab { background: var(--accent-teal); }
+.stack-card .de-word { font-size: 1.3rem; font-weight: 700; color: var(--ink); display: block; }
+.stack-card .gloss { font-size: .78rem; color: var(--ink-faint); margin-top: 6px; }
+.stack-card .punch { position: absolute; top: 12px; left: 14px; width: 7px; height: 7px; border-radius: 50%; background: var(--bg); border: 1px solid var(--border); }
+
+@keyframes floatCard {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -10px; }
+}
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding-top: 40px; gap: 30px; }
+  .hero__visual { height: 220px; order: -1; }
+  .stack-card { width: 190px; height: 120px; padding: 14px 16px; }
+  .stack-card .de-word { font-size: 1.05rem; }
+}
+
+/* ============================================================
+   7. شريط الأدوات: البحث + الفئات + إعدادات النطق
+   ============================================================ */
+.toolbar {
+  max-width: 1280px; margin: 0 auto; padding: 0 24px 28px;
+  display: flex; flex-direction: column; gap: 18px;
+}
+.toolbar__row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+.search-mobile { position: relative; flex: 1; min-width: 220px; }
+.search-mobile input {
+  width: 100%; height: 48px; border-radius: 999px; border: 1.5px solid var(--border);
+  background: var(--surface); color: var(--ink); padding: 0 48px 0 20px; font-size: .95rem;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.search-mobile input:focus { border-color: var(--accent-amber); box-shadow: 0 0 0 4px var(--accent-amber-soft); }
+.search-mobile svg { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--ink-faint); }
+
+.category-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.cat-tab {
+  border: 1.5px solid var(--border); background: var(--surface); color: var(--ink-soft);
+  padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: .88rem;
+  display: flex; align-items: center; gap: 8px;
+  transition: all .2s ease;
+}
+.cat-tab .dot { width: 8px; height: 8px; border-radius: 50%; transition: transform .2s ease; }
+.cat-tab:hover { border-color: var(--border-strong); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.cat-tab:hover .dot { transform: scale(1.25); }
+.cat-tab.active { background: var(--ink); color: var(--bg); border-color: var(--ink); box-shadow: var(--shadow-sm); }
+.cat-tab.active .dot { transform: scale(1.15); }
+html[data-theme="dark"] .cat-tab.active { background: var(--ink); color: var(--surface); }
+.cat-tab .count { font-family: var(--font-mono); font-size: .75rem; opacity: .65; }
+
+/* شريط النطق العام */
+.tts-bar {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius-md);
+  padding: 14px 20px; box-shadow: var(--shadow-sm);
+}
+.tts-bar__label { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .88rem; color: var(--ink-soft); white-space: nowrap; }
+.tts-bar__label svg { width: 18px; height: 18px; color: var(--accent-teal); }
+.tts-bar select {
+  border: 1.5px solid var(--border); background: var(--surface-alt); color: var(--ink);
+  border-radius: 10px; padding: 8px 12px; font-size: .85rem; max-width: 200px;
+}
+.speed-control { display: flex; align-items: center; gap: 10px; }
+.speed-control input[type=range] { width: 110px; accent-color: var(--accent-amber); }
+.speed-control__val { font-family: var(--font-mono); font-size: .82rem; color: var(--ink-soft); min-width: 34px; }
+.tts-bar__hint { font-size: .8rem; color: var(--ink-faint); margin-inline-start: auto; }
+
+/* ============================================================
+   8. شبكة البطاقات (Grid)
+   ============================================================ */
+.grid-section { max-width: 1280px; margin: 0 auto; padding: 8px 24px 60px; }
+.grid-empty {
+  display: none; text-align: center; padding: 70px 20px; color: var(--ink-faint);
+}
+.grid-empty.show { display: block; }
+.grid-empty svg { width: 56px; height: 56px; margin: 0 auto 16px; opacity: .5; }
+.word-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+/* --- بطاقة الفهرسة (Karteikarte) --- */
+.word-card {
+  position: relative; background: var(--surface); border-radius: var(--radius-lg);
+  border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+  padding-inline-start: 22px; overflow: hidden;
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .6s ease, transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease, border-color .3s ease;
+}
+.word-card.is-visible { opacity: 1; transform: translateY(0); }
+.word-card::before {
+  content: ""; position: absolute; inset-inline-start: 0; top: 0; bottom: 0; width: 7px;
+  background: var(--cat-color, var(--accent-teal));
+}
+.word-card:hover {
+  box-shadow: var(--shadow-card-hover), 0 0 0 1px var(--cat-soft, transparent);
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+}
+.word-card.hidden-by-filter { display: none; }
+
+/* شقّ الأعلى بثقوب دائرية كبطاقة فهرسة حقيقية */
+.word-card__punches { position: absolute; top: 10px; inset-inline-end: 16px; display: flex; gap: 6px; }
+.word-card__punches span { width: 6px; height: 6px; border-radius: 50%; background: var(--bg); border: 1px solid var(--border); }
+
+.word-card__front {
+  padding: 26px 24px 18px 20px; cursor: pointer; border: 0; background: none; width: 100%;
+  text-align: start; display: flex; flex-direction: column; gap: 12px;
+}
+.word-card__top { display: flex; align-items: center; }
+.article-badge {
+  font-family: var(--font-mono); font-size: .72rem; font-weight: 700; letter-spacing: .03em;
+  padding: 4px 10px; border-radius: 999px; color: var(--badge-color); background: var(--badge-soft);
+  white-space: nowrap;
+}
+
+.word-card__word {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+}
+.de-word-btn {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: var(--ink);
+  background: none; border: 0; padding: 0; display: inline-flex; align-items: center; gap: 8px;
+  text-align: start; line-height: 1.25;
+}
+.de-word-btn:hover { color: var(--cat-color); }
+.de-word-btn .speak-mini {
+  width: 26px; height: 26px; border-radius: 50%; background: var(--surface-alt); border: 1px solid var(--border);
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  transition: background .2s ease, transform .2s ease;
+}
+.de-word-btn:hover .speak-mini { background: var(--cat-soft); transform: scale(1.08); }
+.de-word-btn .speak-mini svg { width: 13px; height: 13px; color: var(--ink-soft); }
+.de-word-btn.is-speaking .speak-mini { background: var(--cat-color); }
+.de-word-btn.is-speaking .speak-mini svg { color: #fff; }
+
+.word-card__syllables { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); direction: ltr; text-align: start; }
+.word-card__syllables b { color: var(--cat-color); font-weight: 700; }
+
+.word-card__gloss { font-size: .95rem; color: var(--ink-soft); }
+
+.word-card__expand-toggle {
+  align-self: center; display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 4px; padding: 8px 18px; border-radius: 999px;
+  border: 1.5px solid var(--border); background: var(--surface-alt);
+  color: var(--cat-color, var(--ink-soft)); font-family: var(--font-ui);
+  font-size: .78rem; font-weight: 700; white-space: nowrap;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.word-card__expand-toggle svg { width: 14px; height: 14px; flex-shrink: 0; transition: transform .35s cubic-bezier(.4,0,.2,1); }
+.word-card__expand-toggle:hover { background: var(--cat-soft); border-color: var(--cat-color); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.word-card__expand-toggle[aria-expanded="true"] { background: var(--cat-soft); border-color: var(--cat-color); }
+.word-card__expand-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.word-card__expand-toggle[aria-expanded="true"] .expand-txt-show { display: none; }
+.word-card__expand-toggle:not([aria-expanded="true"]) .expand-txt-hide { display: none; }
+
+/* --- لوحة التفاصيل: تُفتح كأنها غطاء بطاقة فهرسة --- */
+.word-card__detail {
+  display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s cubic-bezier(.4,0,.2,1);
+}
+.word-card__detail-inner { overflow: hidden; }
+.word-card.is-open .word-card__detail { grid-template-rows: 1fr; }
+.word-card__detail-content {
+  padding: 4px 24px 26px 20px; transform: perspective(900px) rotateX(-8deg); transform-origin: top;
+  opacity: 0; transition: transform .45s cubic-bezier(.4,0,.2,1), opacity .35s ease;
+}
+.word-card.is-open .word-card__detail-content { transform: perspective(900px) rotateX(0deg); opacity: 1; transition-delay: .05s; }
+
+.detail-block { margin-bottom: 16px; }
+.detail-block:last-child { margin-bottom: 0; }
+.detail-block__label {
+  display: flex; align-items: center; gap: 6px; font-size: .74rem; font-weight: 800;
+  color: var(--ink-faint); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 7px;
+  font-family: var(--font-ui);
+}
+.detail-block__label svg { width: 14px; height: 14px; }
+
+.compound-parts { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.compound-part {
+  background: var(--surface-alt); border: 1px solid var(--border); border-radius: 10px;
+  padding: 6px 10px; font-size: .82rem;
+}
+.compound-part b { font-family: var(--font-display); color: var(--cat-color); font-weight: 700; direction: ltr; display: inline-block; }
+.compound-part span { color: var(--ink-faint); font-size: .74rem; display: block; margin-top: 1px; }
+.compound-plus { color: var(--ink-faint); font-weight: 700; }
+
+.detail-explain { font-size: .96rem; color: var(--ink); line-height: 1.85; }
+
+/* --- قائمة الجمل التوضيحية المتعددة --- */
+.example-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.example-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--cat-soft, var(--surface-alt)); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 12px 14px;
+}
+.example-item__num {
+  flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; margin-top: 2px;
+  background: var(--surface); border: 1px solid var(--border); color: var(--cat-color);
+  font-family: var(--font-mono); font-size: .7rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.example-item__body { flex: 1; min-width: 0; }
+.example-item__de {
+  font-family: var(--font-display); font-size: 1.02rem; color: var(--ink); line-height: 1.55; margin: 0 0 4px;
+}
+.example-item__de .word-hl { transition: background .15s ease; border-radius: 4px; padding: 0 2px; cursor: pointer; }
+.example-item__de .word-hl.speaking { background: var(--cat-color); color: #fff; }
+.example-item__ar { font-size: .84rem; color: var(--ink-soft); margin: 0; }
+.example-item__actions { flex-shrink: 0; display: flex; gap: 6px; }
+
+.mini-btn {
+  width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0; position: relative;
+  border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft);
+  display: flex; align-items: center; justify-content: center; transition: all .2s ease;
+}
+.mini-btn svg { width: 14px; height: 14px; }
+.mini-btn:hover { border-color: var(--cat-color); color: var(--cat-color); transform: translateY(-1px); }
+.mini-btn.is-active { background: var(--cat-color); border-color: var(--cat-color); color: #fff; }
+.mini-btn .copied-flag {
+  position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%) translateY(4px);
+  background: var(--ink); color: var(--bg); font-size: .68rem; padding: 4px 8px; border-radius: 6px;
+  opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; white-space: nowrap;
+}
+.mini-btn .copied-flag.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+@media (max-width: 480px) {
+  .example-item { flex-wrap: wrap; }
+  .example-item__body { flex-basis: calc(100% - 36px); }
+  .example-item__actions { flex-basis: 100%; margin-inline-start: 36px; margin-top: 8px; }
+}
+
+.tip-box { display: flex; gap: 10px; background: var(--accent-amber-soft); border-radius: var(--radius-md); padding: 14px 16px; }
+.tip-box svg { width: 20px; height: 20px; color: var(--accent-amber); flex-shrink: 0; margin-top: 1px; }
+.tip-box p { margin: 0; font-size: .88rem; color: var(--ink); line-height: 1.7; }
+
+.detail-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; gap: 10px; flex-wrap: wrap; }
+.learned-toggle {
+  display: inline-flex; align-items: center; gap: 8px; font-size: .85rem; font-weight: 700;
+  padding: 9px 16px; border-radius: 999px; border: 1.5px solid var(--border); background: var(--surface);
+  color: var(--ink-soft); transition: all .2s ease;
+}
+.learned-toggle svg { width: 16px; height: 16px; }
+.learned-toggle.is-learned { background: var(--other-soft); border-color: var(--other-color); color: var(--other-color); }
+.word-card.is-learned::after {
+  content: ""; position: absolute; top: 14px; inset-inline-end: 14px; width: 10px; height: 10px;
+  border-radius: 50%; background: var(--other-color); box-shadow: 0 0 0 3px var(--other-soft);
+}
+
+/* ============================================================
+   9. ألوان الفئات لكل بطاقة (يتم ضبطها عبر data-category)
+   ============================================================ */
+.word-card[data-category="feelings"] { --cat-color: var(--accent-rose); --cat-soft: var(--accent-rose-soft); }
+.word-card[data-category="people"]   { --cat-color: var(--accent-amber); --cat-soft: var(--accent-amber-soft); }
+.word-card[data-category="concepts"] { --cat-color: var(--accent-teal); --cat-soft: var(--accent-teal-soft); }
+.word-card[data-category="sensory"]  { --cat-color: var(--accent-sage); --cat-soft: var(--accent-sage-soft); }
+
+.word-card[data-article="der"] { --badge-color: var(--der-color); --badge-soft: var(--der-soft); }
+.word-card[data-article="die"] { --badge-color: var(--die-color); --badge-soft: var(--die-soft); }
+.word-card[data-article="das"] { --badge-color: var(--das-color); --badge-soft: var(--das-soft); }
+.word-card[data-article="other"] { --badge-color: var(--other-color); --badge-soft: var(--other-soft); }
+
+/* ============================================================
+   10. قسم "لماذا هذه الكلمات مهمة" + النصيحة الذهبية
+   ============================================================ */
+.info-section {
+  max-width: 1280px; margin: 0 auto; padding: 20px 24px 70px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+}
+.info-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 30px 28px; box-shadow: var(--shadow-sm);
+}
+.info-card h2 { font-size: 1.2rem; margin: 0 0 16px; display: flex; align-items: center; gap: 10px; }
+.info-card h2 svg { width: 24px; height: 24px; color: var(--accent-teal); }
+.info-card ul { display: flex; flex-direction: column; gap: 12px; }
+.info-card li { display: flex; gap: 10px; font-size: .92rem; color: var(--ink-soft); align-items: flex-start; }
+.info-card li svg { width: 18px; height: 18px; color: var(--accent-sage); flex-shrink: 0; margin-top: 2px; }
+.info-card.tip { background: linear-gradient(155deg, var(--accent-indigo), #241d47); color: #EFE9FF; }
+html[data-theme="dark"] .info-card.tip { background: linear-gradient(155deg, #2c2450, #1c1732); }
+.info-card.tip h2 svg { color: var(--accent-amber); }
+.info-card.tip li { color: #D8D2EE; }
+.info-card.tip li svg { color: var(--accent-amber); }
+
+@media (max-width: 800px) { .info-section { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   11. تذييل الصفحة
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid var(--border); padding: 34px 24px 50px; text-align: center;
+  color: var(--ink-faint); font-size: .85rem;
+}
+.site-footer strong { color: var(--ink-soft); }
+
+/* ============================================================
+   12. الأزرار العائمة: العودة للأعلى + ملء الشاشة
+   ============================================================ */
+.fab-stack { position: fixed; bottom: 26px; inset-inline-end: 26px; z-index: 800; display: flex; flex-direction: column; gap: 10px; }
+.fab {
+  width: 50px; height: 50px; border-radius: 50%; background: var(--surface);
+  border: 1px solid var(--border); box-shadow: var(--shadow-md); color: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .2s ease, opacity .25s ease, box-shadow .2s ease;
+}
+.fab svg { width: 20px; height: 20px; }
+.fab:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.fab--top { opacity: 0; pointer-events: none; transform: translateY(10px) scale(.9); }
+.fab--top.show { opacity: 1; pointer-events: auto; transform: translateY(0) scale(1); }
+.fab--playing { background: var(--accent-teal); color: #fff; border-color: var(--accent-teal); display: none; }
+.fab--playing.show { display: flex; }
+.fab--playing .wave { display: flex; align-items: center; gap: 2px; height: 16px; }
+.fab--playing .wave span { width: 3px; background: #fff; border-radius: 2px; animation: waveBar 1s ease-in-out infinite; }
+.fab--playing .wave span:nth-child(1) { height: 6px; animation-delay: 0s; }
+.fab--playing .wave span:nth-child(2) { height: 14px; animation-delay: .15s; }
+.fab--playing .wave span:nth-child(3) { height: 9px; animation-delay: .3s; }
+.fab--playing .wave span:nth-child(4) { height: 16px; animation-delay: .45s; }
+@keyframes waveBar { 0%, 100% { transform: scaleY(.4); } 50% { transform: scaleY(1); } }
+
+/* ============================================================
+   13. التنبيهات المنبثقة (Toast)
+   ============================================================ */
+.toast-region { position: fixed; bottom: 26px; left: 26px; z-index: 900; display: flex; flex-direction: column-reverse; gap: 10px; }
+.toast {
+  background: var(--ink); color: var(--bg); padding: 14px 20px; border-radius: var(--radius-md);
+  font-size: .88rem; font-weight: 600; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px;
+  transform: translateY(20px); opacity: 0; transition: all .3s ease; max-width: 320px;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast svg { width: 20px; height: 20px; color: var(--accent-amber); flex-shrink: 0; }
+
+/* ============================================================
+   14. أنيميشن كشف عند التمرير
+   ============================================================ */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ============================================================
+   15. الاستجابة للشاشات
+   ============================================================ */
+@media (min-width: 860px) { .header-search { display: block; } }
+@media (max-width: 640px) {
+  .header-inner { padding: 0 12px; gap: 6px; }
+  .brand { min-width: 0; }
+  .brand__text { font-size: .92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 46vw; display: inline-block; }
+  .brand__text small { display: none; }
+  .header-actions { gap: 4px; }
+  .progress-chip { padding: 6px; }
+  .progress-chip #progressText { display: none; }
+  .icon-btn { width: 38px; height: 38px; }
+  .hero { padding: 36px 16px 30px; }
+  .toolbar { padding: 0 16px 22px; }
+  .grid-section { padding: 8px 16px 50px; }
+  .word-grid { grid-template-columns: 1fr; gap: 16px; }
+  .tts-bar { padding: 12px 14px; }
+  .tts-bar__hint { display: none; }
+  .fab-stack { bottom: 16px; inset-inline-end: 16px; }
+  .info-section { padding: 16px 16px 50px; }
+  .info-card { padding: 22px 20px; }
+}
+@media (min-width: 1400px) { .word-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); } }
+@media (max-width: 400px) {
+  .stack-card { width: 150px; height: 100px; padding: 10px 12px; }
+  .stack-card:nth-child(1) { transform: rotate(-9deg) translate(-40px, -14px); }
+  .stack-card:nth-child(2) { transform: rotate(4deg) translate(38px, 6px); }
+  .stack-card:nth-child(3) { transform: rotate(-2deg) translate(-2px, 30px); }
+  .stack-card .de-word { font-size: .92rem; }
+  .stack-card .gloss { font-size: .68rem; }
+}
+
+/* ============================================================
+   16. وضع الطباعة
+   ============================================================ */
+@media print {
+  .site-header, .toolbar, .fab-stack, .toast-region, .scroll-progress, .hero__visual, .word-card__expand-hint { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .word-card { break-inside: avoid; box-shadow: none !important; border: 1px solid #ccc !important; margin-bottom: 12px; opacity: 1 !important; transform: none !important; }
+  .word-card__detail { grid-template-rows: 1fr !important; }
+  .word-card__detail-content { transform: none !important; opacity: 1 !important; }
+  .word-grid { grid-template-columns: 1fr 1fr !important; }
+  @page { size: A4; margin: 14mm; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
+
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar" id="scrollBar"></div></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#main" class="brand">
+      <span class="brand__mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </span>
+      <span class="brand__text">أطلس الكلمات الألمانية<small>Wortatlas · ٣٠ كلمة لا تُترجم حرفياً</small></span>
+    </a>
+
+    <div class="header-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="searchInputDesktop" placeholder="ابحث عن كلمة… مثل Sehnsucht أو «حنين»" aria-label="ابحث عن كلمة ألمانية أو معناها">
+    </div>
+
+    <div class="header-actions">
+      <div class="progress-chip" id="progressChip" title="عدد الكلمات التي أتقنتها">
+        <svg class="progress-chip__ring" viewBox="0 0 30 30" aria-hidden="true">
+          <circle class="track" cx="15" cy="15" r="12" fill="none" stroke-width="3"/>
+          <circle class="fill" cx="15" cy="15" r="12" fill="none" stroke-width="3" stroke-linecap="round"
+            stroke-dasharray="75.4" stroke-dashoffset="75.4" transform="rotate(-90 15 15)" id="progressRing"/>
+        </svg>
+        <span id="progressText">٠ / ٣٠</span>
+      </div>
+      <button class="icon-btn" id="fullscreenBtn" aria-label="تفعيل وضع ملء الشاشة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      </button>
+      <button class="icon-btn" id="themeToggle" aria-label="تبديل الوضع الداكن والفاتح" aria-pressed="false">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="hero__aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div>
+      <span class="hero__eyebrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7l9 5 9-5-9-5Z"/><path d="M3 12l9 5 9-5M3 17l9 5 9-5"/></svg>
+        Menschen A2 · Wortschatz mit Gefühl
+      </span>
+      <h1>٣٠ كلمة ألمانية <span class="hl">لا يمكن ترجمتها حرفياً</span></h1>
+      <p class="lede">
+        بعض المشاعر لا تسعها لغة واحدة. هذه الكلمات الألمانية نشأت لتصف لحظات إنسانية دقيقة جداً —
+        من دفء الأمان (Geborgenheit) إلى ذعر فوات الأوان (Torschlusspanik) — بلا مقابل عربي بكلمة واحدة.
+        اضغط على أي كلمة لسماع نطقها، وافتح البطاقة لقراءة الشرح الكامل والمثال والنصيحة.
+      </p>
+      <div class="hero__stats">
+        <div class="stat"><b>٣٠</b><span>كلمة ومصطلح</span></div>
+        <div class="stat"><b>٤</b><span>فئات مفاهيمية</span></div>
+        <div class="stat"><b>A2</b><span>مستوى Menschen</span></div>
+        <div class="stat"><b>DE</b><span>نطق أصلي</span></div>
+      </div>
+    </div>
+    <div class="hero__visual" aria-hidden="true">
+      <div class="stack-card"><span class="tab"></span><span class="de-word" lang="de">Fernweh</span><span class="gloss">الحنين إلى المجهول</span></div>
+      <div class="stack-card"><span class="tab"></span><span class="punch"></span><span class="de-word" lang="de">Geborgenheit</span><span class="gloss">الأمان والدفء</span></div>
+      <div class="stack-card"><span class="tab"></span><span class="punch"></span><span class="de-word" lang="de">Kopfkino</span><span class="gloss">سينما الذهن</span></div>
+    </div>
+  </section>
+
+  <section class="toolbar" aria-label="أدوات البحث والتصفية">
+    <div class="toolbar__row">
+      <div class="search-mobile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="searchInputMobile" placeholder="ابحث عن كلمة أو معنى…" aria-label="ابحث عن كلمة ألمانية أو معناها">
+      </div>
+    </div>
+    <div class="toolbar__row category-tabs" id="categoryTabs" role="tablist" aria-label="تصفية حسب الفئة"></div>
+    <div class="tts-bar">
+      <span class="tts-bar__label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        إعدادات النطق
+      </span>
+      <select id="voiceSelect" aria-label="اختر الصوت الألماني"></select>
+      <div class="speed-control">
+        <label for="speedRange" class="mono" style="font-size:.8rem;color:var(--ink-faint);">السرعة</label>
+        <input type="range" id="speedRange" min="0.7" max="1.3" step="0.05" value="0.95">
+        <span class="speed-control__val" id="speedVal">0.95×</span>
+      </div>
+      <span class="tts-bar__hint">اضغط على أي كلمة ألمانية لسماع نطقها في أي وقت</span>
+    </div>
+  </section>
+
+  <section class="grid-section" aria-label="بطاقات الكلمات">
+    <div class="word-grid" id="wordGrid"></div>
+    <div class="grid-empty" id="gridEmpty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <p>لا توجد كلمات مطابقة لبحثك. جرّب كلمة أخرى أو امسح البحث.</p>
+    </div>
+  </section>
+  <section class="info-section">
+    <div class="info-card">
+      <h2>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+        لماذا هذه الكلمات مهمة؟
+      </h2>
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          تُعبّر عن مشاعر وأفكار دقيقة لا توجد لها كلمة واحدة في العربية.
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          تساعدك على فهم الثقافة الألمانية وطريقة تفكير أهلها بعمق أكبر.
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          تجعل لغتك الألمانية أكثر طبيعية وثراءً عند الحديث أو الكتابة.
+        </li>
+      </ul>
+    </div>
+    <div class="info-card tip">
+      <h2>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z"/></svg>
+        نصيحة ذهبية للتعلّم
+      </h2>
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z"/></svg>
+          حاول استخدام كلمة جديدة كل يوم داخل جملة من إنشائك أنت.
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z"/></svg>
+          استمع للنطق ثم كرّره بصوت عالٍ — سماع صوتك يثبّت الكلمة في الذاكرة.
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z"/></svg>
+          استخدم زر "تعلمت هذه الكلمة" لتتبّع تقدمك حتى تكمل الثلاثين.
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p><strong>أطلس الكلمات الألمانية</strong> — مصدر الكلمات والشرح المبدئي: Ausbildungguide.com · إعداد وتوسيع الشرح والأمثلة والنطق لأغراض تعليمية.</p>
+</footer>
+
+<div class="fab-stack">
+  <button class="fab fab--playing" id="playingFab" aria-label="جارٍ النطق الآن، اضغط للإيقاف">
+    <span class="wave"><span></span><span></span><span></span><span></span></span>
+  </button>
+  <button class="fab fab--top" id="backToTop" aria-label="العودة إلى الأعلى">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+</div>
+
+<div class="toast-region" id="toastRegion" aria-live="polite"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ================================================================
+     ١) مكتبة الأيقونات الوظيفية فقط (بلا صور زخرفية لكل كلمة)
+     ================================================================ */
+  var ICON_PATHS = {
+    'search': '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+    'speaker': '<path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>',
+    'speaker-mini': '<path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M16 9.5a3 3 0 0 1 0 5"/>',
+    'play': '<path d="M6 4.5v15l13-7.5-13-7.5Z"/>',
+    'pause': '<path d="M6 4.5h4v15H6zM14 4.5h4v15h-4z"/>',
+    'replay': '<path d="M3 12a9 9 0 1 1 2.6 6.3"/><path d="M3 21v-5h5"/>',
+    'copy': '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/>',
+    'check': '<path d="M20 6.5 9 17.5l-5-5"/>',
+    'chevron': '<path d="m6 9 6 6 6-6"/>',
+    'alert': '<circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/>',
+    'lightbulb': '<path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z"/>',
+    'brain': '<path d="M9 4.5a2.6 2.6 0 0 0-2.6 2.6v.3A2.7 2.7 0 0 0 5 9.9a2.7 2.7 0 0 0 .8 4.7 2.8 2.8 0 0 0 2.7 3.6c.4 0 .8-.1 1.1-.2"/><path d="M9 4.5a2.5 2.5 0 0 1 3-2.4c1.3.2 2.2 1.4 2.2 2.7v13.5a2.6 2.6 0 0 1-4.6 1.7"/><path d="M15 4.5a2.6 2.6 0 0 1 2.6 2.6v.3a2.7 2.7 0 0 1 1.4 2.5 2.7 2.7 0 0 1-.8 4.7 2.8 2.8 0 0 1-2.7 3.6"/>',
+    'book': '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/>',
+    'list': '<path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/>'
+  };
+  function ic(name) {
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICON_PATHS[name] || '') + '</svg>';
+  }
+  window.__ic = ic;
+
+  /* ================================================================
+     ٢) الفئات
+     ================================================================ */
+  var CATEGORIES = [
+    { id: 'all', label: 'كل الكلمات' },
+    { id: 'feelings', label: 'مشاعر وأحاسيس', color: 'var(--accent-rose)' },
+    { id: 'concepts', label: 'مفاهيم ومواقف', color: 'var(--accent-teal)' },
+    { id: 'people', label: 'وصف الأشخاص', color: 'var(--accent-amber)' },
+    { id: 'sensory', label: 'حسّي وجمالي', color: 'var(--accent-sage)' }
+  ];
+
+  window.__CATEGORIES = CATEGORIES;
+
+  /* ================================================================
+     ٣) قاعدة بيانات الكلمات الثلاثين
+     كل كلمة تحتوي: النطق المقطعي، تفكيك الكلمة المركّبة، الشرح،
+     وخمس جمل مثال أصلية بالألمانية مع ترجمتها، ونصيحة استخدام.
+     ================================================================ */
+  var WORDS = [
+    {
+      id: 'feierabend', word: 'Feierabend', article: 'der', pos: 'اسم مذكر', category: 'concepts',
+      syllables: '<b>Fei</b>-er-a-bend',
+      compound: [['Feier', 'احتفال / وقت فراغ'], ['Abend', 'مساء']],
+      gloss: 'وقت نهاية الدوام والتحرر منه',
+      explain: 'تُستخدم لوصف اللحظة التي ينتهي فيها العمل ويبدأ وقت الراحة والاسترخاء في المساء. لا تعني فقط «نهاية الدوام» بل تحمل شعوراً بالتحرر والارتياح الذي يشعر به الألمان عند ترك مسؤوليات العمل خلف ظهورهم.',
+      examples: [
+        ['Endlich ist Feierabend, jetzt kann ich mich zu Hause entspannen.', 'أخيراً انتهى الدوام، الآن أستطيع الاسترخاء في البيت.'],
+        ['Nach dem Feierabend gehe ich meistens joggen.', 'بعد انتهاء الدوام أذهب عادة للجري.'],
+        ['Schönen Feierabend, bis morgen!', 'مساءً سعيداً بعد العمل، أراك غداً!'],
+        ['Mein Kollege hat heute schon um drei Uhr Feierabend.', 'زميلي ينتهي من دوامه اليوم في الساعة الثالثة.'],
+        ['Wann hast du normalerweise Feierabend?', 'متى تنتهي من دوامك عادةً؟']
+      ],
+      tip: 'يمكنك استخدام تعبير "Schönen Feierabend!" لتتمنى لزميلك مساءً سعيداً بعد العمل — تعبير شائع جداً في ثقافة العمل الألمانية.'
+    },
+    {
+      id: 'fernweh', word: 'Fernweh', article: 'das', pos: 'اسم محايد', category: 'feelings',
+      syllables: '<b>Fern</b>-weh',
+      compound: [['fern', 'بعيد'], ['Weh', 'ألم / وجع']],
+      gloss: 'الحنين إلى السفر لأماكن بعيدة لم تُزَر بعد',
+      explain: 'عكس كلمة Heimweh (الحنين للوطن)، فهذه الكلمة تصف الشوق إلى أماكن بعيدة غير مألوفة، ورغبة داخلية في استكشاف العالم واكتشاف أماكن جديدة لم تطأها قدماك بعد. شعور شائع جداً لدى المسافرين وعشاق المغامرة.',
+      examples: [
+        ['Wenn ich Reisebilder sehe, bekomme ich sofort Fernweh.', 'عندما أرى صور السفر، أشعر فوراً بالحنين لاكتشاف أماكن بعيدة.'],
+        ['Nach dem langen Winter habe ich starkes Fernweh.', 'بعد الشتاء الطويل أشعر بشوق قوي للسفر.'],
+        ['Ihr Fernweh trieb sie nach Südamerika.', 'دفعها شوقها للسفر إلى أمريكا الجنوبية.'],
+        ['Hast du auch manchmal Fernweh?', 'هل تشعر أنت أيضاً أحياناً بالحنين للسفر؟'],
+        ['Sein Fernweh wurde immer größer, je länger er zu Hause blieb.', 'كان حنينه للسفر يزداد كلما طالت إقامته في البيت.']
+      ],
+      tip: 'لاحظ أن "-weh" هنا لا تعني ألماً جسدياً، بل شوقاً عاطفياً — نفس اللاحقة تظهر أيضاً في Heimweh وHerzschmerz.'
+    },
+    {
+      id: 'schadenfreude', word: 'Schadenfreude', article: 'die', pos: 'اسم مؤنث', category: 'concepts',
+      syllables: '<b>Scha</b>-den-freu-de',
+      compound: [['Schaden', 'ضرر'], ['Freude', 'فرح']],
+      gloss: 'شعور خفي بالسرور من فشل أو سوء حظ الآخرين',
+      explain: 'كلمة دخلت الإنجليزية ولغات أخرى كما هي دون ترجمة، لأنها تصف بدقة شعوراً إنسانياً معقداً: المتعة الخفية (وأحياناً غير المُعترف بها) عند رؤية شخص آخر يفشل أو يتعرض لموقف محرج، خصوصاً إن كان شخصاً لا نحبه.',
+      examples: [
+        ['Er konnte seine Schadenfreude nicht verbergen, als sein Kollege den Zug verpasste.', 'لم يستطع إخفاء شماتته عندما فاته زميله القطار.'],
+        ['Ein bisschen Schadenfreude ist menschlich, auch wenn man es nicht zugibt.', 'القليل من الشماتة أمر إنساني، حتى لو لم يعترف به المرء.'],
+        ['Sie grinste voller Schadenfreude, als der Regen seine Party ruinierte.', 'ابتسمت بشماتة عندما أفسد المطر حفلته.'],
+        ['Warum empfinden Menschen manchmal Schadenfreude?', 'لماذا يشعر الناس أحياناً بالشماتة؟'],
+        ['Seine Schadenfreude verschwand schnell, als ihm dasselbe Missgeschick passierte.', 'تلاشت شماتته سريعاً عندما حدث له نفس الموقف المحرج.']
+      ],
+      tip: 'الكلمة تُستخدم غالباً بنبرة نقدية أو ساخرة تجاه من يشعر بها؛ فهي ليست صفة محمودة اجتماعياً.'
+    },
+    {
+      id: 'sehnsucht', word: 'Sehnsucht', article: 'die', pos: 'اسم مؤنث', category: 'feelings',
+      syllables: '<b>Sehn</b>-sucht',
+      compound: [['sehnen', 'يشتاق / يتوق'], ['Sucht', 'إدمان / تعلّق شديد']],
+      gloss: 'شوق عميق وحارق لشيء أو شخص غير موجود حالياً',
+      explain: 'أعمق من كلمة «شوق» العادية؛ تحمل بداخلها معنى Sucht أي الإدمان، مما يمنحها ثقلاً عاطفياً كبيراً — وكأن الشوق تحوّل إلى حاجة لا يمكن مقاومتها. تُستخدم غالباً مع حرف الجر nach.',
+      examples: [
+        ['Ich habe große Sehnsucht nach meiner Kindheit.', 'أشتاق بشدة إلى طفولتي.'],
+        ['Die Sehnsucht nach ihrer Heimat wurde jeden Tag stärker.', 'كان شوقها إلى وطنها يزداد كل يوم.'],
+        ['Er schrieb ihr einen Brief voller Sehnsucht.', 'كتب لها رسالة مليئة بالشوق.'],
+        ['Woher kommt diese plötzliche Sehnsucht nach dem Meer?', 'من أين يأتي هذا الشوق المفاجئ إلى البحر؟'],
+        ['Mit der Zeit wurde ihre Sehnsucht nach ihm schwächer.', 'مع الوقت خفّ شوقها إليه.']
+      ],
+      tip: 'تذكّر استخدام حرف الجر "nach" مع حالة الداتيف (Dativ) بعد Sehnsucht: Sehnsucht nach + Dativ.'
+    },
+    {
+      id: 'geborgenheit', word: 'Geborgenheit', article: 'die', pos: 'اسم مؤنث', category: 'feelings',
+      syllables: 'Ge-<b>bor</b>-gen-heit',
+      compound: [['geborgen', 'محمي وآمن (من bergen: يحفظ/يؤوي)'], ['-heit', 'لاحقة تُكوّن اسماً مجرداً']],
+      gloss: 'الشعور بالأمان والدفء العاطفي مع شخص أو مكان',
+      explain: 'تصف حالة شعورية لا مادية فقط: الأمان النفسي الذي تشعر به وأنت محاط بمن تثق بهم، مثل حضن الأم أو بيت الطفولة. لا يوجد مقابل عربي بكلمة واحدة تماماً، فهي مزيج من الأمان والدفء والانتماء معاً.',
+      examples: [
+        ['In den Armen meiner Familie fühle ich absolute Geborgenheit.', 'في أحضان عائلتي أشعر بأمان ودفء مطلقين.'],
+        ['Kinder brauchen Geborgenheit, um sich sicher zu entwickeln.', 'يحتاج الأطفال إلى الأمان والدفء لينموا بثقة.'],
+        ['Dieses alte Sofa gibt mir ein Gefühl von Geborgenheit.', 'هذه الأريكة القديمة تمنحني شعوراً بالأمان والدفء.'],
+        ['Sie suchte Geborgenheit, nachdem sie alles verloren hatte.', 'بحثت عن الأمان والدفء بعد أن فقدت كل شيء.'],
+        ['Ohne Geborgenheit fühlt sich niemand wirklich zu Hause.', 'بدون الشعور بالأمان والدفء، لا أحد يشعر فعلاً أنه في بيته.']
+      ],
+      tip: 'الصفة "geborgen" (آمن ودافئ) تُستخدم أيضاً وحدها: "Ich fühle mich geborgen" (أشعر بالأمان والدفء).'
+    },
+    {
+      id: 'kummerspeck', word: 'Kummerspeck', article: 'der', pos: 'اسم مذكر', category: 'concepts',
+      syllables: '<b>Kum</b>-mer-speck',
+      compound: [['Kummer', 'هَمّ / حزن'], ['Speck', 'شحم / دهن اللحم']],
+      gloss: 'الوزن الزائد المُكتسب بسبب الحزن أو التوتر',
+      explain: 'كلمة طريفة تصف ظاهرة نفسية حقيقية: زيادة الوزن الناتجة عن الإفراط في الأكل بدافع الحزن أو التوتر العاطفي، وليس بسبب الجوع الحقيقي — غالباً بعد الانفصال العاطفي أو في الفترات الصعبة.',
+      examples: [
+        ['Nach der Trennung habe ich leider etwas Kummerspeck angesetzt.', 'للأسف اكتسبتُ بعض الوزن الزائد بسبب الحزن بعد الانفصال.'],
+        ['Der Kummerspeck vom letzten Winter ist immer noch da.', 'الوزن الزائد من الشتاء الماضي ما زال موجوداً.'],
+        ['Sie aß aus Frust Schokolade und bekam Kummerspeck.', 'أكلت الشوكولاتة بدافع الإحباط واكتسبت وزناً زائداً.'],
+        ['Wie wird man den Kummerspeck wieder los?', 'كيف يتخلص المرء من الوزن الزائد الناتج عن الحزن؟'],
+        ['Mein Kummerspeck kam von zu vielen Chips vor dem Fernseher.', 'وزني الزائد جاء من كثرة الشيبس أمام التلفاز.']
+      ],
+      tip: 'الفعل المرافق الشائع هو "ansetzen" (يكتسب/يتراكم): Kummerspeck ansetzen.'
+    },
+    {
+      id: 'schmetterlinge', word: 'Schmetterlinge im Bauch', article: 'other', pos: 'تعبير اصطلاحي', category: 'feelings',
+      syllables: 'Schmet-ter-<b>lin</b>-ge im Bauch',
+      compound: [['Schmetterlinge', 'فراشات'], ['im Bauch', 'في البطن']],
+      gloss: 'الشعور بالفرح والتوتر الجميل عند الوقوع في الحب',
+      explain: 'تعبير مجازي جميل — تخيل فراشات ترفرف داخل بطنك! يصف الإحساس الجسدي الخفيف بالخفقان والتوتر اللطيف في منطقة البطن عند رؤية أو التفكير في شخص تحبه، خصوصاً في بداية العلاقة.',
+      examples: [
+        ['Seit ich ihn kennengelernt habe, habe ich ständig Schmetterlinge im Bauch.', 'منذ أن تعرّفت عليه وأنا أشعر دائماً بفراشات في بطني.'],
+        ['Bei ihrem ersten Date hatte sie tausend Schmetterlinge im Bauch.', 'في موعدها الغرامي الأول شعرت بآلاف الفراشات في بطنها.'],
+        ['Hast du auch Schmetterlinge im Bauch, wenn du ihn siehst?', 'هل تشعر أنت أيضاً بالفراشات في بطنك عندما تراه؟'],
+        ['Nach Jahren der Ehe spüren sie immer noch Schmetterlinge im Bauch.', 'بعد سنوات من الزواج ما زالا يشعران بالفراشات في بطنيهما.'],
+        ['Die Schmetterlinge im Bauch verschwanden, sobald er zu sprechen begann.', 'اختفت الفراشات من بطنها بمجرد أن بدأ هو بالحديث.']
+      ],
+      tip: 'يُستخدم غالباً مع الفعل "haben": Schmetterlinge im Bauch haben.'
+    },
+    {
+      id: 'backpfeifengesicht', word: 'Backpfeifengesicht', article: 'das', pos: 'اسم محايد', category: 'people',
+      syllables: '<b>Back</b>-pfei-fen-ge-sicht',
+      compound: [['Backpfeife', 'صفعة على الوجه (عامية)'], ['Gesicht', 'وجه']],
+      gloss: 'وصف فكاهي وغير رسمي لوجه شخص مزعج جداً',
+      explain: 'كلمة فكاهية وغير رسمية (بل ووقحة قليلاً) يستخدمها الألمان بروح الدعابة لوصف شخص وجهه — من فرط استفزازه أو غروره — «يستحق صفعة». لا تُستخدم بجدية أو في سياقات رسمية.',
+      examples: [
+        ['Der Bösewicht in diesem Film hat wirklich ein Backpfeifengesicht.', 'الشرير في هذا الفيلم وجهه فعلاً يستفز المشاهد.'],
+        ['Manche Politiker haben einfach ein Backpfeifengesicht, findest du nicht?', 'بعض السياسيين وجوههم مستفزة ببساطة، ألا توافقني؟'],
+        ['Sein arrogantes Grinsen machte sein Backpfeifengesicht noch schlimmer.', 'جعلت ابتسامته المتغطرسة وجهه أكثر استفزازاً.'],
+        ['Das ist kein netter Ausdruck, aber jeder versteht, was ein Backpfeifengesicht ist.', 'هذا ليس تعبيراً لطيفاً، لكن الجميع يفهم معنى هذا الوصف الساخر.'],
+        ['Im Comic hatte der Schurke ein klassisches Backpfeifengesicht.', 'في القصة المصورة كان للشرير وجه استفزازي كلاسيكي.']
+      ],
+      tip: 'كلمة غير رسمية إطلاقاً — لا تستخدمها في العمل أو مع كبار السن، فهي خاصة بالحديث اليومي المرح بين الأصدقاء.'
+    },
+    {
+      id: 'weltschmerz', word: 'Weltschmerz', article: 'der', pos: 'اسم مذكر', category: 'feelings',
+      syllables: '<b>Welt</b>-schmerz',
+      compound: [['Welt', 'عالَم'], ['Schmerz', 'ألم']],
+      gloss: 'حزن عميق وشعور بالإحباط تجاه معاناة العالم وظلمه',
+      explain: 'مصطلح فلسفي الأصل، يصف حالة من الحزن الوجودي الناتج عن إدراك الفجوة بين المثالية التي نتمناها للعالم والواقع المليء بالمعاناة والظلم — أعمق من «حزن» عادي، فهو تأمل فلسفي في حال العالم.',
+      examples: [
+        ['Wenn ich die Nachrichten sehe, überkommt mich oft Weltschmerz.', 'عندما أشاهد الأخبار، أشعر غالباً بحزن عميق تجاه حال العالم.'],
+        ['Sein Weltschmerz machte ihn zu einem stillen, nachdenklichen Menschen.', 'جعله حزنه العميق على العالم شخصاً هادئاً وتأملياً.'],
+        ['Viele junge Menschen sprechen heute offen über ihren Weltschmerz.', 'يتحدث كثير من الشباب اليوم بصراحة عن حزنهم على حال العالم.'],
+        ['Woher kommt dieser tiefe Weltschmerz eigentlich?', 'من أين يأتي هذا الحزن العميق على العالم أصلاً؟'],
+        ['Etwas Zeit in der Natur hilft mir gegen meinen Weltschmerz.', 'بعض الوقت في الطبيعة يساعدني على مواجهة حزني على حال العالم.']
+      ],
+      tip: 'يظهر الفعل "überkommen" (يغمر/يجتاح الشعور) غالباً مع هذه الكلمة: "Weltschmerz überkommt mich."'
+    },
+    {
+      id: 'torschlusspanik', word: 'Torschlusspanik', article: 'die', pos: 'اسم مؤنث', category: 'feelings',
+      syllables: '<b>Tor</b>-schluss-pa-nik',
+      compound: [['Tor', 'بوّابة'], ['Schluss', 'إغلاق'], ['Panik', 'ذعر']],
+      gloss: 'الخوف من فوات الأوان أو ضياع الفرصة الأخيرة',
+      explain: 'أصل الكلمة تاريخي: الخوف القديم من إغلاق بوابات المدينة قبل حلول الظلام فيُترك المرء خارجها. اليوم تُستخدم مجازياً لوصف القلق من «فوات القطار» في الحياة، كالتقدم في العمر دون تحقيق هدف مهم في وقته المتوقع اجتماعياً.',
+      examples: [
+        ['Mit vierzig bekam sie plötzlich Torschlusspanik wegen der Familienplanung.', 'في سن الأربعين، انتابها فجأة خوف من فوات الأوان بخصوص تكوين أسرة.'],
+        ['Aus Torschlusspanik heiratete er viel zu schnell.', 'بدافع الخوف من فوات الأوان تزوّج بسرعة كبيرة جداً.'],
+        ['Torschlusspanik ist ein sehr menschliches, aber oft unnötiges Gefühl.', 'الخوف من فوات الأوان شعور إنساني جداً لكنه غالباً غير ضروري.'],
+        ['Spürst du manchmal auch diese Art von Torschlusspanik?', 'هل تشعر أنت أيضاً أحياناً بهذا النوع من الخوف من فوات الأوان؟'],
+        ['Ihre Torschlusspanik verschwand, als sie ihre eigenen Prioritäten erkannte.', 'تلاشى خوفها من فوات الأوان عندما أدركت أولوياتها الخاصة.']
+      ],
+      tip: 'ترتبط هذه الكلمة اجتماعياً بضغوط «الساعة البيولوجية» — انتبه لسياقها الحساس عند استخدامها.'
+    },
+    {
+      id: 'drachenfutter', word: 'Drachenfutter', article: 'das', pos: 'اسم محايد', category: 'concepts',
+      syllables: '<b>Dra</b>-chen-fut-ter',
+      compound: [['Drachen', 'تنّين'], ['Futter', 'علف / طعام الحيوانات']],
+      gloss: 'هدية تصالحية صغيرة تُقدَّم لتهدئة غضب الشريك',
+      explain: 'كلمة فكاهية تصف الهدية الصغيرة (زهور، شوكولاتة) التي يقدمها الشخص لشريكه «لاسترضائه» بعد خطأ ما، كالتأخر أو نسيان مناسبة. تشبيه «التنين» هنا ساخر يصف الشريك الغاضب الذي يحتاج «إطعامه» ليهدأ.',
+      examples: [
+        ['Ich komme zu spät, also bringe ich ihr Blumen als Drachenfutter mit.', 'سأتأخر، لذلك سأحضر لها الزهور كهدية استرضاء.'],
+        ['Er kaufte Pralinen als Drachenfutter für seine Frau.', 'اشترى الشوكولاتة كهدية استرضاء لزوجته.'],
+        ['Ohne etwas Drachenfutter sollte man nach einem Streit nicht nach Hause kommen.', 'لا ينبغي العودة إلى البيت بعد شجار دون هدية استرضاء صغيرة.'],
+        ['Was ist das beste Drachenfutter, wenn man einen Jahrestag vergessen hat?', 'ما هي أفضل هدية استرضاء عند نسيان ذكرى سنوية؟'],
+        ['Sein Drachenfutter half diesmal leider nicht viel.', 'للأسف لم تفلح هدية الاسترضاء كثيراً هذه المرة.']
+      ],
+      tip: 'كلمة مرحة تُستخدم بين الأزواج أو الشركاء بروح الفكاهة، وليست إهانة حقيقية.'
+    },
+    {
+      id: 'fingerspitzengefuehl', word: 'Fingerspitzengefühl', article: 'das', pos: 'اسم محايد', category: 'concepts',
+      syllables: '<b>Fin</b>-ger-spit-zen-ge-fühl',
+      compound: [['Finger', 'إصبع'], ['Spitze', 'طرف / رأس'], ['Gefühl', 'شعور']],
+      gloss: 'حسّ مرهف ولباقة عالية في التعامل مع المواقف الحساسة',
+      explain: 'تصف الحساسية والدقة والبراعة في التعامل مع الناس أو المواقف الصعبة — كأنك تتحسّس الأمور بأطراف أصابعك بحذر شديد. صفة يُمدح بها القادة والمعلمون والدبلوماسيون الذين يعرفون كيف يتصرفون بحكمة في اللحظات الحرجة.',
+      examples: [
+        ['Als Führungskraft braucht man viel Fingerspitzengefühl im Umgang mit dem Team.', 'بصفتك قائداً، تحتاج إلى حسّ مرهف ولباقة كبيرة في التعامل مع الفريق.'],
+        ['Sie erklärte die schlechte Nachricht mit viel Fingerspitzengefühl.', 'شرحت الخبر السيئ بلباقة وحسّ مرهف كبير.'],
+        ['Bei diesem heiklen Thema ist Fingerspitzengefühl gefragt.', 'في هذا الموضوع الحساس، اللباقة مطلوبة.'],
+        ['Hat er genug Fingerspitzengefühl für diesen schwierigen Kunden?', 'هل لديه ما يكفي من اللباقة للتعامل مع هذا العميل الصعب؟'],
+        ['Ohne Fingerspitzengefühl kann man in Verhandlungen schnell scheitern.', 'بدون حسّ مرهف، يمكن أن يفشل المرء بسرعة في المفاوضات.']
+      ],
+      tip: 'غالباً ما تُستخدم مع فعل "haben" أو "brauchen": Fingerspitzengefühl haben/brauchen.'
+    },
+    {
+      id: 'lampenfieber', word: 'Lampenfieber', article: 'das', pos: 'اسم محايد', category: 'feelings',
+      syllables: '<b>Lam</b>-pen-fie-ber',
+      compound: [['Lampen', 'أضواء / مصابيح'], ['Fieber', 'حُمّى']],
+      gloss: 'التوتر العصبي قبل الظهور أمام الجمهور',
+      explain: 'يصف التوتر الشديد الذي يشعر به الممثلون والموسيقيون والمتحدثون قبل الصعود على المسرح أو الظهور أمام جمهور — يشبه أعراض حمّى خفيفة (تسارع القلب، تعرّق اليدين) بسبب الأضواء المسلطة عليهم.',
+      examples: [
+        ['Vor jedem Konzert habe ich fürchterliches Lampenfieber.', 'قبل كل حفلة موسيقية أشعر بتوتر رهيب.'],
+        ['Ihr Lampenfieber verschwand, sobald die Musik begann.', 'تلاشى توترها بمجرد أن بدأت الموسيقى.'],
+        ['Wie überwindet man am besten sein Lampenfieber?', 'كيف يتغلب المرء على توتره قبل الظهور بأفضل شكل؟'],
+        ['Selbst erfahrene Schauspieler haben manchmal noch Lampenfieber.', 'حتى الممثلون المخضرمون يشعرون أحياناً بهذا التوتر.'],
+        ['Sein Lampenfieber war so stark, dass seine Hände zitterten.', 'كان توتره شديداً لدرجة أن يديه كانتا ترتجفان.']
+      ],
+      tip: 'لا علاقة لها بالحمّى الحقيقية (مرض) — بل هي استعارة للتوتر العصبي فقط.'
+    },
+    {
+      id: 'lieblingsmensch', word: 'Lieblingsmensch', article: 'der', pos: 'اسم مذكر', category: 'people',
+      syllables: '<b>Lieb</b>-lings-mensch',
+      compound: [['Liebling', 'المفضّل / الحبيب'], ['Mensch', 'إنسان']],
+      gloss: 'الشخص الأقرب والأعزّ إلى قلبك',
+      explain: 'كلمة دافئة ومرنة تُستخدم لوصف أعزّ شخص في حياتك — قد يكون صديقاً مقرباً، أو أحد أفراد العائلة، أو شريك الحياة. الجميل فيها أنها لا تحدّد نوع العلاقة، بل فقط عمق الأهمية والمحبة.',
+      examples: [
+        ['Meine Schwester ist mein absoluter Lieblingsmensch.', 'أختي هي أعزّ إنسان لديّ على الإطلاق.'],
+        ['Wer ist dein Lieblingsmensch und warum?', 'من هو أعزّ إنسان لديك، ولماذا؟'],
+        ['Mein Opa war schon immer mein Lieblingsmensch in der Familie.', 'كان جدّي دائماً أعزّ إنسان لديّ في العائلة.'],
+        ['Sie nennt ihren besten Freund liebevoll ihren Lieblingsmenschen.', 'تسمّي صديقها المقرّب بمحبة «إنسانها المفضّل».'],
+        ['Ohne meinen Lieblingsmenschen wäre das Leben viel schwerer.', 'بدون أعزّ إنسان لديّ، كانت الحياة ستكون أصعب بكثير.']
+      ],
+      tip: 'استخدم "mein/meine Lieblingsmensch" للتعبير عن التقدير العميق دون الدخول في تصنيفات علاقة رومانسية.'
+    },
+    {
+      id: 'herzschmerz', word: 'Herzschmerz', article: 'der', pos: 'اسم مذكر', category: 'feelings',
+      syllables: '<b>Herz</b>-schmerz',
+      compound: [['Herz', 'قلب'], ['Schmerz', 'ألم']],
+      gloss: 'الألم العاطفي العميق الناتج عن خيبة أمل أو فراق في الحب',
+      explain: 'تصف الألم العاطفي الحادّ المرتبط بالحب تحديداً — الفراق أو الخيانة أو الحب من طرف واحد. أقوى تعبيراً من «حزن» العادي لأنها تربط الألم مباشرة بموضع القلب رمزياً.',
+      examples: [
+        ['Nach der Trennung hatte sie wochenlang großen Herzschmerz.', 'بعد الانفصال، عانت من ألم عاطفي كبير لأسابيع.'],
+        ['Dieses Lied erinnert mich immer an meinen alten Herzschmerz.', 'هذه الأغنية تذكّرني دائماً بألمي العاطفي القديم.'],
+        ['Wie geht man am besten mit Herzschmerz um?', 'كيف يتعامل المرء بأفضل شكل مع الألم العاطفي؟'],
+        ['Sein Herzschmerz wurde mit der Zeit langsam leichter.', 'خفّ ألمه العاطفي تدريجياً مع الوقت.'],
+        ['Herzschmerz gehört leider manchmal einfach zum Leben dazu.', 'الألم العاطفي، للأسف، جزء من الحياة أحياناً.']
+      ],
+      tip: 'لا تخلط بينها وبين صيغة الجمع "Herzschmerzen" التي قد تشير أحياناً إلى ألم جسدي حقيقي في القلب.'
+    },
+    {
+      id: 'heimweh', word: 'Heimweh', article: 'das', pos: 'اسم محايد', category: 'feelings',
+      syllables: '<b>Heim</b>-weh',
+      compound: [['Heim', 'بيت / وطن'], ['Weh', 'ألم / وجع']],
+      gloss: 'الحنين إلى الوطن والأهل عند الغربة',
+      explain: 'عكس Fernweh تماماً؛ تصف الشوق المؤلم للعودة إلى الوطن والعائلة والأماكن المألوفة، وهو شعور شائع جداً لدى الطلاب والمهاجرين الجدد في بداية إقامتهم بالخارج.',
+      examples: [
+        ['Im ersten Jahr im Ausland hatte ich sehr starkes Heimweh.', 'في السنة الأولى في الخارج، كان لديّ حنين شديد جداً للوطن.'],
+        ['Bekommst du auch manchmal Heimweh, wenn du reist?', 'هل ينتابك أنت أيضاً أحياناً الحنين للوطن عندما تسافر؟'],
+        ['Ihr Heimweh wurde besonders an Feiertagen stärker.', 'كان حنينها للوطن يشتدّ خصوصاً في الأعياد.'],
+        ['Ein Anruf bei der Familie half gegen sein Heimweh.', 'ساعدته مكالمة مع العائلة على تخفيف حنينه للوطن.'],
+        ['Nach ein paar Monaten verschwand ihr Heimweh fast ganz.', 'بعد بضعة أشهر تلاشى حنينها للوطن تقريباً.']
+      ],
+      tip: 'تذكّر الفرق: Heimweh (حنين للبيت) مقابل Fernweh (حنين للبعيد) — كلمتان متضادتان تشتركان في اللاحقة نفسها "-weh".'
+    },
+    {
+      id: 'verschlimmbessern', word: 'Verschlimmbessern', article: 'other', pos: 'فعل', category: 'concepts',
+      syllables: 'ver-<b>schlimm</b>-bes-sern',
+      compound: [['verschlimmern', 'يزيد الأمر سوءاً'], ['verbessern', 'يُحسّن']],
+      gloss: 'محاولة تحسين شيء ينتهي بجعله أسوأ',
+      explain: 'فعل ذكي يجمع بين فعلين متناقضين في كلمة واحدة! يصف المفارقة الشائعة: عندما تحاول إصلاح أو تحسين موقف ما، لكن تدخلك يزيد الطين بلّة ويجعل الأمر أسوأ مما كان عليه.',
+      examples: [
+        ['Ich wollte den Fehler reparieren, aber ich habe alles nur verschlimmbessert.', 'أردت إصلاح الخطأ، لكنني زدت الأمر سوءاً فقط.'],
+        ['Bitte nichts mehr anfassen, sonst verschlimmbesserst du es noch!', 'أرجوك لا تلمس شيئاً آخر، وإلا زدته سوءاً!'],
+        ['Er hat mit seiner Entschuldigung alles nur verschlimmbessert.', 'بمحاولته الاعتذار، زاد الأمر سوءاً فقط.'],
+        ['Manchmal ist es besser, nichts zu tun, als etwas zu verschlimmbessern.', 'أحياناً يكون عدم فعل أي شيء أفضل من زيادة الأمر سوءاً.'],
+        ['Warum verschlimmbessern Menschen Dinge, obwohl sie helfen wollen?', 'لماذا يزيد الناس الأمور سوءاً رغم أنهم يريدون المساعدة؟']
+      ],
+      tip: 'الفعل منتظم في تصريفه رغم كونه مزيجاً من فعلين: ich verschlimmbessere, ich habe verschlimmbessert.'
+    },
+    {
+      id: 'bauchgefuehl', word: 'Bauchgefühl', article: 'das', pos: 'اسم محايد', category: 'feelings',
+      syllables: '<b>Bauch</b>-ge-fühl',
+      compound: [['Bauch', 'بطن'], ['Gefühl', 'شعور']],
+      gloss: 'الحدس أو الإحساس الداخلي الذي يوجّه قراراتك',
+      explain: 'يقابل تعبير «الحدس» أو «الحاسة السادسة» في العربية، لكن بصيغة أكثر جسدية وملموسة — الشعور الداخلي الغريزي الذي يخبرك بصحة أو خطأ قرار ما، دون أن تستطيع تفسيره منطقياً بالكامل.',
+      examples: [
+        ['Mein Bauchgefühl sagt mir, dass diese Entscheidung richtig ist.', 'حدسي يخبرني أنّ هذا القرار صحيح.'],
+        ['Vertraust du eher deinem Kopf oder deinem Bauchgefühl?', 'هل تثق أكثر بعقلك أم بحدسك؟'],
+        ['Ihr Bauchgefühl hatte diesmal leider recht.', 'للأسف كان حدسها هذه المرة صحيحاً.'],
+        ['Ich hatte von Anfang an ein komisches Bauchgefühl bei diesem Plan.', 'كان لديّ منذ البداية إحساس غريب تجاه هذه الخطة.'],
+        ['Höre auf dein Bauchgefühl, auch wenn du es nicht erklären kannst.', 'استمع إلى حدسك حتى لو لم تستطع تفسيره.']
+      ],
+      tip: 'يُستخدم غالباً مع الفعل "sagen": "Mein Bauchgefühl sagt mir..." (حدسي يخبرني...).'
+    },
+    {
+      id: 'klemme', word: 'in der Klemme stecken', article: 'other', pos: 'تعبير اصطلاحي', category: 'concepts',
+      syllables: 'in der <b>Klem</b>-me ste-cken',
+      compound: [['Klemme', 'مشبك ضاغط ← مأزق'], ['stecken', 'يكون عالقاً']],
+      gloss: 'أن تكون في مأزق أو موقف صعب يصعب الخروج منه',
+      explain: 'تعبير اصطلاحي شائع جداً يصف الوقوع في مشكلة أو ضائقة (غالباً مالية أو اجتماعية) يصعب الخلاص منها بسهولة، تماماً كأنك محشور بين فكّي مشبك ضاغط.',
+      examples: [
+        ['Ohne Auto und ohne Geld steckte er wirklich in der Klemme.', 'بدون سيارة وبدون مال، كان فعلاً في مأزق حقيقي.'],
+        ['Sie steckt gerade beruflich ziemlich in der Klemme.', 'إنها الآن في مأزق مهني كبير.'],
+        ['Wie kommt man am besten aus so einer Klemme wieder heraus?', 'كيف يخرج المرء بأفضل شكل من مأزق كهذا؟'],
+        ['Er brachte seinen Freund mit dieser Lüge in die Klemme.', 'أوقع صديقه في مأزق بهذه الكذبة.'],
+        ['Zwischen zwei Terminen steckte ich total in der Klemme.', 'بين موعدين، كنت عالقاً تماماً في مأزق.']
+      ],
+      tip: 'يمكن أيضاً قول "jemanden in die Klemme bringen" (توريط شخص في مأزق) كصيغة فاعلة من التعبير.'
+    },
+    {
+      id: 'mauerbluemchen', word: 'Mauerblümchen', article: 'das', pos: 'اسم محايد', category: 'people',
+      syllables: '<b>Mau</b>-er-blüm-chen',
+      compound: [['Mauer', 'جدار'], ['Blümchen', 'زهرة صغيرة']],
+      gloss: 'شخص خجول يفضّل الوقوف في الظل بعيداً عن الأضواء',
+      explain: 'صورة شعرية جميلة: تخيّل زهرة صغيرة تنمو بجانب الجدار بدلاً من وسط الحديقة — هكذا يُوصف الشخص الخجول الذي يقف على هامش الحفلة أو التجمّع الاجتماعي بدلاً من المشاركة الفعّالة.',
+      examples: [
+        ['Auf Partys ist sie meistens ein Mauerblümchen und redet nicht viel.', 'في الحفلات، غالباً ما تكون خجولة وتقف على الهامش ولا تتحدث كثيراً.'],
+        ['Als Kind war ich immer das Mauerblümchen in der Klasse.', 'عندما كنت طفلاً، كنت دائماً الشخص الخجول في الصف.'],
+        ['Niemand bemerkte das Mauerblümchen in der Ecke des Raumes.', 'لم يلاحظ أحد الشخص الخجول الواقف في زاوية الغرفة.'],
+        ['Mit der Zeit wurde aus dem Mauerblümchen eine selbstbewusste Frau.', 'مع الوقت تحوّلت الفتاة الخجولة إلى امرأة واثقة من نفسها.'],
+        ['Bist du eher ein Mauerblümchen oder der Mittelpunkt der Party?', 'هل أنت أقرب إلى شخص خجول أم إلى نجم الحفلة؟']
+      ],
+      tip: 'الكلمة تحمل نبرة تعاطف لطيفة وليست إهانة — تُستخدم بلطف لوصف الشخصية الخجولة.'
+    },
+    {
+      id: 'kopfkino', word: 'Kopfkino', article: 'das', pos: 'اسم محايد', category: 'concepts',
+      syllables: '<b>Kopf</b>-ki-no',
+      compound: [['Kopf', 'رأس'], ['Kino', 'سينما']],
+      gloss: 'تخيّل مشاهد وسيناريوهات في ذهنك كأنك تشاهد فيلماً',
+      explain: 'تصف النشاط الذهني الشائع: تخيّل مواقف أو محادثات أو سيناريوهات مستقبلية (غالباً قلقة) بتفاصيل حيّة وكأنها فيلم يُعرض داخل رأسك — قد تكون أحلام يقظة ممتعة أو تكراراً قلقاً لمحادثة صعبة قادمة.',
+      examples: [
+        ['Vor dem wichtigen Gespräch lief bei mir schon das ganze Kopfkino.', 'قبل المحادثة المهمة، كانت كل السيناريوهات تدور بالفعل في مخيّلتي.'],
+        ['Mein Kopfkino läuft immer nachts weiter, wenn ich schlafen will.', 'سينما ذهني تستمر دائماً في الليل عندما أريد النوم.'],
+        ['Stopp dein Kopfkino und frag ihn einfach direkt!', 'أوقف سيناريوهات ذهنك واسأله مباشرة!'],
+        ['Ihr Kopfkino zeigte ihr nur die schlimmsten Möglichkeiten.', 'أظهرت لها سينما ذهنها أسوأ الاحتمالات فقط.'],
+        ['Manchmal ist das Kopfkino viel dramatischer als die Realität.', 'أحياناً تكون سينما الذهن أكثر دراماتيكية من الواقع.']
+      ],
+      tip: 'غالباً ما ترتبط بالقلق: "Mein Kopfkino läuft wieder" تعني أنّ الذهن بدأ يتخيّل أسوأ الاحتمالات.'
+    },
+    {
+      id: 'glueckskind', word: 'Glückskind', article: 'das', pos: 'اسم محايد', category: 'people',
+      syllables: '<b>Glücks</b>-kind',
+      compound: [['Glück', 'حظ'], ['Kind', 'طفل']],
+      gloss: 'الشخص المحظوظ دائماً في حياته',
+      explain: 'تصف الشخص الذي يبدو أنّ الحظ يبتسم له باستمرار — ينجح فيما يحاوله، يفوز في المسابقات، وتسير أموره على ما يرام دون جهد كبير ظاهرياً. مثل التعبير العربي «مولود بحظ».',
+      examples: [
+        ['Er gewinnt immer im Lotto, er ist wirklich ein Glückskind!', 'يفوز دائماً في اليانصيب، إنه حقاً محظوظ بشكل استثنائي!'],
+        ['Als Glückskind hat sie nie lange nach einem Job suchen müssen.', 'بصفتها محظوظة، لم تضطر يوماً للبحث طويلاً عن وظيفة.'],
+        ['Manche Menschen scheinen einfach als Glückskinder geboren zu sein.', 'يبدو أن بعض الناس وُلدوا محظوظين ببساطة.'],
+        ['Bist du eher ein Glückskind, oder musst du für alles hart arbeiten?', 'هل أنت محظوظ أم تضطر للعمل بجد من أجل كل شيء؟'],
+        ['Als Glückskind der Familie bekam er immer die beste Unterstützung.', 'بصفته المحظوظ في العائلة، حصل دائماً على أفضل دعم.']
+      ],
+      tip: 'يمكن أيضاً استخدام تعبير "Glückspilz" (فطر الحظ) بنفس المعنى تقريباً وبروح مماثلة من الدعابة.'
+    },
+    {
+      id: 'schnapsidee', word: 'Schnapsidee', article: 'die', pos: 'اسم مؤنث', category: 'concepts',
+      syllables: '<b>Schnaps</b>-i-dee',
+      compound: [['Schnaps', 'كحول قوي'], ['Idee', 'فكرة']],
+      gloss: 'فكرة طائشة تُتخذ بتسرّع أو تحت تأثير الحماس اللحظي',
+      explain: 'تصف فكرة غريبة أو غير عملية تبدو كأنها خرجت «تحت تأثير الشراب» حتى لو لم يكن هناك كحول فعلياً — أي قرار متهور اتُّخذ بلا تفكير كافٍ في لحظة حماس أو مزاج عابر، ثم يُندم عليه لاحقاً.',
+      examples: [
+        ['Mitten in der Nacht ans Meer zu fahren war eine echte Schnapsidee.', 'الذهاب إلى البحر في منتصف الليل كانت فكرة طائشة وغير منطقية فعلاً.'],
+        ['Wer hatte eigentlich diese Schnapsidee mit dem Zelten im Winter?', 'من صاحب هذه الفكرة الطائشة بالتخييم في الشتاء أصلاً؟'],
+        ['Im Nachhinein war unser ganzer Plan eine einzige Schnapsidee.', 'بأثر رجعي، كانت خطتنا بأكملها فكرة طائشة واحدة.'],
+        ['Manche Schnapsideen enden überraschend gut.', 'بعض الأفكار الطائشة تنتهي بشكل جيد بشكل مفاجئ.'],
+        ['Diese Schnapsidee kam ihm natürlich erst nach ein paar Bier.', 'بالطبع خطرت له هذه الفكرة الطائشة بعد بضعة كؤوس بيرة.']
+      ],
+      tip: 'تُستخدم غالباً بنبرة مرحة للتعليق بأثر رجعي على قرار متهور اتُّخذ سابقاً.'
+    },
+    {
+      id: 'traumtaenzer', word: 'Traumtänzer', article: 'der', pos: 'اسم مذكر', category: 'people',
+      syllables: '<b>Traum</b>-tän-zer',
+      compound: [['Traum', 'حلم'], ['Tänzer', 'راقص']],
+      gloss: 'شخص حالم يعيش بعيداً عن الواقع',
+      explain: 'تصف شخصاً يميل إلى الأحلام والخيال أكثر من الواقعية العملية — يخطط لأمور غير واقعية أو يعيش في عالمه الخاص المليء بالأحلام، وغالباً ما تُستخدم بنبرة نقد لطيف تجاه من لا يواجه الواقع بجدية كافية.',
+      examples: [
+        ['Er ist ein Traumtänzer und plant nie etwas realistisch.', 'إنه شخص حالم بعيد عن الواقع ولا يخطط لأي شيء بواقعية أبداً.'],
+        ['Als Traumtänzer glaubte er immer, alles würde sich von selbst lösen.', 'بصفته حالماً، كان دائماً يعتقد أن كل شيء سيُحلّ من تلقاء نفسه.'],
+        ['Bist du ein Realist oder eher ein Traumtänzer?', 'هل أنت واقعي أم أقرب إلى شخص حالم؟'],
+        ['Seine Familie nannte ihn liebevoll den Traumtänzer der Familie.', 'أطلقت عليه عائلته بمحبة لقب «حالم العائلة».'],
+        ['Ein bisschen Traumtänzer zu sein, ist manchmal auch schön.', 'أن تكون قليلاً من الحالمين هو أمر جميل أحياناً أيضاً.']
+      ],
+      tip: 'ترتبط هذه الكلمة بكلمة "realitätsfern" وغالباً ما تُستخدمان معاً لوصف نفس نوع الشخصية.'
+    },
+    {
+      id: 'zwischenmenschlich', word: 'zwischenmenschlich', article: 'other', pos: 'صفة', category: 'people',
+      syllables: 'zwi-schen-<b>mensch</b>-lich',
+      compound: [['zwischen', 'بين'], ['menschlich', 'إنساني']],
+      gloss: 'كل ما يتعلق بالعلاقات والتفاعلات بين الأشخاص',
+      explain: 'صفة تصف كل ما يتعلّق بالتفاعل الاجتماعي والعلاقات الإنسانية — الثقة، التواصل، الصراعات، المشاعر المتبادلة بين الناس. تُستخدم كثيراً في سياقات علم النفس والعمل.',
+      examples: [
+        ['Gute zwischenmenschliche Beziehungen sind die Basis für ein glückliches Leben.', 'العلاقات الإنسانية الجيدة هي أساس حياة سعيدة.'],
+        ['In diesem Job sind zwischenmenschliche Fähigkeiten wichtiger als technisches Wissen.', 'في هذه الوظيفة، المهارات الإنسانية أهم من المعرفة التقنية.'],
+        ['Zwischenmenschliche Konflikte lassen sich oft durch offene Gespräche lösen.', 'يمكن غالباً حلّ النزاعات بين الأشخاص من خلال حوارات صريحة.'],
+        ['Wie wichtig sind dir zwischenmenschliche Beziehungen im Beruf?', 'ما مدى أهمية العلاقات الإنسانية بالنسبة لك في العمل؟'],
+        ['Ihre zwischenmenschliche Art macht sie bei allen beliebt.', 'طريقتها الإنسانية في التعامل تجعلها محبوبة لدى الجميع.']
+      ],
+      tip: 'صفة تُستخدم غالباً قبل اسم: zwischenmenschliche Konflikte / Beziehungen / Kommunikation.'
+    },
+    {
+      id: 'realitaetsfern', word: 'realitätsfern', article: 'other', pos: 'صفة', category: 'people',
+      syllables: 'Re-a-li-<b>täts</b>-fern',
+      compound: [['Realität', 'واقع'], ['fern', 'بعيد']],
+      gloss: 'غير واقعي، بعيد عن المنطق العملي',
+      explain: 'صفة تصف الأفكار أو الخطط أو الأشخاص الذين يفتقرون إلى الواقعية والمنطق العملي — أحلام كبيرة بلا أساس عملي، أو تقييم غير دقيق للإمكانيات الفعلية.',
+      examples: [
+        ['Sein Plan, ohne jegliches Budget zu reisen, ist völlig realitätsfern.', 'خطته للسفر دون أي ميزانية على الإطلاق غير واقعية تماماً.'],
+        ['Manche Ziele klingen zunächst realitätsfern, sind aber machbar.', 'بعض الأهداف تبدو للوهلة الأولى غير واقعية، لكنها قابلة للتحقيق.'],
+        ['Findest du diese Idee realitätsfern oder einfach nur mutig?', 'هل تجد هذه الفكرة غير واقعية أم شجاعة فقط؟'],
+        ['Kritiker nannten den Vorschlag komplett realitätsfern.', 'وصف النقّاد الاقتراح بأنه غير واقعي تماماً.'],
+        ['Mit der Zeit merkte er, wie realitätsfern sein Traum eigentlich war.', 'مع الوقت أدرك كم كان حلمه غير واقعي في الحقيقة.']
+      ],
+      tip: 'عكسها هو "realistisch" (واقعي) — قارن بينهما لفهم درجة النقد التي تحملها realitätsfern.'
+    },
+    {
+      id: 'sonnenbrand', word: 'Sonnenbrand', article: 'der', pos: 'اسم مذكر', category: 'sensory',
+      syllables: '<b>Son</b>-nen-brand',
+      compound: [['Sonne', 'شمس'], ['Brand', 'حريق / حرق']],
+      gloss: 'حرق الجلد الناتج عن التعرض المفرط لأشعة الشمس',
+      explain: 'على عكس ما قد يوحي به الاسم، لا علاقة لها بالنار — بل تصف احمرار وحرقان الجلد المؤلم بعد التعرض الطويل لأشعة الشمس دون حماية كافية. تذكير مهم دائماً باستخدام واقي الشمس!',
+      examples: [
+        ['Nach dem Tag am Strand hatte ich einen schlimmen Sonnenbrand.', 'بعد يوم على الشاطئ، أُصبت بحرق شمس شديد.'],
+        ['Trag Sonnencreme, sonst bekommst du einen Sonnenbrand!', 'ضع واقي الشمس، وإلا ستصاب بحرق شمس!'],
+        ['Sein Sonnenbrand tat noch tagelang weh.', 'استمر ألم حرق الشمس لديه لأيام.'],
+        ['Wie behandelt man einen Sonnenbrand am besten?', 'كيف يُعالَج حرق الشمس بأفضل شكل؟'],
+        ['Ihr Gesicht war nach dem Skiurlaub voller Sonnenbrand.', 'كان وجهها مليئاً بحرق الشمس بعد عطلة التزلج.']
+      ],
+      tip: 'لا تخلط "Brand" هنا بمعنى «حريق نار حقيقي» — فهي هنا وصف مجازي لاحمرار الجلد وحرقانه فقط.'
+    },
+    {
+      id: 'gaensehaut', word: 'Gänsehaut', article: 'die', pos: 'اسم مؤنث', category: 'sensory',
+      syllables: '<b>Gän</b>-se-haut',
+      compound: [['Gänse', 'إوَزّ'], ['Haut', 'جلد']],
+      gloss: 'قشعريرة الجسم الناتجة عن مشاعر قوية أو برودة',
+      explain: 'نفس مفهوم «جلد الدجاجة» بالعربية، لكن بالإوزّ في الألمانية! تصف النتوءات الصغيرة التي تظهر على الجلد بسبب البرد أو بسبب مشاعر قوية كالتأثر بأغنية جميلة أو مشهد مؤثر.',
+      examples: [
+        ['Bei diesem Lied bekomme ich jedes Mal Gänsehaut.', 'هذه الأغنية تصيبني بالقشعريرة في كل مرة.'],
+        ['Der Horrorfilm gab mir eine richtige Gänsehaut.', 'أصابني الفيلم المرعب بقشعريرة حقيقية.'],
+        ['Sie bekam Gänsehaut, als sie die Geschichte hörte.', 'أصيبت بالقشعريرة عندما سمعت القصة.'],
+        ['Welche Musik gibt dir immer Gänsehaut?', 'أي موسيقى تصيبك دائماً بالقشعريرة؟'],
+        ['Vor Kälte hatte er überall Gänsehaut auf den Armen.', 'كان لديه قشعريرة في كل مكان على ذراعيه بسبب البرد.']
+      ],
+      tip: 'يُستخدم مع الفعل "bekommen": Gänsehaut bekommen (يُصاب بالقشعريرة).'
+    },
+    {
+      id: 'tatendrang', word: 'Tatendrang', article: 'der', pos: 'اسم مذكر', category: 'feelings',
+      syllables: '<b>Ta</b>-ten-drang',
+      compound: [['Taten', 'أفعال (جمع Tat)'], ['Drang', 'دافع / رغبة ملحّة']],
+      gloss: 'حماس شديد ورغبة ملحّة في الفعل والإنجاز فوراً',
+      explain: 'تصف الطاقة الإيجابية والحماس الداخلي الذي يدفعك للبدء في العمل أو الإنجاز فوراً دون تأخير — شعور بالنشاط والرغبة الملحّة في تحقيق شيء ملموس، غالباً ما يظهر في بداية عام جديد أو مشروع جديد.',
+      examples: [
+        ['Am Montagmorgen spüre ich vollen Tatendrang für die neue Woche.', 'صباح الاثنين أشعر بحماس كامل ورغبة ملحّة للإنجاز في الأسبوع الجديد.'],
+        ['Nach dem Urlaub kehrte ihr Tatendrang mit voller Kraft zurück.', 'بعد الإجازة، عادت حماستها للإنجاز بكامل قوتها.'],
+        ['Sein Tatendrang steckte das ganze Team an.', 'أصاب حماسه للإنجاز الفريق بأكمله.'],
+        ['Woher nimmst du eigentlich diesen Tatendrang jeden Morgen?', 'من أين تستمدّ أصلاً هذا الحماس للإنجاز كل صباح؟'],
+        ['Mit viel Tatendrang begann sie ihr neues Projekt.', 'بدأت مشروعها الجديد بحماس كبير للإنجاز.']
+      ],
+      tip: 'عادة ما يُقال "voller Tatendrang sein" (أن تكون مليئاً بحماس الإنجاز).'
+    },
+    {
+      id: 'augenweide', word: 'Augenweide', article: 'die', pos: 'اسم مؤنث', category: 'sensory',
+      syllables: '<b>Au</b>-gen-wei-de',
+      compound: [['Augen', 'عيون'], ['Weide', 'مرعى']],
+      gloss: 'منظر جميل جداً يسرّ الناظرين',
+      explain: 'تعبير شاعري يُشبّه المنظر الجميل بمرعى أخضر تسرح فيه العين وتستريح، تماماً كما يرتاح الحيوان في المرعى. يُستخدم لوصف المناظر الطبيعية الخلابة أو أي مشهد جميل يُبهج النظر.',
+      examples: [
+        ['Der Sonnenuntergang über den Bergen war eine wahre Augenweide.', 'كان غروب الشمس فوق الجبال منظراً رائعاً حقاً يسرّ الناظرين.'],
+        ['Dieser alte Garten ist wirklich eine Augenweide im Frühling.', 'هذه الحديقة القديمة منظر يسرّ العين حقاً في الربيع.'],
+        ['Das neue Gebäude in der Stadtmitte ist eine echte Augenweide.', 'المبنى الجديد في وسط المدينة منظر معماري جميل حقاً.'],
+        ['Findest du diesen Wasserfall auch so eine Augenweide?', 'هل تجد أنت أيضاً هذا الشلال منظراً بهذا الجمال؟'],
+        ['Der bunte Herbstwald war für alle Wanderer eine Augenweide.', 'كانت غابة الخريف الملوّنة منظراً بديعاً لكل المتنزّهين.']
+      ],
+      tip: 'غالباً ما تُسبق بـ "eine wahre/echte Augenweide" (منظر رائع حقاً) للتأكيد على شدة الجمال.'
+    }
+  ];
+
+  window.__WORDS = WORDS;
+
+  /* ================================================================
+     ٤) الحالة العامة (State)
+     ================================================================ */
+  var learned = new Set();
+  try { learned = new Set(JSON.parse(localStorage.getItem('wortatlas_learned') || '[]')); } catch (e) { learned = new Set(); }
+  var activeCategory = 'all';
+  var searchQuery = '';
+  var speechRate = 0.95;
+  var germanVoices = [];
+  var chosenVoice = null;
+  var activeSpeakingEl = null; // عنصر الجملة الجاري نطقها حالياً (وليس البطاقة كلها)
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var grid = document.getElementById('wordGrid');
+  var gridEmpty = document.getElementById('gridEmpty');
+  var categoryTabsEl = document.getElementById('categoryTabs');
+
+  var ARABIC_ORDINALS = ['١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩', '١٠'];
+
+  /* ================================================================
+     ٥) دوال البناء (Render helpers)
+     ================================================================ */
+  function badgeLabel(w) {
+    if (w.article === 'der' || w.article === 'die' || w.article === 'das') return w.article;
+    if (w.pos === 'فعل') return 'فعل';
+    if (w.pos === 'صفة') return 'صفة';
+    return 'تعبير';
+  }
+
+  function articleClass(w) {
+    return (w.article === 'der' || w.article === 'die' || w.article === 'das') ? w.article : 'other';
+  }
+
+  function highlightable(sentence) {
+    var words = sentence.split(' ');
+    var idx = 0, out = [];
+    for (var i = 0; i < words.length; i++) {
+      var wd = words[i];
+      out.push('<span class="word-hl" tabindex="0" role="button" data-action="speak" data-speak="' + escAttr(wd.replace(/[.,!?;:]+$/, '')) + '" data-start="' + idx + '" data-end="' + (idx + wd.length) + '" aria-label="نطق الكلمة">' + escHtml(wd) + '</span>');
+      idx += wd.length + 1;
+    }
+    return out.join(' ');
+  }
+
+  function escHtml(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function escAttr(s) { return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); }
+
+  function renderCompound(w) {
+    if (!w.compound || !w.compound.length) return '';
+    var parts = w.compound.map(function (p) {
+      return '<button class="compound-part" data-action="speak" data-speak="' + escAttr(p[0]) + '"><b lang="de">' + escHtml(p[0]) + '</b><span>' + escHtml(p[1]) + '</span></button>';
+    });
+    return '<div class="detail-block"><div class="detail-block__label">' + ic('brain') + ' تفكيك الكلمة المركّبة</div><div class="compound-parts">' +
+      parts.join('<span class="compound-plus">+</span>') + '</div></div>';
+  }
+
+  function renderExamples(w) {
+    var items = w.examples.map(function (pair, i) {
+      var de = pair[0], ar = pair[1];
+      var num = ARABIC_ORDINALS[i] || (i + 1);
+      return (
+        '<li class="example-item" data-de="' + escAttr(de) + '">' +
+          '<span class="example-item__num">' + num + '</span>' +
+          '<div class="example-item__body">' +
+            '<p class="example-item__de" lang="de">' + highlightable(de) + '</p>' +
+            '<p class="example-item__ar">' + escHtml(ar) + '</p>' +
+          '</div>' +
+          '<div class="example-item__actions">' +
+            '<button class="mini-btn" data-action="play-pause-sentence" aria-label="تشغيل نطق الجملة">' + ic('play') + '</button>' +
+            '<button class="mini-btn" data-action="replay-sentence" aria-label="إعادة الجملة من البداية">' + ic('replay') + '</button>' +
+            '<button class="mini-btn" data-action="copy-sentence" data-copy="' + escAttr(de) + '" aria-label="نسخ الجملة">' + ic('copy') + '<span class="copied-flag">تم النسخ!</span></button>' +
+          '</div>' +
+        '</li>'
+      );
+    }).join('');
+    return (
+      '<div class="detail-block">' +
+        '<div class="detail-block__label">' + ic('list') + ' ' + w.examples.length + ' جمل توضيحية</div>' +
+        '<ul class="example-list">' + items + '</ul>' +
+      '</div>'
+    );
+  }
+
+  function renderCard(w) {
+    var artCls = articleClass(w);
+    var searchBlob = (w.word + ' ' + w.gloss + ' ' + w.explain + ' ' + w.examples.map(function (p) { return p[0] + ' ' + p[1]; }).join(' ')).toLowerCase();
+    return (
+      '<article class="word-card" data-id="' + w.id + '" data-category="' + w.category + '" data-article="' + artCls + '" data-search="' + escAttr(searchBlob) + '">' +
+        '<div class="word-card__punches"><span></span><span></span></div>' +
+        '<div class="word-card__front">' +
+          '<div class="word-card__top">' +
+            '<span class="article-badge">' + badgeLabel(w) + '</span>' +
+          '</div>' +
+          '<button class="de-word-btn" data-action="speak" data-speak="' + escAttr(w.word) + '" aria-label="نطق كلمة ' + escAttr(w.word) + '">' +
+            '<span lang="de">' + escHtml(w.word) + '</span>' +
+            '<span class="speak-mini">' + ic('speaker-mini') + '</span>' +
+          '</button>' +
+          '<div class="word-card__syllables" lang="de">' + w.syllables + '</div>' +
+          '<p class="word-card__gloss">' + escHtml(w.gloss) + '</p>' +
+          '<button class="word-card__expand-toggle" data-action="toggle-card" aria-expanded="false" aria-controls="detail-' + w.id + '">' +
+            '<span class="expand-txt-show">عرض الشرح والأمثلة</span>' +
+            '<span class="expand-txt-hide">إخفاء الشرح</span>' +
+            ic('chevron') +
+          '</button>' +
+        '</div>' +
+        '<div class="word-card__detail" id="detail-' + w.id + '">' +
+          '<div class="word-card__detail-inner"><div class="word-card__detail-content">' +
+            renderCompound(w) +
+            '<div class="detail-block">' +
+              '<div class="detail-block__label">' + ic('lightbulb') + ' الشرح التفصيلي</div>' +
+              '<p class="detail-explain">' + escHtml(w.explain) + '</p>' +
+            '</div>' +
+            renderExamples(w) +
+            '<div class="detail-block">' +
+              '<div class="tip-box">' + ic('lightbulb') + '<p>' + escHtml(w.tip) + '</p></div>' +
+            '</div>' +
+            '<div class="detail-footer">' +
+              '<button class="learned-toggle" data-action="toggle-learned" data-id="' + w.id + '">' + ic('check') + '<span class="lt-txt">تعلمت هذه الكلمة</span></button>' +
+            '</div>' +
+          '</div></div>' +
+        '</div>' +
+      '</article>'
+    );
+  }
+
+  function renderAllCards() {
+    grid.innerHTML = WORDS.map(renderCard).join('');
+    refreshLearnedVisuals();
+    if (!reducedMotion) initRevealObserver(); else {
+      Array.prototype.forEach.call(grid.querySelectorAll('.word-card'), function (c) { c.classList.add('is-visible'); });
+    }
+  }
+
+  function renderCategoryTabs() {
+    categoryTabsEl.innerHTML = CATEGORIES.map(function (c) {
+      var count = c.id === 'all' ? WORDS.length : WORDS.filter(function (w) { return w.category === c.id; }).length;
+      var dotStyle = c.color ? ' style="background:' + c.color + '"' : ' style="background:var(--ink-faint)"';
+      return '<button class="cat-tab' + (c.id === 'all' ? ' active' : '') + '" data-cat="' + c.id + '" role="tab" aria-selected="' + (c.id === 'all' ? 'true' : 'false') + '">' +
+        '<span class="dot"' + dotStyle + '></span>' + c.label + ' <span class="count">' + count + '</span></button>';
+    }).join('');
+  }
+
+  /* ================================================================
+     ٦) التصفية: البحث + الفئات
+     ================================================================ */
+  function applyFilters() {
+    var cards = grid.querySelectorAll('.word-card');
+    var visibleCount = 0;
+    var q = searchQuery.trim().toLowerCase();
+    Array.prototype.forEach.call(cards, function (card) {
+      var matchesCat = activeCategory === 'all' || card.getAttribute('data-category') === activeCategory;
+      var matchesSearch = !q || (card.getAttribute('data-search') || '').indexOf(q) !== -1;
+      var visible = matchesCat && matchesSearch;
+      card.classList.toggle('hidden-by-filter', !visible);
+      if (visible) visibleCount++;
+    });
+    gridEmpty.classList.toggle('show', visibleCount === 0);
+  }
+
+  function bindSearch() {
+    var d1 = document.getElementById('searchInputDesktop');
+    var d2 = document.getElementById('searchInputMobile');
+    function onInput(e) {
+      searchQuery = e.target.value;
+      if (d1 && e.target !== d1) d1.value = searchQuery;
+      if (d2 && e.target !== d2) d2.value = searchQuery;
+      applyFilters();
+    }
+    if (d1) d1.addEventListener('input', onInput);
+    if (d2) d2.addEventListener('input', onInput);
+  }
+
+  function bindCategoryTabs() {
+    categoryTabsEl.addEventListener('click', function (e) {
+      var btn = e.target.closest('.cat-tab');
+      if (!btn) return;
+      activeCategory = btn.getAttribute('data-cat');
+      Array.prototype.forEach.call(categoryTabsEl.querySelectorAll('.cat-tab'), function (t) {
+        var isActive = t === btn;
+        t.classList.toggle('active', isActive);
+        t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+      applyFilters();
+    });
+  }
+
+  /* ================================================================
+     ٧) الوضع الداكن / الفاتح
+     ================================================================ */
+  var themeToggleBtn = document.getElementById('themeToggle');
+  function getStoredTheme() { try { return localStorage.getItem('wortatlas_theme'); } catch (e) { return null; } }
+  function setStoredTheme(v) { try { localStorage.setItem('wortatlas_theme', v); } catch (e) {} }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    themeToggleBtn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+  }
+
+  function initTheme() {
+    var stored = getStoredTheme();
+    if (stored === 'dark' || stored === 'light') {
+      applyTheme(stored);
+    } else {
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(prefersDark ? 'dark' : 'light');
+    }
+    themeToggleBtn.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      setStoredTheme(next);
+    });
+    // اتّباع تفضيل النظام تلقائياً فقط إن لم يختر المستخدم يدوياً من قبل
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+        if (!getStoredTheme()) applyTheme(e.matches ? 'dark' : 'light');
+      });
+    }
+  }
+
+  /* ================================================================
+     ٨) النطق الصوتي (Web Speech API — de-DE)
+     ================================================================ */
+  var voiceSelect = document.getElementById('voiceSelect');
+  var speedRange = document.getElementById('speedRange');
+  var speedVal = document.getElementById('speedVal');
+  var playingFab = document.getElementById('playingFab');
+  var supportsSpeech = 'speechSynthesis' in window;
+
+  function scoreVoice(v) {
+    var score = 0;
+    var name = (v.name || '').toLowerCase();
+    if (v.lang === 'de-DE') score += 10;
+    else if (/^de/i.test(v.lang)) score += 6;
+    if (v.localService) score += 5;
+    if (/google|natural|premium|enhanced|siri|anna|markus|helena|petra|conrad/i.test(name)) score += 4;
+    return score;
+  }
+
+  function loadVoices() {
+    if (!supportsSpeech) return;
+    var all = window.speechSynthesis.getVoices();
+    germanVoices = all.filter(function (v) { return /^de/i.test(v.lang); });
+    if (!germanVoices.length) return;
+    germanVoices.sort(function (a, b) { return scoreVoice(b) - scoreVoice(a); });
+    voiceSelect.innerHTML = germanVoices.map(function (v, i) {
+      return '<option value="' + i + '">' + escHtml(v.name) + ' (' + v.lang + ')</option>';
+    }).join('');
+    chosenVoice = germanVoices[0];
+    voiceSelect.selectedIndex = 0;
+  }
+
+  if (supportsSpeech) {
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+    voiceSelect.addEventListener('change', function () {
+      chosenVoice = germanVoices[parseInt(voiceSelect.value, 10)] || null;
+    });
+  } else if (voiceSelect) {
+    voiceSelect.innerHTML = '<option>النطق غير مدعوم في هذا المتصفح</option>';
+    voiceSelect.disabled = true;
+  }
+
+  if (speedRange) {
+    speedRange.addEventListener('input', function () {
+      speechRate = parseFloat(speedRange.value);
+      speedVal.textContent = speechRate.toFixed(2) + '×';
+    });
+  }
+
+  function clearWordHighlights(el) {
+    if (!el) return;
+    Array.prototype.forEach.call(el.querySelectorAll('.word-hl.speaking'), function (s) { s.classList.remove('speaking'); });
+  }
+
+  function setPlayBtnState(el, playing) {
+    if (!el) return;
+    var btn = el.querySelector('[data-action="play-pause-sentence"]');
+    if (!btn) return;
+    btn.innerHTML = playing ? ic('pause') : ic('play');
+    btn.classList.toggle('is-active', playing);
+    btn.setAttribute('aria-label', playing ? 'إيقاف مؤقت للنطق' : 'تشغيل نطق الجملة');
+  }
+
+  function speakWordButton(btnEl, text) {
+    if (!supportsSpeech) { showToast('المتصفح لا يدعم خاصية النطق الصوتي حالياً', 'alert'); return; }
+    window.speechSynthesis.cancel();
+    clearActiveSentence();
+    var utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'de-DE';
+    if (chosenVoice) utter.voice = chosenVoice;
+    utter.rate = speechRate;
+    utter.onstart = function () { btnEl && btnEl.classList.add('is-speaking'); };
+    utter.onend = function () { btnEl && btnEl.classList.remove('is-speaking'); };
+    utter.onerror = function () { btnEl && btnEl.classList.remove('is-speaking'); };
+    window.speechSynthesis.speak(utter);
+  }
+
+  function clearActiveSentence() {
+    if (activeSpeakingEl) { clearWordHighlights(activeSpeakingEl); setPlayBtnState(activeSpeakingEl, false); }
+    activeSpeakingEl = null;
+    playingFab.classList.remove('show');
+  }
+
+  /* يُشغّل جملة داخل عنصر <li class="example-item"> محدد. restart=true يعيدها دوماً من البداية. */
+  function playSentenceEl(exampleEl, sentence, restart) {
+    if (!supportsSpeech) { showToast('المتصفح لا يدعم خاصية النطق الصوتي حالياً', 'alert'); return; }
+    var isSameSpeaking = activeSpeakingEl === exampleEl && window.speechSynthesis.speaking && !window.speechSynthesis.paused;
+    if (isSameSpeaking && !restart) {
+      window.speechSynthesis.pause();
+      setPlayBtnState(exampleEl, false);
+      playingFab.classList.remove('show');
+      return;
+    }
+    if (activeSpeakingEl === exampleEl && window.speechSynthesis.paused && !restart) {
+      window.speechSynthesis.resume();
+      setPlayBtnState(exampleEl, true);
+      playingFab.classList.add('show');
+      return;
+    }
+    window.speechSynthesis.cancel();
+    clearActiveSentence();
+    activeSpeakingEl = exampleEl;
+    var utter = new SpeechSynthesisUtterance(sentence);
+    utter.lang = 'de-DE';
+    if (chosenVoice) utter.voice = chosenVoice;
+    utter.rate = speechRate;
+    utter.onboundary = function (ev) {
+      if (ev.name && ev.name !== 'word') return;
+      var idx = ev.charIndex;
+      clearWordHighlights(exampleEl);
+      var spans = exampleEl.querySelectorAll('.example-item__de .word-hl');
+      for (var i = 0; i < spans.length; i++) {
+        var s = spans[i];
+        var start = parseInt(s.getAttribute('data-start'), 10);
+        var end = parseInt(s.getAttribute('data-end'), 10);
+        if (idx >= start && idx <= end) { s.classList.add('speaking'); break; }
+      }
+    };
+    utter.onstart = function () { setPlayBtnState(exampleEl, true); playingFab.classList.add('show'); };
+    utter.onend = function () { setPlayBtnState(exampleEl, false); clearWordHighlights(exampleEl); playingFab.classList.remove('show'); activeSpeakingEl = null; };
+    utter.onerror = function () { setPlayBtnState(exampleEl, false); clearWordHighlights(exampleEl); playingFab.classList.remove('show'); activeSpeakingEl = null; };
+    window.speechSynthesis.speak(utter);
+  }
+
+  playingFab.addEventListener('click', function () {
+    if (supportsSpeech) window.speechSynthesis.cancel();
+    clearActiveSentence();
+  });
+
+  /* ================================================================
+     ٩) النسخ إلى الحافظة
+     ================================================================ */
+  function copyText(text, btnEl) {
+    function done() {
+      showToast('تم نسخ الجملة الألمانية بنجاح', 'check');
+      if (btnEl) {
+        var flag = btnEl.querySelector('.copied-flag');
+        if (flag) {
+          flag.classList.add('show');
+          setTimeout(function () { flag.classList.remove('show'); }, 1600);
+        }
+      }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () { fallbackCopy(text, done); });
+    } else {
+      fallbackCopy(text, done);
+    }
+  }
+  function fallbackCopy(text, cb) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try { document.execCommand('copy'); cb(); } catch (e) { showToast('تعذّر نسخ النص', 'alert'); }
+    document.body.removeChild(ta);
+  }
+
+  /* ================================================================
+     ١٠) تتبّع التقدّم (الكلمات المتعلَّمة)
+     ================================================================ */
+  var progressText = document.getElementById('progressText');
+  var progressRing = document.getElementById('progressRing');
+  var RING_CIRC = 75.4;
+
+  function saveLearned() { try { localStorage.setItem('wortatlas_learned', JSON.stringify(Array.from(learned))); } catch (e) {} }
+
+  function toArabicDigits(n) {
+    var map = { '0': '٠', '1': '١', '2': '٢', '3': '٣', '4': '٤', '5': '٥', '6': '٦', '7': '٧', '8': '٨', '9': '٩' };
+    return String(n).replace(/[0-9]/g, function (d) { return map[d]; });
+  }
+
+  function updateProgressUI() {
+    var count = learned.size;
+    var total = WORDS.length;
+    progressText.textContent = toArabicDigits(count) + ' / ' + toArabicDigits(total);
+    var offset = RING_CIRC - (RING_CIRC * count / total);
+    progressRing.setAttribute('stroke-dashoffset', offset.toFixed(1));
+  }
+
+  function refreshLearnedVisuals() {
+    Array.prototype.forEach.call(grid.querySelectorAll('.word-card'), function (card) {
+      var id = card.getAttribute('data-id');
+      var isLearned = learned.has(id);
+      card.classList.toggle('is-learned', isLearned);
+      var btn = card.querySelector('.learned-toggle');
+      if (btn) {
+        btn.classList.toggle('is-learned', isLearned);
+        var txt = btn.querySelector('.lt-txt');
+        if (txt) txt.textContent = isLearned ? 'تم تعلّمها ✓' : 'تعلمت هذه الكلمة';
+      }
+    });
+    updateProgressUI();
+  }
+
+  function toggleLearned(id, card) {
+    var wasFull = learned.size === WORDS.length;
+    if (learned.has(id)) learned.delete(id); else learned.add(id);
+    saveLearned();
+    refreshLearnedVisuals();
+    if (learned.size === WORDS.length && !wasFull) {
+      showToast('🎉 رائع! لقد أتقنت جميع الكلمات الثلاثين', 'check');
+    }
+  }
+
+  /* ================================================================
+     ١١) التنبيهات المنبثقة (Toast)
+     ================================================================ */
+  var toastRegion = document.getElementById('toastRegion');
+  function showToast(msg, iconName) {
+    var el = document.createElement('div');
+    el.className = 'toast';
+    el.innerHTML = ic(iconName || 'check') + '<span>' + escHtml(msg) + '</span>';
+    toastRegion.appendChild(el);
+    requestAnimationFrame(function () { el.classList.add('show'); });
+    setTimeout(function () {
+      el.classList.remove('show');
+      setTimeout(function () { el.remove(); }, 350);
+    }, 2600);
+  }
+  window.__showToast = showToast;
+
+  /* ================================================================
+     ١٢) فتح/طي البطاقة
+     ================================================================ */
+  function toggleCard(card, toggleBtn) {
+    var willOpen = !card.classList.contains('is-open');
+    card.classList.toggle('is-open', willOpen);
+    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    if (!willOpen && activeSpeakingEl && card.contains(activeSpeakingEl)) {
+      if (supportsSpeech) window.speechSynthesis.cancel();
+      clearActiveSentence();
+    }
+  }
+
+  /* ================================================================
+     ١٣) التفويض المركزي للأحداث (Event Delegation) داخل الشبكة
+     ================================================================ */
+  function handleGridActivate(target) {
+    var wordHl = target.closest('.word-hl');
+    if (wordHl) { speakWordButton(wordHl, wordHl.getAttribute('data-speak')); return true; }
+
+    var actionEl = target.closest('[data-action]');
+    if (actionEl) {
+      var action = actionEl.getAttribute('data-action');
+      var card = actionEl.closest('.word-card');
+      switch (action) {
+        case 'speak':
+          speakWordButton(actionEl, actionEl.getAttribute('data-speak'));
+          return true;
+        case 'toggle-card': {
+          toggleCard(card, actionEl);
+          return true;
+        }
+        case 'play-pause-sentence': {
+          var exItem = actionEl.closest('.example-item');
+          if (exItem) playSentenceEl(exItem, exItem.getAttribute('data-de'), false);
+          return true;
+        }
+        case 'replay-sentence': {
+          var exItem2 = actionEl.closest('.example-item');
+          if (exItem2) playSentenceEl(exItem2, exItem2.getAttribute('data-de'), true);
+          return true;
+        }
+        case 'copy-sentence':
+          copyText(actionEl.getAttribute('data-copy'), actionEl);
+          return true;
+        case 'toggle-learned':
+          toggleLearned(actionEl.getAttribute('data-id'), card);
+          return true;
+      }
+    }
+
+    var frontArea = target.closest('.word-card__front');
+    if (frontArea) {
+      var parentCard = frontArea.closest('.word-card');
+      var toggleBtn = parentCard.querySelector('.word-card__expand-toggle');
+      toggleCard(parentCard, toggleBtn);
+      return true;
+    }
+    return false;
+  }
+
+  grid.addEventListener('click', function (e) { handleGridActivate(e.target); });
+  grid.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var wordHl = e.target.closest('.word-hl');
+    if (wordHl) { e.preventDefault(); speakWordButton(wordHl, wordHl.getAttribute('data-speak')); }
+  });
+
+  /* ================================================================
+     ١٤) تأثيرات التمرير: شريط التقدّم + الكشف التدريجي + زر الأعلى
+     ================================================================ */
+  var scrollBar = document.getElementById('scrollBar');
+  var backToTopBtn = document.getElementById('backToTop');
+
+  function onScroll() {
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var height = (doc.scrollHeight - doc.clientHeight) || 1;
+    var pct = Math.min(100, Math.max(0, (scrollTop / height) * 100));
+    scrollBar.style.width = pct + '%';
+    backToTopBtn.classList.toggle('show', scrollTop > 480);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  backToTopBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }); });
+
+  function initRevealObserver() {
+    if (!('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(grid.querySelectorAll('.word-card'), function (c) { c.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry, i) {
+        if (entry.isIntersecting) {
+          setTimeout(function () { entry.target.classList.add('is-visible'); }, (i % 6) * 60);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    Array.prototype.forEach.call(grid.querySelectorAll('.word-card'), function (c) { io.observe(c); });
+  }
+
+  /* ================================================================
+     ١٥) وضع ملء الشاشة
+     ================================================================ */
+  var fullscreenBtn = document.getElementById('fullscreenBtn');
+  fullscreenBtn.addEventListener('click', function () {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen && document.documentElement.requestFullscreen().catch(function () {
+        showToast('تعذّر تفعيل وضع ملء الشاشة على هذا الجهاز', 'alert');
+      });
+    } else {
+      document.exitFullscreen && document.exitFullscreen();
+    }
+  });
+
+  /* ================================================================
+     ١٦) التهيئة الرئيسية
+     ================================================================ */
+  function init() {
+    initTheme();
+    renderCategoryTabs();
+    renderAllCards();
+    bindCategoryTabs();
+    bindSearch();
+    onScroll();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="wortschatz-atlas-30-woerter" data-category="wortschatz" data-title="أطلس الكلمات الألمانية — ٣٠ كلمة لا تُترجم حرفيًا" data-root="../../" defer></script>
+</body>
+</html>
