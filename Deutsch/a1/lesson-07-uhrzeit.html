@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>الدليل الشامل · التحيات الأساسية وتقديم النفس — Begrüßung & Vorstellung | ألمانية A1</title>
-<meta name="description" content="الدرس الثاني في مسار الألمانية A1: تحيات الوقت، التحيات غير الرسمية، الوداع، صيغتا du وSie، تقديم النفس، وحوارات كاملة تفاعلية بصوت ألماني حقيقي.">
+<title>الدليل الشامل · الوقت والساعة — Die Uhrzeit | ألمانية A1</title>
+<meta name="description" content="الدرس السابع في مسار الألمانية A1: مفردات الوقت الأساسية، ساعة تفاعلية تحوّل أي وقت إلى الصيغتين الرسمية وغير الرسمية، قاعدة halb الشهيرة التي تشير إلى الساعة القادمة لا الماضية، أقسام اليوم الستة بخط زمني تفاعلي، حروف جر الوقت، حوارا استخدام عملي كامل، وأخطاء شائعة لمتحدثي العربية.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 a { color: inherit; }
 
 /* ==========================================================================
-   1. DESIGN TOKENS (same course identity as Lesson 1)
+   1. DESIGN TOKENS (same course identity as Lessons 1–6)
    ========================================================================== */
 :root {
   color-scheme: light;
@@ -151,6 +151,7 @@ p { margin: 0; }
   padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
 }
 .eyebrow.plum { color: var(--plum); background: var(--plum-soft); }
+.eyebrow.amber { color: var(--amber-ink); background: var(--amber-soft); }
 .section-title { font-size: clamp(1.5rem, 3.6vw, 2.35rem); }
 .section-sub { color: var(--ink-soft); font-size: clamp(.98rem, 1.6vw, 1.1rem); margin-top: 12px; max-width: 62ch; }
 
@@ -161,6 +162,7 @@ p { margin: 0; }
 .reveal-stagger.is-visible > *:nth-child(1){transition-delay:.03s} .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.09s}
 .reveal-stagger.is-visible > *:nth-child(3){transition-delay:.15s} .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.21s}
 .reveal-stagger.is-visible > *:nth-child(5){transition-delay:.27s} .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.33s}
+.reveal-stagger.is-visible > *:nth-child(7){transition-delay:.39s} .reveal-stagger.is-visible > *:nth-child(8){transition-delay:.45s}
 
 /* ==========================================================================
    3. HEADER / NAV
@@ -200,11 +202,6 @@ p { margin: 0; }
 .nav-link.active { background: var(--teal-soft); color: var(--teal); border-color: transparent; }
 
 .header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
-/* == إصلاح استجابة الهاتف: على أضيق الشاشات، نخفي زري البحث وملء الشاشة
-   من شريط الأدوات (البحث متاح أصلًا عبر قائمة الجوال) لمنع خروج الشريط عن حدود الشاشة == */
-@media (max-width: 420px) {
-  .header-controls #searchToggle, .header-controls #fullscreenToggle { display: none; }
-}
 .icon-btn {
   width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border);
   background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center;
@@ -286,7 +283,7 @@ p { margin: 0; }
 .btn:disabled { opacity: .55; cursor: not-allowed; }
 .btn:disabled:hover { transform: none; box-shadow: none; }
 
-/* --- hero illustration: two speech bubbles greeting each other --- */
+/* --- hero illustration: decorative analog clock + floating tag bubbles --- */
 .hero-illustration { position: relative; }
 .hero-illo-svg { width: 100%; height: auto; }
 .floaty { animation: floaty 5s ease-in-out infinite; }
@@ -309,7 +306,7 @@ p { margin: 0; }
   width: 100%; justify-content: center;
 }
 .arrow-frame::before { content: "⌐"; position: absolute; top: -13px; right: 10px; font-family: var(--font-mono); font-size: .7rem; color: var(--ink-faint); background: var(--surface); padding: 0 6px; }
-.k-word { cursor: pointer; border-radius: 8px; padding: 4px 6px; transition: background-color .2s, color .2s; }
+.k-word { cursor: pointer; border-radius: 8px; padding: 2px 6px; transition: background-color .2s, color .2s; }
 .k-word:hover { background: var(--bg-alt); }
 .k-word.speaking { background: var(--teal); color: #fff; }
 .k-phrase-big { background: var(--teal); color: #fff; border-radius: 12px; padding: 8px 20px; font-weight: 700; font-size: clamp(1.3rem, 3vw, 1.7rem); }
@@ -367,48 +364,101 @@ p { margin: 0; }
 .stat-card.amber .stat-pct { color: var(--amber-ink); }
 .stat-card .stat-desc { font-size: .87rem; color: var(--ink-soft); margin-top: 6px; }
 
+
 /* ==========================================================================
-   6. TIME-OF-DAY GREETING CARDS
+   6. TIME VOCAB — flip cards (reused generic component)
    ========================================================================== */
-.time-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-@media (max-width: 940px){ .time-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px){ .time-grid { grid-template-columns: 1fr; } }
-.time-card {
-  border-radius: var(--r-lg); padding: 22px 18px; text-align: center; position: relative; overflow: hidden;
-  border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-  cursor: pointer;
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px; }
+.flip-card { perspective: 1200px; height: 190px; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-shadow: var(--shadow-sm); }
+.flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
+.flip-front .de { font-size: 1.4rem; font-weight: 700; }
+.flip-front .aux-tag { position: absolute; top: 10px; left: 10px; }
+.flip-back { background: var(--plum); color: #fff; transform: rotateY(180deg); gap: 6px; }
+.flip-back .partizip { font-family: var(--font-de-display); font-size: 1.2rem; font-weight: 600; }
+.flip-back .ipa { font-family: var(--font-mono); font-size: .78rem; opacity: .85; }
+.flip-back .meaning { font-size: .85rem; opacity: .92; margin-top: 2px; text-align:center; }
+.flip-hint { font-family: var(--font-mono); font-size: .66rem; color: var(--ink-faint); margin-top: 8px; }
+.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--teal); transition: transform .2s, background-color .2s; z-index:2; }
+.speak-dot:hover { transform: scale(1.1); background: var(--teal-soft); }
+.speak-dot .icon { width: 15px; height: 15px; }
+.speak-dot.speaking { animation: pulse-ring 1s var(--ease) infinite; }
+@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 var(--teal-glow)} 70%{box-shadow:0 0 0 10px transparent} 100%{box-shadow:0 0 0 0 transparent} }
+@keyframes fadeSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
+
+/* ==========================================================================
+   7. INTERACTIVE CLOCK — centerpiece 1
+   ========================================================================== */
+.clock-shell {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl);
+  box-shadow: var(--shadow-lg); padding: clamp(22px, 4vw, 40px); position: relative; overflow: hidden;
 }
-.time-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-.time-card.morning { background: linear-gradient(160deg, #FFF3D6, #FFE1A8); }
-.time-card.day { background: linear-gradient(160deg, #DFF3F6, #BEE7ED); }
-.time-card.evening { background: linear-gradient(160deg, #F3E0D8, #E6BFAE); }
-.time-card.night { background: linear-gradient(160deg, #DDE1F0, #B9BFDE); }
-:root[data-theme="dark"] .time-card.morning { background: linear-gradient(160deg, #4a3a12, #2e2308); }
-:root[data-theme="dark"] .time-card.day { background: linear-gradient(160deg, #123138, #0b2226); }
-:root[data-theme="dark"] .time-card.evening { background: linear-gradient(160deg, #3a2a20, #241a14); }
-:root[data-theme="dark"] .time-card.night { background: linear-gradient(160deg, #1f2340, #141729); }
-.time-card .time-icon { width: 46px; height: 46px; margin: 0 auto 12px; }
-.time-card .time-range { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-soft); margin-bottom: 6px; }
-.time-card .time-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.25rem; color: var(--ink); }
-.time-card .time-ar { font-size: .85rem; color: var(--ink-soft); margin-top: 6px; }
-.time-card .speak-dot { position: static; margin: 12px auto 0; background: rgba(255,255,255,.6); }
-:root[data-theme="dark"] .time-card .speak-dot { background: rgba(0,0,0,.25); }
+.clock-shell::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5;
+  background: radial-gradient(420px 220px at 90% -10%, var(--plum-glow), transparent 70%), radial-gradient(420px 220px at 5% 110%, var(--teal-glow), transparent 70%);
+}
+.clock-layout { display: grid; grid-template-columns: 260px 1fr; gap: clamp(24px, 4vw, 48px); align-items: center; }
+@media (max-width: 760px){ .clock-layout { grid-template-columns: 1fr; justify-items: center; } }
+.clock-face-wrap { width: 240px; }
+.clock-tick { stroke: var(--border-strong); }
+.clock-tick.major { stroke: var(--ink-faint); stroke-width: 3; }
+.clock-hand { stroke-linecap: round; transition: transform .5s cubic-bezier(.34,1.4,.64,1); transform-origin: 140px 140px; }
+.clock-hand.hour { stroke: var(--ink); stroke-width: 7; }
+.clock-hand.minute { stroke: var(--teal); stroke-width: 5; }
+.clock-center-dot { fill: var(--amber); }
+
+.clock-picker-label { font-size: .88rem; font-weight: 700; margin-bottom: 8px; color: var(--ink-soft); }
+.clock-chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.clock-chip { padding: 7px 13px; border-radius: 9px; border: 1.5px solid var(--border-strong); background: var(--bg-alt); cursor: pointer; font-family: var(--font-mono); font-size: .86rem; font-weight: 600; transition: all .2s var(--ease); }
+.clock-chip:hover { border-color: var(--teal); }
+.clock-chip.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+.clock-chip.period.active { background: var(--amber); border-color: var(--amber); color: #2b1c05; }
+
+.clock-result { margin-top: 4px; }
+.clock-result-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.clock-result-label { font-family: var(--font-mono); font-size: .74rem; color: var(--ink-faint); min-width: 88px; }
+.clock-result-value { font-family: var(--font-de-display); font-size: 1.3rem; font-weight: 700; cursor: pointer; padding: 3px 10px; border-radius: 8px; transition: background-color .2s; }
+.clock-result-value:hover { background: var(--bg-alt); }
+.clock-result-value.speaking { background: var(--teal); color: #fff; }
+.clock-digital { font-family: var(--font-mono); font-size: 1.3rem; font-weight: 700; color: var(--teal-ink); }
+:root[data-theme="dark"] .clock-digital { color: var(--teal); }
+.clock-note { margin-top: 14px; font-size: .87rem; color: var(--ink-soft); background: var(--bg-alt); border-radius: 10px; padding: 10px 14px; }
+.clock-note b { color: var(--ink); }
 
 /* ==========================================================================
-   7. CASUAL GREETINGS / REGIONAL GRID
+   8. DAY-PARTS ARC TIMELINE — centerpiece 2
    ========================================================================== */
-.region-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-@media (max-width: 860px){ .region-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px){ .region-grid { grid-template-columns: 1fr; } }
-.region-card { text-align: center; position: relative; }
-.region-card .region-flag { font-size: 1.7rem; margin-bottom: 6px; }
-.region-card .region-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.4rem; color: var(--teal-ink); cursor: pointer; }
-:root[data-theme="dark"] .region-card .region-de { color: var(--teal); }
-.region-card .region-place { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); margin-top: 4px; }
-.region-card .region-desc { font-size: .87rem; color: var(--ink-soft); margin-top: 10px; }
+.arc-wrap { width: 100%; max-width: 640px; margin-inline: auto; }
+.arc-node { cursor: pointer; transition: transform .25s var(--ease); transform-box: fill-box; transform-origin: center; }
+.arc-node:hover, .arc-node.active { transform: scale(1.15); }
+.arc-node-label { font-family: var(--font-de-display); font-weight: 700; fill: var(--ink); pointer-events: none; }
+.arc-result { text-align: center; margin-top: 8px; }
+.arc-result-phrase { font-family: var(--font-de-display); font-size: clamp(1.2rem, 3.4vw, 1.6rem); font-weight: 700; cursor: pointer; display: inline-block; padding: 6px 18px; border-radius: 12px; transition: background-color .2s; }
+.arc-result-phrase:hover { background: var(--bg-alt); }
+.arc-result-time { font-family: var(--font-mono); font-size: .8rem; color: var(--ink-faint); margin-top: 4px; }
+.arc-result-ar { color: var(--ink-soft); margin-top: 4px; }
+.arc-note { margin-top: 12px; font-size: .88rem; color: var(--ink-soft); text-align: center; max-width: 54ch; margin-inline: auto; }
 
 /* ==========================================================================
-   8. ACCORDION (reused for extra notes) + FLIP CARDS (reused for farewells)
+   9. TIME PREPOSITIONS — formation-style cards
+   ========================================================================== */
+.formation-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.formation-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+  padding: 20px; text-align: center; cursor: pointer; box-shadow: var(--shadow-sm);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.formation-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.formation-card .fc-word { font-family: var(--font-de-display); font-weight: 700; font-size: 1.5rem; color: var(--teal-ink); }
+:root[data-theme="dark"] .formation-card .fc-word { color: var(--teal); }
+.formation-card .fc-example { font-family: var(--font-de-display); font-size: 1rem; margin-top: 10px; }
+.formation-card .fc-ar { font-size: .82rem; color: var(--ink-soft); margin-top: 6px; }
+
+/* ==========================================================================
+   10. ACCORDION (extra notes)
    ========================================================================== */
 .accordion-item { border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); margin-bottom: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
 .accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; background: none; border: none; cursor: pointer; text-align: right; color: var(--ink); }
@@ -420,32 +470,9 @@ p { margin: 0; }
 .accordion-panel { max-height: 0; overflow: hidden; transition: max-height .45s var(--ease); }
 .accordion-item.open .accordion-panel { max-height: 900px; }
 .accordion-body { padding: 0 22px 22px; color: var(--ink-soft); font-size: .95rem; }
-.formation-example-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: var(--bg-alt); border-radius: 10px; padding: 10px 14px; margin-top: 8px; }
-.formation-arrow { color: var(--ink-faint); }
-
-.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px; }
-.flip-card { perspective: 1200px; height: 190px; }
-.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
-.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
-.flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-shadow: var(--shadow-sm); }
-.flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
-.flip-front .de { font-size: 1.55rem; font-weight: 700; }
-.flip-front .aux-tag { position: absolute; top: 10px; left: 10px; }
-.flip-back { background: var(--teal); color: #fff; transform: rotateY(180deg); gap: 6px; }
-.flip-back .partizip { font-family: var(--font-de-display); font-size: 1.3rem; font-weight: 600; }
-.flip-back .ipa { font-family: var(--font-mono); font-size: .8rem; opacity: .85; }
-.flip-back .meaning { font-size: .86rem; opacity: .92; margin-top: 2px; text-align:center; }
-.flip-hint { font-family: var(--font-mono); font-size: .66rem; color: var(--ink-faint); margin-top: 8px; }
-.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--teal); transition: transform .2s, background-color .2s; }
-.speak-dot:hover { transform: scale(1.1); background: var(--teal-soft); }
-.flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
-.speak-dot .icon { width: 15px; height: 15px; }
-.speak-dot.speaking { animation: pulse-ring 1s var(--ease) infinite; }
-@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 var(--teal-glow)} 70%{box-shadow:0 0 0 10px transparent} 100%{box-shadow:0 0 0 0 transparent} }
-@keyframes fadeSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ==========================================================================
-   8b. TAB SWITCHER (shared: dialogue formal/informal toggle)
+   10b. TAB SWITCHER (shared: dialogue formal/informal toggle)
    ========================================================================== */
 .cat-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
 .cat-tab {
@@ -459,55 +486,7 @@ p { margin: 0; }
 .cat-tab:not(.active) .cat-count { background: var(--bg-alt); }
 
 /* ==========================================================================
-   9. FORMAL / INFORMAL COMPARISON (du vs Sie) — new signature component
-   ========================================================================== */
-.duSie-table { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); }
-.duSie-head { display: grid; grid-template-columns: 1.1fr 1fr 1fr; }
-.duSie-head > div { padding: 16px 18px; font-weight: 700; text-align: center; }
-.duSie-head .lbl-ar { background: var(--bg-alt); }
-.duSie-head .lbl-du { background: var(--teal); color: #fff; }
-.duSie-head .lbl-sie { background: var(--plum); color: #fff; }
-.duSie-row { display: grid; grid-template-columns: 1.1fr 1fr 1fr; border-top: 1px solid var(--border); }
-.duSie-row > div { padding: 16px 18px; display: flex; align-items: center; justify-content: center; text-align: center; }
-.duSie-row .cell-ar { background: var(--surface); color: var(--ink-soft); font-size: .92rem; }
-.duSie-row .cell-du { background: var(--teal-soft); font-family: var(--font-de-display); font-weight: 600; cursor: pointer; color: var(--teal-ink); }
-.duSie-row .cell-sie { background: var(--plum-soft); font-family: var(--font-de-display); font-weight: 600; cursor: pointer; color: var(--plum-ink); }
-@media (max-width: 700px){
-  .duSie-head { display: none; }
-  .duSie-row { grid-template-columns: 1fr; text-align: center; }
-  .duSie-row > div { justify-content: center; border-top: 1px dashed var(--border); }
-  .duSie-row > div:first-child { border-top: none; font-weight: 700; background: var(--bg-alt); }
-  .duSie-row .cell-du::before { content: "Du: "; font-family: var(--font-mono); font-size: .65rem; opacity: .7; }
-  .duSie-row .cell-sie::before { content: "Sie: "; font-family: var(--font-mono); font-size: .65rem; opacity: .7; }
-}
-.when-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
-@media (max-width: 700px){ .when-cards { grid-template-columns: 1fr; } }
-.when-card { border-radius: var(--r-md); padding: 20px; border: 1.5px solid; }
-.when-card.du { background: var(--teal-soft); border-color: var(--teal); }
-.when-card.sie { background: var(--plum-soft); border-color: var(--plum); }
-.when-card h3 { margin-bottom: 10px; }
-.when-card.du h3 { color: var(--teal-ink); }
-.when-card.sie h3 { color: var(--plum-ink); }
-.when-card ul { display: flex; flex-direction: column; gap: 6px; }
-.when-card li { font-size: .92rem; color: var(--ink-soft); display: flex; align-items: center; gap: 8px; }
-.when-card li::before { content: "•"; font-weight: 700; }
-.when-card.du li::before { color: var(--teal); }
-.when-card.sie li::before { color: var(--plum); }
-
-/* ==========================================================================
-   10. SENTENCE-PATTERN CARDS (self-introduction)
-   ========================================================================== */
-.pattern-list { display: flex; flex-direction: column; gap: 14px; }
-.pattern-card { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 16px 20px; box-shadow: var(--shadow-sm); transition: box-shadow .3s var(--ease), transform .3s var(--ease); }
-.pattern-card:hover { box-shadow: var(--shadow-md); transform: translateX(-4px); }
-@media (max-width: 640px){ .pattern-card { grid-template-columns: 1fr; text-align: center; gap: 10px; } }
-.pattern-num { width: 34px; height: 34px; border-radius: 50%; background: var(--teal-soft); color: var(--teal-ink); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 700; flex-shrink: 0; }
-.pattern-main .pattern-de { font-family: var(--font-de-display); font-size: 1.25rem; font-weight: 600; cursor: pointer; }
-.pattern-main .pattern-ar { font-size: .88rem; color: var(--ink-soft); margin-top: 4px; }
-.pattern-formality { flex-shrink: 0; }
-
-/* ==========================================================================
-   11. DIALOGUE — chat-bubble UI (new signature component)
+   11. DIALOGUE — chat-bubble UI
    ========================================================================== */
 .dialogue-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
 .dialogue-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); padding: clamp(18px, 3vw, 30px); }
@@ -520,7 +499,7 @@ p { margin: 0; }
 .speaker-dot.a { background: var(--teal); }
 .speaker-dot.b { background: var(--amber); }
 
-.chat-line { display: flex; margin-bottom: 14px; max-width: 82%; }
+.chat-line { display: flex; margin-bottom: 14px; max-width: 82%; align-items: flex-start; }
 .chat-line.a { justify-content: flex-start; }
 .chat-line.b { justify-content: flex-end; margin-inline-start: auto; }
 .chat-bubble { position: relative; padding: 12px 18px; border-radius: 18px; cursor: pointer; transition: transform .2s var(--ease), box-shadow .2s var(--ease); box-shadow: var(--shadow-sm); }
@@ -534,7 +513,6 @@ p { margin: 0; }
 .chat-avatar { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .82rem; color: #fff; flex-shrink: 0; }
 .chat-line.a .chat-avatar { background: var(--teal); margin-inline-end: 10px; }
 .chat-line.b .chat-avatar { background: var(--amber); margin-inline-start: 10px; order: 2; }
-.chat-line { align-items: flex-start; }
 .dialogue-actions { display: flex; justify-content: center; margin-top: 22px; }
 
 /* ==========================================================================
@@ -674,9 +652,9 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
   .site-header, .audio-dock, .back-to-top, .nav-toggle, .exercise-tabs, .score-bar-wrap, .btn, .icon-btn, .toast-wrap, .cat-tabs, .dialogue-tabs { display: none !important; }
   body { background: #fff; color: #000; }
   .section { padding-block: 20px; break-inside: avoid; }
-  .showcase-card { box-shadow: none; transform: none; display: block !important; }
+  .showcase-card, .clock-shell { box-shadow: none; transform: none; display: block !important; }
   .exercise-panel { display: block !important; }
-  .alpha-panel, .dialogue-panel { display: block !important; margin-bottom: 24px; }
+  .dialogue-panel { display: block !important; margin-bottom: 24px; }
   .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
   .accordion-panel { max-height: none !important; }
 }
@@ -701,22 +679,15 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <symbol id="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
 <symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
 <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></symbol>
-<symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 13.5 7 21l5-2.5L17 21l-2-7.5"/><path d="M12 6.5l.9 1.9 2.1.3-1.5 1.4.3 2.1-1.8-1-1.8 1 .3-2.1-1.5-1.4 2.1-.3z"/></symbol>
-<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2zM20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2z"/></symbol>
 <symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></symbol>
 <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
 <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5a2.6 2.6 0 0 1 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
 <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
 <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
 <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></symbol>
-<symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 5.5 19 5.5a2 2 0 0 1 2 2L21 18"/></symbol>
-<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.6"/><path d="M15.5 13.3a5.6 5.6 0 0 1 6 6.7"/></symbol>
-<symbol id="i-sunrise" viewBox="0 0 24 24"><circle cx="12" cy="15" r="4"/><line x1="12" y1="3" x2="12" y2="7"/><line x1="4.2" y1="9.2" x2="6.8" y2="11"/><line x1="19.8" y1="9.2" x2="17.2" y2="11"/><line x1="2" y1="20" x2="22" y2="20"/></symbol>
-<symbol id="i-sunset" viewBox="0 0 24 24"><circle cx="12" cy="13" r="4"/><line x1="12" y1="21" x2="12" y2="17"/><line x1="4.2" y1="7.2" x2="6.8" y2="9"/><line x1="19.8" y1="7.2" x2="17.2" y2="9"/><line x1="2" y1="20" x2="22" y2="20"/></symbol>
-<symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2 12l4-4 4 3 3-3 4 4"/><path d="M2 12v4l4 4 4-4 3 3 5-5-4-4"/></symbol>
-<symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M3 6h3a5 5 0 0 1 4 2l6 8a5 5 0 0 0 4 2h1M21 6h-1a5 5 0 0 0-4 2l-1 1.5M3 18h3a5 5 0 0 0 4-2l1-1.5"/><polyline points="18,3 21,6 18,9"/><polyline points="18,15 21,18 18,21"/></symbol>
 <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="14" width="3" height="3"/><rect x="14" y="18" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/></symbol>
 <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="3" y="14" width="5" height="7" rx="1.5"/><rect x="16" y="14" width="5" height="7" rx="1.5"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></symbol>
 </defs>
 </svg>
 
@@ -731,17 +702,18 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     </button>
 
     <div class="brand">
-      <span class="brand-mark"><svg class="icon" style="width:20px;height:20px"><use href="#i-handshake"/></svg></span>
-      <span class="brand-text">ألمانية A1<small>الدرس الثاني · التحيات</small></span>
+      <span class="brand-mark"><svg class="icon" style="width:20px;height:20px"><use href="#i-clock"/></svg></span>
+      <span class="brand-text">ألمانية A1<small>الدرس السابع · الوقت والساعة</small></span>
     </div>
 
     <nav class="main-nav" id="mainNav" aria-label="أقسام الدرس">
       <button class="nav-link" data-target="#intro">المقدّمة</button>
-      <button class="nav-link" data-target="#time-greetings">تحيات الوقت</button>
-      <button class="nav-link" data-target="#casual">تحيات غير رسمية</button>
-      <button class="nav-link" data-target="#farewells">الوداع</button>
-      <button class="nav-link" data-target="#duSie">du أم Sie؟</button>
-      <button class="nav-link" data-target="#introduce">تقديم النفس</button>
+      <button class="nav-link" data-target="#time-vocab">مفردات الوقت</button>
+      <button class="nav-link" data-target="#clock-face">الساعة التفاعلية</button>
+      <button class="nav-link" data-target="#formal-time">الوقت الرسمي</button>
+      <button class="nav-link" data-target="#day-parts">أقسام اليوم</button>
+      <button class="nav-link" data-target="#time-prepositions">حروف جر الوقت</button>
+      <button class="nav-link" data-target="#practical">الاستخدام العملي</button>
       <button class="nav-link" data-target="#dialogue">حوار كامل</button>
       <button class="nav-link" data-target="#mistakes">أخطاء شائعة</button>
       <button class="nav-link" data-target="#pronunciation">نصائح النطق</button>
@@ -779,17 +751,17 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <section class="hero" id="hero">
   <div class="container hero-grid">
     <div class="reveal is-visible">
-      <span class="level-badge"><b>A1</b> الدرس الثاني من مسار «الألمانية للمبتدئين»</span>
-      <h1 class="hero-title">التحيات وتقديم النفس: <span class="de">Hallo!</span></h1>
-      <p class="hero-lead">بعد أن أتقنت الحروف في الدرس الأول، حان وقت أول محادثة حقيقية. في هذا الدرس ستتعلّم كيف تُحيّي بالوقت المناسب، وتودّع، وتُقدّم نفسك، وتفرّق بين صيغتي المخاطبة <span class="de mono">du</span> و<span class="de mono">Sie</span> — مع حوارين كاملين تفاعليين بصوت ألماني حقيقي.</p>
+      <span class="level-badge"><b>A1</b> الدرس السابع من مسار «الألمانية للمبتدئين»</span>
+      <h1 class="hero-title">الوقت والساعة: <span class="de">Wie spät ist es?</span></h1>
+      <p class="hero-lead">تعلّم قراءة الساعة بصيغتين: الرسمية (١٤:٣٠) وغير الرسمية اليومية — بما فيها قاعدة <span class="de mono">halb</span> الشهيرة التي تشير إلى الساعة القادمة وليس الماضية. ساعة تفاعلية وخط زمني لأقسام اليوم سيجعلان الأمر بديهيًا.</p>
       <div class="hero-ctas">
-        <button class="btn btn-primary" data-scroll="#time-greetings">
+        <button class="btn btn-primary" data-scroll="#time-vocab">
           <svg class="icon" style="width:18px;height:18px"><use href="#i-play"/></svg>
           ابدأ الدرس
         </button>
-        <button class="btn btn-ghost" data-scroll="#dialogue">
-          <svg class="icon" style="width:18px;height:18px"><use href="#i-chat"/></svg>
-          استمع لحوار كامل
+        <button class="btn btn-ghost" data-scroll="#clock-face">
+          <svg class="icon" style="width:18px;height:18px"><use href="#i-clock"/></svg>
+          جرّب الساعة التفاعلية
         </button>
       </div>
     </div>
@@ -797,44 +769,35 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     <div class="reveal is-visible" style="transition-delay:.15s">
       <div class="hero-illustration">
         <svg class="hero-illo-svg" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <linearGradient id="personA" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="var(--teal)"/>
-              <stop offset="100%" stop-color="var(--teal-ink)"/>
-            </linearGradient>
-            <linearGradient id="personB" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="var(--amber)"/>
-              <stop offset="100%" stop-color="var(--amber-ink)"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="210" cy="285" rx="170" ry="16" fill="var(--border)" opacity=".5"/>
-          <g>
-            <circle cx="130" cy="150" r="46" fill="url(#personA)"/>
-            <rect x="86" y="190" width="88" height="90" rx="30" fill="url(#personA)"/>
-            <circle cx="115" cy="142" r="5" fill="#fff"/>
-            <circle cx="148" cy="142" r="5" fill="#fff"/>
-            <path d="M112 165 Q130 178 150 165" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <ellipse cx="190" cy="290" rx="150" ry="14" fill="var(--border)" opacity=".5"/>
+          <circle cx="190" cy="170" r="88" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="3"/>
+          <g fill="var(--border-strong)">
+            <circle cx="190" cy="85" r="5"/>
+            <circle cx="232.5" cy="96.4" r="3"/>
+            <circle cx="263.6" cy="127.5" r="3"/>
+            <circle cx="275" cy="170" r="5"/>
+            <circle cx="263.6" cy="212.5" r="3"/>
+            <circle cx="232.5" cy="243.6" r="3"/>
+            <circle cx="190" cy="255" r="5"/>
+            <circle cx="147.5" cy="243.6" r="3"/>
+            <circle cx="116.4" cy="212.5" r="3"/>
+            <circle cx="105" cy="170" r="5"/>
+            <circle cx="116.4" cy="127.5" r="3"/>
+            <circle cx="147.5" cy="96.4" r="3"/>
           </g>
-          <g>
-            <circle cx="290" cy="150" r="46" fill="url(#personB)"/>
-            <rect x="246" y="190" width="88" height="90" rx="30" fill="url(#personB)"/>
-            <circle cx="275" cy="142" r="5" fill="#2b1c05"/>
-            <circle cx="308" cy="142" r="5" fill="#2b1c05"/>
-            <path d="M272 165 Q290 178 310 165" stroke="#2b1c05" stroke-width="4" fill="none" stroke-linecap="round"/>
-          </g>
+          <line x1="190" y1="170" x2="241" y2="170" stroke="var(--ink)" stroke-width="7" stroke-linecap="round"/>
+          <line x1="190" y1="170" x2="190" y2="102" stroke="var(--amber)" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="190" cy="170" r="7" fill="var(--teal)"/>
+
           <g class="floaty">
-            <rect x="55" y="55" width="118" height="50" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <path d="M95 105 L85 118 L108 105 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <text x="114" y="86" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="20" fill="var(--teal)">Hallo!</text>
+            <rect x="10" y="20" width="140" height="52" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M65 72 L55 85 L78 72 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="80" y="53" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="16" fill="var(--teal)">Wie spät ist es?</text>
           </g>
           <g class="floaty d3">
-            <rect x="245" y="30" width="150" height="50" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <path d="M300 80 L290 93 L313 80 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <text x="320" y="61" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="18" fill="var(--amber-ink)">Guten Tag!</text>
-          </g>
-          <g class="floaty d2" transform="translate(178,205)">
-            <circle r="20" fill="var(--plum)"/>
-            <text y="7" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="20" fill="#fff">?</text>
+            <rect x="255" y="235" width="150" height="52" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M300 235 L290 222 L313 235 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="330" y="267" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="16" fill="var(--amber-ink)">Es ist drei Uhr!</text>
           </g>
         </svg>
       </div>
@@ -848,22 +811,22 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <section class="section" id="intro">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-handshake"/></svg>أول محادثة حقيقية</span>
-      <h2 class="section-title">لماذا تُعد التحيات نقطة انطلاق مثالية؟</h2>
-      <p class="section-sub">في كل مرة تلتقي بها بأحد، ستحتاج تحية مناسبة. هذا الدرس يمنحك أدوات فعلية لبدء أي محادثة ألمانية بثقة منذ اللحظة الأولى.</p>
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-clock"/></svg>مهارة تستخدمها كل ساعة</span>
+      <h2 class="section-title">لماذا الوقت بصيغتين في الألمانية؟</h2>
+      <p class="section-sub">الألمانية تستخدم نظامين لقول الوقت: نظام رسمي (كالمحطات والتلفاز) مطابق للأرقام التي تعرفها، ونظام يومي غير رسمي له منطقه الخاص — وأهم قاعدة فيه هي <span class="de mono">halb</span> التي قد تفاجئك.</p>
     </div>
     <div class="grid-3 reveal-stagger reveal">
       <div class="info-card">
-        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-sunrise"/></svg></span>تحية بحسب الوقت</h3>
-        <p>الألمانية تُميّز بدقة بين تحية الصباح والنهار والمساء — تمامًا كما تختلف «صباح الخير» عن «مساء الخير» بالعربية، لكن بحدود زمنية أوضح قليلًا.</p>
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-clock"/></svg></span>الوقت الرسمي بسيط</h3>
+        <p>يعتمد على الأرقام التي أتقنتها في الدرس الثالث فقط: <span class="de mono">vierzehn Uhr dreißig</span> (١٤:٣٠).</p>
       </div>
       <div class="info-card">
-        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-users"/></svg></span>رسمي أم غير رسمي؟</h3>
-        <p>على عكس العربية، تملك الألمانية صيغتين مختلفتين تمامًا لمخاطبة «أنت»: <span class="de mono">du</span> للأصدقاء والعائلة، و<span class="de mono">Sie</span> للغرباء والمواقف الرسمية. اختيار الصيغة الخاطئة قد يبدو وقحًا أو غريبًا.</p>
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-target"/></svg></span>القاعدة المفاجئة: halb</h3>
+        <p><span class="de mono">halb drei</span> تعني ٢:٣٠ — «نصف الطريق نحو الثالثة» وليس «الثالثة والنصف»!</p>
       </div>
       <div class="info-card">
-        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-chat"/></svg></span>جمل جاهزة للاستخدام فورًا</h3>
-        <p>بنهاية هذا الدرس، ستكون قادرًا على تحية شخص، وتقديم نفسك، والسؤال عن اسمه ومكانه، والرد على «كيف حالك؟» — أي محادثة تعارف كاملة.</p>
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>استثناء لطيف: in der Nacht</h3>
+        <p>كل أقسام اليوم تستخدم <span class="de mono">am</span>، لكن الليل مؤنثة فتأخذ <span class="de mono">in der Nacht</span> بدلًا منها.</p>
       </div>
     </div>
 
@@ -878,8 +841,8 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
         <p style="margin-bottom:14px">كل ما تحتاج تذكّره اليوم — والباقي تدريب وحوار حي.</p>
       </div>
       <div class="stat-cards">
-        <div class="stat-card teal"><div class="stat-pct">٤</div><div class="stat-desc">تحيات حسب وقت اليوم</div></div>
-        <div class="stat-card amber"><div class="stat-pct">٢</div><div class="stat-desc">صيغتا مخاطبة: <span class="de mono">du</span> و<span class="de mono">Sie</span></div></div>
+        <div class="stat-card teal"><div class="stat-pct">٢</div><div class="stat-desc">نظاما وقت: رسمي (٢٤ ساعة) وغير رسمي (١٢ ساعة)</div></div>
+        <div class="stat-card amber"><div class="stat-pct">٦</div><div class="stat-desc">أقسام لليوم، من Morgen إلى Nacht</div></div>
       </div>
     </div>
   </div>
@@ -887,79 +850,64 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
 <hr class="rail-rule">
 
-<!-- ============================= TIME-BASED GREETINGS ============================= -->
-<section class="section" id="time-greetings">
+<!-- ============================= TIME VOCAB ============================= -->
+<section class="section" id="time-vocab">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-sunrise"/></svg>حسب وقت اليوم</span>
-      <h2 class="section-title">التحيات الأربع الأساسية</h2>
-      <p class="section-sub">انقر على أي بطاقة لسماع نطقها. لاحظ أن التوقيت التقريبي يساعدك على اختيار التحية الصحيحة.</p>
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-clock"/></svg>الأساس قبل الساعة</span>
+      <h2 class="section-title">مفردات الوقت الأساسية</h2>
+      <p class="section-sub">لاحظ الفرق بين <span class="de mono">Uhr</span> (أداة الساعة/عند قول الوقت) و<span class="de mono">Stunde</span> (مدة ساعة كاملة) — فخّ شائع للمبتدئين.</p>
     </div>
-    <div class="time-grid reveal-stagger reveal" id="timeGrid"></div>
+    <div class="vocab-grid reveal-stagger reveal" id="timeVocabGrid"></div>
   </div>
 </section>
 
 <hr class="rail-rule">
 
-<!-- ============================= CASUAL / REGIONAL GREETINGS ============================= -->
-<section class="section" id="casual">
+<!-- ============================= INTERACTIVE CLOCK (centerpiece) ============================= -->
+<section class="section" id="clock-face">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>بين الأصدقاء</span>
-      <h2 class="section-title">تحيات غير رسمية ولهجات إقليمية</h2>
-      <p class="section-sub">الألمانية المحكية في مختلف البلدان الناطقة بها غنية بالتحيات غير الرسمية. هذه أشهرها.</p>
-    </div>
-    <div class="region-grid reveal-stagger reveal" id="regionGrid"></div>
-  </div>
-</section>
-
-<hr class="rail-rule">
-
-<!-- ============================= FAREWELLS ============================= -->
-<section class="section" id="farewells">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-cards"/></svg>عند المغادرة</span>
-      <h2 class="section-title">كيف تودّع بشكل صحيح</h2>
-      <p class="section-sub">انقر على البطاقة لقلبها ورؤية درجة الرسمية والمعنى الحرفي.</p>
-    </div>
-    <div class="vocab-grid reveal-stagger reveal" id="farewellGrid"></div>
-  </div>
-</section>
-
-<hr class="rail-rule">
-
-<!-- ============================= DU vs SIE ============================= -->
-<section class="section" id="duSie">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-users"/></svg>أهم فرق في هذا الدرس</span>
-      <h2 class="section-title"><span class="de mono">du</span> أم <span class="de mono">Sie</span>؟</h2>
-      <p class="section-sub">قاعدة ذهبية: <span class="de mono">du</span> مع من تعرفهم جيدًا، و<span class="de mono">Sie</span> مع من لا تعرفهم أو تحترم مكانتهم. قارن الجملة نفسها بالصيغتين.</p>
+      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-clock"/></svg>القاعدة الذهبية لهذا الدرس</span>
+      <h2 class="section-title">الساعة التفاعلية</h2>
+      <p class="section-sub">اختر ساعة ودقيقة وفترة (قبل/بعد الظهر)، وشاهد عقارب الساعة تتحرّك مع الصيغتين الرسمية وغير الرسمية للوقت.</p>
     </div>
 
-    <div class="duSie-table reveal" id="duSieTable">
-      <div class="duSie-head"><div class="lbl-ar">بالعربية</div><div class="lbl-du">du · غير رسمي</div><div class="lbl-sie">Sie · رسمي</div></div>
-    </div>
+    <div class="clock-shell reveal">
+      <div class="clock-layout">
+        <div class="clock-face-wrap">
+          <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ساعة تناظرية تفاعلية">
+            <circle cx="140" cy="140" r="120" fill="var(--bg-alt)" stroke="var(--border-strong)" stroke-width="3"/>
+            <g id="clockTicks"></g>
+            <line id="clockHourHand" class="clock-hand hour" x1="140" y1="140" x2="140" y2="90"/>
+            <line id="clockMinuteHand" class="clock-hand minute" x1="140" y1="140" x2="140" y2="60"/>
+            <circle class="clock-center-dot" cx="140" cy="140" r="8"/>
+          </svg>
+        </div>
+        <div>
+          <div class="clock-picker-label">الساعة</div>
+          <div class="clock-chip-row" id="clockHourRow"></div>
+          <div class="clock-picker-label">الدقيقة</div>
+          <div class="clock-chip-row" id="clockMinuteRow"></div>
+          <div class="clock-picker-label">الفترة</div>
+          <div class="clock-chip-row" id="clockPeriodRow"></div>
 
-    <div class="when-cards reveal">
-      <div class="when-card du">
-        <h3>استخدم <span class="de mono">du</span> مع:</h3>
-        <ul>
-          <li>الأصدقاء والعائلة</li>
-          <li>الأطفال والمراهقين</li>
-          <li>زملاء الدراسة</li>
-          <li>غالبًا بين الشباب في العمل غير الرسمي</li>
-        </ul>
-      </div>
-      <div class="when-card sie">
-        <h3>استخدم <span class="de mono">Sie</span> مع:</h3>
-        <ul>
-          <li>الغرباء تمامًا</li>
-          <li>كبار السن</li>
-          <li>في بيئة العمل الرسمية والاجتماعات</li>
-          <li>الأطباء والمسؤولين والبائعين</li>
-        </ul>
+          <div class="clock-result">
+            <div class="clock-result-row">
+              <span class="clock-result-label">الرقمي</span>
+              <span class="clock-digital" id="clockDigital">٣:٠٠</span>
+            </div>
+            <div class="clock-result-row">
+              <span class="clock-result-label">رسمي (٢٤ ساعة)</span>
+              <span class="clock-result-value de" id="clockFormal" tabindex="0" role="button"></span>
+            </div>
+            <div class="clock-result-row">
+              <span class="clock-result-label">يومي (غير رسمي)</span>
+              <span class="clock-result-value de" id="clockInformal" tabindex="0" role="button"></span>
+            </div>
+          </div>
+          <p class="clock-note" id="clockNote"></p>
+        </div>
       </div>
     </div>
   </div>
@@ -967,15 +915,87 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
 <hr class="rail-rule">
 
-<!-- ============================= SELF-INTRODUCTION PATTERNS ============================= -->
-<section class="section" id="introduce">
+<!-- ============================= FORMAL TIME ============================= -->
+<section class="section" id="formal-time">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>عبارات جاهزة</span>
-      <h2 class="section-title">كيف تُقدّم نفسك</h2>
-      <p class="section-sub">ست جمل جاهزة تكفيك لبدء أي تعارف. انقر على أي جملة لسماع نطقها.</p>
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-clock"/></svg>محطات القطار والتلفاز والمواعيد</span>
+      <h2 class="section-title">الوقت الرسمي (٢٤ ساعة)</h2>
+      <p class="section-sub">بسيط جدًا: قل الساعة ثم الدقائق كأرقام عادية، من ٠٠ إلى ٢٣. لا حاجة لـ halb أو viertel هنا إطلاقًا.</p>
     </div>
-    <div class="pattern-list reveal-stagger reveal" id="patternList"></div>
+    <div class="grid-4 reveal-stagger reveal" id="formalTimeGrid"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= DAY PARTS ARC (centerpiece) ============================= -->
+<section class="section" id="day-parts">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-sun"/></svg>من الفجر إلى الليل</span>
+      <h2 class="section-title">أقسام اليوم الستة</h2>
+      <p class="section-sub">انقر على أي نقطة على القوس لسماع اسم القسم وحرف الجر الصحيح المرافق له. لاحظ: كل الأقسام تستخدم <span class="de mono">am</span> ما عدا الليل!</p>
+    </div>
+
+    <div class="showcase-card reveal" style="transform:none;padding:clamp(24px,4vw,44px)">
+      <div class="arc-wrap">
+        <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="خط زمني تفاعلي لأقسام اليوم">
+          <path d="M50,180 Q300,-20 550,180" fill="none" stroke="var(--border-strong)" stroke-width="2.5" stroke-dasharray="2 8" stroke-linecap="round"/>
+          <g id="arcNodes"></g>
+        </svg>
+      </div>
+      <div class="arc-result">
+        <div class="arc-result-phrase de" id="arcResultPhrase" tabindex="0" role="button"></div>
+        <div class="arc-result-time mono" id="arcResultTime"></div>
+        <div class="arc-result-ar" id="arcResultAr"></div>
+      </div>
+      <p class="arc-note" id="arcNote"></p>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= TIME PREPOSITIONS ============================= -->
+<section class="section" id="time-prepositions">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>ثلاث كلمات صغيرة، استخدام كبير</span>
+      <h2 class="section-title">حروف جر الوقت</h2>
+      <p class="section-sub">تُستخدم هذه الكلمات مع كل تعبيرات الوقت التي تعلّمتها اليوم.</p>
+    </div>
+    <div class="formation-grid reveal-stagger reveal" id="prepGrid"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= PRACTICAL ============================= -->
+<section class="section" id="practical">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>من النظرية إلى الحياة اليومية</span>
+      <h2 class="section-title">عبارات تحتاجها كل يوم</h2>
+      <p class="section-sub">جمل عملية آمنة نحويًا تستخدمها في المواعيد وساعات العمل والسفر.</p>
+    </div>
+
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-clock"/></svg></span>مواعيد العمل</h3>
+        <p><span class="de mono" data-speak="Wann öffnet das Geschäft?">Wann öffnet das Geschäft?</span> — متى يفتح المتجر؟</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-target"/></svg></span>الالتزام بالوقت</h3>
+        <p><span class="de mono" data-speak="Ich bin immer pünktlich.">Ich bin immer pünktlich.</span> — أنا دائمًا في الموعد المحدد.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>جداول السفر</h3>
+        <p><span class="de mono" data-speak="Der Zug fährt um vierzehn Uhr dreißig.">Der Zug fährt um vierzehn Uhr dreißig.</span> — يتحرك القطار الساعة ٢:٣٠ ظهرًا.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:30px" class="reveal" id="extraAccordion"></div>
   </div>
 </section>
 
@@ -986,13 +1006,13 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>طبّق ما تعلّمته</span>
-      <h2 class="section-title">حوارا تعارف كاملان</h2>
-      <p class="section-sub">انقر على أي فقاعة حوار لسماعها بمفردها، أو استمع للحوار كاملًا بزر واحد. تنقّل بين الحوار غير الرسمي والرسمي من التبويبات.</p>
+      <h2 class="section-title">حوارا استخدام كاملان</h2>
+      <p class="section-sub">انقر على أي فقاعة حوار لسماعها بمفردها، أو استمع للحوار كاملًا بزر واحد.</p>
     </div>
 
     <div class="dialogue-tabs reveal">
-      <button class="cat-tab active" data-panel="dlgInformal">حوار غير رسمي <span class="cat-count">du</span></button>
-      <button class="cat-tab" data-panel="dlgFormal">حوار رسمي <span class="cat-count">Sie</span></button>
+      <button class="cat-tab active" data-panel="dlgInformal">بين الأصدقاء <span class="cat-count">du</span></button>
+      <button class="cat-tab" data-panel="dlgFormal">في محطة القطار <span class="cat-count">Sie</span></button>
     </div>
 
     <div class="dialogue-shell reveal">
@@ -1010,7 +1030,7 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>تجنّب الفخاخ الشائعة</span>
       <h2 class="section-title">أخطاء يقع فيها معظم المبتدئين</h2>
-      <p class="section-sub">أغلب هذه الأخطاء اجتماعية بقدر ما هي لغوية — قارن كل خطأ بصورته الصحيحة.</p>
+      <p class="section-sub">الخطأ الأول هو الأشهر على الإطلاق — قارن كل خطأ بصورته الصحيحة.</p>
     </div>
     <div class="reveal-stagger reveal" id="mistakesList" style="display:flex;flex-direction:column;gap:16px"></div>
   </div>
@@ -1024,7 +1044,7 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-speaker"/></svg>نطق أصيل</span>
       <h2 class="section-title">نصائح النطق</h2>
-      <p class="section-sub">أربع ملاحظات تبني على ما تعلّمته في درس الحروف.</p>
+      <p class="section-sub">أربع ملاحظات تبني على ما تعلّمته في الدروس السابقة.</p>
     </div>
     <div class="grid-2 reveal-stagger reveal" id="tipsGrid"></div>
   </div>
@@ -1043,9 +1063,9 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
     <div class="exercise-shell reveal">
       <div class="exercise-tabs" role="tablist">
-        <button class="exercise-tab active" data-panel="panelMatch" role="tab">طابق التحية بمعناها <span class="count" id="countMatch">٠/٨</span></button>
+        <button class="exercise-tab active" data-panel="panelMatch" role="tab">طابق الكلمة بمعناها <span class="count" id="countMatch">٠/٨</span></button>
         <button class="exercise-tab" data-panel="panelMcq" role="tab">اختر الإجابة الصحيحة <span class="count" id="countMcq">٠/٨</span></button>
-        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الحوار <span class="count" id="countFill">٠/٨</span></button>
+        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الفراغ <span class="count" id="countFill">٠/٨</span></button>
         <button class="exercise-tab" data-panel="panelBuilder" role="tab">رتّب كلمات الجملة <span class="count" id="countBuilder">٠/٥</span></button>
         <button class="exercise-tab" data-panel="panelListen" role="tab">تمرين الاستماع <span class="count" id="countListen">٠/١</span></button>
       </div>
@@ -1077,18 +1097,18 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
     <div class="grid-2 reveal">
       <ul class="summary-list info-card">
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا التحيات الأربع حسب وقت اليوم، وتحيات غير رسمية من مناطق ناطقة بالألمانية مختلفة.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا خمس صيغ وداع، من الأكثر رسمية إلى الأكثر عفوية.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا الفرق بين <span class="de mono">du</span> و<span class="de mono">Sie</span> ومتى نستخدم كل صيغة.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا ست جمل جاهزة لتقديم النفس والسؤال عن الاسم والمكان والحال.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>استمعنا وتفاعلنا مع حوارين كاملين — أحدهما غير رسمي والآخر رسمي.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا مفردات الوقت الأساسية، والفرق بين <span class="de mono">Uhr</span> و<span class="de mono">Stunde</span>.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا قراءة الوقت رسميًا (٢٤ ساعة) وغير رسميًا، بما فيها قاعدة <span class="de mono">halb</span> الشهيرة.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعرّفنا على أقسام اليوم الستة واستثناء <span class="de mono">in der Nacht</span>.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا حروف جر الوقت: <span class="de mono">um</span>، <span class="de mono">von...bis</span>، و<span class="de mono">gegen</span>.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>استمعنا وتفاعلنا مع حوارين كاملين — بين أصدقاء وفي محطة قطار رسمية.</p></li>
       </ul>
 
       <div class="info-card" style="display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;background:linear-gradient(155deg, var(--teal-soft), var(--plum-soft))">
         <svg class="icon" style="width:40px;height:40px;margin:0 auto;color:var(--teal)"><use href="#i-compass"/></svg>
         <h3 style="justify-content:center">الدرس القادم</h3>
-        <p>الأرقام من ٠ إلى ١٠٠ — قريبًا في الدرس الثالث من مسار A1.</p>
-        <button class="btn btn-ghost" disabled style="align-self:center">الدرس ٣ (قريبًا)</button>
+        <p>المنزل والغرف — قريبًا في الدرس الثامن من مسار A1.</p>
+        <button class="btn btn-ghost" disabled style="align-self:center">الدرس ٨ (قريبًا)</button>
       </div>
     </div>
 
@@ -1102,7 +1122,7 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <!-- ============================= FOOTER ============================= -->
 <footer class="site-footer">
   <div class="container footer-inner">
-    <span>الدرس ٢ · مسار الألمانية A1 — صُمم للتعلّم النشط والاستماع الفوري.</span>
+    <span>الدرس ٧ · مسار الألمانية A1 — صُمم للتعلّم النشط والاستماع الفوري.</span>
     <div class="footer-actions">
       <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس"><svg class="icon"><use href="#i-printer"/></svg></button>
     </div>
@@ -1131,134 +1151,174 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 /* ==========================================================================
    DATA
    ========================================================================== */
-const TIME_GREETINGS = [
-  {cls:"morning", icon:"i-sunrise", range:"~٥ صباحًا – ١٠ صباحًا", de:"Guten Morgen", ipa:"ˈɡuːtn̩ ˈmɔʁɡn̩", ar:"صباح الخير"},
-  {cls:"day", icon:"i-sun", range:"~١٠ صباحًا – ٦ مساءً", de:"Guten Tag", ipa:"ˈɡuːtn̩ taːk", ar:"تحية عامة نهارية"},
-  {cls:"evening", icon:"i-sunset", range:"~٦ مساءً – منتصف الليل", de:"Guten Abend", ipa:"ˈɡuːtn̩ ˈaːbn̩t", ar:"مساء الخير"},
-  {cls:"night", icon:"i-moon", range:"عند النوم أو المغادرة ليلًا", de:"Gute Nacht", ipa:"ˈɡuːtə naxt", ar:"تصبح على خير (وداع لا تحية)"}
+const TIME_VOCAB = [
+  {de:"die Uhr",         word:"Uhr",         ipa:"uːɐ̯",       ar:"الساعة (الأداة/عند قول الوقت)"},
+  {de:"die Zeit",        word:"Zeit",        ipa:"tsaɪt",     ar:"الوقت"},
+  {de:"die Stunde",      word:"Stunde",      ipa:"ˈʃtʊndə",   ar:"الساعة (كمدة زمنية)"},
+  {de:"die Minute",      word:"Minute",      ipa:"miˈnuːtə",  ar:"الدقيقة"},
+  {de:"die Sekunde",     word:"Sekunde",     ipa:"zeˈkʊndə",  ar:"الثانية"},
+  {de:"der Wecker",      word:"Wecker",      ipa:"ˈvɛkɐ",     ar:"المنبّه"},
+  {de:"pünktlich",       word:"pünktlich",   ipa:"ˈpʏŋktlɪç", ar:"في الموعد المحدد"},
+  {de:"die Verspätung",  word:"Verspätung",  ipa:"fɛɐ̯ˈʃpɛːtʊŋ",ar:"التأخير"}
 ];
 
-const REGION_GREETINGS = [
-  {flag:"💬", de:"Hallo", place:"في كل مكان", desc:"الأكثر حيادية بين التحيات غير الرسمية، تُستخدم مع الجميع تقريبًا."},
-  {flag:"👋", de:"Hi", place:"بين الشباب", desc:"مستعارة من الإنجليزية، عفوية جدًا، شائعة في الرسائل والدردشة."},
-  {flag:"🇦🇹", de:"Servus", place:"النمسا وجنوب ألمانيا", desc:"تحية ووداع في آنٍ واحد! تُستخدم عند اللقاء وعند المغادرة أيضًا."},
-  {flag:"⚓", de:"Moin", place:"شمال ألمانيا", desc:"تُقال في أي وقت من اليوم، وأحيانًا تُكرَّر: Moin Moin."},
-  {flag:"🇨🇭", de:"Grüezi", place:"سويسرا", desc:"التحية القياسية في المناطق السويسرية الناطقة بالألمانية."},
-  {flag:"🌞", de:"Grüß dich", place:"جنوب ألمانيا", desc:"تحية ودّية غير رسمية، حرفيًا «يبارك فيك» بمعنى مجازي بحت."}
+/* --- Clock builder centerpiece: word tables + formal/informal algorithms --- */
+const HOUR_WORDS_12 = ['','eins','zwei','drei','vier','fünf','sechs','sieben','acht','neun','zehn','elf','zwölf'];
+const HOUR_WORDS_24 = ['null','eins','zwei','drei','vier','fünf','sechs','sieben','acht','neun','zehn','elf','zwölf','dreizehn','vierzehn','fünfzehn','sechzehn','siebzehn','achtzehn','neunzehn','zwanzig','einundzwanzig','zweiundzwanzig','dreiundzwanzig'];
+const MINUTE_WORDS = {5:'fünf',10:'zehn',15:'fünfzehn',20:'zwanzig',25:'fünfundzwanzig',30:'dreißig',35:'fünfunddreißig',40:'vierzig',45:'fünfundvierzig',50:'fünfzig',55:'fünfundfünfzig'};
+const MINUTES_5 = [0,5,10,15,20,25,30,35,40,45,50,55];
+
+function informalTime(hour, minute){
+  const nextHour = hour === 12 ? 1 : hour + 1;
+  if(minute === 0) return hour === 1 ? 'ein Uhr' : HOUR_WORDS_12[hour] + ' Uhr';
+  if(minute === 15) return 'viertel nach ' + HOUR_WORDS_12[hour];
+  if(minute === 30) return 'halb ' + HOUR_WORDS_12[nextHour];
+  if(minute === 45) return 'viertel vor ' + HOUR_WORDS_12[nextHour];
+  if(minute < 15) return MINUTE_WORDS[minute] + ' nach ' + HOUR_WORDS_12[hour];
+  if(minute < 30) return MINUTE_WORDS[30-minute] + ' vor halb ' + HOUR_WORDS_12[nextHour];
+  if(minute < 45) return MINUTE_WORDS[minute-30] + ' nach halb ' + HOUR_WORDS_12[nextHour];
+  return MINUTE_WORDS[60-minute] + ' vor ' + HOUR_WORDS_12[nextHour];
+}
+function formalTime(hour24, minute){
+  const hw = HOUR_WORDS_24[hour24];
+  if(minute === 0) return hw + ' Uhr';
+  return hw + ' Uhr ' + MINUTE_WORDS[minute];
+}
+function to24Hour(hour12, period){
+  if(hour12 === 12) return period === 'nachmittags' ? 12 : 0;
+  return hour12 + (period === 'nachmittags' ? 12 : 0);
+}
+function clockNoteFor(hour, minute){
+  if(minute === 30) return `تذكّر: <b>halb ${HOUR_WORDS_12[hour === 12 ? 1 : hour+1]}</b> تعني «نصف الطريق نحو» الساعة القادمة، أي ${toAr(hour)}:٣٠ — وليس ${toAr(hour===12?1:hour+1)}:٣٠.`;
+  if(minute === 15) return `<b>viertel nach</b> = ربع ساعة بعد — بسيطة ومباشرة، تمامًا كالعربية «والربع».`;
+  if(minute === 45) return `<b>viertel vor</b> = ربع ساعة قبل الساعة القادمة، أي إلا ربع.`;
+  if(minute > 15 && minute < 30) return `هذا التعبير يُبنى على <b>halb</b> القادمة: أولًا فكّر في الساعة والنصف القادمة، ثم اطرح الدقائق المتبقية.`;
+  if(minute > 30 && minute < 45) return `هذا التعبير أيضًا يُبنى على <b>halb</b> القادمة، لكن بعدها هذه المرة لا قبلها.`;
+  if(minute === 0) return `أبسط صيغة: الساعة كاملة بلا أي إضافة.`;
+  return `تُحسب الدقائق مباشرة من الساعة الحالية دون المرور بـ halb.`;
+}
+
+/* --- Day-parts arc centerpiece --- */
+const DAY_PARTS = [
+  {id:'morgen',     de:"der Morgen",     prep:"am Morgen",     x:50,  y:180, time:"٦:٠٠–١٠:٠٠",  ar:"الصباح",     sentence:"Ich stehe am Morgen auf.", exception:false},
+  {id:'vormittag',  de:"der Vormittag",  prep:"am Vormittag",  x:150, y:116, time:"١٠:٠٠–١٢:٠٠", ar:"قبل الظهر",  sentence:"Ich arbeite am Vormittag.", exception:false},
+  {id:'mittag',     de:"der Mittag",     prep:"am Mittag",     x:250, y:84,  time:"١٢:٠٠–١٤:٠٠", ar:"الظهر",      sentence:"Ich esse am Mittag.", exception:false},
+  {id:'nachmittag', de:"der Nachmittag", prep:"am Nachmittag", x:350, y:84,  time:"١٤:٠٠–١٨:٠٠", ar:"بعد الظهر",  sentence:"Ich lerne am Nachmittag.", exception:false},
+  {id:'abend',      de:"der Abend",      prep:"am Abend",      x:450, y:116, time:"١٨:٠٠–٢٢:٠٠", ar:"المساء",     sentence:"Ich koche am Abend.", exception:false},
+  {id:'nacht',      de:"die Nacht",      prep:"in der Nacht",  x:550, y:180, time:"٢٢:٠٠–٦:٠٠",  ar:"الليل",      sentence:"Ich schlafe in der Nacht.", exception:true}
+];
+const ARC_COLORS = {morgen:'var(--teal)', vormittag:'var(--amber)', mittag:'var(--plum)', nachmittag:'var(--teal)', abend:'var(--amber)', nacht:'var(--plum)'};
+
+const FORMAL_TIME_EXAMPLES = [
+  {digital:"٠٧:٠٠", de:"sieben Uhr", ar:"السابعة صباحًا"},
+  {digital:"٠٩:١٥", de:"neun Uhr fünfzehn", ar:"التاسعة وربع"},
+  {digital:"١٢:٠٠", de:"zwölf Uhr", ar:"الثانية عشرة ظهرًا"},
+  {digital:"١٤:٣٠", de:"vierzehn Uhr dreißig", ar:"الثانية والنصف ظهرًا"},
+  {digital:"١٦:٤٥", de:"sechzehn Uhr fünfundvierzig", ar:"الخامسة إلا ربع"},
+  {digital:"١٨:٠٠", de:"achtzehn Uhr", ar:"السادسة مساءً"},
+  {digital:"٢٠:١٠", de:"zwanzig Uhr zehn", ar:"الثامنة وعشر دقائق مساءً"},
+  {digital:"٠٠:٠٠", de:"null Uhr", ar:"منتصف الليل"}
 ];
 
-const FAREWELLS = [
-  {de:"Tschüss", ipa:"tʃʏs", meaning:"وداعًا", formality:"غير رسمية", note:"الأكثر شيوعًا في المحادثات اليومية"},
-  {de:"Auf Wiedersehen", ipa:"aʊf ˈviːdɐˌzeːən", meaning:"إلى اللقاء", formality:"رسمية", note:"حرفيًا: حتى نرى بعضنا مجددًا"},
-  {de:"Bis bald", ipa:"bɪs balt", meaning:"أراك قريبًا", formality:"غير رسمية", note:"عند توقّع لقاء قريب"},
-  {de:"Bis später", ipa:"bɪs ˈʃpɛːtɐ", meaning:"أراك لاحقًا", formality:"غير رسمية", note:"عادة في نفس اليوم"},
-  {de:"Ciao", ipa:"tʃaʊ", meaning:"سلام", formality:"غير رسمية جدًا", note:"مستعارة من الإيطالية، شائعة بين الشباب"}
+const TIME_PREPOSITIONS = [
+  {word:"um", example:"Ich komme um drei Uhr.", ar:"عند الساعة — للوقت المحدّد"},
+  {word:"von … bis", example:"Von neun bis siebzehn Uhr.", ar:"من … إلى — لفترة زمنية"},
+  {word:"gegen", example:"Wir treffen uns gegen acht Uhr.", ar:"نحو/حوالي — للوقت التقريبي"}
 ];
 
-const DUSIE_ROWS = [
-  {ar:"أنت", du:"du", sie:"Sie"},
-  {ar:"ما اسمك؟", du:"Wie heißt du?", sie:"Wie heißen Sie?"},
-  {ar:"من أين أنت؟", du:"Woher kommst du?", sie:"Woher kommen Sie?"},
-  {ar:"كيف حالك؟", du:"Wie geht's dir?", sie:"Wie geht es Ihnen?"},
-  {ar:"تشرّفت بمعرفتك", du:"Freut mich!", sie:"Freut mich, Sie kennenzulernen."}
-];
-
-const PATTERNS = [
-  {de:"Ich heiße Anna.", ar:"اسمي آنا.", formality:"عام"},
-  {de:"Ich bin Ben.", ar:"أنا بِن.", formality:"عام"},
-  {de:"Mein Name ist Frau Weber.", ar:"اسمي هو السيدة فيبر.", formality:"رسمي"},
-  {de:"Ich komme aus Ägypten.", ar:"أنا من مصر.", formality:"عام"},
-  {de:"Ich wohne in Berlin.", ar:"أسكن في برلين.", formality:"عام"},
-  {de:"Freut mich, Sie kennenzulernen.", ar:"تشرّفت بمعرفتك.", formality:"رسمي"}
+const EXTRA_NOTES = [
+  {q:"لماذا نحتاج «es» في Wie spät ist es؟", body:"<span class=\"de mono\" data-speak=\"es\">es</span> هنا ضمير حياد شكلي (Es الشكلي) لا يشير لشيء محدّد — تمامًا مثل «it» الإنجليزية في «it is raining». الجملة العربية «كم الساعة؟» لا تحتاج مقابلًا له، لكن الألمانية تتطلّبه دائمًا نحويًا."},
+  {q:"ما الفرق بين Mittag وMitternacht؟", body:"<span class=\"de mono\" data-speak=\"der Mittag\">der Mittag</span> يعني «الظهر» (الساعة ١٢ ظهرًا)، بينما <span class=\"de mono\" data-speak=\"die Mitternacht\">die Mitternacht</span> يعني «منتصف الليل» (الساعة ١٢ ليلًا). كلمة Mitte تعني «المنتصف» في كليهما."},
+  {q:"هل توجد صيغة أخرى لـ viertel نادرة إقليميًا؟", body:"في بعض مناطق جنوب ألمانيا والنمسا، تسمع أحيانًا <span class=\"de mono\" data-speak=\"viertel vier\">viertel vier</span> بمعنى ٣:١٥ (وليس ٤:١٥) — أي نفس منطق halb لكن مع viertel. هذا نادر ومحيّر حتى للألمان أنفسهم، وللمستوى A1 يكفي أن تعرف بوجوده فقط."}
 ];
 
 const DIALOGUE_INFORMAL = [
-  {who:"a", name:"Anna", de:"Hallo! Ich heiße Anna. Und du?", ar:"مرحبًا! اسمي آنا. وأنت؟"},
-  {who:"b", name:"Ben", de:"Hi Anna! Ich bin Ben.", ar:"مرحبًا آنا! أنا بِن."},
-  {who:"a", name:"Anna", de:"Woher kommst du?", ar:"من أين أنت؟"},
-  {who:"b", name:"Ben", de:"Ich komme aus Berlin. Und du?", ar:"أنا من برلين. وأنتِ؟"},
-  {who:"a", name:"Anna", de:"Ich komme aus München. Wie geht's dir?", ar:"أنا من ميونخ. كيف حالك؟"},
-  {who:"b", name:"Ben", de:"Mir geht es gut, danke! Und dir?", ar:"أنا بخير، شكرًا! وأنتِ؟"},
-  {who:"a", name:"Anna", de:"Auch gut! Bis später, Ben.", ar:"بخير أيضًا! أراك لاحقًا يا بِن."},
-  {who:"b", name:"Ben", de:"Tschüss, Anna!", ar:"وداعًا يا آنا!"}
+  {who:"a", name:"Ben", de:"Wie spät ist es?", ar:"كم الساعة؟"},
+  {who:"b", name:"Mia", de:"Es ist halb drei.", ar:"الساعة الثانية والنصف."},
+  {who:"a", name:"Ben", de:"Schon so spät! Wann triffst du dich mit Lisa?", ar:"متأخر هكذا! متى ستقابلين ليزا؟"},
+  {who:"b", name:"Mia", de:"Um vier Uhr. Wir gehen ins Kino.", ar:"الساعة الرابعة. سنذهب إلى السينما."},
+  {who:"a", name:"Ben", de:"Welcher Film läuft um vier?", ar:"أي فيلم يُعرض الساعة الرابعة؟"},
+  {who:"b", name:"Mia", de:"Ich weiß nicht genau, so gegen vier oder viertel nach vier.", ar:"لا أعرف بالضبط، نحو الرابعة أو الرابعة والربع."},
+  {who:"a", name:"Ben", de:"Viel Spaß! Bis später.", ar:"استمتعي! أراك لاحقًا."},
+  {who:"b", name:"Mia", de:"Danke, bis bald!", ar:"شكرًا، أراك قريبًا!"}
 ];
 
 const DIALOGUE_FORMAL = [
-  {who:"a", name:"Herr Schmidt", de:"Guten Tag, mein Name ist Schmidt.", ar:"نهارك سعيد، اسمي شميت."},
-  {who:"b", name:"Frau Weber", de:"Guten Tag, Herr Schmidt. Ich heiße Weber.", ar:"نهارك سعيد سيد شميت. اسمي فيبر."},
-  {who:"a", name:"Herr Schmidt", de:"Freut mich, Frau Weber. Wie geht es Ihnen?", ar:"تشرّفت سيدة فيبر. كيف حالك؟"},
-  {who:"b", name:"Frau Weber", de:"Danke, es geht mir gut. Und Ihnen?", ar:"شكرًا، أنا بخير. وأنت؟"},
-  {who:"a", name:"Herr Schmidt", de:"Auch gut, danke. Woher kommen Sie?", ar:"بخير أيضًا، شكرًا. من أين أنت؟"},
-  {who:"b", name:"Frau Weber", de:"Ich komme aus Hamburg. Und Sie?", ar:"أنا من هامبورغ. وأنت؟"},
-  {who:"a", name:"Herr Schmidt", de:"Ich komme aus Köln. Auf Wiedersehen, Frau Weber.", ar:"أنا من كولن. إلى اللقاء سيدة فيبر."},
-  {who:"b", name:"Frau Weber", de:"Auf Wiedersehen, Herr Schmidt.", ar:"إلى اللقاء سيد شميت."}
+  {who:"a", name:"Reisender", de:"Entschuldigung, wann fährt der Zug nach Berlin?", ar:"عفوًا، متى يتحرك القطار إلى برلين؟"},
+  {who:"b", name:"Angestellte", de:"Der Zug fährt um vierzehn Uhr dreißig.", ar:"يتحرك القطار الساعة ٢:٣٠ ظهرًا."},
+  {who:"a", name:"Reisender", de:"Und wann kommt er in Berlin an?", ar:"ومتى يصل إلى برلين؟"},
+  {who:"b", name:"Angestellte", de:"Er kommt um sechzehn Uhr fünfzig an.", ar:"يصل الساعة ٤:٥٠ مساءً."},
+  {who:"a", name:"Reisender", de:"Vielen Dank. Ist der Zug pünktlich?", ar:"شكرًا جزيلًا. هل القطار في موعده؟"},
+  {who:"b", name:"Angestellte", de:"Ja, heute hat er keine Verspätung.", ar:"نعم، لا يوجد تأخير اليوم."},
+  {who:"a", name:"Reisender", de:"Perfekt, das ist gut.", ar:"ممتاز، هذا جيد."},
+  {who:"b", name:"Angestellte", de:"Gute Reise!", ar:"رحلة سعيدة!"}
 ];
 
 const MISTAKES = [
-  {wrong:"مخاطبة طبيب أو مدير بصيغة <span class=\"de mono\" data-speak=\"du\">du</span> من أول لقاء", right:"استخدام <span class=\"de mono\" data-speak=\"Sie\">Sie</span> مع الغرباء والمواقف الرسمية دائمًا", note:"في الشك، استخدم Sie دائمًا حتى يطلب منك الطرف الآخر التحوّل إلى du."},
-  {wrong:"التعامل مع <span class=\"de mono\" data-speak=\"Wie geht's?\">Wie geht's?</span> كسؤال شكلي فقط كما في الإنجليزية", right:"الاستعداد لإجابة حقيقية أحيانًا، فالألمان قد يجيبون بصدق عن حالهم", note:"في السياقات غير الرسمية القريبة، قد يُتوقع منك رد صادق وليس فقط «بخير»."},
-  {wrong:"قول <span class=\"de mono\" data-speak=\"Guten Tag\">Guten Tag</span> في السابعة مساءً", right:"استخدام <span class=\"de mono\" data-speak=\"Guten Abend\">Guten Abend</span> بعد حوالي الساعة السادسة مساءً", note:"التوقيت مهم في الألمانية أكثر من العربية العامية."},
-  {wrong:"استخدام <span class=\"de mono\" data-speak=\"Tschüss\">Tschüss</span> عند مغادرة اجتماع عمل رسمي", right:"استخدام <span class=\"de mono\" data-speak=\"Auf Wiedersehen\">Auf Wiedersehen</span> في السياقات الرسمية", note:"Tschüss غير رسمية تمامًا، احفظها لأصدقائك فقط."},
-  {wrong:"نطق <span class=\"de mono\" data-speak=\"ich\">ich</span> بصوت k بدلًا من الصوت الناعم", right:"نطقها «إش» بصوت ناعم من الحلق (راجع درس الحروف، تركيبة CH)", note:"هذا خطأ شائع جدًا لدى المبتدئين، ويستحق مراجعة إضافية."},
-  {wrong:"ترجمة <span class=\"de mono\" data-speak=\"Wie heißt du?\">Wie heißt du?</span> حرفيًا كـ«ماذا تُدعى؟» بنبرة غريبة", right:"فهمها كصيغة طبيعية تمامًا تعني «ما اسمك؟»", note:"الفعل heißen يعني حرفيًا «يُسمّى»، وهو الفعل الطبيعي للسؤال عن الاسم في الألمانية."}
+  {wrong:"الاعتقاد أن <span class=\"de mono\" data-speak=\"halb drei\">halb drei</span> تعني ٣:٣٠", right:"<span class=\"de mono\" data-speak=\"halb drei\">halb drei</span> تعني ٢:٣٠ — نصف الطريق نحو الثالثة", note:"هذا أشهر خطأ في تعلّم الوقت بالألمانية. فكّر دائمًا: halb + الساعة القادمة، وليس الماضية."},
+  {wrong:"الخلط بين Uhr وStunde: <span class=\"de mono\" data-speak=\"Ich warte eine Uhr.\">Ich warte eine Uhr.</span>", right:"<span class=\"de mono\" data-speak=\"Ich warte eine Stunde.\">Ich warte eine Stunde.</span> — Stunde للمدة", note:"Uhr تُستخدم لأداة الساعة أو عند قول الوقت المحدّد، أما Stunde فللمدة الزمنية."},
+  {wrong:"استخدام am مع Nacht: <span class=\"de mono\" data-speak=\"am Nacht\">am Nacht</span>", right:"<span class=\"de mono\" data-speak=\"in der Nacht\">in der Nacht</span> — Nacht مؤنثة", note:"بما أن Nacht مؤنثة (die)، لا يمكن استخدام am (المخصصة للمذكّر والمحايد)؛ بل نستخدم in der."},
+  {wrong:"حذف es من السؤال: <span class=\"de mono\" data-speak=\"Wie spät?\">Wie spät?</span>", right:"<span class=\"de mono\" data-speak=\"Wie spät ist es?\">Wie spät ist es?</span> — es إلزامية نحويًا", note:"الجملة الألمانية تحتاج فاعلًا دائمًا، وes هنا فاعل شكلي لا معنى مستقلًا له."},
+  {wrong:"قول <span class=\"de mono\" data-speak=\"eins Uhr\">eins Uhr</span> للساعة الواحدة", right:"<span class=\"de mono\" data-speak=\"ein Uhr\">ein Uhr</span> — استثناء خاص بالساعة الواحدة فقط", note:"عند اقتران الرقم واحد مباشرة بكلمة Uhr، يُستخدم ein وليس eins، خلافًا لبقية الساعات."},
+  {wrong:"الخلط بين اتجاه nach وvor", right:"<span class=\"de mono\">nach</span> = بعد (+)، <span class=\"de mono\">vor</span> = قبل (−) من الساعة القادمة", note:"تذكّر: nach يضيف دقائق للساعة الحالية، وvor يطرح دقائق من الساعة القادمة."}
 ];
 
 const TIPS = [
-  {title:"تذكّر نطق G الصلب", body:"في <span class=\"de\" data-speak=\"Guten\">Guten</span>، حرف G في البداية يُنطق مثل الجيم الصلبة كما تعلّمنا في درس الحروف، وليس مثل j الإنجليزية."},
-  {title:"EI تُنطق دائمًا آي", body:"في <span class=\"de\" data-speak=\"heiße\">heiße</span>، تركيبة EI تُنطق «آي» دائمًا — فتُصبح الكلمة «هايسه»، تمامًا كما تعلّمت في درس الحروف."},
-  {title:"Ihnen تبدأ بحرف علة ممدود", body:"صيغة «لكم/لك» الرسمية <span class=\"de\" data-speak=\"Ihnen\">Ihnen</span> تبدأ بصوت إي ممدود، وتُنطق «إينن» — لا تخلطها مع <span class=\"de\" data-speak=\"ihnen\">ihnen</span> بمعنى «لهم»."},
-  {title:"ضع النبرة على اسمك", body:"عند تقديم نفسك بجملة مثل <span class=\"de\" data-speak=\"Ich heiße Anna\">Ich heiße Anna</span>، تقع النبرة الطبيعية على الاسم نفسه، وليس على الفعل heiße."}
+  {title:"Uhr تُنطق بعلّة طويلة صامتة الـ h", body:"في <span class=\"de\" data-speak=\"Uhr\">Uhr</span>، حرف h بعد العلة لا يُنطق أبدًا، لكنه يدلّ على أن حرف u طويل: [uːɐ̯]."},
+  {title:"viertel: V تُنطق [f]", body:"في <span class=\"de\" data-speak=\"viertel\">viertel</span>، حرف V في البداية يُنطق [f] كما تعلّمت سابقًا، والمقطع ier يُنطق [iːɐ] طويلًا."},
+  {title:"النبرة في الكلمات المركّبة", body:"في <span class=\"de\" data-speak=\"Nachmittag\">Nachmittag</span>، تقع النبرة الرئيسية على المقطع الأول: NACH-mittag، وليس على mittag."},
+  {title:"spät بعلّة ä طويلة", body:"في <span class=\"de\" data-speak=\"spät\">spät</span>، حرف ä يُنطق [ɛː] طويلة، تمامًا مثل Käse التي تعلّمتها من قبل."}
 ];
 
 const MATCH_PAIRS = [
-  {de:"Guten Morgen", ar:"صباح الخير"}, {de:"Guten Abend", ar:"مساء الخير"},
-  {de:"Tschüss", ar:"وداعًا (غير رسمي)"}, {de:"Auf Wiedersehen", ar:"إلى اللقاء (رسمي)"},
-  {de:"Hallo", ar:"مرحبًا"}, {de:"Wie heißt du?", ar:"ما اسمك؟ (غير رسمي)"},
-  {de:"Ich komme aus...", ar:"أنا من..."}, {de:"Mir geht es gut", ar:"أنا بخير"}
+  {de:"die Uhr", ar:"الساعة"}, {de:"die Minute", ar:"الدقيقة"},
+  {de:"halb", ar:"نصف / والنصف نحو التالية"}, {de:"der Morgen", ar:"الصباح"},
+  {de:"die Nacht", ar:"الليل"}, {de:"pünktlich", ar:"في الموعد"},
+  {de:"die Stunde", ar:"ساعة (مدة)"}, {de:"der Abend", ar:"المساء"}
 ];
 
 const MCQ = [
-  {prompt:"تتحدث مع طبيبك لأول مرة. ماذا تسأله عن اسمه؟", options:["Wie heißen Sie?","Wie heißt du?","Wie geht's?","Tschüss!"], correct:"Wie heißen Sie?", why:"مع الغرباء وفي السياقات الرسمية مثل الطبيب، نستخدم دائمًا صيغة <span class=\"de mono\" data-speak=\"Sie\">Sie</span>."},
-  {prompt:"متى تقول <span class=\"de mono\" data-speak=\"Guten Abend\">Guten Abend</span>؟", options:["في الصباح الباكر","في منتصف النهار","في المساء","عند النوم فقط"], correct:"في المساء", why:"<span class=\"de mono\" data-speak=\"Guten Abend\">Guten Abend</span> تُستخدم من حوالي الساعة السادسة مساءً."},
-  {prompt:"ماذا تعني <span class=\"de mono\" data-speak=\"Ich komme aus...\">Ich komme aus...</span>؟", options:["أنا من...","أنا ذاهب إلى...","اسمي...","كيف حالك؟"], correct:"أنا من...", why:"<span class=\"de mono\" data-speak=\"kommen\">kommen</span> aus تعني حرفيًا «يأتي من»، وتُستخدم للتعبير عن بلد أو مدينة المنشأ."},
-  {prompt:"أي تحية تُستخدم كوداع أيضًا في النمسا وجنوب ألمانيا؟", options:["Servus","Guten Tag","Moin","Ihnen"], correct:"Servus", why:"<span class=\"de mono\" data-speak=\"Servus\">Servus</span> تُستخدم كتحية ووداع في آنٍ واحد في النمسا وبافاريا."},
-  {prompt:"صديقك يسألك <span class=\"de mono\" data-speak=\"Wie geht's?\">Wie geht's?</span> ما أفضل ردّ غير رسمي؟", options:["Mir geht es gut, danke!","Wie heißen Sie?","Auf Wiedersehen.","Guten Morgen."], correct:"Mir geht es gut, danke!", why:"هذا ردّ طبيعي وشائع جدًا على سؤال الحال بين الأصدقاء."},
-  {prompt:"ما صيغة المخاطبة الصحيحة مع طفل صغير؟", options:["du","Sie","كلاهما سيّان","لا يوجد فرق"], correct:"du", why:"تُستخدم <span class=\"de mono\" data-speak=\"du\">du</span> دائمًا تقريبًا مع الأطفال، بغض النظر عن مدى معرفتك بهم."},
-  {prompt:"أي جملة أكثر رسمية لتقديم نفسك؟", options:["Mein Name ist Weber.","Ich bin Ben.","Hi, ich bin's!","Na, alles klar?"], correct:"Mein Name ist Weber.", why:"<span class=\"de mono\" data-speak=\"Mein Name ist\">Mein Name ist</span> أكثر رسمية من <span class=\"de mono\" data-speak=\"Ich bin\">Ich bin</span>."},
-  {prompt:"ماذا تعني <span class=\"de mono\" data-speak=\"Auf Wiedersehen\">Auf Wiedersehen</span> حرفيًا؟", options:["حتى نرى بعضنا مجددًا","صباح الخير","كيف حالك؟","أنا بخير"], correct:"حتى نرى بعضنا مجددًا", why:"وداع رسمي حرفي المعنى، يُستخدم عند توقّع لقاء لاحق محتمل."}
+  {prompt:"ماذا تعني <span class=\"de mono\" data-speak=\"halb drei\">halb drei</span>؟", options:["٢:٣٠","٣:٣٠","٣:١٥","٣:٤٥"], correct:"٢:٣٠", why:"<span class=\"de mono\">halb drei</span> تعني «نصف الطريق نحو الثالثة»، أي <b>٢:٣٠</b> وليس ٣:٣٠."},
+  {prompt:"كيف تقول الساعة الواحدة تمامًا؟", options:["ein Uhr","eins Uhr","eine Uhr","erste Uhr"], correct:"ein Uhr", why:"استثناء خاص: <span class=\"de mono\" data-speak=\"ein Uhr\">ein Uhr</span> وليس eins Uhr، فقط عند الساعة الواحدة."},
+  {prompt:"ما حرف الجر الصحيح مع <span class=\"de mono\">Nacht</span>؟", options:["in der Nacht","am Nacht","um die Nacht","an der Nacht"], correct:"in der Nacht", why:"<span class=\"de mono\">Nacht</span> مؤنثة، فتأخذ <span class=\"de mono\" data-speak=\"in der Nacht\">in der Nacht</span> بدلًا من am."},
+  {prompt:"ماذا تعني <span class=\"de mono\" data-speak=\"viertel vor vier\">viertel vor vier</span>؟", options:["٣:٤٥","٤:١٥","٣:١٥","٤:٤٥"], correct:"٣:٤٥", why:"<span class=\"de mono\">viertel vor vier</span> = ربع ساعة قبل الرابعة، أي <b>٣:٤٥</b>."},
+  {prompt:"ما الفرق بين Uhr وStunde؟", options:["Uhr للوقت المحدّد، Stunde لمدة ساعة كاملة","لا فرق بينهما إطلاقًا","Uhr للمدة، Stunde للأداة","كلاهما يعني الدقيقة"], correct:"Uhr للوقت المحدّد، Stunde لمدة ساعة كاملة", why:"<span class=\"de mono\">Uhr</span> أداة الساعة/الوقت المحدد، بينما <span class=\"de mono\">Stunde</span> وحدة زمنية (٦٠ دقيقة)."},
+  {prompt:"كيف تُقرأ الساعة الرسمية ١٤:٣٠؟", options:["vierzehn Uhr dreißig","zwei Uhr dreißig","vierzehn Uhr halb","halb drei"], correct:"vierzehn Uhr dreißig", why:"النظام الرسمي يقرأ الأرقام مباشرة: <span class=\"de mono\" data-speak=\"vierzehn Uhr dreißig\">vierzehn Uhr dreißig</span>، بلا halb أو viertel."},
+  {prompt:"ما السؤال الصحيح لمعرفة الوقت؟", options:["Wie spät ist es?","Wie viel Zeit ist es?","Was ist die Uhr?","Wann ist die Zeit?"], correct:"Wie spät ist es?", why:"<span class=\"de mono\" data-speak=\"Wie spät ist es?\">Wie spät ist es?</span> هي الصيغة القياسية والأكثر شيوعًا للسؤال عن الوقت."},
+  {prompt:"متى نستخدم <span class=\"de mono\">gegen</span> مع الوقت؟", options:["للتقريب: حوالي الساعة كذا","للوقت الدقيق فقط","لبداية الفترة فقط","لنهاية الفترة فقط"], correct:"للتقريب: حوالي الساعة كذا", why:"<span class=\"de mono\" data-speak=\"gegen acht Uhr\">gegen acht Uhr</span> تعني «نحو الساعة الثامنة»، للوقت التقريبي غير الدقيق."}
 ];
 
 const FILL = [
-  {display:"Guten ____, Frau Weber.", correct:"Tag", hint:"تحية رسمية عامة خلال النهار", full:"Guten Tag, Frau Weber."},
-  {display:"Ich ____ Anna.", correct:"heiße", hint:"الفعل المستخدم لقول اسمك", full:"Ich heiße Anna."},
-  {display:"Wie ____ es Ihnen?", correct:"geht", hint:"السؤال الرسمي عن الحال", full:"Wie geht es Ihnen?"},
-  {display:"Ich komme ____ Berlin.", correct:"aus", hint:"حرف الجر المستخدم مع بلد المنشأ", full:"Ich komme aus Berlin."},
-  {display:"____ Wiedersehen!", correct:"Auf", hint:"وداع رسمي شائع جدًا", full:"Auf Wiedersehen!"},
-  {display:"Mir geht es ____, danke.", correct:"gut", hint:"عكس كلمة سيئ", full:"Mir geht es gut, danke."},
-  {display:"Freut ____, Sie kennenzulernen.", correct:"mich", hint:"جزء من عبارة «تشرّفت بمعرفتك»", full:"Freut mich, Sie kennenzulernen."},
-  {display:"____ heißt du?", correct:"Wie", hint:"أداة استفهام تعني «كيف/ما»", full:"Wie heißt du?"}
+  {display:"٢:٣٠ = ____ drei", correct:"halb", hint:"نصف الطريق نحو الثالثة", full:"halb drei"},
+  {display:"الساعة الواحدة = ____ Uhr", correct:"ein", hint:"استثناء: ein وليس eins", full:"ein Uhr"},
+  {display:"in der ____ (الليل)", correct:"Nacht", hint:"استثناء: in der وليس am", full:"in der Nacht"},
+  {display:"٣:١٥ = viertel ____ drei", correct:"nach", hint:"بعد الثالثة بربع ساعة", full:"viertel nach drei"},
+  {display:"٣:٤٥ = viertel ____ vier", correct:"vor", hint:"قبل الرابعة بربع ساعة", full:"viertel vor vier"},
+  {display:"Wie ____ ist es? (كم الساعة؟)", correct:"spät", hint:"السؤال القياسي عن الوقت", full:"Wie spät ist es?"},
+  {display:"١٤:٣٠ رسميًا = vierzehn Uhr ____", correct:"dreißig", hint:"رقم الدقائق", full:"vierzehn Uhr dreißig"},
+  {display:"Ich warte eine ____. (مدة ساعة كاملة)", correct:"Stunde", hint:"المدة الزمنية وليس أداة الساعة", full:"Ich warte eine Stunde."}
 ];
 
 const BUILDER = [
-  {words:["Ich","komme","aus","Berlin"], ar:"أنا من برلين"},
-  {words:["Wie","heißt","du"], ar:"ما اسمك؟ (غير رسمي)"},
-  {words:["Guten","Morgen"], ar:"صباح الخير"},
-  {words:["Mein","Name","ist","Anna"], ar:"اسمي هو آنا"},
-  {words:["Auf","Wiedersehen"], ar:"إلى اللقاء"}
+  {words:["Wie","spät","ist","es"], ar:"كم الساعة؟"},
+  {words:["Es","ist","halb","drei"], ar:"الساعة الثانية والنصف"},
+  {words:["Der","Zug","fährt","um","neun","Uhr"], ar:"يتحرك القطار الساعة التاسعة"},
+  {words:["Ich","bin","immer","pünktlich"], ar:"أنا دائمًا في الموعد"},
+  {words:["Das","Geschäft","öffnet","um","acht"], ar:"يفتح المتجر الساعة الثامنة"}
 ];
 
 const LEARNING_TIMELINE = [
-  {top:"الدرس ١", dot:"done", bottom:"الحروف", hl:false},
-  {top:"أنت الآن هنا", dot:"now", bottom:"التحيات", hl:true},
-  {top:"الدرس ٣", dot:"", bottom:"الأرقام", hl:false},
-  {top:"لاحقًا", dot:"", bottom:"المحادثة", hl:false}
+  {top:"الدرس ٥", dot:"done", bottom:"العائلة", hl:false},
+  {top:"الدرس ٦", dot:"done", bottom:"الطعام والشراب", hl:false},
+  {top:"أنت الآن هنا", dot:"now", bottom:"الوقت والساعة", hl:true},
+  {top:"الدرس ٨", dot:"", bottom:"المنزل والغرف", hl:false}
 ];
 
 const BADGES = [
-  {id:'explorer', name:'مستكشف التحيات', icon:'i-compass'},
-  {id:'phrases', name:'حافظ العبارات', icon:'i-cards'},
-  {id:'sharp', name:'حادّ التفكير', icon:'i-target'},
-  {id:'champion', name:'بطل الحوار', icon:'i-medal'}
+  {id:'explorer', name:'مستكشف الوقت', icon:'i-compass'},
+  {id:'clockmaster', name:'خبير قراءة الساعة', icon:'i-clock'},
+  {id:'sharp', name:'حادّ الإجابة', icon:'i-target'},
+  {id:'champion', name:'بطل الساعة', icon:'i-star'}
 ];
 
 /* ==========================================================================
@@ -1320,7 +1380,7 @@ const Speech = (function(){
   }
 
   function clearHighlights(){
-    document.querySelectorAll('.k-word.speaking, .speak-dot.speaking, .listen-chip.speaking, .chat-bubble.speaking').forEach(el => el.classList.remove('speaking'));
+    document.querySelectorAll('.k-word.speaking, .speak-dot.speaking, .listen-chip.speaking, .chat-bubble.speaking, .clock-result-value.speaking, .arc-node.speaking').forEach(el => el.classList.remove('speaking'));
   }
 
   function speak(text, opts){
@@ -1418,31 +1478,31 @@ function toAr(n){ return String(n).replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'
 document.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
 
 /* ==========================================================================
-   HERO SHOWCASE CARD (greeting → reply)
+   HERO SHOWCASE CARD (question → answer about time)
    ========================================================================== */
 (function buildHeroShowcase(){
   const wrap = document.createElement('div');
   wrap.className = 'showcase-card';
   wrap.style.marginTop = '22px';
   wrap.innerHTML = `
-    <div class="showcase-label"><svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-chat"/></svg>عبارة اليوم · انقر لتسمع</div>
+    <div class="showcase-label"><svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-chat"/></svg>سؤال شائع اليوم · انقر لتسمع</div>
     <div class="arrow-frame">
-      <span class="k-word k-phrase-big de" id="heroPhrase" data-plain="Hallo!" tabindex="0" role="button" aria-label="استمع لـ Hallo">Hallo!</span>
+      <span class="k-word k-phrase-big de" id="heroPhrase" data-plain="Wie spät ist es?" tabindex="0" role="button" aria-label="استمع لـ Wie spät ist es">Wie spät ist es?</span>
       <span class="k-arrow">→</span>
-      <span class="k-word k-word-result de" id="heroReply" data-plain="Ich heiße Anna." tabindex="0" role="button" aria-label="استمع لـ Ich heiße Anna">Ich heiße Anna.</span>
+      <span class="k-word k-word-result de" id="heroReply" data-plain="Es ist halb drei." tabindex="0" role="button" aria-label="استمع لـ Es ist halb drei">Es ist halb drei.</span>
     </div>
-    <p class="showcase-translation">هكذا تبدأ أبسط محادثة ألمانية: تحية، ثم تقديم الاسم. انقر على أي جزء لسماع نطقه.</p>
+    <p class="showcase-translation">تذكّر: هذا يعني الساعة الثانية والنصف (٢:٣٠)، وليس الثالثة والنصف! انقر على أي جزء لسماع نطقه.</p>
     <button class="btn btn-ghost showcase-speak-all" id="heroSpeakAll">
       <svg class="icon" style="width:16px;height:16px"><use href="#i-speaker"/></svg>
-      استمع للعبارتين معًا
+      استمع للسؤال والجواب معًا
     </button>`;
   document.querySelector('.hero-illustration').insertAdjacentElement('afterend', wrap);
   const heroPhrase = wrap.querySelector('#heroPhrase');
   const heroReply = wrap.querySelector('#heroReply');
-  makeSpeakable(heroPhrase, 'Hallo!');
-  makeSpeakable(heroReply, 'Ich heiße Anna.');
+  makeSpeakable(heroPhrase, 'Wie spät ist es?');
+  makeSpeakable(heroReply, 'Es ist halb drei.');
   wrap.querySelector('#heroSpeakAll').addEventListener('click', () => {
-    Speech.speak('Hallo! Ich heiße Anna.', {wordEls: [heroPhrase, heroReply]});
+    Speech.speak('Wie spät ist es? Es ist halb drei.', {wordEls: [heroPhrase, heroReply]});
   });
 })();
 
@@ -1458,69 +1518,28 @@ LEARNING_TIMELINE.forEach(item => {
 });
 
 /* ==========================================================================
-   TIME-OF-DAY GREETING CARDS
+   TIME VOCAB — flip cards
    ========================================================================== */
-const timeGrid = document.getElementById('timeGrid');
-TIME_GREETINGS.forEach(t => {
-  const card = document.createElement('div');
-  card.className = 'time-card ' + t.cls;
-  card.innerHTML = `
-    <svg class="icon time-icon" style="color:var(--ink)"><use href="#${t.icon}"/></svg>
-    <div class="time-range">${t.range}</div>
-    <div class="time-de de">${t.de}</div>
-    <div class="time-ar">${t.ar}</div>
-    <span class="speak-dot" style="position:static;margin:12px auto 0;display:flex" aria-label="استمع لـ ${t.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>`;
-  card.addEventListener('click', () => Speech.speak(t.de, {el: card.querySelector('.speak-dot')}));
-  timeGrid.appendChild(card);
-});
-
-/* ==========================================================================
-   CASUAL / REGIONAL GREETINGS
-   ========================================================================== */
-const regionGrid = document.getElementById('regionGrid');
-REGION_GREETINGS.forEach(r => {
-  const card = document.createElement('div');
-  card.className = 'info-card region-card';
-  card.innerHTML = `
-    <div class="region-flag">${r.flag}</div>
-    <div class="region-de" data-plain="${r.de}" tabindex="0" role="button" aria-label="استمع لـ ${r.de}">${r.de}</div>
-    <div class="region-place">${r.place}</div>
-    <div class="region-desc">${r.desc}</div>`;
-  makeSpeakable(card.querySelector('.region-de'), r.de);
-  regionGrid.appendChild(card);
-});
-
-/* ==========================================================================
-   FAREWELLS — 3D flip cards
-   ========================================================================== */
-const farewellGrid = document.getElementById('farewellGrid');
-let flippedCount = 0;
-const flippedSet = new Set();
-FAREWELLS.forEach((f, i) => {
+const timeVocabGrid = document.getElementById('timeVocabGrid');
+TIME_VOCAB.forEach(item => {
   const card = document.createElement('div');
   card.className = 'flip-card';
   card.innerHTML = `
-    <div class="flip-card-inner" tabindex="0" role="button" aria-label="بطاقة ${f.de}, انقر للقلب">
+    <div class="flip-card-inner" tabindex="0" role="button" aria-label="بطاقة ${item.ar}, انقر للقلب">
       <div class="flip-face flip-front">
-        <span class="chip chip-teal aux-tag mono">${f.formality}</span>
-        <span class="de">${f.de}</span>
+        <span class="de">${item.de}</span>
         <span class="flip-hint">انقر للقلب</span>
-        <span class="speak-dot" data-word="${f.de}" aria-label="استمع لـ ${f.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+        <span class="speak-dot" data-word="${item.word}" aria-label="استمع لـ ${item.word}"><svg class="icon"><use href="#i-speaker"/></svg></span>
       </div>
       <div class="flip-face flip-back">
-        <span class="partizip mono">/${f.ipa}/</span>
-        <span class="meaning">${f.meaning}</span>
-        <span class="meaning" style="font-size:.78rem;opacity:.85">${f.note}</span>
-        <span class="speak-dot" data-word="${f.de}" aria-label="استمع لـ ${f.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+        <span class="partizip mono">${item.word}</span>
+        <span class="ipa mono">[${item.ipa}]</span>
+        <span class="meaning">${item.ar}</span>
+        <span class="speak-dot" data-word="${item.word}" aria-label="استمع"><svg class="icon"><use href="#i-speaker"/></svg></span>
       </div>
     </div>`;
   const inner = card.querySelector('.flip-card-inner');
-  inner.addEventListener('click', (e) => {
-    if(e.target.closest('.speak-dot')) return;
-    card.classList.toggle('flipped');
-    if(!flippedSet.has(i)){ flippedSet.add(i); flippedCount++; if(flippedSet.size>=FAREWELLS.length) unlockBadge('phrases'); }
-    updateProgress();
-  });
+  inner.addEventListener('click', (e) => { if(e.target.closest('.speak-dot')) return; card.classList.toggle('flipped'); });
   inner.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); inner.click(); } });
   card.querySelectorAll('.speak-dot').forEach(dot => {
     dot.addEventListener('click', (e) => {
@@ -1530,41 +1549,202 @@ FAREWELLS.forEach((f, i) => {
       setTimeout(()=>dot.classList.remove('speaking'), 900);
     });
   });
-  farewellGrid.appendChild(card);
+  timeVocabGrid.appendChild(card);
 });
 
 /* ==========================================================================
-   DU vs SIE TABLE
+   INTERACTIVE CLOCK — centerpiece 1
    ========================================================================== */
-const duSieTable = document.getElementById('duSieTable');
-DUSIE_ROWS.forEach(row => {
-  const r = document.createElement('div');
-  r.className = 'duSie-row';
-  r.innerHTML = `
-    <div class="cell-ar">${row.ar}</div>
-    <div class="cell-du" data-plain="${row.du}" tabindex="0" role="button" aria-label="استمع لـ ${row.du}">${row.du}</div>
-    <div class="cell-sie" data-plain="${row.sie}" tabindex="0" role="button" aria-label="استمع لـ ${row.sie}">${row.sie}</div>`;
-  makeSpeakable(r.querySelector('.cell-du'), row.du);
-  makeSpeakable(r.querySelector('.cell-sie'), row.sie);
-  duSieTable.appendChild(r);
+const clockTicksEl = document.getElementById('clockTicks');
+(function buildClockTicks(){
+  const cx = 140, cy = 140, rOuter = 118, rInnerMajor = 100, rInnerMinor = 108;
+  let svg = '';
+  for(let i=0;i<12;i++){
+    const angle = i * 30;
+    const rad = (angle - 90) * Math.PI / 180;
+    const isMajor = i % 3 === 0;
+    const rInner = isMajor ? rInnerMajor : rInnerMinor;
+    const x1 = cx + rOuter * Math.cos(rad), y1 = cy + rOuter * Math.sin(rad);
+    const x2 = cx + rInner * Math.cos(rad), y2 = cy + rInner * Math.sin(rad);
+    svg += `<line class="clock-tick${isMajor ? ' major' : ''}" x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke-width="${isMajor?3:1.5}"/>`;
+  }
+  clockTicksEl.innerHTML = svg;
+})();
+
+const clockHourRow = document.getElementById('clockHourRow');
+const clockMinuteRow = document.getElementById('clockMinuteRow');
+const clockPeriodRow = document.getElementById('clockPeriodRow');
+const clockDigital = document.getElementById('clockDigital');
+const clockFormalEl = document.getElementById('clockFormal');
+const clockInformalEl = document.getElementById('clockInformal');
+const clockNoteEl = document.getElementById('clockNote');
+const clockHourHand = document.getElementById('clockHourHand');
+const clockMinuteHand = document.getElementById('clockMinuteHand');
+
+let clockHour = 3, clockMinute = 0, clockPeriod = 'nachmittags';
+let clockTriedMinutes = new Set();
+
+for(let h=1; h<=12; h++){
+  const chip = document.createElement('button');
+  chip.className = 'clock-chip' + (h === clockHour ? ' active' : '');
+  chip.textContent = toAr(h);
+  chip.addEventListener('click', () => { clockHour = h; refreshClockChips(); renderClock(); });
+  clockHourRow.appendChild(chip);
+}
+MINUTES_5.forEach(m => {
+  const chip = document.createElement('button');
+  chip.className = 'clock-chip' + (m === clockMinute ? ' active' : '');
+  chip.textContent = String(m).padStart(2,'0');
+  chip.addEventListener('click', () => { clockMinute = m; refreshClockChips(); renderClock(); });
+  clockMinuteRow.appendChild(chip);
+});
+[{id:'vormittags', label:'قبل الظهر'}, {id:'nachmittags', label:'بعد الظهر'}].forEach(p => {
+  const chip = document.createElement('button');
+  chip.className = 'clock-chip period' + (p.id === clockPeriod ? ' active' : '');
+  chip.textContent = p.label;
+  chip.addEventListener('click', () => { clockPeriod = p.id; refreshClockChips(); renderClock(); });
+  clockPeriodRow.appendChild(chip);
 });
 
+function refreshClockChips(){
+  clockHourRow.querySelectorAll('.clock-chip').forEach((c,i) => c.classList.toggle('active', (i+1) === clockHour));
+  clockMinuteRow.querySelectorAll('.clock-chip').forEach((c,i) => c.classList.toggle('active', MINUTES_5[i] === clockMinute));
+  clockPeriodRow.querySelectorAll('.clock-chip').forEach((c,i) => c.classList.toggle('active', (i===0?'vormittags':'nachmittags') === clockPeriod));
+}
+
+function renderClock(){
+  const hourAngle = (clockHour % 12) * 30 + clockMinute * 0.5;
+  const minuteAngle = clockMinute * 6;
+  clockHourHand.setAttribute('transform', `rotate(${hourAngle} 140 140)`);
+  clockMinuteHand.setAttribute('transform', `rotate(${minuteAngle} 140 140)`);
+
+  clockDigital.textContent = toAr(clockHour) + ':' + toAr(String(clockMinute).padStart(2,'0'));
+
+  const hour24 = to24Hour(clockHour, clockPeriod);
+  const formal = formalTime(hour24, clockMinute);
+  const informal = informalTime(clockHour, clockMinute);
+
+  clockFormalEl.textContent = formal;
+  clockFormalEl.dataset.plain = 'Es ist ' + formal + '.';
+  clockFormalEl.setAttribute('aria-label', 'استمع لـ ' + formal);
+
+  clockInformalEl.textContent = informal;
+  clockInformalEl.dataset.plain = 'Es ist ' + informal + '.';
+  clockInformalEl.setAttribute('aria-label', 'استمع لـ ' + informal);
+
+  clockNoteEl.innerHTML = clockNoteFor(clockHour, clockMinute);
+
+  clockTriedMinutes.add(clockMinute);
+  if(clockTriedMinutes.size >= MINUTES_5.length) unlockBadge('clockmaster');
+}
+[clockFormalEl, clockInformalEl].forEach(el => {
+  el.addEventListener('click', () => Speech.speak(el.dataset.plain, {el}));
+  el.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); el.click(); } });
+});
+
+renderClock();
+
 /* ==========================================================================
-   SELF-INTRODUCTION PATTERN CARDS
+   FORMAL TIME EXAMPLES — grid
    ========================================================================== */
-const patternList = document.getElementById('patternList');
-PATTERNS.forEach((p, i) => {
+const formalTimeGrid = document.getElementById('formalTimeGrid');
+FORMAL_TIME_EXAMPLES.forEach(item => {
   const card = document.createElement('div');
-  card.className = 'pattern-card';
+  card.className = 'info-card';
+  card.style.textAlign = 'center';
+  card.style.cursor = 'pointer';
   card.innerHTML = `
-    <span class="pattern-num">${toAr(i+1)}</span>
-    <div class="pattern-main">
-      <div class="pattern-de de" data-plain="${p.de}" tabindex="0" role="button" aria-label="استمع لـ ${p.de}">${p.de}</div>
-      <div class="pattern-ar">${p.ar}</div>
-    </div>
-    <span class="chip ${p.formality === 'رسمي' ? 'chip-plum' : 'chip-teal'} pattern-formality">${p.formality}</span>`;
-  makeSpeakable(card.querySelector('.pattern-de'), p.de);
-  patternList.appendChild(card);
+    <div class="mono" style="font-size:1.15rem;font-weight:700;color:var(--teal-ink)">${item.digital}</div>
+    <div class="de" style="font-weight:700;font-size:1.05rem;margin-top:8px">${item.de}</div>
+    <div style="font-size:.82rem;color:var(--ink-soft);margin-top:6px">${item.ar}</div>`;
+  card.tabIndex = 0; card.setAttribute('role','button'); card.setAttribute('aria-label', 'استمع لـ ' + item.de);
+  card.addEventListener('click', () => Speech.speak(item.de, {el: card}));
+  card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); } });
+  formalTimeGrid.appendChild(card);
+});
+
+/* ==========================================================================
+   DAY-PARTS ARC — centerpiece 2
+   ========================================================================== */
+const arcNodesEl = document.getElementById('arcNodes');
+let arcVisited = new Set();
+
+function buildArcNodes(){
+  let svg = '';
+  DAY_PARTS.forEach(part => {
+    const icon = part.id === 'nacht' ? 'i-moon' : 'i-sun';
+    svg += `<g class="arc-node" data-id="${part.id}" tabindex="0" role="button" aria-label="اختر ${part.de}">`;
+    svg += `<circle cx="${part.x}" cy="${part.y}" r="26" fill="${ARC_COLORS[part.id]}" stroke="var(--surface)" stroke-width="3"/>`;
+    svg += `<svg x="${part.x-11}" y="${part.y-11}" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#${icon}"/></svg>`;
+    svg += `</g>`;
+  });
+  arcNodesEl.innerHTML = svg;
+  document.querySelectorAll('.arc-node').forEach(node => {
+    node.addEventListener('click', () => selectArcNode(node.dataset.id));
+    node.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); selectArcNode(node.dataset.id); } });
+  });
+}
+
+function selectArcNode(id, opts){
+  opts = opts || {};
+  const part = DAY_PARTS.find(p => p.id === id);
+  document.querySelectorAll('.arc-node').forEach(n => n.classList.toggle('active', n.dataset.id === id));
+  const phraseEl = document.getElementById('arcResultPhrase');
+  phraseEl.textContent = part.prep;
+  phraseEl.dataset.plain = part.sentence;
+  phraseEl.setAttribute('aria-label', 'استمع لـ ' + part.sentence);
+  document.getElementById('arcResultTime').textContent = part.time;
+  document.getElementById('arcResultAr').textContent = part.ar;
+  document.getElementById('arcNote').innerHTML = part.exception
+    ? `<b>استثناء:</b> ${part.de} مؤنثة (die)، لذا نستخدم <b>in der Nacht</b> بدلًا من am.`
+    : `${part.de} مذكّرة (der)، لذا نستخدم <b>am</b> + الاسم كالمعتاد.`;
+  if(opts.speak !== false) Speech.speak(part.sentence, {el: phraseEl});
+  arcVisited.add(id);
+  if(arcVisited.size >= DAY_PARTS.length) unlockBadge('explorer');
+}
+buildArcNodes();
+selectArcNode('morgen', {speak:false});
+
+document.getElementById('arcResultPhrase').addEventListener('click', function(){ Speech.speak(this.dataset.plain, {el:this}); });
+document.getElementById('arcResultPhrase').addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); e.currentTarget.click(); } });
+
+/* ==========================================================================
+   TIME PREPOSITIONS — formation cards
+   ========================================================================== */
+const prepGrid = document.getElementById('prepGrid');
+TIME_PREPOSITIONS.forEach(p => {
+  const card = document.createElement('div');
+  card.className = 'formation-card';
+  card.innerHTML = `
+    <div class="fc-word de">${p.word}</div>
+    <div class="fc-example de">${p.example}</div>
+    <div class="fc-ar">${p.ar}</div>`;
+  card.tabIndex = 0; card.setAttribute('role','button'); card.setAttribute('aria-label', 'استمع لـ ' + p.example);
+  card.addEventListener('click', () => Speech.speak(p.example, {el: card}));
+  card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); } });
+  prepGrid.appendChild(card);
+});
+
+/* ==========================================================================
+   PRACTICAL — extra-notes accordion
+   ========================================================================== */
+const extraAccordion = document.getElementById('extraAccordion');
+EXTRA_NOTES.forEach((note, i) => {
+  const item = document.createElement('div');
+  item.className = 'accordion-item';
+  item.innerHTML = `
+    <button class="accordion-trigger" aria-expanded="false">
+      <span class="accordion-title"><span class="tag mono">${toAr(i+1)}</span>${note.q}</span>
+      <svg class="icon chevron"><use href="#i-chevron"/></svg>
+    </button>
+    <div class="accordion-panel"><div class="accordion-body">${note.body}</div></div>`;
+  const trigger = item.querySelector('.accordion-trigger');
+  trigger.addEventListener('click', () => {
+    item.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+  });
+  item.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  extraAccordion.appendChild(item);
 });
 
 /* ==========================================================================
@@ -1698,10 +1878,10 @@ document.querySelectorAll('.exercise-tab').forEach(tab => {
   });
 });
 
-/* --- MATCH (greeting <-> Arabic meaning) --- */
+/* --- MATCH (German word <-> Arabic meaning) --- */
 const panelMatch = document.getElementById('panelMatch');
 (function initMatch(){
-  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على عبارة من العمود الأيمن، ثم معناها الصحيح من العمود الأيسر.</div>
+  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على كلمة من العمود الأيمن، ثم معناها الصحيح من العمود الأيسر.</div>
     <div class="match-grid"><div class="match-col" id="matchLeft"></div><div class="match-col" id="matchRight"></div></div>`;
   const left = document.getElementById('matchLeft');
   const right = document.getElementById('matchRight');
@@ -1783,7 +1963,7 @@ MCQ.forEach((q) => {
   panelMcq.appendChild(block);
 });
 
-/* --- FILL (missing word in dialogue line, typed) --- */
+/* --- FILL (missing word, typed) --- */
 const panelFill = document.getElementById('panelFill');
 FILL.forEach(q => {
   const block = document.createElement('div');
@@ -1791,10 +1971,10 @@ FILL.forEach(q => {
   block.innerHTML = `
     <div class="fill-word-display">${q.display}</div>
     <div class="fill-row">
-      <input type="text" placeholder="؟" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل الكلمة الناقصة">
+      <input type="text" placeholder="؟" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل الجزء الناقص">
       <button class="fill-check">تحقّق</button>
       <span class="fill-result"></span>
-      <button class="icon-btn" data-speak-word="${q.full}" aria-label="استمع للجملة الكاملة"><svg class="icon"><use href="#i-speaker"/></svg></button>
+      <button class="icon-btn" data-speak-word="${q.full}" aria-label="استمع للصيغة الكاملة"><svg class="icon"><use href="#i-speaker"/></svg></button>
     </div>
     <div class="q-feedback">💡 ${q.hint}</div>`;
   const input = block.querySelector('input');
@@ -1900,7 +2080,7 @@ BUILDER.forEach((q) => {
 const panelListen = document.getElementById('panelListen');
 (function initListen(){
   panelListen.innerHTML = `
-    <div class="q-prompt">استمع إلى الحوار غير الرسمي كاملًا، وتابع الفقاعة المضاءة أثناء النطق. انقر على أي عبارة بمفردها لإعادة سماعها.</div>
+    <div class="q-prompt">استمع إلى حوار الأصدقاء كاملًا، وتابع الفقاعة المضاءة أثناء النطق. انقر على أي عبارة بمفردها لإعادة سماعها.</div>
     <button class="btn btn-primary" id="listenAllBtn"><svg class="icon" style="width:16px;height:16px"><use href="#i-headphones"/></svg> استمع للحوار كاملًا</button>
     <div class="listen-alphabet-row" id="listenRow"></div>
     <div class="qr-placeholder">
@@ -1932,7 +2112,7 @@ const panelListen = document.getElementById('panelListen');
    BADGES / ACHIEVEMENTS
    ========================================================================== */
 let unlockedBadges = {};
-try{ unlockedBadges = JSON.parse(localStorage.getItem('lesson2-greetings-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
+try{ unlockedBadges = JSON.parse(localStorage.getItem('lesson7-uhrzeit-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
 
 const badgesRow = document.getElementById('badgesRow');
 BADGES.forEach(b => {
@@ -1945,7 +2125,7 @@ BADGES.forEach(b => {
 function unlockBadge(id){
   if(unlockedBadges[id]) return;
   unlockedBadges[id] = true;
-  try{ localStorage.setItem('lesson2-greetings-badges', JSON.stringify(unlockedBadges)); }catch(e){}
+  try{ localStorage.setItem('lesson7-uhrzeit-badges', JSON.stringify(unlockedBadges)); }catch(e){}
   const el = document.getElementById('badge-' + id);
   if(el){ el.classList.add('unlocked','pop'); setTimeout(()=>el.classList.remove('pop'), 650); }
   const badge = BADGES.find(b=>b.id===id);
@@ -1973,7 +2153,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 /* ==========================================================================
    SECTION NAV: active-link highlight + click-to-scroll + progress
    ========================================================================== */
-const sections = ['#hero','#intro','#time-greetings','#casual','#farewells','#duSie','#introduce','#dialogue','#mistakes','#pronunciation','#exercises','#summary'].map(s => document.querySelector(s)).filter(Boolean);
+const sections = ['#hero','#intro','#time-vocab','#clock-face','#formal-time','#day-parts','#time-prepositions','#practical','#dialogue','#mistakes','#pronunciation','#exercises','#summary'].map(s => document.querySelector(s)).filter(Boolean);
 const visitedSections = new Set();
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -2094,6 +2274,6 @@ backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smoo
 })();
 </script>
 
-<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a1-lesson-02-begruessung" data-category="a1" data-title="التحيات وتقديم النفس — Begrüßung & Vorstellung" data-root="../../" defer></script>
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a1-lesson-07-uhrzeit" data-category="a1" data-title="الوقت والساعة — Die Uhrzeit" data-root="../../" defer></script>
 </body>
 </html>

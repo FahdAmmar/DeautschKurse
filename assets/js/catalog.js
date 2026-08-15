@@ -38,7 +38,7 @@ window.DEUTSCH_CATALOG = {
     "title": "المرحلة A1 — نقطة الانطلاق",
     "order": 1,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
-    "subtitle": "أول خطوتين في عالم الألمانية: الأبجدية والتحيات",
+    "subtitle": "الأبجدية والتحيات، الأرقام والألوان، العائلة والطعام، الوقت والمنزل، الجسم والصحة",
     "level": "A1",
     "icon": "seed",
     "key": "a1",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
@@ -58,7 +58,7 @@ window.DEUTSCH_CATALOG = {
     "title": "أدلة A2 الشاملة",
     "order": 3,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
-    "subtitle": "غوص عميق في أهم قواعد A2: الأزمنة، الانعكاسية، الناقصة، الجر، الصفات، والجمل الفرعية",
+    "subtitle": "غوص عميق في أهم قواعد A2: الأزمنة، الانعكاسية، الناقصة، الجر، الصفات، الجمل الفرعية، وصيغة الأمر",
     "level": "A2",
     "icon": "compass",
     "key": "a2",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
@@ -68,17 +68,17 @@ window.DEUTSCH_CATALOG = {
     "title": "مرجع القواعد — دفتر الملاحظات الكامل",
     "order": 4,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
-    "subtitle": "٢٢ مرجعًا تفاعليًا لأدق تفاصيل القواعد الألمانية",
+    "subtitle": "٢٣ مرجعًا تفاعليًا لأدق تفاصيل القواعد الألمانية",
     "level": "A2–B1",
     "icon": "book",
     "key": "grammatik",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
     "folder": "grammatik"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
   },
   {
-    "title": "عائلات الأفعال — إصدار الليل",
+    "title": "عائلات الأفعال",
     "order": 5,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
-    "subtitle": "خمس عائلات أفعال أساسية، بأسلوب سردي هادئ ووضع ليلي أنيق",
+    "subtitle": "ثماني عائلات أفعال أساسية، بأسلوب سردي غني — بعضها بوضع ليلي أنيق",
     "level": "A2",
     "icon": "moon",
     "key": "family-verben",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
@@ -131,6 +131,83 @@ window.DEUTSCH_CATALOG = {
     "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
     "path": "Deutsch/a1/lesson-02-begruessung.html",
     "thumb": "assets/thumbnails/a1-lesson-02-begruessung.jpg"
+  },
+  {
+    "title": "الأرقام الألمانية — Zahlen",
+    "order": 3,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الأرقام من ٠ إلى ١٠٠٠، قاعدة und لبناء الأرقام المركّبة، الأرقام الترتيبية، واستخدامها في الهاتف والأسعار والعمر.",
+    "badges": [],
+    "id": "a1-lesson-03-zahlen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-03-zahlen.html",
+    "thumb": "assets/thumbnails/a1-lesson-03-zahlen.jpg"
+  },
+  {
+    "title": "الألوان وأيام الأسبوع — Farben & Wochentage",
+    "order": 4,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "ألوان أساسية وثانوية بأداة مزج تفاعلية، مقدمة لتوافق الصفة مع الاسم، أيام الأسبوع، وحرف الجر المدمج am.",
+    "badges": [],
+    "id": "a1-lesson-04-farben-wochentage",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-04-farben-wochentage.html",
+    "thumb": "assets/thumbnails/a1-lesson-04-farben-wochentage.jpg"
+  },
+  {
+    "title": "العائلة وأدوات الملكية — Familie & Possessivpronomen",
+    "order": 5,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "مفردات العائلة القريبة والممتدة مع شجرة عائلة تفاعلية، أدوات الملكية mein/dein/sein، والحالة الاجتماعية.",
+    "badges": [],
+    "id": "a1-lesson-05-familie",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-05-familie.html",
+    "thumb": "assets/thumbnails/a1-lesson-05-familie.jpg"
+  },
+  {
+    "title": "الطعام والشراب وحالة النصب — Essen, Trinken & Akkusativ",
+    "order": 6,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "مفردات الطعام والشراب ووجبات اليوم الثلاث، أداة بناء تفاعلية لحالة Akkusativ مع Ich möchte، وقائمة مقهى تفاعلية.",
+    "badges": [],
+    "id": "a1-lesson-06-essen-trinken",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-06-essen-trinken.html",
+    "thumb": "assets/thumbnails/a1-lesson-06-essen-trinken.jpg"
+  },
+  {
+    "title": "الوقت والساعة — Die Uhrzeit",
+    "order": 7,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "ساعة تفاعلية تحوّل أي وقت للصيغتين الرسمية وغير الرسمية، قاعدة halb، وأقسام اليوم الستة بخط زمني تفاعلي.",
+    "badges": [],
+    "id": "a1-lesson-07-uhrzeit",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-07-uhrzeit.html",
+    "thumb": "assets/thumbnails/a1-lesson-07-uhrzeit.jpg"
+  },
+  {
+    "title": "المنزل والغرف وحروف الجر المكانية — Die Wohnung & Wechselpräpositionen",
+    "order": 8,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "غرف المنزل والأثاث الأساسي، حروف الجر التسعة ذات الاتجاهين، وأداة تفاعلية تفرّق بين Wo وWohin.",
+    "badges": [],
+    "id": "a1-lesson-08-wohnung",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-08-wohnung.html",
+    "thumb": "assets/thumbnails/a1-lesson-08-wohnung.jpg"
+  },
+  {
+    "title": "الجسم والصحة وضمائر الجر — Körper, Gesundheit & Dativpronomen",
+    "order": 9,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "أجزاء الجسم مع مخطط تفاعلي، مفردات الصحة والمرض، ضمائر الجر السبعة (mir, dir, ihm...)، وأداة بناء تفاعلية لتركيب Schmerzen الشهير tut/tun weh.",
+    "badges": [],
+    "id": "a1-lesson-09-koerper-gesundheit",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-09-koerper-gesundheit.html",
+    "thumb": "assets/thumbnails/a1-lesson-09-koerper-gesundheit.jpg"
   },
 
   // ────────────────────────────────────────────────────────────
@@ -382,6 +459,17 @@ window.DEUTSCH_CATALOG = {
     "path": "Deutsch/a2/guide-08-nebensaetze.html",
     "thumb": "assets/thumbnails/a2-guide-08-nebensaetze.jpg"
   },
+  {
+    "title": "الدرس ٩ — صيغة الأمر الشاملة (Imperativ)",
+    "order": 11,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "شرح شامل وتفاعلي لصيغة الأمر الألمانية Imperativ لصيغ du وihr وSie، بأمثلة صوتية وتمارين تفاعلية.",
+    "badges": [],
+    "id": "a2-guide-09-imperativ",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a2/guide-09-imperativ.html",
+    "thumb": "assets/thumbnails/a2-guide-09-imperativ.jpg"
+  },
 
   // ────────────────────────────────────────────────────────────
   // قسم: مرجع القواعد — دفتر الملاحظات الكامل  (category: "grammatik")
@@ -628,6 +716,17 @@ window.DEUTSCH_CATALOG = {
     "path": "Deutsch/grammatik/adjektivdeklination.html",
     "thumb": "assets/thumbnails/grammatik-adjektivdeklination.jpg"
   },
+  {
+    "title": "welch- : welcher · welche · welches — أداة الاستفهام والوصل",
+    "order": 23,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "شرح شامل لأداة welch- بكل استخداماتها: الاستفهام، والنسب (الوصل)، والتنكير، والتعجب — مع جداول تصريف وتمارين واختبار ختامي.",
+    "badges": ["شامل"],
+    "id": "grammatik-welch-interrogativ-relativ-indefinit",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "grammatik",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik/welch-interrogativ-relativ-indefinit.html",
+    "thumb": "assets/thumbnails/grammatik-welch-interrogativ-relativ-indefinit.jpg"
+  },
 
   // ────────────────────────────────────────────────────────────
   // قسم: عائلات الأفعال — إصدار الليل  (category: "family-verben")
@@ -686,6 +785,39 @@ window.DEUTSCH_CATALOG = {
     "category": "family-verben",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
     "path": "Deutsch/family-verben/stellen.html",
     "thumb": "assets/thumbnails/family-verben-stellen.jpg"
+  },
+  {
+    "title": "مجرّة kommen — عائلة أفعال المجيء",
+    "order": 6,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "فعل kommen وعائلته: ankommen، bekommen، mitkommen، vorkommen، auskommen، entkommen، zurückkommen — مع الحالة الإعرابية والتصريف والنطق.",
+    "badges": [],
+    "id": "family-verben-kommen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "family-verben",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/family-verben/kommen.html",
+    "thumb": "assets/thumbnails/family-verben-kommen.jpg"
+  },
+  {
+    "title": "gehen وعائلته — الأفعال المنفصلة وغير المنفصلة",
+    "order": 7,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "فعل gehen وعائلة بادئاته: vorgehen، ausgehen، angehen، umgehen، nachgehen، entgehen، durchgehen، untergehen — تصريف وحالة ونطق.",
+    "badges": [],
+    "id": "family-verben-gehen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "family-verben",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/family-verben/gehen.html",
+    "thumb": "assets/thumbnails/family-verben-gehen.jpg"
+  },
+  {
+    "title": "nehmen وعائلته — تغيّر الحرف الجذري والأفعال المنفصلة",
+    "order": 8,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "فعل nehmen وعائلة بادئاته: annehmen، mitnehmen، teilnehmen، wahrnehmen، abnehmen، zunehmen، entnehmen — تغيّر الحرف الجذري، الحالة، والنطق.",
+    "badges": [],
+    "id": "family-verben-nehmen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "family-verben",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/family-verben/nehmen.html",
+    "thumb": "assets/thumbnails/family-verben-nehmen.jpg"
   },
 
   // ────────────────────────────────────────────────────────────

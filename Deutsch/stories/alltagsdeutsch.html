@@ -66,6 +66,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -130,6 +131,9 @@ body {
   border-bottom: 1px solid var(--surface-border);
   transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
 }
+/* إصلاح: بدون هذا، يتمدد <nav> لعرض محتواه الكامل (658px) بدل الانكماش
+   ضمن المساحة المتاحة فعليًا، فيصبح overflow-x:auto في .nav-links عديم الأثر */
+.navbar nav { min-width: 0; flex: 1; overflow: hidden; }
 
 .brand {
   display: flex;

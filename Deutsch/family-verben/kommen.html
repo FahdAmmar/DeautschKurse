@@ -1,0 +1,2185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>مجرّة kommen | تعلّم عائلة أفعال المجيء الألمانية</title>
+<meta name="description" content="درس تفاعلي شامل حول فعل kommen وعائلته: ankommen، bekommen، mitkommen، vorkommen، auskommen، entkommen، zurückkommen — مع الحالة الإعرابية والتصريف الكامل والنطق.">
+<style>
+/* ==========================================================================
+   KOMMEN GALAXY — Design Tokens
+   Concept: kommen is the sun at the centre of a small solar system.
+   Every prefixed verb is a planet orbiting it. Each planet's colour encodes
+   the grammatical case it governs:
+     • Akkusativ  → comet-fire  (direct hit, a direct object)
+     • Dativ      → aurora-ice  (an indirect target, reached via a preposition)
+     • no case    → nebula-green (pure movement, nothing "governed")
+   ========================================================================== */
+:root{
+  /* ---- shape & rhythm ---- */
+  --radius-s:10px;
+  --radius-m:16px;
+  --radius-l:24px;
+  --radius-xl:32px;
+  --space-3xs:.25rem;
+  --space-2xs:.5rem;
+  --space-xs:.75rem;
+  --space-s:1rem;
+  --space-m:1.5rem;
+  --space-l:2.25rem;
+  --space-xl:3.5rem;
+  --space-2xl:5.5rem;
+  --container:1180px;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --dur-fast:.18s;
+  --dur-med:.42s;
+  --dur-slow:.9s;
+
+  /* ---- case colours (constant across themes) ---- */
+  --akk-1:#ff7a52;
+  --akk-2:#ff4f6d;
+  --akk-glow:rgba(255,122,82,.45);
+  --dat-1:#4ea8ff;
+  --dat-2:#7c6bff;
+  --dat-glow:rgba(78,168,255,.45);
+  --neu-1:#2fe0a8;
+  --neu-2:#3fd0d8;
+  --neu-glow:rgba(47,224,168,.4);
+  --sun-1:#ffd166;
+  --sun-2:#ff9f45;
+  --sun-glow:rgba(255,209,102,.55);
+
+  /* ---- font stacks ---- */
+  --font-display:'Poppins','Segoe UI','Century Gothic',system-ui,-apple-system,sans-serif;
+  --font-body:'Cairo','Tajawal','Segoe UI',Tahoma,Arial,sans-serif;
+  --font-mono:'Consolas','SFMono-Regular',Menlo,monospace;
+}
+
+/* Registering the theme-swapped colours as typed properties makes the
+   cross-fade between light/dark reliably animatable in every engine
+   (unregistered custom properties are not guaranteed to drive a smooth
+   transition on the property that consumes them). */
+@property --bg-0{ syntax:'<color>'; inherits:true; initial-value:#f5f6fb; }
+@property --nav-bg{ syntax:'<color>'; inherits:true; initial-value:#ffffff; }
+@property --text-0{ syntax:'<color>'; inherits:true; initial-value:#141326; }
+@property --text-1{ syntax:'<color>'; inherits:true; initial-value:#2c2c46; }
+@property --text-2{ syntax:'<color>'; inherits:true; initial-value:#5b5b78; }
+@property --text-3{ syntax:'<color>'; inherits:true; initial-value:#8686a3; }
+@property --surface{ syntax:'<color>'; inherits:true; initial-value:#ffffff; }
+@property --surface-2{ syntax:'<color>'; inherits:true; initial-value:#f7f8fd; }
+@property --border{ syntax:'<color>'; inherits:true; initial-value:rgba(20,25,45,.10); }
+
+/* ---------------- LIGHT THEME ---------------- */
+:root,
+[data-theme="light"]{
+  --bg-0:#f5f6fb;
+  --bg-1:#eef0fa;
+  --bg-2:#ffffff;
+  --bg-nebula-a:rgba(78,168,255,.12);
+  --bg-nebula-b:rgba(255,122,82,.10);
+  --bg-nebula-c:rgba(47,224,168,.10);
+  --surface:#ffffff;
+  --surface-2:#f7f8fd;
+  --glass-bg:rgba(255,255,255,.62);
+  --glass-border:rgba(20,25,45,.08);
+  --text-0:#141326;
+  --text-1:#2c2c46;
+  --text-2:#5b5b78;
+  --text-3:#8686a3;
+  --border:rgba(20,25,45,.10);
+  --shadow-sm:0 1px 2px rgba(20,25,60,.05), 0 1px 1px rgba(20,25,60,.04);
+  --shadow-md:0 8px 24px -8px rgba(30,35,80,.16), 0 2px 8px rgba(30,35,80,.06);
+  --shadow-lg:0 24px 60px -16px rgba(30,35,80,.22), 0 8px 24px rgba(30,35,80,.08);
+  --shadow-glow-sun: 0 0 60px var(--sun-glow);
+  --star-opacity:0;
+  --nav-bg:rgba(255,255,255,.72);
+  --code-bg:#eef0fb;
+  --scrollbar:rgba(20,25,45,.18);
+}
+
+/* ---------------- DARK THEME ---------------- */
+[data-theme="dark"]{
+  --bg-0:#080b16;
+  --bg-1:#0c1120;
+  --bg-2:#111731;
+  --bg-nebula-a:rgba(78,168,255,.16);
+  --bg-nebula-b:rgba(255,90,120,.12);
+  --bg-nebula-c:rgba(47,224,168,.10);
+  --surface:#121a33;
+  --surface-2:#161f3d;
+  --glass-bg:rgba(22,30,60,.55);
+  --glass-border:rgba(255,255,255,.09);
+  --text-0:#f3f4fb;
+  --text-1:#dcdff2;
+  --text-2:#a7acd0;
+  --text-3:#767ba3;
+  --border:rgba(255,255,255,.09);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:0 10px 30px -10px rgba(0,0,0,.55), 0 2px 10px rgba(0,0,0,.35);
+  --shadow-lg:0 30px 70px -20px rgba(0,0,0,.65), 0 10px 30px rgba(0,0,0,.4);
+  --shadow-glow-sun: 0 0 90px var(--sun-glow);
+  --star-opacity:1;
+  --nav-bg:rgba(10,14,28,.68);
+  --code-bg:#0d1326;
+  --scrollbar:rgba(255,255,255,.18);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
+}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  background:var(--bg-0);
+  color:var(--text-1);
+  line-height:1.75;
+  overflow-x:hidden;
+  position:relative;
+}
+::selection{background:var(--dat-1); color:#fff;}
+::-webkit-scrollbar{width:10px; height:10px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--scrollbar); border-radius:10px;}
+a{color:inherit;}
+img,svg{display:block; max-width:100%;}
+button{font-family:inherit;}
+h1,h2,h3,h4{font-family:var(--font-display); color:var(--text-0); margin:0 0 var(--space-s); line-height:1.25;}
+p{margin:0 0 var(--space-s); color:var(--text-2);}
+.container{max-width:var(--container); margin-inline:auto; padding-inline:var(--space-m);}
+@media (max-width:640px){ .container{padding-inline:var(--space-s);} }
+
+/* Latin / German inline text always LTR even inside RTL Arabic flow */
+.de{ direction:ltr; unicode-bidi:isolate; font-family:var(--font-display); }
+
+/* ---------------- Starfield backdrop ---------------- */
+.starfield{
+  position:fixed; inset:0; z-index:-2; pointer-events:none;
+  opacity:var(--star-opacity); transition:opacity var(--dur-slow) var(--ease-out);
+  background-image:
+    radial-gradient(1.5px 1.5px at 20% 30%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 75% 15%, #fff, transparent),
+    radial-gradient(1px 1px at 50% 60%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 85% 75%, #fff, transparent),
+    radial-gradient(1px 1px at 10% 80%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 35% 90%, #fff, transparent),
+    radial-gradient(1px 1px at 65% 40%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 95% 45%, #fff, transparent);
+  background-repeat:repeat; background-size:600px 600px;
+  animation:drift-stars 120s linear infinite;
+}
+@keyframes drift-stars{ from{background-position:0 0;} to{background-position:-600px 600px;} }
+.nebula-bg{
+  position:fixed; inset:0; z-index:-3; pointer-events:none;
+  background:
+    radial-gradient(50% 40% at 15% 10%, var(--bg-nebula-a), transparent 70%),
+    radial-gradient(45% 35% at 90% 20%, var(--bg-nebula-b), transparent 70%),
+    radial-gradient(50% 40% at 50% 100%, var(--bg-nebula-c), transparent 70%),
+    var(--bg-0);
+}
+
+/* Theme cross-fade: dip the whole page's opacity down, swap every colour
+   token instantly while hidden, then fade back in. Animating a plain
+   opacity number (rather than transitioning colours derived from a custom
+   property) is what makes this reliable across every engine. */
+body{ transition:opacity .16s ease; }
+body.theme-flash{ opacity:.4; }
+
+/* ---------------- Skip link (a11y) ---------------- */
+.skip-link{
+  position:fixed; top:-60px; right:var(--space-s); z-index:999;
+  background:var(--sun-1); color:#241800; padding:.7rem 1.2rem; border-radius:var(--radius-s);
+  font-weight:700; transition:top var(--dur-fast) var(--ease-out);
+}
+.skip-link:focus{top:var(--space-s);}
+
+/* ---------------- Focus visibility ---------------- */
+:focus-visible{ outline:3px solid var(--dat-1); outline-offset:3px; border-radius:6px; }
+
+/* ---------------- Top progress bar ---------------- */
+.reading-progress{
+  position:fixed; top:0; insetInlineStart:0; height:4px; width:100%; z-index:1000;
+  background:transparent;
+}
+.reading-progress__bar{
+  height:100%; width:0%;
+  background:linear-gradient(90deg,var(--akk-1),var(--sun-1),var(--dat-1),var(--neu-1));
+  background-size:300% 100%;
+  animation:gradient-flow 6s linear infinite;
+  transition:width .12s linear;
+  box-shadow:0 0 12px var(--sun-glow);
+}
+@keyframes gradient-flow{ 0%{background-position:0% 0;} 100%{background-position:300% 0;} }
+
+/* ---------------- Navigation ---------------- */
+.navbar{
+  position:sticky; top:4px; z-index:900; backdrop-filter:blur(18px) saturate(160%);
+  -webkit-backdrop-filter:blur(18px) saturate(160%);
+  background:var(--nav-bg); border-bottom:1px solid var(--border);
+}
+.navbar__inner{ display:flex; align-items:center; gap:var(--space-m); padding-block:.7rem; }
+.navbar__brand{ display:flex; align-items:center; gap:.6rem; font-weight:800; font-size:1.05rem; white-space:nowrap; }
+.navbar__brand-orb{
+  width:30px; height:30px; border-radius:50%; flex:none;
+  background:radial-gradient(circle at 32% 28%, #fff8, transparent 45%), linear-gradient(140deg,var(--sun-1),var(--sun-2));
+  box-shadow:0 0 16px var(--sun-glow);
+  animation:pulse-sun 3.2s ease-in-out infinite;
+}
+@keyframes pulse-sun{ 0%,100%{ transform:scale(1);} 50%{ transform:scale(1.12);} }
+.navbar__links{ display:flex; gap:.2rem; overflow-x:auto; scrollbar-width:none; flex:1; }
+.navbar__links::-webkit-scrollbar{display:none;}
+.navbar__link{
+  padding:.5rem .85rem; border-radius:999px; font-size:.87rem; font-weight:600;
+  color:var(--text-2); white-space:nowrap; transition:all var(--dur-fast) var(--ease-out);
+  border:1px solid transparent; position:relative;
+}
+.navbar__link:hover{ color:var(--text-0); background:var(--surface-2); }
+.navbar__link.is-active{ color:var(--bg-0); background:linear-gradient(120deg,var(--dat-1),var(--dat-2)); box-shadow:var(--shadow-sm); }
+.navbar__actions{ display:flex; align-items:center; gap:.4rem; flex:none; }
+.icon-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px; border-radius:12px; border:1px solid var(--border);
+  background:var(--surface-2); color:var(--text-1); cursor:pointer;
+  transition:transform var(--dur-fast) var(--ease-spring), background-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.icon-btn:hover{ transform:translateY(-2px); box-shadow:var(--shadow-sm); }
+.icon-btn:active{ transform:translateY(0) scale(.94); }
+.icon-btn svg{ width:19px; height:19px; }
+.theme-toggle{ position:relative; overflow:hidden; }
+.theme-toggle .sun-ic,.theme-toggle .moon-ic{ position:absolute; transition:transform var(--dur-med) var(--ease-spring), opacity var(--dur-med); }
+[data-theme="light"] .theme-toggle .moon-ic{ transform:translateY(30px); opacity:0; }
+[data-theme="light"] .theme-toggle .sun-ic{ transform:translateY(0); opacity:1; }
+[data-theme="dark"] .theme-toggle .sun-ic{ transform:translateY(-30px); opacity:0; }
+[data-theme="dark"] .theme-toggle .moon-ic{ transform:translateY(0); opacity:1; }
+
+/* search panel */
+.search-panel{
+  position:fixed; inset-inline:0; top:0; z-index:1200; display:flex; justify-content:center;
+  padding-top:8vh; background:rgba(5,7,15,.55); backdrop-filter:blur(4px);
+  opacity:0; pointer-events:none; transition:opacity var(--dur-fast) var(--ease-out);
+}
+.search-panel.is-open{ opacity:1; pointer-events:auto; }
+.search-box{
+  width:min(560px,92vw); background:var(--surface); border-radius:var(--radius-l); box-shadow:var(--shadow-lg);
+  border:1px solid var(--border); padding:var(--space-s); max-height:70vh; display:flex; flex-direction:column; gap:.6rem;
+  transform:translateY(-14px); transition:transform var(--dur-med) var(--ease-spring);
+}
+.search-panel.is-open .search-box{ transform:translateY(0); }
+.search-box input{
+  width:100%; padding:.85rem 1rem; border-radius:var(--radius-m); border:1px solid var(--border);
+  background:var(--surface-2); color:var(--text-0); font-size:1rem; font-family:inherit;
+}
+.search-results{ overflow-y:auto; display:flex; flex-direction:column; gap:.3rem; }
+.search-result{ padding:.6rem .8rem; border-radius:var(--radius-s); cursor:pointer; font-size:.9rem; color:var(--text-2); }
+.search-result:hover, .search-result.active{ background:var(--surface-2); color:var(--text-0); }
+.search-result mark{ background:var(--sun-1); color:#241800; border-radius:3px; padding:0 2px; }
+
+/* ---------------- Buttons ---------------- */
+.btn{
+  display:inline-flex; align-items:center; gap:.5rem; justify-content:center;
+  padding:.8rem 1.5rem; border-radius:999px; font-weight:700; font-size:.95rem;
+  cursor:pointer; border:1px solid transparent; transition:transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-fast), background-color var(--dur-fast);
+  user-select:none;
+}
+.btn:active{ transform:scale(.96); }
+.btn--primary{ background:linear-gradient(120deg,var(--dat-1),var(--dat-2)); color:#fff; box-shadow:0 10px 24px -8px var(--dat-glow); }
+.btn--primary:hover{ transform:translateY(-2px); box-shadow:0 14px 30px -6px var(--dat-glow); }
+.btn--sun{ background:linear-gradient(120deg,var(--sun-1),var(--sun-2)); color:#241800; box-shadow:0 10px 24px -8px var(--sun-glow); }
+.btn--sun:hover{ transform:translateY(-2px); }
+.btn--ghost{ background:var(--surface-2); color:var(--text-1); border-color:var(--border); }
+.btn--ghost:hover{ background:var(--surface); transform:translateY(-2px); }
+.btn:disabled{ opacity:.45; cursor:not-allowed; transform:none !important; }
+.btn svg{ width:18px; height:18px; }
+
+/* ---------------- Section shell ---------------- */
+section{ position:relative; padding-block:var(--space-2xl); scroll-margin-top:90px; }
+.section-head{ max-width:760px; margin-inline:auto; text-align:center; margin-bottom:var(--space-l); }
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.5rem; font-size:.78rem; font-weight:800; letter-spacing:.05em;
+  color:var(--dat-1); background:color-mix(in srgb, var(--dat-1) 14%, transparent); padding:.35rem .9rem; border-radius:999px;
+  margin-bottom:var(--space-s);
+}
+.section-head h2{ font-size:clamp(1.7rem,4vw,2.5rem); }
+.section-head p{ font-size:1.05rem; }
+
+/* ---------------- Reveal on scroll ---------------- */
+.reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+.reveal-scale{ opacity:0; transform:scale(.88); transition:opacity .7s var(--ease-out), transform .7s var(--ease-spring); }
+.reveal-scale.is-visible{ opacity:1; transform:scale(1); }
+.stagger > *{ transition-delay:calc(var(--i,0) * 70ms); }
+
+/* ---------------- Glass card ---------------- */
+.glass{
+  background:var(--glass-bg); border:1px solid var(--glass-border); backdrop-filter:blur(16px) saturate(160%);
+  -webkit-backdrop-filter:blur(16px) saturate(160%); border-radius:var(--radius-l); box-shadow:var(--shadow-md);
+}
+
+/* ---------------- Case badges (used everywhere) ---------------- */
+.badge{
+  display:inline-flex; align-items:center; gap:.4rem; font-size:.76rem; font-weight:800; padding:.32rem .75rem;
+  border-radius:999px; letter-spacing:.02em; white-space:nowrap;
+}
+.badge::before{ content:''; width:7px; height:7px; border-radius:50%; }
+.badge--akk{ color:var(--akk-1); background:color-mix(in srgb, var(--akk-1) 15%, transparent); }
+.badge--akk::before{ background:var(--akk-1); box-shadow:0 0 8px var(--akk-1); }
+.badge--dat{ color:var(--dat-1); background:color-mix(in srgb, var(--dat-1) 15%, transparent); }
+.badge--dat::before{ background:var(--dat-1); box-shadow:0 0 8px var(--dat-1); }
+.badge--neu{ color:var(--neu-1); background:color-mix(in srgb, var(--neu-1) 15%, transparent); }
+.badge--neu::before{ background:var(--neu-1); box-shadow:0 0 8px var(--neu-1); }
+.badge--aux{ color:var(--text-2); background:var(--surface-2); border:1px solid var(--border); }
+.badge--aux::before{ display:none; }
+
+/* ---------------- Hero ---------------- */
+.hero{ padding-top:var(--space-2xl); overflow:visible; }
+.hero__grid{ display:grid; grid-template-columns:1.05fr 1fr; gap:var(--space-xl); align-items:center; }
+@media (max-width:960px){ .hero__grid{ grid-template-columns:1fr; gap:var(--space-l);} }
+.hero__eyebrow{ display:inline-flex; gap:.5rem; align-items:center; font-weight:800; font-size:.8rem; letter-spacing:.08em; color:var(--sun-2); margin-bottom:var(--space-s);}
+.hero h1{ font-size:clamp(2.2rem,5vw,3.4rem); letter-spacing:-.01em; }
+.hero h1 .de{ background:linear-gradient(120deg,var(--sun-1),var(--akk-1) 45%,var(--dat-1) 90%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.hero p.lead{ font-size:1.12rem; color:var(--text-1); max-width:52ch; }
+.hero__cta{ display:flex; flex-wrap:wrap; gap:.8rem; margin-top:var(--space-m); }
+.hero__stats{ display:flex; gap:var(--space-l); margin-top:var(--space-l); flex-wrap:wrap;}
+.hero__stat b{ display:block; font-family:var(--font-display); font-size:1.6rem; color:var(--text-0); }
+.hero__stat span{ font-size:.82rem; color:var(--text-3); }
+
+/* Orbit diagram (signature element) */
+.orbit-wrap{ position:relative; aspect-ratio:1/1; width:100%; max-width:520px; margin-inline:auto; }
+.orbit-svg{ width:100%; height:100%; overflow:visible; }
+.orbit-ring{ fill:none; stroke-width:1.4; opacity:.55; }
+.orbit-ring.akk{ stroke:var(--akk-1); }
+.orbit-ring.dat{ stroke:var(--dat-1); }
+.orbit-ring.neu{ stroke:var(--neu-1); }
+.sun-core{ filter:drop-shadow(0 0 22px var(--sun-glow)); cursor:pointer; }
+.sun-core circle{ fill:url(#sunGradient); }
+.sun-core text{ fill:#241800; font-family:var(--font-display); font-weight:800; }
+.planet{ cursor:pointer; transition:filter var(--dur-fast); transform-box:fill-box; transform-origin:center; }
+.planet:hover .planet-dot, .planet:focus .planet-dot{ filter:brightness(1.25); }
+.planet-dot{ transition:transform var(--dur-fast) var(--ease-spring); animation:planet-breathe 4.5s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+.planet:hover .planet-dot{ transform:scale(1.28); }
+.planet:nth-of-type(2) .planet-dot{ animation-delay:.6s; }
+.planet:nth-of-type(3) .planet-dot{ animation-delay:1.2s; }
+.planet:nth-of-type(4) .planet-dot{ animation-delay:1.8s; }
+@keyframes planet-breathe{ 0%,100%{ filter:brightness(1);} 50%{ filter:brightness(1.18);} }
+.planet-label{ font-family:var(--font-display); font-weight:700; font-size:10.5px; fill:var(--text-1); }
+.orbit-comet{ offset-rotate:0deg; animation:travel-orbit linear infinite; }
+.orbit-comet.akk{ offset-path:path("M 360,250 A 110,110 0 1 1 359.9,250"); animation-duration:14s; fill:var(--akk-1); }
+.orbit-comet.dat{ offset-path:path("M 410,250 A 160,160 0 1 1 409.9,250"); animation-duration:22s; fill:var(--dat-1); }
+.orbit-comet.neu{ offset-path:path("M 455,250 A 205,205 0 1 1 454.9,250"); animation-duration:30s; fill:var(--neu-1); }
+@keyframes travel-orbit{ from{ offset-distance:0%;} to{ offset-distance:100%;} }
+@supports not (offset-path: path("M0,0")){ .orbit-comet{ display:none; } }
+
+/* ---------------- Legend / case explainer ---------------- */
+.case-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-m); }
+@media (max-width:820px){ .case-grid{ grid-template-columns:1fr; } }
+.case-card{
+  padding:var(--space-m); border-radius:var(--radius-l); position:relative; overflow:hidden;
+  border:1px solid var(--border); background:var(--surface);
+  transition:transform var(--dur-med) var(--ease-spring), box-shadow var(--dur-med);
+}
+.case-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+.case-card::before{
+  content:''; position:absolute; inset:0 0 auto 0; height:5px;
+}
+.case-card--akk::before{ background:linear-gradient(90deg,var(--akk-1),var(--akk-2)); }
+.case-card--dat::before{ background:linear-gradient(90deg,var(--dat-1),var(--dat-2)); }
+.case-card--neu::before{ background:linear-gradient(90deg,var(--neu-1),var(--neu-2)); }
+.case-card__icon{
+  width:54px; height:54px; border-radius:16px; display:flex; align-items:center; justify-content:center;
+  margin-bottom:var(--space-s); font-size:1.6rem;
+}
+.case-card--akk .case-card__icon{ background:linear-gradient(140deg,var(--akk-1),var(--akk-2)); box-shadow:0 10px 22px -8px var(--akk-glow); }
+.case-card--dat .case-card__icon{ background:linear-gradient(140deg,var(--dat-1),var(--dat-2)); box-shadow:0 10px 22px -8px var(--dat-glow); }
+.case-card--neu .case-card__icon{ background:linear-gradient(140deg,var(--neu-1),var(--neu-2)); box-shadow:0 10px 22px -8px var(--neu-glow); }
+.case-card h3{ font-size:1.15rem; }
+.case-card .q{ font-size:.85rem; color:var(--text-3); font-weight:700; margin-bottom:.3rem; }
+.case-card ul{ margin:.6rem 0 0; padding-inline-start:1.1rem; font-size:.92rem; color:var(--text-2); }
+.case-card li{ margin-bottom:.3rem; }
+
+/* ---------------- Verb builder machine ---------------- */
+.builder{ display:flex; flex-direction:column; align-items:center; gap:var(--space-m); }
+.builder-select{ display:flex; gap:.5rem; flex-wrap:wrap; justify-content:center; }
+.chip{
+  padding:.55rem 1.1rem; border-radius:999px; border:1px solid var(--border); background:var(--surface);
+  font-family:var(--font-display); font-weight:700; cursor:pointer; font-size:.88rem; color:var(--text-2);
+  transition:all var(--dur-fast) var(--ease-spring);
+}
+.chip:hover{ transform:translateY(-2px); }
+.chip.is-active{ color:#fff; border-color:transparent; }
+.chip.is-active.akk{ background:linear-gradient(120deg,var(--akk-1),var(--akk-2)); box-shadow:0 8px 18px -6px var(--akk-glow); }
+.chip.is-active.dat{ background:linear-gradient(120deg,var(--dat-1),var(--dat-2)); box-shadow:0 8px 18px -6px var(--dat-glow); }
+.chip.is-active.neu{ background:linear-gradient(120deg,var(--neu-1),var(--neu-2)); box-shadow:0 8px 18px -6px var(--neu-glow); }
+
+.machine{ display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; justify-content:center; perspective:1000px; min-height:120px; }
+.block{
+  font-family:var(--font-mono); font-weight:700; font-size:clamp(1.1rem,3vw,1.7rem); padding:.9rem 1.2rem;
+  border-radius:var(--radius-m); color:#fff; box-shadow:var(--shadow-md); transform-style:preserve-3d;
+  animation:block-in .55s var(--ease-spring) both;
+}
+@keyframes block-in{ from{ opacity:0; transform:translateY(18px) rotateX(40deg);} to{ opacity:1; transform:translateY(0) rotateX(0);} }
+.block--prefix{ background:linear-gradient(150deg,#8b7bff,#4ea8ff); }
+.block--stem{ background:linear-gradient(150deg,var(--sun-1),var(--sun-2)); color:#241800; }
+.block--ending{ background:linear-gradient(150deg,var(--neu-1),var(--neu-2)); color:#052e26; }
+.block--ge{ background:linear-gradient(150deg,#c084fc,#a855f7); }
+.block--aux{ background:linear-gradient(150deg,var(--akk-1),var(--akk-2)); }
+.plus-sign{ font-size:1.4rem; color:var(--text-3); font-weight:800; }
+.machine-result{
+  margin-top:var(--space-s); font-family:var(--font-display); font-size:clamp(1.4rem,4vw,2.1rem); font-weight:800;
+  color:var(--text-0); direction:ltr;
+}
+.machine-note{ font-size:.9rem; color:var(--text-3); text-align:center; max-width:60ch; }
+
+/* ---------------- Verb explorer (tabs) ---------------- */
+.verb-tabs{ display:flex; gap:.5rem; flex-wrap:wrap; justify-content:center; margin-bottom:var(--space-m); }
+.verb-tab{
+  display:flex; flex-direction:column; align-items:center; gap:.35rem; padding:.7rem 1.1rem 0.6rem;
+  border-radius:var(--radius-m); border:1px solid var(--border); background:var(--surface); cursor:pointer; min-width:108px;
+  transition:all var(--dur-fast) var(--ease-spring); position:relative;
+}
+.verb-tab:hover{ transform:translateY(-3px); box-shadow:var(--shadow-sm); }
+.verb-tab .de{ font-weight:800; font-size:.98rem; }
+.verb-tab small{ color:var(--text-3); font-size:.68rem; font-weight:700; }
+.verb-tab .dot{ width:8px; height:8px; border-radius:50%; margin-top:.15rem; }
+.verb-tab[aria-selected="true"]{ border-color:transparent; box-shadow:var(--shadow-md); }
+.verb-tab[aria-selected="true"].akk{ background:linear-gradient(160deg,color-mix(in srgb,var(--akk-1) 18%,var(--surface)),var(--surface)); }
+.verb-tab[aria-selected="true"].dat{ background:linear-gradient(160deg,color-mix(in srgb,var(--dat-1) 18%,var(--surface)),var(--surface)); }
+.verb-tab[aria-selected="true"].neu{ background:linear-gradient(160deg,color-mix(in srgb,var(--neu-1) 18%,var(--surface)),var(--surface)); }
+
+.verb-panel{ display:none; }
+.verb-panel.is-active{ display:block; animation:fade-in-up .5s var(--ease-out); }
+@keyframes fade-in-up{ from{ opacity:0; transform:translateY(14px);} to{ opacity:1; transform:translateY(0);} }
+
+.verb-hero{
+  display:grid; grid-template-columns:auto 1fr auto; gap:var(--space-m); align-items:center;
+  padding:var(--space-m) var(--space-l); border-radius:var(--radius-l); margin-bottom:var(--space-m);
+  border:1px solid var(--border); background:var(--surface); position:relative; overflow:hidden;
+}
+@media (max-width:720px){ .verb-hero{ grid-template-columns:1fr; text-align:center; } }
+.verb-hero::after{ content:''; position:absolute; inset-inline-end:-40px; top:-40px; width:180px; height:180px; border-radius:50%; filter:blur(40px); opacity:.35; }
+.verb-hero.akk::after{ background:var(--akk-1); }
+.verb-hero.dat::after{ background:var(--dat-1); }
+.verb-hero.neu::after{ background:var(--neu-1); }
+.verb-hero__orb{
+  width:70px; height:70px; border-radius:50%; flex:none; display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-weight:800; color:#fff; font-size:1.5rem;
+}
+.verb-hero.akk .verb-hero__orb{ background:linear-gradient(150deg,var(--akk-1),var(--akk-2)); box-shadow:0 0 30px var(--akk-glow); }
+.verb-hero.dat .verb-hero__orb{ background:linear-gradient(150deg,var(--dat-1),var(--dat-2)); box-shadow:0 0 30px var(--dat-glow); }
+.verb-hero.neu .verb-hero__orb{ background:linear-gradient(150deg,var(--neu-1),var(--neu-2)); box-shadow:0 0 30px var(--neu-glow); }
+.verb-hero h3{ font-size:1.6rem; margin-bottom:.15rem; display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
+.verb-hero__meaning{ color:var(--text-2); font-size:1rem; margin:0; }
+.speak-btn{
+  display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%;
+  border:1px solid var(--border); background:var(--surface-2); color:var(--text-1); cursor:pointer; flex:none;
+  transition:all var(--dur-fast) var(--ease-spring);
+}
+.speak-btn:hover{ transform:scale(1.1); }
+.speak-btn.is-speaking{ animation:speak-pulse 1s ease-in-out infinite; color:#fff; border-color:transparent; background:linear-gradient(120deg,var(--dat-1),var(--dat-2)); }
+@keyframes speak-pulse{ 0%,100%{ box-shadow:0 0 0 0 var(--dat-glow);} 50%{ box-shadow:0 0 0 10px transparent;} }
+.speak-btn svg{ width:16px; height:16px; }
+.clickable-de{ cursor:pointer; border-bottom:2px dotted currentColor; padding-bottom:1px; transition:color var(--dur-fast); }
+.clickable-de:hover{ color:var(--dat-1); }
+.clickable-de.is-current-word{ background:linear-gradient(120deg, var(--sun-1), var(--akk-1)); color:#241800; border-radius:5px; padding:1px 4px; border-bottom-color:transparent; }
+
+.usage-note{
+  display:flex; gap:.7rem; padding:var(--space-s) var(--space-m); border-radius:var(--radius-m); background:var(--surface-2);
+  border:1px solid var(--border); margin-bottom:var(--space-m); font-size:.94rem;
+}
+.usage-note__icon{ flex:none; font-size:1.2rem; }
+
+/* tense sub-tabs */
+.tense-tabs{ display:flex; gap:.4rem; margin-bottom:var(--space-s); flex-wrap:wrap; }
+.tense-tab{
+  padding:.5rem 1rem; border-radius:999px; border:1px solid var(--border); background:var(--surface-2);
+  font-weight:700; font-size:.85rem; cursor:pointer; color:var(--text-2); transition:all var(--dur-fast);
+}
+.tense-tab[aria-selected="true"]{ background:var(--text-0); color:var(--bg-0); border-color:transparent; }
+.tense-panel{ display:none; }
+.tense-panel.is-active{ display:block; animation:fade-in-up .4s var(--ease-out); }
+
+.conj-table{ width:100%; border-collapse:separate; border-spacing:0 .5rem; }
+.conj-table td, .conj-table th{ padding:.75rem 1rem; text-align:start; }
+.conj-table thead th{ font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; color:var(--text-3); }
+.conj-table tbody tr{ background:var(--surface); border:1px solid var(--border); }
+.conj-table tbody tr td:first-child{ border-start-start-radius:var(--radius-m); border-end-start-radius:var(--radius-m); font-weight:700; color:var(--text-2); width:1%; white-space:nowrap;}
+.conj-table tbody tr td:last-child{ border-start-end-radius:var(--radius-m); border-end-end-radius:var(--radius-m); }
+.conj-table tbody tr{ transition:transform var(--dur-fast), box-shadow var(--dur-fast); }
+.conj-table tbody tr:hover{ transform:translateX(-3px); box-shadow:var(--shadow-sm); }
+[dir="rtl"] .conj-table tbody tr:hover{ transform:translateX(3px); }
+.conj-form{ font-family:var(--font-display); font-weight:700; color:var(--text-0); font-size:1.05rem; }
+.conj-prefix-tag{ font-size:.68rem; padding:.15rem .5rem; border-radius:6px; margin-inline-start:.5rem; font-weight:700; }
+
+/* examples */
+.examples-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:var(--space-s); }
+.example-card{
+  padding:var(--space-s) var(--space-m); border-radius:var(--radius-m); background:var(--surface); border:1px solid var(--border);
+  display:flex; align-items:flex-start; gap:.7rem; transition:transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+.example-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+.example-card__text .de{ font-size:1.05rem; font-weight:600; color:var(--text-0); display:block; margin-bottom:.25rem; }
+.example-card__text .ar{ font-size:.92rem; color:var(--text-3); }
+.example-card mark{ background:none; padding:0; border-radius:4px; font-weight:800; box-decoration-break:clone; }
+.example-card mark.akk{ color:var(--akk-1); background:color-mix(in srgb, var(--akk-1) 14%, transparent); padding:0 .2rem;}
+.example-card mark.dat{ color:var(--dat-1); background:color-mix(in srgb, var(--dat-1) 14%, transparent); padding:0 .2rem;}
+
+/* mistakes */
+.mistake-card{
+  display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:var(--radius-l); overflow:hidden; border:1px solid var(--border);
+  margin-bottom:var(--space-m); box-shadow:var(--shadow-sm);
+}
+@media (max-width:720px){ .mistake-card{ grid-template-columns:1fr; } }
+.mistake-side{ padding:var(--space-m); }
+.mistake-side--wrong{ background:color-mix(in srgb, var(--akk-1) 10%, var(--surface)); }
+.mistake-side--right{ background:color-mix(in srgb, var(--neu-1) 10%, var(--surface)); }
+.mistake-tag{ font-weight:800; font-size:.78rem; display:flex; align-items:center; gap:.4rem; margin-bottom:.5rem; }
+.mistake-side--wrong .mistake-tag{ color:var(--akk-1); }
+.mistake-side--right .mistake-tag{ color:var(--neu-1); }
+.mistake-side p.de{ font-size:1.1rem; font-weight:700; margin-bottom:.3rem; }
+.mistake-side .why{ font-size:.86rem; color:var(--text-3); }
+.mistake-header{ padding:var(--space-s) var(--space-m) 0; font-weight:800; font-size:1.05rem; }
+
+/* ---------------- Practice / exercises ---------------- */
+.mission-tabs{ display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center; margin-bottom:var(--space-l); }
+.mission-tab{
+  display:flex; align-items:center; gap:.5rem; padding:.7rem 1.2rem; border-radius:999px; border:1px solid var(--border);
+  background:var(--surface); cursor:pointer; font-weight:700; font-size:.9rem; color:var(--text-2);
+  transition:all var(--dur-fast) var(--ease-spring);
+}
+.mission-tab:hover{ transform:translateY(-2px); }
+.mission-tab.is-active{ background:linear-gradient(120deg,var(--dat-1),var(--dat-2)); color:#fff; border-color:transparent; box-shadow:var(--shadow-md); }
+.mission-panel{ display:none; }
+.mission-panel.is-active{ display:block; animation:fade-in-up .45s var(--ease-out); }
+
+/* flashcards (3D flip) */
+.flash-stage{ display:flex; flex-direction:column; align-items:center; gap:var(--space-m); }
+.flashcard{ width:min(360px,90vw); height:230px; perspective:1400px; cursor:pointer; }
+.flashcard-inner{
+  position:relative; width:100%; height:100%; transform-style:preserve-3d; transition:transform .65s var(--ease-spring);
+}
+.flashcard.is-flipped .flashcard-inner{ transform:rotateY(180deg); }
+.flashcard-face{
+  position:absolute; inset:0; -webkit-backface-visibility:hidden; backface-visibility:hidden;
+  border-radius:var(--radius-l); display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:var(--space-m); text-align:center; box-shadow:var(--shadow-lg); border:1px solid var(--border);
+}
+.flashcard-face--front{ background:linear-gradient(155deg,var(--surface),var(--surface-2)); }
+.flashcard-face--back{ transform:rotateY(180deg); color:#fff; }
+.flashcard-face--back.akk{ background:linear-gradient(155deg,var(--akk-1),var(--akk-2)); }
+.flashcard-face--back.dat{ background:linear-gradient(155deg,var(--dat-1),var(--dat-2)); }
+.flashcard-face--back.neu{ background:linear-gradient(155deg,var(--neu-1),var(--neu-2)); }
+.flashcard-face--front .de{ font-size:1.9rem; font-weight:800; }
+.flashcard-face--front small{ display:block; margin-top:.6rem; color:var(--text-3); font-size:.8rem; }
+.flashcard-face--back .ar{ font-size:1.3rem; font-weight:800; margin-bottom:.4rem; }
+.flashcard-face--back .aux-info{ font-size:.85rem; opacity:.9; }
+.flash-controls{ display:flex; gap:.7rem; align-items:center; }
+.flash-counter{ font-weight:700; color:var(--text-3); font-size:.9rem; }
+
+/* matching game */
+.match-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:var(--space-l); max-width:760px; margin-inline:auto; }
+@media (max-width:640px){ .match-wrap{ grid-template-columns:1fr; gap:var(--space-s);} }
+.match-col{ display:flex; flex-direction:column; gap:.6rem; }
+.match-item{
+  padding:.85rem 1rem; border-radius:var(--radius-m); border:2px solid var(--border); background:var(--surface);
+  cursor:pointer; font-weight:700; text-align:center; transition:all var(--dur-fast) var(--ease-spring); font-size:.95rem;
+}
+.match-item:hover{ transform:translateY(-2px); }
+.match-item.is-selected{ border-color:var(--dat-1); box-shadow:0 0 0 3px var(--dat-glow); }
+.match-item.is-correct{ border-color:var(--neu-1); background:color-mix(in srgb, var(--neu-1) 15%, var(--surface)); animation:pop .4s var(--ease-spring); }
+.match-item.is-wrong{ animation:shake .45s; border-color:var(--akk-1); }
+@keyframes pop{ 0%{transform:scale(1);} 50%{transform:scale(1.06);} 100%{transform:scale(1);} }
+@keyframes shake{ 0%,100%{transform:translateX(0);} 20%{transform:translateX(-8px);} 40%{transform:translateX(8px);} 60%{transform:translateX(-6px);} 80%{transform:translateX(6px);} }
+
+/* quiz */
+.quiz-card{ max-width:640px; margin-inline:auto; }
+.quiz-progress{ display:flex; gap:.35rem; margin-bottom:var(--space-m); }
+.quiz-progress span{ flex:1; height:6px; border-radius:4px; background:var(--border); overflow:hidden; }
+.quiz-progress span i{ display:block; height:100%; width:0; background:linear-gradient(90deg,var(--dat-1),var(--neu-1)); transition:width .4s var(--ease-out); }
+.quiz-question{ font-size:1.2rem; font-weight:700; color:var(--text-0); margin-bottom:var(--space-m); text-align:center; }
+.quiz-options{ display:grid; gap:.7rem; }
+.quiz-option{
+  padding:.9rem 1.2rem; border-radius:var(--radius-m); border:2px solid var(--border); background:var(--surface);
+  cursor:pointer; font-weight:600; text-align:start; transition:all var(--dur-fast) var(--ease-spring); font-size:1rem;
+  display:flex; justify-content:space-between; align-items:center; gap:.6rem;
+}
+.quiz-option:hover{ border-color:var(--dat-1); transform:translateY(-2px); }
+.quiz-option.correct{ border-color:var(--neu-1); background:color-mix(in srgb, var(--neu-1) 16%, var(--surface)); }
+.quiz-option.wrong{ border-color:var(--akk-1); background:color-mix(in srgb, var(--akk-1) 16%, var(--surface)); }
+.quiz-feedback{ margin-top:var(--space-s); padding:var(--space-s) var(--space-m); border-radius:var(--radius-m); font-size:.92rem; display:none; }
+.quiz-feedback.show{ display:block; animation:fade-in-up .3s var(--ease-out); }
+.quiz-feedback.ok{ background:color-mix(in srgb, var(--neu-1) 14%, transparent); color:var(--neu-1); }
+.quiz-feedback.bad{ background:color-mix(in srgb, var(--akk-1) 14%, transparent); color:var(--akk-1); }
+.quiz-footer{ display:flex; justify-content:space-between; align-items:center; margin-top:var(--space-m); }
+.quiz-score{ font-weight:800; color:var(--text-0); }
+
+/* sentence builder */
+.builder-sentence{ max-width:700px; margin-inline:auto; text-align:center; }
+.sb-bank, .sb-target{ display:flex; flex-wrap:wrap; gap:.55rem; justify-content:center; min-height:58px; padding:var(--space-s); border-radius:var(--radius-m); }
+.sb-target{ background:var(--surface-2); border:2px dashed var(--border); margin-bottom:var(--space-s); }
+.sb-word{
+  padding:.6rem 1rem; border-radius:var(--radius-s); background:var(--surface); border:1px solid var(--border);
+  font-family:var(--font-display); font-weight:700; cursor:grab; direction:ltr; box-shadow:var(--shadow-sm);
+  transition:transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-fast);
+}
+.sb-word:hover{ transform:translateY(-2px); box-shadow:var(--shadow-md); }
+.sb-word.is-dragging{ opacity:.4; }
+.sb-word.placed{ background:linear-gradient(120deg,var(--dat-1),var(--dat-2)); color:#fff; border-color:transparent; }
+
+/* typing practice */
+.type-card{ max-width:560px; margin-inline:auto; text-align:center; }
+.type-prompt{ font-size:1.15rem; margin-bottom:var(--space-s); }
+.type-prompt b{ color:var(--dat-1); }
+.type-input-row{ display:flex; gap:.6rem; }
+.type-input-row input{
+  flex:1; padding:.9rem 1.1rem; border-radius:var(--radius-m); border:2px solid var(--border); background:var(--surface);
+  color:var(--text-0); font-size:1.05rem; font-family:var(--font-display); direction:ltr; text-align:center;
+}
+.type-input-row input.correct{ border-color:var(--neu-1); }
+.type-input-row input.wrong{ border-color:var(--akk-1); animation:shake .4s; }
+.type-feedback{ margin-top:.7rem; font-size:.9rem; min-height:1.4em; font-weight:700; }
+
+/* memory game */
+.memory-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:.7rem; max-width:640px; margin-inline:auto; }
+@media (max-width:560px){ .memory-grid{ grid-template-columns:repeat(3,1fr);} }
+.memory-card{ aspect-ratio:3/4; perspective:900px; cursor:pointer; }
+.memory-inner{ position:relative; width:100%; height:100%; transform-style:preserve-3d; transition:transform .5s var(--ease-spring); }
+.memory-card.is-flipped .memory-inner, .memory-card.is-matched .memory-inner{ transform:rotateY(180deg); }
+.memory-face{ position:absolute; inset:0; backface-visibility:hidden; border-radius:var(--radius-m); display:flex; align-items:center; justify-content:center; padding:.4rem; text-align:center; font-weight:700; font-size:.8rem; box-shadow:var(--shadow-sm); border:1px solid var(--border);}
+.memory-face--back{ background:linear-gradient(150deg,var(--surface-2),var(--surface)); font-size:1.4rem; color:var(--text-3); }
+.memory-face--front{ transform:rotateY(180deg); background:var(--surface); color:var(--text-0); }
+.memory-card.is-matched .memory-face--front{ background:linear-gradient(150deg,var(--neu-1),var(--neu-2)); color:#052e26; }
+
+/* score / achievements */
+.score-bar{ display:flex; justify-content:center; gap:var(--space-l); flex-wrap:wrap; margin-bottom:var(--space-l); }
+.score-pill{ display:flex; flex-direction:column; align-items:center; gap:.15rem; padding:.7rem 1.3rem; border-radius:var(--radius-m); background:var(--surface); border:1px solid var(--border); min-width:96px; }
+.score-pill b{ font-family:var(--font-display); font-size:1.4rem; color:var(--text-0); }
+.score-pill span{ font-size:.72rem; color:var(--text-3); font-weight:700; }
+
+.toast-stack{ position:fixed; bottom:var(--space-m); inset-inline-end:var(--space-m); z-index:1300; display:flex; flex-direction:column; gap:.6rem; align-items:flex-end; pointer-events:none; }
+[dir="rtl"] .toast-stack{ align-items:flex-start; }
+.toast{
+  display:flex; align-items:center; gap:.7rem; padding:.85rem 1.2rem; border-radius:var(--radius-m); background:var(--surface);
+  box-shadow:var(--shadow-lg); border:1px solid var(--border); min-width:240px; max-width:88vw;
+  animation:toast-in .45s var(--ease-spring); pointer-events:auto;
+}
+.toast.hide{ animation:toast-out .35s var(--ease-out) forwards; }
+@keyframes toast-in{ from{ opacity:0; transform:translateY(20px) scale(.9);} to{ opacity:1; transform:translateY(0) scale(1);} }
+@keyframes toast-out{ to{ opacity:0; transform:translateY(10px) scale(.92);} }
+.toast__icon{ width:36px; height:36px; border-radius:50%; flex:none; display:flex; align-items:center; justify-content:center; background:linear-gradient(140deg,var(--sun-1),var(--sun-2)); font-size:1.1rem; }
+.toast b{ display:block; font-size:.88rem; color:var(--text-0); }
+.toast span{ font-size:.78rem; color:var(--text-3); }
+
+/* speech control dock */
+.speech-dock{
+  position:fixed; bottom:var(--space-m); inset-inline-start:var(--space-m); z-index:850;
+  display:flex; align-items:center; gap:.4rem; padding:.5rem; border-radius:999px;
+  background:var(--glass-bg); border:1px solid var(--glass-border); backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px); box-shadow:var(--shadow-lg); transition:transform var(--dur-med) var(--ease-spring);
+}
+.speech-dock.is-collapsed .speech-dock__panel{ display:none; }
+.speech-dock__panel{ display:flex; align-items:center; gap:.5rem; }
+.speech-dock select{
+  border-radius:999px; border:1px solid var(--border); background:var(--surface-2); color:var(--text-1);
+  padding:.5rem .8rem; font-size:.78rem; max-width:132px; font-family:inherit;
+}
+.speech-dock input[type=range]{ width:70px; accent-color:var(--dat-1); }
+.speech-dock__rate{ font-size:.72rem; color:var(--text-3); min-width:28px; text-align:center; }
+.now-speaking{ font-size:.72rem; color:var(--text-3); max-width:120px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; direction:ltr; }
+
+/* back to top / fullscreen dock */
+.util-dock{ position:fixed; bottom:var(--space-m); inset-inline-end:var(--space-m); z-index:850; display:flex; flex-direction:column; gap:.6rem; }
+.util-dock .icon-btn{ background:var(--glass-bg); backdrop-filter:blur(16px); box-shadow:var(--shadow-lg); }
+.back-to-top{ opacity:0; pointer-events:none; transform:translateY(10px); transition:all var(--dur-fast) var(--ease-out); }
+.back-to-top.show{ opacity:1; pointer-events:auto; transform:translateY(0); }
+
+/* details / collapsible */
+details.collapsible{ border:1px solid var(--border); border-radius:var(--radius-m); padding:var(--space-s) var(--space-m); background:var(--surface); margin-bottom:.7rem; }
+details.collapsible summary{ cursor:pointer; font-weight:700; color:var(--text-0); list-style:none; display:flex; justify-content:space-between; align-items:center; }
+details.collapsible summary::-webkit-details-marker{ display:none; }
+details.collapsible summary::after{ content:'⌄'; font-size:1.2rem; transition:transform var(--dur-fast); color:var(--text-3);}
+details.collapsible[open] summary::after{ transform:rotate(180deg); }
+details.collapsible p{ margin-top:.6rem; }
+
+/* footer */
+footer{ padding:var(--space-xl) 0 var(--space-l); border-top:1px solid var(--border); text-align:center; }
+footer .orb-mini{ width:34px; height:34px; border-radius:50%; margin-inline:auto var(--space-s); background:radial-gradient(circle at 32% 28%, #fff8, transparent 45%), linear-gradient(140deg,var(--sun-1),var(--sun-2)); box-shadow:0 0 20px var(--sun-glow); }
+footer p{ font-size:.85rem; color:var(--text-3); }
+
+/* utility */
+.text-center{ text-align:center; }
+.mt-l{ margin-top:var(--space-l); }
+.vis-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.hl-mark{ background:linear-gradient(120deg,var(--sun-1),var(--akk-1)); color:#241800; border-radius:3px; padding:0 3px; }
+
+@media print{
+  .navbar,.speech-dock,.util-dock,.toast-stack,.search-panel,.reading-progress{ display:none !important; }
+  section{ padding-block:1.2rem; }
+  body{ background:#fff; color:#000; }
+  .glass,.case-card,.example-card,.verb-hero,.match-item,.quiz-option{ box-shadow:none !important; }
+}
+</style>
+</head>
+<body data-theme="light">
+<a href="#main" class="skip-link">تخطَّ إلى المحتوى الرئيسي</a>
+<div class="nebula-bg" aria-hidden="true"></div>
+<div class="starfield" aria-hidden="true"></div>
+
+<div class="reading-progress" aria-hidden="true"><div class="reading-progress__bar" id="readingBar"></div></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="container navbar__inner">
+    <div class="navbar__brand">
+      <span class="navbar__brand-orb" aria-hidden="true"></span>
+      <span>مجرّة <span class="de">kommen</span></span>
+    </div>
+    <nav class="navbar__links" id="navLinks" aria-label="التنقل بين أقسام الدرس">
+      <a class="navbar__link" href="#hero">الرئيسية</a>
+      <a class="navbar__link" href="#cases">الحالة الإعرابية</a>
+      <a class="navbar__link" href="#builder">مصنع الأفعال</a>
+      <a class="navbar__link" href="#verbs">العائلة والتصريف</a>
+      <a class="navbar__link" href="#mistakes">أخطاء شائعة</a>
+      <a class="navbar__link" href="#practice">التدريب</a>
+    </nav>
+    <div class="navbar__actions">
+      <button class="icon-btn" id="searchBtn" aria-label="بحث داخل الدرس" title="بحث (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <button class="icon-btn" id="fullscreenBtn" aria-label="وضع ملء الشاشة" title="ملء الشاشة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      </button>
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="تبديل الوضع الداكن/الفاتح" title="تبديل الثيم">
+        <svg class="sun-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= SEARCH PANEL ================= -->
+<div class="search-panel" id="searchPanel" role="dialog" aria-modal="true" aria-label="بحث داخل الدرس">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="ابحث عن فعل، مثال، أو قاعدة… (مثلاً: bekommen)" aria-label="نص البحث">
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section id="hero" class="hero">
+  <div class="container hero__grid">
+    <div class="reveal is-visible">
+      <span class="hero__eyebrow">✦ عائلة أفعال الحركة والوصول</span>
+      <h1>استكشف مجرّة <span class="de">kommen</span><br>وتعلّم من يحكمها: <span class="de">Akkusativ</span> أم <span class="de">Dativ</span>؟</h1>
+      <p class="lead">فعل <strong class="de clickable-de" data-speak="kommen">kommen</strong> هو الشمس التي تدور حولها عائلة كاملة من الأفعال المشتقة — لكل فعل مشتق "كوكبه" الخاص، ولونه الذي يكشف فورًا الحالة الإعرابية التي يفرضها: النار البرتقالية لـ Akkusativ، الجليد الأزرق لـ Dativ، والأخضر الفضائي حين لا توجد حالة إعرابية على الإطلاق.</p>
+      <div class="hero__cta">
+        <a href="#verbs" class="btn btn--primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
+          ابدأ الاستكشاف
+        </a>
+        <button class="btn btn--ghost" id="heroSpeakAll" data-speak="Ich komme, ich bekomme, ich komme an." aria-label="استمع لأمثلة صوتية">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>
+          استمع للنطق
+        </button>
+      </div>
+      <div class="hero__stats">
+        <div class="hero__stat"><b>8</b><span>أفعال في العائلة</span></div>
+        <div class="hero__stat"><b>3</b><span>أزمنة كاملة</span></div>
+        <div class="hero__stat"><b>6</b><span>ألعاب وتدريبات</span></div>
+        <div class="hero__stat"><b>∞</b><span>محاولات نطق</span></div>
+      </div>
+    </div>
+    <div class="reveal-scale is-visible">
+      <div class="orbit-wrap">
+        <svg class="orbit-svg" viewBox="0 0 500 500" role="img" aria-label="رسم تفاعلي: الشمس في المنتصف هي فعل kommen، وتدور حولها سبعة كواكب تمثل الأفعال المشتقة، بألوان تدل على الحالة الإعرابية">
+          <defs>
+            <radialGradient id="sunGradient" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#fff3c4"/>
+              <stop offset="45%" stop-color="var(--sun-1)"/>
+              <stop offset="100%" stop-color="var(--sun-2)"/>
+            </radialGradient>
+            <radialGradient id="akkGrad" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#ffb199"/><stop offset="100%" stop-color="var(--akk-2)"/>
+            </radialGradient>
+            <radialGradient id="datGrad" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#bfe0ff"/><stop offset="100%" stop-color="var(--dat-2)"/>
+            </radialGradient>
+            <radialGradient id="neuGrad" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#b6ffe8"/><stop offset="100%" stop-color="var(--neu-2)"/>
+            </radialGradient>
+          </defs>
+
+          <circle class="orbit-ring akk" cx="250" cy="250" r="110"/>
+          <circle class="orbit-ring dat" cx="250" cy="250" r="160"/>
+          <circle class="orbit-ring neu" cx="250" cy="250" r="205"/>
+          <circle class="orbit-comet akk" r="4" aria-hidden="true"/>
+          <circle class="orbit-comet dat" r="4" aria-hidden="true"/>
+          <circle class="orbit-comet neu" r="4" aria-hidden="true"/>
+
+          <text x="140" y="246" text-anchor="middle" font-size="10.5" font-weight="800" fill="var(--akk-1)" font-family="var(--font-display)">AKK</text>
+          <text x="90" y="246" text-anchor="middle" font-size="10.5" font-weight="800" fill="var(--dat-1)" font-family="var(--font-display)">DAT</text>
+          <text x="45" y="246" text-anchor="middle" font-size="12" font-weight="800" fill="var(--neu-1)" font-family="var(--font-display)">∅</text>
+
+          <!-- planets: Akkusativ ring -->
+          <g class="planet" tabindex="0" role="button" data-verb="bekommen" aria-label="bekommen — يحصل على — حالة Akkusativ — انقر للانتقال والاستماع" transform="translate(360,250)">
+            <circle class="planet-dot" r="19" fill="url(#akkGrad)"/>
+            <text class="planet-label" text-anchor="middle" y="34">bekommen</text>
+          </g>
+
+          <!-- planets: Dativ ring -->
+          <g class="planet" tabindex="0" role="button" data-verb="ankommen" aria-label="ankommen — يصل — حالة Dativ — انقر للانتقال والاستماع" transform="translate(363.1,363.1)">
+            <circle class="planet-dot" r="16" fill="url(#datGrad)"/>
+            <text class="planet-label" text-anchor="middle" y="30">ankommen</text>
+          </g>
+          <g class="planet" tabindex="0" role="button" data-verb="vorkommen" aria-label="vorkommen — يبدو / يحدث — حالة Dativ — انقر للانتقال والاستماع" transform="translate(136.9,363.1)">
+            <circle class="planet-dot" r="16" fill="url(#datGrad)"/>
+            <text class="planet-label" text-anchor="middle" y="30">vorkommen</text>
+          </g>
+          <g class="planet" tabindex="0" role="button" data-verb="auskommen" aria-label="auskommen — يتفاهم مع — حالة Dativ — انقر للانتقال والاستماع" transform="translate(136.9,136.9)">
+            <circle class="planet-dot" r="16" fill="url(#datGrad)"/>
+            <text class="planet-label" text-anchor="middle" y="-22">auskommen</text>
+          </g>
+          <g class="planet" tabindex="0" role="button" data-verb="entkommen" aria-label="entkommen — يهرب من — حالة Dativ — انقر للانتقال والاستماع" transform="translate(363.1,136.9)">
+            <circle class="planet-dot" r="16" fill="url(#datGrad)"/>
+            <text class="planet-label" text-anchor="middle" y="-22">entkommen</text>
+          </g>
+
+          <!-- planets: neutral ring -->
+          <g class="planet" tabindex="0" role="button" data-verb="mitkommen" aria-label="mitkommen — يرافق — بدون حالة إعرابية — انقر للانتقال والاستماع" transform="translate(250,455)">
+            <circle class="planet-dot" r="15" fill="url(#neuGrad)"/>
+            <text class="planet-label" text-anchor="middle" y="28">mitkommen</text>
+          </g>
+          <g class="planet" tabindex="0" role="button" data-verb="zurueckkommen" aria-label="zurückkommen — يعود — بدون حالة إعرابية — انقر للانتقال والاستماع" transform="translate(250,45)">
+            <circle class="planet-dot" r="15" fill="url(#neuGrad)"/>
+            <text class="planet-label" text-anchor="middle" y="-20">zurückkommen</text>
+          </g>
+
+          <!-- sun -->
+          <g class="sun-core" tabindex="0" role="button" data-verb="kommen" aria-label="kommen — يأتي — الفعل الأساسي — انقر للاستماع">
+            <circle cx="250" cy="250" r="50"/>
+            <text x="250" y="256" text-anchor="middle" font-size="15">kommen</text>
+          </g>
+        </svg>
+      </div>
+      <p class="text-center" style="font-size:.85rem;color:var(--text-3);margin-top:.5rem;">👆 انقر على أي كوكب للانتقال إلى شرحه والاستماع لنطقه</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CASE LEGEND ================= -->
+<section id="cases">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">🧭 القاعدة الذهبية</span>
+      <h2>كل فعل مشتق له "شخصيته" الإعرابية الخاصة</h2>
+      <p>لا تفترض أبدًا أن كل أفعال عائلة <span class="de">kommen</span> تتصرف بنفس الطريقة. أضف بادئة واحدة، وقد تتغيّر الحالة الإعرابية، وحرف الجر، وحتى المعنى تمامًا.</p>
+    </div>
+    <div class="case-grid stagger">
+      <div class="case-card case-card--akk reveal" style="--i:0">
+        <div class="case-card__icon">🔥</div>
+        <div class="q">Akkusativ — المفعول به المباشر</div>
+        <h3>الفعل "يمسك" بالشيء مباشرة</h3>
+        <p>عندما يكون الفعل متعديًا وله مفعول به مباشر بلا حرف جر، مثل الحصول على شيء ملموس.</p>
+        <ul>
+          <li><span class="de clickable-de" data-speak="bekommen">bekommen</span> — يحصل على (+ Akkusativ)</li>
+          <li>مثال: <span class="de clickable-de" data-speak="Ich bekomme einen Brief.">Ich bekomme <mark class="hl-mark">einen Brief</mark>.</span></li>
+        </ul>
+      </div>
+      <div class="case-card case-card--dat reveal" style="--i:1">
+        <div class="case-card__icon">❄️</div>
+        <div class="q">Dativ — هدف غير مباشر</div>
+        <h3>الفعل يصل إلى هدف عبر حرف جر أو مفعول غير مباشر</h3>
+        <p>غالبًا عبر حروف جر مثل <span class="de">in / an / bei / mit</span>، أو مفعول به بصيغة الدative مباشرة (كأفعال الهروب والتفاهم).</p>
+        <ul>
+          <li><span class="de clickable-de" data-speak="ankommen">ankommen</span>, <span class="de clickable-de" data-speak="entkommen">entkommen</span>…</li>
+          <li>مثال: <span class="de clickable-de" data-speak="Der Zug kommt am Bahnhof an.">Der Zug kommt <mark class="hl-mark">am Bahnhof</mark> an.</span></li>
+        </ul>
+      </div>
+      <div class="case-card case-card--neu reveal" style="--i:2">
+        <div class="case-card__icon">🌌</div>
+        <div class="q">بدون حالة إعرابية ثابتة</div>
+        <h3>حركة خالصة، بلا "مفعول" يُحكم</h3>
+        <p>الفعل لا يفرض حالة إعرابية معيّنة؛ أي تكملة تأتي بعده تكون اختيارية عبر ظروف مكان أو زمان فقط.</p>
+        <ul>
+          <li><span class="de clickable-de" data-speak="kommen">kommen</span>, <span class="de clickable-de" data-speak="mitkommen">mitkommen</span>, <span class="de clickable-de" data-speak="zurückkommen">zurückkommen</span></li>
+          <li>مثال: <span class="de clickable-de" data-speak="Ich komme gleich zurück.">Ich komme gleich zurück.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================= VERB BUILDER MACHINE ================= -->
+<section id="builder" style="background:var(--bg-1);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">🛠️ مصنع الأفعال</span>
+      <h2>شاهد كيف يُبنى كل تصريف، قطعة بقطعة</h2>
+      <p>اختر فعلًا، زمنًا، وضميرًا — وراقب "المصنع" وهو يجمع البادئة مع الجذر ليكوّن الشكل الصحيح، تمامًا كقطع ليغو.</p>
+    </div>
+
+    <div class="builder reveal">
+      <div class="builder-select" id="builderVerbSelect" role="tablist" aria-label="اختر الفعل"></div>
+      <div class="builder-select" id="builderTenseSelect" role="tablist" aria-label="اختر الزمن">
+        <button class="chip is-active" data-tense="praesens">Präsens (المضارع)</button>
+        <button class="chip" data-tense="praeteritum">Präteritum (الماضي البسيط)</button>
+        <button class="chip" data-tense="perfekt">Perfekt (الماضي التام)</button>
+      </div>
+      <div class="builder-select" id="builderPronounSelect" role="tablist" aria-label="اختر الضمير"></div>
+
+      <div class="machine glass" id="machineBlocks" style="padding:var(--space-l); width:100%; max-width:640px;"></div>
+      <div class="machine-result de" id="machineResult">komme</div>
+      <p class="machine-note" id="machineNote"></p>
+      <button class="btn btn--ghost" id="machineSpeak">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>
+        استمع لهذا الشكل
+      </button>
+
+      <div style="display:flex; gap:1.2rem; flex-wrap:wrap; justify-content:center; margin-top:var(--space-s); font-size:.78rem; color:var(--text-3);">
+        <span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:linear-gradient(150deg,#8b7bff,#4ea8ff);margin-inline-end:5px;"></i>البادئة (Präfix)</span>
+        <span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:linear-gradient(150deg,var(--sun-1),var(--sun-2));margin-inline-end:5px;"></i>الجذر + النهاية</span>
+        <span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:linear-gradient(150deg,#c084fc,#a855f7);margin-inline-end:5px;"></i>ge- (الماضي التام)</span>
+        <span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:linear-gradient(150deg,var(--akk-1),var(--akk-2));margin-inline-end:5px;"></i>الفعل المساعد</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================= VERB FAMILY EXPLORER ================= -->
+<section id="verbs">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">🪐 العائلة الكاملة</span>
+      <h2>ثمانية كواكب، ثمانية تصريفات كاملة</h2>
+      <p>انقر على أي فعل، ثم بدّل بين الأزمنة الثلاثة لترى تصريفه الكامل مع كل الضمائر، وأمثلة حقيقية قابلة للنطق.</p>
+    </div>
+    <div class="verb-tabs" id="verbTabs" role="tablist" aria-label="اختر فعلًا من العائلة"></div>
+    <div id="verbPanels"></div>
+  </div>
+</section>
+<!-- ================= COMMON MISTAKES ================= -->
+<section id="mistakes" style="background:var(--bg-1);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">⚠️ ثقوب سوداء</span>
+      <h2>أخطاء شائعة يقع فيها المتعلمون العرب</h2>
+      <p>هذه الأخطاء تحديدًا تظهر باستمرار — تعرّف عليها الآن لتتجنبها للأبد.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="mistake-header">١. الفخ الأشهر: <span class="de">bekommen</span> لا تعني "يصبح"!</div>
+      <div class="mistake-card">
+        <div class="mistake-side mistake-side--wrong">
+          <div class="mistake-tag">✗ خطأ شائع</div>
+          <p class="de clickable-de" data-speak="Er bekommt müde.">Er bekommt müde.</p>
+          <p class="why">(محاولة ترجمة "يصبح متعبًا" حرفيًا باستخدام bekommen)</p>
+        </div>
+        <div class="mistake-side mistake-side--right">
+          <div class="mistake-tag">✓ الصحيح</div>
+          <p class="de clickable-de" data-speak="Er wird müde.">Er wird müde.</p>
+          <p class="why"><span class="de">bekommen</span> = يحصل على / يتلقّى شيئًا، أمّا "يصبح" فهي <span class="de">werden</span>. تذكّر: <span class="de">"Ich bekomme ein Baby"</span> تعني "سأنجب طفلًا" وليس "أصبح طفلًا"!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="mistake-header">٢. الفعل المساعد الخاطئ في الماضي التام</div>
+      <div class="mistake-card">
+        <div class="mistake-side mistake-side--wrong">
+          <div class="mistake-tag">✗ خطأ شائع</div>
+          <p class="de clickable-de" data-speak="Ich habe angekommen.">Ich habe angekommen.</p>
+          <p class="why">(استخدام haben لأنه الافتراضي الشائع لمعظم الأفعال)</p>
+        </div>
+        <div class="mistake-side mistake-side--right">
+          <div class="mistake-tag">✓ الصحيح</div>
+          <p class="de clickable-de" data-speak="Ich bin angekommen.">Ich bin angekommen.</p>
+          <p class="why">كل أفعال الحركة والانتقال في عائلة <span class="de">kommen</span> تستخدم <span class="de">sein</span> كفعل مساعد دائمًا في الماضي التام، ما عدا <span class="de">bekommen</span> التي تستخدم <span class="de">haben</span> لأنها ليست فعل حركة بل فعل "امتلاك".</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="mistake-header">٣. نسيان انفصال البادئة في المضارع والماضي البسيط</div>
+      <div class="mistake-card">
+        <div class="mistake-side mistake-side--wrong">
+          <div class="mistake-tag">✗ خطأ شائع</div>
+          <p class="de clickable-de" data-speak="Ich ankomme in Berlin.">Ich ankomme in Berlin.</p>
+          <p class="why">(معاملة البادئة "an" وكأنها ثابتة دائمًا، كما في bekommen)</p>
+        </div>
+        <div class="mistake-side mistake-side--right">
+          <div class="mistake-tag">✓ الصحيح</div>
+          <p class="de clickable-de" data-speak="Ich komme in Berlin an.">Ich komme in Berlin an.</p>
+          <p class="why">البادئات مثل <span class="de">an-, mit-, vor-, aus-, zurück-</span> بادئات "منفصلة": تُصرَّف الجذر في مكانه المعتاد، وتُرمى البادئة إلى آخر الجملة. أمّا <span class="de">be-</span> و<span class="de">ent-</span> فهما بادئتان "غير منفصلتين" تبقيان ملتصقتين دائمًا.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="mistake-header">٤. إضافة حرف جر لا داعي له مع <span class="de">entkommen</span></div>
+      <div class="mistake-card">
+        <div class="mistake-side mistake-side--wrong">
+          <div class="mistake-tag">✗ خطأ شائع</div>
+          <p class="de clickable-de" data-speak="Der Dieb ist von der Polizei entkommen.">Der Dieb ist von der Polizei entkommen.</p>
+          <p class="why">(افتراض أن "الهروب من" يحتاج دائمًا حرف جر مثل الإنجليزية "escape from")</p>
+        </div>
+        <div class="mistake-side mistake-side--right">
+          <div class="mistake-tag">✓ الصحيح</div>
+          <p class="de clickable-de" data-speak="Der Dieb ist der Polizei entkommen.">Der Dieb ist der Polizei entkommen.</p>
+          <p class="why"><span class="de">entkommen</span> يأخذ مفعولًا به بصيغة <span class="de">Dativ</span> مباشرة بلا أي حرف جر: <span class="de">jemandem entkommen</span>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="usage-note reveal" style="max-width:820px;margin-inline:auto;">
+      <div class="usage-note__icon">💡</div>
+      <div>
+        <strong class="de">ankommen</strong> نفسه له وجهان: بمعنى "يصل" يأخذ <span class="de">in/an/bei + Dativ</span> — لكن في التعبير الاصطلاحي <span class="de clickable-de" data-speak="Es kommt auf das Wetter an.">"Es kommt auf das Wetter an"</span> (الأمر يعتمد على الطقس)، يتحوّل فجأة إلى <span class="de">auf + Akkusativ</span>! القاعدة الذهبية: لا تحفظ "الفعل ← الحالة"، بل احفظ "الفعل + المعنى ← الحالة".
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================= PRACTICE / MISSIONS ================= -->
+<section id="practice" style="background:var(--bg-1);">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">🎮 مهمات التدريب</span>
+      <h2>ثبّت ما تعلّمته عبر ست مهمات مختلفة</h2>
+      <p>تتبّع نقاطك وشاراتك أثناء إتقان عائلة <span class="de">kommen</span> بالكامل.</p>
+    </div>
+
+    <div class="score-bar reveal" aria-live="polite">
+      <div class="score-pill"><b id="scorePoints">0</b><span>النقاط</span></div>
+      <div class="score-pill"><b id="scoreStreak">0</b><span>سلسلة صحيحة</span></div>
+      <div class="score-pill"><b id="scoreBadges">0</b><span>الشارات</span></div>
+      <div class="score-pill"><b id="scoreCompletion">0%</b><span>الإنجاز</span></div>
+    </div>
+
+    <div class="mission-tabs reveal" id="missionTabs" role="tablist" aria-label="اختر تدريبًا">
+      <button class="mission-tab is-active" data-mission="flash" role="tab" aria-selected="true">🗂️ بطاقات سريعة</button>
+      <button class="mission-tab" data-mission="match" role="tab" aria-selected="false">🎯 طابِق الحالة</button>
+      <button class="mission-tab" data-mission="quiz" role="tab" aria-selected="false">❓ اختبار سريع</button>
+      <button class="mission-tab" data-mission="sentence" role="tab" aria-selected="false">🧩 بناء الجملة</button>
+      <button class="mission-tab" data-mission="typing" role="tab" aria-selected="false">⌨️ تدريب الكتابة</button>
+      <button class="mission-tab" data-mission="memory" role="tab" aria-selected="false">🧠 لعبة الذاكرة</button>
+    </div>
+
+    <!-- FLASHCARDS -->
+    <div class="mission-panel is-active" id="mission-flash" role="tabpanel">
+      <div class="flash-stage">
+        <div class="flashcard" id="flashcard" tabindex="0" role="button" aria-label="بطاقة تعليمية، انقر لقلبها">
+          <div class="flashcard-inner">
+            <div class="flashcard-face flashcard-face--front">
+              <span class="de" id="flashFront">kommen</span>
+              <small>انقر للقلب</small>
+            </div>
+            <div class="flashcard-face flashcard-face--back" id="flashBack">
+              <span class="ar" id="flashMeaning">يأتي</span>
+              <span class="aux-info" id="flashAux">sein · بدون حالة إعرابية</span>
+            </div>
+          </div>
+        </div>
+        <div class="flash-controls">
+          <button class="icon-btn" id="flashPrev" aria-label="البطاقة السابقة">‹</button>
+          <button class="btn btn--ghost" id="flashSpeak">🔊 استمع</button>
+          <button class="icon-btn" id="flashNext" aria-label="البطاقة التالية">›</button>
+        </div>
+        <span class="flash-counter" id="flashCounter">1 / 8</span>
+      </div>
+    </div>
+
+    <!-- MATCHING -->
+    <div class="mission-panel" id="mission-match" role="tabpanel">
+      <p class="text-center" style="margin-bottom:1rem;color:var(--text-3);">انقر على فعل من العمود الأول، ثم على الحالة الإعرابية الصحيحة له في العمود الثاني.</p>
+      <div class="match-wrap">
+        <div class="match-col" id="matchVerbs"></div>
+        <div class="match-col" id="matchCases"></div>
+      </div>
+      <p class="text-center mt-l" id="matchStatus" style="font-weight:700;color:var(--neu-1);"></p>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="mission-panel" id="mission-quiz" role="tabpanel">
+      <div class="quiz-card glass" style="padding:var(--space-l);">
+        <div class="quiz-progress" id="quizProgress"></div>
+        <div class="quiz-question de" id="quizQuestion" style="direction:ltr;"></div>
+        <div class="quiz-options" id="quizOptions"></div>
+        <div class="quiz-feedback" id="quizFeedback"></div>
+        <div class="quiz-footer">
+          <span class="quiz-score">النتيجة: <span dir="ltr" style="unicode-bidi:isolate;"><span id="quizScore">0</span>/<span id="quizTotal">8</span></span></span>
+          <button class="btn btn--primary" id="quizNext" disabled>التالي ←</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SENTENCE BUILDER -->
+    <div class="mission-panel" id="mission-sentence" role="tabpanel">
+      <div class="builder-sentence">
+        <p style="color:var(--text-3);margin-bottom:1rem;" id="sentenceArabic"></p>
+        <div class="sb-target" id="sbTarget" aria-label="مكان تجميع الجملة"></div>
+        <div class="sb-bank" id="sbBank"></div>
+        <div style="display:flex;gap:.6rem;justify-content:center;margin-top:var(--space-m);">
+          <button class="btn btn--ghost" id="sbReset">↺ إعادة</button>
+          <button class="btn btn--primary" id="sbCheck">✓ تحقّق</button>
+          <button class="btn btn--sun" id="sbNext" style="display:none;">التالي ←</button>
+        </div>
+        <p class="type-feedback" id="sbFeedback"></p>
+      </div>
+    </div>
+
+    <!-- TYPING -->
+    <div class="mission-panel" id="mission-typing" role="tabpanel">
+      <div class="type-card glass" style="padding:var(--space-l);">
+        <p class="type-prompt" id="typePrompt"></p>
+        <div class="type-input-row">
+          <input type="text" id="typeInput" class="de" placeholder="اكتب التصريف هنا…" autocomplete="off" spellcheck="false" aria-label="اكتب الشكل الصحيح">
+          <button class="btn btn--primary" id="typeCheck">تحقّق</button>
+        </div>
+        <p class="type-feedback" id="typeFeedback"></p>
+        <button class="btn btn--ghost mt-l" id="typeNext">التالي ←</button>
+      </div>
+    </div>
+
+    <!-- MEMORY -->
+    <div class="mission-panel" id="mission-memory" role="tabpanel">
+      <p class="text-center" style="margin-bottom:1rem;color:var(--text-3);">اعثر على كل زوج (الفعل الألماني ↔ معناه بالعربية).</p>
+      <div class="memory-grid" id="memoryGrid"></div>
+      <p class="text-center mt-l" id="memoryStatus" style="font-weight:700;color:var(--neu-1);"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="orb-mini" aria-hidden="true"></div>
+    <p>سلسلة الدروس التفاعلية لتعلّم الألمانية · درس عائلة <span class="de">kommen</span></p>
+    <p>اضغط على أي كلمة أو جملة ألمانية داخل الدرس لسماع نطقها 🔊</p>
+  </div>
+</footer>
+</main>
+
+<!-- ================= FLOATING SPEECH DOCK ================= -->
+<div class="speech-dock" id="speechDock" role="region" aria-label="أدوات التحكم في النطق">
+  <button class="icon-btn" id="dockToggle" aria-label="إظهار/إخفاء إعدادات الصوت" title="إعدادات الصوت">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>
+  </button>
+  <div class="speech-dock__panel">
+    <select id="voiceSelect" aria-label="اختر صوت النطق"></select>
+    <input type="range" id="rateRange" min="0.6" max="1.3" step="0.05" value="0.9" aria-label="سرعة النطق">
+    <span class="speech-dock__rate" id="rateLabel">0.9×</span>
+    <button class="icon-btn" id="playPauseBtn" aria-label="إيقاف مؤقت / استئناف النطق" title="إيقاف مؤقت / استئناف" disabled>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+    </button>
+    <button class="icon-btn" id="replayBtn" aria-label="إعادة النطق" title="إعادة">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 3v5h5"/></svg>
+    </button>
+    <span class="now-speaking" id="nowSpeaking">—</span>
+  </div>
+</div>
+
+<!-- ================= UTILITY DOCK ================= -->
+<div class="util-dock">
+  <button class="icon-btn back-to-top" id="backToTop" aria-label="العودة إلى الأعلى" title="العودة إلى الأعلى">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+</div>
+
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+<script>
+'use strict';
+/* ==========================================================================
+   KOMMEN GALAXY — Lesson Engine
+   Single-source-of-truth verb data + generated conjugations feed every
+   widget: the builder machine, the verb explorer, the flashcards, the
+   matching game, the quiz, the sentence builder, the typing drill and the
+   memory game. Nothing is duplicated by hand across those widgets.
+   ========================================================================== */
+(function(){
+
+  /* ------------------------------------------------------------------ *
+   *  1. CORE GRAMMAR DATA
+   * ------------------------------------------------------------------ */
+  var BASE = {
+    praesens:    { ich:'komme', du:'kommst', er:'kommt',  wir:'kommen', ihr:'kommt', sie:'kommen' },
+    praeteritum: { ich:'kam',   du:'kamst',  er:'kam',    wir:'kamen',  ihr:'kamt',  sie:'kamen'  },
+    partizip: 'gekommen'
+  };
+  var AUX = {
+    haben: { ich:'habe', du:'hast', er:'hat', wir:'haben', ihr:'habt', sie:'haben' },
+    sein:  { ich:'bin',  du:'bist', er:'ist', wir:'sind',  ihr:'seid', sie:'sind'  }
+  };
+  var PRONOUNS = [
+    { key:'ich', label:'ich',         arabic:'أنا',            speak:'ich' },
+    { key:'du',  label:'du',          arabic:'أنتَ / أنتِ',     speak:'du'  },
+    { key:'er',  label:'er / sie / es', arabic:'هو / هي',      speak:'er'  },
+    { key:'wir', label:'wir',         arabic:'نحن',            speak:'wir' },
+    { key:'ihr', label:'ihr',         arabic:'أنتم',           speak:'ihr' },
+    { key:'sie', label:'sie / Sie',   arabic:'هم / حضرتك',      speak:'sie' }
+  ];
+  var TENSE_LABEL = { praesens:'Präsens · المضارع', praeteritum:'Präteritum · الماضي البسيط', perfekt:'Perfekt · الماضي التام' };
+  var CASE_LABEL  = { akk:'Akkusativ', dat:'Dativ', neu:'بدون حالة ثابتة' };
+  var CASE_DOT    = { akk:'akk', dat:'dat', neu:'neu' };
+
+  var VERB_FAMILY = [
+    {
+      id:'kommen', display:'kommen', prefix:'', hasPrefix:false, separable:false,
+      auxiliary:'sein', caseType:'neu', casePattern:null,
+      meaningAr:'يأتي / يجيء',
+      usageNote:'الفعل الأساسي لكل العائلة: حركة خالصة بلا مفعول به إلزامي. يمكن إضافة <span class="de">aus</span> أو <span class="de">von</span> + Dativ للتعبير عن المصدر أو نقطة الانطلاق.',
+      examples:[
+        { de:'Ich komme aus Ägypten.', ar:'أنا آتٍ من مصر.', mark:'aus Ägypten', markCase:'dat' },
+        { de:'Der Bus kommt in fünf Minuten.', ar:'الحافلة قادمة خلال خمس دقائق.', mark:null },
+        { de:'Meine Eltern kommen aus dem Libanon.', ar:'والداي قادمان من لبنان.', mark:'aus dem Libanon', markCase:'dat' },
+        { de:'Kommst du heute zur Party?', ar:'هل ستأتي اليوم إلى الحفلة؟', mark:null }
+      ]
+    },
+    {
+      id:'ankommen', display:'ankommen', prefix:'an', hasPrefix:true, separable:true,
+      auxiliary:'sein', caseType:'dat', casePattern:'in / an / bei + Dativ (مكان الوصول)',
+      meaningAr:'يصل',
+      usageNote:'بادئة <b>منفصلة</b>: في المضارع والماضي البسيط تُصرَّف <span class="de">komm-</span> في مكانها المعتاد وتُرمى <span class="de">an</span> إلى آخر الجملة. في الماضي التام تلتصق البادئة بالفعل: <span class="de">angekommen</span>. تنبيه: في التعبير الاصطلاحي <span class="de">es kommt auf … an</span> (الأمر يعتمد على) تتحوّل الحالة إلى <b>Akkusativ</b>!',
+      examples:[
+        { de:'Der Zug kommt um 10 Uhr am Bahnhof an.', ar:'يصل القطار الساعة العاشرة إلى المحطة.', mark:'am Bahnhof', markCase:'dat' },
+        { de:'Wann kommst du in Berlin an?', ar:'متى تصل إلى برلين؟', mark:'in Berlin', markCase:'dat' },
+        { de:'Wir sind gestern in Hamburg angekommen.', ar:'وصلنا أمس إلى هامبورغ.', mark:'in Hamburg', markCase:'dat' },
+        { de:'Der Brief ist noch nicht angekommen.', ar:'لم تصل الرسالة بعد.', mark:null }
+      ]
+    },
+    {
+      id:'bekommen', display:'bekommen', prefix:'be', hasPrefix:true, separable:false,
+      auxiliary:'haben', caseType:'akk', casePattern:'مفعول به مباشر + Akkusativ',
+      meaningAr:'يحصل على / يتلقّى — وليست "يصبح"!',
+      usageNote:'بادئة <b>غير منفصلة</b>: <span class="de">be-</span> تبقى ملتصقة دائمًا، ولا تُضاف <span class="de">ge-</span> في الماضي التام. تحذير حاسم: <span class="de">bekommen</span> لا تعني أبدًا "يصبح" — تلك هي <span class="de">werden</span>.',
+      examples:[
+        { de:'Ich bekomme ein Geschenk zum Geburtstag.', ar:'سأحصل على هدية بمناسبة عيد ميلادي.', mark:'ein Geschenk', markCase:'akk' },
+        { de:'Sie bekommt einen Brief von ihrer Freundin.', ar:'تتلقّى رسالة من صديقتها.', mark:'einen Brief', markCase:'akk' },
+        { de:'Wir haben gestern die Rechnung bekommen.', ar:'استلمنا الفاتورة أمس.', mark:'die Rechnung', markCase:'akk' },
+        { de:'Er bekam letztes Jahr einen neuen Job.', ar:'حصل على وظيفة جديدة العام الماضي.', mark:'einen neuen Job', markCase:'akk' }
+      ]
+    },
+    {
+      id:'mitkommen', display:'mitkommen', prefix:'mit', hasPrefix:true, separable:true,
+      auxiliary:'sein', caseType:'neu', casePattern:null,
+      meaningAr:'يرافق / يأتي معه',
+      usageNote:'بادئة <b>منفصلة</b>، وغالبًا بلا أي مفعول به — المعنى ببساطة "أنضمّ إليكم / أرافقكم".',
+      examples:[
+        { de:'Kommst du heute Abend mit?', ar:'هل ستأتي معنا هذا المساء؟', mark:null },
+        { de:'Ich komme leider nicht mit.', ar:'للأسف لن أرافقكم.', mark:null },
+        { de:'Sie ist letztes Mal nicht mitgekommen.', ar:'هي لم ترافقنا في المرة الماضية.', mark:null },
+        { de:'Kommt ihr mit ins Kino?', ar:'هل ستأتون معنا إلى السينما؟', mark:null }
+      ]
+    },
+    {
+      id:'vorkommen', display:'vorkommen', prefix:'vor', hasPrefix:true, separable:true,
+      auxiliary:'sein', caseType:'dat', casePattern:'Dativ (jemandem vorkommen = يبدو لشخص ما)',
+      meaningAr:'يبدو لِـ / يحدث / يوجد',
+      usageNote:'بادئة <b>منفصلة</b>. غالبًا مع ضمير Dativ للتعبير عن "يبدو لشخص ما"، أو بلا مفعول به بمعنى "يحدث/يوجد".',
+      examples:[
+        { de:'Das kommt mir bekannt vor.', ar:'يبدو هذا مألوفًا لي.', mark:'mir', markCase:'dat' },
+        { de:'Solche Fehler kommen oft vor.', ar:'مثل هذه الأخطاء تحدث كثيرًا.', mark:null },
+        { de:'Es kam ihm komisch vor, dass sie nicht anrief.', ar:'بدا له غريبًا أنها لم تتصل.', mark:'ihm', markCase:'dat' },
+        { de:'Diese Pflanze kommt nur in Afrika vor.', ar:'هذا النبات يوجد فقط في أفريقيا.', mark:null }
+      ]
+    },
+    {
+      id:'auskommen', display:'auskommen', prefix:'aus', hasPrefix:true, separable:true,
+      auxiliary:'sein', caseType:'dat', casePattern:'mit + Dativ (يتفاهم مع / يكتفي بـ)',
+      meaningAr:'يتفاهم مع / يكتفي بـ',
+      usageNote:'بادئة <b>منفصلة</b>. تُستخدم غالبًا مع <span class="de">mit + Dativ</span> للتعبير عن التفاهم بين شخصين، أو الاكتفاء بمورد معيّن.',
+      examples:[
+        { de:'Ich komme gut mit meinen Kollegen aus.', ar:'أتفاهم جيدًا مع زملائي.', mark:'meinen Kollegen', markCase:'dat' },
+        { de:'Kommst du mit wenig Geld aus?', ar:'هل تكتفي بمال قليل؟', mark:'wenig Geld', markCase:'dat' },
+        { de:'Wir sind immer gut miteinander ausgekommen.', ar:'لطالما تفاهمنا جيدًا مع بعضنا.', mark:null },
+        { de:'Er kam nicht mit seinem Bruder aus.', ar:'لم يكن يتفاهم مع أخيه.', mark:'seinem Bruder', markCase:'dat' }
+      ]
+    },
+    {
+      id:'entkommen', display:'entkommen', prefix:'ent', hasPrefix:true, separable:false,
+      auxiliary:'sein', caseType:'dat', casePattern:'Dativ مباشر بلا حرف جر: jemandem entkommen',
+      meaningAr:'يهرب من / ينجو من',
+      usageNote:'بادئة <b>غير منفصلة</b>. يأخذ مفعولًا به بصيغة Dativ مباشرة دون أي حرف جر — لا تُترجم "escape from" حرفيًا بإضافة <span class="de">von</span>.',
+      examples:[
+        { de:'Der Dieb ist der Polizei entkommen.', ar:'هرب اللص من الشرطة.', mark:'der Polizei', markCase:'dat' },
+        { de:'Niemand kann seinem Schicksal entkommen.', ar:'لا أحد يستطيع الهروب من قدره.', mark:'seinem Schicksal', markCase:'dat' },
+        { de:'Die Maus entkam der Katze gerade noch.', ar:'نجت الفأرة من القطة بالكاد.', mark:'der Katze', markCase:'dat' },
+        { de:'Wie ist er den Räubern entkommen?', ar:'كيف هرب من اللصوص؟', mark:'den Räubern', markCase:'dat' }
+      ]
+    },
+    {
+      id:'zurueckkommen', display:'zurückkommen', prefix:'zurück', hasPrefix:true, separable:true,
+      auxiliary:'sein', caseType:'neu', casePattern:null,
+      meaningAr:'يعود / يرجع',
+      usageNote:'بادئة <b>منفصلة</b> مركّبة. غالبًا بلا مفعول به، مع ظروف مكان اختيارية مثل <span class="de">aus/von</span> أو <span class="de">nach/zu</span>.',
+      examples:[
+        { de:'Wann kommst du aus dem Urlaub zurück?', ar:'متى ستعود من الإجازة؟', mark:null },
+        { de:'Ich komme sofort zurück.', ar:'سأعود حالًا.', mark:null },
+        { de:'Er ist spät in der Nacht zurückgekommen.', ar:'عاد في وقت متأخر من الليل.', mark:null },
+        { de:'Sie kamen nach drei Jahren wieder zurück.', ar:'عادوا مجددًا بعد ثلاث سنوات.', mark:null }
+      ]
+    }
+  ];
+
+  function getVerb(id){ for(var i=0;i<VERB_FAMILY.length;i++){ if(VERB_FAMILY[i].id===id) return VERB_FAMILY[i]; } return VERB_FAMILY[0]; }
+
+  /* ------------------------------------------------------------------ *
+   *  2. CONJUGATION ENGINE (single source of truth)
+   * ------------------------------------------------------------------ */
+  function conjugateFinite(verb, tense, pronKey){
+    var stem = BASE[tense][pronKey];
+    if(!verb.hasPrefix) return stem;
+    if(verb.separable) return stem + ' ' + verb.prefix;
+    return verb.prefix + stem;
+  }
+  function conjugatePerfekt(verb, pronKey){
+    var aux = AUX[verb.auxiliary][pronKey];
+    var partizip;
+    if(!verb.hasPrefix) partizip = BASE.partizip;
+    else if(verb.separable) partizip = verb.prefix + BASE.partizip;
+    else partizip = verb.prefix + 'kommen';
+    return { aux:aux, partizip:partizip };
+  }
+  function fullForm(verb, tense, pronKey){
+    if(tense==='perfekt'){ var p = conjugatePerfekt(verb,pronKey); return p.aux+' '+p.partizip; }
+    return conjugateFinite(verb, tense, pronKey);
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  3. SMALL HELPERS
+   * ------------------------------------------------------------------ */
+  function $(sel, ctx){ return (ctx||document).querySelector(sel); }
+  function $all(sel, ctx){ return Array.prototype.slice.call((ctx||document).querySelectorAll(sel)); }
+  function esc(str){ return String(str).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function shuffle(arr){ var a=arr.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+  function tokenizeWords(text){
+    var re = /[A-Za-zÀ-ÖØ-öø-ÿ]+/g, out=[], m;
+    while((m = re.exec(text))){ out.push({ word:m[0], start:m.index, end:m.index+m[0].length }); }
+    return out;
+  }
+  function buildSentenceHTML(sentence, markWord, markCase){
+    var tokens = tokenizeWords(sentence);
+    var markStart=-1, markEnd=-1;
+    if(markWord){ markStart = sentence.indexOf(markWord); if(markStart>=0) markEnd = markStart+markWord.length; }
+    var html='', cursor=0, markOpen=false;
+    tokens.forEach(function(t){
+      html += esc(sentence.slice(cursor, t.start));
+      var inMark = markStart>=0 && t.start>=markStart && t.end<=markEnd;
+      if(inMark && !markOpen){ html += '<mark class="'+markCase+'">'; markOpen=true; }
+      if(!inMark && markOpen){ html += '</mark>'; markOpen=false; }
+      html += '<span class="clickable-de word" data-speak="'+esc(t.word)+'">'+esc(t.word)+'</span>';
+      cursor = t.end;
+    });
+    if(markOpen) html += '</mark>';
+    html += esc(sentence.slice(cursor));
+    return html;
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  4. SPEECH ENGINE
+   * ------------------------------------------------------------------ */
+  var Speech = (function(){
+    var voices = [], currentVoiceURI = localStorage.getItem('kommenGalaxyVoice') || null;
+    var rate = parseFloat(localStorage.getItem('kommenGalaxyRate')) || 0.9;
+    var supported = 'speechSynthesis' in window;
+    var lastText = '';
+    var speakingBtns = [];
+
+    function germanVoices(){
+      var de = voices.filter(function(v){ return /^de/i.test(v.lang); });
+      return de.length ? de : voices;
+    }
+    function refreshVoices(){
+      if(!supported) return;
+      voices = window.speechSynthesis.getVoices() || [];
+      var sel = $('#voiceSelect');
+      if(!sel) return;
+      var list = germanVoices();
+      sel.innerHTML = '';
+      if(!list.length){
+        var opt = document.createElement('option');
+        opt.textContent = 'لا توجد أصوات متاحة بعد…';
+        sel.appendChild(opt);
+        return;
+      }
+      list.sort(function(a,b){ return (b.localService?1:0) - (a.localService?1:0); });
+      list.forEach(function(v){
+        var opt = document.createElement('option');
+        opt.value = v.voiceURI;
+        opt.textContent = v.name + ' (' + v.lang + ') · ' + (v.localService ? 'محلي' : 'شبكي');
+        sel.appendChild(opt);
+      });
+      var match = list.some(function(v){ return v.voiceURI === currentVoiceURI; });
+      if(!match){ currentVoiceURI = list[0].voiceURI; }
+      sel.value = currentVoiceURI;
+    }
+    function pickVoice(){
+      return voices.find(function(v){ return v.voiceURI === currentVoiceURI; }) || germanVoices()[0] || null;
+    }
+    function clearHighlights(){
+      speakingBtns.forEach(function(b){ b.classList.remove('is-speaking'); });
+      speakingBtns = [];
+      $all('.is-current-word').forEach(function(el){ el.classList.remove('is-current-word'); });
+    }
+    function speak(text, opts){
+      if(!supported || !text) return;
+      opts = opts || {};
+      window.speechSynthesis.cancel();
+      clearHighlights();
+      lastText = text;
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = 'de-DE';
+      var v = pickVoice();
+      if(v) u.voice = v;
+      u.rate = rate;
+      u.pitch = 1;
+      var nowEl = $('#nowSpeaking');
+      if(nowEl) nowEl.textContent = text.length > 26 ? text.slice(0,26)+'…' : text;
+      if(opts.btn){ opts.btn.classList.add('is-speaking'); speakingBtns.push(opts.btn); }
+      var playPause = $('#playPauseBtn');
+      if(playPause) playPause.disabled = false;
+
+      if(opts.wordEls && opts.wordEls.length){
+        var tokens = tokenizeWords(text);
+        u.onboundary = function(e){
+          if(e.name && e.name !== 'word') return;
+          var idx = -1;
+          for(var i=0;i<tokens.length;i++){ if(e.charIndex >= tokens[i].start){ idx = i; } else { break; } }
+          $all('.is-current-word').forEach(function(el){ el.classList.remove('is-current-word'); });
+          if(idx>=0 && opts.wordEls[idx]) opts.wordEls[idx].classList.add('is-current-word');
+        };
+      }
+      u.onend = u.onerror = function(){ clearHighlights(); if(opts.onEnd) opts.onEnd(); };
+      window.speechSynthesis.speak(u);
+    }
+    function replay(){ if(lastText) speak(lastText); }
+    function togglePause(){
+      if(!supported) return;
+      if(window.speechSynthesis.speaking && !window.speechSynthesis.paused){ window.speechSynthesis.pause(); }
+      else if(window.speechSynthesis.paused){ window.speechSynthesis.resume(); }
+    }
+    function setVoice(uri){ currentVoiceURI = uri; localStorage.setItem('kommenGalaxyVoice', uri); }
+    function setRate(r){ rate = r; localStorage.setItem('kommenGalaxyRate', String(r)); }
+
+    if(supported){
+      window.speechSynthesis.onvoiceschanged = refreshVoices;
+      refreshVoices();
+      setTimeout(refreshVoices, 300);
+      setTimeout(refreshVoices, 1200);
+    }
+    return { speak:speak, replay:replay, togglePause:togglePause, setVoice:setVoice, setRate:setRate, supported:supported, refreshVoices:refreshVoices };
+  })();
+
+  /* ------------------------------------------------------------------ *
+   *  5. THEME
+   * ------------------------------------------------------------------ */
+  function initTheme(){
+    var saved = localStorage.getItem('kommenGalaxyTheme');
+    var system = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    var theme = saved || system;
+    document.body.setAttribute('data-theme', theme);
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var themeSwapping = false;
+    $('#themeToggle').addEventListener('click', function(){
+      if(themeSwapping) return;
+      var next = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      var commit = function(){
+        document.body.setAttribute('data-theme', next);
+        localStorage.setItem('kommenGalaxyTheme', next);
+      };
+      if(reduceMotion){ commit(); return; }
+      themeSwapping = true;
+      document.body.classList.add('theme-flash');
+      setTimeout(function(){
+        commit();
+        requestAnimationFrame(function(){
+          document.body.classList.remove('theme-flash');
+          setTimeout(function(){ themeSwapping = false; }, 180);
+        });
+      }, 160);
+    });
+    if(window.matchMedia){
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
+        if(!localStorage.getItem('kommenGalaxyTheme')){ document.body.setAttribute('data-theme', e.matches?'dark':'light'); }
+      });
+    }
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  6. SCROLL UX: progress bar, scrollspy, reveal, back-to-top
+   * ------------------------------------------------------------------ */
+  function initScrollUX(){
+    var bar = $('#readingBar');
+    window.addEventListener('scroll', function(){
+      var h = document.documentElement;
+      var pct = (h.scrollTop) / ((h.scrollHeight - h.clientHeight) || 1) * 100;
+      bar.style.width = pct + '%';
+      var backBtn = $('#backToTop');
+      if(h.scrollTop > 600) backBtn.classList.add('show'); else backBtn.classList.remove('show');
+    }, { passive:true });
+
+    $('#backToTop').addEventListener('click', function(){ window.scrollTo({ top:0, behavior:'smooth' }); });
+
+    var navLinks = $all('.navbar__link');
+    var sections = $all('main section[id]');
+    var visited = new Set();
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var id = entry.target.id;
+        var link = navLinks.find(function(l){ return l.getAttribute('href') === '#'+id; });
+        if(entry.isIntersecting){
+          if(link){ navLinks.forEach(function(l){ l.classList.remove('is-active'); }); link.classList.add('is-active'); }
+          visited.add(id);
+          App.state.completionPct = Math.round((visited.size / sections.length) * 100);
+          App.updateScoreUI();
+        }
+      });
+    }, { rootMargin:'-40% 0px -50% 0px' });
+    sections.forEach(function(s){ io.observe(s); });
+
+    var revealIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ entry.target.classList.add('is-visible'); revealIO.unobserve(entry.target); }
+      });
+    }, { threshold:0.12 });
+    $all('.reveal, .reveal-scale').forEach(function(el){ revealIO.observe(el); });
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  7. FULLSCREEN + SEARCH
+   * ------------------------------------------------------------------ */
+  function initFullscreen(){
+    $('#fullscreenBtn').addEventListener('click', function(){
+      if(!document.fullscreenElement){ document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+      else { document.exitFullscreen && document.exitFullscreen(); }
+    });
+  }
+  function buildSearchIndex(){
+    var idx = [];
+    VERB_FAMILY.forEach(function(v){
+      idx.push({ verb:v.id, de:v.display, ar:v.meaningAr, kind:'فعل' });
+      v.examples.forEach(function(ex){ idx.push({ verb:v.id, de:ex.de, ar:ex.ar, kind:'مثال' }); });
+    });
+    return idx;
+  }
+  function initSearch(){
+    var index = buildSearchIndex();
+    var panel = $('#searchPanel'), input = $('#searchInput'), results = $('#searchResults');
+    function open(){ panel.classList.add('is-open'); setTimeout(function(){ input.focus(); }, 60); }
+    function close(){ panel.classList.remove('is-open'); input.value=''; results.innerHTML=''; }
+    $('#searchBtn').addEventListener('click', open);
+    panel.addEventListener('click', function(e){ if(e.target === panel) close(); });
+    document.addEventListener('keydown', function(e){
+      if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k'){ e.preventDefault(); open(); }
+      if(e.key==='Escape') close();
+    });
+    input.addEventListener('input', function(){
+      var q = input.value.trim().toLowerCase();
+      if(q.length < 2){ results.innerHTML=''; return; }
+      var matches = index.filter(function(item){
+        return item.de.toLowerCase().indexOf(q) > -1 || item.ar.indexOf(q) > -1;
+      }).slice(0, 8);
+      results.innerHTML = matches.map(function(m){
+        var deHtml = esc(m.de).replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'), '<mark>$1</mark>');
+        return '<div class="search-result" data-verb="'+m.verb+'"><span class="badge badge--aux">'+m.kind+'</span> &nbsp;<span class="de">'+deHtml+'</span><br><small>'+esc(m.ar)+'</small></div>';
+      }).join('') || '<div class="search-result">لا توجد نتائج مطابقة</div>';
+      $all('.search-result[data-verb]', results).forEach(function(el){
+        el.addEventListener('click', function(){
+          close();
+          App.selectVerb(el.getAttribute('data-verb'));
+          document.getElementById('verbs').scrollIntoView({ behavior:'smooth', block:'start' });
+        });
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  8. TOASTS / ACHIEVEMENTS
+   * ------------------------------------------------------------------ */
+  function showToast(title, sub, icon){
+    var stack = $('#toastStack');
+    var el = document.createElement('div');
+    el.className = 'toast';
+    el.innerHTML = '<span class="toast__icon">'+(icon||'⭐')+'</span><span><b>'+esc(title)+'</b><span>'+esc(sub||'')+'</span></span>';
+    stack.appendChild(el);
+    setTimeout(function(){ el.classList.add('hide'); setTimeout(function(){ el.remove(); }, 400); }, 4200);
+  }
+  var unlockedBadges = new Set();
+  function unlock(id, title, sub, icon){
+    if(unlockedBadges.has(id)) return;
+    unlockedBadges.add(id);
+    App.state.badges = unlockedBadges.size;
+    App.updateScoreUI();
+    showToast(title, sub, icon);
+    if(unlockedBadges.size === 6){
+      setTimeout(function(){ showToast('أتقنتَ مجرّة kommen بالكامل!', 'كل المهمات مكتملة — أحسنت!', '🌌'); }, 700);
+    }
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  9. GLOBAL APP OBJECT
+   * ------------------------------------------------------------------ */
+  var App = {
+    state:{ points:0, streak:0, badges:0, completionPct:0 },
+    updateScoreUI:function(){
+      $('#scorePoints').textContent = App.state.points;
+      $('#scoreStreak').textContent = App.state.streak;
+      $('#scoreBadges').textContent = App.state.badges;
+      $('#scoreCompletion').textContent = '\u2066' + App.state.completionPct + '%\u2069';
+    },
+    addPoints:function(n){ App.state.points += n; App.updateScoreUI(); },
+    correct:function(n){ App.state.streak += 1; App.addPoints(n); },
+    wrong:function(){ App.state.streak = 0; App.updateScoreUI(); }
+  };
+  window.KommenApp = App;
+
+  /* ------------------------------------------------------------------ *
+   *  10. GLOBAL CLICK-TO-SPEAK DELEGATION (simple, non-highlighted)
+   * ------------------------------------------------------------------ */
+  function initGlobalSpeech(){
+    document.addEventListener('click', function(e){
+      var t = e.target.closest('[data-speak]');
+      if(!t) return;
+      if(t.closest('.example-sentence')) return; /* handled by its own rich handler */
+      e.preventDefault();
+      Speech.speak(t.getAttribute('data-speak'), { btn:t.classList.contains('speak-btn')||t.classList.contains('clickable-de') ? t : null });
+    });
+    $('#voiceSelect').addEventListener('change', function(){ Speech.setVoice(this.value); });
+    $('#rateRange').addEventListener('input', function(){
+      Speech.setRate(parseFloat(this.value));
+      $('#rateLabel').textContent = parseFloat(this.value).toFixed(2) + '×';
+    });
+    $('#rateRange').value = localStorage.getItem('kommenGalaxyRate') || 0.9;
+    $('#rateLabel').textContent = parseFloat($('#rateRange').value).toFixed(2) + '×';
+    $('#replayBtn').addEventListener('click', function(){ Speech.replay(); });
+    $('#playPauseBtn').addEventListener('click', function(){ Speech.togglePause(); });
+    $('#dockToggle').addEventListener('click', function(){ $('#speechDock').classList.toggle('is-collapsed'); });
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  11. ORBIT DIAGRAM
+   * ------------------------------------------------------------------ */
+  function initOrbit(){
+    $all('.planet, .sun-core').forEach(function(el){
+      function activate(){
+        var id = el.getAttribute('data-verb');
+        Speech.speak(getVerb(id).display);
+        if(id !== 'kommen'){ App.selectVerb(id); document.getElementById('verbs').scrollIntoView({ behavior:'smooth', block:'start' }); }
+      }
+      el.addEventListener('click', activate);
+      el.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); activate(); } });
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  12. VERB BUILDER MACHINE
+   * ------------------------------------------------------------------ */
+  var builderState = { verb:'kommen', tense:'praesens', pronoun:'ich' };
+  function renderBuilderChips(){
+    var verbWrap = $('#builderVerbSelect');
+    verbWrap.innerHTML = VERB_FAMILY.map(function(v){
+      return '<button class="chip" data-verb="'+v.id+'">'+v.display+'</button>';
+    }).join('');
+    $all('.chip', verbWrap).forEach(function(c){
+      c.addEventListener('click', function(){ builderState.verb = c.getAttribute('data-verb'); syncBuilderChips(); updateMachine(); });
+    });
+    var pronWrap = $('#builderPronounSelect');
+    pronWrap.innerHTML = PRONOUNS.map(function(p){
+      return '<button class="chip" data-pron="'+p.key+'">'+p.label+'</button>';
+    }).join('');
+    $all('.chip', pronWrap).forEach(function(c){
+      c.addEventListener('click', function(){ builderState.pronoun = c.getAttribute('data-pron'); syncBuilderChips(); updateMachine(); });
+    });
+    $all('#builderTenseSelect .chip').forEach(function(c){
+      c.addEventListener('click', function(){
+        builderState.tense = c.getAttribute('data-tense');
+        $all('#builderTenseSelect .chip').forEach(function(x){ x.classList.remove('is-active'); });
+        c.classList.add('is-active');
+        updateMachine();
+      });
+    });
+    syncBuilderChips();
+  }
+  function syncBuilderChips(){
+    var v = getVerb(builderState.verb);
+    $all('#builderVerbSelect .chip').forEach(function(c){
+      var active = c.getAttribute('data-verb') === builderState.verb;
+      c.classList.toggle('is-active', active);
+      c.classList.remove('akk','dat','neu');
+      if(active) c.classList.add(CASE_DOT[v.caseType]);
+    });
+    $all('#builderPronounSelect .chip').forEach(function(c){
+      c.classList.toggle('is-active', c.getAttribute('data-pron') === builderState.pronoun);
+      c.classList.remove('akk','dat','neu');
+      if(c.getAttribute('data-pron') === builderState.pronoun) c.classList.add(CASE_DOT[v.caseType]);
+    });
+  }
+  function block(type, text){ return '<span class="block block--'+type+'">'+esc(text)+'</span>'; }
+  function updateMachine(){
+    var v = getVerb(builderState.verb);
+    var blocksHTML = '';
+    var subject = PRONOUNS.find(function(p){ return p.key===builderState.pronoun; }).speak;
+    if(builderState.tense === 'perfekt'){
+      var pf = conjugatePerfekt(v, builderState.pronoun);
+      blocksHTML += block('aux', pf.aux) + '<span class="plus-sign">+</span>';
+      if(!v.hasPrefix){ blocksHTML += block('ge','ge') + block('stem','kommen'); }
+      else if(v.separable){ blocksHTML += block('prefix', v.prefix) + block('ge','ge') + block('stem','kommen'); }
+      else { blocksHTML += block('prefix', v.prefix) + block('stem','kommen'); }
+      $('#machineResult').textContent = subject + ' ' + pf.aux + ' ' + pf.partizip;
+      $('#machineNote').innerHTML = 'الفعل المساعد هنا هو <b class="de">'+v.auxiliary+'</b>. صيغة Partizip II هي <b class="de">'+pf.partizip+'</b>' + (v.hasPrefix && !v.separable ? ' — لاحظ: لا توجد ge- لأن البادئة غير منفصلة.' : '') + '.';
+    } else {
+      var stem = BASE[builderState.tense][builderState.pronoun];
+      if(!v.hasPrefix){ blocksHTML += block('stem', stem); }
+      else if(v.separable){ blocksHTML += block('stem', stem) + '<span class="plus-sign">↷</span>' + block('prefix', v.prefix); }
+      else { blocksHTML += block('prefix', v.prefix) + block('stem', stem); }
+      var full = conjugateFinite(v, builderState.tense, builderState.pronoun);
+      $('#machineResult').textContent = subject + ' ' + full;
+      $('#machineNote').innerHTML = v.hasPrefix
+        ? (v.separable ? 'بادئة <b class="de">'+v.prefix+'</b> منفصلة: تطير إلى نهاية الجملة، بينما يُصرَّف الجذر في مكانه المعتاد.' : 'بادئة <b class="de">'+v.prefix+'</b> غير منفصلة: تبقى ملتصقة بالجذر دائمًا.')
+        : 'فعل بلا بادئة — يُصرَّف الجذر مباشرة.';
+    }
+    $('#machineBlocks').innerHTML = blocksHTML;
+    var speakText = $('#machineResult').textContent;
+    $('#machineSpeak').setAttribute('data-speak', speakText);
+  }
+  function initBuilder(){
+    renderBuilderChips();
+    updateMachine();
+    $('#machineSpeak').addEventListener('click', function(){ Speech.speak(this.getAttribute('data-speak'), { btn:this }); });
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  13. VERB EXPLORER (tabs + panels)
+   * ------------------------------------------------------------------ */
+  var visitedVerbs = new Set();
+  function renderVerbTabs(){
+    var wrap = $('#verbTabs');
+    wrap.innerHTML = VERB_FAMILY.map(function(v, i){
+      return '<button class="verb-tab '+CASE_DOT[v.caseType]+'" role="tab" aria-selected="'+(i===0?'true':'false')+'" data-verb="'+v.id+'">'+
+        '<span class="de">'+v.display+'</span><span class="dot" style="background:var(--'+CASE_DOT[v.caseType]+'-1)"></span>'+
+        '<small>'+CASE_LABEL[v.caseType]+'</small></button>';
+    }).join('');
+    $all('.verb-tab', wrap).forEach(function(tab){
+      tab.addEventListener('click', function(){ App.selectVerb(tab.getAttribute('data-verb')); });
+    });
+  }
+  function conjTable(v, tense){
+    var rows = PRONOUNS.map(function(p){
+      var speakText, cellHTML;
+      if(tense==='perfekt'){
+        var pf = conjugatePerfekt(v, p.key);
+        speakText = p.speak+' '+pf.aux+' '+pf.partizip;
+        cellHTML = esc(pf.aux) + ' <span class="conj-form">'+esc(pf.partizip)+'</span>';
+      } else {
+        var form = conjugateFinite(v, tense, p.key);
+        speakText = p.speak+' '+form;
+        cellHTML = '<span class="conj-form">'+esc(form)+'</span>';
+      }
+      return '<tr><td>'+p.label+'</td><td class="clickable-de" data-speak="'+esc(speakText)+'">'+cellHTML+'</td></tr>';
+    }).join('');
+    return '<table class="conj-table de" dir="ltr"><thead><tr><th>Pronomen</th><th>Form</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  }
+  function renderVerbPanel(v){
+    var badgeHTML = '<span class="badge badge--'+v.caseType+'">'+CASE_LABEL[v.caseType]+'</span> <span class="badge badge--aux">Hilfsverb: '+v.auxiliary+'</span>';
+    var orbLabel = v.hasPrefix ? v.prefix : '∅';
+    var caseLine = v.casePattern ? '<p style="font-size:.88rem;color:var(--text-3);margin-top:.3rem;">🔎 '+esc(v.casePattern)+'</p>' : '';
+    var examplesHTML = v.examples.map(function(ex){
+      var sentenceHTML = buildSentenceHTML(ex.de, ex.mark, ex.markCase);
+      return '<div class="example-card">'+
+        '<button class="speak-btn" data-role="example-speak" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>'+
+        '<div class="example-card__text"><span class="de example-sentence" data-full="'+esc(ex.de)+'">'+sentenceHTML+'</span><span class="ar">'+esc(ex.ar)+'</span></div>'+
+      '</div>';
+    }).join('');
+    return (
+      '<div class="verb-hero '+v.caseType+'">'+
+        '<div class="verb-hero__orb de">'+esc(orbLabel)+'</div>'+
+        '<div><h3><span class="de">'+esc(v.display)+'</span> <button class="speak-btn" data-speak="'+esc(v.display)+'" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></h3>'+
+        '<p class="verb-hero__meaning">'+esc(v.meaningAr)+'</p>'+
+        '<div>'+badgeHTML+'</div>'+ caseLine +
+        '</div>'+
+      '</div>'+
+      '<div class="usage-note"><div class="usage-note__icon">💡</div><div>'+v.usageNote+'</div></div>'+
+      '<div class="tense-tabs" role="tablist">'+
+        ['praesens','praeteritum','perfekt'].map(function(t,i){
+          return '<button class="tense-tab" role="tab" aria-selected="'+(i===0?'true':'false')+'" data-tense="'+t+'">'+TENSE_LABEL[t]+'</button>';
+        }).join('') +
+      '</div>'+
+      ['praesens','praeteritum','perfekt'].map(function(t,i){
+        return '<div class="tense-panel'+(i===0?' is-active':'')+'" data-tensepanel="'+t+'">'+conjTable(v,t)+'</div>';
+      }).join('') +
+      '<h4 style="margin-top:var(--space-l);">أمثلة حيّة</h4>'+
+      '<div class="examples-grid">'+examplesHTML+'</div>'
+    );
+  }
+  function wireExampleSpeech(panelEl){
+    $all('.example-card', panelEl).forEach(function(card){
+      var btn = card.querySelector('[data-role="example-speak"]');
+      var sentenceEl = card.querySelector('.example-sentence');
+      var text = sentenceEl.getAttribute('data-full');
+      var wordEls = $all('.word', sentenceEl);
+      btn.addEventListener('click', function(){ Speech.speak(text, { btn:btn, wordEls:wordEls }); });
+    });
+  }
+  function wireTensetabs(panelEl){
+    $all('.tense-tab', panelEl).forEach(function(tab){
+      tab.addEventListener('click', function(){
+        $all('.tense-tab', panelEl).forEach(function(t){ t.setAttribute('aria-selected','false'); });
+        tab.setAttribute('aria-selected','true');
+        var target = tab.getAttribute('data-tense');
+        $all('.tense-panel', panelEl).forEach(function(p){ p.classList.toggle('is-active', p.getAttribute('data-tensepanel')===target); });
+      });
+    });
+  }
+  function renderVerbPanels(){
+    var wrap = $('#verbPanels');
+    wrap.innerHTML = VERB_FAMILY.map(function(v,i){
+      return '<div class="verb-panel'+(i===0?' is-active':'')+'" data-panel="'+v.id+'">'+renderVerbPanel(v)+'</div>';
+    }).join('');
+    $all('.verb-panel', wrap).forEach(function(panel){
+      wireTensetabs(panel);
+      wireExampleSpeech(panel);
+    });
+  }
+  App.selectVerb = function(id){
+    $all('.verb-tab').forEach(function(t){ t.setAttribute('aria-selected', t.getAttribute('data-verb')===id ? 'true':'false'); });
+    $all('.verb-panel').forEach(function(p){ p.classList.toggle('is-active', p.getAttribute('data-panel')===id); });
+    visitedVerbs.add(id);
+    if(visitedVerbs.size === VERB_FAMILY.length){ unlock('explorer', 'مستكشف المجرّة!', 'زرت كل الكواكب الثمانية', '🪐'); }
+  };
+
+  /* ------------------------------------------------------------------ *
+   *  14. MISSION TABS
+   * ------------------------------------------------------------------ */
+  function initMissionTabs(){
+    $all('.mission-tab').forEach(function(tab){
+      tab.addEventListener('click', function(){
+        $all('.mission-tab').forEach(function(t){ t.classList.remove('is-active'); t.setAttribute('aria-selected','false'); });
+        tab.classList.add('is-active'); tab.setAttribute('aria-selected','true');
+        var target = tab.getAttribute('data-mission');
+        $all('.mission-panel').forEach(function(p){ p.classList.toggle('is-active', p.id === 'mission-'+target); });
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  15. FLASHCARDS
+   * ------------------------------------------------------------------ */
+  var flashIdx = 0, flashSeen = new Set();
+  function renderFlash(){
+    var v = VERB_FAMILY[flashIdx];
+    $('#flashcard').classList.remove('is-flipped');
+    $('#flashFront').textContent = v.display;
+    $('#flashMeaning').textContent = v.meaningAr;
+    $('#flashAux').textContent = v.auxiliary + ' · ' + CASE_LABEL[v.caseType];
+    $('#flashBack').classList.remove('akk','dat','neu');
+    $('#flashBack').classList.add(CASE_DOT[v.caseType]);
+    $('#flashCounter').textContent = '\u2066' + (flashIdx+1) + ' / ' + VERB_FAMILY.length + '\u2069';
+    $('#flashSpeak').setAttribute('data-speak', v.display);
+    flashSeen.add(flashIdx);
+    if(flashSeen.size === VERB_FAMILY.length){ unlock('flashmaster', 'بطاقات مكتملة!', 'شاهدت كل بطاقات العائلة', '🗂️'); }
+  }
+  function initFlash(){
+    $('#flashcard').addEventListener('click', function(){ this.classList.toggle('is-flipped'); });
+    $('#flashcard').addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); this.classList.toggle('is-flipped'); } });
+    $('#flashPrev').addEventListener('click', function(){ flashIdx = (flashIdx-1+VERB_FAMILY.length)%VERB_FAMILY.length; renderFlash(); });
+    $('#flashNext').addEventListener('click', function(){ flashIdx = (flashIdx+1)%VERB_FAMILY.length; renderFlash(); });
+    $('#flashSpeak').addEventListener('click', function(){ Speech.speak(this.getAttribute('data-speak'), { btn:this }); });
+    renderFlash();
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  16. MATCHING GAME (verb -> case category)
+   * ------------------------------------------------------------------ */
+  function initMatch(){
+    var verbsShuffled = shuffle(VERB_FAMILY);
+    var vWrap = $('#matchVerbs'), cWrap = $('#matchCases');
+    vWrap.innerHTML = verbsShuffled.map(function(v){ return '<button class="match-item" data-verb="'+v.id+'">'+v.display+'</button>'; }).join('');
+    cWrap.innerHTML = ['akk','dat','neu'].map(function(c){ return '<button class="match-item" data-case="'+c+'">'+CASE_LABEL[c]+'</button>'; }).join('');
+    var selected = null, matched = 0;
+    $all('.match-item[data-verb]', vWrap).forEach(function(item){
+      item.addEventListener('click', function(){
+        if(item.classList.contains('is-correct')) return;
+        $all('.match-item[data-verb]', vWrap).forEach(function(i){ i.classList.remove('is-selected'); });
+        item.classList.add('is-selected');
+        selected = item;
+      });
+    });
+    $all('.match-item[data-case]', cWrap).forEach(function(item){
+      item.addEventListener('click', function(){
+        if(!selected) return;
+        var v = getVerb(selected.getAttribute('data-verb'));
+        if(v.caseType === item.getAttribute('data-case')){
+          selected.classList.add('is-correct');
+          selected.setAttribute('aria-disabled','true');
+          selected.innerHTML = '✓ ' + v.display;
+          matched++;
+          App.correct(5);
+          selected = null;
+          if(matched === VERB_FAMILY.length){
+            $('#matchStatus').textContent = '🎉 أحسنت! طابقتَ كل الأفعال بحالاتها الصحيحة.';
+            unlock('matcher', 'خبير الحالات!', 'طابقت كل الأفعال بنجاح', '🎯');
+          }
+        } else {
+          item.classList.add('is-wrong');
+          selected.classList.add('is-wrong');
+          App.wrong();
+          setTimeout(function(){ item.classList.remove('is-wrong'); if(selected) selected.classList.remove('is-wrong'); }, 450);
+        }
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  17. QUIZ
+   * ------------------------------------------------------------------ */
+  var QUIZ = [
+    { q:'Welchen Kasus braucht „entkommen“?', opts:['Akkusativ','Dativ','Kein Kasus','Genitiv'], correct:1,
+      exp:'entkommen + Dativ direkt, ohne Präposition: jemandem entkommen.' },
+    { q:'Ich ___ gestern in Berlin an. (Perfekt)', opts:['bin angekommen','habe angekommen','bin ankommen','hatte angekommen'], correct:0,
+      exp:'ankommen benutzt sein im Perfekt, und das Partizip lautet angekommen (nicht ankommen).' },
+    { q:'Was bedeutet „werden“, nicht „bekommen“?', opts:['يحصل على','يصبح','يصل','يهرب'], correct:1,
+      exp:'bekommen = يحصل على/يتلقّى. أمّا "يصبح" فهي werden — فخّ شائع جدًا!' },
+    { q:'Kommst du heute Abend ___?', opts:['mit','an','aus','vor'], correct:0,
+      exp:'mitkommen = يرافق / يأتي معه.' },
+    { q:'Welcher Satz ist grammatisch korrekt?', opts:['Ich ankomme morgen.','Ich komme morgen an.','Ich an komme morgen.','Ich morgen ankomme.'], correct:1,
+      exp:'an- بادئة منفصلة: يُصرَّف komme في مكانه، وتُرمى an إلى آخر الجملة.' },
+    { q:'Was bedeutet „mit jemandem auskommen“?', opts:['يهرب من','يتفاهم مع / يكتفي بـ','يصل إلى','يحدث'], correct:1,
+      exp:'auskommen mit + Dativ = يتفاهم مع شخص، أو يكتفي بشيء.' },
+    { q:'„Es kommt auf das Wetter an.“ — welcher Kasus?', opts:['Dativ wie immer bei ankommen','Akkusativ, weil es „abhängen von“ bedeutet','Genitiv','Kein Kasus nötig'], correct:1,
+      exp:'في التعبير الاصطلاحي "يعتمد على" تتحوّل الحالة فجأة إلى Akkusativ رغم أن ankommen عادة تأخذ Dativ.' },
+    { q:'Welches Hilfsverb braucht „bekommen“ im Perfekt?', opts:['sein','haben','werden','kein Hilfsverb'], correct:1,
+      exp:'bekommen ليس فعل حركة، لذلك يأخذ haben — على عكس بقية عائلة kommen.' }
+  ];
+  var quizIdx = 0, quizScore = 0, quizAnswered = false;
+  function renderQuizProgress(){
+    $('#quizProgress').innerHTML = QUIZ.map(function(_,i){ return '<span><i style="width:'+(i<quizIdx?'100%':(i===quizIdx?'50%':'0%'))+'"></i></span>'; }).join('');
+  }
+  function renderQuiz(){
+    quizAnswered = false;
+    var item = QUIZ[quizIdx];
+    $('#quizQuestion').textContent = item.q;
+    $('#quizOptions').innerHTML = item.opts.map(function(o,i){ return '<button class="quiz-option" data-i="'+i+'">'+esc(o)+'</button>'; }).join('');
+    $('#quizFeedback').className = 'quiz-feedback';
+    $('#quizFeedback').textContent = '';
+    $('#quizNext').disabled = true;
+    $('#quizNext').textContent = quizIdx === QUIZ.length-1 ? 'إنهاء ✓' : 'التالي ←';
+    $('#quizTotal').textContent = QUIZ.length;
+    renderQuizProgress();
+    $all('.quiz-option').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(quizAnswered) return;
+        quizAnswered = true;
+        var i = parseInt(btn.getAttribute('data-i'), 10);
+        var correct = i === item.correct;
+        $all('.quiz-option').forEach(function(b,bi){
+          if(bi === item.correct) b.classList.add('correct');
+          if(bi === i && !correct) b.classList.add('wrong');
+        });
+        $('#quizFeedback').textContent = (correct ? '✓ صحيح! ' : '✗ ليست هذه الإجابة. ') + item.exp;
+        $('#quizFeedback').classList.add('show', correct ? 'ok':'bad');
+        if(correct){ quizScore++; App.correct(10); } else { App.wrong(); }
+        $('#quizScore').textContent = quizScore;
+        $('#quizNext').disabled = false;
+      });
+    });
+  }
+  function initQuiz(){
+    renderQuiz();
+    $('#quizNext').addEventListener('click', function(){
+      if(quizIdx < QUIZ.length-1){ quizIdx++; renderQuiz(); }
+      else {
+        unlock('quizzer', 'أنهيت الاختبار!', 'النتيجة: \u2066'+quizScore+'/'+QUIZ.length+'\u2069', '❓');
+        quizIdx = 0; quizScore = 0; $('#quizScore').textContent = 0; renderQuiz();
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  18. SENTENCE BUILDER
+   * ------------------------------------------------------------------ */
+  var SENTENCES = [
+    { ar:'أنا أصل غدًا إلى برلين.', words:['Ich','komme','morgen','in','Berlin','an.'] },
+    { ar:'هل ستأتي معنا إلى السينما؟', words:['Kommst','du','mit','ins','Kino?'] },
+    { ar:'سيحصل هو على رسالة من والدته.', words:['Er','bekommt','einen','Brief','von','seiner','Mutter.'] },
+    { ar:'لقد وصل القطار إلى المحطة.', words:['Der','Zug','ist','am','Bahnhof','angekommen.'] },
+    { ar:'أتفاهم جيدًا مع زملائي.', words:['Ich','komme','gut','mit','meinen','Kollegen','aus.'] },
+    { ar:'متى ستعود من الإجازة؟', words:['Wann','kommst','du','aus','dem','Urlaub','zurück?'] }
+  ];
+  var sbIdx = 0, sbSolvedCount = 0;
+  function renderSentence(){
+    var item = SENTENCES[sbIdx];
+    $('#sentenceArabic').textContent = '📝 ' + item.ar;
+    $('#sbTarget').innerHTML = '';
+    var scrambled = shuffle(item.words);
+    var tries = 0;
+    while(scrambled.join(' ') === item.words.join(' ') && tries < 5){ scrambled = shuffle(item.words); tries++; }
+    $('#sbBank').innerHTML = scrambled.map(function(w,i){ return '<span class="sb-word" draggable="true" data-word="'+esc(w)+'" data-key="'+i+'">'+esc(w)+'</span>'; }).join('');
+    $('#sbFeedback').textContent = '';
+    $('#sbFeedback').className = 'type-feedback';
+    $('#sbNext').style.display = 'none';
+    wireSentenceWords();
+  }
+  function wireSentenceWords(){
+    $all('.sb-word', $('#sbBank')).forEach(function(w){ w.addEventListener('click', function(){ $('#sbTarget').appendChild(w); w.classList.add('placed'); }); });
+    $all('.sb-word', $('#sbBank')).forEach(function(w){
+      w.addEventListener('dragstart', function(){ w.classList.add('is-dragging'); });
+      w.addEventListener('dragend', function(){ w.classList.remove('is-dragging'); });
+    });
+    var target = $('#sbTarget');
+    target.addEventListener('dragover', function(e){ e.preventDefault(); });
+    target.addEventListener('drop', function(e){
+      e.preventDefault();
+      var dragging = document.querySelector('.sb-word.is-dragging');
+      if(dragging){ target.appendChild(dragging); dragging.classList.add('placed'); }
+    });
+  }
+  function initSentenceBuilder(){
+    renderSentence();
+    $('#sbTarget').addEventListener('click', function(e){
+      var w = e.target.closest('.sb-word');
+      if(w){ w.classList.remove('placed'); $('#sbBank').appendChild(w); }
+    });
+    $('#sbReset').addEventListener('click', function(){ renderSentence(); });
+    $('#sbCheck').addEventListener('click', function(){
+      var placed = $all('.sb-word', $('#sbTarget')).map(function(w){ return w.getAttribute('data-word'); });
+      var correct = placed.join(' ') === SENTENCES[sbIdx].words.join(' ');
+      var fb = $('#sbFeedback');
+      if(correct){
+        fb.textContent = '✓ ممتاز! الترتيب صحيح.';
+        fb.style.color = 'var(--neu-1)';
+        App.correct(15);
+        sbSolvedCount++;
+        $('#sbNext').style.display = 'inline-flex';
+        if(sbSolvedCount === 3){ unlock('builder', 'مهندس الجمل!', 'بنيتَ ٣ جمل صحيحة', '🧩'); }
+        Speech.speak(SENTENCES[sbIdx].words.join(' '));
+      } else {
+        fb.textContent = '✗ الترتيب غير صحيح بعد — حاول مجددًا (تذكّر: البادئة المنفصلة تذهب إلى آخر الجملة!).';
+        fb.style.color = 'var(--akk-1)';
+        App.wrong();
+      }
+    });
+    $('#sbNext').addEventListener('click', function(){ sbIdx = (sbIdx+1) % SENTENCES.length; renderSentence(); });
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  19. TYPING PRACTICE
+   * ------------------------------------------------------------------ */
+  var TYPE_ITEMS = [
+    { verb:'kommen', tense:'praesens', pron:'ich', subj:'ich' },
+    { verb:'ankommen', tense:'praesens', pron:'du', subj:'du' },
+    { verb:'bekommen', tense:'praeteritum', pron:'er', subj:'er' },
+    { verb:'ankommen', tense:'perfekt', pron:'wir', subj:'wir' },
+    { verb:'mitkommen', tense:'praesens', pron:'ihr', subj:'ihr' },
+    { verb:'entkommen', tense:'praeteritum', pron:'sie', subj:'sie' },
+    { verb:'auskommen', tense:'perfekt', pron:'ich', subj:'ich' },
+    { verb:'vorkommen', tense:'praesens', pron:'er', subj:'es' },
+    { verb:'zurueckkommen', tense:'praeteritum', pron:'ich', subj:'ich' },
+    { verb:'kommen', tense:'perfekt', pron:'du', subj:'du' }
+  ];
+  var typeIdx = 0, typeOrder = shuffle(TYPE_ITEMS.map(function(_,i){ return i; })), typePos = 0, typeStreak = 0;
+  function renderType(){
+    var item = TYPE_ITEMS[typeOrder[typePos % typeOrder.length]];
+    var v = getVerb(item.verb);
+    $('#typePrompt').innerHTML = 'بضمير <b class="de">'+item.subj+'</b> وزمن <b>'+TENSE_LABEL[item.tense]+'</b>، صرّف الفعل <b class="de">'+v.display+'</b> <span style="color:var(--text-3);">('+esc(v.meaningAr)+')</span>';
+    $('#typeInput').value = '';
+    $('#typeInput').classList.remove('correct','wrong');
+    $('#typeFeedback').textContent = '';
+    $('#typeInput').focus();
+    $('#typeInput').dataset.answer = fullForm(v, item.tense, item.pron);
+  }
+  function initTyping(){
+    renderType();
+    function check(){
+      var input = $('#typeInput');
+      var answer = input.dataset.answer.toLowerCase();
+      var given = input.value.trim().toLowerCase().replace(/\s+/g,' ');
+      var fb = $('#typeFeedback');
+      if(given === answer){
+        input.classList.add('correct'); input.classList.remove('wrong');
+        fb.style.color = 'var(--neu-1)'; fb.textContent = '✓ صحيح تمامًا!';
+        typeStreak++; App.correct(5);
+        if(typeStreak === 5){ unlock('typist', 'طباعة سريعة!', '٥ إجابات صحيحة متتالية', '⌨️'); }
+        Speech.speak(input.dataset.answer);
+      } else {
+        input.classList.add('wrong'); input.classList.remove('correct');
+        fb.style.color = 'var(--akk-1)'; fb.innerHTML = '✗ ليس تمامًا. الشكل الصحيح: <b class="de">'+esc(input.dataset.answer)+'</b>';
+        typeStreak = 0; App.wrong();
+      }
+    }
+    $('#typeCheck').addEventListener('click', check);
+    $('#typeInput').addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); check(); } });
+    $('#typeNext').addEventListener('click', function(){ typePos++; renderType(); });
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  20. MEMORY GAME
+   * ------------------------------------------------------------------ */
+  function initMemory(){
+    var cards = [];
+    VERB_FAMILY.forEach(function(v){
+      cards.push({ pair:v.id, type:'de', content:v.display });
+      cards.push({ pair:v.id, type:'ar', content:v.meaningAr.split(' / ')[0].split(' — ')[0] });
+    });
+    cards = shuffle(cards);
+    var grid = $('#memoryGrid');
+    grid.innerHTML = cards.map(function(c,i){
+      return '<div class="memory-card" data-pair="'+c.pair+'" data-type="'+c.type+'" data-idx="'+i+'" tabindex="0" role="button" aria-label="بطاقة ذاكرة">'+
+        '<div class="memory-inner">'+
+          '<div class="memory-face memory-face--back">✦</div>'+
+          '<div class="memory-face memory-face--front '+(c.type==='de'?'de':'')+'">'+esc(c.content)+'</div>'+
+        '</div></div>';
+    }).join('');
+    var flipped = [], matchedCount = 0, lock = false;
+    function tryMatch(){
+      var a = flipped[0], b = flipped[1];
+      if(a.getAttribute('data-pair') === b.getAttribute('data-pair')){
+        a.classList.add('is-matched'); b.classList.add('is-matched');
+        matchedCount++; App.correct(5);
+        flipped = []; lock = false;
+        if(matchedCount === VERB_FAMILY.length){
+          $('#memoryStatus').textContent = '🎉 أتقنتَ اللعبة! طابقتَ كل الأزواج.';
+          unlock('memory', 'ذاكرة الفولاذ!', 'طابقت كل أزواج العائلة', '🧠');
+        }
+      } else {
+        App.wrong();
+        setTimeout(function(){ a.classList.remove('is-flipped'); b.classList.remove('is-flipped'); flipped=[]; lock=false; }, 850);
+      }
+    }
+    grid.addEventListener('click', function(e){
+      var card = e.target.closest('.memory-card');
+      if(!card || lock || card.classList.contains('is-flipped') || card.classList.contains('is-matched')) return;
+      card.classList.add('is-flipped');
+      if(card.getAttribute('data-type') === 'de'){ Speech.speak(card.getAttribute('data-pair') === 'zurueckkommen' ? 'zurückkommen' : getVerb(card.getAttribute('data-pair')).display); }
+      flipped.push(card);
+      if(flipped.length === 2){ lock = true; setTimeout(tryMatch, 500); }
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   *  21. INIT
+   * ------------------------------------------------------------------ */
+  document.addEventListener('DOMContentLoaded', function(){
+    initTheme();
+    initScrollUX();
+    initFullscreen();
+    initSearch();
+    initGlobalSpeech();
+    initOrbit();
+    initBuilder();
+    renderVerbTabs();
+    renderVerbPanels();
+    initMissionTabs();
+    initFlash();
+    initMatch();
+    initQuiz();
+    initSentenceBuilder();
+    initTyping();
+    initMemory();
+    App.updateScoreUI();
+  });
+
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="family-verben-kommen" data-category="family-verben" data-title="مجرّة kommen — عائلة أفعال المجيء" data-root="../../" defer></script>
+</body>
+</html>

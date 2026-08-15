@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>الدليل الشامل · التحيات الأساسية وتقديم النفس — Begrüßung & Vorstellung | ألمانية A1</title>
-<meta name="description" content="الدرس الثاني في مسار الألمانية A1: تحيات الوقت، التحيات غير الرسمية، الوداع، صيغتا du وSie، تقديم النفس، وحوارات كاملة تفاعلية بصوت ألماني حقيقي.">
+<title>الدليل الشامل · الأرقام الألمانية من ٠ إلى ١٠٠٠ — Zahlen | ألمانية A1</title>
+<meta name="description" content="الدرس الثالث في مسار الألمانية A1: الأرقام من ٠ إلى ١٢، صيغة العشرات والآحاد، قاعدة und السحرية لبناء أي رقم مركّب، المئات والآلاف، الأرقام الترتيبية، الاستخدام العملي في الهاتف والأسعار والعمر، وأداة بناء تفاعلية بصوت ألماني حقيقي.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 a { color: inherit; }
 
 /* ==========================================================================
-   1. DESIGN TOKENS (same course identity as Lesson 1)
+   1. DESIGN TOKENS (same course identity as Lessons 1–2)
    ========================================================================== */
 :root {
   color-scheme: light;
@@ -151,6 +151,7 @@ p { margin: 0; }
   padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
 }
 .eyebrow.plum { color: var(--plum); background: var(--plum-soft); }
+.eyebrow.amber { color: var(--amber-ink); background: var(--amber-soft); }
 .section-title { font-size: clamp(1.5rem, 3.6vw, 2.35rem); }
 .section-sub { color: var(--ink-soft); font-size: clamp(.98rem, 1.6vw, 1.1rem); margin-top: 12px; max-width: 62ch; }
 
@@ -161,6 +162,7 @@ p { margin: 0; }
 .reveal-stagger.is-visible > *:nth-child(1){transition-delay:.03s} .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.09s}
 .reveal-stagger.is-visible > *:nth-child(3){transition-delay:.15s} .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.21s}
 .reveal-stagger.is-visible > *:nth-child(5){transition-delay:.27s} .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.33s}
+.reveal-stagger.is-visible > *:nth-child(7){transition-delay:.39s} .reveal-stagger.is-visible > *:nth-child(8){transition-delay:.45s}
 
 /* ==========================================================================
    3. HEADER / NAV
@@ -200,11 +202,6 @@ p { margin: 0; }
 .nav-link.active { background: var(--teal-soft); color: var(--teal); border-color: transparent; }
 
 .header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
-/* == إصلاح استجابة الهاتف: على أضيق الشاشات، نخفي زري البحث وملء الشاشة
-   من شريط الأدوات (البحث متاح أصلًا عبر قائمة الجوال) لمنع خروج الشريط عن حدود الشاشة == */
-@media (max-width: 420px) {
-  .header-controls #searchToggle, .header-controls #fullscreenToggle { display: none; }
-}
 .icon-btn {
   width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border);
   background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center;
@@ -286,7 +283,7 @@ p { margin: 0; }
 .btn:disabled { opacity: .55; cursor: not-allowed; }
 .btn:disabled:hover { transform: none; box-shadow: none; }
 
-/* --- hero illustration: two speech bubbles greeting each other --- */
+/* --- hero illustration: abacus with floating digit/word bubbles --- */
 .hero-illustration { position: relative; }
 .hero-illo-svg { width: 100%; height: auto; }
 .floaty { animation: floaty 5s ease-in-out infinite; }
@@ -309,7 +306,7 @@ p { margin: 0; }
   width: 100%; justify-content: center;
 }
 .arrow-frame::before { content: "⌐"; position: absolute; top: -13px; right: 10px; font-family: var(--font-mono); font-size: .7rem; color: var(--ink-faint); background: var(--surface); padding: 0 6px; }
-.k-word { cursor: pointer; border-radius: 8px; padding: 4px 6px; transition: background-color .2s, color .2s; }
+.k-word { cursor: pointer; border-radius: 8px; padding: 2px 6px; transition: background-color .2s, color .2s; }
 .k-word:hover { background: var(--bg-alt); }
 .k-word.speaking { background: var(--teal); color: #fff; }
 .k-phrase-big { background: var(--teal); color: #fff; border-radius: 12px; padding: 8px 20px; font-weight: 700; font-size: clamp(1.3rem, 3vw, 1.7rem); }
@@ -368,47 +365,133 @@ p { margin: 0; }
 .stat-card .stat-desc { font-size: .87rem; color: var(--ink-soft); margin-top: 6px; }
 
 /* ==========================================================================
-   6. TIME-OF-DAY GREETING CARDS
+   6. NUMBER CARDS (0–12) — dot-counting visualization (new signature component)
    ========================================================================== */
-.time-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-@media (max-width: 940px){ .time-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px){ .time-grid { grid-template-columns: 1fr; } }
-.time-card {
-  border-radius: var(--r-lg); padding: 22px 18px; text-align: center; position: relative; overflow: hidden;
-  border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-  cursor: pointer;
+.numbers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 16px; }
+.number-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg);
+  padding: 20px 14px 18px; text-align: center; cursor: pointer; box-shadow: var(--shadow-sm);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+  position: relative;
 }
-.time-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-.time-card.morning { background: linear-gradient(160deg, #FFF3D6, #FFE1A8); }
-.time-card.day { background: linear-gradient(160deg, #DFF3F6, #BEE7ED); }
-.time-card.evening { background: linear-gradient(160deg, #F3E0D8, #E6BFAE); }
-.time-card.night { background: linear-gradient(160deg, #DDE1F0, #B9BFDE); }
-:root[data-theme="dark"] .time-card.morning { background: linear-gradient(160deg, #4a3a12, #2e2308); }
-:root[data-theme="dark"] .time-card.day { background: linear-gradient(160deg, #123138, #0b2226); }
-:root[data-theme="dark"] .time-card.evening { background: linear-gradient(160deg, #3a2a20, #241a14); }
-:root[data-theme="dark"] .time-card.night { background: linear-gradient(160deg, #1f2340, #141729); }
-.time-card .time-icon { width: 46px; height: 46px; margin: 0 auto 12px; }
-.time-card .time-range { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-soft); margin-bottom: 6px; }
-.time-card .time-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.25rem; color: var(--ink); }
-.time-card .time-ar { font-size: .85rem; color: var(--ink-soft); margin-top: 6px; }
-.time-card .speak-dot { position: static; margin: 12px auto 0; background: rgba(255,255,255,.6); }
-:root[data-theme="dark"] .time-card .speak-dot { background: rgba(0,0,0,.25); }
+.number-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: var(--shadow-md); border-color: var(--teal); }
+.number-card .num-digit { font-family: var(--font-mono); font-size: 2.2rem; font-weight: 700; color: var(--teal-ink); line-height: 1; }
+:root[data-theme="dark"] .number-card .num-digit { color: var(--teal); }
+.number-card .num-de { font-family: var(--font-de-display); font-size: 1.18rem; font-weight: 600; margin-top: 8px; }
+.number-card .num-ar { font-size: .8rem; color: var(--ink-soft); margin-top: 3px; }
+.number-card .num-dots { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin-top: 12px; min-height: 22px; align-items: center; }
+.number-card .num-dots span.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); flex-shrink: 0; }
+.number-card .num-dots span.dot.two { background: var(--plum); }
+.number-card .num-dots span.empty-mark { color: var(--ink-faint); font-size: 1rem; }
+.number-card .speak-dot { position: static; margin: 12px auto 0; }
 
 /* ==========================================================================
-   7. CASUAL GREETINGS / REGIONAL GRID
+   7. TEENS / TENS FORMATION CARDS + MINIMAL-PAIR COMPARISON
    ========================================================================== */
-.region-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-@media (max-width: 860px){ .region-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px){ .region-grid { grid-template-columns: 1fr; } }
-.region-card { text-align: center; position: relative; }
-.region-card .region-flag { font-size: 1.7rem; margin-bottom: 6px; }
-.region-card .region-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.4rem; color: var(--teal-ink); cursor: pointer; }
-:root[data-theme="dark"] .region-card .region-de { color: var(--teal); }
-.region-card .region-place { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); margin-top: 4px; }
-.region-card .region-desc { font-size: .87rem; color: var(--ink-soft); margin-top: 10px; }
+.formation-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 16px; }
+.formation-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+  padding: 18px; text-align: center; cursor: pointer; box-shadow: var(--shadow-sm);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.formation-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.formation-card .fc-num { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); margin-bottom: 6px; }
+.formation-card .fc-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.35rem; }
+.formation-card .fc-de .stem { color: var(--teal-ink); }
+:root[data-theme="dark"] .formation-card .fc-de .stem { color: var(--teal); }
+.formation-card .fc-de .suffix { color: var(--amber-ink); }
+:root[data-theme="dark"] .formation-card .fc-de .suffix { color: var(--amber); }
+.formation-card .fc-ar { font-size: .82rem; color: var(--ink-soft); margin-top: 6px; }
+.formation-card .fc-note { font-size: .72rem; color: var(--ink-faint); margin-top: 8px; font-family: var(--font-mono); }
+
+.pair-compare-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 24px; }
+@media (max-width: 620px){ .pair-compare-row { grid-template-columns: 1fr; } }
+.pair-compare-card {
+  background: var(--surface); border: 1.5px dashed var(--border-strong); border-radius: var(--r-md);
+  padding: 18px 20px; display: flex; align-items: center; justify-content: space-around; gap: 10px; box-shadow: var(--shadow-sm);
+}
+.pair-compare-card .pc-word { text-align: center; cursor: pointer; border-radius: 10px; padding: 6px 10px; transition: background-color .2s; }
+.pair-compare-card .pc-word:hover { background: var(--bg-alt); }
+.pair-compare-card .pc-word.speaking { background: var(--teal); }
+.pair-compare-card .pc-word.speaking .pc-de { color: #fff; }
+.pair-compare-card .pc-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.28rem; }
+.pair-compare-card .pc-num { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); margin-top: 4px; }
+.pair-compare-card .pc-vs { font-family: var(--font-mono); color: var(--ink-faint); font-size: .78rem; }
 
 /* ==========================================================================
-   8. ACCORDION (reused for extra notes) + FLIP CARDS (reused for farewells)
+   8. COMPOUND-NUMBER BUILDER TOOL — centerpiece interactive component
+   ========================================================================== */
+.builder-tool-shell {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl);
+  box-shadow: var(--shadow-lg); padding: clamp(22px, 4vw, 40px); position: relative; overflow: hidden;
+}
+.builder-tool-shell::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .55;
+  background: radial-gradient(420px 220px at 90% -10%, var(--plum-glow), transparent 70%), radial-gradient(420px 220px at 5% 110%, var(--teal-glow), transparent 70%);
+}
+.builder-picker-group { margin-bottom: 24px; }
+.builder-picker-label { font-size: .9rem; font-weight: 700; margin-bottom: 10px; color: var(--ink-soft); display: flex; align-items: center; gap: 8px; }
+.builder-picker-label .dot-swatch { width: 12px; height: 12px; border-radius: 4px; flex-shrink: 0; }
+.builder-chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.builder-chip {
+  padding: 10px 17px; border-radius: 11px; border: 1.5px solid var(--border-strong); background: var(--bg-alt);
+  cursor: pointer; font-family: var(--font-mono); font-weight: 700; font-size: .95rem; transition: all .2s var(--ease);
+}
+.builder-chip:hover { border-color: var(--teal); transform: translateY(-2px); }
+.builder-chip.active.units { background: var(--amber); border-color: var(--amber); color: #2b1c05; box-shadow: var(--shadow-glow-amber); }
+.builder-chip.active.tens { background: var(--plum); border-color: var(--plum); color: #fff; box-shadow: 0 8px 24px -6px var(--plum-glow); }
+
+.builder-result { margin-top: 30px; text-align: center; }
+.builder-result-number { font-family: var(--font-mono); font-size: 2.6rem; font-weight: 700; color: var(--ink-faint); margin-bottom: 14px; letter-spacing: .02em; }
+.builder-result-word-wrap { perspective: 900px; display: flex; justify-content: center; }
+.builder-result-word {
+  display: inline-flex; align-items: stretch; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-md);
+  transform: perspective(700px) rotateX(6deg); transition: transform .45s var(--ease), box-shadow .45s var(--ease); cursor: pointer;
+}
+.builder-result-word:hover { transform: perspective(700px) rotateX(0deg) translateY(-4px); box-shadow: var(--shadow-lg); }
+.builder-result-word span { font-family: var(--font-de-display); font-weight: 700; font-size: clamp(1.35rem, 4.2vw, 2.05rem); padding: 15px 22px; display: flex; align-items: center; }
+.builder-result-word .bw-unit { background: var(--amber); color: #2b1c05; }
+.builder-result-word .bw-und { background: var(--teal); color: #fff; font-family: var(--font-mono); font-size: .8em !important; padding: 15px 12px !important; }
+.builder-result-word .bw-tens { background: var(--plum); color: #fff; }
+.builder-note { margin-top: 20px; font-size: .9rem; color: var(--ink-soft); text-align: center; max-width: 58ch; margin-inline: auto; }
+.builder-note b { color: var(--ink); }
+.builder-examples-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 22px; }
+.builder-example-chip {
+  padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--border-strong); background: var(--surface);
+  font-family: var(--font-mono); font-size: .82rem; cursor: pointer; transition: all .2s var(--ease);
+}
+.builder-example-chip:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+
+/* ==========================================================================
+   9. MEGA-NUMBER WORD-FUSION DEMO
+   ========================================================================== */
+.mega-digits-row { display: flex; gap: 8px; justify-content: center; margin-bottom: 18px; }
+.mega-digit-box {
+  width: 46px; height: 54px; display: flex; align-items: center; justify-content: center; border-radius: 11px;
+  background: var(--bg-alt); border: 1.5px solid var(--border-strong); font-family: var(--font-mono); font-weight: 700; font-size: 1.35rem;
+}
+.mega-picker-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+.mega-picker-btn {
+  padding: 9px 18px; border-radius: 999px; border: 1.5px solid var(--border-strong); background: var(--surface);
+  cursor: pointer; font-family: var(--font-mono); font-size: .86rem; transition: all .2s var(--ease);
+}
+.mega-picker-btn:hover { border-color: var(--teal); }
+.mega-picker-btn.active { background: var(--teal); border-color: transparent; color: #fff; box-shadow: var(--shadow-glow-teal); }
+
+/* ==========================================================================
+   10. PHONE / PRICE MOCKUPS (reuse listen-chip + info-card patterns)
+   ========================================================================== */
+.phone-mockup { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; justify-content: center; }
+.phone-digit-chip {
+  min-width: 42px; text-align: center; padding: 9px 6px; border-radius: 10px; border: 1.5px solid var(--border-strong);
+  background: var(--surface); font-family: var(--font-de-display); font-weight: 600; cursor: pointer; transition: all .2s var(--ease);
+}
+.phone-digit-chip:hover { border-color: var(--teal); color: var(--teal); }
+.phone-digit-chip.speaking { background: var(--teal); color: #fff; border-color: transparent; }
+.phone-digit-chip.gap { border: none; background: none; width: 10px; min-width: 10px; padding: 0; }
+
+/* ==========================================================================
+   11. ACCORDION (extra notes: Zahl vs Nummer, writing conventions)
    ========================================================================== */
 .accordion-item { border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); margin-bottom: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
 .accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; background: none; border: none; cursor: pointer; text-align: right; color: var(--ink); }
@@ -423,6 +506,9 @@ p { margin: 0; }
 .formation-example-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: var(--bg-alt); border-radius: 10px; padding: 10px 14px; margin-top: 8px; }
 .formation-arrow { color: var(--ink-faint); }
 
+/* ==========================================================================
+   12. VOCAB GRID + FLIP CARDS (reused for ordinal numbers)
+   ========================================================================== */
 .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px; }
 .flip-card { perspective: 1200px; height: 190px; }
 .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
@@ -431,7 +517,7 @@ p { margin: 0; }
 .flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
 .flip-front .de { font-size: 1.55rem; font-weight: 700; }
 .flip-front .aux-tag { position: absolute; top: 10px; left: 10px; }
-.flip-back { background: var(--teal); color: #fff; transform: rotateY(180deg); gap: 6px; }
+.flip-back { background: var(--plum); color: #fff; transform: rotateY(180deg); gap: 6px; }
 .flip-back .partizip { font-family: var(--font-de-display); font-size: 1.3rem; font-weight: 600; }
 .flip-back .ipa { font-family: var(--font-mono); font-size: .8rem; opacity: .85; }
 .flip-back .meaning { font-size: .86rem; opacity: .92; margin-top: 2px; text-align:center; }
@@ -445,7 +531,7 @@ p { margin: 0; }
 @keyframes fadeSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ==========================================================================
-   8b. TAB SWITCHER (shared: dialogue formal/informal toggle)
+   12b. TAB SWITCHER (shared: dialogue formal/informal toggle)
    ========================================================================== */
 .cat-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
 .cat-tab {
@@ -459,55 +545,7 @@ p { margin: 0; }
 .cat-tab:not(.active) .cat-count { background: var(--bg-alt); }
 
 /* ==========================================================================
-   9. FORMAL / INFORMAL COMPARISON (du vs Sie) — new signature component
-   ========================================================================== */
-.duSie-table { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); }
-.duSie-head { display: grid; grid-template-columns: 1.1fr 1fr 1fr; }
-.duSie-head > div { padding: 16px 18px; font-weight: 700; text-align: center; }
-.duSie-head .lbl-ar { background: var(--bg-alt); }
-.duSie-head .lbl-du { background: var(--teal); color: #fff; }
-.duSie-head .lbl-sie { background: var(--plum); color: #fff; }
-.duSie-row { display: grid; grid-template-columns: 1.1fr 1fr 1fr; border-top: 1px solid var(--border); }
-.duSie-row > div { padding: 16px 18px; display: flex; align-items: center; justify-content: center; text-align: center; }
-.duSie-row .cell-ar { background: var(--surface); color: var(--ink-soft); font-size: .92rem; }
-.duSie-row .cell-du { background: var(--teal-soft); font-family: var(--font-de-display); font-weight: 600; cursor: pointer; color: var(--teal-ink); }
-.duSie-row .cell-sie { background: var(--plum-soft); font-family: var(--font-de-display); font-weight: 600; cursor: pointer; color: var(--plum-ink); }
-@media (max-width: 700px){
-  .duSie-head { display: none; }
-  .duSie-row { grid-template-columns: 1fr; text-align: center; }
-  .duSie-row > div { justify-content: center; border-top: 1px dashed var(--border); }
-  .duSie-row > div:first-child { border-top: none; font-weight: 700; background: var(--bg-alt); }
-  .duSie-row .cell-du::before { content: "Du: "; font-family: var(--font-mono); font-size: .65rem; opacity: .7; }
-  .duSie-row .cell-sie::before { content: "Sie: "; font-family: var(--font-mono); font-size: .65rem; opacity: .7; }
-}
-.when-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
-@media (max-width: 700px){ .when-cards { grid-template-columns: 1fr; } }
-.when-card { border-radius: var(--r-md); padding: 20px; border: 1.5px solid; }
-.when-card.du { background: var(--teal-soft); border-color: var(--teal); }
-.when-card.sie { background: var(--plum-soft); border-color: var(--plum); }
-.when-card h3 { margin-bottom: 10px; }
-.when-card.du h3 { color: var(--teal-ink); }
-.when-card.sie h3 { color: var(--plum-ink); }
-.when-card ul { display: flex; flex-direction: column; gap: 6px; }
-.when-card li { font-size: .92rem; color: var(--ink-soft); display: flex; align-items: center; gap: 8px; }
-.when-card li::before { content: "•"; font-weight: 700; }
-.when-card.du li::before { color: var(--teal); }
-.when-card.sie li::before { color: var(--plum); }
-
-/* ==========================================================================
-   10. SENTENCE-PATTERN CARDS (self-introduction)
-   ========================================================================== */
-.pattern-list { display: flex; flex-direction: column; gap: 14px; }
-.pattern-card { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 16px 20px; box-shadow: var(--shadow-sm); transition: box-shadow .3s var(--ease), transform .3s var(--ease); }
-.pattern-card:hover { box-shadow: var(--shadow-md); transform: translateX(-4px); }
-@media (max-width: 640px){ .pattern-card { grid-template-columns: 1fr; text-align: center; gap: 10px; } }
-.pattern-num { width: 34px; height: 34px; border-radius: 50%; background: var(--teal-soft); color: var(--teal-ink); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 700; flex-shrink: 0; }
-.pattern-main .pattern-de { font-family: var(--font-de-display); font-size: 1.25rem; font-weight: 600; cursor: pointer; }
-.pattern-main .pattern-ar { font-size: .88rem; color: var(--ink-soft); margin-top: 4px; }
-.pattern-formality { flex-shrink: 0; }
-
-/* ==========================================================================
-   11. DIALOGUE — chat-bubble UI (new signature component)
+   13. DIALOGUE — chat-bubble UI
    ========================================================================== */
 .dialogue-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
 .dialogue-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); padding: clamp(18px, 3vw, 30px); }
@@ -538,7 +576,7 @@ p { margin: 0; }
 .dialogue-actions { display: flex; justify-content: center; margin-top: 22px; }
 
 /* ==========================================================================
-   12. MISTAKES — wrong vs right
+   14. MISTAKES — wrong vs right
    ========================================================================== */
 .mistake-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
 @media (max-width: 640px){ .mistake-card { grid-template-columns: 1fr; } }
@@ -552,13 +590,13 @@ p { margin: 0; }
 .mistake-note { grid-column: 1 / -1; padding: 12px 20px; font-size: .88rem; color: var(--ink-soft); border-top: 1px dashed var(--border); background: var(--surface); }
 
 /* ==========================================================================
-   13. PRONUNCIATION TIP CARDS
+   15. PRONUNCIATION TIP CARDS
    ========================================================================== */
 .tip-card { display: flex; gap: 14px; align-items: flex-start; }
 .tip-card .icon-chip { background: var(--amber-soft); color: var(--amber-ink); }
 
 /* ==========================================================================
-   14. EXERCISES
+   16. EXERCISES
    ========================================================================== */
 .exercise-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
 .exercise-tabs { display: flex; overflow-x: auto; border-bottom: 1px solid var(--border); scrollbar-width: none; }
@@ -624,7 +662,7 @@ p { margin: 0; }
 .qr-placeholder .qr-note { font-family: var(--font-mono); font-size: .76rem; color: var(--ink-faint); }
 
 /* ==========================================================================
-   15. AUDIO DOCK
+   17. AUDIO DOCK
    ========================================================================== */
 .audio-dock { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(140%); z-index: 200; background: var(--surface-glass); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border: 1px solid var(--surface-glass-border); box-shadow: var(--shadow-lg); border-radius: 999px; padding: 8px 10px 8px 18px; display: flex; align-items: center; gap: 12px; max-width: min(92vw, 560px); transition: transform .45s var(--ease); }
 .audio-dock.visible { transform: translateX(-50%) translateY(0); }
@@ -636,7 +674,7 @@ p { margin: 0; }
 @media (min-width: 620px){ .audio-dock-voice { display: block; } }
 
 /* ==========================================================================
-   16. SUMMARY / ACHIEVEMENTS
+   18. SUMMARY / ACHIEVEMENTS
    ========================================================================== */
 .summary-list { display: flex; flex-direction: column; gap: 12px; }
 .summary-list li { display: flex; gap: 12px; align-items: flex-start; }
@@ -650,14 +688,14 @@ p { margin: 0; }
 .badge-name { font-size: .82rem; font-weight: 600; }
 
 /* ==========================================================================
-   17. TOAST
+   19. TOAST
    ========================================================================== */
 .toast-wrap { position: fixed; top: calc(var(--nav-h) + 14px); left: 50%; transform: translateX(-50%); z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
 .toast { background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-size: .88rem; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(-14px); transition: all .4s var(--ease); white-space: nowrap; }
 .toast.show { opacity: 1; transform: translateY(0); }
 
 /* ==========================================================================
-   18. FOOTER + FLOATING CONTROLS
+   20. FOOTER + FLOATING CONTROLS
    ========================================================================== */
 .site-footer { border-top: 1px solid var(--border); padding-block: 36px; margin-top: 30px; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--ink-faint); font-size: .86rem; }
@@ -668,15 +706,15 @@ p { margin: 0; }
 mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius: 4px; padding: 0 2px; }
 
 /* ==========================================================================
-   19. PRINT
+   21. PRINT
    ========================================================================== */
 @media print {
   .site-header, .audio-dock, .back-to-top, .nav-toggle, .exercise-tabs, .score-bar-wrap, .btn, .icon-btn, .toast-wrap, .cat-tabs, .dialogue-tabs { display: none !important; }
   body { background: #fff; color: #000; }
   .section { padding-block: 20px; break-inside: avoid; }
-  .showcase-card { box-shadow: none; transform: none; display: block !important; }
+  .showcase-card, .builder-tool-shell { box-shadow: none; transform: none; display: block !important; }
   .exercise-panel { display: block !important; }
-  .alpha-panel, .dialogue-panel { display: block !important; margin-bottom: 24px; }
+  .dialogue-panel { display: block !important; margin-bottom: 24px; }
   .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
   .accordion-panel { max-height: none !important; }
 }
@@ -702,21 +740,21 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
 <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></symbol>
 <symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 13.5 7 21l5-2.5L17 21l-2-7.5"/><path d="M12 6.5l.9 1.9 2.1.3-1.5 1.4.3 2.1-1.8-1-1.8 1 .3-2.1-1.5-1.4 2.1-.3z"/></symbol>
-<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2zM20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2z"/></symbol>
 <symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></symbol>
 <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
 <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5a2.6 2.6 0 0 1 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
 <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
 <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
 <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></symbol>
-<symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 5.5 19 5.5a2 2 0 0 1 2 2L21 18"/></symbol>
 <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.6"/><path d="M15.5 13.3a5.6 5.6 0 0 1 6 6.7"/></symbol>
-<symbol id="i-sunrise" viewBox="0 0 24 24"><circle cx="12" cy="15" r="4"/><line x1="12" y1="3" x2="12" y2="7"/><line x1="4.2" y1="9.2" x2="6.8" y2="11"/><line x1="19.8" y1="9.2" x2="17.2" y2="11"/><line x1="2" y1="20" x2="22" y2="20"/></symbol>
-<symbol id="i-sunset" viewBox="0 0 24 24"><circle cx="12" cy="13" r="4"/><line x1="12" y1="21" x2="12" y2="17"/><line x1="4.2" y1="7.2" x2="6.8" y2="9"/><line x1="19.8" y1="7.2" x2="17.2" y2="9"/><line x1="2" y1="20" x2="22" y2="20"/></symbol>
-<symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2 12l4-4 4 3 3-3 4 4"/><path d="M2 12v4l4 4 4-4 3 3 5-5-4-4"/></symbol>
-<symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M3 6h3a5 5 0 0 1 4 2l6 8a5 5 0 0 0 4 2h1M21 6h-1a5 5 0 0 0-4 2l-1 1.5M3 18h3a5 5 0 0 0 4-2l1-1.5"/><polyline points="18,3 21,6 18,9"/><polyline points="18,15 21,18 18,21"/></symbol>
 <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="14" width="3" height="3"/><rect x="14" y="18" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/></symbol>
 <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="3" y="14" width="5" height="7" rx="1.5"/><rect x="16" y="14" width="5" height="7" rx="1.5"/></symbol>
+<symbol id="i-hash" viewBox="0 0 24 24"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="9" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="15" y2="20"/></symbol>
+<symbol id="i-euro" viewBox="0 0 24 24"><path d="M18 6.5a7 7 0 1 0 0 11"/><line x1="4" y1="10" x2="15" y2="10"/><line x1="4" y1="14" x2="14" y2="14"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-dots3" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="18" cy="12" r="2"/></symbol>
+<symbol id="i-stack" viewBox="0 0 24 24"><polygon points="12,3 21,8 12,13 3,8"/><polyline points="3,13 12,18 21,13"/><polyline points="3,17 12,22 21,17"/></symbol>
+<symbol id="i-abacus" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="14" x2="21" y2="14"/><circle cx="8" cy="9" r="1.4" fill="currentColor" stroke="none"/><circle cx="14" cy="9" r="1.4" fill="currentColor" stroke="none"/><circle cx="10" cy="14" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="14" r="1.4" fill="currentColor" stroke="none"/></symbol>
 </defs>
 </svg>
 
@@ -731,17 +769,19 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     </button>
 
     <div class="brand">
-      <span class="brand-mark"><svg class="icon" style="width:20px;height:20px"><use href="#i-handshake"/></svg></span>
-      <span class="brand-text">ألمانية A1<small>الدرس الثاني · التحيات</small></span>
+      <span class="brand-mark"><svg class="icon" style="width:20px;height:20px"><use href="#i-hash"/></svg></span>
+      <span class="brand-text">ألمانية A1<small>الدرس الثالث · الأرقام</small></span>
     </div>
 
     <nav class="main-nav" id="mainNav" aria-label="أقسام الدرس">
       <button class="nav-link" data-target="#intro">المقدّمة</button>
-      <button class="nav-link" data-target="#time-greetings">تحيات الوقت</button>
-      <button class="nav-link" data-target="#casual">تحيات غير رسمية</button>
-      <button class="nav-link" data-target="#farewells">الوداع</button>
-      <button class="nav-link" data-target="#duSie">du أم Sie؟</button>
-      <button class="nav-link" data-target="#introduce">تقديم النفس</button>
+      <button class="nav-link" data-target="#basics">٠-١٢</button>
+      <button class="nav-link" data-target="#teens">١٣-١٩</button>
+      <button class="nav-link" data-target="#tens">العشرات</button>
+      <button class="nav-link" data-target="#compound">الأرقام المركّبة</button>
+      <button class="nav-link" data-target="#hundreds">المئات والآلاف</button>
+      <button class="nav-link" data-target="#ordinals">الترتيبية</button>
+      <button class="nav-link" data-target="#practical">الاستخدام العملي</button>
       <button class="nav-link" data-target="#dialogue">حوار كامل</button>
       <button class="nav-link" data-target="#mistakes">أخطاء شائعة</button>
       <button class="nav-link" data-target="#pronunciation">نصائح النطق</button>
@@ -779,17 +819,17 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <section class="hero" id="hero">
   <div class="container hero-grid">
     <div class="reveal is-visible">
-      <span class="level-badge"><b>A1</b> الدرس الثاني من مسار «الألمانية للمبتدئين»</span>
-      <h1 class="hero-title">التحيات وتقديم النفس: <span class="de">Hallo!</span></h1>
-      <p class="hero-lead">بعد أن أتقنت الحروف في الدرس الأول، حان وقت أول محادثة حقيقية. في هذا الدرس ستتعلّم كيف تُحيّي بالوقت المناسب، وتودّع، وتُقدّم نفسك، وتفرّق بين صيغتي المخاطبة <span class="de mono">du</span> و<span class="de mono">Sie</span> — مع حوارين كاملين تفاعليين بصوت ألماني حقيقي.</p>
+      <span class="level-badge"><b>A1</b> الدرس الثالث من مسار «الألمانية للمبتدئين»</span>
+      <h1 class="hero-title">الأرقام بالألمانية: <span class="de">eins, zwei, drei…</span></h1>
+      <p class="hero-lead">بعد التحيات، حان دور أهم أداة عملية في أي محادثة: الأرقام. في هذا الدرس ستتقن الأرقام من ٠ إلى ١٢، ثم قاعدة واحدة سحرية تبني بها أي رقم حتى ٩٩، وصولًا إلى المئات والآلاف — مع أداة تفاعلية تبني الأرقام المركّبة أمام عينيك بصوت ألماني حقيقي.</p>
       <div class="hero-ctas">
-        <button class="btn btn-primary" data-scroll="#time-greetings">
+        <button class="btn btn-primary" data-scroll="#basics">
           <svg class="icon" style="width:18px;height:18px"><use href="#i-play"/></svg>
           ابدأ الدرس
         </button>
-        <button class="btn btn-ghost" data-scroll="#dialogue">
-          <svg class="icon" style="width:18px;height:18px"><use href="#i-chat"/></svg>
-          استمع لحوار كامل
+        <button class="btn btn-ghost" data-scroll="#compound">
+          <svg class="icon" style="width:18px;height:18px"><use href="#i-abacus"/></svg>
+          جرّب أداة بناء الأرقام
         </button>
       </div>
     </div>
@@ -798,43 +838,50 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
       <div class="hero-illustration">
         <svg class="hero-illo-svg" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
-            <linearGradient id="personA" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="var(--teal)"/>
-              <stop offset="100%" stop-color="var(--teal-ink)"/>
-            </linearGradient>
-            <linearGradient id="personB" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="var(--amber)"/>
-              <stop offset="100%" stop-color="var(--amber-ink)"/>
+            <linearGradient id="abacusFrame" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="var(--surface)"/>
+              <stop offset="100%" stop-color="var(--bg-alt)"/>
             </linearGradient>
           </defs>
           <ellipse cx="210" cy="285" rx="170" ry="16" fill="var(--border)" opacity=".5"/>
+          <rect x="85" y="95" width="250" height="165" rx="18" fill="url(#abacusFrame)" stroke="var(--border-strong)" stroke-width="2.5"/>
+          <line x1="105" y1="145" x2="315" y2="145" stroke="var(--border-strong)" stroke-width="3"/>
+          <line x1="105" y1="180" x2="315" y2="180" stroke="var(--border-strong)" stroke-width="3"/>
+          <line x1="105" y1="215" x2="315" y2="215" stroke="var(--border-strong)" stroke-width="3"/>
           <g>
-            <circle cx="130" cy="150" r="46" fill="url(#personA)"/>
-            <rect x="86" y="190" width="88" height="90" rx="30" fill="url(#personA)"/>
-            <circle cx="115" cy="142" r="5" fill="#fff"/>
-            <circle cx="148" cy="142" r="5" fill="#fff"/>
-            <path d="M112 165 Q130 178 150 165" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="125" cy="145" r="11" fill="var(--teal)"/>
+            <circle cx="150" cy="145" r="11" fill="var(--teal)"/>
+            <circle cx="175" cy="145" r="11" fill="var(--teal)"/>
+            <circle cx="255" cy="145" r="11" fill="var(--amber)"/>
+            <circle cx="280" cy="145" r="11" fill="var(--amber)"/>
           </g>
           <g>
-            <circle cx="290" cy="150" r="46" fill="url(#personB)"/>
-            <rect x="246" y="190" width="88" height="90" rx="30" fill="url(#personB)"/>
-            <circle cx="275" cy="142" r="5" fill="#2b1c05"/>
-            <circle cx="308" cy="142" r="5" fill="#2b1c05"/>
-            <path d="M272 165 Q290 178 310 165" stroke="#2b1c05" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="125" cy="180" r="11" fill="var(--amber)"/>
+            <circle cx="150" cy="180" r="11" fill="var(--amber)"/>
+            <circle cx="230" cy="180" r="11" fill="var(--teal)"/>
+            <circle cx="255" cy="180" r="11" fill="var(--teal)"/>
+            <circle cx="280" cy="180" r="11" fill="var(--teal)"/>
+          </g>
+          <g>
+            <circle cx="125" cy="215" r="11" fill="var(--plum)"/>
+            <circle cx="150" cy="215" r="11" fill="var(--plum)"/>
+            <circle cx="175" cy="215" r="11" fill="var(--plum)"/>
+            <circle cx="200" cy="215" r="11" fill="var(--plum)"/>
+            <circle cx="280" cy="215" r="11" fill="var(--amber)"/>
           </g>
           <g class="floaty">
-            <rect x="55" y="55" width="118" height="50" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <path d="M95 105 L85 118 L108 105 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <text x="114" y="86" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="20" fill="var(--teal)">Hallo!</text>
+            <rect x="45" y="35" width="110" height="52" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M85 87 L75 100 L98 87 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="100" y="68" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="700" font-size="24" fill="var(--teal)">21</text>
           </g>
           <g class="floaty d3">
-            <rect x="245" y="30" width="150" height="50" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <path d="M300 80 L290 93 L313 80 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <text x="320" y="61" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="18" fill="var(--amber-ink)">Guten Tag!</text>
+            <rect x="235" y="20" width="165" height="52" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M290 72 L280 85 L303 72 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="317" y="53" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="16" fill="var(--amber-ink)">einundzwanzig</text>
           </g>
-          <g class="floaty d2" transform="translate(178,205)">
+          <g class="floaty d2" transform="translate(360,235)">
             <circle r="20" fill="var(--plum)"/>
-            <text y="7" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="20" fill="#fff">?</text>
+            <text y="7" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="18" fill="#fff">€</text>
           </g>
         </svg>
       </div>
@@ -848,22 +895,22 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <section class="section" id="intro">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-handshake"/></svg>أول محادثة حقيقية</span>
-      <h2 class="section-title">لماذا تُعد التحيات نقطة انطلاق مثالية؟</h2>
-      <p class="section-sub">في كل مرة تلتقي بها بأحد، ستحتاج تحية مناسبة. هذا الدرس يمنحك أدوات فعلية لبدء أي محادثة ألمانية بثقة منذ اللحظة الأولى.</p>
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-hash"/></svg>لماذا الأرقام أولًا</span>
+      <h2 class="section-title">لماذا تُعدّ الأرقام من أهم أساسيات اللغة؟</h2>
+      <p class="section-sub">من رقم الهاتف إلى سعر القهوة إلى عمرك — لن تمر ساعة في ألمانيا أو النمسا أو سويسرا دون الحاجة إلى رقم. الخبر الجيد؟ الأرقام الألمانية أكثر انتظامًا مما تتخيل.</p>
     </div>
     <div class="grid-3 reveal-stagger reveal">
       <div class="info-card">
-        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-sunrise"/></svg></span>تحية بحسب الوقت</h3>
-        <p>الألمانية تُميّز بدقة بين تحية الصباح والنهار والمساء — تمامًا كما تختلف «صباح الخير» عن «مساء الخير» بالعربية، لكن بحدود زمنية أوضح قليلًا.</p>
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-phone"/></svg></span>أرقام في كل مكان</h3>
+        <p>رقم الهاتف، رقم المنزل، رقم الحافلة، الرمز البريدي — الأرقام أول ما تحتاجه فعليًا في أي بلد ناطق بالألمانية، حتى قبل الجمل الكاملة.</p>
       </div>
       <div class="info-card">
-        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-users"/></svg></span>رسمي أم غير رسمي؟</h3>
-        <p>على عكس العربية، تملك الألمانية صيغتين مختلفتين تمامًا لمخاطبة «أنت»: <span class="de mono">du</span> للأصدقاء والعائلة، و<span class="de mono">Sie</span> للغرباء والمواقف الرسمية. اختيار الصيغة الخاطئة قد يبدو وقحًا أو غريبًا.</p>
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-abacus"/></svg></span>قاعدة واحدة تبني كل شيء</h3>
+        <p>بمجرد إتقان الأرقام من ٠ إلى ٢٠ وقاعدة الربط <span class="de mono">und</span>، ستكون قادرًا على تكوين أي رقم بنفسك حتى ٩٩٩٩٩٩ دون حفظ كل رقم على حدة.</p>
       </div>
       <div class="info-card">
-        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-chat"/></svg></span>جمل جاهزة للاستخدام فورًا</h3>
-        <p>بنهاية هذا الدرس، ستكون قادرًا على تحية شخص، وتقديم نفسك، والسؤال عن اسمه ومكانه، والرد على «كيف حالك؟» — أي محادثة تعارف كاملة.</p>
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>نفس ترتيب العربية!</h3>
+        <p>الأرقام المركّبة بالألمانية (٢١، ٣٥، ٤٧) تُبنى بترتيب الآحاد ثم العشرات — تمامًا كما في العربية «واحد وعشرون» — على عكس الإنجليزية. هذه ميزة حقيقية لصالحك.</p>
       </div>
     </div>
 
@@ -878,8 +925,8 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
         <p style="margin-bottom:14px">كل ما تحتاج تذكّره اليوم — والباقي تدريب وحوار حي.</p>
       </div>
       <div class="stat-cards">
-        <div class="stat-card teal"><div class="stat-pct">٤</div><div class="stat-desc">تحيات حسب وقت اليوم</div></div>
-        <div class="stat-card amber"><div class="stat-pct">٢</div><div class="stat-desc">صيغتا مخاطبة: <span class="de mono">du</span> و<span class="de mono">Sie</span></div></div>
+        <div class="stat-card teal"><div class="stat-pct">١٢</div><div class="stat-desc">رقمًا أساسيًا تحفظه أولًا (٠-١٢)</div></div>
+        <div class="stat-card amber"><div class="stat-pct">١</div><div class="stat-desc">قاعدة ذهبية تبني كل الأرقام حتى ٩٩: <span class="de mono">und</span></div></div>
       </div>
     </div>
   </div>
@@ -887,79 +934,76 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
 <hr class="rail-rule">
 
-<!-- ============================= TIME-BASED GREETINGS ============================= -->
-<section class="section" id="time-greetings">
+<!-- ============================= BASICS 0-12 ============================= -->
+<section class="section" id="basics">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-sunrise"/></svg>حسب وقت اليوم</span>
-      <h2 class="section-title">التحيات الأربع الأساسية</h2>
-      <p class="section-sub">انقر على أي بطاقة لسماع نطقها. لاحظ أن التوقيت التقريبي يساعدك على اختيار التحية الصحيحة.</p>
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-dots3"/></svg>الأساس الذي تُبنى عليه كل الأرقام</span>
+      <h2 class="section-title">الأرقام من ٠ إلى ١٢</h2>
+      <p class="section-sub">هذه الأرقام الثلاثة عشر هي حجر الأساس — احفظها جيدًا، فكل رقم آخر في الألمانية يُبنى منها. انقر على أي بطاقة لسماع نطقها.</p>
     </div>
-    <div class="time-grid reveal-stagger reveal" id="timeGrid"></div>
+    <div class="numbers-grid reveal-stagger reveal" id="basicsGrid"></div>
   </div>
 </section>
 
 <hr class="rail-rule">
 
-<!-- ============================= CASUAL / REGIONAL GREETINGS ============================= -->
-<section class="section" id="casual">
+<!-- ============================= TEENS 13-19 ============================= -->
+<section class="section" id="teens">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>بين الأصدقاء</span>
-      <h2 class="section-title">تحيات غير رسمية ولهجات إقليمية</h2>
-      <p class="section-sub">الألمانية المحكية في مختلف البلدان الناطقة بها غنية بالتحيات غير الرسمية. هذه أشهرها.</p>
+      <span class="eyebrow amber"><svg class="icon" style="width:14px;height:14px"><use href="#i-stack"/></svg>لاحقة ثابتة</span>
+      <h2 class="section-title">الأرقام من ١٣ إلى ١٩</h2>
+      <p class="section-sub">القاعدة بسيطة: الرقم الأساسي + لاحقة <span class="de mono">-zehn</span> (من كلمة <span class="de mono">zehn</span> = عشرة). لاحظ أن <span class="de mono">sechs</span> و<span class="de mono">sieben</span> يفقدان حرفًا عند الإلحاق.</p>
     </div>
-    <div class="region-grid reveal-stagger reveal" id="regionGrid"></div>
+    <div class="formation-grid reveal-stagger reveal" id="teensGrid"></div>
   </div>
 </section>
 
 <hr class="rail-rule">
 
-<!-- ============================= FAREWELLS ============================= -->
-<section class="section" id="farewells">
+<!-- ============================= TENS 20-100 ============================= -->
+<section class="section" id="tens">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-cards"/></svg>عند المغادرة</span>
-      <h2 class="section-title">كيف تودّع بشكل صحيح</h2>
-      <p class="section-sub">انقر على البطاقة لقلبها ورؤية درجة الرسمية والمعنى الحرفي.</p>
+      <span class="eyebrow amber"><svg class="icon" style="width:14px;height:14px"><use href="#i-stack"/></svg>نفس المنطق، لاحقة مختلفة</span>
+      <h2 class="section-title">العشرات من ٢٠ إلى ١٠٠</h2>
+      <p class="section-sub">الآن اللاحقة هي <span class="de mono">-zig</span> بدلًا من <span class="de mono">-zehn</span>. استثناء وحيد يستحق الانتباه: <span class="de mono">dreißig</span> (٣٠) تُكتب بحرف <span class="de mono">ß</span> بدلًا من <span class="de mono">z</span>.</p>
     </div>
-    <div class="vocab-grid reveal-stagger reveal" id="farewellGrid"></div>
+    <div class="formation-grid reveal-stagger reveal" id="tensGrid"></div>
+
+    <div class="pair-compare-row reveal" id="pairCompareRow"></div>
   </div>
 </section>
 
 <hr class="rail-rule">
 
-<!-- ============================= DU vs SIE ============================= -->
-<section class="section" id="duSie">
+<!-- ============================= COMPOUND NUMBER BUILDER (centerpiece) ============================= -->
+<section class="section" id="compound">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-users"/></svg>أهم فرق في هذا الدرس</span>
-      <h2 class="section-title"><span class="de mono">du</span> أم <span class="de mono">Sie</span>؟</h2>
-      <p class="section-sub">قاعدة ذهبية: <span class="de mono">du</span> مع من تعرفهم جيدًا، و<span class="de mono">Sie</span> مع من لا تعرفهم أو تحترم مكانتهم. قارن الجملة نفسها بالصيغتين.</p>
+      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-abacus"/></svg>القاعدة الذهبية لهذا الدرس</span>
+      <h2 class="section-title">بناء الأرقام المركّبة: <span class="de mono">und</span></h2>
+      <p class="section-sub">من ٢١ إلى ٩٩ (باستثناء العشرات الصحيحة)، الصيغة ثابتة دائمًا: <b>الآحاد + <span class="de mono">und</span> + العشرات</b> — وتُكتب ككلمة واحدة متصلة بلا مسافات. اختر رقمين أدناه وشاهد الكلمة تتكوّن أمامك.</p>
     </div>
 
-    <div class="duSie-table reveal" id="duSieTable">
-      <div class="duSie-head"><div class="lbl-ar">بالعربية</div><div class="lbl-du">du · غير رسمي</div><div class="lbl-sie">Sie · رسمي</div></div>
-    </div>
-
-    <div class="when-cards reveal">
-      <div class="when-card du">
-        <h3>استخدم <span class="de mono">du</span> مع:</h3>
-        <ul>
-          <li>الأصدقاء والعائلة</li>
-          <li>الأطفال والمراهقين</li>
-          <li>زملاء الدراسة</li>
-          <li>غالبًا بين الشباب في العمل غير الرسمي</li>
-        </ul>
+    <div class="builder-tool-shell reveal">
+      <div class="builder-picker-group">
+        <div class="builder-picker-label"><span class="dot-swatch" style="background:var(--amber)"></span>١) اختر خانة الآحاد</div>
+        <div class="builder-chip-row" id="builderUnitsRow"></div>
       </div>
-      <div class="when-card sie">
-        <h3>استخدم <span class="de mono">Sie</span> مع:</h3>
-        <ul>
-          <li>الغرباء تمامًا</li>
-          <li>كبار السن</li>
-          <li>في بيئة العمل الرسمية والاجتماعات</li>
-          <li>الأطباء والمسؤولين والبائعين</li>
-        </ul>
+      <div class="builder-picker-group" style="margin-bottom:4px">
+        <div class="builder-picker-label"><span class="dot-swatch" style="background:var(--plum)"></span>٢) اختر خانة العشرات</div>
+        <div class="builder-chip-row" id="builderTensRow"></div>
+      </div>
+
+      <div class="builder-result">
+        <div class="builder-result-number" id="builderNumberDisplay">٢١</div>
+        <div class="builder-result-word-wrap">
+          <div class="builder-result-word" id="builderWordDisplay" tabindex="0" role="button" aria-label="استمع للرقم المكوَّن"></div>
+        </div>
+        <p class="builder-note" id="builderNote"></p>
+        <div class="builder-examples-row" id="builderExamplesRow"></div>
       </div>
     </div>
   </div>
@@ -967,15 +1011,71 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
 <hr class="rail-rule">
 
-<!-- ============================= SELF-INTRODUCTION PATTERNS ============================= -->
-<section class="section" id="introduce">
+<!-- ============================= HUNDREDS / THOUSANDS ============================= -->
+<section class="section" id="hundreds">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>عبارات جاهزة</span>
-      <h2 class="section-title">كيف تُقدّم نفسك</h2>
-      <p class="section-sub">ست جمل جاهزة تكفيك لبدء أي تعارف. انقر على أي جملة لسماع نطقها.</p>
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-stack"/></svg>خطوة أوسع</span>
+      <h2 class="section-title">المئات والآلاف</h2>
+      <p class="section-sub"><span class="de mono">hundert</span> (مئة) و<span class="de mono">tausend</span> (ألف) تُضافان بنفس منطق الآحاد والعشرات — وكل الرقم مهما طال يبقى كلمة واحدة متصلة!</p>
     </div>
-    <div class="pattern-list reveal-stagger reveal" id="patternList"></div>
+    <div class="grid-4 reveal-stagger reveal" id="hundredsGrid"></div>
+
+    <div class="showcase-card reveal" style="margin-top:30px">
+      <div class="showcase-label"><svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-stack"/></svg>شاهد رقمًا طويلًا يندمج في كلمة واحدة</div>
+      <div class="mega-digits-row" id="megaDigitsRow"></div>
+      <div class="arrow-frame" style="justify-content:center">
+        <span class="k-word k-phrase-big de" id="megaWordDisplay" tabindex="0" role="button"></span>
+      </div>
+      <p class="showcase-translation">مهما طال الرقم، الألمانية تكتبه ككلمة واحدة متصلة بلا مسافات ولا شرطات — على عكس الإنجليزية والعربية.</p>
+      <div class="mega-picker-row" id="megaPickerRow"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= ORDINALS (bonus, flip cards) ============================= -->
+<section class="section" id="ordinals">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-medal"/></svg>لمحة إضافية · قد تحتاجها قريبًا</span>
+      <h2 class="section-title">الأرقام الترتيبية: الأول، الثاني…</h2>
+      <p class="section-sub">القاعدة: من ١ إلى ١٩ نضيف <span class="de mono">-te</span> (مع استثناءات قليلة)، ومن ٢٠ فصاعدًا نضيف <span class="de mono">-ste</span>. انقر على البطاقة لقلبها ورؤية الصيغة الترتيبية.</p>
+    </div>
+    <div class="vocab-grid reveal-stagger reveal" id="ordinalsGrid"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= PRACTICAL USAGE ============================= -->
+<section class="section" id="practical">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>من النظرية إلى الحياة اليومية</span>
+      <h2 class="section-title">كيف تُستخدم الأرقام فعليًا</h2>
+      <p class="section-sub">ثلاثة مواقف يومية ستستخدم فيها الأرقام أكثر من أي مكان آخر.</p>
+    </div>
+
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-phone"/></svg></span>رقم الهاتف</h3>
+        <p>الألمان عادة ينطقون رقم الهاتف رقمًا رقمًا وليس كأرقام مركّبة. لتفادي الالتباس بين <span class="de mono" data-speak="zwei">zwei</span> و<span class="de mono" data-speak="drei">drei</span> في الاتصالات، يُستبدل <span class="de mono" data-speak="zwei">zwei</span> أحيانًا بـ<span class="de mono" data-speak="zwo">zwo</span>.</p>
+        <div class="phone-mockup" id="phoneMockup"></div>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-euro"/></svg></span>الأسعار باليورو</h3>
+        <p>تُستخدم الفاصلة (Komma) للكسور العشرية، وغالبًا يُحذف اسم العملة بين الجزأين: <span class="de mono" data-speak="zwölf Euro neunundneunzig">12,99 €</span> تُقال <span class="de" data-speak="zwölf Euro neunundneunzig">zwölf Euro neunundneunzig</span>.</p>
+        <p class="mono" style="margin-top:10px;font-size:.85rem;color:var(--ink-faint)" data-speak="Was kostet das?">Was kostet das? — كم يكلّف هذا؟</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-users"/></svg></span>العمر</h3>
+        <p>لقول عمرك تستخدم الفعل <span class="de mono">sein</span> (يكون) وليس «يملك»: <span class="de mono" data-speak="Ich bin fünfundzwanzig Jahre alt.">Ich bin fünfundzwanzig Jahre alt.</span> — أنا أبلغ من العمر خمسة وعشرين عامًا.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:30px" class="reveal" id="extraAccordion"></div>
   </div>
 </section>
 
@@ -986,13 +1086,13 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>طبّق ما تعلّمته</span>
-      <h2 class="section-title">حوارا تعارف كاملان</h2>
-      <p class="section-sub">انقر على أي فقاعة حوار لسماعها بمفردها، أو استمع للحوار كاملًا بزر واحد. تنقّل بين الحوار غير الرسمي والرسمي من التبويبات.</p>
+      <h2 class="section-title">حوارا استخدام الأرقام كاملان</h2>
+      <p class="section-sub">انقر على أي فقاعة حوار لسماعها بمفردها، أو استمع للحوار كاملًا بزر واحد. تنقّل بين حوار الأصدقاء وحوار السوق من التبويبات.</p>
     </div>
 
     <div class="dialogue-tabs reveal">
-      <button class="cat-tab active" data-panel="dlgInformal">حوار غير رسمي <span class="cat-count">du</span></button>
-      <button class="cat-tab" data-panel="dlgFormal">حوار رسمي <span class="cat-count">Sie</span></button>
+      <button class="cat-tab active" data-panel="dlgInformal">بين الأصدقاء <span class="cat-count">du</span></button>
+      <button class="cat-tab" data-panel="dlgFormal">في السوق <span class="cat-count">Sie</span></button>
     </div>
 
     <div class="dialogue-shell reveal">
@@ -1010,7 +1110,7 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>تجنّب الفخاخ الشائعة</span>
       <h2 class="section-title">أخطاء يقع فيها معظم المبتدئين</h2>
-      <p class="section-sub">أغلب هذه الأخطاء اجتماعية بقدر ما هي لغوية — قارن كل خطأ بصورته الصحيحة.</p>
+      <p class="section-sub">أغلبها أخطاء إملائية أو سمعية بسيطة — قارن كل خطأ بصورته الصحيحة.</p>
     </div>
     <div class="reveal-stagger reveal" id="mistakesList" style="display:flex;flex-direction:column;gap:16px"></div>
   </div>
@@ -1043,9 +1143,9 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
     <div class="exercise-shell reveal">
       <div class="exercise-tabs" role="tablist">
-        <button class="exercise-tab active" data-panel="panelMatch" role="tab">طابق التحية بمعناها <span class="count" id="countMatch">٠/٨</span></button>
+        <button class="exercise-tab active" data-panel="panelMatch" role="tab">طابق الرقم بصيغته <span class="count" id="countMatch">٠/٨</span></button>
         <button class="exercise-tab" data-panel="panelMcq" role="tab">اختر الإجابة الصحيحة <span class="count" id="countMcq">٠/٨</span></button>
-        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الحوار <span class="count" id="countFill">٠/٨</span></button>
+        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل التكوين <span class="count" id="countFill">٠/٨</span></button>
         <button class="exercise-tab" data-panel="panelBuilder" role="tab">رتّب كلمات الجملة <span class="count" id="countBuilder">٠/٥</span></button>
         <button class="exercise-tab" data-panel="panelListen" role="tab">تمرين الاستماع <span class="count" id="countListen">٠/١</span></button>
       </div>
@@ -1077,18 +1177,18 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
     <div class="grid-2 reveal">
       <ul class="summary-list info-card">
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا التحيات الأربع حسب وقت اليوم، وتحيات غير رسمية من مناطق ناطقة بالألمانية مختلفة.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا خمس صيغ وداع، من الأكثر رسمية إلى الأكثر عفوية.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا الفرق بين <span class="de mono">du</span> و<span class="de mono">Sie</span> ومتى نستخدم كل صيغة.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا ست جمل جاهزة لتقديم النفس والسؤال عن الاسم والمكان والحال.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>استمعنا وتفاعلنا مع حوارين كاملين — أحدهما غير رسمي والآخر رسمي.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا الأرقام الأساسية من ٠ إلى ١٢، أساس كل رقم آخر في الألمانية.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا لاحقتي <span class="de mono">-zehn</span> و<span class="de mono">-zig</span> لتكوين الأرقام من ١٣ إلى ١٠٠.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا القاعدة الذهبية للأرقام المركّبة: الآحاد + <span class="de mono">und</span> + العشرات، ككلمة واحدة متصلة.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعرّفنا على المئات والآلاف، والأرقام الترتيبية، والاستخدام العملي في الهاتف والأسعار والعمر.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>استمعنا وتفاعلنا مع حوارين كاملين — أحدهما بين أصدقاء والآخر في السوق.</p></li>
       </ul>
 
       <div class="info-card" style="display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;background:linear-gradient(155deg, var(--teal-soft), var(--plum-soft))">
         <svg class="icon" style="width:40px;height:40px;margin:0 auto;color:var(--teal)"><use href="#i-compass"/></svg>
         <h3 style="justify-content:center">الدرس القادم</h3>
-        <p>الأرقام من ٠ إلى ١٠٠ — قريبًا في الدرس الثالث من مسار A1.</p>
-        <button class="btn btn-ghost" disabled style="align-self:center">الدرس ٣ (قريبًا)</button>
+        <p>الألوان والأيام — قريبًا في الدرس الرابع من مسار A1.</p>
+        <button class="btn btn-ghost" disabled style="align-self:center">الدرس ٤ (قريبًا)</button>
       </div>
     </div>
 
@@ -1102,7 +1202,7 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <!-- ============================= FOOTER ============================= -->
 <footer class="site-footer">
   <div class="container footer-inner">
-    <span>الدرس ٢ · مسار الألمانية A1 — صُمم للتعلّم النشط والاستماع الفوري.</span>
+    <span>الدرس ٣ · مسار الألمانية A1 — صُمم للتعلّم النشط والاستماع الفوري.</span>
     <div class="footer-actions">
       <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس"><svg class="icon"><use href="#i-printer"/></svg></button>
     </div>
@@ -1131,134 +1231,204 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 /* ==========================================================================
    DATA
    ========================================================================== */
-const TIME_GREETINGS = [
-  {cls:"morning", icon:"i-sunrise", range:"~٥ صباحًا – ١٠ صباحًا", de:"Guten Morgen", ipa:"ˈɡuːtn̩ ˈmɔʁɡn̩", ar:"صباح الخير"},
-  {cls:"day", icon:"i-sun", range:"~١٠ صباحًا – ٦ مساءً", de:"Guten Tag", ipa:"ˈɡuːtn̩ taːk", ar:"تحية عامة نهارية"},
-  {cls:"evening", icon:"i-sunset", range:"~٦ مساءً – منتصف الليل", de:"Guten Abend", ipa:"ˈɡuːtn̩ ˈaːbn̩t", ar:"مساء الخير"},
-  {cls:"night", icon:"i-moon", range:"عند النوم أو المغادرة ليلًا", de:"Gute Nacht", ipa:"ˈɡuːtə naxt", ar:"تصبح على خير (وداع لا تحية)"}
+const BASICS_NUMBERS = [
+  {n:0,  de:"null",   ipa:"nʊl",           ar:"صفر"},
+  {n:1,  de:"eins",   ipa:"aɪns",          ar:"واحد"},
+  {n:2,  de:"zwei",   ipa:"tsvaɪ",         ar:"اثنان"},
+  {n:3,  de:"drei",   ipa:"draɪ",          ar:"ثلاثة"},
+  {n:4,  de:"vier",   ipa:"fiːɐ",          ar:"أربعة"},
+  {n:5,  de:"fünf",   ipa:"fʏnf",          ar:"خمسة"},
+  {n:6,  de:"sechs",  ipa:"zɛks",          ar:"ستة"},
+  {n:7,  de:"sieben", ipa:"ˈziːbn̩",        ar:"سبعة"},
+  {n:8,  de:"acht",   ipa:"axt",           ar:"ثمانية"},
+  {n:9,  de:"neun",   ipa:"nɔɪn",          ar:"تسعة"},
+  {n:10, de:"zehn",   ipa:"tseːn",         ar:"عشرة"},
+  {n:11, de:"elf",    ipa:"ɛlf",           ar:"أحد عشر"},
+  {n:12, de:"zwölf",  ipa:"tsvœlf",        ar:"اثنا عشر"}
 ];
 
-const REGION_GREETINGS = [
-  {flag:"💬", de:"Hallo", place:"في كل مكان", desc:"الأكثر حيادية بين التحيات غير الرسمية، تُستخدم مع الجميع تقريبًا."},
-  {flag:"👋", de:"Hi", place:"بين الشباب", desc:"مستعارة من الإنجليزية، عفوية جدًا، شائعة في الرسائل والدردشة."},
-  {flag:"🇦🇹", de:"Servus", place:"النمسا وجنوب ألمانيا", desc:"تحية ووداع في آنٍ واحد! تُستخدم عند اللقاء وعند المغادرة أيضًا."},
-  {flag:"⚓", de:"Moin", place:"شمال ألمانيا", desc:"تُقال في أي وقت من اليوم، وأحيانًا تُكرَّر: Moin Moin."},
-  {flag:"🇨🇭", de:"Grüezi", place:"سويسرا", desc:"التحية القياسية في المناطق السويسرية الناطقة بالألمانية."},
-  {flag:"🌞", de:"Grüß dich", place:"جنوب ألمانيا", desc:"تحية ودّية غير رسمية، حرفيًا «يبارك فيك» بمعنى مجازي بحت."}
+const TEENS_NUMBERS = [
+  {n:13, stem:"drei", suffix:"zehn", de:"dreizehn",  ar:"ثلاثة عشر", note:"drei + zehn"},
+  {n:14, stem:"vier", suffix:"zehn", de:"vierzehn",  ar:"أربعة عشر", note:"vier + zehn"},
+  {n:15, stem:"fünf", suffix:"zehn", de:"fünfzehn",  ar:"خمسة عشر",  note:"fünf + zehn"},
+  {n:16, stem:"sech", suffix:"zehn", de:"sechzehn",  ar:"ستة عشر",   note:"sechs يفقد الـs"},
+  {n:17, stem:"sieb", suffix:"zehn", de:"siebzehn",  ar:"سبعة عشر",  note:"sieben تفقد en"},
+  {n:18, stem:"acht", suffix:"zehn", de:"achtzehn",  ar:"ثمانية عشر", note:"acht + zehn"},
+  {n:19, stem:"neun", suffix:"zehn", de:"neunzehn",  ar:"تسعة عشر",  note:"neun + zehn"}
 ];
 
-const FAREWELLS = [
-  {de:"Tschüss", ipa:"tʃʏs", meaning:"وداعًا", formality:"غير رسمية", note:"الأكثر شيوعًا في المحادثات اليومية"},
-  {de:"Auf Wiedersehen", ipa:"aʊf ˈviːdɐˌzeːən", meaning:"إلى اللقاء", formality:"رسمية", note:"حرفيًا: حتى نرى بعضنا مجددًا"},
-  {de:"Bis bald", ipa:"bɪs balt", meaning:"أراك قريبًا", formality:"غير رسمية", note:"عند توقّع لقاء قريب"},
-  {de:"Bis später", ipa:"bɪs ˈʃpɛːtɐ", meaning:"أراك لاحقًا", formality:"غير رسمية", note:"عادة في نفس اليوم"},
-  {de:"Ciao", ipa:"tʃaʊ", meaning:"سلام", formality:"غير رسمية جدًا", note:"مستعارة من الإيطالية، شائعة بين الشباب"}
+const TENS_NUMBERS = [
+  {n:20,  stem:"zwan", suffix:"zig", de:"zwanzig",  ar:"عشرون",  note:"كلمة خاصة، ليست zweizig"},
+  {n:30,  stem:"drei",  suffix:"ßig", de:"dreißig",  ar:"ثلاثون", note:"استثناء إملائي: ß بدلًا من z"},
+  {n:40,  stem:"vier",  suffix:"zig", de:"vierzig",  ar:"أربعون", note:"vier + zig"},
+  {n:50,  stem:"fünf",  suffix:"zig", de:"fünfzig",  ar:"خمسون",  note:"fünf + zig"},
+  {n:60,  stem:"sech",  suffix:"zig", de:"sechzig",  ar:"ستون",   note:"يفقد الـs مثل sechzehn"},
+  {n:70,  stem:"sieb",  suffix:"zig", de:"siebzig",  ar:"سبعون",  note:"تفقد en مثل siebzehn"},
+  {n:80,  stem:"acht",  suffix:"zig", de:"achtzig",  ar:"ثمانون", note:"acht + zig"},
+  {n:90,  stem:"neun",  suffix:"zig", de:"neunzig",  ar:"تسعون",  note:"neun + zig"},
+  {n:100, stem:"hundert", suffix:"",  de:"hundert",  ar:"مئة",    note:"نقطة انطلاق المئات القادمة"}
 ];
 
-const DUSIE_ROWS = [
-  {ar:"أنت", du:"du", sie:"Sie"},
-  {ar:"ما اسمك؟", du:"Wie heißt du?", sie:"Wie heißen Sie?"},
-  {ar:"من أين أنت؟", du:"Woher kommst du?", sie:"Woher kommen Sie?"},
-  {ar:"كيف حالك؟", du:"Wie geht's dir?", sie:"Wie geht es Ihnen?"},
-  {ar:"تشرّفت بمعرفتك", du:"Freut mich!", sie:"Freut mich, Sie kennenzulernen."}
+const PAIR_COMPARE = [
+  {a:{n:16, de:"sechzehn"}, b:{n:60, de:"sechzig"}},
+  {a:{n:17, de:"siebzehn"}, b:{n:70, de:"siebzig"}}
 ];
 
-const PATTERNS = [
-  {de:"Ich heiße Anna.", ar:"اسمي آنا.", formality:"عام"},
-  {de:"Ich bin Ben.", ar:"أنا بِن.", formality:"عام"},
-  {de:"Mein Name ist Frau Weber.", ar:"اسمي هو السيدة فيبر.", formality:"رسمي"},
-  {de:"Ich komme aus Ägypten.", ar:"أنا من مصر.", formality:"عام"},
-  {de:"Ich wohne in Berlin.", ar:"أسكن في برلين.", formality:"عام"},
-  {de:"Freut mich, Sie kennenzulernen.", ar:"تشرّفت بمعرفتك.", formality:"رسمي"}
+const BUILDER_UNITS = [
+  {v:0, label:"٠", word:""},
+  {v:1, label:"١", word:"ein"},
+  {v:2, label:"٢", word:"zwei"},
+  {v:3, label:"٣", word:"drei"},
+  {v:4, label:"٤", word:"vier"},
+  {v:5, label:"٥", word:"fünf"},
+  {v:6, label:"٦", word:"sechs"},
+  {v:7, label:"٧", word:"sieben"},
+  {v:8, label:"٨", word:"acht"},
+  {v:9, label:"٩", word:"neun"}
+];
+const BUILDER_TENS = [
+  {v:2, label:"٢٠", word:"zwanzig"},
+  {v:3, label:"٣٠", word:"dreißig"},
+  {v:4, label:"٤٠", word:"vierzig"},
+  {v:5, label:"٥٠", word:"fünfzig"},
+  {v:6, label:"٦٠", word:"sechzig"},
+  {v:7, label:"٧٠", word:"siebzig"},
+  {v:8, label:"٨٠", word:"achtzig"},
+  {v:9, label:"٩٠", word:"neunzig"}
+];
+const COMPOUND_EXAMPLES = [
+  {u:1,t:2},{u:5,t:3},{u:7,t:4},{u:8,t:5},{u:9,t:6},{u:3,t:7},{u:9,t:9}
+];
+
+const HUNDREDS_NUMBERS = [
+  {n:100,  de:"hundert",              ar:"مئة"},
+  {n:200,  de:"zweihundert",          ar:"مئتان"},
+  {n:300,  de:"dreihundert",          ar:"ثلاثمئة"},
+  {n:500,  de:"fünfhundert",          ar:"خمسمئة"},
+  {n:1000, de:"tausend",              ar:"ألف"},
+  {n:2000, de:"zweitausend",          ar:"ألفان"},
+  {n:121,  de:"hunderteinundzwanzig", ar:"مئة وواحد وعشرون"},
+  {n:999,  de:"neunhundertneunundneunzig", ar:"تسعمئة وتسعة وتسعون"}
+];
+
+const MEGA_NUMBERS = [
+  {digits:["2","5","6"],           de:"zweihundertsechsundfünfzig"},
+  {digits:["1","4","7","0"],       de:"eintausendvierhundertsiebzig"},
+  {digits:["4","7","8","2"],       de:"viertausendsiebenhundertzweiundachtzig"}
+];
+
+const ORDINALS = [
+  {cardinal:"eins",   ordinal:"erste",   ar:"الأول"},
+  {cardinal:"zwei",   ordinal:"zweite",  ar:"الثاني"},
+  {cardinal:"drei",   ordinal:"dritte",  ar:"الثالث"},
+  {cardinal:"vier",   ordinal:"vierte",  ar:"الرابع"},
+  {cardinal:"fünf",   ordinal:"fünfte",  ar:"الخامس"},
+  {cardinal:"sechs",  ordinal:"sechste", ar:"السادس"},
+  {cardinal:"sieben", ordinal:"siebte",  ar:"السابع"},
+  {cardinal:"acht",   ordinal:"achte",   ar:"الثامن"},
+  {cardinal:"neun",   ordinal:"neunte",  ar:"التاسع"},
+  {cardinal:"zehn",   ordinal:"zehnte",  ar:"العاشر"}
+];
+
+const PHONE_DIGITS = [
+  {d:"0",w:"null"},{d:"1",w:"eins"},{d:"7",w:"sieben"},{d:"6",w:"sechs"},{gap:true},
+  {d:"2",w:"zwei"},{d:"3",w:"drei"},{d:"4",w:"vier"},{gap:true},
+  {d:"5",w:"fünf"},{d:"6",w:"sechs"}
+];
+
+const EXTRA_NOTES = [
+  {q:"Zahl أم Nummer؟ ما الفرق؟", body:"<span class=\"de mono\" data-speak=\"Zahl\">Zahl</span> هي الرقم بمفهومه الرياضي المجرّد (مثل: سبعة رقم فردي)، بينما <span class=\"de mono\" data-speak=\"Nummer\">Nummer</span> هي رقم تعريفي يُستخدم كمُعرِّف — رقم هاتف، رقم منزل، رقم غرفة. مثال: <span class=\"de\" data-speak=\"Sieben ist eine Zahl.\">Sieben ist eine Zahl.</span> مقابل <span class=\"de\" data-speak=\"Meine Hausnummer ist sieben.\">Meine Hausnummer ist sieben.</span>"},
+  {q:"لماذا نقول hundert فقط وليس einhundert؟", body:"عند بدء رقم بالمئة أو الألف، يمكن حذف <span class=\"de mono\">ein</span> اختياريًا: <span class=\"de mono\" data-speak=\"hundert\">hundert</span> و<span class=\"de mono\" data-speak=\"einhundert\">einhundert</span> كلاهما صحيح ومفهوم، لكن <span class=\"de mono\" data-speak=\"hundert\">hundert</span> المجرّدة أكثر شيوعًا في الكلام اليومي."},
+  {q:"هل تُكتب الأرقام بالألمانية بنفس الشكل ٠١٢٣؟", body:"الألمانية تستخدم دائمًا الأرقام الغربية (0،1،2،3…) بنفس الشكل المستخدم في الإنجليزية، وليس الأرقام الهندية العربية (٠،١،٢،٣…) الشائعة في الكتابة العربية اليومية. تدرّب على قراءة الشكلين معًا لتعتاد عليهما."}
 ];
 
 const DIALOGUE_INFORMAL = [
-  {who:"a", name:"Anna", de:"Hallo! Ich heiße Anna. Und du?", ar:"مرحبًا! اسمي آنا. وأنت؟"},
-  {who:"b", name:"Ben", de:"Hi Anna! Ich bin Ben.", ar:"مرحبًا آنا! أنا بِن."},
-  {who:"a", name:"Anna", de:"Woher kommst du?", ar:"من أين أنت؟"},
-  {who:"b", name:"Ben", de:"Ich komme aus Berlin. Und du?", ar:"أنا من برلين. وأنتِ؟"},
-  {who:"a", name:"Anna", de:"Ich komme aus München. Wie geht's dir?", ar:"أنا من ميونخ. كيف حالك؟"},
-  {who:"b", name:"Ben", de:"Mir geht es gut, danke! Und dir?", ar:"أنا بخير، شكرًا! وأنتِ؟"},
-  {who:"a", name:"Anna", de:"Auch gut! Bis später, Ben.", ar:"بخير أيضًا! أراك لاحقًا يا بِن."},
-  {who:"b", name:"Ben", de:"Tschüss, Anna!", ar:"وداعًا يا آنا!"}
+  {who:"a", name:"Lena", de:"Wie alt bist du, Tom?", ar:"كم عمرك يا توم؟"},
+  {who:"b", name:"Tom",  de:"Ich bin einundzwanzig. Und du?", ar:"عمري واحد وعشرون. وأنتِ؟"},
+  {who:"a", name:"Lena", de:"Ich bin neunzehn Jahre alt.", ar:"عمري تسعة عشر عامًا."},
+  {who:"b", name:"Tom",  de:"Wie ist deine Telefonnummer?", ar:"ما رقم هاتفك؟"},
+  {who:"a", name:"Lena", de:"Meine Nummer ist null eins sieben sechs, zwei drei, vier fünf.", ar:"رقمي هو ٠١٧٦٢٣٤٥."},
+  {who:"b", name:"Tom",  de:"Danke! Wie viele Geschwister hast du?", ar:"شكرًا! كم عدد إخوتك؟"},
+  {who:"a", name:"Lena", de:"Ich habe zwei Brüder und eine Schwester.", ar:"لدي أخوان وأخت واحدة."},
+  {who:"b", name:"Tom",  de:"Cool! Bis bald, Lena!", ar:"رائع! أراك قريبًا يا لينا!"}
 ];
 
 const DIALOGUE_FORMAL = [
-  {who:"a", name:"Herr Schmidt", de:"Guten Tag, mein Name ist Schmidt.", ar:"نهارك سعيد، اسمي شميت."},
-  {who:"b", name:"Frau Weber", de:"Guten Tag, Herr Schmidt. Ich heiße Weber.", ar:"نهارك سعيد سيد شميت. اسمي فيبر."},
-  {who:"a", name:"Herr Schmidt", de:"Freut mich, Frau Weber. Wie geht es Ihnen?", ar:"تشرّفت سيدة فيبر. كيف حالك؟"},
-  {who:"b", name:"Frau Weber", de:"Danke, es geht mir gut. Und Ihnen?", ar:"شكرًا، أنا بخير. وأنت؟"},
-  {who:"a", name:"Herr Schmidt", de:"Auch gut, danke. Woher kommen Sie?", ar:"بخير أيضًا، شكرًا. من أين أنت؟"},
-  {who:"b", name:"Frau Weber", de:"Ich komme aus Hamburg. Und Sie?", ar:"أنا من هامبورغ. وأنت؟"},
-  {who:"a", name:"Herr Schmidt", de:"Ich komme aus Köln. Auf Wiedersehen, Frau Weber.", ar:"أنا من كولن. إلى اللقاء سيدة فيبر."},
-  {who:"b", name:"Frau Weber", de:"Auf Wiedersehen, Herr Schmidt.", ar:"إلى اللقاء سيد شميت."}
+  {who:"a", name:"Herr Klein", de:"Guten Tag! Was kosten die Äpfel?", ar:"نهارك سعيد! كم سعر التفاح؟"},
+  {who:"b", name:"Frau Bauer", de:"Die Äpfel kosten zwei Euro pro Kilo.", ar:"يكلّف التفاح يورويْن للكيلو."},
+  {who:"a", name:"Herr Klein", de:"Und was kosten die Bananen?", ar:"وكم سعر الموز؟"},
+  {who:"b", name:"Frau Bauer", de:"Die Bananen kosten drei Euro.", ar:"يكلّف الموز ثلاثة يورو."},
+  {who:"a", name:"Herr Klein", de:"Ich nehme zehn Äpfel und fünf Bananen, bitte.", ar:"سآخذ عشر تفاحات وخمس موزات، من فضلك."},
+  {who:"b", name:"Frau Bauer", de:"Das macht zusammen dreißig Euro.", ar:"المجموع ثلاثون يورو."},
+  {who:"a", name:"Herr Klein", de:"Hier sind fünfzig Euro.", ar:"تفضلي، خمسون يورو."},
+  {who:"b", name:"Frau Bauer", de:"Danke, und hier sind zwanzig Euro zurück.", ar:"شكرًا، وهذه عشرون يورو الباقي."}
 ];
 
 const MISTAKES = [
-  {wrong:"مخاطبة طبيب أو مدير بصيغة <span class=\"de mono\" data-speak=\"du\">du</span> من أول لقاء", right:"استخدام <span class=\"de mono\" data-speak=\"Sie\">Sie</span> مع الغرباء والمواقف الرسمية دائمًا", note:"في الشك، استخدم Sie دائمًا حتى يطلب منك الطرف الآخر التحوّل إلى du."},
-  {wrong:"التعامل مع <span class=\"de mono\" data-speak=\"Wie geht's?\">Wie geht's?</span> كسؤال شكلي فقط كما في الإنجليزية", right:"الاستعداد لإجابة حقيقية أحيانًا، فالألمان قد يجيبون بصدق عن حالهم", note:"في السياقات غير الرسمية القريبة، قد يُتوقع منك رد صادق وليس فقط «بخير»."},
-  {wrong:"قول <span class=\"de mono\" data-speak=\"Guten Tag\">Guten Tag</span> في السابعة مساءً", right:"استخدام <span class=\"de mono\" data-speak=\"Guten Abend\">Guten Abend</span> بعد حوالي الساعة السادسة مساءً", note:"التوقيت مهم في الألمانية أكثر من العربية العامية."},
-  {wrong:"استخدام <span class=\"de mono\" data-speak=\"Tschüss\">Tschüss</span> عند مغادرة اجتماع عمل رسمي", right:"استخدام <span class=\"de mono\" data-speak=\"Auf Wiedersehen\">Auf Wiedersehen</span> في السياقات الرسمية", note:"Tschüss غير رسمية تمامًا، احفظها لأصدقائك فقط."},
-  {wrong:"نطق <span class=\"de mono\" data-speak=\"ich\">ich</span> بصوت k بدلًا من الصوت الناعم", right:"نطقها «إش» بصوت ناعم من الحلق (راجع درس الحروف، تركيبة CH)", note:"هذا خطأ شائع جدًا لدى المبتدئين، ويستحق مراجعة إضافية."},
-  {wrong:"ترجمة <span class=\"de mono\" data-speak=\"Wie heißt du?\">Wie heißt du?</span> حرفيًا كـ«ماذا تُدعى؟» بنبرة غريبة", right:"فهمها كصيغة طبيعية تمامًا تعني «ما اسمك؟»", note:"الفعل heißen يعني حرفيًا «يُسمّى»، وهو الفعل الطبيعي للسؤال عن الاسم في الألمانية."}
+  {wrong:"كتابة <span class=\"de mono\" data-speak=\"zwei und zwanzig\">zwei und zwanzig</span> كثلاث كلمات منفصلة", right:"كتابتها ككلمة واحدة متصلة: <span class=\"de mono\" data-speak=\"zweiundzwanzig\">zweiundzwanzig</span>", note:"الألمانية تكتب كل رقم — مهما طال — ككلمة واحدة بلا مسافات ولا شرطات."},
+  {wrong:"الخلط بين <span class=\"de mono\" data-speak=\"sechzehn\">sechzehn</span> (١٦) و<span class=\"de mono\" data-speak=\"sechzig\">sechzig</span> (٦٠) عند الاستماع", right:"الانتباه للمقطع الأخير: <span class=\"de mono\" data-speak=\"-zehn\">-zehn</span> أوضح نطقًا من <span class=\"de mono\" data-speak=\"-zig\">-zig</span> الخافتة", note:"هذا الالتباس شائع جدًا حتى بين المتحدثين الأصليين في الهاتف — لذلك يُطلب أحيانًا التكرار أو التهجئة."},
+  {wrong:"قول <span class=\"de mono\" data-speak=\"zwanzigeins\">zwanzigeins</span> (ترتيب العشرات أولًا كما بالإنجليزية)", right:"<span class=\"de mono\" data-speak=\"einundzwanzig\">einundzwanzig</span> — الآحاد أولًا ثم und ثم العشرات", note:"تذكّر: هذا الترتيب مطابق تمامًا للعربية «واحد وعشرون» — اعتمد على حدسك العربي هنا وليس الإنجليزي."},
+  {wrong:"استخدام <span class=\"de mono\" data-speak=\"eins\">eins</span> داخل الأرقام المركّبة مثل <span class=\"de mono\" data-speak=\"einsundzwanzig\">einsundzwanzig</span>", right:"إسقاط الـs داخل التركيب: <span class=\"de mono\" data-speak=\"einundzwanzig\">einundzwanzig</span>", note:"eins تُستخدم فقط عند العدّ المستقل؛ داخل أي رقم مركّب تصبح ein."},
+  {wrong:"نطق حرف Z في <span class=\"de mono\" data-speak=\"zwanzig\">zwanzig</span> كصوت z الإنجليزية", right:"نطقه دائمًا [ts] كما في نهاية كلمة cats", note:"حرف Z في الألمانية لا يُنطق أبدًا كالـ z الإنجليزية — راجع درس الحروف."},
+  {wrong:"نطق حرف V في <span class=\"de mono\" data-speak=\"vier\">vier</span> كصوت v الإنجليزية", right:"نطقه [f] في معظم الكلمات الألمانية الأصيلة", note:"لهذا تسمع vier وvierzehn وvierzig جميعها بصوت f في البداية."}
 ];
 
 const TIPS = [
-  {title:"تذكّر نطق G الصلب", body:"في <span class=\"de\" data-speak=\"Guten\">Guten</span>، حرف G في البداية يُنطق مثل الجيم الصلبة كما تعلّمنا في درس الحروف، وليس مثل j الإنجليزية."},
-  {title:"EI تُنطق دائمًا آي", body:"في <span class=\"de\" data-speak=\"heiße\">heiße</span>، تركيبة EI تُنطق «آي» دائمًا — فتُصبح الكلمة «هايسه»، تمامًا كما تعلّمت في درس الحروف."},
-  {title:"Ihnen تبدأ بحرف علة ممدود", body:"صيغة «لكم/لك» الرسمية <span class=\"de\" data-speak=\"Ihnen\">Ihnen</span> تبدأ بصوت إي ممدود، وتُنطق «إينن» — لا تخلطها مع <span class=\"de\" data-speak=\"ihnen\">ihnen</span> بمعنى «لهم»."},
-  {title:"ضع النبرة على اسمك", body:"عند تقديم نفسك بجملة مثل <span class=\"de\" data-speak=\"Ich heiße Anna\">Ich heiße Anna</span>، تقع النبرة الطبيعية على الاسم نفسه، وليس على الفعل heiße."}
+  {title:"Z تُنطق دائمًا [ts]", body:"في <span class=\"de\" data-speak=\"zwei\">zwei</span> و<span class=\"de\" data-speak=\"zehn\">zehn</span> و<span class=\"de\" data-speak=\"zwölf\">zwölf</span>، حرف Z يُنطق دائمًا [ts] كما في نهاية كلمة «cats» — لا يوجد استثناء لهذه القاعدة في الألمانية."},
+  {title:"V تُنطق [f] في الكلمات الأصيلة", body:"في <span class=\"de\" data-speak=\"vier\">vier</span> و<span class=\"de\" data-speak=\"vierzehn\">vierzehn</span> و<span class=\"de\" data-speak=\"vierzig\">vierzig</span>، حرف V في بداية الكلمة يُنطق دائمًا [f]، مثل حرف الفاء العربي."},
+  {title:"لاحقة -zig تُنطق بخفّة", body:"عكس اللاحقة الواضحة <span class=\"de\" data-speak=\"-zehn\">-zehn</span>، فإن <span class=\"de\" data-speak=\"-zig\">-zig</span> في نهاية العشرات تُنطق بصوت خافت أقرب لـ«إش» وليس «زيغ» الصريحة."},
+  {title:"النبرة في الأرقام المركّبة على العشرات", body:"في كلمة <span class=\"de\" data-speak=\"einundzwanzig\">einundzwanzig</span>، تقع النبرة الرئيسية على الجزء الأخير (العشرات): ein-und-ZWAN-zig، وليس على الآحاد في البداية."}
 ];
 
 const MATCH_PAIRS = [
-  {de:"Guten Morgen", ar:"صباح الخير"}, {de:"Guten Abend", ar:"مساء الخير"},
-  {de:"Tschüss", ar:"وداعًا (غير رسمي)"}, {de:"Auf Wiedersehen", ar:"إلى اللقاء (رسمي)"},
-  {de:"Hallo", ar:"مرحبًا"}, {de:"Wie heißt du?", ar:"ما اسمك؟ (غير رسمي)"},
-  {de:"Ich komme aus...", ar:"أنا من..."}, {de:"Mir geht es gut", ar:"أنا بخير"}
+  {de:"sieben", ar:"٧"}, {de:"zwölf", ar:"١٢"},
+  {de:"siebzehn", ar:"١٧"}, {de:"dreißig", ar:"٣٠"},
+  {de:"einundzwanzig", ar:"٢١"}, {de:"sechzig", ar:"٦٠"},
+  {de:"hundert", ar:"١٠٠"}, {de:"neunundneunzig", ar:"٩٩"}
 ];
 
 const MCQ = [
-  {prompt:"تتحدث مع طبيبك لأول مرة. ماذا تسأله عن اسمه؟", options:["Wie heißen Sie?","Wie heißt du?","Wie geht's?","Tschüss!"], correct:"Wie heißen Sie?", why:"مع الغرباء وفي السياقات الرسمية مثل الطبيب، نستخدم دائمًا صيغة <span class=\"de mono\" data-speak=\"Sie\">Sie</span>."},
-  {prompt:"متى تقول <span class=\"de mono\" data-speak=\"Guten Abend\">Guten Abend</span>؟", options:["في الصباح الباكر","في منتصف النهار","في المساء","عند النوم فقط"], correct:"في المساء", why:"<span class=\"de mono\" data-speak=\"Guten Abend\">Guten Abend</span> تُستخدم من حوالي الساعة السادسة مساءً."},
-  {prompt:"ماذا تعني <span class=\"de mono\" data-speak=\"Ich komme aus...\">Ich komme aus...</span>؟", options:["أنا من...","أنا ذاهب إلى...","اسمي...","كيف حالك؟"], correct:"أنا من...", why:"<span class=\"de mono\" data-speak=\"kommen\">kommen</span> aus تعني حرفيًا «يأتي من»، وتُستخدم للتعبير عن بلد أو مدينة المنشأ."},
-  {prompt:"أي تحية تُستخدم كوداع أيضًا في النمسا وجنوب ألمانيا؟", options:["Servus","Guten Tag","Moin","Ihnen"], correct:"Servus", why:"<span class=\"de mono\" data-speak=\"Servus\">Servus</span> تُستخدم كتحية ووداع في آنٍ واحد في النمسا وبافاريا."},
-  {prompt:"صديقك يسألك <span class=\"de mono\" data-speak=\"Wie geht's?\">Wie geht's?</span> ما أفضل ردّ غير رسمي؟", options:["Mir geht es gut, danke!","Wie heißen Sie?","Auf Wiedersehen.","Guten Morgen."], correct:"Mir geht es gut, danke!", why:"هذا ردّ طبيعي وشائع جدًا على سؤال الحال بين الأصدقاء."},
-  {prompt:"ما صيغة المخاطبة الصحيحة مع طفل صغير؟", options:["du","Sie","كلاهما سيّان","لا يوجد فرق"], correct:"du", why:"تُستخدم <span class=\"de mono\" data-speak=\"du\">du</span> دائمًا تقريبًا مع الأطفال، بغض النظر عن مدى معرفتك بهم."},
-  {prompt:"أي جملة أكثر رسمية لتقديم نفسك؟", options:["Mein Name ist Weber.","Ich bin Ben.","Hi, ich bin's!","Na, alles klar?"], correct:"Mein Name ist Weber.", why:"<span class=\"de mono\" data-speak=\"Mein Name ist\">Mein Name ist</span> أكثر رسمية من <span class=\"de mono\" data-speak=\"Ich bin\">Ich bin</span>."},
-  {prompt:"ماذا تعني <span class=\"de mono\" data-speak=\"Auf Wiedersehen\">Auf Wiedersehen</span> حرفيًا؟", options:["حتى نرى بعضنا مجددًا","صباح الخير","كيف حالك؟","أنا بخير"], correct:"حتى نرى بعضنا مجددًا", why:"وداع رسمي حرفي المعنى، يُستخدم عند توقّع لقاء لاحق محتمل."}
+  {prompt:"ما هو الرقم الصحيح لكلمة <span class=\"de mono\" data-speak=\"sechzehn\">sechzehn</span>؟", options:["١٦","٦٠","٦","١٧"], correct:"١٦", why:"اللاحقة <span class=\"de mono\" data-speak=\"-zehn\">-zehn</span> تعني أننا في نطاق ١٣-١٩، وsech هي جذر sechs بعد إسقاط الـs."},
+  {prompt:"أي كلمة تعني الرقم ٢١؟", options:["zwanzigeins","einundzwanzig","zweiundzwanzig","einzwanzig"], correct:"einundzwanzig", why:"القاعدة: الآحاد (ein) + und + العشرات (zwanzig) = <span class=\"de mono\" data-speak=\"einundzwanzig\">einundzwanzig</span>."},
+  {prompt:"كيف يُنطق حرف Z في الألمانية دائمًا؟", options:["تس (ts)","ز (z)","س (s)","تش (tch)"], correct:"تس (ts)", why:"حرف Z الألماني يُنطق دائمًا [ts]، بلا استثناء، كما في نهاية الكلمة الإنجليزية cats."},
+  {prompt:"أي رقم يُكتب هكذا: <span class=\"de mono\" data-speak=\"dreiundvierzig\">dreiundvierzig</span>؟", options:["٣٤","٤٣","٣٣","٤٤"], correct:"٤٣", why:"drei (٣) + und + vierzig (٤٠) = ٤٣. الآحاد أولًا كما في العربية، وليس ٣٤."},
+  {prompt:"ما الاستثناء الإملائي في رقم ٣٠ <span class=\"de mono\" data-speak=\"dreißig\">dreißig</span>؟", options:["يُكتب بحرف ß بدلًا من zig","يبدأ بحرف كبير دائمًا","لا يحتوي على drei","يُنطق بصوت v"], correct:"يُكتب بحرف ß بدلًا من zig", why:"كل العشرات تنتهي بـ -zig ما عدا ٣٠ التي تنتهي بـ -ßig: <span class=\"de mono\" data-speak=\"dreißig\">dreißig</span>."},
+  {prompt:"ماذا يُفضَّل استخدامه بدلًا من <span class=\"de mono\" data-speak=\"zwei\">zwei</span> عند إملاء رقم هاتف لتفادي الالتباس مع <span class=\"de mono\" data-speak=\"drei\">drei</span>؟", options:["zwo","zwei","zwoi","zwelf"], correct:"zwo", why:"<span class=\"de mono\" data-speak=\"zwo\">zwo</span> بديل شائع لـ zwei في الاتصالات والأرقام المُملاة لتجنّب الخلط الصوتي مع drei."},
+  {prompt:"ما ترتيب تكوين الأرقام المركّبة في الألمانية (مثل ٢١-٩٩)؟", options:["الآحاد ثم und ثم العشرات","العشرات ثم und ثم الآحاد","العشرات فقط بلا آحاد","الآحاد فقط بلا عشرات"], correct:"الآحاد ثم und ثم العشرات", why:"هذا هو نفس ترتيب العربية «واحد وعشرون» — ميزة تجعل الأرقام الألمانية أسهل لمتحدثي العربية من متحدثي الإنجليزية."},
+  {prompt:"كيف تكتب الرقم ٨٢ بالألمانية؟", options:["zweiundachtzig","achtzigzwei","achtundzweizig","zweiachtzig"], correct:"zweiundachtzig", why:"zwei (٢) + und + achtzig (٨٠) = ٨٢، ككلمة واحدة متصلة: <span class=\"de mono\" data-speak=\"zweiundachtzig\">zweiundachtzig</span>."}
 ];
 
 const FILL = [
-  {display:"Guten ____, Frau Weber.", correct:"Tag", hint:"تحية رسمية عامة خلال النهار", full:"Guten Tag, Frau Weber."},
-  {display:"Ich ____ Anna.", correct:"heiße", hint:"الفعل المستخدم لقول اسمك", full:"Ich heiße Anna."},
-  {display:"Wie ____ es Ihnen?", correct:"geht", hint:"السؤال الرسمي عن الحال", full:"Wie geht es Ihnen?"},
-  {display:"Ich komme ____ Berlin.", correct:"aus", hint:"حرف الجر المستخدم مع بلد المنشأ", full:"Ich komme aus Berlin."},
-  {display:"____ Wiedersehen!", correct:"Auf", hint:"وداع رسمي شائع جدًا", full:"Auf Wiedersehen!"},
-  {display:"Mir geht es ____, danke.", correct:"gut", hint:"عكس كلمة سيئ", full:"Mir geht es gut, danke."},
-  {display:"Freut ____, Sie kennenzulernen.", correct:"mich", hint:"جزء من عبارة «تشرّفت بمعرفتك»", full:"Freut mich, Sie kennenzulernen."},
-  {display:"____ heißt du?", correct:"Wie", hint:"أداة استفهام تعني «كيف/ما»", full:"Wie heißt du?"}
+  {display:"13 = drei____", correct:"zehn", hint:"اللاحقة المشتركة للأرقام ١٣-١٩", full:"dreizehn"},
+  {display:"60 = sech____", correct:"zig", hint:"لاحقة العشرات، وسقطت الـs من sechs", full:"sechzig"},
+  {display:"21 = ein____zwanzig", correct:"und", hint:"الكلمة الرابطة بين الآحاد والعشرات", full:"einundzwanzig"},
+  {display:"30 = drei____", correct:"ßig", hint:"استثناء إملائي بحرف ß بدلًا من zig", full:"dreißig"},
+  {display:"Ich bin ____ Jahre alt. (٢٠)", correct:"zwanzig", hint:"الرقم عشرون", full:"Ich bin zwanzig Jahre alt."},
+  {display:"Das kostet zehn ____.", correct:"Euro", hint:"العملة الألمانية", full:"Das kostet zehn Euro."},
+  {display:"99 + 1 = ____", correct:"hundert", hint:"الرقم الذي يأتي بعد neunundneunzig مباشرة", full:"hundert"},
+  {display:"17 = sieb____", correct:"zehn", hint:"لاحظ أن sieben تفقد en هنا", full:"siebzehn"}
 ];
 
 const BUILDER = [
-  {words:["Ich","komme","aus","Berlin"], ar:"أنا من برلين"},
-  {words:["Wie","heißt","du"], ar:"ما اسمك؟ (غير رسمي)"},
-  {words:["Guten","Morgen"], ar:"صباح الخير"},
-  {words:["Mein","Name","ist","Anna"], ar:"اسمي هو آنا"},
-  {words:["Auf","Wiedersehen"], ar:"إلى اللقاء"}
+  {words:["Ich","bin","dreiundzwanzig","Jahre","alt"], ar:"أنا أبلغ من العمر ثلاثة وعشرين عامًا"},
+  {words:["Das","kostet","zwölf","Euro"], ar:"يكلّف هذا اثني عشر يورو"},
+  {words:["Meine","Nummer","ist","null","drei","null"], ar:"رقمي هو ٠٣٠ (رمز برلين)"},
+  {words:["Wie","viel","kostet","das"], ar:"كم يكلّف هذا؟"},
+  {words:["Ich","habe","zwei","Brüder","und","eine","Schwester"], ar:"لدي أخوان وأخت واحدة"}
 ];
 
 const LEARNING_TIMELINE = [
   {top:"الدرس ١", dot:"done", bottom:"الحروف", hl:false},
-  {top:"أنت الآن هنا", dot:"now", bottom:"التحيات", hl:true},
-  {top:"الدرس ٣", dot:"", bottom:"الأرقام", hl:false},
-  {top:"لاحقًا", dot:"", bottom:"المحادثة", hl:false}
+  {top:"الدرس ٢", dot:"done", bottom:"التحيات", hl:false},
+  {top:"أنت الآن هنا", dot:"now", bottom:"الأرقام", hl:true},
+  {top:"الدرس ٤", dot:"", bottom:"الألوان والأيام", hl:false}
 ];
 
 const BADGES = [
-  {id:'explorer', name:'مستكشف التحيات', icon:'i-compass'},
-  {id:'phrases', name:'حافظ العبارات', icon:'i-cards'},
-  {id:'sharp', name:'حادّ التفكير', icon:'i-target'},
-  {id:'champion', name:'بطل الحوار', icon:'i-medal'}
+  {id:'explorer', name:'مستكشف الأرقام', icon:'i-compass'},
+  {id:'ordinals', name:'خبير الترتيب', icon:'i-medal'},
+  {id:'sharp', name:'حادّ الحساب', icon:'i-target'},
+  {id:'champion', name:'بطل الأرقام', icon:'i-star'}
 ];
 
 /* ==========================================================================
@@ -1320,7 +1490,7 @@ const Speech = (function(){
   }
 
   function clearHighlights(){
-    document.querySelectorAll('.k-word.speaking, .speak-dot.speaking, .listen-chip.speaking, .chat-bubble.speaking').forEach(el => el.classList.remove('speaking'));
+    document.querySelectorAll('.k-word.speaking, .speak-dot.speaking, .listen-chip.speaking, .chat-bubble.speaking, .phone-digit-chip.speaking, .pc-word.speaking, .builder-result-word.speaking').forEach(el => el.classList.remove('speaking'));
   }
 
   function speak(text, opts){
@@ -1418,31 +1588,31 @@ function toAr(n){ return String(n).replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'
 document.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
 
 /* ==========================================================================
-   HERO SHOWCASE CARD (greeting → reply)
+   HERO SHOWCASE CARD (question → answer with a number)
    ========================================================================== */
 (function buildHeroShowcase(){
   const wrap = document.createElement('div');
   wrap.className = 'showcase-card';
   wrap.style.marginTop = '22px';
   wrap.innerHTML = `
-    <div class="showcase-label"><svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-chat"/></svg>عبارة اليوم · انقر لتسمع</div>
+    <div class="showcase-label"><svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-chat"/></svg>سؤال شائع اليوم · انقر لتسمع</div>
     <div class="arrow-frame">
-      <span class="k-word k-phrase-big de" id="heroPhrase" data-plain="Hallo!" tabindex="0" role="button" aria-label="استمع لـ Hallo">Hallo!</span>
+      <span class="k-word k-phrase-big de" id="heroPhrase" data-plain="Wie alt bist du?" tabindex="0" role="button" aria-label="استمع لـ Wie alt bist du">Wie alt bist du?</span>
       <span class="k-arrow">→</span>
-      <span class="k-word k-word-result de" id="heroReply" data-plain="Ich heiße Anna." tabindex="0" role="button" aria-label="استمع لـ Ich heiße Anna">Ich heiße Anna.</span>
+      <span class="k-word k-word-result de" id="heroReply" data-plain="Ich bin einundzwanzig." tabindex="0" role="button" aria-label="استمع لـ Ich bin einundzwanzig">Ich bin einundzwanzig.</span>
     </div>
-    <p class="showcase-translation">هكذا تبدأ أبسط محادثة ألمانية: تحية، ثم تقديم الاسم. انقر على أي جزء لسماع نطقه.</p>
+    <p class="showcase-translation">هكذا تُستخدم الأرقام في أول سؤال شخصي تتعلّمه: العمر. انقر على أي جزء لسماع نطقه.</p>
     <button class="btn btn-ghost showcase-speak-all" id="heroSpeakAll">
       <svg class="icon" style="width:16px;height:16px"><use href="#i-speaker"/></svg>
-      استمع للعبارتين معًا
+      استمع للسؤال والجواب معًا
     </button>`;
   document.querySelector('.hero-illustration').insertAdjacentElement('afterend', wrap);
   const heroPhrase = wrap.querySelector('#heroPhrase');
   const heroReply = wrap.querySelector('#heroReply');
-  makeSpeakable(heroPhrase, 'Hallo!');
-  makeSpeakable(heroReply, 'Ich heiße Anna.');
+  makeSpeakable(heroPhrase, 'Wie alt bist du?');
+  makeSpeakable(heroReply, 'Ich bin einundzwanzig.');
   wrap.querySelector('#heroSpeakAll').addEventListener('click', () => {
-    Speech.speak('Hallo! Ich heiße Anna.', {wordEls: [heroPhrase, heroReply]});
+    Speech.speak('Wie alt bist du? Ich bin einundzwanzig.', {wordEls: [heroPhrase, heroReply]});
   });
 })();
 
@@ -1458,67 +1628,240 @@ LEARNING_TIMELINE.forEach(item => {
 });
 
 /* ==========================================================================
-   TIME-OF-DAY GREETING CARDS
+   BASICS 0–12 — number cards with dot-counting visualization
    ========================================================================== */
-const timeGrid = document.getElementById('timeGrid');
-TIME_GREETINGS.forEach(t => {
+const basicsGrid = document.getElementById('basicsGrid');
+BASICS_NUMBERS.forEach(item => {
   const card = document.createElement('div');
-  card.className = 'time-card ' + t.cls;
+  card.className = 'number-card';
+  let dotsHTML;
+  if(item.n === 0){
+    dotsHTML = '<span class="empty-mark">∅</span>';
+  } else {
+    let dots = '';
+    for(let i=0;i<item.n;i++){
+      dots += `<span class="dot${i>=6?' two':''}"></span>`;
+    }
+    dotsHTML = dots;
+  }
   card.innerHTML = `
-    <svg class="icon time-icon" style="color:var(--ink)"><use href="#${t.icon}"/></svg>
-    <div class="time-range">${t.range}</div>
-    <div class="time-de de">${t.de}</div>
-    <div class="time-ar">${t.ar}</div>
-    <span class="speak-dot" style="position:static;margin:12px auto 0;display:flex" aria-label="استمع لـ ${t.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>`;
-  card.addEventListener('click', () => Speech.speak(t.de, {el: card.querySelector('.speak-dot')}));
-  timeGrid.appendChild(card);
+    <div class="num-digit mono">${toAr(item.n)}</div>
+    <div class="num-de de">${item.de}</div>
+    <div class="num-ar">${item.ar}</div>
+    <div class="num-dots">${dotsHTML}</div>
+    <span class="speak-dot" aria-label="استمع لـ ${item.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>`;
+  card.addEventListener('click', () => Speech.speak(item.de, {el: card.querySelector('.speak-dot')}));
+  basicsGrid.appendChild(card);
 });
 
 /* ==========================================================================
-   CASUAL / REGIONAL GREETINGS
+   TEENS 13–19 — formation cards (stem + suffix highlighting)
    ========================================================================== */
-const regionGrid = document.getElementById('regionGrid');
-REGION_GREETINGS.forEach(r => {
+const teensGrid = document.getElementById('teensGrid');
+TEENS_NUMBERS.forEach(item => {
   const card = document.createElement('div');
-  card.className = 'info-card region-card';
+  card.className = 'formation-card';
   card.innerHTML = `
-    <div class="region-flag">${r.flag}</div>
-    <div class="region-de" data-plain="${r.de}" tabindex="0" role="button" aria-label="استمع لـ ${r.de}">${r.de}</div>
-    <div class="region-place">${r.place}</div>
-    <div class="region-desc">${r.desc}</div>`;
-  makeSpeakable(card.querySelector('.region-de'), r.de);
-  regionGrid.appendChild(card);
+    <div class="fc-num mono">${toAr(item.n)}</div>
+    <div class="fc-de de"><span class="stem">${item.stem}</span><span class="suffix">${item.suffix}</span></div>
+    <div class="fc-ar">${item.ar}</div>
+    <div class="fc-note">${item.note}</div>`;
+  card.addEventListener('click', () => Speech.speak(item.de, {el: card}));
+  card.tabIndex = 0; card.setAttribute('role','button'); card.setAttribute('aria-label', 'استمع لـ ' + item.de);
+  card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); } });
+  teensGrid.appendChild(card);
 });
 
 /* ==========================================================================
-   FAREWELLS — 3D flip cards
+   TENS 20–100 — formation cards + minimal-pair comparison
    ========================================================================== */
-const farewellGrid = document.getElementById('farewellGrid');
-let flippedCount = 0;
-const flippedSet = new Set();
-FAREWELLS.forEach((f, i) => {
+const tensGrid = document.getElementById('tensGrid');
+TENS_NUMBERS.forEach(item => {
+  const card = document.createElement('div');
+  card.className = 'formation-card';
+  const deHTML = item.suffix
+    ? `<span class="stem">${item.stem}</span><span class="suffix">${item.suffix}</span>`
+    : `<span class="stem">${item.stem}</span>`;
+  card.innerHTML = `
+    <div class="fc-num mono">${toAr(item.n)}</div>
+    <div class="fc-de de">${deHTML}</div>
+    <div class="fc-ar">${item.ar}</div>
+    <div class="fc-note">${item.note}</div>`;
+  card.addEventListener('click', () => Speech.speak(item.de, {el: card}));
+  card.tabIndex = 0; card.setAttribute('role','button'); card.setAttribute('aria-label', 'استمع لـ ' + item.de);
+  card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); } });
+  tensGrid.appendChild(card);
+});
+
+const pairCompareRow = document.getElementById('pairCompareRow');
+PAIR_COMPARE.forEach(pair => {
+  const card = document.createElement('div');
+  card.className = 'pair-compare-card';
+  card.innerHTML = `
+    <div class="pc-word" data-plain="${pair.a.de}" tabindex="0" role="button" aria-label="استمع لـ ${pair.a.de}">
+      <div class="pc-de">${pair.a.de}</div><div class="pc-num mono">${toAr(pair.a.n)}</div>
+    </div>
+    <span class="pc-vs">vs</span>
+    <div class="pc-word" data-plain="${pair.b.de}" tabindex="0" role="button" aria-label="استمع لـ ${pair.b.de}">
+      <div class="pc-de">${pair.b.de}</div><div class="pc-num mono">${toAr(pair.b.n)}</div>
+    </div>`;
+  card.querySelectorAll('.pc-word').forEach(w => makeSpeakable(w, w.dataset.plain));
+  pairCompareRow.appendChild(card);
+});
+
+/* ==========================================================================
+   COMPOUND NUMBER BUILDER — centerpiece interactive tool
+   ========================================================================== */
+const builderUnitsRow = document.getElementById('builderUnitsRow');
+const builderTensRow = document.getElementById('builderTensRow');
+const builderNumberDisplay = document.getElementById('builderNumberDisplay');
+const builderWordDisplay = document.getElementById('builderWordDisplay');
+const builderNote = document.getElementById('builderNote');
+const builderExamplesRow = document.getElementById('builderExamplesRow');
+
+let builderUnit = 1, builderTen = 2;
+let builderUsedCount = 0;
+
+BUILDER_UNITS.forEach(u => {
+  const chip = document.createElement('button');
+  chip.className = 'builder-chip units' + (u.v === builderUnit ? ' active' : '');
+  chip.textContent = u.label;
+  chip.dataset.v = u.v;
+  chip.setAttribute('aria-label', 'اختر خانة الآحاد ' + u.label);
+  chip.addEventListener('click', () => { builderUnit = u.v; refreshBuilderChips(); renderBuilder(); });
+  builderUnitsRow.appendChild(chip);
+});
+BUILDER_TENS.forEach(t => {
+  const chip = document.createElement('button');
+  chip.className = 'builder-chip tens' + (t.v === builderTen ? ' active' : '');
+  chip.textContent = t.label;
+  chip.dataset.v = t.v;
+  chip.setAttribute('aria-label', 'اختر خانة العشرات ' + t.label);
+  chip.addEventListener('click', () => { builderTen = t.v; refreshBuilderChips(); renderBuilder(); });
+  builderTensRow.appendChild(chip);
+});
+
+function refreshBuilderChips(){
+  builderUnitsRow.querySelectorAll('.builder-chip').forEach(c => c.classList.toggle('active', Number(c.dataset.v) === builderUnit));
+  builderTensRow.querySelectorAll('.builder-chip').forEach(c => c.classList.toggle('active', Number(c.dataset.v) === builderTen));
+}
+
+function renderBuilder(){
+  const unitData = BUILDER_UNITS.find(u => u.v === builderUnit);
+  const tenData = BUILDER_TENS.find(t => t.v === builderTen);
+  const num = builderTen * 10 + builderUnit;
+  builderNumberDisplay.textContent = toAr(num);
+
+  let word;
+  if(builderUnit === 0){
+    word = tenData.word;
+    builderWordDisplay.innerHTML = `<span class="bw-tens">${tenData.word}</span>`;
+  } else {
+    word = unitData.word + 'und' + tenData.word;
+    builderWordDisplay.innerHTML = `<span class="bw-unit">${unitData.word}</span><span class="bw-und">und</span><span class="bw-tens">${tenData.word}</span>`;
+  }
+  builderWordDisplay.dataset.plain = word;
+  builderWordDisplay.setAttribute('aria-label', 'استمع لـ ' + word);
+
+  builderNote.innerHTML = builderUnit === 0
+    ? `عندما تكون الآحاد صفرًا، تحصل على العشرة الصحيحة كما هي: <b>${tenData.word}</b>.`
+    : `<b>${unitData.word}</b> (الآحاد) + <b>und</b> (رابط) + <b>${tenData.word}</b> (العشرات) = كلمة واحدة متصلة. تذكّر: هذا نفس الترتيب الذي تستخدمه عربيتك اليومية عندما تقول «واحد وعشرون» بدلًا من «عشرون وواحد».`;
+}
+
+builderWordDisplay.addEventListener('click', () => {
+  Speech.speak(builderWordDisplay.dataset.plain, {el: builderWordDisplay});
+  builderUsedCount++;
+  if(builderUsedCount >= 5) unlockBadge('explorer');
+});
+builderWordDisplay.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); builderWordDisplay.click(); } });
+
+COMPOUND_EXAMPLES.forEach(ex => {
+  const chip = document.createElement('button');
+  chip.className = 'builder-example-chip mono';
+  const num = ex.t*10+ex.u;
+  chip.textContent = toAr(num);
+  chip.addEventListener('click', () => {
+    builderUnit = ex.u; builderTen = ex.t;
+    refreshBuilderChips(); renderBuilder();
+    Speech.speak(builderWordDisplay.dataset.plain, {el: builderWordDisplay});
+  });
+  builderExamplesRow.appendChild(chip);
+});
+
+refreshBuilderChips();
+renderBuilder();
+
+/* ==========================================================================
+   HUNDREDS / THOUSANDS + MEGA-NUMBER WORD-FUSION DEMO
+   ========================================================================== */
+const hundredsGrid = document.getElementById('hundredsGrid');
+HUNDREDS_NUMBERS.forEach(item => {
+  const card = document.createElement('div');
+  card.className = 'info-card';
+  card.style.textAlign = 'center';
+  card.style.cursor = 'pointer';
+  card.innerHTML = `
+    <div class="mono" style="font-size:.78rem;color:var(--ink-faint);margin-bottom:6px">${toAr(item.n)}</div>
+    <div class="de" style="font-weight:700;font-size:1.15rem">${item.de}</div>
+    <div style="font-size:.82rem;color:var(--ink-soft);margin-top:6px">${item.ar}</div>`;
+  card.tabIndex = 0; card.setAttribute('role','button'); card.setAttribute('aria-label', 'استمع لـ ' + item.de);
+  card.addEventListener('click', () => Speech.speak(item.de, {el: card}));
+  card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); } });
+  hundredsGrid.appendChild(card);
+});
+
+const megaDigitsRow = document.getElementById('megaDigitsRow');
+const megaWordDisplay = document.getElementById('megaWordDisplay');
+const megaPickerRow = document.getElementById('megaPickerRow');
+let megaIndex = 0;
+
+function renderMega(){
+  const item = MEGA_NUMBERS[megaIndex];
+  megaDigitsRow.innerHTML = item.digits.map(d => `<div class="mega-digit-box mono">${toAr(d)}</div>`).join('');
+  megaWordDisplay.textContent = item.de;
+  megaWordDisplay.dataset.plain = item.de;
+  megaWordDisplay.setAttribute('aria-label', 'استمع لـ ' + item.de);
+  megaPickerRow.querySelectorAll('.mega-picker-btn').forEach((b,i) => b.classList.toggle('active', i === megaIndex));
+}
+MEGA_NUMBERS.forEach((item, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'mega-picker-btn';
+  btn.textContent = toAr(item.digits.join(''));
+  btn.addEventListener('click', () => { megaIndex = i; renderMega(); Speech.speak(item.de, {el: megaWordDisplay}); });
+  megaPickerRow.appendChild(btn);
+});
+megaWordDisplay.addEventListener('click', () => Speech.speak(megaWordDisplay.dataset.plain, {el: megaWordDisplay}));
+megaWordDisplay.tabIndex = 0; megaWordDisplay.setAttribute('role','button');
+megaWordDisplay.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); megaWordDisplay.click(); } });
+renderMega();
+
+/* ==========================================================================
+   ORDINALS — flip cards (bonus)
+   ========================================================================== */
+const ordinalsGrid = document.getElementById('ordinalsGrid');
+let ordinalFlipped = new Set();
+ORDINALS.forEach((o, i) => {
   const card = document.createElement('div');
   card.className = 'flip-card';
   card.innerHTML = `
-    <div class="flip-card-inner" tabindex="0" role="button" aria-label="بطاقة ${f.de}, انقر للقلب">
+    <div class="flip-card-inner" tabindex="0" role="button" aria-label="بطاقة الرقم الترتيبي ${o.ar}, انقر للقلب">
       <div class="flip-face flip-front">
-        <span class="chip chip-teal aux-tag mono">${f.formality}</span>
-        <span class="de">${f.de}</span>
+        <span class="chip chip-teal aux-tag mono">${toAr(i+1)}</span>
+        <span class="de">${o.cardinal}</span>
         <span class="flip-hint">انقر للقلب</span>
-        <span class="speak-dot" data-word="${f.de}" aria-label="استمع لـ ${f.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+        <span class="speak-dot" data-word="${o.cardinal}" aria-label="استمع لـ ${o.cardinal}"><svg class="icon"><use href="#i-speaker"/></svg></span>
       </div>
       <div class="flip-face flip-back">
-        <span class="partizip mono">/${f.ipa}/</span>
-        <span class="meaning">${f.meaning}</span>
-        <span class="meaning" style="font-size:.78rem;opacity:.85">${f.note}</span>
-        <span class="speak-dot" data-word="${f.de}" aria-label="استمع لـ ${f.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+        <span class="partizip mono">${o.ordinal}</span>
+        <span class="meaning">${o.ar}</span>
+        <span class="speak-dot" data-word="${o.ordinal}" aria-label="استمع لـ ${o.ordinal}"><svg class="icon"><use href="#i-speaker"/></svg></span>
       </div>
     </div>`;
   const inner = card.querySelector('.flip-card-inner');
   inner.addEventListener('click', (e) => {
     if(e.target.closest('.speak-dot')) return;
     card.classList.toggle('flipped');
-    if(!flippedSet.has(i)){ flippedSet.add(i); flippedCount++; if(flippedSet.size>=FAREWELLS.length) unlockBadge('phrases'); }
+    if(!ordinalFlipped.has(i)){ ordinalFlipped.add(i); if(ordinalFlipped.size>=ORDINALS.length) unlockBadge('ordinals'); }
     updateProgress();
   });
   inner.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); inner.click(); } });
@@ -1530,41 +1873,47 @@ FAREWELLS.forEach((f, i) => {
       setTimeout(()=>dot.classList.remove('speaking'), 900);
     });
   });
-  farewellGrid.appendChild(card);
+  ordinalsGrid.appendChild(card);
 });
 
 /* ==========================================================================
-   DU vs SIE TABLE
+   PRACTICAL — phone mockup + extra-notes accordion
    ========================================================================== */
-const duSieTable = document.getElementById('duSieTable');
-DUSIE_ROWS.forEach(row => {
-  const r = document.createElement('div');
-  r.className = 'duSie-row';
-  r.innerHTML = `
-    <div class="cell-ar">${row.ar}</div>
-    <div class="cell-du" data-plain="${row.du}" tabindex="0" role="button" aria-label="استمع لـ ${row.du}">${row.du}</div>
-    <div class="cell-sie" data-plain="${row.sie}" tabindex="0" role="button" aria-label="استمع لـ ${row.sie}">${row.sie}</div>`;
-  makeSpeakable(r.querySelector('.cell-du'), row.du);
-  makeSpeakable(r.querySelector('.cell-sie'), row.sie);
-  duSieTable.appendChild(r);
+const phoneMockup = document.getElementById('phoneMockup');
+const phoneChipEls = [];
+PHONE_DIGITS.forEach(item => {
+  if(item.gap){
+    const gap = document.createElement('span');
+    gap.className = 'phone-digit-chip gap';
+    phoneMockup.appendChild(gap);
+    return;
+  }
+  const chip = document.createElement('button');
+  chip.className = 'phone-digit-chip mono';
+  chip.textContent = item.d;
+  chip.dataset.plain = item.w;
+  makeSpeakable(chip, item.w);
+  phoneChipEls.push(chip);
+  phoneMockup.appendChild(chip);
 });
 
-/* ==========================================================================
-   SELF-INTRODUCTION PATTERN CARDS
-   ========================================================================== */
-const patternList = document.getElementById('patternList');
-PATTERNS.forEach((p, i) => {
-  const card = document.createElement('div');
-  card.className = 'pattern-card';
-  card.innerHTML = `
-    <span class="pattern-num">${toAr(i+1)}</span>
-    <div class="pattern-main">
-      <div class="pattern-de de" data-plain="${p.de}" tabindex="0" role="button" aria-label="استمع لـ ${p.de}">${p.de}</div>
-      <div class="pattern-ar">${p.ar}</div>
-    </div>
-    <span class="chip ${p.formality === 'رسمي' ? 'chip-plum' : 'chip-teal'} pattern-formality">${p.formality}</span>`;
-  makeSpeakable(card.querySelector('.pattern-de'), p.de);
-  patternList.appendChild(card);
+const extraAccordion = document.getElementById('extraAccordion');
+EXTRA_NOTES.forEach((note, i) => {
+  const item = document.createElement('div');
+  item.className = 'accordion-item';
+  item.innerHTML = `
+    <button class="accordion-trigger" aria-expanded="false">
+      <span class="accordion-title"><span class="tag mono">${toAr(i+1)}</span>${note.q}</span>
+      <svg class="icon chevron"><use href="#i-chevron"/></svg>
+    </button>
+    <div class="accordion-panel"><div class="accordion-body">${note.body}</div></div>`;
+  const trigger = item.querySelector('.accordion-trigger');
+  trigger.addEventListener('click', () => {
+    item.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+  });
+  item.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  extraAccordion.appendChild(item);
 });
 
 /* ==========================================================================
@@ -1698,10 +2047,10 @@ document.querySelectorAll('.exercise-tab').forEach(tab => {
   });
 });
 
-/* --- MATCH (greeting <-> Arabic meaning) --- */
+/* --- MATCH (German number word <-> Arabic-Indic digit) --- */
 const panelMatch = document.getElementById('panelMatch');
 (function initMatch(){
-  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على عبارة من العمود الأيمن، ثم معناها الصحيح من العمود الأيسر.</div>
+  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على رقم من العمود الأيمن، ثم صيغته الرقمية الصحيحة من العمود الأيسر.</div>
     <div class="match-grid"><div class="match-col" id="matchLeft"></div><div class="match-col" id="matchRight"></div></div>`;
   const left = document.getElementById('matchLeft');
   const right = document.getElementById('matchRight');
@@ -1724,7 +2073,7 @@ const panelMatch = document.getElementById('panelMatch');
   });
   shuffledRight.forEach(p => {
     const el = document.createElement('button');
-    el.className = 'match-item';
+    el.className = 'match-item mono';
     el.textContent = p.ar;
     el.dataset.key = p.de;
     el.addEventListener('click', () => {
@@ -1765,7 +2114,7 @@ MCQ.forEach((q) => {
   q.options.forEach(opt => {
     const b = document.createElement('button');
     const isGerman = /^[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß.,!?' ]*$/.test(opt);
-    b.className = 'opt-btn' + (isGerman ? ' de' : '');
+    b.className = 'opt-btn' + (isGerman ? ' de' : ' mono');
     b.textContent = opt;
     b.addEventListener('click', () => {
       const correct = opt === q.correct;
@@ -1783,7 +2132,7 @@ MCQ.forEach((q) => {
   panelMcq.appendChild(block);
 });
 
-/* --- FILL (missing word in dialogue line, typed) --- */
+/* --- FILL (missing morpheme / word, typed) --- */
 const panelFill = document.getElementById('panelFill');
 FILL.forEach(q => {
   const block = document.createElement('div');
@@ -1791,10 +2140,10 @@ FILL.forEach(q => {
   block.innerHTML = `
     <div class="fill-word-display">${q.display}</div>
     <div class="fill-row">
-      <input type="text" placeholder="؟" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل الكلمة الناقصة">
+      <input type="text" placeholder="؟" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل الجزء الناقص">
       <button class="fill-check">تحقّق</button>
       <span class="fill-result"></span>
-      <button class="icon-btn" data-speak-word="${q.full}" aria-label="استمع للجملة الكاملة"><svg class="icon"><use href="#i-speaker"/></svg></button>
+      <button class="icon-btn" data-speak-word="${q.full}" aria-label="استمع للصيغة الكاملة"><svg class="icon"><use href="#i-speaker"/></svg></button>
     </div>
     <div class="q-feedback">💡 ${q.hint}</div>`;
   const input = block.querySelector('input');
@@ -1900,7 +2249,7 @@ BUILDER.forEach((q) => {
 const panelListen = document.getElementById('panelListen');
 (function initListen(){
   panelListen.innerHTML = `
-    <div class="q-prompt">استمع إلى الحوار غير الرسمي كاملًا، وتابع الفقاعة المضاءة أثناء النطق. انقر على أي عبارة بمفردها لإعادة سماعها.</div>
+    <div class="q-prompt">استمع إلى حوار الأصدقاء كاملًا، وتابع الفقاعة المضاءة أثناء النطق. انقر على أي عبارة بمفردها لإعادة سماعها.</div>
     <button class="btn btn-primary" id="listenAllBtn"><svg class="icon" style="width:16px;height:16px"><use href="#i-headphones"/></svg> استمع للحوار كاملًا</button>
     <div class="listen-alphabet-row" id="listenRow"></div>
     <div class="qr-placeholder">
@@ -1932,7 +2281,7 @@ const panelListen = document.getElementById('panelListen');
    BADGES / ACHIEVEMENTS
    ========================================================================== */
 let unlockedBadges = {};
-try{ unlockedBadges = JSON.parse(localStorage.getItem('lesson2-greetings-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
+try{ unlockedBadges = JSON.parse(localStorage.getItem('lesson3-zahlen-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
 
 const badgesRow = document.getElementById('badgesRow');
 BADGES.forEach(b => {
@@ -1945,7 +2294,7 @@ BADGES.forEach(b => {
 function unlockBadge(id){
   if(unlockedBadges[id]) return;
   unlockedBadges[id] = true;
-  try{ localStorage.setItem('lesson2-greetings-badges', JSON.stringify(unlockedBadges)); }catch(e){}
+  try{ localStorage.setItem('lesson3-zahlen-badges', JSON.stringify(unlockedBadges)); }catch(e){}
   const el = document.getElementById('badge-' + id);
   if(el){ el.classList.add('unlocked','pop'); setTimeout(()=>el.classList.remove('pop'), 650); }
   const badge = BADGES.find(b=>b.id===id);
@@ -1973,7 +2322,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 /* ==========================================================================
    SECTION NAV: active-link highlight + click-to-scroll + progress
    ========================================================================== */
-const sections = ['#hero','#intro','#time-greetings','#casual','#farewells','#duSie','#introduce','#dialogue','#mistakes','#pronunciation','#exercises','#summary'].map(s => document.querySelector(s)).filter(Boolean);
+const sections = ['#hero','#intro','#basics','#teens','#tens','#compound','#hundreds','#ordinals','#practical','#dialogue','#mistakes','#pronunciation','#exercises','#summary'].map(s => document.querySelector(s)).filter(Boolean);
 const visitedSections = new Set();
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -2094,6 +2443,6 @@ backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smoo
 })();
 </script>
 
-<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a1-lesson-02-begruessung" data-category="a1" data-title="التحيات وتقديم النفس — Begrüßung & Vorstellung" data-root="../../" defer></script>
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a1-lesson-03-zahlen" data-category="a1" data-title="الأرقام الألمانية — Zahlen" data-root="../../" defer></script>
 </body>
 </html>

@@ -705,6 +705,7 @@ body {
 [data-theme="dark"] .vocab-section { border-color: rgba(192,132,252,.15); }
 .vocab-section h2 { font-family: var(--f-display); font-size: 1.45rem; margin-bottom: 8px; color: var(--violet); display: flex; align-items: center; gap: 10px; }
 .vocab-table { width: 100%; border-collapse: collapse; font-size: .88rem; margin-top: 20px; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .vocab-table th { background: var(--ink); color: white; padding: 10px 15px; text-align: left; font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; }
 .vocab-table th:first-child { border-radius: var(--radius-s) 0 0 0; }
 .vocab-table th:last-child  { border-radius: 0 var(--radius-s) 0 0; }
@@ -1041,7 +1042,7 @@ footer strong { color: var(--teal-2); }
 
       <!-- Conjugation Table -->
       <div class="sec-label">التصريف الكامل – Vollständige Konjugation</div>
-      <table class="conj-table">
+      <div class="table-scroll"><table class="conj-table">
         <thead>
           <tr><th>Pronomen</th><th>haben</th><th>Infinitiv</th><th>Modal-Inf.</th><th>Vollsatz (Beispiel)</th><th>بالعربية</th></tr>
         </thead>
@@ -1095,7 +1096,7 @@ footer strong { color: var(--teal-2); }
             <td class="cell-ar">استطاعوا التحدث بالألمانية.</td>
           </tr>
         </tbody>
-      </table>
+      </table></div>
 
       <div class="g-note">
         <div class="g-note-title">💡 Ersatzinfinitiv – بديل Partizip II</div>
@@ -1201,7 +1202,7 @@ footer strong { color: var(--teal-2); }
     </div>
     <div class="vc-body">
       <div class="sec-label">أمثلة وجدول – Beispiele &amp; Konjugation</div>
-      <table class="conj-table">
+      <div class="table-scroll"><table class="conj-table">
         <thead>
           <tr><th>Pronomen</th><th>haben</th><th>Inf.</th><th>Modal-Inf.</th><th>Vollsatz</th><th>عربي</th></tr>
         </thead>
@@ -1213,7 +1214,7 @@ footer strong { color: var(--teal-2); }
           <tr><td class="pronoun">ihr</td><td class="form-haben">habt</td><td class="form-pp">kommen</td><td class="form-modal">wollen</td><td class="full-sent">Ihr <span class="h">habt</span> nicht <span class="p">kommen</span> <span class="m">wollen</span>.</td><td class="cell-ar">لم تريدوا المجيء.</td></tr>
           <tr><td class="pronoun">sie/Sie</td><td class="form-haben">haben</td><td class="form-pp">sprechen</td><td class="form-modal">wollen</td><td class="full-sent">Sie <span class="h">haben</span> nicht mit mir <span class="p">sprechen</span> <span class="m">wollen</span>.</td><td class="cell-ar">لم يريدوا التحدث معي.</td></tr>
         </tbody>
-      </table>
+      </table></div>
 
       <div class="examples-grid">
         <div class="ex-card">
@@ -1290,7 +1291,7 @@ footer strong { color: var(--teal-2); }
       </div>
     </div>
     <div class="vc-body">
-      <table class="conj-table">
+      <div class="table-scroll"><table class="conj-table">
         <thead>
           <tr><th>Pronomen</th><th>haben</th><th>Inf.</th><th>Modal-Inf.</th><th>Vollsatz</th><th>عربي</th></tr>
         </thead>
@@ -1302,7 +1303,7 @@ footer strong { color: var(--teal-2); }
           <tr><td class="pronoun">ihr</td><td class="form-haben">habt</td><td class="form-pp">aufräumen</td><td class="form-modal">sollen</td><td class="full-sent">Ihr <span class="h">habt</span> euer Zimmer <span class="p">aufräumen</span> <span class="m">sollen</span>.</td><td class="cell-ar">كان يُفترض بكم ترتيب غرفتكم.</td></tr>
           <tr><td class="pronoun">sie/Sie</td><td class="form-haben">haben</td><td class="form-pp">pünktlich sein</td><td class="form-modal">sollen</td><td class="full-sent">Sie <span class="h">haben</span> pünktlich <span class="p">kommen</span> <span class="m">sollen</span>.</td><td class="cell-ar">كان يُفترض بهم المجيء في الوقت.</td></tr>
         </tbody>
-      </table>
+      </table></div>
 
       <div class="examples-grid">
         <div class="ex-card">
@@ -1379,7 +1380,7 @@ footer strong { color: var(--teal-2); }
       </div>
     </div>
     <div class="vc-body">
-      <table class="conj-table">
+      <div class="table-scroll"><table class="conj-table">
         <thead>
           <tr><th>Pronomen</th><th>haben</th><th>Inf.</th><th>Modal-Inf.</th><th>Vollsatz</th><th>عربي</th></tr>
         </thead>
@@ -1391,7 +1392,7 @@ footer strong { color: var(--teal-2); }
           <tr><td class="pronoun">ihr</td><td class="form-haben">habt</td><td class="form-pp">lernen</td><td class="form-modal">müssen</td><td class="full-sent">Ihr <span class="h">habt</span> viel <span class="p">lernen</span> <span class="m">müssen</span>.</td><td class="cell-ar">اضطررتم لتعلم الكثير.</td></tr>
           <tr><td class="pronoun">sie/Sie</td><td class="form-haben">haben</td><td class="form-pp">heiraten</td><td class="form-modal">müssen</td><td class="full-sent">Sie <span class="h">haben</span> jung <span class="p">heiraten</span> <span class="m">müssen</span>.</td><td class="cell-ar">اضطروا للزواج وهم صغار.</td></tr>
         </tbody>
-      </table>
+      </table></div>
 
       <div class="examples-grid">
         <div class="ex-card">
@@ -1466,7 +1467,7 @@ footer strong { color: var(--teal-2); }
       </div>
     </div>
     <div class="vc-body">
-      <table class="conj-table">
+      <div class="table-scroll"><table class="conj-table">
         <thead>
           <tr><th>Pronomen</th><th>haben</th><th>Inf.</th><th>Modal-Inf.</th><th>Vollsatz</th><th>عربي</th></tr>
         </thead>
@@ -1478,7 +1479,7 @@ footer strong { color: var(--teal-2); }
           <tr><td class="pronoun">ihr</td><td class="form-haben">habt</td><td class="form-pp">spielen</td><td class="form-modal">dürfen</td><td class="full-sent">Ihr <span class="h">habt</span> am Computer nicht <span class="p">spielen</span> <span class="m">dürfen</span>.</td><td class="cell-ar">لم يُسمح لكم اللعب على الكمبيوتر.</td></tr>
           <tr><td class="pronoun">sie/Sie</td><td class="form-haben">haben</td><td class="form-pp">bleiben</td><td class="form-modal">dürfen</td><td class="full-sent">Sie <span class="h">haben</span> in Italien <span class="p">bleiben</span> <span class="m">dürfen</span>.</td><td class="cell-ar">كان مسموحاً لهم البقاء في إيطاليا.</td></tr>
         </tbody>
-      </table>
+      </table></div>
 
       <div class="examples-grid">
         <div class="ex-card">
@@ -1552,7 +1553,7 @@ footer strong { color: var(--teal-2); }
         <p class="ar">عندما يُستخدم mögen بمعنى "يحب/يعجبه" بدون فعل آخر، نستخدم Partizip II = <strong>gemocht</strong> وليس Ersatzinfinitiv!</p>
       </div>
 
-      <table class="conj-table">
+      <div class="table-scroll"><table class="conj-table">
         <thead>
           <tr><th>Pronomen</th><th>haben</th><th>Partizip II</th><th>Vollsatz (ohne Inf.)</th><th>عربي</th></tr>
         </thead>
@@ -1564,7 +1565,7 @@ footer strong { color: var(--teal-2); }
           <tr><td class="pronoun">ihr</td><td class="form-haben">habt</td><td class="form-modal">gemocht</td><td class="full-sent">Ihr <span class="h">habt</span> ihn nie <span class="m">gemocht</span>.</td><td class="cell-ar">لم تكونوا تحبونه أبداً.</td></tr>
           <tr><td class="pronoun">sie/Sie</td><td class="form-haben">haben</td><td class="form-modal">gemocht</td><td class="full-sent">Sie <span class="h">haben</span> keinen Brokkoli <span class="m">gemocht</span>.</td><td class="cell-ar">لم يكونوا يحبون البروكلي.</td></tr>
         </tbody>
-      </table>
+      </table></div>
 
       <div class="examples-grid">
         <div class="ex-card">
@@ -1631,7 +1632,7 @@ footer strong { color: var(--teal-2); }
     <p class="ar" style="font-family:var(--f-ar); font-size:.88rem; color:var(--ink-3); direction:rtl; text-align:right; margin-bottom:0;">
       الفرق الأساسي: <strong>Präteritum</strong> شائع في الكتابة والسرد، و<strong>Perfekt</strong> أكثر شيوعاً في الحديث اليومي — خاصة مع غير الأفعال المساعدة.
     </p>
-    <table class="compare-table">
+    <div class="table-scroll"><table class="compare-table">
       <thead>
         <tr>
           <th>الفعل</th>
@@ -1647,7 +1648,7 @@ footer strong { color: var(--teal-2); }
         <tr><td><strong>dürfen</strong></td><td class="prät-cell">Als Kind durfte ich nicht ausgehen.</td><td class="perf-cell">Als Kind habe ich nicht ausgehen dürfen.</td></tr>
         <tr><td><strong>mögen</strong></td><td class="prät-cell">Ich mochte das nicht essen.</td><td class="perf-cell">Ich habe das nicht gemocht. <em style="font-size:.78rem; color:var(--ink-4)">(kein Ersatzinfinitiv!)</em></td></tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="g-note" style="margin-top:20px;">
       <div class="g-note-title">📌 متى نستخدم أيهما؟</div>
@@ -1749,7 +1750,7 @@ footer strong { color: var(--teal-2); }
   <section class="vocab-section" id="sec-vocab">
     <h2>📚 Vokabeltabelle – جدول الأفعال الكامل</h2>
     <p style="color:var(--ink-3); font-size:.88rem;">جميع الأفعال المساعدة بصيغ Infinitiv، Präteritum، Partizip II، وErsatzinfinitiv</p>
-    <table class="vocab-table">
+    <div class="table-scroll"><table class="vocab-table">
       <thead>
         <tr>
           <th>Infinitiv</th>
@@ -1817,7 +1818,7 @@ footer strong { color: var(--teal-2); }
           <td class="vb-ar">يحب</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
     <p style="font-size:.78rem; color:var(--ink-4); margin-top:12px;">⭐ mögen: يستخدم Partizip II (gemocht) عندما لا يوجد فعل آخر في الجملة</p>
   </section>
 

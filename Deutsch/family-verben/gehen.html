@@ -1,0 +1,2246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gehen &amp; seine Familie — Trennbare &amp; untrennbare Verben | Deutsch lernen</title>
+<meta name="description" content="Interaktive Lektion: das Verb gehen und seine Präfix-Familie (vorgehen, ausgehen, angehen, umgehen, nachgehen, entgehen, durchgehen, untergehen) — Konjugation, Kasus, Aussprache.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN TOKENS — "Wegweiser" (Signpost) system
+   Theme: gehen = movement. Prefixes = directions on a signpost.
+   ============================================================ */
+:root{
+  color-scheme: light;
+
+  /* --- surfaces & text (light) --- */
+  --color-bg: #F5F6F1;
+  --color-bg-elevated: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #EEF1E6;
+  --color-surface-3: #E4E9D9;
+  --color-text: #16211D;
+  --color-text-muted: #4E5B54;
+  --color-text-faint: #7C8880;
+  --color-border: #DBE0D2;
+  --color-border-strong: #C4CBB6;
+
+  /* --- brand accents --- */
+  --color-primary: #A8721E;
+  --color-primary-hover: #8A5D17;
+  --color-primary-soft: #F3E6C9;
+  --color-primary-contrast: #FFFFFF;
+
+  --color-accent: #1F6E52;
+  --color-accent-hover: #175A42;
+  --color-accent-soft: #DCEEE3;
+  --color-accent-contrast: #FFFFFF;
+
+  /* --- grammar case colors (used consistently for Akkusativ/Dativ) --- */
+  --color-akk: #B54A2A;
+  --color-akk-soft: #F6E2D8;
+  --color-dat: #1D6FA5;
+  --color-dat-soft: #DCEBF5;
+  --color-neutral-case: #6B6357;
+  --color-neutral-case-soft: #ECE8DD;
+
+  /* --- semantic --- */
+  --color-success: #1F7A4D;
+  --color-success-soft: #DCF0E4;
+  --color-warning: #B8862E;
+  --color-warning-soft: #F6ECD4;
+  --color-danger: #BC3B3B;
+  --color-danger-soft: #F7DEDE;
+  --color-info: #1D6FA5;
+  --color-info-soft: #DCEBF5;
+
+  /* --- shadows --- */
+  --shadow-sm: 0 1px 2px rgba(22,33,29,0.06), 0 1px 1px rgba(22,33,29,0.04);
+  --shadow-md: 0 4px 14px rgba(22,33,29,0.08), 0 2px 4px rgba(22,33,29,0.05);
+  --shadow-lg: 0 12px 32px rgba(22,33,29,0.12), 0 4px 10px rgba(22,33,29,0.06);
+  --shadow-focus: 0 0 0 3px rgba(168,114,30,0.35);
+
+  /* --- typography --- */
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-ar: 'IBM Plex Sans Arabic', 'Tahoma', sans-serif;
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* --- layout --- */
+  --container: 1120px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --header-h: 64px;
+}
+
+[data-theme="dark"]{
+  color-scheme: dark;
+  --color-bg: #101613;
+  --color-bg-elevated: #16201C;
+  --color-surface: #18231E;
+  --color-surface-2: #202D26;
+  --color-surface-3: #29382F;
+  --color-text: #EAF0EA;
+  --color-text-muted: #A9B8AE;
+  --color-text-faint: #79897F;
+  --color-border: #2C3D34;
+  --color-border-strong: #3B5245;
+
+  --color-primary: #DFAE58;
+  --color-primary-hover: #ECC178;
+  --color-primary-soft: #382B14;
+  --color-primary-contrast: #17130A;
+
+  --color-accent: #4FB58C;
+  --color-accent-hover: #6FC7A2;
+  --color-accent-soft: #163229;
+  --color-accent-contrast: #07140F;
+
+  --color-akk: #E58A62;
+  --color-akk-soft: #3A2519;
+  --color-dat: #6FB8E6;
+  --color-dat-soft: #172C3A;
+  --color-neutral-case: #B9AF9C;
+  --color-neutral-case-soft: #2A2A22;
+
+  --color-success: #57BF93;
+  --color-success-soft: #16302380;
+  --color-warning: #DFAE58;
+  --color-warning-soft: #382B14;
+  --color-danger: #E5807A;
+  --color-danger-soft: #3A1C1B;
+  --color-info: #6FB8E6;
+  --color-info-soft: #172C3A;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.35);
+  --shadow-md: 0 6px 18px rgba(0,0,0,0.38);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.5);
+  --shadow-focus: 0 0 0 3px rgba(223,174,88,0.35);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,*::before,*::after{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *,*::before,*::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+body{
+  margin:0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .25s ease, color .25s ease;
+}
+body[dir="rtl"], .rtl{ direction: rtl; }
+[dir="rtl"]{ font-family: var(--font-ar); }
+[dir="ltr"]{ font-family: var(--font-sans); }
+img,svg{ display:block; max-width:100%; }
+button{ font-family: inherit; }
+a{ color: var(--color-accent); }
+h1,h2,h3,h4{ font-family: var(--font-ar); font-weight:700; margin:0 0 .5em; line-height:1.25; color: var(--color-text); }
+p{ margin:0 0 1em; }
+ul,ol{ margin:0 0 1em; padding-inline-start: 1.4em; }
+table{ border-collapse: collapse; width:100%; }
+
+.skip-link{
+  position:absolute; inset-inline-start:8px; top:-48px;
+  background: var(--color-primary); color:var(--color-primary-contrast);
+  padding:.6em 1.1em; border-radius: var(--radius-sm); z-index:999;
+  font-weight:600; transition: top .2s ease;
+}
+.skip-link:focus{ top:8px; }
+
+:focus-visible{ outline: none; box-shadow: var(--shadow-focus); border-radius: 6px; }
+button:focus-visible, a:focus-visible, [tabindex]:focus-visible, input:focus-visible, select:focus-visible{
+  outline: 2px solid var(--color-primary); outline-offset: 2px;
+}
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.container{ max-width: var(--container); margin-inline:auto; padding-inline: 20px; }
+.visually-hidden{ position:absolute; width:1px;height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+/* German inline text */
+.de{ direction:ltr; unicode-bidi: isolate; font-family: var(--font-sans); }
+.ar{ direction:rtl; unicode-bidi: isolate; font-family: var(--font-ar); }
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.site-header{
+  position: sticky; top:0; z-index: 60;
+  background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+.site-header .bar{
+  height: var(--header-h);
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+.brand-mark{ width:34px; height:34px; color: var(--color-primary); flex-shrink:0; }
+.brand-text{ display:flex; flex-direction:column; line-height:1.1; }
+.brand-text strong{ font-family: var(--font-display); font-size:1.05rem; font-weight:700; color: var(--color-text); letter-spacing:.01em; }
+.brand-text span{ font-family: var(--font-ar); font-size:.72rem; color: var(--color-text-muted); }
+
+.header-actions{ display:flex; align-items:center; gap:8px; }
+.icon-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  width:40px; height:40px; border-radius: var(--radius-pill);
+  border:1px solid var(--color-border); background: var(--color-surface);
+  color: var(--color-text); cursor:pointer; transition: all .15s ease;
+}
+.icon-btn:hover{ background: var(--color-surface-2); border-color: var(--color-border-strong); transform: translateY(-1px); }
+.icon-btn svg{ width:18px; height:18px; }
+.icon-btn.wide{ width:auto; padding-inline:14px; }
+
+.progress-rail{ height:3px; background: var(--color-surface-2); position:relative; overflow:hidden; }
+.progress-rail-fill{
+  position:absolute; inset-inline-start:0; top:0; height:100%; width:0%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  transition: width .15s ease;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding: .68em 1.3em; border-radius: var(--radius-pill); border:1px solid transparent;
+  font-family: var(--font-ar); font-weight:600; font-size:.95rem; cursor:pointer;
+  transition: all .15s ease; text-decoration:none; line-height:1.2;
+}
+.btn svg{ width:16px; height:16px; flex-shrink:0; }
+.btn-primary{ background: var(--color-primary); color: var(--color-primary-contrast); }
+.btn-primary:hover{ background: var(--color-primary-hover); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-accent{ background: var(--color-accent); color: var(--color-accent-contrast); }
+.btn-accent:hover{ background: var(--color-accent-hover); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-outline{ background: transparent; border-color: var(--color-border-strong); color: var(--color-text); }
+.btn-outline:hover{ background: var(--color-surface-2); }
+.btn-ghost{ background: transparent; color: var(--color-text-muted); padding-inline:.7em; }
+.btn-ghost:hover{ color: var(--color-text); background: var(--color-surface-2); }
+.btn-sm{ padding:.42em .9em; font-size:.82rem; }
+.btn:disabled{ opacity:.45; cursor:not-allowed; transform:none !important; box-shadow:none !important; }
+
+/* ============================================================
+   LESSON SHELL
+   ============================================================ */
+.lesson{ max-width: var(--container); margin-inline:auto; padding: 0 20px 80px; }
+
+.lesson-hero{
+  position:relative; padding: 46px 0 34px; border-bottom:1px dashed var(--color-border-strong);
+  margin-bottom: 40px; overflow:hidden;
+}
+.hero-grid{ display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items:center; }
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px; font-family: var(--font-mono);
+  font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color: var(--color-accent);
+  background: var(--color-accent-soft); padding:.35em .9em; border-radius: var(--radius-pill);
+  margin-bottom:16px; font-weight:600;
+}
+.lesson-hero h1{
+  font-family: var(--font-display); font-size: clamp(2.1rem, 4.2vw, 3.1rem);
+  font-weight:700; letter-spacing:-.01em; margin-bottom:.3em; color:var(--color-text);
+}
+.lesson-hero h1 .de-accent{ font-style:italic; color: var(--color-primary); font-weight:600; }
+.lesson-subtitle{ font-family: var(--font-ar); font-size:1.05rem; color: var(--color-text-muted); max-width:52ch; margin-bottom:20px; }
+.hero-meta{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom: 22px; }
+.meta-chip{
+  display:inline-flex; align-items:center; gap:6px; padding:.4em .85em; border-radius: var(--radius-pill);
+  background: var(--color-surface); border:1px solid var(--color-border); font-size:.82rem; color: var(--color-text-muted); font-family: var(--font-ar);
+}
+.meta-chip svg{ width:14px; height:14px; color: var(--color-primary); }
+.hero-cta{ display:flex; gap:10px; flex-wrap:wrap; }
+
+/* signpost hero graphic */
+.signpost-wrap{ display:flex; justify-content:center; }
+.signpost-wrap svg{ width:100%; max-width:340px; height:auto; }
+
+/* ============================================================
+   TOC
+   ============================================================ */
+.lesson-toc{
+  background: var(--color-surface); border:1px solid var(--color-border); border-radius: var(--radius-lg);
+  padding: 18px 20px; margin-bottom: 44px; box-shadow: var(--shadow-sm);
+}
+.lesson-toc h2{ font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; color: var(--color-text-faint); font-family: var(--font-mono); font-weight:600; margin-bottom:12px; }
+.toc-list{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns: repeat(3, 1fr); gap:6px 14px; }
+.toc-list a{
+  display:flex; align-items:center; gap:8px; text-decoration:none; color: var(--color-text);
+  font-family: var(--font-ar); font-size:.9rem; padding:.4em .3em; border-radius:8px; transition: all .15s ease;
+}
+.toc-list a:hover{ color: var(--color-primary); }
+.toc-num{
+  width:20px; height:20px; border-radius:50%; border:1.5px solid var(--color-border-strong);
+  display:inline-flex; align-items:center; justify-content:center; font-family: var(--font-mono);
+  font-size:.65rem; color: var(--color-text-faint); flex-shrink:0; transition: all .2s ease;
+}
+.toc-list a.done .toc-num{ background: var(--color-accent); border-color: var(--color-accent); color:#fff; }
+.toc-list a.done .toc-num::after{ content:"✓"; }
+.toc-list a.done .toc-num{ font-size:0; }
+.toc-list a.done .toc-num::after{ font-size:.7rem; }
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.lesson-section{ margin-bottom: 64px; scroll-margin-top: calc(var(--header-h) + 16px); }
+.section-head{ display:flex; align-items:baseline; gap:14px; margin-bottom: 22px; }
+.section-num{ font-family: var(--font-mono); color: var(--color-primary); font-size:1rem; font-weight:600; }
+.section-head h2{ font-family: var(--font-display); font-size: clamp(1.5rem, 2.6vw, 1.95rem); font-weight:700; margin:0; }
+.section-lede{ font-family: var(--font-ar); color: var(--color-text-muted); max-width:75ch; margin-bottom:26px; font-size:1rem; }
+
+.path-divider{
+  display:flex; align-items:center; gap:10px; margin: 56px 0; color: var(--color-border-strong);
+}
+.path-divider::before, .path-divider::after{ content:""; flex:1; height:1px; background: repeating-linear-gradient(90deg, var(--color-border-strong) 0 6px, transparent 6px 12px); }
+.path-divider svg{ width:18px; height:18px; color: var(--color-text-faint); flex-shrink:0; }
+
+/* ============================================================
+   CARDS / COMPONENTS
+   ============================================================ */
+.card{ background: var(--color-surface); border:1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.card-pad{ padding: 24px; }
+
+.objectives-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:14px; }
+.objective-item{
+  display:flex; gap:12px; align-items:flex-start; background: var(--color-surface); border:1px solid var(--color-border);
+  border-radius: var(--radius-md); padding:16px 18px; font-family: var(--font-ar);
+}
+.objective-item .num{
+  flex-shrink:0; width:28px; height:28px; border-radius:50%; background: var(--color-primary-soft); color: var(--color-primary);
+  display:flex; align-items:center; justify-content:center; font-family: var(--font-mono); font-weight:700; font-size:.85rem;
+}
+
+/* Rule box family */
+.rule-box, .tip-box, .warning-box, .mistake-box{
+  border-radius: var(--radius-md); padding: 18px 20px; margin: 18px 0; border:1px solid; position:relative;
+}
+.rule-box{ background: var(--color-surface-2); border-color: var(--color-border); }
+.rule-box .box-label, .tip-box .box-label, .warning-box .box-label, .info-box .box-label{
+  display:flex; align-items:center; gap:8px; font-family: var(--font-mono); font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.07em; font-weight:600; margin-bottom:10px;
+}
+.rule-box .box-label{ color: var(--color-accent); }
+.rule-box svg, .tip-box svg, .warning-box svg, .info-box svg{ width:15px; height:15px; flex-shrink:0; }
+.tip-box{ background: var(--color-primary-soft); border-color: color-mix(in srgb, var(--color-primary) 35%, transparent); }
+.tip-box .box-label{ color: var(--color-primary); }
+.info-box{ background: var(--color-info-soft); border-color: color-mix(in srgb, var(--color-info) 35%, transparent); border-radius: var(--radius-md); padding:18px 20px; margin:18px 0; border:1px solid; }
+.info-box .box-label{ color: var(--color-info); }
+.warning-box{ background: var(--color-warning-soft); border-color: color-mix(in srgb, var(--color-warning) 40%, transparent); }
+.warning-box .box-label{ color:#8a6218; }
+[data-theme="dark"] .warning-box .box-label{ color: var(--color-warning); }
+.rule-box p:last-child, .tip-box p:last-child, .warning-box p:last-child, .info-box p:last-child{ margin-bottom:0; }
+
+/* case badges */
+.case-badge{
+  display:inline-flex; align-items:center; gap:5px; font-family: var(--font-mono); font-size:.72rem; font-weight:600;
+  padding:.28em .7em; border-radius: var(--radius-pill); white-space:nowrap; letter-spacing:.02em;
+}
+.case-badge.akk{ background: var(--color-akk-soft); color: var(--color-akk); }
+.case-badge.dat{ background: var(--color-dat-soft); color: var(--color-dat); }
+.case-badge.none{ background: var(--color-neutral-case-soft); color: var(--color-neutral-case); }
+.sep-badge{
+  display:inline-flex; align-items:center; gap:5px; font-family: var(--font-ar); font-size:.74rem; font-weight:600;
+  padding:.28em .75em; border-radius: var(--radius-pill); background: var(--color-surface-3); color: var(--color-text-muted);
+}
+
+/* German example block */
+.example-block{
+  display:flex; flex-direction:column; gap:6px; padding:14px 16px; border-radius: var(--radius-md);
+  background: var(--color-surface-2); border:1px solid var(--color-border); margin: 10px 0;
+}
+.example-de-row{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.example-de{
+  font-family: var(--font-display); font-style:italic; font-weight:500; font-size:1.12rem; color: var(--color-text);
+  direction:ltr; unicode-bidi:isolate;
+}
+.example-ar{ font-family: var(--font-ar); color: var(--color-text-muted); font-size:.93rem; direction:rtl; }
+
+/* audio player component */
+.audio-btn{
+  display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%;
+  background: var(--color-accent-soft); color: var(--color-accent); border:none; cursor:pointer; flex-shrink:0;
+  transition: all .15s ease;
+}
+.audio-btn:hover{ background: var(--color-accent); color:#fff; transform: scale(1.06); }
+.audio-btn svg{ width:15px; height:15px; }
+.audio-btn.playing{ background: var(--color-accent); color:#fff; animation: pulse-ring 1.1s ease-in-out infinite; }
+@keyframes pulse-ring{ 0%,100%{ box-shadow:0 0 0 0 color-mix(in srgb, var(--color-accent) 45%, transparent);} 50%{ box-shadow:0 0 0 6px transparent; } }
+.example-block.speaking{ border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent-soft) 60%, var(--color-surface-2)); }
+.speed-tag{ font-family: var(--font-mono); font-size:.68rem; color: var(--color-text-faint); }
+
+/* Verb family cards */
+.verb-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap:18px; }
+.verb-card{ background: var(--color-surface); border:1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow:hidden; display:flex; flex-direction:column; }
+.verb-card-head{ display:flex; align-items:flex-start; gap:14px; padding:20px 20px 14px; }
+.verb-icon{
+  width:44px; height:44px; border-radius:50%; background: var(--color-primary-soft); color: var(--color-primary);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.verb-icon svg{ width:22px; height:22px; }
+.verb-title{ flex:1; }
+.verb-title .infinitive{ font-family: var(--font-display); font-style:italic; font-size:1.35rem; font-weight:600; direction:ltr; }
+.verb-title .infinitive .prefix{ color: var(--color-primary); font-style:normal; font-weight:700; }
+.verb-badges{ display:flex; gap:6px; flex-wrap:wrap; margin-top:6px; }
+.verb-meaning{ padding: 0 20px 14px; font-family: var(--font-ar); color: var(--color-text-muted); font-size:.94rem; }
+.verb-pattern{ margin: 0 20px 14px; padding:8px 12px; border-radius:8px; background: var(--color-surface-2); font-family:var(--font-mono); font-size:.8rem; color: var(--color-text-muted); direction:ltr; text-align:start; }
+.verb-examples{ padding: 0 20px 6px; }
+.verb-note{ margin: 4px 20px 16px; font-family: var(--font-ar); font-size:.85rem; color: var(--color-text-faint); background:var(--color-surface-2); padding:10px 12px; border-radius:8px; }
+
+/* details / conjugation */
+details.conj-toggle{ margin: 0 20px 20px; border-top:1px solid var(--color-border); padding-top:14px; }
+details.conj-toggle summary{
+  cursor:pointer; font-family: var(--font-ar); font-weight:600; font-size:.88rem; color: var(--color-accent);
+  display:flex; align-items:center; gap:8px; list-style:none;
+}
+details.conj-toggle summary::-webkit-details-marker{ display:none; }
+details.conj-toggle summary::before{ content:"▸"; transition: transform .18s ease; display:inline-block; font-size:.8em; }
+details.conj-toggle[open] summary::before{ transform: rotate(90deg); }
+.conj-table-wrap{ overflow-x:auto; margin-top:14px; -webkit-overflow-scrolling:touch; }
+table.conj-table{ min-width:520px; font-size:.86rem; }
+table.conj-table caption{ text-align:start; font-family:var(--font-mono); font-size:.72rem; color:var(--color-text-faint); margin-bottom:6px; text-transform:uppercase; letter-spacing:.05em; }
+table.conj-table th, table.conj-table td{ padding:7px 10px; border-bottom:1px solid var(--color-border); text-align:start; direction:ltr; }
+table.conj-table thead th{ font-family: var(--font-mono); font-size:.72rem; color: var(--color-text-faint); text-transform:uppercase; letter-spacing:.04em; font-weight:600; }
+table.conj-table tbody tr:hover{ background: var(--color-surface-2); }
+table.conj-table td.pron{ font-weight:600; color:var(--color-text-muted); font-family: var(--font-mono); font-size:.8rem; }
+table.conj-table td .perf-aux{ color: var(--color-primary); font-weight:600; }
+
+/* Satzrahmen (sentence frame / word order) */
+.satzrahmen{ overflow-x:auto; margin: 14px 0; -webkit-overflow-scrolling:touch; }
+.satzrahmen-row{ display:flex; min-width:max-content; border:1px solid var(--color-border); border-radius: var(--radius-md); overflow:hidden; direction:ltr; }
+.sr-slot{ padding: 12px 16px; border-inline-end:1px solid var(--color-border); display:flex; flex-direction:column; gap:4px; min-width:90px; background: var(--color-surface); }
+.sr-slot:last-child{ border-inline-end:none; }
+.sr-slot .sr-word{ font-family: var(--font-display); font-style:italic; font-size:1.05rem; white-space:nowrap; }
+.sr-slot .sr-label{ font-family: var(--font-mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.05em; color: var(--color-text-faint); }
+.sr-slot.pos2{ background: var(--color-primary-soft); }
+.sr-slot.pos2 .sr-word{ color: var(--color-primary); font-weight:600; }
+.sr-slot.pos2 .sr-label{ color: var(--color-primary); }
+.sr-slot.ende{ background: var(--color-accent-soft); }
+.sr-slot.ende .sr-word{ color: var(--color-accent); font-weight:600; }
+.sr-slot.ende .sr-label{ color: var(--color-accent); }
+
+/* comparison table (nicht vs kein style) */
+.compare-wrap{ overflow-x:auto; }
+table.compare-table{ min-width:640px; }
+table.compare-table th, table.compare-table td{ padding:12px 16px; border:1px solid var(--color-border); vertical-align:top; }
+table.compare-table thead th{ font-family: var(--font-ar); background: var(--color-surface-2); }
+table.compare-table td.label-col{ font-family: var(--font-mono); font-size:.78rem; color: var(--color-text-faint); white-space:nowrap; }
+table.compare-table th.path-a{ color: var(--color-akk); }
+table.compare-table th.path-b{ color: var(--color-dat); }
+.compare-de{ font-family: var(--font-display); font-style:italic; direction:ltr; }
+
+/* two-path hero graphic block */
+.two-path{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin: 24px 0; }
+.path-card{ border-radius: var(--radius-lg); padding:22px; border:1.5px solid; position:relative; }
+.path-card.a{ background: var(--color-akk-soft); border-color: color-mix(in srgb, var(--color-akk) 35%, transparent); }
+.path-card.b{ background: var(--color-dat-soft); border-color: color-mix(in srgb, var(--color-dat) 35%, transparent); }
+.path-card h4{ font-family: var(--font-display); font-style:italic; font-size:1.2rem; margin-bottom:4px; }
+.path-card.a h4{ color: var(--color-akk); }
+.path-card.b h4{ color: var(--color-dat); }
+.path-card .stress{ font-family: var(--font-mono); font-size:.85rem; color: var(--color-text-muted); margin-bottom:10px; direction:ltr; }
+
+/* Case compass diagram */
+.case-compass{ display:grid; grid-template-columns: repeat(4,1fr); gap:12px; margin: 20px 0; }
+.case-tile{ border-radius: var(--radius-md); padding:16px 14px; text-align:center; border:1.5px solid var(--color-border); background: var(--color-surface); }
+.case-tile .cn{ font-family: var(--font-display); font-weight:700; font-size:1.05rem; margin-bottom:4px; }
+.case-tile .cq{ font-family: var(--font-mono); font-size:.78rem; color: var(--color-text-faint); }
+.case-tile.active-akk{ border-color: var(--color-akk); background: var(--color-akk-soft); }
+.case-tile.active-akk .cn{ color: var(--color-akk); }
+.case-tile.active-dat{ border-color: var(--color-dat); background: var(--color-dat-soft); }
+.case-tile.active-dat .cn{ color: var(--color-dat); }
+.case-tile.muted{ opacity:.5; }
+
+/* Common mistakes */
+.mistake-card{ background: var(--color-surface); border:1px solid var(--color-border); border-radius: var(--radius-lg); padding:20px 22px; margin-bottom:14px; box-shadow: var(--shadow-sm); }
+.mistake-row{ display:flex; align-items:flex-start; gap:10px; margin-bottom:8px; font-family: var(--font-display); font-style:italic; font-size:1.06rem; direction:ltr; }
+.mistake-row .mark{ font-family: var(--font-sans); font-style:normal; font-weight:700; flex-shrink:0; width:22px; text-align:center; }
+.mistake-row.wrong .mark{ color: var(--color-danger); }
+.mistake-row.right .mark{ color: var(--color-success); }
+.mistake-why{ font-family: var(--font-ar); color: var(--color-text-muted); font-size:.9rem; margin-top:10px; padding-top:10px; border-top:1px dashed var(--color-border); }
+.mistake-why strong{ color: var(--color-text); }
+
+/* Vocabulary flip cards */
+.vocab-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap:16px; }
+.flip-card{ perspective: 1200px; height:170px; }
+.flip-card-inner{
+  position:relative; width:100%; height:100%; transition: transform .5s cubic-bezier(.4,.2,.2,1); transform-style:preserve-3d; cursor:pointer;
+}
+.flip-card.flipped .flip-card-inner{ transform: rotateY(180deg); }
+.flip-face{
+  position:absolute; inset:0; backface-visibility:hidden; border-radius: var(--radius-md); border:1px solid var(--color-border);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:14px; gap:8px;
+  background: var(--color-surface); box-shadow: var(--shadow-sm);
+}
+.flip-face.back{ transform: rotateY(180deg); background: var(--color-surface-2); }
+.flip-face .fc-word{ font-family: var(--font-display); font-style:italic; font-size:1.15rem; direction:ltr; }
+.flip-face .fc-hint{ font-family: var(--font-mono); font-size:.65rem; color: var(--color-text-faint); text-transform:uppercase; letter-spacing:.05em; }
+.flip-face .fc-meaning{ font-family: var(--font-ar); font-size:.92rem; color: var(--color-text); }
+.flip-face .fc-example{ font-family: var(--font-ar); font-size:.76rem; color: var(--color-text-muted); direction:rtl; }
+
+/* Exercises */
+.exercise-card{ background: var(--color-surface); border:1px solid var(--color-border); border-radius: var(--radius-lg); padding:24px; margin-bottom:22px; box-shadow: var(--shadow-sm); }
+.exercise-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:16px; flex-wrap:wrap; }
+.exercise-head h3{ font-family: var(--font-ar); font-size:1.08rem; margin:0; }
+.exercise-tag{ font-family: var(--font-mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; color: var(--color-text-faint); background:var(--color-surface-2); padding:.3em .7em; border-radius: var(--radius-pill); }
+
+.fillblank-item{ padding:14px 0; border-bottom:1px dashed var(--color-border); }
+.fillblank-item:last-of-type{ border-bottom:none; }
+.fillblank-sentence{ font-family: var(--font-display); font-style:italic; font-size:1.08rem; direction:ltr; margin-bottom:10px; line-height:1.7; }
+.fillblank-sentence .gap-marker{ display:inline-block; min-width:60px; border-bottom:2px dotted var(--color-border-strong); text-align:center; }
+.option-row{ display:flex; gap:8px; flex-wrap:wrap; }
+.opt-btn{
+  font-family: var(--font-sans); direction:ltr; padding:.5em 1em; border-radius: var(--radius-pill);
+  border:1.5px solid var(--color-border-strong); background: var(--color-surface); color: var(--color-text); cursor:pointer; font-size:.92rem;
+  transition: all .15s ease;
+}
+.opt-btn:hover{ border-color: var(--color-primary); }
+.opt-btn.selected{ border-color: var(--color-primary); background: var(--color-primary-soft); }
+.opt-btn.correct{ border-color: var(--color-success); background: var(--color-success-soft); color: var(--color-success); font-weight:600; }
+.opt-btn.incorrect{ border-color: var(--color-danger); background: var(--color-danger-soft); color: var(--color-danger); }
+.opt-btn:disabled{ cursor:default; }
+.item-feedback{ margin-top:10px; padding:10px 14px; border-radius:8px; font-family: var(--font-ar); font-size:.88rem; display:none; }
+.item-feedback.show{ display:block; }
+.item-feedback.ok{ background: var(--color-success-soft); color: var(--color-success); }
+.item-feedback.bad{ background: var(--color-danger-soft); color: var(--color-danger); }
+
+/* Ordering exercise */
+.order-item{ padding:16px 0; border-bottom:1px dashed var(--color-border); }
+.order-item:last-of-type{ border-bottom:none; }
+.order-bank, .order-answer{ display:flex; flex-wrap:wrap; gap:8px; min-height:44px; padding:10px; border-radius: var(--radius-md); }
+.order-bank{ background: var(--color-surface-2); margin-bottom:10px; }
+.order-answer{ border:2px dashed var(--color-border-strong); }
+.order-answer.filled{ border-style:solid; border-color: var(--color-border); }
+.word-chip{
+  font-family: var(--font-sans); direction:ltr; padding:.5em 1em; border-radius: var(--radius-pill);
+  border:1.5px solid var(--color-border-strong); background: var(--color-surface); cursor:pointer; font-size:.92rem; transition: all .15s ease;
+}
+.word-chip:hover{ border-color: var(--color-primary); transform: translateY(-1px); }
+.word-chip.placed{ opacity:.35; cursor:default; }
+.word-chip.in-answer{ background: var(--color-primary-soft); border-color: var(--color-primary); }
+.order-controls{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+
+/* Matching exercise */
+.match-wrap{ display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
+.match-col h4{ font-family: var(--font-ar); font-size:.85rem; color: var(--color-text-faint); text-transform:uppercase; letter-spacing:.04em; margin-bottom:10px; }
+.match-verbs{ display:flex; flex-wrap:wrap; gap:8px; }
+.match-chip{
+  font-family: var(--font-sans); direction:ltr; padding:.5em .95em; border-radius: var(--radius-pill); border:1.5px solid var(--color-border-strong);
+  background: var(--color-surface); cursor:pointer; font-size:.9rem;
+}
+.match-chip.selected{ border-color: var(--color-primary); background: var(--color-primary-soft); }
+.match-chip.assigned{ opacity:.4; }
+.match-targets{ display:flex; flex-direction:column; gap:10px; }
+.match-target{ border:1.5px dashed var(--color-border-strong); border-radius: var(--radius-md); padding:10px 12px; min-height:52px; }
+.match-target .mt-label{ font-family: var(--font-mono); font-size:.7rem; text-transform:uppercase; color: var(--color-text-faint); margin-bottom:6px; display:block; }
+.match-target .mt-items{ display:flex; flex-wrap:wrap; gap:6px; }
+.match-target .mt-items .word-chip.correct{ border-color: var(--color-success); background: var(--color-success-soft); }
+.match-target .mt-items .word-chip.incorrect{ border-color: var(--color-danger); background: var(--color-danger-soft); }
+
+/* Quiz */
+.quiz-question{ padding:22px 0; border-bottom:1px solid var(--color-border); }
+.quiz-question:last-of-type{ border-bottom:none; }
+.qq-head{ display:flex; gap:10px; align-items:flex-start; margin-bottom:14px; }
+.qq-num{ font-family: var(--font-mono); font-weight:700; color: var(--color-primary); font-size:.95rem; flex-shrink:0; }
+.qq-prompt{ font-family: var(--font-ar); font-size:1rem; line-height:1.7; }
+.qq-prompt .de{ display:inline-block; font-family: var(--font-display); font-style:italic; font-size:1.05rem; }
+.qq-options{ display:flex; flex-direction:column; gap:8px; margin-inline-start:30px; }
+.qq-option{
+  display:flex; align-items:center; gap:10px; padding:.65em 1em; border-radius: var(--radius-md); border:1.5px solid var(--color-border-strong);
+  background: var(--color-surface); cursor:pointer; font-family: var(--font-ar); font-size:.94rem; transition: all .15s ease;
+}
+.qq-option:hover{ border-color: var(--color-primary); }
+.qq-option .de{ direction:ltr; }
+.qq-option.selected{ border-color: var(--color-primary); background: var(--color-primary-soft); }
+.qq-option.correct{ border-color: var(--color-success); background: var(--color-success-soft); }
+.qq-option.incorrect{ border-color: var(--color-danger); background: var(--color-danger-soft); }
+.qq-explain{ margin-inline-start:30px; margin-top:10px; padding:12px 14px; border-radius:8px; background: var(--color-surface-2); font-family: var(--font-ar); font-size:.88rem; display:none; }
+.qq-explain.show{ display:block; }
+.quiz-listen{ margin-inline-start:30px; margin-bottom:12px; }
+
+.quiz-score{ text-align:center; padding: 30px 20px; display:none; }
+.quiz-score.show{ display:block; }
+.score-ring{ width:120px; height:120px; margin:0 auto 16px; }
+.score-num{ font-family: var(--font-display); font-size:2.6rem; font-weight:700; }
+.score-label{ font-family: var(--font-ar); color: var(--color-text-muted); }
+
+/* Summary */
+.summary-card{ background: linear-gradient(150deg, var(--color-surface-2), var(--color-surface)); border:1px solid var(--color-border); border-radius: var(--radius-lg); padding:28px; }
+.summary-list{ list-style:none; padding:0; margin:0; display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:10px; }
+.summary-list li{ display:flex; gap:10px; align-items:flex-start; font-family: var(--font-ar); font-size:.93rem; padding:8px 0; }
+.summary-list li svg{ width:16px; height:16px; color: var(--color-accent); flex-shrink:0; margin-top:3px; }
+
+.next-card{ display:flex; align-items:center; gap:20px; background: var(--color-surface); border:1px solid var(--color-border); border-radius: var(--radius-lg); padding:26px; flex-wrap:wrap; }
+.next-icon{ width:56px; height:56px; border-radius:50%; background: var(--color-primary-soft); color: var(--color-primary); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.next-icon svg{ width:28px; height:28px; }
+.next-text h3{ font-family: var(--font-ar); margin-bottom:4px; font-size:1.05rem; }
+.next-text p{ font-family: var(--font-ar); color: var(--color-text-muted); margin:0; font-size:.92rem; }
+
+/* Pronunciation grid */
+.sound-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap:12px; }
+.sound-chip{ background: var(--color-surface); border:1px solid var(--color-border); border-radius: var(--radius-md); padding:14px; text-align:center; }
+.sound-chip .sg-letter{ font-family: var(--font-display); font-style:italic; font-size:1.4rem; color: var(--color-primary); }
+.sound-chip .sg-ipa{ font-family: var(--font-mono); font-size:.78rem; color: var(--color-text-faint); }
+
+footer.site-footer{ border-top:1px solid var(--color-border); padding: 34px 0 60px; text-align:center; }
+footer.site-footer p{ font-family: var(--font-ar); color: var(--color-text-faint); font-size:.85rem; margin:0; }
+
+/* ============================================================
+   AUDIO SETTINGS PANEL
+   ============================================================ */
+.overlay{ position:fixed; inset:0; background: rgba(10,14,12,.45); z-index:80; opacity:0; pointer-events:none; transition: opacity .2s ease; }
+.overlay.show{ opacity:1; pointer-events:auto; }
+.audio-panel{
+  position:fixed; inset-inline-end:0; top:0; height:100%; width:min(420px, 92vw); background: var(--color-bg-elevated);
+  z-index:90; box-shadow: var(--shadow-lg); transform: translateX(105%); transition: transform .28s cubic-bezier(.4,0,.2,1);
+  display:flex; flex-direction:column; border-inline-start:1px solid var(--color-border);
+}
+[dir="rtl"] .audio-panel{ transform: translateX(-105%); }
+.audio-panel.show{ transform: translateX(0); }
+.ap-head{ display:flex; align-items:center; justify-content:space-between; padding:20px 22px; border-bottom:1px solid var(--color-border); }
+.ap-head h2{ font-family: var(--font-ar); font-size:1.1rem; margin:0; }
+.ap-body{ flex:1; overflow-y:auto; padding: 20px 22px 40px; }
+.ap-section{ margin-bottom:26px; }
+.ap-section h3{ font-family: var(--font-ar); font-size:.82rem; text-transform:uppercase; letter-spacing:.04em; color: var(--color-text-faint); margin-bottom:12px; }
+.voice-list{ display:flex; flex-direction:column; gap:8px; }
+.voice-item{ display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius: var(--radius-md); border:1.5px solid var(--color-border); background: var(--color-surface); }
+.voice-item.selected{ border-color: var(--color-primary); background: var(--color-primary-soft); }
+.voice-item input[type=radio]{ accent-color: var(--color-primary); width:16px; height:16px; flex-shrink:0; }
+.voice-item label{ flex:1; font-family: var(--font-sans); font-size:.88rem; cursor:pointer; direction:ltr; text-align:start; }
+.voice-item label .voice-lang{ display:block; font-family: var(--font-mono); font-size:.68rem; color: var(--color-text-faint); }
+.voice-test-btn{
+  flex-shrink:0; padding:.4em .8em; border-radius: var(--radius-pill); border:1px solid var(--color-border-strong); background: var(--color-surface);
+  font-family: var(--font-ar); font-size:.78rem; cursor:pointer; color: var(--color-text-muted); display:flex; align-items:center; gap:5px;
+}
+.voice-test-btn:hover{ border-color: var(--color-accent); color: var(--color-accent); }
+.voice-test-btn svg{ width:12px; height:12px; }
+
+.slider-row{ margin-bottom:16px; }
+.slider-row .sr-top{ display:flex; justify-content:space-between; margin-bottom:8px; font-family: var(--font-ar); font-size:.88rem; }
+.slider-row .sr-val{ font-family: var(--font-mono); color: var(--color-primary); font-weight:600; }
+input[type=range]{ width:100%; accent-color: var(--color-primary); height:6px; }
+
+.provider-list{ display:flex; flex-direction:column; gap:8px; }
+.provider-item{ display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius: var(--radius-md); border:1.5px solid var(--color-border); font-family: var(--font-ar); font-size:.88rem; }
+.provider-item.active{ border-color: var(--color-accent); background: var(--color-accent-soft); }
+.provider-dot{ width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+.provider-item.active .provider-dot{ background: var(--color-accent); }
+.provider-item:not(.active) .provider-dot{ background: var(--color-text-faint); }
+.provider-item .p-status{ margin-inline-start:auto; font-family: var(--font-mono); font-size:.68rem; color: var(--color-text-faint); }
+
+.fallback-msg{ display:flex; gap:10px; align-items:flex-start; padding:14px 16px; border-radius: var(--radius-md); background: var(--color-warning-soft); font-family: var(--font-ar); font-size:.88rem; color:#8a6218; }
+[data-theme="dark"] .fallback-msg{ color: var(--color-warning); }
+.fallback-msg svg{ width:18px; height:18px; flex-shrink:0; margin-top:1px; }
+
+/* theme choice pills inside panel */
+.theme-pills{ display:flex; gap:8px; }
+.theme-pill{ flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; padding:12px 8px; border-radius: var(--radius-md); border:1.5px solid var(--color-border); background: var(--color-surface); cursor:pointer; font-family: var(--font-ar); font-size:.8rem; color: var(--color-text-muted); }
+.theme-pill svg{ width:18px; height:18px; }
+.theme-pill.active{ border-color: var(--color-primary); background: var(--color-primary-soft); color: var(--color-primary); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 860px){
+  .hero-grid{ grid-template-columns:1fr; gap:24px; }
+  .signpost-wrap{ order:-1; max-width:220px; margin-inline:auto; }
+  .toc-list{ grid-template-columns: repeat(2,1fr); }
+  .two-path{ grid-template-columns:1fr; }
+  .match-wrap{ grid-template-columns:1fr; }
+  .case-compass{ grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 560px){
+  .container, .lesson{ padding-inline:14px; }
+  .toc-list{ grid-template-columns: 1fr 1fr; }
+  .verb-grid{ grid-template-columns:1fr; }
+  .sr-slot{ min-width:76px; padding:10px 12px; }
+  .example-de{ font-size:1.02rem; }
+  .case-compass{ grid-template-columns: repeat(2,1fr); }
+  .audio-panel{ width:100vw; }
+}
+</style>
+</head>
+<body data-theme="light" dir="rtl">
+<a href="#main" class="skip-link">تخطي إلى المحتوى</a>
+
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header">
+  <div class="container bar">
+    <a href="#main" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M11 22 L20 13 L29 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 13 V27" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M15 27 H25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">
+        <strong class="de">Wegweiser Deutsch</strong>
+        <span>منصّة تعلّم الألمانية</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <button id="audioSettingsBtn" class="icon-btn wide" aria-haspopup="dialog" aria-expanded="false" aria-controls="audioPanel">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10v4h4l5 5V5L7 10H3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="ar" style="font-size:.82rem;">الصوت</span>
+      </button>
+      <button id="themeToggleBtn" class="icon-btn" aria-label="تبديل الوضع الداكن والفاتح">
+        <svg id="themeIconSun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg id="themeIconMoon" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:none;"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="progress-rail" aria-hidden="true"><div class="progress-rail-fill" id="progressFill"></div></div>
+</header>
+
+<!-- ============================================================
+     AUDIO SETTINGS PANEL
+     ============================================================ -->
+<div class="overlay" id="overlay"></div>
+<div class="audio-panel" id="audioPanel" role="dialog" aria-modal="true" aria-labelledby="audioPanelTitle">
+  <div class="ap-head">
+    <h2 id="audioPanelTitle">إعدادات الصوت الألماني</h2>
+    <button class="icon-btn" id="closeAudioPanel" aria-label="إغلاق لوحة الصوت">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="ap-body">
+
+    <div class="ap-section">
+      <h3>المظهر</h3>
+      <div class="theme-pills" role="radiogroup" aria-label="اختيار المظهر">
+        <button class="theme-pill" data-theme-choice="light" role="radio" aria-checked="false">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/></svg>
+          فاتح
+        </button>
+        <button class="theme-pill" data-theme-choice="dark" role="radio" aria-checked="false">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          داكن
+        </button>
+        <button class="theme-pill" data-theme-choice="system" role="radio" aria-checked="false">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          النظام
+        </button>
+      </div>
+    </div>
+
+    <div class="ap-section">
+      <h3>مزوّد الصوت (Audio Provider)</h3>
+      <div class="provider-list" id="providerList"></div>
+    </div>
+
+    <div class="ap-section" id="voiceSection">
+      <h3>الأصوات الألمانية المتاحة</h3>
+      <div id="voiceStatus" style="font-family:var(--font-ar); font-size:.85rem; color:var(--color-text-faint); margin-bottom:10px;"></div>
+      <div class="voice-list" id="voiceList"></div>
+    </div>
+
+    <div class="ap-section">
+      <h3>سرعة النطق</h3>
+      <div class="slider-row">
+        <div class="sr-top"><span>Speed</span><span class="sr-val" id="rateVal">1.0x</span></div>
+        <input type="range" id="rateSlider" min="0.5" max="2" step="0.25" value="1">
+      </div>
+      <div class="slider-row" style="margin-bottom:0;">
+        <div class="sr-top"><span>Pitch</span><span class="sr-val" id="pitchVal">1.0</span></div>
+        <input type="range" id="pitchSlider" min="0.5" max="1.5" step="0.1" value="1">
+      </div>
+    </div>
+
+    <div class="ap-section" style="margin-bottom:0;">
+      <button class="btn btn-outline btn-sm" id="testCurrentVoiceBtn" style="width:100%;">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10v4h4l5 5V5L7 10H3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        تجربة الصوت الحالي — "Hallo! Wie geht es dir?"
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<main id="main">
+<article class="lesson">
+
+  <!-- ============================================================
+       LESSON HERO
+       ============================================================ -->
+  <header class="lesson-hero">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Verbfamilie · A2–B1 · Trennbare &amp; untrennbare Verben</span>
+        <h1><span class="de-accent de">gehen</span> und seine Familie</h1>
+        <p class="lesson-subtitle ar">فعل الحركة الألماني الأهم — وكيف تُغيّر البادئات (vor-, aus-, an-, um-, nach-, ent-, durch-, unter-) معناه وحالته الإعرابية تمامًا.</p>
+        <div class="hero-meta">
+          <span class="meta-chip"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg> ٣٥–٤٥ دقيقة</span>
+          <span class="meta-chip"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> ٩ أفعال + مقارنة خاصة</span>
+          <span class="meta-chip"><svg viewBox="0 0 24 24" fill="none"><path d="M3 10v4h4l5 5V5L7 10H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> نطق تفاعلي بأصوات متعددة</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#grundlagen" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            ابدأ الدرس
+          </a>
+          <a href="#quiz" class="btn btn-outline">الانتقال إلى الاختبار</a>
+        </div>
+      </div>
+      <div class="signpost-wrap">
+        <svg viewBox="0 0 300 360" aria-hidden="true">
+          <ellipse cx="150" cy="332" rx="46" ry="8" style="fill:var(--color-border-strong); opacity:.5;"/>
+          <rect x="147" y="60" width="6" height="270" rx="3" style="fill:var(--color-border-strong);"/>
+          <circle cx="150" cy="45" r="23" style="fill:var(--color-surface); stroke:var(--color-primary); stroke-width:2;"/>
+          <text x="150" y="51" text-anchor="middle" font-style="italic" font-weight="600" font-size="15" style="fill:var(--color-primary); font-family:'Fraunces',serif;">gehen</text>
+
+          <!-- vor (right) -->
+          <circle cx="150" cy="72" r="3" style="fill:var(--color-accent);"/>
+          <rect x="153" y="61" width="60" height="22" rx="4" style="fill:var(--color-primary);"/>
+          <polygon points="213,61 213,83 227,72" style="fill:var(--color-primary);"/>
+          <text x="182" y="76" text-anchor="middle" font-style="italic" font-size="12.5" style="fill:var(--color-primary-contrast); font-family:'Fraunces',serif;">vor-</text>
+
+          <!-- aus (left) -->
+          <circle cx="150" cy="102" r="3" style="fill:var(--color-accent);"/>
+          <rect x="87" y="91" width="60" height="22" rx="4" style="fill:var(--color-primary);"/>
+          <polygon points="87,91 87,113 73,102" style="fill:var(--color-primary);"/>
+          <text x="117" y="106" text-anchor="middle" font-style="italic" font-size="12.5" style="fill:var(--color-primary-contrast); font-family:'Fraunces',serif;">aus-</text>
+
+          <!-- an (right) -->
+          <circle cx="150" cy="132" r="3" style="fill:var(--color-accent);"/>
+          <rect x="153" y="121" width="52" height="22" rx="4" style="fill:var(--color-primary);"/>
+          <polygon points="205,121 205,143 219,132" style="fill:var(--color-primary);"/>
+          <text x="179" y="136" text-anchor="middle" font-style="italic" font-size="12.5" style="fill:var(--color-primary-contrast); font-family:'Fraunces',serif;">an-</text>
+
+          <!-- um (left) -->
+          <circle cx="150" cy="162" r="3" style="fill:var(--color-accent);"/>
+          <rect x="95" y="151" width="52" height="22" rx="4" style="fill:var(--color-primary);"/>
+          <polygon points="95,151 95,173 81,162" style="fill:var(--color-primary);"/>
+          <text x="121" y="166" text-anchor="middle" font-style="italic" font-size="12.5" style="fill:var(--color-primary-contrast); font-family:'Fraunces',serif;">um-</text>
+
+          <!-- nach (right) -->
+          <circle cx="150" cy="192" r="3" style="fill:var(--color-accent);"/>
+          <rect x="153" y="181" width="64" height="22" rx="4" style="fill:var(--color-primary);"/>
+          <polygon points="217,181 217,203 231,192" style="fill:var(--color-primary);"/>
+          <text x="185" y="196" text-anchor="middle" font-style="italic" font-size="12.5" style="fill:var(--color-primary-contrast); font-family:'Fraunces',serif;">nach-</text>
+
+          <!-- ent (left) -->
+          <circle cx="150" cy="222" r="3" style="fill:var(--color-accent);"/>
+          <rect x="90" y="211" width="57" height="22" rx="4" style="fill:var(--color-primary);"/>
+          <polygon points="90,211 90,233 76,222" style="fill:var(--color-primary);"/>
+          <text x="118" y="226" text-anchor="middle" font-style="italic" font-size="12.5" style="fill:var(--color-primary-contrast); font-family:'Fraunces',serif;">ent-</text>
+
+          <!-- durch (right) -->
+          <circle cx="150" cy="252" r="3" style="fill:var(--color-accent);"/>
+          <rect x="153" y="241" width="66" height="22" rx="4" style="fill:var(--color-primary);"/>
+          <polygon points="219,241 219,263 233,252" style="fill:var(--color-primary);"/>
+          <text x="186" y="256" text-anchor="middle" font-style="italic" font-size="12.5" style="fill:var(--color-primary-contrast); font-family:'Fraunces',serif;">durch-</text>
+
+          <!-- unter (left) -->
+          <circle cx="150" cy="282" r="3" style="fill:var(--color-accent);"/>
+          <rect x="83" y="271" width="64" height="22" rx="4" style="fill:var(--color-primary);"/>
+          <polygon points="83,271 83,293 69,282" style="fill:var(--color-primary);"/>
+          <text x="115" y="286" text-anchor="middle" font-style="italic" font-size="12.5" style="fill:var(--color-primary-contrast); font-family:'Fraunces',serif;">unter-</text>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       TABLE OF CONTENTS
+       ============================================================ -->
+  <nav class="lesson-toc" aria-label="محتويات الدرس">
+    <h2>محتويات الدرس</h2>
+    <ul class="toc-list" id="tocList">
+      <li><a href="#objectives" data-section="objectives"><span class="toc-num">1</span> أهداف الدرس</a></li>
+      <li><a href="#intro" data-section="intro"><span class="toc-num">2</span> مقدّمة</a></li>
+      <li><a href="#grundlagen" data-section="grundlagen"><span class="toc-num">3</span> الأساسيات النحوية</a></li>
+      <li><a href="#gehen-basis" data-section="gehen-basis"><span class="toc-num">4</span> gehen — الفعل الأساسي</a></li>
+      <li><a href="#familie" data-section="familie"><span class="toc-num">5</span> عائلة الأفعال</a></li>
+      <li><a href="#umgehen" data-section="umgehen"><span class="toc-num">6</span> umgehen — طريقان</a></li>
+      <li><a href="#aussprache" data-section="aussprache"><span class="toc-num">7</span> النطق والنبر</a></li>
+      <li><a href="#fehler" data-section="fehler"><span class="toc-num">8</span> أخطاء شائعة</a></li>
+      <li><a href="#wortschatz" data-section="wortschatz"><span class="toc-num">9</span> المفردات</a></li>
+      <li><a href="#uebungen" data-section="uebungen"><span class="toc-num">10</span> تمارين تفاعلية</a></li>
+      <li><a href="#quiz" data-section="quiz"><span class="toc-num">11</span> اختبار الدرس</a></li>
+      <li><a href="#zusammenfassung" data-section="zusammenfassung"><span class="toc-num">12</span> ملخّص</a></li>
+      <li><a href="#naechste" data-section="naechste"><span class="toc-num">13</span> الدرس القادم</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       1. LERNZIELE
+       ============================================================ -->
+  <section id="objectives" class="lesson-section" aria-labelledby="objectives-h">
+    <div class="section-head"><span class="section-num">01</span><h2 id="objectives-h">أهداف الدرس</h2></div>
+    <p class="section-lede">في نهاية هذا الدرس ستكون قادرًا على:</p>
+    <div class="objectives-grid">
+      <div class="objective-item"><span class="num">1</span><span>تصريف الفعل <span class="de">gehen</span> بثقة في أزمنة الحاضر والماضي والماضي التام.</span></div>
+      <div class="objective-item"><span class="num">2</span><span>التمييز بين الأفعال المنفصلة وغير المنفصلة (trennbar / untrennbar) ومعرفة موضع البادئة في الجملة.</span></div>
+      <div class="objective-item"><span class="num">3</span><span>تحديد الحالة الإعرابية الصحيحة (Akkusativ أو Dativ) لكل فعل من عائلة gehen.</span></div>
+      <div class="objective-item"><span class="num">4</span><span>فهم الفرق الدقيق بين <span class="de">umgehen</span> المنفصل و<span class="de">umgehen</span> غير المنفصل — نفس الكتابة، معنى مختلف تمامًا.</span></div>
+      <div class="objective-item"><span class="num">5</span><span>نطق هذه الأفعال بشكل صحيح، مع التمييز بين نبر البادئة المنفصلة ونبر الفعل الأساسي.</span></div>
+      <div class="objective-item"><span class="num">6</span><span>تجنّب الأخطاء الشائعة التي يقع فيها المتعلمون الناطقون بالعربية تحديدًا.</span></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2. EINFÜHRUNG
+       ============================================================ -->
+  <section id="intro" class="lesson-section" aria-labelledby="intro-h">
+    <div class="section-head"><span class="section-num">02</span><h2 id="intro-h">مقدّمة</h2></div>
+    <div class="card card-pad">
+      <p class="ar">الفعل <span class="de" style="font-family:var(--font-display); font-style:italic;">gehen</span> ("يذهب / يمشي") هو من أوائل الأفعال التي يتعلمها أي دارس للألمانية. لكن حين تضيف إليه بادئة صغيرة مثل <span class="de">vor-</span> أو <span class="de">um-</span> أو <span class="de">ent-</span>، يتحوّل المعنى كليًا — وأحيانًا تتغيّر معه الحالة الإعرابية التي يفرضها الفعل على ما بعده.</p>
+      <p class="ar">هذه الظاهرة تُسمّى <strong>الأفعال المركّبة بالبادئة (Präfixverben)</strong>، وهي من أكثر الجوانب تحديًا — وتشويقًا — في القواعد الألمانية، لأن البادئة الواحدة قد "تنفصل" عن الفعل وتنتقل إلى نهاية الجملة، بينما بادئة أخرى تبقى ملتصقة به دائمًا.</p>
+      <p class="ar">في هذا الدرس، سنبني "لافتة إرشادية" (Wegweiser) كاملة من الفعل <span class="de">gehen</span> نفسه، ونتتبّع ثماني بادئات تُغيّر اتجاهه ومعناه: <span class="de">vorgehen</span>، <span class="de">ausgehen</span>، <span class="de">angehen</span>، <span class="de">umgehen</span>، <span class="de">nachgehen</span>، <span class="de">entgehen</span>، <span class="de">durchgehen</span>، و<span class="de">untergehen</span>.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. GRUNDLAGEN
+       ============================================================ -->
+  <section id="grundlagen" class="lesson-section" aria-labelledby="grundlagen-h">
+    <div class="section-head"><span class="section-num">03</span><h2 id="grundlagen-h">الأساسيات النحوية: trennbar و untrennbar</h2></div>
+    <p class="section-lede">قبل أن نلتقي بعائلة gehen كاملةً، نحتاج إلى قاعدة واحدة أساسية تحكم كل شيء: هل تنفصل البادئة عن الفعل أم لا؟</p>
+
+    <div class="rule-box">
+      <div class="box-label">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        القاعدة
+      </div>
+      <p class="ar"><strong>الفعل المنفصل (trennbares Verb):</strong> البادئة تنفصل عن الفعل في الجملة الرئيسية وتذهب إلى <strong>نهاية الجملة</strong>. مثال: <span class="de" style="font-family:var(--font-display);font-style:italic;">aus·gehen</span> ← <span class="de" style="font-family:var(--font-display);font-style:italic;">Ich gehe heute aus.</span></p>
+      <p class="ar" style="margin-bottom:0;"><strong>الفعل غير المنفصل (untrennbares Verb):</strong> البادئة تبقى ملتصقة بالفعل دائمًا ولا تنتقل أبدًا. مثال: <span class="de" style="font-family:var(--font-display);font-style:italic;">ent·gehen</span> ← <span class="de" style="font-family:var(--font-display);font-style:italic;">Ich entgehe der Gefahr.</span></p>
+    </div>
+
+    <h3 class="ar" style="font-size:1.05rem; margin-top:28px;">إطار الجملة (Satzrahmen) — إلى أين تذهب البادئة؟</h3>
+    <p class="ar" style="color:var(--color-text-muted); font-size:.92rem; margin-bottom:14px;">في الفعل المضارع، يحتل الفعل المُصرَّف <strong>الموضع الثاني (Position 2)</strong> دائمًا، بينما تنتقل البادئة المنفصلة إلى <strong>نهاية الجملة</strong>:</p>
+    <div class="satzrahmen">
+      <div class="satzrahmen-row">
+        <div class="sr-slot"><span class="sr-word de">Ich</span><span class="sr-label">Vorfeld</span></div>
+        <div class="sr-slot pos2"><span class="sr-word de">gehe</span><span class="sr-label">Position 2</span></div>
+        <div class="sr-slot"><span class="sr-word de">heute Abend</span><span class="sr-label">Mittelfeld</span></div>
+        <div class="sr-slot ende"><span class="sr-word de">aus.</span><span class="sr-label">Satzende</span></div>
+      </div>
+    </div>
+    <p class="ar" style="color:var(--color-text-muted); font-size:.92rem; margin:14px 0;">وفي زمن الماضي التام (Perfekt)، ينطبق المبدأ نفسه — لكن هذه المرة على المشاركة الماضية (Partizip II) كاملةً:</p>
+    <div class="satzrahmen">
+      <div class="satzrahmen-row">
+        <div class="sr-slot"><span class="sr-word de">Ich</span><span class="sr-label">Vorfeld</span></div>
+        <div class="sr-slot pos2"><span class="sr-word de">bin</span><span class="sr-label">Position 2</span></div>
+        <div class="sr-slot"><span class="sr-word de">gestern</span><span class="sr-label">Mittelfeld</span></div>
+        <div class="sr-slot ende"><span class="sr-word de">ausgegangen.</span><span class="sr-label">Satzende</span></div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <div class="box-label">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 22 20H2L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9v5M12 17h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        تنبيه مهم
+      </div>
+      <p class="ar" style="margin-bottom:0;">في الفعل غير المنفصل، لا تُضاف <span class="de" style="font-family:var(--font-mono);">ge-</span> إلى المشاركة الماضية أبدًا: <span class="de" style="font-family:var(--font-display);font-style:italic;">entgangen</span> وليس <span class="de" style="font-family:var(--font-display);font-style:italic; text-decoration:line-through; opacity:.6;">geentgangen</span>.</p>
+    </div>
+
+    <h3 class="ar" style="font-size:1.05rem; margin-top:32px;">كيف تعرف إن كانت البادئة منفصلة؟ — استمع إلى النبر</h3>
+    <div class="tip-box">
+      <div class="box-label">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        نصيحة نطقية
+      </div>
+      <p class="ar">في الأفعال المنفصلة، يقع <strong>النبر (Wortakzent)</strong> على البادئة نفسها: <span class="de" style="font-family:var(--font-mono); font-weight:700;">ˈVORgehen</span>، <span class="de" style="font-family:var(--font-mono); font-weight:700;">ˈAUSgehen</span>. أما في الأفعال غير المنفصلة، فالنبر يقع على جذع الفعل: <span class="de" style="font-family:var(--font-mono); font-weight:700;">entGEHEN</span>. استخدم زر الاستماع 🔊 في هذا الدرس لتتدرّب على سماع الفرق.</p>
+      <p class="ar" style="margin-bottom:0; font-size:.85rem; color:var(--color-text-faint);">ملاحظة: الأصوات الإلكترونية في المتصفح لا تُبرز النبر بدقة متناهية دائمًا — فهي أداة تدريب مفيدة، لكنها لا تُغني عن الاستماع لمتحدثين أصليين.</p>
+    </div>
+
+    <div class="rule-box" style="margin-top:24px;">
+      <div class="box-label">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        تصنيف البادئات
+      </div>
+      <p class="ar">بعض البادئات <strong>منفصلة دائمًا</strong>، وبعضها <strong>غير منفصلة دائمًا</strong>، وفئة ثالثة "متغيّرة" تعتمد على النبر والمعنى:</p>
+      <div class="compare-wrap">
+        <table class="compare-table" style="min-width:auto;">
+          <thead><tr><th class="ar">منفصلة دائمًا</th><th class="ar">غير منفصلة دائمًا</th><th class="ar">متغيّرة (Wechselpräfixe)</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="de">vor-, aus-, an-, nach-</td>
+              <td class="de">ent-, be-, ver-, er-, ge-, emp-, zer-, miss-</td>
+              <td class="de">um-, durch-, über-, wieder-, unter-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="ar" style="margin:10px 0 0;">مثالنا الأشهر على البادئة "المتغيّرة" هو <span class="de" style="font-style:italic; font-family:var(--font-display);">umgehen</span> — سنراه بالتفصيل في القسم السادس.</p>
+    </div>
+
+    <h3 class="ar" style="font-size:1.05rem; margin-top:32px;">تذكير سريع بالحالات الإعرابية</h3>
+    <p class="ar" style="color:var(--color-text-muted); font-size:.92rem; margin-bottom:6px;">أفعال عائلة gehen التي سنتعلّمها تستخدم فقط حالتين: Akkusativ و Dativ. هذا تذكير بالأسئلة التي تحدد كل حالة:</p>
+    <div class="case-compass">
+      <div class="case-tile"><div class="cn de">Nominativ</div><div class="cq">Wer? Was?</div></div>
+      <div class="case-tile active-akk"><div class="cn de">Akkusativ</div><div class="cq">Wen? Was?</div></div>
+      <div class="case-tile active-dat"><div class="cn de">Dativ</div><div class="cq">Wem?</div></div>
+      <div class="case-tile muted"><div class="cn de">Genitiv</div><div class="cq">Wessen?</div></div>
+    </div>
+    <p class="ar" style="color:var(--color-text-faint); font-size:.85rem;">(الـ Genitiv غير مستخدم مع أفعال هذا الدرس — أضفناه فقط للمقارنة الكاملة بين الحالات الأربع.)</p>
+  </section>
+
+  <!-- ============================================================
+       4. GEHEN — DIE BASIS
+       ============================================================ -->
+  <section id="gehen-basis" class="lesson-section" aria-labelledby="gehen-basis-h">
+    <div class="section-head"><span class="section-num">04</span><h2 id="gehen-basis-h"><span class="de">gehen</span> — الفعل الأساسي</h2></div>
+    <p class="section-lede"><span class="de">gehen</span> فعل قوي (unregelmäßig) ويُصرَّف في الماضي التام بمساعدة <span class="de" style="font-style:italic;">sein</span> لأنه فعل حركة. هذا هو الأساس الذي سنبني عليه العائلة كاملة.</p>
+
+    <div class="card card-pad">
+      <div class="conj-table-wrap">
+        <table class="conj-table" aria-describedby="gehen-basis-h">
+          <caption>Konjugation von <span class="de">gehen</span></caption>
+          <thead>
+            <tr><th class="ar">الضمير</th><th class="de">Präsens</th><th class="de">Präteritum</th><th class="de">Perfekt</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="pron de">ich</td><td class="de">gehe</td><td class="de">ging</td><td class="de"><span class="perf-aux">bin</span> gegangen</td></tr>
+            <tr><td class="pron de">du</td><td class="de">gehst</td><td class="de">gingst</td><td class="de"><span class="perf-aux">bist</span> gegangen</td></tr>
+            <tr><td class="pron de">er/sie/es</td><td class="de">geht</td><td class="de">ging</td><td class="de"><span class="perf-aux">ist</span> gegangen</td></tr>
+            <tr><td class="pron de">wir</td><td class="de">gehen</td><td class="de">gingen</td><td class="de"><span class="perf-aux">sind</span> gegangen</td></tr>
+            <tr><td class="pron de">ihr</td><td class="de">geht</td><td class="de">gingt</td><td class="de"><span class="perf-aux">seid</span> gegangen</td></tr>
+            <tr><td class="pron de">sie/Sie</td><td class="de">gehen</td><td class="de">gingen</td><td class="de"><span class="perf-aux">sind</span> gegangen</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="verb-examples" style="padding:0; margin-top:18px;" data-examples-mount="gehen-basis-examples"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. DIE FAMILIE — PRÄFIX-VERBEN
+       ============================================================ -->
+  <section id="familie" class="lesson-section" aria-labelledby="familie-h">
+    <div class="section-head"><span class="section-num">05</span><h2 id="familie-h">عائلة الأفعال: بادئات gehen</h2></div>
+    <p class="section-lede">سبعة أفراد من عائلة gehen، كل واحد منهم يأخذ اتجاهًا ومعنى وحالة إعرابية مختلفة. اضغط على "عرض التصريف الكامل" داخل كل بطاقة لرؤية جميع الأزمنة مع الضمائر.</p>
+    <div class="verb-grid" id="verbFamilyGrid" data-render="verb-family"></div>
+  </section>
+
+  <!-- ============================================================
+       6. UMGEHEN — EIN VERB, ZWEI WEGE
+       ============================================================ -->
+  <section id="umgehen" class="lesson-section" aria-labelledby="umgehen-h">
+    <div class="section-head"><span class="section-num">06</span><h2 id="umgehen-h"><span class="de">umgehen</span> — فعل واحد، طريقان</h2></div>
+    <p class="section-lede">وهناك عضو خاص جدًا في العائلة: <span class="de" style="font-style:italic;">umgehen</span>. الكتابة نفسها، لكن حسب مكان النبر والانفصال، يأخذ الفعل معنىً وحالة إعرابية مختلفين تمامًا — مثال حي على البادئات "المتغيّرة" (Wechselpräfixe).</p>
+
+    <div class="two-path">
+      <div class="path-card a">
+        <h4 class="de">um·gehen <span style="font-size:.8em; opacity:.8;">(untrennbar)</span></h4>
+        <div class="stress de">/ʊmˈɡeːən/ — النبر على <strong>-GEH-</strong></div>
+        <span class="case-badge akk">Akkusativ · etwas umgehen</span>
+        <p class="ar" style="margin:12px 0 0; font-size:.92rem;">يتجنّب / يتحايل على شيء (قانون، لائحة، عقبة)</p>
+      </div>
+      <div class="path-card b">
+        <h4 class="de">UM·gehen <span style="font-size:.8em; opacity:.8;">(trennbar)</span></h4>
+        <div class="stress de">/ˈʊmɡeːən/ — النبر على <strong>UM-</strong></div>
+        <span class="case-badge dat">Dativ · mit jemandem/etwas umgehen</span>
+        <p class="ar" style="margin:12px 0 0; font-size:.92rem;">يتعامل مع شخص أو شيء بطريقة معيّنة</p>
+      </div>
+    </div>
+
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr><th class="ar" style="width:140px;"></th><th class="path-a ar">umgehen (يتجنّب)</th><th class="path-b ar">umgehen (يتعامل مع)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="label-col ar">الانفصال</td><td class="ar">غير منفصل (untrennbar)</td><td class="ar">منفصل (trennbar)</td></tr>
+          <tr><td class="label-col ar">الحالة</td><td><span class="case-badge akk">Akkusativ</span></td><td><span class="case-badge dat">Dativ (mit)</span></td></tr>
+          <tr><td class="label-col ar">Präsens (er)</td><td class="compare-de">er umgeht</td><td class="compare-de">er geht um</td></tr>
+          <tr><td class="label-col ar">Präteritum (er)</td><td class="compare-de">er umging</td><td class="compare-de">er ging um</td></tr>
+          <tr><td class="label-col ar">Perfekt (er)</td><td class="compare-de">er hat umgangen</td><td class="compare-de">er ist umgegangen</td></tr>
+          <tr><td class="label-col ar">مثال</td><td class="compare-de">Er umging die Frage.</td><td class="compare-de">Er ging klug mit der Frage um.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="verb-examples" data-examples-mount="umgehen-a-examples" style="margin-top:18px;">
+      <h3 class="ar" style="font-size:.92rem; color:var(--color-akk); margin-bottom:8px;">أمثلة — umgehen (Akkusativ · يتجنّب)</h3>
+    </div>
+    <div class="verb-examples" data-examples-mount="umgehen-b-examples" style="margin-top:10px;">
+      <h3 class="ar" style="font-size:.92rem; color:var(--color-dat); margin-bottom:8px;">أمثلة — umgehen (Dativ · يتعامل مع)</h3>
+    </div>
+
+    <details class="conj-toggle" style="margin:24px 0 0; padding:16px 0 0; border-top:1px solid var(--color-border);" id="umgehenConjDetails">
+      <summary>عرض التصريف الكامل لكلا الفعلين (Präsens • Präteritum • Perfekt)</summary>
+      <div id="umgehenConjMount"></div>
+    </details>
+  </section>
+
+  <!-- ============================================================
+       7. AUSSPRACHE & BETONUNG
+       ============================================================ -->
+  <section id="aussprache" class="lesson-section" aria-labelledby="aussprache-h">
+    <div class="section-head"><span class="section-num">07</span><h2 id="aussprache-h">النطق والنبر</h2></div>
+    <p class="section-lede">النطق الصحيح جزء أساسي من إتقان عائلة gehen — خصوصًا النبر الذي يحدّد إن كانت البادئة منفصلة. إليك أيضًا أصواتًا ألمانية شائعة يصعب على المتعلمين الناطقين بالعربية نطقها، مع كلمات من عالم "الطريق والاتجاه" حيثما أمكن.</p>
+
+    <div class="info-box">
+      <div class="box-label">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 17v.01M12 13.5a2 2 0 1 0-2-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>
+        لماذا يخطئ المتعلمون العرب هنا غالبًا؟
+      </div>
+      <p class="ar" style="margin-bottom:0;">العربية لا تحتوي على أصوات مثل <span class="de">ü</span> أو <span class="de">ö</span> أو حرف <span class="de">ch</span> الأمامي (ich-Laut)، لذلك يميل المتعلم إلى استبدالها بأقرب صوت عربي. التدريب المتكرر بالاستماع والتكرار هو الحل الأسرع.</p>
+    </div>
+
+    <div class="sound-grid" id="soundGrid" data-render="sounds"></div>
+  </section>
+
+  <!-- ============================================================
+       8. HÄUFIGE FEHLER
+       ============================================================ -->
+  <section id="fehler" class="lesson-section" aria-labelledby="fehler-h">
+    <div class="section-head"><span class="section-num">08</span><h2 id="fehler-h">أخطاء شائعة</h2></div>
+    <p class="section-lede">أخطاء متكررة تحديدًا لدى المتعلمين الناطقين بالعربية عند استخدام عائلة gehen — لأن العربية لا تعرف "انفصال الفعل" ولا تمييز haben/sein.</p>
+    <div id="mistakesMount" data-render="mistakes"></div>
+  </section>
+
+  <!-- ============================================================
+       9. WORTSCHATZ
+       ============================================================ -->
+  <section id="wortschatz" class="lesson-section" aria-labelledby="wortschatz-h">
+    <div class="section-head"><span class="section-num">09</span><h2 id="wortschatz-h">المفردات</h2></div>
+    <p class="section-lede">بطاقات مرجعية سريعة لكل أفعال العائلة. اضغط على البطاقة لقلبها ورؤية المعنى والحالة الإعرابية.</p>
+    <div class="vocab-grid" id="vocabGrid" data-render="vocab"></div>
+  </section>
+
+  <!-- ============================================================
+       10. ÜBUNGEN
+       ============================================================ -->
+  <section id="uebungen" class="lesson-section" aria-labelledby="uebungen-h">
+    <div class="section-head"><span class="section-num">10</span><h2 id="uebungen-h">تمارين تفاعلية</h2></div>
+    <p class="section-lede">ثلاثة أنواع من التمارين: إكمال الفراغ، ترتيب الجملة، والمطابقة.</p>
+
+    <div class="exercise-card">
+      <div class="exercise-head"><h3>١. أكمل الفراغ بالحالة الصحيحة</h3><span class="exercise-tag">Fill in the blank</span></div>
+      <div id="fillblankMount" data-render="fillblank"></div>
+    </div>
+
+    <div class="exercise-card">
+      <div class="exercise-head"><h3>٢. رتّب الكلمات لتكوين جملة صحيحة</h3><span class="exercise-tag">Sentence ordering</span></div>
+      <div id="orderMount" data-render="order"></div>
+    </div>
+
+    <div class="exercise-card">
+      <div class="exercise-head"><h3>٣. طابق كل فعل بحالته الإعرابية</h3><span class="exercise-tag">Matching</span></div>
+      <div id="matchMount" data-render="match"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       11. QUIZ
+       ============================================================ -->
+  <section id="quiz" class="lesson-section" aria-labelledby="quiz-h">
+    <div class="section-head"><span class="section-num">11</span><h2 id="quiz-h">اختبار الدرس</h2></div>
+    <p class="section-lede">ثماني أسئلة متنوّعة لتقييم فهمك الشامل للدرس. أجب عن جميع الأسئلة ثم اضغط "عرض النتيجة".</p>
+    <div class="card card-pad">
+      <div id="quizMount" data-render="quiz"></div>
+      <div style="text-align:center; margin-top:10px;">
+        <button class="btn btn-primary" id="quizSubmitBtn">عرض النتيجة</button>
+        <button class="btn btn-ghost" id="quizResetBtn" style="display:none;">إعادة المحاولة</button>
+      </div>
+      <div class="quiz-score" id="quizScore">
+        <div class="score-num" id="scoreNum">0/8</div>
+        <div class="score-label ar" id="scoreLabel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       12. ZUSAMMENFASSUNG
+       ============================================================ -->
+  <section id="zusammenfassung" class="lesson-section" aria-labelledby="zusammenfassung-h">
+    <div class="section-head"><span class="section-num">12</span><h2 id="zusammenfassung-h">ملخّص الدرس</h2></div>
+    <div class="summary-card">
+      <ul class="summary-list">
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ar"><span class="de" style="font-style:italic;">gehen</span> فعل قوي، يُصرَّف في الـ Perfekt بمساعدة <span class="de">sein</span>.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ar">البادئات <span class="de">vor-, aus-, an-, nach-</span> منفصلة دائمًا، و<span class="de">ent-</span> غير منفصلة دائمًا.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ar">البادئة <span class="de">um-</span> "متغيّرة": منفصلة مع Dativ (يتعامل مع)، وغير منفصلة مع Akkusativ (يتجنّب).</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ar"><span class="de">angehen</span> و<span class="de">durchgehen</span> يأخذان مفعولًا مباشرًا بالـ Akkusativ، ويُصرَّفان بـ <span class="de">haben</span>.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ar"><span class="de">nachgehen</span> و<span class="de">entgehen</span> يأخذان Dativ، ويُصرَّفان بـ <span class="de">sein</span>.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ar">البادئة المنفصلة تنتقل دائمًا إلى نهاية الجملة الرئيسية في المضارع، والمشاركة الماضية كاملةً تنتقل إلى النهاية في الـ Perfekt.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       13. NÄCHSTE LEKTION
+       ============================================================ -->
+  <section id="naechste" class="lesson-section" aria-labelledby="naechste-h" style="margin-bottom:20px;">
+    <div class="section-head"><span class="section-num">13</span><h2 id="naechste-h">الدرس القادم</h2></div>
+    <div class="next-card">
+      <div class="next-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="next-text">
+        <h3>الأفعال المنفصلة في الحياة اليومية: <span class="de" style="font-style:italic;">an-, auf-, ein-</span></h3>
+        <p>بعد أن أتقنت منطق الانفصال مع gehen، الخطوة التالية الطبيعية هي تطبيق المبدأ نفسه على أفعال يومية أخرى مثل <span class="de">anrufen</span> و<span class="de">aufstehen</span> و<span class="de">einkaufen</span> — وربطها بحروف الجر وحالاتها (Wechselpräpositionen).</p>
+      </div>
+    </div>
+  </section>
+
+</article>
+</main>
+
+<footer class="site-footer">
+  <p class="ar">Wegweiser Deutsch · محتوى تعليمي أصلي لدارسي اللغة الألمانية الناطقين بالعربية</p>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ============================================================
+   CONSTANTS & HELPERS
+   ============================================================ */
+var LS_PREFIX = 'wegweiser_gehen_v1_';
+var ICON_PLAY = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>';
+var ICON_PAUSE = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>';
+var CASE_LABEL = { akk:'Akkusativ', dat:'Dativ', none:'kein Objekt' };
+
+function $(sel, ctx){ return (ctx||document).querySelector(sel); }
+function $all(sel, ctx){ return Array.prototype.slice.call((ctx||document).querySelectorAll(sel)); }
+function shuffle(arr){
+  var a = arr.slice();
+  for(var i=a.length-1;i>0;i--){
+    var j = Math.floor(Math.random()*(i+1));
+    var tmp=a[i]; a[i]=a[j]; a[j]=tmp;
+  }
+  return a;
+}
+function escapeAttr(str){
+  return String(str).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function fallbackMessageHTML(msg){
+  return '<div class="fallback-msg"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 22 20H2L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9v5M12 17h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>'+msg+'</span></div>';
+}
+function caseBadgeHTML(type){
+  return '<span class="case-badge '+type+'">'+CASE_LABEL[type]+'</span>';
+}
+function audioBtnHTML(text, extraAttrs){
+  return '<button type="button" class="audio-btn" data-speak="'+escapeAttr(text)+'" aria-label="نطق الجملة الألمانية">'+ICON_PLAY+'</button>';
+}
+function exampleBlockHTML(ex){
+  return '<div class="example-block">'
+    + '<div class="example-de-row">'
+    + audioBtnHTML(ex.de)
+    + '<span class="example-de de">'+ex.de+'</span>'
+    + '</div>'
+    + '<span class="example-ar ar">'+ex.ar+'</span>'
+    + '</div>';
+}
+function renderExamplesInto(key, examples){
+  var el = document.querySelector('[data-examples-mount="'+key+'"]');
+  if(!el) return;
+  el.insertAdjacentHTML('beforeend', examples.map(exampleBlockHTML).join(''));
+}
+
+/* small direction icon set for verb-family cards */
+var ICONS = {
+  vor: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  aus: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="6" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M14 12h7M17 9l4 3-4 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  an: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="17" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  nach: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12h3M8 12h3M14 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M18 8l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  ent: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19 17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  durch: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4v16M17 4v16" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h18M15 8l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  unter: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v11M8 12l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  um: '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 1 1 2.5 5.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4 16v-4h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+};
+
+var PRON = ['ich','du','er/sie/es','wir','ihr','sie/Sie'];
+
+function conjTableHTML(conj, captionText){
+  var rows = PRON.map(function(p,i){
+    var parts = conj.perfekt.forms[i].split(' ');
+    var perfHTML = '<span class="perf-aux">'+parts[0]+'</span> '+parts.slice(1).join(' ');
+    return '<tr><td class="pron de">'+p+'</td><td class="de">'+conj.praesens[i]+'</td><td class="de">'+conj.praeteritum[i]+'</td><td class="de">'+perfHTML+'</td></tr>';
+  }).join('');
+  return '<div class="conj-table-wrap"><table class="conj-table"><caption>Konjugation von <span class="de" style="font-style:italic;">'+captionText+'</span></caption>'
+    + '<thead><tr><th class="ar">الضمير</th><th class="de">Präsens</th><th class="de">Präteritum</th><th class="de">Perfekt</th></tr></thead>'
+    + '<tbody>'+rows+'</tbody></table></div>';
+}
+
+/* ============================================================
+   LESSON DATA
+   ============================================================ */
+var GEHEN_EXAMPLES = [
+  {de:'Ich gehe jeden Tag zur Schule.', ar:'أذهب إلى المدرسة كل يوم.'},
+  {de:'Wohin gehst du heute Abend?', ar:'إلى أين تذهب هذا المساء؟'}
+];
+
+var VERB_FAMILY = [
+  {
+    id:'vorgehen', prefix:'vor', sep:true, icon:'vor', caseType:'none',
+    pattern:'kein festes Objekt · optional: gegen + Akkusativ',
+    meaning:'يتصرّف / يتقدّم بحزم؛ (عن ساعة) تكون متقدّمة',
+    note:'أيضًا تُستخدم لوصف ساعة "متقدّمة" (vorgehen) — عكس nachgehen تمامًا.',
+    examples:[
+      {de:'Die Polizei geht hart gegen den Diebstahl vor.', ar:'تتصرف الشرطة بحزم ضد السرقة.'},
+      {de:'Meine Uhr geht immer ein bisschen vor.', ar:'ساعتي دائمًا متقدمة قليلًا.'}
+    ],
+    conj:{
+      praesens:['gehe vor','gehst vor','geht vor','gehen vor','geht vor','gehen vor'],
+      praeteritum:['ging vor','gingst vor','ging vor','gingen vor','gingt vor','gingen vor'],
+      perfekt:{ aux:'sein', forms:['bin vorgegangen','bist vorgegangen','ist vorgegangen','sind vorgegangen','seid vorgegangen','sind vorgegangen'] }
+    }
+  },
+  {
+    id:'ausgehen', prefix:'aus', sep:true, icon:'aus', caseType:'dat',
+    pattern:'von + Dativ (annehmen) · sonst kein Objekt',
+    meaning:'يخرج (اجتماعيًا)؛ mit "von": ينطلق من افتراض',
+    note:'في الحياة اليومية بلا مفعول: "Wir gehen aus" = سنخرج. مع "von" + Dativ تعني: ينطلق من افتراض.',
+    examples:[
+      {de:'Am Freitag gehen wir mit Freunden aus.', ar:'يوم الجمعة سنخرج مع الأصدقاء.'},
+      {de:'Der Lehrer geht von unseren Vorkenntnissen aus.', ar:'ينطلق المعلم من معارفنا السابقة.'}
+    ],
+    conj:{
+      praesens:['gehe aus','gehst aus','geht aus','gehen aus','geht aus','gehen aus'],
+      praeteritum:['ging aus','gingst aus','ging aus','gingen aus','gingt aus','gingen aus'],
+      perfekt:{ aux:'sein', forms:['bin ausgegangen','bist ausgegangen','ist ausgegangen','sind ausgegangen','seid ausgegangen','sind ausgegangen'] }
+    }
+  },
+  {
+    id:'angehen', prefix:'an', sep:true, icon:'an', caseType:'akk',
+    pattern:'+ Akkusativ (مفعول مباشر بلا حرف جر)',
+    meaning:'يعالج / يتصدّى لمشكلة؛ يخصّ شخصًا',
+    note:'"Das geht dich nichts an" تعبير شائع يعني: هذا لا يخصّك.',
+    examples:[
+      {de:'Wir müssen das Problem sofort angehen.', ar:'يجب أن نتعامل مع المشكلة فورًا.'},
+      {de:'Diese Entscheidung geht nur mich an.', ar:'هذا القرار يخصّني أنا فقط.'}
+    ],
+    conj:{
+      praesens:['gehe an','gehst an','geht an','gehen an','geht an','gehen an'],
+      praeteritum:['ging an','gingst an','ging an','gingen an','gingt an','gingen an'],
+      perfekt:{ aux:'haben', forms:['habe angegangen','hast angegangen','hat angegangen','haben angegangen','habt angegangen','haben angegangen'] }
+    }
+  },
+  {
+    id:'nachgehen', prefix:'nach', sep:true, icon:'nach', caseType:'dat',
+    pattern:'+ Dativ (مفعول مباشر بلا حرف جر)',
+    meaning:'يتابع / يلاحق أثرًا؛ (عن ساعة) تكون متأخّرة',
+    note:'تُستخدم أيضًا لوصف ساعة "متأخرة" — عكس vorgehen تمامًا.',
+    examples:[
+      {de:'Die Polizei geht jedem Hinweis nach.', ar:'تتابع الشرطة كل بلاغ.'},
+      {de:'Meine Uhr geht ein bisschen nach.', ar:'ساعتي متأخرة قليلًا.'}
+    ],
+    conj:{
+      praesens:['gehe nach','gehst nach','geht nach','gehen nach','geht nach','gehen nach'],
+      praeteritum:['ging nach','gingst nach','ging nach','gingen nach','gingt nach','gingen nach'],
+      perfekt:{ aux:'sein', forms:['bin nachgegangen','bist nachgegangen','ist nachgegangen','sind nachgegangen','seid nachgegangen','sind nachgegangen'] }
+    }
+  },
+  {
+    id:'entgehen', prefix:'ent', sep:false, icon:'ent', caseType:'dat',
+    pattern:'+ Dativ (مفعول مباشر بلا حرف جر)',
+    meaning:'يفوت / يفلت من انتباه أو عقوبة',
+    note:'غالبًا مع "mir/dir/ihm...": "Das entgeht mir nicht" = لن يفوتني هذا.',
+    examples:[
+      {de:'Dieser Fehler ist mir völlig entgangen.', ar:'لم ألاحظ هذا الخطأ إطلاقًا.'},
+      {de:'Du wirst dieser Strafe nicht entgehen.', ar:'لن تفلت من هذه العقوبة.'}
+    ],
+    conj:{
+      praesens:['entgehe','entgehst','entgeht','entgehen','entgeht','entgehen'],
+      praeteritum:['entging','entgingst','entging','entgingen','entgingt','entgingen'],
+      perfekt:{ aux:'sein', forms:['bin entgangen','bist entgangen','ist entgangen','sind entgangen','seid entgangen','sind entgangen'] }
+    }
+  },
+  {
+    id:'durchgehen', prefix:'durch', sep:true, icon:'durch', caseType:'akk',
+    pattern:'+ Akkusativ (مفعول مباشر بلا حرف جر)',
+    meaning:'يراجع / يمرّ عبر شيء بالتفصيل',
+    note:'لها أيضًا معنى "يُقبَل / يمرّ" بلا مفعول: "Das geht durch." = هذا مقبول.',
+    examples:[
+      {de:'Können wir die Hausaufgaben zusammen durchgehen?', ar:'هل يمكننا مراجعة الواجب معًا؟'},
+      {de:'Der Lehrer geht die Fehler noch einmal durch.', ar:'يراجع المعلم الأخطاء مرة أخرى.'}
+    ],
+    conj:{
+      praesens:['gehe durch','gehst durch','geht durch','gehen durch','geht durch','gehen durch'],
+      praeteritum:['ging durch','gingst durch','ging durch','gingen durch','gingt durch','gingen durch'],
+      perfekt:{ aux:'haben', forms:['habe durchgegangen','hast durchgegangen','hat durchgegangen','haben durchgegangen','habt durchgegangen','haben durchgegangen'] }
+    }
+  },
+  {
+    id:'untergehen', prefix:'unter', sep:true, icon:'unter', caseType:'none',
+    pattern:'kein Objekt (intransitiv)',
+    meaning:'يغرب (الشمس)؛ يغرق؛ ينهار / يندثر',
+    note:'تُستخدم مجازيًا أيضًا لحضارة أو دولة "تنهار وتندثر".',
+    examples:[
+      {de:'Die Sonne geht um sieben Uhr unter.', ar:'تغرب الشمس في الساعة السابعة.'},
+      {de:'Das Schiff ist in der Nacht untergegangen.', ar:'غرقت السفينة في الليل.'}
+    ],
+    conj:{
+      praesens:['gehe unter','gehst unter','geht unter','gehen unter','geht unter','gehen unter'],
+      praeteritum:['ging unter','gingst unter','ging unter','gingen unter','gingt unter','gingen unter'],
+      perfekt:{ aux:'sein', forms:['bin untergegangen','bist untergegangen','ist untergegangen','sind untergegangen','seid untergegangen','sind untergegangen'] }
+    }
+  }
+];
+
+var UMGEHEN_A = { // untrennbar, Akkusativ, vermeiden
+  examples:[
+    {de:'Der Fahrer versuchte, den Stau zu umgehen.', ar:'حاول السائق تجنّب الازدحام المروري.'},
+    {de:'Man darf die Vorschriften nicht umgehen.', ar:'لا يجوز التحايل على اللوائح.'}
+  ],
+  conj:{
+    praesens:['umgehe','umgehst','umgeht','umgehen','umgeht','umgehen'],
+    praeteritum:['umging','umgingst','umging','umgingen','umgingt','umgingen'],
+    perfekt:{ aux:'haben', forms:['habe umgangen','hast umgangen','hat umgangen','haben umgangen','habt umgangen','haben umgangen'] }
+  }
+};
+var UMGEHEN_B = { // trennbar, Dativ, behandeln
+  examples:[
+    {de:'Er geht sehr geduldig mit den Kindern um.', ar:'يتعامل مع الأطفال بصبر كبير.'},
+    {de:'Wie gehst du mit Stress um?', ar:'كيف تتعامل مع التوتر؟'}
+  ],
+  conj:{
+    praesens:['gehe um','gehst um','geht um','gehen um','geht um','gehen um'],
+    praeteritum:['ging um','gingst um','ging um','gingen um','gingt um','gingen um'],
+    perfekt:{ aux:'sein', forms:['bin umgegangen','bist umgegangen','ist umgegangen','sind umgegangen','seid umgegangen','sind umgegangen'] }
+  }
+};
+
+var SOUNDS = [
+  {letter:'ä', ipa:'/ɛ, ɛː/', word:'spät'},
+  {letter:'ö', ipa:'/øː/', word:'hören'},
+  {letter:'ü', ipa:'/yː/', word:'früh'},
+  {letter:'ß', ipa:'/s/', word:'Straße'},
+  {letter:'ch', ipa:'/x/', word:'durch'},
+  {letter:'ch', ipa:'/ç/', word:'ich'},
+  {letter:'sch', ipa:'/ʃ/', word:'Tasche'},
+  {letter:'sp', ipa:'/ʃp/', word:'sprechen'},
+  {letter:'st', ipa:'/ʃt/', word:'Stau'},
+  {letter:'r', ipa:'/ʁ/', word:'Richtung'},
+  {letter:'z', ipa:'/ts/', word:'zurück'},
+  {letter:'w', ipa:'/v/', word:'Weg'},
+  {letter:'v', ipa:'/f/', word:'vorgehen'},
+  {letter:'j', ipa:'/j/', word:'jeder'},
+  {letter:'ei', ipa:'/aɪ̯/', word:'weit'},
+  {letter:'ie', ipa:'/iː/', word:'wieder'},
+  {letter:'eu', ipa:'/ɔʏ̯/', word:'heute'},
+  {letter:'äu', ipa:'/ɔʏ̯/', word:'läuft'}
+];
+
+var MISTAKES = [
+  { wrong:'Ich vorgehe schnell.', right:'Ich gehe schnell vor.', why:'بادئة "vor-" منفصلة، فتنتقل دائمًا إلى نهاية الجملة الرئيسية — لا يمكن أن تبقى ملتصقة بالفعل في المضارع.' },
+  { wrong:'Er geht mit die Kritik um.', right:'Er geht mit der Kritik um.', why:'حرف الجر "mit" يفرض دائمًا حالة Dativ، بغض النظر عن الفعل المستخدم.' },
+  { wrong:'Das ist mir geentgangen.', right:'Das ist mir entgangen.', why:'البادئات غير المنفصلة (مثل ent-) لا تأخذ "ge-" أبدًا في صيغة المشاركة الماضية.' },
+  { wrong:'Er ist mit den Kindern geduldig umgangen.', right:'Er ist mit den Kindern geduldig umgegangen.', why:'الفعل المنفصل umgehen (يتعامل مع + Dativ) يُصرَّف "umgegangen" — أما "umgangen" فخاصة بالفعل غير المنفصل (يتجنّب + Akkusativ) فقط.' },
+  { wrong:'Ich habe ausgegangen.', right:'Ich bin ausgegangen.', why:'أفعال الحركة المشتقة من gehen تُصرَّف دائمًا بـ sein في الـ Perfekt، وليس haben — رغم أن العربية لا تُميّز بين الحالتين.' },
+  { wrong:'..., weil er ausgeht heute Abend.', right:'..., weil er heute Abend ausgeht.', why:'في الجملة الثانوية بعد "weil"، يعود الفعل المنفصل إلى صيغته الكاملة (ausgeht) وينتقل إلى نهاية الجملة تمامًا.' }
+];
+
+var VOCAB = [
+  { word:'gehen', hint:'Basis', meaning:'يذهب / يمشي', example:'Ich gehe zur Arbeit.' },
+  { word:'vorgehen', hint:'trennbar · kein Objekt', meaning:'يتصرّف / يتقدّم', example:'Wie sollen wir vorgehen?' },
+  { word:'ausgehen', hint:'trennbar · Dativ (von)', meaning:'يخرج / ينطلق من افتراض', example:'Wir gehen heute Abend aus.' },
+  { word:'angehen', hint:'trennbar · Akkusativ', meaning:'يعالج / يخصّ', example:'Das geht mich an.' },
+  { word:'umgehen', hint:'trennbar/untr. · Dat/Akk', meaning:'يتعامل مع / يتجنّب', example:'Wie gehst du damit um?' },
+  { word:'nachgehen', hint:'trennbar · Dativ', meaning:'يتابع / يلاحق', example:'Er geht seinem Hobby nach.' },
+  { word:'entgehen', hint:'untrennbar · Dativ', meaning:'يفوت / يفلت من', example:'Nichts entgeht ihr.' },
+  { word:'durchgehen', hint:'trennbar · Akkusativ', meaning:'يراجع / يمرّ عبر', example:'Wir gehen den Plan durch.' },
+  { word:'untergehen', hint:'trennbar · kein Objekt', meaning:'يغرب / يغرق', example:'Die Sonne geht unter.' }
+];
+
+var FILLBLANK = [
+  { sentence:'Er geht mit ___ sehr ruhig um.', options:['der Situation','die Situation'], correct:'der Situation', explain:'"mit" يفرض دائمًا Dativ، لذلك: der Situation (Dativ مؤنث).' },
+  { sentence:'Wir müssen ___ endlich angehen.', options:['das Problem','dem Problem'], correct:'das Problem', explain:'"angehen" + Akkusativ مباشر بلا حرف جر: das Problem.' },
+  { sentence:'Die Polizei geht ___ nach.', options:['jeder Spur','jede Spur'], correct:'jeder Spur', explain:'"nachgehen" + Dativ: jeder Spur (Dativ مؤنث).' },
+  { sentence:'Ich konnte ___ leider nicht umgehen.', options:['die Kontrolle','der Kontrolle'], correct:'die Kontrolle', explain:'umgehen غير المنفصل (يتجنّب) + Akkusativ: die Kontrolle.' },
+  { sentence:'Dieser Termin ist ___ völlig entgangen.', options:['mir','mich'], correct:'mir', explain:'"entgehen" + Dativ: mir (وليس mich).' },
+  { sentence:'Der Lehrer geht ___ noch einmal mit der Klasse durch.', options:['die Übung','der Übung'], correct:'die Übung', explain:'"durchgehen" + Akkusativ مباشر: die Übung.' }
+];
+
+var ORDER = [
+  { words:['Am','Freitag','gehen','wir','aus.'], ar:'يوم الجمعة سنخرج.' },
+  { words:['Die','Polizei','geht','entschlossen','vor.'], ar:'تتصرف الشرطة بحزم.' },
+  { words:['Die','Sonne','geht','um','sieben','Uhr','unter.'], ar:'تغرب الشمس في الساعة السابعة.' },
+  { words:['Wir','gehen','den','Text','gemeinsam','durch.'], ar:'نراجع النص معًا.' }
+];
+
+var MATCH = [
+  { verb:'vorgehen', case:'none' },
+  { verb:'untergehen', case:'none' },
+  { verb:'ausgehen', case:'dat' },
+  { verb:'nachgehen', case:'dat' },
+  { verb:'entgehen', case:'dat' },
+  { verb:'angehen', case:'akk' },
+  { verb:'durchgehen', case:'akk' },
+  { verb:'umgehen (vermeiden)', case:'akk' },
+  { verb:'umgehen (behandeln)', case:'dat' }
+];
+
+var QUIZ = [
+  { prompt:'أي حالة صحيحة هنا؟ <span class="de" style="font-family:var(--font-display);font-style:italic;">Ich gehe von ___ aus.</span> (deine Idee)',
+    options:['<span class="de">deine Idee</span>','<span class="de">deiner Idee</span>','<span class="de">deinen Idee</span>'], correct:1,
+    explain:'"ausgehen von" + Dativ. "Idee" مؤنثة، فتصبح: deiner Idee.' },
+  { prompt:'صواب أم خطأ؟ الفعل <span class="de" style="font-style:italic;">entgehen</span> منفصل (trennbar).',
+    options:['صواب','خطأ'], correct:1,
+    explain:'entgehen غير منفصل دائمًا؛ لا تنفصل عنه "ent-" أبدًا، ولا تُضاف "ge-" في المشاركة الماضية: entgangen.' },
+  { prompt:'اختر الصيغة الصحيحة للـ Perfekt: <span class="de" style="font-family:var(--font-display);font-style:italic;">Wir ___ am Samstag ausgegangen.</span>',
+    options:['<span class="de">haben</span>','<span class="de">sind</span>'], correct:1,
+    explain:'"ausgehen" فعل حركة مشتق من gehen، يُصرَّف دائمًا بـ sein في الـ Perfekt.' },
+  { prompt:'ماذا يعني <span class="de" style="font-family:var(--font-display);font-style:italic;">die Vorschriften umgehen</span>؟',
+    options:['الالتزام باللوائح','تجنّب اللوائح والتحايل عليها','شرح اللوائح للآخرين'], correct:1,
+    explain:'umgehen غير المنفصل (+ Akkusativ) يعني: تجنّب شيء أو التحايل عليه.' },
+  { prompt:'ما الصيغة الصحيحة؟ الجملة الخاطئة: <span class="de" style="font-family:var(--font-display);font-style:italic;">Ich vorgehe langsam.</span>',
+    options:['<span class="de">Ich gehe langsam vor.</span>','<span class="de">Ich vor gehe langsam.</span>','<span class="de">Langsam ich gehe vor.</span>'], correct:0,
+    explain:'البادئة المنفصلة "vor-" تنتقل إلى نهاية الجملة الرئيسية: Ich gehe langsam vor.' },
+  { prompt:'أي حالة تناسب هنا؟ <span class="de" style="font-family:var(--font-display);font-style:italic;">Wir gehen ___ durch.</span> (die Liste)',
+    options:['<span class="de">die Liste</span>','<span class="de">der Liste</span>','<span class="de">dem Liste</span>'], correct:0,
+    explain:'"durchgehen" + Akkusativ مباشر: die Liste.' },
+  { prompt:'صواب أم خطأ؟ البادئة <span class="de">unter-</span> في <span class="de">untergehen</span> غير منفصلة دائمًا في كل الأفعال الألمانية.',
+    options:['صواب','خطأ'], correct:1,
+    explain:'في untergehen تحديدًا، البادئة unter- منفصلة (Die Sonne geht unter). لكنها غير منفصلة مع أفعال أخرى مثل unterschreiben — فهي بادئة "متغيّرة".' },
+  { prompt:'استمع للجملة ثم اختر الفعل الذي سمعته:', audio:'Die Sonne geht unter.',
+    options:['<span class="de">aufgehen</span>','<span class="de">untergehen</span>','<span class="de">ausgehen</span>'], correct:1,
+    explain:'الجملة كانت: "Die Sonne geht unter." (تغرب الشمس).' }
+];
+
+/* ============================================================
+   RENDER FUNCTIONS — verb family, umgehen, sounds, mistakes, vocab
+   ============================================================ */
+function verbCardHTML(v){
+  var infinitiveRest = v.id.slice(v.prefix.length);
+  return '<article class="verb-card">'
+    + '<div class="verb-card-head">'
+    +   '<div class="verb-icon">'+(ICONS[v.icon]||'')+'</div>'
+    +   '<div class="verb-title">'
+    +     '<div class="infinitive de"><span class="prefix">'+v.prefix+'</span>'+infinitiveRest+'</div>'
+    +     '<div class="verb-badges"><span class="sep-badge">'+(v.sep?'trennbar':'untrennbar')+'</span>'+caseBadgeHTML(v.caseType)+'</div>'
+    +   '</div>'
+    + '</div>'
+    + '<div class="verb-meaning ar">'+v.meaning+'</div>'
+    + '<div class="verb-pattern de">'+v.pattern+'</div>'
+    + '<div class="verb-examples">'+v.examples.map(exampleBlockHTML).join('')+'</div>'
+    + (v.note ? '<div class="verb-note ar">'+v.note+'</div>' : '')
+    + '<details class="conj-toggle"><summary>عرض التصريف الكامل (Präsens • Präteritum • Perfekt)</summary>'+conjTableHTML(v.conj, v.id)+'</details>'
+    + '</article>';
+}
+function renderVerbFamily(){
+  var el = document.getElementById('verbFamilyGrid');
+  if(el) el.innerHTML = VERB_FAMILY.map(verbCardHTML).join('');
+}
+function renderUmgehenSection(){
+  renderExamplesInto('umgehen-a-examples', UMGEHEN_A.examples);
+  renderExamplesInto('umgehen-b-examples', UMGEHEN_B.examples);
+  var mount = document.getElementById('umgehenConjMount');
+  if(mount){
+    mount.innerHTML = conjTableHTML(UMGEHEN_A.conj, 'umgehen (vermeiden) · untrennbar')
+      + '<div style="height:18px;"></div>'
+      + conjTableHTML(UMGEHEN_B.conj, 'umgehen (behandeln) · trennbar');
+  }
+}
+function renderSounds(){
+  var el = document.getElementById('soundGrid');
+  if(!el) return;
+  el.innerHTML = SOUNDS.map(function(s){
+    return '<div class="sound-chip">'
+      + '<button type="button" class="audio-btn" style="margin:0 auto 8px;" data-speak="'+escapeAttr(s.word)+'" aria-label="نطق: '+s.word+'">'+ICON_PLAY+'</button>'
+      + '<div class="sg-letter de">'+s.letter+'</div>'
+      + '<div class="sg-ipa">'+s.ipa+'</div>'
+      + '<div class="de" style="font-size:.8rem; color:var(--color-text-muted); margin-top:4px;">'+s.word+'</div>'
+      + '</div>';
+  }).join('');
+}
+function renderMistakes(){
+  var el = document.getElementById('mistakesMount');
+  if(!el) return;
+  el.innerHTML = MISTAKES.map(function(m){
+    return '<div class="mistake-card">'
+      + '<div class="mistake-row wrong"><span class="mark">✕</span><span class="de">'+m.wrong+'</span></div>'
+      + '<div class="mistake-row right"><span class="mark">✓</span><span class="de">'+m.right+'</span></div>'
+      + '<div class="mistake-why ar"><strong>لماذا؟</strong> '+m.why+'</div>'
+      + '</div>';
+  }).join('');
+}
+function renderVocab(){
+  var el = document.getElementById('vocabGrid');
+  if(!el) return;
+  el.innerHTML = VOCAB.map(function(item){
+    return '<div class="flip-card" tabindex="0" role="button" aria-label="بطاقة مفردات: '+item.word+'، اضغط للقلب">'
+      + '<div class="flip-card-inner">'
+      +   '<div class="flip-face front"><div class="fc-word de">'+item.word+'</div><div class="fc-hint">'+item.hint+'</div></div>'
+      +   '<div class="flip-face back"><div class="fc-meaning ar">'+item.meaning+'</div><div class="fc-example de" style="font-family:var(--font-display); font-style:italic; font-size:.82rem;">'+item.example+'</div></div>'
+      + '</div></div>';
+  }).join('');
+}
+
+/* ============================================================
+   EXERCISE 1 — FILL IN THE BLANK
+   ============================================================ */
+function renderFillblank(){
+  var el = document.getElementById('fillblankMount');
+  if(!el) return;
+  el.innerHTML = FILLBLANK.map(function(item,i){
+    var shuffled = shuffle(item.options);
+    var opts = shuffled.map(function(opt){
+      return '<button type="button" class="opt-btn de" data-fb="'+i+'" data-val="'+escapeAttr(opt)+'">'+opt+'</button>';
+    }).join('');
+    var sentence = item.sentence.replace('___','<span class="gap-marker">…</span>');
+    return '<div class="fillblank-item" data-fb-item="'+i+'">'
+      + '<div class="fillblank-sentence de">'+sentence+'</div>'
+      + '<div class="option-row">'+opts+'</div>'
+      + '<div class="item-feedback" id="fbFeedback'+i+'"></div>'
+      + '</div>';
+  }).join('');
+}
+document.addEventListener('click', function(e){
+  var b = e.target.closest('.opt-btn[data-fb]');
+  if(!b) return;
+  var i = parseInt(b.getAttribute('data-fb'),10);
+  var item = FILLBLANK[i];
+  var container = document.querySelector('[data-fb-item="'+i+'"]');
+  if(!container || container.getAttribute('data-answered')) return;
+  container.setAttribute('data-answered','1');
+  var val = b.getAttribute('data-val');
+  $all('.opt-btn', container).forEach(function(o){
+    o.disabled = true;
+    if(o.getAttribute('data-val') === item.correct) o.classList.add('correct');
+    else if(o === b) o.classList.add('incorrect');
+  });
+  var fb = document.getElementById('fbFeedback'+i);
+  var isRight = (val === item.correct);
+  fb.className = 'item-feedback show '+(isRight?'ok':'bad');
+  fb.innerHTML = (isRight ? '✓ صحيح! ' : '✕ ليست هذه الإجابة الصحيحة. ') + item.explain;
+  maybeMarkExercisesDone();
+});
+
+/* ============================================================
+   EXERCISE 2 — SENTENCE ORDERING
+   ============================================================ */
+var orderPlaced = {};
+function renderOrder(){
+  var el = document.getElementById('orderMount');
+  if(!el) return;
+  ORDER.forEach(function(item){ item._shuffled = shuffle(item.words.map(function(_,wi){return wi;})); });
+  el.innerHTML = ORDER.map(function(item,i){
+    return '<div class="order-item" data-order-item="'+i+'">'
+      + '<div class="order-bank" id="orderBank'+i+'"></div>'
+      + '<div class="order-answer" id="orderAnswer'+i+'"></div>'
+      + '<div class="order-controls">'
+      +   '<button type="button" class="btn btn-sm btn-outline" data-order-reset="'+i+'">إعادة</button>'
+      +   '<button type="button" class="btn btn-sm btn-primary" data-order-check="'+i+'">تحقّق</button>'
+      + '</div>'
+      + '<div class="item-feedback" id="orderFeedback'+i+'"></div>'
+      + '</div>';
+  }).join('');
+  ORDER.forEach(function(_,i){ refreshOrderItem(i); });
+}
+function refreshOrderItem(i){
+  var item = ORDER[i];
+  var placed = orderPlaced[i] || (orderPlaced[i] = []);
+  var bankIdx = item._shuffled.filter(function(wi){ return placed.indexOf(wi) === -1; });
+  var bankEl = document.getElementById('orderBank'+i);
+  var ansEl = document.getElementById('orderAnswer'+i);
+  if(!bankEl || !ansEl) return;
+  bankEl.innerHTML = bankIdx.map(function(wi){
+    return '<button type="button" class="word-chip de" data-order-pick="'+i+':'+wi+'">'+item.words[wi]+'</button>';
+  }).join('');
+  ansEl.innerHTML = placed.length
+    ? placed.map(function(wi){ return '<button type="button" class="word-chip in-answer de" data-order-unpick="'+i+':'+wi+'">'+item.words[wi]+'</button>'; }).join('')
+    : '<span class="ar" style="color:var(--color-text-faint); font-size:.85rem;">اضغط على الكلمات بالأسفل بالترتيب الصحيح…</span>';
+}
+document.addEventListener('click', function(e){
+  var t = e.target.closest('[data-order-pick]');
+  if(t){
+    var parts = t.getAttribute('data-order-pick').split(':');
+    var i = parseInt(parts[0],10), wi = parseInt(parts[1],10);
+    (orderPlaced[i] = orderPlaced[i] || []).push(wi);
+    refreshOrderItem(i);
+    return;
+  }
+  t = e.target.closest('[data-order-unpick]');
+  if(t){
+    var parts2 = t.getAttribute('data-order-unpick').split(':');
+    var i2 = parseInt(parts2[0],10), wi2 = parseInt(parts2[1],10);
+    var arr = orderPlaced[i2] || [];
+    var pos = arr.indexOf(wi2);
+    if(pos > -1) arr.splice(pos,1);
+    refreshOrderItem(i2);
+    return;
+  }
+  t = e.target.closest('[data-order-reset]');
+  if(t){
+    var i3 = parseInt(t.getAttribute('data-order-reset'),10);
+    orderPlaced[i3] = [];
+    refreshOrderItem(i3);
+    var fbr = document.getElementById('orderFeedback'+i3);
+    fbr.className = 'item-feedback'; fbr.innerHTML = '';
+    return;
+  }
+  t = e.target.closest('[data-order-check]');
+  if(t){
+    var i4 = parseInt(t.getAttribute('data-order-check'),10);
+    var item = ORDER[i4];
+    var placed = orderPlaced[i4] || [];
+    var correctSeq = item.words.map(function(_,wi){ return wi; });
+    var isRight = placed.length === correctSeq.length && placed.every(function(v,idx){ return v === correctSeq[idx]; });
+    var fb = document.getElementById('orderFeedback'+i4);
+    if(isRight){
+      fb.className = 'item-feedback show ok';
+      fb.innerHTML = '✓ صحيح! <span class="de" style="font-style:italic; font-family:var(--font-display);">'+item.words.join(' ')+'</span> — '+item.ar;
+    } else {
+      fb.className = 'item-feedback show bad';
+      fb.innerHTML = '✕ ليس بعد الترتيب الصحيح. الجملة الصحيحة: <span class="de" style="font-style:italic; font-family:var(--font-display);">'+item.words.join(' ')+'</span>';
+    }
+    maybeMarkExercisesDone();
+    return;
+  }
+});
+
+/* ============================================================
+   EXERCISE 3 — MATCHING
+   ============================================================ */
+var matchSelected = null;
+var matchAssigned = {};
+var matchChecked = false;
+function renderMatch(){
+  var el = document.getElementById('matchMount');
+  if(!el) return;
+  el.innerHTML =
+    '<div class="match-wrap">'
+    + '<div class="match-col"><h4 class="ar">الأفعال</h4><div class="match-verbs" id="matchVerbs"></div></div>'
+    + '<div class="match-col"><h4 class="ar">الحالة الإعرابية</h4><div class="match-targets">'
+    +   '<div class="match-target" data-target="akk"><span class="mt-label">Akkusativ</span><div class="mt-items" id="mtAkk"></div></div>'
+    +   '<div class="match-target" data-target="dat"><span class="mt-label">Dativ</span><div class="mt-items" id="mtDat"></div></div>'
+    +   '<div class="match-target" data-target="none"><span class="mt-label">kein Objekt</span><div class="mt-items" id="mtNone"></div></div>'
+    + '</div></div></div>'
+    + '<div class="order-controls" style="margin-top:16px;">'
+    +   '<button type="button" class="btn btn-sm btn-outline" id="matchResetBtn">إعادة</button>'
+    +   '<button type="button" class="btn btn-sm btn-primary" id="matchCheckBtn">تحقّق</button>'
+    + '</div>'
+    + '<div class="item-feedback" id="matchFeedback"></div>';
+  refreshMatch();
+}
+function refreshMatch(){
+  var bankIdx = MATCH.map(function(_,i){return i;}).filter(function(i){ return !matchAssigned[i]; });
+  var verbsEl = document.getElementById('matchVerbs');
+  verbsEl.innerHTML = bankIdx.length
+    ? bankIdx.map(function(i){
+        return '<button type="button" class="match-chip de'+(matchSelected===i?' selected':'')+'" data-match-verb="'+i+'">'+MATCH[i].verb+'</button>';
+      }).join('')
+    : '<span class="ar" style="color:var(--color-text-faint); font-size:.85rem;">تم توزيع كل الأفعال ✓</span>';
+  ['akk','dat','none'].forEach(function(cat){
+    var containerId = cat==='akk' ? 'mtAkk' : (cat==='dat' ? 'mtDat' : 'mtNone');
+    var items = MATCH.map(function(_,i){return i;}).filter(function(i){ return matchAssigned[i]===cat; });
+    document.getElementById(containerId).innerHTML = items.map(function(i){
+      var cls = 'word-chip de';
+      if(matchChecked) cls += (MATCH[i].case===cat) ? ' correct' : ' incorrect';
+      return '<button type="button" class="'+cls+'" data-match-remove="'+i+'">'+MATCH[i].verb+'</button>';
+    }).join('');
+  });
+}
+document.addEventListener('click', function(e){
+  var t = e.target.closest('[data-match-remove]');
+  if(t){
+    var i = parseInt(t.getAttribute('data-match-remove'),10);
+    delete matchAssigned[i];
+    matchChecked = false;
+    refreshMatch();
+    return;
+  }
+  t = e.target.closest('[data-match-verb]');
+  if(t){
+    var i2 = parseInt(t.getAttribute('data-match-verb'),10);
+    matchSelected = (matchSelected === i2) ? null : i2;
+    refreshMatch();
+    return;
+  }
+  t = e.target.closest('.match-target');
+  if(t){
+    if(matchSelected !== null){
+      matchAssigned[matchSelected] = t.getAttribute('data-target');
+      matchSelected = null;
+      matchChecked = false;
+      refreshMatch();
+    }
+    return;
+  }
+  t = e.target.closest('#matchResetBtn');
+  if(t){
+    matchAssigned = {}; matchSelected = null; matchChecked = false;
+    refreshMatch();
+    var fbm = document.getElementById('matchFeedback');
+    fbm.className = 'item-feedback'; fbm.textContent='';
+    return;
+  }
+  t = e.target.closest('#matchCheckBtn');
+  if(t){
+    matchChecked = true;
+    refreshMatch();
+    var correct = 0;
+    MATCH.forEach(function(m,i){ if(matchAssigned[i]===m.case) correct++; });
+    var fb2 = document.getElementById('matchFeedback');
+    fb2.className = 'item-feedback show '+(correct===MATCH.length?'ok':'bad');
+    fb2.textContent = correct+' من '+MATCH.length+' إجابات صحيحة.';
+    maybeMarkExercisesDone();
+    return;
+  }
+});
+function maybeMarkExercisesDone(){ markSectionDone('uebungen'); }
+
+/* ============================================================
+   QUIZ
+   ============================================================ */
+var quizAnswers = {};
+var quizSubmitted = false;
+function renderQuiz(){
+  var el = document.getElementById('quizMount');
+  if(!el) return;
+  el.innerHTML = QUIZ.map(function(q,i){
+    var optsHTML = q.options.map(function(opt,oi){
+      return '<div class="qq-option" data-quiz-opt="'+i+':'+oi+'">'+opt+'</div>';
+    }).join('');
+    var listenHTML = q.audio ? '<div class="quiz-listen"><button type="button" class="btn btn-outline btn-sm" data-quiz-listen="'+i+'"><svg viewBox="0 0 24 24" fill="none" style="width:14px;height:14px;" aria-hidden="true"><path d="M3 10v4h4l5 5V5L7 10H3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> استمع للجملة</button></div>' : '';
+    return '<div class="quiz-question" data-qq="'+i+'">'
+      + '<div class="qq-head"><span class="qq-num">'+(i+1)+'.</span><div class="qq-prompt ar">'+q.prompt+'</div></div>'
+      + listenHTML
+      + '<div class="qq-options">'+optsHTML+'</div>'
+      + '<div class="qq-explain ar" id="qqExplain'+i+'">'+q.explain+'</div>'
+      + '</div>';
+  }).join('');
+}
+document.addEventListener('click', function(e){
+  var t = e.target.closest('[data-quiz-opt]');
+  if(t){
+    if(quizSubmitted) return;
+    var parts = t.getAttribute('data-quiz-opt').split(':');
+    var i = parseInt(parts[0],10), oi = parseInt(parts[1],10);
+    quizAnswers[i] = oi;
+    $all('[data-quiz-opt^="'+i+':"]').forEach(function(o){ o.classList.remove('selected'); });
+    t.classList.add('selected');
+    return;
+  }
+  t = e.target.closest('[data-quiz-listen]');
+  if(t){
+    var qi = parseInt(t.getAttribute('data-quiz-listen'),10);
+    AudioService.speak(QUIZ[qi].audio, {});
+    return;
+  }
+});
+function submitQuiz(){
+  quizSubmitted = true;
+  var score = 0;
+  QUIZ.forEach(function(q,i){
+    var chosen = quizAnswers[i];
+    if(chosen === q.correct) score++;
+    $all('[data-quiz-opt^="'+i+':"]').forEach(function(optEl){
+      var oi = parseInt(optEl.getAttribute('data-quiz-opt').split(':')[1],10);
+      optEl.classList.remove('selected');
+      if(oi === q.correct) optEl.classList.add('correct');
+      else if(oi === chosen) optEl.classList.add('incorrect');
+    });
+    var ex = document.getElementById('qqExplain'+i);
+    if(ex) ex.classList.add('show');
+  });
+  var scoreBox = document.getElementById('quizScore');
+  scoreBox.classList.add('show');
+  document.getElementById('scoreNum').textContent = score+'/'+QUIZ.length;
+  var label;
+  if(score === QUIZ.length) label = 'ممتاز! إجابات كاملة 🎉';
+  else if(score >= Math.ceil(QUIZ.length*0.6)) label = 'أداء جيد جدًا — راجع الأسئلة المُعلَّمة باللون الأحمر.';
+  else label = 'يستحق مراجعة إضافية — اقرأ التفسيرات أعلاه ثم أعد المحاولة.';
+  document.getElementById('scoreLabel').textContent = label;
+  document.getElementById('quizSubmitBtn').style.display = 'none';
+  document.getElementById('quizResetBtn').style.display = 'inline-flex';
+  try{
+    var best = parseInt(localStorage.getItem(LS_PREFIX+'quizBest')||'0',10);
+    if(score > best) localStorage.setItem(LS_PREFIX+'quizBest', String(score));
+  }catch(e){}
+  markSectionDone('quiz');
+}
+function resetQuiz(){
+  quizSubmitted = false; quizAnswers = {};
+  document.getElementById('quizScore').classList.remove('show');
+  document.getElementById('quizSubmitBtn').style.display = 'inline-flex';
+  document.getElementById('quizResetBtn').style.display = 'none';
+  renderQuiz();
+}
+
+/* ============================================================
+   FLIP CARDS
+   ============================================================ */
+document.addEventListener('click', function(e){
+  var fc = e.target.closest('.flip-card');
+  if(fc) fc.classList.toggle('flipped');
+});
+document.addEventListener('keydown', function(e){
+  if((e.key === 'Enter' || e.key === ' ') && document.activeElement && document.activeElement.classList.contains('flip-card')){
+    e.preventDefault();
+    document.activeElement.classList.toggle('flipped');
+  }
+});
+
+/* ============================================================
+   THEME MANAGER
+   ============================================================ */
+var ThemeManager = {
+  key: LS_PREFIX+'theme',
+  get: function(){ return localStorage.getItem(this.key) || 'system'; },
+  set: function(val){ localStorage.setItem(this.key, val); this.apply(); },
+  resolved: function(){
+    var v = this.get();
+    if(v === 'system') return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+    return v;
+  },
+  apply: function(){
+    var r = this.resolved();
+    document.body.setAttribute('data-theme', r);
+    var sun = document.getElementById('themeIconSun'), moon = document.getElementById('themeIconMoon');
+    if(sun && moon){ sun.style.display = (r==='dark') ? 'none' : 'block'; moon.style.display = (r==='dark') ? 'block' : 'none'; }
+    $all('.theme-pill').forEach(function(p){
+      var active = p.getAttribute('data-theme-choice') === ThemeManager.get();
+      p.classList.toggle('active', active);
+      p.setAttribute('aria-checked', active ? 'true' : 'false');
+    });
+  },
+  init: function(){
+    this.apply();
+    if(window.matchMedia){
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var handler = function(){ if(ThemeManager.get() === 'system') ThemeManager.apply(); };
+      if(mq.addEventListener) mq.addEventListener('change', handler);
+      else if(mq.addListener) mq.addListener(handler);
+    }
+  }
+};
+document.getElementById('themeToggleBtn').addEventListener('click', function(){
+  var cur = ThemeManager.resolved();
+  ThemeManager.set(cur === 'dark' ? 'light' : 'dark');
+});
+$all('.theme-pill').forEach(function(p){
+  p.addEventListener('click', function(){ ThemeManager.set(p.getAttribute('data-theme-choice')); });
+});
+
+/* ============================================================
+   AUDIO PROVIDER ABSTRACTION
+   ============================================================ */
+function BrowserSpeechProvider(){
+  this.synth = ('speechSynthesis' in window) ? window.speechSynthesis : null;
+}
+BrowserSpeechProvider.prototype.isSupported = function(){ return !!this.synth; };
+BrowserSpeechProvider.prototype.getVoices = function(){
+  var self = this;
+  if(!this.isSupported()) return Promise.resolve([]);
+  var voices = this.synth.getVoices();
+  if(voices && voices.length) return Promise.resolve(voices);
+  return new Promise(function(resolve){
+    var done = false;
+    function finish(){
+      if(done) return; done = true;
+      resolve(self.synth.getVoices() || []);
+    }
+    self.synth.addEventListener('voiceschanged', finish, {once:true});
+    setTimeout(finish, 1200);
+  });
+};
+BrowserSpeechProvider.prototype.speak = function(text, opts){
+  var self = this;
+  opts = opts || {};
+  return new Promise(function(resolve, reject){
+    if(!self.isSupported()){ reject(new Error('Web Speech API not supported')); return; }
+    self.synth.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = (opts.voice && opts.voice.lang) || 'de-DE';
+    if(opts.voice) u.voice = opts.voice;
+    u.rate = opts.rate || 1;
+    u.pitch = opts.pitch || 1;
+    u.onstart = function(){ if(opts.onstart) opts.onstart(); };
+    u.onend = function(){ if(opts.onend) opts.onend(); resolve(); };
+    u.onerror = function(err){ if(opts.onend) opts.onend(); reject(err); };
+    self.synth.speak(u);
+  });
+};
+BrowserSpeechProvider.prototype.stop = function(){ if(this.isSupported()) this.synth.cancel(); };
+
+/* Cloud provider stub — demonstrates the abstraction. Not configured in
+   this static, single-file lesson (no backend), so it always reports
+   itself as unavailable. Browser TTS remains fully functional either way. */
+function CloudTTSProvider(){ this.configured = false; }
+CloudTTSProvider.prototype.isSupported = function(){ return false; };
+CloudTTSProvider.prototype.getVoices = function(){ return Promise.resolve([]); };
+CloudTTSProvider.prototype.speak = function(){ return Promise.reject(new Error('Cloud TTS provider not configured')); };
+CloudTTSProvider.prototype.stop = function(){};
+
+var AudioService = {
+  providers: { browser: new BrowserSpeechProvider(), cloud: new CloudTTSProvider() },
+  germanVoices: [],
+  selectedVoice: null,
+  activeButton: null,
+  activeBlock: null,
+  rate: 1,
+  pitch: 1,
+
+  init: function(){
+    this.rate = parseFloat(localStorage.getItem(LS_PREFIX+'rate')) || 1;
+    this.pitch = parseFloat(localStorage.getItem(LS_PREFIX+'pitch')) || 1;
+    var rs = document.getElementById('rateSlider'), rv = document.getElementById('rateVal');
+    var ps = document.getElementById('pitchSlider'), pv = document.getElementById('pitchVal');
+    if(rs){ rs.value = this.rate; rv.textContent = this.rate.toFixed(2)+'x'; }
+    if(ps){ ps.value = this.pitch; pv.textContent = this.pitch.toFixed(1); }
+    var self = this;
+    return this.loadVoices().then(function(){ self.renderProviders(); });
+  },
+
+  loadVoices: function(){
+    var self = this;
+    return this.providers.browser.getVoices().then(function(voices){
+      self.germanVoices = (voices||[]).filter(function(v){ return /^de([-_]|$)/i.test(v.lang); });
+      var savedURI = localStorage.getItem(LS_PREFIX+'voiceURI');
+      if(self.germanVoices.length){
+        var found = null;
+        self.germanVoices.forEach(function(v){ if(v.voiceURI === savedURI) found = v; });
+        self.selectedVoice = found || self.germanVoices[0];
+      } else {
+        self.selectedVoice = null;
+      }
+      self.renderVoiceList();
+    });
+  },
+
+  renderProviders: function(){
+    var el = document.getElementById('providerList');
+    if(!el) return;
+    var browserOK = this.providers.browser.isSupported() && this.germanVoices.length > 0;
+    el.innerHTML =
+      '<div class="provider-item active">'
+      + '<span class="provider-dot"></span><span class="ar">مزوّد المتصفح (Browser TTS)</span>'
+      + '<span class="p-status">'+(browserOK ? 'متاح' : (this.providers.browser.isSupported() ? 'لا يوجد صوت' : 'غير مدعوم'))+'</span>'
+      + '</div>'
+      + '<div class="provider-item">'
+      + '<span class="provider-dot"></span><span class="ar">مزوّد سحابي (Cloud TTS)</span>'
+      + '<span class="p-status">غير مُهيّأ</span>'
+      + '</div>';
+  },
+
+  renderVoiceList: function(){
+    var status = document.getElementById('voiceStatus');
+    var list = document.getElementById('voiceList');
+    if(!status || !list) return;
+    if(!this.providers.browser.isSupported()){
+      status.innerHTML = fallbackMessageHTML('متصفحك لا يدعم خاصية النطق (Web Speech API). جرّب متصفحًا آخر مثل Chrome أو Edge أو Safari.');
+      list.innerHTML = '';
+      return;
+    }
+    if(!this.germanVoices.length){
+      status.innerHTML = fallbackMessageHTML('لا يوجد صوت ألماني مثبَّت حاليًا على هذا الجهاز أو المتصفح. جرّب متصفحًا أو جهازًا آخر، أو ثبّت حزمة لغة ألمانية من إعدادات النظام.');
+      list.innerHTML = '';
+      return;
+    }
+    status.textContent = 'تم العثور على '+this.germanVoices.length+' '+(this.germanVoices.length===1?'صوت ألماني':'أصوات ألمانية')+'.';
+    var self = this;
+    list.innerHTML = this.germanVoices.map(function(v,i){
+      var sel = self.selectedVoice && v.voiceURI === self.selectedVoice.voiceURI;
+      return '<div class="voice-item'+(sel?' selected':'')+'">'
+        + '<input type="radio" name="voiceChoice" id="voiceOpt'+i+'" data-voice-idx="'+i+'"'+(sel?' checked':'')+'>'
+        + '<label for="voiceOpt'+i+'">'+v.name+'<span class="voice-lang">'+v.lang+'</span></label>'
+        + '<button type="button" class="voice-test-btn" data-voice-test="'+i+'"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10v4h4l5 5V5L7 10H3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>تجربة</button>'
+        + '</div>';
+    }).join('');
+  },
+
+  setVoice: function(v){
+    this.selectedVoice = v;
+    try{ localStorage.setItem(LS_PREFIX+'voiceURI', v.voiceURI); }catch(e){}
+    this.renderVoiceList();
+  },
+  setRate: function(r){ this.rate = r; try{ localStorage.setItem(LS_PREFIX+'rate', r); }catch(e){} },
+  setPitch: function(p){ this.pitch = p; try{ localStorage.setItem(LS_PREFIX+'pitch', p); }catch(e){} },
+
+  speak: function(text, opts){
+    opts = opts || {};
+    this.stop();
+    if(!this.providers.browser.isSupported() || !this.germanVoices.length){
+      openAudioPanel();
+      return;
+    }
+    this.activeButton = opts.button || null;
+    this.activeBlock = opts.block || null;
+    if(this.activeButton){ this.activeButton.classList.add('playing'); this.activeButton.innerHTML = ICON_PAUSE; }
+    if(this.activeBlock){ this.activeBlock.classList.add('speaking'); }
+    var self = this;
+    this.providers.browser.speak(text, {
+      voice: this.selectedVoice, rate: this.rate, pitch: this.pitch,
+      onend: function(){ self.resetButton(); }
+    }).catch(function(){ self.resetButton(); });
+  },
+  resetButton: function(){
+    if(this.activeButton){ this.activeButton.classList.remove('playing'); this.activeButton.innerHTML = ICON_PLAY; }
+    if(this.activeBlock){ this.activeBlock.classList.remove('speaking'); }
+    this.activeButton = null; this.activeBlock = null;
+  },
+  stop: function(){
+    this.providers.browser.stop();
+    this.resetButton();
+  }
+};
+
+if('speechSynthesis' in window){
+  window.speechSynthesis.onvoiceschanged = function(){
+    AudioService.loadVoices().then(function(){ AudioService.renderProviders(); });
+  };
+}
+
+/* global click: any element carrying data-speak plays/stops that text */
+document.addEventListener('click', function(e){
+  var btn = e.target.closest('[data-speak]');
+  if(!btn) return;
+  var text = btn.getAttribute('data-speak');
+  if(AudioService.activeButton === btn){ AudioService.stop(); return; }
+  var block = btn.closest('.example-block');
+  AudioService.speak(text, {button: btn, block: block});
+});
+
+/* voice selection + testing inside the panel */
+document.addEventListener('change', function(e){
+  if(e.target.matches('[data-voice-idx]')){
+    var idx = parseInt(e.target.getAttribute('data-voice-idx'),10);
+    AudioService.setVoice(AudioService.germanVoices[idx]);
+  }
+});
+document.addEventListener('click', function(e){
+  var t = e.target.closest('[data-voice-test]');
+  if(t){
+    var idx = parseInt(t.getAttribute('data-voice-test'),10);
+    var v = AudioService.germanVoices[idx];
+    AudioService.providers.browser.speak('Hallo! Wie geht es dir? Ich lerne heute Deutsch.', {voice:v, rate:AudioService.rate, pitch:AudioService.pitch});
+  }
+});
+var testCurrentBtn = document.getElementById('testCurrentVoiceBtn');
+if(testCurrentBtn){
+  testCurrentBtn.addEventListener('click', function(){
+    if(AudioService.selectedVoice){
+      AudioService.providers.browser.speak('Hallo! Wie geht es dir? Ich lerne heute Deutsch.', {voice:AudioService.selectedVoice, rate:AudioService.rate, pitch:AudioService.pitch});
+    }
+  });
+}
+var rateSliderEl = document.getElementById('rateSlider');
+if(rateSliderEl){
+  rateSliderEl.addEventListener('input', function(e){
+    var r = parseFloat(e.target.value);
+    AudioService.setRate(r);
+    document.getElementById('rateVal').textContent = r.toFixed(2)+'x';
+  });
+}
+var pitchSliderEl = document.getElementById('pitchSlider');
+if(pitchSliderEl){
+  pitchSliderEl.addEventListener('input', function(e){
+    var p = parseFloat(e.target.value);
+    AudioService.setPitch(p);
+    document.getElementById('pitchVal').textContent = p.toFixed(1);
+  });
+}
+
+/* ============================================================
+   AUDIO SETTINGS PANEL — open/close
+   ============================================================ */
+function escCloseHandler(e){ if(e.key === 'Escape') closeAudioPanel(); }
+function openAudioPanel(){
+  document.getElementById('audioPanel').classList.add('show');
+  document.getElementById('overlay').classList.add('show');
+  document.getElementById('audioSettingsBtn').setAttribute('aria-expanded','true');
+  document.getElementById('closeAudioPanel').focus();
+  document.addEventListener('keydown', escCloseHandler);
+}
+function closeAudioPanel(){
+  document.getElementById('audioPanel').classList.remove('show');
+  document.getElementById('overlay').classList.remove('show');
+  document.getElementById('audioSettingsBtn').setAttribute('aria-expanded','false');
+  document.removeEventListener('keydown', escCloseHandler);
+}
+document.getElementById('audioSettingsBtn').addEventListener('click', openAudioPanel);
+document.getElementById('closeAudioPanel').addEventListener('click', closeAudioPanel);
+document.getElementById('overlay').addEventListener('click', closeAudioPanel);
+
+/* ============================================================
+   PROGRESS RAIL + TABLE OF CONTENTS TRACKING
+   ============================================================ */
+function initProgress(){
+  var fill = document.getElementById('progressFill');
+  function update(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? Math.min(100, Math.max(0,(scrollTop/docH)*100)) : 0;
+    fill.style.width = pct+'%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+}
+var VISIT_KEY = LS_PREFIX+'visited';
+var visited = {};
+function loadVisited(){
+  try{ visited = JSON.parse(localStorage.getItem(VISIT_KEY)) || {}; }catch(e){ visited = {}; }
+  applyVisitedToTOC();
+}
+function markSectionDone(id){
+  visited[id] = true;
+  try{ localStorage.setItem(VISIT_KEY, JSON.stringify(visited)); }catch(e){}
+  applyVisitedToTOC();
+}
+function applyVisitedToTOC(){
+  $all('.toc-list a').forEach(function(a){
+    a.classList.toggle('done', !!visited[a.getAttribute('data-section')]);
+  });
+}
+function initSectionObserver(){
+  if(!('IntersectionObserver' in window)) return;
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting && entry.intersectionRatio > 0.4){
+        markSectionDone(entry.target.id);
+      }
+    });
+  }, {threshold:[0.4]});
+  $all('.lesson-section').forEach(function(s){ obs.observe(s); });
+}
+
+/* ============================================================
+   INIT
+   ============================================================ */
+function init(){
+  ThemeManager.init();
+  renderExamplesInto('gehen-basis-examples', GEHEN_EXAMPLES);
+  renderVerbFamily();
+  renderUmgehenSection();
+  renderSounds();
+  renderMistakes();
+  renderVocab();
+  renderFillblank();
+  renderOrder();
+  renderMatch();
+  renderQuiz();
+  AudioService.init();
+  initProgress();
+  loadVisited();
+  initSectionObserver();
+
+  document.getElementById('quizSubmitBtn').addEventListener('click', submitQuiz);
+  document.getElementById('quizResetBtn').addEventListener('click', resetQuiz);
+}
+
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="family-verben-gehen" data-category="family-verben" data-title="gehen وعائلته — الأفعال المنفصلة وغير المنفصلة" data-root="../../" defer></script>
+</body>
+</html>

@@ -103,7 +103,7 @@
    RESET & BASE
 ═══════════════════════════════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   background: var(--bg-primary);
@@ -946,6 +946,8 @@ body {
   .header-search { display: none; }
   .vocab-grid { grid-template-columns: repeat(2, 1fr); }
   .quiz-score-row { gap: 8px; }
+  .btn-quiz { padding: 0 10px; }
+  .btn-quiz .quiz-btn-label { display: none; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -974,7 +976,7 @@ body {
     <div class="header-controls">
       <button class="btn-icon" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
       <button class="btn-icon" onclick="window.print()" aria-label="Print" title="Print page">🖨️</button>
-      <button class="btn-quiz" onclick="document.getElementById('quizSection').scrollIntoView({behavior:'smooth'})">📝 اختبر نفسك</button>
+      <button class="btn-quiz" onclick="document.getElementById('quizSection').scrollIntoView({behavior:'smooth'})">📝 <span class="quiz-btn-label">اختبر نفسك</span></button>
     </div>
   </div>
 </header>

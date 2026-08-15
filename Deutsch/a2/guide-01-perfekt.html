@@ -201,6 +201,11 @@ p { margin: 0; }
 .nav-link.active { background: var(--teal-soft); color: var(--teal); border-color: transparent; }
 
 .header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+/* == إصلاح استجابة الهاتف: على أضيق الشاشات، نخفي زري البحث وملء الشاشة
+   من شريط الأدوات (البحث متاح أصلًا عبر قائمة الجوال) لمنع خروج الشريط عن حدود الشاشة == */
+@media (max-width: 420px) {
+  .header-controls #searchToggle, .header-controls #fullscreenToggle { display: none; }
+}
 .icon-btn {
   width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border);
   background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center;
@@ -291,7 +296,7 @@ p { margin: 0; }
 .klammer-card:hover { transform: perspective(900px) rotateY(0deg) rotateX(0deg); }
 .klammer-label { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .74rem; color: var(--ink-faint); margin-bottom: 16px; }
 .klammer-sentence { direction: ltr; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-family: var(--font-de-display); font-size: clamp(1.15rem, 2.4vw, 1.55rem); }
-.k-word { cursor: pointer; border-radius: 8px; padding: 2px 3px; transition: background-color .2s, color .2s; }
+.k-word { cursor: pointer; border-radius: 8px; padding: 4px 4px; transition: background-color .2s, color .2s; }
 .k-word:hover { background: var(--bg-alt); }
 .k-word.speaking { background: var(--teal); color: #fff; }
 .klammer-frame {

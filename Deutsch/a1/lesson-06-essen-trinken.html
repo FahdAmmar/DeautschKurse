@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>الدليل الشامل · التحيات الأساسية وتقديم النفس — Begrüßung & Vorstellung | ألمانية A1</title>
-<meta name="description" content="الدرس الثاني في مسار الألمانية A1: تحيات الوقت، التحيات غير الرسمية، الوداع، صيغتا du وSie، تقديم النفس، وحوارات كاملة تفاعلية بصوت ألماني حقيقي.">
+<title>الدليل الشامل · الطعام والشراب وحالة النصب — Essen, Trinken & Akkusativ | ألمانية A1</title>
+<meta name="description" content="الدرس السادس في مسار الألمانية A1: مفردات الطعام والشراب الأساسية، وجبات اليوم الثلاث، أداة بناء تفاعلية لحالة النصب (Akkusativ) مع Ich möchte، قائمة مقهى تفاعلية لطلب الطعام، حوارا استخدام عملي كامل، وأخطاء شائعة لمتحدثي العربية.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 a { color: inherit; }
 
 /* ==========================================================================
-   1. DESIGN TOKENS (same course identity as Lesson 1)
+   1. DESIGN TOKENS (same course identity as Lessons 1–5)
    ========================================================================== */
 :root {
   color-scheme: light;
@@ -151,6 +151,7 @@ p { margin: 0; }
   padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
 }
 .eyebrow.plum { color: var(--plum); background: var(--plum-soft); }
+.eyebrow.amber { color: var(--amber-ink); background: var(--amber-soft); }
 .section-title { font-size: clamp(1.5rem, 3.6vw, 2.35rem); }
 .section-sub { color: var(--ink-soft); font-size: clamp(.98rem, 1.6vw, 1.1rem); margin-top: 12px; max-width: 62ch; }
 
@@ -161,6 +162,7 @@ p { margin: 0; }
 .reveal-stagger.is-visible > *:nth-child(1){transition-delay:.03s} .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.09s}
 .reveal-stagger.is-visible > *:nth-child(3){transition-delay:.15s} .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.21s}
 .reveal-stagger.is-visible > *:nth-child(5){transition-delay:.27s} .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.33s}
+.reveal-stagger.is-visible > *:nth-child(7){transition-delay:.39s} .reveal-stagger.is-visible > *:nth-child(8){transition-delay:.45s}
 
 /* ==========================================================================
    3. HEADER / NAV
@@ -200,11 +202,6 @@ p { margin: 0; }
 .nav-link.active { background: var(--teal-soft); color: var(--teal); border-color: transparent; }
 
 .header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
-/* == إصلاح استجابة الهاتف: على أضيق الشاشات، نخفي زري البحث وملء الشاشة
-   من شريط الأدوات (البحث متاح أصلًا عبر قائمة الجوال) لمنع خروج الشريط عن حدود الشاشة == */
-@media (max-width: 420px) {
-  .header-controls #searchToggle, .header-controls #fullscreenToggle { display: none; }
-}
 .icon-btn {
   width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border);
   background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center;
@@ -286,13 +283,16 @@ p { margin: 0; }
 .btn:disabled { opacity: .55; cursor: not-allowed; }
 .btn:disabled:hover { transform: none; box-shadow: none; }
 
-/* --- hero illustration: two speech bubbles greeting each other --- */
+/* --- hero illustration: coffee cup + plate, floating tag bubbles --- */
 .hero-illustration { position: relative; }
 .hero-illo-svg { width: 100%; height: auto; }
 .floaty { animation: floaty 5s ease-in-out infinite; }
 .floaty.d2 { animation-delay: -1.4s; }
 .floaty.d3 { animation-delay: -2.8s; }
 @keyframes floaty { 0%,100%{ transform: translateY(0px); } 50%{ transform: translateY(-10px); } }
+.steam-wisp { animation: steam 3.4s ease-in-out infinite; transform-origin: bottom center; }
+.steam-wisp.s2 { animation-delay: -1.7s; }
+@keyframes steam { 0%,100%{ opacity:.35; transform: translateY(0) scaleY(1);} 50%{ opacity:.75; transform: translateY(-6px) scaleY(1.08);} }
 
 /* --- showcase-card: signature 3D bracket-style card --- */
 .showcase-card {
@@ -309,7 +309,7 @@ p { margin: 0; }
   width: 100%; justify-content: center;
 }
 .arrow-frame::before { content: "⌐"; position: absolute; top: -13px; right: 10px; font-family: var(--font-mono); font-size: .7rem; color: var(--ink-faint); background: var(--surface); padding: 0 6px; }
-.k-word { cursor: pointer; border-radius: 8px; padding: 4px 6px; transition: background-color .2s, color .2s; }
+.k-word { cursor: pointer; border-radius: 8px; padding: 2px 6px; transition: background-color .2s, color .2s; }
 .k-word:hover { background: var(--bg-alt); }
 .k-word.speaking { background: var(--teal); color: #fff; }
 .k-phrase-big { background: var(--teal); color: #fff; border-radius: 12px; padding: 8px 20px; font-weight: 700; font-size: clamp(1.3rem, 3vw, 1.7rem); }
@@ -368,47 +368,109 @@ p { margin: 0; }
 .stat-card .stat-desc { font-size: .87rem; color: var(--ink-soft); margin-top: 6px; }
 
 /* ==========================================================================
-   6. TIME-OF-DAY GREETING CARDS
+   6. FOOD/DRINK VOCAB — flip cards (reused generic component)
    ========================================================================== */
-.time-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-@media (max-width: 940px){ .time-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px){ .time-grid { grid-template-columns: 1fr; } }
-.time-card {
-  border-radius: var(--r-lg); padding: 22px 18px; text-align: center; position: relative; overflow: hidden;
-  border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-  cursor: pointer;
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px; }
+.flip-card { perspective: 1200px; height: 190px; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-shadow: var(--shadow-sm); }
+.flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
+.flip-front .de { font-size: 1.5rem; font-weight: 700; }
+.flip-front .aux-tag { position: absolute; top: 10px; left: 10px; }
+.flip-back { background: var(--plum); color: #fff; transform: rotateY(180deg); gap: 6px; }
+.flip-back .partizip { font-family: var(--font-de-display); font-size: 1.25rem; font-weight: 600; }
+.flip-back .ipa { font-family: var(--font-mono); font-size: .78rem; opacity: .85; }
+.flip-back .meaning { font-size: .85rem; opacity: .92; margin-top: 2px; text-align:center; }
+.flip-hint { font-family: var(--font-mono); font-size: .66rem; color: var(--ink-faint); margin-top: 8px; }
+.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--teal); transition: transform .2s, background-color .2s; z-index:2; }
+.speak-dot:hover { transform: scale(1.1); background: var(--teal-soft); }
+.speak-dot .icon { width: 15px; height: 15px; }
+.speak-dot.speaking { animation: pulse-ring 1s var(--ease) infinite; }
+@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 var(--teal-glow)} 70%{box-shadow:0 0 0 10px transparent} 100%{box-shadow:0 0 0 0 transparent} }
+@keyframes fadeSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
+.plural-only-tag { position: absolute; top: 10px; right: 10px; }
+
+/* ==========================================================================
+   7. MEALS OF THE DAY — compact timeline cards
+   ========================================================================== */
+.meals-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 760px){ .meals-row { grid-template-columns: 1fr; } }
+.meal-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px; text-align: center; cursor: pointer; box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.meal-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.meal-card .meal-time { font-family: var(--font-mono); font-size: .74rem; color: var(--ink-faint); }
+.meal-card .meal-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.3rem; margin-top: 8px; }
+.meal-card .meal-ar { font-size: .88rem; color: var(--ink-soft); margin-top: 6px; }
+.meal-card .icon-chip { margin: 0 auto 10px; }
+
+/* ==========================================================================
+   8. ACCUSATIVE BUILDER — centerpiece interactive component
+   ========================================================================== */
+.acc-shell {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl);
+  box-shadow: var(--shadow-lg); padding: clamp(22px, 4vw, 40px); position: relative; overflow: hidden;
 }
-.time-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-.time-card.morning { background: linear-gradient(160deg, #FFF3D6, #FFE1A8); }
-.time-card.day { background: linear-gradient(160deg, #DFF3F6, #BEE7ED); }
-.time-card.evening { background: linear-gradient(160deg, #F3E0D8, #E6BFAE); }
-.time-card.night { background: linear-gradient(160deg, #DDE1F0, #B9BFDE); }
-:root[data-theme="dark"] .time-card.morning { background: linear-gradient(160deg, #4a3a12, #2e2308); }
-:root[data-theme="dark"] .time-card.day { background: linear-gradient(160deg, #123138, #0b2226); }
-:root[data-theme="dark"] .time-card.evening { background: linear-gradient(160deg, #3a2a20, #241a14); }
-:root[data-theme="dark"] .time-card.night { background: linear-gradient(160deg, #1f2340, #141729); }
-.time-card .time-icon { width: 46px; height: 46px; margin: 0 auto 12px; }
-.time-card .time-range { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-soft); margin-bottom: 6px; }
-.time-card .time-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.25rem; color: var(--ink); }
-.time-card .time-ar { font-size: .85rem; color: var(--ink-soft); margin-top: 6px; }
-.time-card .speak-dot { position: static; margin: 12px auto 0; background: rgba(255,255,255,.6); }
-:root[data-theme="dark"] .time-card .speak-dot { background: rgba(0,0,0,.25); }
+.acc-shell::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5;
+  background: radial-gradient(420px 220px at 90% -10%, var(--plum-glow), transparent 70%), radial-gradient(420px 220px at 5% 110%, var(--teal-glow), transparent 70%);
+}
+.acc-picker-label { font-size: .9rem; font-weight: 700; margin-bottom: 10px; color: var(--ink-soft); }
+.acc-chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.acc-chip {
+  padding: 10px 17px; border-radius: 11px; border: 1.5px solid var(--border-strong); background: var(--bg-alt);
+  cursor: pointer; font-family: var(--font-de-display); font-weight: 600; font-size: 1rem; transition: all .2s var(--ease);
+}
+.acc-chip:hover { border-color: var(--teal); transform: translateY(-2px); }
+.acc-chip.active { color: #fff; box-shadow: var(--shadow-glow-teal); }
+.acc-chip.active.masc { background: var(--teal); border-color: var(--teal); }
+.acc-chip.active.fem { background: var(--plum); border-color: var(--plum); }
+.acc-chip.active.neut { background: var(--amber); border-color: var(--amber); color: #2b1c05; box-shadow: var(--shadow-glow-amber); }
+.acc-chip .gender-tag { font-family: var(--font-mono); font-size: .66rem; opacity: .7; margin-inline-start: 4px; }
+
+.acc-result { margin-top: 30px; text-align: center; }
+.acc-result-phrase { display: inline-flex; align-items: stretch; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-md); cursor: pointer; transition: transform .3s var(--ease); }
+.acc-result-phrase:hover { transform: translateY(-3px); }
+.acc-result-phrase span { font-family: var(--font-de-display); font-weight: 700; font-size: clamp(1.3rem, 4vw, 1.85rem); padding: 14px 20px; }
+.acc-result-phrase .ar-verb { background: var(--ink); color: var(--bg); }
+.acc-result-phrase .ar-art { color: #fff; }
+.acc-result-phrase .ar-art.masc { background: var(--teal); }
+.acc-result-phrase .ar-art.fem { background: var(--plum); }
+.acc-result-phrase .ar-art.neut { background: var(--amber); color: #2b1c05; }
+.acc-result-phrase .ar-noun { background: var(--bg-alt); color: var(--ink); }
+.acc-note { margin-top: 18px; font-size: .9rem; color: var(--ink-soft); text-align: center; max-width: 58ch; margin-inline: auto; }
+.acc-note b { color: var(--ink); }
+.acc-table { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 26px; }
+@media (max-width: 620px){ .acc-table { grid-template-columns: 1fr; } }
+.acc-table-cell { background: var(--bg-alt); border-radius: var(--r-sm); padding: 12px; text-align: center; font-family: var(--font-mono); font-size: .82rem; }
+.acc-table-cell b { display: block; font-family: var(--font-de-display); font-size: 1.05rem; margin-top: 4px; }
 
 /* ==========================================================================
-   7. CASUAL GREETINGS / REGIONAL GRID
+   9. CAFÉ MENU / ORDER BUILDER — centerpiece interactive component
    ========================================================================== */
-.region-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-@media (max-width: 860px){ .region-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px){ .region-grid { grid-template-columns: 1fr; } }
-.region-card { text-align: center; position: relative; }
-.region-card .region-flag { font-size: 1.7rem; margin-bottom: 6px; }
-.region-card .region-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.4rem; color: var(--teal-ink); cursor: pointer; }
-:root[data-theme="dark"] .region-card .region-de { color: var(--teal); }
-.region-card .region-place { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); margin-top: 4px; }
-.region-card .region-desc { font-size: .87rem; color: var(--ink-soft); margin-top: 10px; }
+.menu-board { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl); box-shadow: var(--shadow-lg); padding: clamp(20px, 4vw, 36px); }
+.menu-cat-label { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); margin: 18px 0 10px; }
+.menu-cat-label:first-child { margin-top: 0; }
+.menu-items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.menu-item-card {
+  background: var(--bg-alt); border: 1.5px solid var(--border-strong); border-radius: var(--r-md);
+  padding: 16px 12px; text-align: center; cursor: pointer; transition: all .2s var(--ease); position: relative;
+}
+.menu-item-card:hover { border-color: var(--teal); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+.menu-item-card.selected { background: var(--teal-soft); border-color: var(--teal); box-shadow: var(--shadow-glow-teal); }
+.menu-item-card.selected::after { content:"✓"; position:absolute; top:6px; left:8px; color: var(--teal); font-weight:700; }
+.menu-item-card .mi-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.08rem; }
+.menu-item-card .mi-ar { font-size: .78rem; color: var(--ink-soft); margin-top: 4px; }
+
+.order-tray { margin-top: 26px; border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: 18px 20px; background: var(--bg-alt); }
+.order-tray-label { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); margin-bottom: 10px; }
+.order-sentence { font-family: var(--font-de-display); font-size: clamp(1.1rem, 3vw, 1.4rem); font-weight: 600; cursor: pointer; padding: 6px 10px; border-radius: 8px; transition: background-color .2s; min-height: 1.4em; }
+.order-sentence:hover { background: var(--surface); }
+.order-sentence .empty-hint { font-family: var(--font-ar-body); font-weight: 400; font-size: .9rem; color: var(--ink-faint); }
+.order-actions { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
 
 /* ==========================================================================
-   8. ACCORDION (reused for extra notes) + FLIP CARDS (reused for farewells)
+   10. ACCORDION (extra notes)
    ========================================================================== */
 .accordion-item { border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); margin-bottom: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
 .accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; background: none; border: none; cursor: pointer; text-align: right; color: var(--ink); }
@@ -420,32 +482,9 @@ p { margin: 0; }
 .accordion-panel { max-height: 0; overflow: hidden; transition: max-height .45s var(--ease); }
 .accordion-item.open .accordion-panel { max-height: 900px; }
 .accordion-body { padding: 0 22px 22px; color: var(--ink-soft); font-size: .95rem; }
-.formation-example-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: var(--bg-alt); border-radius: 10px; padding: 10px 14px; margin-top: 8px; }
-.formation-arrow { color: var(--ink-faint); }
-
-.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px; }
-.flip-card { perspective: 1200px; height: 190px; }
-.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
-.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
-.flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-shadow: var(--shadow-sm); }
-.flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
-.flip-front .de { font-size: 1.55rem; font-weight: 700; }
-.flip-front .aux-tag { position: absolute; top: 10px; left: 10px; }
-.flip-back { background: var(--teal); color: #fff; transform: rotateY(180deg); gap: 6px; }
-.flip-back .partizip { font-family: var(--font-de-display); font-size: 1.3rem; font-weight: 600; }
-.flip-back .ipa { font-family: var(--font-mono); font-size: .8rem; opacity: .85; }
-.flip-back .meaning { font-size: .86rem; opacity: .92; margin-top: 2px; text-align:center; }
-.flip-hint { font-family: var(--font-mono); font-size: .66rem; color: var(--ink-faint); margin-top: 8px; }
-.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--teal); transition: transform .2s, background-color .2s; }
-.speak-dot:hover { transform: scale(1.1); background: var(--teal-soft); }
-.flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
-.speak-dot .icon { width: 15px; height: 15px; }
-.speak-dot.speaking { animation: pulse-ring 1s var(--ease) infinite; }
-@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 var(--teal-glow)} 70%{box-shadow:0 0 0 10px transparent} 100%{box-shadow:0 0 0 0 transparent} }
-@keyframes fadeSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ==========================================================================
-   8b. TAB SWITCHER (shared: dialogue formal/informal toggle)
+   10b. TAB SWITCHER (shared: dialogue formal/informal toggle)
    ========================================================================== */
 .cat-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
 .cat-tab {
@@ -459,55 +498,7 @@ p { margin: 0; }
 .cat-tab:not(.active) .cat-count { background: var(--bg-alt); }
 
 /* ==========================================================================
-   9. FORMAL / INFORMAL COMPARISON (du vs Sie) — new signature component
-   ========================================================================== */
-.duSie-table { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); }
-.duSie-head { display: grid; grid-template-columns: 1.1fr 1fr 1fr; }
-.duSie-head > div { padding: 16px 18px; font-weight: 700; text-align: center; }
-.duSie-head .lbl-ar { background: var(--bg-alt); }
-.duSie-head .lbl-du { background: var(--teal); color: #fff; }
-.duSie-head .lbl-sie { background: var(--plum); color: #fff; }
-.duSie-row { display: grid; grid-template-columns: 1.1fr 1fr 1fr; border-top: 1px solid var(--border); }
-.duSie-row > div { padding: 16px 18px; display: flex; align-items: center; justify-content: center; text-align: center; }
-.duSie-row .cell-ar { background: var(--surface); color: var(--ink-soft); font-size: .92rem; }
-.duSie-row .cell-du { background: var(--teal-soft); font-family: var(--font-de-display); font-weight: 600; cursor: pointer; color: var(--teal-ink); }
-.duSie-row .cell-sie { background: var(--plum-soft); font-family: var(--font-de-display); font-weight: 600; cursor: pointer; color: var(--plum-ink); }
-@media (max-width: 700px){
-  .duSie-head { display: none; }
-  .duSie-row { grid-template-columns: 1fr; text-align: center; }
-  .duSie-row > div { justify-content: center; border-top: 1px dashed var(--border); }
-  .duSie-row > div:first-child { border-top: none; font-weight: 700; background: var(--bg-alt); }
-  .duSie-row .cell-du::before { content: "Du: "; font-family: var(--font-mono); font-size: .65rem; opacity: .7; }
-  .duSie-row .cell-sie::before { content: "Sie: "; font-family: var(--font-mono); font-size: .65rem; opacity: .7; }
-}
-.when-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
-@media (max-width: 700px){ .when-cards { grid-template-columns: 1fr; } }
-.when-card { border-radius: var(--r-md); padding: 20px; border: 1.5px solid; }
-.when-card.du { background: var(--teal-soft); border-color: var(--teal); }
-.when-card.sie { background: var(--plum-soft); border-color: var(--plum); }
-.when-card h3 { margin-bottom: 10px; }
-.when-card.du h3 { color: var(--teal-ink); }
-.when-card.sie h3 { color: var(--plum-ink); }
-.when-card ul { display: flex; flex-direction: column; gap: 6px; }
-.when-card li { font-size: .92rem; color: var(--ink-soft); display: flex; align-items: center; gap: 8px; }
-.when-card li::before { content: "•"; font-weight: 700; }
-.when-card.du li::before { color: var(--teal); }
-.when-card.sie li::before { color: var(--plum); }
-
-/* ==========================================================================
-   10. SENTENCE-PATTERN CARDS (self-introduction)
-   ========================================================================== */
-.pattern-list { display: flex; flex-direction: column; gap: 14px; }
-.pattern-card { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 16px 20px; box-shadow: var(--shadow-sm); transition: box-shadow .3s var(--ease), transform .3s var(--ease); }
-.pattern-card:hover { box-shadow: var(--shadow-md); transform: translateX(-4px); }
-@media (max-width: 640px){ .pattern-card { grid-template-columns: 1fr; text-align: center; gap: 10px; } }
-.pattern-num { width: 34px; height: 34px; border-radius: 50%; background: var(--teal-soft); color: var(--teal-ink); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 700; flex-shrink: 0; }
-.pattern-main .pattern-de { font-family: var(--font-de-display); font-size: 1.25rem; font-weight: 600; cursor: pointer; }
-.pattern-main .pattern-ar { font-size: .88rem; color: var(--ink-soft); margin-top: 4px; }
-.pattern-formality { flex-shrink: 0; }
-
-/* ==========================================================================
-   11. DIALOGUE — chat-bubble UI (new signature component)
+   11. DIALOGUE — chat-bubble UI
    ========================================================================== */
 .dialogue-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
 .dialogue-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); padding: clamp(18px, 3vw, 30px); }
@@ -520,7 +511,7 @@ p { margin: 0; }
 .speaker-dot.a { background: var(--teal); }
 .speaker-dot.b { background: var(--amber); }
 
-.chat-line { display: flex; margin-bottom: 14px; max-width: 82%; }
+.chat-line { display: flex; margin-bottom: 14px; max-width: 82%; align-items: flex-start; }
 .chat-line.a { justify-content: flex-start; }
 .chat-line.b { justify-content: flex-end; margin-inline-start: auto; }
 .chat-bubble { position: relative; padding: 12px 18px; border-radius: 18px; cursor: pointer; transition: transform .2s var(--ease), box-shadow .2s var(--ease); box-shadow: var(--shadow-sm); }
@@ -534,7 +525,6 @@ p { margin: 0; }
 .chat-avatar { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .82rem; color: #fff; flex-shrink: 0; }
 .chat-line.a .chat-avatar { background: var(--teal); margin-inline-end: 10px; }
 .chat-line.b .chat-avatar { background: var(--amber); margin-inline-start: 10px; order: 2; }
-.chat-line { align-items: flex-start; }
 .dialogue-actions { display: flex; justify-content: center; margin-top: 22px; }
 
 /* ==========================================================================
@@ -674,9 +664,9 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
   .site-header, .audio-dock, .back-to-top, .nav-toggle, .exercise-tabs, .score-bar-wrap, .btn, .icon-btn, .toast-wrap, .cat-tabs, .dialogue-tabs { display: none !important; }
   body { background: #fff; color: #000; }
   .section { padding-block: 20px; break-inside: avoid; }
-  .showcase-card { box-shadow: none; transform: none; display: block !important; }
+  .showcase-card, .acc-shell, .menu-board { box-shadow: none; transform: none; display: block !important; }
   .exercise-panel { display: block !important; }
-  .alpha-panel, .dialogue-panel { display: block !important; margin-bottom: 24px; }
+  .dialogue-panel { display: block !important; margin-bottom: 24px; }
   .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
   .accordion-panel { max-height: none !important; }
 }
@@ -701,22 +691,17 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <symbol id="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
 <symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
 <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></symbol>
-<symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 13.5 7 21l5-2.5L17 21l-2-7.5"/><path d="M12 6.5l.9 1.9 2.1.3-1.5 1.4.3 2.1-1.8-1-1.8 1 .3-2.1-1.5-1.4 2.1-.3z"/></symbol>
-<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2zM20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2z"/></symbol>
 <symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></symbol>
 <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
 <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5a2.6 2.6 0 0 1 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
 <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
 <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
 <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></symbol>
-<symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 5.5 19 5.5a2 2 0 0 1 2 2L21 18"/></symbol>
-<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.6"/><path d="M15.5 13.3a5.6 5.6 0 0 1 6 6.7"/></symbol>
-<symbol id="i-sunrise" viewBox="0 0 24 24"><circle cx="12" cy="15" r="4"/><line x1="12" y1="3" x2="12" y2="7"/><line x1="4.2" y1="9.2" x2="6.8" y2="11"/><line x1="19.8" y1="9.2" x2="17.2" y2="11"/><line x1="2" y1="20" x2="22" y2="20"/></symbol>
-<symbol id="i-sunset" viewBox="0 0 24 24"><circle cx="12" cy="13" r="4"/><line x1="12" y1="21" x2="12" y2="17"/><line x1="4.2" y1="7.2" x2="6.8" y2="9"/><line x1="19.8" y1="7.2" x2="17.2" y2="9"/><line x1="2" y1="20" x2="22" y2="20"/></symbol>
-<symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2 12l4-4 4 3 3-3 4 4"/><path d="M2 12v4l4 4 4-4 3 3 5-5-4-4"/></symbol>
-<symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M3 6h3a5 5 0 0 1 4 2l6 8a5 5 0 0 0 4 2h1M21 6h-1a5 5 0 0 0-4 2l-1 1.5M3 18h3a5 5 0 0 0 4-2l1-1.5"/><polyline points="18,3 21,6 18,9"/><polyline points="18,15 21,18 18,21"/></symbol>
 <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="14" width="3" height="3"/><rect x="14" y="18" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/></symbol>
 <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="3" y="14" width="5" height="7" rx="1.5"/><rect x="16" y="14" width="5" height="7" rx="1.5"/></symbol>
+<symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 9.5h2a2.7 2.7 0 0 1 0 5.4h-2"/><path d="M7 3.5c0 1-1 1-1 2M11 3.5c0 1-1 1-1 2"/></symbol>
+<symbol id="i-utensils" viewBox="0 0 24 24"><path d="M6.5 2v7M9 2v7M11.5 2v7M9 9v13"/><path d="M16.5 2c-1.6 1-2.2 3.2-2.2 5.2 0 1.8 1 3 2.2 3v12"/></symbol>
+<symbol id="i-bread" viewBox="0 0 24 24"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-2 9-9 9-9-4-9-9z"/><path d="M9 9v7M12 8v8M15 9v7"/></symbol>
 </defs>
 </svg>
 
@@ -731,17 +716,18 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     </button>
 
     <div class="brand">
-      <span class="brand-mark"><svg class="icon" style="width:20px;height:20px"><use href="#i-handshake"/></svg></span>
-      <span class="brand-text">ألمانية A1<small>الدرس الثاني · التحيات</small></span>
+      <span class="brand-mark"><svg class="icon" style="width:20px;height:20px"><use href="#i-utensils"/></svg></span>
+      <span class="brand-text">ألمانية A1<small>الدرس السادس · الطعام والشراب</small></span>
     </div>
 
     <nav class="main-nav" id="mainNav" aria-label="أقسام الدرس">
       <button class="nav-link" data-target="#intro">المقدّمة</button>
-      <button class="nav-link" data-target="#time-greetings">تحيات الوقت</button>
-      <button class="nav-link" data-target="#casual">تحيات غير رسمية</button>
-      <button class="nav-link" data-target="#farewells">الوداع</button>
-      <button class="nav-link" data-target="#duSie">du أم Sie؟</button>
-      <button class="nav-link" data-target="#introduce">تقديم النفس</button>
+      <button class="nav-link" data-target="#food-basics">الأطعمة الأساسية</button>
+      <button class="nav-link" data-target="#drinks">المشروبات</button>
+      <button class="nav-link" data-target="#meals-of-day">وجبات اليوم</button>
+      <button class="nav-link" data-target="#accusative-builder">حالة النصب</button>
+      <button class="nav-link" data-target="#cafe-menu">قائمة المقهى</button>
+      <button class="nav-link" data-target="#practical">الاستخدام العملي</button>
       <button class="nav-link" data-target="#dialogue">حوار كامل</button>
       <button class="nav-link" data-target="#mistakes">أخطاء شائعة</button>
       <button class="nav-link" data-target="#pronunciation">نصائح النطق</button>
@@ -779,17 +765,17 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <section class="hero" id="hero">
   <div class="container hero-grid">
     <div class="reveal is-visible">
-      <span class="level-badge"><b>A1</b> الدرس الثاني من مسار «الألمانية للمبتدئين»</span>
-      <h1 class="hero-title">التحيات وتقديم النفس: <span class="de">Hallo!</span></h1>
-      <p class="hero-lead">بعد أن أتقنت الحروف في الدرس الأول، حان وقت أول محادثة حقيقية. في هذا الدرس ستتعلّم كيف تُحيّي بالوقت المناسب، وتودّع، وتُقدّم نفسك، وتفرّق بين صيغتي المخاطبة <span class="de mono">du</span> و<span class="de mono">Sie</span> — مع حوارين كاملين تفاعليين بصوت ألماني حقيقي.</p>
+      <span class="level-badge"><b>A1</b> الدرس السادس من مسار «الألمانية للمبتدئين»</span>
+      <h1 class="hero-title">الطعام والشراب: <span class="de">Ich möchte…</span></h1>
+      <p class="hero-lead">تعلّم مفردات الطعام والشراب الأساسية، ثم أتقن حالة النصب (Akkusativ) — القاعدة التي تحوّل <span class="de mono">ein</span> إلى <span class="de mono">einen</span> عند طلب شيء مذكّر — بأداة بناء تفاعلية وقائمة مقهى حقيقية تطلب منها بنفسك.</p>
       <div class="hero-ctas">
-        <button class="btn btn-primary" data-scroll="#time-greetings">
+        <button class="btn btn-primary" data-scroll="#food-basics">
           <svg class="icon" style="width:18px;height:18px"><use href="#i-play"/></svg>
           ابدأ الدرس
         </button>
-        <button class="btn btn-ghost" data-scroll="#dialogue">
-          <svg class="icon" style="width:18px;height:18px"><use href="#i-chat"/></svg>
-          استمع لحوار كامل
+        <button class="btn btn-ghost" data-scroll="#cafe-menu">
+          <svg class="icon" style="width:18px;height:18px"><use href="#i-cup"/></svg>
+          اطلب من قائمة المقهى
         </button>
       </div>
     </div>
@@ -797,44 +783,34 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     <div class="reveal is-visible" style="transition-delay:.15s">
       <div class="hero-illustration">
         <svg class="hero-illo-svg" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <linearGradient id="personA" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="var(--teal)"/>
-              <stop offset="100%" stop-color="var(--teal-ink)"/>
-            </linearGradient>
-            <linearGradient id="personB" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="var(--amber)"/>
-              <stop offset="100%" stop-color="var(--amber-ink)"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="210" cy="285" rx="170" ry="16" fill="var(--border)" opacity=".5"/>
-          <g>
-            <circle cx="130" cy="150" r="46" fill="url(#personA)"/>
-            <rect x="86" y="190" width="88" height="90" rx="30" fill="url(#personA)"/>
-            <circle cx="115" cy="142" r="5" fill="#fff"/>
-            <circle cx="148" cy="142" r="5" fill="#fff"/>
-            <path d="M112 165 Q130 178 150 165" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <ellipse cx="210" cy="290" rx="160" ry="14" fill="var(--border)" opacity=".5"/>
+
+          <!-- saucer + cup -->
+          <ellipse cx="160" cy="230" rx="75" ry="15" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2.5"/>
+          <path d="M125,150 L195,150 L188,213 Q160,230 132,213 Z" fill="var(--amber)" stroke="var(--surface)" stroke-width="3"/>
+          <path d="M195,165 Q225,165 225,185 Q225,205 195,205" fill="none" stroke="var(--amber)" stroke-width="9" stroke-linecap="round"/>
+
+          <!-- steam -->
+          <g opacity=".65">
+            <path class="steam-wisp" d="M143,148 Q136,130 146,115 Q156,100 148,85" fill="none" stroke="var(--ink-faint)" stroke-width="3" stroke-linecap="round"/>
+            <path class="steam-wisp s2" d="M173,148 Q180,130 170,115 Q160,100 168,85" fill="none" stroke="var(--ink-faint)" stroke-width="3" stroke-linecap="round"/>
           </g>
-          <g>
-            <circle cx="290" cy="150" r="46" fill="url(#personB)"/>
-            <rect x="246" y="190" width="88" height="90" rx="30" fill="url(#personB)"/>
-            <circle cx="275" cy="142" r="5" fill="#2b1c05"/>
-            <circle cx="308" cy="142" r="5" fill="#2b1c05"/>
-            <path d="M272 165 Q290 178 310 165" stroke="#2b1c05" stroke-width="4" fill="none" stroke-linecap="round"/>
-          </g>
+
+          <!-- side plate with bread roll -->
+          <ellipse cx="310" cy="245" rx="58" ry="14" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2.5"/>
+          <ellipse cx="310" cy="228" rx="34" ry="17" fill="var(--plum)"/>
+          <path d="M290,224 Q310,216 330,224" fill="none" stroke="var(--surface)" stroke-width="2" opacity=".6"/>
+          <path d="M294,232 Q310,224 326,232" fill="none" stroke="var(--surface)" stroke-width="2" opacity=".6"/>
+
           <g class="floaty">
-            <rect x="55" y="55" width="118" height="50" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <path d="M95 105 L85 118 L108 105 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <text x="114" y="86" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="20" fill="var(--teal)">Hallo!</text>
+            <rect x="10" y="20" width="140" height="52" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M65 72 L55 85 L78 72 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="80" y="53" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="17" fill="var(--teal)">Ich möchte…</text>
           </g>
           <g class="floaty d3">
-            <rect x="245" y="30" width="150" height="50" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <path d="M300 80 L290 93 L313 80 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <text x="320" y="61" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="18" fill="var(--amber-ink)">Guten Tag!</text>
-          </g>
-          <g class="floaty d2" transform="translate(178,205)">
-            <circle r="20" fill="var(--plum)"/>
-            <text y="7" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="20" fill="#fff">?</text>
+            <rect x="250" y="15" width="160" height="52" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M300 67 L290 80 L313 67 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="330" y="47" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="15" fill="var(--amber-ink)">einen Kaffee!</text>
           </g>
         </svg>
       </div>
@@ -848,22 +824,22 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <section class="section" id="intro">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-handshake"/></svg>أول محادثة حقيقية</span>
-      <h2 class="section-title">لماذا تُعد التحيات نقطة انطلاق مثالية؟</h2>
-      <p class="section-sub">في كل مرة تلتقي بها بأحد، ستحتاج تحية مناسبة. هذا الدرس يمنحك أدوات فعلية لبدء أي محادثة ألمانية بثقة منذ اللحظة الأولى.</p>
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-utensils"/></svg>موضوعان مترابطان</span>
+      <h2 class="section-title">لماذا الطعام هو أفضل بوّابة لحالة النصب؟</h2>
+      <p class="section-sub">كل مرة تطلب فيها شيئًا — قهوة، ماء، خبزًا — تحتاج حالة النصب (Akkusativ). هذا الدرس يعلّمك المفردات والقاعدة النحوية معًا، بالطريقة التي ستستخدمها فعليًا في أي مقهى.</p>
     </div>
     <div class="grid-3 reveal-stagger reveal">
       <div class="info-card">
-        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-sunrise"/></svg></span>تحية بحسب الوقت</h3>
-        <p>الألمانية تُميّز بدقة بين تحية الصباح والنهار والمساء — تمامًا كما تختلف «صباح الخير» عن «مساء الخير» بالعربية، لكن بحدود زمنية أوضح قليلًا.</p>
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-cup"/></svg></span>مفردات تستخدمها يوميًا</h3>
+        <p>الطعام والشراب من أكثر المواضيع استخدامًا في السفر والحياة اليومية — من الفطور إلى طلب العشاء.</p>
       </div>
       <div class="info-card">
-        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-users"/></svg></span>رسمي أم غير رسمي؟</h3>
-        <p>على عكس العربية، تملك الألمانية صيغتين مختلفتين تمامًا لمخاطبة «أنت»: <span class="de mono">du</span> للأصدقاء والعائلة، و<span class="de mono">Sie</span> للغرباء والمواقف الرسمية. اختيار الصيغة الخاطئة قد يبدو وقحًا أو غريبًا.</p>
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-target"/></svg></span>باب نحوي أساسي: Akkusativ</h3>
+        <p>عندما تطلب شيئًا مذكّرًا، تتحوّل <span class="de mono">ein</span> إلى <span class="de mono">einen</span> — المؤنث والمحايد لا يتغيّران.</p>
       </div>
       <div class="info-card">
-        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-chat"/></svg></span>جمل جاهزة للاستخدام فورًا</h3>
-        <p>بنهاية هذا الدرس، ستكون قادرًا على تحية شخص، وتقديم نفسك، والسؤال عن اسمه ومكانه، والرد على «كيف حالك؟» — أي محادثة تعارف كاملة.</p>
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>امتداد طبيعي لدرسك السابق</h3>
+        <p>مثلما تعلّمت توافق أدوات الملكية مع جنس الاسم في الدرس الماضي، ستتعلّم اليوم توافق أداة النصب بنفس المنطق تمامًا.</p>
       </div>
     </div>
 
@@ -878,8 +854,8 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
         <p style="margin-bottom:14px">كل ما تحتاج تذكّره اليوم — والباقي تدريب وحوار حي.</p>
       </div>
       <div class="stat-cards">
-        <div class="stat-card teal"><div class="stat-pct">٤</div><div class="stat-desc">تحيات حسب وقت اليوم</div></div>
-        <div class="stat-card amber"><div class="stat-pct">٢</div><div class="stat-desc">صيغتا مخاطبة: <span class="de mono">du</span> و<span class="de mono">Sie</span></div></div>
+        <div class="stat-card teal"><div class="stat-pct">١٨</div><div class="stat-desc">كلمة طعام وشراب أساسية تحفظها اليوم</div></div>
+        <div class="stat-card amber"><div class="stat-pct">١</div><div class="stat-desc">تغيير واحد فقط: <span class="de mono">ein → einen</span> للمذكّر فقط</div></div>
       </div>
     </div>
   </div>
@@ -887,79 +863,70 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
 <hr class="rail-rule">
 
-<!-- ============================= TIME-BASED GREETINGS ============================= -->
-<section class="section" id="time-greetings">
+<!-- ============================= FOOD BASICS ============================= -->
+<section class="section" id="food-basics">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-sunrise"/></svg>حسب وقت اليوم</span>
-      <h2 class="section-title">التحيات الأربع الأساسية</h2>
-      <p class="section-sub">انقر على أي بطاقة لسماع نطقها. لاحظ أن التوقيت التقريبي يساعدك على اختيار التحية الصحيحة.</p>
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-bread"/></svg>ما يوضع على المائدة</span>
+      <h2 class="section-title">الأطعمة الأساسية</h2>
+      <p class="section-sub">أطعمة تراها في كل بيت ومطعم ألماني. انقر لقلب البطاقة وسماع النطق.</p>
     </div>
-    <div class="time-grid reveal-stagger reveal" id="timeGrid"></div>
+    <div class="vocab-grid reveal-stagger reveal" id="foodGrid"></div>
   </div>
 </section>
 
 <hr class="rail-rule">
 
-<!-- ============================= CASUAL / REGIONAL GREETINGS ============================= -->
-<section class="section" id="casual">
+<!-- ============================= DRINKS ============================= -->
+<section class="section" id="drinks">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>بين الأصدقاء</span>
-      <h2 class="section-title">تحيات غير رسمية ولهجات إقليمية</h2>
-      <p class="section-sub">الألمانية المحكية في مختلف البلدان الناطقة بها غنية بالتحيات غير الرسمية. هذه أشهرها.</p>
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-cup"/></svg>لكل وجبة مشروب</span>
+      <h2 class="section-title">المشروبات</h2>
+      <p class="section-sub">من الماء إلى القهوة — أول ما يُسألك عنه النادل في أي مطعم.</p>
     </div>
-    <div class="region-grid reveal-stagger reveal" id="regionGrid"></div>
+    <div class="vocab-grid reveal-stagger reveal" id="drinksGrid"></div>
   </div>
 </section>
 
 <hr class="rail-rule">
 
-<!-- ============================= FAREWELLS ============================= -->
-<section class="section" id="farewells">
+<!-- ============================= MEALS OF THE DAY ============================= -->
+<section class="section" id="meals-of-day">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-cards"/></svg>عند المغادرة</span>
-      <h2 class="section-title">كيف تودّع بشكل صحيح</h2>
-      <p class="section-sub">انقر على البطاقة لقلبها ورؤية درجة الرسمية والمعنى الحرفي.</p>
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>إيقاع اليوم</span>
+      <h2 class="section-title">وجبات اليوم الثلاث</h2>
+      <p class="section-sub">حقيقة لطيفة: الوجبات الثلاث كلّها محايدة الجنس (das) — استثناء نادر يريحك من الحفظ!</p>
     </div>
-    <div class="vocab-grid reveal-stagger reveal" id="farewellGrid"></div>
+    <div class="meals-row reveal-stagger reveal" id="mealsRow"></div>
   </div>
 </section>
 
 <hr class="rail-rule">
 
-<!-- ============================= DU vs SIE ============================= -->
-<section class="section" id="duSie">
+<!-- ============================= ACCUSATIVE BUILDER (centerpiece) ============================= -->
+<section class="section" id="accusative-builder">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-users"/></svg>أهم فرق في هذا الدرس</span>
-      <h2 class="section-title"><span class="de mono">du</span> أم <span class="de mono">Sie</span>؟</h2>
-      <p class="section-sub">قاعدة ذهبية: <span class="de mono">du</span> مع من تعرفهم جيدًا، و<span class="de mono">Sie</span> مع من لا تعرفهم أو تحترم مكانتهم. قارن الجملة نفسها بالصيغتين.</p>
+      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>القاعدة الذهبية لهذا الدرس</span>
+      <h2 class="section-title">حالة النصب: <span class="de mono">ein → einen</span></h2>
+      <p class="section-sub">عند قول <span class="de mono">Ich möchte…</span> (أريد…)، أداة التنكير <span class="de mono">ein</span> تتحوّل إلى <span class="de mono">einen</span> فقط مع الأسماء المذكّرة. المؤنث والمحايد لا يتغيّران أبدًا. اختر اسمًا وشاهد القاعدة تعمل.</p>
     </div>
 
-    <div class="duSie-table reveal" id="duSieTable">
-      <div class="duSie-head"><div class="lbl-ar">بالعربية</div><div class="lbl-du">du · غير رسمي</div><div class="lbl-sie">Sie · رسمي</div></div>
-    </div>
+    <div class="acc-shell reveal">
+      <div class="acc-picker-label">اختر ما تريد طلبه</div>
+      <div class="acc-chip-row" id="accNounRow"></div>
 
-    <div class="when-cards reveal">
-      <div class="when-card du">
-        <h3>استخدم <span class="de mono">du</span> مع:</h3>
-        <ul>
-          <li>الأصدقاء والعائلة</li>
-          <li>الأطفال والمراهقين</li>
-          <li>زملاء الدراسة</li>
-          <li>غالبًا بين الشباب في العمل غير الرسمي</li>
-        </ul>
+      <div class="acc-result">
+        <div class="acc-result-phrase" id="accResultPhrase" tabindex="0" role="button" aria-label="استمع للعبارة المكوَّنة"></div>
+        <p class="acc-note" id="accNote"></p>
       </div>
-      <div class="when-card sie">
-        <h3>استخدم <span class="de mono">Sie</span> مع:</h3>
-        <ul>
-          <li>الغرباء تمامًا</li>
-          <li>كبار السن</li>
-          <li>في بيئة العمل الرسمية والاجتماعات</li>
-          <li>الأطباء والمسؤولين والبائعين</li>
-        </ul>
+
+      <div class="acc-table">
+        <div class="acc-table-cell">مذكّر (der)<b class="de">ein → einen</b></div>
+        <div class="acc-table-cell">مؤنث (die)<b class="de">eine → eine</b></div>
+        <div class="acc-table-cell">محايد (das)<b class="de">ein → ein</b></div>
       </div>
     </div>
   </div>
@@ -967,15 +934,59 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
 <hr class="rail-rule">
 
-<!-- ============================= SELF-INTRODUCTION PATTERNS ============================= -->
-<section class="section" id="introduce">
+<!-- ============================= CAFÉ MENU (centerpiece) ============================= -->
+<section class="section" id="cafe-menu">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>عبارات جاهزة</span>
-      <h2 class="section-title">كيف تُقدّم نفسك</h2>
-      <p class="section-sub">ست جمل جاهزة تكفيك لبدء أي تعارف. انقر على أي جملة لسماع نطقها.</p>
+      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-cup"/></svg>طبّق القاعدة في موقف حقيقي</span>
+      <h2 class="section-title">قائمة المقهى التفاعلية</h2>
+      <p class="section-sub">انقر على ما تريد طلبه (حتى ٤ عناصر)، وشاهد جملة الطلب الكاملة تتكوّن تلقائيًا بحالة النصب الصحيحة لكل عنصر.</p>
     </div>
-    <div class="pattern-list reveal-stagger reveal" id="patternList"></div>
+
+    <div class="menu-board reveal">
+      <div class="menu-cat-label">☕ المشروبات</div>
+      <div class="menu-items-grid" id="menuDrinksGrid"></div>
+      <div class="menu-cat-label">🍽️ الطعام</div>
+      <div class="menu-items-grid" id="menuFoodGrid"></div>
+
+      <div class="order-tray">
+        <div class="order-tray-label">طلبي (Meine Bestellung)</div>
+        <div class="order-sentence de" id="orderSentence" tabindex="0" role="button"></div>
+        <div class="order-actions">
+          <button class="btn btn-ghost" id="orderResetBtn" style="padding:9px 18px;font-size:.88rem">إعادة تعيين</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= PRACTICAL ============================= -->
+<section class="section" id="practical">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>من النظرية إلى الحياة اليومية</span>
+      <h2 class="section-title">عبارات تحتاجها في كل مطعم</h2>
+      <p class="section-sub">جمل عملية آمنة نحويًا تستخدمها من أول زيارة لمطعم أو مقهى.</p>
+    </div>
+
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-target"/></svg></span>الجوع والعطش</h3>
+        <p><span class="de mono" data-speak="Ich habe Hunger und Durst.">Ich habe Hunger und Durst.</span> — أنا جائع وعطشان.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-cup"/></svg></span>طلب بأدب</h3>
+        <p><span class="de mono" data-speak="Ich hätte gern eine Suppe.">Ich hätte gern eine Suppe.</span> — أرغب في حساء، من فضلك.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-utensils"/></svg></span>إنهاء الوجبة</h3>
+        <p><span class="de mono" data-speak="Die Rechnung, bitte.">Die Rechnung, bitte.</span> — الحساب، من فضلك.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:30px" class="reveal" id="extraAccordion"></div>
   </div>
 </section>
 
@@ -986,13 +997,13 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>طبّق ما تعلّمته</span>
-      <h2 class="section-title">حوارا تعارف كاملان</h2>
-      <p class="section-sub">انقر على أي فقاعة حوار لسماعها بمفردها، أو استمع للحوار كاملًا بزر واحد. تنقّل بين الحوار غير الرسمي والرسمي من التبويبات.</p>
+      <h2 class="section-title">حوارا استخدام كاملان</h2>
+      <p class="section-sub">انقر على أي فقاعة حوار لسماعها بمفردها، أو استمع للحوار كاملًا بزر واحد.</p>
     </div>
 
     <div class="dialogue-tabs reveal">
-      <button class="cat-tab active" data-panel="dlgInformal">حوار غير رسمي <span class="cat-count">du</span></button>
-      <button class="cat-tab" data-panel="dlgFormal">حوار رسمي <span class="cat-count">Sie</span></button>
+      <button class="cat-tab active" data-panel="dlgInformal">في مطبخ صديق <span class="cat-count">du</span></button>
+      <button class="cat-tab" data-panel="dlgFormal">في مطعم <span class="cat-count">Sie</span></button>
     </div>
 
     <div class="dialogue-shell reveal">
@@ -1010,7 +1021,7 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>تجنّب الفخاخ الشائعة</span>
       <h2 class="section-title">أخطاء يقع فيها معظم المبتدئين</h2>
-      <p class="section-sub">أغلب هذه الأخطاء اجتماعية بقدر ما هي لغوية — قارن كل خطأ بصورته الصحيحة.</p>
+      <p class="section-sub">معظمها يتعلّق بتوافق حالة النصب مع جنس الاسم — قارن كل خطأ بصورته الصحيحة.</p>
     </div>
     <div class="reveal-stagger reveal" id="mistakesList" style="display:flex;flex-direction:column;gap:16px"></div>
   </div>
@@ -1024,7 +1035,7 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-speaker"/></svg>نطق أصيل</span>
       <h2 class="section-title">نصائح النطق</h2>
-      <p class="section-sub">أربع ملاحظات تبني على ما تعلّمته في درس الحروف.</p>
+      <p class="section-sub">أربع ملاحظات — إحداها قاعدة جديدة كليًا لم تظهر من قبل.</p>
     </div>
     <div class="grid-2 reveal-stagger reveal" id="tipsGrid"></div>
   </div>
@@ -1043,9 +1054,9 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
     <div class="exercise-shell reveal">
       <div class="exercise-tabs" role="tablist">
-        <button class="exercise-tab active" data-panel="panelMatch" role="tab">طابق التحية بمعناها <span class="count" id="countMatch">٠/٨</span></button>
+        <button class="exercise-tab active" data-panel="panelMatch" role="tab">طابق الكلمة بمعناها <span class="count" id="countMatch">٠/٨</span></button>
         <button class="exercise-tab" data-panel="panelMcq" role="tab">اختر الإجابة الصحيحة <span class="count" id="countMcq">٠/٨</span></button>
-        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الحوار <span class="count" id="countFill">٠/٨</span></button>
+        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الفراغ <span class="count" id="countFill">٠/٨</span></button>
         <button class="exercise-tab" data-panel="panelBuilder" role="tab">رتّب كلمات الجملة <span class="count" id="countBuilder">٠/٥</span></button>
         <button class="exercise-tab" data-panel="panelListen" role="tab">تمرين الاستماع <span class="count" id="countListen">٠/١</span></button>
       </div>
@@ -1077,18 +1088,18 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
     <div class="grid-2 reveal">
       <ul class="summary-list info-card">
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا التحيات الأربع حسب وقت اليوم، وتحيات غير رسمية من مناطق ناطقة بالألمانية مختلفة.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا خمس صيغ وداع، من الأكثر رسمية إلى الأكثر عفوية.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا الفرق بين <span class="de mono">du</span> و<span class="de mono">Sie</span> ومتى نستخدم كل صيغة.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا ست جمل جاهزة لتقديم النفس والسؤال عن الاسم والمكان والحال.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>استمعنا وتفاعلنا مع حوارين كاملين — أحدهما غير رسمي والآخر رسمي.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا ١٨ كلمة طعام وشراب أساسية، ووجبات اليوم الثلاث.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا حالة النصب (Akkusativ): <span class="de mono">ein → einen</span> للمذكّر فقط.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>طبّقنا القاعدة عمليًا عبر طلب طعام حقيقي من قائمة مقهى تفاعلية.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا عبارات عملية: الجوع والعطش، الطلب بأدب، وطلب الحساب.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>استمعنا وتفاعلنا مع حوارين كاملين — في مطبخ صديق وفي مطعم رسمي.</p></li>
       </ul>
 
       <div class="info-card" style="display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;background:linear-gradient(155deg, var(--teal-soft), var(--plum-soft))">
         <svg class="icon" style="width:40px;height:40px;margin:0 auto;color:var(--teal)"><use href="#i-compass"/></svg>
         <h3 style="justify-content:center">الدرس القادم</h3>
-        <p>الأرقام من ٠ إلى ١٠٠ — قريبًا في الدرس الثالث من مسار A1.</p>
-        <button class="btn btn-ghost" disabled style="align-self:center">الدرس ٣ (قريبًا)</button>
+        <p>الوقت والساعة — قريبًا في الدرس السابع من مسار A1.</p>
+        <button class="btn btn-ghost" disabled style="align-self:center">الدرس ٧ (قريبًا)</button>
       </div>
     </div>
 
@@ -1102,7 +1113,7 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <!-- ============================= FOOTER ============================= -->
 <footer class="site-footer">
   <div class="container footer-inner">
-    <span>الدرس ٢ · مسار الألمانية A1 — صُمم للتعلّم النشط والاستماع الفوري.</span>
+    <span>الدرس ٦ · مسار الألمانية A1 — صُمم للتعلّم النشط والاستماع الفوري.</span>
     <div class="footer-actions">
       <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس"><svg class="icon"><use href="#i-printer"/></svg></button>
     </div>
@@ -1131,134 +1142,158 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 /* ==========================================================================
    DATA
    ========================================================================== */
-const TIME_GREETINGS = [
-  {cls:"morning", icon:"i-sunrise", range:"~٥ صباحًا – ١٠ صباحًا", de:"Guten Morgen", ipa:"ˈɡuːtn̩ ˈmɔʁɡn̩", ar:"صباح الخير"},
-  {cls:"day", icon:"i-sun", range:"~١٠ صباحًا – ٦ مساءً", de:"Guten Tag", ipa:"ˈɡuːtn̩ taːk", ar:"تحية عامة نهارية"},
-  {cls:"evening", icon:"i-sunset", range:"~٦ مساءً – منتصف الليل", de:"Guten Abend", ipa:"ˈɡuːtn̩ ˈaːbn̩t", ar:"مساء الخير"},
-  {cls:"night", icon:"i-moon", range:"عند النوم أو المغادرة ليلًا", de:"Gute Nacht", ipa:"ˈɡuːtə naxt", ar:"تصبح على خير (وداع لا تحية)"}
+const FOOD_BASICS = [
+  {de:"das Brot",     word:"Brot",     ipa:"broːt",     ar:"الخبز",              plural:false},
+  {de:"der Käse",     word:"Käse",     ipa:"ˈkɛːzə",    ar:"الجبن",              plural:false},
+  {de:"die Wurst",    word:"Wurst",    ipa:"vʊʁst",     ar:"النقانق/السجق",      plural:false},
+  {de:"das Ei",       word:"Ei",       ipa:"aɪ",        ar:"البيضة",             plural:false},
+  {de:"der Reis",     word:"Reis",     ipa:"ʁaɪs",      ar:"الأرز",              plural:false},
+  {de:"die Nudeln",   word:"Nudeln",   ipa:"ˈnuːdl̩n",   ar:"المعكرونة",          plural:true},
+  {de:"das Obst",     word:"Obst",     ipa:"oːpst",     ar:"الفاكهة",            plural:false},
+  {de:"das Gemüse",   word:"Gemüse",   ipa:"ɡəˈmyːzə",  ar:"الخضار",             plural:false},
+  {de:"das Fleisch",  word:"Fleisch",  ipa:"flaɪʃ",     ar:"اللحم",              plural:false},
+  {de:"der Fisch",    word:"Fisch",    ipa:"fɪʃ",       ar:"السمك",              plural:false},
+  {de:"die Suppe",    word:"Suppe",    ipa:"ˈzʊpə",     ar:"الحساء/الشوربة",     plural:false}
 ];
 
-const REGION_GREETINGS = [
-  {flag:"💬", de:"Hallo", place:"في كل مكان", desc:"الأكثر حيادية بين التحيات غير الرسمية، تُستخدم مع الجميع تقريبًا."},
-  {flag:"👋", de:"Hi", place:"بين الشباب", desc:"مستعارة من الإنجليزية، عفوية جدًا، شائعة في الرسائل والدردشة."},
-  {flag:"🇦🇹", de:"Servus", place:"النمسا وجنوب ألمانيا", desc:"تحية ووداع في آنٍ واحد! تُستخدم عند اللقاء وعند المغادرة أيضًا."},
-  {flag:"⚓", de:"Moin", place:"شمال ألمانيا", desc:"تُقال في أي وقت من اليوم، وأحيانًا تُكرَّر: Moin Moin."},
-  {flag:"🇨🇭", de:"Grüezi", place:"سويسرا", desc:"التحية القياسية في المناطق السويسرية الناطقة بالألمانية."},
-  {flag:"🌞", de:"Grüß dich", place:"جنوب ألمانيا", desc:"تحية ودّية غير رسمية، حرفيًا «يبارك فيك» بمعنى مجازي بحت."}
+const DRINKS = [
+  {de:"das Wasser", word:"Wasser", ipa:"ˈvasɐ",  ar:"الماء",   plural:false},
+  {de:"der Kaffee", word:"Kaffee", ipa:"ˈkafe",  ar:"القهوة",  plural:false},
+  {de:"der Tee",    word:"Tee",    ipa:"teː",    ar:"الشاي",   plural:false},
+  {de:"der Saft",   word:"Saft",   ipa:"zaft",   ar:"العصير",  plural:false},
+  {de:"die Milch",  word:"Milch",  ipa:"mɪlç",   ar:"الحليب",  plural:false},
+  {de:"das Bier",   word:"Bier",   ipa:"biːɐ̯",   ar:"البيرة",  plural:false},
+  {de:"der Wein",   word:"Wein",   ipa:"vaɪn",   ar:"النبيذ",  plural:false}
 ];
 
-const FAREWELLS = [
-  {de:"Tschüss", ipa:"tʃʏs", meaning:"وداعًا", formality:"غير رسمية", note:"الأكثر شيوعًا في المحادثات اليومية"},
-  {de:"Auf Wiedersehen", ipa:"aʊf ˈviːdɐˌzeːən", meaning:"إلى اللقاء", formality:"رسمية", note:"حرفيًا: حتى نرى بعضنا مجددًا"},
-  {de:"Bis bald", ipa:"bɪs balt", meaning:"أراك قريبًا", formality:"غير رسمية", note:"عند توقّع لقاء قريب"},
-  {de:"Bis später", ipa:"bɪs ˈʃpɛːtɐ", meaning:"أراك لاحقًا", formality:"غير رسمية", note:"عادة في نفس اليوم"},
-  {de:"Ciao", ipa:"tʃaʊ", meaning:"سلام", formality:"غير رسمية جدًا", note:"مستعارة من الإيطالية، شائعة بين الشباب"}
+const MEALS = [
+  {de:"das Frühstück",   time:"٧:٠٠ - ٩:٠٠", ar:"الفطور"},
+  {de:"das Mittagessen", time:"١٢:٠٠ - ١٤:٠٠", ar:"الغداء"},
+  {de:"das Abendessen",  time:"١٨:٠٠ - ٢٠:٠٠", ar:"العشاء"}
 ];
 
-const DUSIE_ROWS = [
-  {ar:"أنت", du:"du", sie:"Sie"},
-  {ar:"ما اسمك؟", du:"Wie heißt du?", sie:"Wie heißen Sie?"},
-  {ar:"من أين أنت؟", du:"Woher kommst du?", sie:"Woher kommen Sie?"},
-  {ar:"كيف حالك؟", du:"Wie geht's dir?", sie:"Wie geht es Ihnen?"},
-  {ar:"تشرّفت بمعرفتك", du:"Freut mich!", sie:"Freut mich, Sie kennenzulernen."}
+/* --- Accusative builder centerpiece: ein → einen only for masculine --- */
+const ACC_NOUNS = [
+  {id:'kaffee', label:"Kaffee", gender:"masc.", cls:"masc", art:"einen"},
+  {id:'tee',    label:"Tee",    gender:"masc.", cls:"masc", art:"einen"},
+  {id:'saft',   label:"Saft",   gender:"masc.", cls:"masc", art:"einen"},
+  {id:'milch',  label:"Milch",  gender:"fem.",  cls:"fem",  art:"eine"},
+  {id:'wurst',  label:"Wurst",  gender:"fem.",  cls:"fem",  art:"eine"},
+  {id:'suppe',  label:"Suppe",  gender:"fem.",  cls:"fem",  art:"eine"},
+  {id:'wasser', label:"Wasser", gender:"neutr.",cls:"neut", art:"ein"},
+  {id:'brot',   label:"Brot",   gender:"neutr.",cls:"neut", art:"ein"},
+  {id:'ei',     label:"Ei",     gender:"neutr.",cls:"neut", art:"ein"}
 ];
 
-const PATTERNS = [
-  {de:"Ich heiße Anna.", ar:"اسمي آنا.", formality:"عام"},
-  {de:"Ich bin Ben.", ar:"أنا بِن.", formality:"عام"},
-  {de:"Mein Name ist Frau Weber.", ar:"اسمي هو السيدة فيبر.", formality:"رسمي"},
-  {de:"Ich komme aus Ägypten.", ar:"أنا من مصر.", formality:"عام"},
-  {de:"Ich wohne in Berlin.", ar:"أسكن في برلين.", formality:"عام"},
-  {de:"Freut mich, Sie kennenzulernen.", ar:"تشرّفت بمعرفتك.", formality:"رسمي"}
+/* --- Café menu / order builder centerpiece --- */
+const MENU_DRINKS = [
+  {id:'kaffee', de:"Kaffee", acc:"einen Kaffee", ar:"قهوة"},
+  {id:'tee',    de:"Tee",    acc:"einen Tee",    ar:"شاي"},
+  {id:'wasser', de:"Wasser", acc:"ein Wasser",   ar:"ماء"},
+  {id:'saft',   de:"Saft",   acc:"einen Saft",   ar:"عصير"}
+];
+const MENU_FOOD = [
+  {id:'brot',   de:"Brot",   acc:"ein Brot",    ar:"خبز"},
+  {id:'kaese',  de:"Käse",   acc:"einen Käse",  ar:"جبن"},
+  {id:'ei',     de:"Ei",     acc:"ein Ei",      ar:"بيضة"},
+  {id:'suppe',  de:"Suppe",  acc:"eine Suppe",  ar:"حساء"},
+  {id:'wurst',  de:"Wurst",  acc:"eine Wurst",  ar:"نقانق"},
+  {id:'kuchen', de:"Kuchen", acc:"einen Kuchen",ar:"كعكة"}
+];
+
+const EXTRA_NOTES = [
+  {q:"لماذا لا تُستخدم أداة تنكير مع Obst و Gemüse؟", body:"<span class=\"de mono\" data-speak=\"Obst\">Obst</span> و<span class=\"de mono\" data-speak=\"Gemüse\">Gemüse</span> أسماء جماعية غير معدودة (مثل «الفاكهة» و«الخضار» بالعربية) — تُستخدم عادة بلا أداة عند الحديث عنها بشكل عام: <span class=\"de\" data-speak=\"Ich esse gern Obst.\">Ich esse gern Obst.</span> — أحب أكل الفاكهة."},
+  {q:"ما الفرق بين Ich möchte و Ich hätte gern؟", body:"كلاهما يعني «أريد» بأدب ويُستخدمان بالتبادل في المطاعم. <span class=\"de mono\" data-speak=\"Ich möchte\">Ich möchte</span> أبسط وأكثر شيوعًا، بينما <span class=\"de mono\" data-speak=\"Ich hätte gern\">Ich hätte gern</span> أكثر رسمية قليلًا ويُترجم حرفيًا «كنت لأحب أن يكون لدي»."},
+  {q:"هل Hunger و Durst مذكّران أم مؤنثان؟", body:"كلاهما مذكّر: <span class=\"de mono\" data-speak=\"der Hunger\">der Hunger</span> (الجوع) و<span class=\"de mono\" data-speak=\"der Durst\">der Durst</span> (العطش). تُستخدمان مع الفعل <span class=\"de mono\">haben</span>: <span class=\"de\" data-speak=\"Ich habe Hunger.\">Ich habe Hunger.</span>، وليس مع <span class=\"de mono\">sein</span>."}
 ];
 
 const DIALOGUE_INFORMAL = [
-  {who:"a", name:"Anna", de:"Hallo! Ich heiße Anna. Und du?", ar:"مرحبًا! اسمي آنا. وأنت؟"},
-  {who:"b", name:"Ben", de:"Hi Anna! Ich bin Ben.", ar:"مرحبًا آنا! أنا بِن."},
-  {who:"a", name:"Anna", de:"Woher kommst du?", ar:"من أين أنت؟"},
-  {who:"b", name:"Ben", de:"Ich komme aus Berlin. Und du?", ar:"أنا من برلين. وأنتِ؟"},
-  {who:"a", name:"Anna", de:"Ich komme aus München. Wie geht's dir?", ar:"أنا من ميونخ. كيف حالك؟"},
-  {who:"b", name:"Ben", de:"Mir geht es gut, danke! Und dir?", ar:"أنا بخير، شكرًا! وأنتِ؟"},
-  {who:"a", name:"Anna", de:"Auch gut! Bis später, Ben.", ar:"بخير أيضًا! أراك لاحقًا يا بِن."},
-  {who:"b", name:"Ben", de:"Tschüss, Anna!", ar:"وداعًا يا آنا!"}
+  {who:"a", name:"Lisa", de:"Hast du Hunger?", ar:"هل أنت جائع؟"},
+  {who:"b", name:"Tom", de:"Ja, ich habe Hunger. Und Durst!", ar:"نعم، أنا جائع. وعطشان!"},
+  {who:"a", name:"Lisa", de:"Ich mache Kaffee. Möchtest du auch einen?", ar:"سأحضّر قهوة. هل تريد واحدة أيضًا؟"},
+  {who:"b", name:"Tom", de:"Ja, gern! Und hast du vielleicht Brot und Käse?", ar:"نعم من فضلك! وهل لديك خبز وجبن؟"},
+  {who:"a", name:"Lisa", de:"Klar, ich habe Brot, Käse und Eier.", ar:"بالتأكيد، لدي خبز وجبن وبيض."},
+  {who:"b", name:"Tom", de:"Perfekt, ich möchte ein Ei und ein Brot mit Käse.", ar:"ممتاز، أريد بيضة وخبزًا بالجبن."},
+  {who:"a", name:"Lisa", de:"Kommt sofort!", ar:"قادم في الحال!"},
+  {who:"b", name:"Tom", de:"Danke, Lisa!", ar:"شكرًا يا ليزا!"}
 ];
 
 const DIALOGUE_FORMAL = [
-  {who:"a", name:"Herr Schmidt", de:"Guten Tag, mein Name ist Schmidt.", ar:"نهارك سعيد، اسمي شميت."},
-  {who:"b", name:"Frau Weber", de:"Guten Tag, Herr Schmidt. Ich heiße Weber.", ar:"نهارك سعيد سيد شميت. اسمي فيبر."},
-  {who:"a", name:"Herr Schmidt", de:"Freut mich, Frau Weber. Wie geht es Ihnen?", ar:"تشرّفت سيدة فيبر. كيف حالك؟"},
-  {who:"b", name:"Frau Weber", de:"Danke, es geht mir gut. Und Ihnen?", ar:"شكرًا، أنا بخير. وأنت؟"},
-  {who:"a", name:"Herr Schmidt", de:"Auch gut, danke. Woher kommen Sie?", ar:"بخير أيضًا، شكرًا. من أين أنت؟"},
-  {who:"b", name:"Frau Weber", de:"Ich komme aus Hamburg. Und Sie?", ar:"أنا من هامبورغ. وأنت؟"},
-  {who:"a", name:"Herr Schmidt", de:"Ich komme aus Köln. Auf Wiedersehen, Frau Weber.", ar:"أنا من كولن. إلى اللقاء سيدة فيبر."},
-  {who:"b", name:"Frau Weber", de:"Auf Wiedersehen, Herr Schmidt.", ar:"إلى اللقاء سيد شميت."}
+  {who:"a", name:"Kellner", de:"Guten Abend! Was möchten Sie trinken?", ar:"مساء الخير! ماذا تريدون أن تشربوا؟"},
+  {who:"b", name:"Herr Baumann", de:"Ich möchte einen Wein, bitte.", ar:"أريد نبيذًا من فضلك."},
+  {who:"a", name:"Kellner", de:"Gerne. Und was möchten Sie essen?", ar:"بالطبع. وماذا تريدون أن تأكلوا؟"},
+  {who:"b", name:"Herr Baumann", de:"Ich hätte gern eine Suppe und einen Fisch.", ar:"أرغب في حساء وسمك."},
+  {who:"a", name:"Kellner", de:"Möchten Sie auch ein Dessert?", ar:"هل تريدون حلوى أيضًا؟"},
+  {who:"b", name:"Herr Baumann", de:"Nein danke. Die Rechnung, bitte.", ar:"لا شكرًا. الحساب من فضلك."},
+  {who:"a", name:"Kellner", de:"Natürlich, einen Moment bitte.", ar:"بالتأكيد، لحظة من فضلكم."},
+  {who:"b", name:"Herr Baumann", de:"Vielen Dank!", ar:"شكرًا جزيلًا!"}
 ];
 
 const MISTAKES = [
-  {wrong:"مخاطبة طبيب أو مدير بصيغة <span class=\"de mono\" data-speak=\"du\">du</span> من أول لقاء", right:"استخدام <span class=\"de mono\" data-speak=\"Sie\">Sie</span> مع الغرباء والمواقف الرسمية دائمًا", note:"في الشك، استخدم Sie دائمًا حتى يطلب منك الطرف الآخر التحوّل إلى du."},
-  {wrong:"التعامل مع <span class=\"de mono\" data-speak=\"Wie geht's?\">Wie geht's?</span> كسؤال شكلي فقط كما في الإنجليزية", right:"الاستعداد لإجابة حقيقية أحيانًا، فالألمان قد يجيبون بصدق عن حالهم", note:"في السياقات غير الرسمية القريبة، قد يُتوقع منك رد صادق وليس فقط «بخير»."},
-  {wrong:"قول <span class=\"de mono\" data-speak=\"Guten Tag\">Guten Tag</span> في السابعة مساءً", right:"استخدام <span class=\"de mono\" data-speak=\"Guten Abend\">Guten Abend</span> بعد حوالي الساعة السادسة مساءً", note:"التوقيت مهم في الألمانية أكثر من العربية العامية."},
-  {wrong:"استخدام <span class=\"de mono\" data-speak=\"Tschüss\">Tschüss</span> عند مغادرة اجتماع عمل رسمي", right:"استخدام <span class=\"de mono\" data-speak=\"Auf Wiedersehen\">Auf Wiedersehen</span> في السياقات الرسمية", note:"Tschüss غير رسمية تمامًا، احفظها لأصدقائك فقط."},
-  {wrong:"نطق <span class=\"de mono\" data-speak=\"ich\">ich</span> بصوت k بدلًا من الصوت الناعم", right:"نطقها «إش» بصوت ناعم من الحلق (راجع درس الحروف، تركيبة CH)", note:"هذا خطأ شائع جدًا لدى المبتدئين، ويستحق مراجعة إضافية."},
-  {wrong:"ترجمة <span class=\"de mono\" data-speak=\"Wie heißt du?\">Wie heißt du?</span> حرفيًا كـ«ماذا تُدعى؟» بنبرة غريبة", right:"فهمها كصيغة طبيعية تمامًا تعني «ما اسمك؟»", note:"الفعل heißen يعني حرفيًا «يُسمّى»، وهو الفعل الطبيعي للسؤال عن الاسم في الألمانية."}
+  {wrong:"قول <span class=\"de mono\" data-speak=\"Ich möchte ein Kaffee.\">Ich möchte ein Kaffee.</span> (بلا نصب للمذكّر)", right:"<span class=\"de mono\" data-speak=\"Ich möchte einen Kaffee.\">Ich möchte einen Kaffee.</span> — Kaffee مذكّر فيحتاج einen", note:"أي اسم مذكّر بعد فعل مثل möchten أو haben يأخذ حالة النصب: ein → einen."},
+  {wrong:"قول <span class=\"de mono\" data-speak=\"Ich möchte einen Milch.\">Ich möchte einen Milch.</span> (نصب خاطئ لمؤنث)", right:"<span class=\"de mono\" data-speak=\"Ich möchte eine Milch.\">Ich möchte eine Milch.</span> — Milch مؤنثة، تبقى eine", note:"الأسماء المؤنثة والمحايدة لا تتغيّر أبدًا في حالة النصب مع أداة التنكير."},
+  {wrong:"خلط الصيغتين: <span class=\"de mono\" data-speak=\"Ich habe hungrig.\">Ich habe hungrig.</span>", right:"<span class=\"de mono\" data-speak=\"Ich habe Hunger.\">Ich habe Hunger.</span> أو <span class=\"de mono\" data-speak=\"Ich bin hungrig.\">Ich bin hungrig.</span>", note:"لا تخلط بين haben + اسم (Hunger) وbin + صفة (hungrig) — كلٌّ صحيح بمفرده لكن لا يُمزجان."},
+  {wrong:"استخدام صيغة مفرد نادرة لكلمة Nudeln", right:"<span class=\"de mono\" data-speak=\"die Nudeln\">die Nudeln</span> — تُستخدم بصيغة الجمع في الكلام اليومي دائمًا تقريبًا", note:"مثل كلمة «معكرونة»، تشير Nudeln عادة إلى الطبق ككل وليس قطعة واحدة."},
+  {wrong:"إضافة أداة تنكير لكلمات جماعية: <span class=\"de mono\" data-speak=\"ein Obst\">ein Obst</span>", right:"<span class=\"de mono\" data-speak=\"Obst\">Obst</span> بلا أداة عند الحديث بشكل عام", note:"Obst وGemüse أسماء جماعية غير معدودة، تُستخدم عادة بلا أداة تنكير مثل «ماء» أو «أرز» بالعربية."},
+  {wrong:"افتراض أن Saft محايد مثل Wasser", right:"<span class=\"de mono\" data-speak=\"der Saft\">der Saft</span> مذكّر: <span class=\"de mono\" data-speak=\"einen Saft\">einen Saft</span>", note:"لا يوجد نمط ثابت لتخمين جنس اسم المشروب — احفظ كل كلمة مع أداتها من البداية."}
 ];
 
 const TIPS = [
-  {title:"تذكّر نطق G الصلب", body:"في <span class=\"de\" data-speak=\"Guten\">Guten</span>، حرف G في البداية يُنطق مثل الجيم الصلبة كما تعلّمنا في درس الحروف، وليس مثل j الإنجليزية."},
-  {title:"EI تُنطق دائمًا آي", body:"في <span class=\"de\" data-speak=\"heiße\">heiße</span>، تركيبة EI تُنطق «آي» دائمًا — فتُصبح الكلمة «هايسه»، تمامًا كما تعلّمت في درس الحروف."},
-  {title:"Ihnen تبدأ بحرف علة ممدود", body:"صيغة «لكم/لك» الرسمية <span class=\"de\" data-speak=\"Ihnen\">Ihnen</span> تبدأ بصوت إي ممدود، وتُنطق «إينن» — لا تخلطها مع <span class=\"de\" data-speak=\"ihnen\">ihnen</span> بمعنى «لهم»."},
-  {title:"ضع النبرة على اسمك", body:"عند تقديم نفسك بجملة مثل <span class=\"de\" data-speak=\"Ich heiße Anna\">Ich heiße Anna</span>، تقع النبرة الطبيعية على الاسم نفسه، وليس على الفعل heiße."}
+  {title:"ä في Käse صوت طويل [ɛː]", body:"في <span class=\"de\" data-speak=\"Käse\">Käse</span>، حرف <span class=\"de mono\">ä</span> يُنطق [ɛː] طويلة، أقرب لصوت «إيه» ممدودًا."},
+  {title:"W تُنطق [v] — قاعدة جديدة!", body:"في <span class=\"de\" data-speak=\"Wasser\">Wasser</span> و<span class=\"de\" data-speak=\"Wein\">Wein</span>، حرف <span class=\"de mono\">W</span> يُنطق [v] وليس [w] الإنجليزية — تمامًا كحرف V الذي تعلّمته من قبل، لكن بالعكس: V=[f] وW=[v]."},
+  {title:"ei تُنطق [aɪ] كالمعتاد", body:"في <span class=\"de\" data-speak=\"Ei\">Ei</span> و<span class=\"de\" data-speak=\"Fleisch\">Fleisch</span> و<span class=\"de\" data-speak=\"Wein\">Wein</span>، النمط المألوف [aɪ] يتكرر مجددًا."},
+  {title:"تضعيف الحروف يعني علّة طويلة", body:"في <span class=\"de\" data-speak=\"Tee\">Tee</span>، تضعيف حرف العلة (ee) يدلّ على نطق طويل [teː] — نفس المبدأ في <span class=\"de\" data-speak=\"Bier\">Bier</span> بحرفي ie."}
 ];
 
 const MATCH_PAIRS = [
-  {de:"Guten Morgen", ar:"صباح الخير"}, {de:"Guten Abend", ar:"مساء الخير"},
-  {de:"Tschüss", ar:"وداعًا (غير رسمي)"}, {de:"Auf Wiedersehen", ar:"إلى اللقاء (رسمي)"},
-  {de:"Hallo", ar:"مرحبًا"}, {de:"Wie heißt du?", ar:"ما اسمك؟ (غير رسمي)"},
-  {de:"Ich komme aus...", ar:"أنا من..."}, {de:"Mir geht es gut", ar:"أنا بخير"}
+  {de:"Brot", ar:"خبز"}, {de:"Käse", ar:"جبن"},
+  {de:"Wasser", ar:"ماء"}, {de:"Kaffee", ar:"قهوة"},
+  {de:"Fisch", ar:"سمك"}, {de:"Milch", ar:"حليب"},
+  {de:"Ei", ar:"بيضة"}, {de:"Wein", ar:"نبيذ"}
 ];
 
 const MCQ = [
-  {prompt:"تتحدث مع طبيبك لأول مرة. ماذا تسأله عن اسمه؟", options:["Wie heißen Sie?","Wie heißt du?","Wie geht's?","Tschüss!"], correct:"Wie heißen Sie?", why:"مع الغرباء وفي السياقات الرسمية مثل الطبيب، نستخدم دائمًا صيغة <span class=\"de mono\" data-speak=\"Sie\">Sie</span>."},
-  {prompt:"متى تقول <span class=\"de mono\" data-speak=\"Guten Abend\">Guten Abend</span>؟", options:["في الصباح الباكر","في منتصف النهار","في المساء","عند النوم فقط"], correct:"في المساء", why:"<span class=\"de mono\" data-speak=\"Guten Abend\">Guten Abend</span> تُستخدم من حوالي الساعة السادسة مساءً."},
-  {prompt:"ماذا تعني <span class=\"de mono\" data-speak=\"Ich komme aus...\">Ich komme aus...</span>؟", options:["أنا من...","أنا ذاهب إلى...","اسمي...","كيف حالك؟"], correct:"أنا من...", why:"<span class=\"de mono\" data-speak=\"kommen\">kommen</span> aus تعني حرفيًا «يأتي من»، وتُستخدم للتعبير عن بلد أو مدينة المنشأ."},
-  {prompt:"أي تحية تُستخدم كوداع أيضًا في النمسا وجنوب ألمانيا؟", options:["Servus","Guten Tag","Moin","Ihnen"], correct:"Servus", why:"<span class=\"de mono\" data-speak=\"Servus\">Servus</span> تُستخدم كتحية ووداع في آنٍ واحد في النمسا وبافاريا."},
-  {prompt:"صديقك يسألك <span class=\"de mono\" data-speak=\"Wie geht's?\">Wie geht's?</span> ما أفضل ردّ غير رسمي؟", options:["Mir geht es gut, danke!","Wie heißen Sie?","Auf Wiedersehen.","Guten Morgen."], correct:"Mir geht es gut, danke!", why:"هذا ردّ طبيعي وشائع جدًا على سؤال الحال بين الأصدقاء."},
-  {prompt:"ما صيغة المخاطبة الصحيحة مع طفل صغير؟", options:["du","Sie","كلاهما سيّان","لا يوجد فرق"], correct:"du", why:"تُستخدم <span class=\"de mono\" data-speak=\"du\">du</span> دائمًا تقريبًا مع الأطفال، بغض النظر عن مدى معرفتك بهم."},
-  {prompt:"أي جملة أكثر رسمية لتقديم نفسك؟", options:["Mein Name ist Weber.","Ich bin Ben.","Hi, ich bin's!","Na, alles klar?"], correct:"Mein Name ist Weber.", why:"<span class=\"de mono\" data-speak=\"Mein Name ist\">Mein Name ist</span> أكثر رسمية من <span class=\"de mono\" data-speak=\"Ich bin\">Ich bin</span>."},
-  {prompt:"ماذا تعني <span class=\"de mono\" data-speak=\"Auf Wiedersehen\">Auf Wiedersehen</span> حرفيًا؟", options:["حتى نرى بعضنا مجددًا","صباح الخير","كيف حالك؟","أنا بخير"], correct:"حتى نرى بعضنا مجددًا", why:"وداع رسمي حرفي المعنى، يُستخدم عند توقّع لقاء لاحق محتمل."}
+  {prompt:"أي أداة نصب صحيحة مع <span class=\"de mono\">Kaffee</span> (مذكّر)؟", options:["einen","eine","ein","der"], correct:"einen", why:"<span class=\"de mono\">Kaffee</span> اسم مذكّر، فتتحوّل أداة التنكير من ein إلى <span class=\"de mono\" data-speak=\"einen\">einen</span> في حالة النصب."},
+  {prompt:"أي أداة نصب صحيحة مع <span class=\"de mono\">Milch</span> (مؤنث)؟", options:["eine","einen","ein","die"], correct:"eine", why:"الأسماء المؤنثة لا تتغيّر في حالة النصب: تبقى <span class=\"de mono\" data-speak=\"eine\">eine</span>."},
+  {prompt:"أي أداة نصب صحيحة مع <span class=\"de mono\">Wasser</span> (محايد)؟", options:["ein","eine","einen","das"], correct:"ein", why:"الأسماء المحايدة أيضًا لا تتغيّر في حالة النصب: تبقى <span class=\"de mono\" data-speak=\"ein\">ein</span>."},
+  {prompt:"ما جمع كلمة <span class=\"de mono\" data-speak=\"Ei\">Ei</span>؟", options:["Eier","Eis","Eien","Eiern"], correct:"Eier", why:"الجمع الصحيح <span class=\"de mono\" data-speak=\"Eier\">Eier</span>، وهو جمع غير قياسي يجب حفظه."},
+  {prompt:"كيف تقول «أنا جائع» بالصيغة الأكثر شيوعًا؟", options:["Ich habe Hunger","Ich habe hungrig","Ich bin Hunger","Ich esse Hunger"], correct:"Ich habe Hunger", why:"<span class=\"de mono\" data-speak=\"Ich habe Hunger.\">Ich habe Hunger.</span> — تستخدم الفعل haben مع الاسم Hunger، وليس مع الصفة."},
+  {prompt:"أي كلمة من هذه مذكّرة؟", options:["der Saft","die Suppe","das Brot","die Wurst"], correct:"der Saft", why:"<span class=\"de mono\" data-speak=\"der Saft\">der Saft</span> مذكّر، بينما الباقي مؤنث أو محايد."},
+  {prompt:"كيف تطلب الحساب في مطعم بالألمانية؟", options:["Die Rechnung, bitte.","Der Preis, bitte.","Das Geld, bitte.","Die Zahlung, bitte."], correct:"Die Rechnung, bitte.", why:"<span class=\"de mono\" data-speak=\"Die Rechnung, bitte.\">Die Rechnung, bitte.</span> هي العبارة القياسية لطلب الحساب في أي مطعم ألماني."},
+  {prompt:"ما الفعل المساعد الصحيح: 'Ich ____ gern eine Suppe.' (طلب مؤدّب)؟", options:["hätte","habe","bin","möchten"], correct:"hätte", why:"<span class=\"de mono\" data-speak=\"Ich hätte gern eine Suppe.\">Ich hätte gern eine Suppe.</span> صيغة مؤدّبة شائعة جدًا في المطاعم، تعني حرفيًا «كنت لأحب أن يكون لدي»."}
 ];
 
 const FILL = [
-  {display:"Guten ____, Frau Weber.", correct:"Tag", hint:"تحية رسمية عامة خلال النهار", full:"Guten Tag, Frau Weber."},
-  {display:"Ich ____ Anna.", correct:"heiße", hint:"الفعل المستخدم لقول اسمك", full:"Ich heiße Anna."},
-  {display:"Wie ____ es Ihnen?", correct:"geht", hint:"السؤال الرسمي عن الحال", full:"Wie geht es Ihnen?"},
-  {display:"Ich komme ____ Berlin.", correct:"aus", hint:"حرف الجر المستخدم مع بلد المنشأ", full:"Ich komme aus Berlin."},
-  {display:"____ Wiedersehen!", correct:"Auf", hint:"وداع رسمي شائع جدًا", full:"Auf Wiedersehen!"},
-  {display:"Mir geht es ____, danke.", correct:"gut", hint:"عكس كلمة سيئ", full:"Mir geht es gut, danke."},
-  {display:"Freut ____, Sie kennenzulernen.", correct:"mich", hint:"جزء من عبارة «تشرّفت بمعرفتك»", full:"Freut mich, Sie kennenzulernen."},
-  {display:"____ heißt du?", correct:"Wie", hint:"أداة استفهام تعني «كيف/ما»", full:"Wie heißt du?"}
+  {display:"Ich möchte ____ Kaffee. (مذكّر)", correct:"einen", hint:"Kaffee مذكّر", full:"einen Kaffee"},
+  {display:"Ich möchte ____ Milch. (مؤنث)", correct:"eine", hint:"Milch مؤنثة، لا تتغيّر", full:"eine Milch"},
+  {display:"Ich möchte ____ Wasser. (محايد)", correct:"ein", hint:"Wasser محايد، لا يتغيّر", full:"ein Wasser"},
+  {display:"Ei → الجمع: die ____", correct:"Eier", hint:"جمع غير قياسي", full:"Eier"},
+  {display:"أنا جائع = Ich habe ____.", correct:"Hunger", hint:"الاسم وليس الصفة", full:"Ich habe Hunger."},
+  {display:"في نهاية الوجبة تطلب: Die ____, bitte.", correct:"Rechnung", hint:"الحساب", full:"Die Rechnung, bitte."},
+  {display:"Ich möchte ____ Suppe. (مؤنث)", correct:"eine", hint:"Suppe مؤنثة", full:"eine Suppe"},
+  {display:"Ich möchte ____ Brot. (محايد)", correct:"ein", hint:"Brot محايد", full:"ein Brot"}
 ];
 
 const BUILDER = [
-  {words:["Ich","komme","aus","Berlin"], ar:"أنا من برلين"},
-  {words:["Wie","heißt","du"], ar:"ما اسمك؟ (غير رسمي)"},
-  {words:["Guten","Morgen"], ar:"صباح الخير"},
-  {words:["Mein","Name","ist","Anna"], ar:"اسمي هو آنا"},
-  {words:["Auf","Wiedersehen"], ar:"إلى اللقاء"}
+  {words:["Ich","möchte","einen","Kaffee","bitte"], ar:"أريد قهوة من فضلك"},
+  {words:["Hast","du","Hunger"], ar:"هل أنت جائع؟"},
+  {words:["Die","Rechnung","bitte"], ar:"الحساب من فضلك"},
+  {words:["Ich","hätte","gern","eine","Suppe"], ar:"أرغب في حساء من فضلك"},
+  {words:["Was","möchten","Sie","trinken"], ar:"ماذا تريدون أن تشربوا؟"}
 ];
 
 const LEARNING_TIMELINE = [
-  {top:"الدرس ١", dot:"done", bottom:"الحروف", hl:false},
-  {top:"أنت الآن هنا", dot:"now", bottom:"التحيات", hl:true},
-  {top:"الدرس ٣", dot:"", bottom:"الأرقام", hl:false},
-  {top:"لاحقًا", dot:"", bottom:"المحادثة", hl:false}
+  {top:"الدرس ٤", dot:"done", bottom:"الألوان والأيام", hl:false},
+  {top:"الدرس ٥", dot:"done", bottom:"العائلة", hl:false},
+  {top:"أنت الآن هنا", dot:"now", bottom:"الطعام والشراب", hl:true},
+  {top:"الدرس ٧", dot:"", bottom:"الوقت والساعة", hl:false}
 ];
 
 const BADGES = [
-  {id:'explorer', name:'مستكشف التحيات', icon:'i-compass'},
-  {id:'phrases', name:'حافظ العبارات', icon:'i-cards'},
-  {id:'sharp', name:'حادّ التفكير', icon:'i-target'},
-  {id:'champion', name:'بطل الحوار', icon:'i-medal'}
+  {id:'explorer', name:'مستكشف القائمة', icon:'i-compass'},
+  {id:'orderer', name:'خبير الطلب في المقهى', icon:'i-cup'},
+  {id:'sharp', name:'حادّ الإجابة', icon:'i-target'},
+  {id:'champion', name:'بطل المائدة', icon:'i-star'}
 ];
 
 /* ==========================================================================
@@ -1320,7 +1355,7 @@ const Speech = (function(){
   }
 
   function clearHighlights(){
-    document.querySelectorAll('.k-word.speaking, .speak-dot.speaking, .listen-chip.speaking, .chat-bubble.speaking').forEach(el => el.classList.remove('speaking'));
+    document.querySelectorAll('.k-word.speaking, .speak-dot.speaking, .listen-chip.speaking, .chat-bubble.speaking, .menu-item-card.speaking').forEach(el => el.classList.remove('speaking'));
   }
 
   function speak(text, opts){
@@ -1418,31 +1453,31 @@ function toAr(n){ return String(n).replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'
 document.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
 
 /* ==========================================================================
-   HERO SHOWCASE CARD (greeting → reply)
+   HERO SHOWCASE CARD (question → answer about ordering)
    ========================================================================== */
 (function buildHeroShowcase(){
   const wrap = document.createElement('div');
   wrap.className = 'showcase-card';
   wrap.style.marginTop = '22px';
   wrap.innerHTML = `
-    <div class="showcase-label"><svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-chat"/></svg>عبارة اليوم · انقر لتسمع</div>
+    <div class="showcase-label"><svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-chat"/></svg>سؤال شائع اليوم · انقر لتسمع</div>
     <div class="arrow-frame">
-      <span class="k-word k-phrase-big de" id="heroPhrase" data-plain="Hallo!" tabindex="0" role="button" aria-label="استمع لـ Hallo">Hallo!</span>
+      <span class="k-word k-phrase-big de" id="heroPhrase" data-plain="Was möchten Sie trinken?" tabindex="0" role="button" aria-label="استمع لـ Was möchten Sie trinken">Was möchten Sie trinken?</span>
       <span class="k-arrow">→</span>
-      <span class="k-word k-word-result de" id="heroReply" data-plain="Ich heiße Anna." tabindex="0" role="button" aria-label="استمع لـ Ich heiße Anna">Ich heiße Anna.</span>
+      <span class="k-word k-word-result de" id="heroReply" data-plain="Ich möchte einen Kaffee." tabindex="0" role="button" aria-label="استمع لـ Ich möchte einen Kaffee">Ich möchte einen Kaffee.</span>
     </div>
-    <p class="showcase-translation">هكذا تبدأ أبسط محادثة ألمانية: تحية، ثم تقديم الاسم. انقر على أي جزء لسماع نطقه.</p>
+    <p class="showcase-translation">هكذا يسألك النادل وهكذا تجيب بحالة النصب الصحيحة. انقر على أي جزء لسماع نطقه.</p>
     <button class="btn btn-ghost showcase-speak-all" id="heroSpeakAll">
       <svg class="icon" style="width:16px;height:16px"><use href="#i-speaker"/></svg>
-      استمع للعبارتين معًا
+      استمع للسؤال والجواب معًا
     </button>`;
   document.querySelector('.hero-illustration').insertAdjacentElement('afterend', wrap);
   const heroPhrase = wrap.querySelector('#heroPhrase');
   const heroReply = wrap.querySelector('#heroReply');
-  makeSpeakable(heroPhrase, 'Hallo!');
-  makeSpeakable(heroReply, 'Ich heiße Anna.');
+  makeSpeakable(heroPhrase, 'Was möchten Sie trinken?');
+  makeSpeakable(heroReply, 'Ich möchte einen Kaffee.');
   wrap.querySelector('#heroSpeakAll').addEventListener('click', () => {
-    Speech.speak('Hallo! Ich heiße Anna.', {wordEls: [heroPhrase, heroReply]});
+    Speech.speak('Was möchten Sie trinken? Ich möchte einen Kaffee.', {wordEls: [heroPhrase, heroReply]});
   });
 })();
 
@@ -1458,113 +1493,191 @@ LEARNING_TIMELINE.forEach(item => {
 });
 
 /* ==========================================================================
-   TIME-OF-DAY GREETING CARDS
+   VOCAB FLIP-CARD GRID BUILDER (shared: food + drinks)
    ========================================================================== */
-const timeGrid = document.getElementById('timeGrid');
-TIME_GREETINGS.forEach(t => {
-  const card = document.createElement('div');
-  card.className = 'time-card ' + t.cls;
-  card.innerHTML = `
-    <svg class="icon time-icon" style="color:var(--ink)"><use href="#${t.icon}"/></svg>
-    <div class="time-range">${t.range}</div>
-    <div class="time-de de">${t.de}</div>
-    <div class="time-ar">${t.ar}</div>
-    <span class="speak-dot" style="position:static;margin:12px auto 0;display:flex" aria-label="استمع لـ ${t.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>`;
-  card.addEventListener('click', () => Speech.speak(t.de, {el: card.querySelector('.speak-dot')}));
-  timeGrid.appendChild(card);
-});
-
-/* ==========================================================================
-   CASUAL / REGIONAL GREETINGS
-   ========================================================================== */
-const regionGrid = document.getElementById('regionGrid');
-REGION_GREETINGS.forEach(r => {
-  const card = document.createElement('div');
-  card.className = 'info-card region-card';
-  card.innerHTML = `
-    <div class="region-flag">${r.flag}</div>
-    <div class="region-de" data-plain="${r.de}" tabindex="0" role="button" aria-label="استمع لـ ${r.de}">${r.de}</div>
-    <div class="region-place">${r.place}</div>
-    <div class="region-desc">${r.desc}</div>`;
-  makeSpeakable(card.querySelector('.region-de'), r.de);
-  regionGrid.appendChild(card);
-});
-
-/* ==========================================================================
-   FAREWELLS — 3D flip cards
-   ========================================================================== */
-const farewellGrid = document.getElementById('farewellGrid');
-let flippedCount = 0;
-const flippedSet = new Set();
-FAREWELLS.forEach((f, i) => {
-  const card = document.createElement('div');
-  card.className = 'flip-card';
-  card.innerHTML = `
-    <div class="flip-card-inner" tabindex="0" role="button" aria-label="بطاقة ${f.de}, انقر للقلب">
-      <div class="flip-face flip-front">
-        <span class="chip chip-teal aux-tag mono">${f.formality}</span>
-        <span class="de">${f.de}</span>
-        <span class="flip-hint">انقر للقلب</span>
-        <span class="speak-dot" data-word="${f.de}" aria-label="استمع لـ ${f.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
-      </div>
-      <div class="flip-face flip-back">
-        <span class="partizip mono">/${f.ipa}/</span>
-        <span class="meaning">${f.meaning}</span>
-        <span class="meaning" style="font-size:.78rem;opacity:.85">${f.note}</span>
-        <span class="speak-dot" data-word="${f.de}" aria-label="استمع لـ ${f.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
-      </div>
-    </div>`;
-  const inner = card.querySelector('.flip-card-inner');
-  inner.addEventListener('click', (e) => {
-    if(e.target.closest('.speak-dot')) return;
-    card.classList.toggle('flipped');
-    if(!flippedSet.has(i)){ flippedSet.add(i); flippedCount++; if(flippedSet.size>=FAREWELLS.length) unlockBadge('phrases'); }
-    updateProgress();
-  });
-  inner.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); inner.click(); } });
-  card.querySelectorAll('.speak-dot').forEach(dot => {
-    dot.addEventListener('click', (e) => {
-      e.stopPropagation();
-      dot.classList.add('speaking');
-      Speech.speak(dot.dataset.word, {el: dot});
-      setTimeout(()=>dot.classList.remove('speaking'), 900);
+function buildFlipVocabGrid(container, items){
+  items.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'flip-card';
+    const speakWord = item.word || item.de;
+    const backLine2 = item.ipa ? `<span class="ipa mono">[${item.ipa}]</span>` : '';
+    const pluralTag = item.plural ? '<span class="chip chip-plum plural-only-tag mono">جمع فقط</span>' : '';
+    card.innerHTML = `
+      <div class="flip-card-inner" tabindex="0" role="button" aria-label="بطاقة ${item.ar}, انقر للقلب">
+        <div class="flip-face flip-front">
+          ${pluralTag}
+          <span class="de">${item.de}</span>
+          <span class="flip-hint">انقر للقلب</span>
+          <span class="speak-dot" data-word="${speakWord}" aria-label="استمع لـ ${speakWord}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+        </div>
+        <div class="flip-face flip-back">
+          <span class="partizip mono">${speakWord}</span>
+          ${backLine2}
+          <span class="meaning">${item.ar}</span>
+          <span class="speak-dot" data-word="${speakWord}" aria-label="استمع"><svg class="icon"><use href="#i-speaker"/></svg></span>
+        </div>
+      </div>`;
+    const inner = card.querySelector('.flip-card-inner');
+    inner.addEventListener('click', (e) => { if(e.target.closest('.speak-dot')) return; card.classList.toggle('flipped'); });
+    inner.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); inner.click(); } });
+    card.querySelectorAll('.speak-dot').forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dot.classList.add('speaking');
+        Speech.speak(dot.dataset.word, {el: dot});
+        setTimeout(()=>dot.classList.remove('speaking'), 900);
+      });
     });
+    container.appendChild(card);
   });
-  farewellGrid.appendChild(card);
-});
+}
+buildFlipVocabGrid(document.getElementById('foodGrid'), FOOD_BASICS);
+buildFlipVocabGrid(document.getElementById('drinksGrid'), DRINKS);
 
 /* ==========================================================================
-   DU vs SIE TABLE
+   MEALS OF THE DAY — compact cards
    ========================================================================== */
-const duSieTable = document.getElementById('duSieTable');
-DUSIE_ROWS.forEach(row => {
-  const r = document.createElement('div');
-  r.className = 'duSie-row';
-  r.innerHTML = `
-    <div class="cell-ar">${row.ar}</div>
-    <div class="cell-du" data-plain="${row.du}" tabindex="0" role="button" aria-label="استمع لـ ${row.du}">${row.du}</div>
-    <div class="cell-sie" data-plain="${row.sie}" tabindex="0" role="button" aria-label="استمع لـ ${row.sie}">${row.sie}</div>`;
-  makeSpeakable(r.querySelector('.cell-du'), row.du);
-  makeSpeakable(r.querySelector('.cell-sie'), row.sie);
-  duSieTable.appendChild(r);
-});
-
-/* ==========================================================================
-   SELF-INTRODUCTION PATTERN CARDS
-   ========================================================================== */
-const patternList = document.getElementById('patternList');
-PATTERNS.forEach((p, i) => {
+const mealsRow = document.getElementById('mealsRow');
+MEALS.forEach(meal => {
   const card = document.createElement('div');
-  card.className = 'pattern-card';
+  card.className = 'meal-card';
   card.innerHTML = `
-    <span class="pattern-num">${toAr(i+1)}</span>
-    <div class="pattern-main">
-      <div class="pattern-de de" data-plain="${p.de}" tabindex="0" role="button" aria-label="استمع لـ ${p.de}">${p.de}</div>
-      <div class="pattern-ar">${p.ar}</div>
-    </div>
-    <span class="chip ${p.formality === 'رسمي' ? 'chip-plum' : 'chip-teal'} pattern-formality">${p.formality}</span>`;
-  makeSpeakable(card.querySelector('.pattern-de'), p.de);
-  patternList.appendChild(card);
+    <span class="icon-chip chip-teal" style="width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg class="icon" style="width:18px;height:18px"><use href="#i-utensils"/></svg></span>
+    <div class="meal-time mono">${meal.time}</div>
+    <div class="meal-de de">${meal.de}</div>
+    <div class="meal-ar">${meal.ar}</div>`;
+  card.tabIndex = 0; card.setAttribute('role','button'); card.setAttribute('aria-label', 'استمع لـ ' + meal.de);
+  card.addEventListener('click', () => Speech.speak(meal.de, {el: card}));
+  card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); } });
+  mealsRow.appendChild(card);
+});
+
+/* ==========================================================================
+   ACCUSATIVE BUILDER — centerpiece interactive tool
+   ========================================================================== */
+const accNounRow = document.getElementById('accNounRow');
+const accResultPhrase = document.getElementById('accResultPhrase');
+const accNote = document.getElementById('accNote');
+let accNoun = 'kaffee';
+let accVisited = new Set();
+
+ACC_NOUNS.forEach(n => {
+  const chip = document.createElement('button');
+  chip.className = 'acc-chip' + (n.id === accNoun ? ' active ' + n.cls : '');
+  chip.innerHTML = n.label + '<span class="gender-tag">' + n.gender + '</span>';
+  chip.addEventListener('click', () => { accNoun = n.id; refreshAccChips(); renderAcc(); });
+  accNounRow.appendChild(chip);
+});
+
+function refreshAccChips(){
+  const nodes = accNounRow.querySelectorAll('.acc-chip');
+  ACC_NOUNS.forEach((n,i) => {
+    nodes[i].className = 'acc-chip' + (n.id === accNoun ? ' active ' + n.cls : '');
+  });
+}
+
+function renderAcc(){
+  const noun = ACC_NOUNS.find(n => n.id === accNoun);
+  const phrase = 'Ich möchte ' + noun.art + ' ' + noun.label + '.';
+
+  accResultPhrase.innerHTML = '<span class="ar-verb de">Ich möchte</span><span class="ar-art de ' + noun.cls + '">' + noun.art + '</span><span class="ar-noun de">' + noun.label + '</span>';
+  accResultPhrase.dataset.plain = phrase;
+  accResultPhrase.setAttribute('aria-label', 'استمع لـ ' + phrase);
+
+  const changed = noun.cls === 'masc';
+  accNote.innerHTML = changed
+    ? `<b>${noun.label}</b> (${noun.gender}) اسم مذكّر، لذا تحوّلت <b>ein</b> إلى <b>${noun.art}</b> في حالة النصب.`
+    : `<b>${noun.label}</b> (${noun.gender}) ليست مذكّرة، لذا بقيت أداة التنكير <b>${noun.art}</b> بلا أي تغيير.`;
+
+  accVisited.add(accNoun);
+  if(accVisited.size >= ACC_NOUNS.length) unlockBadge('explorer');
+}
+accResultPhrase.addEventListener('click', () => Speech.speak(accResultPhrase.dataset.plain, {el: accResultPhrase}));
+accResultPhrase.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); accResultPhrase.click(); } });
+
+renderAcc();
+
+/* ==========================================================================
+   CAFÉ MENU / ORDER BUILDER — centerpiece interactive tool
+   ========================================================================== */
+const menuDrinksGrid = document.getElementById('menuDrinksGrid');
+const menuFoodGrid = document.getElementById('menuFoodGrid');
+const orderSentence = document.getElementById('orderSentence');
+const MAX_ORDER = 4;
+let orderItems = [];
+
+function buildMenuGrid(container, items){
+  items.forEach(item => {
+    const card = document.createElement('button');
+    card.className = 'menu-item-card';
+    card.dataset.id = item.id;
+    card.innerHTML = `<div class="mi-de de">${item.de}</div><div class="mi-ar">${item.ar}</div>`;
+    card.addEventListener('click', () => toggleOrderItem(item, card));
+    container.appendChild(card);
+  });
+}
+buildMenuGrid(menuDrinksGrid, MENU_DRINKS);
+buildMenuGrid(menuFoodGrid, MENU_FOOD);
+
+function toggleOrderItem(item, card){
+  const idx = orderItems.findIndex(o => o.id === item.id);
+  if(idx > -1){
+    orderItems.splice(idx, 1);
+    card.classList.remove('selected');
+  } else {
+    if(orderItems.length >= MAX_ORDER){ showToast('يمكنك اختيار ' + toAr(MAX_ORDER) + ' عناصر كحد أقصى'); return; }
+    orderItems.push(item);
+    card.classList.add('selected');
+  }
+  renderOrder();
+}
+
+function renderOrder(){
+  if(!orderItems.length){
+    orderSentence.innerHTML = '<span class="empty-hint">انقر على عناصر من القائمة أعلاه لبدء طلبك…</span>';
+    orderSentence.dataset.plain = '';
+    return;
+  }
+  const accParts = orderItems.map(o => o.acc);
+  let joined;
+  if(accParts.length === 1) joined = accParts[0];
+  else joined = accParts.slice(0, -1).join(', ') + ' und ' + accParts[accParts.length - 1];
+  const sentence = 'Ich möchte ' + joined + ', bitte.';
+  orderSentence.textContent = sentence;
+  orderSentence.dataset.plain = sentence;
+  orderSentence.setAttribute('aria-label', 'استمع لـ ' + sentence);
+  if(orderItems.length >= 3) unlockBadge('orderer');
+}
+orderSentence.addEventListener('click', () => { if(orderSentence.dataset.plain) Speech.speak(orderSentence.dataset.plain, {el: orderSentence}); });
+orderSentence.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); orderSentence.click(); } });
+
+document.getElementById('orderResetBtn').addEventListener('click', () => {
+  orderItems = [];
+  document.querySelectorAll('.menu-item-card.selected').forEach(c => c.classList.remove('selected'));
+  renderOrder();
+});
+renderOrder();
+
+/* ==========================================================================
+   PRACTICAL — extra-notes accordion
+   ========================================================================== */
+const extraAccordion = document.getElementById('extraAccordion');
+EXTRA_NOTES.forEach((note, i) => {
+  const item = document.createElement('div');
+  item.className = 'accordion-item';
+  item.innerHTML = `
+    <button class="accordion-trigger" aria-expanded="false">
+      <span class="accordion-title"><span class="tag mono">${toAr(i+1)}</span>${note.q}</span>
+      <svg class="icon chevron"><use href="#i-chevron"/></svg>
+    </button>
+    <div class="accordion-panel"><div class="accordion-body">${note.body}</div></div>`;
+  const trigger = item.querySelector('.accordion-trigger');
+  trigger.addEventListener('click', () => {
+    item.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+  });
+  item.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  extraAccordion.appendChild(item);
 });
 
 /* ==========================================================================
@@ -1698,10 +1811,10 @@ document.querySelectorAll('.exercise-tab').forEach(tab => {
   });
 });
 
-/* --- MATCH (greeting <-> Arabic meaning) --- */
+/* --- MATCH (German word <-> Arabic meaning) --- */
 const panelMatch = document.getElementById('panelMatch');
 (function initMatch(){
-  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على عبارة من العمود الأيمن، ثم معناها الصحيح من العمود الأيسر.</div>
+  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على كلمة من العمود الأيمن، ثم معناها الصحيح من العمود الأيسر.</div>
     <div class="match-grid"><div class="match-col" id="matchLeft"></div><div class="match-col" id="matchRight"></div></div>`;
   const left = document.getElementById('matchLeft');
   const right = document.getElementById('matchRight');
@@ -1783,7 +1896,7 @@ MCQ.forEach((q) => {
   panelMcq.appendChild(block);
 });
 
-/* --- FILL (missing word in dialogue line, typed) --- */
+/* --- FILL (missing word, typed) --- */
 const panelFill = document.getElementById('panelFill');
 FILL.forEach(q => {
   const block = document.createElement('div');
@@ -1791,10 +1904,10 @@ FILL.forEach(q => {
   block.innerHTML = `
     <div class="fill-word-display">${q.display}</div>
     <div class="fill-row">
-      <input type="text" placeholder="؟" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل الكلمة الناقصة">
+      <input type="text" placeholder="؟" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل الجزء الناقص">
       <button class="fill-check">تحقّق</button>
       <span class="fill-result"></span>
-      <button class="icon-btn" data-speak-word="${q.full}" aria-label="استمع للجملة الكاملة"><svg class="icon"><use href="#i-speaker"/></svg></button>
+      <button class="icon-btn" data-speak-word="${q.full}" aria-label="استمع للصيغة الكاملة"><svg class="icon"><use href="#i-speaker"/></svg></button>
     </div>
     <div class="q-feedback">💡 ${q.hint}</div>`;
   const input = block.querySelector('input');
@@ -1900,7 +2013,7 @@ BUILDER.forEach((q) => {
 const panelListen = document.getElementById('panelListen');
 (function initListen(){
   panelListen.innerHTML = `
-    <div class="q-prompt">استمع إلى الحوار غير الرسمي كاملًا، وتابع الفقاعة المضاءة أثناء النطق. انقر على أي عبارة بمفردها لإعادة سماعها.</div>
+    <div class="q-prompt">استمع إلى حوار المطبخ كاملًا، وتابع الفقاعة المضاءة أثناء النطق. انقر على أي عبارة بمفردها لإعادة سماعها.</div>
     <button class="btn btn-primary" id="listenAllBtn"><svg class="icon" style="width:16px;height:16px"><use href="#i-headphones"/></svg> استمع للحوار كاملًا</button>
     <div class="listen-alphabet-row" id="listenRow"></div>
     <div class="qr-placeholder">
@@ -1932,7 +2045,7 @@ const panelListen = document.getElementById('panelListen');
    BADGES / ACHIEVEMENTS
    ========================================================================== */
 let unlockedBadges = {};
-try{ unlockedBadges = JSON.parse(localStorage.getItem('lesson2-greetings-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
+try{ unlockedBadges = JSON.parse(localStorage.getItem('lesson6-essen-trinken-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
 
 const badgesRow = document.getElementById('badgesRow');
 BADGES.forEach(b => {
@@ -1945,7 +2058,7 @@ BADGES.forEach(b => {
 function unlockBadge(id){
   if(unlockedBadges[id]) return;
   unlockedBadges[id] = true;
-  try{ localStorage.setItem('lesson2-greetings-badges', JSON.stringify(unlockedBadges)); }catch(e){}
+  try{ localStorage.setItem('lesson6-essen-trinken-badges', JSON.stringify(unlockedBadges)); }catch(e){}
   const el = document.getElementById('badge-' + id);
   if(el){ el.classList.add('unlocked','pop'); setTimeout(()=>el.classList.remove('pop'), 650); }
   const badge = BADGES.find(b=>b.id===id);
@@ -1973,7 +2086,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 /* ==========================================================================
    SECTION NAV: active-link highlight + click-to-scroll + progress
    ========================================================================== */
-const sections = ['#hero','#intro','#time-greetings','#casual','#farewells','#duSie','#introduce','#dialogue','#mistakes','#pronunciation','#exercises','#summary'].map(s => document.querySelector(s)).filter(Boolean);
+const sections = ['#hero','#intro','#food-basics','#drinks','#meals-of-day','#accusative-builder','#cafe-menu','#practical','#dialogue','#mistakes','#pronunciation','#exercises','#summary'].map(s => document.querySelector(s)).filter(Boolean);
 const visitedSections = new Set();
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -2094,6 +2207,6 @@ backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smoo
 })();
 </script>
 
-<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a1-lesson-02-begruessung" data-category="a1" data-title="التحيات وتقديم النفس — Begrüßung & Vorstellung" data-root="../../" defer></script>
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a1-lesson-06-essen-trinken" data-category="a1" data-title="الطعام والشراب وحالة النصب — Essen, Trinken &amp; Akkusativ" data-root="../../" defer></script>
 </body>
 </html>

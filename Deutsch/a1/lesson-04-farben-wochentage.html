@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>الدليل الشامل · التحيات الأساسية وتقديم النفس — Begrüßung & Vorstellung | ألمانية A1</title>
-<meta name="description" content="الدرس الثاني في مسار الألمانية A1: تحيات الوقت، التحيات غير الرسمية، الوداع، صيغتا du وSie، تقديم النفس، وحوارات كاملة تفاعلية بصوت ألماني حقيقي.">
+<title>الدليل الشامل · الألوان وأيام الأسبوع — Farben & Wochentage | ألمانية A1</title>
+<meta name="description" content="الدرس الرابع في مسار الألمانية A1: ألوان أساسية وثانوية مع أداة مزج تفاعلية، مقدمة لتوافق الصفة مع الاسم، أيام الأسبوع السبعة مع عجلة أسبوع تفاعلية، حرف الجر المدمج am (an+dem)، حوارا استخدام عملي كامل، وأخطاء شائعة لمتحدثي العربية.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 a { color: inherit; }
 
 /* ==========================================================================
-   1. DESIGN TOKENS (same course identity as Lesson 1)
+   1. DESIGN TOKENS (same course identity as Lessons 1–3)
    ========================================================================== */
 :root {
   color-scheme: light;
@@ -151,6 +151,7 @@ p { margin: 0; }
   padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
 }
 .eyebrow.plum { color: var(--plum); background: var(--plum-soft); }
+.eyebrow.amber { color: var(--amber-ink); background: var(--amber-soft); }
 .section-title { font-size: clamp(1.5rem, 3.6vw, 2.35rem); }
 .section-sub { color: var(--ink-soft); font-size: clamp(.98rem, 1.6vw, 1.1rem); margin-top: 12px; max-width: 62ch; }
 
@@ -161,6 +162,7 @@ p { margin: 0; }
 .reveal-stagger.is-visible > *:nth-child(1){transition-delay:.03s} .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.09s}
 .reveal-stagger.is-visible > *:nth-child(3){transition-delay:.15s} .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.21s}
 .reveal-stagger.is-visible > *:nth-child(5){transition-delay:.27s} .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.33s}
+.reveal-stagger.is-visible > *:nth-child(7){transition-delay:.39s} .reveal-stagger.is-visible > *:nth-child(8){transition-delay:.45s}
 
 /* ==========================================================================
    3. HEADER / NAV
@@ -200,11 +202,6 @@ p { margin: 0; }
 .nav-link.active { background: var(--teal-soft); color: var(--teal); border-color: transparent; }
 
 .header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
-/* == إصلاح استجابة الهاتف: على أضيق الشاشات، نخفي زري البحث وملء الشاشة
-   من شريط الأدوات (البحث متاح أصلًا عبر قائمة الجوال) لمنع خروج الشريط عن حدود الشاشة == */
-@media (max-width: 420px) {
-  .header-controls #searchToggle, .header-controls #fullscreenToggle { display: none; }
-}
 .icon-btn {
   width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border);
   background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center;
@@ -286,7 +283,7 @@ p { margin: 0; }
 .btn:disabled { opacity: .55; cursor: not-allowed; }
 .btn:disabled:hover { transform: none; box-shadow: none; }
 
-/* --- hero illustration: two speech bubbles greeting each other --- */
+/* --- hero illustration: color wheel + calendar page, floating tag bubbles --- */
 .hero-illustration { position: relative; }
 .hero-illo-svg { width: 100%; height: auto; }
 .floaty { animation: floaty 5s ease-in-out infinite; }
@@ -309,7 +306,7 @@ p { margin: 0; }
   width: 100%; justify-content: center;
 }
 .arrow-frame::before { content: "⌐"; position: absolute; top: -13px; right: 10px; font-family: var(--font-mono); font-size: .7rem; color: var(--ink-faint); background: var(--surface); padding: 0 6px; }
-.k-word { cursor: pointer; border-radius: 8px; padding: 4px 6px; transition: background-color .2s, color .2s; }
+.k-word { cursor: pointer; border-radius: 8px; padding: 2px 6px; transition: background-color .2s, color .2s; }
 .k-word:hover { background: var(--bg-alt); }
 .k-word.speaking { background: var(--teal); color: #fff; }
 .k-phrase-big { background: var(--teal); color: #fff; border-radius: 12px; padding: 8px 20px; font-weight: 700; font-size: clamp(1.3rem, 3vw, 1.7rem); }
@@ -368,47 +365,123 @@ p { margin: 0; }
 .stat-card .stat-desc { font-size: .87rem; color: var(--ink-soft); margin-top: 6px; }
 
 /* ==========================================================================
-   6. TIME-OF-DAY GREETING CARDS
+   6. COLOR VOCAB — flip cards with swatch face (new signature component)
    ========================================================================== */
-.time-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-@media (max-width: 940px){ .time-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px){ .time-grid { grid-template-columns: 1fr; } }
-.time-card {
-  border-radius: var(--r-lg); padding: 22px 18px; text-align: center; position: relative; overflow: hidden;
-  border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+.color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 18px; }
+.color-flip { perspective: 1200px; height: 170px; }
+.color-flip-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
+.color-flip.flipped .color-flip-inner { transform: rotateY(180deg); }
+.color-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px; box-shadow: var(--shadow-sm); }
+.color-swatch-face { position: relative; overflow: hidden; }
+.color-swatch-face .swatch-fill { position: absolute; inset: 0; }
+.color-swatch-face .swatch-hint { position: relative; z-index: 1; font-family: var(--font-mono); font-size: .68rem; padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,.85); color: #1c1c1c; }
+.color-back { background: var(--surface); transform: rotateY(180deg); gap: 6px; }
+.color-back .swatch-dot { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--border-strong); margin-bottom: 6px; }
+.color-back .de { font-size: 1.25rem; font-weight: 700; }
+.color-back .ipa { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); }
+.color-back .meaning { font-size: .86rem; color: var(--ink-soft); margin-top: 2px; }
+.flip-hint { font-family: var(--font-mono); font-size: .66rem; color: var(--ink-faint); margin-top: 8px; }
+.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--teal); transition: transform .2s, background-color .2s; z-index: 2; }
+.speak-dot:hover { transform: scale(1.1); background: var(--teal-soft); }
+.speak-dot .icon { width: 15px; height: 15px; }
+.speak-dot.speaking { animation: pulse-ring 1s var(--ease) infinite; }
+@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 var(--teal-glow)} 70%{box-shadow:0 0 0 10px transparent} 100%{box-shadow:0 0 0 0 transparent} }
+@keyframes fadeSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ==========================================================================
+   7. COLOR MIXER — centerpiece interactive component
+   ========================================================================== */
+.mixer-shell {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl);
+  box-shadow: var(--shadow-lg); padding: clamp(22px, 4vw, 40px); position: relative; overflow: hidden;
+}
+.mixer-shell::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5;
+  background: radial-gradient(420px 220px at 90% -10%, var(--plum-glow), transparent 70%), radial-gradient(420px 220px at 5% 110%, var(--amber-glow), transparent 70%);
+}
+.mixer-picker-group { margin-bottom: 24px; }
+.mixer-picker-label { font-size: .9rem; font-weight: 700; margin-bottom: 10px; color: var(--ink-soft); }
+.mixer-swatch-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.mixer-swatch {
+  width: 64px; height: 64px; border-radius: 16px; border: 3px solid transparent; cursor: pointer; position: relative;
+  transition: transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+  box-shadow: var(--shadow-sm);
+}
+.mixer-swatch:hover { transform: translateY(-4px) scale(1.05); }
+.mixer-swatch.active { border-color: var(--ink); box-shadow: var(--shadow-md); }
+.mixer-swatch.active::after { content:"✓"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:1.2rem; text-shadow:0 1px 3px rgba(0,0,0,.5); }
+
+.mixer-plus { text-align: center; font-family: var(--font-mono); font-size: 1.4rem; color: var(--ink-faint); margin: 6px 0; }
+.mixer-result { margin-top: 30px; text-align: center; perspective: 900px; }
+.mixer-result-swatch {
+  width: 120px; height: 120px; border-radius: 28px; margin: 0 auto 18px; box-shadow: var(--shadow-lg);
+  border: 4px solid var(--surface); outline: 1px solid var(--border);
+  transform: perspective(700px) rotateX(6deg); transition: transform .45s var(--ease), background-color .5s var(--ease);
   cursor: pointer;
 }
-.time-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-.time-card.morning { background: linear-gradient(160deg, #FFF3D6, #FFE1A8); }
-.time-card.day { background: linear-gradient(160deg, #DFF3F6, #BEE7ED); }
-.time-card.evening { background: linear-gradient(160deg, #F3E0D8, #E6BFAE); }
-.time-card.night { background: linear-gradient(160deg, #DDE1F0, #B9BFDE); }
-:root[data-theme="dark"] .time-card.morning { background: linear-gradient(160deg, #4a3a12, #2e2308); }
-:root[data-theme="dark"] .time-card.day { background: linear-gradient(160deg, #123138, #0b2226); }
-:root[data-theme="dark"] .time-card.evening { background: linear-gradient(160deg, #3a2a20, #241a14); }
-:root[data-theme="dark"] .time-card.night { background: linear-gradient(160deg, #1f2340, #141729); }
-.time-card .time-icon { width: 46px; height: 46px; margin: 0 auto 12px; }
-.time-card .time-range { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-soft); margin-bottom: 6px; }
-.time-card .time-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.25rem; color: var(--ink); }
-.time-card .time-ar { font-size: .85rem; color: var(--ink-soft); margin-top: 6px; }
-.time-card .speak-dot { position: static; margin: 12px auto 0; background: rgba(255,255,255,.6); }
-:root[data-theme="dark"] .time-card .speak-dot { background: rgba(0,0,0,.25); }
+.mixer-result-swatch:hover { transform: perspective(700px) rotateX(0deg) translateY(-4px); }
+.mixer-result-name { font-family: var(--font-de-display); font-weight: 700; font-size: clamp(1.4rem, 4vw, 1.9rem); }
+.mixer-result-ar { color: var(--ink-soft); font-size: .95rem; margin-top: 4px; }
+.mixer-note { margin-top: 18px; font-size: .9rem; color: var(--ink-soft); text-align: center; max-width: 56ch; margin-inline: auto; }
+.mixer-note b { color: var(--ink); }
 
 /* ==========================================================================
-   7. CASUAL GREETINGS / REGIONAL GRID
+   8. ADJECTIVE-AGREEMENT PREVIEW (bonus grammar cards)
    ========================================================================== */
-.region-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-@media (max-width: 860px){ .region-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px){ .region-grid { grid-template-columns: 1fr; } }
-.region-card { text-align: center; position: relative; }
-.region-card .region-flag { font-size: 1.7rem; margin-bottom: 6px; }
-.region-card .region-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.4rem; color: var(--teal-ink); cursor: pointer; }
-:root[data-theme="dark"] .region-card .region-de { color: var(--teal); }
-.region-card .region-place { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); margin-top: 4px; }
-.region-card .region-desc { font-size: .87rem; color: var(--ink-soft); margin-top: 10px; }
+.agree-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 760px){ .agree-row { grid-template-columns: 1fr; } }
+.agree-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 20px; text-align: center; box-shadow: var(--shadow-sm); cursor: pointer; transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.agree-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.agree-card .agree-de { font-family: var(--font-de-display); font-size: 1.2rem; font-weight: 700; }
+.agree-card .agree-de .gender-art { color: var(--teal-ink); }
+:root[data-theme="dark"] .agree-card .agree-de .gender-art { color: var(--teal); }
+.agree-card .agree-de .ending { color: var(--amber-ink); text-decoration: underline; text-decoration-style: wavy; text-decoration-color: var(--amber); }
+:root[data-theme="dark"] .agree-card .agree-de .ending { color: var(--amber); }
+.agree-card .agree-ar { font-size: .82rem; color: var(--ink-soft); margin-top: 6px; }
+.agree-card .agree-gender-tag { font-family: var(--font-mono); font-size: .68rem; color: var(--ink-faint); margin-top: 8px; }
+.predicate-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 20px; }
+.predicate-chip { padding: 8px 16px; border-radius: 999px; border: 1.5px solid var(--border-strong); background: var(--bg-alt); font-family: var(--font-de-display); font-size: .95rem; cursor: pointer; transition: all .2s var(--ease); }
+.predicate-chip:hover { border-color: var(--teal); color: var(--teal); }
 
 /* ==========================================================================
-   8. ACCORDION (reused for extra notes) + FLIP CARDS (reused for farewells)
+   9. DAYS FORMATION CARDS + AM-CONTRACTION CHIPS (reuse formation-card pattern)
+   ========================================================================== */
+.formation-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 16px; }
+.formation-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+  padding: 18px; text-align: center; cursor: pointer; box-shadow: var(--shadow-sm);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.formation-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.formation-card .fc-num { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); margin-bottom: 6px; }
+.formation-card .fc-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.3rem; }
+.formation-card .fc-ar { font-size: .82rem; color: var(--ink-soft); margin-top: 6px; }
+.formation-card .fc-note { font-size: .72rem; color: var(--ink-faint); margin-top: 8px; font-family: var(--font-mono); }
+
+.am-chip-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 24px; }
+.am-chip { padding: 10px 18px; border-radius: 999px; border: 1.5px solid var(--border-strong); background: var(--surface); font-family: var(--font-de-display); font-size: 1rem; cursor: pointer; transition: all .2s var(--ease); box-shadow: var(--shadow-sm); }
+.am-chip:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+.am-chip .am-part { color: var(--teal-ink); font-weight: 700; }
+:root[data-theme="dark"] .am-chip .am-part { color: var(--teal); }
+
+/* ==========================================================================
+   10. WEEK WHEEL — centerpiece interactive component
+   ========================================================================== */
+.wheel-wrap { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.wheel-svg-wrap { width: min(100%, 340px); }
+.wheel-slice { cursor: pointer; transition: transform .25s var(--ease), opacity .25s var(--ease); transform-origin: 150px 150px; opacity: .92; }
+.wheel-slice:hover, .wheel-slice.active { opacity: 1; transform: scale(1.045); }
+.wheel-label { font-family: var(--font-de-display); font-weight: 700; fill: #fff; pointer-events: none; user-select: none; }
+.wheel-hub { fill: var(--surface); stroke: var(--border-strong); stroke-width: 2; }
+.wheel-result { text-align: center; }
+.wheel-result-title { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); margin-bottom: 8px; }
+.wheel-result-day { font-family: var(--font-de-display); font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; cursor: pointer; display: inline-block; padding: 6px 18px; border-radius: 12px; transition: background-color .2s; }
+.wheel-result-day:hover { background: var(--bg-alt); }
+.wheel-result-ar { color: var(--ink-soft); margin-top: 6px; }
+.wheel-note { margin-top: 14px; font-size: .88rem; color: var(--ink-soft); text-align: center; max-width: 52ch; }
+
+/* ==========================================================================
+   11. ACCORDION (extra notes: day-name etymology)
    ========================================================================== */
 .accordion-item { border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); margin-bottom: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
 .accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; background: none; border: none; cursor: pointer; text-align: right; color: var(--ink); }
@@ -420,9 +493,10 @@ p { margin: 0; }
 .accordion-panel { max-height: 0; overflow: hidden; transition: max-height .45s var(--ease); }
 .accordion-item.open .accordion-panel { max-height: 900px; }
 .accordion-body { padding: 0 22px 22px; color: var(--ink-soft); font-size: .95rem; }
-.formation-example-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; background: var(--bg-alt); border-radius: 10px; padding: 10px 14px; margin-top: 8px; }
-.formation-arrow { color: var(--ink-faint); }
 
+/* ==========================================================================
+   12. VOCAB GRID + FLIP CARDS (generic, reused if needed)
+   ========================================================================== */
 .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px; }
 .flip-card { perspective: 1200px; height: 190px; }
 .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
@@ -431,21 +505,14 @@ p { margin: 0; }
 .flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
 .flip-front .de { font-size: 1.55rem; font-weight: 700; }
 .flip-front .aux-tag { position: absolute; top: 10px; left: 10px; }
-.flip-back { background: var(--teal); color: #fff; transform: rotateY(180deg); gap: 6px; }
+.flip-back { background: var(--plum); color: #fff; transform: rotateY(180deg); gap: 6px; }
 .flip-back .partizip { font-family: var(--font-de-display); font-size: 1.3rem; font-weight: 600; }
 .flip-back .ipa { font-family: var(--font-mono); font-size: .8rem; opacity: .85; }
 .flip-back .meaning { font-size: .86rem; opacity: .92; margin-top: 2px; text-align:center; }
-.flip-hint { font-family: var(--font-mono); font-size: .66rem; color: var(--ink-faint); margin-top: 8px; }
-.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--teal); transition: transform .2s, background-color .2s; }
-.speak-dot:hover { transform: scale(1.1); background: var(--teal-soft); }
 .flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
-.speak-dot .icon { width: 15px; height: 15px; }
-.speak-dot.speaking { animation: pulse-ring 1s var(--ease) infinite; }
-@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 var(--teal-glow)} 70%{box-shadow:0 0 0 10px transparent} 100%{box-shadow:0 0 0 0 transparent} }
-@keyframes fadeSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ==========================================================================
-   8b. TAB SWITCHER (shared: dialogue formal/informal toggle)
+   12b. TAB SWITCHER (shared: dialogue formal/informal toggle)
    ========================================================================== */
 .cat-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
 .cat-tab {
@@ -459,55 +526,7 @@ p { margin: 0; }
 .cat-tab:not(.active) .cat-count { background: var(--bg-alt); }
 
 /* ==========================================================================
-   9. FORMAL / INFORMAL COMPARISON (du vs Sie) — new signature component
-   ========================================================================== */
-.duSie-table { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); }
-.duSie-head { display: grid; grid-template-columns: 1.1fr 1fr 1fr; }
-.duSie-head > div { padding: 16px 18px; font-weight: 700; text-align: center; }
-.duSie-head .lbl-ar { background: var(--bg-alt); }
-.duSie-head .lbl-du { background: var(--teal); color: #fff; }
-.duSie-head .lbl-sie { background: var(--plum); color: #fff; }
-.duSie-row { display: grid; grid-template-columns: 1.1fr 1fr 1fr; border-top: 1px solid var(--border); }
-.duSie-row > div { padding: 16px 18px; display: flex; align-items: center; justify-content: center; text-align: center; }
-.duSie-row .cell-ar { background: var(--surface); color: var(--ink-soft); font-size: .92rem; }
-.duSie-row .cell-du { background: var(--teal-soft); font-family: var(--font-de-display); font-weight: 600; cursor: pointer; color: var(--teal-ink); }
-.duSie-row .cell-sie { background: var(--plum-soft); font-family: var(--font-de-display); font-weight: 600; cursor: pointer; color: var(--plum-ink); }
-@media (max-width: 700px){
-  .duSie-head { display: none; }
-  .duSie-row { grid-template-columns: 1fr; text-align: center; }
-  .duSie-row > div { justify-content: center; border-top: 1px dashed var(--border); }
-  .duSie-row > div:first-child { border-top: none; font-weight: 700; background: var(--bg-alt); }
-  .duSie-row .cell-du::before { content: "Du: "; font-family: var(--font-mono); font-size: .65rem; opacity: .7; }
-  .duSie-row .cell-sie::before { content: "Sie: "; font-family: var(--font-mono); font-size: .65rem; opacity: .7; }
-}
-.when-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
-@media (max-width: 700px){ .when-cards { grid-template-columns: 1fr; } }
-.when-card { border-radius: var(--r-md); padding: 20px; border: 1.5px solid; }
-.when-card.du { background: var(--teal-soft); border-color: var(--teal); }
-.when-card.sie { background: var(--plum-soft); border-color: var(--plum); }
-.when-card h3 { margin-bottom: 10px; }
-.when-card.du h3 { color: var(--teal-ink); }
-.when-card.sie h3 { color: var(--plum-ink); }
-.when-card ul { display: flex; flex-direction: column; gap: 6px; }
-.when-card li { font-size: .92rem; color: var(--ink-soft); display: flex; align-items: center; gap: 8px; }
-.when-card li::before { content: "•"; font-weight: 700; }
-.when-card.du li::before { color: var(--teal); }
-.when-card.sie li::before { color: var(--plum); }
-
-/* ==========================================================================
-   10. SENTENCE-PATTERN CARDS (self-introduction)
-   ========================================================================== */
-.pattern-list { display: flex; flex-direction: column; gap: 14px; }
-.pattern-card { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 16px 20px; box-shadow: var(--shadow-sm); transition: box-shadow .3s var(--ease), transform .3s var(--ease); }
-.pattern-card:hover { box-shadow: var(--shadow-md); transform: translateX(-4px); }
-@media (max-width: 640px){ .pattern-card { grid-template-columns: 1fr; text-align: center; gap: 10px; } }
-.pattern-num { width: 34px; height: 34px; border-radius: 50%; background: var(--teal-soft); color: var(--teal-ink); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 700; flex-shrink: 0; }
-.pattern-main .pattern-de { font-family: var(--font-de-display); font-size: 1.25rem; font-weight: 600; cursor: pointer; }
-.pattern-main .pattern-ar { font-size: .88rem; color: var(--ink-soft); margin-top: 4px; }
-.pattern-formality { flex-shrink: 0; }
-
-/* ==========================================================================
-   11. DIALOGUE — chat-bubble UI (new signature component)
+   13. DIALOGUE — chat-bubble UI
    ========================================================================== */
 .dialogue-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
 .dialogue-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); padding: clamp(18px, 3vw, 30px); }
@@ -520,7 +539,7 @@ p { margin: 0; }
 .speaker-dot.a { background: var(--teal); }
 .speaker-dot.b { background: var(--amber); }
 
-.chat-line { display: flex; margin-bottom: 14px; max-width: 82%; }
+.chat-line { display: flex; margin-bottom: 14px; max-width: 82%; align-items: flex-start; }
 .chat-line.a { justify-content: flex-start; }
 .chat-line.b { justify-content: flex-end; margin-inline-start: auto; }
 .chat-bubble { position: relative; padding: 12px 18px; border-radius: 18px; cursor: pointer; transition: transform .2s var(--ease), box-shadow .2s var(--ease); box-shadow: var(--shadow-sm); }
@@ -534,11 +553,10 @@ p { margin: 0; }
 .chat-avatar { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .82rem; color: #fff; flex-shrink: 0; }
 .chat-line.a .chat-avatar { background: var(--teal); margin-inline-end: 10px; }
 .chat-line.b .chat-avatar { background: var(--amber); margin-inline-start: 10px; order: 2; }
-.chat-line { align-items: flex-start; }
 .dialogue-actions { display: flex; justify-content: center; margin-top: 22px; }
 
 /* ==========================================================================
-   12. MISTAKES — wrong vs right
+   14. MISTAKES — wrong vs right
    ========================================================================== */
 .mistake-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
 @media (max-width: 640px){ .mistake-card { grid-template-columns: 1fr; } }
@@ -552,13 +570,13 @@ p { margin: 0; }
 .mistake-note { grid-column: 1 / -1; padding: 12px 20px; font-size: .88rem; color: var(--ink-soft); border-top: 1px dashed var(--border); background: var(--surface); }
 
 /* ==========================================================================
-   13. PRONUNCIATION TIP CARDS
+   15. PRONUNCIATION TIP CARDS
    ========================================================================== */
 .tip-card { display: flex; gap: 14px; align-items: flex-start; }
 .tip-card .icon-chip { background: var(--amber-soft); color: var(--amber-ink); }
 
 /* ==========================================================================
-   14. EXERCISES
+   16. EXERCISES
    ========================================================================== */
 .exercise-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
 .exercise-tabs { display: flex; overflow-x: auto; border-bottom: 1px solid var(--border); scrollbar-width: none; }
@@ -624,7 +642,7 @@ p { margin: 0; }
 .qr-placeholder .qr-note { font-family: var(--font-mono); font-size: .76rem; color: var(--ink-faint); }
 
 /* ==========================================================================
-   15. AUDIO DOCK
+   17. AUDIO DOCK
    ========================================================================== */
 .audio-dock { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(140%); z-index: 200; background: var(--surface-glass); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border: 1px solid var(--surface-glass-border); box-shadow: var(--shadow-lg); border-radius: 999px; padding: 8px 10px 8px 18px; display: flex; align-items: center; gap: 12px; max-width: min(92vw, 560px); transition: transform .45s var(--ease); }
 .audio-dock.visible { transform: translateX(-50%) translateY(0); }
@@ -636,7 +654,7 @@ p { margin: 0; }
 @media (min-width: 620px){ .audio-dock-voice { display: block; } }
 
 /* ==========================================================================
-   16. SUMMARY / ACHIEVEMENTS
+   18. SUMMARY / ACHIEVEMENTS
    ========================================================================== */
 .summary-list { display: flex; flex-direction: column; gap: 12px; }
 .summary-list li { display: flex; gap: 12px; align-items: flex-start; }
@@ -650,14 +668,14 @@ p { margin: 0; }
 .badge-name { font-size: .82rem; font-weight: 600; }
 
 /* ==========================================================================
-   17. TOAST
+   19. TOAST
    ========================================================================== */
 .toast-wrap { position: fixed; top: calc(var(--nav-h) + 14px); left: 50%; transform: translateX(-50%); z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
 .toast { background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-size: .88rem; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(-14px); transition: all .4s var(--ease); white-space: nowrap; }
 .toast.show { opacity: 1; transform: translateY(0); }
 
 /* ==========================================================================
-   18. FOOTER + FLOATING CONTROLS
+   20. FOOTER + FLOATING CONTROLS
    ========================================================================== */
 .site-footer { border-top: 1px solid var(--border); padding-block: 36px; margin-top: 30px; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--ink-faint); font-size: .86rem; }
@@ -668,15 +686,15 @@ p { margin: 0; }
 mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius: 4px; padding: 0 2px; }
 
 /* ==========================================================================
-   19. PRINT
+   21. PRINT
    ========================================================================== */
 @media print {
   .site-header, .audio-dock, .back-to-top, .nav-toggle, .exercise-tabs, .score-bar-wrap, .btn, .icon-btn, .toast-wrap, .cat-tabs, .dialogue-tabs { display: none !important; }
   body { background: #fff; color: #000; }
   .section { padding-block: 20px; break-inside: avoid; }
-  .showcase-card { box-shadow: none; transform: none; display: block !important; }
+  .showcase-card, .mixer-shell { box-shadow: none; transform: none; display: block !important; }
   .exercise-panel { display: block !important; }
-  .alpha-panel, .dialogue-panel { display: block !important; margin-bottom: 24px; }
+  .dialogue-panel { display: block !important; margin-bottom: 24px; }
   .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
   .accordion-panel { max-height: none !important; }
 }
@@ -702,21 +720,18 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
 <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></symbol>
 <symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 13.5 7 21l5-2.5L17 21l-2-7.5"/><path d="M12 6.5l.9 1.9 2.1.3-1.5 1.4.3 2.1-1.8-1-1.8 1 .3-2.1-1.5-1.4 2.1-.3z"/></symbol>
-<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2zM20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2z"/></symbol>
 <symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></symbol>
 <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
 <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5a2.6 2.6 0 0 1 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
 <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
 <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
 <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></symbol>
-<symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 5.5 19 5.5a2 2 0 0 1 2 2L21 18"/></symbol>
 <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.6"/><path d="M15.5 13.3a5.6 5.6 0 0 1 6 6.7"/></symbol>
-<symbol id="i-sunrise" viewBox="0 0 24 24"><circle cx="12" cy="15" r="4"/><line x1="12" y1="3" x2="12" y2="7"/><line x1="4.2" y1="9.2" x2="6.8" y2="11"/><line x1="19.8" y1="9.2" x2="17.2" y2="11"/><line x1="2" y1="20" x2="22" y2="20"/></symbol>
-<symbol id="i-sunset" viewBox="0 0 24 24"><circle cx="12" cy="13" r="4"/><line x1="12" y1="21" x2="12" y2="17"/><line x1="4.2" y1="7.2" x2="6.8" y2="9"/><line x1="19.8" y1="7.2" x2="17.2" y2="9"/><line x1="2" y1="20" x2="22" y2="20"/></symbol>
-<symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2 12l4-4 4 3 3-3 4 4"/><path d="M2 12v4l4 4 4-4 3 3 5-5-4-4"/></symbol>
-<symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M3 6h3a5 5 0 0 1 4 2l6 8a5 5 0 0 0 4 2h1M21 6h-1a5 5 0 0 0-4 2l-1 1.5M3 18h3a5 5 0 0 0 4-2l1-1.5"/><polyline points="18,3 21,6 18,9"/><polyline points="18,15 21,18 18,21"/></symbol>
 <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="14" width="3" height="3"/><rect x="14" y="18" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/></symbol>
 <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="3" y="14" width="5" height="7" rx="1.5"/><rect x="16" y="14" width="5" height="7" rx="1.5"/></symbol>
+<symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18h.5a2.5 2.5 0 0 0 0-5H12a2 2 0 0 1 0-4h5a2 2 0 0 0 2-2 9 9 0 0 0-7-7z"/><circle cx="8" cy="10" r="1.3" fill="currentColor" stroke="none"/><circle cx="12" cy="7.3" r="1.3" fill="currentColor" stroke="none"/><circle cx="16" cy="10" r="1.3" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s7 7.5 7 12a7 7 0 0 1-14 0c0-4.5 7-12 7-12z"/></symbol>
 </defs>
 </svg>
 
@@ -731,17 +746,19 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     </button>
 
     <div class="brand">
-      <span class="brand-mark"><svg class="icon" style="width:20px;height:20px"><use href="#i-handshake"/></svg></span>
-      <span class="brand-text">ألمانية A1<small>الدرس الثاني · التحيات</small></span>
+      <span class="brand-mark"><svg class="icon" style="width:20px;height:20px"><use href="#i-palette"/></svg></span>
+      <span class="brand-text">ألمانية A1<small>الدرس الرابع · الألوان والأيام</small></span>
     </div>
 
     <nav class="main-nav" id="mainNav" aria-label="أقسام الدرس">
       <button class="nav-link" data-target="#intro">المقدّمة</button>
-      <button class="nav-link" data-target="#time-greetings">تحيات الوقت</button>
-      <button class="nav-link" data-target="#casual">تحيات غير رسمية</button>
-      <button class="nav-link" data-target="#farewells">الوداع</button>
-      <button class="nav-link" data-target="#duSie">du أم Sie؟</button>
-      <button class="nav-link" data-target="#introduce">تقديم النفس</button>
+      <button class="nav-link" data-target="#colors-basics">الألوان الأساسية</button>
+      <button class="nav-link" data-target="#color-mixer">امزج الألوان</button>
+      <button class="nav-link" data-target="#color-grammar">صفة اللون والاسم</button>
+      <button class="nav-link" data-target="#days-basics">أيام الأسبوع</button>
+      <button class="nav-link" data-target="#week-wheel">عجلة الأسبوع</button>
+      <button class="nav-link" data-target="#am-contraction">حرف الجر am</button>
+      <button class="nav-link" data-target="#practical">الاستخدام العملي</button>
       <button class="nav-link" data-target="#dialogue">حوار كامل</button>
       <button class="nav-link" data-target="#mistakes">أخطاء شائعة</button>
       <button class="nav-link" data-target="#pronunciation">نصائح النطق</button>
@@ -779,17 +796,17 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <section class="hero" id="hero">
   <div class="container hero-grid">
     <div class="reveal is-visible">
-      <span class="level-badge"><b>A1</b> الدرس الثاني من مسار «الألمانية للمبتدئين»</span>
-      <h1 class="hero-title">التحيات وتقديم النفس: <span class="de">Hallo!</span></h1>
-      <p class="hero-lead">بعد أن أتقنت الحروف في الدرس الأول، حان وقت أول محادثة حقيقية. في هذا الدرس ستتعلّم كيف تُحيّي بالوقت المناسب، وتودّع، وتُقدّم نفسك، وتفرّق بين صيغتي المخاطبة <span class="de mono">du</span> و<span class="de mono">Sie</span> — مع حوارين كاملين تفاعليين بصوت ألماني حقيقي.</p>
+      <span class="level-badge"><b>A1</b> الدرس الرابع من مسار «الألمانية للمبتدئين»</span>
+      <h1 class="hero-title">الألوان وأيام الأسبوع: <span class="de">Farben & Tage</span></h1>
+      <p class="hero-lead">تعرّف على الألوان الأساسية والثانوية بأداة مزج تفاعلية، ولمحة عن كيفية توافق صفة اللون مع الاسم، ثم أيام الأسبوع السبعة مع عجلة أسبوع دوّارة، وحرف الجر المدمج <span class="de mono">am</span> الذي يلازم كل يوم. درسٌ عملي جدًا لحياتك اليومية.</p>
       <div class="hero-ctas">
-        <button class="btn btn-primary" data-scroll="#time-greetings">
+        <button class="btn btn-primary" data-scroll="#colors-basics">
           <svg class="icon" style="width:18px;height:18px"><use href="#i-play"/></svg>
           ابدأ الدرس
         </button>
-        <button class="btn btn-ghost" data-scroll="#dialogue">
-          <svg class="icon" style="width:18px;height:18px"><use href="#i-chat"/></svg>
-          استمع لحوار كامل
+        <button class="btn btn-ghost" data-scroll="#color-mixer">
+          <svg class="icon" style="width:18px;height:18px"><use href="#i-palette"/></svg>
+          جرّب مازج الألوان
         </button>
       </div>
     </div>
@@ -797,44 +814,29 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     <div class="reveal is-visible" style="transition-delay:.15s">
       <div class="hero-illustration">
         <svg class="hero-illo-svg" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <linearGradient id="personA" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="var(--teal)"/>
-              <stop offset="100%" stop-color="var(--teal-ink)"/>
-            </linearGradient>
-            <linearGradient id="personB" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="var(--amber)"/>
-              <stop offset="100%" stop-color="var(--amber-ink)"/>
-            </linearGradient>
-          </defs>
-          <ellipse cx="210" cy="285" rx="170" ry="16" fill="var(--border)" opacity=".5"/>
-          <g>
-            <circle cx="130" cy="150" r="46" fill="url(#personA)"/>
-            <rect x="86" y="190" width="88" height="90" rx="30" fill="url(#personA)"/>
-            <circle cx="115" cy="142" r="5" fill="#fff"/>
-            <circle cx="148" cy="142" r="5" fill="#fff"/>
-            <path d="M112 165 Q130 178 150 165" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <ellipse cx="200" cy="290" rx="160" ry="14" fill="var(--border)" opacity=".5"/>
+          <g stroke="var(--surface)" stroke-width="3">
+            <path d="M180,175 L180,90 A85,85 0 0,1 253.6,132.5 Z" fill="#E0483E"/>
+            <path d="M180,175 L253.6,132.5 A85,85 0 0,1 253.6,217.5 Z" fill="#F2994A"/>
+            <path d="M180,175 L253.6,217.5 A85,85 0 0,1 180,260 Z" fill="#F2C94C"/>
+            <path d="M180,175 L180,260 A85,85 0 0,1 106.4,217.5 Z" fill="#3FAE6B"/>
+            <path d="M180,175 L106.4,217.5 A85,85 0 0,1 106.4,132.5 Z" fill="#2F6FED"/>
+            <path d="M180,175 L106.4,132.5 A85,85 0 0,1 180,90 Z" fill="#9B6BC7"/>
           </g>
-          <g>
-            <circle cx="290" cy="150" r="46" fill="url(#personB)"/>
-            <rect x="246" y="190" width="88" height="90" rx="30" fill="url(#personB)"/>
-            <circle cx="275" cy="142" r="5" fill="#2b1c05"/>
-            <circle cx="308" cy="142" r="5" fill="#2b1c05"/>
-            <path d="M272 165 Q290 178 310 165" stroke="#2b1c05" stroke-width="4" fill="none" stroke-linecap="round"/>
-          </g>
+          <circle cx="180" cy="175" r="26" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2.5"/>
           <g class="floaty">
-            <rect x="55" y="55" width="118" height="50" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <path d="M95 105 L85 118 L108 105 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <text x="114" y="86" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="20" fill="var(--teal)">Hallo!</text>
+            <rect x="15" y="30" width="118" height="52" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M60 82 L50 95 L73 82 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="74" y="63" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="18" fill="#2F6FED">Blau</text>
           </g>
           <g class="floaty d3">
-            <rect x="245" y="30" width="150" height="50" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <path d="M300 80 L290 93 L313 80 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
-            <text x="320" y="61" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="18" fill="var(--amber-ink)">Guten Tag!</text>
+            <rect x="255" y="15" width="150" height="52" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M300 67 L290 80 L313 67 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="330" y="47" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="17" fill="var(--amber-ink)">Montag</text>
           </g>
-          <g class="floaty d2" transform="translate(178,205)">
-            <circle r="20" fill="var(--plum)"/>
-            <text y="7" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="20" fill="#fff">?</text>
+          <g class="floaty d2" transform="translate(360,255)">
+            <circle r="22" fill="var(--plum)"/>
+            <svg x="-11" y="-11" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>
           </g>
         </svg>
       </div>
@@ -848,22 +850,22 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <section class="section" id="intro">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-handshake"/></svg>أول محادثة حقيقية</span>
-      <h2 class="section-title">لماذا تُعد التحيات نقطة انطلاق مثالية؟</h2>
-      <p class="section-sub">في كل مرة تلتقي بها بأحد، ستحتاج تحية مناسبة. هذا الدرس يمنحك أدوات فعلية لبدء أي محادثة ألمانية بثقة منذ اللحظة الأولى.</p>
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-palette"/></svg>موضوعان في درس واحد</span>
+      <h2 class="section-title">لماذا الألوان والأيام معًا؟</h2>
+      <p class="section-sub">كلاهما مفردات وصفية تستخدمها يوميًا لوصف ما تراه وتخطيط موعدك — وكلاهما يفتح بابًا نحويًا صغيرًا ومهمًا في الألمانية.</p>
     </div>
     <div class="grid-3 reveal-stagger reveal">
       <div class="info-card">
-        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-sunrise"/></svg></span>تحية بحسب الوقت</h3>
-        <p>الألمانية تُميّز بدقة بين تحية الصباح والنهار والمساء — تمامًا كما تختلف «صباح الخير» عن «مساء الخير» بالعربية، لكن بحدود زمنية أوضح قليلًا.</p>
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-palette"/></svg></span>الألوان تصف كل شيء</h3>
+        <p>من لون قميصك إلى لون السيارة — الألوان أول صفة تحتاجها لوصف أي شيء من حولك بالألمانية.</p>
       </div>
       <div class="info-card">
-        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-users"/></svg></span>رسمي أم غير رسمي؟</h3>
-        <p>على عكس العربية، تملك الألمانية صيغتين مختلفتين تمامًا لمخاطبة «أنت»: <span class="de mono">du</span> للأصدقاء والعائلة، و<span class="de mono">Sie</span> للغرباء والمواقف الرسمية. اختيار الصيغة الخاطئة قد يبدو وقحًا أو غريبًا.</p>
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-calendar"/></svg></span>الأيام تنظّم حياتك</h3>
+        <p>لا موعد ولا جدول أسبوعي بلا أيام الأسبوع — وهي أيضًا أسماء تحمل جنسًا نحويًا واحدًا لجميعها: مذكّر.</p>
       </div>
       <div class="info-card">
-        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-chat"/></svg></span>جمل جاهزة للاستخدام فورًا</h3>
-        <p>بنهاية هذا الدرس، ستكون قادرًا على تحية شخص، وتقديم نفسك، والسؤال عن اسمه ومكانه، والرد على «كيف حالك؟» — أي محادثة تعارف كاملة.</p>
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>بابان نحويان صغيران</h3>
+        <p>ستتعرّف على توافق صفة اللون مع الاسم (<span class="de mono">der rote Apfel</span>)، وحرف الجر المدمج <span class="de mono">am</span> مع كل يوم.</p>
       </div>
     </div>
 
@@ -878,8 +880,8 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
         <p style="margin-bottom:14px">كل ما تحتاج تذكّره اليوم — والباقي تدريب وحوار حي.</p>
       </div>
       <div class="stat-cards">
-        <div class="stat-card teal"><div class="stat-pct">٤</div><div class="stat-desc">تحيات حسب وقت اليوم</div></div>
-        <div class="stat-card amber"><div class="stat-pct">٢</div><div class="stat-desc">صيغتا مخاطبة: <span class="de mono">du</span> و<span class="de mono">Sie</span></div></div>
+        <div class="stat-card teal"><div class="stat-pct">١١</div><div class="stat-desc">لونًا أساسيًا وثانويًا تحفظه اليوم</div></div>
+        <div class="stat-card amber"><div class="stat-pct">٧</div><div class="stat-desc">أيام أسبوع، كلّها بجنس مذكّر واحد: <span class="de mono">der</span></div></div>
       </div>
     </div>
   </div>
@@ -887,79 +889,45 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
 <hr class="rail-rule">
 
-<!-- ============================= TIME-BASED GREETINGS ============================= -->
-<section class="section" id="time-greetings">
+<!-- ============================= COLORS BASICS ============================= -->
+<section class="section" id="colors-basics">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-sunrise"/></svg>حسب وقت اليوم</span>
-      <h2 class="section-title">التحيات الأربع الأساسية</h2>
-      <p class="section-sub">انقر على أي بطاقة لسماع نطقها. لاحظ أن التوقيت التقريبي يساعدك على اختيار التحية الصحيحة.</p>
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-palette"/></svg>خمّن قبل أن تقلب البطاقة</span>
+      <h2 class="section-title">الألوان الأساسية</h2>
+      <p class="section-sub">انظر إلى لون البطاقة وحاول تخمين اسمه بالألمانية، ثم انقر لقلبها والاستماع إلى النطق الصحيح.</p>
     </div>
-    <div class="time-grid reveal-stagger reveal" id="timeGrid"></div>
+    <div class="color-grid reveal-stagger reveal" id="colorsGrid"></div>
   </div>
 </section>
 
 <hr class="rail-rule">
 
-<!-- ============================= CASUAL / REGIONAL GREETINGS ============================= -->
-<section class="section" id="casual">
+<!-- ============================= COLOR MIXER (centerpiece) ============================= -->
+<section class="section" id="color-mixer">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>بين الأصدقاء</span>
-      <h2 class="section-title">تحيات غير رسمية ولهجات إقليمية</h2>
-      <p class="section-sub">الألمانية المحكية في مختلف البلدان الناطقة بها غنية بالتحيات غير الرسمية. هذه أشهرها.</p>
-    </div>
-    <div class="region-grid reveal-stagger reveal" id="regionGrid"></div>
-  </div>
-</section>
-
-<hr class="rail-rule">
-
-<!-- ============================= FAREWELLS ============================= -->
-<section class="section" id="farewells">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-cards"/></svg>عند المغادرة</span>
-      <h2 class="section-title">كيف تودّع بشكل صحيح</h2>
-      <p class="section-sub">انقر على البطاقة لقلبها ورؤية درجة الرسمية والمعنى الحرفي.</p>
-    </div>
-    <div class="vocab-grid reveal-stagger reveal" id="farewellGrid"></div>
-  </div>
-</section>
-
-<hr class="rail-rule">
-
-<!-- ============================= DU vs SIE ============================= -->
-<section class="section" id="duSie">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-users"/></svg>أهم فرق في هذا الدرس</span>
-      <h2 class="section-title"><span class="de mono">du</span> أم <span class="de mono">Sie</span>؟</h2>
-      <p class="section-sub">قاعدة ذهبية: <span class="de mono">du</span> مع من تعرفهم جيدًا، و<span class="de mono">Sie</span> مع من لا تعرفهم أو تحترم مكانتهم. قارن الجملة نفسها بالصيغتين.</p>
+      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-drop"/></svg>من الألوان الأساسية إلى الثانوية</span>
+      <h2 class="section-title">امزج لونين وشاهد الناتج</h2>
+      <p class="section-sub">الألوان الثانوية في الألمانية (كما في الطبيعة) تُصنع من مزج الأساسية: <span class="de mono">Rot</span>، <span class="de mono">Blau</span>، <span class="de mono">Gelb</span>. اختر لونين وشاهد الاسم الجديد.</p>
     </div>
 
-    <div class="duSie-table reveal" id="duSieTable">
-      <div class="duSie-head"><div class="lbl-ar">بالعربية</div><div class="lbl-du">du · غير رسمي</div><div class="lbl-sie">Sie · رسمي</div></div>
-    </div>
-
-    <div class="when-cards reveal">
-      <div class="when-card du">
-        <h3>استخدم <span class="de mono">du</span> مع:</h3>
-        <ul>
-          <li>الأصدقاء والعائلة</li>
-          <li>الأطفال والمراهقين</li>
-          <li>زملاء الدراسة</li>
-          <li>غالبًا بين الشباب في العمل غير الرسمي</li>
-        </ul>
+    <div class="mixer-shell reveal">
+      <div class="mixer-picker-group">
+        <div class="mixer-picker-label">١) اختر اللون الأول</div>
+        <div class="mixer-swatch-row" id="mixerRowA"></div>
       </div>
-      <div class="when-card sie">
-        <h3>استخدم <span class="de mono">Sie</span> مع:</h3>
-        <ul>
-          <li>الغرباء تمامًا</li>
-          <li>كبار السن</li>
-          <li>في بيئة العمل الرسمية والاجتماعات</li>
-          <li>الأطباء والمسؤولين والبائعين</li>
-        </ul>
+      <div class="mixer-plus">+</div>
+      <div class="mixer-picker-group" style="margin-bottom:4px">
+        <div class="mixer-picker-label">٢) اختر اللون الثاني</div>
+        <div class="mixer-swatch-row" id="mixerRowB"></div>
+      </div>
+
+      <div class="mixer-result">
+        <div class="mixer-result-swatch" id="mixerResultSwatch" tabindex="0" role="button" aria-label="استمع لاسم اللون الناتج"></div>
+        <div class="mixer-result-name de" id="mixerResultName"></div>
+        <div class="mixer-result-ar" id="mixerResultAr"></div>
+        <p class="mixer-note" id="mixerNote"></p>
       </div>
     </div>
   </div>
@@ -967,15 +935,109 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
 <hr class="rail-rule">
 
-<!-- ============================= SELF-INTRODUCTION PATTERNS ============================= -->
-<section class="section" id="introduce">
+<!-- ============================= COLOR GRAMMAR PREVIEW (bonus) ============================= -->
+<section class="section" id="color-grammar">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>عبارات جاهزة</span>
-      <h2 class="section-title">كيف تُقدّم نفسك</h2>
-      <p class="section-sub">ست جمل جاهزة تكفيك لبدء أي تعارف. انقر على أي جملة لسماع نطقها.</p>
+      <span class="eyebrow amber"><svg class="icon" style="width:14px;height:14px"><use href="#i-medal"/></svg>لمحة إضافية · قد تحتاجها قريبًا</span>
+      <h2 class="section-title">متى تحتاج اللون إلى نهاية -e؟</h2>
+      <p class="section-sub">بعد الفعل <span class="de mono">sein</span> (يكون)، يبقى اللون بلا أي نهاية. لكن عندما يقف اللون مباشرة قبل الاسم مع أداة تعريف، يأخذ نهاية <span class="de mono">-e</span> — بغضّ النظر عن جنس الاسم.</p>
     </div>
-    <div class="pattern-list reveal-stagger reveal" id="patternList"></div>
+
+    <div class="agree-row reveal-stagger reveal" id="agreeRow"></div>
+
+    <div class="reveal" style="margin-top:26px;text-align:center">
+      <p style="color:var(--ink-soft);margin-bottom:14px">قارن الآن بالصيغة بلا نهاية بعد الفعل <span class="de mono">sein</span>:</p>
+      <div class="predicate-row" id="predicateRow"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= DAYS BASICS ============================= -->
+<section class="section" id="days-basics">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-calendar"/></svg>سبعة أسماء، جنس واحد</span>
+      <h2 class="section-title">أيام الأسبوع السبعة</h2>
+      <p class="section-sub">كل أيام الأسبوع في الألمانية مذكّرة: <span class="de mono">der Montag</span>، <span class="de mono">der Dienstag</span>… جميعها بلا استثناء. انقر على أي بطاقة لسماع نطقها.</p>
+    </div>
+    <div class="formation-grid reveal-stagger reveal" id="daysGrid"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= WEEK WHEEL (centerpiece) ============================= -->
+<section class="section" id="week-wheel">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>الأسبوع دائرة، وليس خطًا فقط</span>
+      <h2 class="section-title">عجلة الأسبوع الدوّارة</h2>
+      <p class="section-sub">في التقويم الألماني، يبدأ الأسبوع بيوم <span class="de mono">Montag</span> (الاثنين) وليس الأحد. انقر على أي قطاع من العجلة لسماع اسم اليوم والتعرّف على مكانه في الأسبوع.</p>
+    </div>
+
+    <div class="showcase-card reveal" style="transform:none;padding:clamp(24px,4vw,44px)">
+      <div class="wheel-wrap">
+        <div class="wheel-svg-wrap" id="wheelSvgWrap"></div>
+        <div class="wheel-result">
+          <div class="wheel-result-title">اليوم المختار</div>
+          <div class="wheel-result-day de" id="wheelResultDay" tabindex="0" role="button"></div>
+          <div class="wheel-result-ar" id="wheelResultAr"></div>
+        </div>
+        <p class="wheel-note">تذكّر: الأسبوع الألماني (حسب معيار DIN 1355) يبدأ بـ<span class="de mono" data-speak="Montag">Montag</span> وينتهي بـ<span class="de mono" data-speak="Sonntag">Sonntag</span> — عكس التقويم الذي قد تعتاد عليه.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= AM CONTRACTION ============================= -->
+<section class="section" id="am-contraction">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>اندماج صغير، استخدام يومي كبير</span>
+      <h2 class="section-title">حرف الجر المدمج: <span class="de mono">am</span></h2>
+      <p class="section-sub">لقول «في يوم كذا»، تندمج <span class="de mono">an</span> (في) مع <span class="de mono">dem</span> (أداة الجر للمذكّر) لتكوين <span class="de mono">am</span>. بما أن كل الأيام مذكّرة، فستستخدم <span class="de mono">am</span> دائمًا معها.</p>
+    </div>
+
+    <div class="formation-grid reveal-stagger reveal" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));max-width:420px;margin-inline:auto">
+      <div class="formation-card" id="amFormationCard" style="cursor:default"></div>
+    </div>
+
+    <div class="am-chip-row reveal" id="amChipRow"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= PRACTICAL ============================= -->
+<section class="section" id="practical">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>من النظرية إلى الحياة اليومية</span>
+      <h2 class="section-title">كيف تُستخدم الألوان والأيام معًا</h2>
+      <p class="section-sub">جمل بسيطة وآمنة نحويًا تجمع بين الموضوعين، تستخدمها من اليوم الأول.</p>
+    </div>
+
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-palette"/></svg></span>لونك المفضّل</h3>
+        <p><span class="de mono" data-speak="Meine Lieblingsfarbe ist blau.">Meine Lieblingsfarbe ist blau.</span> — لوني المفضّل هو الأزرق.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-calendar"/></svg></span>يومك المفضّل وجدولك</h3>
+        <p><span class="de mono" data-speak="Ich habe am Montag Deutschkurs.">Ich habe am Montag Deutschkurs.</span> — لدي درس ألماني يوم الاثنين.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-users"/></svg></span>حجز موعد</h3>
+        <p><span class="de mono" data-speak="Welcher Tag passt Ihnen?">Welcher Tag passt Ihnen?</span> — أي يوم يناسبكم؟</p>
+      </div>
+    </div>
+
+    <div style="margin-top:30px" class="reveal" id="extraAccordion"></div>
   </div>
 </section>
 
@@ -986,13 +1048,13 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>طبّق ما تعلّمته</span>
-      <h2 class="section-title">حوارا تعارف كاملان</h2>
-      <p class="section-sub">انقر على أي فقاعة حوار لسماعها بمفردها، أو استمع للحوار كاملًا بزر واحد. تنقّل بين الحوار غير الرسمي والرسمي من التبويبات.</p>
+      <h2 class="section-title">حوارا استخدام كاملان</h2>
+      <p class="section-sub">انقر على أي فقاعة حوار لسماعها بمفردها، أو استمع للحوار كاملًا بزر واحد. تنقّل بين حوار الأصدقاء وحوار حجز الموعد من التبويبات.</p>
     </div>
 
     <div class="dialogue-tabs reveal">
-      <button class="cat-tab active" data-panel="dlgInformal">حوار غير رسمي <span class="cat-count">du</span></button>
-      <button class="cat-tab" data-panel="dlgFormal">حوار رسمي <span class="cat-count">Sie</span></button>
+      <button class="cat-tab active" data-panel="dlgInformal">تسوّق بين الأصدقاء <span class="cat-count">du</span></button>
+      <button class="cat-tab" data-panel="dlgFormal">حجز موعد <span class="cat-count">Sie</span></button>
     </div>
 
     <div class="dialogue-shell reveal">
@@ -1010,7 +1072,7 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>تجنّب الفخاخ الشائعة</span>
       <h2 class="section-title">أخطاء يقع فيها معظم المبتدئين</h2>
-      <p class="section-sub">أغلب هذه الأخطاء اجتماعية بقدر ما هي لغوية — قارن كل خطأ بصورته الصحيحة.</p>
+      <p class="section-sub">أغلبها أخطاء نحوية أو ثقافية بسيطة — قارن كل خطأ بصورته الصحيحة.</p>
     </div>
     <div class="reveal-stagger reveal" id="mistakesList" style="display:flex;flex-direction:column;gap:16px"></div>
   </div>
@@ -1024,7 +1086,7 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-speaker"/></svg>نطق أصيل</span>
       <h2 class="section-title">نصائح النطق</h2>
-      <p class="section-sub">أربع ملاحظات تبني على ما تعلّمته في درس الحروف.</p>
+      <p class="section-sub">أربع ملاحظات — إحداها ستجدها أسهل من الإنجليزية بفضل لغتك الأم!</p>
     </div>
     <div class="grid-2 reveal-stagger reveal" id="tipsGrid"></div>
   </div>
@@ -1043,9 +1105,9 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
     <div class="exercise-shell reveal">
       <div class="exercise-tabs" role="tablist">
-        <button class="exercise-tab active" data-panel="panelMatch" role="tab">طابق التحية بمعناها <span class="count" id="countMatch">٠/٨</span></button>
+        <button class="exercise-tab active" data-panel="panelMatch" role="tab">طابق الكلمة بمعناها <span class="count" id="countMatch">٠/٨</span></button>
         <button class="exercise-tab" data-panel="panelMcq" role="tab">اختر الإجابة الصحيحة <span class="count" id="countMcq">٠/٨</span></button>
-        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الحوار <span class="count" id="countFill">٠/٨</span></button>
+        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الفراغ <span class="count" id="countFill">٠/٨</span></button>
         <button class="exercise-tab" data-panel="panelBuilder" role="tab">رتّب كلمات الجملة <span class="count" id="countBuilder">٠/٥</span></button>
         <button class="exercise-tab" data-panel="panelListen" role="tab">تمرين الاستماع <span class="count" id="countListen">٠/١</span></button>
       </div>
@@ -1077,18 +1139,18 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 
     <div class="grid-2 reveal">
       <ul class="summary-list info-card">
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا التحيات الأربع حسب وقت اليوم، وتحيات غير رسمية من مناطق ناطقة بالألمانية مختلفة.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا خمس صيغ وداع، من الأكثر رسمية إلى الأكثر عفوية.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا الفرق بين <span class="de mono">du</span> و<span class="de mono">Sie</span> ومتى نستخدم كل صيغة.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا ست جمل جاهزة لتقديم النفس والسؤال عن الاسم والمكان والحال.</p></li>
-        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>استمعنا وتفاعلنا مع حوارين كاملين — أحدهما غير رسمي والآخر رسمي.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا ١١ لونًا أساسيًا وثانويًا، وتعلّمنا كيف تُصنع الألوان الثانوية من مزج الأساسية.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعرّفنا على توافق صفة اللون مع الاسم: بلا نهاية بعد <span class="de mono">sein</span>، ونهاية <span class="de mono">-e</span> قبل الاسم مباشرة.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا أيام الأسبوع السبعة، وكلّها مذكّرة، والأسبوع الألماني يبدأ بـ<span class="de mono">Montag</span>.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>تعلّمنا حرف الجر المدمج <span class="de mono">am</span> (an + dem) المستخدم مع كل الأيام.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>استمعنا وتفاعلنا مع حوارين كاملين — تسوّق بين أصدقاء وحجز موعد رسمي.</p></li>
       </ul>
 
       <div class="info-card" style="display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;background:linear-gradient(155deg, var(--teal-soft), var(--plum-soft))">
         <svg class="icon" style="width:40px;height:40px;margin:0 auto;color:var(--teal)"><use href="#i-compass"/></svg>
         <h3 style="justify-content:center">الدرس القادم</h3>
-        <p>الأرقام من ٠ إلى ١٠٠ — قريبًا في الدرس الثالث من مسار A1.</p>
-        <button class="btn btn-ghost" disabled style="align-self:center">الدرس ٣ (قريبًا)</button>
+        <p>العائلة — قريبًا في الدرس الخامس من مسار A1.</p>
+        <button class="btn btn-ghost" disabled style="align-self:center">الدرس ٥ (قريبًا)</button>
       </div>
     </div>
 
@@ -1102,7 +1164,7 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 <!-- ============================= FOOTER ============================= -->
 <footer class="site-footer">
   <div class="container footer-inner">
-    <span>الدرس ٢ · مسار الألمانية A1 — صُمم للتعلّم النشط والاستماع الفوري.</span>
+    <span>الدرس ٤ · مسار الألمانية A1 — صُمم للتعلّم النشط والاستماع الفوري.</span>
     <div class="footer-actions">
       <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس"><svg class="icon"><use href="#i-printer"/></svg></button>
     </div>
@@ -1131,134 +1193,145 @@ mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius:
 /* ==========================================================================
    DATA
    ========================================================================== */
-const TIME_GREETINGS = [
-  {cls:"morning", icon:"i-sunrise", range:"~٥ صباحًا – ١٠ صباحًا", de:"Guten Morgen", ipa:"ˈɡuːtn̩ ˈmɔʁɡn̩", ar:"صباح الخير"},
-  {cls:"day", icon:"i-sun", range:"~١٠ صباحًا – ٦ مساءً", de:"Guten Tag", ipa:"ˈɡuːtn̩ taːk", ar:"تحية عامة نهارية"},
-  {cls:"evening", icon:"i-sunset", range:"~٦ مساءً – منتصف الليل", de:"Guten Abend", ipa:"ˈɡuːtn̩ ˈaːbn̩t", ar:"مساء الخير"},
-  {cls:"night", icon:"i-moon", range:"عند النوم أو المغادرة ليلًا", de:"Gute Nacht", ipa:"ˈɡuːtə naxt", ar:"تصبح على خير (وداع لا تحية)"}
+const COLORS = [
+  {id:'rot',    de:"rot",    ipa:"roːt",     ar:"أحمر",    hex:"#E0483E", primary:true},
+  {id:'blau',   de:"blau",   ipa:"blaʊ",     ar:"أزرق",    hex:"#2F6FED", primary:true},
+  {id:'gelb',   de:"gelb",   ipa:"ɡɛlp",     ar:"أصفر",    hex:"#F2C94C", primary:true},
+  {id:'gruen',  de:"grün",   ipa:"ɡʁyːn",    ar:"أخضر",    hex:"#3FAE6B", primary:false},
+  {id:'orange', de:"orange", ipa:"oˈʁãːʒə",  ar:"برتقالي", hex:"#F2994A", primary:false},
+  {id:'lila',   de:"lila",   ipa:"ˈliːla",   ar:"بنفسجي",  hex:"#9B6BC7", primary:false},
+  {id:'schwarz',de:"schwarz",ipa:"ʃvaʁts",   ar:"أسود",    hex:"#1C1C1C", primary:false},
+  {id:'weiss',  de:"weiß",   ipa:"vaɪs",     ar:"أبيض",    hex:"#F5F5F5", primary:false, needsBorder:true},
+  {id:'grau',   de:"grau",   ipa:"ɡʁaʊ",     ar:"رمادي",   hex:"#9298A3", primary:false},
+  {id:'braun',  de:"braun",  ipa:"bʁaʊn",    ar:"بني",     hex:"#8B5E3C", primary:false},
+  {id:'rosa',   de:"rosa",   ipa:"ˈʁoːza",   ar:"وردي",    hex:"#F2A6C4", primary:false}
 ];
 
-const REGION_GREETINGS = [
-  {flag:"💬", de:"Hallo", place:"في كل مكان", desc:"الأكثر حيادية بين التحيات غير الرسمية، تُستخدم مع الجميع تقريبًا."},
-  {flag:"👋", de:"Hi", place:"بين الشباب", desc:"مستعارة من الإنجليزية، عفوية جدًا، شائعة في الرسائل والدردشة."},
-  {flag:"🇦🇹", de:"Servus", place:"النمسا وجنوب ألمانيا", desc:"تحية ووداع في آنٍ واحد! تُستخدم عند اللقاء وعند المغادرة أيضًا."},
-  {flag:"⚓", de:"Moin", place:"شمال ألمانيا", desc:"تُقال في أي وقت من اليوم، وأحيانًا تُكرَّر: Moin Moin."},
-  {flag:"🇨🇭", de:"Grüezi", place:"سويسرا", desc:"التحية القياسية في المناطق السويسرية الناطقة بالألمانية."},
-  {flag:"🌞", de:"Grüß dich", place:"جنوب ألمانيا", desc:"تحية ودّية غير رسمية، حرفيًا «يبارك فيك» بمعنى مجازي بحت."}
+const PRIMARY_MIX = [
+  {id:'rot',  de:"Rot",  ar:"أحمر", hex:"#E0483E"},
+  {id:'blau', de:"Blau", ar:"أزرق", hex:"#2F6FED"},
+  {id:'gelb', de:"Gelb", ar:"أصفر", hex:"#F2C94C"}
+];
+const MIX_RESULTS = {
+  "rot+blau":  {de:"lila",   ar:"بنفسجي", hex:"#9B6BC7"},
+  "rot+gelb":  {de:"orange", ar:"برتقالي", hex:"#F2994A"},
+  "blau+gelb": {de:"grün",   ar:"أخضر",   hex:"#3FAE6B"}
+};
+
+const AGREE_EXAMPLES = [
+  {art:"der", noun:"Apfel", ending:"e", ar:"التفاحة الحمراء", gender:"مذكّر (masc.)"},
+  {art:"die", noun:"Blume", ending:"e", ar:"الزهرة الحمراء",  gender:"مؤنث (fem.)"},
+  {art:"das", noun:"Auto",  ending:"e", ar:"السيارة الحمراء", gender:"محايد (neutr.)"}
+];
+const PREDICATE_EXAMPLES = [
+  {de:"Der Apfel ist rot.", ar:"التفاحة حمراء"},
+  {de:"Die Blume ist rot.", ar:"الزهرة حمراء"},
+  {de:"Das Auto ist rot.",  ar:"السيارة حمراء"}
 ];
 
-const FAREWELLS = [
-  {de:"Tschüss", ipa:"tʃʏs", meaning:"وداعًا", formality:"غير رسمية", note:"الأكثر شيوعًا في المحادثات اليومية"},
-  {de:"Auf Wiedersehen", ipa:"aʊf ˈviːdɐˌzeːən", meaning:"إلى اللقاء", formality:"رسمية", note:"حرفيًا: حتى نرى بعضنا مجددًا"},
-  {de:"Bis bald", ipa:"bɪs balt", meaning:"أراك قريبًا", formality:"غير رسمية", note:"عند توقّع لقاء قريب"},
-  {de:"Bis später", ipa:"bɪs ˈʃpɛːtɐ", meaning:"أراك لاحقًا", formality:"غير رسمية", note:"عادة في نفس اليوم"},
-  {de:"Ciao", ipa:"tʃaʊ", meaning:"سلام", formality:"غير رسمية جدًا", note:"مستعارة من الإيطالية، شائعة بين الشباب"}
+const DAYS = [
+  {i:0, de:"Montag",     ar:"الاثنين",  abbr:"Mo", note:"Mond + Tag — يوم القمر"},
+  {i:1, de:"Dienstag",   ar:"الثلاثاء", abbr:"Di", note:"يوم إله الحرب Ziu"},
+  {i:2, de:"Mittwoch",   ar:"الأربعاء", abbr:"Mi", note:"Mitte + Woche — منتصف الأسبوع"},
+  {i:3, de:"Donnerstag", ar:"الخميس",  abbr:"Do", note:"يوم إله الرعد Donar"},
+  {i:4, de:"Freitag",    ar:"الجمعة",  abbr:"Fr", note:"يوم الإلهة Freya"},
+  {i:5, de:"Samstag",    ar:"السبت",   abbr:"Sa", note:"من Sabbat؛ أيضًا Sonnabend"},
+  {i:6, de:"Sonntag",    ar:"الأحد",   abbr:"So", note:"Sonne + Tag — يوم الشمس"}
 ];
 
-const DUSIE_ROWS = [
-  {ar:"أنت", du:"du", sie:"Sie"},
-  {ar:"ما اسمك؟", du:"Wie heißt du?", sie:"Wie heißen Sie?"},
-  {ar:"من أين أنت؟", du:"Woher kommst du?", sie:"Woher kommen Sie?"},
-  {ar:"كيف حالك؟", du:"Wie geht's dir?", sie:"Wie geht es Ihnen?"},
-  {ar:"تشرّفت بمعرفتك", du:"Freut mich!", sie:"Freut mich, Sie kennenzulernen."}
-];
-
-const PATTERNS = [
-  {de:"Ich heiße Anna.", ar:"اسمي آنا.", formality:"عام"},
-  {de:"Ich bin Ben.", ar:"أنا بِن.", formality:"عام"},
-  {de:"Mein Name ist Frau Weber.", ar:"اسمي هو السيدة فيبر.", formality:"رسمي"},
-  {de:"Ich komme aus Ägypten.", ar:"أنا من مصر.", formality:"عام"},
-  {de:"Ich wohne in Berlin.", ar:"أسكن في برلين.", formality:"عام"},
-  {de:"Freut mich, Sie kennenzulernen.", ar:"تشرّفت بمعرفتك.", formality:"رسمي"}
+const EXTRA_NOTES = [
+  {q:"لماذا تحمل معظم أيام الأسبوع أسماء آلهة قديمة؟", body:"مثل الإنجليزية (Monday=Moon، Thursday=Thor، Sunday=Sun)، ورثت الألمانية أسماء أيامها من الميثولوجيا الجرمانية القديمة: <span class=\"de mono\" data-speak=\"Donnerstag\">Donnerstag</span> يوم إله الرعد Donar، و<span class=\"de mono\" data-speak=\"Freitag\">Freitag</span> يوم الإلهة Freya. الاستثناء الوحيد هو <span class=\"de mono\" data-speak=\"Mittwoch\">Mittwoch</span> الذي يعني ببساطة «منتصف الأسبوع»."},
+  {q:"هل Samstag و Sonnabend نفس الشيء؟", body:"نعم — <span class=\"de mono\" data-speak=\"Samstag\">Samstag</span> أكثر شيوعًا في جنوب وغرب ألمانيا والنمسا وسويسرا، بينما <span class=\"de mono\" data-speak=\"Sonnabend\">Sonnabend</span> (حرفيًا «مساء الأحد») شائع في شمال وشرق ألمانيا خصوصًا برلين."},
+  {q:"كيف أكتب لونًا كاسم وليس صفة؟", body:"عندما يكون اللون هو الاسم نفسه (وليس صفة قبل اسم آخر)، يُكتب بحرف كبير مثل كل الأسماء الألمانية: <span class=\"de\" data-speak=\"Blau ist meine Lieblingsfarbe.\">Blau ist meine Lieblingsfarbe.</span> — الأزرق هو لوني المفضّل."}
 ];
 
 const DIALOGUE_INFORMAL = [
-  {who:"a", name:"Anna", de:"Hallo! Ich heiße Anna. Und du?", ar:"مرحبًا! اسمي آنا. وأنت؟"},
-  {who:"b", name:"Ben", de:"Hi Anna! Ich bin Ben.", ar:"مرحبًا آنا! أنا بِن."},
-  {who:"a", name:"Anna", de:"Woher kommst du?", ar:"من أين أنت؟"},
-  {who:"b", name:"Ben", de:"Ich komme aus Berlin. Und du?", ar:"أنا من برلين. وأنتِ؟"},
-  {who:"a", name:"Anna", de:"Ich komme aus München. Wie geht's dir?", ar:"أنا من ميونخ. كيف حالك؟"},
-  {who:"b", name:"Ben", de:"Mir geht es gut, danke! Und dir?", ar:"أنا بخير، شكرًا! وأنتِ؟"},
-  {who:"a", name:"Anna", de:"Auch gut! Bis später, Ben.", ar:"بخير أيضًا! أراك لاحقًا يا بِن."},
-  {who:"b", name:"Ben", de:"Tschüss, Anna!", ar:"وداعًا يا آنا!"}
+  {who:"a", name:"Mia", de:"Welche Farbe gefällt dir, Ben?", ar:"أي لون يعجبك يا بن؟"},
+  {who:"b", name:"Ben", de:"Mir gefällt Blau. Und dir?", ar:"يعجبني الأزرق. وأنتِ؟"},
+  {who:"a", name:"Mia", de:"Ich mag Rot und Gelb, aber nicht Grün.", ar:"أحب الأحمر والأصفر، لكن ليس الأخضر."},
+  {who:"b", name:"Ben", de:"Welcher Tag passt dir für Shoppen?", ar:"أي يوم يناسبك للتسوق؟"},
+  {who:"a", name:"Mia", de:"Samstag ist gut für mich.", ar:"السبت مناسب لي."},
+  {who:"b", name:"Ben", de:"Super! Am Samstag um zehn Uhr?", ar:"رائع! السبت الساعة العاشرة؟"},
+  {who:"a", name:"Mia", de:"Perfekt, bis Samstag!", ar:"ممتاز، أراك السبت!"},
+  {who:"b", name:"Ben", de:"Bis dann, Mia!", ar:"أراك حينها يا ميا!"}
 ];
 
 const DIALOGUE_FORMAL = [
-  {who:"a", name:"Herr Schmidt", de:"Guten Tag, mein Name ist Schmidt.", ar:"نهارك سعيد، اسمي شميت."},
-  {who:"b", name:"Frau Weber", de:"Guten Tag, Herr Schmidt. Ich heiße Weber.", ar:"نهارك سعيد سيد شميت. اسمي فيبر."},
-  {who:"a", name:"Herr Schmidt", de:"Freut mich, Frau Weber. Wie geht es Ihnen?", ar:"تشرّفت سيدة فيبر. كيف حالك؟"},
-  {who:"b", name:"Frau Weber", de:"Danke, es geht mir gut. Und Ihnen?", ar:"شكرًا، أنا بخير. وأنت؟"},
-  {who:"a", name:"Herr Schmidt", de:"Auch gut, danke. Woher kommen Sie?", ar:"بخير أيضًا، شكرًا. من أين أنت؟"},
-  {who:"b", name:"Frau Weber", de:"Ich komme aus Hamburg. Und Sie?", ar:"أنا من هامبورغ. وأنت؟"},
-  {who:"a", name:"Herr Schmidt", de:"Ich komme aus Köln. Auf Wiedersehen, Frau Weber.", ar:"أنا من كولن. إلى اللقاء سيدة فيبر."},
-  {who:"b", name:"Frau Weber", de:"Auf Wiedersehen, Herr Schmidt.", ar:"إلى اللقاء سيد شميت."}
+  {who:"a", name:"Frau Roth", de:"Guten Tag, Herr Vogel! Wie kann ich helfen?", ar:"نهارك سعيد يا سيد فوغل! كيف يمكنني المساعدة؟"},
+  {who:"b", name:"Herr Vogel", de:"Ich brauche einen Termin, bitte.", ar:"أحتاج موعدًا من فضلك."},
+  {who:"a", name:"Frau Roth", de:"Welcher Tag passt Ihnen?", ar:"أي يوم يناسبكم؟"},
+  {who:"b", name:"Herr Vogel", de:"Mittwoch wäre gut für mich.", ar:"الأربعاء سيكون جيدًا لي."},
+  {who:"a", name:"Frau Roth", de:"Mittwoch ist leider voll. Geht Donnerstag?", ar:"الأربعاء ممتلئ للأسف. هل يناسب الخميس؟"},
+  {who:"b", name:"Herr Vogel", de:"Ja, Donnerstag passt auch gut.", ar:"نعم، الخميس مناسب أيضًا."},
+  {who:"a", name:"Frau Roth", de:"Sehr gut, der Termin ist am Donnerstag um neun Uhr.", ar:"ممتاز، الموعد يوم الخميس الساعة التاسعة."},
+  {who:"b", name:"Herr Vogel", de:"Vielen Dank! Bis Donnerstag.", ar:"شكرًا جزيلًا! أراكم الخميس."}
 ];
 
 const MISTAKES = [
-  {wrong:"مخاطبة طبيب أو مدير بصيغة <span class=\"de mono\" data-speak=\"du\">du</span> من أول لقاء", right:"استخدام <span class=\"de mono\" data-speak=\"Sie\">Sie</span> مع الغرباء والمواقف الرسمية دائمًا", note:"في الشك، استخدم Sie دائمًا حتى يطلب منك الطرف الآخر التحوّل إلى du."},
-  {wrong:"التعامل مع <span class=\"de mono\" data-speak=\"Wie geht's?\">Wie geht's?</span> كسؤال شكلي فقط كما في الإنجليزية", right:"الاستعداد لإجابة حقيقية أحيانًا، فالألمان قد يجيبون بصدق عن حالهم", note:"في السياقات غير الرسمية القريبة، قد يُتوقع منك رد صادق وليس فقط «بخير»."},
-  {wrong:"قول <span class=\"de mono\" data-speak=\"Guten Tag\">Guten Tag</span> في السابعة مساءً", right:"استخدام <span class=\"de mono\" data-speak=\"Guten Abend\">Guten Abend</span> بعد حوالي الساعة السادسة مساءً", note:"التوقيت مهم في الألمانية أكثر من العربية العامية."},
-  {wrong:"استخدام <span class=\"de mono\" data-speak=\"Tschüss\">Tschüss</span> عند مغادرة اجتماع عمل رسمي", right:"استخدام <span class=\"de mono\" data-speak=\"Auf Wiedersehen\">Auf Wiedersehen</span> في السياقات الرسمية", note:"Tschüss غير رسمية تمامًا، احفظها لأصدقائك فقط."},
-  {wrong:"نطق <span class=\"de mono\" data-speak=\"ich\">ich</span> بصوت k بدلًا من الصوت الناعم", right:"نطقها «إش» بصوت ناعم من الحلق (راجع درس الحروف، تركيبة CH)", note:"هذا خطأ شائع جدًا لدى المبتدئين، ويستحق مراجعة إضافية."},
-  {wrong:"ترجمة <span class=\"de mono\" data-speak=\"Wie heißt du?\">Wie heißt du?</span> حرفيًا كـ«ماذا تُدعى؟» بنبرة غريبة", right:"فهمها كصيغة طبيعية تمامًا تعني «ما اسمك؟»", note:"الفعل heißen يعني حرفيًا «يُسمّى»، وهو الفعل الطبيعي للسؤال عن الاسم في الألمانية."}
+  {wrong:"قول <span class=\"de mono\" data-speak=\"in Montag\">in Montag</span> لوصف يوم حدوث شيء", right:"<span class=\"de mono\" data-speak=\"am Montag\">am Montag</span> — an + dem = am", note:"<span class=\"de mono\">in</span> تُستخدم مع الأشهر والفصول (<span class=\"de mono\" data-speak=\"im Januar\">im Januar</span>)، أمّا الأيام فتأخذ <span class=\"de mono\">am</span> دائمًا."},
+  {wrong:"الخلط بين <span class=\"de mono\" data-speak=\"Dienstag\">Dienstag</span> و<span class=\"de mono\" data-speak=\"Donnerstag\">Donnerstag</span> عند الاستماع", right:"انتبه للمقطع الأول: <span class=\"de mono\">Diens-</span> مقابل <span class=\"de mono\">Donners-</span>", note:"كلاهما يبدأ بحرف D وينتهي بـ -tag، لذا التمييز يكون من المقطع الأول فقط."},
+  {wrong:"كتابة اللون كاسم بحرف صغير: <span class=\"de mono\" data-speak=\"ich mag rot\">ich mag rot</span>", right:"<span class=\"de mono\" data-speak=\"Ich mag Rot.\">Ich mag Rot.</span> — بحرف كبير لأنه اسم هنا وليس صفة", note:"كل الأسماء الألمانية تبدأ بحرف كبير دائمًا، واللون هنا يعمل كاسم مستقل."},
+  {wrong:"إضافة نهاية للون بعد الفعل sein: <span class=\"de mono\" data-speak=\"Der Apfel ist rote.\">Der Apfel ist rote.</span>", right:"<span class=\"de mono\" data-speak=\"Der Apfel ist rot.\">Der Apfel ist rot.</span> — بلا أي نهاية", note:"اللون بعد <span class=\"de mono\">sein</span> (المسند) يبقى دائمًا بصيغته الأساسية بلا تصريف."},
+  {wrong:"حذف النهاية قبل الاسم مباشرة: <span class=\"de mono\" data-speak=\"der rot Apfel\">der rot Apfel</span>", right:"<span class=\"de mono\" data-speak=\"der rote Apfel\">der rote Apfel</span> — بنهاية -e", note:"عندما يقف اللون مباشرة قبل الاسم مع أداة تعريف، يحتاج نهاية -e في حالة الرفع لكل الأجناس."},
+  {wrong:"افتراض أن الأسبوع الألماني يبدأ بالأحد كما في العربية", right:"الأسبوع الألماني يبدأ بـ<span class=\"de mono\" data-speak=\"Montag\">Montag</span> (الاثنين) وينتهي بـ<span class=\"de mono\" data-speak=\"Sonntag\">Sonntag</span> (الأحد)", note:"هذا فرق ثقافي مهم يؤثر على قراءة التقاويم والجداول الألمانية بشكل صحيح."}
 ];
 
 const TIPS = [
-  {title:"تذكّر نطق G الصلب", body:"في <span class=\"de\" data-speak=\"Guten\">Guten</span>، حرف G في البداية يُنطق مثل الجيم الصلبة كما تعلّمنا في درس الحروف، وليس مثل j الإنجليزية."},
-  {title:"EI تُنطق دائمًا آي", body:"في <span class=\"de\" data-speak=\"heiße\">heiße</span>، تركيبة EI تُنطق «آي» دائمًا — فتُصبح الكلمة «هايسه»، تمامًا كما تعلّمت في درس الحروف."},
-  {title:"Ihnen تبدأ بحرف علة ممدود", body:"صيغة «لكم/لك» الرسمية <span class=\"de\" data-speak=\"Ihnen\">Ihnen</span> تبدأ بصوت إي ممدود، وتُنطق «إينن» — لا تخلطها مع <span class=\"de\" data-speak=\"ihnen\">ihnen</span> بمعنى «لهم»."},
-  {title:"ضع النبرة على اسمك", body:"عند تقديم نفسك بجملة مثل <span class=\"de\" data-speak=\"Ich heiße Anna\">Ich heiße Anna</span>، تقع النبرة الطبيعية على الاسم نفسه، وليس على الفعل heiße."}
+  {title:"ch في Mittwoch — ميزة لصالحك!", body:"حرف <span class=\"de mono\">ch</span> بعد حرف o في <span class=\"de\" data-speak=\"Mittwoch\">Mittwoch</span> يُنطق بصوت خلفي [x] أقرب لحرف الخاء العربي — أسهل على متحدثي العربية منه على متحدثي الإنجليزية!"},
+  {title:"ei تُنطق [aɪ] دائمًا", body:"في <span class=\"de\" data-speak=\"Freitag\">Freitag</span>، حرفا <span class=\"de mono\">ei</span> يُنطقان كصوت واحد [aɪ]، تمامًا كما في <span class=\"de mono\" data-speak=\"zwei\">zwei</span> و<span class=\"de mono\" data-speak=\"drei\">drei</span> التي تعلّمتها سابقًا."},
+  {title:"au تُنطق [aʊ] كصوت واحد", body:"في <span class=\"de\" data-speak=\"blau\">blau</span> و<span class=\"de\" data-speak=\"braun\">braun</span>، حرفا <span class=\"de mono\">au</span> يندمجان في صوت واحد [aʊ]، تمامًا مثل «ow» في الإنجليزية «how»."},
+  {title:"تصامت الحرف الأخير: b تُنطق p", body:"في <span class=\"de\" data-speak=\"gelb\">gelb</span>، حرف <span class=\"de mono\">b</span> في نهاية الكلمة يُنطق [p] — قاعدة عامة في الألمانية: الحروف المجهورة تتصامت في نهاية الكلمة."}
 ];
 
 const MATCH_PAIRS = [
-  {de:"Guten Morgen", ar:"صباح الخير"}, {de:"Guten Abend", ar:"مساء الخير"},
-  {de:"Tschüss", ar:"وداعًا (غير رسمي)"}, {de:"Auf Wiedersehen", ar:"إلى اللقاء (رسمي)"},
-  {de:"Hallo", ar:"مرحبًا"}, {de:"Wie heißt du?", ar:"ما اسمك؟ (غير رسمي)"},
-  {de:"Ich komme aus...", ar:"أنا من..."}, {de:"Mir geht es gut", ar:"أنا بخير"}
+  {de:"rot", ar:"أحمر"}, {de:"blau", ar:"أزرق"},
+  {de:"Montag", ar:"الاثنين"}, {de:"Freitag", ar:"الجمعة"},
+  {de:"grün", ar:"أخضر"}, {de:"Mittwoch", ar:"الأربعاء"},
+  {de:"schwarz", ar:"أسود"}, {de:"Sonntag", ar:"الأحد"}
 ];
 
 const MCQ = [
-  {prompt:"تتحدث مع طبيبك لأول مرة. ماذا تسأله عن اسمه؟", options:["Wie heißen Sie?","Wie heißt du?","Wie geht's?","Tschüss!"], correct:"Wie heißen Sie?", why:"مع الغرباء وفي السياقات الرسمية مثل الطبيب، نستخدم دائمًا صيغة <span class=\"de mono\" data-speak=\"Sie\">Sie</span>."},
-  {prompt:"متى تقول <span class=\"de mono\" data-speak=\"Guten Abend\">Guten Abend</span>؟", options:["في الصباح الباكر","في منتصف النهار","في المساء","عند النوم فقط"], correct:"في المساء", why:"<span class=\"de mono\" data-speak=\"Guten Abend\">Guten Abend</span> تُستخدم من حوالي الساعة السادسة مساءً."},
-  {prompt:"ماذا تعني <span class=\"de mono\" data-speak=\"Ich komme aus...\">Ich komme aus...</span>؟", options:["أنا من...","أنا ذاهب إلى...","اسمي...","كيف حالك؟"], correct:"أنا من...", why:"<span class=\"de mono\" data-speak=\"kommen\">kommen</span> aus تعني حرفيًا «يأتي من»، وتُستخدم للتعبير عن بلد أو مدينة المنشأ."},
-  {prompt:"أي تحية تُستخدم كوداع أيضًا في النمسا وجنوب ألمانيا؟", options:["Servus","Guten Tag","Moin","Ihnen"], correct:"Servus", why:"<span class=\"de mono\" data-speak=\"Servus\">Servus</span> تُستخدم كتحية ووداع في آنٍ واحد في النمسا وبافاريا."},
-  {prompt:"صديقك يسألك <span class=\"de mono\" data-speak=\"Wie geht's?\">Wie geht's?</span> ما أفضل ردّ غير رسمي؟", options:["Mir geht es gut, danke!","Wie heißen Sie?","Auf Wiedersehen.","Guten Morgen."], correct:"Mir geht es gut, danke!", why:"هذا ردّ طبيعي وشائع جدًا على سؤال الحال بين الأصدقاء."},
-  {prompt:"ما صيغة المخاطبة الصحيحة مع طفل صغير؟", options:["du","Sie","كلاهما سيّان","لا يوجد فرق"], correct:"du", why:"تُستخدم <span class=\"de mono\" data-speak=\"du\">du</span> دائمًا تقريبًا مع الأطفال، بغض النظر عن مدى معرفتك بهم."},
-  {prompt:"أي جملة أكثر رسمية لتقديم نفسك؟", options:["Mein Name ist Weber.","Ich bin Ben.","Hi, ich bin's!","Na, alles klar?"], correct:"Mein Name ist Weber.", why:"<span class=\"de mono\" data-speak=\"Mein Name ist\">Mein Name ist</span> أكثر رسمية من <span class=\"de mono\" data-speak=\"Ich bin\">Ich bin</span>."},
-  {prompt:"ماذا تعني <span class=\"de mono\" data-speak=\"Auf Wiedersehen\">Auf Wiedersehen</span> حرفيًا؟", options:["حتى نرى بعضنا مجددًا","صباح الخير","كيف حالك؟","أنا بخير"], correct:"حتى نرى بعضنا مجددًا", why:"وداع رسمي حرفي المعنى، يُستخدم عند توقّع لقاء لاحق محتمل."}
+  {prompt:"ما ناتج مزج <span class=\"de mono\" data-speak=\"rot\">rot</span> + <span class=\"de mono\" data-speak=\"gelb\">gelb</span>؟", options:["orange","grün","lila","braun"], correct:"orange", why:"الأحمر + الأصفر = <span class=\"de mono\" data-speak=\"orange\">orange</span> — لون ثانوي دافئ."},
+  {prompt:"أي حرف جر صحيح مع الأيام: ____ Montag؟", options:["am","in","im","um"], correct:"am", why:"<span class=\"de mono\" data-speak=\"am\">am</span> = an + dem، وتُستخدم دائمًا مع أيام الأسبوع لأنها كلها مذكّرة."},
+  {prompt:"أي يوم يأتي مباشرة بعد <span class=\"de mono\" data-speak=\"Mittwoch\">Mittwoch</span>؟", options:["Dienstag","Donnerstag","Freitag","Montag"], correct:"Donnerstag", why:"ترتيب الأسبوع الألماني: Montag، Dienstag، Mittwoch، ثم <span class=\"de mono\" data-speak=\"Donnerstag\">Donnerstag</span>."},
+  {prompt:"كيف تُكتب <span class=\"de mono\">rot</span> عند استخدامها كاسم مستقل؟", options:["Rot","rot","ROT","rots"], correct:"Rot", why:"كل الأسماء الألمانية — بما فيها الألوان حين تُستخدم كأسماء — تبدأ بحرف كبير: <span class=\"de mono\" data-speak=\"Rot\">Rot</span>."},
+  {prompt:"ما الجملة الصحيحة لوصف تفاحة حمراء مباشرة قبل اسمها؟", options:["der rote Apfel","der rot Apfel","der rotes Apfel","der roter Apfel"], correct:"der rote Apfel", why:"مع أداة التعريف وحالة الرفع، تأخذ الصفة نهاية <span class=\"de mono\">-e</span> بغضّ النظر عن الجنس: <span class=\"de mono\" data-speak=\"der rote Apfel\">der rote Apfel</span>."},
+  {prompt:"بأي يوم يبدأ الأسبوع في التقويم الألماني؟", options:["Montag","Sonntag","Samstag","Freitag"], correct:"Montag", why:"حسب معيار DIN 1355 الألماني، يبدأ الأسبوع بـ<span class=\"de mono\" data-speak=\"Montag\">Montag</span> وينتهي بـ<span class=\"de mono\" data-speak=\"Sonntag\">Sonntag</span>."},
+  {prompt:"ما أصل تسمية <span class=\"de mono\" data-speak=\"Sonntag\">Sonntag</span>؟", options:["Sonne (الشمس)","Mond (القمر)","Saturn (زحل)","Meer (البحر)"], correct:"Sonne (الشمس)", why:"<span class=\"de mono\">Sonntag</span> = <span class=\"de mono\">Sonne</span> (شمس) + <span class=\"de mono\">Tag</span> (يوم) — يوم الشمس، تمامًا مثل Sunday الإنجليزية."},
+  {prompt:"أي لون ينتج من مزج <span class=\"de mono\" data-speak=\"blau\">blau</span> + <span class=\"de mono\" data-speak=\"gelb\">gelb</span>؟", options:["grün","lila","orange","braun"], correct:"grün", why:"الأزرق + الأصفر = <span class=\"de mono\" data-speak=\"grün\">grün</span> — لون الطبيعة الثانوي."}
 ];
 
 const FILL = [
-  {display:"Guten ____, Frau Weber.", correct:"Tag", hint:"تحية رسمية عامة خلال النهار", full:"Guten Tag, Frau Weber."},
-  {display:"Ich ____ Anna.", correct:"heiße", hint:"الفعل المستخدم لقول اسمك", full:"Ich heiße Anna."},
-  {display:"Wie ____ es Ihnen?", correct:"geht", hint:"السؤال الرسمي عن الحال", full:"Wie geht es Ihnen?"},
-  {display:"Ich komme ____ Berlin.", correct:"aus", hint:"حرف الجر المستخدم مع بلد المنشأ", full:"Ich komme aus Berlin."},
-  {display:"____ Wiedersehen!", correct:"Auf", hint:"وداع رسمي شائع جدًا", full:"Auf Wiedersehen!"},
-  {display:"Mir geht es ____, danke.", correct:"gut", hint:"عكس كلمة سيئ", full:"Mir geht es gut, danke."},
-  {display:"Freut ____, Sie kennenzulernen.", correct:"mich", hint:"جزء من عبارة «تشرّفت بمعرفتك»", full:"Freut mich, Sie kennenzulernen."},
-  {display:"____ heißt du?", correct:"Wie", hint:"أداة استفهام تعني «كيف/ما»", full:"Wie heißt du?"}
+  {display:"rot + gelb = ____", correct:"orange", hint:"لون دافئ ثالث", full:"orange"},
+  {display:"blau + gelb = ____", correct:"grün", hint:"لون الطبيعة", full:"grün"},
+  {display:"an + dem = ____", correct:"am", hint:"الصيغة المدمجة المستخدمة مع الأيام", full:"am"},
+  {display:"Der Apfel ist ____. (بلا أي نهاية)", correct:"rot", hint:"بدون أي نهاية بعد الفعل sein", full:"Der Apfel ist rot."},
+  {display:"der ____ Apfel (بنهاية -e)", correct:"rote", hint:"تحتاج نهاية -e هنا", full:"der rote Apfel"},
+  {display:"Ich mag ____. (اسم اللون، حرف كبير)", correct:"Rot", hint:"الألوان كأسماء تبدأ بحرف كبير", full:"Ich mag Rot."},
+  {display:"Mittwoch = Mitte + ____", correct:"Woche", hint:"منتصف الأسبوع", full:"Mittwoch"},
+  {display:"____tag = يوم الشمس", correct:"Sonn", hint:"أول جزء من اسم يوم الأحد", full:"Sonntag"}
 ];
 
 const BUILDER = [
-  {words:["Ich","komme","aus","Berlin"], ar:"أنا من برلين"},
-  {words:["Wie","heißt","du"], ar:"ما اسمك؟ (غير رسمي)"},
-  {words:["Guten","Morgen"], ar:"صباح الخير"},
-  {words:["Mein","Name","ist","Anna"], ar:"اسمي هو آنا"},
-  {words:["Auf","Wiedersehen"], ar:"إلى اللقاء"}
+  {words:["Meine","Lieblingsfarbe","ist","blau"], ar:"لوني المفضّل هو الأزرق"},
+  {words:["Ich","habe","am","Montag","Deutschkurs"], ar:"لدي درس ألماني يوم الاثنين"},
+  {words:["Der","Termin","ist","am","Donnerstag"], ar:"الموعد يوم الخميس"},
+  {words:["Welche","Farbe","gefällt","dir"], ar:"أي لون يعجبك؟"},
+  {words:["Das","Wochenende","beginnt","am","Samstag"], ar:"تبدأ عطلة نهاية الأسبوع يوم السبت"}
 ];
 
 const LEARNING_TIMELINE = [
-  {top:"الدرس ١", dot:"done", bottom:"الحروف", hl:false},
-  {top:"أنت الآن هنا", dot:"now", bottom:"التحيات", hl:true},
-  {top:"الدرس ٣", dot:"", bottom:"الأرقام", hl:false},
-  {top:"لاحقًا", dot:"", bottom:"المحادثة", hl:false}
+  {top:"الدرس ٢", dot:"done", bottom:"التحيات", hl:false},
+  {top:"الدرس ٣", dot:"done", bottom:"الأرقام", hl:false},
+  {top:"أنت الآن هنا", dot:"now", bottom:"الألوان والأيام", hl:true},
+  {top:"الدرس ٥", dot:"", bottom:"العائلة", hl:false}
 ];
 
 const BADGES = [
-  {id:'explorer', name:'مستكشف التحيات', icon:'i-compass'},
-  {id:'phrases', name:'حافظ العبارات', icon:'i-cards'},
-  {id:'sharp', name:'حادّ التفكير', icon:'i-target'},
-  {id:'champion', name:'بطل الحوار', icon:'i-medal'}
+  {id:'explorer', name:'مستكشف الأسبوع', icon:'i-compass'},
+  {id:'mixer', name:'خبير مزج الألوان', icon:'i-palette'},
+  {id:'sharp', name:'حادّ الإجابة', icon:'i-target'},
+  {id:'champion', name:'بطل الألوان والأيام', icon:'i-star'}
 ];
 
 /* ==========================================================================
@@ -1320,7 +1393,7 @@ const Speech = (function(){
   }
 
   function clearHighlights(){
-    document.querySelectorAll('.k-word.speaking, .speak-dot.speaking, .listen-chip.speaking, .chat-bubble.speaking').forEach(el => el.classList.remove('speaking'));
+    document.querySelectorAll('.k-word.speaking, .speak-dot.speaking, .listen-chip.speaking, .chat-bubble.speaking, .pc-word.speaking, .wheel-slice.speaking').forEach(el => el.classList.remove('speaking'));
   }
 
   function speak(text, opts){
@@ -1418,31 +1491,31 @@ function toAr(n){ return String(n).replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'
 document.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
 
 /* ==========================================================================
-   HERO SHOWCASE CARD (greeting → reply)
+   HERO SHOWCASE CARD (question → answer about favorite color)
    ========================================================================== */
 (function buildHeroShowcase(){
   const wrap = document.createElement('div');
   wrap.className = 'showcase-card';
   wrap.style.marginTop = '22px';
   wrap.innerHTML = `
-    <div class="showcase-label"><svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-chat"/></svg>عبارة اليوم · انقر لتسمع</div>
+    <div class="showcase-label"><svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-chat"/></svg>سؤال شائع اليوم · انقر لتسمع</div>
     <div class="arrow-frame">
-      <span class="k-word k-phrase-big de" id="heroPhrase" data-plain="Hallo!" tabindex="0" role="button" aria-label="استمع لـ Hallo">Hallo!</span>
+      <span class="k-word k-phrase-big de" id="heroPhrase" data-plain="Welche Farbe magst du?" tabindex="0" role="button" aria-label="استمع لـ Welche Farbe magst du">Welche Farbe magst du?</span>
       <span class="k-arrow">→</span>
-      <span class="k-word k-word-result de" id="heroReply" data-plain="Ich heiße Anna." tabindex="0" role="button" aria-label="استمع لـ Ich heiße Anna">Ich heiße Anna.</span>
+      <span class="k-word k-word-result de" id="heroReply" data-plain="Ich mag Blau." tabindex="0" role="button" aria-label="استمع لـ Ich mag Blau">Ich mag Blau.</span>
     </div>
-    <p class="showcase-translation">هكذا تبدأ أبسط محادثة ألمانية: تحية، ثم تقديم الاسم. انقر على أي جزء لسماع نطقه.</p>
+    <p class="showcase-translation">هكذا تسأل عن اللون المفضّل وتجيب عنه منذ أول محادثة. انقر على أي جزء لسماع نطقه.</p>
     <button class="btn btn-ghost showcase-speak-all" id="heroSpeakAll">
       <svg class="icon" style="width:16px;height:16px"><use href="#i-speaker"/></svg>
-      استمع للعبارتين معًا
+      استمع للسؤال والجواب معًا
     </button>`;
   document.querySelector('.hero-illustration').insertAdjacentElement('afterend', wrap);
   const heroPhrase = wrap.querySelector('#heroPhrase');
   const heroReply = wrap.querySelector('#heroReply');
-  makeSpeakable(heroPhrase, 'Hallo!');
-  makeSpeakable(heroReply, 'Ich heiße Anna.');
+  makeSpeakable(heroPhrase, 'Welche Farbe magst du?');
+  makeSpeakable(heroReply, 'Ich mag Blau.');
   wrap.querySelector('#heroSpeakAll').addEventListener('click', () => {
-    Speech.speak('Hallo! Ich heiße Anna.', {wordEls: [heroPhrase, heroReply]});
+    Speech.speak('Welche Farbe magst du? Ich mag Blau.', {wordEls: [heroPhrase, heroReply]});
   });
 })();
 
@@ -1458,113 +1531,249 @@ LEARNING_TIMELINE.forEach(item => {
 });
 
 /* ==========================================================================
-   TIME-OF-DAY GREETING CARDS
+   COLORS BASICS — flip cards with swatch face (guess-then-reveal)
    ========================================================================== */
-const timeGrid = document.getElementById('timeGrid');
-TIME_GREETINGS.forEach(t => {
+const colorsGrid = document.getElementById('colorsGrid');
+let colorFlipped = new Set();
+COLORS.forEach((c, i) => {
   const card = document.createElement('div');
-  card.className = 'time-card ' + t.cls;
+  card.className = 'color-flip';
   card.innerHTML = `
-    <svg class="icon time-icon" style="color:var(--ink)"><use href="#${t.icon}"/></svg>
-    <div class="time-range">${t.range}</div>
-    <div class="time-de de">${t.de}</div>
-    <div class="time-ar">${t.ar}</div>
-    <span class="speak-dot" style="position:static;margin:12px auto 0;display:flex" aria-label="استمع لـ ${t.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>`;
-  card.addEventListener('click', () => Speech.speak(t.de, {el: card.querySelector('.speak-dot')}));
-  timeGrid.appendChild(card);
-});
-
-/* ==========================================================================
-   CASUAL / REGIONAL GREETINGS
-   ========================================================================== */
-const regionGrid = document.getElementById('regionGrid');
-REGION_GREETINGS.forEach(r => {
-  const card = document.createElement('div');
-  card.className = 'info-card region-card';
-  card.innerHTML = `
-    <div class="region-flag">${r.flag}</div>
-    <div class="region-de" data-plain="${r.de}" tabindex="0" role="button" aria-label="استمع لـ ${r.de}">${r.de}</div>
-    <div class="region-place">${r.place}</div>
-    <div class="region-desc">${r.desc}</div>`;
-  makeSpeakable(card.querySelector('.region-de'), r.de);
-  regionGrid.appendChild(card);
-});
-
-/* ==========================================================================
-   FAREWELLS — 3D flip cards
-   ========================================================================== */
-const farewellGrid = document.getElementById('farewellGrid');
-let flippedCount = 0;
-const flippedSet = new Set();
-FAREWELLS.forEach((f, i) => {
-  const card = document.createElement('div');
-  card.className = 'flip-card';
-  card.innerHTML = `
-    <div class="flip-card-inner" tabindex="0" role="button" aria-label="بطاقة ${f.de}, انقر للقلب">
-      <div class="flip-face flip-front">
-        <span class="chip chip-teal aux-tag mono">${f.formality}</span>
-        <span class="de">${f.de}</span>
-        <span class="flip-hint">انقر للقلب</span>
-        <span class="speak-dot" data-word="${f.de}" aria-label="استمع لـ ${f.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+    <div class="color-flip-inner" tabindex="0" role="button" aria-label="بطاقة لون رقم ${toAr(i+1)}, انقر للقلب">
+      <div class="color-face color-swatch-face" style="background:${c.hex}${c.needsBorder ? ';border:2px solid var(--border-strong)' : ''}">
+        <span class="swatch-hint">؟ خمّن ثم انقر</span>
       </div>
-      <div class="flip-face flip-back">
-        <span class="partizip mono">/${f.ipa}/</span>
-        <span class="meaning">${f.meaning}</span>
-        <span class="meaning" style="font-size:.78rem;opacity:.85">${f.note}</span>
-        <span class="speak-dot" data-word="${f.de}" aria-label="استمع لـ ${f.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+      <div class="color-face color-back">
+        <span class="swatch-dot" style="background:${c.hex}"></span>
+        <span class="de">${c.de}</span>
+        <span class="ipa mono">[${c.ipa}]</span>
+        <span class="meaning">${c.ar}</span>
+        <span class="speak-dot" data-word="${c.de}" aria-label="استمع لـ ${c.de}"><svg class="icon"><use href="#i-speaker"/></svg></span>
       </div>
     </div>`;
-  const inner = card.querySelector('.flip-card-inner');
+  const inner = card.querySelector('.color-flip-inner');
   inner.addEventListener('click', (e) => {
     if(e.target.closest('.speak-dot')) return;
     card.classList.toggle('flipped');
-    if(!flippedSet.has(i)){ flippedSet.add(i); flippedCount++; if(flippedSet.size>=FAREWELLS.length) unlockBadge('phrases'); }
-    updateProgress();
+    if(!colorFlipped.has(i)){ colorFlipped.add(i); if(colorFlipped.size>=COLORS.length) unlockBadge('explorer'); }
   });
   inner.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); inner.click(); } });
-  card.querySelectorAll('.speak-dot').forEach(dot => {
-    dot.addEventListener('click', (e) => {
-      e.stopPropagation();
-      dot.classList.add('speaking');
-      Speech.speak(dot.dataset.word, {el: dot});
-      setTimeout(()=>dot.classList.remove('speaking'), 900);
-    });
+  card.querySelector('.speak-dot').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const dot = e.currentTarget;
+    dot.classList.add('speaking');
+    Speech.speak(c.de, {el: dot});
+    setTimeout(()=>dot.classList.remove('speaking'), 900);
   });
-  farewellGrid.appendChild(card);
+  colorsGrid.appendChild(card);
 });
 
 /* ==========================================================================
-   DU vs SIE TABLE
+   COLOR MIXER — centerpiece interactive tool
    ========================================================================== */
-const duSieTable = document.getElementById('duSieTable');
-DUSIE_ROWS.forEach(row => {
-  const r = document.createElement('div');
-  r.className = 'duSie-row';
-  r.innerHTML = `
-    <div class="cell-ar">${row.ar}</div>
-    <div class="cell-du" data-plain="${row.du}" tabindex="0" role="button" aria-label="استمع لـ ${row.du}">${row.du}</div>
-    <div class="cell-sie" data-plain="${row.sie}" tabindex="0" role="button" aria-label="استمع لـ ${row.sie}">${row.sie}</div>`;
-  makeSpeakable(r.querySelector('.cell-du'), row.du);
-  makeSpeakable(r.querySelector('.cell-sie'), row.sie);
-  duSieTable.appendChild(r);
-});
+const mixerRowA = document.getElementById('mixerRowA');
+const mixerRowB = document.getElementById('mixerRowB');
+const mixerResultSwatch = document.getElementById('mixerResultSwatch');
+const mixerResultName = document.getElementById('mixerResultName');
+const mixerResultAr = document.getElementById('mixerResultAr');
+const mixerNote = document.getElementById('mixerNote');
+
+let mixA = 'rot', mixB = 'gelb';
+let doneMixes = new Set();
+
+function buildMixerRow(row, selected, onPick){
+  row.innerHTML = '';
+  PRIMARY_MIX.forEach(c => {
+    const sw = document.createElement('button');
+    sw.className = 'mixer-swatch' + (c.id === selected ? ' active' : '');
+    sw.style.background = c.hex;
+    sw.setAttribute('aria-label', 'اختر ' + c.de);
+    sw.addEventListener('click', () => onPick(c.id));
+    row.appendChild(sw);
+  });
+}
+function refreshMixerRows(){
+  buildMixerRow(mixerRowA, mixA, (id)=>{ mixA = id; refreshMixerRows(); renderMixer(); });
+  buildMixerRow(mixerRowB, mixB, (id)=>{ mixB = id; refreshMixerRows(); renderMixer(); });
+}
+
+function renderMixer(){
+  const key1 = mixA + '+' + mixB, key2 = mixB + '+' + mixA;
+  const colorA = PRIMARY_MIX.find(c=>c.id===mixA);
+  const colorB = PRIMARY_MIX.find(c=>c.id===mixB);
+
+  if(mixA === mixB){
+    mixerResultSwatch.style.background = colorA.hex;
+    mixerResultName.textContent = colorA.de.toLowerCase();
+    mixerResultName.dataset.plain = colorA.de.toLowerCase();
+    mixerResultAr.textContent = colorA.ar;
+    mixerNote.innerHTML = `اخترت نفس اللون مرتين — تبقى النتيجة <b>${colorA.de}</b> كما هي بلا مزج جديد. جرّب لونين مختلفين!`;
+  } else {
+    const result = MIX_RESULTS[key1] || MIX_RESULTS[key2];
+    mixerResultSwatch.style.background = result.hex;
+    mixerResultName.textContent = result.de;
+    mixerResultName.dataset.plain = result.de;
+    mixerResultAr.textContent = result.ar;
+    mixerNote.innerHTML = `<b>${colorA.de}</b> + <b>${colorB.de}</b> = <b>${result.de}</b>. هكذا تُصنع كل الألوان الثانوية في الألمانية — تمامًا كما في الطبيعة.`;
+    doneMixes.add([mixA,mixB].sort().join('+'));
+    if(doneMixes.size >= 3) unlockBadge('mixer');
+  }
+  mixerResultSwatch.setAttribute('aria-label', 'استمع لـ ' + mixerResultName.dataset.plain);
+}
+mixerResultSwatch.addEventListener('click', () => Speech.speak(mixerResultName.dataset.plain, {el: mixerResultSwatch}));
+mixerResultSwatch.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); mixerResultSwatch.click(); } });
+
+refreshMixerRows();
+renderMixer();
 
 /* ==========================================================================
-   SELF-INTRODUCTION PATTERN CARDS
+   COLOR GRAMMAR PREVIEW — adjective agreement (bonus)
    ========================================================================== */
-const patternList = document.getElementById('patternList');
-PATTERNS.forEach((p, i) => {
+const agreeRow = document.getElementById('agreeRow');
+AGREE_EXAMPLES.forEach(ex => {
   const card = document.createElement('div');
-  card.className = 'pattern-card';
+  card.className = 'agree-card';
+  const full = `${ex.art} rot${ex.ending} ${ex.noun}`;
   card.innerHTML = `
-    <span class="pattern-num">${toAr(i+1)}</span>
-    <div class="pattern-main">
-      <div class="pattern-de de" data-plain="${p.de}" tabindex="0" role="button" aria-label="استمع لـ ${p.de}">${p.de}</div>
-      <div class="pattern-ar">${p.ar}</div>
-    </div>
-    <span class="chip ${p.formality === 'رسمي' ? 'chip-plum' : 'chip-teal'} pattern-formality">${p.formality}</span>`;
-  makeSpeakable(card.querySelector('.pattern-de'), p.de);
-  patternList.appendChild(card);
+    <div class="agree-de"><span class="gender-art">${ex.art}</span> rot<span class="ending">${ex.ending}</span> ${ex.noun}</div>
+    <div class="agree-ar">${ex.ar}</div>
+    <div class="agree-gender-tag">${ex.gender}</div>`;
+  card.tabIndex = 0; card.setAttribute('role','button'); card.setAttribute('aria-label', 'استمع لـ ' + full);
+  card.addEventListener('click', () => Speech.speak(full, {el: card}));
+  card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); } });
+  agreeRow.appendChild(card);
+});
+
+const predicateRow = document.getElementById('predicateRow');
+PREDICATE_EXAMPLES.forEach(ex => {
+  const chip = document.createElement('button');
+  chip.className = 'predicate-chip de';
+  chip.textContent = ex.de;
+  chip.setAttribute('aria-label', 'استمع لـ ' + ex.de + ' — ' + ex.ar);
+  chip.addEventListener('click', () => Speech.speak(ex.de, {el: chip}));
+  predicateRow.appendChild(chip);
+});
+
+/* ==========================================================================
+   DAYS BASICS — formation-style cards
+   ========================================================================== */
+const daysGrid = document.getElementById('daysGrid');
+DAYS.forEach(day => {
+  const card = document.createElement('div');
+  card.className = 'formation-card';
+  card.innerHTML = `
+    <div class="fc-num mono">${day.abbr}</div>
+    <div class="fc-de de">${day.de}</div>
+    <div class="fc-ar">${day.ar}</div>
+    <div class="fc-note">${day.note}</div>`;
+  card.tabIndex = 0; card.setAttribute('role','button'); card.setAttribute('aria-label', 'استمع لـ ' + day.de);
+  card.addEventListener('click', () => Speech.speak(day.de, {el: card}));
+  card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); } });
+  daysGrid.appendChild(card);
+});
+
+/* ==========================================================================
+   WEEK WHEEL — centerpiece interactive component
+   ========================================================================== */
+const WHEEL_COLORS = ['var(--teal)','var(--amber)','var(--plum)','var(--success)','var(--teal)','var(--amber)','var(--plum)'];
+
+function polarToCartesian(cx, cy, r, angleDeg){
+  const rad = (angleDeg - 90) * Math.PI / 180;
+  return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
+}
+
+function buildWeekWheel(){
+  const cx = 150, cy = 150, r = 130, hubR = 46;
+  const sliceAngle = 360 / DAYS.length;
+  let svg = '<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="عجلة أيام الأسبوع">';
+  DAYS.forEach((day, i) => {
+    const startAngle = i * sliceAngle;
+    const endAngle = (i+1) * sliceAngle;
+    const p1 = polarToCartesian(cx, cy, r, startAngle);
+    const p2 = polarToCartesian(cx, cy, r, endAngle);
+    const midAngle = startAngle + sliceAngle/2;
+    const labelPos = polarToCartesian(cx, cy, r*0.66, midAngle);
+    const pathD = 'M' + cx + ',' + cy + ' L' + p1.x.toFixed(2) + ',' + p1.y.toFixed(2) + ' A' + r + ',' + r + ' 0 0,1 ' + p2.x.toFixed(2) + ',' + p2.y.toFixed(2) + ' Z';
+    svg += '<path class="wheel-slice" data-idx="' + i + '" tabindex="0" role="button" aria-label="اختر يوم ' + day.de + '" d="' + pathD + '" fill="' + WHEEL_COLORS[i] + '" stroke="var(--surface)" stroke-width="3"></path>';
+    svg += '<text class="wheel-label" x="' + labelPos.x.toFixed(2) + '" y="' + labelPos.y.toFixed(2) + '" text-anchor="middle" dominant-baseline="middle" font-size="13">' + day.abbr + '</text>';
+  });
+  svg += '<circle class="wheel-hub" cx="' + cx + '" cy="' + cy + '" r="' + hubR + '"/>';
+  svg += '<text x="' + cx + '" y="' + (cy-2) + '" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-faint)">DIN 1355</text>';
+  svg += '<text x="' + cx + '" y="' + (cy+13) + '" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-faint)">٧ أيام</text>';
+  svg += '</svg>';
+  document.getElementById('wheelSvgWrap').innerHTML = svg;
+
+  document.querySelectorAll('.wheel-slice').forEach(slice => {
+    slice.addEventListener('click', () => selectDay(Number(slice.dataset.idx)));
+    slice.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); selectDay(Number(slice.dataset.idx)); } });
+  });
+}
+
+let wheelVisited = new Set();
+function selectDay(i, opts){
+  opts = opts || {};
+  const day = DAYS[i];
+  document.querySelectorAll('.wheel-slice').forEach(s => s.classList.toggle('active', Number(s.dataset.idx) === i));
+  const resultDay = document.getElementById('wheelResultDay');
+  resultDay.textContent = day.de;
+  resultDay.dataset.plain = day.de;
+  resultDay.setAttribute('aria-label', 'استمع لـ ' + day.de);
+  document.getElementById('wheelResultAr').textContent = day.ar;
+  if(opts.speak !== false){ Speech.speak(day.de, {el: resultDay}); }
+  wheelVisited.add(i);
+  if(wheelVisited.size >= DAYS.length) unlockBadge('explorer');
+}
+buildWeekWheel();
+selectDay(0, {speak:false});
+
+document.getElementById('wheelResultDay').addEventListener('click', function(){ Speech.speak(this.dataset.plain, {el:this}); });
+document.getElementById('wheelResultDay').addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); e.currentTarget.click(); } });
+
+/* ==========================================================================
+   AM CONTRACTION — formation card + usage chips
+   ========================================================================== */
+const amFormationCard = document.getElementById('amFormationCard');
+amFormationCard.innerHTML = `
+  <div class="fc-num mono">an + dem</div>
+  <div class="fc-de de" style="font-size:1.8rem">am</div>
+  <div class="fc-ar">في (حرف جر) + أداة جر المذكّر</div>
+  <div class="fc-note">تُستخدم دائمًا مع الأيام</div>`;
+amFormationCard.tabIndex = 0; amFormationCard.setAttribute('role','button'); amFormationCard.setAttribute('aria-label','استمع لـ am');
+amFormationCard.style.cursor = 'pointer';
+amFormationCard.addEventListener('click', () => Speech.speak('am', {el: amFormationCard}));
+amFormationCard.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); amFormationCard.click(); } });
+
+const amChipRow = document.getElementById('amChipRow');
+const AM_EXAMPLES = DAYS.map(d => ({rest: d.de, full: 'am ' + d.de})).concat([{rest:'Wochenende', full:'am Wochenende'}]);
+AM_EXAMPLES.forEach(item => {
+  const chip = document.createElement('button');
+  chip.className = 'am-chip de';
+  chip.innerHTML = '<span class="am-part">am</span> ' + item.rest;
+  chip.dataset.plain = item.full;
+  makeSpeakable(chip, item.full);
+  amChipRow.appendChild(chip);
+});
+
+/* ==========================================================================
+   PRACTICAL — extra-notes accordion (day-name etymology, capitalization)
+   ========================================================================== */
+const extraAccordion = document.getElementById('extraAccordion');
+EXTRA_NOTES.forEach((note, i) => {
+  const item = document.createElement('div');
+  item.className = 'accordion-item';
+  item.innerHTML = `
+    <button class="accordion-trigger" aria-expanded="false">
+      <span class="accordion-title"><span class="tag mono">${toAr(i+1)}</span>${note.q}</span>
+      <svg class="icon chevron"><use href="#i-chevron"/></svg>
+    </button>
+    <div class="accordion-panel"><div class="accordion-body">${note.body}</div></div>`;
+  const trigger = item.querySelector('.accordion-trigger');
+  trigger.addEventListener('click', () => {
+    item.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+  });
+  item.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  extraAccordion.appendChild(item);
 });
 
 /* ==========================================================================
@@ -1698,10 +1907,10 @@ document.querySelectorAll('.exercise-tab').forEach(tab => {
   });
 });
 
-/* --- MATCH (greeting <-> Arabic meaning) --- */
+/* --- MATCH (German word <-> Arabic meaning) --- */
 const panelMatch = document.getElementById('panelMatch');
 (function initMatch(){
-  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على عبارة من العمود الأيمن، ثم معناها الصحيح من العمود الأيسر.</div>
+  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على كلمة من العمود الأيمن، ثم معناها الصحيح من العمود الأيسر.</div>
     <div class="match-grid"><div class="match-col" id="matchLeft"></div><div class="match-col" id="matchRight"></div></div>`;
   const left = document.getElementById('matchLeft');
   const right = document.getElementById('matchRight');
@@ -1783,7 +1992,7 @@ MCQ.forEach((q) => {
   panelMcq.appendChild(block);
 });
 
-/* --- FILL (missing word in dialogue line, typed) --- */
+/* --- FILL (missing word, typed) --- */
 const panelFill = document.getElementById('panelFill');
 FILL.forEach(q => {
   const block = document.createElement('div');
@@ -1791,10 +2000,10 @@ FILL.forEach(q => {
   block.innerHTML = `
     <div class="fill-word-display">${q.display}</div>
     <div class="fill-row">
-      <input type="text" placeholder="؟" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل الكلمة الناقصة">
+      <input type="text" placeholder="؟" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل الجزء الناقص">
       <button class="fill-check">تحقّق</button>
       <span class="fill-result"></span>
-      <button class="icon-btn" data-speak-word="${q.full}" aria-label="استمع للجملة الكاملة"><svg class="icon"><use href="#i-speaker"/></svg></button>
+      <button class="icon-btn" data-speak-word="${q.full}" aria-label="استمع للصيغة الكاملة"><svg class="icon"><use href="#i-speaker"/></svg></button>
     </div>
     <div class="q-feedback">💡 ${q.hint}</div>`;
   const input = block.querySelector('input');
@@ -1900,7 +2109,7 @@ BUILDER.forEach((q) => {
 const panelListen = document.getElementById('panelListen');
 (function initListen(){
   panelListen.innerHTML = `
-    <div class="q-prompt">استمع إلى الحوار غير الرسمي كاملًا، وتابع الفقاعة المضاءة أثناء النطق. انقر على أي عبارة بمفردها لإعادة سماعها.</div>
+    <div class="q-prompt">استمع إلى حوار الأصدقاء كاملًا، وتابع الفقاعة المضاءة أثناء النطق. انقر على أي عبارة بمفردها لإعادة سماعها.</div>
     <button class="btn btn-primary" id="listenAllBtn"><svg class="icon" style="width:16px;height:16px"><use href="#i-headphones"/></svg> استمع للحوار كاملًا</button>
     <div class="listen-alphabet-row" id="listenRow"></div>
     <div class="qr-placeholder">
@@ -1932,7 +2141,7 @@ const panelListen = document.getElementById('panelListen');
    BADGES / ACHIEVEMENTS
    ========================================================================== */
 let unlockedBadges = {};
-try{ unlockedBadges = JSON.parse(localStorage.getItem('lesson2-greetings-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
+try{ unlockedBadges = JSON.parse(localStorage.getItem('lesson4-farben-wochentage-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
 
 const badgesRow = document.getElementById('badgesRow');
 BADGES.forEach(b => {
@@ -1945,7 +2154,7 @@ BADGES.forEach(b => {
 function unlockBadge(id){
   if(unlockedBadges[id]) return;
   unlockedBadges[id] = true;
-  try{ localStorage.setItem('lesson2-greetings-badges', JSON.stringify(unlockedBadges)); }catch(e){}
+  try{ localStorage.setItem('lesson4-farben-wochentage-badges', JSON.stringify(unlockedBadges)); }catch(e){}
   const el = document.getElementById('badge-' + id);
   if(el){ el.classList.add('unlocked','pop'); setTimeout(()=>el.classList.remove('pop'), 650); }
   const badge = BADGES.find(b=>b.id===id);
@@ -1973,7 +2182,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 /* ==========================================================================
    SECTION NAV: active-link highlight + click-to-scroll + progress
    ========================================================================== */
-const sections = ['#hero','#intro','#time-greetings','#casual','#farewells','#duSie','#introduce','#dialogue','#mistakes','#pronunciation','#exercises','#summary'].map(s => document.querySelector(s)).filter(Boolean);
+const sections = ['#hero','#intro','#colors-basics','#color-mixer','#color-grammar','#days-basics','#week-wheel','#am-contraction','#practical','#dialogue','#mistakes','#pronunciation','#exercises','#summary'].map(s => document.querySelector(s)).filter(Boolean);
 const visitedSections = new Set();
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -2094,6 +2303,6 @@ backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smoo
 })();
 </script>
 
-<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a1-lesson-02-begruessung" data-category="a1" data-title="التحيات وتقديم النفس — Begrüßung & Vorstellung" data-root="../../" defer></script>
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a1-lesson-04-farben-wochentage" data-category="a1" data-title="الألوان وأيام الأسبوع — Farben &amp; Wochentage" data-root="../../" defer></script>
 </body>
 </html>

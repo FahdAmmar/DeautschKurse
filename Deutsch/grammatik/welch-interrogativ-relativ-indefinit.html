@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>welch- : welcher · welche · welches — أداة الاستفهام والوصل الألمانية | شرح شامل</title>
+<meta name="description" content="شرح تفاعلي شامل لأداة welch- بكل استخداماتها: الاستفهام، والنسب (الوصل)، والتنكير، والتعجب — مع جداول تصريف، وأمثلة صوتية، وتمارين، واختبار ختامي">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   DESIGN TOKENS — "Auswahl-Kompass" (بوصلة الاختيار)
+   المفهوم البصري: welch- أداة "اختيار واتّجاه" — كالبوصلة التي تشير إلى خمس
+   وظائف مختلفة للكلمة نفسها. الوضع الداكن هو الافتراضي (قريب من الأسود)
+   بطلب صاحب المشروع، مع دعم كامل للوضع الفاتح ووضع النظام.
+   لون سماوي (Interrogativ) · أزرق (was für ein) · بنفسجي (Relativ) ·
+   ذهبي (Indefinit) · وردي-أحمر (Ausruf)
+   ========================================================================== */
+:root{
+  --bg:#F5F6F4;
+  --bg-soft:#FAFAF8;
+  --surface:#FFFFFF;
+  --surface-alt:#FBFBF9;
+  --ink:#1B1C1E;
+  --ink-soft:#5A5C61;
+  --ink-faint:#8D8F95;
+  --border:#E3E4E0;
+  --border-strong:#D2D3CD;
+  --path:#CBCCC5;
+
+  --interrog:#0E7C86;    --interrog-soft:#DCF1F1;  --interrog-ink:#0A565E;
+  --wasfuer:#2A5FA5;     --wasfuer-soft:#DEE9F7;   --wasfuer-ink:#1D4272;
+  --relativ:#6A3FA0;     --relativ-soft:#EAE0F5;   --relativ-ink:#4A2B70;
+  --indefinit:#A2740F;   --indefinit-soft:#F3E6C6; --indefinit-ink:#75530C;
+  --ausruf:#B23A50;      --ausruf-soft:#F6DEE3;    --ausruf-ink:#7E2836;
+  --danger:#B8302F;      --danger-soft:#F8DEDD;
+  --gold:#A2740F;
+
+  --shadow-sm:0 1px 2px rgba(20,20,18,.07), 0 1px 1px rgba(20,20,18,.05);
+  --shadow-md:0 8px 24px -8px rgba(20,20,18,.15), 0 2px 8px -2px rgba(20,20,18,.09);
+  --shadow-lg:0 24px 64px -16px rgba(20,20,18,.24), 0 8px 24px -8px rgba(20,20,18,.12);
+  --shadow-glow:0 0 0 4px rgba(14,124,134,.15);
+
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --radius-pill:999px;
+
+  --font-display:'Spectral', 'Noto Kufi Arabic', serif;
+  --font-body:'Inter', system-ui, sans-serif;
+  --font-ar-head:'Noto Kufi Arabic', 'Inter', sans-serif;
+  --font-ar-body:'Noto Naskh Arabic', 'Inter', sans-serif;
+  --font-mono:'IBM Plex Mono', ui-monospace, monospace;
+
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --dur-fast:.18s;
+  --dur-med:.42s;
+  --dur-slow:.7s;
+  color-scheme: light;
+}
+
+html.dark{
+  --bg:#0A0A0C;
+  --bg-soft:#101013;
+  --surface:#161619;
+  --surface-alt:#1B1B1F;
+  --ink:#EDEDF0;
+  --ink-soft:#AFAFB8;
+  --ink-faint:#75757D;
+  --border:#26262B;
+  --border-strong:#343439;
+  --path:#343439;
+
+  --interrog:#4FD3D9;    --interrog-soft:#0F2E31;  --interrog-ink:#A9EEF1;
+  --wasfuer:#6FA8E8;     --wasfuer-soft:#15243B;   --wasfuer-ink:#BCD7F6;
+  --relativ:#B78EE2;     --relativ-soft:#231A38;   --relativ-ink:#DCC9F2;
+  --indefinit:#E0B54E;   --indefinit-soft:#332609; --indefinit-ink:#F3DA9C;
+  --ausruf:#E4899B;      --ausruf-soft:#391A21;    --ausruf-ink:#F3BAC5;
+  --danger:#E58B85;      --danger-soft:#3A1D1B;
+  --gold:#E0B54E;
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:0 8px 24px -8px rgba(0,0,0,.6), 0 2px 8px -2px rgba(0,0,0,.45);
+  --shadow-lg:0 24px 64px -16px rgba(0,0,0,.7), 0 8px 24px -8px rgba(0,0,0,.5);
+  --shadow-glow:0 0 0 4px rgba(79,211,217,.16);
+  color-scheme: dark;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important}
+}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--font-ar-body); line-height:1.85;
+  min-height:100vh; overflow-x:hidden; transition:background var(--dur-med) var(--ease-out), color var(--dur-med) var(--ease-out);
+}
+img,svg{display:block; max-width:100%}
+button{font:inherit; color:inherit; background:none; border:none; cursor:pointer}
+a{color:inherit}
+ul{list-style:none}
+[lang="de"]{font-family:var(--font-body); direction:ltr; unicode-bidi:isolate}
+.de{font-family:var(--font-body); direction:ltr; unicode-bidi:isolate}
+::selection{background:var(--interrog); color:#fff}
+:focus-visible{outline:3px solid var(--relativ); outline-offset:2px; border-radius:6px}
+button:focus-visible, a:focus-visible{outline-offset:3px}
+
+.container{max-width:1180px; margin-inline:auto; padding-inline:clamp(16px,4vw,40px)}
+.visually-hidden{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+.skip-link{position:fixed; top:-100px; right:16px; z-index:9999; background:var(--ink); color:var(--bg); padding:12px 20px; border-radius:var(--radius-sm); transition:top .2s}
+.skip-link:focus{top:16px}
+
+#readProgress{position:fixed; inset-inline:0; top:0; height:4px; z-index:1100; background:transparent}
+#readProgress::after{content:''; display:block; height:100%; width:var(--progress,0%); background:linear-gradient(90deg, var(--interrog), var(--relativ), var(--ausruf)); transition:width .12s linear}
+
+.topnav{position:sticky; top:4px; z-index:1000; backdrop-filter:blur(16px) saturate(1.4); -webkit-backdrop-filter:blur(16px) saturate(1.4); background:color-mix(in srgb, var(--bg) 78%, transparent); border-bottom:1px solid var(--border)}
+.topnav-inner{display:flex; align-items:center; gap:16px; padding-block:12px}
+.brand{display:flex; align-items:center; gap:10px; font-family:var(--font-ar-head); font-weight:700; font-size:1.02rem; white-space:nowrap}
+.brand-mark{width:34px; height:34px; flex:none}
+.navlinks{display:flex; gap:4px; flex:1; min-width:0; overflow-x:auto; scrollbar-width:none; padding-inline:4px}
+.navlinks::-webkit-scrollbar{display:none}
+.navlink{position:relative; padding:9px 13px; border-radius:var(--radius-pill); font-size:.85rem; font-weight:600; color:var(--ink-soft); white-space:nowrap; transition:all var(--dur-fast) var(--ease-out); display:flex; align-items:center; gap:6px}
+.navlink:hover{background:var(--surface); color:var(--ink)}
+.navlink.active{background:var(--ink); color:var(--bg)}
+.navlink .dot{width:7px; height:7px; border-radius:50%; background:currentColor; opacity:.5}
+.navlink[data-done="true"] .dot{opacity:1; background:var(--interrog)}
+.nav-tools{display:flex; align-items:center; gap:6px; flex:none}
+
+.icon-btn{display:grid; place-items:center; width:40px; height:40px; border-radius:var(--radius-pill); background:var(--surface); border:1px solid var(--border); color:var(--ink); transition:transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-fast), background var(--dur-fast)}
+.icon-btn:hover{transform:translateY(-2px); box-shadow:var(--shadow-md)}
+.icon-btn:active{transform:translateY(0) scale(.94)}
+.icon-btn svg{width:19px; height:19px}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 26px; border-radius:var(--radius-pill); font-weight:700; font-size:.95rem; font-family:var(--font-ar-head); cursor:pointer; transition:all var(--dur-fast) var(--ease-spring); border:1px solid transparent}
+.btn:active{transform:scale(.96)}
+.btn-primary{background:var(--ink); color:var(--bg); box-shadow:var(--shadow-sm)}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-md)}
+.btn-ghost{background:var(--surface); color:var(--ink); border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--border-strong); transform:translateY(-2px); box-shadow:var(--shadow-sm)}
+.btn-sm{padding:9px 18px; font-size:.85rem}
+.btn:disabled{opacity:.45; cursor:not-allowed; transform:none !important}
+
+.chip{display:inline-flex; align-items:center; gap:7px; padding:6px 14px; border-radius:var(--radius-pill); font-family:var(--font-mono); font-size:.76rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase}
+.chip-interrog{background:var(--interrog-soft); color:var(--interrog-ink)}
+.chip-wasfuer{background:var(--wasfuer-soft); color:var(--wasfuer-ink)}
+.chip-relativ{background:var(--relativ-soft); color:var(--relativ-ink)}
+.chip-indefinit{background:var(--indefinit-soft); color:var(--indefinit-ink)}
+.chip-ausruf{background:var(--ausruf-soft); color:var(--ausruf-ink)}
+
+/* theme switch — segmented control (light/dark/system) */
+.theme-switch{display:inline-flex; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-pill); padding:3px; gap:2px}
+.theme-switch button{width:32px; height:32px; border-radius:50%; display:grid; place-items:center; color:var(--ink-faint); transition:all var(--dur-fast) var(--ease-spring)}
+.theme-switch button svg{width:16px; height:16px}
+.theme-switch button.on{background:var(--ink); color:var(--bg)}
+.theme-switch button:hover:not(.on){color:var(--ink)}
+
+#speechBar{position:fixed; bottom:18px; left:50%; transform:translateX(-50%) translateY(140%); z-index:1200; display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-lg); padding:10px 16px; border-radius:var(--radius-pill); max-width:calc(100vw - 24px); transition:transform var(--dur-med) var(--ease-spring)}
+#speechBar.show{transform:translateX(-50%) translateY(0)}
+#speechBar .now-playing{display:flex; flex-direction:column; max-width:220px; overflow:hidden}
+#speechBar .now-playing small{color:var(--ink-faint); font-size:.68rem; font-family:var(--font-ar-body)}
+#speechBar .now-playing span{font-family:var(--font-body); font-size:.85rem; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; direction:ltr; text-align:left}
+#speechBar .sp-controls{display:flex; align-items:center; gap:6px}
+#speechBar .sp-btn{width:36px; height:36px; border-radius:50%; background:var(--bg-soft); display:grid; place-items:center}
+#speechBar .sp-btn:hover{background:var(--interrog-soft)}
+#speechBar .sp-btn svg{width:16px; height:16px}
+#speechBar input[type="range"]{width:64px; accent-color:var(--interrog)}
+.speak-indicator{display:inline-flex; gap:2px; align-items:flex-end; height:14px}
+.speak-indicator i{display:block; width:3px; height:3px; background:var(--ink-faint); border-radius:2px; animation:speakbar 0.9s ease-in-out infinite; animation-play-state:paused}
+#speechBar.playing .speak-indicator i{background:var(--interrog); animation-play-state:running}
+.ex-card.sentence-speaking{box-shadow:var(--shadow-glow), var(--shadow-md)}
+@keyframes speakbar{0%,100%{height:3px}50%{height:14px}}
+.novoice-banner{display:none; align-items:center; gap:10px; background:var(--danger-soft); color:var(--danger); border-radius:var(--radius-sm); padding:10px 14px; font-size:.84rem; margin-block:14px}
+.novoice-banner.show{display:flex}
+
+/* ==========================================================================
+   VOICE PANEL — VoiceSelector + VoiceTester + PlaybackSpeedControl
+   ========================================================================== */
+.voice-panel{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); padding:24px clamp(18px,4vw,30px); margin-block:30px}
+.voice-panel-head{display:flex; align-items:flex-start; gap:14px; margin-bottom:18px}
+.voice-panel-head h3{font-family:var(--font-ar-head); font-size:1.02rem; margin-bottom:6px}
+.voice-panel-head p{color:var(--ink-soft); font-size:.9rem}
+.voice-list{display:grid; gap:10px; margin-bottom:20px}
+.voice-loading{color:var(--ink-faint); font-size:.9rem; padding:8px 2px}
+.voice-item{display:flex; align-items:center; gap:12px; background:var(--bg-soft); border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:12px 14px; transition:all var(--dur-fast) var(--ease-spring); cursor:pointer}
+.voice-item:hover{border-color:var(--border-strong)}
+.voice-item.selected{border-color:var(--interrog); background:var(--interrog-soft)}
+.voice-item .radio-dot{flex:none; width:20px; height:20px; border-radius:50%; border:2px solid var(--border-strong); display:grid; place-items:center; background:var(--surface)}
+.voice-item.selected .radio-dot{border-color:var(--interrog)}
+.voice-item .radio-dot::after{content:''; width:10px; height:10px; border-radius:50%; background:var(--interrog); transform:scale(0); transition:transform var(--dur-fast) var(--ease-spring)}
+.voice-item.selected .radio-dot::after{transform:scale(1)}
+.voice-item .voice-info{flex:1; min-width:0}
+.voice-item .voice-name{font-family:var(--font-body); direction:ltr; text-align:left; font-weight:700; font-size:.94rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.voice-item .voice-meta{font-size:.76rem; color:var(--ink-faint); direction:ltr; text-align:left}
+.voice-item .voice-badge{flex:none; font-family:var(--font-mono); font-size:.68rem; font-weight:700; padding:3px 9px; border-radius:var(--radius-pill); background:var(--surface); border:1px solid var(--border); color:var(--ink-soft)}
+.voice-item.selected .voice-badge{background:var(--interrog); color:#fff; border-color:transparent}
+.voice-test-btn{flex:none; display:inline-flex; align-items:center; gap:6px; padding:8px 14px; border-radius:var(--radius-pill); background:var(--surface); border:1px solid var(--border); font-family:var(--font-ar-head); font-size:.78rem; font-weight:700; transition:all var(--dur-fast) var(--ease-spring)}
+.voice-test-btn:hover{background:var(--interrog); color:#fff; border-color:var(--interrog); transform:scale(1.04)}
+.voice-test-btn.testing{background:var(--interrog); color:#fff; border-color:var(--interrog)}
+.voice-test-btn svg{width:14px; height:14px}
+.voice-panel-foot{display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding-top:16px; border-top:1px solid var(--border)}
+.speed-label{font-family:var(--font-ar-head); font-weight:700; font-size:.86rem; color:var(--ink-soft); flex:none}
+.speed-chips{display:inline-flex; flex-wrap:wrap; gap:6px}
+.speed-chip{padding:7px 13px; border-radius:var(--radius-pill); background:var(--bg-soft); border:1px solid var(--border); font-family:var(--font-mono); font-size:.78rem; font-weight:700; direction:ltr; color:var(--ink-soft); transition:all var(--dur-fast) var(--ease-spring)}
+.speed-chip:hover{border-color:var(--border-strong)}
+.speed-chip.on{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+@media (max-width:640px){
+  .voice-item{flex-wrap:wrap}
+  .voice-panel-head{flex-direction:column}
+}
+
+/* ==========================================================================
+   HERO — "Auswahl-Kompass" (بوصلة الاختيار)
+   ========================================================================== */
+.hero{position:relative; padding-block:56px 40px; overflow:hidden}
+.hero-bg{position:absolute; inset:0; z-index:-1; opacity:.5}
+.hero-bg svg{width:100%; height:100%}
+.hero-eyebrow{display:inline-flex; align-items:center; gap:10px; font-family:var(--font-ar-head); font-weight:700; font-size:.85rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); padding:8px 16px; border-radius:var(--radius-pill); margin-bottom:22px}
+.hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center}
+.hero h1{font-family:var(--font-display); font-weight:600; line-height:1.1; letter-spacing:-.01em; font-size:clamp(2rem, 4.2vw, 3.2rem); margin-bottom:22px; direction:ltr; text-align:right}
+.hero h1 .a-interrog{color:var(--interrog)}
+.hero-sub{font-family:var(--font-ar-body); font-size:1.12rem; color:var(--ink-soft); max-width:60ch; margin-bottom:30px}
+.hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:34px}
+.hero-stats{display:flex; gap:28px; flex-wrap:wrap}
+.hero-stat b{display:block; font-family:var(--font-display); font-size:1.7rem; color:var(--ink)}
+.hero-stat span{font-size:.8rem; color:var(--ink-faint)}
+
+.path-wrap{position:relative; aspect-ratio:1/1; display:grid; place-items:center}
+.path-card{position:relative; width:100%; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); padding:26px 22px; overflow:hidden}
+.path-card::before{content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(120% 100% at 100% 0%, rgba(14,124,134,.10), transparent 55%), radial-gradient(120% 100% at 0% 100%, rgba(106,63,160,.10), transparent 55%)}
+.compass-row{position:relative; margin-block:6px}
+.compass-row svg{width:100%; height:auto}
+.legend-row{display:flex; flex-wrap:wrap; gap:9px; margin-block:18px 4px; font-size:.76rem; color:var(--ink-soft)}
+.legend-row span{display:inline-flex; align-items:center; gap:6px}
+.legend-row i{width:10px; height:10px; border-radius:3px; display:inline-block; flex:none}
+
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .7s var(--ease-out), transform .7s var(--ease-out)}
+.reveal.in{opacity:1; transform:translateY(0)}
+.reveal-stagger > *{opacity:0; transform:translateY(20px); transition:opacity .6s var(--ease-out), transform .6s var(--ease-out)}
+.reveal-stagger.in > *{opacity:1; transform:translateY(0)}
+.reveal-stagger.in > *:nth-child(1){transition-delay:.03s}
+.reveal-stagger.in > *:nth-child(2){transition-delay:.09s}
+.reveal-stagger.in > *:nth-child(3){transition-delay:.15s}
+.reveal-stagger.in > *:nth-child(4){transition-delay:.21s}
+.reveal-stagger.in > *:nth-child(5){transition-delay:.27s}
+.reveal-stagger.in > *:nth-child(6){transition-delay:.33s}
+
+/* ==========================================================================
+   SECTIONS
+   ========================================================================== */
+.section{padding-block:64px; scroll-margin-top:90px; position:relative}
+.section-head{max-width:760px; margin-bottom:38px}
+.kicker{font-family:var(--font-mono); font-weight:700; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; direction:ltr; display:block; margin-bottom:10px}
+.section h2{font-family:var(--font-ar-head); font-size:clamp(1.5rem,3vw,2.1rem); font-weight:700; margin-bottom:14px; line-height:1.3}
+.section h2 .de{font-family:var(--font-display); font-style:italic; direction:ltr; unicode-bidi:isolate}
+.section-desc{color:var(--ink-soft); font-size:1.04rem; max-width:66ch}
+.section.tone-interrog .kicker,.section.tone-interrog h2 .de{color:var(--interrog)}
+.section.tone-wasfuer .kicker,.section.tone-wasfuer h2 .de{color:var(--wasfuer)}
+.section.tone-relativ .kicker,.section.tone-relativ h2 .de{color:var(--relativ)}
+.section.tone-indefinit .kicker,.section.tone-indefinit h2 .de{color:var(--indefinit)}
+.section.tone-ausruf .kicker,.section.tone-ausruf h2 .de{color:var(--ausruf)}
+
+.rule-box{display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:flex-start; background:var(--surface); border:1px solid var(--border); border-inline-start:5px solid var(--tone,var(--interrog)); border-radius:var(--radius-md); padding:22px 24px; box-shadow:var(--shadow-sm); margin-block:24px}
+.rule-box .icon{width:42px; height:42px; border-radius:var(--radius-sm); background:var(--tone-soft,var(--interrog-soft)); color:var(--tone,var(--interrog)); display:grid; place-items:center; flex:none; font-size:1.15rem}
+.rule-box .icon svg{width:22px; height:22px}
+.rule-box h3{font-family:var(--font-ar-head); font-size:1.06rem; margin-bottom:6px}
+.rule-box p{color:var(--ink-soft)}
+.rule-box.tone-interrog{--tone:var(--interrog); --tone-soft:var(--interrog-soft)}
+.rule-box.tone-wasfuer{--tone:var(--wasfuer); --tone-soft:var(--wasfuer-soft)}
+.rule-box.tone-relativ{--tone:var(--relativ); --tone-soft:var(--relativ-soft)}
+.rule-box.tone-indefinit{--tone:var(--indefinit); --tone-soft:var(--indefinit-soft)}
+.rule-box.tone-ausruf{--tone:var(--ausruf); --tone-soft:var(--ausruf-soft)}
+
+.formula{display:flex; flex-wrap:wrap; gap:8px; align-items:center; font-family:var(--font-mono); font-weight:700; font-size:.9rem; direction:ltr; background:var(--bg-soft); border:1px dashed var(--border-strong); border-radius:var(--radius-sm); padding:16px 18px; margin-block:20px}
+.formula .f-tag{padding:5px 12px; border-radius:8px; font-size:.8rem}
+.formula .f-tag.main{background:var(--surface); border:1px solid var(--border); color:var(--ink-soft)}
+.formula .f-tag.mid{background:var(--surface); border:1px solid var(--border); color:var(--ink-soft)}
+.formula .f-tag.end{background:var(--indefinit-soft); color:var(--indefinit-ink); border:1px solid transparent}
+.formula .arrow{color:var(--ink-faint)}
+
+.examples-grid{display:grid; gap:16px; margin-block:26px}
+.ex-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 22px; box-shadow:var(--shadow-sm); transition:box-shadow var(--dur-fast), transform var(--dur-fast)}
+.ex-card:hover{box-shadow:var(--shadow-md); transform:translateY(-2px)}
+.ex-top{display:flex; align-items:flex-start; gap:12px; margin-bottom:12px}
+.ex-num{flex:none; width:28px; height:28px; border-radius:50%; background:var(--bg-soft); color:var(--ink-faint); display:grid; place-items:center; font-family:var(--font-mono); font-weight:700; font-size:.78rem}
+.ex-de{font-family:var(--font-body); font-size:1.12rem; font-weight:600; direction:ltr; text-align:left; line-height:1.5; flex:1}
+.ex-de .hl{padding:1px 5px; border-radius:5px; background:var(--interrog-soft); color:var(--interrog-ink); font-weight:800}
+.speak-btn{flex:none; width:36px; height:36px; border-radius:50%; background:var(--bg-soft); border:1px solid var(--border); display:grid; place-items:center; transition:all var(--dur-fast) var(--ease-spring)}
+.speak-btn:hover{background:var(--interrog-soft); border-color:var(--interrog); color:var(--interrog-ink); transform:scale(1.08)}
+.speak-btn svg{width:16px; height:16px}
+.ex-ar{color:var(--ink-soft); font-size:.96rem; margin-inline-start:40px; margin-bottom:6px}
+.ex-note{color:var(--ink-faint); font-size:.82rem; margin-inline-start:40px}
+
+.w{cursor:pointer; border-radius:5px; padding:1px 3px; margin:0 -3px; transition:background var(--dur-fast), color var(--dur-fast)}
+.w:hover{background:var(--interrog-soft); color:var(--interrog-ink)}
+.w.speaking{background:var(--interrog); color:#fff}
+
+.slot{padding:7px 12px; border-radius:9px; font-size:.82rem; font-weight:700; line-height:1.3; background:var(--bg-soft); border:1px solid var(--border); color:var(--ink-soft); position:relative}
+.slot .lbl{display:block; font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; opacity:.62; margin-bottom:1px}
+.slot.s-main{background:var(--surface-alt)}
+.slot.s-mid{background:var(--surface)}
+.slot.s-conn{color:#fff; border-color:transparent}
+.slot.s-end{background:var(--indefinit-soft); color:var(--indefinit-ink); border-color:transparent}
+
+.mistake-box{display:grid; gap:10px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 22px; margin-block:26px; box-shadow:var(--shadow-sm)}
+.mistake-box h4{font-family:var(--font-ar-head); font-size:.98rem; margin-bottom:6px; display:flex; align-items:center; gap:8px}
+.mrow{display:flex; align-items:center; gap:12px; padding:11px 14px; border-radius:var(--radius-sm); font-family:var(--font-body); font-size:.98rem; direction:ltr; text-align:left}
+.mrow.bad{background:var(--danger-soft); color:var(--danger)}
+.mrow.good{background:var(--interrog-soft); color:var(--interrog-ink)}
+.mrow .mark{flex:none; font-weight:900; font-size:1.1rem}
+.mnote{font-family:var(--font-ar-body); color:var(--ink-soft); font-size:.92rem; direction:rtl; text-align:right; margin-top:4px}
+
+details.more{background:var(--bg-soft); border:1px solid var(--border); border-radius:var(--radius-md); padding:4px 20px; margin-block:22px}
+details.more summary{cursor:pointer; padding:14px 0; font-family:var(--font-ar-head); font-weight:700; font-size:.94rem; list-style:none; display:flex; align-items:center; gap:10px}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:'+'; width:22px; height:22px; border-radius:50%; background:var(--surface); border:1px solid var(--border); display:grid; place-items:center; font-size:1rem; flex:none; transition:transform var(--dur-fast)}
+details.more[open] summary::before{content:'−'}
+details.more .more-body{padding-bottom:18px; color:var(--ink-soft)}
+
+.compare-widget{background:linear-gradient(145deg, var(--surface), var(--surface-alt)); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px clamp(18px,4vw,32px); margin-block:28px; box-shadow:var(--shadow-md)}
+.compare-head{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; margin-bottom:20px}
+.compare-head h3{font-family:var(--font-ar-head); font-size:1.05rem}
+.toggle-switch{display:inline-flex; flex-wrap:wrap; justify-content:center; background:var(--bg-soft); border-radius:var(--radius-pill); padding:4px; border:1px solid var(--border)}
+.toggle-switch button{padding:9px 18px; border-radius:var(--radius-pill); font-weight:700; font-family:var(--font-mono); font-size:.82rem; direction:ltr; color:var(--ink-soft); transition:all var(--dur-fast) var(--ease-spring); position:relative; z-index:1}
+.toggle-switch button.on{background:var(--ink); color:var(--bg)}
+.compare-stage{min-height:150px; display:flex; align-items:center; justify-content:center; position:relative}
+.compare-sentence{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; direction:ltr; font-family:var(--font-mono); font-weight:700; font-size:clamp(.85rem,2.4vw,1.05rem)}
+.compare-sentence .slot{transition:all var(--dur-slow) var(--ease-spring)}
+.compare-caption{text-align:center; margin-top:18px; color:var(--ink-soft); font-size:.94rem; min-height:24px}
+
+.table-wrap{overflow-x:auto; border-radius:var(--radius-md); border:1px solid var(--border); box-shadow:var(--shadow-sm); margin-block:26px}
+table.cmp{width:100%; border-collapse:collapse; background:var(--surface); min-width:560px}
+table.cmp th,table.cmp td{padding:14px 18px; text-align:right; border-bottom:1px solid var(--border); vertical-align:top}
+table.cmp thead th{background:var(--bg-soft); font-family:var(--font-ar-head); font-size:.86rem; color:var(--ink-soft); position:sticky; top:0}
+table.cmp tbody tr:last-child td{border-bottom:none}
+table.cmp tbody tr:hover{background:var(--bg-soft)}
+table.cmp td.de-cell{direction:ltr; text-align:left; font-family:var(--font-body); font-weight:600}
+table.cmp td:first-child{font-family:var(--font-mono); font-weight:800; direction:ltr; text-align:left}
+table.decl th, table.decl td{text-align:center}
+table.decl td.case-label{text-align:right; font-family:var(--font-ar-head); font-weight:700; color:var(--ink-soft); font-size:.86rem}
+table.decl td.rare{color:var(--ink-faint); font-style:italic}
+.flow-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+
+.practice-panel{background:var(--bg-soft); border:1px solid var(--border); border-radius:var(--radius-lg); padding:26px clamp(18px,4vw,32px); margin-block:30px}
+.practice-head{display:flex; align-items:center; gap:12px; margin-bottom:18px}
+.practice-head .badge-icon{width:38px; height:38px; border-radius:12px; background:var(--surface); border:1px solid var(--border); display:grid; place-items:center; flex:none}
+.practice-head h3{font-family:var(--font-ar-head); font-size:1.02rem}
+.practice-head p{color:var(--ink-faint); font-size:.84rem}
+.practice-context{direction:ltr; text-align:left; font-family:var(--font-body); font-size:.98rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px 14px; margin-bottom:14px}
+
+.builder-target{min-height:58px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; direction:ltr; background:var(--surface); border:2px dashed var(--border-strong); border-radius:var(--radius-sm); padding:12px 14px; margin-bottom:14px; transition:border-color var(--dur-fast)}
+.builder-target.correct{border-color:var(--interrog); border-style:solid; background:var(--interrog-soft)}
+.builder-target.wrong{border-color:var(--danger); border-style:solid; background:var(--danger-soft); animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.builder-bank{display:flex; flex-wrap:wrap; gap:8px; direction:ltr; margin-bottom:16px}
+.word-chip{padding:9px 15px; border-radius:9px; background:var(--surface); border:1px solid var(--border); font-family:var(--font-body); font-weight:600; font-size:.92rem; cursor:grab; transition:all var(--dur-fast) var(--ease-spring); user-select:none}
+.word-chip:hover{transform:translateY(-2px); box-shadow:var(--shadow-sm); border-color:var(--border-strong)}
+.word-chip.placed{opacity:.35; cursor:not-allowed}
+.word-chip.in-target{cursor:pointer; background:var(--surface-alt)}
+.builder-actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.builder-feedback{font-size:.9rem; font-weight:600; min-height:20px}
+.builder-feedback.ok{color:var(--interrog-ink)}
+.builder-feedback.no{color:var(--danger)}
+
+.quiz-q{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 22px; margin-bottom:14px; box-shadow:var(--shadow-sm)}
+.quiz-q .qtext{font-weight:700; margin-bottom:14px; font-family:var(--font-ar-head); font-size:.98rem}
+.quiz-q .qtext .de{font-family:var(--font-body); direction:ltr; unicode-bidi:isolate; font-weight:600}
+.qopts{display:grid; gap:9px}
+.qopt{text-align:right; padding:13px 16px; border-radius:var(--radius-sm); background:var(--bg-soft); border:1px solid var(--border); font-family:var(--font-body); direction:ltr; text-align:left; font-weight:600; font-size:.92rem; display:flex; align-items:center; justify-content:space-between; gap:10px; transition:all var(--dur-fast)}
+.qopt:hover:not(:disabled){border-color:var(--border-strong); background:var(--surface)}
+.qopt.correct{background:var(--interrog-soft); border-color:var(--interrog); color:var(--interrog-ink)}
+.qopt.incorrect{background:var(--danger-soft); border-color:var(--danger); color:var(--danger)}
+.qopt:disabled{cursor:not-allowed}
+.quiz-explain{margin-top:12px; padding:12px 14px; background:var(--bg-soft); border-radius:var(--radius-sm); font-size:.88rem; color:var(--ink-soft)}
+
+.quiz-summary{text-align:center; padding:40px 24px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); display:none}
+.quiz-summary.show{display:block}
+.quiz-summary .score-ring{width:130px; height:130px; margin:0 auto 18px; position:relative}
+.quiz-summary .score-ring svg{width:100%; height:100%; transform:rotate(-90deg)}
+.quiz-summary .score-ring .num{position:absolute; inset:0; display:grid; place-items:center; font-family:var(--font-display); font-size:2.1rem; font-weight:600}
+.quiz-summary h3{font-family:var(--font-ar-head); font-size:1.3rem; margin-bottom:8px}
+.quiz-summary p{color:var(--ink-soft); margin-bottom:20px}
+.progressbar-track{height:8px; background:var(--bg-soft); border-radius:99px; overflow:hidden; margin-block:6px}
+.progressbar-fill{height:100%; background:linear-gradient(90deg,var(--interrog),var(--relativ)); border-radius:99px; transition:width .6s var(--ease-out)}
+
+#achToastHost{position:fixed; top:70px; inset-inline-end:16px; z-index:1300; display:flex; flex-direction:column; gap:10px; pointer-events:none}
+.ach-toast{pointer-events:auto; display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-lg); border-radius:var(--radius-md); padding:14px 18px; min-width:260px; max-width:320px; transform:translateX(120%); transition:transform .5s var(--ease-spring)}
+[dir="rtl"] .ach-toast{transform:translateX(-120%)}
+.ach-toast.show{transform:translateX(0)}
+.ach-toast .emoji{font-size:1.6rem}
+.ach-toast b{display:block; font-family:var(--font-ar-head); font-size:.9rem}
+.ach-toast span{font-size:.78rem; color:var(--ink-faint)}
+.achievements-panel{display:flex; flex-wrap:wrap; gap:12px; margin-block:20px}
+.ach-item{display:flex; flex-direction:column; align-items:center; gap:6px; width:88px; text-align:center; opacity:.32; filter:grayscale(1); transition:all var(--dur-med) var(--ease-spring)}
+.ach-item.unlocked{opacity:1; filter:none}
+.ach-item .ach-circle{width:52px; height:52px; border-radius:50%; background:var(--bg-soft); border:1px solid var(--border); display:grid; place-items:center; font-size:1.4rem}
+.ach-item.unlocked .ach-circle{background:linear-gradient(150deg,var(--interrog-soft),var(--relativ-soft)); box-shadow:var(--shadow-sm)}
+.ach-item small{font-size:.7rem; color:var(--ink-soft); line-height:1.3}
+
+.flip-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-block:28px}
+.flip-card{aspect-ratio:4/3; perspective:1200px}
+.flip-inner{position:relative; width:100%; height:100%; transition:transform .7s var(--ease-spring); transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-card:focus-visible .flip-inner{outline:3px solid var(--relativ); outline-offset:4px}
+.flip-face{position:absolute; inset:0; backface-visibility:hidden; border-radius:var(--radius-md); padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:9px; border:1px solid var(--border); box-shadow:var(--shadow-md); cursor:pointer}
+.flip-front{background:var(--surface)}
+.flip-front .fw{font-family:var(--font-display); font-size:1.3rem; font-weight:600; direction:ltr}
+.flip-front .tap-hint{font-size:.7rem; color:var(--ink-faint); margin-top:auto}
+.flip-back{color:var(--tone-ink,var(--relativ-ink)); background:var(--tone-soft,var(--relativ-soft)); transform:rotateY(180deg)}
+.flip-back p{font-size:.82rem; line-height:1.65}
+.flip-back .ex{font-family:var(--font-body); direction:ltr; font-weight:700; font-size:.82rem; margin-top:6px; padding:8px 10px; background:rgba(255,255,255,.35); border-radius:8px}
+
+.fab-stack{position:fixed; bottom:18px; inset-inline-start:16px; z-index:1150; display:flex; flex-direction:column; gap:10px; transition:bottom var(--dur-med) var(--ease-spring)}
+body.speech-active .fab-stack{bottom:84px}
+.fab{width:48px; height:48px; border-radius:50%; background:var(--ink); color:var(--bg); display:grid; place-items:center; box-shadow:var(--shadow-lg); transition:all var(--dur-fast) var(--ease-spring); opacity:0; transform:translateY(20px) scale(.7); pointer-events:none}
+.fab.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto}
+.fab:hover{transform:translateY(-3px) scale(1.06)}
+.fab svg{width:20px; height:20px}
+
+.search-wrap{position:relative; flex:none}
+.search-box{display:flex; align-items:center; gap:6px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-pill); padding:8px 8px 8px 14px; transition:all var(--dur-fast); width:38px; overflow:hidden}
+.search-box.open{width:200px}
+.search-box input{border:none; background:none; outline:none; font-size:.86rem; color:var(--ink); width:100%; font-family:var(--font-ar-body)}
+.search-box svg{width:17px; height:17px; flex:none}
+
+footer{background:var(--surface-alt); border-top:1px solid var(--border); padding-block:56px 36px; margin-top:30px}
+.cheat-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:30px clamp(18px,4vw,36px); box-shadow:var(--shadow-md)}
+.cheat-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-block:20px}
+.cheat-item{padding:16px 18px; border-radius:var(--radius-sm); border-inline-start:4px solid var(--tone,var(--interrog)); background:var(--bg-soft)}
+.cheat-item b{display:block; font-family:var(--font-mono); direction:ltr; font-size:1rem; margin-bottom:4px; color:var(--tone,var(--interrog))}
+.cheat-item span{font-size:.86rem; color:var(--ink-soft)}
+footer .foot-bottom{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:30px; padding-top:20px; border-top:1px solid var(--border); color:var(--ink-faint); font-size:.82rem}
+
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .path-wrap{max-width:420px; margin-inline:auto; width:100%}
+  .flip-grid{grid-template-columns:1fr 1fr}
+  .cheat-grid{grid-template-columns:1fr}
+  .flow-grid{grid-template-columns:1fr !important}
+}
+@media (max-width:640px){
+  .brand span{display:none}
+  .navlinks{gap:2px}
+  .navlink{padding:8px 10px; font-size:.78rem}
+  .nav-tools .search-box.open{width:140px}
+  .hero{padding-block:32px 20px}
+  .hero-stats{gap:18px}
+  .ex-ar,.ex-note{margin-inline-start:0; margin-top:8px}
+  .ex-top{flex-wrap:wrap}
+  #speechBar{padding:8px 12px; gap:8px}
+  #speechBar .now-playing{max-width:100px}
+  .cheat-grid{grid-template-columns:1fr}
+  .toggle-switch button{padding:7px 12px; font-size:.74rem}
+  .flip-grid{grid-template-columns:1fr}
+  table.cmp{min-width:520px}
+}
+@media (min-width:1400px){ .container{max-width:1280px} }
+
+@media print{
+  .topnav,#speechBar,.fab-stack,#achToastHost,#readProgress,.practice-panel,.hero-actions,.skip-link,.no-print{display:none !important}
+  body{background:#fff; color:#000}
+  .section{padding-block:18px; break-inside:avoid}
+  .ex-card,.rule-box,.cheat-card{box-shadow:none; border:1px solid #ccc}
+  a{text-decoration:none; color:#000}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطَّ إلى المحتوى الرئيسي</a>
+
+<div id="readProgress" role="progressbar" aria-label="نسبة التقدّم في قراءة الدرس" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+<header class="topnav">
+  <div class="container topnav-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="15" stroke="var(--path)" stroke-width="2.4" fill="none"/>
+        <circle cx="20" cy="20" r="3" fill="var(--ink)"/>
+        <path d="M20 7 L23 17 L20 20 L17 17 Z" fill="var(--interrog)"/>
+        <circle cx="33" cy="20" r="2.6" fill="var(--wasfuer)"/>
+        <circle cx="20" cy="33" r="2.6" fill="var(--relativ)"/>
+        <circle cx="7" cy="20" r="2.6" fill="var(--indefinit)"/>
+        <circle cx="28.5" cy="28.5" r="2.6" fill="var(--ausruf)"/>
+      </svg>
+      <span>بوصلة welch- الألمانية</span>
+    </div>
+    <nav class="navlinks" id="navlinks" aria-label="التنقّل بين أقسام الدرس">
+      <a href="#overview" class="navlink" data-nav="overview"><span class="dot"></span>نظرة عامة</a>
+      <a href="#interrogativ" class="navlink" data-nav="interrogativ"><span class="dot"></span>الاستفهام</a>
+      <a href="#wasfuerein" class="navlink" data-nav="wasfuerein"><span class="dot"></span>welcher / was für ein</a>
+      <a href="#indefinit" class="navlink" data-nav="indefinit"><span class="dot"></span>التنكير</a>
+      <a href="#relativ" class="navlink" data-nav="relativ"><span class="dot"></span>الوصل</a>
+      <a href="#ausruf" class="navlink" data-nav="ausruf"><span class="dot"></span>التعجب</a>
+      <a href="#vocabulary" class="navlink" data-nav="vocabulary"><span class="dot"></span>مفردات</a>
+      <a href="#compare" class="navlink" data-nav="compare"><span class="dot"></span>المراجعة</a>
+      <a href="#quiz" class="navlink" data-nav="quiz"><span class="dot"></span>الاختبار</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="search-wrap">
+        <div class="search-box" id="searchBox">
+          <button class="icon-btn" id="searchToggle" style="width:auto;height:auto;background:none;border:none" aria-label="بحث داخل الدرس" title="بحث">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </button>
+          <input type="text" id="searchInput" placeholder="ابحث في الدرس…" aria-label="نص البحث">
+        </div>
+      </div>
+      <button class="icon-btn" id="fullscreenBtn" aria-label="وضع ملء الشاشة" title="ملء الشاشة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      </button>
+      <div class="theme-switch" role="group" aria-label="اختيار المظهر: فاتح، داكن، أو النظام">
+        <button type="button" id="themeLight" title="فاتح" aria-label="المظهر الفاتح"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg></button>
+        <button type="button" id="themeDark" title="داكن" aria-label="المظهر الداكن"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button>
+        <button type="button" id="themeSystem" title="النظام" aria-label="حسب إعدادات النظام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+      <circle cx="1000" cy="80" r="260" fill="var(--interrog)" opacity="0.05"/>
+      <circle cx="120" cy="420" r="220" fill="var(--relativ)" opacity="0.05"/>
+    </svg>
+  </div>
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-eyebrow">📘 درس شامل — أداة welch- بكل استخداماتها</span>
+      <h1>أداة <span class="de a-interrog">welch-</span>: welcher · welche · welches</h1>
+      <p class="hero-sub">كلمة ألمانية واحدة، خمس وظائف نحوية مختلفة: تسأل بها ("أيّ")، وتصل بها جملة بجملة، وتُنكّر بها اسمًا ("بعض")، وتتعجّب بها ("يا له من...!"). في هذا الدرس تتعلّم كل وظيفة بجدول تصريفها الكامل، وأمثلتها الصوتية، وأخطائها الشائعة لدى الناطقين بالعربية.</p>
+      <div class="hero-actions">
+        <a href="#overview" class="btn btn-primary">ابدأ الدرس ↓</a>
+        <button class="btn btn-ghost" id="heroSpeakDemo">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>
+          استمع لمثال
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>5</b><span>وظائف نحوية لأداة واحدة</span></div>
+        <div class="hero-stat"><b>+30</b><span>مثال صوتي تطبيقي</span></div>
+        <div class="hero-stat"><b>5</b><span>جداول تصريف + اختبار ختامي</span></div>
+      </div>
+    </div>
+
+    <div class="path-wrap reveal">
+      <div class="path-card">
+        <div class="legend-row" style="margin-top:0">
+          <span><i style="background:var(--interrog)"></i>استفهام</span>
+          <span><i style="background:var(--wasfuer)"></i>was für ein</span>
+          <span><i style="background:var(--relativ)"></i>وصل</span>
+          <span><i style="background:var(--indefinit)"></i>تنكير</span>
+          <span><i style="background:var(--ausruf)"></i>تعجب</span>
+        </div>
+        <div class="compass-row">
+          <svg viewBox="0 0 400 260" aria-hidden="true">
+            <circle cx="200" cy="130" r="95" fill="none" stroke="var(--path)" stroke-width="2" stroke-dasharray="2 8"/>
+            <circle cx="200" cy="130" r="60" fill="none" stroke="var(--border)" stroke-width="1.5"/>
+            <line x1="200" y1="35" x2="200" y2="225" stroke="var(--border)" stroke-width="1"/>
+            <line x1="105" y1="130" x2="295" y2="130" stroke="var(--border)" stroke-width="1"/>
+            <circle cx="200" cy="130" r="7" fill="var(--ink)"/>
+            <g>
+              <path d="M200 130 L200 45" stroke="var(--interrog)" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="200" cy="45" r="15" fill="var(--interrog-soft)" stroke="var(--interrog)" stroke-width="2"/>
+              <text x="200" y="49" text-anchor="middle" font-size="11" font-weight="700" fill="var(--interrog-ink)" font-family="IBM Plex Mono, monospace">?</text>
+            </g>
+            <g>
+              <path d="M200 130 L275 175" stroke="var(--wasfuer)" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="285" cy="181" r="15" fill="var(--wasfuer-soft)" stroke="var(--wasfuer)" stroke-width="2"/>
+              <text x="285" y="185" text-anchor="middle" font-size="10" font-weight="700" fill="var(--wasfuer-ink)" font-family="IBM Plex Mono, monospace">Art</text>
+            </g>
+            <g>
+              <path d="M200 130 L200 215" stroke="var(--relativ)" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="200" cy="225" r="15" fill="var(--relativ-soft)" stroke="var(--relativ)" stroke-width="2"/>
+              <text x="200" y="229" text-anchor="middle" font-size="10" font-weight="700" fill="var(--relativ-ink)" font-family="IBM Plex Mono, monospace">,</text>
+            </g>
+            <g>
+              <path d="M200 130 L120 85" stroke="var(--indefinit)" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="110" cy="79" r="15" fill="var(--indefinit-soft)" stroke="var(--indefinit)" stroke-width="2"/>
+              <text x="110" y="83" text-anchor="middle" font-size="10" font-weight="700" fill="var(--indefinit-ink)" font-family="IBM Plex Mono, monospace">∃</text>
+            </g>
+            <g>
+              <path d="M200 130 L120 178" stroke="var(--ausruf)" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="110" cy="184" r="15" fill="var(--ausruf-soft)" stroke="var(--ausruf)" stroke-width="2"/>
+              <text x="110" y="189" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ausruf-ink)" font-family="IBM Plex Mono, monospace">!</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="overview">
+  <div class="container">
+    <div class="novoice-banner" id="novoiceBanner" role="status">
+      <span>🔇</span>
+      <span>لا يتوفّر حاليًا أي صوت ألماني في هذا المتصفح. الدرس يعمل بشكل كامل بدون صوت — جرّب متصفحًا آخر (مثل Chrome أو Edge) أو ثبّت حزمة صوت ألمانية في نظام التشغيل للاستماع إلى الأمثلة.</span>
+    </div>
+    <div class="section-head reveal">
+      <span class="kicker">Überblick · نظرة عامة</span>
+      <h2>كلمة واحدة، خمس بوابات نحوية</h2>
+      <p class="section-desc">عندما تسمع <span class="de">welch-</span> في جملة ألمانية، فأول ما عليك فعله هو تحديد أي "بوابة" من الخمس تستخدمها الآن — لأنّ القاعدة والتصريف يختلفان قليلًا من وظيفة لأخرى. هذا الجدول هو خريطتك السريعة لكل الدرس.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>الوظيفة</th><th>الاسم النحوي</th><th>القاعدة الأساسية</th><th>المعنى / الاستخدام</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="de-cell" style="color:var(--interrog)">welcher?</td>
+            <td>ضمير/أداة استفهام <br><span style="color:var(--ink-faint); font-size:.82rem">(Interrogativpronomen)</span></td>
+            <td>تُصرَّف مثل <b class="de">der/die/das</b>، وتسأل عن اختيار من مجموعة معروفة</td>
+            <td>أيّ...؟ / أيّهم؟</td>
+          </tr>
+          <tr>
+            <td class="de-cell" style="color:var(--relativ)">welcher, welchen…</td>
+            <td>ضمير وصل رسمي <br><span style="color:var(--ink-faint); font-size:.82rem">(Relativpronomen) — بديل لـ der/die/das</span></td>
+            <td>يبدأ جملة وصل في الأسلوب الرسمي/الكتابي، <b>بلا صيغة إضافة (Genitiv)</b></td>
+            <td>الذي / التي / الذين</td>
+          </tr>
+          <tr>
+            <td class="de-cell" style="color:var(--indefinit)">welche(r/s)</td>
+            <td>ضمير تنكير <br><span style="color:var(--ink-faint); font-size:.82rem">(Indefinitpronomen) — عامّي، بلا اسم بعده</span></td>
+            <td>يحلّ محلّ اسم مذكور سابقًا، وغالبًا في حالتي Nominativ وAkkusativ فقط</td>
+            <td>بعض / قليل من / منه(ا)</td>
+          </tr>
+          <tr>
+            <td class="de-cell" style="color:var(--ausruf)">welch (ein…)!</td>
+            <td>أداة تعجب <br><span style="color:var(--ink-faint); font-size:.82rem">(Ausrufewort) — أسلوب أدبي مرتفع</span></td>
+            <td>تبقى أحيانًا <b>بلا تصريف</b> قبل ein/eine أو صفة</td>
+            <td>يا له من...! / يا لها من...!</td>
+          </tr>
+          <tr>
+            <td class="de-cell" style="color:var(--wasfuer)">was für ein…?</td>
+            <td>ليست welch- بل عبارة موازية <br><span style="color:var(--ink-faint); font-size:.82rem">(يُقارَن بها كثيرًا)</span></td>
+            <td>تسأل عن <b>النوع/الصنف</b> لا عن اختيار من مجموعة محددة</td>
+            <td>أيّ نوع من...؟</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule-box tone-interrog reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></div>
+      <div>
+        <h3>السؤال الذي يحلّ 90٪ من التمارين</h3>
+        <p>اسأل نفسك: <b>"هل أنا أطرح سؤالًا عن اختيار من مجموعة معروفة، أم أصل جملتين، أم أعني «بعض»، أم أتعجّب؟"</b> فور تحديد الوظيفة، ستعرف تلقائيًا أي جدول تصريف من هذا الدرس تطبّق عليه، لأنّ لكل وظيفة قواعدها الخاصة رغم أنّ الشكل الظاهري للكلمة متشابه.</p>
+      </div>
+    </div>
+
+    <div class="rule-box tone-wasfuer reveal">
+      <div class="icon">🔊</div>
+      <div>
+        <h3>ملاحظة نطق سريعة</h3>
+        <p><span class="de">welch-</span> تُنطق <span class="de" style="font-family:var(--font-mono)">[vɛlç]</span> — الحرفان <span class="de" style="font-family:var(--font-mono)">ch</span> في نهايتها يُنطقان بصوت "الإخ الليّن" (Ich-Laut)، وهو نفس صوت <span class="de">ch</span> في كلمة <span class="de">ich</span>، وليس صوت الخاء الحلقي. اضغط على زر السماع بجانب أي مثال لتتأكد من النطق.</p>
+      </div>
+    </div>
+
+    <div class="voice-panel reveal" id="voicePanel">
+      <div class="voice-panel-head">
+        <div class="badge-icon" style="width:38px;height:38px;border-radius:12px;background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;flex:none">🎙️</div>
+        <div>
+          <h3>اختر صوتك الألماني وجرّبه قبل أن تقرر</h3>
+          <p>هذه الأصوات الألمانية المتاحة فعليًا الآن في متصفحك وجهازك — لا نفترض وجود أي صوت غير موجود فعلًا. اضغط <b>«اختبار 🔊»</b> بجانب أي صوت لسماع الجملة نفسها بكل صوت والمقارنة بينها، ثم انقر على الصوت لتحديده كصوت افتراضي لبقية الدرس.</p>
+        </div>
+      </div>
+      <div class="voice-list" id="voiceList" role="radiogroup" aria-label="اختيار الصوت الألماني">
+        <p class="voice-loading" id="voiceLoading">⏳ جارٍ البحث عن الأصوات الألمانية المتاحة في متصفحك…</p>
+      </div>
+      <div class="voice-panel-foot">
+        <span class="speed-label">سرعة النطق</span>
+        <div class="speed-chips" id="speedChips" role="group" aria-label="اختيار سرعة النطق">
+          <button type="button" class="speed-chip" data-rate="0.5">0.5x</button>
+          <button type="button" class="speed-chip" data-rate="0.75">0.75x</button>
+          <button type="button" class="speed-chip on" data-rate="1">1x</button>
+          <button type="button" class="speed-chip" data-rate="1.25">1.25x</button>
+          <button type="button" class="speed-chip" data-rate="1.5">1.5x</button>
+          <button type="button" class="speed-chip" data-rate="2">2x</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== INTERROGATIV ==================== -->
+<section class="section tone-interrog" id="interrogativ">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-interrog">Interrogativpronomen · ضمير/أداة استفهام</span>
+      <span class="kicker" style="margin-top:14px">01 / welcher als Frage</span>
+      <h2><span class="de">welcher, welche, welches</span> — أيّ...؟ (الوظيفة الأساسية)</h2>
+      <p class="section-desc">هذه هي الوظيفة الأشيع لـ <span class="de">welch-</span>: تسأل بها عن <b>اختيار محدّد من مجموعة معروفة أو محدودة</b> — على عكس "ما نوعه؟" العامة. تتصرّف الكلمة تمامًا مثل الأداة <span class="de">dieser</span> ("هذا")، أي أنها تأخذ نفس نهايات أداة التعريف <span class="de">der/die/das</span>.</p>
+    </div>
+
+    <div class="rule-box tone-interrog reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M15 5l7 7-7 7"/></svg></div>
+      <div>
+        <h3>استخدامان: مصاحِبة لاسم، أو بديلة عنه</h3>
+        <p><b>١) استخدام مصاحب (adjektivisch):</b> تسبق اسمًا مباشرة وتتفق معه في الجنس والحالة والعدد — <span class="de">Welcher Zug…?</span> <br><b>٢) استخدام مستقل (pronominal):</b> تقف وحدها لتحلّ محلّ اسم ذُكر سابقًا — <span class="de">Ich habe zwei Jacken. Welche gefällt dir?</span></p>
+      </div>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp decl">
+        <thead><tr><th>الحالة (Kasus)</th><th class="de-cell">Maskulin</th><th class="de-cell">Feminin</th><th class="de-cell">Neutrum</th><th class="de-cell">Plural</th></tr></thead>
+        <tbody>
+          <tr><td class="case-label">Nominativ — من؟ ما؟</td><td class="de-cell">welcher</td><td class="de-cell">welche</td><td class="de-cell">welches</td><td class="de-cell">welche</td></tr>
+          <tr><td class="case-label">Akkusativ — من؟ ماذا؟</td><td class="de-cell">welchen</td><td class="de-cell">welche</td><td class="de-cell">welches</td><td class="de-cell">welche</td></tr>
+          <tr><td class="case-label">Dativ — لمن؟</td><td class="de-cell">welchem</td><td class="de-cell">welcher</td><td class="de-cell">welchem</td><td class="de-cell">welchen</td></tr>
+          <tr><td class="case-label">Genitiv — لمن ملكًا؟</td><td class="de-cell rare">welches*</td><td class="de-cell rare">welcher*</td><td class="de-cell rare">welches*</td><td class="de-cell rare">welcher*</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="section-desc" style="font-size:.9rem; color:var(--ink-faint)">* صيغة الإضافة (Genitiv) لأداة الاستفهام welch- نادرة جدًا في الألمانية الحديثة، وتكاد تكون غائبة من اللغة المحكية. للسؤال عن المُلكية يُفضَّل استخدام <span class="de" style="font-weight:700">wessen؟</span> ("لمن؟") بدلًا منها — راجع بطاقات المفردات في نهاية الدرس.</p>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">1</span>
+          <p class="ex-de" lang="de"><span class="w"><span class="hl">Welcher</span> Zug</span> <span class="w">fährt</span> <span class="w">nach Berlin?</span></p>
+          <button class="speak-btn" data-speak="Welcher Zug fährt nach Berlin?" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أيّ قطار يذهب إلى برلين؟</p>
+        <p class="ex-note">Nominativ · مذكّر (der Zug) — استخدام مصاحب لاسم.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">2</span>
+          <p class="ex-de" lang="de"><span class="w"><span class="hl">Welche</span> Farbe</span> <span class="w">gefällt</span> <span class="w">dir</span> <span class="w">am besten?</span></p>
+          <button class="speak-btn" data-speak="Welche Farbe gefällt dir am besten?" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أيّ لون يعجبك أكثر؟</p>
+        <p class="ex-note">Nominativ · مؤنّث (die Farbe).</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">3</span>
+          <p class="ex-de" lang="de"><span class="w"><span class="hl">Welches</span> Hemd</span> <span class="w">ziehst</span> <span class="w">du</span> <span class="w">heute an?</span></p>
+          <button class="speak-btn" data-speak="Welches Hemd ziehst du heute an?" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أيّ قميص سترتديه اليوم؟</p>
+        <p class="ex-note">Nominativ · محايد (das Hemd).</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">4</span>
+          <p class="ex-de" lang="de"><span class="w"><span class="hl">Welchen</span> Film</span> <span class="w">hast</span> <span class="w">du</span> <span class="w">gestern gesehen?</span></p>
+          <button class="speak-btn" data-speak="Welchen Film hast du gestern gesehen?" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أيّ فيلم شاهدت أمس؟</p>
+        <p class="ex-note">Akkusativ · مذكّر (den Film) — لاحظ النهاية <span class="de" style="font-weight:700">-en</span>.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">5</span>
+          <p class="ex-de" lang="de"><span class="w">Mit <span class="hl">welcher</span> Freundin</span> <span class="w">gehst</span> <span class="w">du</span> <span class="w">ins Kino?</span></p>
+          <button class="speak-btn" data-speak="Mit welcher Freundin gehst du ins Kino?" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">مع أيّ صديقة ستذهبين إلى السينما؟</p>
+        <p class="ex-note">Dativ · مؤنّث (der Freundin) — بعد حرف الجر mit الذي يفرض Dativ دائمًا.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">6</span>
+          <p class="ex-de" lang="de"><span class="w">Ich habe drei Jacken.</span> <span class="w"><span class="hl">Welche</span></span> <span class="w">gefällt</span> <span class="w">dir?</span></p>
+          <button class="speak-btn" data-speak="Ich habe drei Jacken. Welche gefällt dir?" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">لديّ ثلاث سترات. أيّها يعجبك؟</p>
+        <p class="ex-note">استخدام مستقل (pronominal) — welche هنا تحل محلّ die Jacken، بلا اسم بعدها.</p>
+      </div>
+    </div>
+
+    <div class="mistake-box reveal">
+      <h4>⚠️ الخطأ الأكثر شيوعًا لدى الناطقين بالعربية</h4>
+      <div class="mrow bad"><span class="mark">✗</span><span lang="de">Welche Film hast du gesehen?</span></div>
+      <div class="mrow good"><span class="mark">✓</span><span lang="de">Welchen Film hast du gesehen?</span></div>
+      <p class="mnote">العربية لا تُصرِّف أداة السؤال "أيّ" حسب موقعها في الجملة، لذلك يميل المتعلّم لاستخدام صيغة واحدة ثابتة. لكن الألمانية تفرض تطابقًا كاملًا في الجنس والحالة: <span class="de">Film</span> اسم مذكّر وهو مفعول به مباشر (Akkusativ)، لذا تجب النهاية <span class="de" style="font-weight:700">-en</span>.</p>
+    </div>
+
+    <details class="more reveal">
+      <summary>ماذا لو كان اسم الجمع في الحالة نفسها لكل الأجناس؟ 🔧</summary>
+      <div class="more-body">
+        <p>لاحظ في الجدول أعلاه أن صيغة الجمع (Plural) لا تفرّق بين المذكّر والمؤنّث والمحايد إطلاقًا — تمامًا مثل أداة التعريف <span class="de">die</span> التي تُستخدم للجمع بصرف النظر عن جنس المفرد. لذلك تكفيك أربع حالات فقط (Nominativ, Akkusativ, Dativ, Genitiv) لضبط صيغة الجمع، بدل أربع عشرة صيغة.</p>
+      </div>
+    </details>
+
+    <div class="practice-panel reveal">
+      <div class="practice-head">
+        <div class="badge-icon">🧩</div>
+        <div><h3>تمرين: رتّب سؤال welch- الصحيح</h3><p>انقر على الكلمات بالترتيب الصحيح لتكوين سؤال بصيغة Akkusativ مذكّر.</p></div>
+      </div>
+      <div class="builder-target" id="interrogTarget" aria-live="polite"></div>
+      <div class="builder-bank" id="interrogBank"></div>
+      <div class="builder-actions">
+        <button class="btn btn-primary btn-sm" data-builder-check="interrog">تحقّق ✓</button>
+        <button class="btn btn-ghost btn-sm" data-builder-reset="interrog">إعادة ترتيب 🔀</button>
+        <span class="builder-feedback" id="interrogFeedback"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WELCHER vs WAS FÜR EIN ==================== -->
+<section class="section tone-wasfuer" id="wasfuerein">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-wasfuer">Vergleich · مقارنة أساسية</span>
+      <span class="kicker" style="margin-top:14px">02 / welcher vs. was für ein</span>
+      <h2><span class="de">welcher</span> مقابل <span class="de">was für ein</span> — الاختيار مقابل النوع</h2>
+      <p class="section-desc">هذا أكثر خلط يقع فيه متعلّمو الألمانية بلا استثناء: كلا التعبيرين يُترجَمان أحيانًا بـ"أيّ" في العربية، لكنهما يسألان عن شيئين مختلفين تمامًا.</p>
+    </div>
+
+    <div class="rule-box tone-wasfuer reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 1 1 4 2.8c-.6.3-1 .9-1 1.7v.5M12 17h.01"/></svg></div>
+      <div>
+        <h3>القاعدة الفاصلة</h3>
+        <p><b class="de" style="color:var(--interrog)">welcher</b> = اختر لي واحدًا من مجموعة معروفة أو محدودة (تُصرَّف مثل der/die/das). <br><b class="de" style="color:var(--wasfuer)">was für ein</b> = أخبرني عن النوع أو الصنف أو الخصائص من مجموعة مفتوحة غير محدّدة (يُصرَّف فيها "ein" فقط مثل أداة النكرة، أما "was für" فتبقى ثابتة بلا تغيير).</p>
+      </div>
+    </div>
+
+    <div class="compare-widget reveal" id="compareToggleWidget">
+      <div class="compare-head">
+        <h3>🎛️ جرّب بنفسك: بدّل السياق وشاهد الفرق</h3>
+        <div class="toggle-switch">
+          <button id="btnModeWelcher" class="on" type="button">welcher</button>
+          <button id="btnModeWasfuer" type="button">was für ein</button>
+        </div>
+      </div>
+      <div class="compare-stage">
+        <div class="compare-sentence" id="compareSentence">
+          <span class="slot s-main">Ich möchte ein Eis.</span><span class="slot s-conn" style="background:var(--interrog); color:#fff">Welches</span><span class="slot s-mid">nimmst du — Schoko oder Vanille?</span>
+        </div>
+      </div>
+      <p class="compare-caption" id="compareCaption">هناك نكهتان معروضتان أمامك بالفعل (شوكولاتة أو فانيلا) — أنت تختار من بينهما، لذلك نستخدم welches.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>المعيار</th><th class="de-cell" style="color:var(--interrog)">welcher / welche / welches</th><th class="de-cell" style="color:var(--wasfuer)">was für ein / eine / einen</th></tr></thead>
+        <tbody>
+          <tr><td>يسأل عن</td><td>اختيار محدّد من مجموعة معروفة</td><td>النوع، الصنف، أو الصفة العامة</td></tr>
+          <tr><td>نمط التصريف</td><td>مثل أداة التعريف <span class="de">der/die/das</span></td><td><span class="de">was für</span> ثابتة، و<span class="de">ein</span> وحدها تتصرّف مثل أداة النكرة</td></tr>
+          <tr><td>في صيغة الجمع</td><td class="de-cell">welche (بلا تغيير)</td><td class="de-cell">was für + اسم (بلا ein)</td></tr>
+          <tr><td>مثال</td><td class="de-cell">Welches Auto — das rote oder das blaue?</td><td class="de-cell">Was für ein Auto hast du? – Einen BMW.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">7</span>
+          <p class="ex-de" lang="de"><span class="w"><span class="hl">Was für ein</span> Auto</span> <span class="w">fährst</span> <span class="w">du?</span></p>
+          <button class="speak-btn" data-speak="Was für ein Auto fährst du?" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أيّ نوع من السيارات تقود؟</p>
+        <p class="ex-note">سؤال عن النوع/الماركة بشكل عام، لا اختيار من قائمة معروضة.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">8</span>
+          <p class="ex-de" lang="de"><span class="w"><span class="hl">Welches</span> Auto</span> <span class="w">hast</span> <span class="w">du genommen —</span> <span class="w">das rote</span> <span class="w">oder das blaue?</span></p>
+          <button class="speak-btn" data-speak="Welches Auto hast du genommen, das rote oder das blaue?" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أيّ سيارة أخذت — الحمراء أم الزرقاء؟</p>
+        <p class="ex-note">خياران معروفان ومحدّدان بالفعل ⇐ welches.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">9</span>
+          <p class="ex-de" lang="de"><span class="w"><span class="hl">Was für</span> Bücher</span> <span class="w">liest</span> <span class="w">du</span> <span class="w">gern?</span></p>
+          <button class="speak-btn" data-speak="Was für Bücher liest du gern?" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أيّ نوع من الكتب تحب قراءته؟</p>
+        <p class="ex-note">صيغة الجمع: تسقط "ein" تمامًا لأن أداة النكرة ليس لها جمع.</p>
+      </div>
+    </div>
+
+    <div class="mistake-box reveal">
+      <h4>⚠️ خطأ شائع: استخدام welch- للسؤال عن النوع</h4>
+      <div class="mrow bad"><span class="mark">✗</span><span lang="de">Welches Auto hast du? (ohne bekannte Auswahl)</span></div>
+      <div class="mrow good"><span class="mark">✓</span><span lang="de">Was für ein Auto hast du?</span></div>
+      <p class="mnote">إن لم يكن هناك خياران معروضان أمام السامع بالفعل، فالسؤال عن "أيّ نوع" لا عن "أيّ واحد" — والأداة الصحيحة هنا هي was für ein وليست welches.</p>
+    </div>
+
+    <details class="more reveal">
+      <summary>هل يمكن الجمع بين الأداتين؟ 🔧</summary>
+      <div class="more-body">
+        <p>نعم، في الحوار الشفهي أحيانًا يُستخدم الشكل المدمج للردّ على "was für ein" دون تكرار الاسم: <span class="de">Ich möchte Schuhe kaufen. – Und was für welche möchten Sie?</span> ("وأيّ نوع منها تريدين؟") — هنا حلّت welche محلّ الاسم Schuhe داخل عبارة was für، وهذا استخدام متقدّم يظهر غالبًا في اللغة المحكية اليومية.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ==================== INDEFINIT ==================== -->
+<section class="section tone-indefinit" id="indefinit">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-indefinit">Indefinitpronomen · ضمير تنكير — عامّي</span>
+      <span class="kicker" style="margin-top:14px">03 / welche als "بعض"</span>
+      <h2><span class="de">welche(r/s)</span> — بمعنى "بعض / قليل من" في الحديث اليومي</h2>
+      <p class="section-desc">في هذه الوظيفة، لا علاقة لـ <span class="de">welch-</span> بالسؤال إطلاقًا! إنها تحلّ محلّ اسم مذكور سابقًا لتعني <b>"بعض منه" أو "قليل منه"</b>، تمامًا مثل <span class="de">etwas</span> أو <span class="de">einige</span>. هذا الاستخدام عامّي (Umgangssprache) وشائع جدًا في الحوار اليومي، لكنه نادرًا ما يُذكر في كتب النحو الأساسية.</p>
+    </div>
+
+    <div class="rule-box tone-indefinit reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg></div>
+      <div>
+        <h3>القاعدة النحوية</h3>
+        <p>تُستخدم <b>وحدها فقط</b> — بلا اسم بعدها أبدًا — لتستبدل اسمًا سبق ذكره في السؤال. في المفرد لا تُستخدم إلا للأشياء (وليس للأشخاص)، بينما صيغة الجمع <span class="de">welche</span> تصلح للأشياء والأشخاص معًا. ويُفضَّل عمليًا الاقتصار على حالتي <b>Nominativ وAkkusativ</b>؛ استخدامها في Dativ وGenitiv وارد نحويًا لكنه يُعتبر ركيكًا ويُتجنَّب حتى في الحديث اليومي.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp decl">
+        <thead><tr><th>الحالة</th><th class="de-cell">مذكّر (مثل: Käse)</th><th class="de-cell">مؤنّث (مثل: Milch)</th><th class="de-cell">محايد (مثل: Brot)</th><th class="de-cell">جمع (أشياء أو أشخاص)</th></tr></thead>
+        <tbody>
+          <tr><td class="case-label">Nominativ</td><td class="de-cell">welcher</td><td class="de-cell">welche</td><td class="de-cell">welches</td><td class="de-cell">welche</td></tr>
+          <tr><td class="case-label">Akkusativ</td><td class="de-cell">welchen</td><td class="de-cell">welche</td><td class="de-cell">welches</td><td class="de-cell">welche</td></tr>
+          <tr><td class="case-label">Dativ</td><td class="de-cell rare">welchem*</td><td class="de-cell rare">welcher*</td><td class="de-cell rare">welchem*</td><td class="de-cell rare">welchen*</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="section-desc" style="font-size:.9rem; color:var(--ink-faint)">* صيغ Dativ (وGenitiv الغائبة تمامًا هنا) تُعتبر غير مستحسنة أسلوبيًا في هذه الوظيفة تحديدًا؛ اقتصر على Nominativ وAkkusativ.</p>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">10</span>
+          <p class="ex-de" lang="de"><span class="w">Ist noch Käse da?</span> <span class="w">— Ja,</span> <span class="w">im Kühlschrank</span> <span class="w">müsste noch</span> <span class="w"><span class="hl">welcher</span></span> <span class="w">sein.</span></p>
+          <button class="speak-btn" data-speak="Ist noch Käse da? Im Kühlschrank müsste noch welcher sein." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">هل بقي جبن؟ — نعم، لا بد أن يكون هناك بعضٌ منه في الثلاجة.</p>
+        <p class="ex-note">welcher تحلّ محلّ der Käse (مذكّر، Nominativ).</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">11</span>
+          <p class="ex-de" lang="de"><span class="w">Brauchst du</span> <span class="w">noch Milch?</span> <span class="w">— Nein danke,</span> <span class="w">ich habe noch</span> <span class="w"><span class="hl">welche.</span></span></p>
+          <button class="speak-btn" data-speak="Brauchst du noch Milch? Nein danke, ich habe noch welche." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أتحتاج حليبًا؟ — لا شكرًا، لا يزال لديّ بعضٌ منه.</p>
+        <p class="ex-note">welche تحلّ محلّ die Milch (مؤنّث، Akkusativ).</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">12</span>
+          <p class="ex-de" lang="de"><span class="w">Hast du</span> <span class="w">Geschwister?</span> <span class="w">— Ja,</span> <span class="w">ich habe</span> <span class="w"><span class="hl">welche.</span></span></p>
+          <button class="speak-btn" data-speak="Hast du Geschwister? Ja, ich habe welche." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">هل لديك إخوة؟ — نعم، لديّ بعض منهم.</p>
+        <p class="ex-note">هنا welche للجمع، وتشير إلى أشخاص (Geschwister) لا أشياء — وهذا مسموح في صيغة الجمع فقط.</p>
+      </div>
+    </div>
+
+    <div class="practice-panel reveal">
+      <div class="practice-head">
+        <div class="badge-icon">💬</div>
+        <div><h3>تمرين: أكمل الردّ الصحيح</h3><p>اقرأ السؤال، ثم رتّب كلمات الإجابة باستخدام welche بمعنى "بعض منه".</p></div>
+      </div>
+      <div class="practice-context" lang="de">Gibt es Cafés hier in der Nähe?</div>
+      <div class="builder-target" id="indefinitTarget" aria-live="polite"></div>
+      <div class="builder-bank" id="indefinitBank"></div>
+      <div class="builder-actions">
+        <button class="btn btn-primary btn-sm" data-builder-check="indefinit">تحقّق ✓</button>
+        <button class="btn btn-ghost btn-sm" data-builder-reset="indefinit">إعادة ترتيب 🔀</button>
+        <span class="builder-feedback" id="indefinitFeedback"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== RELATIV ==================== -->
+<section class="section tone-relativ" id="relativ">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-relativ">Relativpronomen · ضمير وصل رسمي</span>
+      <span class="kicker" style="margin-top:14px">04 / welcher als Relativpronomen</span>
+      <h2><span class="de">welcher, welche, welches</span> — بديل رسمي لـ der/die/das</h2>
+      <p class="section-desc">يمكن لـ <span class="de">welch-</span> أن تبدأ جملة وصل (Relativsatz) بدلًا من <span class="de">der/die/das</span> — لكن هذا الاستخدام <b>رسمي وكتابي</b>، ويكاد يختفي من اللغة المحكية اليومية. يظهر غالبًا في النصوص الصحفية أو القانونية أو الأدبية، وأحيانًا لتفادي تكرار "der" مرتين متتاليتين في الجملة نفسها.</p>
+    </div>
+
+    <div class="rule-box tone-relativ reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M15 5l7 7-7 7"/></svg></div>
+      <div>
+        <h3>القاعدة النحوية</h3>
+        <p>تأخذ welch- هنا جنس وعدد الاسم الذي تصفه (Bezugswort)، بينما تُحدَّد حالتها النحوية (Kasus) حسب دورها داخل جملة الوصل نفسها — تمامًا مثل der/die/das كضمير وصل. والفعل، كالعادة في أي جملة فرعية، ينتقل إلى النهاية.</p>
+      </div>
+    </div>
+
+    <div class="rule-box tone-relativ reveal" style="border-inline-start-color:var(--danger)">
+      <div class="icon" style="background:var(--danger-soft); color:var(--danger)">⚠️</div>
+      <div>
+        <h3>القاعدة الأهم: لا توجد صيغة إضافة (Genitiv) لـ welch- كضمير وصل!</h3>
+        <p>على عكس وظيفة الاستفهام، ضمير الوصل welch- <b>ليس له صيغة Genitiv إطلاقًا</b>. عندما تحتاج ضمير وصل بمعنى "الذي ملكيته..." أو "التي...ها"، يجب استخدام <span class="de" style="font-weight:700">dessen</span> (للمذكر والمحايد) أو <span class="de" style="font-weight:700">deren</span> (للمؤنث والجمع) — ولا بديل آخر عنهما.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp decl">
+        <thead><tr><th>الحالة</th><th class="de-cell">Maskulin</th><th class="de-cell">Feminin</th><th class="de-cell">Neutrum</th><th class="de-cell">Plural</th></tr></thead>
+        <tbody>
+          <tr><td class="case-label">Nominativ</td><td class="de-cell">welcher</td><td class="de-cell">welche</td><td class="de-cell">welches</td><td class="de-cell">welche</td></tr>
+          <tr><td class="case-label">Akkusativ</td><td class="de-cell">welchen</td><td class="de-cell">welche</td><td class="de-cell">welches</td><td class="de-cell">welche</td></tr>
+          <tr><td class="case-label">Dativ</td><td class="de-cell">welchem</td><td class="de-cell">welcher</td><td class="de-cell">welchem</td><td class="de-cell">welchen</td></tr>
+          <tr><td class="case-label">Genitiv</td><td class="de-cell" style="color:var(--danger); font-weight:800">dessen</td><td class="de-cell" style="color:var(--danger); font-weight:800">deren</td><td class="de-cell" style="color:var(--danger); font-weight:800">dessen</td><td class="de-cell" style="color:var(--danger); font-weight:800">deren</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">13</span>
+          <p class="ex-de" lang="de"><span class="w">Der Vertrag,</span> <span class="w"><span class="hl">welchen</span></span> <span class="w">wir</span> <span class="w">unterschrieben haben,</span> <span class="w">ist noch gültig.</span></p>
+          <button class="speak-btn" data-speak="Der Vertrag, welchen wir unterschrieben haben, ist noch gültig." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">العقد الذي وقّعناه لا يزال ساريًا.</p>
+        <p class="ex-note">= den wir unterschrieben haben (النمط اليومي الشائع).</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">14</span>
+          <p class="ex-de" lang="de"><span class="w">Die Firma,</span> <span class="w"><span class="hl">welche</span></span> <span class="w">das Projekt leitet,</span> <span class="w">sitzt in München.</span></p>
+          <button class="speak-btn" data-speak="Die Firma, welche das Projekt leitet, sitzt in München." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">الشركة التي تدير المشروع مقرها في ميونخ.</p>
+        <p class="ex-note">أسلوب صحفي/رسمي نموذجي — يتجنّب تكرار "die" مرتين.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">15</span>
+          <p class="ex-de" lang="de"><span class="w">Das Haus,</span> <span class="w"><span class="hl">welches</span></span> <span class="w">den Nachbarn gehört,</span> <span class="w">ist weiß.</span></p>
+          <button class="speak-btn" data-speak="Das Haus, welches den Nachbarn gehört, ist weiß." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">المنزل الذي يملكه الجيران أبيض اللون.</p>
+        <p class="ex-note">= das den Nachbarn gehört.</p>
+      </div>
+    </div>
+
+    <div class="mistake-box reveal">
+      <h4>⚠️ خطأ شائع: استخدام welch- بدلًا من dessen/deren</h4>
+      <div class="mrow bad"><span class="mark">✗</span><span lang="de">Der Mann, welches Auto kaputt ist, ruft an.</span></div>
+      <div class="mrow good"><span class="mark">✓</span><span lang="de">Der Mann, dessen Auto kaputt ist, ruft an.</span></div>
+      <p class="mnote">الجملة تعني "الرجل الذي سيارتـه معطّلة" — وهذه علاقة ملكية (Genitiv). بما أن welch- لا تملك صيغة Genitiv إطلاقًا، فاستخدامها هنا خطأ نحوي واضح؛ الصواب دائمًا dessen (لأن "الرجل" مذكّر).</p>
+    </div>
+
+    <details class="more reveal">
+      <summary>هل يُنصح باستخدام welch- كضمير وصل في حديثك اليومي؟ 🔧</summary>
+      <div class="more-body">
+        <p>لا. في الألمانية المحكية اليومية يُفضَّل دائمًا der/die/das لأنها أخفّ وأكثر طبيعية؛ استخدام welch- هنا قد يجعل حديثك يبدو متكلَّفًا أو رسميًا أكثر من اللازم. لكن معرفتها ضرورية لفهم النصوص الرسمية والصحفية والقانونية التي تستخدمها بكثرة لتفادي تكرار الكلمة نفسها. (ملاحظة: في الألمانية السويسرية الرسمية لا تزال هذه الصيغة شائعة الاستخدام حتى في الكتابة الأكاديمية.)</p>
+      </div>
+    </details>
+
+    <div class="practice-panel reveal">
+      <div class="practice-head">
+        <div class="badge-icon">📜</div>
+        <div><h3>تمرين: رتّب جملة الوصل الرسمية</h3><p>انقر على الكلمات بالترتيب الصحيح لتكوين جملة وصل بأسلوب رسمي.</p></div>
+      </div>
+      <div class="builder-target" id="relativTarget" aria-live="polite"></div>
+      <div class="builder-bank" id="relativBank"></div>
+      <div class="builder-actions">
+        <button class="btn btn-primary btn-sm" data-builder-check="relativ">تحقّق ✓</button>
+        <button class="btn btn-ghost btn-sm" data-builder-reset="relativ">إعادة ترتيب 🔀</button>
+        <span class="builder-feedback" id="relativFeedback"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AUSRUF ==================== -->
+<section class="section tone-ausruf" id="ausruf">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-ausruf">Ausrufewort · أداة تعجّب — أسلوب أدبي مرتفع</span>
+      <span class="kicker" style="margin-top:14px">05 / welch als Ausruf</span>
+      <h2><span class="de">Welch...!</span> — يا له من...! (صيغة التعجّب)</h2>
+      <p class="section-desc">تتحوّل welch- أحيانًا إلى أداة تعجّب تبدأ جملة بلا فعل رئيسي، معبّرة عن دهشة أو إعجاب قوي. لهذا الاستخدام صيغتان مختلفتان تمامًا في السلوك النحوي.</p>
+    </div>
+
+    <div class="rule-box tone-ausruf reveal">
+      <div class="icon">١</div>
+      <div>
+        <h3>الصيغة المُصرَّفة (الأكثر شيوعًا) — welche + اسم مباشرة</h3>
+        <p>هنا تتصرّف welch- بشكل طبيعي حسب جنس الاسم وحالته، تمامًا كما في الاستفهام، لكن بلا علامة استفهام وبنبرة تعجّب: <span class="de">Welche Freude!</span> / <span class="de">Welcher Zufall!</span></p>
+      </div>
+    </div>
+    <div class="rule-box tone-ausruf reveal">
+      <div class="icon">٢</div>
+      <div>
+        <h3>الصيغة الثابتة الأدبية — welch (بلا تصريف) + ein/eine أو صفة</h3>
+        <p>في الأسلوب الأدبي أو المرتفع، تبقى الكلمة <span class="de" style="font-weight:700">welch</span> نفسها بلا أي نهاية إطلاقًا، بينما يحمل ein/eine بعدها علامة الجنس بدلًا عنها: <span class="de">Welch ein Glück!</span> — وهذا مثال معياري موثّق في قواعد Duden نفسها. ويمكن أيضًا أن تسبق welch صفةً مباشرة بلا أداة نكرة: <span class="de">Welch schönes Wetter!</span></p>
+      </div>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>النمط</th><th class="de-cell">مثال</th><th>الترجمة</th></tr></thead>
+        <tbody>
+          <tr><td>مُصرَّفة + اسم مباشرة</td><td class="de-cell">Welche Freude!</td><td>يا لها من فرحة!</td></tr>
+          <tr><td>مُصرَّفة + اسم مباشرة</td><td class="de-cell">Welcher Zufall!</td><td>يا لها من صدفة!</td></tr>
+          <tr><td>ثابتة + ein/eine</td><td class="de-cell">Welch ein Glück!</td><td>يا له من حظ!</td></tr>
+          <tr><td>ثابتة + ein/eine</td><td class="de-cell">Welch eine Überraschung!</td><td>يا لها من مفاجأة!</td></tr>
+          <tr><td>ثابتة + صفة بلا أداة</td><td class="de-cell">Welch schönes Wetter!</td><td>يا له من طقس جميل!</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">16</span>
+          <p class="ex-de" lang="de"><span class="w"><span class="hl">Welch</span> ein Glück,</span> <span class="w">dass du</span> <span class="w">da bist!</span></p>
+          <button class="speak-btn" data-speak="Welch ein Glück, dass du da bist!" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">يا له من حظ أن تكون هنا!</p>
+        <p class="ex-note">welch بلا تصريف؛ ein تحمل التذكير بدلًا عنها.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">17</span>
+          <p class="ex-de" lang="de"><span class="w"><span class="hl">Welche</span></span> <span class="w">Freude,</span> <span class="w">euch alle</span> <span class="w">wiederzusehen!</span></p>
+          <button class="speak-btn" data-speak="Welche Freude, euch alle wiederzusehen!" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">يا لها من فرحة أن أراكم جميعًا مجددًا!</p>
+        <p class="ex-note">الصيغة المُصرَّفة، تتفق مع die Freude (مؤنّث).</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="ex-num">18</span>
+          <p class="ex-de" lang="de"><span class="w"><span class="hl">Welch</span> schönes Wetter</span> <span class="w">heute!</span></p>
+          <button class="speak-btn" data-speak="Welch schönes Wetter heute!" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">يا له من طقس جميل اليوم!</p>
+        <p class="ex-note">welch بلا تصريف + صفة (schönes) تأخذ نهاية قوية بلا أداة قبلها.</p>
+      </div>
+    </div>
+
+    <div class="rule-box tone-ausruf reveal">
+      <div class="icon">💬</div>
+      <div>
+        <h3>في الحديث اليومي</h3>
+        <p>هذا الاستخدام أدبي/مرتفع بامتياز؛ في الحديث العفوي اليومي يُفضَّل الألمان تعبيرات أبسط مثل <span class="de">Was für ein Glück!</span> أو ببساطة <span class="de">So ein Glück!</span> لإيصال المعنى نفسه بنبرة أكثر طبيعية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== VOCABULARY ==================== -->
+<section class="section" id="vocabulary">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">Wortschatz · مفردات مرتبطة</span>
+      <h2>عائلة welch- وأدوات السؤال القريبة منها</h2>
+      <p class="section-desc"><span class="de">welch-</span> ليست وحيدة — فهي عضو في عائلة كلمات تُصرَّف جميعها بنفس نمط أداة التعريف (der-Wörter)، وتشترك أيضًا مع عائلة أدوات السؤال الأساسية. معرفة هاتين العائلتين تجعل تذكّر تصريف welch- أسهل بكثير.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>الكلمة</th><th>المعنى</th><th>ملاحظة</th></tr></thead>
+        <tbody>
+          <tr><td class="de-cell" style="color:var(--interrog)">welcher</td><td>أيّ</td><td>موضوع هذا الدرس</td></tr>
+          <tr><td class="de-cell">dieser</td><td>هذا</td><td>يشير إلى شيء قريب أو مذكور للتوّ</td></tr>
+          <tr><td class="de-cell">jener</td><td>ذاك</td><td>نادر في المحكية، يقابل dieser غالبًا</td></tr>
+          <tr><td class="de-cell">jeder</td><td>كلّ (واحد)</td><td>لا صيغة جمع له</td></tr>
+          <tr><td class="de-cell">mancher</td><td>بعض / كثير من</td><td>غالبًا في صيغة الجمع manche</td></tr>
+          <tr><td class="de-cell">solcher</td><td>مِثل هذا</td><td>غالبًا يُستبدل بـ so ein في المحكية</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>أداة السؤال</th><th>تسأل عن</th><th>مثال</th></tr></thead>
+        <tbody>
+          <tr><td class="de-cell">wer?</td><td>شخص (فاعل)</td><td class="de-cell">Wer kommt heute?</td></tr>
+          <tr><td class="de-cell">wen?</td><td>شخص (مفعول به مباشر)</td><td class="de-cell">Wen siehst du?</td></tr>
+          <tr><td class="de-cell">wem?</td><td>شخص (مفعول به غير مباشر)</td><td class="de-cell">Wem hilfst du?</td></tr>
+          <tr><td class="de-cell">wessen?</td><td>مِلكية — لمن؟</td><td class="de-cell">Wessen Buch ist das?</td></tr>
+          <tr><td class="de-cell">was?</td><td>شيء</td><td class="de-cell">Was machst du?</td></tr>
+          <tr><td class="de-cell" style="color:var(--interrog)">welcher?</td><td>اختيار من مجموعة</td><td class="de-cell">Welches Buch liest du?</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mistake-box reveal">
+      <h4>⚠️ لا تخلط بين welches (اختيار) وwessen (ملكية)</h4>
+      <div class="mrow bad"><span class="mark">✗</span><span lang="de">Welches Buch ist das? (Frage nach dem Besitzer)</span></div>
+      <div class="mrow good"><span class="mark">✓</span><span lang="de">Wessen Buch ist das?</span></div>
+      <p class="mnote">إذا كان سؤالك عن "لمن هذا الكتاب؟" فالأداة الصحيحة هي wessen وليست welches. أما welches فتسأل "أيّ كتاب من بين عدّة كتب؟".</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== COMPARE / SUMMARY ==================== -->
+<section class="section" id="compare">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">06 / Zusammenfassung</span>
+      <h2>مراجعة سريعة — انقر لقلب كل بطاقة</h2>
+      <p class="section-desc">خمس بطاقات لخمس وظائف. انقر على كل بطاقة لمراجعة قاعدتها بسرعة، ثم استخدم خريطة القرار أدناه في المرة القادمة التي تتردّد فيها.</p>
+    </div>
+
+    <div class="flip-grid reveal-stagger">
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة الاستفهام — انقر لعرض الشرح">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--interrog)">welcher?</span><p style="font-size:.82rem; color:var(--ink-soft)">اختيار من مجموعة معروفة</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--interrog-soft); --tone-ink:var(--interrog-ink)">
+            <p><b>ضمير/أداة استفهام</b> — تُصرَّف مثل der/die/das، وتسأل عن اختيار محدّد.</p>
+            <div class="ex">Welches Buch liest du?</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة was für ein — انقر لعرض الشرح">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--wasfuer)">was für ein?</span><p style="font-size:.82rem; color:var(--ink-soft)">النوع أو الصنف</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--wasfuer-soft); --tone-ink:var(--wasfuer-ink)">
+            <p><b>ليست welch-</b> — لكنها الأداة الموازية للسؤال عن النوع من مجموعة مفتوحة.</p>
+            <div class="ex">Was für ein Auto hast du?</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة الوصل — انقر لعرض الشرح">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--relativ)">welche(r/s),</span><p style="font-size:.82rem; color:var(--ink-soft)">وصل رسمي — بلا Genitiv</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--relativ-soft); --tone-ink:var(--relativ-ink)">
+            <p><b>ضمير وصل رسمي</b> — بديل مكتوب لـ der/die/das، بلا صيغة Genitiv (استخدم dessen/deren).</p>
+            <div class="ex">Der Vertrag, welchen wir unterschrieben haben…</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة التنكير — انقر لعرض الشرح">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--indefinit)">welche</span><p style="font-size:.82rem; color:var(--ink-soft)">بعض / قليل من — عامّي</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--indefinit-soft); --tone-ink:var(--indefinit-ink)">
+            <p><b>ضمير تنكير عامّي</b> — بلا اسم بعدها، تحلّ محلّ اسم مذكور سابقًا بمعنى "بعض".</p>
+            <div class="ex">Brauchst du Zucker? – Ich habe noch welchen.</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة التعجب — انقر لعرض الشرح">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--ausruf)">Welch…!</span><p style="font-size:.82rem; color:var(--ink-soft)">تعجّب — أسلوب أدبي</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--ausruf-soft); --tone-ink:var(--ausruf-ink)">
+            <p><b>أداة تعجّب</b> — قد تبقى بلا تصريف قبل ein/eine أو صفة، في الأسلوب المرتفع.</p>
+            <div class="ex">Welch ein Glück!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); padding:clamp(20px,4vw,36px); margin-top:10px">
+      <div style="text-align:center; margin-bottom:26px">
+        <span class="chip" style="background:var(--ink); color:var(--bg)">ما الذي تريد قوله؟</span>
+      </div>
+      <div class="flow-grid">
+        <div>
+          <div style="text-align:center; margin-bottom:16px; font-family:var(--font-ar-head); font-weight:700; color:var(--interrog)">🧭 اختيار أو وصل</div>
+          <div style="display:grid; gap:12px">
+            <div class="rule-box tone-interrog" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">?</div><div><h3 style="font-size:.92rem">اختيار من مجموعة معروفة</h3><p style="font-size:.86rem">→ استخدم <b class="de" style="color:var(--interrog)">welcher؟</b></p></div></div>
+            <div class="rule-box tone-wasfuer" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">≡</div><div><h3 style="font-size:.92rem">النوع أو الصنف من مجموعة مفتوحة</h3><p style="font-size:.86rem">→ استخدم <b class="de" style="color:var(--wasfuer)">was für ein؟</b></p></div></div>
+            <div class="rule-box tone-relativ" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">,</div><div><h3 style="font-size:.92rem">وصل جملتين بأسلوب رسمي/كتابي</h3><p style="font-size:.86rem">→ استخدم <b class="de" style="color:var(--relativ)">welche(r/s)</b> (بلا Genitiv)</p></div></div>
+          </div>
+        </div>
+        <div>
+          <div style="text-align:center; margin-bottom:16px; font-family:var(--font-ar-head); font-weight:700; color:var(--ausruf)">💬 تنكير أو تعجّب</div>
+          <div style="display:grid; gap:12px">
+            <div class="rule-box tone-indefinit" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">∃</div><div><h3 style="font-size:.92rem">"بعض منه" بلا اسم بعدها، عامّيًا</h3><p style="font-size:.86rem">→ استخدم <b class="de" style="color:var(--indefinit)">welche</b></p></div></div>
+            <div class="rule-box tone-ausruf" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">!</div><div><h3 style="font-size:.92rem">تعجّب أدبي مرتفع</h3><p style="font-size:.86rem">→ استخدم <b class="de" style="color:var(--ausruf)">Welch (ein…)!</b></p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:40px">
+      <h3 style="font-family:var(--font-ar-head); font-size:1.05rem; margin-bottom:6px">🏅 إنجازاتك في هذا الدرس</h3>
+      <p style="color:var(--ink-faint); font-size:.86rem">أكمل الأقسام والتمارين لتفتح كل شارة</p>
+      <div class="achievements-panel" id="achievementsPanel">
+        <div class="ach-item" data-ach="start"><div class="ach-circle">🚀</div><small>بداية الرحلة</small></div>
+        <div class="ach-item" data-ach="interrog"><div class="ach-circle">🧭</div><small>خبير الاستفهام</small></div>
+        <div class="ach-item" data-ach="indefinit"><div class="ach-circle">🔹</div><small>خبير التنكير</small></div>
+        <div class="ach-item" data-ach="relativ"><div class="ach-circle">📜</div><small>خبير الوصل</small></div>
+        <div class="ach-item" data-ach="quiz"><div class="ach-circle">🏆</div><small>بطل الاختبار</small></div>
+      </div>
+      <div style="margin-top:18px">
+        <div style="display:flex; justify-content:space-between; font-size:.82rem; color:var(--ink-soft); margin-bottom:4px"><span>تقدّمك الإجمالي</span><span id="overallPct">0%</span></div>
+        <div class="progressbar-track"><div class="progressbar-fill" id="overallFill" style="width:0%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FINAL QUIZ ==================== -->
+<section class="section" id="quiz">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">07 / Abschlusstest</span>
+      <h2>الاختبار الختامي — welch- بكل وظائفها</h2>
+      <p class="section-desc">اثنا عشر سؤالًا تغطّي الوظائف الخمس. انتبه للحالة النحوية (Kasus) وللفرق بين welcher وwas für ein قبل الإجابة.</p>
+    </div>
+
+    <div id="finalQuizContainer" class="reveal"></div>
+
+    <div class="quiz-summary" id="quizSummary">
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="52" fill="none" stroke="var(--border)" stroke-width="10"/>
+          <circle id="scoreRingFill" cx="60" cy="60" r="52" fill="none" stroke="var(--interrog)" stroke-width="10" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="327"/>
+        </svg>
+        <div class="num" id="scoreRingNum">0/12</div>
+      </div>
+      <h3 id="quizResultTitle">نتيجتك</h3>
+      <p id="quizResultDesc">استمر في التدرّب لتُتقن وظائف welch- الخمس.</p>
+      <button class="btn btn-primary" id="quizRetryBtn">أعد الاختبار 🔄</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="cheat-card reveal">
+      <h2 style="font-family:var(--font-ar-head); font-size:1.2rem; margin-bottom:4px">📋 البطاقة المرجعية السريعة</h2>
+      <p style="color:var(--ink-faint); font-size:.86rem">مثالية للطباعة والمراجعة قبل الاختبار</p>
+      <div class="cheat-grid">
+        <div class="cheat-item" style="--tone:var(--interrog)"><b>welcher؟</b><span>استفهام — اختيار من مجموعة معروفة، تُصرَّف مثل der/die/das.</span></div>
+        <div class="cheat-item" style="--tone:var(--wasfuer)"><b>was für ein؟</b><span>سؤال عن النوع/الصنف، وليست من عائلة welch-.</span></div>
+        <div class="cheat-item" style="--tone:var(--relativ)"><b>welche(r/s),</b><span>وصل رسمي — بديل لـ der/die/das، بلا Genitiv (استخدم dessen/deren).</span></div>
+        <div class="cheat-item" style="--tone:var(--indefinit)"><b>welche</b><span>تنكير عامّي — "بعض منه"، بلا اسم بعدها، بلا Genitiv ولا Dativ مستحسن.</span></div>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px">
+        <button class="btn btn-ghost btn-sm" id="printBtn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+          طباعة البطاقة
+        </button>
+        <a href="#overview" class="btn btn-ghost btn-sm">العودة إلى البداية ↑</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>درس شامل عن أداة welch- الألمانية بكل وظائفها النحوية.</span>
+      <span>مبني لتقليل أخطاء التصريف والخلط الشائعة لدى الناطقين بالعربية.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab-stack">
+  <button class="fab" id="backToTop" aria-label="العودة إلى الأعلى" title="العودة إلى الأعلى">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<div id="speechBar" role="region" aria-label="أدوات النطق الصوتي">
+  <div class="speak-indicator" id="speakIndicator" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="now-playing">
+    <small>الآن يُنطق</small>
+    <span id="nowPlayingText">—</span>
+  </div>
+  <div class="sp-controls">
+    <button class="sp-btn" id="spReplay" aria-label="إعادة النطق" title="إعادة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12a9 9 0 1 1 3 6.7"/><path d="M3 16v-4h4"/></svg></button>
+    <button class="sp-btn" id="spPlayPause" aria-label="إيقاف/تشغيل مؤقت" title="إيقاف مؤقت"><svg viewBox="0 0 24 24" fill="currentColor" id="spPlayIcon"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+    <button class="sp-btn" id="spGotoVoice" aria-label="الانتقال إلى إعدادات الصوت" title="إعدادات الصوت"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 1a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M9 22h6"/></svg></button>
+  </div>
+</div>
+
+<div id="achToastHost" aria-live="polite"></div>
+
+<script>
+/* ==========================================================================
+   THEME — ثلاثي: فاتح / داكن / النظام (الافتراضي: داكن)
+   ========================================================================== */
+(function themeModule(){
+  const root = document.documentElement;
+  const KEY = 'welch_theme';
+  const mql = window.matchMedia('(prefers-color-scheme: dark)');
+  const btns = {
+    light: document.getElementById('themeLight'),
+    dark: document.getElementById('themeDark'),
+    system: document.getElementById('themeSystem')
+  };
+
+  function resolvedIsDark(mode){
+    if(mode === 'dark') return true;
+    if(mode === 'light') return false;
+    return mql.matches;
+  }
+  function apply(mode){
+    root.classList.toggle('dark', resolvedIsDark(mode));
+    Object.keys(btns).forEach(k => btns[k].classList.toggle('on', k === mode));
+  }
+  function setMode(mode){
+    localStorage.setItem(KEY, mode);
+    apply(mode);
+  }
+
+  const saved = localStorage.getItem(KEY);
+  const initial = saved ? saved : 'dark';
+  apply(initial);
+
+  btns.light.addEventListener('click', ()=> setMode('light'));
+  btns.dark.addEventListener('click', ()=> setMode('dark'));
+  btns.system.addEventListener('click', ()=> setMode('system'));
+
+  mql.addEventListener('change', ()=>{
+    const current = localStorage.getItem(KEY) || 'dark';
+    if(current === 'system') apply('system');
+  });
+})();
+
+/* ==========================================================================
+   PROGRESS BAR + SCROLLSPY + REVEAL ON SCROLL
+   ========================================================================== */
+(function scrollModule(){
+  const bar = document.getElementById('readProgress');
+  function updateProgress(){
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const height = h.scrollHeight - h.clientHeight;
+    const pct = height > 0 ? (scrolled/height)*100 : 0;
+    bar.style.setProperty('--progress', pct + '%');
+    bar.setAttribute('aria-valuenow', Math.round(pct));
+    document.getElementById('backToTop').classList.toggle('show', scrolled > 500);
+  }
+  document.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  const sections = document.querySelectorAll('main .section, main .hero');
+  const navlinks = document.querySelectorAll('.navlink');
+  const visited = new Set(JSON.parse(localStorage.getItem('welch_visited') || '[]'));
+  visited.forEach(id => { const l = document.querySelector('.navlink[data-nav="'+id+'"]'); if(l) l.setAttribute('data-done','true'); });
+
+  const spy = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      const id = entry.target.id;
+      if(!id) return;
+      const link = document.querySelector('.navlink[data-nav="'+id+'"]');
+      if(entry.isIntersecting){
+        navlinks.forEach(l=>l.classList.remove('active'));
+        if(link) link.classList.add('active');
+        visited.add(id);
+        localStorage.setItem('welch_visited', JSON.stringify([...visited]));
+        if(link) link.setAttribute('data-done','true');
+        if(window.WELCH) window.WELCH.updateOverallProgress();
+      }
+    });
+  }, {rootMargin:'-15% 0px -70% 0px', threshold:0});
+  sections.forEach(s=>spy.observe(s));
+
+  const reveals = document.querySelectorAll('.reveal, .reveal-stagger');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.15});
+  reveals.forEach(r=>io.observe(r));
+})();
+
+/* ==========================================================================
+   FULLSCREEN + SEARCH
+   ========================================================================== */
+(function uiModule(){
+  document.getElementById('fullscreenBtn').addEventListener('click', ()=>{
+    if(!document.fullscreenElement){ document.documentElement.requestFullscreen().catch(()=>{}); }
+    else{ document.exitFullscreen(); }
+  });
+  const searchBox = document.getElementById('searchBox');
+  const searchInput = document.getElementById('searchInput');
+  document.getElementById('searchToggle').addEventListener('click', ()=>{
+    searchBox.classList.toggle('open');
+    if(searchBox.classList.contains('open')) searchInput.focus();
+  });
+  let lastHit = null;
+  searchInput.addEventListener('keydown', (e)=>{
+    if(e.key !== 'Enter') return;
+    const q = searchInput.value.trim().toLowerCase();
+    if(!q) return;
+    const candidates = document.querySelectorAll('main .ex-de, main h2, main .section-desc, main p');
+    let found = null;
+    for(const el of candidates){ if(el === lastHit) continue; if(el.textContent.toLowerCase().includes(q)){ found = el; break; } }
+    if(!found){ for(const el of candidates){ if(el.textContent.toLowerCase().includes(q)){ found = el; break; } } }
+    if(found){
+      lastHit = found;
+      found.scrollIntoView({behavior:'smooth', block:'center'});
+      const old = found.style.background;
+      found.style.transition = 'background .3s';
+      found.style.background = 'var(--interrog-soft)';
+      setTimeout(()=>{ found.style.background = old; }, 1400);
+    }
+  });
+})();
+</script>
+
+<script>
+/* ==========================================================================
+   SPEECH ENGINE — نطق ألماني (de-DE) عبر Web Speech API
+   طبقة تجريد: BrowserSpeechProvider هي المزوّد الوحيد المفعَّل حاليًا؛
+   الواجهة (getVoices / speak / stop) مصمّمة لتسمح بإضافة CloudTTSProvider
+   لاحقًا دون تعديل بقية النظام.
+   ========================================================================== */
+const TEST_SENTENCE = 'Hallo! Wie geht es dir? Ich lerne heute Deutsch.';
+
+const AudioService = (function(){
+  const hasSynth = 'speechSynthesis' in window;
+  const synth = hasSynth ? window.speechSynthesis : null;
+  const bar = document.getElementById('speechBar');
+  const novoiceBanner = document.getElementById('novoiceBanner');
+  const nowPlayingText = document.getElementById('nowPlayingText');
+  const voiceList = document.getElementById('voiceList');
+  const voiceLoading = document.getElementById('voiceLoading');
+  const speedChips = document.querySelectorAll('.speed-chip');
+  const playPauseBtn = document.getElementById('spPlayPause');
+  const playIcon = document.getElementById('spPlayIcon');
+  const RATE_KEY = 'welch_rate';
+  const VOICE_KEY = 'welch_voice';
+
+  /* BrowserSpeechProvider: يطبّق واجهة TTSProvider العامة (getVoices/speak/stop)
+     دون أي مفتاح API — وهو المزوّد الوحيد النشط حاليًا. */
+  const BrowserSpeechProvider = {
+    supported: hasSynth,
+    async getVoices(){
+      if(!hasSynth) return [];
+      const all = synth.getVoices();
+      return all.filter(v => v.lang && v.lang.toLowerCase().startsWith('de'));
+    },
+    speak(text, opts){
+      if(!hasSynth) return;
+      const utter = new SpeechSynthesisUtterance(text);
+      if(opts.voice) utter.voice = opts.voice;
+      utter.lang = (opts.voice && opts.voice.lang) || 'de-DE';
+      utter.rate = opts.rate || 1;
+      utter.onboundary = opts.onboundary;
+      utter.onstart = opts.onstart;
+      utter.onend = opts.onend;
+      utter.onerror = opts.onerror;
+      synth.cancel();
+      synth.speak(utter);
+      return utter;
+    },
+    stop(){ if(hasSynth) synth.cancel(); },
+    pause(){ if(hasSynth) synth.pause(); },
+    resume(){ if(hasSynth) synth.resume(); }
+  };
+  /* نقطة توسّع مستقبلية — واجهة TTSProvider نفسها تسمح بإضافة مزوّد سحابي
+     (CloudTTSProvider) لاحقًا عبر خادم آمن، دون تعديل بقية النظام أو
+     كشف أي مفتاح API في الواجهة الأمامية. لا يُستخدم إلا إذا هُيِّئ فعليًا:
+     const CloudTTSProvider = { supported:false, async getVoices(){return []}, speak(){}, stop(){} }; */
+
+  const provider = BrowserSpeechProvider;
+
+  let deVoices = [];
+  let selectedVoiceIdx = 0;
+  let currentRate = parseFloat(localStorage.getItem(RATE_KEY) || '1');
+  let currentUtterance = null;
+  let currentText = '';
+  let currentHighlightEls = [];
+  let currentSentenceCard = null;
+  let isPaused = false;
+  let voicesEverFound = false;
+
+  setActiveChip(currentRate);
+
+  function setActiveChip(rate){
+    speedChips.forEach(c => c.classList.toggle('on', parseFloat(c.dataset.rate) === rate));
+  }
+  speedChips.forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      currentRate = parseFloat(chip.dataset.rate);
+      localStorage.setItem(RATE_KEY, currentRate);
+      setActiveChip(currentRate);
+    });
+  });
+
+  function voiceLabel(v){
+    const lang = (v.lang || '').toLowerCase();
+    let region = 'Deutsch';
+    if(lang.includes('at')) region = 'Deutsch — Österreich';
+    else if(lang.includes('ch')) region = 'Deutsch — Schweiz';
+    else if(lang.includes('de')) region = 'Deutsch — Deutschland';
+    return { name: v.name.replace(/^Google\s|^Microsoft\s/,''), region, lang: v.lang };
+  }
+
+  function renderVoiceList(){
+    voiceList.innerHTML = '';
+    if(deVoices.length === 0){
+      const p = document.createElement('p');
+      p.className = 'voice-loading';
+      p.textContent = 'لا يوجد أي صوت ألماني مثبَّت في هذا المتصفح حاليًا.';
+      voiceList.appendChild(p);
+      return;
+    }
+    deVoices.forEach((v,i)=>{
+      const info = voiceLabel(v);
+      const row = document.createElement('div');
+      row.className = 'voice-item' + (i === selectedVoiceIdx ? ' selected' : '');
+      row.setAttribute('role','radio');
+      row.setAttribute('aria-checked', i === selectedVoiceIdx ? 'true' : 'false');
+      row.tabIndex = 0;
+      row.innerHTML =
+        '<span class="radio-dot" aria-hidden="true"></span>' +
+        '<span class="voice-info"><span class="voice-name">'+info.name+'</span><span class="voice-meta">'+info.region+' · '+info.lang+'</span></span>' +
+        '<span class="voice-badge">'+(i === selectedVoiceIdx ? 'مُختار' : 'اختر')+'</span>' +
+        '<button type="button" class="voice-test-btn" data-test-idx="'+i+'" aria-label="اختبار هذا الصوت">'+
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>اختبار'+
+        '</button>';
+      row.addEventListener('click', (e)=>{
+        if(e.target.closest('.voice-test-btn')) return;
+        selectVoice(i);
+      });
+      row.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectVoice(i); }
+      });
+      row.querySelector('.voice-test-btn').addEventListener('click', (e)=>{
+        e.stopPropagation();
+        testVoice(i, e.currentTarget);
+      });
+      voiceList.appendChild(row);
+    });
+  }
+
+  function selectVoice(i){
+    selectedVoiceIdx = i;
+    localStorage.setItem(VOICE_KEY, i);
+    renderVoiceList();
+  }
+
+  function testVoice(i, btnEl){
+    const voice = deVoices[i];
+    if(!voice) return;
+    document.querySelectorAll('.voice-test-btn').forEach(b=>b.classList.remove('testing'));
+    if(btnEl) btnEl.classList.add('testing');
+    provider.speak(TEST_SENTENCE, {
+      voice: voice,
+      rate: currentRate,
+      onstart(){ bar.classList.add('show','playing'); document.body.classList.add('speech-active'); nowPlayingText.textContent = TEST_SENTENCE; },
+      onend(){ bar.classList.remove('playing'); if(btnEl) btnEl.classList.remove('testing'); },
+      onerror(){ bar.classList.remove('playing'); if(btnEl) btnEl.classList.remove('testing'); }
+    });
+  }
+
+  async function loadVoices(){
+    if(!provider.supported){
+      novoiceBanner.classList.add('show');
+      voiceLoading && (voiceLoading.textContent = 'متصفحك لا يدعم خاصية النطق الآلي (Web Speech API).');
+      return;
+    }
+    deVoices = await provider.getVoices();
+    if(deVoices.length === 0){
+      renderVoiceList();
+      novoiceBanner.classList.add('show');
+      return;
+    }
+    voicesEverFound = true;
+    novoiceBanner.classList.remove('show');
+    const savedVoice = parseInt(localStorage.getItem(VOICE_KEY), 10);
+    if(!isNaN(savedVoice) && deVoices[savedVoice]) selectedVoiceIdx = savedVoice;
+    else{
+      const preferredIdx = deVoices.findIndex(v => /de-DE/i.test(v.lang) && /google|natural|online/i.test(v.name));
+      selectedVoiceIdx = preferredIdx > -1 ? preferredIdx : 0;
+    }
+    renderVoiceList();
+  }
+  loadVoices();
+  if(hasSynth && synth.onvoiceschanged !== undefined){ synth.onvoiceschanged = loadVoices; }
+
+  function clearHighlights(){
+    currentHighlightEls.forEach(el => el.classList.remove('speaking'));
+    currentHighlightEls = [];
+    if(currentSentenceCard){ currentSentenceCard.classList.remove('sentence-speaking'); currentSentenceCard = null; }
+  }
+
+  function computeWordRanges(containerEl, fullText){
+    const spans = Array.from(containerEl.querySelectorAll('.w'));
+    let cursor = 0;
+    const ranges = [];
+    spans.forEach(span=>{
+      const t = span.textContent;
+      const idx = fullText.indexOf(t, cursor);
+      if(idx === -1) return;
+      ranges.push({start:idx, end:idx+t.length, el:span});
+      cursor = idx + t.length;
+    });
+    return ranges;
+  }
+
+  function speak(text, sourceEl){
+    if(!text) return;
+    if(!provider.supported){
+      novoiceBanner.classList.add('show');
+      novoiceBanner.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+    clearHighlights();
+    const voice = deVoices[selectedVoiceIdx];
+
+    let ranges = [];
+    const card = sourceEl && sourceEl.closest ? sourceEl.closest('.ex-de') : null;
+    if(card && card.querySelectorAll('.w').length){
+      ranges = computeWordRanges(card, text);
+      currentSentenceCard = card.closest('.ex-card');
+      if(currentSentenceCard) currentSentenceCard.classList.add('sentence-speaking');
+    } else if(sourceEl && sourceEl.classList && sourceEl.classList.contains('w')){
+      sourceEl.classList.add('speaking');
+      currentHighlightEls.push(sourceEl);
+    }
+
+    currentUtterance = provider.speak(text, {
+      voice: voice,
+      rate: currentRate,
+      onboundary(ev){
+        if(ev.name && ev.name !== 'word') return;
+        const hit = ranges.find(r => ev.charIndex >= r.start && ev.charIndex < r.end);
+        if(hit){
+          currentHighlightEls.forEach(el=>el.classList.remove('speaking'));
+          currentHighlightEls = [hit.el];
+          hit.el.classList.add('speaking');
+        }
+      },
+      onstart(){
+        bar.classList.add('show','playing');
+        document.body.classList.add('speech-active');
+        nowPlayingText.textContent = text;
+        playIcon.innerHTML = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+        isPaused = false;
+      },
+      onend(){ bar.classList.remove('playing'); clearHighlights(); },
+      onerror(){
+        bar.classList.remove('playing'); clearHighlights();
+        if(!voicesEverFound){
+          nowPlayingText.textContent = 'لا يتوفّر صوت في هذا المتصفح';
+          bar.classList.add('show');
+          document.body.classList.add('speech-active');
+          novoiceBanner.classList.add('show');
+        }
+      }
+    });
+    currentText = text;
+  }
+
+  playPauseBtn.addEventListener('click', ()=>{
+    if(!currentUtterance || !hasSynth) return;
+    if(synth.speaking && !isPaused){
+      provider.pause(); isPaused = true; bar.classList.remove('playing');
+      playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+    } else if(isPaused){
+      provider.resume(); isPaused = false; bar.classList.add('playing');
+      playIcon.innerHTML = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+    }
+  });
+  document.getElementById('spReplay').addEventListener('click', ()=>{
+    if(currentText) speak(currentText, currentSentenceCard ? currentSentenceCard.querySelector('.ex-de') : null);
+  });
+  document.getElementById('spGotoVoice').addEventListener('click', ()=>{
+    document.getElementById('voicePanel').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  document.addEventListener('click', function(e){
+    const wordEl = e.target.closest('.w');
+    if(wordEl){ speak(wordEl.textContent.trim().replace(/[.,!?—–]+$/,''), wordEl); return; }
+    const speakBtn = e.target.closest('[data-speak]');
+    if(speakBtn){
+      const card = speakBtn.closest('.ex-card');
+      speak(speakBtn.getAttribute('data-speak'), card ? card.querySelector('.ex-de') : speakBtn);
+      return;
+    }
+    const deEl = e.target.closest('.de, .de-cell');
+    if(deEl && !deEl.closest('.ex-de') && !deEl.closest('table') && !deEl.closest('.voice-item')){ speak(deEl.textContent.trim(), deEl); }
+  });
+
+  document.getElementById('heroSpeakDemo').addEventListener('click', ()=>{
+    const firstEx = document.querySelector('#interrogativ .ex-de');
+    speak('Welcher Zug fährt nach Berlin?', firstEx);
+  });
+
+  return { speak };
+})();
+</script>
+
+<script>
+/* ==========================================================================
+   SENTENCE BUILDER — تمارين ترتيب الجمل
+   ========================================================================== */
+const SentenceBuilder = (function(){
+  const configs = {
+    interrog: {
+      tokens: ['Welchen', 'Film', 'hast', 'du', 'gestern', 'gesehen?'],
+      correct: ['Welchen', 'Film', 'hast', 'du', 'gestern', 'gesehen?'],
+      hintAr: 'الترجمة: أيّ فيلم شاهدت أمس؟ — Film اسم مذكّر ومفعول به مباشر (Akkusativ) ⇐ welchen.'
+    },
+    indefinit: {
+      tokens: ['Ja,', 'da', 'drüben', 'sind', 'welche.'],
+      correct: ['Ja,', 'da', 'drüben', 'sind', 'welche.'],
+      hintAr: 'الترجمة: نعم، هناك بعض منها. — welche هنا تحلّ محلّ Cafés (جمع)، بلا اسم بعدها.'
+    },
+    relativ: {
+      tokens: ['Der', 'Vertrag,', 'welchen', 'wir', 'unterschrieben', 'haben,', 'ist', 'gültig.'],
+      correct: ['Der', 'Vertrag,', 'welchen', 'wir', 'unterschrieben', 'haben,', 'ist', 'gültig.'],
+      hintAr: 'الترجمة: العقد الذي وقّعناه ساري المفعول. — welchen ضمير وصل (Akkusativ مذكّر)، والفعل ينتقل إلى نهاية جملة الوصل.'
+    }
+  };
+
+  function shuffle(arr){
+    const a = [...arr];
+    for(let i=a.length-1; i>0; i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+    if(JSON.stringify(a) === JSON.stringify(arr) && a.length > 2){ [a[0],a[1]] = [a[1],a[0]]; }
+    return a;
+  }
+
+  function render(key){
+    const cfg = configs[key];
+    const target = document.getElementById(key+'Target');
+    const bank = document.getElementById(key+'Bank');
+    const feedback = document.getElementById(key+'Feedback');
+    if(!target || !bank || !feedback) return;
+    target.innerHTML = ''; target.classList.remove('correct','wrong');
+    feedback.textContent = ''; feedback.className = 'builder-feedback';
+    bank.innerHTML = '';
+    const shuffled = shuffle(cfg.tokens);
+    shuffled.forEach((word, idx)=>{
+      const chip = document.createElement('button');
+      chip.className = 'word-chip'; chip.type = 'button'; chip.textContent = word;
+      chip.dataset.word = word; chip.dataset.uid = key+'_'+idx;
+      chip.addEventListener('click', ()=>{
+        if(chip.classList.contains('placed')) return;
+        chip.classList.add('placed');
+        const placedChip = document.createElement('button');
+        placedChip.type = 'button'; placedChip.className = 'word-chip in-target'; placedChip.textContent = word;
+        placedChip.addEventListener('click', ()=>{
+          placedChip.remove(); chip.classList.remove('placed');
+          target.classList.remove('correct','wrong'); feedback.textContent='';
+        });
+        target.appendChild(placedChip);
+      });
+      bank.appendChild(chip);
+    });
+  }
+
+  function check(key){
+    const cfg = configs[key];
+    const target = document.getElementById(key+'Target');
+    const feedback = document.getElementById(key+'Feedback');
+    const placed = Array.from(target.children).map(c=>c.textContent);
+    const isCorrect = JSON.stringify(placed) === JSON.stringify(cfg.correct);
+    target.classList.remove('correct','wrong');
+    if(placed.length === 0) return;
+    if(isCorrect){
+      target.classList.add('correct');
+      feedback.textContent = '✓ صحيح تمامًا! ' + cfg.hintAr;
+      feedback.className = 'builder-feedback ok';
+      if(window.WELCH) window.WELCH.unlock(key);
+    } else {
+      target.classList.add('wrong');
+      feedback.textContent = '✗ ليس تمامًا — راجع القاعدة أعلاه.';
+      feedback.className = 'builder-feedback no';
+    }
+  }
+
+  document.addEventListener('click', (e)=>{
+    const checkBtn = e.target.closest('[data-builder-check]');
+    if(checkBtn){ check(checkBtn.dataset.builderCheck); return; }
+    const resetBtn = e.target.closest('[data-builder-reset]');
+    if(resetBtn){ render(resetBtn.dataset.builderReset); return; }
+  });
+
+  Object.keys(configs).forEach(render);
+  return { render, check };
+})();
+
+/* ==========================================================================
+   WELCHER / WAS FÜR EIN — COMPARE TOGGLE
+   ========================================================================== */
+(function compareToggle(){
+  const sentenceEl = document.getElementById('compareSentence');
+  const captionEl = document.getElementById('compareCaption');
+  const buttons = { welcher: document.getElementById('btnModeWelcher'), wasfuer: document.getElementById('btnModeWasfuer') };
+
+  const modes = {
+    welcher: {
+      html: '<span class="slot s-main">Ich möchte ein Eis.</span><span class="slot s-conn" style="background:var(--interrog); color:#fff">Welches</span><span class="slot s-mid">nimmst du — Schoko oder Vanille?</span>',
+      caption: 'هناك نكهتان معروضتان أمامك بالفعل (شوكولاتة أو فانيلا) — أنت تختار من بينهما، لذلك نستخدم welches.'
+    },
+    wasfuer: {
+      html: '<span class="slot s-main">Ich möchte ein Eis.</span><span class="slot s-conn" style="background:var(--wasfuer); color:#fff">Was für eins</span><span class="slot s-mid">magst du am liebsten?</span>',
+      caption: 'لا توجد خيارات معروضة هنا؛ السؤال عن الصنف المفضّل بشكل عام من بين كل النكهات الممكنة، لذلك نستخدم was für ein.'
+    }
+  };
+
+  function setMode(mode){
+    sentenceEl.innerHTML = modes[mode].html;
+    captionEl.textContent = modes[mode].caption;
+    Object.values(buttons).forEach(b=>b.classList.remove('on'));
+    buttons[mode].classList.add('on');
+  }
+  buttons.welcher.addEventListener('click', ()=>setMode('welcher'));
+  buttons.wasfuer.addEventListener('click', ()=>setMode('wasfuer'));
+})();
+</script>
+
+<script>
+/* ==========================================================================
+   ACHIEVEMENTS / PROGRESS MODULE
+   ========================================================================== */
+window.WELCH = (function(){
+  const KEY = 'welch_achievements';
+  const TOTAL_SECTIONS = 9; // overview interrogativ wasfuerein indefinit relativ ausruf vocabulary compare quiz
+  const LABELS = {
+    start:['بداية الرحلة','🚀'], interrog:['خبير الاستفهام','🧭'], indefinit:['خبير التنكير','🔹'],
+    relativ:['خبير الوصل','📜'], quiz:['بطل الاختبار الختامي','🏆']
+  };
+  let achievements = {};
+  try{ achievements = JSON.parse(localStorage.getItem(KEY) || '{}'); }catch(e){ achievements = {}; }
+
+  function save(){ localStorage.setItem(KEY, JSON.stringify(achievements)); }
+
+  function showToast(title, emoji){
+    const host = document.getElementById('achToastHost');
+    const t = document.createElement('div');
+    t.className = 'ach-toast';
+    t.innerHTML = '<span class="emoji">'+emoji+'</span><div><b>شارة جديدة!</b><span>'+title+'</span></div>';
+    host.appendChild(t);
+    requestAnimationFrame(()=> t.classList.add('show'));
+    setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.remove(), 500); }, 3200);
+  }
+
+  function renderProgress(){
+    let visited = [];
+    try{ visited = JSON.parse(localStorage.getItem('welch_visited') || '[]'); }catch(e){}
+    const achCount = Object.keys(LABELS).filter(k=>achievements[k]).length;
+    const pct = Math.round(((visited.length/TOTAL_SECTIONS)*0.5 + (achCount/Object.keys(LABELS).length)*0.5)*100);
+    const fill = document.getElementById('overallFill');
+    const label = document.getElementById('overallPct');
+    if(fill) fill.style.width = Math.min(pct,100)+'%';
+    if(label) label.textContent = Math.min(pct,100)+'%';
+  }
+
+  function unlock(key){
+    if(!achievements[key]){
+      achievements[key] = true; save();
+      const item = document.querySelector('.ach-item[data-ach="'+key+'"]');
+      if(item) item.classList.add('unlocked');
+      const meta = LABELS[key];
+      if(meta) showToast(meta[0], meta[1]);
+    }
+    renderProgress();
+  }
+
+  function checkStart(){
+    let visited = [];
+    try{ visited = JSON.parse(localStorage.getItem('welch_visited') || '[]'); }catch(e){}
+    if(visited.length >= 1 && !achievements.start){ unlock('start'); }
+    else{ renderProgress(); }
+  }
+
+  Object.keys(achievements).forEach(key=>{
+    if(achievements[key]){
+      const item = document.querySelector('.ach-item[data-ach="'+key+'"]');
+      if(item) item.classList.add('unlocked');
+    }
+  });
+  renderProgress();
+
+  return { unlock, updateOverallProgress: checkStart };
+})();
+
+/* ==========================================================================
+   QUIZ ENGINE
+   ========================================================================== */
+function createQuiz(container, questions, opts){
+  opts = opts || {};
+  container.innerHTML = '';
+  let score = 0, answered = 0;
+  questions.forEach((q)=>{
+    const qDiv = document.createElement('div');
+    qDiv.className = 'quiz-q';
+    const qText = document.createElement('div');
+    qText.className = 'qtext';
+    qText.innerHTML = q.q + (q.de ? ' <br><span class="de">'+q.de+'</span>' : '');
+    qDiv.appendChild(qText);
+    const optsDiv = document.createElement('div');
+    optsDiv.className = 'qopts';
+    q.options.forEach((optText, oi)=>{
+      const btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'qopt';
+      const span = document.createElement('span');
+      span.className = 'de'; span.style.fontFamily = 'inherit'; span.textContent = optText;
+      btn.appendChild(span);
+      btn.addEventListener('click', ()=>{
+        if(qDiv.dataset.answered) return;
+        qDiv.dataset.answered = 'true'; answered++;
+        const correct = oi === q.correct;
+        if(correct){ score++; btn.classList.add('correct'); }
+        else{ btn.classList.add('incorrect'); optsDiv.children[q.correct].classList.add('correct'); }
+        Array.from(optsDiv.children).forEach(b=>b.disabled = true);
+        if(q.explain){
+          const ex = document.createElement('div');
+          ex.className = 'quiz-explain show'; ex.textContent = q.explain;
+          qDiv.appendChild(ex);
+        }
+        if(answered === questions.length && opts.onComplete) opts.onComplete(score, questions.length);
+      });
+      optsDiv.appendChild(btn);
+    });
+    qDiv.appendChild(optsDiv);
+    container.appendChild(qDiv);
+  });
+}
+
+/* ---- final combined quiz ---- */
+const finalQuestions = [
+  { q:'اختر الشكل الصحيح:', de:'___ Zug fährt nach Hamburg?', options:['Welcher','Welche','Welchem'], correct:0, explain:'Zug اسم مذكّر، وهو فاعل الجملة (Nominativ) ⇐ welcher.' },
+  { q:'اختر الشكل الصحيح:', de:'___ Film hast du gesehen?', options:['Welche','Welchen','Welchem'], correct:1, explain:'Film اسم مذكّر، لكنه هنا مفعول به مباشر (Akkusativ) ⇐ welchen.' },
+  { q:'اختر الشكل الصحيح:', de:'Mit ___ Freundin gehst du?', options:['welche','welcher','welchen'], correct:1, explain:'بعد حرف الجر mit يأتي Dativ دائمًا، وFreundin اسم مؤنّث ⇐ welcher.' },
+  { q:'اختر الأداة الأنسب:', de:'Ich möchte ein Eis. – ___ nimmst du, Schoko oder Vanille?', options:['Welches','Was für eins'], correct:0, explain:'هناك نكهتان معروضتان بالفعل يختار السامع من بينهما ⇐ welches (اختيار من مجموعة معروفة).' },
+  { q:'اختر الأداة الأنسب:', de:'___ Eis magst du am liebsten?', options:['Welches','Was für ein'], correct:1, explain:'سؤال عام عن الصنف المفضّل بلا خيارات محدّدة معروضة ⇐ was für ein.' },
+  { q:'صواب أم خطأ؟', de:'welch- كضمير وصل له صيغة Genitiv خاصة به.', options:['صواب','خطأ'], correct:1, explain:'خطأ — لا توجد صيغة Genitiv لـ welch- كضمير وصل؛ يجب استخدام dessen أو deren دائمًا.' },
+  { q:'أي جملة صحيحة نحويًا؟', options:['Der Mann, welches Auto kaputt ist, ruft an.','Der Mann, dessen Auto kaputt ist, ruft an.'], correct:1, explain:'العلاقة هنا ملكية (سيارته) ⇐ Genitiv، وwelch- لا تملك هذه الصيغة، لذا الصواب dessen.' },
+  { q:'أكمل الحوار الصحيح:', de:'Ist noch Käse da? – Ja, im Kühlschrank müsste noch ___ sein.', options:['welcher','welche','welches'], correct:0, explain:'Käse اسم مذكّر (der Käse)، وهي هنا فاعل الجملة الثانية (Nominativ) ⇐ welcher.' },
+  { q:'أكمل الحوار الصحيح:', de:'Brauchst du Batterien? – Ja, hast du ___?', options:['welche','welcher','welches'], correct:0, explain:'Batterien اسم جمع ⇐ صيغة الجمع welche دائمًا بصرف النظر عن الجنس.' },
+  { q:'اختر الصيغة الصحيحة للتعجّب الأدبي:', de:'___ ein Glück, dass du da bist!', options:['Welch','Welche','Welcher'], correct:0, explain:'في صيغة welch + ein الأدبية الثابتة، تبقى welch بلا أي تصريف؛ ein هي التي تحمل علامة الجنس.' },
+  { q:'ما الترجمة الألمانية الصحيحة لـ "أيّ كتاب تقرأ الآن؟"', options:['Welches Buch liest du gerade?','Welche Buch liest du gerade?','Welchem Buch liest du gerade?'], correct:0, explain:'Buch اسم محايد (das Buch) وهو مفعول به مباشر (Akkusativ)؛ صيغة المحايد في Nominativ وAkkusativ متطابقة: welches.' },
+  { q:'"Welche Sprache sprichst du?" — أي نوع من الأسئلة هذا؟', options:['اختيار من مجموعة لغات معروفة سلفًا','سؤال عن نوع غير محدَّد تمامًا'], correct:0, explain:'استخدام welche يفترض دائمًا وجود مجموعة (معروفة أو ضمنية) يُختار منها؛ لو كان السؤال عامًا تمامًا عن نوع اللغة لاستُخدمت was für eine.' }
+];
+
+function renderFinalQuiz(){
+  const container = document.getElementById('finalQuizContainer');
+  const summary = document.getElementById('quizSummary');
+  summary.classList.remove('show');
+  container.style.display = '';
+  createQuiz(container, finalQuestions, { onComplete:(score,total)=>{
+    setTimeout(()=>{
+      container.style.display = 'none';
+      summary.classList.add('show');
+      const circumference = 2*Math.PI*52;
+      const ring = document.getElementById('scoreRingFill');
+      ring.setAttribute('stroke-dasharray', circumference.toFixed(0));
+      ring.style.transition = 'stroke-dashoffset 1s ease-out';
+      requestAnimationFrame(()=>{ ring.setAttribute('stroke-dashoffset', (circumference*(1-score/total)).toFixed(0)); });
+      document.getElementById('scoreRingNum').textContent = score+'/'+total;
+      const title = document.getElementById('quizResultTitle');
+      const desc = document.getElementById('quizResultDesc');
+      if(score >= 11){ title.textContent='🥇 ممتاز — أنت خبير حقيقي في welch-!'; desc.textContent='أتقنت الوظائف الخمس كلها بامتياز.'; ring.style.stroke='var(--gold)'; }
+      else if(score >= 8){ title.textContent='🥈 جيد جدًا!'; desc.textContent='أنت قريب من الإتقان الكامل — راجع الأسئلة التي أخطأت فيها.'; ring.style.stroke='var(--interrog)'; }
+      else{ title.textContent='🥉 استمر في التدرّب'; desc.textContent='راجع أقسام الدرس التي تحتوي على الوظيفة التي أخطأت فيها، ثم أعد المحاولة.'; ring.style.stroke='var(--ausruf)'; }
+      if(score >= 9) window.WELCH.unlock('quiz');
+    }, 400);
+  }});
+}
+renderFinalQuiz();
+document.getElementById('quizRetryBtn').addEventListener('click', renderFinalQuiz);
+
+/* ==========================================================================
+   FLIP CARDS
+   ========================================================================== */
+document.querySelectorAll('.flip-card').forEach(card=>{
+  function toggle(){
+    const flipped = card.classList.toggle('flipped');
+    card.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+  }
+  card.addEventListener('click', toggle);
+  card.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); } });
+});
+
+/* ==========================================================================
+   PRINT
+   ========================================================================== */
+document.getElementById('printBtn').addEventListener('click', ()=> window.print());
+</script>
+
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="grammatik-welch-interrogativ-relativ-indefinit" data-category="grammatik" data-title="welch- : welcher · welche · welches — أداة الاستفهام والوصل" data-root="../../" defer></script>
+</body>
+</html>
