@@ -38,15 +38,25 @@ window.DEUTSCH_CATALOG = {
     "title": "المرحلة A1 — نقطة الانطلاق",
     "order": 1,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
-    "subtitle": "الأبجدية والتحيات، الأرقام والألوان، العائلة والطعام، الوقت والمنزل، الجسم والصحة",
+    "subtitle": "من الأبجدية والتحيات إلى النفي والأفعال المنفصلة والمهن — ١٩ درسًا متكاملًا",
     "level": "A1",
     "icon": "seed",
     "key": "a1",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
     "folder": "a1"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
   },
   {
-    "title": "مسار A2 الكامل — دورة من ١٢ محطة",
+    "title": "Lektion A2",
     "order": 2,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
+    "subtitle": "مسار نحوي متكامل من ١٥ درسًا شاملًا، من زمن Perfekt حتى الضمائر غير المحددة",
+    "level": "A2",
+    "icon": "stack",
+    "key": "lektion-a2",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
+    "folder": "lektion-a2"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
+  },
+  {
+    "title": "مسار A2 الكامل — دورة من ١٢ محطة",
+    "order": 3,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
     "subtitle": "رحلة متسلسلة من التعارف حتى السفر، محطة تلو الأخرى",
     "level": "A2",
@@ -55,20 +65,10 @@ window.DEUTSCH_CATALOG = {
     "folder": "a2-kurs"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
   },
   {
-    "title": "أدلة A2 الشاملة",
-    "order": 3,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
-    "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
-    "subtitle": "غوص عميق في أهم قواعد A2: الأزمنة، الانعكاسية، الناقصة، الجر، الصفات، الجمل الفرعية، وصيغة الأمر",
-    "level": "A2",
-    "icon": "compass",
-    "key": "a2",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
-    "folder": "a2"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
-  },
-  {
     "title": "مرجع القواعد — دفتر الملاحظات الكامل",
     "order": 4,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
-    "subtitle": "٢٣ مرجعًا تفاعليًا لأدق تفاصيل القواعد الألمانية",
+    "subtitle": "٢٤ مرجعًا تفاعليًا لأدق تفاصيل القواعد الألمانية",
     "level": "A2–B1",
     "icon": "book",
     "key": "grammatik",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
@@ -209,6 +209,285 @@ window.DEUTSCH_CATALOG = {
     "path": "Deutsch/a1/lesson-09-koerper-gesundheit.html",
     "thumb": "assets/thumbnails/a1-lesson-09-koerper-gesundheit.jpg"
   },
+  {
+    "title": "nicht أم kein؟ — أدوات النفي",
+    "order": 10,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "درس تفاعلي شامل حول أدوات النفي في اللغة الألمانية: nicht وkein — القواعد، الأمثلة، الحوارات، والتمارين.",
+    "badges": [],
+    "id": "a1-lesson-10-negation-nicht-kein",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-10-negation-nicht-kein.html",
+    "thumb": "assets/thumbnails/a1-lesson-10-negation-nicht-kein.jpg"
+  },
+  {
+    "title": "الأفعال المنفصلة — Trennbare Verben",
+    "order": 11,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "قاعدة الأفعال المنفصلة: كيف تنفصل البادئة وتنتقل إلى نهاية الجملة، أفعال الروتين اليومي الأساسية، وأداة تفاعلية لتفكيك الجملة.",
+    "badges": [],
+    "id": "a1-lesson-11-trennbare-verben",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-11-trennbare-verben.html",
+    "thumb": "assets/thumbnails/a1-lesson-11-trennbare-verben.jpg"
+  },
+  {
+    "title": "الطقس والفصول — Wetter, Jahreszeiten & weil",
+    "order": 12,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "مفردات الطقس والفصول الأربعة، جملة es الشكلية (es regnet / es schneit)، ومقدّمة إلى أداة الربط weil وقاعدة الفعل في نهاية الجملة الثانوية.",
+    "badges": [],
+    "id": "a1-lesson-12-wetter-jahreszeiten",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-12-wetter-jahreszeiten.html",
+    "thumb": "assets/thumbnails/a1-lesson-12-wetter-jahreszeiten.jpg"
+  },
+  {
+    "title": "أسئلة W وترتيب الجملة — W-Fragen & Satzstellung",
+    "order": 13,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "أسئلة الاستفهام السبع (wer/was/wo/wann/warum/wie/welche) وترتيب الجملة الألمانية: قاعدة الفعل في الموضع الثاني، مع أداة بناء تفاعلية.",
+    "badges": [],
+    "id": "a1-lesson-13-w-fragen-satzstellung",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-13-w-fragen-satzstellung.html",
+    "thumb": "assets/thumbnails/a1-lesson-13-w-fragen-satzstellung.jpg"
+  },
+  {
+    "title": "وسائل النقل والسفر — Verkehrsmittel, müssen & können",
+    "order": 14,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "مفردات وسائل النقل والسفر، الأفعال الوجوبية müssen وkönnen، وقاعدة ترتيب الفعل في نهاية الجملة (Satzklammer)، مع محطة قطار تفاعلية.",
+    "badges": [],
+    "id": "a1-lesson-14-verkehrsmittel",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-14-verkehrsmittel.html",
+    "thumb": "assets/thumbnails/a1-lesson-14-verkehrsmittel.jpg"
+  },
+  {
+    "title": "الجنسيات واللغات — Länder, Sprachen & Herkunft",
+    "order": 15,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الدول والجنسيات واللغات، تثبيت أسئلة W مع woher/wohin/wo، وصيغتا Ich komme aus / Ich spreche، مع خريطة عالمية تفاعلية.",
+    "badges": [],
+    "id": "a1-lesson-15-laender-sprachen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-15-laender-sprachen.html",
+    "thumb": "assets/thumbnails/a1-lesson-15-laender-sprachen.jpg"
+  },
+  {
+    "title": "الاتجاهات والمدينة — Wegbeschreibung",
+    "order": 16,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "صيغة الأمر (Imperativ) للمخاطَبين du وihr وSie، وتثبيت حروف الجر المكانية (Wechselpräpositionen وحروف الاتجاه)، مع خريطة مدينة تفاعلية كاملة.",
+    "badges": [],
+    "id": "a1-lesson-16-wegbeschreibung",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-16-wegbeschreibung.html",
+    "thumb": "assets/thumbnails/a1-lesson-16-wegbeschreibung.jpg"
+  },
+  {
+    "title": "الروتين اليومي والأفعال المنفصلة",
+    "order": 17,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الروتين اليومي والأفعال المنفصلة، مع جدول يوم تفاعلي وأداة منهجية لتفكيك الفعل وتطبيقات عملية.",
+    "badges": [],
+    "id": "a1-lesson-17-tagesablauf",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-17-tagesablauf.html",
+    "thumb": "assets/thumbnails/a1-lesson-17-tagesablauf.jpg"
+  },
+  {
+    "title": "الهوايات ووقت الفراغ — gern/lieber/am liebsten",
+    "order": 18,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الهوايات ووقت الفراغ، مع شرح gern/lieber/am liebsten وربطها بالمقارنة، ولوحة هوايات وأداة تفضيلات تفاعلية.",
+    "badges": [],
+    "id": "a1-lesson-18-hobbys-freizeit",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-18-hobbys-freizeit.html",
+    "thumb": "assets/thumbnails/a1-lesson-18-hobbys-freizeit.jpg"
+  },
+  {
+    "title": "المهن والعمل — kein مقابل nicht",
+    "order": 19,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "المهن والعمل، مع شرح الفرق بين kein وnicht، وبطاقات مهن وأداة نفي تفاعلية.",
+    "badges": [],
+    "id": "a1-lesson-19-berufe",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/a1/lesson-19-berufe.html",
+    "thumb": "assets/thumbnails/a1-lesson-19-berufe.jpg"
+  },
+
+  // ────────────────────────────────────────────────────────────
+  // قسم: Lektion A2 — مسار نحوي شامل من ١٥ درسًا  (category: "lektion-a2")
+  // ────────────────────────────────────────────────────────────
+  {
+    "title": "الدرس ١ — زمن الـ Perfekt: الحديث عن الماضي",
+    "order": 1,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "دليل شامل لزمن الـ Perfekt: تكوين Partizip II بكل فئاته، haben أم sein، ترتيب الكلمات والنفي والأسئلة، أكثر من ٧٠ فعلًا أساسيًا، ونطق صوتي تفاعلي.",
+    "badges": [],
+    "id": "lektion-a2-01-perfekt",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-01-perfekt.html",
+    "thumb": "assets/thumbnails/lektion-a2-01-perfekt.jpg"
+  },
+  {
+    "title": "الدرس ٢ — الأفعال الانعكاسية الشاملة",
+    "order": 2,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "دليل شامل للأفعال الانعكاسية الألمانية: ١٦ فعلًا، حالتا Akkusativ وDativ، حروف الجر الثابتة، الماضي التام، وساعة يوم تفاعلية.",
+    "badges": [],
+    "id": "lektion-a2-02-reflexive-verben",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-02-reflexive-verben.html",
+    "thumb": "assets/thumbnails/lektion-a2-02-reflexive-verben.jpg"
+  },
+  {
+    "title": "الدرس ٣ — الأفعال الناقصة الشاملة",
+    "order": 3,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "دليل شامل للأفعال الناقصة (können, müssen, wollen, dürfen, sollen, möchten) والأفعال المساعدة، عبر تجربة عدسة كاميرا تفاعلية ونطق صوتي.",
+    "badges": [],
+    "id": "lektion-a2-03-modalverben",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-03-modalverben.html",
+    "thumb": "assets/thumbnails/lektion-a2-03-modalverben.jpg"
+  },
+  {
+    "title": "الدرس ٤ — دليل حروف الجر الشامل (Akkusativ · Dativ · Genitiv · Wechsel)",
+    "order": 4,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "كل حروف الجر الألمانية مصنّفة حسب الحالة: Akkusativ وDativ وGenitiv وWechselpräpositionen، مع بوصلات تفاعلية ومئات الأمثلة.",
+    "badges": [],
+    "id": "lektion-a2-04-praepositionen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-04-praepositionen.html",
+    "thumb": "assets/thumbnails/lektion-a2-04-praepositionen.jpg"
+  },
+  {
+    "title": "الدرس ٥ — أفعال الوضع والحركة: stehen · liegen · stellen · legen",
+    "order": 5,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الأفعال الأربعة stehen وliegen وstellen وlegen بالتفصيل: الفرق بين وصف الحالة والحركة، حروف الجر ثنائية الاتجاه، وورشة قرار تفاعلية.",
+    "badges": [],
+    "id": "lektion-a2-05-wechselverben",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-05-wechselverben.html",
+    "thumb": "assets/thumbnails/lektion-a2-05-wechselverben.jpg"
+  },
+  {
+    "title": "الدرس ٦ — إتمام عائلة أفعال الوضع: hängen · sitzen · setzen",
+    "order": 6,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "إتمام عائلة أفعال الوضع مع hängen وsitzen وsetzen، بما فيها sich setzen الانعكاسي، والفرق بين Dativ وAkkusativ.",
+    "badges": [],
+    "id": "lektion-a2-06-haengen-sitzen-setzen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-06-haengen-sitzen-setzen.html",
+    "thumb": "assets/thumbnails/lektion-a2-06-haengen-sitzen-setzen.jpg"
+  },
+  {
+    "title": "الدرس ٧ — الجمل الفرعية الشاملة (Nebensätze)",
+    "order": 7,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الجمل الفرعية الألمانية بالتفصيل: السبب (weil/denn)، أنّ (dass)، الشرط والزمن (wenn/als/wann)، والتنازل (obwohl/trotzdem)، مع معمل بناء جمل تفاعلي.",
+    "badges": [],
+    "id": "lektion-a2-07-nebensaetze",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-07-nebensaetze.html",
+    "thumb": "assets/thumbnails/lektion-a2-07-nebensaetze.jpg"
+  },
+  {
+    "title": "الدرس ٨ — المقارنة والتفضيل الشامل (Komparativ und Superlativ)",
+    "order": 8,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "درجات المقارنة: Positiv وKomparativ وSuperlativ، قاعدة الـ Umlaut، الصفات الشاذة، والاستخدام في الجملة، مع سلّم مقارنة تفاعلي.",
+    "badges": [],
+    "id": "lektion-a2-08-komparativ-superlativ",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-08-komparativ-superlativ.html",
+    "thumb": "assets/thumbnails/lektion-a2-08-komparativ-superlativ.jpg"
+  },
+  {
+    "title": "الدرس ٩ — الحاضر التام الشامل (Perfekt & Partizip)",
+    "order": 9,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الحاضر التام بالتفصيل: haben أم sein، صيغة Partizip II للأفعال الضعيفة والقوية، الأفعال بلا ge- والأفعال المنفصلة، مع معمل بناء تفاعلي.",
+    "badges": [],
+    "id": "lektion-a2-09-perfekt-partizip",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-09-perfekt-partizip.html",
+    "thumb": "assets/thumbnails/lektion-a2-09-perfekt-partizip.jpg"
+  },
+  {
+    "title": "الدرس ١٠ — الماضي البسيط الشامل (Präteritum)",
+    "order": 10,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "زمن الماضي البسيط: تصريف الأفعال الضعيفة والقوية، haben وsein والأفعال الناقصة، والفرق بين اللغة المكتوبة والمحكية، مع ورشة تصريف تفاعلية.",
+    "badges": [],
+    "id": "lektion-a2-10-praeteritum",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-10-praeteritum.html",
+    "thumb": "assets/thumbnails/lektion-a2-10-praeteritum.jpg"
+  },
+  {
+    "title": "الدرس ١١ — تصريف الصفات (Adjektivdeklination)",
+    "order": 11,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "تصريف الصفات الألمانية بعد der/die/das، ein/eine، وبدون أداة، في حالتي Akkusativ وDativ.",
+    "badges": [],
+    "id": "lektion-a2-11-adjektivdeklination",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-11-adjektivdeklination.html",
+    "thumb": "assets/thumbnails/lektion-a2-11-adjektivdeklination.jpg"
+  },
+  {
+    "title": "الدرس ١٢ — الجمل الموصولة الشاملة (Relativsätze)",
+    "order": 12,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الجمل الموصولة الألمانية وأداة الوصل حسب الحالة والجنس والعدد، مع نطق وتمارين.",
+    "badges": [],
+    "id": "lektion-a2-12-relativsaetze",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-12-relativsaetze.html",
+    "thumb": "assets/thumbnails/lektion-a2-12-relativsaetze.jpg"
+  },
+  {
+    "title": "الدرس ١٣ — أدوات الربط الشاملة (Konnektoren)",
+    "order": 13,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "أدوات الربط deshalb وtrotzdem وaußerdem وsondern وdenn، مع أمثلة ورسوميات تفاعلية.",
+    "badges": [],
+    "id": "lektion-a2-13-konnektoren",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-13-konnektoren.html",
+    "thumb": "assets/thumbnails/lektion-a2-13-konnektoren.jpg"
+  },
+  {
+    "title": "الدرس ١٤ — الأفعال مع حروف الجر (Präpositionale Verben)",
+    "order": 14,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الأفعال المرتبطة بحروف الجر الثابتة مع dass والجمل الموصولة، مع رسوميات ونطق وتمارين.",
+    "badges": [],
+    "id": "lektion-a2-14-praepositionale-verben",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-14-praepositionale-verben.html",
+    "thumb": "assets/thumbnails/lektion-a2-14-praepositionale-verben.jpg"
+  },
+  {
+    "title": "الدرس ١٥ — الضمائر غير المحددة (Indefinitpronomen)",
+    "order": 15,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الضمائر غير المحددة man وjemand وniemand وetwas ونichts وalle، مع أمثلة ورسوميات وتمارين.",
+    "badges": [],
+    "id": "lektion-a2-15-indefinitpronomen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "lektion-a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/lektion-a2/lektion-15-indefinitpronomen.html",
+    "thumb": "assets/thumbnails/lektion-a2-15-indefinitpronomen.jpg"
+  },
 
   // ────────────────────────────────────────────────────────────
   // قسم: مسار A2 الكامل — دورة من ١٢ محطة  (category: "a2-kurs")
@@ -344,131 +623,6 @@ window.DEUTSCH_CATALOG = {
     "category": "a2-kurs",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
     "path": "Deutsch/a2-kurs/lesson-12-reisen.html",
     "thumb": "assets/thumbnails/a2-kurs-lesson-12-reisen.jpg"
-  },
-
-  // ────────────────────────────────────────────────────────────
-  // قسم: أدلة A2 الشاملة  (category: "a2")
-  // ────────────────────────────────────────────────────────────
-  {
-    "title": "الدليل الشامل · زمن الـ Perfekt",
-    "order": 1,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
-    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
-    "desc": "القاعدة الكاملة، haben أم sein، أكثر من ٧٠ فعلًا، وتمارين فورية.",
-    "badges": ["شامل"],
-    "id": "a2-guide-01-perfekt",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
-    "category": "a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
-    "path": "Deutsch/a2/guide-01-perfekt.html",
-    "thumb": "assets/thumbnails/a2-guide-01-perfekt.jpg"
-  },
-  {
-    "title": "يومي المعتاد — الأفعال الانعكاسية",
-    "order": 2,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
-    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
-    "desc": "١٦ فعلًا انعكاسيًا، حالتا Akkusativ وDativ، وساعة يوم تفاعلية.",
-    "badges": [],
-    "id": "a2-guide-02-reflexive-verben",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
-    "category": "a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
-    "path": "Deutsch/a2/guide-02-reflexive-verben.html",
-    "thumb": "assets/thumbnails/a2-guide-02-reflexive-verben.jpg"
-  },
-  {
-    "title": "عدسات المعنى — الأفعال الناقصة (الأساسية)",
-    "order": 3,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
-    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
-    "desc": "können, müssen, wollen, dürfen, sollen, möchten عبر عدسة كاميرا تفاعلية.",
-    "badges": ["النسخة الأساسية"],
-    "id": "a2-guide-03-modalverben",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
-    "category": "a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
-    "path": "Deutsch/a2/guide-03-modalverben.html",
-    "thumb": "assets/thumbnails/a2-guide-03-modalverben.jpg"
-  },
-  {
-    "title": "عدسات المعنى — الأفعال الناقصة (الموسّعة)",
-    "order": 4,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
-    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
-    "desc": "نسخة موسّعة تضيف الأفعال المساعدة haben, sein, werden للدرس السابق.",
-    "badges": ["نسخة موسّعة"],
-    "id": "a2-guide-03b-modalverben-komplett",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
-    "category": "a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
-    "path": "Deutsch/a2/guide-03b-modalverben-komplett.html",
-    "thumb": "assets/thumbnails/a2-guide-03b-modalverben-komplett.jpg"
-  },
-  {
-    "title": "بوصلة حروف الجر — حالة الجر Dativ",
-    "order": 5,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
-    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
-    "desc": "حروف الجر السبعة (aus, bei, mit, nach, seit, von, zu) عبر بوصلة تفاعلية.",
-    "badges": [],
-    "id": "a2-guide-04-dativ",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
-    "category": "a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
-    "path": "Deutsch/a2/guide-04-dativ.html",
-    "thumb": "assets/thumbnails/a2-guide-04-dativ.jpg"
-  },
-  {
-    "title": "دليل حروف الجر الشامل",
-    "order": 6,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
-    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
-    "desc": "كل حروف الجر: Akkusativ · Dativ · Genitiv · حروف الجر المزدوجة، بمئات الأمثلة.",
-    "badges": ["نسخة موسّعة"],
-    "id": "a2-guide-04b-praepositionen-komplett",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
-    "category": "a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
-    "path": "Deutsch/a2/guide-04b-praepositionen-komplett.html",
-    "thumb": "assets/thumbnails/a2-guide-04b-praepositionen-komplett.jpg"
-  },
-  {
-    "title": "الدرس ٥ — الماضي البسيط الشامل (Präteritum)",
-    "order": 7,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
-    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
-    "desc": "الأفعال الضعيفة والقوية وsein/haben/werden والناقصة في الماضي البسيط، ومتى نستخدمه بدل Perfekt — مع معمل تصريف تفاعلي.",
-    "badges": ["شامل"],
-    "id": "a2-guide-05-praeteritum",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
-    "category": "a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
-    "path": "Deutsch/a2/guide-05-praeteritum.html",
-    "thumb": "assets/thumbnails/a2-guide-05-praeteritum.jpg"
-  },
-  {
-    "title": "الدرس ٦ — نهايات الصفة الشاملة (Adjektivendungen)",
-    "order": 8,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
-    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
-    "desc": "التصريف الضعيف بعد der/die/das، والمختلط بعد ein/mein، والقوي بلا أداة، عبر الحالات الأربع، مع حاسبة تصريف تفاعلية.",
-    "badges": ["شامل"],
-    "id": "a2-guide-06-adjektivendungen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
-    "category": "a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
-    "path": "Deutsch/a2/guide-06-adjektivendungen.html",
-    "thumb": "assets/thumbnails/a2-guide-06-adjektivendungen.jpg"
-  },
-  {
-    "title": "الدرس ٧ — الحاضر التام الشامل (Perfekt)",
-    "order": 9,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
-    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
-    "desc": "haben أم sein، تكوين Partizip II للأفعال الضعيفة والقوية، الأفعال بلا ge- والأفعال المنفصلة، مع معمل بناء تفاعلي.",
-    "badges": ["شامل"],
-    "id": "a2-guide-07-partizip-ii-komplett",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
-    "category": "a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
-    "path": "Deutsch/a2/guide-07-partizip-ii-komplett.html",
-    "thumb": "assets/thumbnails/a2-guide-07-partizip-ii-komplett.jpg"
-  },
-  {
-    "title": "الدرس ٨ — الجمل الفرعية الشاملة (Nebensätze)",
-    "order": 10,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
-    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
-    "desc": "جمل السبب (weil/denn)، وdass، والشرط والزمن (wenn/als/wann)، والتنازل (obwohl/trotzdem)، مع معمل بناء جمل تفاعلي.",
-    "badges": ["شامل"],
-    "id": "a2-guide-08-nebensaetze",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
-    "category": "a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
-    "path": "Deutsch/a2/guide-08-nebensaetze.html",
-    "thumb": "assets/thumbnails/a2-guide-08-nebensaetze.jpg"
-  },
-  {
-    "title": "الدرس ٩ — صيغة الأمر الشاملة (Imperativ)",
-    "order": 11,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
-    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
-    "desc": "شرح شامل وتفاعلي لصيغة الأمر الألمانية Imperativ لصيغ du وihr وSie، بأمثلة صوتية وتمارين تفاعلية.",
-    "badges": [],
-    "id": "a2-guide-09-imperativ",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
-    "category": "a2",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
-    "path": "Deutsch/a2/guide-09-imperativ.html",
-    "thumb": "assets/thumbnails/a2-guide-09-imperativ.jpg"
   },
 
   // ────────────────────────────────────────────────────────────
@@ -726,6 +880,17 @@ window.DEUTSCH_CATALOG = {
     "category": "grammatik",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
     "path": "Deutsch/grammatik/welch-interrogativ-relativ-indefinit.html",
     "thumb": "assets/thumbnails/grammatik-welch-interrogativ-relativ-indefinit.jpg"
+  },
+  {
+    "title": "صيغة الأمر الشاملة — Imperativ",
+    "order": 24,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "شرح شامل وتفاعلي لصيغة الأمر الألمانية Imperativ لصيغ du وihr وSie، بأمثلة صوتية وتمارين تفاعلية.",
+    "badges": [],
+    "id": "grammatik-imperativ",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "grammatik",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik/imperativ.html",
+    "thumb": "assets/thumbnails/grammatik-imperativ.jpg"
   },
 
   // ────────────────────────────────────────────────────────────

@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الدرس ٦ · إتمام عائلة أفعال الوضع: hängen · sitzen · setzen | ألمانية A2</title>
+<meta name="description" content="الدرس السادس من مستوى A2: إتمام عائلة أفعال الوضع مع hängen (بمعنييها: الحالة والحركة من نفس المصدر) وsitzen وsetzen — بما في ذلك sich setzen الانعكاسي بربط مباشر مع درس الأفعال الانعكاسية، الفرق بين Dativ وAkkusativ، الأفعال القوية والضعيفة، ورشة قرار تفاعلية، ونطق صوتي، ومئات الأمثلة والتمارين.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+body { margin: 0; overflow-x: hidden; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+:root {
+  color-scheme: light;
+  --bg: #F7F6F3;
+  --bg-alt: #EFEDE7;
+  --surface: #FFFFFF;
+  --surface-glass: rgba(255,255,255,.68);
+  --surface-glass-border: rgba(255,255,255,.5);
+  --ink: #23291F;
+  --ink-soft: #57604F;
+  --ink-faint: #8B927F;
+  --border: #E3E1D8;
+  --border-strong: #CCC9BC;
+
+  --primary: #3D8A5F;
+  --primary-ink: #2C6746;
+  --primary-soft: #E3F0E8;
+  --primary-glow: rgba(61,138,95,.24);
+
+  --secondary: #C4732E;
+  --secondary-ink: #9A5A23;
+  --secondary-soft: #FBEEE2;
+  --secondary-glow: rgba(196,115,46,.22);
+
+  --success: #2E7D4F;
+  --success-soft: #E4F5EA;
+  --danger: #B8493C;
+  --danger-soft: #FBEAE7;
+
+  /* four position-verb colors: state (Zustand · wo?) vs action (Handlung · wohin?) */
+  --verb-sitzen: var(--primary);
+  --verb-sitzen-soft: var(--primary-soft);
+  --verb-haengen: var(--secondary);
+  --verb-haengen-soft: var(--secondary-soft);
+  --verb-setzen: #3D74B0;
+  --verb-setzen-soft: #E7EFF9;
+  --verb-haengen-akt: #B0507A;
+  --verb-haengen-akt-soft: #FBE7EF;
+
+  --shadow-sm: 0 1px 2px rgba(35,41,31,.06), 0 1px 1px rgba(35,41,31,.04);
+  --shadow-md: 0 8px 24px -8px rgba(35,41,31,.16), 0 2px 8px -2px rgba(35,41,31,.08);
+  --shadow-lg: 0 24px 60px -20px rgba(35,41,31,.28), 0 8px 20px -8px rgba(35,41,31,.12);
+  --shadow-glow-primary: 0 8px 30px -6px var(--primary-glow);
+
+  --r-sm: 10px; --r-md: 16px; --r-lg: 24px; --r-xl: 32px;
+
+  --font-ar-display: 'Markazi Text', 'Segoe UI', sans-serif;
+  --font-ar-body: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-de-display: 'Newsreader', Georgia, serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  --nav-h: 72px;
+  --ease: cubic-bezier(.22,.9,.32,1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #14180F;
+  --bg-alt: #0F120B;
+  --surface: #1C2317;
+  --surface-glass: rgba(28,35,23,.62);
+  --surface-glass-border: rgba(255,255,255,.08);
+  --ink: #EEF1E9;
+  --ink-soft: #ACB59F;
+  --ink-faint: #6E7663;
+  --border: #2C3524;
+  --border-strong: #3A4630;
+
+  --primary: #6FC291;
+  --primary-ink: #A4DEBD;
+  --primary-soft: rgba(111,194,145,.14);
+  --primary-glow: rgba(111,194,145,.28);
+
+  --secondary: #E29A5C;
+  --secondary-ink: #F0BE8E;
+  --secondary-soft: rgba(226,154,92,.14);
+  --secondary-glow: rgba(226,154,92,.24);
+
+  --success: #5FCB8C;
+  --success-soft: rgba(95,203,140,.14);
+  --danger: #E2836E;
+  --danger-soft: rgba(226,131,110,.14);
+
+  --verb-sitzen: var(--primary);
+  --verb-sitzen-soft: var(--primary-soft);
+  --verb-haengen: var(--secondary);
+  --verb-haengen-soft: var(--secondary-soft);
+  --verb-setzen: #7FA8DE;
+  --verb-setzen-soft: rgba(127,168,222,.14);
+  --verb-haengen-akt: #E28CB0;
+  --verb-haengen-akt-soft: rgba(226,140,176,.14);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3);
+  --shadow-md: 0 8px 24px -8px rgba(0,0,0,.5);
+  --shadow-lg: 0 24px 60px -20px rgba(0,0,0,.6);
+}
+
+body { background: var(--bg); color: var(--ink); font-family: var(--font-ar-body); line-height: 1.75; transition: background-color .5s var(--ease), color .5s var(--ease); }
+.de, [lang="de"] { font-family: var(--font-de-display); direction: ltr; unicode-bidi: isolate; }
+.mono { font-family: var(--font-mono); direction: ltr; unicode-bidi: isolate; }
+h1, h2, h3 { font-family: var(--font-ar-display); font-weight: 600; line-height: 1.3; margin: 0; }
+p { margin: 0; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+::selection { background: var(--primary); color: #fff; }
+.road-rule { height: 3px; background-image: repeating-linear-gradient(to right, var(--border-strong) 0 10px, transparent 10px 20px); border: none; }
+
+.container { max-width: 1120px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); }
+.section { padding-block: clamp(56px, 8vw, 108px); position: relative; }
+.section-head { max-width: 720px; margin-bottom: clamp(28px, 5vw, 48px); }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .76rem; letter-spacing: .01em; color: var(--primary); background: var(--primary-soft); padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; }
+.section-title { font-size: clamp(1.7rem, 3.9vw, 2.6rem); }
+.section-sub { color: var(--ink-soft); font-size: clamp(.98rem, 1.6vw, 1.1rem); margin-top: 12px; max-width: 64ch; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(1){transition-delay:.03s} .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.09s}
+.reveal-stagger.is-visible > *:nth-child(3){transition-delay:.15s} .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.21s}
+.reveal-stagger.is-visible > *:nth-child(5){transition-delay:.27s} .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.33s}
+.reveal-stagger.is-visible > *:nth-child(7){transition-delay:.39s} .reveal-stagger.is-visible > *:nth-child(8){transition-delay:.45s}
+.reveal-stagger.is-visible > *:nth-child(9){transition-delay:.51s}
+
+.site-header { position: sticky; top: 0; z-index: 100; background: var(--surface-glass); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4); border-bottom: 1px solid var(--surface-glass-border); }
+.header-top { height: var(--nav-h); display: flex; align-items: center; }
+.header-inner { display: flex; align-items: center; gap: 18px; width: 100%; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; white-space: nowrap; }
+.brand-mark { width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; background: conic-gradient(from 0deg, var(--verb-sitzen), var(--verb-setzen), var(--verb-haengen), var(--verb-haengen-akt), var(--verb-sitzen)); box-shadow: var(--shadow-glow-primary); position: relative; }
+.brand-mark::after { content:""; position:absolute; inset:30%; border-radius:50%; background: var(--surface); }
+.brand-mark::before { content:"⇕"; font-family: var(--font-de-display); position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; color:var(--ink); }
+.brand-text { font-family: var(--font-ar-display); font-size: 1.15rem; }
+.brand-text small { display: block; font-family: var(--font-ar-body); font-weight: 400; font-size: .68rem; color: var(--ink-faint); }
+.progress-ring-wrap { position: relative; width: 44px; height: 44px; flex-shrink: 0; }
+.progress-ring-wrap svg { transform: rotate(-90deg); }
+.progress-ring-track { fill: none; stroke: var(--border); stroke-width: 4; }
+.progress-ring-bar { fill: none; stroke: var(--primary); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset .6s var(--ease); }
+.progress-ring-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: .6rem; font-weight: 600; }
+.header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.icon-btn { width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all .25s var(--ease); }
+.icon-btn:hover { color: var(--primary); border-color: var(--primary); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.icon-btn:active { transform: translateY(0) scale(.94); }
+.icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+.search-box { position: relative; display: none; align-items: center; }
+.search-box input { width: 0; opacity: 0; padding: 0; border: none; background: var(--surface); color: var(--ink); border-radius: 12px; transition: all .3s var(--ease); font-family: var(--font-ar-body); font-size: .88rem; }
+.search-box.open input { width: 190px; opacity: 1; padding: 9px 14px; border: 1px solid var(--border); }
+@media (min-width: 861px){ .search-box { display: flex; } }
+
+.road-nav { overflow-x: auto; scrollbar-width: none; border-top: 1px dashed var(--border); position: relative; }
+.road-nav::-webkit-scrollbar { display: none; }
+.road-track { display: flex; align-items: flex-end; min-width: max-content; padding: 12px clamp(18px,4vw,40px) 10px; position: relative; }
+.road-track::before { content:""; position:absolute; right: clamp(18px,4vw,40px); left: clamp(18px,4vw,40px); bottom: 18px; height: 2px; background-image: repeating-linear-gradient(to left, var(--border-strong) 0 8px, transparent 8px 14px); }
+.waypoint-btn { display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: none; cursor: pointer; padding: 0 13px; flex-shrink: 0; color: var(--ink-faint); position: relative; z-index: 1; }
+.waypoint-pin { width: 14px; height: 14px; border-radius: 50% 50% 50% 0; background: var(--border-strong); transform: rotate(-45deg); margin-bottom: 6px; transition: all .25s var(--ease); }
+.waypoint-btn span.lbl { font-size: .72rem; font-weight: 500; white-space: nowrap; }
+.waypoint-btn:hover .waypoint-pin { background: var(--primary); transform: rotate(-45deg) scale(1.2); }
+.waypoint-btn:hover { color: var(--ink); }
+.waypoint-btn.active .waypoint-pin { background: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft); transform: rotate(-45deg) scale(1.25); }
+.waypoint-btn.active { color: var(--primary); }
+
+.hero { position: relative; padding-block: clamp(48px, 9vw, 96px) clamp(64px, 9vw, 110px); overflow: hidden; }
+.hero::before { content:""; position:absolute; inset:-20% -10% auto -10%; height:640px; z-index:-2; background: radial-gradient(560px 360px at 18% 15%, var(--verb-sitzen-soft), transparent 70%), radial-gradient(520px 340px at 88% 20%, var(--verb-haengen-akt-soft), transparent 70%); filter: blur(10px); }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 56px); align-items: center; }
+@media (max-width: 940px){ .hero-grid { grid-template-columns: 1fr; } }
+.level-badge { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: .8rem; background: var(--surface); border: 1px solid var(--border); padding: 7px 8px 7px 16px; border-radius: 999px; box-shadow: var(--shadow-sm); margin-bottom: 22px; }
+.level-badge b { background: var(--primary); color: #fff; padding: 3px 11px; border-radius: 999px; font-weight: 600; }
+.hero-title { font-size: clamp(2rem, 4.6vw, 3.1rem); }
+.hero-title .de { color: var(--primary); }
+.hero-lead { margin-top: 20px; font-size: clamp(1.02rem, 1.7vw, 1.2rem); color: var(--ink-soft); max-width: 58ch; }
+.hero-ctas { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 24px; border-radius: 14px; font-weight: 600; font-size: .96rem; cursor: pointer; border: 1px solid transparent; transition: all .25s var(--ease); }
+.btn:active { transform: scale(.97); }
+.btn-primary { background: linear-gradient(155deg, var(--primary), var(--primary-ink)); color: #fff; box-shadow: var(--shadow-glow-primary); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 34px -8px var(--primary-glow); }
+.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--border); }
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-3px); }
+.btn-sm { padding: 8px 16px; font-size: .85rem; }
+
+.hero-quad-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: clamp(18px,3vw,26px); box-shadow: var(--shadow-lg); }
+.hero-verb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.hero-verb-cell { border-radius: var(--r-md); padding: 14px 16px; color: #fff; display: flex; flex-direction: column; gap: 6px; box-shadow: var(--shadow-sm); }
+.hero-verb-cell .hl-tag { font-family: var(--font-mono); font-size: .64rem; opacity: .88; }
+.hero-verb-cell .hl-word { font-family: var(--font-de-display); font-weight: 700; font-size: 1.15rem; }
+
+/* ==========================================================================
+   POSITION WORKSHOP — object picker + two-step decision ladder (Zustand → Handlung)
+   ========================================================================== */
+.workshop-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: clamp(20px,3.4vw,32px); box-shadow: var(--shadow-lg); }
+.verb-picker { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 26px; }
+.verb-picker-btn { font-family: var(--font-de-display); direction: ltr; font-weight: 700; font-size: .96rem; padding: 8px 18px; border-radius: 999px; border: 2px solid var(--border-strong); background: var(--surface); color: var(--ink); cursor: pointer; transition: all .22s var(--ease); }
+.verb-picker-btn:hover { transform: translateY(-2px); }
+.verb-picker-btn.active { color: #fff; box-shadow: var(--shadow-sm); }
+.ladder { display: flex; flex-direction: column; gap: 14px; transition: filter .3s var(--ease), opacity .3s var(--ease); }
+.ladder.focusing { filter: blur(6px); opacity: .35; }
+.ladder-step { display: grid; grid-template-columns: 160px 1fr; gap: 18px; align-items: center; background: var(--bg-alt); border-radius: var(--r-md); padding: 16px 20px; border-inline-start: 6px solid var(--step-color, var(--primary)); }
+@media (max-width: 640px){ .ladder-step { grid-template-columns: 1fr; } }
+.ladder-step.step-handlung { margin-inline-start: clamp(0px, 4vw, 40px); }
+.ladder-word-col { text-align: center; }
+.ladder-tag { font-family: var(--font-mono); font-size: .72rem; color: var(--step-color, var(--primary)); font-weight: 700; display: block; margin-bottom: 4px; }
+.ladder-word { font-family: var(--font-de-display); font-weight: 700; font-size: clamp(1.15rem, 2.4vw, 1.5rem); color: var(--step-color, var(--primary)); cursor: pointer; }
+.ladder-bar { height: 8px; border-radius: 999px; background: var(--step-color, var(--primary)); margin-top: 8px; }
+.ladder-example { direction: ltr; }
+.ladder-example .de-line { font-family: var(--font-de-display); font-size: 1.05rem; cursor: pointer; }
+.ladder-example .ar-line { font-family: var(--font-ar-body); direction: rtl; font-size: .88rem; color: var(--ink-soft); margin-top: 4px; }
+
+/* route sentence — reused word-click component */
+.route-sentence { direction: ltr; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-family: var(--font-de-display); font-size: clamp(1.02rem, 2.1vw, 1.3rem); }
+.rs-word { cursor: pointer; border-radius: 8px; padding: 3px 4px; transition: background-color .2s, color .2s; }
+.rs-word:hover { background: var(--surface); }
+.rs-word.speaking { background: var(--primary); color: #fff; }
+.rs-verb { border-bottom: 3px solid var(--verb-marker, var(--ink-faint)); font-weight: 700; cursor: pointer; padding-bottom: 1px; color: var(--verb-marker, var(--ink)); }
+.rs-verb:hover, .rs-verb.speaking { background: var(--bg-alt); }
+.route-ar { color: var(--ink-soft); margin-top: 8px; }
+
+.flow-mini-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: stretch; }
+@media (max-width: 700px){ .flow-mini-grid { grid-template-columns: 1fr; } .flow-mini-arrow { transform: rotate(90deg); margin: 0 auto; } }
+.flow-mini-arrow { display: flex; align-items: center; justify-content: center; color: var(--ink-faint); }
+.flow-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 20px; box-shadow: var(--shadow-sm); }
+.flow-card .fc-q { font-weight: 700; margin-bottom: 10px; }
+.flow-card .fc-result { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-family: var(--font-mono); font-size: .82rem; color: #fff; margin-top: 8px; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 760px){ .grid-2 { grid-template-columns: 1fr; } }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 940px){ .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px){ .grid-3 { grid-template-columns: 1fr; } }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media (max-width: 760px){ .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+.info-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px; box-shadow: var(--shadow-sm); transition: all .3s var(--ease); }
+.info-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--border-strong); }
+.info-card h3 { font-size: 1.1rem; margin-bottom: 10px; display: flex; align-items: center; gap: 9px; font-family: var(--font-ar-body); font-weight: 700; }
+.info-card h3 .icon-chip { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.info-card p, .info-card li { color: var(--ink-soft); font-size: .95rem; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: .78rem; padding: 4px 11px; border-radius: 999px; }
+.callout { display: flex; gap: 14px; align-items: flex-start; border-inline-start: 4px solid var(--primary); background: var(--surface); border-radius: var(--r-md); padding: 18px 20px; box-shadow: var(--shadow-sm); }
+.callout.haengen { border-inline-start-color: var(--verb-haengen); }
+.callout.setzen { border-inline-start-color: var(--verb-setzen); }
+.callout.haengen-akt { border-inline-start-color: var(--verb-haengen-akt); }
+.callout svg { color: var(--primary); flex-shrink: 0; margin-top: 2px; }
+.callout.haengen svg { color: var(--verb-haengen); }
+.callout.setzen svg { color: var(--verb-setzen); }
+.callout.haengen-akt svg { color: var(--verb-haengen-akt); }
+.simple-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+.simple-table th, .simple-table td { padding: 12px 16px; text-align: center; border-bottom: 1px solid var(--border); }
+.simple-table th { background: var(--bg-alt); font-family: var(--font-ar-body); font-weight: 700; font-size: .88rem; }
+.simple-table tr:last-child td { border-bottom: none; }
+.simple-table td.de { font-size: 1.02rem; cursor: pointer; font-weight: 600; }
+.simple-table tr:hover td { background: var(--bg-alt); }
+.simple-table.compact th, .simple-table.compact td { padding: 10px 12px; font-size: .86rem; }
+
+.filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+.filter-chip { font-family: var(--font-ar-body); font-size: .86rem; font-weight: 600; padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink-soft); cursor: pointer; transition: all .22s var(--ease); display: inline-flex; align-items: center; gap: 7px; }
+.filter-chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--dot-color, var(--ink-faint)); }
+.filter-chip:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+.filter-chip.active { background: var(--dot-color, var(--primary)); border-color: var(--dot-color, var(--primary)); color: #fff; }
+.filter-chip.active .dot { background: #fff; }
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.flip-card { perspective: 1200px; height: 190px; }
+.flip-card.hidden-item { display: none; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-shadow: var(--shadow-sm); }
+.flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
+.flip-front .de { font-size: 1.2rem; font-weight: 700; }
+.flip-front .flip-case-tag { position:absolute; top:10px; inset-inline-start:10px; font-family: var(--font-mono); font-size:.6rem; padding:2px 9px; border-radius:999px; color:#fff; }
+.flip-back { color: #fff; transform: rotateY(180deg); gap: 6px; }
+.flip-back .meaning-de { font-family: var(--font-de-display); font-size: .92rem; font-weight: 600; }
+.flip-back .meaning { font-size: .86rem; opacity: .92; }
+.flip-hint { font-family: var(--font-mono); font-size: .64rem; color: var(--ink-faint); margin-top: 8px; }
+.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--primary); transition: all .2s; }
+.speak-dot:hover { transform: scale(1.1); }
+.flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
+.speak-dot .icon { width: 15px; height: 15px; }
+
+.mistake-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+@media (max-width: 640px){ .mistake-card { grid-template-columns: 1fr; } }
+.mistake-side { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.mistake-wrong { background: var(--danger-soft); }
+.mistake-right { background: var(--success-soft); }
+.mistake-tag { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .82rem; }
+.mistake-wrong .mistake-tag { color: var(--danger); }
+.mistake-right .mistake-tag { color: var(--success); }
+.mistake-sentence { font-family: var(--font-de-display); direction: ltr; font-size: 1.02rem; }
+.mistake-note { grid-column: 1 / -1; padding: 12px 20px; font-size: .88rem; color: var(--ink-soft); border-top: 1px dashed var(--border); background: var(--surface); display:flex; align-items:center; gap:8px; }
+.mistake-note .grp-tag { font-family: var(--font-mono); font-size: .64rem; padding: 2px 8px; border-radius: 999px; color: #fff; flex-shrink:0; }
+
+.exercise-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+.exercise-tabs { display: flex; overflow-x: auto; border-bottom: 1px solid var(--border); scrollbar-width: none; }
+.exercise-tabs::-webkit-scrollbar { display: none; }
+.exercise-tab { flex-shrink: 0; padding: 16px 18px; background: none; border: none; cursor: pointer; font-weight: 600; font-size: .88rem; color: var(--ink-faint); border-bottom: 3px solid transparent; display: flex; align-items: center; gap: 8px; transition: all .25s; }
+.exercise-tab:hover { color: var(--ink); }
+.exercise-tab.active { color: var(--primary); border-color: var(--primary); }
+.exercise-tab .count { font-family: var(--font-mono); font-size: .68rem; background: var(--bg-alt); padding: 1px 7px; border-radius: 999px; }
+.exercise-panels { padding: clamp(20px, 4vw, 34px); }
+.exercise-panel { display: none; }
+.exercise-panel.active { display: block; animation: fadeSlide .4s var(--ease); }
+@keyframes fadeSlide { from { opacity:0; transform:translateY(10px);} to { opacity:1; transform:translateY(0);} }
+.q-block { border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 20px; margin-bottom: 16px; background: var(--bg-alt); }
+.q-prompt { font-family: var(--font-de-display); direction: ltr; font-size: 1.06rem; margin-bottom: 14px; }
+.q-prompt-ar { font-family: var(--font-ar-body); direction: rtl; font-size: .86rem; color: var(--ink-soft); margin-bottom: 12px; }
+.q-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.opt-btn { font-family: var(--font-de-display); direction: ltr; padding: 9px 20px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 1rem; transition: all .2s var(--ease); }
+.opt-btn:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+.opt-btn.correct { background: var(--success-soft); border-color: var(--success); color: var(--success); }
+.opt-btn.wrong { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
+.opt-btn:disabled { cursor: default; }
+.q-feedback { margin-top: 12px; font-size: .88rem; color: var(--ink-soft); display: none; padding-top: 10px; border-top: 1px dashed var(--border); }
+.q-feedback.show { display: block; }
+.fill-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.fill-row input { font-family: var(--font-de-display); direction: ltr; text-align: left; font-size: 1.05rem; padding: 9px 14px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink); width: 140px; max-width: 100%; }
+.fill-row input:focus { border-color: var(--primary); }
+.fill-check { border: none; background: var(--primary); color: #fff; padding: 9px 18px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+.fill-result { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+.builder-pool, .builder-answer { display: flex; flex-wrap: wrap; gap: 10px; min-height: 52px; align-items: center; }
+.builder-answer { border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: 10px 14px; margin-bottom: 14px; background: var(--surface); }
+.chip-word { font-family: var(--font-de-display); direction: ltr; padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 1rem; transition: all .2s var(--ease); box-shadow: var(--shadow-sm); }
+.chip-word:hover { transform: translateY(-2px); border-color: var(--primary); }
+.chip-word.used { opacity: .3; pointer-events: none; }
+.builder-actions { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.builder-actions .btn { padding: 9px 18px; font-size: .88rem; }
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 3vw, 40px); }
+.match-col { display: flex; flex-direction: column; gap: 10px; }
+.match-item { font-family: var(--font-de-display); direction: ltr; padding: 12px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; transition: all .2s var(--ease); text-align: center; }
+.match-item:hover:not(.matched) { border-color: var(--primary); transform: scale(1.02); }
+.match-item.selected { border-color: var(--primary); background: var(--primary-soft); }
+.match-item.matched { border-color: var(--success); background: var(--success-soft); color: var(--success); pointer-events: none; }
+.match-item.shake { animation: shake .4s; border-color: var(--danger); background: var(--danger-soft); }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+.score-bar-wrap { display: flex; align-items: center; gap: 16px; padding: 18px clamp(20px, 4vw, 34px); border-top: 1px solid var(--border); background: var(--bg-alt); flex-wrap: wrap; }
+.score-track { flex: 1; min-width: 140px; height: 10px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.score-fill { height: 100%; background: linear-gradient(to left, var(--verb-sitzen), var(--verb-setzen), var(--verb-haengen), var(--verb-haengen-akt)); border-radius: 999px; width: 0%; transition: width .5s var(--ease); }
+.score-label { font-family: var(--font-mono); font-size: .82rem; white-space: nowrap; }
+
+.audio-dock { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(140%); z-index: 200; background: var(--surface-glass); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border: 1px solid var(--surface-glass-border); box-shadow: var(--shadow-lg); border-radius: 999px; padding: 8px 10px 8px 18px; display: flex; align-items: center; gap: 12px; max-width: min(92vw, 560px); transition: transform .45s var(--ease); }
+.audio-dock.visible { transform: translateX(-50%) translateY(0); }
+.audio-dock-text { font-family: var(--font-de-display); direction: ltr; font-size: .92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 160px; }
+.audio-dock-controls { display: flex; align-items: center; gap: 4px; }
+.audio-dock .icon-btn { width: 34px; height: 34px; border-radius: 50%; }
+.audio-dock input[type="range"] { width: 70px; accent-color: var(--primary); }
+.audio-dock-voice { font-family: var(--font-mono); font-size: .64rem; color: var(--ink-faint); display: none; }
+@media (min-width: 620px){ .audio-dock-voice { display: block; } }
+.summary-list { display: flex; flex-direction: column; gap: 12px; }
+.summary-list li { display: flex; gap: 12px; align-items: flex-start; }
+.summary-list .icon-chip { flex-shrink: 0; }
+.badges-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 14px; margin-top: 30px; }
+.badge { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 10px; text-align: center; filter: grayscale(1) opacity(.5); transition: filter .5s var(--ease); }
+.badge.unlocked { filter: none; opacity: 1; }
+.badge.pop { animation: badgePop .6s var(--ease); }
+@keyframes badgePop { 0%{transform:scale(.7) rotate(-8deg)} 60%{transform:scale(1.12) rotate(4deg)} 100%{transform:scale(1) rotate(0)} }
+.badge-icon { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(155deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: #fff; }
+.badge-name { font-size: .8rem; font-weight: 600; }
+.toast-wrap { position: fixed; top: calc(var(--nav-h) + 44px); left: 50%; transform: translateX(-50%); z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+.toast { background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-size: .88rem; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(-14px); transition: all .4s var(--ease); white-space: nowrap; }
+.toast.show { opacity: 1; transform: translateY(0); }
+.site-footer { border-top: 1px solid var(--border); padding-block: 36px; margin-top: 30px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--ink-faint); font-size: .86rem; }
+.back-to-top { position: fixed; bottom: 20px; inset-inline-end: 20px; z-index: 190; width: 46px; height: 46px; border-radius: 50%; background: var(--primary); color: #fff; border: none; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow-primary); cursor: pointer; opacity: 0; transform: translateY(20px) scale(.8); pointer-events: none; transition: all .35s var(--ease); }
+.back-to-top.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.back-to-top:hover { transform: translateY(-4px) scale(1.05); }
+mark.hl { background: var(--secondary-soft); color: var(--secondary-ink); border-radius: 4px; padding: 0 2px; }
+
+/* scene diagram (why section) */
+.scene-figure { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: clamp(16px,3vw,28px); box-shadow: var(--shadow-md); margin-bottom: 24px; }
+.scene-figure figcaption { text-align: center; color: var(--ink-soft); font-size: .88rem; margin-top: 14px; }
+.scene-legend { display: flex; justify-content: center; gap: 22px; margin-top: 12px; flex-wrap: wrap; }
+.scene-legend span { display: inline-flex; align-items: center; gap: 7px; font-size: .84rem; color: var(--ink-soft); }
+.scene-legend i { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+
+@media print {
+  .site-header, .audio-dock, .back-to-top, .exercise-tabs, .score-bar-wrap, .btn, .icon-btn, .toast-wrap, .filter-bar, .verb-picker { display: none !important; }
+  body { background: #fff; color: #000; }
+  .section { padding-block: 20px; break-inside: avoid; }
+  .exercise-panel { display: block !important; }
+  .flip-card.hidden-item { display: block !important; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><g stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/></g></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+<symbol id="i-speaker" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.3 5.7a9 9 0 0 1 0 12.6"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+<symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 4v6h6"/><path d="M4.6 15a8 8 0 1 0 1.5-9.4L4 9"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><polyline points="6,9 6,3 18,3 18,9"/><rect x="4" y="9" width="16" height="8" rx="1.2"/><rect x="8" y="14" width="8" height="6"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5"/><path d="M15 4h5v5"/><path d="M20 15v5h-5"/><path d="M9 20H4v-5"/></symbol>
+<symbol id="i-compress" viewBox="0 0 24 24"><path d="M9 4v5H4"/><path d="M15 4v5h5"/><path d="M20 20v-5h-5"/><path d="M4 20v-5h5"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="5,13 9,17 19,7"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></symbol>
+<symbol id="i-medal" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9 13.5 7 21l5-2.5L17 21l-2-7.5"/><path d="M12 6.5l.9 1.9 2.1.3-1.5 1.4.3 2.1-1.8-1-1.8 1 .3-2.1-1.5-1.4 2.1-.3z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h6v18H6a2 2 0 0 1-2-2zM20 5a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 0 2-2z"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5a2.6 2.6 0 0 1 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-cards" viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="14" rx="2"/><path d="M8 5.5 19 5.5a2 2 0 0 1 2 2L21 18"/></symbol>
+<symbol id="i-scroll" viewBox="0 0 24 24"><path d="M6 3h13a2 2 0 0 1 2 2v3H8"/><path d="M6 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3H8a2 2 0 0 0-2 2"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M9 15L15 9"/><path d="M13.5 6.5l1-1a3.5 3.5 0 0 1 5 5l-1 1"/><path d="M10.5 17.5l-1 1a3.5 3.5 0 0 1-5-5l1-1"/></symbol>
+<symbol id="i-stairs" viewBox="0 0 24 24"><path d="M3 21v-4h4v-4h4v-4h4v-4h4"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><path d="M4 7h16"/><path d="M4 7l-2 6a3 3 0 0 0 4.5 0z"/><path d="M20 7l-2 6a3 3 0 0 0 4.5 0z"/></symbol>
+<symbol id="i-vertical" viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><polyline points="7,7 12,2 17,7"/><polyline points="7,17 12,22 17,17"/></symbol>
+<symbol id="i-horizontal" viewBox="0 0 24 24"><line x1="2" y1="12" x2="22" y2="12"/><polyline points="7,7 2,12 7,17"/><polyline points="17,7 22,12 17,17"/></symbol>
+<symbol id="i-hook" viewBox="0 0 24 24"><path d="M12 2v9"/><path d="M8 11a4 4 0 1 0 8 0"/></symbol>
+<symbol id="i-chair" viewBox="0 0 24 24"><path d="M7 3v8"/><path d="M7 11h10"/><path d="M17 7v4"/><path d="M8 11v8"/><path d="M16 11v8"/></symbol>
+<symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+</defs>
+</svg>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<header class="site-header">
+  <div class="header-top">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">ألمانية A2<small>الدرس السادس · hängen · sitzen · setzen</small></span>
+      </div>
+      <div style="flex:1"></div>
+      <div class="header-controls">
+        <div class="search-box" id="searchBoxDesktop"><input type="search" id="searchInputDesktop" placeholder="ابحث في الدرس…" aria-label="ابحث في الدرس"></div>
+        <button class="icon-btn" id="searchToggle" aria-label="بحث"><svg class="icon"><use href="#i-search"/></svg></button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري">
+          <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+        </button>
+        <button class="icon-btn" id="fullscreenToggle" aria-label="ملء الشاشة"><svg class="icon" id="fsIcon"><use href="#i-expand"/></svg></button>
+        <div class="progress-ring-wrap" title="تقدّمك في الدرس">
+          <svg width="44" height="44"><circle class="progress-ring-track" cx="22" cy="22" r="18"/><circle class="progress-ring-bar" id="progressRingBar" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="113"/></svg>
+          <span class="progress-ring-label" id="progressRingLabel">٠٪</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="road-nav" aria-label="أقسام الدرس"><div class="road-track" id="roadTrack"></div></nav>
+</header>
+
+<main id="mainContent">
+
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="reveal is-visible">
+      <span class="level-badge"><b>A2</b> الدرس رقم ٦ من مسار «الألمانية خطوة بخطوة»</span>
+      <h1 class="hero-title">إتمام عائلة أفعال الوضع <span class="de">hängen · sitzen · setzen</span></h1>
+      <p class="hero-lead">في الدرس السابق تعلّمت stehen/liegen وشريكيهما stellen/legen. اليوم نُكمل العائلة بثلاثة أفعال أكثر دقةً: <span class="de" data-speak="hängen">hängen</span> الذي يحمل معنيين — الحالة والحركة — من نفس المصدر بالضبط، و<span class="de" data-speak="sitzen, setzen">sitzen وsetzen</span> المخصّصان للكائنات الحيّة الجالسة، حيث يعود setzen غالبًا بصيغته الانعكاسية <span class="de" data-speak="sich setzen">sich setzen</span> التي تربطنا مباشرة بدرس الأفعال الانعكاسية.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" data-scroll="#why"><svg class="icon" style="width:18px;height:18px"><use href="#i-play"/></svg>الفكرة الأساسية</button>
+        <button class="btn btn-ghost" data-scroll="#workshop"><svg class="icon" style="width:18px;height:18px"><use href="#i-stairs"/></svg>جرّب ورشة القرار</button>
+      </div>
+    </div>
+    <div class="reveal is-visible" style="transition-delay:.15s">
+      <div class="hero-quad-card">
+        <div class="hero-verb-grid">
+          <div class="hero-verb-cell" style="background:linear-gradient(155deg, var(--verb-sitzen), var(--primary-ink))">
+            <span class="hl-tag">Zustand · wo؟</span><span class="hl-word">sitzt</span>
+          </div>
+          <div class="hero-verb-cell" style="background:linear-gradient(155deg, var(--verb-haengen), var(--secondary-ink))">
+            <span class="hl-tag">Zustand · wo؟</span><span class="hl-word">hängt</span>
+          </div>
+          <div class="hero-verb-cell" style="background:linear-gradient(155deg, var(--verb-setzen), #26456f)">
+            <span class="hl-tag">Handlung · wohin؟</span><span class="hl-word">setzt</span>
+          </div>
+          <div class="hero-verb-cell" style="background:linear-gradient(155deg, var(--verb-haengen-akt), #7a3355)">
+            <span class="hl-tag">Handlung · wohin؟</span><span class="hl-word">hängt</span>
+          </div>
+        </div>
+        <p style="color:var(--ink-soft);font-size:.86rem;margin-top:16px;text-align:center">لاحظ: خانتا hängen متطابقتان في المضارع — والفرق يظهر فقط في الماضي!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-bulb"/></svg>الفكرة الأساسية</span>
+      <h2 class="section-title">أشياء معلّقة، وكائنات جالسة</h2>
+      <p class="section-sub">نفس منطق الحالة/الحركة الذي عرفته سابقًا، لكن بفئتين مختلفتين تمامًا من "الوضعية": أشياء <b>معلّقة من نقطة فوقها</b> (hängen)، وكائنات حيّة <b>جالسة</b> (sitzen/setzen).</p>
+    </div>
+
+    <figure class="scene-figure reveal">
+      <svg viewBox="0 0 720 320" role="img" aria-label="مشهد يوضح أشياء معلّقة في الأعلى وكائنات جالسة في الأسفل">
+        <rect x="20" y="34" width="680" height="6" rx="3" fill="var(--border-strong)" opacity=".5"/>
+
+        <g data-speak="Bild" style="cursor:pointer">
+          <rect x="85" y="14" width="50" height="20" rx="10" fill="var(--verb-haengen)"/>
+          <text x="110" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" style="font-family:var(--font-mono)">hängt</text>
+          <line x1="110" y1="34" x2="110" y2="50" stroke="var(--border-strong)" stroke-width="2" stroke-dasharray="3 3"/>
+          <circle cx="110" cy="58" r="4" fill="var(--verb-haengen)"/>
+          <line x1="110" y1="58" x2="110" y2="68" stroke="var(--verb-haengen)" stroke-width="2"/>
+          <rect x="85" y="68" width="50" height="55" rx="3" fill="var(--verb-haengen)"/>
+          <rect x="92" y="75" width="36" height="41" fill="var(--verb-haengen-soft)"/>
+        </g>
+
+        <g data-speak="Mantel" style="cursor:pointer">
+          <rect x="335" y="14" width="50" height="20" rx="10" fill="var(--verb-haengen)"/>
+          <text x="360" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" style="font-family:var(--font-mono)">hängt</text>
+          <line x1="360" y1="34" x2="360" y2="50" stroke="var(--border-strong)" stroke-width="2" stroke-dasharray="3 3"/>
+          <circle cx="360" cy="58" r="4" fill="var(--verb-haengen)"/>
+          <circle cx="360" cy="65" r="6" fill="none" stroke="var(--verb-haengen)" stroke-width="3"/>
+          <path d="M335,71 L385,71 L392,140 L328,140 Z" fill="var(--verb-haengen)"/>
+        </g>
+
+        <g data-speak="Uhr" style="cursor:pointer">
+          <rect x="585" y="14" width="50" height="20" rx="10" fill="var(--verb-haengen)"/>
+          <text x="610" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" style="font-family:var(--font-mono)">hängt</text>
+          <line x1="610" y1="34" x2="610" y2="50" stroke="var(--border-strong)" stroke-width="2" stroke-dasharray="3 3"/>
+          <circle cx="610" cy="58" r="4" fill="var(--verb-haengen)"/>
+          <line x1="610" y1="58" x2="610" y2="70" stroke="var(--verb-haengen)" stroke-width="2"/>
+          <circle cx="610" cy="95" r="25" fill="var(--verb-haengen-soft)" stroke="var(--verb-haengen)" stroke-width="3"/>
+          <line x1="610" y1="95" x2="610" y2="80" stroke="var(--verb-haengen)" stroke-width="3" stroke-linecap="round"/>
+          <line x1="610" y1="95" x2="622" y2="95" stroke="var(--verb-haengen)" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <text x="110" y="160" text-anchor="middle" font-size="12" fill="var(--ink-soft)" style="font-family:var(--font-ar-body)">لوحة</text>
+        <text x="360" y="160" text-anchor="middle" font-size="12" fill="var(--ink-soft)" style="font-family:var(--font-ar-body)">معطف</text>
+        <text x="610" y="160" text-anchor="middle" font-size="12" fill="var(--ink-soft)" style="font-family:var(--font-ar-body)">ساعة</text>
+
+        <rect x="20" y="266" width="680" height="14" rx="7" fill="var(--border-strong)" opacity=".5"/>
+
+        <g data-speak="Kind" style="cursor:pointer">
+          <rect x="85" y="172" width="50" height="20" rx="10" fill="var(--verb-sitzen)"/>
+          <text x="110" y="186" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" style="font-family:var(--font-mono)">sitzt</text>
+          <line x1="110" y1="192" x2="110" y2="200" stroke="var(--border-strong)" stroke-width="2" stroke-dasharray="3 3"/>
+          <rect x="85" y="200" width="6" height="38" fill="var(--border-strong)"/>
+          <rect x="85" y="230" width="50" height="8" fill="var(--border-strong)"/>
+          <rect x="90" y="238" width="5" height="28" fill="var(--border-strong)"/>
+          <rect x="125" y="238" width="5" height="28" fill="var(--border-strong)"/>
+          <ellipse cx="110" cy="222" rx="16" ry="14" fill="var(--verb-sitzen)"/>
+          <circle cx="110" cy="200" r="11" fill="var(--verb-sitzen)"/>
+          <ellipse cx="100" cy="240" rx="6" ry="12" fill="var(--verb-sitzen)" opacity=".85"/>
+          <ellipse cx="120" cy="240" rx="6" ry="12" fill="var(--verb-sitzen)" opacity=".85"/>
+        </g>
+
+        <g data-speak="Katze" style="cursor:pointer">
+          <rect x="335" y="172" width="50" height="20" rx="10" fill="var(--verb-sitzen)"/>
+          <text x="360" y="186" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" style="font-family:var(--font-mono)">sitzt</text>
+          <line x1="360" y1="192" x2="360" y2="200" stroke="var(--border-strong)" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M385,235 q20,-10 15,-30" fill="none" stroke="var(--verb-sitzen)" stroke-width="5" stroke-linecap="round"/>
+          <ellipse cx="355" cy="232" rx="20" ry="22" fill="var(--verb-sitzen)"/>
+          <circle cx="355" cy="200" r="14" fill="var(--verb-sitzen)"/>
+          <path d="M345,192 L349,178 L355,192 Z" fill="var(--verb-sitzen)"/>
+          <path d="M365,192 L361,178 L355,192 Z" fill="var(--verb-sitzen)"/>
+        </g>
+
+        <g data-speak="Vogel" style="cursor:pointer">
+          <rect x="585" y="172" width="50" height="20" rx="10" fill="var(--verb-sitzen)"/>
+          <text x="610" y="186" text-anchor="middle" font-size="11" font-weight="700" fill="#fff" style="font-family:var(--font-mono)">sitzt</text>
+          <line x1="610" y1="192" x2="610" y2="200" stroke="var(--border-strong)" stroke-width="2" stroke-dasharray="3 3"/>
+          <line x1="570" y1="245" x2="650" y2="245" stroke="var(--border-strong)" stroke-width="5" stroke-linecap="round"/>
+          <line x1="602" y1="237" x2="602" y2="245" stroke="var(--verb-sitzen)" stroke-width="2"/>
+          <line x1="616" y1="237" x2="616" y2="245" stroke="var(--verb-sitzen)" stroke-width="2"/>
+          <ellipse cx="610" cy="225" rx="16" ry="13" fill="var(--verb-sitzen)"/>
+          <circle cx="598" cy="210" r="9" fill="var(--verb-sitzen)"/>
+          <path d="M589,210 L580,213 L589,216 Z" fill="var(--verb-haengen)"/>
+        </g>
+
+        <text x="110" y="298" text-anchor="middle" font-size="12" fill="var(--ink-soft)" style="font-family:var(--font-ar-body)">طفل على كرسي</text>
+        <text x="360" y="298" text-anchor="middle" font-size="12" fill="var(--ink-soft)" style="font-family:var(--font-ar-body)">قطة</text>
+        <text x="610" y="298" text-anchor="middle" font-size="12" fill="var(--ink-soft)" style="font-family:var(--font-ar-body)">طائر على غصن</text>
+      </svg>
+      <figcaption>الأشياء المعلّقة من نقطة فوقها تُستخدم معها hängen. الكائنات الحيّة الجالسة تُستخدم معها sitzen. انقر على أي عنصر لسماع اسمه.</figcaption>
+      <div class="scene-legend">
+        <span><i style="background:var(--verb-haengen)"></i>hängt — معلّق من الأعلى</span>
+        <span><i style="background:var(--verb-sitzen)"></i>sitzt — جالس (كائن حيّ)</span>
+      </div>
+    </figure>
+
+    <div class="flow-mini-grid reveal" style="margin-bottom:26px">
+      <div class="flow-card">
+        <div class="fc-q">الحالة الأصلية (Zustand) — hängen القوي</div>
+        <p class="de" data-speak="Das Bild hängt an der Wand." style="cursor:pointer;font-size:1.05rem">Das Bild hängt an der Wand.</p>
+        <p style="font-size:.88rem;margin-top:6px">اللوحة معلّقة على الحائط.</p>
+        <span class="fc-result" style="background:var(--verb-haengen)">wo؟ · Dativ · hing/gehangen</span>
+      </div>
+      <div class="flow-mini-arrow"><svg class="icon" style="width:28px;height:28px"><use href="#i-repeat"/></svg></div>
+      <div class="flow-card">
+        <div class="fc-q">أنقلها بحركة (Handlung) — hängen الضعيف</div>
+        <p class="de" data-speak="Ich hänge das Bild an die Wand." style="cursor:pointer;font-size:1.05rem">Ich hänge das Bild an die Wand.</p>
+        <p style="font-size:.88rem;margin-top:6px">أُعلّق اللوحة على الحائط.</p>
+        <span class="fc-result" style="background:var(--verb-haengen-akt)">wohin؟ · Akkusativ · hängte/gehängt</span>
+      </div>
+    </div>
+
+    <div class="callout haengen-akt reveal" style="margin-bottom:26px">
+      <svg class="icon" style="width:22px;height:22px"><use href="#i-hook"/></svg>
+      <p><b>لاحظ جيدًا:</b> الجملتان أعلاه تستخدمان <span class="de" data-speak="hängen">hängen</span> بصيغة المضارع بشكل <b>متطابق تمامًا</b> — الفرق الوحيد الظاهر هو وجود مفعول به مباشر (das Bild) وحرف جر بحالة Akkusativ في الجملة الثانية. الفرق الحقيقي بينهما لا يظهر بوضوح إلا في الماضي: <span class="de" data-speak="hing">hing</span> (حالة) مقابل <span class="de" data-speak="hängte">hängte</span> (حركة). هذا هو الفعل الوحيد في هذه العائلة الذي يشترك فيه معنيان بمصدر واحد.</p>
+    </div>
+
+    <div class="grid-4 reveal-stagger reveal">
+      <div class="info-card" style="border-top:4px solid var(--verb-sitzen)">
+        <h3><span class="icon-chip" style="background:var(--verb-sitzen-soft);color:var(--verb-sitzen)"><svg class="icon" style="width:18px;height:18px"><use href="#i-chair"/></svg></span>sitzen</h3>
+        <p>كائن حيّ <b>جالس</b> بالفعل. حالة ثابتة بلا حركة: <span class="de" data-speak="Das Kind sitzt auf dem Stuhl.">Das Kind sitzt auf dem Stuhl.</span> يُسأل عنه بـ <span class="mono">wo؟</span> ويأخذ <span class="mono">Dativ</span>.</p>
+      </div>
+      <div class="info-card" style="border-top:4px solid var(--verb-haengen)">
+        <h3><span class="icon-chip" style="background:var(--verb-haengen-soft);color:var(--verb-haengen)"><svg class="icon" style="width:18px;height:18px"><use href="#i-hook"/></svg></span>hängen <span class="mono" style="font-size:.7rem">(١)</span></h3>
+        <p>شيء <b>معلّق</b> بالفعل من نقطة فوقه. حالة ثابتة: <span class="de" data-speak="Der Mantel hängt am Haken.">Der Mantel hängt am Haken.</span> يُسأل عنه بـ <span class="mono">wo؟</span> ويأخذ <span class="mono">Dativ</span>. فعل قوي: hing/gehangen.</p>
+      </div>
+      <div class="info-card" style="border-top:4px solid var(--verb-setzen)">
+        <h3><span class="icon-chip" style="background:var(--verb-setzen-soft);color:var(--verb-setzen)"><svg class="icon" style="width:18px;height:18px"><use href="#i-chair"/></svg></span>setzen</h3>
+        <p><b>أُجلس</b> كائنًا حيًا، أو (غالبًا) <b>أجلس أنا نفسي</b> بصيغة انعكاسية: <span class="de" data-speak="Ich setze mich auf den Stuhl.">Ich setze mich auf den Stuhl.</span> يُسأل عنه بـ <span class="mono">wohin؟</span> ويأخذ <span class="mono">Akkusativ</span>.</p>
+      </div>
+      <div class="info-card" style="border-top:4px solid var(--verb-haengen-akt)">
+        <h3><span class="icon-chip" style="background:var(--verb-haengen-akt-soft);color:var(--verb-haengen-akt)"><svg class="icon" style="width:18px;height:18px"><use href="#i-hook"/></svg></span>hängen <span class="mono" style="font-size:.7rem">(٢)</span></h3>
+        <p><b>أُعلّق</b> شيئًا في مكان جديد. فعل حركة متعدٍ: <span class="de" data-speak="Ich hänge das Bild an die Wand.">Ich hänge das Bild an die Wand.</span> يُسأل عنه بـ <span class="mono">wohin؟</span> ويأخذ <span class="mono">Akkusativ</span>. فعل ضعيف: hängte/gehängt.</p>
+      </div>
+    </div>
+
+    <div class="callout reveal" style="margin-top:20px">
+      <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+      <p><b>قاعدة ذهبية للتذكّر:</b> إذا كان الشيء معلّقًا من نقطة فوقه (لوحة، معطف، ساعة، مصباح متدلٍّ) استخدم <span class="de">hängen</span>. إذا كان الفاعل كائنًا حيًا في وضعية الجلوس (طفل، قطة، طائر) استخدم <span class="de">sitzen/setzen</span>. ولا تنسَ: <b>sitzen لا تُستخدم أبدًا انعكاسيًا</b> — الفعل الانعكاسي الوحيد في هذه العائلة هو <span class="de" data-speak="sich setzen">sich setzen</span>.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="bildung">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-book"/></svg>تصريف الأفعال</span>
+      <h2 class="section-title">أربع بطاقات تصريف — لاحظ التوأمة في hängen</h2>
+      <p class="section-sub">المضارع منتظم في الجميع، لكن انتبه: بطاقتَي hängen لهما نفس عمود Präsens تمامًا. الفرق الحقيقي يبدأ من Präteritum.</p>
+    </div>
+    <div class="grid-2 reveal">
+      <div class="callout">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-book"/></svg>
+        <p><b>المضارع (Präsens) منتظم دائمًا</b><br>نفس نهايات أي فعل ألماني عادي: <span class="mono">-e, -st, -t, -en, -t, -en</span>. حتى hängen بمعنييها تتبع هذا النمط دون أي استثناء.</p>
+      </div>
+      <div class="callout setzen">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-link"/></svg>
+        <p><b>الشريك المتعدي غالبًا ضعيف</b><br><span class="de">sitzen → setzen</span> بمصدرين مختلفين، لكن <span class="de">hängen → hängen</span> بنفس المصدر — استثناء يستحق الانتباه.</p>
+      </div>
+    </div>
+    <div class="grid-2 reveal-stagger reveal" id="conjugationCards" style="margin-top:20px"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="formen">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>لاحظ الفرق</span>
+      <h2 class="section-title">قوي أم ضعيف؟ ولماذا لـ hängen وجهان؟</h2>
+      <p class="section-sub"><span class="de">sitzen</span> و<span class="de">hängen</span> (بمعنى الحالة) فعلان قويّان، بينما <span class="de">setzen</span> و<span class="de">hängen</span> (بمعنى الحركة) فعلان ضعيفان منتظمان. المفاجأة: كلا نوعَي hängen يشتركان في نفس المصدر بالضبط.</p>
+    </div>
+    <div class="grid-2 reveal">
+      <div class="callout">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-chair"/></svg>
+        <p><b>الأفعال القوية (Zustand):</b> جذر الفعل يتغيّر بلا قاعدة ثابتة: <span class="de" data-speak="sitzen, saß, gesessen">sitzen – saß – gesessen</span> و<span class="de" data-speak="hängen, hing, gehangen">hängen – hing – gehangen</span>.</p>
+      </div>
+      <div class="callout setzen">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-hook"/></svg>
+        <p><b>الأفعال الضعيفة (Handlung):</b> تتبع القاعدة العادية -te / -t: <span class="de" data-speak="setzen, setzte, gesetzt">setzen – setzte – gesetzt</span> و<span class="de" data-speak="hängen, hängte, gehängt">hängen – hängte – gehängt</span>.</p>
+      </div>
+    </div>
+    <div class="callout haengen-akt reveal" style="margin-top:20px">
+      <svg class="icon" style="width:22px;height:22px"><use href="#i-repeat"/></svg>
+      <p><b>لماذا يحدث هذا؟</b> تاريخيًا اندمج في الألمانية الحديثة فعلان قديمان مختلفان (أحدهما لازم قوي، والآخر متعدٍ ضعيف) في مصدر واحد هو <span class="de">hängen</span>. النتيجة: مصدر واحد، لكن تصريفان كاملان منفصلان في الماضي والفعل التام — يجب حفظهما كوحدتين مستقلّتين تمامًا.</p>
+    </div>
+    <div class="grid-2 reveal" style="margin-top:20px">
+      <div>
+        <h3 style="margin-bottom:12px;color:var(--verb-sitzen)">القويّان — Zustand</h3>
+        <table class="simple-table" id="strongTable"></table>
+      </div>
+      <div>
+        <h3 style="margin-bottom:12px;color:var(--verb-setzen)">الضعيفان — Handlung</h3>
+        <table class="simple-table" id="weakTable"></table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="reflexiv">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-link"/></svg>ربط بالدرس الثاني</span>
+      <h2 class="section-title">sich setzen — الاستخدام الأكثر شيوعًا لـ setzen</h2>
+      <p class="section-sub">تذكّر من الدرس الثاني: الأفعال الانعكاسية تحتاج ضميرًا انعكاسيًا يتطابق مع الفاعل (mich, dich, sich, uns, euch, sich). <span class="de">setzen</span> يستخدم هذا النمط في أغلب الجمل اليومية عندما يجلس الفاعل نفسه.</p>
+    </div>
+    <table class="simple-table reveal" style="margin-bottom:22px">
+      <tr><th>الصيغة</th><th>مثال</th><th>المعنى</th></tr>
+      <tr><td class="de" data-speak="sitzen" style="font-weight:700;color:var(--verb-sitzen)">sitzen (Zustand)</td><td class="de" data-speak="Ich sitze auf dem Stuhl.">Ich sitze auf dem Stuhl.</td><td>أنا جالس على الكرسي — حالة، بلا حركة، بلا ضمير.</td></tr>
+      <tr><td class="de" data-speak="sich setzen" style="font-weight:700;color:var(--verb-setzen)">sich setzen (Handlung)</td><td class="de" data-speak="Ich setze mich auf den Stuhl.">Ich setze mich auf den Stuhl.</td><td>أجلس (بنفسي) على الكرسي — حركة، الفاعل والمفعول نفس الشخص.</td></tr>
+      <tr><td class="de" data-speak="jemanden setzen" style="font-weight:700;color:var(--verb-haengen-akt)">jemanden setzen (Handlung)</td><td class="de" data-speak="Ich setze das Kind auf den Stuhl.">Ich setze das Kind auf den Stuhl.</td><td>أُجلس الطفل على الكرسي — حركة، الفاعل يُجلس شخصًا آخر.</td></tr>
+    </table>
+    <div class="grid-2 reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--verb-setzen-soft);color:var(--verb-setzen)"><svg class="icon" style="width:18px;height:18px"><use href="#i-repeat"/></svg></span>تصريف الضمائر الانعكاسية مع setzen</h3>
+        <p class="de" data-speak="Ich setze mich, du setzt dich, er setzt sich, wir setzen uns, ihr setzt euch, sie setzen sich" style="cursor:pointer;line-height:2">
+        ich setze <b>mich</b> · du setzt <b>dich</b> · er/sie/es setzt <b>sich</b><br>
+        wir setzen <b>uns</b> · ihr setzt <b>euch</b> · sie/Sie setzen <b>sich</b>
+        </p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--verb-haengen-akt-soft);color:var(--verb-haengen-akt)"><svg class="icon" style="width:18px;height:18px"><use href="#i-chat"/></svg></span>في الأمر (Imperativ) — عبارة يومية شائعة جدًا</h3>
+        <p><span class="de" data-speak="Setz dich!" style="cursor:pointer;font-weight:700">Setz dich!</span> (اجلس! — غير رسمية) · <span class="de" data-speak="Setzen Sie sich, bitte!" style="cursor:pointer;font-weight:700">Setzen Sie sich, bitte!</span> (تفضّل بالجلوس! — رسمية)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="verwendung">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-scale"/></svg>wo؟ أم wohin؟</span>
+      <h2 class="section-title">نفس القاعدة، تطبيق جديد</h2>
+      <p class="section-sub">تعلّمت في الدرس الخامس الجدول الكامل لحروف الجر التسعة ثنائية الاتجاه. القاعدة نفسها هنا: <span class="mono">wo؟</span> مع hängen/sitzen يأخذ <span class="mono">Dativ</span>، و<span class="mono">wohin؟</span> مع hängen/setzen يأخذ <span class="mono">Akkusativ</span> — وأكثر حرفي جر شيوعًا هنا هما <span class="de">an</span> و<span class="de">auf</span>.</p>
+    </div>
+    <div class="grid-2 reveal">
+      <div class="callout">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-chair"/></svg>
+        <p><b>wo؟ + Dativ (الحالة):</b> لا حركة، وصف مكان قائم بالفعل: <span class="de" data-speak="Das Bild hängt an der Wand.">Das Bild hängt an der Wand.</span> — <span class="mono">an der</span> (Dativ مؤنث).</p>
+      </div>
+      <div class="callout setzen">
+        <svg class="icon" style="width:22px;height:22px"><use href="#i-hook"/></svg>
+        <p><b>wohin؟ + Akkusativ (الحركة):</b> فعل نقلٍ إلى مكان جديد: <span class="de" data-speak="Ich hänge das Bild an die Wand.">Ich hänge das Bild an die Wand.</span> — <span class="mono">an die</span> (Akkusativ مؤنث).</p>
+      </div>
+    </div>
+    <div class="callout haengen-akt reveal" style="margin-top:20px">
+      <svg class="icon" style="width:22px;height:22px"><use href="#i-bulb"/></svg>
+      <p><b>تذكير من الدرس الخامس:</b> الجدول الكامل لحروف الجر التسعة (in, an, auf, unter, über, vor, hinter, neben, zwischen) بصيغتَي Dativ وAkkusativ متاح هناك — القاعدة واحدة تُطبَّق على كل أفعال الوضع.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="workshop">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-stairs"/></svg>الأداة التفاعلية الرئيسية</span>
+      <h2 class="section-title">ورشة القرار: اختر عنصرًا، وشاهد الفعل الصحيح</h2>
+      <p class="section-sub">ستة أشياء معلّقة وستة كائنات جالسة — اختر أحدها وشاهد صيغتَي الحالة والحركة مع مثال حقيقي ونطق صوتي.</p>
+    </div>
+    <div class="workshop-shell reveal">
+      <div class="verb-picker" id="workshopPicker"></div>
+      <div class="ladder" id="ladderDisplay"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="reference">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-book"/></svg>مرجع شامل</span>
+      <h2 class="section-title">قائمة العناصر وأفعالها الصحيحة</h2>
+      <p class="section-sub">اثنا عشر عنصرًا شائعًا مع فعل حالته وفعل حركته — انقر لسماع النطق.</p>
+    </div>
+    <table class="simple-table reveal" id="objectsReferenceTable"></table>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="vocab">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-cards"/></svg>حفظ سريع</span>
+      <h2 class="section-title">بطاقات العناصر وأفعالها</h2>
+      <p class="section-sub">انقر لتقلب البطاقة، وانقر على الصوت للاستماع.</p>
+    </div>
+    <div class="vocab-grid reveal-stagger reveal" id="vocabGrid"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="examples">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>تطبيق عملي</span>
+      <h2 class="section-title">جمل كثيرة من كل فعل</h2>
+      <p class="section-sub">فلترة حسب الفعل، مع تمييز الفعل المصرّف بلون فئته.</p>
+    </div>
+    <div class="filter-bar reveal" id="examplesFilterBar"></div>
+    <div class="reveal-stagger reveal" id="examplesList" style="display:flex;flex-direction:column;gap:18px"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="mistakes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>تجنّب الفخاخ الشائعة</span>
+      <h2 class="section-title">أخطاء يقع فيها معظم المتعلمين</h2>
+    </div>
+    <div class="reveal-stagger reveal" id="mistakesList" style="display:flex;flex-direction:column;gap:16px"></div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="pronunciation">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-mic"/></svg>نطق أصيل</span>
+      <h2 class="section-title">نصائح النطق وأسرار المتحدث الأصلي</h2>
+    </div>
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--verb-haengen-soft);color:var(--verb-haengen);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">حرف ä في hängen</h3><p><span class="de" data-speak="hängen">hängen</span> بحرف ä قصير مفتوح [ɛ]، بنفس عائلة صوت e في <span class="de" data-speak="stellen">stellen</span> من الدرس السابق.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--verb-setzen-soft);color:var(--verb-setzen);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">مجموعة tz</h3><p>في <span class="de" data-speak="sitzen, setzen">sitzen وsetzen</span> يُنطق الحرفان tz صوتًا واحدًا حادًا [ts]، تمامًا مثل "تس".</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--verb-sitzen-soft);color:var(--verb-sitzen);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">sitzen مقابل setzen</h3><p>زوج صوتي دقيق: <span class="de" data-speak="sitzen">sitzen</span> بحرف i قصير [ɪ]، و<span class="de" data-speak="setzen">setzen</span> بحرف e قصير [ɛ] — فرق بسيط لكنه يُغيّر المعنى تمامًا.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--verb-haengen-akt-soft);color:var(--verb-haengen-akt);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">saß — الماضي الشاذّ لـ sitzen</h3><p><span class="de" data-speak="saß">saß</span> بحرف a ممدود وصوت ß الحاد [s] — يختلف تمامًا عن <span class="de" data-speak="setzte">setzte</span> صوتًا ومعنى.</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--primary-soft);color:var(--primary);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">gehangen مقابل gehängt</h3><p>فرق صوتي دقيق بحرف واحد: <span class="de" data-speak="gehangen">gehangen</span> (حالة، بلا نقطتين) مقابل <span class="de" data-speak="gehängt">gehängt</span> (حركة، بحرف ä).</p></div>
+      </div>
+      <div class="info-card" style="display:flex;gap:14px;align-items:flex-start">
+        <span class="icon-chip" style="background:var(--verb-haengen-soft);color:var(--verb-haengen);flex-shrink:0"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+        <div><h3 style="margin-bottom:6px">النبر ثابت دائمًا</h3><p>كل الأفعال الخمسة (بما فيها معنيا hängen) تُنطق بنبرة على المقطع الأول دائمًا: <span class="de" data-speak="ich setze mich">ich SETZE mich</span>.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="exercises">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-scroll"/></svg>وقت التطبيق</span>
+      <h2 class="section-title">تمارين تفاعلية شاملة</h2>
+      <p class="section-sub">خمسة أنواع من التمارين تغطي حالة hängen المزدوجة وصيغة sich setzen الانعكاسية.</p>
+    </div>
+    <div class="exercise-shell reveal">
+      <div class="exercise-tabs" role="tablist">
+        <button class="exercise-tab active" data-panel="panelMcq" role="tab">اختر الفعل الصحيح <span class="count" id="countMcq">٠/٠</span></button>
+        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الفراغ <span class="count" id="countFill">٠/٠</span></button>
+        <button class="exercise-tab" data-panel="panelBuilder" role="tab">رتّب الجملة <span class="count" id="countBuilder">٠/٠</span></button>
+        <button class="exercise-tab" data-panel="panelMatch" role="tab">طابق الحالة بالحركة <span class="count" id="countMatch">٠/٠</span></button>
+        <button class="exercise-tab" data-panel="panelPhrase" role="tab">اختر العبارة الصحيحة <span class="count" id="countPhrase">٠/٠</span></button>
+      </div>
+      <div class="exercise-panels">
+        <div class="exercise-panel active" id="panelMcq"></div>
+        <div class="exercise-panel" id="panelFill"></div>
+        <div class="exercise-panel" id="panelBuilder"></div>
+        <div class="exercise-panel" id="panelMatch"></div>
+        <div class="exercise-panel" id="panelPhrase"></div>
+      </div>
+      <div class="score-bar-wrap">
+        <span class="score-label">إتقانك للتمارين</span>
+        <div class="score-track"><div class="score-fill" id="scoreFill"></div></div>
+        <span class="score-label mono" id="scoreLabel">٠٪</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="road-rule">
+
+<section class="section" id="summary">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-star"/></svg>ملخّص الدرس</span>
+      <h2 class="section-title">ما الذي أتقنته اليوم؟</h2>
+    </div>
+    <div class="grid-2 reveal">
+      <ul class="summary-list info-card">
+        <li><span class="icon-chip" style="background:var(--verb-sitzen-soft);color:var(--verb-sitzen)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>sitzen:</b> فعل حالة قويّ للكائنات الحيّة الجالسة — wo؟ + Dativ + sitzen–saß–gesessen.</p></li>
+        <li><span class="icon-chip" style="background:var(--verb-setzen-soft);color:var(--verb-setzen)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>setzen / sich setzen:</b> فعل حركة ضعيف — غالبًا انعكاسي عندما يجلس الفاعل نفسه — wohin؟ + Akkusativ.</p></li>
+        <li><span class="icon-chip" style="background:var(--verb-haengen-soft);color:var(--verb-haengen)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>hängen (حالة):</b> فعل قوي، لا حركة، wo؟ + Dativ، hing/gehangen.</p></li>
+        <li><span class="icon-chip" style="background:var(--verb-haengen-akt-soft);color:var(--verb-haengen-akt)"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p><b>hängen (حركة):</b> نفس المصدر، لكن فعل ضعيف مختلف تمامًا، wohin؟ + Akkusativ، hängte/gehängt.</p></li>
+      </ul>
+      <div class="info-card" style="display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;background:linear-gradient(155deg, var(--verb-sitzen-soft), var(--verb-haengen-akt-soft))">
+        <svg class="icon" style="width:40px;height:40px;margin:0 auto;color:var(--primary)"><use href="#i-stairs"/></svg>
+        <h3 style="justify-content:center;font-size:1.2rem">الدرس القادم</h3>
+        <p>عائلة أفعال الوضع اكتملت بالكامل! في الدرس القادم ننتقل إلى تعقيد الجملة: الجمل الفرعية الشاملة (Nebensätze) — السبب (weil/denn)، أنّ (dass)، الشرط والزمن (wenn/als/wann)، والتنازل (obwohl).</p>
+        <button class="btn btn-ghost" disabled style="align-self:center;opacity:.6;cursor:not-allowed">الدرس ٧ (قريبًا)</button>
+      </div>
+    </div>
+    <h3 style="margin-top:40px;text-align:center;font-size:1.3rem" class="reveal">إنجازاتك في هذا الدرس</h3>
+    <div class="badges-row reveal" id="badgesRow"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>الدرس ٦ · مسار الألمانية A2 — إتمام عائلة أفعال الوضع: hängen · sitzen · setzen.</span>
+    <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس"><svg class="icon"><use href="#i-printer"/></svg></button>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى"><svg class="icon" style="width:20px;height:20px;stroke:#fff"><use href="#i-up"/></svg></button>
+
+<div class="audio-dock" id="audioDock">
+  <div class="audio-dock-controls">
+    <button class="icon-btn" id="dockPlayPause" aria-label="تشغيل/إيقاف مؤقت"><svg class="icon" id="dockPlayIcon"><use href="#i-pause"/></svg></button>
+    <button class="icon-btn" id="dockReplay" aria-label="إعادة"><svg class="icon"><use href="#i-replay"/></svg></button>
+  </div>
+  <span class="audio-dock-text" id="dockText" dir="ltr">…</span>
+  <input type="range" id="dockSpeed" min="0.6" max="1.3" step="0.05" value="0.95" aria-label="سرعة النطق">
+  <span class="audio-dock-voice" id="dockVoice">…</span>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+function qs(sel, el){ return (el||document).querySelector(sel); }
+function qsa(sel, el){ return Array.prototype.slice.call((el||document).querySelectorAll(sel)); }
+function ce(tag, cls, html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!==undefined) e.innerHTML=html; return e; }
+
+var toastWrap = qs('#toastWrap');
+function toast(msg, icon){
+  var t = ce('div','toast', (icon? '<svg class="icon" style="width:16px;height:16px;stroke:var(--bg)"><use href="#'+icon+'"/></svg>':'')+'<span>'+msg+'</span>');
+  toastWrap.appendChild(t);
+  requestAnimationFrame(function(){ t.classList.add('show'); });
+  setTimeout(function(){ t.classList.remove('show'); setTimeout(function(){ t.remove(); }, 400); }, 2600);
+}
+
+var root = document.documentElement;
+function applyTheme(mode){
+  root.setAttribute('data-theme', mode);
+  try{ localStorage.setItem('haengen-sitzen-setzen-guide-theme', mode); }catch(e){}
+}
+(function initTheme(){
+  var saved = null;
+  try{ saved = localStorage.getItem('haengen-sitzen-setzen-guide-theme'); }catch(e){}
+  if(saved){ applyTheme(saved); }
+  else{
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
+})();
+qs('#themeToggle').addEventListener('click', function(){
+  var cur = root.getAttribute('data-theme');
+  applyTheme(cur === 'dark' ? 'light' : 'dark');
+});
+
+/* ==========================================================================
+   SPEECH — Web Speech API with provider abstraction + graceful fallback
+   ========================================================================== */
+var Speech = (function(){
+  var voices = [];
+  var chosenVoice = null;
+  var currentUtterance = null;
+  var currentEls = [];
+  var rate = 0.95;
+  var isPaused = false;
+  var supported = !!window.speechSynthesis;
+
+  function loadVoices(){
+    voices = supported ? window.speechSynthesis.getVoices() : [];
+    var de = voices.filter(function(v){ return /de-DE|de_DE|German/i.test(v.lang); });
+    if(!de.length) de = voices.filter(function(v){ return /^de/i.test(v.lang); });
+    var preferredNames = ['Google Deutsch','Anna','Markus','Petra','Yannick','Amala'];
+    var found = null;
+    for(var i=0;i<preferredNames.length && !found;i++){
+      found = de.find(function(v){ return v.name.indexOf(preferredNames[i]) !== -1; });
+    }
+    chosenVoice = found || de[0] || null;
+    var dockVoice = qs('#dockVoice');
+    if(dockVoice) dockVoice.textContent = chosenVoice ? chosenVoice.name : (de.length ? de[0].name : 'لا يوجد صوت ألماني مثبّت');
+  }
+  if(supported){
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+  }
+
+  function clearHighlights(){
+    currentEls.forEach(function(el){ el.classList.remove('speaking'); });
+    currentEls = [];
+  }
+
+  function speak(text, opts){
+    if(!supported) { toast('متصفحك لا يدعم النطق الصوتي — بقية الدرس تعمل بشكل طبيعي'); return; }
+    opts = opts || {};
+    window.speechSynthesis.cancel();
+    clearHighlights();
+    if(opts.els) currentEls = opts.els;
+    currentEls.forEach(function(el){ el.classList.add('speaking'); });
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'de-DE';
+    if(chosenVoice) u.voice = chosenVoice;
+    u.rate = rate;
+    u.onend = function(){ clearHighlights(); showDock(false); if(opts.onend) opts.onend(); };
+    u.onerror = function(){ clearHighlights(); };
+    currentUtterance = u;
+    window.speechSynthesis.speak(u);
+    showDock(true, opts.label || text);
+  }
+
+  function replay(){ if(currentUtterance){ speak(currentUtterance.text, {els:currentEls, label: qs('#dockText').textContent}); } }
+  function togglePause(){
+    if(!supported) return;
+    if(window.speechSynthesis.speaking && !isPaused){ window.speechSynthesis.pause(); isPaused = true; qs('#dockPlayIcon use').setAttribute('href','#i-play'); }
+    else if(isPaused){ window.speechSynthesis.resume(); isPaused = false; qs('#dockPlayIcon use').setAttribute('href','#i-pause'); }
+  }
+  function setRate(r){ rate = r; }
+
+  var dock = qs('#audioDock'), dockText = qs('#dockText');
+  function showDock(visible, label){
+    if(visible){ dock.classList.add('visible'); dockText.textContent = label || ''; qs('#dockPlayIcon use').setAttribute('href','#i-pause'); isPaused=false; }
+    else { dock.classList.remove('visible'); }
+  }
+  qs('#dockPlayPause').addEventListener('click', togglePause);
+  qs('#dockReplay').addEventListener('click', replay);
+  qs('#dockSpeed').addEventListener('input', function(e){ setRate(parseFloat(e.target.value)); if(supported && window.speechSynthesis.speaking) replay(); });
+
+  return { speak: speak, replay: replay };
+})();
+
+document.addEventListener('click', function(e){
+  var target = e.target.closest ? e.target.closest('[data-speak]') : null;
+  if(target){
+    Speech.speak(target.getAttribute('data-speak'), { els:[target], label: target.getAttribute('data-speak') });
+  }
+});
+
+function toArabicDigits(n){
+  var map = {'0':'٠','1':'١','2':'٢','3':'٣','4':'٤','5':'٥','6':'٦','7':'٧','8':'٨','9':'٩'};
+  return String(n).replace(/[0-9]/g, function(d){ return map[d]; });
+}
+
+/* ==========================================================================
+   DATA — the four verb-forms (conjugation) and twelve items (state + action)
+   ========================================================================== */
+var VERBS = [
+  { id:'sitzen', key:'sitzen', sub:'', color:'var(--verb-sitzen)', colorSoft:'var(--verb-sitzen-soft)', type:'Zustand · Dativ (wo؟)', strong:true,
+    praesens:[['ich','sitze'],['du','sitzt'],['er/sie/es','sitzt'],['wir','sitzen'],['ihr','sitzt'],['sie/Sie','sitzen']],
+    praeteritum:'saß', partizip:'gesessen', perfekt:'hat gesessen', ar:'يجلس / يكون في وضعية الجلوس' },
+  { id:'haengen-zustand', key:'hängen', sub:'(١) الحالة', color:'var(--verb-haengen)', colorSoft:'var(--verb-haengen-soft)', type:'Zustand · Dativ (wo؟)', strong:true,
+    praesens:[['ich','hänge'],['du','hängst'],['er/sie/es','hängt'],['wir','hängen'],['ihr','hängt'],['sie/Sie','hängen']],
+    praeteritum:'hing', partizip:'gehangen', perfekt:'hat gehangen', ar:'يكون معلّقًا / متدلّيًا' },
+  { id:'setzen', key:'setzen', sub:'', color:'var(--verb-setzen)', colorSoft:'var(--verb-setzen-soft)', type:'Handlung · Akkusativ (wohin؟)', strong:false,
+    praesens:[['ich','setze'],['du','setzt'],['er/sie/es','setzt'],['wir','setzen'],['ihr','setzt'],['sie/Sie','setzen']],
+    praeteritum:'setzte', partizip:'gesetzt', perfekt:'hat gesetzt', ar:'يُجلس شخصًا / (sich setzen: يجلس بنفسه)' },
+  { id:'haengen-handlung', key:'hängen', sub:'(٢) الحركة', color:'var(--verb-haengen-akt)', colorSoft:'var(--verb-haengen-akt-soft)', type:'Handlung · Akkusativ (wohin؟)', strong:false,
+    praesens:[['ich','hänge'],['du','hängst'],['er/sie/es','hängt'],['wir','hängen'],['ihr','hängt'],['sie/Sie','hängen']],
+    praeteritum:'hängte', partizip:'gehängt', perfekt:'hat gehängt', ar:'يُعلّق شيئًا' }
+];
+
+var VERB_FORMS = {
+  haengen: { state:'hängt', actionInf:'hängen', action1p:'hänge', color:'var(--verb-haengen)', actionColor:'var(--verb-haengen-akt)' },
+  sitzen: { state:'sitzt', actionInf:'setzen', action1p:'setze', color:'var(--verb-sitzen)', actionColor:'var(--verb-setzen)' }
+};
+
+var OBJECTS = [
+  { key:'bild', article:'das', noun:'Bild', ar:'لوحة', orientation:'haengen',
+    exState:{s:'Das Bild hängt an der Wand.', ar:'اللوحة معلّقة على الحائط.'},
+    exAction:{s:'Ich hänge das Bild an die Wand.', ar:'أُعلّق اللوحة على الحائط.'} },
+  { key:'mantel', article:'der', noun:'Mantel', ar:'معطف', orientation:'haengen',
+    exState:{s:'Der Mantel hängt am Haken.', ar:'المعطف معلّق على الشمّاعة.'},
+    exAction:{s:'Ich hänge den Mantel an den Haken.', ar:'أُعلّق المعطف على الشمّاعة.'} },
+  { key:'lampe', article:'die', noun:'Lampe', ar:'مصباح معلّق', orientation:'haengen',
+    exState:{s:'Die Lampe hängt an der Decke.', ar:'المصباح معلّق في السقف.'},
+    exAction:{s:'Ich hänge die Lampe an die Decke.', ar:'أُعلّق المصباح في السقف.'} },
+  { key:'uhr', article:'die', noun:'Uhr', ar:'ساعة حائط', orientation:'haengen',
+    exState:{s:'Die Uhr hängt an der Wand.', ar:'الساعة معلّقة على الحائط.'},
+    exAction:{s:'Ich hänge die Uhr an die Wand.', ar:'أُعلّق الساعة على الحائط.'} },
+  { key:'kleid', article:'das', noun:'Kleid', ar:'فستان', orientation:'haengen',
+    exState:{s:'Das Kleid hängt im Schrank.', ar:'الفستان معلّق في الخزانة.'},
+    exAction:{s:'Ich hänge das Kleid in den Schrank.', ar:'أُعلّق الفستان في الخزانة.'} },
+  { key:'jacke', article:'die', noun:'Jacke', ar:'سترة', orientation:'haengen',
+    exState:{s:'Die Jacke hängt an der Garderobe.', ar:'السترة معلّقة على المشجب.'},
+    exAction:{s:'Ich hänge die Jacke an die Garderobe.', ar:'أُعلّق السترة على المشجب.'} },
+  { key:'kind', article:'das', noun:'Kind', ar:'طفل', orientation:'sitzen',
+    exState:{s:'Das Kind sitzt auf dem Stuhl.', ar:'الطفل جالس على الكرسي.'},
+    exAction:{s:'Ich setze das Kind auf den Stuhl.', ar:'أُجلس الطفل على الكرسي.'} },
+  { key:'katze', article:'die', noun:'Katze', ar:'قطة', orientation:'sitzen',
+    exState:{s:'Die Katze sitzt auf dem Sofa.', ar:'القطة جالسة على الأريكة.'},
+    exAction:{s:'Ich setze die Katze auf das Sofa.', ar:'أُجلس القطة على الأريكة.'} },
+  { key:'vogel', article:'der', noun:'Vogel', ar:'طائر', orientation:'sitzen',
+    exState:{s:'Der Vogel sitzt auf dem Ast.', ar:'الطائر جالس على الغصن.'},
+    exAction:{s:'Ich setze den Vogel auf den Ast.', ar:'أُجلس الطائر على الغصن.'} },
+  { key:'puppe', article:'die', noun:'Puppe', ar:'دمية', orientation:'sitzen',
+    exState:{s:'Die Puppe sitzt auf dem Bett.', ar:'الدمية جالسة على السرير.'},
+    exAction:{s:'Ich setze die Puppe auf das Bett.', ar:'أُجلس الدمية على السرير.'} },
+  { key:'baby', article:'das', noun:'Baby', ar:'رضيع', orientation:'sitzen',
+    exState:{s:'Das Baby sitzt auf dem Teppich.', ar:'الرضيع جالس على السجادة.'},
+    exAction:{s:'Ich setze das Baby auf den Teppich.', ar:'أُجلس الرضيع على السجادة.'} },
+  { key:'gast', article:'der', noun:'Gast', ar:'ضيف', orientation:'sitzen',
+    exState:{s:'Der Gast sitzt am Tisch.', ar:'الضيف جالس عند الطاولة.'},
+    exAction:{s:'Ich setze den Gast an den Tisch.', ar:'أُجلس الضيف عند الطاولة.'} }
+];
+
+var STRONG_TABLE = { headers:['Infinitiv','Präteritum','Partizip II','المعنى'], rows:[
+  ['sitzen','saß','gesessen','يجلس / يكون في وضعية الجلوس'],
+  ['hängen','hing','gehangen','يكون معلّقًا (بلا حركة)']
+]};
+
+var WEAK_TABLE = { headers:['Infinitiv','Präteritum','Partizip II','المعنى'], rows:[
+  ['setzen','setzte','gesetzt','يُجلس شخصًا / نفسه (فعل متعدٍ)'],
+  ['hängen','hängte','gehängt','يُعلّق شيئًا (فعل متعدٍ)']
+]};
+
+/* ==========================================================================
+   MISTAKES
+   ========================================================================== */
+var MISTAKES = [
+  { color:'var(--verb-haengen)', groupLabel:'hängen: حالة أم حركة؟', wrong:'Das Bild hängte an der Wand.', right:'Das Bild hing an der Wand.',
+    note:'hängen بمعنى الحالة (بلا حركة) فعل قوي: hing، وليس hängte (الخاص بمعنى الحركة).' },
+  { color:'var(--verb-haengen-akt)', groupLabel:'hängen: حالة أم حركة؟', wrong:'Ich hing das Bild an die Wand.', right:'Ich hängte das Bild an die Wand.',
+    note:'hängen بمعنى الحركة (وضع شيء) فعل ضعيف منتظم: hängte، وليس hing (الخاص بمعنى الحالة).' },
+  { color:'var(--verb-sitzen)', groupLabel:'sitzen لا تكون انعكاسية', wrong:'Ich sitze mich auf den Stuhl.', right:'Ich setze mich auf den Stuhl.',
+    note:'sitzen فعل حالة لا يأخذ ضميرًا انعكاسيًا أبدًا؛ الفعل الانعكاسي الوحيد في هذه العائلة هو sich setzen (فعل حركة).' },
+  { color:'var(--verb-setzen)', groupLabel:'الضمير الانعكاسي مفقود', wrong:'Ich setze auf den Stuhl.', right:'Ich setze mich auf den Stuhl.',
+    note:'عندما يجلس الفاعل نفسه، يحتاج setzen دائمًا ضميرًا انعكاسيًا مطابقًا للفاعل.' },
+  { color:'var(--verb-haengen)', groupLabel:'الحالة النحوية', wrong:'Das Bild hängt an die Wand.', right:'Das Bild hängt an der Wand.',
+    note:'حالة الوصف (hängen بمعنى الحالة) تأخذ Dativ بعد an، وليس Akkusativ.' },
+  { color:'var(--verb-haengen-akt)', groupLabel:'الحالة النحوية', wrong:'Ich hänge das Bild an der Wand.', right:'Ich hänge das Bild an die Wand.',
+    note:'حالة الحركة (hängen بمعنى وضع شيء) تأخذ Akkusativ بعد an، وليس Dativ.' },
+  { color:'var(--verb-haengen)', groupLabel:'Partizip II', wrong:'Das Bild hat an der Wand gehängt.', right:'Das Bild hat an der Wand gehangen.',
+    note:'الحالة (بلا مفعول به) تستخدم Partizip II القوي gehangen، وليس gehängt (الخاص بالحركة).' },
+  { color:'var(--verb-sitzen)', groupLabel:'Perfekt', wrong:'Die Katze ist auf dem Sofa gesessen.', right:'Die Katze hat auf dem Sofa gesessen.',
+    note:'مثل hängen وstehen وliegen، يُصرَّف sitzen في Perfekt مع haben في الألمانية المعيارية، وليس sein.' },
+  { color:'var(--verb-setzen)', groupLabel:'gesessen أم gesetzt؟', wrong:'Ich habe mich auf den Stuhl gesessen.', right:'Ich habe mich auf den Stuhl gesetzt.',
+    note:'sich setzen فعل ضعيف: صيغة Partizip II الصحيحة هي gesetzt. أما gesessen فهي خاصة بـ sitzen (الحالة) فقط، ولا تُستخدم مع ضمير انعكاسي.' }
+];
+
+/* ==========================================================================
+   EXERCISE DATA
+   ========================================================================== */
+var MCQ = [
+  { sentence:'Der Mantel ___ am Haken.', options:['hängt','hängte','setzt'], correct:'hängt', ar:'المعطف معلّق على الشمّاعة.', explain:'وصف حالة حاضرة = hängt.' },
+  { sentence:'Das Kind ___ auf dem Stuhl.', options:['sitzt','setzt','hängt'], correct:'sitzt', ar:'الطفل جالس على الكرسي.', explain:'حالة جلوس لكائن حيّ = sitzt.' },
+  { sentence:'Ich ___ das Kind auf den Stuhl.', options:['setze','sitze','hänge'], correct:'setze', ar:'أُجلس الطفل على الكرسي.', explain:'حركة بمفعول به مباشر = setze.' },
+  { sentence:'Ich ___ mich auf den Stuhl.', options:['setze','sitze','hänge'], correct:'setze', ar:'أجلس (بنفسي) على الكرسي.', explain:'حركة انعكاسية = setze mich.' },
+  { sentence:'Ich ___ das Bild an die Wand.', options:['hänge','setze','sitze'], correct:'hänge', ar:'أُعلّق اللوحة على الحائط.', explain:'حركة تعليق شيء = hänge، وليس setze (خاص بالكائنات الجالسة).' },
+  { sentence:'Gestern ___ das Bild schon an der Wand.', options:['hing','hängte','hängen'], correct:'hing', ar:'بالأمس كانت اللوحة معلّقة على الحائط بالفعل.', explain:'حالة في الماضي = hing (فعل قوي).' },
+  { sentence:'Gestern ___ ich das Bild an die Wand.', options:['hängte','hing','hänge'], correct:'hängte', ar:'بالأمس علّقت اللوحة على الحائط.', explain:'حركة في الماضي = hängte (فعل ضعيف).' },
+  { sentence:'Das Bild hat an der Wand ___.', options:['gehangen','gehängt','hängen'], correct:'gehangen', ar:'كانت اللوحة معلّقة على الحائط.', explain:'حالة في Partizip II = gehangen.' },
+  { sentence:'Ich habe das Bild an die Wand ___.', options:['gehängt','gehangen','hänge'], correct:'gehängt', ar:'علّقت اللوحة على الحائط.', explain:'حركة في Partizip II = gehängt.' },
+  { sentence:'Die Katze hat auf dem Sofa ___.', options:['gesessen','gesetzt','sitzen'], correct:'gesessen', ar:'كانت القطة جالسة على الأريكة.', explain:'sitzen في Partizip II = gesessen.' },
+  { sentence:'Ich habe mich auf den Stuhl ___.', options:['gesetzt','gesessen','setzen'], correct:'gesetzt', ar:'جلست على الكرسي.', explain:'sich setzen في Partizip II = gesetzt.' },
+  { sentence:'Der Vogel ___ auf dem Ast.', options:['sitzt','setzt','hängt'], correct:'sitzt', ar:'الطائر جالس على الغصن.', explain:'حالة جلوس لكائن حيّ = sitzt.' }
+];
+
+var FILL = [
+  { sentence:'Die Uhr ___ an der Wand.', answer:'hängt', ar:'الساعة معلّقة على الحائط.' },
+  { sentence:'Die Katze ___ auf dem Sofa.', answer:'sitzt', ar:'القطة جالسة على الأريكة.' },
+  { sentence:'Ich ___ die Jacke an die Garderobe.', answer:'hänge', ar:'أُعلّق السترة على المشجب.' },
+  { sentence:'Ich ___ mich an den Tisch.', answer:'setze', ar:'أجلس عند الطاولة.' },
+  { sentence:'Das Kleid ___ im Schrank.', answer:'hängt', ar:'الفستان معلّق في الخزانة.' },
+  { sentence:'Der Gast ___ am Tisch.', answer:'sitzt', ar:'الضيف جالس عند الطاولة.' },
+  { sentence:'Früher ___ die Lampe an der Decke.', answer:'hing', ar:'سابقًا كان المصباح معلّقًا في السقف.' },
+  { sentence:'Gestern ___ ich die Uhr an die Wand.', answer:'hängte', ar:'بالأمس علّقت الساعة على الحائط.' },
+  { sentence:'Wir haben uns an den Tisch ___.', answer:'gesetzt', ar:'جلسنا عند الطاولة.' },
+  { sentence:'Das Baby hat auf dem Teppich ___.', answer:'gesessen', ar:'كان الرضيع جالسًا على السجادة.' },
+  { sentence:'Setz ___, bitte!', answer:'dich', ar:'اجلس، من فضلك! (غير رسمية)' },
+  { sentence:'Die Puppe ___ auf dem Bett.', answer:'sitzt', ar:'الدمية جالسة على السرير.' }
+];
+
+var BUILDER = [
+  { words:['Das','Bild','hängt','an','der','Wand','.'], ar:'اللوحة معلّقة على الحائط.' },
+  { words:['Ich','hänge','das','Bild','an','die','Wand','.'], ar:'أُعلّق اللوحة على الحائط.' },
+  { words:['Das','Kind','sitzt','auf','dem','Stuhl','.'], ar:'الطفل جالس على الكرسي.' },
+  { words:['Ich','setze','mich','auf','den','Stuhl','.'], ar:'أجلس على الكرسي.' },
+  { words:['Der','Mantel','hängt','am','Haken','.'], ar:'المعطف معلّق على الشمّاعة.' },
+  { words:['Setzen','Sie','sich',',','bitte','!'], ar:'تفضّلوا بالجلوس! (رسمية)' },
+  { words:['Die','Katze','sitzt','auf','dem','Sofa','.'], ar:'القطة جالسة على الأريكة.' },
+  { words:['Ich','setze','das','Kind','auf','den','Stuhl','.'], ar:'أُجلس الطفل على الكرسي.' }
+];
+
+var MATCH_ITEMS = [
+  { de:'Das Bild hängt', ko:'Ich hänge das Bild' },
+  { de:'Der Mantel hängt', ko:'Ich hänge den Mantel' },
+  { de:'Die Lampe hängt', ko:'Ich hänge die Lampe' },
+  { de:'Die Uhr hängt', ko:'Ich hänge die Uhr' },
+  { de:'Das Kleid hängt', ko:'Ich hänge das Kleid' },
+  { de:'Die Jacke hängt', ko:'Ich hänge die Jacke' },
+  { de:'Das Kind sitzt', ko:'Ich setze das Kind' },
+  { de:'Die Katze sitzt', ko:'Ich setze die Katze' },
+  { de:'Der Vogel sitzt', ko:'Ich setze den Vogel' },
+  { de:'Die Puppe sitzt', ko:'Ich setze die Puppe' },
+  { de:'Das Baby sitzt', ko:'Ich setze das Baby' },
+  { de:'Der Gast sitzt', ko:'Ich setze den Gast' }
+];
+
+var PHRASE_ITEMS = [
+  { context:'Das Bild (hängen، Zustand، Dat.، مؤنث، der) Wand.', options:['hängt an der Wand','hängt an die Wand','hängt an dem Wand'], correct:'hängt an der Wand', ar:'اللوحة معلّقة على الحائط.' },
+  { context:'Ich (hängen، Handlung، Akk.، مؤنث، die) Wand.', options:['hänge das Bild an die Wand','hänge das Bild an der Wand','hänge das Bild an das Wand'], correct:'hänge das Bild an die Wand', ar:'أُعلّق اللوحة على الحائط.' },
+  { context:'Der Mantel (hängen، Zustand، Dat.، مذكّر، dem) Haken.', options:['hängt am Haken','hängt an den Haken','setzt am Haken'], correct:'hängt am Haken', ar:'المعطف معلّق على الشمّاعة.' },
+  { context:'Ich (hängen، Handlung، Akk.، مذكّر، den) Haken.', options:['hänge den Mantel an den Haken','hänge den Mantel an dem Haken','hänge den Mantel an der Haken'], correct:'hänge den Mantel an den Haken', ar:'أُعلّق المعطف على الشمّاعة.' },
+  { context:'Das Kind (sitzen، Zustand، Dat.، مذكّر، dem) Stuhl.', options:['sitzt auf dem Stuhl','sitzt auf den Stuhl','setzt auf dem Stuhl'], correct:'sitzt auf dem Stuhl', ar:'الطفل جالس على الكرسي.' },
+  { context:'Ich (setzen، Handlung، Akk.، مذكّر، den) Stuhl.', options:['setze mich auf den Stuhl','setze mich auf dem Stuhl','sitze mich auf den Stuhl'], correct:'setze mich auf den Stuhl', ar:'أجلس على الكرسي.' },
+  { context:'Die Katze (sitzen، Zustand، Dat.، محايد، dem) Sofa.', options:['sitzt auf dem Sofa','sitzt auf das Sofa','setzt auf dem Sofa'], correct:'sitzt auf dem Sofa', ar:'القطة جالسة على الأريكة.' },
+  { context:'Ich (setzen، Handlung، Akk.، محايد، das) Sofa.', options:['setze die Katze auf das Sofa','setze die Katze auf dem Sofa','sitze die Katze auf das Sofa'], correct:'setze die Katze auf das Sofa', ar:'أُجلس القطة على الأريكة.' },
+  { context:'Das Kleid (hängen، Zustand، Dat.، مذكّر، dem) Schrank.', options:['hängt im Schrank','hängt in den Schrank','setzt im Schrank'], correct:'hängt im Schrank', ar:'الفستان معلّق في الخزانة.' },
+  { context:'Ich (hängen، Handlung، Akk.، مذكّر، den) Schrank.', options:['hänge das Kleid in den Schrank','hänge das Kleid in dem Schrank','hänge das Kleid in der Schrank'], correct:'hänge das Kleid in den Schrank', ar:'أُعلّق الفستان في الخزانة.' }
+];
+
+/* ==========================================================================
+   GENERIC RENDER HELPERS
+   ========================================================================== */
+function renderTable(el, data){
+  var html = '<tr>' + data.headers.map(function(h){ return '<th>'+h+'</th>'; }).join('') + '</tr>';
+  data.rows.forEach(function(row){
+    html += '<tr>' + row.map(function(cell, i){
+      var isDe = i < 3;
+      return '<td class="'+(isDe?'de':'')+'"'+(isDe?' data-speak="'+String(cell).replace(/"/g,'')+'"':'')+'>'+cell+'</td>';
+    }).join('') + '</tr>';
+  });
+  el.innerHTML = html;
+}
+
+function renderMarkedSentence(container, sentence, marked, color, ar){
+  container.innerHTML = '';
+  var wrap = ce('div','route-sentence');
+  var idx = sentence.indexOf(marked);
+  var before = idx>=0 ? sentence.slice(0, idx).trim() : '';
+  var after = idx>=0 ? sentence.slice(idx+marked.length).trim() : sentence;
+  function addWords(text){
+    if(!text) return;
+    text.split(' ').forEach(function(w){
+      if(!w) return;
+      var span = ce('span','rs-word', w);
+      span.addEventListener('click', function(){ Speech.speak(w, {els:[span]}); });
+      wrap.appendChild(span);
+    });
+  }
+  addWords(before);
+  if(idx>=0){
+    var markedSpan = ce('span','rs-verb', marked);
+    markedSpan.style.setProperty('--verb-marker', color);
+    markedSpan.addEventListener('click', function(){ Speech.speak(marked, {els:[markedSpan]}); });
+    wrap.appendChild(markedSpan);
+  }
+  addWords(after);
+  container.appendChild(wrap);
+  if(ar){ container.appendChild(ce('p','route-ar', ar)); }
+  var playBtn = ce('button','btn btn-primary btn-sm', '<svg class="icon" style="width:16px;height:16px"><use href="#i-speaker"/></svg> استمع للجملة كاملة');
+  playBtn.style.marginTop = '14px';
+  playBtn.addEventListener('click', function(){ Speech.speak(sentence, {label:sentence}); });
+  container.appendChild(playBtn);
+}
+
+/* ==========================================================================
+   CONJUGATION CARDS (bildung section) — note: hängen appears twice
+   ========================================================================== */
+function renderConjugationCards(){
+  var wrap = qs('#conjugationCards');
+  wrap.innerHTML = '';
+  VERBS.forEach(function(v){
+    var card = ce('div','info-card');
+    card.style.borderTop = '4px solid '+v.color;
+    var head = ce('div');
+    head.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;flex-wrap:wrap';
+    var titleHtml = '<span class="de" data-speak="'+v.key+'" style="color:'+v.color+'">'+v.key+'</span>'+(v.sub? ' <span style="font-size:.7rem;color:var(--ink-faint)">'+v.sub+'</span>' : '');
+    var title = ce('h3', null, titleHtml);
+    var typeChip = ce('span','chip', v.type);
+    typeChip.style.background = v.colorSoft; typeChip.style.color = v.color;
+    head.appendChild(title); head.appendChild(typeChip);
+    card.appendChild(head);
+    var table = document.createElement('table');
+    table.className = 'simple-table compact';
+    var html = '<tr><th>الضمير</th><th>Präsens</th></tr>';
+    v.praesens.forEach(function(p){ html += '<tr><td>'+p[0]+'</td><td class="de" data-speak="'+p[1]+'">'+p[1]+'</td></tr>'; });
+    table.innerHTML = html;
+    card.appendChild(table);
+    var footer = ce('div');
+    footer.style.cssText = 'display:flex;gap:10px;flex-wrap:wrap;margin-top:14px';
+    var pratChip = ce('span','chip de', 'Präteritum: '+v.praeteritum);
+    pratChip.style.background = 'var(--bg-alt)'; pratChip.style.color = 'var(--ink-soft)';
+    pratChip.setAttribute('data-speak', v.praeteritum);
+    var perfChip = ce('span','chip de', 'Perfekt: '+v.perfekt);
+    perfChip.style.background = 'var(--bg-alt)'; perfChip.style.color = 'var(--ink-soft)';
+    perfChip.setAttribute('data-speak', v.perfekt);
+    footer.appendChild(pratChip); footer.appendChild(perfChip);
+    card.appendChild(footer);
+    card.appendChild(ce('p', null, v.ar));
+    wrap.appendChild(card);
+  });
+}
+
+/* ==========================================================================
+   OBJECTS REFERENCE TABLE
+   ========================================================================== */
+function renderObjectsReferenceTable(){
+  var el = qs('#objectsReferenceTable');
+  var html = '<tr><th>Gegenstand</th><th>Zustand</th><th>Handlung</th><th>المعنى</th></tr>';
+  OBJECTS.forEach(function(o){
+    var f = VERB_FORMS[o.orientation];
+    html += '<tr><td class="de" data-speak="'+o.article+' '+o.noun+'" style="font-weight:700">'+o.article+' '+o.noun+'</td>'+
+      '<td class="de" data-speak="'+f.state+'" style="color:'+f.color+';font-weight:700">'+f.state+'</td>'+
+      '<td class="de" data-speak="'+f.actionInf+'" style="color:'+f.actionColor+';font-weight:700">'+f.actionInf+'</td>'+
+      '<td>'+o.ar+'</td></tr>';
+  });
+  el.innerHTML = html;
+}
+
+/* ==========================================================================
+   VOCAB GRID (flip cards, one per item)
+   ========================================================================== */
+function renderVocabGrid(){
+  var grid = qs('#vocabGrid');
+  grid.innerHTML = '';
+  OBJECTS.forEach(function(o){
+    var f = VERB_FORMS[o.orientation];
+    var card = ce('div','flip-card');
+    var inner = ce('div','flip-card-inner');
+    var front = ce('div','flip-face flip-front');
+    var tag = ce('span','flip-case-tag', f.state);
+    tag.style.background = f.color;
+    front.appendChild(tag);
+    front.appendChild(ce('div','de', o.article+' '+o.noun));
+    front.appendChild(ce('div','flip-hint','انقر للقلب ↺'));
+    var speakFront = ce('button','speak-dot', '<svg class="icon"><use href="#i-speaker"/></svg>');
+    speakFront.addEventListener('click', function(e){ e.stopPropagation(); Speech.speak(o.article+' '+o.noun, {els:[]}); });
+    front.appendChild(speakFront);
+    var back = ce('div','flip-face flip-back');
+    back.style.background = 'linear-gradient(155deg, '+f.color+', '+f.actionColor+')';
+    back.appendChild(ce('div','meaning-de de', f.state+' · '+f.actionInf));
+    back.appendChild(ce('div','meaning', o.ar));
+    var speakBack = ce('button','speak-dot', '<svg class="icon"><use href="#i-speaker"/></svg>');
+    speakBack.addEventListener('click', function(e){ e.stopPropagation(); Speech.speak(f.state+', '+f.actionInf, {els:[]}); });
+    back.appendChild(speakBack);
+    inner.appendChild(front); inner.appendChild(back);
+    card.appendChild(inner);
+    card.addEventListener('click', function(){ card.classList.toggle('flipped'); markVisited('cards'); });
+    grid.appendChild(card);
+  });
+}
+
+/* ==========================================================================
+   POSITION WORKSHOP — item picker + two-step ladder (Zustand → Handlung)
+   ========================================================================== */
+function renderWorkshopPicker(){
+  var wrap = qs('#workshopPicker');
+  wrap.innerHTML = '';
+  var buttons = [];
+  OBJECTS.forEach(function(o){
+    var btn = ce('button','verb-picker-btn de', o.article+' '+o.noun);
+    btn.type = 'button';
+    btn.addEventListener('click', function(){
+      buttons.forEach(function(b){ b.classList.remove('active'); b.style.background=''; b.style.borderColor=''; });
+      var f = VERB_FORMS[o.orientation];
+      btn.classList.add('active'); btn.style.background = f.color; btn.style.borderColor = f.color;
+      showPosition(o);
+      markVisited('workshop');
+    });
+    wrap.appendChild(btn);
+    buttons.push(btn);
+  });
+  buttons[0].click();
+}
+
+function buildPositionStep(labelKey, colorVar, word, ex, barWidth){
+  var step = ce('div','ladder-step step-'+labelKey);
+  step.style.setProperty('--step-color', colorVar);
+  var wordCol = ce('div','ladder-word-col');
+  var tagText = labelKey === 'zustand' ? 'Zustand · wo؟' : 'Handlung · wohin؟';
+  var tag = ce('span','ladder-tag', tagText);
+  wordCol.appendChild(tag);
+  var wordEl = ce('div','ladder-word de', word);
+  wordEl.addEventListener('click', function(){ Speech.speak(word, {els:[wordEl]}); });
+  wordCol.appendChild(wordEl);
+  var bar = ce('div','ladder-bar');
+  bar.style.width = barWidth;
+  wordCol.appendChild(bar);
+  step.appendChild(wordCol);
+  var exCol = ce('div','ladder-example');
+  var deLine = ce('div','de-line de', ex.s);
+  deLine.addEventListener('click', function(){ Speech.speak(ex.s, {els:[deLine], label:ex.s}); });
+  exCol.appendChild(deLine);
+  exCol.appendChild(ce('div','ar-line', ex.ar));
+  step.appendChild(exCol);
+  return step;
+}
+
+function showPosition(o){
+  var display = qs('#ladderDisplay');
+  display.classList.add('focusing');
+  setTimeout(function(){
+    display.innerHTML = '';
+    var f = VERB_FORMS[o.orientation];
+    display.appendChild(buildPositionStep('zustand', f.color, f.state, o.exState, '45%'));
+    display.appendChild(buildPositionStep('handlung', f.actionColor, f.action1p, o.exAction, '100%'));
+    var note = ce('p', null, o.orientation === 'haengen'
+      ? 'ملاحظة: '+(o.article+' '+o.noun)+' شيء معلّق من نقطة فوقه، لذا يستخدم hängen في المعنيين — لكن انتبه للفرق في الماضي.'
+      : 'ملاحظة: '+(o.article+' '+o.noun)+' كائن حيّ في وضعية الجلوس، لذا يستخدم sitzen/setzen دائمًا.');
+    note.style.cssText = 'margin-top:6px;font-size:.84rem;color:var(--ink-faint);text-align:center';
+    display.appendChild(note);
+    display.classList.remove('focusing');
+  }, 150);
+}
+
+/* ==========================================================================
+   EXAMPLES LIST (filterable by verb)
+   ========================================================================== */
+var EX_FILTERS = [
+  { key:'all', label:'الكل', color:'var(--ink)' },
+  { key:'sitzen', label:'sitzen', color:'var(--verb-sitzen)' },
+  { key:'haengen', label:'hängen (حالة)', color:'var(--verb-haengen)' },
+  { key:'setzen', label:'setzen', color:'var(--verb-setzen)' },
+  { key:'haengen-akt', label:'hängen (حركة)', color:'var(--verb-haengen-akt)' }
+];
+var examplesActiveFilter = 'all';
+
+function buildExamplesItems(){
+  var items = [];
+  OBJECTS.forEach(function(o){
+    var f = VERB_FORMS[o.orientation];
+    var stateKey = o.orientation; /* 'haengen' or 'sitzen' */
+    var actionKey = o.orientation === 'haengen' ? 'haengen-akt' : 'setzen';
+    items.push({ deg:stateKey, color:f.color, word:f.state, sentence:o.exState.s, marked:f.state, ar:o.exState.ar });
+    items.push({ deg:actionKey, color:f.actionColor, word:f.action1p, sentence:o.exAction.s, marked:f.action1p, ar:o.exAction.ar });
+  });
+  return items;
+}
+var EXAMPLES_ITEMS = buildExamplesItems();
+
+function renderExamplesFilterBar(){
+  var bar = qs('#examplesFilterBar');
+  bar.innerHTML = '';
+  EX_FILTERS.forEach(function(f){
+    var chip = ce('button','filter-chip','<span class="dot"></span>'+f.label);
+    chip.style.setProperty('--dot-color', f.color);
+    chip.type = 'button';
+    if(f.key===examplesActiveFilter) chip.classList.add('active');
+    chip.addEventListener('click', function(){
+      examplesActiveFilter = f.key;
+      qsa('.filter-chip', bar).forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      renderExamplesList();
+    });
+    bar.appendChild(chip);
+  });
+}
+
+function renderExamplesList(){
+  var list = qs('#examplesList');
+  list.innerHTML = '';
+  EXAMPLES_ITEMS.forEach(function(item){
+    if(examplesActiveFilter !== 'all' && item.deg !== examplesActiveFilter) return;
+    var card = ce('div','info-card');
+    var head = ce('div');
+    head.style.cssText = 'display:flex;align-items:center;gap:10px;margin-bottom:12px';
+    var tag = ce('span','chip', item.deg);
+    tag.style.background = item.color; tag.style.color = '#fff';
+    head.appendChild(tag);
+    head.appendChild(ce('span','de', '<b style="font-size:1.05rem">'+item.word+'</b>'));
+    card.appendChild(head);
+    var box = ce('div');
+    card.appendChild(box);
+    renderMarkedSentence(box, item.sentence, item.marked, item.color, item.ar);
+    list.appendChild(card);
+  });
+}
+
+/* ==========================================================================
+   MISTAKES
+   ========================================================================== */
+function renderMistakes(){
+  var list = qs('#mistakesList');
+  list.innerHTML = '';
+  MISTAKES.forEach(function(m){
+    var card = ce('div','mistake-card');
+    var wrong = ce('div','mistake-side mistake-wrong');
+    wrong.innerHTML = '<span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-x"/></svg>خطأ شائع</span><span class="mistake-sentence">'+m.wrong+'</span>';
+    var right = ce('div','mistake-side mistake-right');
+    right.innerHTML = '<span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg>الصحيح</span><span class="mistake-sentence">'+m.right+'</span>';
+    right.querySelector('.mistake-sentence').addEventListener('click', function(e){ Speech.speak(m.right, {els:[e.currentTarget]}); });
+    card.appendChild(wrong); card.appendChild(right);
+    var note = ce('div','mistake-note');
+    var grpTag = ce('span','grp-tag', m.groupLabel);
+    grpTag.style.background = m.color;
+    note.appendChild(grpTag);
+    note.appendChild(document.createTextNode(m.note));
+    card.appendChild(note);
+    list.appendChild(card);
+  });
+}
+
+/* ==========================================================================
+   EXERCISES — scoring
+   ========================================================================== */
+var exerciseScore = { mcq:0, fill:0, builder:0, match:0, phrase:0 };
+var exerciseTotal = { mcq:MCQ.length, fill:FILL.length, builder:BUILDER.length, match:MATCH_ITEMS.length, phrase:PHRASE_ITEMS.length };
+
+function updateScoreBar(){
+  var done = exerciseScore.mcq + exerciseScore.fill + exerciseScore.builder + exerciseScore.match + exerciseScore.phrase;
+  var total = exerciseTotal.mcq + exerciseTotal.fill + exerciseTotal.builder + exerciseTotal.match + exerciseTotal.phrase;
+  var pct = Math.round((done/total)*100);
+  qs('#scoreFill').style.width = pct+'%';
+  qs('#scoreLabel').textContent = toArabicDigits(pct)+'٪';
+  qs('#countMcq').textContent = toArabicDigits(exerciseScore.mcq)+'/'+toArabicDigits(exerciseTotal.mcq);
+  qs('#countFill').textContent = toArabicDigits(exerciseScore.fill)+'/'+toArabicDigits(exerciseTotal.fill);
+  qs('#countBuilder').textContent = toArabicDigits(exerciseScore.builder)+'/'+toArabicDigits(exerciseTotal.builder);
+  qs('#countMatch').textContent = toArabicDigits(exerciseScore.match)+'/'+toArabicDigits(exerciseTotal.match);
+  qs('#countPhrase').textContent = toArabicDigits(exerciseScore.phrase)+'/'+toArabicDigits(exerciseTotal.phrase);
+  if(pct === 100) unlockBadge('champion');
+  refreshProgress();
+}
+
+function renderMcqPanel(){
+  var panel = qs('#panelMcq');
+  panel.innerHTML = '';
+  MCQ.forEach(function(q){
+    var block = ce('div','q-block');
+    var promptParts = q.sentence.split('___');
+    block.appendChild(ce('div','q-prompt de', promptParts[0]+'<span style="color:var(--primary);font-weight:700">___</span>'+(promptParts[1]||'')));
+    block.appendChild(ce('div','q-prompt-ar', q.ar));
+    var opts = ce('div','q-options');
+    var feedback = ce('div','q-feedback', q.explain);
+    q.options.forEach(function(opt){
+      var btn = ce('button','opt-btn de', opt);
+      btn.type = 'button';
+      btn.addEventListener('click', function(){
+        qsa('.opt-btn', opts).forEach(function(b){ b.disabled = true; });
+        if(opt === q.correct){
+          btn.classList.add('correct');
+          if(!block.dataset.done){ exerciseScore.mcq++; block.dataset.done='1'; updateScoreBar(); }
+        } else {
+          btn.classList.add('wrong');
+          qsa('.opt-btn', opts).forEach(function(b){ if(b.textContent===q.correct) b.classList.add('correct'); });
+        }
+        feedback.classList.add('show');
+        Speech.speak(promptParts[0]+' '+q.correct+' '+(promptParts[1]||''));
+      });
+      opts.appendChild(btn);
+    });
+    block.appendChild(opts);
+    block.appendChild(feedback);
+    panel.appendChild(block);
+  });
+}
+
+function renderFillPanel(){
+  var panel = qs('#panelFill');
+  panel.innerHTML = '';
+  FILL.forEach(function(q){
+    var block = ce('div','q-block');
+    var promptParts = q.sentence.split('___');
+    block.appendChild(ce('div','q-prompt de', promptParts[0]+' ______ '+(promptParts[1]||'')));
+    block.appendChild(ce('div','q-prompt-ar', q.ar));
+    var row = ce('div','fill-row');
+    var input = document.createElement('input');
+    input.type = 'text'; input.placeholder = '...'; input.setAttribute('dir','ltr');
+    var checkBtn = ce('button','fill-check','تحقّق');
+    checkBtn.type = 'button';
+    var result = ce('div','fill-result');
+    row.appendChild(input); row.appendChild(checkBtn); row.appendChild(result);
+    block.appendChild(row);
+    function check(){
+      var val = input.value.trim().toLowerCase();
+      var correct = q.answer.toLowerCase();
+      if(val === correct){
+        result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--success)"><use href="#i-check"/></svg>';
+        input.style.borderColor = 'var(--success)';
+        if(!block.dataset.done){ exerciseScore.fill++; block.dataset.done='1'; updateScoreBar(); }
+        Speech.speak(promptParts[0]+' '+q.answer+' '+(promptParts[1]||''));
+      } else {
+        result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--danger)"><use href="#i-x"/></svg>';
+        input.style.borderColor = 'var(--danger)';
+        toast('الإجابة الصحيحة: '+q.answer);
+      }
+    }
+    checkBtn.addEventListener('click', check);
+    input.addEventListener('keydown', function(e){ if(e.key==='Enter') check(); });
+    panel.appendChild(block);
+  });
+}
+
+function renderBuilderPanel(){
+  var panel = qs('#panelBuilder');
+  panel.innerHTML = '';
+  BUILDER.forEach(function(q){
+    var block = ce('div','q-block');
+    block.appendChild(ce('div','q-prompt-ar', q.ar));
+    var answerZone = ce('div','builder-answer');
+    var pool = ce('div','builder-pool');
+    var shuffled = q.words.slice().sort(function(){ return Math.random()-0.5; });
+    var placed = [];
+    shuffled.forEach(function(word){
+      var chip = ce('button','chip-word de', word);
+      chip.type = 'button';
+      chip.addEventListener('click', function(){
+        if(chip.classList.contains('used')) return;
+        chip.classList.add('used');
+        var placedChip = ce('span','chip-word de', word);
+        placedChip.style.cursor = 'default';
+        placedChip.addEventListener('click', function(){
+          placedChip.remove();
+          chip.classList.remove('used');
+          placed = placed.filter(function(p){ return p.el !== placedChip; });
+        });
+        answerZone.appendChild(placedChip);
+        placed.push({ word:word, el:placedChip });
+      });
+      pool.appendChild(chip);
+    });
+    var actions = ce('div','builder-actions');
+    var checkBtn = ce('button','btn btn-primary btn-sm','تحقّق من الترتيب');
+    var resetBtn = ce('button','btn btn-ghost btn-sm','إعادة');
+    var feedback = ce('div','q-feedback');
+    checkBtn.addEventListener('click', function(){
+      var userSentence = placed.map(function(p){ return p.word; }).join(' ');
+      var correctSentence = q.words.join(' ');
+      feedback.classList.add('show');
+      if(userSentence === correctSentence){
+        feedback.innerHTML = '<b style="color:var(--success)">✓ ممتاز! الترتيب صحيح.</b>';
+        if(!block.dataset.done){ exerciseScore.builder++; block.dataset.done='1'; updateScoreBar(); }
+        Speech.speak(correctSentence.replace(/ \./,'.').replace(/ ,/,',').replace(/ !/,'!'));
+      } else {
+        feedback.innerHTML = '<b style="color:var(--danger)">الترتيب الصحيح:</b> <span class="de" dir="ltr">'+correctSentence.replace(/ \./,'.').replace(/ ,/,',').replace(/ !/,'!')+'</span>';
+      }
+    });
+    resetBtn.addEventListener('click', function(){
+      placed = []; answerZone.innerHTML = '';
+      qsa('.chip-word', pool).forEach(function(c){ c.classList.remove('used'); });
+      feedback.classList.remove('show');
+    });
+    actions.appendChild(checkBtn); actions.appendChild(resetBtn);
+    block.appendChild(answerZone); block.appendChild(pool); block.appendChild(actions); block.appendChild(feedback);
+    panel.appendChild(block);
+  });
+}
+
+function renderMatchPanel(){
+  var panel = qs('#panelMatch');
+  panel.innerHTML = '';
+  var intro = ce('p', null, 'اضغط على جملة الحالة، ثم على جملة الحركة (Handlung) المطابقة لها لنفس العنصر.');
+  intro.style.cssText = 'margin-bottom:18px;color:var(--ink-soft)';
+  panel.appendChild(intro);
+  var grid = ce('div','match-grid');
+  var colDe = ce('div','match-col');
+  var colKo = ce('div','match-col');
+  var deShuffled = MATCH_ITEMS.slice();
+  var koShuffled = MATCH_ITEMS.slice().sort(function(){ return Math.random()-0.5; });
+  var selectedDe = null, selectedKo = null;
+  var matchedCount = 0;
+  deShuffled.forEach(function(item){
+    var el = ce('div','match-item de', item.de);
+    el.dataset.key = item.de;
+    el.addEventListener('click', function(){
+      if(el.classList.contains('matched')) return;
+      qsa('.match-item', colDe).forEach(function(x){ x.classList.remove('selected'); });
+      el.classList.add('selected'); selectedDe = el;
+      attemptMatch();
+    });
+    colDe.appendChild(el);
+  });
+  koShuffled.forEach(function(item){
+    var el = ce('div','match-item de', item.ko);
+    el.dataset.key = item.de;
+    el.addEventListener('click', function(){
+      if(el.classList.contains('matched')) return;
+      qsa('.match-item', colKo).forEach(function(x){ x.classList.remove('selected'); });
+      el.classList.add('selected'); selectedKo = el;
+      attemptMatch();
+    });
+    colKo.appendChild(el);
+  });
+  function attemptMatch(){
+    if(!selectedDe || !selectedKo) return;
+    if(selectedDe.dataset.key === selectedKo.dataset.key){
+      selectedDe.classList.add('matched'); selectedKo.classList.add('matched');
+      selectedDe.classList.remove('selected'); selectedKo.classList.remove('selected');
+      matchedCount++;
+      if(matchedCount === MATCH_ITEMS.length){ exerciseScore.match = MATCH_ITEMS.length; updateScoreBar(); unlockBadge('sharp'); toast('أحسنت! طابقت كل الأزواج 🎉'); }
+      Speech.speak(selectedDe.textContent+', '+selectedKo.textContent);
+    } else {
+      [selectedDe, selectedKo].forEach(function(el){ el.classList.add('shake'); setTimeout(function(){ el.classList.remove('shake','selected'); }, 420); });
+    }
+    selectedDe = null; selectedKo = null;
+  }
+  grid.appendChild(colDe); grid.appendChild(colKo);
+  panel.appendChild(grid);
+}
+
+function renderPhrasePanel(){
+  var panel = qs('#panelPhrase');
+  panel.innerHTML = '';
+  PHRASE_ITEMS.forEach(function(q){
+    var block = ce('div','q-block');
+    block.appendChild(ce('div','q-prompt-ar', q.context));
+    var opts = ce('div','q-options');
+    opts.style.flexDirection = 'column';
+    opts.style.alignItems = 'stretch';
+    var feedback = ce('div','q-feedback');
+    q.options.forEach(function(opt){
+      var btn = ce('button','opt-btn de', opt);
+      btn.type = 'button';
+      btn.style.textAlign = 'center';
+      btn.addEventListener('click', function(){
+        qsa('.opt-btn', opts).forEach(function(b){ b.disabled = true; });
+        if(opt === q.correct){
+          btn.classList.add('correct');
+          if(!block.dataset.done){ exerciseScore.phrase++; block.dataset.done='1'; updateScoreBar(); }
+        } else {
+          btn.classList.add('wrong');
+          qsa('.opt-btn', opts).forEach(function(b){ if(b.textContent===q.correct) b.classList.add('correct'); });
+        }
+        feedback.innerHTML = q.ar;
+        feedback.classList.add('show');
+        Speech.speak(q.correct);
+      });
+      opts.appendChild(btn);
+    });
+    block.appendChild(opts);
+    block.appendChild(feedback);
+    panel.appendChild(block);
+  });
+}
+
+qsa('.exercise-tab').forEach(function(tab){
+  tab.addEventListener('click', function(){
+    qsa('.exercise-tab').forEach(function(t){ t.classList.remove('active'); });
+    qsa('.exercise-panel').forEach(function(p){ p.classList.remove('active'); });
+    tab.classList.add('active');
+    qs('#'+tab.dataset.panel).classList.add('active');
+  });
+});
+
+/* ==========================================================================
+   BADGES
+   ========================================================================== */
+var BADGES = [
+  { key:'explorer', label:'مستكشف الدرس', icon:'i-book' },
+  { key:'workshop', label:'خبير القرار', icon:'i-stairs' },
+  { key:'cards', label:'جامع البطاقات', icon:'i-cards' },
+  { key:'sharp', label:'مطابقة حادة', icon:'i-link' },
+  { key:'champion', label:'بطل التمارين', icon:'i-medal' }
+];
+var unlockedBadges = {};
+function renderBadges(){
+  var row = qs('#badgesRow');
+  row.innerHTML = '';
+  BADGES.forEach(function(b){
+    var el = ce('div','badge'+(unlockedBadges[b.key]?' unlocked':''));
+    el.id = 'badge-'+b.key;
+    el.innerHTML = '<div class="badge-icon"><svg class="icon" style="width:22px;height:22px;stroke:#fff"><use href="#'+b.icon+'"/></svg></div><div class="badge-name">'+b.label+'</div>';
+    row.appendChild(el);
+  });
+}
+function unlockBadge(key){
+  if(unlockedBadges[key]) return;
+  unlockedBadges[key] = true;
+  var el = qs('#badge-'+key);
+  if(el){ el.classList.add('unlocked','pop'); }
+  var def = BADGES.filter(function(b){ return b.key===key; })[0];
+  if(def) toast('إنجاز جديد: '+def.label+' 🏅', 'i-star');
+}
+var workshopUsedCount = 0;
+var cardsFlippedCount = 0;
+function markVisited(kind){
+  if(kind === 'workshop'){ workshopUsedCount++; if(workshopUsedCount >= 6) unlockBadge('workshop'); }
+  if(kind === 'cards'){ cardsFlippedCount++; if(cardsFlippedCount >= 8) unlockBadge('cards'); }
+}
+
+/* ==========================================================================
+   ROAD NAV / SCROLLSPY / PROGRESS RING
+   ========================================================================== */
+var SECTION_META = [
+  {id:'hero', label:'البداية'},
+  {id:'why', label:'الفكرة الأساسية'},
+  {id:'bildung', label:'التصريف'},
+  {id:'formen', label:'القوي والضعيف'},
+  {id:'reflexiv', label:'sich setzen'},
+  {id:'verwendung', label:'الحالة النحوية'},
+  {id:'workshop', label:'ورشة القرار'},
+  {id:'reference', label:'المرجع'},
+  {id:'vocab', label:'البطاقات'},
+  {id:'examples', label:'الأمثلة'},
+  {id:'mistakes', label:'الأخطاء'},
+  {id:'pronunciation', label:'النطق'},
+  {id:'exercises', label:'التمارين'},
+  {id:'summary', label:'الملخّص'}
+];
+function renderRoadNav(){
+  var track = qs('#roadTrack');
+  track.innerHTML = '';
+  SECTION_META.forEach(function(s){
+    var btn = ce('button','waypoint-btn', '<span class="waypoint-pin"></span><span class="lbl">'+s.label+'</span>');
+    btn.type = 'button';
+    btn.dataset.target = s.id;
+    btn.addEventListener('click', function(){ scrollToSection('#'+s.id); });
+    track.appendChild(btn);
+  });
+}
+function scrollToSection(sel){
+  var el = qs(sel);
+  if(el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+}
+document.addEventListener('click', function(e){
+  var btn = e.target.closest ? e.target.closest('[data-scroll]') : null;
+  if(btn) scrollToSection(btn.getAttribute('data-scroll'));
+});
+
+var visitedSet = {};
+function refreshProgress(){
+  var total = SECTION_META.length;
+  var seen = Object.keys(visitedSet).length;
+  var pct = Math.max(seen? Math.round((seen/total)*100) : 0, 0);
+  var circumference = 113;
+  var offset = circumference - (pct/100)*circumference;
+  qs('#progressRingBar').style.strokeDashoffset = offset;
+  qs('#progressRingLabel').textContent = toArabicDigits(pct)+'٪';
+  if(seen === total) unlockBadge('explorer');
+}
+
+var spyObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    var id = entry.target.id;
+    if(entry.isIntersecting){
+      visitedSet[id] = true;
+      qsa('.waypoint-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.target===id); });
+      refreshProgress();
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+var revealObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){ entry.target.classList.add('is-visible'); revealObserver.unobserve(entry.target); }
+  });
+}, { threshold: 0.12 });
+
+/* ==========================================================================
+   SEARCH
+   ========================================================================== */
+function initSearch(){
+  var toggle = qs('#searchToggle');
+  var box = qs('#searchBoxDesktop');
+  var input = qs('#searchInputDesktop');
+  toggle.addEventListener('click', function(){
+    box.classList.toggle('open');
+    if(box.classList.contains('open')) input.focus();
+  });
+  var lastMarks = [];
+  input.addEventListener('input', function(){
+    lastMarks.forEach(function(m){ var parent=m.parentNode; if(parent){ parent.replaceChild(document.createTextNode(m.textContent), m); parent.normalize(); } });
+    lastMarks = [];
+    var term = input.value.trim();
+    if(term.length < 2) return;
+    var walker = document.createTreeWalker(qs('#mainContent'), NodeFilter.SHOW_TEXT, null);
+    var node, matches = 0;
+    var re = new RegExp('('+term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+    var nodesToProcess = [];
+    while((node = walker.nextNode())){
+      if(re.test(node.nodeValue)) nodesToProcess.push(node);
+    }
+    nodesToProcess.forEach(function(n){
+      var span = document.createElement('span');
+      span.innerHTML = n.nodeValue.replace(re, '<mark class="hl">$1</mark>');
+      var frag = document.createDocumentFragment();
+      Array.prototype.slice.call(span.childNodes).forEach(function(c){ frag.appendChild(c); });
+      n.parentNode.replaceChild(frag, n);
+    });
+    lastMarks = qsa('mark.hl');
+    matches = lastMarks.length;
+    if(matches){ lastMarks[0].scrollIntoView({behavior:'smooth', block:'center'}); toast('تم العثور على '+toArabicDigits(matches)+' نتيجة'); }
+  });
+}
+
+/* ==========================================================================
+   FULLSCREEN / PRINT / BACK TO TOP
+   ========================================================================== */
+qs('#fullscreenToggle').addEventListener('click', function(){
+  if(!document.fullscreenElement){ document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+  else { document.exitFullscreen && document.exitFullscreen(); }
+});
+document.addEventListener('fullscreenchange', function(){
+  var use = qs('#fsIcon use');
+  use.setAttribute('href', document.fullscreenElement ? '#i-compress' : '#i-expand');
+});
+qs('#printBtn').addEventListener('click', function(){ window.print(); });
+
+var backBtn = qs('#backToTop');
+window.addEventListener('scroll', function(){
+  backBtn.classList.toggle('visible', window.scrollY > 800);
+}, { passive:true });
+backBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+/* ==========================================================================
+   INIT
+   ========================================================================== */
+function init(){
+  renderRoadNav();
+  renderConjugationCards();
+  renderTable(qs('#strongTable'), STRONG_TABLE);
+  renderTable(qs('#weakTable'), WEAK_TABLE);
+
+  renderWorkshopPicker();
+  renderObjectsReferenceTable();
+  renderVocabGrid();
+  renderExamplesFilterBar();
+  renderExamplesList();
+  renderMistakes();
+
+  renderMcqPanel();
+  renderFillPanel();
+  renderBuilderPanel();
+  renderMatchPanel();
+  renderPhrasePanel();
+  updateScoreBar();
+  renderBadges();
+  initSearch();
+
+  qsa('section[id]').forEach(function(sec){ spyObserver.observe(sec); });
+  qsa('.reveal, .reveal-stagger').forEach(function(el){ revealObserver.observe(el); });
+
+  refreshProgress();
+}
+
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="lektion-a2-06-haengen-sitzen-setzen" data-category="lektion-a2" data-title="إتمام عائلة أفعال الوضع: hängen · sitzen · setzen" data-root="../../" defer></script>
+</body>
+</html>

@@ -41,6 +41,7 @@
     moonStars: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 13.2A7.5 7.5 0 1 1 10.8 5a6 6 0 0 0 8.2 8.2Z"/><path d="M18 3.5v3M16.5 5h3"/></svg>',
     palette: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .9-1.9 2-1.9h1.6c1.9 0 3.4-1.5 3.4-3.4C20 6.6 16.4 3 12 3Z"/><circle cx="7.5" cy="11" r="1.1"/><circle cx="9.5" cy="7.2" r="1.1"/><circle cx="14.5" cy="7.2" r="1.1"/></svg>',
     chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 3.5 6.6L4 20l1.2-3.6A7.9 7.9 0 0 1 4 12Z"/></svg>',
+    stack: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/></svg>',
     refresh: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11A8 8 0 1 0 18.5 16"/><path d="M20 5v6h-6"/></svg>',
     empty: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-3.6-3.6"/></svg>',
   };
@@ -208,7 +209,7 @@
   function categoryIcon(key) {
     var map = {
       seed: "seed", route: "route", compass: "compass", book: "book",
-      moon: "moonStars", palette: "palette", chat: "chat",
+      moon: "moonStars", palette: "palette", chat: "chat", stack: "stack",
     };
     return icon(map[key] || "book");
   }

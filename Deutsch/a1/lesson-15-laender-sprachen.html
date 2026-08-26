@@ -1,0 +1,2349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الدليل الشامل · الجنسيات واللغات — Länder, Sprachen & Herkunft | ألمانية A1</title>
+<meta name="description" content="الدرس ١٥ في مسار الألمانية A1: الدول والجنسيات واللغات، تثبيت أسئلة W مع woher/wohin/wo، وصيغتا Ich komme aus / Ich spreche — خريطة عالمية تفاعلية، أداة تعارف كاملة، حوارا استخدام عملي كامل، وأخطاء شائعة لمتحدثي العربية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   0. RESET + BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+body { margin: 0; overflow-x: hidden; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+a { color: inherit; }
+
+/* ==========================================================================
+   1. DESIGN TOKENS (same course identity as Lessons 1–5)
+   ========================================================================== */
+:root {
+  color-scheme: light;
+  --bg: #F5F7F9;
+  --bg-alt: #ECEFF3;
+  --surface: #FFFFFF;
+  --surface-glass: rgba(255,255,255,.66);
+  --surface-glass-border: rgba(255,255,255,.5);
+  --ink: #17212B;
+  --ink-soft: #4B5766;
+  --ink-faint: #85909C;
+  --border: #E1E5EA;
+  --border-strong: #CBD2DA;
+
+  --teal: #146770;
+  --teal-ink: #0D4A51;
+  --teal-soft: #E1EFF0;
+  --teal-glow: rgba(20,103,112,.22);
+
+  --amber: #B87A1F;
+  --amber-ink: #8C5C15;
+  --amber-soft: #FBF0DD;
+  --amber-glow: rgba(184,122,31,.22);
+
+  --plum: #7A4CA0;
+  --plum-ink: #5B3679;
+  --plum-soft: #F1E9F7;
+  --plum-glow: rgba(122,76,160,.2);
+
+  --success: #2E7D4F;
+  --success-soft: #E4F5EA;
+  --danger: #B84A38;
+  --danger-soft: #FBEAE6;
+
+  --shadow-sm: 0 1px 2px rgba(23,33,43,.06), 0 1px 1px rgba(23,33,43,.04);
+  --shadow-md: 0 8px 24px -8px rgba(23,33,43,.16), 0 2px 8px -2px rgba(23,33,43,.08);
+  --shadow-lg: 0 24px 60px -20px rgba(23,33,43,.28), 0 8px 20px -8px rgba(23,33,43,.12);
+  --shadow-glow-teal: 0 8px 30px -6px var(--teal-glow);
+  --shadow-glow-amber: 0 8px 30px -6px var(--amber-glow);
+
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+
+  --font-ar-display: 'Reem Kufi', 'Segoe UI', sans-serif;
+  --font-ar-body: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-de-display: 'Fraunces', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --nav-h: 72px;
+  --ease: cubic-bezier(.22,.9,.32,1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #101720;
+  --bg-alt: #0B1119;
+  --surface: #1A2430;
+  --surface-glass: rgba(26,36,48,.62);
+  --surface-glass-border: rgba(255,255,255,.08);
+  --ink: #ECF1F5;
+  --ink-soft: #A9B4C0;
+  --ink-faint: #6B7684;
+  --border: #2A3644;
+  --border-strong: #384454;
+
+  --teal: #4FC2CC;
+  --teal-ink: #8CE0E6;
+  --teal-soft: rgba(79,194,204,.13);
+  --teal-glow: rgba(79,194,204,.28);
+
+  --amber: #F0B255;
+  --amber-ink: #F7CD8C;
+  --amber-soft: rgba(240,178,85,.13);
+  --amber-glow: rgba(240,178,85,.24);
+
+  --plum: #B48CD6;
+  --plum-ink: #D6BCEC;
+  --plum-soft: rgba(180,140,214,.16);
+  --plum-glow: rgba(180,140,214,.26);
+
+  --success: #5FCB8C;
+  --success-soft: rgba(95,203,140,.14);
+  --danger: #E2836E;
+  --danger-soft: rgba(226,131,110,.14);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3);
+  --shadow-md: 0 8px 24px -8px rgba(0,0,0,.5);
+  --shadow-lg: 0 24px 60px -20px rgba(0,0,0,.6);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ar-body);
+  line-height: 1.75;
+  transition: background-color .5s var(--ease), color .5s var(--ease);
+}
+
+.de, [lang="de"] { font-family: var(--font-de-display); direction: ltr; unicode-bidi: isolate; }
+.mono { font-family: var(--font-mono); direction: ltr; unicode-bidi: isolate; }
+
+h1, h2, h3 { font-family: var(--font-ar-display); font-weight: 700; line-height: 1.3; margin: 0; }
+p { margin: 0; }
+
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+::selection { background: var(--teal); color: #fff; }
+
+.rail-rule { height: 2px; background-image: repeating-linear-gradient(to left, var(--border-strong) 0 10px, transparent 10px 18px); margin: 0; border: none; }
+
+/* ==========================================================================
+   2. LAYOUT SHELL
+   ========================================================================== */
+.container { max-width: 1120px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); }
+.section { padding-block: clamp(56px, 8vw, 108px); position: relative; }
+.section-head { max-width: 720px; margin-bottom: clamp(28px, 5vw, 48px); }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: .78rem; letter-spacing: .06em;
+  color: var(--teal); background: var(--teal-soft);
+  padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
+}
+.eyebrow.plum { color: var(--plum); background: var(--plum-soft); }
+.eyebrow.amber { color: var(--amber-ink); background: var(--amber-soft); }
+.section-title { font-size: clamp(1.5rem, 3.6vw, 2.35rem); }
+.section-sub { color: var(--ink-soft); font-size: clamp(.98rem, 1.6vw, 1.1rem); margin-top: 12px; max-width: 62ch; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(1){transition-delay:.03s} .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.09s}
+.reveal-stagger.is-visible > *:nth-child(3){transition-delay:.15s} .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.21s}
+.reveal-stagger.is-visible > *:nth-child(5){transition-delay:.27s} .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.33s}
+.reveal-stagger.is-visible > *:nth-child(7){transition-delay:.39s} .reveal-stagger.is-visible > *:nth-child(8){transition-delay:.45s}
+
+/* ==========================================================================
+   3. HEADER / NAV
+   ========================================================================== */
+.site-header {
+  position: sticky; top: 0; z-index: 100; height: var(--nav-h);
+  display: flex; align-items: center;
+  background: var(--surface-glass); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--surface-glass-border);
+  transition: background-color .5s var(--ease), border-color .5s var(--ease);
+}
+.header-inner { display: flex; align-items: center; gap: 18px; width: 100%; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; white-space: nowrap; }
+.brand-mark {
+  width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0;
+  background: linear-gradient(155deg, var(--teal) 0%, var(--teal-ink) 100%);
+  display: flex; align-items: center; justify-content: center; color: #fff;
+  box-shadow: var(--shadow-glow-teal);
+}
+.brand-text { font-family: var(--font-ar-display); font-size: 1.05rem; }
+.brand-text small { display: block; font-family: var(--font-ar-body); font-weight: 400; font-size: .68rem; color: var(--ink-faint); }
+
+.progress-ring-wrap { position: relative; width: 44px; height: 44px; flex-shrink: 0; }
+.progress-ring-wrap svg { transform: rotate(-90deg); }
+.progress-ring-track { fill: none; stroke: var(--border); stroke-width: 4; }
+.progress-ring-bar { fill: none; stroke: var(--teal); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset .6s var(--ease); }
+.progress-ring-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: .62rem; font-weight: 600; }
+
+.main-nav { display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; flex: 1; -webkit-overflow-scrolling: touch; }
+.main-nav::-webkit-scrollbar { display: none; }
+.nav-link {
+  flex-shrink: 0; padding: 8px 14px; border-radius: 999px; font-size: .88rem; font-weight: 500;
+  color: var(--ink-soft); background: transparent; border: 1px solid transparent; cursor: pointer;
+  transition: background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+}
+.nav-link:hover { background: var(--bg-alt); color: var(--ink); }
+.nav-link.active { background: var(--teal-soft); color: var(--teal); border-color: transparent; }
+
+.header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.icon-btn {
+  width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: transform .2s var(--ease), background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.icon-btn:hover { color: var(--teal); border-color: var(--teal); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.icon-btn:active { transform: translateY(0) scale(.94); }
+.icon-btn svg { width: 19px; height: 19px; }
+.icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+
+.nav-toggle { display: none; }
+.search-box { position: relative; display: none; }
+.search-box input {
+  width: 0; opacity: 0; padding: 0; border: none; background: var(--surface);
+  color: var(--ink); border-radius: 12px; transition: width .3s var(--ease), opacity .3s var(--ease), padding .3s var(--ease);
+  font-family: var(--font-ar-body); font-size: .88rem;
+}
+.search-box.open input { width: 190px; opacity: 1; padding: 9px 14px; border: 1px solid var(--border); }
+.search-box.open { display: flex; }
+@media (min-width: 861px){ .search-box { display: flex; align-items: center; } }
+
+@media (max-width: 860px) {
+  .main-nav { position: fixed; inset-inline: 0; top: var(--nav-h); background: var(--surface); flex-direction: column; align-items: stretch;
+    padding: 10px 16px 20px; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md);
+    transform: translateY(-12px); opacity: 0; pointer-events: none; transition: transform .3s var(--ease), opacity .3s var(--ease); max-height: 70vh; overflow-y: auto; }
+  .main-nav.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .nav-link { text-align: center; padding: 12px; }
+  .nav-toggle { display: flex; }
+  .search-box.mobile { display: flex; width: 100%; margin-top: 8px; }
+  .search-box.mobile input { width: 100%; opacity: 1; padding: 10px 14px; border: 1px solid var(--border); }
+}
+@media (max-width: 420px) {
+  .brand-text small { display: none; }
+  .header-controls { gap: 2px; }
+  .header-inner { gap: 8px; }
+  .progress-ring-wrap { width: 34px; height: 34px; }
+  .icon-btn { width: 34px; height: 34px; }
+}
+
+/* ==========================================================================
+   4. HERO
+   ========================================================================== */
+.hero { position: relative; padding-block: clamp(48px, 9vw, 96px) clamp(64px, 9vw, 110px); overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; inset: -20% -10% auto -10%; height: 620px; z-index: -2;
+  background:
+    radial-gradient(560px 360px at 15% 20%, var(--teal-glow), transparent 70%),
+    radial-gradient(520px 340px at 85% 10%, var(--amber-glow), transparent 70%);
+  filter: blur(10px);
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5;
+  background-image: repeating-linear-gradient(to left, var(--border) 0 2px, transparent 2px 26px);
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px, 5vw, 56px); align-items: center; }
+@media (max-width: 940px){ .hero-grid { grid-template-columns: 1fr; } }
+
+.level-badge {
+  display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: .82rem;
+  background: var(--surface); border: 1px solid var(--border); padding: 7px 8px 7px 16px; border-radius: 999px;
+  box-shadow: var(--shadow-sm); margin-bottom: 22px;
+}
+.level-badge b { background: var(--teal); color: #fff; padding: 3px 11px; border-radius: 999px; font-weight: 600; }
+
+.hero-title { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.01em; }
+.hero-title .de { color: var(--teal); font-style: italic; font-weight: 500; }
+.hero-lead { margin-top: 20px; font-size: clamp(1.02rem, 1.7vw, 1.2rem); color: var(--ink-soft); max-width: 56ch; }
+
+.hero-ctas { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 9px; padding: 13px 24px; border-radius: 14px;
+  font-weight: 600; font-size: .96rem; cursor: pointer; border: 1px solid transparent;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), background-color .25s var(--ease), border-color .25s var(--ease);
+}
+.btn:active { transform: scale(.97); }
+.btn-primary { background: linear-gradient(155deg, var(--teal) 0%, var(--teal-ink) 100%); color: #fff; box-shadow: var(--shadow-glow-teal); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 34px -8px var(--teal-glow); }
+.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--border); }
+.btn-ghost:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-3px); }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
+.btn:disabled:hover { transform: none; box-shadow: none; }
+
+/* --- hero illustration: coffee cup + plate, floating tag bubbles --- */
+.hero-illustration { position: relative; }
+.hero-illo-svg { width: 100%; height: auto; }
+.floaty { animation: floaty 5s ease-in-out infinite; }
+.floaty.d2 { animation-delay: -1.4s; }
+.floaty.d3 { animation-delay: -2.8s; }
+@keyframes floaty { 0%,100%{ transform: translateY(0px); } 50%{ transform: translateY(-10px); } }
+.steam-wisp { animation: steam 3.4s ease-in-out infinite; transform-origin: bottom center; }
+.steam-wisp.s2 { animation-delay: -1.7s; }
+@keyframes steam { 0%,100%{ opacity:.35; transform: translateY(0) scaleY(1);} 50%{ opacity:.75; transform: translateY(-6px) scaleY(1.08);} }
+
+/* --- showcase-card: signature 3D bracket-style card --- */
+.showcase-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg);
+  padding: clamp(20px, 3vw, 30px); box-shadow: var(--shadow-lg);
+  transform: perspective(900px) rotateY(-4deg) rotateX(2deg);
+  transition: transform .5s var(--ease);
+}
+.showcase-card:hover { transform: perspective(900px) rotateY(0deg) rotateX(0deg); }
+.showcase-label { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .74rem; color: var(--ink-faint); margin-bottom: 16px; }
+.arrow-frame {
+  display: inline-flex; flex-wrap: wrap; align-items: center; gap: 12px 16px;
+  border: 2px dashed var(--border-strong); border-radius: 16px; padding: 14px 22px; position: relative;
+  width: 100%; justify-content: center;
+}
+.arrow-frame::before { content: "⌐"; position: absolute; top: -13px; right: 10px; font-family: var(--font-mono); font-size: .7rem; color: var(--ink-faint); background: var(--surface); padding: 0 6px; }
+.k-word { cursor: pointer; border-radius: 8px; padding: 2px 6px; transition: background-color .2s, color .2s; }
+.k-word:hover { background: var(--bg-alt); }
+.k-word.speaking { background: var(--teal); color: #fff; }
+.k-phrase-big { background: var(--teal); color: #fff; border-radius: 12px; padding: 8px 20px; font-weight: 700; font-size: clamp(1.3rem, 3vw, 1.7rem); }
+.k-word-result { background: var(--amber); color: #2b1c05; border-radius: 10px; padding: 6px 16px; font-weight: 600; font-size: clamp(1.1rem, 2.2vw, 1.35rem); }
+.k-arrow { color: var(--ink-faint); font-size: 1.4rem; }
+.showcase-translation { margin-top: 14px; font-family: var(--font-ar-body); color: var(--ink-soft); font-size: .92rem; padding-top: 14px; border-top: 1px dashed var(--border); text-align: center; }
+.showcase-speak-all { margin-top: 14px; }
+
+/* ==========================================================================
+   5. GENERIC CARDS / GRIDS
+   ========================================================================== */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 760px){ .grid-2 { grid-template-columns: 1fr; } }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 940px){ .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px){ .grid-3 { grid-template-columns: 1fr; } }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 940px){ .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px){ .grid-4 { grid-template-columns: 1fr; } }
+
+.info-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+  padding: 22px; box-shadow: var(--shadow-sm); transition: box-shadow .3s var(--ease), transform .3s var(--ease), border-color .3s var(--ease);
+}
+.info-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--border-strong); }
+.info-card h3 { font-size: 1.08rem; margin-bottom: 10px; display: flex; align-items: center; gap: 9px; }
+.info-card h3 .icon-chip { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.info-card p, .info-card li { color: var(--ink-soft); font-size: .95rem; }
+
+.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: .78rem; padding: 4px 11px; border-radius: 999px; }
+.chip-teal { background: var(--teal-soft); color: var(--teal-ink); }
+.chip-amber { background: var(--amber-soft); color: var(--amber-ink); }
+.chip-plum { background: var(--plum-soft); color: var(--plum-ink); }
+
+/* ==========================================================================
+   5b. LEARNING PATHWAY TIMELINE + STAT CARDS
+   ========================================================================== */
+.mini-timeline { display: flex; align-items: flex-start; justify-content: space-between; gap: 4px; padding: 30px clamp(6px, 3vw, 26px) 6px; overflow-x: auto; }
+.mt-item { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 96px; flex: 1; position: relative; }
+.mt-item:not(:last-child)::after { content:""; position: absolute; top: 9px; right: -50%; width: 100%; height: 2px; background: repeating-linear-gradient(to left, var(--border-strong) 0 6px, transparent 6px 11px); z-index: 0; }
+.mt-top { font-size: .78rem; color: var(--ink-soft); margin-bottom: 8px; min-height: 18px; }
+.mt-dot { width: 20px; height: 20px; border-radius: 50%; border: 3px solid var(--border-strong); background: var(--surface); z-index: 1; display:flex; align-items:center; justify-content:center; font-size:.6rem; }
+.mt-dot.now { border-color: var(--teal); background: var(--teal); box-shadow: var(--shadow-glow-teal); }
+.mt-dot.done { border-color: var(--amber); background: var(--amber-soft); }
+.mt-bottom { margin-top: 8px; font-size: .84rem; font-weight: 600; }
+.mt-bottom.hl { color: var(--teal); }
+
+.stat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 620px){ .stat-cards { grid-template-columns: 1fr; } }
+.stat-card { border-radius: var(--r-md); padding: 26px 20px; text-align: center; }
+.stat-card.teal { background: var(--teal-soft); border: 1px solid var(--teal); }
+.stat-card.amber { background: var(--amber-soft); border: 1px solid var(--amber); }
+.stat-card .stat-pct { font-family: var(--font-mono); font-size: 2.6rem; font-weight: 700; }
+.stat-card.teal .stat-pct { color: var(--teal-ink); }
+.stat-card.amber .stat-pct { color: var(--amber-ink); }
+.stat-card .stat-desc { font-size: .87rem; color: var(--ink-soft); margin-top: 6px; }
+
+/* ==========================================================================
+   6. FOOD/DRINK VOCAB — flip cards (reused generic component)
+   ========================================================================== */
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px; }
+.flip-card { perspective: 1200px; height: 190px; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-shadow: var(--shadow-sm); }
+.flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
+.flip-front .de { font-size: 1.5rem; font-weight: 700; }
+.flip-front .aux-tag { position: absolute; top: 10px; left: 10px; }
+.flip-back { background: var(--plum); color: #fff; transform: rotateY(180deg); gap: 6px; }
+.flip-back .partizip { font-family: var(--font-de-display); font-size: 1.25rem; font-weight: 600; }
+.flip-back .ipa { font-family: var(--font-mono); font-size: .78rem; opacity: .85; }
+.flip-back .meaning { font-size: .85rem; opacity: .92; margin-top: 2px; text-align:center; }
+.flip-hint { font-family: var(--font-mono); font-size: .66rem; color: var(--ink-faint); margin-top: 8px; }
+.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--teal); transition: transform .2s, background-color .2s; z-index:2; }
+.speak-dot:hover { transform: scale(1.1); background: var(--teal-soft); }
+.speak-dot .icon { width: 15px; height: 15px; }
+.speak-dot.speaking { animation: pulse-ring 1s var(--ease) infinite; }
+@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 var(--teal-glow)} 70%{box-shadow:0 0 0 10px transparent} 100%{box-shadow:0 0 0 0 transparent} }
+@keyframes fadeSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
+.plural-only-tag { position: absolute; top: 10px; right: 10px; }
+
+/* ==========================================================================
+   7. MEALS OF THE DAY — compact timeline cards
+   ========================================================================== */
+.meals-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 760px){ .meals-row { grid-template-columns: 1fr; } }
+.meal-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px; text-align: center; cursor: pointer; box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.meal-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.meal-card .meal-time { font-family: var(--font-mono); font-size: .74rem; color: var(--ink-faint); }
+.meal-card .meal-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.3rem; margin-top: 8px; }
+.meal-card .meal-ar { font-size: .88rem; color: var(--ink-soft); margin-top: 6px; }
+.meal-card .icon-chip { margin: 0 auto 10px; }
+
+/* ==========================================================================
+   8. ACCUSATIVE BUILDER — centerpiece interactive component
+   ========================================================================== */
+.acc-shell {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl);
+  box-shadow: var(--shadow-lg); padding: clamp(22px, 4vw, 40px); position: relative; overflow: hidden;
+}
+.acc-shell::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5;
+  background: radial-gradient(420px 220px at 90% -10%, var(--plum-glow), transparent 70%), radial-gradient(420px 220px at 5% 110%, var(--teal-glow), transparent 70%);
+}
+.acc-picker-label { font-size: .9rem; font-weight: 700; margin-bottom: 10px; color: var(--ink-soft); }
+.acc-chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.acc-chip {
+  padding: 10px 17px; border-radius: 11px; border: 1.5px solid var(--border-strong); background: var(--bg-alt);
+  cursor: pointer; font-family: var(--font-de-display); font-weight: 600; font-size: 1rem; transition: all .2s var(--ease);
+}
+.acc-chip:hover { border-color: var(--teal); transform: translateY(-2px); }
+.acc-chip.active { color: #fff; box-shadow: var(--shadow-glow-teal); }
+.acc-chip.active.masc { background: var(--teal); border-color: var(--teal); }
+.acc-chip.active.fem { background: var(--plum); border-color: var(--plum); }
+.acc-chip.active.neut { background: var(--amber); border-color: var(--amber); color: #2b1c05; box-shadow: var(--shadow-glow-amber); }
+.acc-chip .gender-tag { font-family: var(--font-mono); font-size: .66rem; opacity: .7; margin-inline-start: 4px; }
+
+.acc-result { margin-top: 30px; text-align: center; }
+.acc-result-phrase { display: inline-flex; align-items: stretch; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-md); cursor: pointer; transition: transform .3s var(--ease); }
+.acc-result-phrase:hover { transform: translateY(-3px); }
+.acc-result-phrase span { font-family: var(--font-de-display); font-weight: 700; font-size: clamp(1.3rem, 4vw, 1.85rem); padding: 14px 20px; }
+.acc-result-phrase .ar-verb { background: var(--ink); color: var(--bg); }
+.acc-result-phrase .ar-art { color: #fff; }
+.acc-result-phrase .ar-art.masc { background: var(--teal); }
+.acc-result-phrase .ar-art.fem { background: var(--plum); }
+.acc-result-phrase .ar-art.neut { background: var(--amber); color: #2b1c05; }
+.acc-result-phrase .ar-noun { background: var(--bg-alt); color: var(--ink); }
+.acc-note { margin-top: 18px; font-size: .9rem; color: var(--ink-soft); text-align: center; max-width: 58ch; margin-inline: auto; }
+.acc-note b { color: var(--ink); }
+.acc-table { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 26px; }
+@media (max-width: 620px){ .acc-table { grid-template-columns: 1fr; } }
+.acc-table-cell { background: var(--bg-alt); border-radius: var(--r-sm); padding: 12px; text-align: center; font-family: var(--font-mono); font-size: .82rem; }
+.acc-table-cell b { display: block; font-family: var(--font-de-display); font-size: 1.05rem; margin-top: 4px; }
+.conj-table { display: flex; flex-direction: column; gap: 2px; margin-top: 14px; }
+.conj-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 6px; border-bottom: 1px dashed var(--border); }
+.conj-row:last-child { border-bottom: none; }
+.conj-pron { color: var(--ink-faint); font-size: .88rem; }
+.conj-form { font-family: var(--font-de-display); font-weight: 700; font-size: 1.12rem; cursor: pointer; border-radius: 6px; padding: 2px 8px; transition: background .15s, color .15s; }
+.conj-form:hover, .conj-form:focus-visible { background: var(--teal-soft); color: var(--teal); }
+.board-head { display: flex; padding: 8px 14px; border-bottom: 2px solid var(--ink); font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); font-weight: 600; letter-spacing: .02em; }
+.board-col-dest { flex: 2.3; }
+.board-col-time, .board-col-gleis { flex: 1; text-align: center; }
+.board-col-status { flex: 1.5; text-align: center; }
+.board-row { display: flex; align-items: center; width: 100%; padding: 13px 14px; border: none; border-bottom: 1px solid var(--border); background: none; cursor: pointer; text-align: start; transition: background .15s; }
+.board-row:last-child { border-bottom: none; }
+.board-row:hover, .board-row:focus-visible { background: var(--bg-alt); }
+.board-row.active { background: var(--teal-soft); }
+.board-row .board-col-dest { flex: 2.3; font-family: var(--font-de-display); font-weight: 700; font-size: 1.02rem; color: var(--ink); }
+.board-row .board-col-time, .board-row .board-col-gleis { flex: 1; text-align: center; font-family: var(--font-mono); font-size: .92rem; color: var(--ink-soft); }
+.board-status-badge { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: .74rem; font-weight: 700; font-family: var(--font-ar-body); }
+.board-status-badge.ontime { background: var(--teal-soft); color: var(--teal); }
+.board-status-badge.delayed { background: var(--amber-soft); color: var(--amber-ink); }
+.board-badge { display: inline-block; padding: 3px 11px; border-radius: 999px; font-size: .75rem; font-weight: 700; }
+.board-badge.ontime { background: var(--success-soft); color: var(--success); }
+.board-badge.delay { background: var(--danger-soft); color: var(--danger); }
+
+/* ==========================================================================
+   9B. WORLD MAP — centerpiece interactive component
+   ========================================================================== */
+.map-wrap { position: relative; width: 100%; aspect-ratio: 800 / 420; border-radius: var(--r-lg); overflow: hidden; background: var(--bg-alt); border: 1px solid var(--border); }
+.map-bg-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.map-pin { position: absolute; transform: translate(-50%, -100%); display: flex; flex-direction: column; align-items: center; gap: 2px; background: none; border: none; cursor: pointer; padding: 0; z-index: 2; }
+.map-pin-dot { width: 34px; height: 34px; border-radius: 50%; background: var(--surface); border: 2.5px solid var(--teal); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: var(--shadow-md); transition: transform .18s, border-color .18s, background .18s; }
+.map-pin:hover .map-pin-dot, .map-pin:focus-visible .map-pin-dot { transform: scale(1.12); }
+.map-pin.active .map-pin-dot { background: var(--teal); border-color: var(--teal); transform: scale(1.18); }
+.map-pin-label { font-family: var(--font-de-display); font-weight: 700; font-size: .74rem; background: var(--surface); padding: 1px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--ink); white-space: nowrap; }
+.map-pin.active .map-pin-label { background: var(--teal); color: #fff; border-color: var(--teal); }
+@media (max-width: 640px) {
+  .map-pin-dot { width: 28px; height: 28px; font-size: .95rem; }
+  .map-pin-label { font-size: .66rem; }
+  .map-pin-label { display: none; }
+  .map-pin.active .map-pin-label { display: block; }
+}
+
+/* ==========================================================================
+   9. CAFÉ MENU / ORDER BUILDER — centerpiece interactive component
+   ========================================================================== */
+.menu-board { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl); box-shadow: var(--shadow-lg); padding: clamp(20px, 4vw, 36px); }
+.menu-cat-label { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); margin: 18px 0 10px; }
+.menu-cat-label:first-child { margin-top: 0; }
+.menu-items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.menu-item-card {
+  background: var(--bg-alt); border: 1.5px solid var(--border-strong); border-radius: var(--r-md);
+  padding: 16px 12px; text-align: center; cursor: pointer; transition: all .2s var(--ease); position: relative;
+}
+.menu-item-card:hover { border-color: var(--teal); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+.menu-item-card.selected { background: var(--teal-soft); border-color: var(--teal); box-shadow: var(--shadow-glow-teal); }
+.menu-item-card.selected::after { content:"✓"; position:absolute; top:6px; left:8px; color: var(--teal); font-weight:700; }
+.menu-item-card .mi-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.08rem; }
+.menu-item-card .mi-ar { font-size: .78rem; color: var(--ink-soft); margin-top: 4px; }
+
+.order-tray { margin-top: 26px; border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: 18px 20px; background: var(--bg-alt); }
+.order-tray-label { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); margin-bottom: 10px; }
+.order-sentence { font-family: var(--font-de-display); font-size: clamp(1.1rem, 3vw, 1.4rem); font-weight: 600; cursor: pointer; padding: 6px 10px; border-radius: 8px; transition: background-color .2s; min-height: 1.4em; }
+.order-sentence:hover { background: var(--surface); }
+.order-sentence .empty-hint { font-family: var(--font-ar-body); font-weight: 400; font-size: .9rem; color: var(--ink-faint); }
+.order-actions { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+
+/* ==========================================================================
+   10. ACCORDION (extra notes)
+   ========================================================================== */
+.accordion-item { border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); margin-bottom: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
+.accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; background: none; border: none; cursor: pointer; text-align: right; color: var(--ink); }
+.accordion-trigger:hover { background: var(--bg-alt); }
+.accordion-trigger .chevron { transition: transform .35s var(--ease); flex-shrink: 0; color: var(--ink-faint); }
+.accordion-item.open .chevron { transform: rotate(180deg); }
+.accordion-title { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.accordion-title .tag { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); }
+.accordion-panel { max-height: 0; overflow: hidden; transition: max-height .45s var(--ease); }
+.accordion-item.open .accordion-panel { max-height: 900px; }
+.accordion-body { padding: 0 22px 22px; color: var(--ink-soft); font-size: .95rem; }
+
+/* ==========================================================================
+   10b. TAB SWITCHER (shared: dialogue formal/informal toggle)
+   ========================================================================== */
+.cat-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.cat-tab {
+  font-family: var(--font-ar-body); font-size: .88rem; font-weight: 600; padding: 9px 18px; border-radius: 999px;
+  border: 1.5px solid var(--border); background: var(--surface); color: var(--ink-soft); cursor: pointer;
+  transition: all .25s var(--ease); display: flex; align-items: center; gap: 8px;
+}
+.cat-tab:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+.cat-tab.active { background: linear-gradient(155deg, var(--teal) 0%, var(--teal-ink) 100%); border-color: transparent; color: #fff; box-shadow: var(--shadow-glow-teal); }
+.cat-tab .cat-count { font-family: var(--font-mono); font-size: .68rem; background: rgba(255,255,255,.25); padding: 1px 7px; border-radius: 999px; }
+.cat-tab:not(.active) .cat-count { background: var(--bg-alt); }
+
+/* ==========================================================================
+   11. DIALOGUE — chat-bubble UI
+   ========================================================================== */
+.dialogue-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+.dialogue-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); padding: clamp(18px, 3vw, 30px); }
+.dialogue-panel { display: none; }
+.dialogue-panel.active { display: block; animation: fadeSlide .4s var(--ease); }
+.dialogue-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.dialogue-speakers { display: flex; gap: 18px; font-size: .88rem; color: var(--ink-soft); }
+.dialogue-speakers span { display: flex; align-items: center; gap: 6px; }
+.speaker-dot { width: 10px; height: 10px; border-radius: 50%; }
+.speaker-dot.a { background: var(--teal); }
+.speaker-dot.b { background: var(--amber); }
+
+.chat-line { display: flex; margin-bottom: 14px; max-width: 82%; align-items: flex-start; }
+.chat-line.a { justify-content: flex-start; }
+.chat-line.b { justify-content: flex-end; margin-inline-start: auto; }
+.chat-bubble { position: relative; padding: 12px 18px; border-radius: 18px; cursor: pointer; transition: transform .2s var(--ease), box-shadow .2s var(--ease); box-shadow: var(--shadow-sm); }
+.chat-bubble:hover { transform: scale(1.02); box-shadow: var(--shadow-md); }
+.chat-line.a .chat-bubble { background: var(--teal-soft); border-bottom-left-radius: 4px; }
+.chat-line.b .chat-bubble { background: var(--amber-soft); border-bottom-right-radius: 4px; }
+.chat-bubble.speaking { outline: 2px solid var(--teal); }
+.chat-name { font-family: var(--font-mono); font-size: .68rem; color: var(--ink-faint); margin-bottom: 4px; }
+.chat-de { font-family: var(--font-de-display); font-size: 1.08rem; font-weight: 600; direction: ltr; }
+.chat-ar { font-size: .82rem; color: var(--ink-soft); margin-top: 4px; }
+.chat-avatar { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .82rem; color: #fff; flex-shrink: 0; }
+.chat-line.a .chat-avatar { background: var(--teal); margin-inline-end: 10px; }
+.chat-line.b .chat-avatar { background: var(--amber); margin-inline-start: 10px; order: 2; }
+.dialogue-actions { display: flex; justify-content: center; margin-top: 22px; }
+
+/* ==========================================================================
+   12. MISTAKES — wrong vs right
+   ========================================================================== */
+.mistake-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+@media (max-width: 640px){ .mistake-card { grid-template-columns: 1fr; } }
+.mistake-side { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.mistake-wrong { background: var(--danger-soft); }
+.mistake-right { background: var(--success-soft); }
+.mistake-tag { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .82rem; }
+.mistake-wrong .mistake-tag { color: var(--danger); }
+.mistake-right .mistake-tag { color: var(--success); }
+.mistake-sentence { font-size: .98rem; }
+.mistake-note { grid-column: 1 / -1; padding: 12px 20px; font-size: .88rem; color: var(--ink-soft); border-top: 1px dashed var(--border); background: var(--surface); }
+
+/* ==========================================================================
+   13. PRONUNCIATION TIP CARDS
+   ========================================================================== */
+.tip-card { display: flex; gap: 14px; align-items: flex-start; }
+.tip-card .icon-chip { background: var(--amber-soft); color: var(--amber-ink); }
+
+/* ==========================================================================
+   14. EXERCISES
+   ========================================================================== */
+.exercise-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+.exercise-tabs { display: flex; overflow-x: auto; border-bottom: 1px solid var(--border); scrollbar-width: none; }
+.exercise-tabs::-webkit-scrollbar { display: none; }
+.exercise-tab { flex-shrink: 0; padding: 16px 20px; background: none; border: none; cursor: pointer; font-weight: 600; font-size: .92rem; color: var(--ink-faint); border-bottom: 3px solid transparent; display: flex; align-items: center; gap: 8px; transition: color .25s, border-color .25s; }
+.exercise-tab:hover { color: var(--ink); }
+.exercise-tab.active { color: var(--teal); border-color: var(--teal); }
+.exercise-tab .count { font-family: var(--font-mono); font-size: .7rem; background: var(--bg-alt); padding: 1px 7px; border-radius: 999px; }
+.exercise-panels { padding: clamp(20px, 4vw, 34px); }
+.exercise-panel { display: none; }
+.exercise-panel.active { display: block; animation: fadeSlide .4s var(--ease); }
+
+.q-block { border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 20px; margin-bottom: 16px; background: var(--bg-alt); }
+.q-prompt { font-size: 1.02rem; margin-bottom: 14px; }
+.q-prompt .de { font-size: 1.1rem; font-weight: 600; }
+.q-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.opt-btn { padding: 9px 20px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: .95rem; transition: all .2s var(--ease); }
+.opt-btn.de { font-family: var(--font-de-display); direction: ltr; font-size: 1rem; }
+.opt-btn:hover:not(:disabled) { border-color: var(--teal); color: var(--teal); }
+.opt-btn.correct { background: var(--success-soft); border-color: var(--success); color: var(--success); }
+.opt-btn.wrong { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
+.opt-btn:disabled { cursor: default; }
+.q-feedback { margin-top: 12px; font-size: .88rem; color: var(--ink-soft); display: none; padding-top: 10px; border-top: 1px dashed var(--border); }
+.q-feedback.show { display: block; }
+
+.fill-word-display { font-family: var(--font-de-display); direction: ltr; font-size: 1.25rem; font-weight: 600; letter-spacing: .01em; margin-bottom: 14px; line-height:1.6; }
+.fill-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.fill-row input { font-family: var(--font-de-display); direction: ltr; text-align: center; font-size: 1.05rem; padding: 9px 14px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink); width: 150px; max-width: 100%; }
+.fill-row input:focus { border-color: var(--teal); }
+.fill-check { border: none; background: var(--teal); color: #fff; padding: 9px 18px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+.fill-result { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+
+.builder-pool, .builder-answer { display: flex; flex-wrap: wrap; gap: 10px; min-height: 52px; align-items: center; }
+.builder-answer { border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: 10px 14px; margin-bottom: 14px; background: var(--surface); }
+.builder-pool { padding: 10px 0; }
+.chip-word { font-family: var(--font-de-display); direction: ltr; padding: 8px 18px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 1.05rem; font-weight: 600; transition: all .2s var(--ease); box-shadow: var(--shadow-sm); }
+.chip-word:hover { transform: translateY(-2px); border-color: var(--teal); }
+.chip-word.used { opacity: .3; pointer-events: none; }
+.builder-actions { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.builder-actions .btn { padding: 9px 18px; font-size: .88rem; }
+
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 3vw, 40px); }
+.match-col { display: flex; flex-direction: column; gap: 10px; }
+.match-item { padding: 12px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; transition: all .2s var(--ease); text-align: center; font-size: .98rem; }
+.match-item.de { font-family: var(--font-de-display); direction: ltr; font-size: 1.05rem; }
+.match-item:hover:not(.matched) { border-color: var(--teal); transform: scale(1.02); }
+.match-item.selected { border-color: var(--teal); background: var(--teal-soft); }
+.match-item.matched { border-color: var(--success); background: var(--success-soft); color: var(--success); pointer-events: none; }
+.match-item.shake { animation: shake .4s; border-color: var(--danger); background: var(--danger-soft); }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+
+.score-bar-wrap { display: flex; align-items: center; gap: 16px; padding: 18px clamp(20px, 4vw, 34px); border-top: 1px solid var(--border); background: var(--bg-alt); flex-wrap: wrap; }
+.score-track { flex: 1; min-width: 140px; height: 10px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.score-fill { height: 100%; background: linear-gradient(to left, var(--teal), var(--amber)); border-radius: 999px; width: 0%; transition: width .5s var(--ease); }
+.score-label { font-family: var(--font-mono); font-size: .82rem; white-space: nowrap; }
+
+.listen-alphabet-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.listen-chip { padding: 8px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); display: flex; align-items: center; justify-content: center; font-family: var(--font-de-display); font-weight: 600; cursor: pointer; transition: all .2s var(--ease); }
+.listen-chip:hover { border-color: var(--teal); color: var(--teal); }
+.listen-chip.speaking { background: var(--teal); color: #fff; border-color: transparent; }
+.qr-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: 28px 20px; background: var(--bg-alt); margin-top: 22px; }
+.qr-placeholder .qr-box { width: 108px; height: 108px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--ink-faint); }
+.qr-placeholder .qr-note { font-family: var(--font-mono); font-size: .76rem; color: var(--ink-faint); }
+
+/* ==========================================================================
+   15. AUDIO DOCK
+   ========================================================================== */
+.audio-dock { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(140%); z-index: 200; background: var(--surface-glass); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border: 1px solid var(--surface-glass-border); box-shadow: var(--shadow-lg); border-radius: 999px; padding: 8px 10px 8px 18px; display: flex; align-items: center; gap: 12px; max-width: min(92vw, 560px); transition: transform .45s var(--ease); }
+.audio-dock.visible { transform: translateX(-50%) translateY(0); }
+.audio-dock-text { font-family: var(--font-de-display); direction: ltr; font-size: .92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+.audio-dock-controls { display: flex; align-items: center; gap: 4px; }
+.audio-dock .icon-btn { width: 34px; height: 34px; border-radius: 50%; }
+.audio-dock input[type="range"] { width: 70px; accent-color: var(--teal); }
+.audio-dock-voice { font-family: var(--font-mono); font-size: .64rem; color: var(--ink-faint); display: none; }
+@media (min-width: 620px){ .audio-dock-voice { display: block; } }
+
+/* ==========================================================================
+   16. SUMMARY / ACHIEVEMENTS
+   ========================================================================== */
+.summary-list { display: flex; flex-direction: column; gap: 12px; }
+.summary-list li { display: flex; gap: 12px; align-items: flex-start; }
+.summary-list .icon-chip { background: var(--teal-soft); color: var(--teal); flex-shrink: 0; }
+.badges-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; margin-top: 30px; }
+.badge { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 12px; text-align: center; filter: grayscale(1) opacity(.5); transition: filter .5s var(--ease), transform .5s var(--ease); }
+.badge.unlocked { filter: none; opacity: 1; }
+.badge.pop { animation: badgePop .6s var(--ease); }
+@keyframes badgePop { 0%{transform:scale(.7) rotate(-8deg)} 60%{transform:scale(1.12) rotate(4deg)} 100%{transform:scale(1) rotate(0)} }
+.badge-icon { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(155deg, var(--teal), var(--amber)); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: #fff; }
+.badge-name { font-size: .82rem; font-weight: 600; }
+
+/* ==========================================================================
+   17. TOAST
+   ========================================================================== */
+.toast-wrap { position: fixed; top: calc(var(--nav-h) + 14px); left: 50%; transform: translateX(-50%); z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+.toast { background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-size: .88rem; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(-14px); transition: all .4s var(--ease); white-space: nowrap; }
+.toast.show { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   18. FOOTER + FLOATING CONTROLS
+   ========================================================================== */
+.site-footer { border-top: 1px solid var(--border); padding-block: 36px; margin-top: 30px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--ink-faint); font-size: .86rem; }
+.footer-actions { display: flex; gap: 10px; }
+.back-to-top { position: fixed; bottom: 20px; inset-inline-end: 20px; z-index: 190; width: 46px; height: 46px; border-radius: 50%; background: var(--teal); color: #fff; border: none; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow-teal); cursor: pointer; opacity: 0; transform: translateY(20px) scale(.8); pointer-events: none; transition: all .35s var(--ease); }
+.back-to-top.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.back-to-top:hover { transform: translateY(-4px) scale(1.05); }
+mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius: 4px; padding: 0 2px; }
+
+/* ==========================================================================
+   19. PRINT
+   ========================================================================== */
+@media print {
+  .site-header, .audio-dock, .back-to-top, .nav-toggle, .exercise-tabs, .score-bar-wrap, .btn, .icon-btn, .toast-wrap, .cat-tabs, .dialogue-tabs { display: none !important; }
+  body { background: #fff; color: #000; }
+  .section { padding-block: 20px; break-inside: avoid; }
+  .showcase-card, .acc-shell, .menu-board { box-shadow: none; transform: none; display: block !important; }
+  .exercise-panel { display: block !important; }
+  .dialogue-panel { display: block !important; margin-bottom: 24px; }
+  .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
+  .accordion-panel { max-height: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================= ICON SPRITE ============================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><g stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/></g></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+<symbol id="i-speaker" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.3 5.7a9 9 0 0 1 0 12.6"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+<symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 4v6h6"/><path d="M4.6 15a8 8 0 1 0 1.5-9.4L4 9"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><polyline points="6,9 6,3 18,3 18,9"/><rect x="4" y="9" width="16" height="8" rx="1.2"/><rect x="8" y="14" width="8" height="6"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5"/><path d="M15 4h5v5"/><path d="M20 15v5h-5"/><path d="M9 20H4v-5"/></symbol>
+<symbol id="i-compress" viewBox="0 0 24 24"><path d="M9 4v5H4"/><path d="M15 4v5h5"/><path d="M20 20v-5h-5"/><path d="M4 20v-5h5"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="5,13 9,17 19,7"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5a2.6 2.6 0 0 1 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></symbol>
+<symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="14" width="3" height="3"/><rect x="14" y="18" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/></symbol>
+<symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="3" y="14" width="5" height="7" rx="1.5"/><rect x="16" y="14" width="5" height="7" rx="1.5"/></symbol>
+<symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 9.5h2a2.7 2.7 0 0 1 0 5.4h-2"/><path d="M7 3.5c0 1-1 1-1 2M11 3.5c0 1-1 1-1 2"/></symbol>
+<symbol id="i-utensils" viewBox="0 0 24 24"><path d="M6.5 2v7M9 2v7M11.5 2v7M9 9v13"/><path d="M16.5 2c-1.6 1-2.2 3.2-2.2 5.2 0 1.8 1 3 2.2 3v12"/></symbol>
+<symbol id="i-bread" viewBox="0 0 24 24"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-2 9-9 9-9-4-9-9z"/><path d="M9 9v7M12 8v8M15 9v7"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.2 9a2.8 2.8 0 1 1 4 2.5c-.9.5-1.2 1-1.2 2.1"/><line x1="12" y1="17" x2="12" y2="17.1"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><line x1="9" y1="6" x2="21" y2="6"/><line x1="9" y1="12" x2="21" y2="12"/><line x1="9" y1="18" x2="21" y2="18"/><circle cx="4.2" cy="6" r="1.4"/><circle cx="4.2" cy="12" r="1.4"/><circle cx="4.2" cy="18" r="1.4"/></symbol>
+<symbol id="i-bus" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2.5"/><line x1="3" y1="11" x2="21" y2="11"/><line x1="7.5" y1="5" x2="7.5" y2="11"/><line x1="16.5" y1="5" x2="16.5" y2="11"/><circle cx="7.5" cy="19" r="1.6"/><circle cx="16.5" cy="19" r="1.6"/></symbol>
+<symbol id="i-train" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="13" rx="4"/><line x1="5" y1="10" x2="19" y2="10"/><line x1="9" y1="6.5" x2="9" y2="10"/><line x1="15" y1="6.5" x2="15" y2="10"/><circle cx="9" cy="13.2" r="1"/><circle cx="15" cy="13.2" r="1"/><path d="M8 16.5 5.5 21M16 16.5 18.5 21"/></symbol>
+<symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1.2a1.8 1.8 0 0 0 0 3.6V15a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1.2a1.8 1.8 0 0 0 0-3.6z"/><line x1="14" y1="7" x2="14" y2="17" stroke-dasharray="2 2.4"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.4 7-11.5A7 7 0 0 0 5 9.5C5 14.6 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M4.5 7.5h15M4.5 16.5h15"/></symbol>
+<symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4.5c2-1.4 4-1.4 6 0s4 1.4 6 0v9c-2 1.4-4 1.4-6 0s-4-1.4-6 0z"/></symbol>
+</defs>
+</svg>
+
+<!-- ============================= TOASTS ============================= -->
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<!-- ============================= HEADER ============================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="icon-btn nav-toggle" id="navToggle" aria-label="فتح قائمة الأقسام" aria-expanded="false">
+      <svg class="icon"><use href="#i-menu"/></svg>
+    </button>
+
+    <div class="brand">
+      <span class="brand-mark"><svg class="icon" style="width:20px;height:20px"><use href="#i-globe"/></svg></span>
+      <span class="brand-text">ألمانية A1<small>الدرس ١٥ · الجنسيات واللغات</small></span>
+    </div>
+
+    <nav class="main-nav" id="mainNav" aria-label="أقسام الدرس">
+      <button class="nav-link" data-target="#intro">المقدّمة</button>
+      <button class="nav-link" data-target="#countries-vocab">الدول</button>
+      <button class="nav-link" data-target="#languages-vocab">اللغات</button>
+      <button class="nav-link" data-target="#w-recap">wo / wohin / woher</button>
+      <button class="nav-link" data-target="#aus-sprechen">aus و sprechen</button>
+      <button class="nav-link" data-target="#world-map">الخريطة العالمية</button>
+      <button class="nav-link" data-target="#intro-tool">أداة التعارف</button>
+      <button class="nav-link" data-target="#practical">الاستخدام العملي</button>
+      <button class="nav-link" data-target="#dialogue">حوار كامل</button>
+      <button class="nav-link" data-target="#mistakes">أخطاء شائعة</button>
+      <button class="nav-link" data-target="#pronunciation">نصائح النطق</button>
+      <button class="nav-link" data-target="#exercises">التمارين</button>
+      <button class="nav-link" data-target="#summary">الخلاصة</button>
+      <div class="search-box mobile">
+        <input type="search" id="searchInputMobile" placeholder="ابحث في الدرس…" aria-label="ابحث في الدرس">
+      </div>
+    </nav>
+
+    <div class="header-controls">
+      <div class="search-box" id="searchBoxDesktop">
+        <input type="search" id="searchInputDesktop" placeholder="ابحث في الدرس…" aria-label="ابحث في الدرس">
+      </div>
+      <button class="icon-btn" id="searchToggle" aria-label="بحث"><svg class="icon"><use href="#i-search"/></svg></button>
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري">
+        <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+        <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+      </button>
+      <button class="icon-btn" id="fullscreenToggle" aria-label="ملء الشاشة"><svg class="icon" id="fsIcon"><use href="#i-expand"/></svg></button>
+      <div class="progress-ring-wrap" title="تقدّمك في الدرس">
+        <svg width="44" height="44">
+          <circle class="progress-ring-track" cx="22" cy="22" r="18"/>
+          <circle class="progress-ring-bar" id="progressRingBar" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="113"/>
+        </svg>
+        <span class="progress-ring-label" id="progressRingLabel">٠٪</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="mainContent">
+
+<!-- ============================= HERO ============================= -->
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="reveal is-visible">
+      <span class="level-badge"><b>A1</b> الدرس ١٥ من مسار «الألمانية للمبتدئين»</span>
+      <h1 class="hero-title">🌍 الجنسيات واللغات: <span class="de">Woher kommst du?</span></h1>
+      <p class="hero-lead">من أين أنت؟ وما اللغات التي تتحدثها؟ في هذا الدرس ستتعلّم أسماء الدول واللغات، وتُثبّت أسئلة W عبر عائلة كاملة جديدة — <span class="de mono">wo / wohin / woher</span> — مع صيغتي <span class="de mono">Ich komme aus</span> و<span class="de mono">Ich spreche</span>.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" data-scroll="#countries-vocab">
+          <svg class="icon" style="width:18px;height:18px"><use href="#i-play"/></svg>
+          ابدأ الدرس
+        </button>
+        <button class="btn btn-ghost" data-scroll="#world-map">
+          <svg class="icon" style="width:18px;height:18px"><use href="#i-globe"/></svg>
+          جرّب الخريطة العالمية
+        </button>
+      </div>
+    </div>
+
+    <div class="reveal is-visible" style="transition-delay:.15s">
+      <div class="hero-illustration">
+        <svg class="hero-illo-svg" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="210" cy="290" rx="160" ry="14" fill="var(--border)" opacity=".5"/>
+
+          <!-- large globe medallion -->
+          <circle cx="160" cy="185" r="78" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2.5"/>
+          <g transform="translate(160,185) scale(4)" fill="none" stroke="var(--teal)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+            <circle cx="0" cy="0" r="9"/>
+            <ellipse cx="0" cy="0" rx="4" ry="9"/>
+            <line x1="-9" y1="0" x2="9" y2="0"/>
+            <path d="M-7.5 -4.5h15M-7.5 4.5h15"/>
+          </g>
+
+          <!-- small orbiting country bubbles -->
+          <g class="floaty">
+            <rect x="6" y="26" width="118" height="46" rx="15" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M52 72 L44 84 L64 72 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="65" y="55" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="16" fill="var(--teal)">Ägypten</text>
+          </g>
+          <g class="floaty d2">
+            <rect x="280" y="10" width="120" height="46" rx="15" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M330 56 L322 68 L342 56 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="340" y="39" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="16" fill="var(--amber-ink)">Schweiz</text>
+          </g>
+          <g class="floaty d3">
+            <rect x="266" y="220" width="122" height="46" rx="15" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M300 220 L292 208 L312 220 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="327" y="248" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="16" fill="var(--plum-ink)">Türkei</text>
+          </g>
+          <g class="floaty d2">
+            <rect x="10" y="230" width="122" height="46" rx="15" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M60 230 L52 218 L72 230 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="71" y="258" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="16" fill="var(--teal)">Marokko</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= INTRO ============================= -->
+<section class="section" id="intro">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-globe"/></svg>خطوة أولى في أي حوار تعارف</span>
+      <h2 class="section-title">لماذا "من أين أنت؟" أهم سؤال ستسمعه؟</h2>
+      <p class="section-sub">في أول دقيقة من أي محادثة جديدة، سيسألك أحدهم من أين أنت وما اللغات التي تتحدثها. هذا الدرس يجمع مفردات الدول واللغات، مع تثبيت شامل لأسئلة W عبر عائلة "أين" الكاملة، وصيغتين ستستخدمهما في كل مرة تُعرِّف فيها عن نفسك.</p>
+    </div>
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-globe"/></svg></span>مفردات الدول واللغات</h3>
+        <p>من ألمانيا ومصر إلى سويسرا وتركيا — مع القاعدة المهمة: بعض الدول تحتاج أداة تعريف وبعضها لا.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-target"/></svg></span>باب نحوي أساسي: عائلة wo الكاملة</h3>
+        <p><span class="de mono">wo</span> (أين؟ مكان ثابت)، <span class="de mono">wohin</span> (إلى أين؟ اتجاه)، <span class="de mono">woher</span> (من أين؟ أصل) — ثلاث كلمات، ثلاث فروق دقيقة.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>امتداد طبيعي لدروسك السابقة</h3>
+        <p>تعلّمت أسئلة W كاملة، والحالة Dativ مع الضمائر — اليوم يلتقي الاثنان في جملة واحدة: <span class="de mono">aus der Schweiz</span>.</p>
+      </div>
+    </div>
+
+    <div class="info-card reveal" style="margin-top:26px;padding-top:6px">
+      <h3 style="padding:16px 4px 0"><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>رحلتك في تعلّم الألمانية</h3>
+      <div class="mini-timeline" id="learningTimeline"></div>
+    </div>
+
+    <div class="grid-2 reveal" style="margin-top:22px;align-items:stretch">
+      <div class="info-card" style="display:flex;flex-direction:column;justify-content:center">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>درس اليوم بالأرقام</h3>
+        <p style="margin-bottom:14px">كل ما تحتاج تذكّره اليوم — والباقي تدريب وحوار حي.</p>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card teal"><div class="stat-pct">٣</div><div class="stat-desc">كلمات في عائلة "أين": <span class="de mono">wo / wohin / woher</span></div></div>
+        <div class="stat-card amber"><div class="stat-pct">٢</div><div class="stat-desc">دول استثنائية بأداة تعريف رأيتها اليوم: <span class="de mono">die Schweiz, die Türkei</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= COUNTRIES VOCAB ============================= -->
+<section class="section" id="countries-vocab">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-globe"/></svg>المفردات الأساسية</span>
+      <h2 class="section-title">الدول (Länder)</h2>
+      <p class="section-sub">سبع دول ستحتاجها كثيرًا. انقر لقلب البطاقة وسماع النطق، ولاحظ الدولتين اللتين تحملان أداة تعريف — ستتعلّم لماذا بعد قليل.</p>
+    </div>
+    <div class="vocab-grid reveal-stagger reveal" id="countriesGrid"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<section class="section" id="languages-vocab">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-flag"/></svg>اللغات</span>
+      <h2 class="section-title">اللغات (Sprachen)</h2>
+      <p class="section-sub">أسماء اللغات في الألمانية تُستخدم دائمًا بلا أداة تعريف بعد الفعل sprechen — تعرّف عليها هنا وستراها لاحقًا في القاعدة.</p>
+    </div>
+    <div class="vocab-grid reveal-stagger reveal" id="languagesGrid"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= W-FAMILY RECAP (wo/wohin/woher) ============================= -->
+<section class="section" id="w-recap">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>تثبيت أسئلة W</span>
+      <h2 class="section-title">عائلة <span class="de mono">wo</span> الكاملة</h2>
+      <p class="section-sub">في الدرس ١٣ تعلّمت <span class="de mono">wo</span> (أين؟). اليوم تكتمل العائلة بكلمتين جديدتين — الفرق بينهما دقيق لكنه مهم جدًا في كل محادثة عن السفر والإقامة.</p>
+    </div>
+
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-pin"/></svg></span><span class="de mono">wo؟</span> — أين؟ (مكان ثابت)</h3>
+        <p style="margin-bottom:10px">تسأل عن مكان وجود شيء أو شخص، بلا أي حركة.</p>
+        <div class="conj-table">
+          <div class="conj-row"><span class="conj-pron de" data-speak="Wo wohnst du?">Wo wohnst du?</span><span class="conj-form de" data-speak="In Berlin.">In Berlin.</span></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-flag"/></svg></span><span class="de mono">wohin؟</span> — إلى أين؟ (اتجاه)</h3>
+        <p style="margin-bottom:10px">تسأل عن وجهة حركة — إلى أين تتجه؟</p>
+        <div class="conj-table">
+          <div class="conj-row"><span class="conj-pron de" data-speak="Wohin fährst du?">Wohin fährst du?</span><span class="conj-form de" data-speak="Nach Berlin.">Nach Berlin.</span></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-globe"/></svg></span><span class="de mono">woher؟</span> — من أين؟ (أصل)</h3>
+        <p style="margin-bottom:10px">تسأل عن نقطة الانطلاق أو بلد المنشأ.</p>
+        <div class="conj-table">
+          <div class="conj-row"><span class="conj-pron de" data-speak="Woher kommst du?">Woher kommst du?</span><span class="conj-form de" data-speak="Aus Berlin.">Aus Berlin.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card reveal" style="margin-top:24px">
+      <h3 style="margin-bottom:10px"><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>لاحظ حرف الجر المرافق لكل سؤال</h3>
+      <p><span class="de mono">wo</span> يقترن غالبًا بـ<span class="de mono">in</span> (في)، و<span class="de mono">wohin</span> بـ<span class="de mono">nach</span> (إلى — مع المدن والدول)، و<span class="de mono">woher</span> بـ<span class="de mono">aus</span> (من). تذكّر السؤال الثلاثي أعلاه وستستنتج حرف الجر الصحيح تلقائيًا في أي جملة.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= aus + sprechen ============================= -->
+<section class="section" id="aus-sprechen">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-list"/></svg>صيغتان ستستخدمهما كل يوم</span>
+      <h2 class="section-title"><span class="de mono">Ich komme aus…</span> و<span class="de mono">Ich spreche…</span></h2>
+      <p class="section-sub">القاعدة الذهبية: أسماء الدول واللغات في الألمانية <b>لا تأخذ أداة تعريف</b> غالبًا — إلا استثناءً قليلًا من الدول، وهنا يعود معك Dativ الذي تعلّمته في الدرس ٩.</p>
+    </div>
+
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-globe"/></svg></span>دولة بلا أداة (الغالبية)</h3>
+        <p class="de mono" style="font-size:1.05rem;margin-bottom:8px" data-speak="Ich komme aus Ägypten.">Ich komme aus Ägypten.</p>
+        <p>معظم الدول (<span class="de mono">Deutschland, Ägypten, Syrien, Marokko</span>) تأتي مباشرة بعد <b>aus</b> بلا أي أداة تعريف.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-flag"/></svg></span>دولة بأداة (استثناء + Dativ)</h3>
+        <p class="de mono" style="font-size:1.05rem;margin-bottom:8px" data-speak="Ich komme aus der Schweiz.">Ich komme aus der Schweiz.</p>
+        <p>دول قليلة تحمل أداة تعريف أصلًا (<span class="de mono">die Schweiz</span>) — بعد <b>aus</b> تتحوّل الأداة إلى صيغة Dativ: <span class="de mono">die → der</span>.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-check"/></svg></span>لغة بلا أداة دائمًا</h3>
+        <p class="de mono" style="font-size:1.05rem;margin-bottom:8px" data-speak="Ich spreche Arabisch und Englisch.">Ich spreche Arabisch und Englisch.</p>
+        <p>بعد <b>sprechen</b>، اسم اللغة لا يأخذ أداة تعريف مطلقًا — بلا استثناءات هنا.</p>
+      </div>
+    </div>
+
+    <div class="info-card reveal" style="margin-top:24px">
+      <h3 style="margin-bottom:16px"><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-list"/></svg></span>الدول التي تحتاج أداة تعريف بعد <span class="de mono">aus</span></h3>
+      <div class="acc-table" style="grid-template-columns:repeat(4,1fr)">
+        <div class="acc-table-cell">Nominativ<b class="de">die Schweiz</b></div>
+        <div class="acc-table-cell" style="background:var(--teal-soft);color:var(--teal)">aus + Dativ<b class="de">aus der Schweiz</b></div>
+        <div class="acc-table-cell">Nominativ<b class="de">die Türkei</b></div>
+        <div class="acc-table-cell" style="background:var(--teal-soft);color:var(--teal)">aus + Dativ<b class="de">aus der Türkei</b></div>
+        <div class="acc-table-cell">Nominativ<b class="de">der Irak</b></div>
+        <div class="acc-table-cell" style="background:var(--amber-soft);color:var(--amber-ink)">aus + Dativ<b class="de">aus dem Irak</b></div>
+        <div class="acc-table-cell">Nominativ<b class="de">die USA (جمع)</b></div>
+        <div class="acc-table-cell" style="background:var(--plum-soft);color:var(--plum-ink)">aus + Dativ<b class="de">aus den USA</b></div>
+      </div>
+      <p class="acc-note">نفس تصريف Dativ الذي رأيته مع الضمائر في الدرس ٩ (<span class="de mono">die → der</span>) ينطبق هنا تمامًا على أسماء الدول القليلة التي تحمل أداة أصلًا.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= WORLD MAP (centerpiece 1) ============================= -->
+<section class="section" id="world-map">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-globe"/></svg>مركز تفاعلي</span>
+      <h2 class="section-title">الخريطة العالمية: انقر على أي دولة</h2>
+      <p class="section-sub">سبع دول موزّعة على خريطة مبسّطة. انقر على أي علامة لتسمع جملتين كاملتين عن تلك الدولة — من أين تأتي، وما اللغة التي يتحدثها أهلها.</p>
+    </div>
+
+    <div class="acc-shell reveal">
+      <div class="map-wrap">
+        <svg class="map-bg-svg" viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="800" height="420" fill="var(--bg-alt)"/>
+          <path d="M300 70 Q340 50 390 65 Q430 55 460 80 Q470 110 445 130 Q460 150 440 170 Q400 175 380 155 Q345 165 320 140 Q290 120 300 70Z" fill="var(--teal-soft)" opacity=".8"/>
+          <path d="M330 175 Q380 165 420 185 Q450 210 440 250 Q450 290 420 320 Q390 345 360 330 Q330 340 315 305 Q300 260 310 220 Q305 190 330 175Z" fill="var(--amber-soft)" opacity=".8"/>
+          <path d="M455 130 Q510 115 560 140 Q590 160 580 195 Q595 220 570 245 Q535 255 505 235 Q470 225 460 190 Q450 155 455 130Z" fill="var(--plum-soft)" opacity=".8"/>
+          <path d="M90 130 Q130 110 160 135 Q175 170 155 200 Q165 235 140 260 Q110 250 100 215 Q80 175 90 130Z" fill="var(--teal-soft)" opacity=".55"/>
+        </svg>
+        <div id="mapPins"></div>
+      </div>
+
+      <div class="acc-result" style="margin-top:18px">
+        <div class="acc-result-phrase" id="mapResultPhrase" tabindex="0" role="button" aria-label="استمع للجملتين">انقر على أي علامة على الخريطة لتبدأ…</div>
+        <p class="acc-note" id="mapNote">اختر دولة من الخريطة أعلاه.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= INTRO-YOURSELF TOOL (centerpiece 2) ============================= -->
+<section class="section" id="intro-tool">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-user"/></svg>اجمع كل ما تعلّمته</span>
+      <h2 class="section-title">أداة التعارف الكاملة</h2>
+      <p class="section-sub">اختر اسمًا ودولة ولغة ومهنة — وشاهد فقرة تعريف كاملة عن نفسك تتكوّن أمامك سطرًا بسطر، جاهزة لأول محادثة حقيقية.</p>
+    </div>
+
+    <div class="acc-shell reveal">
+      <div class="acc-picker-label">١. الاسم</div>
+      <div class="acc-chip-row" id="introNameRow"></div>
+      <div class="acc-picker-label">٢. الدولة</div>
+      <div class="acc-chip-row" id="introCountryRow"></div>
+      <div class="acc-picker-label">٣. اللغة</div>
+      <div class="acc-chip-row" id="introLangRow"></div>
+      <div class="acc-picker-label">٤. المهنة</div>
+      <div class="acc-chip-row" id="introJobRow"></div>
+
+      <div class="acc-result" style="margin-top:8px">
+        <div class="acc-result-phrase" id="introResultPhrase" style="min-height:auto;line-height:2.1;font-size:1.15rem" tabindex="0" role="button" aria-label="استمع للتعريف الكامل"></div>
+        <p class="acc-note" id="introNote">اختر من كل صف أعلاه لتكتمل فقرة التعريف.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= PRACTICAL ============================= -->
+<section class="section" id="practical">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-pin"/></svg>من النظرية إلى الحياة اليومية</span>
+      <h2 class="section-title">عبارات ستحتاجها في كل تعارف</h2>
+      <p class="section-sub">ثلاث عبارات جاهزة تستخدمها في أول دقيقة من أي محادثة جديدة.</p>
+    </div>
+
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-globe"/></svg></span>السؤال عن الأصل</h3>
+        <p><span class="de mono" data-speak="Woher kommst du?">Woher kommst du?</span> — من أين أنت؟</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-flag"/></svg></span>السؤال عن اللغات</h3>
+        <p><span class="de mono" data-speak="Welche Sprachen sprichst du?">Welche Sprachen sprichst du?</span> — ما اللغات التي تتحدثها؟</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-target"/></svg></span>التعبير عن التعلّم</h3>
+        <p><span class="de mono" data-speak="Ich lerne gerade Deutsch.">Ich lerne gerade Deutsch.</span> — أنا أتعلّم الألمانية حاليًا.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:30px" class="reveal" id="extraAccordion"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= DIALOGUE ============================= -->
+<section class="section" id="dialogue">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>طبّق ما تعلّمته</span>
+      <h2 class="section-title">حوارا استخدام كاملان</h2>
+      <p class="section-sub">انقر على أي فقاعة حوار لسماعها بمفردها، أو استمع للحوار كاملًا بزر واحد.</p>
+    </div>
+
+    <div class="dialogue-tabs reveal">
+      <button class="cat-tab active" data-panel="dlgInformal">بين صديقين <span class="cat-count">du</span></button>
+      <button class="cat-tab" data-panel="dlgFormal">في مؤتمر <span class="cat-count">Sie</span></button>
+    </div>
+
+    <div class="dialogue-shell reveal">
+      <div class="dialogue-panel active" id="dlgInformal"></div>
+      <div class="dialogue-panel" id="dlgFormal"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= MISTAKES ============================= -->
+<section class="section" id="mistakes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>تجنّب الفخاخ الشائعة</span>
+      <h2 class="section-title">أخطاء يقع فيها معظم المبتدئين</h2>
+      <p class="section-sub">معظمها يتعلّق بموضع الفعل الثاني أو بتصريف الفعل الوجوبي — قارن كل خطأ بصورته الصحيحة.</p>
+    </div>
+    <div class="reveal-stagger reveal" id="mistakesList" style="display:flex;flex-direction:column;gap:16px"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= PRONUNCIATION TIPS ============================= -->
+<section class="section" id="pronunciation">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-speaker"/></svg>نطق أصيل</span>
+      <h2 class="section-title">نصائح النطق</h2>
+      <p class="section-sub">أربع ملاحظات نطق ستقابلك كثيرًا في مفردات المواصلات والفعلين الوجوبيين.</p>
+    </div>
+    <div class="grid-2 reveal-stagger reveal" id="tipsGrid"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= EXERCISES ============================= -->
+<section class="section" id="exercises">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>وقت التطبيق</span>
+      <h2 class="section-title">تمارين تفاعلية فورية</h2>
+      <p class="section-sub">خمسة أنواع من التمارين، مع تصحيح لحظي وتفسير لكل إجابة.</p>
+    </div>
+
+    <div class="exercise-shell reveal">
+      <div class="exercise-tabs" role="tablist">
+        <button class="exercise-tab active" data-panel="panelMatch" role="tab">طابق الكلمة بمعناها <span class="count" id="countMatch">٠/٨</span></button>
+        <button class="exercise-tab" data-panel="panelMcq" role="tab">اختر الإجابة الصحيحة <span class="count" id="countMcq">٠/٨</span></button>
+        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل الفراغ <span class="count" id="countFill">٠/٨</span></button>
+        <button class="exercise-tab" data-panel="panelBuilder" role="tab">رتّب كلمات الجملة <span class="count" id="countBuilder">٠/٥</span></button>
+        <button class="exercise-tab" data-panel="panelListen" role="tab">تمرين الاستماع <span class="count" id="countListen">٠/١</span></button>
+      </div>
+      <div class="exercise-panels">
+        <div class="exercise-panel active" id="panelMatch"></div>
+        <div class="exercise-panel" id="panelMcq"></div>
+        <div class="exercise-panel" id="panelFill"></div>
+        <div class="exercise-panel" id="panelBuilder"></div>
+        <div class="exercise-panel" id="panelListen"></div>
+      </div>
+      <div class="score-bar-wrap">
+        <span class="score-label">إتقانك للتمارين</span>
+        <div class="score-track"><div class="score-fill" id="scoreFill"></div></div>
+        <span class="score-label mono" id="scoreLabel">٠٪</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= SUMMARY ============================= -->
+<section class="section" id="summary">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-star"/></svg>ملخّص الدرس</span>
+      <h2 class="section-title">ما الذي أتقنته اليوم؟</h2>
+    </div>
+
+    <div class="grid-2 reveal">
+      <ul class="summary-list info-card">
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا مفردات سبع دول وست لغات أساسية.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا صيغتي <span class="de mono">Ich komme aus</span> و<span class="de mono">Ich spreche</span> واستخدامهما الصحيح.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>ثبّتنا عائلة <span class="de mono">wo / wohin / woher</span> كاملة — المكان، الوجهة، والأصل.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>طبّقنا القاعدة عمليًا عبر الخريطة العالمية التفاعلية وأداة التعارف الكاملة.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>استمعنا وتفاعلنا مع حوارين كاملين — تعارف بين صديقين ومقابلة رسمية.</p></li>
+      </ul>
+
+      <div class="info-card" style="display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;background:linear-gradient(155deg, var(--teal-soft), var(--plum-soft))">
+        <svg class="icon" style="width:40px;height:40px;margin:0 auto;color:var(--teal)"><use href="#i-compass"/></svg>
+        <h3 style="justify-content:center">الدرس القادم</h3>
+        <p>الأفعال المنفصلة (trennbare Verben) — قريبًا في الدرس ١٦ من مسار A1.</p>
+        <button class="btn btn-ghost" disabled style="align-self:center">الدرس ١٦ (قريبًا)</button>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px;text-align:center" class="reveal">إنجازاتك في هذا الدرس</h3>
+    <div class="badges-row reveal" id="badgesRow"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>الدرس ١٥ · مسار الألمانية A1 — صُمم للتعلّم النشط والاستماع الفوري.</span>
+    <div class="footer-actions">
+      <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس"><svg class="icon"><use href="#i-printer"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================= FLOATING CONTROLS ============================= -->
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى">
+  <svg class="icon" style="width:20px;height:20px;stroke:#fff"><use href="#i-up"/></svg>
+</button>
+
+<div class="audio-dock" id="audioDock">
+  <div class="audio-dock-controls">
+    <button class="icon-btn" id="dockPlayPause" aria-label="تشغيل/إيقاف مؤقت"><svg class="icon" id="dockPlayIcon"><use href="#i-pause"/></svg></button>
+    <button class="icon-btn" id="dockReplay" aria-label="إعادة"><svg class="icon"><use href="#i-replay"/></svg></button>
+  </div>
+  <span class="audio-dock-text" id="dockText" dir="ltr">…</span>
+  <input type="range" id="dockSpeed" min="0.6" max="1.3" step="0.05" value="0.9" aria-label="سرعة النطق">
+  <span class="audio-dock-voice" id="dockVoice">…</span>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ==========================================================================
+   DATA
+   ========================================================================== */
+const COUNTRIES = [
+  {de:"Deutschland",    word:"Deutschland",    ipa:"ˈdɔʏtʃlant",     ar:"ألمانيا"},
+  {de:"Ägypten",        word:"Ägypten",        ipa:"ɛˈɡʏptn̩",       ar:"مصر"},
+  {de:"Syrien",         word:"Syrien",         ipa:"ˈzyːʁi̯ən",      ar:"سوريا"},
+  {de:"Marokko",        word:"Marokko",        ipa:"maˈʁɔko",        ar:"المغرب"},
+  {de:"Saudi-Arabien",  word:"Saudi-Arabien",  ipa:"ˈzaʊdi aˈʁaːbi̯ən", ar:"السعودية"},
+  {de:"die Schweiz",    word:"die Schweiz",    ipa:"ʃvaɪts",         ar:"سويسرا — بأداة تعريف!"},
+  {de:"die Türkei",     word:"die Türkei",     ipa:"tʏɐˈkaɪ",        ar:"تركيا — بأداة تعريف!"}
+];
+
+const LANGUAGES = [
+  {de:"Deutsch",      word:"Deutsch",      ipa:"dɔʏtʃ",       ar:"الألمانية"},
+  {de:"Arabisch",     word:"Arabisch",     ipa:"aˈʁaːbɪʃ",    ar:"العربية"},
+  {de:"Englisch",     word:"Englisch",     ipa:"ˈɛŋlɪʃ",      ar:"الإنجليزية"},
+  {de:"Französisch",  word:"Französisch",  ipa:"fʁanˈtsøːzɪʃ",ar:"الفرنسية"},
+  {de:"Spanisch",     word:"Spanisch",     ipa:"ˈʃpaːnɪʃ",    ar:"الإسبانية"},
+  {de:"Türkisch",     word:"Türkisch",     ipa:"ˈtʏɐ̯kɪʃ",    ar:"التركية"}
+];
+
+/* --- World map centerpiece: country pins (positions are % of the 800×420 map viewBox) --- */
+const MAP_COUNTRIES = [
+  {id:'de', flag:'🇩🇪', name:'Deutschland',   left:46, top:11,
+   sentence:'Ich komme aus Deutschland. Ich spreche Deutsch.',
+   ar:'أنا من ألمانيا. أتحدث الألمانية.'},
+  {id:'ch', flag:'🇨🇭', name:'die Schweiz',   left:37, top:29,
+   sentence:'Ich komme aus der Schweiz. Ich spreche Deutsch, Französisch und Italienisch.',
+   ar:'أنا من سويسرا. أتحدث الألمانية والفرنسية والإيطالية.'},
+  {id:'tr', flag:'🇹🇷', name:'die Türkei',    left:63, top:26,
+   sentence:'Ich komme aus der Türkei. Ich spreche Türkisch.',
+   ar:'أنا من تركيا. أتحدث التركية.'},
+  {id:'sy', flag:'🇸🇾', name:'Syrien',        left:70, top:44,
+   sentence:'Ich komme aus Syrien. Ich spreche Arabisch.',
+   ar:'أنا من سوريا. أتحدث العربية.'},
+  {id:'ma', flag:'🇲🇦', name:'Marokko',       left:28, top:56,
+   sentence:'Ich komme aus Marokko. Ich spreche Arabisch und Französisch.',
+   ar:'أنا من المغرب. أتحدث العربية والفرنسية.'},
+  {id:'eg', flag:'🇪🇬', name:'Ägypten',       left:46, top:64,
+   sentence:'Ich komme aus Ägypten. Ich spreche Arabisch.',
+   ar:'أنا من مصر. أتحدث العربية.'},
+  {id:'sa', flag:'🇸🇦', name:'Saudi-Arabien', left:63, top:64,
+   sentence:'Ich komme aus Saudi-Arabien. Ich spreche Arabisch.',
+   ar:'أنا من السعودية. أتحدث العربية.'}
+];
+
+/* --- Introduce-yourself tool: four independent chip rows --- */
+const INTRO_NAMES = [
+  {id:'layla', label:'Layla'}, {id:'omar', label:'Omar'}, {id:'anna', label:'Anna'},
+  {id:'karim', label:'Karim'}, {id:'sophie', label:'Sophie'}, {id:'yusuf', label:'Yusuf'}
+];
+const INTRO_COUNTRIES = [
+  {id:'de', label:'Deutschland', phrase:'aus Deutschland'},
+  {id:'eg', label:'Ägypten',     phrase:'aus Ägypten'},
+  {id:'ma', label:'Marokko',     phrase:'aus Marokko'},
+  {id:'ch', label:'die Schweiz', phrase:'aus der Schweiz'},
+  {id:'tr', label:'die Türkei',  phrase:'aus der Türkei'},
+  {id:'sa', label:'Saudi-Arabien', phrase:'aus Saudi-Arabien'}
+];
+const INTRO_LANGS = [
+  {id:'ar',    label:'Arabisch',            phrase:'Arabisch'},
+  {id:'de',    label:'Deutsch',             phrase:'Deutsch'},
+  {id:'en',    label:'Englisch',            phrase:'Englisch'},
+  {id:'ar_en', label:'Arabisch & Englisch',  phrase:'Arabisch und Englisch'},
+  {id:'de_en', label:'Deutsch & Englisch',   phrase:'Deutsch und Englisch'},
+  {id:'tr_de', label:'Türkisch & Deutsch',   phrase:'Türkisch und Deutsch'}
+];
+const INTRO_JOBS = [
+  {id:'student', label:'Student(in)',     phrase:'Student'},
+  {id:'lehrer',  label:'Lehrer(in)',      phrase:'Lehrer'},
+  {id:'ing',     label:'Ingenieur(in)',   phrase:'Ingenieur'},
+  {id:'arzt',    label:'Arzt / Ärztin',   phrase:'Arzt'},
+  {id:'prog',    label:'Programmierer(in)', phrase:'Programmierer'}
+];
+
+const EXTRA_NOTES = [
+  {q:"هل يمكن أن أقول Ich bin Ägypter بدلًا من Ich komme aus Ägypten؟", body:"نعم، لكن <span class=\"de mono\">Ägypter</span> اسم جنسية يتغيّر حسب الجنس (<span class=\"de mono\">Ägypter/Ägypterin</span>)، بينما <span class=\"de\" data-speak=\"Ich komme aus Ägypten.\">Ich komme aus Ägypten</span> أبسط وتصلح للجميع دون تعقيد. ستتعرّف على صيغ الجنسية الاسمية الكاملة في درس قادم."},
+  {q:"لماذا تحتاج بعض الدول أداة تعريف وبعضها لا؟", body:"لا توجد قاعدة منطقية كاملة — عليك حفظ القائمة القصيرة فقط: <span class=\"de mono\">die Schweiz، die Türkei، der Irak، die USA</span> (جمع). كل الدول الأخرى تقريبًا بلا أداة، وهذا هو الأغلب دائمًا."},
+  {q:"هل تُستخدم woher فقط مع الدول؟", body:"لا! <span class=\"de\" data-speak=\"Woher hast du das Buch?\">Woher hast du das Buch?</span> — من أين حصلت على الكتاب؟ نفس السؤال يُستخدم لأي مصدر أو أصل، وليس فقط بلد المنشأ."}
+];
+
+const DIALOGUE_INFORMAL = [
+  {who:"a", name:"Mia",    de:"Hallo! Wie heißt du?", ar:"مرحبًا! ما اسمك؟"},
+  {who:"b", name:"Yusuf",  de:"Ich heiße Yusuf. Und du?", ar:"اسمي يوسف. وأنتِ؟"},
+  {who:"a", name:"Mia",    de:"Ich heiße Mia. Woher kommst du?", ar:"اسمي ميا. من أين أنت؟"},
+  {who:"b", name:"Yusuf",  de:"Ich komme aus Ägypten, aus Kairo. Und du?", ar:"أنا من مصر، من القاهرة. وأنتِ؟"},
+  {who:"a", name:"Mia",    de:"Ich komme aus der Schweiz. Sprichst du Deutsch?", ar:"أنا من سويسرا. هل تتحدث الألمانية؟"},
+  {who:"b", name:"Yusuf",  de:"Ja, ein bisschen. Ich spreche auch Englisch und Arabisch.", ar:"نعم، قليلًا. أتحدث أيضًا الإنجليزية والعربية."},
+  {who:"a", name:"Mia",    de:"Wow, drei Sprachen! Ich spreche nur Deutsch und Französisch.", ar:"رائع، ثلاث لغات! أنا أتحدث الألمانية والفرنسية فقط."},
+  {who:"b", name:"Yusuf",  de:"Das ist auch super!", ar:"هذا رائع أيضًا!"}
+];
+
+const DIALOGUE_FORMAL = [
+  {who:"a", name:"Herr Demir",  de:"Guten Tag! Woher kommen Sie?", ar:"مساء الخير! من أين حضرتك؟"},
+  {who:"b", name:"Frau Amrani", de:"Ich komme aus Marokko, aus Casablanca. Und Sie?", ar:"أنا من المغرب، من الدار البيضاء. وأنت؟"},
+  {who:"a", name:"Herr Demir",  de:"Ich komme aus der Türkei.", ar:"أنا من تركيا."},
+  {who:"b", name:"Frau Amrani", de:"Sprechen Sie Französisch?", ar:"هل تتحدث الفرنسية؟"},
+  {who:"a", name:"Herr Demir",  de:"Nein, aber ich spreche Türkisch, Englisch und ein bisschen Deutsch.", ar:"لا، لكنني أتحدث التركية والإنجليزية وقليلًا من الألمانية."},
+  {who:"b", name:"Frau Amrani", de:"Ich spreche Arabisch, Französisch und auch ein bisschen Deutsch.", ar:"أنا أتحدث العربية والفرنسية وقليلًا من الألمانية أيضًا."},
+  {who:"a", name:"Herr Demir",  de:"Wie schön, wir können auf Deutsch üben!", ar:"كم هذا جميل، يمكننا التدرّب بالألمانية!"},
+  {who:"b", name:"Frau Amrani", de:"Genau, das ist eine gute Idee.", ar:"بالضبط، هذه فكرة جيدة."}
+];
+
+const MISTAKES = [
+  {wrong:"حذف aus قبل الدولة: <span class=\"de mono\" data-speak=\"Ich komme Deutschland.\">Ich komme Deutschland.</span>", right:"<span class=\"de mono\" data-speak=\"Ich komme aus Deutschland.\">Ich komme aus Deutschland.</span> — aus لا تُحذف أبدًا", note:"الفعل kommen يحتاج دائمًا حرف الجر aus قبل اسم بلد المنشأ، حتى لو بدا واضحًا من السياق."},
+  {wrong:"إضافة أداة تعريف لدولة لا تحتاجها: <span class=\"de mono\" data-speak=\"Ich komme aus das Ägypten.\">Ich komme aus das Ägypten.</span>", right:"<span class=\"de mono\" data-speak=\"Ich komme aus Ägypten.\">Ich komme aus Ägypten.</span> — بلا أداة تعريف", note:"معظم الدول (منها Ägypten وSyrien وMarokko وDeutschland) تأتي مباشرة بعد aus بلا أي أداة."},
+  {wrong:"نسيان تحويل الأداة إلى Dativ: <span class=\"de mono\" data-speak=\"Ich komme aus die Schweiz.\">Ich komme aus die Schweiz.</span>", right:"<span class=\"de mono\" data-speak=\"Ich komme aus der Schweiz.\">Ich komme aus der Schweiz.</span> — die تتحوّل إلى der", note:"الدول القليلة التي تحمل أداة أصلًا (die Schweiz) تُصرَّف حسب حالة Dativ بعد aus، تمامًا كما تعلّمت مع الضمائر في الدرس ٩."},
+  {wrong:"الخلط بين woher وwohin: <span class=\"de mono\" data-speak=\"Woher fährst du im Urlaub?\">Woher fährst du im Urlaub?</span> (يسأل عن الوجهة بالخطأ)", right:"<span class=\"de mono\" data-speak=\"Wohin fährst du im Urlaub?\">Wohin fährst du im Urlaub?</span> — wohin للوجهة", note:"woher تسأل عن نقطة الانطلاق (من أين)، بينما wohin تسأل عن الوجهة (إلى أين). كلمتان مختلفتان تمامًا رغم تشابه اللفظ."},
+  {wrong:"إضافة أداة تعريف قبل اسم اللغة: <span class=\"de mono\" data-speak=\"Ich spreche das Arabisch.\">Ich spreche das Arabisch.</span>", right:"<span class=\"de mono\" data-speak=\"Ich spreche Arabisch.\">Ich spreche Arabisch.</span> — بلا أداة تعريف أبدًا", note:"أسماء اللغات بعد الفعل sprechen لا تأخذ أداة تعريف مطلقًا، بلا أي استثناء."},
+  {wrong:"استخدام bin بدلًا من spreche للغة: <span class=\"de mono\" data-speak=\"Ich bin Englisch.\">Ich bin Englisch.</span>", right:"<span class=\"de mono\" data-speak=\"Ich spreche Englisch.\">Ich spreche Englisch.</span> — spreche للغات دائمًا", note:"الفعل sein (bin) يُستخدم للهوية أو الصفة، أما التحدّث بلغة فيحتاج الفعل sprechen حصرًا."}
+];
+
+const TIPS = [
+  {title:"مقطع sch يُنطق [ʃ] دائمًا", body:"في <span class=\"de\" data-speak=\"Deutsch\">Deutsch</span> و<span class=\"de\" data-speak=\"Englisch\">Englisch</span> و<span class=\"de\" data-speak=\"Türkisch\">Türkisch</span> — نفس صوت «ش» بالعربية بالضبط."},
+  {title:"لاحقة -isch نمط ثابت لأسماء اللغات", body:"لاحظ التكرار: <span class=\"de mono\">arabisch، englisch، französisch، türkisch</span> — كل لغة أو صفة جنسية تقريبًا تنتهي بـ<span class=\"de mono\">-isch</span> في الألمانية."},
+  {title:"مقطع au في aus يُنطق [aʊ]", body:"في <span class=\"de\" data-speak=\"aus\">aus</span> و<span class=\"de\" data-speak=\"Ausland\">Ausland</span> — صوت مزدوج ينزلق من «آ» إلى «و» في مقطع واحد."},
+  {title:"النبر في Ägypten على المقطع الأول", body:"تُنطق <span class=\"de\" data-speak=\"Ägypten\">ÄGYPten</span> بتشديد واضح على أول مقطع، بعكس اللفظ العربي المألوف."}
+];
+
+const MATCH_PAIRS = [
+  {de:"Deutschland", ar:"ألمانيا"}, {de:"Ägypten", ar:"مصر"},
+  {de:"die Schweiz", ar:"سويسرا"}, {de:"die Türkei", ar:"تركيا"},
+  {de:"Deutsch", ar:"الألمانية"}, {de:"Arabisch", ar:"العربية"},
+  {de:"kommen", ar:"يأتي"}, {de:"sprechen", ar:"يتحدث"}
+];
+
+const MCQ = [
+  {prompt:"أكمل: <span class=\"de mono\">Ich komme ____ Ägypten.</span>", options:["aus","von","in","nach"], correct:"aus", why:"<span class=\"de mono\" data-speak=\"Ich komme aus Ägypten.\">Ich komme aus Ägypten.</span> — aus + بلد المنشأ دائمًا."},
+  {prompt:"أكمل: <span class=\"de mono\">Ich komme aus ____ Schweiz.</span>", options:["der","die","das","dem"], correct:"der", why:"<span class=\"de mono\" data-speak=\"Ich komme aus der Schweiz.\">Ich komme aus der Schweiz.</span> — die تتحوّل إلى der في Dativ."},
+  {prompt:"أكمل: <span class=\"de mono\">____ kommst du?</span>", options:["Woher","Wohin","Wo","Wann"], correct:"Woher", why:"<span class=\"de mono\" data-speak=\"Woher kommst du?\">Woher kommst du?</span> — woher تسأل عن أصل الشخص."},
+  {prompt:"أكمل: <span class=\"de mono\">____ fliegst du in den Ferien?</span>", options:["Wohin","Woher","Wo","Was"], correct:"Wohin", why:"<span class=\"de mono\" data-speak=\"Wohin fliegst du in den Ferien?\">Wohin fliegst du in den Ferien?</span> — wohin تسأل عن الوجهة."},
+  {prompt:"أكمل: <span class=\"de mono\">Ich spreche gut ____.</span>", options:["Englisch","das Englisch","ein Englisch","die Englisch"], correct:"Englisch", why:"<span class=\"de mono\" data-speak=\"Ich spreche gut Englisch.\">Ich spreche gut Englisch.</span> — اسم اللغة بلا أداة تعريف مطلقًا."},
+  {prompt:"أكمل: <span class=\"de mono\">Er kommt aus ____ Türkei.</span>", options:["der","die","das","den"], correct:"der", why:"<span class=\"de mono\" data-speak=\"Er kommt aus der Türkei.\">Er kommt aus der Türkei.</span> — نفس قاعدة die Schweiz."},
+  {prompt:"ما الترتيب الصحيح؟", options:["Ich komme aus Marokko.","Ich aus Marokko komme.","Komme ich aus Marokko.","Aus Marokko ich komme."], correct:"Ich komme aus Marokko.", why:"<span class=\"de mono\" data-speak=\"Ich komme aus Marokko.\">Ich komme aus Marokko.</span> — الفاعل أولًا، الفعل ثانيًا، ثم aus + الدولة."},
+  {prompt:"أكمل: <span class=\"de mono\">Sie kommen aus ____ USA.</span>", options:["den","der","die","das"], correct:"den", why:"<span class=\"de mono\" data-speak=\"Sie kommen aus den USA.\">Sie kommen aus den USA.</span> — USA اسم جمع، فتأخذ den في Dativ."}
+];
+
+const FILL = [
+  {display:"Ich komme aus ____. (Deutschland)", correct:"Deutschland", hint:"بلا أداة تعريف", full:"Ich komme aus Deutschland."},
+  {display:"Ich komme aus ____ Schweiz.", correct:"der", hint:"Dativ للمؤنث", full:"Ich komme aus der Schweiz."},
+  {display:"Ich komme aus ____ Türkei.", correct:"der", hint:"نفس قاعدة Schweiz", full:"Ich komme aus der Türkei."},
+  {display:"____ kommst du?", correct:"Woher", hint:"سؤال عن الأصل", full:"Woher kommst du?"},
+  {display:"____ gehst du heute Abend?", correct:"Wohin", hint:"سؤال عن الوجهة", full:"Wohin gehst du heute Abend?"},
+  {display:"Ich spreche ____ und Englisch. (Arabic)", correct:"Arabisch", hint:"اسم اللغة", full:"Ich spreche Arabisch und Englisch."},
+  {display:"Er kommt aus ____ Irak.", correct:"dem", hint:"Dativ للمذكّر", full:"Er kommt aus dem Irak."},
+  {display:"Wir kommen aus ____ USA.", correct:"den", hint:"Dativ للجمع", full:"Wir kommen aus den USA."}
+];
+
+const BUILDER = [
+  {words:["Ich","komme","aus","Ägypten"], ar:"أنا من مصر."},
+  {words:["Woher","kommst","du"], ar:"من أين أنت؟"},
+  {words:["Ich","spreche","Arabisch","und","Englisch"], ar:"أتحدث العربية والإنجليزية."},
+  {words:["Er","kommt","aus","der","Türkei"], ar:"هو من تركيا."},
+  {words:["Wohin","fährst","du"], ar:"إلى أين تسافر؟"}
+];
+
+const LEARNING_TIMELINE = [
+  {top:"الدرس ١٣", dot:"done", bottom:"أسئلة W", hl:false},
+  {top:"الدرس ١٤", dot:"done", bottom:"وسائل النقل", hl:false},
+  {top:"أنت الآن هنا", dot:"now", bottom:"الجنسيات واللغات", hl:true},
+  {top:"الدرس ١٦", dot:"", bottom:"الأفعال المنفصلة", hl:false}
+];
+
+const BADGES = [
+  {id:'explorer', name:'مستكشف العالم', icon:'i-compass'},
+  {id:'cartographer', name:'رسّام الخرائط', icon:'i-pin'},
+  {id:'introducer', name:'خبير التعارف', icon:'i-user'},
+  {id:'sharp', name:'دقّة في الإجابة', icon:'i-check'},
+  {id:'champion', name:'بطل الجنسيات واللغات', icon:'i-star'}
+];
+
+
+/* ==========================================================================
+   THEME
+   ========================================================================== */
+const root = document.documentElement;
+function applyTheme(mode){
+  root.setAttribute('data-theme', mode);
+  try{ localStorage.setItem('lesson-theme', mode); }catch(e){}
+}
+(function initTheme(){
+  let stored = null;
+  try{ stored = localStorage.getItem('lesson-theme'); }catch(e){}
+  if(stored){ applyTheme(stored); }
+  else{
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
+})();
+document.getElementById('themeToggle').addEventListener('click', function(){
+  const current = root.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});
+if(window.matchMedia){
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    let stored = null;
+    try{ stored = localStorage.getItem('lesson-theme'); }catch(err){}
+    if(!stored) applyTheme(e.matches ? 'dark' : 'light');
+  });
+}
+
+/* ==========================================================================
+   SPEECH SYNTHESIS MANAGER
+   ========================================================================== */
+const Speech = (function(){
+  let voices = [];
+  let currentVoice = null;
+  let currentUtterance = null;
+  let currentEl = null;
+  let rate = 0.9;
+
+  function refreshVoices(){
+    voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+    const de = voices.filter(v => /^de/i.test(v.lang));
+    const pool = de.length ? de : voices;
+    if(pool.length){
+      pool.sort((a,b)=>{
+        const score = v => (/de-de/i.test(v.lang)?3:0) + (/google/i.test(v.name)?2:0) + (/natural|enhanced|premium|online/i.test(v.name)?2:0) + (v.default?1:0);
+        return score(b) - score(a);
+      });
+      currentVoice = pool[0];
+    }
+    const label = document.getElementById('dockVoice');
+    if(label) label.textContent = currentVoice ? currentVoice.name.replace('Microsoft ','').replace('Google ','') : 'صوت افتراضي';
+  }
+  if(window.speechSynthesis){
+    refreshVoices();
+    window.speechSynthesis.onvoiceschanged = refreshVoices;
+  }
+
+  function clearHighlights(){
+    document.querySelectorAll('.k-word.speaking, .speak-dot.speaking, .listen-chip.speaking, .chat-bubble.speaking, .menu-item-card.speaking').forEach(el => el.classList.remove('speaking'));
+  }
+
+  function speak(text, opts){
+    opts = opts || {};
+    if(!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    clearHighlights();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'de-DE';
+    if(currentVoice) utter.voice = currentVoice;
+    utter.rate = rate;
+    currentUtterance = utter;
+    currentEl = opts.el || null;
+
+    utter.onstart = function(){
+      showDock(text);
+      if(opts.el) opts.el.classList.add('speaking');
+      setDockPlaying(true);
+    };
+    utter.onend = function(){
+      clearHighlights();
+      setDockPlaying(false);
+      hideDockDelayed();
+      if(opts.onend) opts.onend();
+    };
+    utter.onerror = function(){ setDockPlaying(false); };
+
+    if(opts.wordEls && opts.wordEls.length){
+      utter.onboundary = function(e){
+        if(e.name !== 'word') return;
+        clearHighlights();
+        let acc = 0, idx = -1;
+        for(let i=0;i<opts.wordEls.length;i++){
+          const w = opts.wordEls[i].dataset.plain || opts.wordEls[i].textContent;
+          if(e.charIndex >= acc && e.charIndex < acc + w.length + 1){ idx = i; break; }
+          acc += w.length + 1;
+        }
+        if(idx >= 0) opts.wordEls[idx].classList.add('speaking');
+      };
+    }
+    window.speechSynthesis.speak(utter);
+  }
+
+  function togglePause(){
+    if(!window.speechSynthesis) return;
+    if(window.speechSynthesis.speaking && !window.speechSynthesis.paused){
+      window.speechSynthesis.pause();
+      setDockPlaying(false);
+    } else if(window.speechSynthesis.paused){
+      window.speechSynthesis.resume();
+      setDockPlaying(true);
+    }
+  }
+  function replay(){
+    if(currentUtterance) speak(currentUtterance.text, {el: currentEl});
+  }
+  function setRate(r){ rate = r; }
+
+  let dockTimeout = null;
+  function showDock(text){
+    clearTimeout(dockTimeout);
+    const dock = document.getElementById('audioDock');
+    document.getElementById('dockText').textContent = text;
+    dock.classList.add('visible');
+  }
+  function hideDockDelayed(){
+    dockTimeout = setTimeout(()=> document.getElementById('audioDock').classList.remove('visible'), 2600);
+  }
+  function setDockPlaying(playing){
+    const icon = document.getElementById('dockPlayIcon');
+    icon.innerHTML = '<use href="#' + (playing ? 'i-pause' : 'i-play') + '"/>';
+  }
+
+  return { speak, togglePause, replay, setRate };
+})();
+
+document.getElementById('dockPlayPause').addEventListener('click', Speech.togglePause);
+document.getElementById('dockReplay').addEventListener('click', Speech.replay);
+document.getElementById('dockSpeed').addEventListener('input', function(e){ Speech.setRate(parseFloat(e.target.value)); });
+
+/* ==========================================================================
+   SHARED HELPERS
+   ========================================================================== */
+function makeSpeakable(el, text, opts){
+  opts = opts || {};
+  el.style.cursor = 'pointer';
+  if(!el.getAttribute('role')) el.setAttribute('role','button');
+  if(!el.hasAttribute('tabindex')) el.tabIndex = 0;
+  if(!el.getAttribute('aria-label')) el.setAttribute('aria-label', 'استمع لـ ' + text);
+  el.addEventListener('click', () => Speech.speak(text, Object.assign({el}, opts)));
+  el.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); el.click(); } });
+}
+function toAr(n){ return String(n).replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]); }
+
+document.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+
+/* ==========================================================================
+   HERO SHOWCASE CARD (question → answer)
+   ========================================================================== */
+(function buildHeroShowcase(){
+  const wrap = document.createElement('div');
+  wrap.className = 'showcase-card';
+  wrap.style.marginTop = '22px';
+  wrap.innerHTML = `
+    <div class="showcase-label"><svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-chat"/></svg>سؤال شائع اليوم · انقر لتسمع</div>
+    <div class="arrow-frame">
+      <span class="k-word k-phrase-big de" id="heroPhrase" data-plain="Woher kommst du?" tabindex="0" role="button" aria-label="استمع لـ Woher kommst du">Woher kommst du?</span>
+      <span class="k-arrow">→</span>
+      <span class="k-word k-word-result de" id="heroReply" data-plain="Ich komme aus Ägypten. Ich spreche Arabisch und Englisch." tabindex="0" role="button" aria-label="استمع للجواب">Ich komme aus Ägypten. Ich spreche Arabisch und Englisch.</span>
+    </div>
+    <p class="showcase-translation">من أين أنت؟ ← أنا من مصر. أتحدث العربية والإنجليزية. — لاحظ <b class="de">aus</b> قبل الدولة، واسم اللغة <b class="de">Arabisch</b> بلا أي أداة تعريف.</p>
+    <button class="btn btn-ghost showcase-speak-all" id="heroSpeakAll">
+      <svg class="icon" style="width:16px;height:16px"><use href="#i-speaker"/></svg>
+      استمع للسؤال والجواب معًا
+    </button>`;
+  document.querySelector('.hero-illustration').insertAdjacentElement('afterend', wrap);
+  const heroPhrase = wrap.querySelector('#heroPhrase');
+  const heroReply = wrap.querySelector('#heroReply');
+  makeSpeakable(heroPhrase, 'Woher kommst du?');
+  makeSpeakable(heroReply, 'Ich komme aus Ägypten. Ich spreche Arabisch und Englisch.');
+  wrap.querySelector('#heroSpeakAll').addEventListener('click', () => {
+    Speech.speak('Woher kommst du? Ich komme aus Ägypten. Ich spreche Arabisch und Englisch.', {wordEls: [heroPhrase, heroReply]});
+  });
+})();
+
+/* ==========================================================================
+   LEARNING PATHWAY TIMELINE
+   ========================================================================== */
+const learningTimelineEl = document.getElementById('learningTimeline');
+LEARNING_TIMELINE.forEach(item => {
+  const el = document.createElement('div');
+  el.className = 'mt-item';
+  el.innerHTML = `<div class="mt-top">${item.top}</div><div class="mt-dot ${item.dot}"></div><div class="mt-bottom ${item.hl ? 'hl' : ''}">${item.bottom}</div>`;
+  learningTimelineEl.appendChild(el);
+});
+
+/* ==========================================================================
+   VOCAB FLIP-CARD GRID BUILDER (shared: food + drinks)
+   ========================================================================== */
+function buildFlipVocabGrid(container, items){
+  items.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'flip-card';
+    const speakWord = item.word || item.de;
+    const backLine2 = item.ipa ? `<span class="ipa mono">[${item.ipa}]</span>` : '';
+    const pluralTag = item.plural ? '<span class="chip chip-plum plural-only-tag mono">جمع فقط</span>' : '';
+    card.innerHTML = `
+      <div class="flip-card-inner" tabindex="0" role="button" aria-label="بطاقة ${item.ar}, انقر للقلب">
+        <div class="flip-face flip-front">
+          ${pluralTag}
+          <span class="de">${item.de}</span>
+          <span class="flip-hint">انقر للقلب</span>
+          <span class="speak-dot" data-word="${speakWord}" aria-label="استمع لـ ${speakWord}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+        </div>
+        <div class="flip-face flip-back">
+          <span class="partizip mono">${speakWord}</span>
+          ${backLine2}
+          <span class="meaning">${item.ar}</span>
+          <span class="speak-dot" data-word="${speakWord}" aria-label="استمع"><svg class="icon"><use href="#i-speaker"/></svg></span>
+        </div>
+      </div>`;
+    const inner = card.querySelector('.flip-card-inner');
+    inner.addEventListener('click', (e) => { if(e.target.closest('.speak-dot')) return; card.classList.toggle('flipped'); });
+    inner.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); inner.click(); } });
+    card.querySelectorAll('.speak-dot').forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dot.classList.add('speaking');
+        Speech.speak(dot.dataset.word, {el: dot});
+        setTimeout(()=>dot.classList.remove('speaking'), 900);
+      });
+    });
+    container.appendChild(card);
+  });
+}
+buildFlipVocabGrid(document.getElementById('countriesGrid'), COUNTRIES);
+buildFlipVocabGrid(document.getElementById('languagesGrid'), LANGUAGES);
+
+/* ==========================================================================
+   WORLD MAP — centerpiece interactive tool (click a country pin)
+   ========================================================================== */
+const mapPins = document.getElementById('mapPins');
+const mapResultPhrase = document.getElementById('mapResultPhrase');
+const mapNote = document.getElementById('mapNote');
+let mapVisited = new Set();
+
+MAP_COUNTRIES.forEach((c, i) => {
+  const pin = document.createElement('button');
+  pin.className = 'map-pin';
+  pin.style.left = c.left + '%';
+  pin.style.top = c.top + '%';
+  pin.dataset.idx = i;
+  pin.setAttribute('aria-label', c.name);
+  pin.innerHTML = '<span class="map-pin-dot">' + c.flag + '</span><span class="map-pin-label de">' + c.name + '</span>';
+  pin.addEventListener('click', () => selectMapPin(i, pin));
+  mapPins.appendChild(pin);
+});
+
+function selectMapPin(i, pin){
+  const c = MAP_COUNTRIES[i];
+  document.querySelectorAll('.map-pin').forEach(p => p.classList.remove('active'));
+  pin.classList.add('active');
+
+  mapResultPhrase.textContent = c.sentence;
+  mapResultPhrase.dataset.plain = c.sentence;
+  mapResultPhrase.setAttribute('aria-label', 'استمع لـ ' + c.sentence);
+  mapNote.innerHTML = '💬 ' + c.ar;
+  Speech.speak(c.sentence, {el: mapResultPhrase});
+
+  mapVisited.add(i);
+  if(mapVisited.size >= MAP_COUNTRIES.length) unlockBadge('cartographer');
+}
+mapResultPhrase.addEventListener('click', () => { if(mapResultPhrase.dataset.plain) Speech.speak(mapResultPhrase.dataset.plain, {el: mapResultPhrase}); });
+mapResultPhrase.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); mapResultPhrase.click(); } });
+
+/* ==========================================================================
+   INTRODUCE-YOURSELF TOOL — centerpiece interactive tool (4 chip rows)
+   ========================================================================== */
+const introNameRow = document.getElementById('introNameRow');
+const introCountryRow = document.getElementById('introCountryRow');
+const introLangRow = document.getElementById('introLangRow');
+const introJobRow = document.getElementById('introJobRow');
+const introResultPhrase = document.getElementById('introResultPhrase');
+const introNote = document.getElementById('introNote');
+
+let introState = { name: INTRO_NAMES[0], country: null, lang: null, job: null };
+let introVisited = new Set();
+
+function buildIntroRow(container, items, key, getLabel){
+  items.forEach((item, i) => {
+    const chip = document.createElement('button');
+    chip.className = 'acc-chip' + (i === 0 && key === 'name' ? ' active masc' : '');
+    chip.textContent = getLabel(item);
+    chip.addEventListener('click', () => {
+      introState[key] = item;
+      introVisited.add(key);
+      container.querySelectorAll('.acc-chip').forEach(c => c.classList.remove('active','masc'));
+      chip.classList.add('active','masc');
+      renderIntro();
+    });
+    container.appendChild(chip);
+  });
+}
+buildIntroRow(introNameRow, INTRO_NAMES, 'name', n => n.label);
+buildIntroRow(introCountryRow, INTRO_COUNTRIES, 'country', c => c.label);
+buildIntroRow(introLangRow, INTRO_LANGS, 'lang', l => l.label);
+buildIntroRow(introJobRow, INTRO_JOBS, 'job', j => j.label);
+
+function renderIntro(speak){
+  if(speak === undefined) speak = true;
+  const { name, country, lang, job } = introState;
+  const lines = [];
+  const plainLines = [];
+
+  lines.push('<span class="ar-verb de">Ich heiße ' + name.label + '.</span>');
+  plainLines.push('Ich heiße ' + name.label + '.');
+
+  if(country){
+    lines.push('<span class="ar-art de masc">Ich komme ' + country.phrase + '.</span>');
+    plainLines.push('Ich komme ' + country.phrase + '.');
+  }
+  if(lang){
+    lines.push('<span class="ar-noun de">Ich spreche ' + lang.phrase + '.</span>');
+    plainLines.push('Ich spreche ' + lang.phrase + '.');
+  }
+  if(job){
+    lines.push('<span class="ar-art de masc">Ich bin ' + job.phrase + ' von Beruf.</span>');
+    plainLines.push('Ich bin ' + job.phrase + ' von Beruf.');
+  }
+
+  introResultPhrase.innerHTML = lines.join(' ');
+  const plain = plainLines.join(' ');
+  introResultPhrase.dataset.plain = plain;
+  introResultPhrase.setAttribute('aria-label', 'استمع لـ ' + plain);
+  if(speak) Speech.speak(plain, {el: introResultPhrase});
+
+  introNote.textContent = introVisited.size < 4
+    ? 'اختر من الصفوف المتبقية أعلاه لإكمال فقرة التعريف.'
+    : 'فقرة تعريف كاملة! جرّب تركيبات أخرى بالنقر على خيارات مختلفة.';
+  if(introVisited.size >= 4) unlockBadge('introducer');
+}
+introResultPhrase.addEventListener('click', () => { if(introResultPhrase.dataset.plain) Speech.speak(introResultPhrase.dataset.plain, {el: introResultPhrase}); });
+introResultPhrase.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); introResultPhrase.click(); } });
+
+renderIntro(false);
+
+/* ==========================================================================
+   PRACTICAL — extra-notes accordion
+   ========================================================================== */
+const extraAccordion = document.getElementById('extraAccordion');
+EXTRA_NOTES.forEach((note, i) => {
+  const item = document.createElement('div');
+  item.className = 'accordion-item';
+  item.innerHTML = `
+    <button class="accordion-trigger" aria-expanded="false">
+      <span class="accordion-title"><span class="tag mono">${toAr(i+1)}</span>${note.q}</span>
+      <svg class="icon chevron"><use href="#i-chevron"/></svg>
+    </button>
+    <div class="accordion-panel"><div class="accordion-body">${note.body}</div></div>`;
+  const trigger = item.querySelector('.accordion-trigger');
+  trigger.addEventListener('click', () => {
+    item.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+  });
+  item.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  extraAccordion.appendChild(item);
+});
+
+/* ==========================================================================
+   DIALOGUE — chat bubbles
+   ========================================================================== */
+function buildDialogue(container, lines){
+  container.innerHTML = '';
+  const header = document.createElement('div');
+  header.className = 'dialogue-header';
+  const uniqueNames = [...new Set(lines.map(l => l.name))];
+  header.innerHTML = `
+    <div class="dialogue-speakers">
+      <span><span class="speaker-dot a"></span>${uniqueNames[0]}</span>
+      <span><span class="speaker-dot b"></span>${uniqueNames[1]}</span>
+    </div>
+    <button class="btn btn-primary btn-listen-all"><svg class="icon" style="width:16px;height:16px"><use href="#i-headphones"/></svg> استمع للحوار كاملًا</button>`;
+  container.appendChild(header);
+
+  const bubbleEls = [];
+  lines.forEach(line => {
+    const row = document.createElement('div');
+    row.className = 'chat-line ' + line.who;
+    const initials = line.name.split(' ').map(w=>w[0]).join('').slice(0,2);
+    row.innerHTML = `
+      <span class="chat-avatar">${initials}</span>
+      <div class="chat-bubble" tabindex="0" role="button" aria-label="استمع لـ ${line.de}">
+        <div class="chat-name">${line.name}</div>
+        <div class="chat-de">${line.de}</div>
+        <div class="chat-ar">${line.ar}</div>
+      </div>`;
+    const bubble = row.querySelector('.chat-bubble');
+    bubble.dataset.plain = line.de;
+    makeSpeakable(bubble, line.de);
+    bubbleEls.push(bubble);
+    container.appendChild(row);
+  });
+
+  const actionsWrap = document.createElement('div');
+  actionsWrap.className = 'dialogue-actions';
+  container.appendChild(actionsWrap);
+
+  header.querySelector('.btn-listen-all').addEventListener('click', () => {
+    const fullText = lines.map(l => l.de).join(' ');
+    Speech.speak(fullText, {wordEls: bubbleEls});
+  });
+}
+buildDialogue(document.getElementById('dlgInformal'), DIALOGUE_INFORMAL);
+buildDialogue(document.getElementById('dlgFormal'), DIALOGUE_FORMAL);
+
+document.querySelectorAll('.dialogue-tabs .cat-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.dialogue-tabs .cat-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.dialogue-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+/* ==========================================================================
+   MISTAKES LIST
+   ========================================================================== */
+const mistakesList = document.getElementById('mistakesList');
+MISTAKES.forEach(m => {
+  const card = document.createElement('div');
+  card.className = 'mistake-card';
+  card.innerHTML = `
+    <div class="mistake-side mistake-wrong">
+      <span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-x"/></svg> خطأ شائع</span>
+      <span class="mistake-sentence">${m.wrong}</span>
+    </div>
+    <div class="mistake-side mistake-right">
+      <span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg> الصحيح</span>
+      <span class="mistake-sentence">${m.right}</span>
+    </div>
+    <div class="mistake-note">${m.note}</div>`;
+  card.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  mistakesList.appendChild(card);
+});
+
+/* ==========================================================================
+   PRONUNCIATION TIPS
+   ========================================================================== */
+const tipsGrid = document.getElementById('tipsGrid');
+TIPS.forEach(t => {
+  const card = document.createElement('div');
+  card.className = 'info-card tip-card';
+  card.innerHTML = `
+    <span class="icon-chip"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+    <div>
+      <h3 style="margin-bottom:6px">${t.title}</h3>
+      <p>${t.body}</p>
+    </div>`;
+  card.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  tipsGrid.appendChild(card);
+});
+
+/* ==========================================================================
+   EXERCISES — state
+   ========================================================================== */
+const exState = { match: 0, mcq: 0, fill: 0, builder: 0, listen: 0 };
+const exTotals = { match: MATCH_PAIRS.length, mcq: MCQ.length, fill: FILL.length, builder: BUILDER.length, listen: 1 };
+const perfectFlags = { mcq: true, match: true, fill: true };
+
+function updateExerciseCounters(){
+  document.getElementById('countMatch').textContent = toAr(exState.match) + '/' + toAr(exTotals.match);
+  document.getElementById('countMcq').textContent = toAr(exState.mcq) + '/' + toAr(exTotals.mcq);
+  document.getElementById('countFill').textContent = toAr(exState.fill) + '/' + toAr(exTotals.fill);
+  document.getElementById('countBuilder').textContent = toAr(exState.builder) + '/' + toAr(exTotals.builder);
+  document.getElementById('countListen').textContent = toAr(exState.listen) + '/' + toAr(exTotals.listen);
+  const total = exTotals.match + exTotals.mcq + exTotals.fill + exTotals.builder + exTotals.listen;
+  const done = exState.match + exState.mcq + exState.fill + exState.builder + exState.listen;
+  const pct = Math.round((done/total)*100);
+  document.getElementById('scoreFill').style.width = pct + '%';
+  document.getElementById('scoreLabel').textContent = toAr(pct) + '٪';
+  if(pct === 100) unlockBadge('champion');
+  checkAnyPerfect();
+  updateProgress();
+}
+function checkAnyPerfect(){
+  if(exState.mcq === exTotals.mcq && perfectFlags.mcq) unlockBadge('sharp');
+  if(exState.match === exTotals.match) unlockBadge('sharp');
+  if(exState.fill === exTotals.fill && perfectFlags.fill) unlockBadge('sharp');
+}
+
+document.querySelectorAll('.exercise-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.exercise-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.exercise-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+/* --- MATCH (German word <-> Arabic meaning) --- */
+const panelMatch = document.getElementById('panelMatch');
+(function initMatch(){
+  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على كلمة من العمود الأيمن، ثم معناها الصحيح من العمود الأيسر.</div>
+    <div class="match-grid"><div class="match-col" id="matchLeft"></div><div class="match-col" id="matchRight"></div></div>`;
+  const left = document.getElementById('matchLeft');
+  const right = document.getElementById('matchRight');
+  const shuffledRight = [...MATCH_PAIRS].sort(() => Math.random() - 0.5);
+  let selectedLeft = null, selectedRight = null, matched = 0;
+
+  MATCH_PAIRS.forEach(p => {
+    const el = document.createElement('button');
+    el.className = 'match-item de';
+    el.textContent = p.de;
+    el.dataset.key = p.de;
+    el.addEventListener('click', () => {
+      if(el.classList.contains('matched')) return;
+      left.querySelectorAll('.match-item').forEach(i=>i.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedLeft = el;
+      tryMatch();
+    });
+    left.appendChild(el);
+  });
+  shuffledRight.forEach(p => {
+    const el = document.createElement('button');
+    el.className = 'match-item';
+    el.textContent = p.ar;
+    el.dataset.key = p.de;
+    el.addEventListener('click', () => {
+      if(el.classList.contains('matched')) return;
+      right.querySelectorAll('.match-item').forEach(i=>i.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedRight = el;
+      tryMatch();
+    });
+    right.appendChild(el);
+  });
+
+  function tryMatch(){
+    if(!selectedLeft || !selectedRight) return;
+    if(selectedLeft.dataset.key === selectedRight.dataset.key){
+      selectedLeft.classList.add('matched'); selectedRight.classList.add('matched');
+      selectedLeft.classList.remove('selected'); selectedRight.classList.remove('selected');
+      Speech.speak(selectedLeft.textContent, {});
+      matched++; exState.match = matched; updateExerciseCounters();
+      selectedLeft = null; selectedRight = null;
+    } else {
+      perfectFlags.match = false;
+      [selectedLeft, selectedRight].forEach(el => { el.classList.add('shake'); setTimeout(()=>el.classList.remove('shake','selected'), 400); });
+      setTimeout(()=>{ selectedLeft = null; selectedRight = null; }, 420);
+    }
+  }
+})();
+
+/* --- MCQ --- */
+const panelMcq = document.getElementById('panelMcq');
+MCQ.forEach((q) => {
+  const block = document.createElement('div');
+  block.className = 'q-block';
+  block.innerHTML = `<div class="q-prompt">${q.prompt}</div><div class="q-options"></div><div class="q-feedback"></div>`;
+  const optsWrap = block.querySelector('.q-options');
+  const feedback = block.querySelector('.q-feedback');
+  block.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  q.options.forEach(opt => {
+    const b = document.createElement('button');
+    const isGerman = /^[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß.,!?' ]*$/.test(opt);
+    b.className = 'opt-btn' + (isGerman ? ' de' : '');
+    b.textContent = opt;
+    b.addEventListener('click', () => {
+      const correct = opt === q.correct;
+      optsWrap.querySelectorAll('.opt-btn').forEach(o => o.disabled = true);
+      b.classList.add(correct ? 'correct' : 'wrong');
+      if(!correct){ perfectFlags.mcq = false; optsWrap.querySelectorAll('.opt-btn').forEach(o=>{ if(o.textContent===q.correct) o.classList.add('correct'); }); }
+      feedback.innerHTML = q.why;
+      feedback.classList.add('show');
+      feedback.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+      exState.mcq++;
+      updateExerciseCounters();
+    });
+    optsWrap.appendChild(b);
+  });
+  panelMcq.appendChild(block);
+});
+
+/* --- FILL (missing word, typed) --- */
+const panelFill = document.getElementById('panelFill');
+FILL.forEach(q => {
+  const block = document.createElement('div');
+  block.className = 'q-block';
+  block.innerHTML = `
+    <div class="fill-word-display">${q.display}</div>
+    <div class="fill-row">
+      <input type="text" placeholder="؟" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل الجزء الناقص">
+      <button class="fill-check">تحقّق</button>
+      <span class="fill-result"></span>
+      <button class="icon-btn" data-speak-word="${q.full}" aria-label="استمع للصيغة الكاملة"><svg class="icon"><use href="#i-speaker"/></svg></button>
+    </div>
+    <div class="q-feedback">💡 ${q.hint}</div>`;
+  const input = block.querySelector('input');
+  const result = block.querySelector('.fill-result');
+  const feedback = block.querySelector('.q-feedback');
+  const check = block.querySelector('.fill-check');
+  const speakBtn = block.querySelector('[data-speak-word]');
+  speakBtn.addEventListener('click', () => Speech.speak(q.full, {el: speakBtn}));
+  let answered = false;
+  function norm(v){ return v.trim().toLowerCase(); }
+  function doCheck(){
+    if(answered) return;
+    const correct = norm(input.value) === norm(q.correct);
+    answered = true;
+    input.disabled = true; check.disabled = true;
+    if(correct){
+      result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--success)"><use href="#i-check"/></svg>';
+      input.style.borderColor = 'var(--success)';
+    } else {
+      result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--danger)"><use href="#i-x"/></svg>';
+      input.style.borderColor = 'var(--danger)';
+      perfectFlags.fill = false;
+      input.value = q.correct;
+    }
+    feedback.classList.add('show');
+    exState.fill++;
+    updateExerciseCounters();
+  }
+  check.addEventListener('click', doCheck);
+  input.addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); doCheck(); } });
+  panelFill.appendChild(block);
+});
+
+/* --- BUILDER (arrange words to form the correct sentence) --- */
+const panelBuilder = document.getElementById('panelBuilder');
+BUILDER.forEach((q) => {
+  const block = document.createElement('div');
+  block.className = 'q-block';
+  const words = q.words;
+  const shuffled = words.map((w,i)=>({w,i})).sort(() => Math.random() - 0.5);
+  block.innerHTML = `
+    <div class="q-prompt">رتّب الكلمات لتكوين الجملة الصحيحة (المعنى: ${q.ar})</div>
+    <div class="builder-answer"></div>
+    <div class="builder-pool"></div>
+    <div class="builder-actions">
+      <button class="btn btn-ghost btn-reset" style="padding:8px 16px;font-size:.85rem">إعادة الترتيب</button>
+      <button class="btn btn-primary btn-check" style="padding:8px 16px;font-size:.85rem">تحقّق</button>
+    </div>
+    <div class="q-feedback"></div>`;
+  const answerWrap = block.querySelector('.builder-answer');
+  const poolWrap = block.querySelector('.builder-pool');
+  const feedback = block.querySelector('.q-feedback');
+  let answer = [];
+
+  function renderPool(){
+    poolWrap.innerHTML = '';
+    shuffled.forEach((item) => {
+      const chip = document.createElement('button');
+      chip.className = 'chip-word de';
+      chip.textContent = item.w;
+      chip.dataset.idx = item.i;
+      if(answer.some(a => a.idx === item.i)) chip.classList.add('used');
+      chip.addEventListener('click', () => {
+        if(chip.classList.contains('used')) return;
+        answer.push({idx: item.i, w: item.w});
+        renderAll();
+      });
+      poolWrap.appendChild(chip);
+    });
+  }
+  function renderAnswer(){
+    answerWrap.innerHTML = '';
+    if(!answer.length){
+      answerWrap.innerHTML = '<span style="color:var(--ink-faint);font-size:.85rem">انقر على الكلمات أدناه بالترتيب الصحيح…</span>';
+    }
+    answer.forEach((a, ai) => {
+      const chip = document.createElement('button');
+      chip.className = 'chip-word de';
+      chip.style.background = 'var(--teal-soft)';
+      chip.style.borderColor = 'var(--teal)';
+      chip.textContent = a.w;
+      chip.addEventListener('click', () => { answer.splice(ai,1); renderAll(); });
+      answerWrap.appendChild(chip);
+    });
+  }
+  function renderAll(){ renderPool(); renderAnswer(); }
+  renderAll();
+
+  block.querySelector('.btn-reset').addEventListener('click', () => { answer = []; feedback.classList.remove('show'); renderAll(); });
+  block.querySelector('.btn-check').addEventListener('click', function(){
+    const built = answer.map(a=>a.w).join(' ');
+    const target = words.join(' ');
+    const isCorrect = built === target;
+    feedback.textContent = isCorrect ? '✔ صحيح تمامًا! الجملة: ' + target + '.' : '✘ ليس تمامًا. الجملة الصحيحة: ' + target + '.';
+    feedback.classList.add('show');
+    Speech.speak(target, {});
+    if(!block.dataset.counted){ block.dataset.counted = '1'; exState.builder++; updateExerciseCounters(); }
+  });
+  panelBuilder.appendChild(block);
+});
+
+/* --- LISTENING (full informal dialogue read-aloud + QR placeholder) --- */
+const panelListen = document.getElementById('panelListen');
+(function initListen(){
+  panelListen.innerHTML = `
+    <div class="q-prompt">استمع إلى حوار المطبخ كاملًا، وتابع الفقاعة المضاءة أثناء النطق. انقر على أي عبارة بمفردها لإعادة سماعها.</div>
+    <button class="btn btn-primary" id="listenAllBtn"><svg class="icon" style="width:16px;height:16px"><use href="#i-headphones"/></svg> استمع للحوار كاملًا</button>
+    <div class="listen-alphabet-row" id="listenRow"></div>
+    <div class="qr-placeholder">
+      <div class="qr-box"><svg class="icon" style="width:48px;height:48px"><use href="#i-qr"/></svg></div>
+      <p style="font-weight:600">تمرين استماع إضافي</p>
+      <p style="font-size:.88rem;color:var(--ink-soft);max-width:46ch">امسح رمز الاستجابة السريعة (QR) هنا للوصول إلى تسجيلات صوتية إضافية لهذا الدرس — سيُضاف الرمز قريبًا.</p>
+      <span class="qr-note">QR CODE — سيُضاف لاحقًا</span>
+    </div>`;
+  const row = document.getElementById('listenRow');
+  const chipEls = [];
+  DIALOGUE_INFORMAL.forEach(line => {
+    const chip = document.createElement('button');
+    chip.className = 'listen-chip de';
+    chip.textContent = line.de;
+    chip.dataset.plain = line.de;
+    chip.addEventListener('click', () => Speech.speak(line.de, {el: chip}));
+    row.appendChild(chip);
+    chipEls.push(chip);
+  });
+  let listenDone = false;
+  document.getElementById('listenAllBtn').addEventListener('click', () => {
+    const text = DIALOGUE_INFORMAL.map(l => l.de).join(' ');
+    Speech.speak(text, {wordEls: chipEls});
+    if(!listenDone){ listenDone = true; exState.listen = 1; updateExerciseCounters(); }
+  });
+})();
+
+/* ==========================================================================
+   BADGES / ACHIEVEMENTS
+   ========================================================================== */
+let unlockedBadges = {};
+try{ unlockedBadges = JSON.parse(localStorage.getItem('lesson15-nationalitaeten-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
+
+const badgesRow = document.getElementById('badgesRow');
+BADGES.forEach(b => {
+  const el = document.createElement('div');
+  el.className = 'badge' + (unlockedBadges[b.id] ? ' unlocked' : '');
+  el.id = 'badge-' + b.id;
+  el.innerHTML = `<div class="badge-icon"><svg class="icon" style="stroke:#fff;width:22px;height:22px"><use href="#${b.icon}"/></svg></div><div class="badge-name">${b.name}</div>`;
+  badgesRow.appendChild(el);
+});
+function unlockBadge(id){
+  if(unlockedBadges[id]) return;
+  unlockedBadges[id] = true;
+  try{ localStorage.setItem('lesson15-nationalitaeten-badges', JSON.stringify(unlockedBadges)); }catch(e){}
+  const el = document.getElementById('badge-' + id);
+  if(el){ el.classList.add('unlocked','pop'); setTimeout(()=>el.classList.remove('pop'), 650); }
+  const badge = BADGES.find(b=>b.id===id);
+  if(badge) showToast('🎉 إنجاز جديد: ' + badge.name);
+}
+
+function showToast(msg){
+  const wrap = document.getElementById('toastWrap');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.textContent = msg;
+  wrap.appendChild(t);
+  requestAnimationFrame(()=>t.classList.add('show'));
+  setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.remove(), 400); }, 3200);
+}
+
+/* ==========================================================================
+   SCROLL REVEAL
+   ========================================================================== */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('is-visible'); } });
+}, {threshold: .15});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ==========================================================================
+   SECTION NAV: active-link highlight + click-to-scroll + progress
+   ========================================================================== */
+const sections = ['#hero','#intro','#countries-vocab','#languages-vocab','#w-recap','#aus-sprechen','#world-map','#intro-tool','#practical','#dialogue','#mistakes','#pronunciation','#exercises','#summary'].map(s => document.querySelector(s)).filter(Boolean);
+const visitedSections = new Set();
+const navLinks = document.querySelectorAll('.nav-link');
+
+function setActiveNav(id){
+  navLinks.forEach(l => l.classList.toggle('active', l.dataset.target === id));
+}
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      setActiveNav('#' + entry.target.id);
+      visitedSections.add(entry.target.id);
+      if(visitedSections.size === sections.length) unlockBadge('explorer');
+      updateProgress();
+    }
+  });
+}, {rootMargin: '-40% 0px -50% 0px'});
+sections.forEach(s => sectionObserver.observe(s));
+
+document.querySelectorAll('[data-target], [data-scroll]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.target || btn.dataset.scroll;
+    const el = document.querySelector(target);
+    if(el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
+    document.getElementById('mainNav').classList.remove('open');
+    document.getElementById('navToggle').setAttribute('aria-expanded','false');
+  });
+});
+
+function updateProgress(){
+  const sectionWeight = 0.4, exerciseWeight = 0.6;
+  const sectionPct = visitedSections.size / sections.length;
+  const exTotal = exTotals.match + exTotals.mcq + exTotals.fill + exTotals.builder + exTotals.listen;
+  const exDone = exState.match + exState.mcq + exState.fill + exState.builder + exState.listen;
+  const exPct = exTotal ? exDone / exTotal : 0;
+  const overall = Math.round((sectionPct*sectionWeight + exPct*exerciseWeight) * 100);
+  const circumference = 113;
+  const offset = circumference - (overall/100)*circumference;
+  document.getElementById('progressRingBar').style.strokeDashoffset = offset;
+  document.getElementById('progressRingLabel').textContent = toAr(overall) + '٪';
+}
+updateProgress();
+updateExerciseCounters();
+
+/* ==========================================================================
+   MOBILE NAV TOGGLE
+   ========================================================================== */
+const navToggle = document.getElementById('navToggle');
+const mainNav = document.getElementById('mainNav');
+navToggle.addEventListener('click', () => {
+  const open = mainNav.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(open));
+});
+
+/* ==========================================================================
+   SEARCH
+   ========================================================================== */
+function runSearch(query){
+  if(!query || query.trim().length < 2) return;
+  const q = query.trim().toLowerCase();
+  document.querySelectorAll('mark.hl').forEach(m => { m.replaceWith(document.createTextNode(m.textContent)); });
+  const walker = document.createTreeWalker(document.getElementById('mainContent'), NodeFilter.SHOW_TEXT, null);
+  let found = null;
+  const nodes = [];
+  let n;
+  while(n = walker.nextNode()){ nodes.push(n); }
+  for(const node of nodes){
+    const text = node.nodeValue;
+    const idx = text.toLowerCase().indexOf(q);
+    if(idx > -1 && node.parentElement && !node.parentElement.closest('script,style')){
+      const before = text.slice(0, idx), match = text.slice(idx, idx+q.length), after = text.slice(idx+q.length);
+      const mark = document.createElement('mark');
+      mark.className = 'hl';
+      mark.textContent = match;
+      const frag = document.createDocumentFragment();
+      frag.appendChild(document.createTextNode(before));
+      frag.appendChild(mark);
+      frag.appendChild(document.createTextNode(after));
+      node.parentElement.replaceChild(frag, node);
+      if(!found) found = mark;
+    }
+  }
+  if(found){ found.scrollIntoView({behavior:'smooth', block:'center'}); }
+  else{ showToast('لم يتم العثور على «' + query + '» في هذا الدرس'); }
+}
+document.getElementById('searchToggle').addEventListener('click', () => {
+  document.getElementById('searchBoxDesktop').classList.toggle('open');
+  document.getElementById('searchInputDesktop').focus();
+});
+['searchInputDesktop','searchInputMobile'].forEach(id => {
+  document.getElementById(id).addEventListener('keydown', e => { if(e.key === 'Enter'){ runSearch(e.target.value); } });
+});
+
+/* ==========================================================================
+   FULLSCREEN
+   ========================================================================== */
+document.getElementById('fullscreenToggle').addEventListener('click', () => {
+  if(!document.fullscreenElement){ document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+  else{ document.exitFullscreen && document.exitFullscreen(); }
+});
+document.addEventListener('fullscreenchange', () => {
+  document.getElementById('fsIcon').innerHTML = '<use href="#' + (document.fullscreenElement ? 'i-compress' : 'i-expand') + '"/>';
+});
+
+/* ==========================================================================
+   PRINT
+   ========================================================================== */
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+/* ==========================================================================
+   BACK TO TOP
+   ========================================================================== */
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 640);
+}, {passive: true});
+backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a1-lesson-15-laender-sprachen" data-category="a1" data-title="الجنسيات واللغات — Länder, Sprachen &amp; Herkunft" data-root="../../" defer></script>
+</body>
+</html>

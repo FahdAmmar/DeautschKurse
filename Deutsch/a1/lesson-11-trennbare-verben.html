@@ -1,0 +1,2454 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الدليل الشامل · الأفعال المنفصلة — Trennbare Verben | ألمانية A1</title>
+<meta name="description" content="الدرس الحادي عشر في مسار الألمانية A1: قاعدة الأفعال المنفصلة (trennbare Verben) — كيف تنفصل البادئة وتنتقل إلى نهاية الجملة، أفعال الروتين اليومي الأساسية، أداة تفاعلية لتفكيك الجملة، بناء يوم كامل بالأفعال المنفصلة، حوارا استخدام، وأخطاء شائعة لمتحدثي العربية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   0. RESET + BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+body { margin: 0; overflow-x: hidden; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+a { color: inherit; }
+
+/* ==========================================================================
+   1. DESIGN TOKENS (same course identity as Lessons 1–10)
+   ========================================================================== */
+:root {
+  color-scheme: light;
+  --bg: #F5F7F9;
+  --bg-alt: #ECEFF3;
+  --surface: #FFFFFF;
+  --surface-glass: rgba(255,255,255,.66);
+  --surface-glass-border: rgba(255,255,255,.5);
+  --ink: #17212B;
+  --ink-soft: #4B5766;
+  --ink-faint: #85909C;
+  --border: #E1E5EA;
+  --border-strong: #CBD2DA;
+
+  --teal: #146770;
+  --teal-ink: #0D4A51;
+  --teal-soft: #E1EFF0;
+  --teal-glow: rgba(20,103,112,.22);
+
+  --amber: #B87A1F;
+  --amber-ink: #8C5C15;
+  --amber-soft: #FBF0DD;
+  --amber-glow: rgba(184,122,31,.22);
+
+  --plum: #7A4CA0;
+  --plum-ink: #5B3679;
+  --plum-soft: #F1E9F7;
+  --plum-glow: rgba(122,76,160,.2);
+
+  --success: #2E7D4F;
+  --success-soft: #E4F5EA;
+  --danger: #B84A38;
+  --danger-soft: #FBEAE6;
+
+  --shadow-sm: 0 1px 2px rgba(23,33,43,.06), 0 1px 1px rgba(23,33,43,.04);
+  --shadow-md: 0 8px 24px -8px rgba(23,33,43,.16), 0 2px 8px -2px rgba(23,33,43,.08);
+  --shadow-lg: 0 24px 60px -20px rgba(23,33,43,.28), 0 8px 20px -8px rgba(23,33,43,.12);
+  --shadow-glow-teal: 0 8px 30px -6px var(--teal-glow);
+  --shadow-glow-amber: 0 8px 30px -6px var(--amber-glow);
+
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+
+  --font-ar-display: 'Reem Kufi', 'Segoe UI', sans-serif;
+  --font-ar-body: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  --font-de-display: 'Fraunces', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --nav-h: 72px;
+  --ease: cubic-bezier(.22,.9,.32,1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #101720;
+  --bg-alt: #0B1119;
+  --surface: #1A2430;
+  --surface-glass: rgba(26,36,48,.62);
+  --surface-glass-border: rgba(255,255,255,.08);
+  --ink: #ECF1F5;
+  --ink-soft: #A9B4C0;
+  --ink-faint: #6B7684;
+  --border: #2A3644;
+  --border-strong: #384454;
+
+  --teal: #4FC2CC;
+  --teal-ink: #8CE0E6;
+  --teal-soft: rgba(79,194,204,.13);
+  --teal-glow: rgba(79,194,204,.28);
+
+  --amber: #F0B255;
+  --amber-ink: #F7CD8C;
+  --amber-soft: rgba(240,178,85,.13);
+  --amber-glow: rgba(240,178,85,.24);
+
+  --plum: #B48CD6;
+  --plum-ink: #D6BCEC;
+  --plum-soft: rgba(180,140,214,.16);
+  --plum-glow: rgba(180,140,214,.26);
+
+  --success: #5FCB8C;
+  --success-soft: rgba(95,203,140,.14);
+  --danger: #E2836E;
+  --danger-soft: rgba(226,131,110,.14);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3);
+  --shadow-md: 0 8px 24px -8px rgba(0,0,0,.5);
+  --shadow-lg: 0 24px 60px -20px rgba(0,0,0,.6);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ar-body);
+  line-height: 1.75;
+  transition: background-color .5s var(--ease), color .5s var(--ease);
+}
+
+.de, [lang="de"] { font-family: var(--font-de-display); direction: ltr; unicode-bidi: isolate; }
+.mono { font-family: var(--font-mono); direction: ltr; unicode-bidi: isolate; }
+
+h1, h2, h3 { font-family: var(--font-ar-display); font-weight: 700; line-height: 1.3; margin: 0; }
+p { margin: 0; }
+
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+::selection { background: var(--teal); color: #fff; }
+
+.rail-rule { height: 2px; background-image: repeating-linear-gradient(to left, var(--border-strong) 0 10px, transparent 10px 18px); margin: 0; border: none; }
+
+/* ==========================================================================
+   2. LAYOUT SHELL
+   ========================================================================== */
+.container { max-width: 1120px; margin-inline: auto; padding-inline: clamp(18px, 4vw, 40px); }
+.section { padding-block: clamp(56px, 8vw, 108px); position: relative; }
+.section-head { max-width: 720px; margin-bottom: clamp(28px, 5vw, 48px); }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: .78rem; letter-spacing: .06em;
+  color: var(--teal); background: var(--teal-soft);
+  padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
+}
+.eyebrow.plum { color: var(--plum); background: var(--plum-soft); }
+.eyebrow.amber { color: var(--amber-ink); background: var(--amber-soft); }
+.section-title { font-size: clamp(1.5rem, 3.6vw, 2.35rem); }
+.section-sub { color: var(--ink-soft); font-size: clamp(.98rem, 1.6vw, 1.1rem); margin-top: 12px; max-width: 62ch; }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(1){transition-delay:.03s} .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.09s}
+.reveal-stagger.is-visible > *:nth-child(3){transition-delay:.15s} .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.21s}
+.reveal-stagger.is-visible > *:nth-child(5){transition-delay:.27s} .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.33s}
+.reveal-stagger.is-visible > *:nth-child(7){transition-delay:.39s} .reveal-stagger.is-visible > *:nth-child(8){transition-delay:.45s}
+
+/* ==========================================================================
+   3. HEADER / NAV
+   ========================================================================== */
+.site-header {
+  position: sticky; top: 0; z-index: 100; height: var(--nav-h);
+  display: flex; align-items: center;
+  background: var(--surface-glass); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--surface-glass-border);
+  transition: background-color .5s var(--ease), border-color .5s var(--ease);
+}
+.header-inner { display: flex; align-items: center; gap: 18px; width: 100%; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; white-space: nowrap; }
+.brand-mark {
+  width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0;
+  background: linear-gradient(155deg, var(--teal) 0%, var(--teal-ink) 100%);
+  display: flex; align-items: center; justify-content: center; color: #fff;
+  box-shadow: var(--shadow-glow-teal);
+}
+.brand-text { font-family: var(--font-ar-display); font-size: 1.05rem; }
+.brand-text small { display: block; font-family: var(--font-ar-body); font-weight: 400; font-size: .68rem; color: var(--ink-faint); }
+
+.progress-ring-wrap { position: relative; width: 44px; height: 44px; flex-shrink: 0; }
+.progress-ring-wrap svg { transform: rotate(-90deg); }
+.progress-ring-track { fill: none; stroke: var(--border); stroke-width: 4; }
+.progress-ring-bar { fill: none; stroke: var(--teal); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset .6s var(--ease); }
+.progress-ring-label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: .62rem; font-weight: 600; }
+
+.main-nav { display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; flex: 1; -webkit-overflow-scrolling: touch; }
+.main-nav::-webkit-scrollbar { display: none; }
+.nav-link {
+  flex-shrink: 0; padding: 8px 14px; border-radius: 999px; font-size: .88rem; font-weight: 500;
+  color: var(--ink-soft); background: transparent; border: 1px solid transparent; cursor: pointer;
+  transition: background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+}
+.nav-link:hover { background: var(--bg-alt); color: var(--ink); }
+.nav-link.active { background: var(--teal-soft); color: var(--teal); border-color: transparent; }
+
+.header-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.icon-btn {
+  width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--ink-soft); display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: transform .2s var(--ease), background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.icon-btn:hover { color: var(--teal); border-color: var(--teal); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.icon-btn:active { transform: translateY(0) scale(.94); }
+.icon-btn.active { color: var(--teal); border-color: var(--teal); background: var(--teal-soft); }
+.icon-btn svg { width: 19px; height: 19px; }
+.icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+
+.nav-toggle { display: none; }
+.search-box { position: relative; display: none; }
+.search-box input {
+  width: 0; opacity: 0; padding: 0; border: none; background: var(--surface);
+  color: var(--ink); border-radius: 12px; transition: width .3s var(--ease), opacity .3s var(--ease), padding .3s var(--ease);
+  font-family: var(--font-ar-body); font-size: .88rem;
+}
+.search-box.open input { width: 190px; opacity: 1; padding: 9px 14px; border: 1px solid var(--border); }
+.search-box.open { display: flex; }
+@media (min-width: 861px){ .search-box { display: flex; align-items: center; } }
+
+@media (max-width: 860px) {
+  .main-nav { position: fixed; inset-inline: 0; top: var(--nav-h); background: var(--surface); flex-direction: column; align-items: stretch;
+    padding: 10px 16px 20px; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md);
+    transform: translateY(-12px); opacity: 0; pointer-events: none; transition: transform .3s var(--ease), opacity .3s var(--ease); max-height: 70vh; overflow-y: auto; }
+  .main-nav.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .nav-link { text-align: center; padding: 12px; }
+  .nav-toggle { display: flex; }
+  .search-box.mobile { display: flex; width: 100%; margin-top: 8px; }
+  .search-box.mobile input { width: 100%; opacity: 1; padding: 10px 14px; border: 1px solid var(--border); }
+}
+
+/* ==========================================================================
+   4. HERO
+   ========================================================================== */
+.hero { position: relative; padding-block: clamp(48px, 9vw, 96px) clamp(64px, 9vw, 110px); overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; inset: -20% -10% auto -10%; height: 620px; z-index: -2;
+  background:
+    radial-gradient(560px 360px at 15% 20%, var(--teal-glow), transparent 70%),
+    radial-gradient(520px 340px at 85% 10%, var(--amber-glow), transparent 70%);
+  filter: blur(10px);
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5;
+  background-image: repeating-linear-gradient(to left, var(--border) 0 2px, transparent 2px 26px);
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px, 5vw, 56px); align-items: center; }
+@media (max-width: 940px){ .hero-grid { grid-template-columns: 1fr; } }
+
+.level-badge {
+  display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: .82rem;
+  background: var(--surface); border: 1px solid var(--border); padding: 7px 8px 7px 16px; border-radius: 999px;
+  box-shadow: var(--shadow-sm); margin-bottom: 22px;
+}
+.level-badge b { background: var(--teal); color: #fff; padding: 3px 11px; border-radius: 999px; font-weight: 600; }
+
+.hero-title { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.01em; }
+.hero-title .de { color: var(--teal); font-style: italic; font-weight: 500; }
+.hero-lead { margin-top: 20px; font-size: clamp(1.02rem, 1.7vw, 1.2rem); color: var(--ink-soft); max-width: 56ch; }
+
+.hero-ctas { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 9px; padding: 13px 24px; border-radius: 14px;
+  font-weight: 600; font-size: .96rem; cursor: pointer; border: 1px solid transparent;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), background-color .25s var(--ease), border-color .25s var(--ease);
+}
+.btn:active { transform: scale(.97); }
+.btn-primary { background: linear-gradient(155deg, var(--teal) 0%, var(--teal-ink) 100%); color: #fff; box-shadow: var(--shadow-glow-teal); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 34px -8px var(--teal-glow); }
+.btn-ghost { background: var(--surface); color: var(--ink); border-color: var(--border); }
+.btn-ghost:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-3px); }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
+.btn:disabled:hover { transform: none; box-shadow: none; }
+
+/* --- hero illustration --- */
+.hero-illustration { position: relative; }
+.hero-illo-svg { width: 100%; height: auto; }
+.floaty { animation: floaty 5s ease-in-out infinite; }
+.floaty.d2 { animation-delay: -1.4s; }
+.floaty.d3 { animation-delay: -2.8s; }
+@keyframes floaty { 0%,100%{ transform: translateY(0px); } 50%{ transform: translateY(-10px); } }
+.steam-wisp { animation: steam 3.4s ease-in-out infinite; transform-origin: bottom center; }
+.steam-wisp.s2 { animation-delay: -1.7s; }
+@keyframes steam { 0%,100%{ opacity:.35; transform: translateY(0) scaleY(1);} 50%{ opacity:.75; transform: translateY(-6px) scaleY(1.08);} }
+.flight-path { stroke-dasharray: 6 7; animation: flowDash 1.6s linear infinite; }
+@keyframes flowDash { to { stroke-dashoffset: -26; } }
+
+/* --- showcase-card: signature 3D bracket-style card --- */
+.showcase-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg);
+  padding: clamp(20px, 3vw, 30px); box-shadow: var(--shadow-lg);
+  transform: perspective(900px) rotateY(-4deg) rotateX(2deg);
+  transition: transform .5s var(--ease);
+}
+.showcase-card:hover { transform: perspective(900px) rotateY(0deg) rotateX(0deg); }
+.showcase-label { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: .74rem; color: var(--ink-faint); margin-bottom: 16px; }
+.arrow-frame {
+  display: inline-flex; flex-wrap: wrap; align-items: center; gap: 12px 16px;
+  border: 2px dashed var(--border-strong); border-radius: 16px; padding: 14px 22px; position: relative;
+  width: 100%; justify-content: center;
+}
+.arrow-frame::before { content: "⌐"; position: absolute; top: -13px; right: 10px; font-family: var(--font-mono); font-size: .7rem; color: var(--ink-faint); background: var(--surface); padding: 0 6px; }
+.k-word { cursor: pointer; border-radius: 8px; padding: 2px 6px; transition: background-color .2s, color .2s; }
+.k-word:hover { background: var(--bg-alt); }
+.k-word.speaking { background: var(--teal); color: #fff; }
+.k-phrase-big { background: var(--teal); color: #fff; border-radius: 12px; padding: 8px 20px; font-weight: 700; font-size: clamp(1.3rem, 3vw, 1.7rem); }
+.k-word-result { background: var(--amber); color: #2b1c05; border-radius: 10px; padding: 6px 16px; font-weight: 600; font-size: clamp(1.1rem, 2.2vw, 1.35rem); }
+.k-arrow { color: var(--ink-faint); font-size: 1.4rem; }
+.showcase-translation { margin-top: 14px; font-family: var(--font-ar-body); color: var(--ink-soft); font-size: .92rem; padding-top: 14px; border-top: 1px dashed var(--border); text-align: center; }
+.showcase-speak-all { margin-top: 14px; }
+
+/* ==========================================================================
+   5. GENERIC CARDS / GRIDS
+   ========================================================================== */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 760px){ .grid-2 { grid-template-columns: 1fr; } }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 940px){ .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px){ .grid-3 { grid-template-columns: 1fr; } }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 940px){ .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px){ .grid-4 { grid-template-columns: 1fr; } }
+
+.info-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+  padding: 22px; box-shadow: var(--shadow-sm); transition: box-shadow .3s var(--ease), transform .3s var(--ease), border-color .3s var(--ease);
+}
+.info-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--border-strong); }
+.info-card h3 { font-size: 1.08rem; margin-bottom: 10px; display: flex; align-items: center; gap: 9px; }
+.info-card h3 .icon-chip { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.info-card p, .info-card li { color: var(--ink-soft); font-size: .95rem; }
+
+.chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: .78rem; padding: 4px 11px; border-radius: 999px; }
+.chip-teal { background: var(--teal-soft); color: var(--teal-ink); }
+.chip-amber { background: var(--amber-soft); color: var(--amber-ink); }
+.chip-plum { background: var(--plum-soft); color: var(--plum-ink); }
+
+/* ==========================================================================
+   5b. LEARNING PATHWAY TIMELINE + STAT CARDS
+   ========================================================================== */
+.mini-timeline { display: flex; align-items: flex-start; justify-content: space-between; gap: 4px; padding: 30px clamp(6px, 3vw, 26px) 6px; overflow-x: auto; }
+.mt-item { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 96px; flex: 1; position: relative; }
+.mt-item:not(:last-child)::after { content:""; position: absolute; top: 9px; right: -50%; width: 100%; height: 2px; background: repeating-linear-gradient(to left, var(--border-strong) 0 6px, transparent 6px 11px); z-index: 0; }
+.mt-top { font-size: .78rem; color: var(--ink-soft); margin-bottom: 8px; min-height: 18px; }
+.mt-dot { width: 20px; height: 20px; border-radius: 50%; border: 3px solid var(--border-strong); background: var(--surface); z-index: 1; display:flex; align-items:center; justify-content:center; font-size:.6rem; }
+.mt-dot.now { border-color: var(--teal); background: var(--teal); box-shadow: var(--shadow-glow-teal); }
+.mt-dot.done { border-color: var(--amber); background: var(--amber-soft); }
+.mt-bottom { margin-top: 8px; font-size: .84rem; font-weight: 600; }
+.mt-bottom.hl { color: var(--teal); }
+
+.stat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 620px){ .stat-cards { grid-template-columns: 1fr; } }
+.stat-card { border-radius: var(--r-md); padding: 26px 20px; text-align: center; }
+.stat-card.teal { background: var(--teal-soft); border: 1px solid var(--teal); }
+.stat-card.amber { background: var(--amber-soft); border: 1px solid var(--amber); }
+.stat-card .stat-pct { font-family: var(--font-mono); font-size: 2.6rem; font-weight: 700; }
+.stat-card.teal .stat-pct { color: var(--teal-ink); }
+.stat-card.amber .stat-pct { color: var(--amber-ink); }
+.stat-card .stat-desc { font-size: .87rem; color: var(--ink-soft); margin-top: 6px; }
+
+/* ==========================================================================
+   6. VOCAB — flip cards (reused generic component)
+   ========================================================================== */
+.vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px; }
+.flip-card { perspective: 1200px; height: 190px; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; cursor: pointer; transform-style: preserve-3d; transition: transform .65s cubic-bezier(.4,.2,.2,1); border-radius: var(--r-md); }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: var(--r-md); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; box-shadow: var(--shadow-sm); }
+.flip-front { background: linear-gradient(160deg, var(--surface) 0%, var(--bg-alt) 100%); }
+.flip-front .de { font-size: 1.5rem; font-weight: 700; }
+.flip-front .aux-tag { position: absolute; top: 10px; left: 10px; }
+.flip-back { background: var(--plum); color: #fff; transform: rotateY(180deg); gap: 6px; }
+.flip-back .partizip { font-family: var(--font-de-display); font-size: 1.25rem; font-weight: 600; }
+.flip-back .ipa { font-family: var(--font-mono); font-size: .78rem; opacity: .85; }
+.flip-back .meaning { font-size: .85rem; opacity: .92; margin-top: 2px; text-align:center; }
+.flip-hint { font-family: var(--font-mono); font-size: .66rem; color: var(--ink-faint); margin-top: 8px; }
+.speak-dot { position: absolute; bottom: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--teal); transition: transform .2s, background-color .2s; z-index:2; }
+.speak-dot:hover { transform: scale(1.1); background: var(--teal-soft); }
+.speak-dot .icon { width: 15px; height: 15px; }
+.speak-dot.speaking { animation: pulse-ring 1s var(--ease) infinite; }
+@keyframes pulse-ring { 0%{box-shadow:0 0 0 0 var(--teal-glow)} 70%{box-shadow:0 0 0 10px transparent} 100%{box-shadow:0 0 0 0 transparent} }
+@keyframes fadeSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.flip-back .speak-dot { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.3); color: #fff; }
+.plural-only-tag { position: absolute; top: 10px; right: 10px; }
+
+/* ==========================================================================
+   7. DAILY RHYTHM — compact timeline cards
+   ========================================================================== */
+.meals-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 760px){ .meals-row { grid-template-columns: 1fr; } }
+.meal-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 22px; text-align: center; cursor: pointer; box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.meal-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.meal-card .meal-time { font-family: var(--font-mono); font-size: .74rem; color: var(--ink-faint); }
+.meal-card .meal-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.3rem; margin-top: 8px; }
+.meal-card .meal-ar { font-size: .88rem; color: var(--ink-soft); margin-top: 6px; }
+.meal-card .icon-chip { margin: 0 auto 10px; }
+
+/* ==========================================================================
+   8. VERB SPLITTER — centerpiece interactive component
+   ========================================================================== */
+.acc-shell {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl);
+  box-shadow: var(--shadow-lg); padding: clamp(22px, 4vw, 40px); position: relative; overflow: hidden;
+}
+.acc-shell::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .5;
+  background: radial-gradient(420px 220px at 90% -10%, var(--plum-glow), transparent 70%), radial-gradient(420px 220px at 5% 110%, var(--teal-glow), transparent 70%);
+}
+.acc-picker-label { font-size: .9rem; font-weight: 700; margin-bottom: 10px; color: var(--ink-soft); }
+.acc-chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.acc-chip {
+  padding: 10px 17px; border-radius: 11px; border: 1.5px solid var(--border-strong); background: var(--bg-alt);
+  cursor: pointer; font-family: var(--font-de-display); font-weight: 600; font-size: 1rem; transition: all .2s var(--ease);
+}
+.acc-chip:hover { border-color: var(--teal); transform: translateY(-2px); }
+.acc-chip.active { color: #fff; box-shadow: var(--shadow-glow-teal); }
+.acc-chip.active.masc { background: var(--teal); border-color: var(--teal); }
+.acc-chip.active.fem { background: var(--plum); border-color: var(--plum); }
+.acc-chip.active.neut { background: var(--amber); border-color: var(--amber); color: #2b1c05; box-shadow: var(--shadow-glow-amber); }
+.acc-chip .gender-tag { font-family: var(--font-mono); font-size: .66rem; opacity: .7; margin-inline-start: 4px; }
+
+.acc-result { margin-top: 30px; text-align: center; }
+.acc-result-phrase { display: inline-flex; flex-wrap: wrap; align-items: stretch; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-md); cursor: pointer; transition: transform .3s var(--ease); justify-content: center; }
+.acc-result-phrase:hover { transform: translateY(-3px); }
+.acc-result-phrase span { font-family: var(--font-de-display); font-weight: 700; font-size: clamp(1.1rem, 3.4vw, 1.7rem); padding: 14px 20px; }
+.acc-result-phrase .ar-verb { background: var(--ink); color: var(--bg); }
+.acc-result-phrase .ar-art { color: #fff; }
+.acc-result-phrase .ar-art.masc { background: var(--teal); }
+.acc-result-phrase .ar-art.fem { background: var(--plum); }
+.acc-result-phrase .ar-art.neut { background: var(--amber); color: #2b1c05; }
+.acc-result-phrase .ar-noun { background: var(--bg-alt); color: var(--ink); }
+.acc-note { margin-top: 18px; font-size: .9rem; color: var(--ink-soft); text-align: center; max-width: 62ch; margin-inline: auto; }
+.acc-note b { color: var(--ink); }
+.acc-table { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 26px; }
+@media (max-width: 620px){ .acc-table { grid-template-columns: 1fr; } }
+.acc-table-cell { background: var(--bg-alt); border-radius: var(--r-sm); padding: 12px; text-align: center; font-family: var(--font-mono); font-size: .82rem; }
+.acc-table-cell b { display: block; font-family: var(--font-de-display); font-size: 1rem; margin-top: 6px; font-weight: 600; }
+
+/* ==========================================================================
+   9. DAY BUILDER — centerpiece interactive component
+   ========================================================================== */
+.menu-board { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl); box-shadow: var(--shadow-lg); padding: clamp(20px, 4vw, 36px); }
+.menu-cat-label { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); margin: 18px 0 10px; }
+.menu-cat-label:first-child { margin-top: 0; }
+.menu-items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.menu-item-card {
+  background: var(--bg-alt); border: 1.5px solid var(--border-strong); border-radius: var(--r-md);
+  padding: 16px 12px; text-align: center; cursor: pointer; transition: all .2s var(--ease); position: relative;
+}
+.menu-item-card:hover { border-color: var(--teal); transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+.menu-item-card.selected { background: var(--teal-soft); border-color: var(--teal); box-shadow: var(--shadow-glow-teal); }
+.menu-item-card.selected::after { content:"✓"; position:absolute; top:6px; left:8px; color: var(--teal); font-weight:700; }
+.menu-item-card .mi-de { font-family: var(--font-de-display); font-weight: 700; font-size: 1.08rem; }
+.menu-item-card .mi-ar { font-size: .78rem; color: var(--ink-soft); margin-top: 4px; }
+
+.order-tray { margin-top: 26px; border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: 18px 20px; background: var(--bg-alt); }
+.order-tray-label { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-faint); margin-bottom: 10px; }
+.order-sentence { font-family: var(--font-de-display); font-size: clamp(1.02rem, 2.6vw, 1.28rem); font-weight: 600; cursor: pointer; padding: 6px 10px; border-radius: 8px; transition: background-color .2s; min-height: 1.4em; line-height: 1.7; }
+.order-sentence:hover { background: var(--surface); }
+.order-sentence .empty-hint { font-family: var(--font-ar-body); font-weight: 400; font-size: .9rem; color: var(--ink-faint); }
+.order-actions { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+
+/* ==========================================================================
+   10. ACCORDION (extra notes)
+   ========================================================================== */
+.accordion-item { border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); margin-bottom: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
+.accordion-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; background: none; border: none; cursor: pointer; text-align: right; color: var(--ink); }
+.accordion-trigger:hover { background: var(--bg-alt); }
+.accordion-trigger .chevron { transition: transform .35s var(--ease); flex-shrink: 0; color: var(--ink-faint); }
+.accordion-item.open .chevron { transform: rotate(180deg); }
+.accordion-title { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.accordion-title .tag { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); }
+.accordion-panel { max-height: 0; overflow: hidden; transition: max-height .45s var(--ease); }
+.accordion-item.open .accordion-panel { max-height: 900px; }
+.accordion-body { padding: 0 22px 22px; color: var(--ink-soft); font-size: .95rem; }
+
+/* ==========================================================================
+   10b. TAB SWITCHER (shared: dialogue formal/informal toggle)
+   ========================================================================== */
+.cat-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.cat-tab {
+  font-family: var(--font-ar-body); font-size: .88rem; font-weight: 600; padding: 9px 18px; border-radius: 999px;
+  border: 1.5px solid var(--border); background: var(--surface); color: var(--ink-soft); cursor: pointer;
+  transition: all .25s var(--ease); display: flex; align-items: center; gap: 8px;
+}
+.cat-tab:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+.cat-tab.active { background: linear-gradient(155deg, var(--teal) 0%, var(--teal-ink) 100%); border-color: transparent; color: #fff; box-shadow: var(--shadow-glow-teal); }
+.cat-tab .cat-count { font-family: var(--font-mono); font-size: .68rem; background: rgba(255,255,255,.25); padding: 1px 7px; border-radius: 999px; }
+.cat-tab:not(.active) .cat-count { background: var(--bg-alt); }
+
+/* ==========================================================================
+   11. DIALOGUE — chat-bubble UI
+   ========================================================================== */
+.dialogue-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+.dialogue-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); padding: clamp(18px, 3vw, 30px); }
+.dialogue-panel { display: none; }
+.dialogue-panel.active { display: block; animation: fadeSlide .4s var(--ease); }
+.dialogue-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.dialogue-speakers { display: flex; gap: 18px; font-size: .88rem; color: var(--ink-soft); }
+.dialogue-speakers span { display: flex; align-items: center; gap: 6px; }
+.speaker-dot { width: 10px; height: 10px; border-radius: 50%; }
+.speaker-dot.a { background: var(--teal); }
+.speaker-dot.b { background: var(--amber); }
+
+.chat-line { display: flex; margin-bottom: 14px; max-width: 82%; align-items: flex-start; }
+.chat-line.a { justify-content: flex-start; }
+.chat-line.b { justify-content: flex-end; margin-inline-start: auto; }
+.chat-bubble { position: relative; padding: 12px 18px; border-radius: 18px; cursor: pointer; transition: transform .2s var(--ease), box-shadow .2s var(--ease); box-shadow: var(--shadow-sm); }
+.chat-bubble:hover { transform: scale(1.02); box-shadow: var(--shadow-md); }
+.chat-line.a .chat-bubble { background: var(--teal-soft); border-bottom-left-radius: 4px; }
+.chat-line.b .chat-bubble { background: var(--amber-soft); border-bottom-right-radius: 4px; }
+.chat-bubble.speaking { outline: 2px solid var(--teal); }
+.chat-name { font-family: var(--font-mono); font-size: .68rem; color: var(--ink-faint); margin-bottom: 4px; }
+.chat-de { font-family: var(--font-de-display); font-size: 1.08rem; font-weight: 600; direction: ltr; }
+.chat-ar { font-size: .82rem; color: var(--ink-soft); margin-top: 4px; }
+.chat-avatar { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .82rem; color: #fff; flex-shrink: 0; }
+.chat-line.a .chat-avatar { background: var(--teal); margin-inline-end: 10px; }
+.chat-line.b .chat-avatar { background: var(--amber); margin-inline-start: 10px; order: 2; }
+.dialogue-actions { display: flex; justify-content: center; margin-top: 22px; }
+
+/* ==========================================================================
+   12. MISTAKES — wrong vs right
+   ========================================================================== */
+.mistake-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); }
+@media (max-width: 640px){ .mistake-card { grid-template-columns: 1fr; } }
+.mistake-side { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.mistake-wrong { background: var(--danger-soft); }
+.mistake-right { background: var(--success-soft); }
+.mistake-tag { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: .82rem; }
+.mistake-wrong .mistake-tag { color: var(--danger); }
+.mistake-right .mistake-tag { color: var(--success); }
+.mistake-sentence { font-size: .98rem; }
+.mistake-note { grid-column: 1 / -1; padding: 12px 20px; font-size: .88rem; color: var(--ink-soft); border-top: 1px dashed var(--border); background: var(--surface); }
+
+/* ==========================================================================
+   13. PRONUNCIATION TIP CARDS
+   ========================================================================== */
+.tip-card { display: flex; gap: 14px; align-items: flex-start; }
+.tip-card .icon-chip { background: var(--amber-soft); color: var(--amber-ink); }
+
+/* ==========================================================================
+   14. EXERCISES
+   ========================================================================== */
+.exercise-shell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+.exercise-tabs { display: flex; overflow-x: auto; border-bottom: 1px solid var(--border); scrollbar-width: none; }
+.exercise-tabs::-webkit-scrollbar { display: none; }
+.exercise-tab { flex-shrink: 0; padding: 16px 20px; background: none; border: none; cursor: pointer; font-weight: 600; font-size: .92rem; color: var(--ink-faint); border-bottom: 3px solid transparent; display: flex; align-items: center; gap: 8px; transition: color .25s, border-color .25s; }
+.exercise-tab:hover { color: var(--ink); }
+.exercise-tab.active { color: var(--teal); border-color: var(--teal); }
+.exercise-tab .count { font-family: var(--font-mono); font-size: .7rem; background: var(--bg-alt); padding: 1px 7px; border-radius: 999px; }
+.exercise-panels { padding: clamp(20px, 4vw, 34px); }
+.exercise-panel { display: none; }
+.exercise-panel.active { display: block; animation: fadeSlide .4s var(--ease); }
+
+.q-block { border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 20px; margin-bottom: 16px; background: var(--bg-alt); }
+.q-prompt { font-size: 1.02rem; margin-bottom: 14px; }
+.q-prompt .de { font-size: 1.1rem; font-weight: 600; }
+.q-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.opt-btn { padding: 9px 20px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: .95rem; transition: all .2s var(--ease); }
+.opt-btn.de { font-family: var(--font-de-display); direction: ltr; font-size: 1rem; }
+.opt-btn:hover:not(:disabled) { border-color: var(--teal); color: var(--teal); }
+.opt-btn.correct { background: var(--success-soft); border-color: var(--success); color: var(--success); }
+.opt-btn.wrong { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
+.opt-btn:disabled { cursor: default; }
+.q-feedback { margin-top: 12px; font-size: .88rem; color: var(--ink-soft); display: none; padding-top: 10px; border-top: 1px dashed var(--border); }
+.q-feedback.show { display: block; }
+
+.fill-word-display { font-family: var(--font-de-display); direction: ltr; font-size: 1.25rem; font-weight: 600; letter-spacing: .01em; margin-bottom: 14px; line-height:1.6; }
+.fill-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.fill-row input { font-family: var(--font-de-display); direction: ltr; text-align: center; font-size: 1.05rem; padding: 9px 14px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); color: var(--ink); width: 150px; max-width: 100%; }
+.fill-row input:focus { border-color: var(--teal); }
+.fill-check { border: none; background: var(--teal); color: #fff; padding: 9px 18px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+.fill-result { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
+
+.builder-pool, .builder-answer { display: flex; flex-wrap: wrap; gap: 10px; min-height: 52px; align-items: center; }
+.builder-answer { border: 2px dashed var(--border-strong); border-radius: var(--r-md); padding: 10px 14px; margin-bottom: 14px; background: var(--surface); }
+.builder-pool { padding: 10px 0; }
+.chip-word { font-family: var(--font-de-display); direction: ltr; padding: 8px 18px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 1.05rem; font-weight: 600; transition: all .2s var(--ease); box-shadow: var(--shadow-sm); }
+.chip-word:hover { transform: translateY(-2px); border-color: var(--teal); }
+.chip-word.used { opacity: .3; pointer-events: none; }
+.builder-actions { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+.builder-actions .btn { padding: 9px 18px; font-size: .88rem; }
+
+.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 3vw, 40px); }
+.match-col { display: flex; flex-direction: column; gap: 10px; }
+.match-item { padding: 12px 16px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; transition: all .2s var(--ease); text-align: center; font-size: .98rem; }
+.match-item.de { font-family: var(--font-de-display); direction: ltr; font-size: 1.05rem; }
+.match-item:hover:not(.matched) { border-color: var(--teal); transform: scale(1.02); }
+.match-item.selected { border-color: var(--teal); background: var(--teal-soft); }
+.match-item.matched { border-color: var(--success); background: var(--success-soft); color: var(--success); pointer-events: none; }
+.match-item.shake { animation: shake .4s; border-color: var(--danger); background: var(--danger-soft); }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+
+.score-bar-wrap { display: flex; align-items: center; gap: 16px; padding: 18px clamp(20px, 4vw, 34px); border-top: 1px solid var(--border); background: var(--bg-alt); flex-wrap: wrap; }
+.score-track { flex: 1; min-width: 140px; height: 10px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.score-fill { height: 100%; background: linear-gradient(to left, var(--teal), var(--amber)); border-radius: 999px; width: 0%; transition: width .5s var(--ease); }
+.score-label { font-family: var(--font-mono); font-size: .82rem; white-space: nowrap; }
+
+/* ==========================================================================
+   15. AUDIO DOCK
+   ========================================================================== */
+.audio-dock { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(140%); z-index: 200; background: var(--surface-glass); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border: 1px solid var(--surface-glass-border); box-shadow: var(--shadow-lg); border-radius: 999px; padding: 8px 10px 8px 18px; display: flex; align-items: center; gap: 12px; max-width: min(92vw, 560px); transition: transform .45s var(--ease); }
+.audio-dock.visible { transform: translateX(-50%) translateY(0); }
+.audio-dock-text { font-family: var(--font-de-display); direction: ltr; font-size: .92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; }
+.audio-dock-controls { display: flex; align-items: center; gap: 4px; }
+.audio-dock .icon-btn { width: 34px; height: 34px; border-radius: 50%; }
+.audio-dock input[type="range"] { width: 70px; accent-color: var(--teal); }
+.audio-dock-voice { font-family: var(--font-mono); font-size: .64rem; color: var(--ink-faint); display: none; }
+@media (min-width: 620px){ .audio-dock-voice { display: block; } }
+
+/* ==========================================================================
+   15b. VOICE SETTINGS PANEL
+   ========================================================================== */
+.voice-panel {
+  position: fixed; top: calc(var(--nav-h) + 10px); inset-inline-end: 16px; z-index: 250;
+  width: min(92vw, 380px); max-height: 76vh; overflow-y: auto;
+  background: var(--surface-glass); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border: 1px solid var(--surface-glass-border); border-radius: var(--r-lg); box-shadow: var(--shadow-lg);
+  padding: 20px; opacity: 0; transform: translateY(-10px) scale(.98); pointer-events: none;
+  transition: opacity .3s var(--ease), transform .3s var(--ease);
+}
+.voice-panel.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.voice-panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; gap: 10px; }
+.voice-panel-head h3 { font-size: 1rem; }
+.voice-status { font-size: .84rem; color: var(--ink-soft); margin-bottom: 14px; line-height: 1.65; background: var(--bg-alt); border-radius: var(--r-sm); padding: 10px 12px; }
+.voice-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.voice-row { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; border: 1.5px solid var(--border-strong); background: var(--surface); cursor: pointer; transition: all .2s var(--ease); }
+.voice-row:hover { border-color: var(--teal); }
+.voice-row.selected { border-color: var(--teal); background: var(--teal-soft); }
+.voice-radio { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--border-strong); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.voice-row.selected .voice-radio { border-color: var(--teal); }
+.voice-row.selected .voice-radio::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); }
+.voice-info { flex: 1; min-width: 0; }
+.voice-name { font-size: .86rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.voice-lang { font-family: var(--font-mono); font-size: .66rem; color: var(--ink-faint); }
+.voice-test-btn { flex-shrink: 0; border: 1px solid var(--border-strong); background: var(--surface); color: var(--ink-soft); border-radius: 8px; padding: 6px 12px; font-size: .76rem; cursor: pointer; display: flex; align-items: center; gap: 5px; transition: all .2s var(--ease); }
+.voice-test-btn:hover { border-color: var(--teal); color: var(--teal); }
+.voice-test-btn svg { width: 13px; height: 13px; }
+.voice-slider-row { margin-bottom: 14px; }
+.voice-slider-row label { display: flex; justify-content: space-between; font-size: .82rem; color: var(--ink-soft); margin-bottom: 6px; }
+.voice-slider-row input[type=range] { width: 100%; accent-color: var(--teal); }
+.voice-cloud-note { font-size: .78rem; color: var(--ink-faint); border-top: 1px dashed var(--border); padding-top: 12px; margin-top: 2px; line-height: 1.65; }
+
+/* ==========================================================================
+   16. SUMMARY / ACHIEVEMENTS
+   ========================================================================== */
+.summary-list { display: flex; flex-direction: column; gap: 12px; }
+.summary-list li { display: flex; gap: 12px; align-items: flex-start; }
+.summary-list .icon-chip { background: var(--teal-soft); color: var(--teal); flex-shrink: 0; }
+.badges-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; margin-top: 30px; }
+.badge { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 18px 12px; text-align: center; filter: grayscale(1) opacity(.5); transition: filter .5s var(--ease), transform .5s var(--ease); }
+.badge.unlocked { filter: none; opacity: 1; }
+.badge.pop { animation: badgePop .6s var(--ease); }
+@keyframes badgePop { 0%{transform:scale(.7) rotate(-8deg)} 60%{transform:scale(1.12) rotate(4deg)} 100%{transform:scale(1) rotate(0)} }
+.badge-icon { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(155deg, var(--teal), var(--amber)); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: #fff; }
+.badge-name { font-size: .82rem; font-weight: 600; }
+
+/* ==========================================================================
+   17. TOAST
+   ========================================================================== */
+.toast-wrap { position: fixed; top: calc(var(--nav-h) + 14px); left: 50%; transform: translateX(-50%); z-index: 300; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+.toast { background: var(--ink); color: var(--bg); padding: 12px 20px; border-radius: 12px; font-size: .88rem; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(-14px); transition: all .4s var(--ease); white-space: nowrap; }
+.toast.show { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   18. FOOTER + FLOATING CONTROLS
+   ========================================================================== */
+.site-footer { border-top: 1px solid var(--border); padding-block: 36px; margin-top: 30px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; color: var(--ink-faint); font-size: .86rem; }
+.footer-actions { display: flex; gap: 10px; }
+.back-to-top { position: fixed; bottom: 20px; inset-inline-end: 20px; z-index: 190; width: 46px; height: 46px; border-radius: 50%; background: var(--teal); color: #fff; border: none; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow-teal); cursor: pointer; opacity: 0; transform: translateY(20px) scale(.8); pointer-events: none; transition: all .35s var(--ease); }
+.back-to-top.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+.back-to-top:hover { transform: translateY(-4px) scale(1.05); }
+mark.hl { background: var(--amber-soft); color: var(--amber-ink); border-radius: 4px; padding: 0 2px; }
+
+/* ==========================================================================
+   19. PRINT
+   ========================================================================== */
+@media print {
+  .site-header, .audio-dock, .voice-panel, .back-to-top, .nav-toggle, .exercise-tabs, .score-bar-wrap, .btn, .icon-btn, .toast-wrap, .cat-tabs, .dialogue-tabs { display: none !important; }
+  body { background: #fff; color: #000; }
+  .section { padding-block: 20px; break-inside: avoid; }
+  .showcase-card, .acc-shell, .menu-board { box-shadow: none; transform: none; display: block !important; }
+  .exercise-panel { display: block !important; }
+  .dialogue-panel { display: block !important; margin-bottom: 24px; }
+  .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
+  .accordion-panel { max-height: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================= ICON SPRITE ============================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><g stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.6" y1="4.6" x2="6.7" y2="6.7"/><line x1="17.3" y1="17.3" x2="19.4" y2="19.4"/><line x1="4.6" y1="19.4" x2="6.7" y2="17.3"/><line x1="17.3" y1="6.7" x2="19.4" y2="4.6"/></g></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+<symbol id="i-speaker" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.3 5.7a9 9 0 0 1 0 12.6"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+<symbol id="i-replay" viewBox="0 0 24 24"><path d="M4 4v6h6"/><path d="M4.6 15a8 8 0 1 0 1.5-9.4L4 9"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.6" y2="16.6"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><polyline points="6,9 6,3 18,3 18,9"/><rect x="4" y="9" width="16" height="8" rx="1.2"/><rect x="8" y="14" width="8" height="6"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5"/><path d="M15 4h5v5"/><path d="M20 15v5h-5"/><path d="M9 20H4v-5"/></symbol>
+<symbol id="i-compress" viewBox="0 0 24 24"><path d="M9 4v5H4"/><path d="M15 4v5h5"/><path d="M20 20v-5h-5"/><path d="M4 20v-5h5"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><polyline points="5,13 9,17 19,7"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6-4.6-4.1 6.1-.6z"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5 1.1 1.3 1.1 2.2h5a2.6 2.6 0 0 1 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15,9 13,13 9,15 11,11"/></symbol>
+<symbol id="i-headphones" viewBox="0 0 24 24"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="3" y="14" width="5" height="7" rx="1.5"/><rect x="16" y="14" width="5" height="7" rx="1.5"/></symbol>
+<symbol id="i-split" viewBox="0 0 24 24"><path d="M12 3v6"/><path d="M12 9 6 21"/><path d="M12 9l6 12"/></symbol>
+<symbol id="i-sliders" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><circle cx="8" cy="6" r="2.3" style="fill:currentColor;stroke:none"/><line x1="3" y1="12" x2="21" y2="12"/><circle cx="16" cy="12" r="2.3" style="fill:currentColor;stroke:none"/><line x1="3" y1="18" x2="21" y2="18"/><circle cx="11" cy="18" r="2.3" style="fill:currentColor;stroke:none"/></symbol>
+</defs>
+</svg>
+
+<!-- ============================= TOASTS ============================= -->
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<!-- ============================= HEADER ============================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <button class="icon-btn nav-toggle" id="navToggle" aria-label="فتح قائمة الأقسام" aria-expanded="false">
+      <svg class="icon"><use href="#i-menu"/></svg>
+    </button>
+
+    <div class="brand">
+      <span class="brand-mark"><svg class="icon" style="width:20px;height:20px"><use href="#i-split"/></svg></span>
+      <span class="brand-text">ألمانية A1<small>الدرس الحادي عشر · الأفعال المنفصلة</small></span>
+    </div>
+
+    <nav class="main-nav" id="mainNav" aria-label="أقسام الدرس">
+      <button class="nav-link" data-target="#intro">المقدّمة</button>
+      <button class="nav-link" data-target="#verbs-basics">أفعال أساسية</button>
+      <button class="nav-link" data-target="#prefixes">البادئات المنفصلة</button>
+      <button class="nav-link" data-target="#daily-rhythm">إيقاع اليوم</button>
+      <button class="nav-link" data-target="#verb-splitter">تفكيك الجملة</button>
+      <button class="nav-link" data-target="#day-builder">يومي الكامل</button>
+      <button class="nav-link" data-target="#practical">الاستخدام العملي</button>
+      <button class="nav-link" data-target="#dialogue">حوار كامل</button>
+      <button class="nav-link" data-target="#mistakes">أخطاء شائعة</button>
+      <button class="nav-link" data-target="#pronunciation">نصائح النطق</button>
+      <button class="nav-link" data-target="#exercises">التمارين</button>
+      <button class="nav-link" data-target="#summary">الخلاصة</button>
+      <div class="search-box mobile">
+        <input type="search" id="searchInputMobile" placeholder="ابحث في الدرس…" aria-label="ابحث في الدرس">
+      </div>
+    </nav>
+
+    <div class="header-controls">
+      <div class="search-box" id="searchBoxDesktop">
+        <input type="search" id="searchInputDesktop" placeholder="ابحث في الدرس…" aria-label="ابحث في الدرس">
+      </div>
+      <button class="icon-btn" id="searchToggle" aria-label="بحث"><svg class="icon"><use href="#i-search"/></svg></button>
+      <button class="icon-btn" id="voiceSettingsToggle" aria-label="إعدادات صوت النطق الألماني" aria-expanded="false"><svg class="icon"><use href="#i-sliders"/></svg></button>
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري">
+        <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+        <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+      </button>
+      <button class="icon-btn" id="fullscreenToggle" aria-label="ملء الشاشة"><svg class="icon" id="fsIcon"><use href="#i-expand"/></svg></button>
+      <div class="progress-ring-wrap" title="تقدّمك في الدرس">
+        <svg width="44" height="44">
+          <circle class="progress-ring-track" cx="22" cy="22" r="18"/>
+          <circle class="progress-ring-bar" id="progressRingBar" cx="22" cy="22" r="18" stroke-dasharray="113" stroke-dashoffset="113"/>
+        </svg>
+        <span class="progress-ring-label" id="progressRingLabel">٠٪</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================= VOICE SETTINGS PANEL ============================= -->
+<div class="voice-panel" id="voicePanel" role="dialog" aria-label="إعدادات صوت النطق الألماني" aria-hidden="true">
+  <div class="voice-panel-head">
+    <h3>أصوات النطق الألماني</h3>
+    <button class="icon-btn" id="voicePanelClose" aria-label="إغلاق لوحة الصوت" style="width:32px;height:32px"><svg class="icon" style="width:16px;height:16px"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="voice-status" id="voiceStatusLine"></div>
+  <div class="voice-list" id="voiceListContainer"></div>
+  <div class="voice-slider-row">
+    <label><span>سرعة النطق</span><span class="mono" id="voiceSpeedLabel">0.90×</span></label>
+    <input type="range" id="voicePanelSpeed" min="0.5" max="1.5" step="0.05" value="0.9" aria-label="سرعة النطق">
+  </div>
+  <div class="voice-slider-row">
+    <label><span>درجة الصوت (Pitch)</span><span class="mono" id="voicePitchLabel">1.00</span></label>
+    <input type="range" id="voicePanelPitch" min="0.7" max="1.3" step="0.05" value="1" aria-label="درجة الصوت">
+  </div>
+  <p class="voice-cloud-note">يستخدم هذا الدرس صوت متصفحك مباشرة (Web Speech API) بدون الحاجة لأي إعداد أو اتصال بالإنترنت. الأصوات السحابية عالية الجودة غير مُفعَّلة حاليًا في هذا الدرس؛ عند توفّرها مستقبلًا، سيتحوّل التطبيق إليها تلقائيًا دون أي تغيير في طريقة استخدامك للدرس.</p>
+</div>
+
+<main id="mainContent">
+
+<!-- ============================= HERO ============================= -->
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="reveal is-visible">
+      <span class="level-badge"><b>A1</b> الدرس الحادي عشر من مسار «الألمانية للمبتدئين»</span>
+      <h1 class="hero-title">الأفعال المنفصلة: <span class="de">Ich stehe … auf</span></h1>
+      <p class="hero-lead">تعلّم كيف تنقسم بعض الأفعال الألمانية إلى جزأين — بادئة تطير إلى نهاية الجملة، وجذر يبقى في الموضع الثاني — بأداة تفكيك تفاعلية، وجدول يوم كامل تبنيه بنفسك بأفعال الروتين اليومي.</p>
+      <div class="hero-ctas">
+        <button class="btn btn-primary" data-scroll="#verbs-basics">
+          <svg class="icon" style="width:18px;height:18px"><use href="#i-play"/></svg>
+          ابدأ الدرس
+        </button>
+        <button class="btn btn-ghost" data-scroll="#verb-splitter">
+          <svg class="icon" style="width:18px;height:18px"><use href="#i-split"/></svg>
+          جرّب أداة التفكيك
+        </button>
+      </div>
+    </div>
+
+    <div class="reveal is-visible" style="transition-delay:.15s">
+      <div class="hero-illustration">
+        <svg class="hero-illo-svg" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="210" cy="290" rx="160" ry="14" fill="var(--border)" opacity=".5"/>
+
+          <!-- alarm clock -->
+          <circle cx="205" cy="195" r="72" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2.5"/>
+          <circle cx="205" cy="195" r="59" fill="none" stroke="var(--border)" stroke-width="1.5"/>
+          <circle cx="152" cy="128" r="15" fill="var(--amber)"/>
+          <circle cx="258" cy="128" r="15" fill="var(--amber)"/>
+          <line x1="205" y1="195" x2="205" y2="157" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+          <line x1="205" y1="195" x2="232" y2="206" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="205" cy="195" r="5" fill="var(--ink)"/>
+          <line x1="174" y1="248" x2="163" y2="263" stroke="var(--border-strong)" stroke-width="5" stroke-linecap="round"/>
+          <line x1="236" y1="248" x2="247" y2="263" stroke="var(--border-strong)" stroke-width="5" stroke-linecap="round"/>
+
+          <g opacity=".6">
+            <path class="steam-wisp" d="M138,92 Q127,72 140,54" fill="none" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/>
+            <path class="steam-wisp s2" d="M272,92 Q283,72 270,54" fill="none" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/>
+          </g>
+
+          <path class="flight-path" d="M95,58 Q210,8 335,53" fill="none" stroke="var(--ink-faint)" stroke-width="2"/>
+
+          <g class="floaty">
+            <rect x="8" y="28" width="150" height="52" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M68 80 L58 93 L81 80 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="83" y="61" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="17" fill="var(--teal)">Ich stehe …</text>
+          </g>
+          <g class="floaty d3">
+            <rect x="258" y="23" width="150" height="52" rx="16" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <path d="M318 75 L308 88 L331 75 Z" fill="var(--surface)" stroke="var(--border-strong)" stroke-width="2"/>
+            <text x="333" y="56" text-anchor="middle" font-family="Fraunces, serif" font-weight="700" font-size="17" fill="var(--amber-ink)">… auf!</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= INTRO ============================= -->
+<section class="section" id="intro">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-split"/></svg>قاعدة تتكرر في كل جملة يومية تقريبًا</span>
+      <h2 class="section-title">لماذا الأفعال المنفصلة هي مفتاح الجملة الألمانية اليومية؟</h2>
+      <p class="section-sub">أفعال مثل <span class="de mono">aufstehen</span> و<span class="de mono">anrufen</span> و<span class="de mono">einkaufen</span> تبدو كلمة واحدة في القاموس، لكنها تنقسم فعليًا إلى جزأين داخل الجملة. هذا الدرس يعلّمك متى تنقسم، وأين تذهب البادئة، ومتى تبقى الكلمة كاملة بلا انقسام.</p>
+    </div>
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-target"/></svg></span>قاعدة تتكرر يوميًا</h3>
+        <p>من أوّل جملة تصف بها يومك — الاستيقاظ، التسوّق، الاتصال بأحد — ستحتاج فعلًا منفصلًا.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-split"/></svg></span>باب نحوي أساسي: ترتيب الجملة</h3>
+        <p>البادئة المنفصلة (<span class="de mono">auf, an, ein…</span>) تنتقل دائمًا إلى آخر الجملة الرئيسية، بينما يبقى جذر الفعل في الموضع الثاني مباشرة بعد الفاعل.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>امتداد طبيعي لما سبق</h3>
+        <p>بعد أن تعرّفت على أفعال الروتين اليومي في الدروس السابقة، ستكتشف اليوم كيف تتغيّر بعض هذه الأفعال شكلها داخل الجملة.</p>
+      </div>
+    </div>
+
+    <div class="info-card reveal" style="margin-top:26px;padding-top:6px">
+      <h3 style="padding:16px 4px 0"><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>رحلتك في تعلّم الألمانية</h3>
+      <div class="mini-timeline" id="learningTimeline"></div>
+    </div>
+
+    <div class="grid-2 reveal" style="margin-top:22px;align-items:stretch">
+      <div class="info-card" style="display:flex;flex-direction:column;justify-content:center">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>درس اليوم بالأرقام</h3>
+        <p style="margin-bottom:14px">كل ما تحتاج تذكّره اليوم — والباقي تدريب وحوار حي.</p>
+      </div>
+      <div class="stat-cards">
+        <div class="stat-card teal"><div class="stat-pct">١٢</div><div class="stat-desc">فعلًا منفصلًا أساسيًا تتقنه اليوم</div></div>
+        <div class="stat-card amber"><div class="stat-pct">١</div><div class="stat-desc">قاعدة واحدة: البادئة تطير دائمًا إلى نهاية الجملة الرئيسية</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= VERBS BASICS ============================= -->
+<section class="section" id="verbs-basics">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>الأفعال التي ستستخدمها كل يوم</span>
+      <h2 class="section-title">أفعال منفصلة أساسية</h2>
+      <p class="section-sub">انقر لقلب البطاقة وسماع النطق. الوسم الملوّن أعلى يسار كل بطاقة يوضّح الفعل المساعد الصحيح في زمن الماضي التام (Perfekt): <span class="chip chip-teal mono">ist</span> للحركة وتغيّر الحال، و<span class="chip chip-amber mono">hat</span> لبقية الأفعال.</p>
+    </div>
+    <div class="vocab-grid reveal-stagger reveal" id="verbsGrid"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= PREFIXES ============================= -->
+<section class="section" id="prefixes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>كل بادئة تحمل معنى ثابتًا</span>
+      <h2 class="section-title">البادئات المنفصلة الشائعة</h2>
+      <p class="section-sub">البادئة ليست عشوائية — كل واحدة تضيف اتجاهًا أو معنى منطقيًا للفعل. تعرّف على البادئات الثماني الأكثر استخدامًا مع مثال حي لكل واحدة.</p>
+    </div>
+    <div class="vocab-grid reveal-stagger reveal" id="prefixesGrid"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= DAILY RHYTHM ============================= -->
+<section class="section" id="daily-rhythm">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>إيقاع اليوم</span>
+      <h2 class="section-title">أفعال منفصلة على مدار يومك</h2>
+      <p class="section-sub">لاحظ كيف يرافق كل وقت من اليوم فعلًا منفصلًا مختلفًا — هذا هو نمط استخدامها الطبيعي في الكلام اليومي.</p>
+    </div>
+    <div class="meals-row reveal-stagger reveal" id="rhythmRow"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= VERB SPLITTER (centerpiece) ============================= -->
+<section class="section" id="verb-splitter">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-split"/></svg>القاعدة الذهبية لهذا الدرس</span>
+      <h2 class="section-title">تفكيك الجملة: <span class="de mono">stehe … auf</span></h2>
+      <p class="section-sub">عند تصريف فعل منفصل في الجملة الرئيسية، ينتقل جذر الفعل إلى الموضع الثاني بعد الفاعل، بينما تطير البادئة إلى آخر الجملة تمامًا. اختر فعلًا وشاهد الانقسام يحدث أمامك، ثم قارن سلوكه في ثلاثة أنواع من الجُمل.</p>
+    </div>
+
+    <div class="acc-shell reveal">
+      <div class="acc-picker-label">اختر فعلًا لتشاهد انقسامه</div>
+      <div class="acc-chip-row" id="splitVerbRow"></div>
+
+      <div class="acc-result">
+        <div class="acc-result-phrase" id="splitResultPhrase" tabindex="0" role="button" aria-label="استمع للجملة المكوَّنة"></div>
+        <p class="acc-note" id="splitNote"></p>
+      </div>
+
+      <div class="acc-table">
+        <div class="acc-table-cell">جملة رئيسية <span style="opacity:.6">(Hauptsatz)</span><b class="de" id="tableHaupt"></b></div>
+        <div class="acc-table-cell">مع فعل ناقص <span style="opacity:.6">(Modalverb)</span><b class="de" id="tableModal"></b></div>
+        <div class="acc-table-cell">جملة فرعية <span style="opacity:.6">(dass-Satz)</span><b class="de" id="tableNeben"></b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= DAY BUILDER (centerpiece) ============================= -->
+<section class="section" id="day-builder">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow plum"><svg class="icon" style="width:14px;height:14px"><use href="#i-compass"/></svg>طبّق القاعدة في سيناريو حقيقي</span>
+      <h2 class="section-title">ابنِ يومك الكامل</h2>
+      <p class="section-sub">انقر على الأنشطة (حتى ٥ عناصر) بترتيب يومك، وشاهد كل جملة تتكوّن تلقائيًا بالانقسام الصحيح — لتحصل في النهاية على وصف كامل ليومك.</p>
+    </div>
+
+    <div class="menu-board reveal">
+      <div class="menu-cat-label">🌅 الصباح</div>
+      <div class="menu-items-grid" id="dayMorningGrid"></div>
+      <div class="menu-cat-label">🌆 المساء</div>
+      <div class="menu-items-grid" id="dayEveningGrid"></div>
+
+      <div class="order-tray">
+        <div class="order-tray-label">يومي (Mein Tag)</div>
+        <div class="order-sentence de" id="dayTraySentence" tabindex="0" role="button"></div>
+        <div class="order-actions">
+          <button class="btn btn-ghost" id="dayResetBtn" style="padding:9px 18px;font-size:.88rem">إعادة تعيين</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= PRACTICAL ============================= -->
+<section class="section" id="practical">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>من النظرية إلى الحياة اليومية</span>
+      <h2 class="section-title">عبارات تحتاجها كل يوم</h2>
+      <p class="section-sub">جمل عملية آمنة نحويًا تستخدمها في التخطيط للروتين والتواصل مع الآخرين.</p>
+    </div>
+
+    <div class="grid-3 reveal-stagger reveal">
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--teal-soft);color:var(--teal)"><svg class="icon" style="width:18px;height:18px"><use href="#i-target"/></svg></span>التخطيط للروتين</h3>
+        <p><span class="de mono" data-speak="Ich stehe um sieben Uhr auf.">Ich stehe um sieben Uhr auf.</span> — أستيقظ الساعة السابعة.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--amber-soft);color:var(--amber-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-chat"/></svg></span>التواصل</h3>
+        <p><span class="de mono" data-speak="Ich rufe dich später an.">Ich rufe dich später an.</span> — سأتصل بك لاحقًا.</p>
+      </div>
+      <div class="info-card">
+        <h3><span class="icon-chip" style="background:var(--plum-soft);color:var(--plum-ink)"><svg class="icon" style="width:18px;height:18px"><use href="#i-compass"/></svg></span>الخروج والعودة</h3>
+        <p><span class="de mono" data-speak="Wann kommst du zurück?">Wann kommst du zurück?</span> — متى ستعود؟</p>
+      </div>
+    </div>
+
+    <div style="margin-top:30px" class="reveal" id="grammarAccordion"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= DIALOGUE ============================= -->
+<section class="section" id="dialogue">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-chat"/></svg>طبّق ما تعلّمته</span>
+      <h2 class="section-title">حوارا استخدام كاملان</h2>
+      <p class="section-sub">انقر على أي فقاعة حوار لسماعها بمفردها، أو استمع للحوار كاملًا بزر واحد.</p>
+    </div>
+
+    <div class="dialogue-tabs reveal">
+      <button class="cat-tab active" data-panel="dlgInformal">بين صديقين <span class="cat-count">du</span></button>
+      <button class="cat-tab" data-panel="dlgFormal">في المكتب <span class="cat-count">Sie</span></button>
+    </div>
+
+    <div class="dialogue-shell reveal">
+      <div class="dialogue-panel active" id="dlgInformal"></div>
+      <div class="dialogue-panel" id="dlgFormal"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= MISTAKES ============================= -->
+<section class="section" id="mistakes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-x"/></svg>تجنّب الفخاخ الشائعة</span>
+      <h2 class="section-title">أخطاء يقع فيها معظم المبتدئين</h2>
+      <p class="section-sub">معظمها يتعلّق بموضع البادئة أو بالخلط بين الأفعال المنفصلة وغير المنفصلة — قارن كل خطأ بصورته الصحيحة.</p>
+    </div>
+    <div class="reveal-stagger reveal" id="mistakesList" style="display:flex;flex-direction:column;gap:16px"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= PRONUNCIATION TIPS ============================= -->
+<section class="section" id="pronunciation">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-speaker"/></svg>نطق أصيل</span>
+      <h2 class="section-title">نصائح النطق</h2>
+      <p class="section-sub">أربع ملاحظات — أهمها قاعدة الضغط الصوتي التي تكشف نوع الفعل قبل أن تفهم معناه.</p>
+    </div>
+    <div class="grid-2 reveal-stagger reveal" id="tipsGrid"></div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= EXERCISES ============================= -->
+<section class="section" id="exercises">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-target"/></svg>وقت التطبيق</span>
+      <h2 class="section-title">تمارين تفاعلية فورية</h2>
+      <p class="section-sub">خمسة أنواع من التمارين، مع تصحيح لحظي وتفسير لكل إجابة.</p>
+    </div>
+
+    <div class="exercise-shell reveal">
+      <div class="exercise-tabs" role="tablist">
+        <button class="exercise-tab active" data-panel="panelMatch" role="tab">طابق الفعل بمعناه <span class="count" id="countMatch">٠/٨</span></button>
+        <button class="exercise-tab" data-panel="panelMcq" role="tab">اختر الإجابة الصحيحة <span class="count" id="countMcq">٠/٨</span></button>
+        <button class="exercise-tab" data-panel="panelFill" role="tab">أكمل البادئة</button>
+        <button class="exercise-tab" data-panel="panelBuilder" role="tab">رتّب كلمات الجملة <span class="count" id="countBuilder">٠/٥</span></button>
+        <button class="exercise-tab" data-panel="panelListen" role="tab">تمرين الاستماع <span class="count" id="countListen">٠/١</span></button>
+      </div>
+      <div class="exercise-panels">
+        <div class="exercise-panel active" id="panelMatch"></div>
+        <div class="exercise-panel" id="panelMcq"></div>
+        <div class="exercise-panel" id="panelFill"></div>
+        <div class="exercise-panel" id="panelBuilder"></div>
+        <div class="exercise-panel" id="panelListen"></div>
+      </div>
+      <div class="score-bar-wrap">
+        <span class="score-label">إتقانك للتمارين</span>
+        <div class="score-track"><div class="score-fill" id="scoreFill"></div></div>
+        <span class="score-label mono" id="scoreLabel">٠٪</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rail-rule">
+
+<!-- ============================= SUMMARY ============================= -->
+<section class="section" id="summary">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon" style="width:14px;height:14px"><use href="#i-star"/></svg>ملخّص الدرس</span>
+      <h2 class="section-title">ما الذي أتقنته اليوم؟</h2>
+    </div>
+
+    <div class="grid-2 reveal">
+      <ul class="summary-list info-card">
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا ١٢ فعلًا منفصلًا أساسيًا، مع أفعال الروتين اليومي على مدار الساعة.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>أتقنّا قاعدة الانفصال: البادئة تطير دائمًا إلى نهاية الجملة الرئيسية، والجذر يبقى في الموضع الثاني.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>قارنّا سلوك الفعل المنفصل في الجملة الرئيسية، ومع فعل ناقص، وفي جملة dass الفرعية.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>طبّقنا القاعدة عمليًا عبر بناء يوم كامل بأفعال منفصلة حقيقية.</p></li>
+        <li><span class="icon-chip"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg></span><p>استمعنا وتفاعلنا مع حوارين كاملين — بين صديقين وفي مكتب رسمي.</p></li>
+      </ul>
+
+      <div class="info-card" style="display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:center;background:linear-gradient(155deg, var(--teal-soft), var(--plum-soft))">
+        <svg class="icon" style="width:40px;height:40px;margin:0 auto;color:var(--teal)"><use href="#i-compass"/></svg>
+        <h3 style="justify-content:center">الدرس القادم</h3>
+        <p>قواعد وأفعال جديدة تنتظرك — قريبًا في الدرس الثاني عشر من مسار A1.</p>
+        <button class="btn btn-ghost" disabled style="align-self:center">الدرس ١٢ (قريبًا)</button>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px;text-align:center" class="reveal">إنجازاتك في هذا الدرس</h3>
+    <div class="badges-row reveal" id="badgesRow"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>الدرس ١١ · مسار الألمانية A1 — صُمم للتعلّم النشط والاستماع الفوري.</span>
+    <div class="footer-actions">
+      <button class="icon-btn" id="printBtn" aria-label="طباعة الدرس"><svg class="icon"><use href="#i-printer"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================= FLOATING CONTROLS ============================= -->
+<button class="back-to-top" id="backToTop" aria-label="العودة إلى الأعلى">
+  <svg class="icon" style="width:20px;height:20px;stroke:#fff"><use href="#i-up"/></svg>
+</button>
+
+<div class="audio-dock" id="audioDock">
+  <div class="audio-dock-controls">
+    <button class="icon-btn" id="dockPlayPause" aria-label="تشغيل/إيقاف مؤقت"><svg class="icon" id="dockPlayIcon"><use href="#i-pause"/></svg></button>
+    <button class="icon-btn" id="dockReplay" aria-label="إعادة"><svg class="icon"><use href="#i-replay"/></svg></button>
+  </div>
+  <span class="audio-dock-text" id="dockText" dir="ltr">…</span>
+  <input type="range" id="dockSpeed" min="0.5" max="1.5" step="0.05" value="0.9" aria-label="سرعة النطق">
+  <span class="audio-dock-voice" id="dockVoice">…</span>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ==========================================================================
+   DATA
+   ========================================================================== */
+const SEPARABLE_VERBS = [
+  {de:"aufstehen",    word:"aufstehen",    ipa:"ˈaʊfˌʃteːən",     ar:"يستيقظ / ينهض",          aux:"ist", partizip:"aufgestanden"},
+  {de:"aufwachen",    word:"aufwachen",    ipa:"ˈaʊfˌvaxən",      ar:"يستفيق من النوم",        aux:"ist", partizip:"aufgewacht"},
+  {de:"anrufen",      word:"anrufen",      ipa:"ˈanˌʁuːfn̩",      ar:"يتصل هاتفيًا",           aux:"hat", partizip:"angerufen"},
+  {de:"einkaufen",    word:"einkaufen",    ipa:"ˈaɪnˌkaʊfn̩",     ar:"يتسوّق",                 aux:"hat", partizip:"eingekauft"},
+  {de:"fernsehen",    word:"fernsehen",    ipa:"ˈfɛʁnˌzeːən",     ar:"يشاهد التلفاز",          aux:"hat", partizip:"ferngesehen"},
+  {de:"aufräumen",    word:"aufräumen",    ipa:"ˈaʊfˌʁɔɪmən",     ar:"يُرتّب / ينظّف",          aux:"hat", partizip:"aufgeräumt"},
+  {de:"mitkommen",    word:"mitkommen",    ipa:"ˈmɪtˌkɔmən",      ar:"يرافق / يأتي معه",       aux:"ist", partizip:"mitgekommen"},
+  {de:"weggehen",     word:"weggehen",     ipa:"ˈvɛkˌɡeːən",      ar:"يذهب بعيدًا / يغادر",    aux:"ist", partizip:"weggegangen"},
+  {de:"zurückkommen", word:"zurückkommen", ipa:"tsuˈʁʏkˌkɔmən",   ar:"يعود",                   aux:"ist", partizip:"zurückgekommen"},
+  {de:"ausgehen",     word:"ausgehen",     ipa:"ˈaʊsˌɡeːən",      ar:"يخرج (للتسلية)",         aux:"ist", partizip:"ausgegangen"},
+  {de:"anziehen",     word:"anziehen",     ipa:"ˈanˌtsiːən",      ar:"يرتدي / يلبس",           aux:"hat", partizip:"angezogen"},
+  {de:"vorbereiten",  word:"vorbereiten",  ipa:"ˈfoːɐ̯bəˌʁaɪtn̩", ar:"يُحضّر مسبقًا",           aux:"hat", partizip:"vorbereitet"}
+];
+
+const PREFIXES = [
+  {de:"auf-",    word:"aufstehen",    ipa:"aʊf",       ar:"للأعلى / فتح — كما في aufstehen (يقف) وaufmachen (يفتح)"},
+  {de:"an-",     word:"anrufen",      ipa:"an",        ar:"بدء / اتجاه نحو — كما في anrufen (يتصل) وanmachen (يشغّل)"},
+  {de:"aus-",    word:"ausgehen",     ipa:"aʊs",       ar:"للخارج / إيقاف — كما في ausgehen (يخرج) وausmachen (يطفئ)"},
+  {de:"ein-",    word:"einkaufen",    ipa:"aɪn",       ar:"للداخل — كما في einkaufen (يتسوّق) وeinsteigen (يركب)"},
+  {de:"mit-",    word:"mitkommen",    ipa:"mɪt",       ar:"مع / مرافقة — كما في mitkommen (يرافق) وmitbringen (يُحضر معه)"},
+  {de:"weg-",    word:"weggehen",     ipa:"vɛk",       ar:"بعيدًا — كما في weggehen (يذهب بعيدًا) وwegwerfen (يرمي بعيدًا)"},
+  {de:"zurück-", word:"zurückkommen", ipa:"tsuˈʁʏk",   ar:"للخلف / عودة — كما في zurückkommen (يعود) وzurückrufen (يُعاود الاتصال)"},
+  {de:"vor-",    word:"vorbereiten",  ipa:"foːɐ̯",     ar:"أمام / تقديم مسبق — كما في vorbereiten (يُحضّر مسبقًا) وvorstellen (يُقدّم)"}
+];
+
+const DAILY_RHYTHM = [
+  {de:"aufstehen", time:"٦:٠٠ - ٨:٠٠",   ar:"الاستيقاظ والنهوض من الفراش", icon:"i-sun"},
+  {de:"einkaufen", time:"١٢:٠٠ - ١٤:٠٠", ar:"التسوّق لوجبة الغداء",        icon:"i-compass"},
+  {de:"fernsehen", time:"١٩:٠٠ - ٢٢:٠٠", ar:"مشاهدة التلفاز والاسترخاء",   icon:"i-moon"}
+];
+
+/* --- Verb splitter centerpiece: subject + conjugated stem | rest | prefix --- */
+const SPLIT_VERBS = [
+  {id:'aufstehen',    label:"aufstehen",    cat:"masc", catName:"حركة",   subj:"Ich", conj:"stehe",   rest:"jeden Morgen früh", prefix:"auf",
+    haupt:"Ich stehe jeden Morgen früh auf.", ar:"أستيقظ كل صباح باكرًا.",
+    modal:"Ich möchte jeden Morgen früh aufstehen.", neben:"…, dass ich jeden Morgen früh aufstehe."},
+  {id:'weggehen',     label:"weggehen",     cat:"masc", catName:"حركة",   subj:"Ich", conj:"gehe",    rest:"um acht Uhr", prefix:"weg",
+    haupt:"Ich gehe um acht Uhr weg.", ar:"أذهب بعيدًا الساعة الثامنة.",
+    modal:"Ich muss um acht Uhr weggehen.", neben:"…, dass ich um acht Uhr weggehe."},
+  {id:'zurückkommen', label:"zurückkommen", cat:"masc", catName:"حركة",   subj:"Ich", conj:"komme",   rest:"um sechs Uhr", prefix:"zurück",
+    haupt:"Ich komme um sechs Uhr zurück.", ar:"أعود الساعة السادسة.",
+    modal:"Ich will um sechs Uhr zurückkommen.", neben:"…, dass ich um sechs Uhr zurückkomme."},
+  {id:'aufräumen',    label:"aufräumen",    cat:"fem",  catName:"روتين يومي", subj:"Ich", conj:"räume",  rest:"mein Zimmer", prefix:"auf",
+    haupt:"Ich räume mein Zimmer auf.", ar:"أُرتّب غرفتي.",
+    modal:"Ich muss mein Zimmer aufräumen.", neben:"…, dass ich mein Zimmer aufräume."},
+  {id:'einkaufen',    label:"einkaufen",    cat:"fem",  catName:"روتين يومي", subj:"Ich", conj:"kaufe",  rest:"frisches Gemüse", prefix:"ein",
+    haupt:"Ich kaufe frisches Gemüse ein.", ar:"أشتري خضارًا طازجة.",
+    modal:"Ich möchte frisches Gemüse einkaufen.", neben:"…, dass ich frisches Gemüse einkaufe."},
+  {id:'fernsehen',    label:"fernsehen",    cat:"fem",  catName:"روتين يومي", subj:"Ich", conj:"sehe",   rest:"abends", prefix:"fern",
+    haupt:"Ich sehe abends fern.", ar:"أشاهد التلفاز مساءً.",
+    modal:"Ich kann heute Abend fernsehen.", neben:"…, dass ich abends fernsehe."},
+  {id:'anrufen',      label:"anrufen",      cat:"neut", catName:"تواصل",  subj:"Ich", conj:"rufe",    rest:"meine Mutter", prefix:"an",
+    haupt:"Ich rufe meine Mutter an.", ar:"أتصل بأمي.",
+    modal:"Ich möchte meine Mutter anrufen.", neben:"…, dass ich meine Mutter anrufe."},
+  {id:'mitkommen',    label:"mitkommen",    cat:"neut", catName:"تواصل",  subj:"Ich", conj:"komme",   rest:"heute Abend", prefix:"mit",
+    haupt:"Ich komme heute Abend mit.", ar:"سآتي معكم الليلة.",
+    modal:"Ich kann heute Abend mitkommen.", neben:"…, dass ich heute Abend mitkomme."},
+  {id:'vorbereiten',  label:"vorbereiten",  cat:"neut", catName:"تواصل",  subj:"Ich", conj:"bereite", rest:"das Abendessen", prefix:"vor",
+    haupt:"Ich bereite das Abendessen vor.", ar:"أُحضّر العشاء.",
+    modal:"Ich muss das Abendessen vorbereiten.", neben:"…, dass ich das Abendessen vorbereite."}
+];
+
+/* --- Day builder centerpiece --- */
+const DAY_MORNING = [
+  {id:'aufstehen2', de:"aufstehen", sentence:"Ich stehe auf.",              ar:"أستيقظ"},
+  {id:'aufwachen2', de:"aufwachen", sentence:"Ich wache auf.",              ar:"أستفيق"},
+  {id:'anziehen2',  de:"anziehen",  sentence:"Ich ziehe die Jacke an.",     ar:"أرتدي السترة"},
+  {id:'aufraeumen2',de:"aufräumen", sentence:"Ich räume mein Zimmer auf.",  ar:"أُرتّب غرفتي"}
+];
+const DAY_EVENING = [
+  {id:'einkaufen2',  de:"einkaufen",     sentence:"Ich kaufe Brot ein.",              ar:"أشتري خبزًا"},
+  {id:'anrufen2',    de:"anrufen",       sentence:"Ich rufe einen Freund an.",        ar:"أتصل بصديق"},
+  {id:'fernsehen2',  de:"fernsehen",     sentence:"Ich sehe fern.",                   ar:"أشاهد التلفاز"},
+  {id:'ausgehen2',   de:"ausgehen",      sentence:"Ich gehe aus.",                    ar:"أخرج (للتسلية)"},
+  {id:'zurueckkommen2', de:"zurückkommen", sentence:"Ich komme um zehn Uhr zurück.", ar:"أعود الساعة العاشرة"}
+];
+
+const EXTRA_NOTES = [
+  {q:"ما الفرق بين البادئات المنفصلة وغير المنفصلة؟", body:"بادئات مثل <span class=\"de mono\">be-, ge-, er-, ver-, zer-, ent-, emp-, miss-</span> لا تنفصل أبدًا ولا تحمل الضغط الصوتي. قارن: <span class=\"de mono\" data-speak=\"Ich stehe auf.\">Ich stehe auf.</span> (فعل منفصل، auf- تطير للنهاية) مقابل <span class=\"de mono\" data-speak=\"Ich verstehe das nicht.\">Ich verstehe das nicht.</span> — الفعل <span class=\"de mono\" data-speak=\"verstehen\">verstehen</span> غير منفصل رغم أن ver- تبدو بادئة."},
+  {q:"كيف يتكوّن الـ Partizip II (صيغة التمام) للأفعال المنفصلة؟", body:"تُدرَج <span class=\"de mono\">ge-</span> بين البادئة وجذر الفعل: <span class=\"de mono\" data-speak=\"aufstehen\">auf</span> + <span class=\"de mono\">ge</span> + <span class=\"de mono\" data-speak=\"gestanden\">standen</span> = <span class=\"de mono\" data-speak=\"aufgestanden\">aufgestanden</span>. أفعال الحركة وتغيّر الحال (مثل aufstehen وweggehen) تستخدم الفعل المساعد <span class=\"de mono\">sein</span>، بينما معظم الأفعال الأخرى تستخدم <span class=\"de mono\">haben</span>."},
+  {q:"ماذا عن بادئات مثل um- التي تكون أحيانًا منفصلة وأحيانًا غير منفصلة؟", body:"معلومة إضافية: بادئات مثل <span class=\"de mono\">um-, über-, unter-, durch-, wieder-</span> يمكن أن تكون منفصلة أو غير منفصلة حسب المعنى والضغط الصوتي — إن كانت مضغوطة فهي منفصلة، وإن لم تكن مضغوطة فهي غير منفصلة. هذه نقطة متقدّمة قليلًا، ولا تحتاج إتقانها بالكامل في مستوى A1."}
+];
+
+const DIALOGUE_INFORMAL = [
+  {who:"a", name:"Anna", de:"Kommst du heute Abend mit?", ar:"هل ستأتي معي الليلة؟"},
+  {who:"b", name:"Ben",  de:"Wohin gehst du aus?", ar:"إلى أين ستخرجين؟"},
+  {who:"a", name:"Anna", de:"Ich gehe mit Lena aus. Wir sehen einen Film.", ar:"سأخرج مع لينا. سنشاهد فيلمًا."},
+  {who:"b", name:"Ben",  de:"Klingt gut! Ich räume nur noch mein Zimmer auf.", ar:"يبدو جيدًا! سأرتّب غرفتي فقط أولًا."},
+  {who:"a", name:"Anna", de:"Okay, ich rufe dich in einer Stunde an.", ar:"حسنًا، سأتصل بك خلال ساعة."},
+  {who:"b", name:"Ben",  de:"Perfekt. Wann kommst du zurück?", ar:"ممتاز. متى ستعودين؟"},
+  {who:"a", name:"Anna", de:"Ich komme um elf Uhr zurück.", ar:"سأعود الساعة الحادية عشرة."},
+  {who:"b", name:"Ben",  de:"Bis später!", ar:"إلى اللقاء لاحقًا!"}
+];
+
+const DIALOGUE_FORMAL = [
+  {who:"a", name:"Frau Klein", de:"Bereiten Sie die Präsentation schon vor?", ar:"هل تُحضّرون العرض التقديمي بالفعل؟"},
+  {who:"b", name:"Herr Roth",  de:"Ja, ich bereite sie gerade vor.", ar:"نعم، أُحضّره الآن."},
+  {who:"a", name:"Frau Klein", de:"Rufen Sie mich an, wenn Sie fertig sind.", ar:"اتصلوا بي عندما تنتهون."},
+  {who:"b", name:"Herr Roth",  de:"Natürlich, ich rufe Sie um vier Uhr an.", ar:"بالتأكيد، سأتصل بكم الساعة الرابعة."},
+  {who:"a", name:"Frau Klein", de:"Kommen Sie heute später zurück?", ar:"هل ستعودون لاحقًا اليوم؟"},
+  {who:"b", name:"Herr Roth",  de:"Nein, ich gehe um sechs Uhr weg.", ar:"لا، سأغادر الساعة السادسة."},
+  {who:"a", name:"Frau Klein", de:"Gut, dann räumen wir morgen gemeinsam auf.", ar:"حسنًا، إذن سنرتّب معًا غدًا."},
+  {who:"b", name:"Herr Roth",  de:"Einverstanden, bis morgen!", ar:"متّفقون، إلى الغد!"}
+];
+
+const MISTAKES = [
+  {wrong:"قول <span class=\"de mono\" data-speak=\"Ich aufstehe früh.\">Ich aufstehe früh.</span> (بلا انقسام)", right:"<span class=\"de mono\" data-speak=\"Ich stehe früh auf.\">Ich stehe früh auf.</span>", note:"في الجملة الرئيسية، يجب أن ينقسم الفعل: الجذر المصرَّف في الموضع الثاني، والبادئة في نهاية الجملة."},
+  {wrong:"قول <span class=\"de mono\" data-speak=\"Ich stehe auf früh.\">Ich stehe auf früh.</span> (البادئة في مكان خاطئ)", right:"<span class=\"de mono\" data-speak=\"Ich stehe früh auf.\">Ich stehe früh auf.</span>", note:"البادئة المنفصلة يجب أن تكون آخر كلمة في الجملة الرئيسية، لا أن تأتي مباشرة بعد الفعل."},
+  {wrong:"قول <span class=\"de mono\" data-speak=\"Ich möchte aufstehe früh.\">Ich möchte aufstehe früh.</span> (تصريف خاطئ مع فعل ناقص)", right:"<span class=\"de mono\" data-speak=\"Ich möchte früh aufstehen.\">Ich möchte früh aufstehen.</span>", note:"بعد فعل ناقص مثل möchten، يبقى الفعل المنفصل مصدرًا كاملًا واحدًا في نهاية الجملة، ولا يتصرّف ولا ينقسم."},
+  {wrong:"قول <span class=\"de mono\" data-speak=\"Ich habe früh aufgestehen.\">Ich habe früh aufgestehen.</span> (صيغة تمام وفعل مساعد خاطئان)", right:"<span class=\"de mono\" data-speak=\"Ich bin früh aufgestanden.\">Ich bin früh aufgestanden.</span>", note:"صيغة الـ Partizip II الصحيحة هي aufgestanden وليست aufgestehen، والفعل المساعد الصحيح هو sein لأن aufstehen يصف تغيّر حال."},
+  {wrong:"قول <span class=\"de mono\" data-speak=\"weil ich stehe auf früh.\">weil ich stehe auf früh.</span> (ترتيب جملة فرعية خاطئ)", right:"<span class=\"de mono\" data-speak=\"weil ich früh aufstehe.\">weil ich früh aufstehe.</span>", note:"في الجملة الفرعية (بعد weil أو dass)، ينتقل الفعل المصرَّف إلى آخر الجملة تمامًا ويتّحد مجددًا مع بادئته في كلمة واحدة."},
+  {wrong:"قول <span class=\"de mono\" data-speak=\"Ich verstehe das nicht auf.\">Ich verstehe das nicht auf.</span> (تطبيق القاعدة على فعل غير منفصل)", right:"<span class=\"de mono\" data-speak=\"Ich verstehe das nicht.\">Ich verstehe das nicht.</span>", note:"الفعل verstehen غير منفصل — بادئته ver- من البادئات التي لا تنفصل أبدًا، فلا تُطبَّق عليه قاعدة الانفصال."}
+];
+
+const TIPS = [
+  {title:"الضغط الصوتي دائمًا على البادئة المنفصلة", body:"في الفعل <span class=\"de\" data-speak=\"aufstehen\">aufstehen</span>، يقع الضغط على <span class=\"de mono\">auf</span> وليس على stehen. وبالمثل <span class=\"de\" data-speak=\"anrufen\">anrufen</span> تُنطق بضغط قوي على an-. هذا الضغط علامة مسموعة تكشف أن الفعل منفصل قبل حتى أن تفهم معناه."},
+  {title:"نطق البادئات المنفصلة الأساسية", body:"<span class=\"de mono\" data-speak=\"auf\">auf</span> [aʊf]، <span class=\"de mono\" data-speak=\"an\">an</span> [an]، <span class=\"de mono\" data-speak=\"aus\">aus</span> [aʊs]، <span class=\"de mono\" data-speak=\"ein\">ein</span> [aɪn]، <span class=\"de mono\" data-speak=\"mit\">mit</span> [mɪt]. لاحظ أن <span class=\"de mono\" data-speak=\"zurück\">zurück</span> بادئة من مقطعين، وضغطها يقع على المقطع الثاني rück."},
+  {title:"البادئة في نهاية الجملة تحمل نبرة الختام", body:"عندما تصل البادئة إلى نهاية الجملة الرئيسية، فإنها غالبًا تحمل نبرة هابطة تدلّ على اكتمال الجملة — استمع إلى <span class=\"de\" data-speak=\"Ich stehe früh auf.\">Ich stehe früh auf.</span> ولاحظ كيف تنخفض النبرة عند auf في النهاية."},
+  {title:"قارن: بادئة منفصلة مقابل بادئة غير منفصلة", body:"زوج تمييزي مفيد: <span class=\"de\" data-speak=\"aufstehen\">aufstehen</span> (auf- مضغوطة ومنفصلة) مقابل <span class=\"de\" data-speak=\"verstehen\">verstehen</span> (ver- غير مضغوطة أبدًا وغير منفصلة). استخدم هذا الفرق الصوتي لتخمين نوع الفعل فورًا عند الاستماع."}
+];
+
+const MATCH_PAIRS = [
+  {de:"aufstehen", ar:"يستيقظ / ينهض"}, {de:"anrufen", ar:"يتصل هاتفيًا"},
+  {de:"einkaufen", ar:"يتسوّق"}, {de:"fernsehen", ar:"يشاهد التلفاز"},
+  {de:"aufräumen", ar:"يُرتّب / ينظّف"}, {de:"mitkommen", ar:"يرافق / يأتي معه"},
+  {de:"weggehen", ar:"يذهب بعيدًا / يغادر"}, {de:"zurückkommen", ar:"يعود"}
+];
+
+const MCQ = [
+  {prompt:"أين تذهب البادئة المنفصلة في الجملة الرئيسية؟", options:["إلى نهاية الجملة","بعد الفاعل مباشرة","قبل الفعل","لا تتحرك"], correct:"إلى نهاية الجملة", why:"القاعدة الذهبية: البادئة المنفصلة تنتقل دائمًا إلى آخر الجملة الرئيسية، بينما يبقى جذر الفعل المصرَّف في الموضع الثاني."},
+  {prompt:"أي جملة صحيحة لفعل <span class=\"de mono\">aufstehen</span>؟", options:["Ich stehe früh auf.","Ich aufstehe früh.","Ich stehe auf früh.","Ich früh aufstehe."], correct:"Ich stehe früh auf.", why:"<span class=\"de mono\" data-speak=\"Ich stehe früh auf.\">Ich stehe früh auf.</span> — الجذر stehe في الموضع الثاني، والبادئة auf في النهاية."},
+  {prompt:"أي جملة صحيحة مع فعل ناقص (möchte)؟", options:["Ich möchte früh aufstehen.","Ich möchte früh stehe auf.","Ich möchte aufstehe früh.","Ich aufstehen möchte früh."], correct:"Ich möchte früh aufstehen.", why:"بعد فعل ناقص، يبقى الفعل المنفصل مصدرًا كاملًا واحدًا في نهاية الجملة: <span class=\"de mono\" data-speak=\"Ich möchte früh aufstehen.\">Ich möchte früh aufstehen.</span>"},
+  {prompt:"ما صيغة الـ Partizip II الصحيحة لفعل <span class=\"de mono\">aufstehen</span>؟", options:["aufgestanden","aufgestehen","gestandenauf","aufgesteht"], correct:"aufgestanden", why:"<span class=\"de mono\" data-speak=\"aufgestanden\">aufgestanden</span> — تُدرَج ge- بين البادئة auf والجذر الماضي standen."},
+  {prompt:"أي فعل مساعد يُستخدم مع <span class=\"de mono\">aufstehen</span> في الماضي التام؟", options:["sein","haben","werden","möchten"], correct:"sein", why:"<span class=\"de mono\" data-speak=\"Ich bin aufgestanden.\">Ich bin aufgestanden.</span> — aufstehen يصف تغيّر حال (من النوم إلى اليقظة)، فيأخذ sein."},
+  {prompt:"أي بادئة من هذه غير منفصلة أبدًا؟", options:["ver-","auf-","an-","mit-"], correct:"ver-", why:"<span class=\"de mono\">ver-</span> من البادئات التي لا تنفصل أبدًا ولا تحمل الضغط الصوتي، مثل verstehen وverkaufen."},
+  {prompt:"أكمل: <span class=\"de mono\">…, dass ich früh ____.</span>", options:["aufstehe","stehe auf","auf stehe","aufstehen"], correct:"aufstehe", why:"في الجملة الفرعية، يتّحد الفعل مع بادئته مجددًا وينتقل إلى نهاية الجملة كاملًا: <span class=\"de mono\" data-speak=\"dass ich früh aufstehe.\">dass ich früh aufstehe.</span>"},
+  {prompt:"ماذا يعني الفعل <span class=\"de mono\">einkaufen</span>؟", options:["يتسوّق","يستيقظ","يتصل","يشاهد"], correct:"يتسوّق", why:"<span class=\"de mono\" data-speak=\"einkaufen\">einkaufen</span> يعني «يتسوّق»، والبادئة ein- تشير إلى الدخول (إلى المتجر)."}
+];
+
+const FILL = [
+  {display:"Ich stehe jeden Tag früh ____. (aufstehen)", correct:"auf", hint:"البادئة تذهب لنهاية الجملة", full:"Ich stehe jeden Tag früh auf."},
+  {display:"Ich rufe meine Schwester ____. (anrufen)", correct:"an", hint:"بادئة anrufen", full:"Ich rufe meine Schwester an."},
+  {display:"Ich kaufe frisches Brot ____. (einkaufen)", correct:"ein", hint:"بادئة einkaufen", full:"Ich kaufe frisches Brot ein."},
+  {display:"Ich sehe am Abend ____. (fernsehen)", correct:"fern", hint:"بادئة fernsehen", full:"Ich sehe am Abend fern."},
+  {display:"Ich räume mein Zimmer ____. (aufräumen)", correct:"auf", hint:"بادئة aufräumen", full:"Ich räume mein Zimmer auf."},
+  {display:"Ich komme um zehn Uhr ____. (zurückkommen)", correct:"zurück", hint:"بادئة zurückkommen", full:"Ich komme um zehn Uhr zurück."},
+  {display:"Ich gehe heute Abend ____. (ausgehen)", correct:"aus", hint:"بادئة ausgehen", full:"Ich gehe heute Abend aus."},
+  {display:"Kommst du heute Abend ____? (mitkommen)", correct:"mit", hint:"بادئة mitkommen", full:"Kommst du heute Abend mit?"}
+];
+
+const BUILDER = [
+  {words:["Ich","stehe","jeden","Morgen","früh","auf"], ar:"أستيقظ كل صباح باكرًا"},
+  {words:["Ich","rufe","meine","Mutter","an"], ar:"أتصل بأمي"},
+  {words:["Kommst","du","heute","Abend","mit"], ar:"هل ستأتي معي الليلة؟"},
+  {words:["Ich","räume","mein","Zimmer","auf"], ar:"أرتّب غرفتي"},
+  {words:["Wann","kommst","du","zurück"], ar:"متى ستعود؟"}
+];
+
+const LISTEN_QUESTION = {
+  prompt:"استمع إلى حوار «بين صديقين» كاملًا، ثم أجب: في أي ساعة تعود Anna؟",
+  options:["الحادية عشرة","العاشرة","التاسعة","الثانية عشرة"],
+  correct:"الحادية عشرة",
+  why:"في الحوار قالت Anna: <span class=\"de mono\" data-speak=\"Ich komme um elf Uhr zurück.\">Ich komme um elf Uhr zurück.</span> — أي الساعة الحادية عشرة."
+};
+
+const LEARNING_TIMELINE = [
+  {top:"الدرس ٩", dot:"done", bottom:"الأفعال الأساسية", hl:false},
+  {top:"الدرس ١٠", dot:"done", bottom:"الروتين اليومي", hl:false},
+  {top:"أنت الآن هنا", dot:"now", bottom:"الأفعال المنفصلة", hl:true},
+  {top:"الدرس ١٢", dot:"", bottom:"قريبًا", hl:false}
+];
+
+const BADGES = [
+  {id:'explorer', name:'مستكشف الأفعال', icon:'i-compass'},
+  {id:'builder', name:'بطل بناء اليوم', icon:'i-split'},
+  {id:'sharp', name:'حادّ الإجابة', icon:'i-target'},
+  {id:'champion', name:'بطل الأفعال المنفصلة', icon:'i-star'}
+];
+
+/* ==========================================================================
+   THEME
+   ========================================================================== */
+const root = document.documentElement;
+function applyTheme(mode){
+  root.setAttribute('data-theme', mode);
+  try{ localStorage.setItem('lesson-theme', mode); }catch(e){}
+}
+(function initTheme(){
+  let stored = null;
+  try{ stored = localStorage.getItem('lesson-theme'); }catch(e){}
+  if(stored){ applyTheme(stored); }
+  else{
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
+})();
+document.getElementById('themeToggle').addEventListener('click', function(){
+  const current = root.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});
+if(window.matchMedia){
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    let stored = null;
+    try{ stored = localStorage.getItem('lesson-theme'); }catch(err){}
+    if(!stored) applyTheme(e.matches ? 'dark' : 'light');
+  });
+}
+
+/* ==========================================================================
+   AUDIO PROVIDER ABSTRACTION
+   Keeps the lesson decoupled from a specific TTS backend. The "browser"
+   provider wraps the Web Speech API and needs no configuration or network
+   access. The "cloud" provider is a placeholder for a future high-quality
+   network voice service — it is intentionally NOT configured here (no API
+   key exists in this file), so it always reports itself unavailable and
+   the app falls back to the browser provider automatically.
+   ========================================================================== */
+const AudioProviders = {
+  browser: {
+    name: 'browser',
+    isAvailable(){ return !!window.speechSynthesis; },
+    listVoices(){ return window.speechSynthesis ? window.speechSynthesis.getVoices() : []; },
+    speak(text, opts){
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'de-DE';
+      if(opts.voice) utter.voice = opts.voice;
+      utter.rate = opts.rate;
+      utter.pitch = opts.pitch;
+      utter.onstart = opts.onstart;
+      utter.onend = opts.onend;
+      utter.onerror = opts.onerror;
+      if(opts.onboundary) utter.onboundary = opts.onboundary;
+      window.speechSynthesis.speak(utter);
+      return utter;
+    },
+    cancel(){ if(window.speechSynthesis) window.speechSynthesis.cancel(); },
+    pause(){ if(window.speechSynthesis) window.speechSynthesis.pause(); },
+    resume(){ if(window.speechSynthesis) window.speechSynthesis.resume(); },
+    get speaking(){ return !!(window.speechSynthesis && window.speechSynthesis.speaking); },
+    get paused(){ return !!(window.speechSynthesis && window.speechSynthesis.paused); }
+  },
+  cloud: {
+    name: 'cloud',
+    // No cloud TTS provider is configured for this lesson — this always
+    // returns false so the app gracefully falls back to the browser voice.
+    isAvailable(){ return false; },
+    listVoices(){ return []; },
+    speak(){ throw new Error('Cloud TTS provider is not configured for this lesson.'); },
+    cancel(){}, pause(){}, resume(){}, speaking:false, paused:false
+  }
+};
+function getActiveProvider(){
+  return AudioProviders.cloud.isAvailable() ? AudioProviders.cloud : AudioProviders.browser;
+}
+
+/* ==========================================================================
+   SPEECH SYNTHESIS MANAGER
+   ========================================================================== */
+const Speech = (function(){
+  let allVoices = [];
+  let germanVoices = [];
+  let currentVoice = null;
+  let currentUtterance = null;
+  let currentEl = null;
+  let rate = 0.9;
+  let pitch = 1;
+
+  function refreshVoices(){
+    const provider = getActiveProvider();
+    allVoices = provider.listVoices();
+    germanVoices = allVoices.filter(v => /^de/i.test(v.lang));
+    if(germanVoices.length && (!currentVoice || !germanVoices.includes(currentVoice))){
+      const sorted = germanVoices.slice().sort((a,b)=>{
+        const score = v => (/de-de/i.test(v.lang)?3:0) + (/google/i.test(v.name)?2:0) + (/natural|enhanced|premium|online/i.test(v.name)?2:0) + (v.default?1:0);
+        return score(b) - score(a);
+      });
+      currentVoice = sorted[0];
+    }
+    const label = document.getElementById('dockVoice');
+    if(label) label.textContent = currentVoice ? currentVoice.name.replace('Microsoft ','').replace('Google ','') : 'صوت افتراضي';
+    if(typeof window.onVoicesReady === 'function') window.onVoicesReady();
+  }
+  if(window.speechSynthesis){
+    refreshVoices();
+    window.speechSynthesis.onvoiceschanged = refreshVoices;
+  }
+
+  function clearHighlights(){
+    document.querySelectorAll('.k-word.speaking, .speak-dot.speaking, .listen-chip.speaking, .chat-bubble.speaking, .menu-item-card.speaking').forEach(el => el.classList.remove('speaking'));
+  }
+
+  function speak(text, opts){
+    opts = opts || {};
+    const provider = getActiveProvider();
+    if(!provider.isAvailable()) return;
+    provider.cancel();
+    clearHighlights();
+    currentEl = opts.el || null;
+
+    const speakOpts = {
+      voice: opts.voiceOverride || currentVoice,
+      rate: opts.rateOverride || rate,
+      pitch: opts.pitchOverride || pitch,
+      onstart(){
+        showDock(text);
+        if(opts.el) opts.el.classList.add('speaking');
+        setDockPlaying(true);
+      },
+      onend(){
+        clearHighlights();
+        setDockPlaying(false);
+        hideDockDelayed();
+        if(opts.onend) opts.onend();
+      },
+      onerror(){ setDockPlaying(false); }
+    };
+    if(opts.wordEls && opts.wordEls.length){
+      speakOpts.onboundary = function(e){
+        if(e.name !== 'word') return;
+        clearHighlights();
+        let acc = 0, idx = -1;
+        for(let i=0;i<opts.wordEls.length;i++){
+          const w = opts.wordEls[i].dataset.plain || opts.wordEls[i].textContent;
+          if(e.charIndex >= acc && e.charIndex < acc + w.length + 1){ idx = i; break; }
+          acc += w.length + 1;
+        }
+        if(idx >= 0) opts.wordEls[idx].classList.add('speaking');
+      };
+    }
+    currentUtterance = provider.speak(text, speakOpts);
+    currentUtterance.text = text;
+  }
+
+  function togglePause(){
+    const provider = getActiveProvider();
+    if(!provider.isAvailable()) return;
+    if(provider.speaking && !provider.paused){ provider.pause(); setDockPlaying(false); }
+    else if(provider.paused){ provider.resume(); setDockPlaying(true); }
+  }
+  function replay(){ if(currentUtterance) speak(currentUtterance.text, {el: currentEl}); }
+  function setRate(r){ rate = r; }
+  function setPitch(p){ pitch = p; }
+  function getGermanVoices(){ return germanVoices.slice(); }
+  function getVoiceLabel(){ return currentVoice ? currentVoice.name : null; }
+  function selectVoiceByURI(uri){
+    const found = germanVoices.find(v => v.voiceURI === uri) || allVoices.find(v => v.voiceURI === uri);
+    if(found){ currentVoice = found; }
+    const label = document.getElementById('dockVoice');
+    if(label) label.textContent = currentVoice ? currentVoice.name.replace('Microsoft ','').replace('Google ','') : 'صوت افتراضي';
+  }
+  function testVoice(voice, text){
+    const provider = getActiveProvider();
+    if(!provider.isAvailable()) return;
+    provider.cancel();
+    provider.speak(text, {voice: voice, rate: rate, pitch: pitch, onstart(){}, onend(){}, onerror(){}});
+  }
+
+  let dockTimeout = null;
+  function showDock(text){
+    clearTimeout(dockTimeout);
+    const dock = document.getElementById('audioDock');
+    document.getElementById('dockText').textContent = text;
+    dock.classList.add('visible');
+  }
+  function hideDockDelayed(){
+    dockTimeout = setTimeout(()=> document.getElementById('audioDock').classList.remove('visible'), 2600);
+  }
+  function setDockPlaying(playing){
+    const icon = document.getElementById('dockPlayIcon');
+    icon.innerHTML = '<use href="#' + (playing ? 'i-pause' : 'i-play') + '"/>';
+  }
+
+  return { speak, togglePause, replay, setRate, setPitch, getGermanVoices, getVoiceLabel, selectVoiceByURI, testVoice, refreshVoices,
+    get currentVoiceURI(){ return currentVoice ? currentVoice.voiceURI : null; } };
+})();
+
+document.getElementById('dockPlayPause').addEventListener('click', Speech.togglePause);
+document.getElementById('dockReplay').addEventListener('click', Speech.replay);
+document.getElementById('dockSpeed').addEventListener('input', function(e){
+  Speech.setRate(parseFloat(e.target.value));
+  syncSpeedSliders(e.target.value, 'dock');
+});
+
+/* ==========================================================================
+   SHARED HELPERS
+   ========================================================================== */
+function makeSpeakable(el, text, opts){
+  opts = opts || {};
+  el.style.cursor = 'pointer';
+  if(!el.getAttribute('role')) el.setAttribute('role','button');
+  if(!el.hasAttribute('tabindex')) el.tabIndex = 0;
+  if(!el.getAttribute('aria-label')) el.setAttribute('aria-label', 'استمع لـ ' + text);
+  el.addEventListener('click', () => Speech.speak(text, Object.assign({el}, opts)));
+  el.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); el.click(); } });
+}
+function toAr(n){ return String(n).replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]); }
+
+document.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+
+/* ==========================================================================
+   HERO SHOWCASE CARD
+   ========================================================================== */
+(function buildHeroShowcase(){
+  const wrap = document.createElement('div');
+  wrap.className = 'showcase-card';
+  wrap.style.marginTop = '22px';
+  wrap.innerHTML = `
+    <div class="showcase-label"><svg class="icon" style="width:16px;height:16px;color:var(--teal)"><use href="#i-chat"/></svg>سؤال شائع اليوم · انقر لتسمع</div>
+    <div class="arrow-frame">
+      <span class="k-word k-phrase-big de" id="heroPhrase" data-plain="Wann stehst du auf?" tabindex="0" role="button" aria-label="استمع لـ Wann stehst du auf">Wann stehst du auf?</span>
+      <span class="k-arrow">→</span>
+      <span class="k-word k-word-result de" id="heroReply" data-plain="Ich stehe um sieben Uhr auf." tabindex="0" role="button" aria-label="استمع لـ Ich stehe um sieben Uhr auf">Ich stehe um sieben Uhr auf.</span>
+    </div>
+    <p class="showcase-translation">هكذا يُسألك أحدهم عن موعد استيقاظك، وهكذا تجيب بالفعل المنفصل مقسّمًا بشكل صحيح. انقر على أي جزء لسماع نطقه.</p>
+    <button class="btn btn-ghost showcase-speak-all" id="heroSpeakAll">
+      <svg class="icon" style="width:16px;height:16px"><use href="#i-speaker"/></svg>
+      استمع للسؤال والجواب معًا
+    </button>`;
+  document.querySelector('.hero-illustration').insertAdjacentElement('afterend', wrap);
+  const heroPhrase = wrap.querySelector('#heroPhrase');
+  const heroReply = wrap.querySelector('#heroReply');
+  makeSpeakable(heroPhrase, 'Wann stehst du auf?');
+  makeSpeakable(heroReply, 'Ich stehe um sieben Uhr auf.');
+  wrap.querySelector('#heroSpeakAll').addEventListener('click', () => {
+    Speech.speak('Wann stehst du auf? Ich stehe um sieben Uhr auf.', {wordEls: [heroPhrase, heroReply]});
+  });
+})();
+
+/* ==========================================================================
+   LEARNING PATHWAY TIMELINE
+   ========================================================================== */
+const learningTimelineEl = document.getElementById('learningTimeline');
+LEARNING_TIMELINE.forEach(item => {
+  const el = document.createElement('div');
+  el.className = 'mt-item';
+  el.innerHTML = `<div class="mt-top">${item.top}</div><div class="mt-dot ${item.dot}"></div><div class="mt-bottom ${item.hl ? 'hl' : ''}">${item.bottom}</div>`;
+  learningTimelineEl.appendChild(el);
+});
+
+/* ==========================================================================
+   VOCAB FLIP-CARD GRID BUILDER (shared: verbs + prefixes)
+   ========================================================================== */
+function buildFlipVocabGrid(container, items){
+  items.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'flip-card';
+    const speakWord = item.word || item.de;
+    const backLine2 = item.ipa ? `<span class="ipa mono">[${item.ipa}]</span>` : '';
+    const pluralTag = item.plural ? '<span class="chip chip-plum plural-only-tag mono">جمع فقط</span>' : '';
+    const auxTag = item.aux ? `<span class="chip ${item.aux === 'ist' ? 'chip-teal' : 'chip-amber'} aux-tag mono">${item.aux}</span>` : '';
+    card.innerHTML = `
+      <div class="flip-card-inner" tabindex="0" role="button" aria-label="بطاقة ${item.ar}, انقر للقلب">
+        <div class="flip-face flip-front">
+          ${pluralTag}${auxTag}
+          <span class="de">${item.de}</span>
+          <span class="flip-hint">انقر للقلب</span>
+          <span class="speak-dot" data-word="${speakWord}" aria-label="استمع لـ ${speakWord}"><svg class="icon"><use href="#i-speaker"/></svg></span>
+        </div>
+        <div class="flip-face flip-back">
+          <span class="partizip mono">${item.partizip || speakWord}</span>
+          ${backLine2}
+          <span class="meaning">${item.ar}</span>
+          <span class="speak-dot" data-word="${speakWord}" aria-label="استمع"><svg class="icon"><use href="#i-speaker"/></svg></span>
+        </div>
+      </div>`;
+    const inner = card.querySelector('.flip-card-inner');
+    inner.addEventListener('click', (e) => { if(e.target.closest('.speak-dot')) return; card.classList.toggle('flipped'); });
+    inner.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); inner.click(); } });
+    card.querySelectorAll('.speak-dot').forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dot.classList.add('speaking');
+        Speech.speak(dot.dataset.word, {el: dot});
+        setTimeout(()=>dot.classList.remove('speaking'), 900);
+      });
+    });
+    container.appendChild(card);
+  });
+}
+buildFlipVocabGrid(document.getElementById('verbsGrid'), SEPARABLE_VERBS);
+buildFlipVocabGrid(document.getElementById('prefixesGrid'), PREFIXES);
+
+/* ==========================================================================
+   DAILY RHYTHM — compact cards
+   ========================================================================== */
+const rhythmRow = document.getElementById('rhythmRow');
+DAILY_RHYTHM.forEach(item => {
+  const card = document.createElement('div');
+  card.className = 'meal-card';
+  card.innerHTML = `
+    <span class="icon-chip chip-teal" style="width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg class="icon" style="width:18px;height:18px"><use href="#${item.icon}"/></svg></span>
+    <div class="meal-time mono">${item.time}</div>
+    <div class="meal-de de">${item.de}</div>
+    <div class="meal-ar">${item.ar}</div>`;
+  card.tabIndex = 0; card.setAttribute('role','button'); card.setAttribute('aria-label', 'استمع لـ ' + item.de);
+  card.addEventListener('click', () => Speech.speak(item.de, {el: card}));
+  card.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); card.click(); } });
+  rhythmRow.appendChild(card);
+});
+
+/* ==========================================================================
+   VERB SPLITTER — centerpiece interactive tool
+   ========================================================================== */
+const splitVerbRow = document.getElementById('splitVerbRow');
+const splitResultPhrase = document.getElementById('splitResultPhrase');
+const splitNote = document.getElementById('splitNote');
+let splitVerb = 'aufstehen';
+let splitVisited = new Set();
+
+SPLIT_VERBS.forEach(v => {
+  const chip = document.createElement('button');
+  chip.className = 'acc-chip' + (v.id === splitVerb ? ' active ' + v.cat : '');
+  chip.innerHTML = v.label + '<span class="gender-tag">' + v.catName + '</span>';
+  chip.addEventListener('click', () => { splitVerb = v.id; refreshSplitChips(); renderSplit(); });
+  splitVerbRow.appendChild(chip);
+});
+
+function refreshSplitChips(){
+  const nodes = splitVerbRow.querySelectorAll('.acc-chip');
+  SPLIT_VERBS.forEach((v,i) => {
+    nodes[i].className = 'acc-chip' + (v.id === splitVerb ? ' active ' + v.cat : '');
+  });
+}
+
+function renderSplit(){
+  const v = SPLIT_VERBS.find(x => x.id === splitVerb);
+  splitResultPhrase.innerHTML = '<span class="ar-verb de">' + v.subj + ' ' + v.conj + '</span><span class="ar-noun de">' + v.rest + '</span><span class="ar-art de ' + v.cat + '">' + v.prefix + '</span>';
+  splitResultPhrase.dataset.plain = v.haupt;
+  splitResultPhrase.setAttribute('aria-label', 'استمع لـ ' + v.haupt);
+
+  splitNote.innerHTML = `<b>${v.prefix}</b> بادئة منفصلة من الفعل <b class="de">${v.label}</b> (فئة: ${v.catName}) — انتقلت إلى آخر الجملة، بينما بقي جذر الفعل <b>${v.conj}</b> في الموضع الثاني مباشرة بعد الفاعل.`;
+
+  document.getElementById('tableHaupt').textContent = v.haupt;
+  document.getElementById('tableModal').textContent = v.modal;
+  document.getElementById('tableNeben').textContent = v.neben;
+
+  splitVisited.add(splitVerb);
+  if(splitVisited.size >= SPLIT_VERBS.length) unlockBadge('explorer');
+}
+splitResultPhrase.addEventListener('click', () => Speech.speak(splitResultPhrase.dataset.plain, {el: splitResultPhrase}));
+splitResultPhrase.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); splitResultPhrase.click(); } });
+
+renderSplit();
+
+/* ==========================================================================
+   DAY BUILDER — centerpiece interactive tool
+   ========================================================================== */
+const dayMorningGrid = document.getElementById('dayMorningGrid');
+const dayEveningGrid = document.getElementById('dayEveningGrid');
+const dayTraySentence = document.getElementById('dayTraySentence');
+const MAX_DAY = 5;
+let dayItems = [];
+
+function buildDayGrid(container, items){
+  items.forEach(item => {
+    const card = document.createElement('button');
+    card.className = 'menu-item-card';
+    card.dataset.id = item.id;
+    card.innerHTML = `<div class="mi-de de">${item.de}</div><div class="mi-ar">${item.ar}</div>`;
+    card.addEventListener('click', () => toggleDayItem(item, card));
+    container.appendChild(card);
+  });
+}
+buildDayGrid(dayMorningGrid, DAY_MORNING);
+buildDayGrid(dayEveningGrid, DAY_EVENING);
+
+function toggleDayItem(item, card){
+  const idx = dayItems.findIndex(o => o.id === item.id);
+  if(idx > -1){
+    dayItems.splice(idx, 1);
+    card.classList.remove('selected');
+  } else {
+    if(dayItems.length >= MAX_DAY){ showToast('يمكنك اختيار ' + toAr(MAX_DAY) + ' عناصر كحد أقصى'); return; }
+    dayItems.push(item);
+    card.classList.add('selected');
+  }
+  renderDayTray();
+}
+
+function renderDayTray(){
+  if(!dayItems.length){
+    dayTraySentence.innerHTML = '<span class="empty-hint">انقر على أنشطة من فوق لتبدأ ببناء يومك…</span>';
+    dayTraySentence.dataset.plain = '';
+    return;
+  }
+  const sentence = dayItems.map(o => o.sentence).join(' ');
+  dayTraySentence.textContent = sentence;
+  dayTraySentence.dataset.plain = sentence;
+  dayTraySentence.setAttribute('aria-label', 'استمع لـ ' + sentence);
+  if(dayItems.length >= 3) unlockBadge('builder');
+}
+dayTraySentence.addEventListener('click', () => { if(dayTraySentence.dataset.plain) Speech.speak(dayTraySentence.dataset.plain, {el: dayTraySentence}); });
+dayTraySentence.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); dayTraySentence.click(); } });
+
+document.getElementById('dayResetBtn').addEventListener('click', () => {
+  dayItems = [];
+  document.querySelectorAll('.menu-item-card.selected').forEach(c => c.classList.remove('selected'));
+  renderDayTray();
+});
+renderDayTray();
+
+/* ==========================================================================
+   PRACTICAL — extra-notes accordion
+   ========================================================================== */
+const grammarAccordion = document.getElementById('grammarAccordion');
+EXTRA_NOTES.forEach((note, i) => {
+  const item = document.createElement('div');
+  item.className = 'accordion-item';
+  item.innerHTML = `
+    <button class="accordion-trigger" aria-expanded="false">
+      <span class="accordion-title"><span class="tag mono">${toAr(i+1)}</span>${note.q}</span>
+      <svg class="icon chevron"><use href="#i-chevron"/></svg>
+    </button>
+    <div class="accordion-panel"><div class="accordion-body">${note.body}</div></div>`;
+  const trigger = item.querySelector('.accordion-trigger');
+  trigger.addEventListener('click', () => {
+    item.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+  });
+  item.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  grammarAccordion.appendChild(item);
+});
+
+/* ==========================================================================
+   DIALOGUE — chat bubbles
+   ========================================================================== */
+function buildDialogue(container, lines){
+  container.innerHTML = '';
+  const header = document.createElement('div');
+  header.className = 'dialogue-header';
+  const uniqueNames = [...new Set(lines.map(l => l.name))];
+  header.innerHTML = `
+    <div class="dialogue-speakers">
+      <span><span class="speaker-dot a"></span>${uniqueNames[0]}</span>
+      <span><span class="speaker-dot b"></span>${uniqueNames[1]}</span>
+    </div>
+    <button class="btn btn-primary btn-listen-all"><svg class="icon" style="width:16px;height:16px"><use href="#i-headphones"/></svg> استمع للحوار كاملًا</button>`;
+  container.appendChild(header);
+
+  const bubbleEls = [];
+  lines.forEach(line => {
+    const row = document.createElement('div');
+    row.className = 'chat-line ' + line.who;
+    const initials = line.name.split(' ').map(w=>w[0]).join('').slice(0,2);
+    row.innerHTML = `
+      <span class="chat-avatar">${initials}</span>
+      <div class="chat-bubble" tabindex="0" role="button" aria-label="استمع لـ ${line.de}">
+        <div class="chat-name">${line.name}</div>
+        <div class="chat-de">${line.de}</div>
+        <div class="chat-ar">${line.ar}</div>
+      </div>`;
+    const bubble = row.querySelector('.chat-bubble');
+    bubble.dataset.plain = line.de;
+    makeSpeakable(bubble, line.de);
+    bubbleEls.push(bubble);
+    container.appendChild(row);
+  });
+
+  const actionsWrap = document.createElement('div');
+  actionsWrap.className = 'dialogue-actions';
+  container.appendChild(actionsWrap);
+
+  header.querySelector('.btn-listen-all').addEventListener('click', () => {
+    const fullText = lines.map(l => l.de).join(' ');
+    Speech.speak(fullText, {wordEls: bubbleEls});
+  });
+}
+buildDialogue(document.getElementById('dlgInformal'), DIALOGUE_INFORMAL);
+buildDialogue(document.getElementById('dlgFormal'), DIALOGUE_FORMAL);
+
+document.querySelectorAll('.dialogue-tabs .cat-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.dialogue-tabs .cat-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.dialogue-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+/* ==========================================================================
+   MISTAKES LIST
+   ========================================================================== */
+const mistakesList = document.getElementById('mistakesList');
+MISTAKES.forEach(m => {
+  const card = document.createElement('div');
+  card.className = 'mistake-card';
+  card.innerHTML = `
+    <div class="mistake-side mistake-wrong">
+      <span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-x"/></svg> خطأ شائع</span>
+      <span class="mistake-sentence">${m.wrong}</span>
+    </div>
+    <div class="mistake-side mistake-right">
+      <span class="mistake-tag"><svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg> الصحيح</span>
+      <span class="mistake-sentence">${m.right}</span>
+    </div>
+    <div class="mistake-note">${m.note}</div>`;
+  card.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  mistakesList.appendChild(card);
+});
+
+/* ==========================================================================
+   PRONUNCIATION TIPS
+   ========================================================================== */
+const tipsGrid = document.getElementById('tipsGrid');
+TIPS.forEach(t => {
+  const card = document.createElement('div');
+  card.className = 'info-card tip-card';
+  card.innerHTML = `
+    <span class="icon-chip"><svg class="icon" style="width:18px;height:18px"><use href="#i-bulb"/></svg></span>
+    <div>
+      <h3 style="margin-bottom:6px">${t.title}</h3>
+      <p>${t.body}</p>
+    </div>`;
+  card.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  tipsGrid.appendChild(card);
+});
+
+/* ==========================================================================
+   EXERCISES — state
+   ========================================================================== */
+const exState = { match: 0, mcq: 0, fill: 0, builder: 0, listen: 0 };
+const exTotals = { match: MATCH_PAIRS.length, mcq: MCQ.length, fill: FILL.length, builder: BUILDER.length, listen: 1 };
+const perfectFlags = { mcq: true, match: true, fill: true };
+
+function updateExerciseCounters(){
+  document.getElementById('countMatch').textContent = toAr(exState.match) + '/' + toAr(exTotals.match);
+  document.getElementById('countMcq').textContent = toAr(exState.mcq) + '/' + toAr(exTotals.mcq);
+  document.getElementById('countBuilder').textContent = toAr(exState.builder) + '/' + toAr(exTotals.builder);
+  document.getElementById('countListen').textContent = toAr(exState.listen) + '/' + toAr(exTotals.listen);
+  const total = exTotals.match + exTotals.mcq + exTotals.fill + exTotals.builder + exTotals.listen;
+  const done = exState.match + exState.mcq + exState.fill + exState.builder + exState.listen;
+  const pct = Math.round((done/total)*100);
+  document.getElementById('scoreFill').style.width = pct + '%';
+  document.getElementById('scoreLabel').textContent = toAr(pct) + '٪';
+  if(pct === 100) unlockBadge('champion');
+  checkAnyPerfect();
+  updateProgress();
+}
+function checkAnyPerfect(){
+  if(exState.mcq === exTotals.mcq && perfectFlags.mcq) unlockBadge('sharp');
+  if(exState.match === exTotals.match) unlockBadge('sharp');
+  if(exState.fill === exTotals.fill && perfectFlags.fill) unlockBadge('sharp');
+}
+
+document.querySelectorAll('.exercise-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.exercise-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.exercise-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+});
+
+/* --- MATCH (German verb <-> Arabic meaning) --- */
+const panelMatch = document.getElementById('panelMatch');
+(function initMatch(){
+  panelMatch.innerHTML = `<div class="q-prompt" style="margin-bottom:18px">انقر على فعل من العمود الأيمن، ثم معناه الصحيح من العمود الأيسر.</div>
+    <div class="match-grid"><div class="match-col" id="matchLeft"></div><div class="match-col" id="matchRight"></div></div>`;
+  const left = document.getElementById('matchLeft');
+  const right = document.getElementById('matchRight');
+  const shuffledRight = [...MATCH_PAIRS].sort(() => Math.random() - 0.5);
+  let selectedLeft = null, selectedRight = null, matched = 0;
+
+  MATCH_PAIRS.forEach(p => {
+    const el = document.createElement('button');
+    el.className = 'match-item de';
+    el.textContent = p.de;
+    el.dataset.key = p.de;
+    el.addEventListener('click', () => {
+      if(el.classList.contains('matched')) return;
+      left.querySelectorAll('.match-item').forEach(i=>i.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedLeft = el;
+      tryMatch();
+    });
+    left.appendChild(el);
+  });
+  shuffledRight.forEach(p => {
+    const el = document.createElement('button');
+    el.className = 'match-item';
+    el.textContent = p.ar;
+    el.dataset.key = p.de;
+    el.addEventListener('click', () => {
+      if(el.classList.contains('matched')) return;
+      right.querySelectorAll('.match-item').forEach(i=>i.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedRight = el;
+      tryMatch();
+    });
+    right.appendChild(el);
+  });
+
+  function tryMatch(){
+    if(!selectedLeft || !selectedRight) return;
+    if(selectedLeft.dataset.key === selectedRight.dataset.key){
+      selectedLeft.classList.add('matched'); selectedRight.classList.add('matched');
+      selectedLeft.classList.remove('selected'); selectedRight.classList.remove('selected');
+      Speech.speak(selectedLeft.textContent, {});
+      matched++; exState.match = matched; updateExerciseCounters();
+      selectedLeft = null; selectedRight = null;
+    } else {
+      perfectFlags.match = false;
+      [selectedLeft, selectedRight].forEach(el => { el.classList.add('shake'); setTimeout(()=>el.classList.remove('shake','selected'), 400); });
+      setTimeout(()=>{ selectedLeft = null; selectedRight = null; }, 420);
+    }
+  }
+})();
+
+/* --- MCQ --- */
+const panelMcq = document.getElementById('panelMcq');
+MCQ.forEach((q) => {
+  const block = document.createElement('div');
+  block.className = 'q-block';
+  block.innerHTML = `<div class="q-prompt">${q.prompt}</div><div class="q-options"></div><div class="q-feedback"></div>`;
+  const optsWrap = block.querySelector('.q-options');
+  const feedback = block.querySelector('.q-feedback');
+  block.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+  q.options.forEach(opt => {
+    const b = document.createElement('button');
+    const isGerman = /^[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß.,!?' ]*$/.test(opt);
+    b.className = 'opt-btn' + (isGerman ? ' de' : '');
+    b.textContent = opt;
+    b.addEventListener('click', () => {
+      const correct = opt === q.correct;
+      optsWrap.querySelectorAll('.opt-btn').forEach(o => o.disabled = true);
+      b.classList.add(correct ? 'correct' : 'wrong');
+      if(!correct){ perfectFlags.mcq = false; optsWrap.querySelectorAll('.opt-btn').forEach(o=>{ if(o.textContent===q.correct) o.classList.add('correct'); }); }
+      feedback.innerHTML = q.why;
+      feedback.classList.add('show');
+      feedback.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+      exState.mcq++;
+      updateExerciseCounters();
+    });
+    optsWrap.appendChild(b);
+  });
+  panelMcq.appendChild(block);
+});
+
+/* --- FILL (missing prefix, typed) --- */
+const panelFill = document.getElementById('panelFill');
+FILL.forEach(q => {
+  const block = document.createElement('div');
+  block.className = 'q-block';
+  block.innerHTML = `
+    <div class="fill-word-display">${q.display}</div>
+    <div class="fill-row">
+      <input type="text" placeholder="؟" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="أدخل البادئة الناقصة">
+      <button class="fill-check">تحقّق</button>
+      <span class="fill-result"></span>
+      <button class="icon-btn" data-speak-word="${q.full}" aria-label="استمع للجملة الكاملة"><svg class="icon"><use href="#i-speaker"/></svg></button>
+    </div>
+    <div class="q-feedback">💡 ${q.hint}</div>`;
+  const input = block.querySelector('input');
+  const result = block.querySelector('.fill-result');
+  const feedback = block.querySelector('.q-feedback');
+  const check = block.querySelector('.fill-check');
+  const speakBtn = block.querySelector('[data-speak-word]');
+  speakBtn.addEventListener('click', () => Speech.speak(q.full, {el: speakBtn}));
+  let answered = false;
+  function norm(v){ return v.trim().toLowerCase(); }
+  function doCheck(){
+    if(answered) return;
+    const correct = norm(input.value) === norm(q.correct);
+    answered = true;
+    input.disabled = true; check.disabled = true;
+    if(correct){
+      result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--success)"><use href="#i-check"/></svg>';
+      input.style.borderColor = 'var(--success)';
+    } else {
+      result.innerHTML = '<svg class="icon" style="width:16px;height:16px;color:var(--danger)"><use href="#i-x"/></svg>';
+      input.style.borderColor = 'var(--danger)';
+      perfectFlags.fill = false;
+      input.value = q.correct;
+    }
+    feedback.classList.add('show');
+    exState.fill++;
+    updateExerciseCounters();
+  }
+  check.addEventListener('click', doCheck);
+  input.addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); doCheck(); } });
+  panelFill.appendChild(block);
+});
+
+/* --- BUILDER (arrange words to form the correct split sentence) --- */
+const panelBuilder = document.getElementById('panelBuilder');
+BUILDER.forEach((q) => {
+  const block = document.createElement('div');
+  block.className = 'q-block';
+  const words = q.words;
+  const shuffled = words.map((w,i)=>({w,i})).sort(() => Math.random() - 0.5);
+  block.innerHTML = `
+    <div class="q-prompt">رتّب الكلمات لتكوين الجملة الصحيحة (المعنى: ${q.ar})</div>
+    <div class="builder-answer"></div>
+    <div class="builder-pool"></div>
+    <div class="builder-actions">
+      <button class="btn btn-ghost btn-reset" style="padding:8px 16px;font-size:.85rem">إعادة الترتيب</button>
+      <button class="btn btn-primary btn-check" style="padding:8px 16px;font-size:.85rem">تحقّق</button>
+    </div>
+    <div class="q-feedback"></div>`;
+  const answerWrap = block.querySelector('.builder-answer');
+  const poolWrap = block.querySelector('.builder-pool');
+  const feedback = block.querySelector('.q-feedback');
+  let answer = [];
+
+  function renderPool(){
+    poolWrap.innerHTML = '';
+    shuffled.forEach((item) => {
+      const chip = document.createElement('button');
+      chip.className = 'chip-word de';
+      chip.textContent = item.w;
+      chip.dataset.idx = item.i;
+      if(answer.some(a => a.idx === item.i)) chip.classList.add('used');
+      chip.addEventListener('click', () => {
+        if(chip.classList.contains('used')) return;
+        answer.push({idx: item.i, w: item.w});
+        renderAll();
+      });
+      poolWrap.appendChild(chip);
+    });
+  }
+  function renderAnswer(){
+    answerWrap.innerHTML = '';
+    if(!answer.length){
+      answerWrap.innerHTML = '<span style="color:var(--ink-faint);font-size:.85rem">انقر على الكلمات أدناه بالترتيب الصحيح…</span>';
+    }
+    answer.forEach((a, ai) => {
+      const chip = document.createElement('button');
+      chip.className = 'chip-word de';
+      chip.style.background = 'var(--teal-soft)';
+      chip.style.borderColor = 'var(--teal)';
+      chip.textContent = a.w;
+      chip.addEventListener('click', () => { answer.splice(ai,1); renderAll(); });
+      answerWrap.appendChild(chip);
+    });
+  }
+  function renderAll(){ renderPool(); renderAnswer(); }
+  renderAll();
+
+  block.querySelector('.btn-reset').addEventListener('click', () => { answer = []; feedback.classList.remove('show'); renderAll(); });
+  block.querySelector('.btn-check').addEventListener('click', function(){
+    const built = answer.map(a=>a.w).join(' ');
+    const target = words.join(' ');
+    const isCorrect = built === target;
+    feedback.textContent = isCorrect ? '✔ صحيح تمامًا! الجملة: ' + target + '.' : '✘ ليس تمامًا. الجملة الصحيحة: ' + target + '.';
+    feedback.classList.add('show');
+    Speech.speak(target, {});
+    if(!block.dataset.counted){ block.dataset.counted = '1'; exState.builder++; updateExerciseCounters(); }
+  });
+  panelBuilder.appendChild(block);
+});
+
+/* --- LISTENING (full informal dialogue + real comprehension question) --- */
+const panelListen = document.getElementById('panelListen');
+(function initListen(){
+  panelListen.innerHTML = `
+    <div class="q-prompt">استمع إلى حوار «بين صديقين» كاملًا، وتابع الفقاعة المضاءة أثناء النطق. انقر على أي عبارة بمفردها لإعادة سماعها.</div>
+    <button class="btn btn-primary" id="listenAllBtn"><svg class="icon" style="width:16px;height:16px"><use href="#i-headphones"/></svg> استمع للحوار كاملًا</button>
+    <div class="listen-alphabet-row" id="listenRow" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px"></div>
+    <div class="q-block" style="margin-top:26px">
+      <div class="q-prompt">${LISTEN_QUESTION.prompt}</div>
+      <div class="q-options" id="listenOptions"></div>
+      <div class="q-feedback" id="listenFeedback"></div>
+    </div>`;
+  const row = document.getElementById('listenRow');
+  const chipEls = [];
+  DIALOGUE_INFORMAL.forEach(line => {
+    const chip = document.createElement('button');
+    chip.className = 'listen-chip de';
+    chip.style.cssText = 'padding:8px 16px;border-radius:10px;border:1.5px solid var(--border-strong);background:var(--surface);font-family:var(--font-de-display);font-weight:600;cursor:pointer;transition:all .2s var(--ease);';
+    chip.textContent = line.de;
+    chip.dataset.plain = line.de;
+    chip.addEventListener('click', () => Speech.speak(line.de, {el: chip}));
+    row.appendChild(chip);
+    chipEls.push(chip);
+  });
+  document.getElementById('listenAllBtn').addEventListener('click', () => {
+    const text = DIALOGUE_INFORMAL.map(l => l.de).join(' ');
+    Speech.speak(text, {wordEls: chipEls});
+  });
+
+  const optsWrap = document.getElementById('listenOptions');
+  const feedback = document.getElementById('listenFeedback');
+  LISTEN_QUESTION.options.forEach(opt => {
+    const b = document.createElement('button');
+    b.className = 'opt-btn';
+    b.textContent = opt;
+    b.addEventListener('click', () => {
+      const correct = opt === LISTEN_QUESTION.correct;
+      optsWrap.querySelectorAll('.opt-btn').forEach(o => o.disabled = true);
+      b.classList.add(correct ? 'correct' : 'wrong');
+      if(!correct){ optsWrap.querySelectorAll('.opt-btn').forEach(o=>{ if(o.textContent===LISTEN_QUESTION.correct) o.classList.add('correct'); }); }
+      feedback.innerHTML = LISTEN_QUESTION.why;
+      feedback.classList.add('show');
+      feedback.querySelectorAll('[data-speak]').forEach(el => makeSpeakable(el, el.dataset.speak));
+      if(!exState.listen){ exState.listen = 1; updateExerciseCounters(); }
+    });
+    optsWrap.appendChild(b);
+  });
+})();
+
+/* ==========================================================================
+   BADGES / ACHIEVEMENTS
+   ========================================================================== */
+let unlockedBadges = {};
+try{ unlockedBadges = JSON.parse(localStorage.getItem('lesson11-trennbare-verben-badges') || '{}'); }catch(e){ unlockedBadges = {}; }
+
+const badgesRow = document.getElementById('badgesRow');
+BADGES.forEach(b => {
+  const el = document.createElement('div');
+  el.className = 'badge' + (unlockedBadges[b.id] ? ' unlocked' : '');
+  el.id = 'badge-' + b.id;
+  el.innerHTML = `<div class="badge-icon"><svg class="icon" style="stroke:#fff;width:22px;height:22px"><use href="#${b.icon}"/></svg></div><div class="badge-name">${b.name}</div>`;
+  badgesRow.appendChild(el);
+});
+function unlockBadge(id){
+  if(unlockedBadges[id]) return;
+  unlockedBadges[id] = true;
+  try{ localStorage.setItem('lesson11-trennbare-verben-badges', JSON.stringify(unlockedBadges)); }catch(e){}
+  const el = document.getElementById('badge-' + id);
+  if(el){ el.classList.add('unlocked','pop'); setTimeout(()=>el.classList.remove('pop'), 650); }
+  const badge = BADGES.find(b=>b.id===id);
+  if(badge) showToast('🎉 إنجاز جديد: ' + badge.name);
+}
+
+function showToast(msg){
+  const wrap = document.getElementById('toastWrap');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.textContent = msg;
+  wrap.appendChild(t);
+  requestAnimationFrame(()=>t.classList.add('show'));
+  setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.remove(), 400); }, 3200);
+}
+
+/* ==========================================================================
+   VOICE SETTINGS PANEL
+   ========================================================================== */
+function buildVoicePanel(){
+  const listEl = document.getElementById('voiceListContainer');
+  const statusEl = document.getElementById('voiceStatusLine');
+  listEl.innerHTML = '';
+
+  if(!window.speechSynthesis){
+    statusEl.textContent = 'متصفحك لا يدعم خاصية النطق الآلي (Web Speech API) حاليًا. ستستمر بقية عناصر الدرس بالعمل بشكل طبيعي بدون صوت.';
+    return;
+  }
+
+  const germanVoices = Speech.getGermanVoices();
+
+  if(!germanVoices.length){
+    statusEl.textContent = 'لم يتم العثور على أي صوت ألماني (de-DE) مثبت على جهازك حاليًا. سيُستخدم الصوت الافتراضي في متصفحك بدلًا من ذلك، وقد يختلف النطق قليلًا عن اللهجة الألمانية الأصلية. لتحسين الجودة، يمكنك تثبيت حزمة صوت ألماني من إعدادات نظام التشغيل.';
+    const row = document.createElement('div');
+    row.className = 'voice-row selected';
+    row.innerHTML = `
+      <span class="voice-radio"></span>
+      <span class="voice-info"><span class="voice-name">الصوت الافتراضي لمتصفحك</span><span class="voice-lang mono">غير محدَّد اللغة</span></span>
+      <button class="voice-test-btn" type="button"><svg class="icon"><use href="#i-play"/></svg>تجربة</button>`;
+    row.querySelector('.voice-test-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      Speech.testVoice(null, 'Guten Tag, wie geht es Ihnen?');
+    });
+    listEl.appendChild(row);
+    return;
+  }
+
+  statusEl.textContent = 'تم العثور على ' + toAr(germanVoices.length) + ' صوت/أصوات ألمانية على جهازك. انقر على أي صف لاختياره، أو زر «تجربة» لسماعه أولًا دون تغيير اختيارك الحالي.';
+
+  germanVoices.forEach(v => {
+    const row = document.createElement('div');
+    row.className = 'voice-row' + (v.voiceURI === Speech.currentVoiceURI ? ' selected' : '');
+    row.setAttribute('role','radio');
+    row.setAttribute('aria-checked', v.voiceURI === Speech.currentVoiceURI ? 'true' : 'false');
+    row.tabIndex = 0;
+    row.innerHTML = `
+      <span class="voice-radio"></span>
+      <span class="voice-info"><span class="voice-name">${v.name}</span><span class="voice-lang mono">${v.lang}</span></span>
+      <button class="voice-test-btn" type="button"><svg class="icon"><use href="#i-play"/></svg>تجربة</button>`;
+    row.addEventListener('click', () => {
+      Speech.selectVoiceByURI(v.voiceURI);
+      listEl.querySelectorAll('.voice-row').forEach(r => { r.classList.remove('selected'); r.setAttribute('aria-checked','false'); });
+      row.classList.add('selected');
+      row.setAttribute('aria-checked','true');
+    });
+    row.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); row.click(); } });
+    row.querySelector('.voice-test-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      Speech.testVoice(v, 'Guten Tag, wie geht es Ihnen?');
+    });
+    listEl.appendChild(row);
+  });
+}
+window.onVoicesReady = buildVoicePanel;
+buildVoicePanel();
+
+const voicePanel = document.getElementById('voicePanel');
+const voiceSettingsToggle = document.getElementById('voiceSettingsToggle');
+function toggleVoicePanel(forceOpen){
+  const open = typeof forceOpen === 'boolean' ? forceOpen : !voicePanel.classList.contains('open');
+  voicePanel.classList.toggle('open', open);
+  voicePanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+  voiceSettingsToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  voiceSettingsToggle.classList.toggle('active', open);
+  if(open) buildVoicePanel();
+}
+voiceSettingsToggle.addEventListener('click', () => toggleVoicePanel());
+document.getElementById('voicePanelClose').addEventListener('click', () => toggleVoicePanel(false));
+document.addEventListener('keydown', e => { if(e.key === 'Escape') toggleVoicePanel(false); });
+document.addEventListener('click', e => {
+  if(!voicePanel.classList.contains('open')) return;
+  if(voicePanel.contains(e.target) || voiceSettingsToggle.contains(e.target)) return;
+  toggleVoicePanel(false);
+});
+
+function syncSpeedSliders(value, source){
+  if(source !== 'dock') document.getElementById('dockSpeed').value = value;
+  if(source !== 'panel') document.getElementById('voicePanelSpeed').value = value;
+  document.getElementById('voiceSpeedLabel').textContent = parseFloat(value).toFixed(2) + '×';
+}
+document.getElementById('voicePanelSpeed').addEventListener('input', function(e){
+  Speech.setRate(parseFloat(e.target.value));
+  syncSpeedSliders(e.target.value, 'panel');
+});
+document.getElementById('voicePanelPitch').addEventListener('input', function(e){
+  Speech.setPitch(parseFloat(e.target.value));
+  document.getElementById('voicePitchLabel').textContent = parseFloat(e.target.value).toFixed(2);
+});
+syncSpeedSliders('0.9', 'init');
+
+/* ==========================================================================
+   SCROLL REVEAL
+   ========================================================================== */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('is-visible'); } });
+}, {threshold: .15});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ==========================================================================
+   SECTION NAV: active-link highlight + click-to-scroll + progress
+   ========================================================================== */
+const sections = ['#hero','#intro','#verbs-basics','#prefixes','#daily-rhythm','#verb-splitter','#day-builder','#practical','#dialogue','#mistakes','#pronunciation','#exercises','#summary'].map(s => document.querySelector(s)).filter(Boolean);
+const visitedSections = new Set();
+const navLinks = document.querySelectorAll('.nav-link');
+
+function setActiveNav(id){
+  navLinks.forEach(l => l.classList.toggle('active', l.dataset.target === id));
+}
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      setActiveNav('#' + entry.target.id);
+      visitedSections.add(entry.target.id);
+      updateProgress();
+    }
+  });
+}, {rootMargin: '-40% 0px -50% 0px'});
+sections.forEach(s => sectionObserver.observe(s));
+
+document.querySelectorAll('[data-target], [data-scroll]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.target || btn.dataset.scroll;
+    const el = document.querySelector(target);
+    if(el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
+    document.getElementById('mainNav').classList.remove('open');
+    document.getElementById('navToggle').setAttribute('aria-expanded','false');
+  });
+});
+
+function updateProgress(){
+  const sectionWeight = 0.4, exerciseWeight = 0.6;
+  const sectionPct = visitedSections.size / sections.length;
+  const exTotal = exTotals.match + exTotals.mcq + exTotals.fill + exTotals.builder + exTotals.listen;
+  const exDone = exState.match + exState.mcq + exState.fill + exState.builder + exState.listen;
+  const exPct = exTotal ? exDone / exTotal : 0;
+  const overall = Math.round((sectionPct*sectionWeight + exPct*exerciseWeight) * 100);
+  const circumference = 113;
+  const offset = circumference - (overall/100)*circumference;
+  document.getElementById('progressRingBar').style.strokeDashoffset = offset;
+  document.getElementById('progressRingLabel').textContent = toAr(overall) + '٪';
+}
+updateProgress();
+updateExerciseCounters();
+
+/* ==========================================================================
+   MOBILE NAV TOGGLE
+   ========================================================================== */
+const navToggle = document.getElementById('navToggle');
+const mainNav = document.getElementById('mainNav');
+navToggle.addEventListener('click', () => {
+  const open = mainNav.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(open));
+});
+
+/* ==========================================================================
+   SEARCH
+   ========================================================================== */
+function runSearch(query){
+  if(!query || query.trim().length < 2) return;
+  const q = query.trim().toLowerCase();
+  document.querySelectorAll('mark.hl').forEach(m => { m.replaceWith(document.createTextNode(m.textContent)); });
+  const walker = document.createTreeWalker(document.getElementById('mainContent'), NodeFilter.SHOW_TEXT, null);
+  let found = null;
+  const nodes = [];
+  let n;
+  while(n = walker.nextNode()){ nodes.push(n); }
+  for(const node of nodes){
+    const text = node.nodeValue;
+    const idx = text.toLowerCase().indexOf(q);
+    if(idx > -1 && node.parentElement && !node.parentElement.closest('script,style')){
+      const before = text.slice(0, idx), match = text.slice(idx, idx+q.length), after = text.slice(idx+q.length);
+      const mark = document.createElement('mark');
+      mark.className = 'hl';
+      mark.textContent = match;
+      const frag = document.createDocumentFragment();
+      frag.appendChild(document.createTextNode(before));
+      frag.appendChild(mark);
+      frag.appendChild(document.createTextNode(after));
+      node.parentElement.replaceChild(frag, node);
+      if(!found) found = mark;
+    }
+  }
+  if(found){ found.scrollIntoView({behavior:'smooth', block:'center'}); }
+  else{ showToast('لم يتم العثور على «' + query + '» في هذا الدرس'); }
+}
+document.getElementById('searchToggle').addEventListener('click', () => {
+  document.getElementById('searchBoxDesktop').classList.toggle('open');
+  document.getElementById('searchInputDesktop').focus();
+});
+['searchInputDesktop','searchInputMobile'].forEach(id => {
+  document.getElementById(id).addEventListener('keydown', e => { if(e.key === 'Enter'){ runSearch(e.target.value); } });
+});
+
+/* ==========================================================================
+   FULLSCREEN
+   ========================================================================== */
+document.getElementById('fullscreenToggle').addEventListener('click', () => {
+  if(!document.fullscreenElement){ document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+  else{ document.exitFullscreen && document.exitFullscreen(); }
+});
+document.addEventListener('fullscreenchange', () => {
+  document.getElementById('fsIcon').innerHTML = '<use href="#' + (document.fullscreenElement ? 'i-compress' : 'i-expand') + '"/>';
+});
+
+/* ==========================================================================
+   PRINT
+   ========================================================================== */
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+/* ==========================================================================
+   BACK TO TOP
+   ========================================================================== */
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 640);
+}, {passive: true});
+backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+})();
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a1-lesson-11-trennbare-verben" data-category="a1" data-title="الأفعال المنفصلة — Trennbare Verben" data-root="../../" defer></script>
+</body>
+</html>
