@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>حالة الأكوزاتيف Akkusativ — شرح شامل ومفصّل بكل الاستخدامات</title>
+<meta name="description" content="شرح تفاعلي شامل لحالة Akkusativ الألمانية: الأدوات (der/ein/kein)، الضمائر، الأفعال التي تتطلبها، حروف الجر الثابتة والمتغيّرة (Wechselpräpositionen)، نهايات الصفة، والتعبيرات الثابتة — مع أمثلة صوتية وتمارين واختبار ختامي">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   DESIGN TOKENS — "Der direkte Treffer" (الإصابة المباشرة)
+   المفهوم البصري: Akkusativ هي حالة "المفعول المباشر" — الهدف الذي يصيبه
+   الفعل مباشرة، كسهم يصيب هدفًا. أحمر-قرميدي هو لون Akkusativ الثابت طوال
+   الدرس، وسماوي هو لون التباين مع Dativ حيثما وردت المقارنة.
+   الوضع الداكن افتراضي (اتساقًا مع بقية دروس المنصة) مع دعم كامل للفاتح والنظام.
+   ========================================================================== */
+:root{
+  --bg:#F5F6F4;
+  --bg-soft:#FAFAF8;
+  --surface:#FFFFFF;
+  --surface-alt:#FBFBF9;
+  --ink:#1B1C1E;
+  --ink-soft:#5A5C61;
+  --ink-faint:#8D8F95;
+  --border:#E3E4E0;
+  --border-strong:#D2D3CD;
+  --path:#CBCCC5;
+
+  --akk:#B2392E;      --akk-soft:#F7E1DE;    --akk-ink:#7E281F;
+  --dat:#166E7A;      --dat-soft:#DBEEF0;    --dat-ink:#0D4D56;
+  --ok:#3F7D4A;       --ok-soft:#DCEEDF;     --ok-ink:#2C5A34;
+
+  --t1:#3A4FA0;  --t1-soft:#DEE2F5;  --t1-ink:#28356F;   /* pronomen */
+  --t2:#2C7A4B;  --t2-soft:#DCEFE2;  --t2-ink:#1E5735;   /* verben */
+  --t3:#A2740F;  --t3-soft:#F3E6C6;  --t3-ink:#75530C;   /* praepositionen */
+  --t4:#6A3FA0;  --t4-soft:#EAE0F5;  --t4-ink:#4A2B70;   /* wechsel */
+  --t5:#B2396B;  --t5-soft:#F6DEEA;  --t5-ink:#7E2850;   /* ausdruecke */
+
+  --danger:#B8302F;   --danger-soft:#F8DEDD;
+  --gold:#A2740F;
+
+  --shadow-sm:0 1px 2px rgba(20,20,18,.07), 0 1px 1px rgba(20,20,18,.05);
+  --shadow-md:0 8px 24px -8px rgba(20,20,18,.15), 0 2px 8px -2px rgba(20,20,18,.09);
+  --shadow-lg:0 24px 64px -16px rgba(20,20,18,.24), 0 8px 24px -8px rgba(20,20,18,.12);
+  --shadow-glow:0 0 0 4px rgba(178,57,46,.15);
+
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --radius-pill:999px;
+
+  --font-display:'Spectral', 'Noto Kufi Arabic', serif;
+  --font-body:'Inter', system-ui, sans-serif;
+  --font-ar-head:'Noto Kufi Arabic', 'Inter', sans-serif;
+  --font-ar-body:'Noto Naskh Arabic', 'Inter', sans-serif;
+  --font-mono:'IBM Plex Mono', ui-monospace, monospace;
+
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --dur-fast:.18s;
+  --dur-med:.42s;
+  --dur-slow:.7s;
+  color-scheme: light;
+}
+
+html.dark{
+  --bg:#0A0A0C;
+  --bg-soft:#101013;
+  --surface:#161619;
+  --surface-alt:#1B1B1F;
+  --ink:#EDEDF0;
+  --ink-soft:#AFAFB8;
+  --ink-faint:#75757D;
+  --border:#26262B;
+  --border-strong:#343439;
+  --path:#343439;
+
+  --akk:#E88A7A;      --akk-soft:#3A1D18;    --akk-ink:#F5C3B8;
+  --dat:#5FCAD6;      --dat-soft:#0F2E33;    --dat-ink:#AEE9EF;
+  --ok:#7FC98C;       --ok-soft:#17301C;     --ok-ink:#BFE8C5;
+
+  --t1:#8FA3E8;  --t1-soft:#1B2340;  --t1-ink:#CBD5F5;
+  --t2:#7FD9A0;  --t2-soft:#16301F;  --t2-ink:#BFEFD0;
+  --t3:#E0B54E;  --t3-soft:#332609;  --t3-ink:#F3DA9C;
+  --t4:#B78EE2;  --t4-soft:#231A38;  --t4-ink:#DCC9F2;
+  --t5:#E48AB8;  --t5-soft:#391A2C;  --t5-ink:#F3BADA;
+
+  --danger:#E58B85;   --danger-soft:#3A1D1B;
+  --gold:#E0B54E;
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:0 8px 24px -8px rgba(0,0,0,.6), 0 2px 8px -2px rgba(0,0,0,.45);
+  --shadow-lg:0 24px 64px -16px rgba(0,0,0,.7), 0 8px 24px -8px rgba(0,0,0,.5);
+  --shadow-glow:0 0 0 4px rgba(232,138,122,.16);
+  color-scheme: dark;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important}
+}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--font-ar-body); line-height:1.85;
+  min-height:100vh; overflow-x:hidden; transition:background var(--dur-med) var(--ease-out), color var(--dur-med) var(--ease-out);
+}
+img,svg{display:block; max-width:100%}
+button{font:inherit; color:inherit; background:none; border:none; cursor:pointer}
+a{color:inherit}
+ul{list-style:none}
+[lang="de"]{font-family:var(--font-body); direction:ltr; unicode-bidi:isolate}
+.de{font-family:var(--font-body); direction:ltr; unicode-bidi:isolate}
+::selection{background:var(--akk); color:#fff}
+:focus-visible{outline:3px solid var(--t4); outline-offset:2px; border-radius:6px}
+button:focus-visible, a:focus-visible{outline-offset:3px}
+
+.container{max-width:1180px; margin-inline:auto; padding-inline:clamp(16px,4vw,40px)}
+.visually-hidden{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+.skip-link{position:fixed; top:-100px; right:16px; z-index:9999; background:var(--ink); color:var(--bg); padding:12px 20px; border-radius:var(--radius-sm); transition:top .2s}
+.skip-link:focus{top:16px}
+
+#readProgress{position:fixed; inset-inline:0; top:0; height:4px; z-index:1100; background:transparent}
+#readProgress::after{content:''; display:block; height:100%; width:var(--progress,0%); background:linear-gradient(90deg, var(--akk), var(--t4), var(--dat)); transition:width .12s linear}
+
+.topnav{position:sticky; top:4px; z-index:1000; backdrop-filter:blur(16px) saturate(1.4); -webkit-backdrop-filter:blur(16px) saturate(1.4); background:color-mix(in srgb, var(--bg) 78%, transparent); border-bottom:1px solid var(--border)}
+.topnav-inner{display:flex; align-items:center; gap:16px; padding-block:12px}
+.brand{display:flex; align-items:center; gap:10px; font-family:var(--font-ar-head); font-weight:700; font-size:1.02rem; white-space:nowrap}
+.brand-mark{width:34px; height:34px; flex:none}
+.navlinks{display:flex; gap:4px; flex:1; min-width:0; overflow-x:auto; scrollbar-width:none; padding-inline:4px}
+.navlinks::-webkit-scrollbar{display:none}
+.navlink{position:relative; padding:9px 13px; border-radius:var(--radius-pill); font-size:.85rem; font-weight:600; color:var(--ink-soft); white-space:nowrap; transition:all var(--dur-fast) var(--ease-out); display:flex; align-items:center; gap:6px}
+.navlink:hover{background:var(--surface); color:var(--ink)}
+.navlink.active{background:var(--ink); color:var(--bg)}
+.navlink .dot{width:7px; height:7px; border-radius:50%; background:currentColor; opacity:.5}
+.navlink[data-done="true"] .dot{opacity:1; background:var(--akk)}
+.nav-tools{display:flex; align-items:center; gap:6px; flex:none}
+
+.icon-btn{display:grid; place-items:center; width:40px; height:40px; border-radius:var(--radius-pill); background:var(--surface); border:1px solid var(--border); color:var(--ink); transition:transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-fast), background var(--dur-fast)}
+.icon-btn:hover{transform:translateY(-2px); box-shadow:var(--shadow-md)}
+.icon-btn:active{transform:translateY(0) scale(.94)}
+.icon-btn svg{width:19px; height:19px}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 26px; border-radius:var(--radius-pill); font-weight:700; font-size:.95rem; font-family:var(--font-ar-head); cursor:pointer; transition:all var(--dur-fast) var(--ease-spring); border:1px solid transparent}
+.btn:active{transform:scale(.96)}
+.btn-primary{background:var(--ink); color:var(--bg); box-shadow:var(--shadow-sm)}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-md)}
+.btn-ghost{background:var(--surface); color:var(--ink); border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--border-strong); transform:translateY(-2px); box-shadow:var(--shadow-sm)}
+.btn-sm{padding:9px 18px; font-size:.85rem}
+.btn:disabled{opacity:.45; cursor:not-allowed; transform:none !important}
+
+.chip{display:inline-flex; align-items:center; gap:7px; padding:6px 14px; border-radius:var(--radius-pill); font-family:var(--font-mono); font-size:.76rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase}
+.chip-akk{background:var(--akk-soft); color:var(--akk-ink)}
+.chip-dat{background:var(--dat-soft); color:var(--dat-ink)}
+.chip-t1{background:var(--t1-soft); color:var(--t1-ink)}
+.chip-t2{background:var(--t2-soft); color:var(--t2-ink)}
+.chip-t3{background:var(--t3-soft); color:var(--t3-ink)}
+.chip-t4{background:var(--t4-soft); color:var(--t4-ink)}
+.chip-t5{background:var(--t5-soft); color:var(--t5-ink)}
+
+.case-badge{display:inline-flex; align-items:center; gap:5px; padding:4px 11px; border-radius:var(--radius-pill); font-family:var(--font-mono); font-size:.68rem; font-weight:800; letter-spacing:.02em; direction:ltr; flex:none}
+.case-badge.akk{background:var(--akk-soft); color:var(--akk-ink)}
+.case-badge.dat{background:var(--dat-soft); color:var(--dat-ink)}
+.case-badge.t1{background:var(--t1-soft); color:var(--t1-ink)}
+.case-badge.t2{background:var(--t2-soft); color:var(--t2-ink)}
+.case-badge.t3{background:var(--t3-soft); color:var(--t3-ink)}
+.case-badge.t4{background:var(--t4-soft); color:var(--t4-ink)}
+.case-badge.t5{background:var(--t5-soft); color:var(--t5-ink)}
+
+.theme-switch{display:inline-flex; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-pill); padding:3px; gap:2px}
+.theme-switch button{width:32px; height:32px; border-radius:50%; display:grid; place-items:center; color:var(--ink-faint); transition:all var(--dur-fast) var(--ease-spring)}
+.theme-switch button svg{width:16px; height:16px}
+.theme-switch button.on{background:var(--ink); color:var(--bg)}
+.theme-switch button:hover:not(.on){color:var(--ink)}
+
+#speechBar{position:fixed; bottom:18px; left:50%; transform:translateX(-50%) translateY(140%); z-index:1200; display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-lg); padding:10px 16px; border-radius:var(--radius-pill); max-width:calc(100vw - 24px); transition:transform var(--dur-med) var(--ease-spring)}
+#speechBar.show{transform:translateX(-50%) translateY(0)}
+#speechBar .now-playing{display:flex; flex-direction:column; max-width:220px; overflow:hidden}
+#speechBar .now-playing small{color:var(--ink-faint); font-size:.68rem; font-family:var(--font-ar-body)}
+#speechBar .now-playing span{font-family:var(--font-body); font-size:.85rem; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; direction:ltr; text-align:left}
+#speechBar .sp-controls{display:flex; align-items:center; gap:6px}
+#speechBar .sp-btn{width:36px; height:36px; border-radius:50%; background:var(--bg-soft); display:grid; place-items:center}
+#speechBar .sp-btn:hover{background:var(--akk-soft)}
+#speechBar .sp-btn svg{width:16px; height:16px}
+.speak-indicator{display:inline-flex; gap:2px; align-items:flex-end; height:14px}
+.speak-indicator i{display:block; width:3px; height:3px; background:var(--ink-faint); border-radius:2px; animation:speakbar 0.9s ease-in-out infinite; animation-play-state:paused}
+#speechBar.playing .speak-indicator i{background:var(--akk); animation-play-state:running}
+.ex-card.sentence-speaking{box-shadow:var(--shadow-glow), var(--shadow-md)}
+@keyframes speakbar{0%,100%{height:3px}50%{height:14px}}
+.novoice-banner{display:none; align-items:center; gap:10px; background:var(--danger-soft); color:var(--danger); border-radius:var(--radius-sm); padding:10px 14px; font-size:.84rem; margin-block:14px}
+.novoice-banner.show{display:flex}
+
+/* ==========================================================================
+   VOICE PANEL — VoiceSelector + VoiceTester + PlaybackSpeedControl
+   ========================================================================== */
+.voice-panel{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); padding:24px clamp(18px,4vw,30px); margin-block:30px}
+.voice-panel-head{display:flex; align-items:flex-start; gap:14px; margin-bottom:18px}
+.voice-panel-head h3{font-family:var(--font-ar-head); font-size:1.02rem; margin-bottom:6px}
+.voice-panel-head p{color:var(--ink-soft); font-size:.9rem}
+.voice-list{display:grid; gap:10px; margin-bottom:20px}
+.voice-loading{color:var(--ink-faint); font-size:.9rem; padding:8px 2px}
+.voice-item{display:flex; align-items:center; gap:12px; background:var(--bg-soft); border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:12px 14px; transition:all var(--dur-fast) var(--ease-spring); cursor:pointer}
+.voice-item:hover{border-color:var(--border-strong)}
+.voice-item.selected{border-color:var(--akk); background:var(--akk-soft)}
+.voice-item .radio-dot{flex:none; width:20px; height:20px; border-radius:50%; border:2px solid var(--border-strong); display:grid; place-items:center; background:var(--surface)}
+.voice-item.selected .radio-dot{border-color:var(--akk)}
+.voice-item .radio-dot::after{content:''; width:10px; height:10px; border-radius:50%; background:var(--akk); transform:scale(0); transition:transform var(--dur-fast) var(--ease-spring)}
+.voice-item.selected .radio-dot::after{transform:scale(1)}
+.voice-item .voice-info{flex:1; min-width:0}
+.voice-item .voice-name{font-family:var(--font-body); direction:ltr; text-align:left; font-weight:700; font-size:.94rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.voice-item .voice-meta{font-size:.76rem; color:var(--ink-faint); direction:ltr; text-align:left}
+.voice-item .voice-badge{flex:none; font-family:var(--font-mono); font-size:.68rem; font-weight:700; padding:3px 9px; border-radius:var(--radius-pill); background:var(--surface); border:1px solid var(--border); color:var(--ink-soft)}
+.voice-item.selected .voice-badge{background:var(--akk); color:#fff; border-color:transparent}
+.voice-test-btn{flex:none; display:inline-flex; align-items:center; gap:6px; padding:8px 14px; border-radius:var(--radius-pill); background:var(--surface); border:1px solid var(--border); font-family:var(--font-ar-head); font-size:.78rem; font-weight:700; transition:all var(--dur-fast) var(--ease-spring)}
+.voice-test-btn:hover{background:var(--akk); color:#fff; border-color:var(--akk); transform:scale(1.04)}
+.voice-test-btn.testing{background:var(--akk); color:#fff; border-color:var(--akk)}
+.voice-test-btn svg{width:14px; height:14px}
+.voice-panel-foot{display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding-top:16px; border-top:1px solid var(--border)}
+.speed-label{font-family:var(--font-ar-head); font-weight:700; font-size:.86rem; color:var(--ink-soft); flex:none}
+.speed-chips{display:inline-flex; flex-wrap:wrap; gap:6px}
+.speed-chip{padding:7px 13px; border-radius:var(--radius-pill); background:var(--bg-soft); border:1px solid var(--border); font-family:var(--font-mono); font-size:.78rem; font-weight:700; direction:ltr; color:var(--ink-soft); transition:all var(--dur-fast) var(--ease-spring)}
+.speed-chip:hover{border-color:var(--border-strong)}
+.speed-chip.on{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+@media (max-width:640px){
+  .voice-item{flex-wrap:wrap}
+  .voice-panel-head{flex-direction:column}
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero{position:relative; padding-block:56px 40px; overflow:hidden}
+.hero-bg{position:absolute; inset:0; z-index:-1; opacity:.5}
+.hero-bg svg{width:100%; height:100%}
+.hero-eyebrow{display:inline-flex; align-items:center; gap:10px; font-family:var(--font-ar-head); font-weight:700; font-size:.85rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); padding:8px 16px; border-radius:var(--radius-pill); margin-bottom:22px}
+.hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center}
+.hero h1{font-family:var(--font-display); font-weight:600; line-height:1.1; letter-spacing:-.01em; font-size:clamp(2rem, 4.2vw, 3.2rem); margin-bottom:22px; direction:ltr; text-align:right}
+.hero-sub{font-family:var(--font-ar-body); font-size:1.12rem; color:var(--ink-soft); max-width:60ch; margin-bottom:30px}
+.hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:34px}
+.hero-stats{display:flex; gap:28px; flex-wrap:wrap}
+.hero-stat b{display:block; font-family:var(--font-display); font-size:1.7rem; color:var(--ink)}
+.hero-stat span{font-size:.8rem; color:var(--ink-faint)}
+
+.path-wrap{position:relative; aspect-ratio:1/1; display:grid; place-items:center}
+.path-card{position:relative; width:100%; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); padding:26px 22px; overflow:hidden}
+.path-card::before{content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(120% 100% at 100% 0%, rgba(178,57,46,.10), transparent 55%), radial-gradient(120% 100% at 0% 100%, rgba(106,63,160,.10), transparent 55%)}
+.compass-row{position:relative; margin-block:6px}
+.compass-row svg{width:100%; height:auto}
+.legend-row{display:flex; flex-wrap:wrap; gap:9px; margin-block:18px 4px; font-size:.76rem; color:var(--ink-soft)}
+.legend-row span{display:inline-flex; align-items:center; gap:6px}
+.legend-row i{width:10px; height:10px; border-radius:3px; display:inline-block; flex:none}
+
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .7s var(--ease-out), transform .7s var(--ease-out)}
+.reveal.in{opacity:1; transform:translateY(0)}
+.reveal-stagger > *{opacity:0; transform:translateY(20px); transition:opacity .6s var(--ease-out), transform .6s var(--ease-out)}
+.reveal-stagger.in > *{opacity:1; transform:translateY(0)}
+.reveal-stagger.in > *:nth-child(1){transition-delay:.03s}
+.reveal-stagger.in > *:nth-child(2){transition-delay:.09s}
+.reveal-stagger.in > *:nth-child(3){transition-delay:.15s}
+.reveal-stagger.in > *:nth-child(4){transition-delay:.21s}
+.reveal-stagger.in > *:nth-child(5){transition-delay:.27s}
+.reveal-stagger.in > *:nth-child(6){transition-delay:.33s}
+
+/* ==========================================================================
+   SECTIONS
+   ========================================================================== */
+.section{padding-block:64px; scroll-margin-top:90px; position:relative}
+.section-head{max-width:760px; margin-bottom:38px}
+.kicker{font-family:var(--font-mono); font-weight:700; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; direction:ltr; display:block; margin-bottom:10px}
+.section h2{font-family:var(--font-ar-head); font-size:clamp(1.5rem,3vw,2.1rem); font-weight:700; margin-bottom:14px; line-height:1.3}
+.section h2 .de{font-family:var(--font-display); font-style:italic; direction:ltr; unicode-bidi:isolate}
+.section-desc{color:var(--ink-soft); font-size:1.04rem; max-width:66ch}
+.section.tone-akk .kicker,.section.tone-akk h2 .de{color:var(--akk)}
+.section.tone-t1 .kicker,.section.tone-t1 h2 .de{color:var(--t1)}
+.section.tone-t2 .kicker,.section.tone-t2 h2 .de{color:var(--t2)}
+.section.tone-t3 .kicker,.section.tone-t3 h2 .de{color:var(--t3)}
+.section.tone-t4 .kicker,.section.tone-t4 h2 .de{color:var(--t4)}
+.section.tone-t5 .kicker,.section.tone-t5 h2 .de{color:var(--t5)}
+
+.rule-box{display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:flex-start; background:var(--surface); border:1px solid var(--border); border-inline-start:5px solid var(--tone,var(--akk)); border-radius:var(--radius-md); padding:22px 24px; box-shadow:var(--shadow-sm); margin-block:24px}
+.rule-box .icon{width:42px; height:42px; border-radius:var(--radius-sm); background:var(--tone-soft,var(--akk-soft)); color:var(--tone,var(--akk)); display:grid; place-items:center; flex:none; font-size:1.15rem}
+.rule-box .icon svg{width:22px; height:22px}
+.rule-box h3{font-family:var(--font-ar-head); font-size:1.06rem; margin-bottom:6px}
+.rule-box p{color:var(--ink-soft)}
+.rule-box.tone-akk{--tone:var(--akk); --tone-soft:var(--akk-soft)}
+.rule-box.tone-dat{--tone:var(--dat); --tone-soft:var(--dat-soft)}
+.rule-box.tone-t1{--tone:var(--t1); --tone-soft:var(--t1-soft)}
+.rule-box.tone-t2{--tone:var(--t2); --tone-soft:var(--t2-soft)}
+.rule-box.tone-t3{--tone:var(--t3); --tone-soft:var(--t3-soft)}
+.rule-box.tone-t4{--tone:var(--t4); --tone-soft:var(--t4-soft)}
+.rule-box.tone-t5{--tone:var(--t5); --tone-soft:var(--t5-soft)}
+.rule-box.tone-danger{--tone:var(--danger); --tone-soft:var(--danger-soft)}
+.rule-box.tone-ok{--tone:var(--ok); --tone-soft:var(--ok-soft)}
+
+.formula{display:flex; flex-wrap:wrap; gap:8px; align-items:center; font-family:var(--font-mono); font-weight:700; font-size:.9rem; direction:ltr; background:var(--bg-soft); border:1px dashed var(--border-strong); border-radius:var(--radius-sm); padding:16px 18px; margin-block:20px}
+.formula .f-tag{padding:5px 12px; border-radius:8px; font-size:.8rem}
+.formula .f-tag.main{background:var(--surface); border:1px solid var(--border); color:var(--ink-soft)}
+.formula .f-tag.mid{background:var(--surface); border:1px solid var(--border); color:var(--ink-soft)}
+.formula .f-tag.end{background:var(--akk-soft); color:var(--akk-ink); border:1px solid transparent}
+.formula .arrow{color:var(--ink-faint)}
+
+.flip-pair{display:grid; grid-template-columns:1fr auto 1fr; gap:14px; align-items:center; margin-block:20px}
+.flip-pair .side{padding:16px 18px; border-radius:var(--radius-md); border:1.5px solid var(--border)}
+.flip-pair .side.pos{background:var(--dat-soft); border-color:var(--dat)}
+.flip-pair .side.neg{background:var(--akk-soft); border-color:var(--akk)}
+.flip-pair .side .lbl{font-family:var(--font-mono); font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.04em; margin-bottom:6px; display:block}
+.flip-pair .side.pos .lbl{color:var(--dat-ink)}
+.flip-pair .side.neg .lbl{color:var(--akk-ink)}
+.flip-pair .side p{font-family:var(--font-body); direction:ltr; text-align:left; font-weight:600; font-size:1rem}
+.flip-pair .arrow-mid{font-size:1.4rem; color:var(--ink-faint)}
+@media (max-width:640px){ .flip-pair{grid-template-columns:1fr} .flip-pair .arrow-mid{transform:rotate(90deg); justify-self:center} }
+
+.examples-grid{display:grid; gap:16px; margin-block:26px}
+.ex-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 22px; box-shadow:var(--shadow-sm); transition:box-shadow var(--dur-fast), transform var(--dur-fast)}
+.ex-card:hover{box-shadow:var(--shadow-md); transform:translateY(-2px)}
+.ex-top{display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; flex-wrap:wrap}
+.ex-num{flex:none; width:28px; height:28px; border-radius:50%; background:var(--bg-soft); color:var(--ink-faint); display:grid; place-items:center; font-family:var(--font-mono); font-weight:700; font-size:.78rem}
+.ex-de{font-family:var(--font-body); font-size:1.12rem; font-weight:600; direction:ltr; text-align:left; line-height:1.5; flex:1; min-width:200px}
+.ex-de .hl{padding:1px 5px; border-radius:5px; background:var(--akk-soft); color:var(--akk-ink); font-weight:800}
+.ex-de .hl-dat{background:var(--dat-soft); color:var(--dat-ink)}
+.speak-btn{flex:none; width:36px; height:36px; border-radius:50%; background:var(--bg-soft); border:1px solid var(--border); display:grid; place-items:center; transition:all var(--dur-fast) var(--ease-spring)}
+.speak-btn:hover{background:var(--akk-soft); border-color:var(--akk); color:var(--akk-ink); transform:scale(1.08)}
+.speak-btn svg{width:16px; height:16px}
+.ex-ar{color:var(--ink-soft); font-size:.96rem; margin-inline-start:40px; margin-bottom:6px}
+.ex-note{color:var(--ink-faint); font-size:.82rem; margin-inline-start:40px}
+
+.w{cursor:pointer; border-radius:5px; padding:1px 3px; margin:0 -3px; transition:background var(--dur-fast), color var(--dur-fast)}
+.w:hover{background:var(--akk-soft); color:var(--akk-ink)}
+.w.speaking{background:var(--akk); color:#fff}
+
+.slot{padding:7px 12px; border-radius:9px; font-size:.82rem; font-weight:700; line-height:1.3; background:var(--bg-soft); border:1px solid var(--border); color:var(--ink-soft); position:relative}
+.slot .lbl{display:block; font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; opacity:.62; margin-bottom:1px}
+.slot.s-main{background:var(--surface-alt)}
+.slot.s-mid{background:var(--surface)}
+.slot.s-conn{color:#fff; border-color:transparent}
+.slot.s-end{background:var(--akk-soft); color:var(--akk-ink); border-color:transparent}
+
+.mistake-box{display:grid; gap:10px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 22px; margin-block:26px; box-shadow:var(--shadow-sm)}
+.mistake-box h4{font-family:var(--font-ar-head); font-size:.98rem; margin-bottom:6px; display:flex; align-items:center; gap:8px}
+.mrow{display:flex; align-items:center; gap:12px; padding:11px 14px; border-radius:var(--radius-sm); font-family:var(--font-body); font-size:.98rem; direction:ltr; text-align:left}
+.mrow.bad{background:var(--danger-soft); color:var(--danger)}
+.mrow.good{background:var(--ok-soft); color:var(--ok-ink)}
+.mrow .mark{flex:none; font-weight:900; font-size:1.1rem}
+.mnote{font-family:var(--font-ar-body); color:var(--ink-soft); font-size:.92rem; direction:rtl; text-align:right; margin-top:4px}
+
+details.more{background:var(--bg-soft); border:1px solid var(--border); border-radius:var(--radius-md); padding:4px 20px; margin-block:22px}
+details.more summary{cursor:pointer; padding:14px 0; font-family:var(--font-ar-head); font-weight:700; font-size:.94rem; list-style:none; display:flex; align-items:center; gap:10px}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:'+'; width:22px; height:22px; border-radius:50%; background:var(--surface); border:1px solid var(--border); display:grid; place-items:center; font-size:1rem; flex:none; transition:transform var(--dur-fast)}
+details.more[open] summary::before{content:'−'}
+details.more .more-body{padding-bottom:18px; color:var(--ink-soft)}
+
+.compare-widget{background:linear-gradient(145deg, var(--surface), var(--surface-alt)); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px clamp(18px,4vw,32px); margin-block:28px; box-shadow:var(--shadow-md)}
+.compare-head{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; margin-bottom:20px}
+.compare-head h3{font-family:var(--font-ar-head); font-size:1.05rem}
+.toggle-switch{display:inline-flex; flex-wrap:wrap; justify-content:center; background:var(--bg-soft); border-radius:var(--radius-pill); padding:4px; border:1px solid var(--border)}
+.toggle-switch button{padding:9px 18px; border-radius:var(--radius-pill); font-weight:700; font-family:var(--font-mono); font-size:.82rem; direction:ltr; color:var(--ink-soft); transition:all var(--dur-fast) var(--ease-spring); position:relative; z-index:1}
+.toggle-switch button.on{background:var(--ink); color:var(--bg)}
+.compare-stage{min-height:150px; display:flex; align-items:center; justify-content:center; position:relative}
+.compare-sentence{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; direction:ltr; font-family:var(--font-mono); font-weight:700; font-size:clamp(.85rem,2.4vw,1.05rem)}
+.compare-sentence .slot{transition:all var(--dur-slow) var(--ease-spring)}
+.compare-caption{text-align:center; margin-top:18px; color:var(--ink-soft); font-size:.94rem; min-height:24px}
+
+.table-wrap{overflow-x:auto; border-radius:var(--radius-md); border:1px solid var(--border); box-shadow:var(--shadow-sm); margin-block:26px}
+table.cmp{width:100%; border-collapse:collapse; background:var(--surface); min-width:560px}
+table.cmp th,table.cmp td{padding:14px 18px; text-align:right; border-bottom:1px solid var(--border); vertical-align:top}
+table.cmp thead th{background:var(--bg-soft); font-family:var(--font-ar-head); font-size:.86rem; color:var(--ink-soft); position:sticky; top:0}
+table.cmp tbody tr:last-child td{border-bottom:none}
+table.cmp tbody tr:hover{background:var(--bg-soft)}
+table.cmp td.de-cell{direction:ltr; text-align:left; font-family:var(--font-body); font-weight:600}
+table.cmp td:first-child{font-family:var(--font-mono); font-weight:800; direction:ltr; text-align:left}
+table.decl th, table.decl td{text-align:center}
+table.decl td.case-label{text-align:right; font-family:var(--font-ar-head); font-weight:700; color:var(--ink-soft); font-size:.86rem}
+table.decl td.rare{color:var(--ink-faint); font-style:italic}
+table.decl td.hlcol{background:var(--akk-soft); color:var(--akk-ink); font-weight:800; border-radius:6px}
+
+.flow-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+
+.practice-panel{background:var(--bg-soft); border:1px solid var(--border); border-radius:var(--radius-lg); padding:26px clamp(18px,4vw,32px); margin-block:30px}
+.practice-head{display:flex; align-items:center; gap:12px; margin-bottom:18px}
+.practice-head .badge-icon{width:38px; height:38px; border-radius:12px; background:var(--surface); border:1px solid var(--border); display:grid; place-items:center; flex:none}
+.practice-head h3{font-family:var(--font-ar-head); font-size:1.02rem}
+.practice-head p{color:var(--ink-faint); font-size:.84rem}
+.practice-context{direction:ltr; text-align:left; font-family:var(--font-body); font-size:.98rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px 14px; margin-bottom:14px}
+
+.builder-target{min-height:58px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; direction:ltr; background:var(--surface); border:2px dashed var(--border-strong); border-radius:var(--radius-sm); padding:12px 14px; margin-bottom:14px; transition:border-color var(--dur-fast)}
+.builder-target.correct{border-color:var(--ok); border-style:solid; background:var(--ok-soft)}
+.builder-target.wrong{border-color:var(--danger); border-style:solid; background:var(--danger-soft); animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.builder-bank{display:flex; flex-wrap:wrap; gap:8px; direction:ltr; margin-bottom:16px}
+.word-chip{padding:9px 15px; border-radius:9px; background:var(--surface); border:1px solid var(--border); font-family:var(--font-body); font-weight:600; font-size:.92rem; cursor:grab; transition:all var(--dur-fast) var(--ease-spring); user-select:none}
+.word-chip:hover{transform:translateY(-2px); box-shadow:var(--shadow-sm); border-color:var(--border-strong)}
+.word-chip.placed{opacity:.35; cursor:not-allowed}
+.word-chip.in-target{cursor:pointer; background:var(--surface-alt)}
+.builder-actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.builder-feedback{font-size:.9rem; font-weight:600; min-height:20px}
+.builder-feedback.ok{color:var(--ok-ink)}
+.builder-feedback.no{color:var(--danger)}
+
+.quiz-q{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 22px; margin-bottom:14px; box-shadow:var(--shadow-sm)}
+.quiz-q .qtext{font-weight:700; margin-bottom:14px; font-family:var(--font-ar-head); font-size:.98rem}
+.quiz-q .qtext .de{font-family:var(--font-body); direction:ltr; unicode-bidi:isolate; font-weight:600}
+.qopts{display:grid; gap:9px}
+.qopt{text-align:right; padding:13px 16px; border-radius:var(--radius-sm); background:var(--bg-soft); border:1px solid var(--border); font-family:var(--font-body); direction:ltr; text-align:left; font-weight:600; font-size:.92rem; display:flex; align-items:center; justify-content:space-between; gap:10px; transition:all var(--dur-fast)}
+.qopt:hover:not(:disabled){border-color:var(--border-strong); background:var(--surface)}
+.qopt.correct{background:var(--ok-soft); border-color:var(--ok); color:var(--ok-ink)}
+.qopt.incorrect{background:var(--danger-soft); border-color:var(--danger); color:var(--danger)}
+.qopt:disabled{cursor:not-allowed}
+.quiz-explain{margin-top:12px; padding:12px 14px; background:var(--bg-soft); border-radius:var(--radius-sm); font-size:.88rem; color:var(--ink-soft)}
+
+.quiz-summary{text-align:center; padding:40px 24px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); display:none}
+.quiz-summary.show{display:block}
+.quiz-summary .score-ring{width:130px; height:130px; margin:0 auto 18px; position:relative}
+.quiz-summary .score-ring svg{width:100%; height:100%; transform:rotate(-90deg)}
+.quiz-summary .score-ring .num{position:absolute; inset:0; display:grid; place-items:center; font-family:var(--font-display); font-size:2.1rem; font-weight:600}
+.quiz-summary h3{font-family:var(--font-ar-head); font-size:1.3rem; margin-bottom:8px}
+.quiz-summary p{color:var(--ink-soft); margin-bottom:20px}
+.progressbar-track{height:8px; background:var(--bg-soft); border-radius:99px; overflow:hidden; margin-block:6px}
+.progressbar-fill{height:100%; background:linear-gradient(90deg,var(--akk),var(--t4)); border-radius:99px; transition:width .6s var(--ease-out)}
+
+#achToastHost{position:fixed; top:70px; inset-inline-end:16px; z-index:1300; display:flex; flex-direction:column; gap:10px; pointer-events:none}
+.ach-toast{pointer-events:auto; display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-lg); border-radius:var(--radius-md); padding:14px 18px; min-width:260px; max-width:320px; transform:translateX(120%); transition:transform .5s var(--ease-spring)}
+[dir="rtl"] .ach-toast{transform:translateX(-120%)}
+.ach-toast.show{transform:translateX(0)}
+.ach-toast .emoji{font-size:1.6rem}
+.ach-toast b{display:block; font-family:var(--font-ar-head); font-size:.9rem}
+.ach-toast span{font-size:.78rem; color:var(--ink-faint)}
+.achievements-panel{display:flex; flex-wrap:wrap; gap:12px; margin-block:20px}
+.ach-item{display:flex; flex-direction:column; align-items:center; gap:6px; width:88px; text-align:center; opacity:.32; filter:grayscale(1); transition:all var(--dur-med) var(--ease-spring)}
+.ach-item.unlocked{opacity:1; filter:none}
+.ach-item .ach-circle{width:52px; height:52px; border-radius:50%; background:var(--bg-soft); border:1px solid var(--border); display:grid; place-items:center; font-size:1.4rem}
+.ach-item.unlocked .ach-circle{background:linear-gradient(150deg,var(--akk-soft),var(--t4-soft)); box-shadow:var(--shadow-sm)}
+.ach-item small{font-size:.7rem; color:var(--ink-soft); line-height:1.3}
+
+.flip-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-block:28px}
+.flip-card{aspect-ratio:4/3; perspective:1200px}
+.flip-inner{position:relative; width:100%; height:100%; transition:transform .7s var(--ease-spring); transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-card:focus-visible .flip-inner{outline:3px solid var(--t4); outline-offset:4px}
+.flip-face{position:absolute; inset:0; backface-visibility:hidden; border-radius:var(--radius-md); padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:9px; border:1px solid var(--border); box-shadow:var(--shadow-md); cursor:pointer}
+.flip-front{background:var(--surface)}
+.flip-front .fw{font-family:var(--font-display); font-size:1.3rem; font-weight:600; direction:ltr}
+.flip-front .tap-hint{font-size:.7rem; color:var(--ink-faint); margin-top:auto}
+.flip-back{color:var(--tone-ink,var(--t4-ink)); background:var(--tone-soft,var(--t4-soft)); transform:rotateY(180deg)}
+.flip-back p{font-size:.82rem; line-height:1.65}
+.flip-back .ex{font-family:var(--font-body); direction:ltr; font-weight:700; font-size:.82rem; margin-top:6px; padding:8px 10px; background:rgba(255,255,255,.35); border-radius:8px}
+
+.fab-stack{position:fixed; bottom:18px; inset-inline-start:16px; z-index:1150; display:flex; flex-direction:column; gap:10px; transition:bottom var(--dur-med) var(--ease-spring)}
+body.speech-active .fab-stack{bottom:84px}
+.fab{width:48px; height:48px; border-radius:50%; background:var(--ink); color:var(--bg); display:grid; place-items:center; box-shadow:var(--shadow-lg); transition:all var(--dur-fast) var(--ease-spring); opacity:0; transform:translateY(20px) scale(.7); pointer-events:none}
+.fab.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto}
+.fab:hover{transform:translateY(-3px) scale(1.06)}
+.fab svg{width:20px; height:20px}
+
+.search-wrap{position:relative; flex:none}
+.search-box{display:flex; align-items:center; gap:6px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-pill); padding:8px 8px 8px 14px; transition:all var(--dur-fast); width:38px; overflow:hidden}
+.search-box.open{width:200px}
+.search-box input{border:none; background:none; outline:none; font-size:.86rem; color:var(--ink); width:100%; font-family:var(--font-ar-body)}
+.search-box svg{width:17px; height:17px; flex:none}
+
+footer{background:var(--surface-alt); border-top:1px solid var(--border); padding-block:56px 36px; margin-top:30px}
+.cheat-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:30px clamp(18px,4vw,36px); box-shadow:var(--shadow-md)}
+.cheat-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-block:20px}
+.cheat-item{padding:16px 18px; border-radius:var(--radius-sm); border-inline-start:4px solid var(--tone,var(--akk)); background:var(--bg-soft)}
+.cheat-item b{display:block; font-family:var(--font-mono); direction:ltr; font-size:1rem; margin-bottom:4px; color:var(--tone,var(--akk))}
+.cheat-item span{font-size:.86rem; color:var(--ink-soft)}
+footer .foot-bottom{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:30px; padding-top:20px; border-top:1px solid var(--border); color:var(--ink-faint); font-size:.82rem}
+
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .path-wrap{max-width:420px; margin-inline:auto; width:100%}
+  .flip-grid{grid-template-columns:1fr 1fr}
+  .cheat-grid{grid-template-columns:1fr}
+  .flow-grid{grid-template-columns:1fr !important}
+}
+@media (max-width:640px){
+  .brand span{display:none}
+  .navlinks{gap:2px}
+  .navlink{padding:8px 10px; font-size:.78rem}
+  .nav-tools .search-box.open{width:140px}
+  .hero{padding-block:32px 20px}
+  .hero-stats{gap:18px}
+  .ex-ar,.ex-note{margin-inline-start:0; margin-top:8px}
+  .ex-top{flex-wrap:wrap}
+  #speechBar{padding:8px 12px; gap:8px}
+  #speechBar .now-playing{max-width:100px}
+  .cheat-grid{grid-template-columns:1fr}
+  .toggle-switch button{padding:7px 12px; font-size:.74rem}
+  .flip-grid{grid-template-columns:1fr}
+  table.cmp{min-width:520px}
+}
+@media (min-width:1400px){ .container{max-width:1280px} }
+
+@media print{
+  .topnav,#speechBar,.fab-stack,#achToastHost,#readProgress,.practice-panel,.hero-actions,.skip-link,.no-print,.voice-panel{display:none !important}
+  body{background:#fff; color:#000}
+  .section{padding-block:18px; break-inside:avoid}
+  .ex-card,.rule-box,.cheat-card{box-shadow:none; border:1px solid #ccc}
+  a{text-decoration:none; color:#000}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطَّ إلى المحتوى الرئيسي</a>
+
+<div id="readProgress" role="progressbar" aria-label="نسبة التقدّم في قراءة الدرس" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+<header class="topnav">
+  <div class="container topnav-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="16" fill="none" stroke="var(--border-strong)" stroke-width="1.5"/>
+        <circle cx="20" cy="20" r="10" fill="none" stroke="var(--akk-soft)" stroke-width="3"/>
+        <circle cx="20" cy="20" r="4" fill="var(--akk)"/>
+        <path d="M6 6 L16 16" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M6 6 L6 12 M6 6 L12 6" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span>حالة Akkusativ الألمانية</span>
+    </div>
+    <nav class="navlinks" id="navlinks" aria-label="التنقّل بين أقسام الدرس">
+      <a href="#overview" class="navlink" data-nav="overview"><span class="dot"></span>نظرة عامة</a>
+      <a href="#artikel" class="navlink" data-nav="artikel"><span class="dot"></span>الأدوات</a>
+      <a href="#pronomen" class="navlink" data-nav="pronomen"><span class="dot"></span>الضمائر</a>
+      <a href="#verben" class="navlink" data-nav="verben"><span class="dot"></span>الأفعال</a>
+      <a href="#praepositionen" class="navlink" data-nav="praepositionen"><span class="dot"></span>حروف الجر</a>
+      <a href="#wechsel" class="navlink" data-nav="wechsel"><span class="dot"></span>Wechsel</a>
+      <a href="#adjektive" class="navlink" data-nav="adjektive"><span class="dot"></span>الصفات</a>
+      <a href="#ausdruecke" class="navlink" data-nav="ausdruecke"><span class="dot"></span>تعبيرات</a>
+      <a href="#compare" class="navlink" data-nav="compare"><span class="dot"></span>المراجعة</a>
+      <a href="#quiz" class="navlink" data-nav="quiz"><span class="dot"></span>الاختبار</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="search-wrap">
+        <div class="search-box" id="searchBox">
+          <button class="icon-btn" id="searchToggle" style="width:auto;height:auto;background:none;border:none" aria-label="بحث داخل الدرس" title="بحث">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </button>
+          <input type="text" id="searchInput" placeholder="ابحث في الدرس…" aria-label="نص البحث">
+        </div>
+      </div>
+      <button class="icon-btn" id="fullscreenBtn" aria-label="وضع ملء الشاشة" title="ملء الشاشة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      </button>
+      <div class="theme-switch" role="group" aria-label="اختيار المظهر: فاتح، داكن، أو النظام">
+        <button type="button" id="themeLight" title="فاتح" aria-label="المظهر الفاتح"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg></button>
+        <button type="button" id="themeDark" title="داكن" aria-label="المظهر الداكن"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button>
+        <button type="button" id="themeSystem" title="النظام" aria-label="حسب إعدادات النظام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+      <circle cx="1000" cy="80" r="260" fill="var(--akk)" opacity="0.05"/>
+      <circle cx="120" cy="420" r="220" fill="var(--t4)" opacity="0.05"/>
+    </svg>
+  </div>
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-eyebrow">📘 درس شامل — حالة Akkusativ بكل استخداماتها</span>
+      <h1>حالة <span class="de" style="color:var(--akk)">Akkusativ</span></h1>
+      <p class="hero-sub">Akkusativ هي حالة <b>المفعول به المباشر</b> — الهدف الذي يقع عليه فعل الجملة مباشرة. تسأل عنها بـ<span class="de">wen?</span> (من؟) للأشخاص أو <span class="de">was?</span> (ماذا؟) للأشياء. في هذا الدرس تتعلّم تصريف كل الأدوات والضمائر، والأفعال التي تتطلبها، وحروف الجر الثابتة والمتغيّرة معها، ونهايات الصفة — بدقة وأمثلة كثيرة.</p>
+      <div class="hero-actions">
+        <a href="#overview" class="btn btn-primary">ابدأ الدرس ↓</a>
+        <button class="btn btn-ghost" id="heroSpeakDemo">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>
+          استمع لمثال
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>8</b><span>أقسام تغطّي كل استخدامات Akkusativ</span></div>
+        <div class="hero-stat"><b>9</b><span>حروف جر متغيّرة (Wechselpräpositionen)</span></div>
+        <div class="hero-stat"><b>+35</b><span>مثال صوتي تطبيقي</span></div>
+      </div>
+    </div>
+
+    <div class="path-wrap reveal">
+      <div class="path-card">
+        <div class="legend-row" style="margin-top:0">
+          <span><i style="background:var(--akk)"></i>Akkusativ</span>
+          <span><i style="background:var(--dat)"></i>Dativ (للمقارنة)</span>
+        </div>
+        <div class="compass-row">
+          <svg viewBox="0 0 400 300" aria-hidden="true">
+            <circle cx="200" cy="150" r="110" fill="none" stroke="var(--akk-soft)" stroke-width="18"/>
+            <circle cx="200" cy="150" r="75" fill="none" stroke="var(--akk-soft)" stroke-width="16" opacity=".7"/>
+            <circle cx="200" cy="150" r="40" fill="none" stroke="var(--akk-soft)" stroke-width="14" opacity=".9"/>
+            <circle cx="200" cy="150" r="10" fill="var(--akk)"/>
+            <line x1="30" y1="260" x2="185" y2="163" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M30 260 L30 235 M30 260 L55 260" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <g font-family="IBM Plex Mono, monospace" font-weight="800">
+              <text x="200" y="150" text-anchor="middle" dy="5" font-size="13" fill="#fff">wen? / was?</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="overview">
+  <div class="container">
+    <div class="novoice-banner" id="novoiceBanner" role="status">
+      <span>🔇</span>
+      <span>لا يتوفّر حاليًا أي صوت ألماني في هذا المتصفح. الدرس يعمل بشكل كامل بدون صوت — جرّب متصفحًا آخر (مثل Chrome أو Edge) أو ثبّت حزمة صوت ألمانية في نظام التشغيل للاستماع إلى الأمثلة.</span>
+    </div>
+    <div class="section-head reveal">
+      <span class="kicker">Überblick · نظرة عامة</span>
+      <h2>ما هي Akkusativ ولماذا نحتاجها؟</h2>
+      <p class="section-desc">في الجملة الألمانية، لا يكفي معرفة "من الفاعل"؛ يجب أيضًا تحديد "من/ماذا وقع عليه الفعل مباشرة" — وهذا بالضبط دور <b>Akkusativ</b>. تسأل عنها بـ <span class="de" style="font-weight:700">wen?</span> (من؟ للأشخاص) أو <span class="de" style="font-weight:700">was?</span> (ماذا؟ للأشياء).</p>
+    </div>
+
+    <div class="flip-pair reveal">
+      <div class="side pos"><span class="lbl">Nominativ — الفاعل (wer?)</span><p>Der Mann sieht ...</p></div>
+      <div class="arrow-mid">+</div>
+      <div class="side neg"><span class="lbl">Akkusativ — المفعول به (wen?)</span><p>... den Hund.</p></div>
+    </div>
+
+    <div class="rule-box tone-akk reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></div>
+      <div>
+        <h3>الخبر الجيد: تغيير واحد فقط يجب حفظه</h3>
+        <p>عند الانتقال من Nominativ إلى Akkusativ، <b>يتغيّر شكل واحد فقط</b>: أداة التعريف/التنكير للمذكر (<span class="de">der→den</span>، <span class="de">ein→einen</span>). أما المؤنث والمحايد والجمع، فتبقى أداتها <b>بلا أي تغيير</b> عن Nominativ. هذا يعني أن نصف عمل تعلّم Akkusativ قد انتهى فعليًا بمجرد حفظ هذه الحقيقة الواحدة.</p>
+      </div>
+    </div>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge akk">Akkusativ</span>
+          <p class="ex-de" lang="de"><span class="w">Der Mann</span> <span class="w">sieht</span> <span class="w"><span class="hl">den Hund.</span></span></p>
+          <button class="speak-btn" data-speak="Der Mann sieht den Hund." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">الرجل يرى الكلب.</p>
+        <p class="ex-note">der Hund (مذكر Nominativ) ⇐ den Hund (مذكر Akkusativ) — التغيير الوحيد.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge akk">Akkusativ</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">kaufe</span> <span class="w"><span class="hl">die Blume.</span></span></p>
+          <button class="speak-btn" data-speak="Ich kaufe die Blume." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أنا أشتري الزهرة.</p>
+        <p class="ex-note">die Blume (مؤنث) — بلا أي تغيير بين Nominativ وAkkusativ.</p>
+      </div>
+    </div>
+
+    <div class="voice-panel reveal" id="voicePanel">
+      <div class="voice-panel-head">
+        <div class="badge-icon" style="width:38px;height:38px;border-radius:12px;background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;flex:none">🎙️</div>
+        <div>
+          <h3>اختر صوتك الألماني وجرّبه قبل أن تقرر</h3>
+          <p>هذه الأصوات الألمانية المتاحة فعليًا الآن في متصفحك وجهازك (محلية عبر نظام التشغيل، أو شبكية إن وفّرها متصفحك) — لا نفترض وجود أي صوت غير موجود فعلًا. اضغط <b>«اختبار 🔊»</b> بجانب أي صوت لسماعه، ثم انقر عليه لاعتماده صوتًا افتراضيًا لبقية الدرس.</p>
+        </div>
+      </div>
+      <div class="voice-list" id="voiceList" role="radiogroup" aria-label="اختيار الصوت الألماني">
+        <p class="voice-loading" id="voiceLoading">⏳ جارٍ البحث عن الأصوات الألمانية المتاحة في متصفحك…</p>
+      </div>
+      <div class="voice-panel-foot">
+        <span class="speed-label">سرعة النطق</span>
+        <div class="speed-chips" id="speedChips" role="group" aria-label="اختيار سرعة النطق">
+          <button type="button" class="speed-chip" data-rate="0.5">0.5x</button>
+          <button type="button" class="speed-chip" data-rate="0.75">0.75x</button>
+          <button type="button" class="speed-chip on" data-rate="1">1x</button>
+          <button type="button" class="speed-chip" data-rate="1.25">1.25x</button>
+          <button type="button" class="speed-chip" data-rate="1.5">1.5x</button>
+          <button type="button" class="speed-chip" data-rate="2">2x</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ARTIKEL ==================== -->
+<section class="section tone-akk" id="artikel">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-akk">Artikel · الأدوات — القاعدة الأساسية</span>
+      <span class="kicker" style="margin-top:14px">01 / der, ein, kein في Akkusativ</span>
+      <h2>تصريف أدوات التعريف والتنكير والنفي</h2>
+      <p class="section-desc">ثلاث عائلات من الأدوات، وقاعدة واحدة تحكمها جميعًا: <b>فقط صيغة المذكر تتغيّر</b> في Akkusativ. راقب عمود المذكر في كل جدول أدناه — هو الوحيد المختلف عن Nominativ.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp decl">
+        <thead><tr><th>الحالة</th><th class="de-cell">Maskulin</th><th class="de-cell">Feminin</th><th class="de-cell">Neutrum</th><th class="de-cell">Plural</th></tr></thead>
+        <tbody>
+          <tr><td class="case-label">Nominativ</td><td class="de-cell">der</td><td class="de-cell">die</td><td class="de-cell">das</td><td class="de-cell">die</td></tr>
+          <tr><td class="case-label">Akkusativ</td><td class="de-cell hlcol">den</td><td class="de-cell">die</td><td class="de-cell">das</td><td class="de-cell">die</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="section-desc" style="font-size:.88rem; color:var(--ink-faint)">أداة التعريف (bestimmter Artikel) — نفس النمط تتبعه أيضًا أدوات الإشارة dieser/jeder/jener/mancher/solcher/welcher (der-Wörter).</p>
+
+    <div class="table-wrap reveal">
+      <table class="cmp decl">
+        <thead><tr><th>الحالة</th><th class="de-cell">Maskulin</th><th class="de-cell">Feminin</th><th class="de-cell">Neutrum</th><th class="de-cell">Plural</th></tr></thead>
+        <tbody>
+          <tr><td class="case-label">Nominativ</td><td class="de-cell">ein</td><td class="de-cell">eine</td><td class="de-cell">ein</td><td class="de-cell rare">—</td></tr>
+          <tr><td class="case-label">Akkusativ</td><td class="de-cell hlcol">einen</td><td class="de-cell">eine</td><td class="de-cell">ein</td><td class="de-cell rare">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="section-desc" style="font-size:.88rem; color:var(--ink-faint)">أداة التنكير (unbestimmter Artikel) — لا صيغة جمع لها أصلًا. نفس النمط تتبعه أيضًا الأدوات الملكية (mein/dein/sein...) — راجع القسم التالي.</p>
+
+    <div class="table-wrap reveal">
+      <table class="cmp decl">
+        <thead><tr><th>الحالة</th><th class="de-cell">Maskulin</th><th class="de-cell">Feminin</th><th class="de-cell">Neutrum</th><th class="de-cell">Plural</th></tr></thead>
+        <tbody>
+          <tr><td class="case-label">Nominativ</td><td class="de-cell">kein</td><td class="de-cell">keine</td><td class="de-cell">kein</td><td class="de-cell">keine</td></tr>
+          <tr><td class="case-label">Akkusativ</td><td class="de-cell hlcol">keinen</td><td class="de-cell">keine</td><td class="de-cell">kein</td><td class="de-cell">keine</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="section-desc" style="font-size:.88rem; color:var(--ink-faint)">أداة النفي kein — على عكس ein، لها صيغة جمع (keine)، وتتبع نمط التغيير نفسه في المذكر فقط.</p>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge akk">der → den</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">brauche</span> <span class="w"><span class="hl">den Stift.</span></span></p>
+          <button class="speak-btn" data-speak="Ich brauche den Stift." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أحتاج القلم (هذا القلم تحديدًا).</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge akk">ein → einen</span>
+          <p class="ex-de" lang="de"><span class="w">Sie</span> <span class="w">hat</span> <span class="w"><span class="hl">einen Bruder.</span></span></p>
+          <button class="speak-btn" data-speak="Sie hat einen Bruder." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">لديها أخ (واحد).</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge akk">kein → keinen</span>
+          <p class="ex-de" lang="de"><span class="w">Wir</span> <span class="w">haben</span> <span class="w"><span class="hl">keinen Hunger.</span></span></p>
+          <button class="speak-btn" data-speak="Wir haben keinen Hunger." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">لسنا جائعين (حرفيًا: ليس لدينا جوع).</p>
+      </div>
+    </div>
+
+    <div class="mistake-box reveal">
+      <h4>⚠️ الخطأ الأكثر شيوعًا: نسيان تغيير المذكر</h4>
+      <div class="mrow bad"><span class="mark">✗</span><span lang="de">Ich sehe der Mann.</span></div>
+      <div class="mrow good"><span class="mark">✓</span><span lang="de">Ich sehe den Mann.</span></div>
+      <p class="mnote">لأن العربية لا تُغيّر شكل "ال" التعريف حسب موقع الاسم في الجملة، يميل المتعلمون لترك der كما هي. لكن بما أن Mann مذكر وهو مفعول به مباشر هنا، يجب أن تصبح den.</p>
+    </div>
+
+    <div class="practice-panel reveal">
+      <div class="practice-head">
+        <div class="badge-icon">🎯</div>
+        <div><h3>تمرين: رتّب الجملة بالأداة الصحيحة</h3><p>اختر شكل الأداة الصحيح لاسم مذكر في Akkusativ.</p></div>
+      </div>
+      <div class="builder-target" id="artikelTarget" aria-live="polite"></div>
+      <div class="builder-bank" id="artikelBank"></div>
+      <div class="builder-actions">
+        <button class="btn btn-primary btn-sm" data-builder-check="artikel">تحقّق ✓</button>
+        <button class="btn btn-ghost btn-sm" data-builder-reset="artikel">إعادة ترتيب 🔀</button>
+        <span class="builder-feedback" id="artikelFeedback"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRONOMEN ==================== -->
+<section class="section tone-t1" id="pronomen">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-t1">Possessiv & Personalpronomen · الملكية والضمائر</span>
+      <span class="kicker" style="margin-top:14px">02 / mein, dein... und mich, dich...</span>
+      <h2>الأدوات الملكية والضمائر الشخصية في Akkusativ</h2>
+      <p class="section-desc">الأدوات الملكية (<span class="de">mein, dein, sein, ihr, unser, euer, ihr/Ihr</span>) تتبع نفس نمط <span class="de">ein</span> تمامًا. أما الضمائر الشخصية، فبعضها يتغيّر شكله تغيّرًا جذريًا في Akkusativ ويستحق الحفظ عن ظهر قلب.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp decl">
+        <thead><tr><th>الحالة</th><th class="de-cell">Maskulin (mein)</th><th class="de-cell">Feminin (mein)</th><th class="de-cell">Neutrum (mein)</th><th class="de-cell">Plural (mein)</th></tr></thead>
+        <tbody>
+          <tr><td class="case-label">Nominativ</td><td class="de-cell">mein</td><td class="de-cell">meine</td><td class="de-cell">mein</td><td class="de-cell">meine</td></tr>
+          <tr><td class="case-label">Akkusativ</td><td class="de-cell hlcol">meinen</td><td class="de-cell">meine</td><td class="de-cell">mein</td><td class="de-cell">meine</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="section-desc" style="font-size:.88rem; color:var(--ink-faint)">وبنفس الطريقة: dein→deinen، sein→seinen، ihr→ihren، unser→unseren، euer→euren، ihr/Ihr→ihren/Ihren — التغيير دائمًا في المذكر فقط.</p>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>Nominativ</th><th class="de-cell">Akkusativ</th><th>المعنى</th></tr></thead>
+        <tbody>
+          <tr><td class="de-cell">ich</td><td class="de-cell hlcol" style="border-radius:6px">mich</td><td>أنا ⟵ ـني/إيّاي</td></tr>
+          <tr><td class="de-cell">du</td><td class="de-cell hlcol" style="border-radius:6px">dich</td><td>أنتَ/أنتِ ⟵ ـك</td></tr>
+          <tr><td class="de-cell">er</td><td class="de-cell hlcol" style="border-radius:6px">ihn</td><td>هو ⟵ ـه</td></tr>
+          <tr><td class="de-cell">sie</td><td class="de-cell">sie</td><td>هي ⟵ ـها (بلا تغيير)</td></tr>
+          <tr><td class="de-cell">es</td><td class="de-cell">es</td><td>هو/هي (محايد) (بلا تغيير)</td></tr>
+          <tr><td class="de-cell">wir</td><td class="de-cell hlcol" style="border-radius:6px">uns</td><td>نحن ⟵ ـنا</td></tr>
+          <tr><td class="de-cell">ihr</td><td class="de-cell hlcol" style="border-radius:6px">euch</td><td>أنتم ⟵ ـكم</td></tr>
+          <tr><td class="de-cell">sie (Pl.)</td><td class="de-cell">sie</td><td>هم ⟵ ـهم (بلا تغيير)</td></tr>
+          <tr><td class="de-cell">Sie (Höflich)</td><td class="de-cell">Sie</td><td>حضرتك (بلا تغيير)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule-box tone-t1 reveal">
+      <div class="icon">💡</div>
+      <div>
+        <h3>لاحظ النمط: مذكر فقط يتغيّر شكلًا جذريًا</h3>
+        <p>تمامًا كالأدوات، فإن ضمائر <span class="de">ich, du, er, wir, ihr</span> فقط هي التي تأخذ شكلًا مختلفًا تمامًا في Akkusativ (mich, dich, ihn, uns, euch)، بينما sie/es/Sie تبقى كما هي — نفس فلسفة "المذكر يتغيّر، البقية غالبًا لا" التي رأيناها في الأدوات.</p>
+      </div>
+    </div>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge t1">Akkusativ</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">liebe</span> <span class="w"><span class="hl">dich.</span></span></p>
+          <button class="speak-btn" data-speak="Ich liebe dich." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أحبّك.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge t1">Akkusativ</span>
+          <p class="ex-de" lang="de"><span class="w">Kennst du</span> <span class="w"><span class="hl">meinen Bruder?</span></span></p>
+          <button class="speak-btn" data-speak="Kennst du meinen Bruder?" aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">هل تعرف أخي؟</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge t1">Akkusativ</span>
+          <p class="ex-de" lang="de"><span class="w">Er</span> <span class="w">ruft</span> <span class="w"><span class="hl">uns</span></span> <span class="w">morgen an.</span></p>
+          <button class="speak-btn" data-speak="Er ruft uns morgen an." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">سيتصل بنا غدًا.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== VERBEN ==================== -->
+<section class="section tone-t2" id="verben">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-t2">Verben mit Akkusativ · الأفعال المتعدية</span>
+      <span class="kicker" style="margin-top:14px">03 / أي الأفعال تتطلّب Akkusativ؟</span>
+      <h2>الأفعال التي تتطلّب Akkusativ (ومَن يخالف التوقّع)</h2>
+      <p class="section-desc">القاعدة العامة السارّة: <b>حوالي 90٪ من الأفعال المتعدية</b> في الألمانية تأخذ مفعولها المباشر في Akkusativ. لكن هناك استثناءات معروفة ومهمة يجب حفظها لأنها تبدو متعدية في العربية أو الإنجليزية لكنها فعليًا تتطلّب Dativ.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>الفعل</th><th>المعنى</th><th class="de-cell">مثال</th></tr></thead>
+        <tbody>
+          <tr><td class="de-cell">haben</td><td>يملك</td><td class="de-cell">Ich habe einen Hund.</td></tr>
+          <tr><td class="de-cell">sehen</td><td>يرى</td><td class="de-cell">Ich sehe den Turm.</td></tr>
+          <tr><td class="de-cell">kaufen</td><td>يشتري</td><td class="de-cell">Sie kauft das Auto.</td></tr>
+          <tr><td class="de-cell">brauchen</td><td>يحتاج</td><td class="de-cell">Wir brauchen Zeit.</td></tr>
+          <tr><td class="de-cell">lieben / mögen</td><td>يحب</td><td class="de-cell">Er liebt seine Familie.</td></tr>
+          <tr><td class="de-cell">kennen</td><td>يعرف (شخصًا/مكانًا)</td><td class="de-cell">Kennst du diesen Mann?</td></tr>
+          <tr><td class="de-cell">suchen / finden</td><td>يبحث عن / يجد</td><td class="de-cell">Ich suche meinen Schlüssel.</td></tr>
+          <tr><td class="de-cell">nehmen</td><td>يأخذ</td><td class="de-cell">Nimmst du den Bus?</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule-box tone-t2 reveal">
+      <div class="icon">🎯</div>
+      <div>
+        <h3>fragen وbitten: الشخص نفسه في Akkusativ!</h3>
+        <p>هذان فعلان مهمّان يُخطئ فيهما كثيرون: <span class="de">fragen</span> (يسأل) و<span class="de">bitten</span> (يطلب من) يضعان <b>الشخص المخاطَب في Akkusativ</b> مباشرة — على عكس ما قد تتوقعه (وعلى عكس antworten التي تضع الشخص في Dativ).</p>
+      </div>
+    </div>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge t2">Akkusativ · شخص</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">frage</span> <span class="w"><span class="hl">dich.</span></span></p>
+          <button class="speak-btn" data-speak="Ich frage dich." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أنا أسألك.</p>
+        <p class="ex-note">قارن: Ich antworte dir. (Dativ) — نفس فكرة السؤال والجواب، لكن حالتان مختلفتان!</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge t2">Akkusativ · شخص</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">bitte</span> <span class="w"><span class="hl">Sie</span></span> <span class="w">um Hilfe.</span></p>
+          <button class="speak-btn" data-speak="Ich bitte Sie um Hilfe." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أطلب مساعدتكم.</p>
+      </div>
+    </div>
+
+    <div class="rule-box tone-danger reveal">
+      <div class="icon">⚠️</div>
+      <div>
+        <h3>احذر: هذه الأفعال تأخذ Dativ رغم أنها تبدو متعدّية</h3>
+        <p>الأفعال التالية شائعة جدًا لكنها تتطلّب <b>Dativ</b> لا Akkusativ للشخص المذكور بعدها: <span class="de" style="font-weight:700">helfen</span> (يساعد)، <span class="de" style="font-weight:700">danken</span> (يشكر)، <span class="de" style="font-weight:700">gefallen</span> (يعجب)، <span class="de" style="font-weight:700">gehören</span> (ينتمي/يملكه)، <span class="de" style="font-weight:700">antworten</span> (يجيب)، <span class="de" style="font-weight:700">folgen</span> (يتبع)، <span class="de" style="font-weight:700">gratulieren</span> (يهنّئ)، <span class="de" style="font-weight:700">glauben</span> (يصدّق). احفظها كقائمة مستقلة — لا توجد قاعدة منطقية تفسّرها غير الحفظ.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>الفعل (Dativ)</th><th class="de-cell">مثال</th><th>الترجمة</th></tr></thead>
+        <tbody>
+          <tr><td class="de-cell" style="color:var(--dat)">helfen</td><td class="de-cell">Ich helfe dir.</td><td>أنا أساعدك.</td></tr>
+          <tr><td class="de-cell" style="color:var(--dat)">danken</td><td class="de-cell">Ich danke dir.</td><td>أشكرك.</td></tr>
+          <tr><td class="de-cell" style="color:var(--dat)">gefallen</td><td class="de-cell">Das Bild gefällt mir.</td><td>تعجبني اللوحة.</td></tr>
+          <tr><td class="de-cell" style="color:var(--dat)">gehören</td><td class="de-cell">Das Buch gehört ihm.</td><td>الكتاب يخصّه.</td></tr>
+          <tr><td class="de-cell" style="color:var(--dat)">antworten</td><td class="de-cell">Ich antworte dir.</td><td>أجيبك.</td></tr>
+          <tr><td class="de-cell" style="color:var(--dat)">folgen</td><td class="de-cell">Folgen Sie mir.</td><td>اتبعني.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mistake-box reveal">
+      <h4>⚠️ خطأ شائع جدًا: helfen مع Akkusativ</h4>
+      <div class="mrow bad"><span class="mark">✗</span><span lang="de">Ich helfe dich.</span></div>
+      <div class="mrow good"><span class="mark">✓</span><span lang="de">Ich helfe dir.</span></div>
+      <p class="mnote">"يساعد" فعل متعدٍّ بامتياز في العربية والإنجليزية (help someone)، فيتوقّع المتعلم Akkusativ. لكن helfen ألمانيًا فعل من أفعال Dativ الثابتة، ولا استثناء لهذه القاعدة.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRÄPOSITIONEN ==================== -->
+<section class="section tone-t3" id="praepositionen">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-t3">Präpositionen mit Akkusativ · حروف جر ثابتة</span>
+      <span class="kicker" style="margin-top:14px">04 / für, durch, gegen, ohne, um...</span>
+      <h2>حروف الجر التي تفرض Akkusativ دائمًا</h2>
+      <p class="section-desc">هذه المجموعة من حروف الجر تفرض Akkusativ على الاسم بعدها <b>دون استثناء، أيًّا كان السياق</b> — على عكس حروف الجر "المتغيّرة" (Wechselpräpositionen) في القسم التالي.</p>
+    </div>
+
+    <div class="formula reveal">
+      <span class="f-tag main">für</span><span class="f-tag main">durch</span><span class="f-tag main">gegen</span><span class="f-tag main">ohne</span><span class="f-tag main">um</span><span class="f-tag main">bis</span><span class="f-tag main">entlang</span>
+      <span class="arrow">→</span><span class="f-tag end">+ Akkusativ دائمًا</span>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>حرف الجر</th><th>المعنى</th><th class="de-cell">مثال</th></tr></thead>
+        <tbody>
+          <tr><td class="de-cell">für</td><td>من أجل، لـ</td><td class="de-cell">Das ist für dich.</td></tr>
+          <tr><td class="de-cell">durch</td><td>عبر، من خلال</td><td class="de-cell">Wir gehen durch den Park.</td></tr>
+          <tr><td class="de-cell">gegen</td><td>ضدّ، مقابل</td><td class="de-cell">Er kämpft gegen die Zeit.</td></tr>
+          <tr><td class="de-cell">ohne</td><td>بدون</td><td class="de-cell">Ich trinke Kaffee ohne Zucker.</td></tr>
+          <tr><td class="de-cell">um</td><td>حول، الساعة</td><td class="de-cell">Wir sitzen um den Tisch.</td></tr>
+          <tr><td class="de-cell">bis</td><td>حتى</td><td class="de-cell">Ich bleibe bis nächsten Montag.</td></tr>
+          <tr><td class="de-cell">entlang</td><td>على طول (غالبًا بعد الاسم)</td><td class="de-cell">Wir gehen die Straße entlang.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge t3">für + Akkusativ</span>
+          <p class="ex-de" lang="de"><span class="w">Ich habe</span> <span class="w">ein Geschenk</span> <span class="w">für</span> <span class="w"><span class="hl">meine Mutter.</span></span></p>
+          <button class="speak-btn" data-speak="Ich habe ein Geschenk für meine Mutter." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">لديّ هدية لأمي.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge t3">ohne + Akkusativ</span>
+          <p class="ex-de" lang="de"><span class="w">Er</span> <span class="w">geht</span> <span class="w">nie</span> <span class="w">ohne</span> <span class="w"><span class="hl">seinen Regenschirm.</span></span></p>
+          <button class="speak-btn" data-speak="Er geht nie ohne seinen Regenschirm." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">لا يخرج أبدًا بدون مظلته.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge t3">durch + Akkusativ</span>
+          <p class="ex-de" lang="de"><span class="w">Die Katze</span> <span class="w">springt</span> <span class="w">durch</span> <span class="w"><span class="hl">das Fenster.</span></span></p>
+          <button class="speak-btn" data-speak="Die Katze springt durch das Fenster." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">القطة تقفز عبر النافذة.</p>
+      </div>
+    </div>
+
+    <div class="rule-box tone-t3 reveal">
+      <div class="icon">🔤</div>
+      <div>
+        <h3>الدمج مع أداة التعريف</h3>
+        <p>يندمج بعض هذه الحروف مع أداة التعريف المحايدة "das" في الحديث اليومي: <span class="de">für das → fürs</span>، <span class="de">um das → ums</span>، <span class="de">durch das → durchs</span>. مثال: <span class="de">Danke fürs Geschenk!</span> (شكرًا على الهدية!).</p>
+      </div>
+    </div>
+
+    <div class="practice-panel reveal">
+      <div class="practice-head">
+        <div class="badge-icon">🚪</div>
+        <div><h3>تمرين: رتّب الجملة بحرف الجر durch</h3><p>احرص على استخدام Akkusativ بعد durch.</p></div>
+      </div>
+      <div class="builder-target" id="praepTarget" aria-live="polite"></div>
+      <div class="builder-bank" id="praepBank"></div>
+      <div class="builder-actions">
+        <button class="btn btn-primary btn-sm" data-builder-check="praep">تحقّق ✓</button>
+        <button class="btn btn-ghost btn-sm" data-builder-reset="praep">إعادة ترتيب 🔀</button>
+        <span class="builder-feedback" id="praepFeedback"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WECHSELPRÄPOSITIONEN ==================== -->
+<section class="section tone-t4" id="wechsel">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-t4">Wechselpräpositionen · حروف الجر المتغيّرة</span>
+      <span class="kicker" style="margin-top:14px">05 / an, auf, hinter, in, neben, über, unter, vor, zwischen</span>
+      <h2>الحركة (Akkusativ) مقابل الموقع (Dativ)</h2>
+      <p class="section-desc">تسعة حروف جر مكانية تتأرجح بين Akkusativ وDativ حسب المعنى، لا حسب الحرف نفسه. هذا أهمّ قسم في هذا الدرس، وأكثر نقطة يخطئ فيها المتعلمون في المستوى المتوسط.</p>
+    </div>
+
+    <div class="formula reveal">
+      <span class="f-tag main">wohin?</span><span class="arrow">→</span><span class="f-tag end">حركة/اتجاه ⇐ Akkusativ</span>
+    </div>
+    <div class="formula reveal">
+      <span class="f-tag main">wo?</span><span class="arrow">→</span><span class="f-tag end" style="background:var(--dat-soft); color:var(--dat-ink)">موقع ثابت ⇐ Dativ</span>
+    </div>
+
+    <div class="compare-widget reveal" id="compareToggleWidget">
+      <div class="compare-head">
+        <h3>🎛️ جرّب بنفسك: بدّل بين الحركة والموقع</h3>
+        <div class="toggle-switch">
+          <button id="btnModeAkk" class="on" type="button">wohin؟ (Akkusativ)</button>
+          <button id="btnModeDat" type="button">wo؟ (Dativ)</button>
+        </div>
+      </div>
+      <div class="compare-stage">
+        <div class="compare-sentence" id="compareSentence">
+          <span class="slot s-main">Ich stelle die Vase</span><span class="slot s-conn" style="background:var(--akk); color:#fff">auf den Tisch.</span>
+        </div>
+      </div>
+      <p class="compare-caption" id="compareCaption">stellen فعل حركة (أضع شيئًا في مكان) ⇐ يسأل wohin؟ ⇐ Akkusativ (den Tisch).</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>حرف الجر</th><th class="de-cell">wo؟ (Dativ)</th><th class="de-cell">wohin؟ (Akkusativ)</th></tr></thead>
+        <tbody>
+          <tr><td class="de-cell">in</td><td class="de-cell">Ich bin in der Schule.</td><td class="de-cell">Ich gehe in die Schule.</td></tr>
+          <tr><td class="de-cell">auf</td><td class="de-cell">Das Buch liegt auf dem Tisch.</td><td class="de-cell">Ich lege das Buch auf den Tisch.</td></tr>
+          <tr><td class="de-cell">an</td><td class="de-cell">Das Bild hängt an der Wand.</td><td class="de-cell">Ich hänge das Bild an die Wand.</td></tr>
+          <tr><td class="de-cell">vor</td><td class="de-cell">Das Auto steht vor dem Haus.</td><td class="de-cell">Ich fahre vor das Haus.</td></tr>
+          <tr><td class="de-cell">unter</td><td class="de-cell">Die Katze schläft unter dem Bett.</td><td class="de-cell">Die Katze läuft unter das Bett.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule-box tone-t4 reveal">
+      <div class="icon">🔑</div>
+      <div>
+        <h3>مفتاح الحلّ: انظر إلى الفعل قبل حرف الجر</h3>
+        <p>أفعال <b>الحركة</b> (تضع شيئًا في مكان جديد): <span class="de" style="font-weight:700">legen</span> (يضع مسطّحًا)، <span class="de" style="font-weight:700">stellen</span> (يضع واقفًا)، <span class="de" style="font-weight:700">setzen</span> (يُجلس)، <span class="de" style="font-weight:700">stecken</span> (يُدخل) ⇐ Akkusativ دائمًا. أما أفعال <b>الموقع الثابت</b>: <span class="de" style="font-weight:700">liegen</span> (يرقد)، <span class="de" style="font-weight:700">stehen</span> (يقف)، <span class="de" style="font-weight:700">sitzen</span> (يجلس)، <span class="de" style="font-weight:700">hängen</span> (يتدلّى، لازم) ⇐ Dativ دائمًا.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>فعل حركة (Akkusativ)</th><th class="de-cell">مثال</th><th>فعل موقع (Dativ)</th><th class="de-cell">مثال</th></tr></thead>
+        <tbody>
+          <tr><td class="de-cell" style="color:var(--akk)">legen</td><td class="de-cell">Ich lege das Buch hin.</td><td class="de-cell" style="color:var(--dat)">liegen</td><td class="de-cell">Das Buch liegt da.</td></tr>
+          <tr><td class="de-cell" style="color:var(--akk)">stellen</td><td class="de-cell">Ich stelle die Flasche hin.</td><td class="de-cell" style="color:var(--dat)">stehen</td><td class="de-cell">Die Flasche steht da.</td></tr>
+          <tr><td class="de-cell" style="color:var(--akk)">setzen</td><td class="de-cell">Ich setze mich hin.</td><td class="de-cell" style="color:var(--dat)">sitzen</td><td class="de-cell">Ich sitze da.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge akk">wohin؟ Akkusativ</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">gehe</span> <span class="w">in</span> <span class="w"><span class="hl">die Sprachschule.</span></span></p>
+          <button class="speak-btn" data-speak="Ich gehe in die Sprachschule." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أنا ذاهب إلى معهد اللغة.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge dat">wo؟ Dativ</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">bin</span> <span class="w">in</span> <span class="w"><span class="hl hl-dat">der Sprachschule.</span></span></p>
+          <button class="speak-btn" data-speak="Ich bin in der Sprachschule." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أنا في معهد اللغة (الآن).</p>
+      </div>
+    </div>
+
+    <details class="more reveal">
+      <summary>استثناء: über مع الزمن 🔧</summary>
+      <div class="more-body">
+        <p>حين تُستخدم Wechselpräpositionen للزمن لا للمكان، تفرض جميعها Dativ عادة (<span class="de">im September</span>، <span class="de">am Montag</span>) — <b>باستثناء über</b> التي تبقى مع Akkusativ حتى في السياق الزمني: <span class="de">Ich fahre über das Wochenende nach Berlin.</span> (سأسافر إلى برلين خلال عطلة نهاية الأسبوع).</p>
+      </div>
+    </details>
+
+    <div class="mistake-box reveal">
+      <h4>⚠️ خطأ شائع: خلط wo وwohin</h4>
+      <div class="mrow bad"><span class="mark">✗</span><span lang="de">Ich gehe in der Schule.</span></div>
+      <div class="mrow good"><span class="mark">✓</span><span lang="de">Ich gehe in die Schule.</span></div>
+      <p class="mnote">gehen فعل حركة نحو هدف ⇐ يسأل "إلى أين؟" (wohin) ⇐ يتطلّب Akkusativ (die Schule)، وليس Dativ.</p>
+    </div>
+
+    <div class="practice-panel reveal">
+      <div class="practice-head">
+        <div class="badge-icon">📦</div>
+        <div><h3>تمرين: رتّب جملة حركة بحرف جر متغيّر</h3><p>stellen فعل حركة ⇐ Akkusativ.</p></div>
+      </div>
+      <div class="builder-target" id="wechselTarget" aria-live="polite"></div>
+      <div class="builder-bank" id="wechselBank"></div>
+      <div class="builder-actions">
+        <button class="btn btn-primary btn-sm" data-builder-check="wechsel">تحقّق ✓</button>
+        <button class="btn btn-ghost btn-sm" data-builder-reset="wechsel">إعادة ترتيب 🔀</button>
+        <span class="builder-feedback" id="wechselFeedback"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ADJEKTIVE ==================== -->
+<section class="section tone-t5" id="adjektive">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-t5">Adjektivendungen · نهايات الصفة</span>
+      <span class="kicker" style="margin-top:14px">06 / نهاية الصفة في Akkusativ</span>
+      <h2>كيف تنتهي الصفة قبل اسم في Akkusativ؟</h2>
+      <p class="section-desc">تختلف نهاية الصفة حسب وجود أداة قبلها ونوعها: بلا أداة (قوي)، بعد ein/mein... (مختلط)، أو بعد der/dieser... (ضعيف). الخبر الجيد في Akkusativ تحديدًا: <b>نهاية المذكر دائمًا -en، ونهاية المؤنث دائمًا -e</b>، أيًّا كان نمط الأداة.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp decl">
+        <thead><tr><th>النمط</th><th class="de-cell">Maskulin</th><th class="de-cell">Feminin</th><th class="de-cell">Neutrum</th><th class="de-cell">Plural</th></tr></thead>
+        <tbody>
+          <tr><td class="case-label">ضعيف (der/dieser...)</td><td class="de-cell">den guten Mann</td><td class="de-cell">die gute Frau</td><td class="de-cell">das gute Kind</td><td class="de-cell">die guten Kinder</td></tr>
+          <tr><td class="case-label">مختلط (ein/mein/kein...)</td><td class="de-cell">einen guten Mann</td><td class="de-cell">eine gute Frau</td><td class="de-cell">ein gutes Kind</td><td class="de-cell">meine guten Kinder</td></tr>
+          <tr><td class="case-label">قوي (بلا أداة)</td><td class="de-cell">guten Wein</td><td class="de-cell">gute Milch</td><td class="de-cell">gutes Wasser</td><td class="de-cell">gute Äpfel</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule-box tone-t5 reveal">
+      <div class="icon">✅</div>
+      <div>
+        <h3>الاختصار الذهبي لهذا الجدول</h3>
+        <p>في عمودَي <b>المذكر</b> و<b>المؤنث</b> أعلاه، النهاية ثابتة تمامًا مهما تغيّر نمط الأداة: <span class="de" style="font-weight:700">-en</span> للمذكر، <span class="de" style="font-weight:700">-e</span> للمؤنث. أما المحايد والجمع ففيهما استثناء واحد بسيط لكل منهما (النمط الضعيف للمحايد، والنمط القوي للجمع) — راجع الجدول لتفاصيلهما.</p>
+      </div>
+    </div>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge t5">ضعيف</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">sehe</span> <span class="w"><span class="hl">den kleinen Jungen.</span></span></p>
+          <button class="speak-btn" data-speak="Ich sehe den kleinen Jungen." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أرى الولد الصغير.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge t5">مختلط</span>
+          <p class="ex-de" lang="de"><span class="w">Sie</span> <span class="w">trägt</span> <span class="w"><span class="hl">ein rotes Kleid.</span></span></p>
+          <button class="speak-btn" data-speak="Sie trägt ein rotes Kleid." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">هي ترتدي فستانًا أحمر.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge t5">قوي</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">trinke gern</span> <span class="w"><span class="hl">kalten Tee.</span></span></p>
+          <button class="speak-btn" data-speak="Ich trinke gern kalten Tee." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أحبّ شرب الشاي البارد.</p>
+        <p class="ex-note">بلا أداة قبل الصفة ⇐ الصفة نفسها تحمل نهاية -en القوية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AUSDRÜCKE ==================== -->
+<section class="section tone-akk" id="ausdruecke">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-akk">Feste Ausdrücke · تعبيرات ثابتة</span>
+      <span class="kicker" style="margin-top:14px">07 / الزمن والتحيات والقياس</span>
+      <h2>استخدامات خاصة: الزمن، القياس، والتحيّات اليومية</h2>
+      <p class="section-desc">Akkusativ لا تظهر فقط بعد الأفعال وحروف الجر — بل تظهر أيضًا بلا أي فعل أو حرف جر ظاهر في تعبيرات زمنية وتحيّات نستخدمها يوميًا دون أن ندرك أنها Akkusativ.</p>
+    </div>
+
+    <div class="rule-box tone-akk reveal">
+      <div class="icon">🕐</div>
+      <div>
+        <h3>Akkusativ الزمن (بلا حرف جر)</h3>
+        <p>للتعبير عن نقطة زمنية محدّدة أو مدّة زمنية بلا حرف جر، تُستخدم Akkusativ مباشرة: <span class="de">jeden Tag</span> (كل يوم)، <span class="de">letzten Monat</span> (الشهر الماضي)، <span class="de">nächste Woche</span> (الأسبوع القادم)، <span class="de">diesen Sommer</span> (هذا الصيف).</p>
+      </div>
+    </div>
+
+    <div class="examples-grid reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge akk">Zeit · زمن</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">gehe</span> <span class="w"><span class="hl">jeden Tag</span></span> <span class="w">joggen.</span></p>
+          <button class="speak-btn" data-speak="Ich gehe jeden Tag joggen." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أنا أذهب للركض كل يوم.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge akk">Maß · قياس</span>
+          <p class="ex-de" lang="de"><span class="w">Der Tisch</span> <span class="w">ist</span> <span class="w"><span class="hl">einen Meter</span></span> <span class="w">lang.</span></p>
+          <button class="speak-btn" data-speak="Der Tisch ist einen Meter lang." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">الطاولة طولها متر واحد.</p>
+        <p class="ex-note">"Akkusativ القياس" — لا حرف جر، والاسم مباشرة بعد الفعل.</p>
+      </div>
+    </div>
+
+    <div class="rule-box tone-akk reveal">
+      <div class="icon">👋</div>
+      <div>
+        <h3>لماذا نقول "Guten Tag" لا "Der Tag"؟</h3>
+        <p>كل هذه التحيّات هي في الأصل مفعول به مباشر لفعل محذوف مثل <span class="de">(ich wünsche dir)</span> "أتمنى لك..." — وwünschen يضع الشخص في Dativ والشيء المتمنّى في Akkusativ؛ لذلك بقي "الشيء" وحده في الجملة المختصرة، وبقيت معه صيغة Akkusativ.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>التعبير</th><th>الجنس/العدد</th><th>المعنى</th></tr></thead>
+        <tbody>
+          <tr><td class="de-cell">Guten Tag!</td><td>مذكر (der Tag)</td><td>نهارك سعيد / مرحبًا</td></tr>
+          <tr><td class="de-cell">Guten Morgen!</td><td>مذكر (der Morgen)</td><td>صباح الخير</td></tr>
+          <tr><td class="de-cell">Gute Nacht!</td><td>مؤنث (die Nacht)</td><td>تصبح على خير</td></tr>
+          <tr><td class="de-cell">Guten Appetit!</td><td>مذكر (der Appetit)</td><td>بالهناء والشفاء</td></tr>
+          <tr><td class="de-cell">Vielen Dank!</td><td>مذكر (der Dank)</td><td>شكرًا جزيلًا</td></tr>
+          <tr><td class="de-cell">Herzlichen Glückwunsch!</td><td>مذكر (der Glückwunsch)</td><td>ألف مبروك</td></tr>
+          <tr><td class="de-cell">Frohe Weihnachten!</td><td>جمع (بلا أداة)</td><td>عيد ميلاد مجيد</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="practice-panel reveal">
+      <div class="practice-head">
+        <div class="badge-icon">⏰</div>
+        <div><h3>تمرين: رتّب تعبير الزمن الصحيح</h3><p>Akkusativ الزمن بلا حرف جر.</p></div>
+      </div>
+      <div class="builder-target" id="zeitTarget" aria-live="polite"></div>
+      <div class="builder-bank" id="zeitBank"></div>
+      <div class="builder-actions">
+        <button class="btn btn-primary btn-sm" data-builder-check="zeit">تحقّق ✓</button>
+        <button class="btn btn-ghost btn-sm" data-builder-reset="zeit">إعادة ترتيب 🔀</button>
+        <span class="builder-feedback" id="zeitFeedback"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== COMPARE / SUMMARY ==================== -->
+<section class="section" id="compare">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">08 / Zusammenfassung</span>
+      <h2>مراجعة سريعة — انقر لقلب كل بطاقة</h2>
+      <p class="section-desc">ست بطاقات لكل جوانب Akkusativ. انقر على كل بطاقة لمراجعة قاعدتها بسرعة، ثم استخدم خريطة القرار أدناه في المرة القادمة التي تتردّد فيها.</p>
+    </div>
+
+    <div class="flip-grid reveal-stagger">
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة الأدوات — انقر لعرض الشرح">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--akk)">der → den</span><p style="font-size:.82rem; color:var(--ink-soft)">الأدوات في Akkusativ</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--akk-soft); --tone-ink:var(--akk-ink)">
+            <p>فقط المذكر يتغيّر شكلًا: der→den، ein→einen، kein→keinen.</p>
+            <div class="ex">Ich sehe den Mann.</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة الضمائر — انقر لعرض الشرح">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--t1)">ich → mich</span><p style="font-size:.82rem; color:var(--ink-soft)">الضمائر الشخصية</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--t1-soft); --tone-ink:var(--t1-ink)">
+            <p>ich/du/er/wir/ihr تتغيّر جذريًا؛ sie/es/Sie تبقى كما هي.</p>
+            <div class="ex">Ich liebe dich.</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة الأفعال — انقر لعرض الشرح">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--t2)">90٪</span><p style="font-size:.82rem; color:var(--ink-soft)">الأفعال المتعدية</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--t2-soft); --tone-ink:var(--t2-ink)">
+            <p>معظم الأفعال المتعدية Akkusativ، لكن helfen/danken/gefallen وأخواتها Dativ.</p>
+            <div class="ex">Ich helfe dir. (Dativ!)</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة حروف الجر — انقر لعرض الشرح">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--t3)">für·durch·um</span><p style="font-size:.82rem; color:var(--ink-soft)">حروف جر ثابتة</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--t3-soft); --tone-ink:var(--t3-ink)">
+            <p>für, durch, gegen, ohne, um, bis, entlang ⇐ Akkusativ دائمًا.</p>
+            <div class="ex">Das ist für dich.</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة Wechselpräpositionen — انقر لعرض الشرح">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--t4)">wohin?</span><p style="font-size:.82rem; color:var(--ink-soft)">حركة مقابل موقع</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--t4-soft); --tone-ink:var(--t4-ink)">
+            <p>wohin (حركة) ⇐ Akkusativ. wo (موقع ثابت) ⇐ Dativ.</p>
+            <div class="ex">Ich gehe in die Schule.</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة الصفات — انقر لعرض الشرح">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--t5)">-en / -e</span><p style="font-size:.82rem; color:var(--ink-soft)">نهايات الصفة</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--t5-soft); --tone-ink:var(--t5-ink)">
+            <p>مذكر دائمًا -en، مؤنث دائمًا -e، أيًّا كان نمط الأداة.</p>
+            <div class="ex">den guten Mann / gute Milch</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); padding:clamp(20px,4vw,36px); margin-top:10px">
+      <div style="text-align:center; margin-bottom:26px">
+        <span class="chip" style="background:var(--ink); color:var(--bg)">هل هذه الجملة Akkusativ؟</span>
+      </div>
+      <div class="flow-grid">
+        <div>
+          <div style="text-align:center; margin-bottom:16px; font-family:var(--font-ar-head); font-weight:700; color:var(--akk)">🎯 اسأل هذه الأسئلة أولًا</div>
+          <div style="display:grid; gap:12px">
+            <div class="rule-box tone-akk" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">?</div><div><h3 style="font-size:.92rem">wen? / was؟ (المفعول المباشر)</h3><p style="font-size:.86rem">→ <b class="de" style="color:var(--akk)">Akkusativ</b></p></div></div>
+            <div class="rule-box tone-t3" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">✓</div><div><h3 style="font-size:.92rem">für/durch/gegen/ohne/um/bis/entlang؟</h3><p style="font-size:.86rem">→ <b class="de" style="color:var(--t3)">Akkusativ دائمًا</b></p></div></div>
+            <div class="rule-box tone-t4" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">🧭</div><div><h3 style="font-size:.92rem">فعل حركة + حرف جر مكاني (wohin؟)</h3><p style="font-size:.86rem">→ <b class="de" style="color:var(--t4)">Akkusativ</b></p></div></div>
+          </div>
+        </div>
+        <div>
+          <div style="text-align:center; margin-bottom:16px; font-family:var(--font-ar-head); font-weight:700; color:var(--dat)">⚠️ لكن احذر من هذه</div>
+          <div style="display:grid; gap:12px">
+            <div class="rule-box tone-dat" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">✋</div><div><h3 style="font-size:.92rem">helfen/danken/gefallen/gehören...</h3><p style="font-size:.86rem">→ <b class="de" style="color:var(--dat)">Dativ</b> رغم أنها تبدو متعدّية</p></div></div>
+            <div class="rule-box tone-dat" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">📍</div><div><h3 style="font-size:.92rem">فعل موقع ثابت (wo؟)</h3><p style="font-size:.86rem">→ <b class="de" style="color:var(--dat)">Dativ</b> لا Akkusativ</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:40px">
+      <h3 style="font-family:var(--font-ar-head); font-size:1.05rem; margin-bottom:6px">🏅 إنجازاتك في هذا الدرس</h3>
+      <p style="color:var(--ink-faint); font-size:.86rem">أكمل الأقسام والتمارين لتفتح كل شارة</p>
+      <div class="achievements-panel" id="achievementsPanel">
+        <div class="ach-item" data-ach="start"><div class="ach-circle">🚀</div><small>بداية الرحلة</small></div>
+        <div class="ach-item" data-ach="artikel"><div class="ach-circle">🎯</div><small>خبير الأدوات</small></div>
+        <div class="ach-item" data-ach="praep"><div class="ach-circle">🔗</div><small>خبير حروف الجر</small></div>
+        <div class="ach-item" data-ach="wechsel"><div class="ach-circle">🧭</div><small>خبير Wechsel</small></div>
+        <div class="ach-item" data-ach="quiz"><div class="ach-circle">🏆</div><small>بطل الاختبار</small></div>
+      </div>
+      <div style="margin-top:18px">
+        <div style="display:flex; justify-content:space-between; font-size:.82rem; color:var(--ink-soft); margin-bottom:4px"><span>تقدّمك الإجمالي</span><span id="overallPct">0%</span></div>
+        <div class="progressbar-track"><div class="progressbar-fill" id="overallFill" style="width:0%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FINAL QUIZ ==================== -->
+<section class="section" id="quiz">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">09 / Abschlusstest</span>
+      <h2>الاختبار الختامي — حالة Akkusativ</h2>
+      <p class="section-desc">أربعة عشر سؤالًا تغطّي الأدوات، الضمائر، الأفعال، حروف الجر، وWechselpräpositionen.</p>
+    </div>
+
+    <div id="finalQuizContainer" class="reveal"></div>
+
+    <div class="quiz-summary" id="quizSummary">
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="52" fill="none" stroke="var(--border)" stroke-width="10"/>
+          <circle id="scoreRingFill" cx="60" cy="60" r="52" fill="none" stroke="var(--akk)" stroke-width="10" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="327"/>
+        </svg>
+        <div class="num" id="scoreRingNum">0/14</div>
+      </div>
+      <h3 id="quizResultTitle">نتيجتك</h3>
+      <p id="quizResultDesc">استمر في التدرّب لتُتقن حالة Akkusativ بكل استخداماتها.</p>
+      <button class="btn btn-primary" id="quizRetryBtn">أعد الاختبار 🔄</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="cheat-card reveal">
+      <h2 style="font-family:var(--font-ar-head); font-size:1.2rem; margin-bottom:4px">📋 البطاقة المرجعية السريعة</h2>
+      <p style="color:var(--ink-faint); font-size:.86rem">مثالية للطباعة والمراجعة قبل الاختبار</p>
+      <div class="cheat-grid">
+        <div class="cheat-item" style="--tone:var(--akk)"><b>der → den</b><span>فقط المذكر يتغيّر في الأدوات (der/ein/kein/mein...).</span></div>
+        <div class="cheat-item" style="--tone:var(--t1)"><b>ich → mich</b><span>ich/du/er/wir/ihr تتغيّر جذريًا؛ sie/es/Sie تبقى كما هي.</span></div>
+        <div class="cheat-item" style="--tone:var(--t3)"><b>für·durch·um</b><span>für, durch, gegen, ohne, um, bis, entlang ⇐ Akkusativ دائمًا.</span></div>
+        <div class="cheat-item" style="--tone:var(--t4)"><b>wohin → Akk</b><span>حركة (wohin) ⇐ Akkusativ، موقع ثابت (wo) ⇐ Dativ.</span></div>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px">
+        <button class="btn btn-ghost btn-sm" id="printBtn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+          طباعة البطاقة
+        </button>
+        <a href="#overview" class="btn btn-ghost btn-sm">العودة إلى البداية ↑</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>درس شامل عن حالة Akkusativ الألمانية بكل استخداماتها.</span>
+      <span>مبني لتوضيح أدق التفاصيل النحوية بدقة وأمثلة عملية.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab-stack">
+  <button class="fab" id="backToTop" aria-label="العودة إلى الأعلى" title="العودة إلى الأعلى">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<div id="speechBar" role="region" aria-label="أدوات النطق الصوتي">
+  <div class="speak-indicator" id="speakIndicator" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="now-playing">
+    <small>الآن يُنطق</small>
+    <span id="nowPlayingText">—</span>
+  </div>
+  <div class="sp-controls">
+    <button class="sp-btn" id="spReplay" aria-label="إعادة النطق" title="إعادة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12a9 9 0 1 1 3 6.7"/><path d="M3 16v-4h4"/></svg></button>
+    <button class="sp-btn" id="spPlayPause" aria-label="إيقاف/تشغيل مؤقت" title="إيقاف مؤقت"><svg viewBox="0 0 24 24" fill="currentColor" id="spPlayIcon"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+    <button class="sp-btn" id="spGotoVoice" aria-label="الانتقال إلى إعدادات الصوت" title="إعدادات الصوت"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 1a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M9 22h6"/></svg></button>
+  </div>
+</div>
+
+<div id="achToastHost" aria-live="polite"></div>
+
+<script>
+/* ==========================================================================
+   THEME — ثلاثي: فاتح / داكن / النظام (الافتراضي: داكن)
+   ========================================================================== */
+(function themeModule(){
+  const root = document.documentElement;
+  const KEY = 'akkusativ_theme';
+  const mql = window.matchMedia('(prefers-color-scheme: dark)');
+  const btns = {
+    light: document.getElementById('themeLight'),
+    dark: document.getElementById('themeDark'),
+    system: document.getElementById('themeSystem')
+  };
+  function resolvedIsDark(mode){
+    if(mode === 'dark') return true;
+    if(mode === 'light') return false;
+    return mql.matches;
+  }
+  function apply(mode){
+    root.classList.toggle('dark', resolvedIsDark(mode));
+    Object.keys(btns).forEach(k => btns[k].classList.toggle('on', k === mode));
+  }
+  function setMode(mode){ localStorage.setItem(KEY, mode); apply(mode); }
+  const saved = localStorage.getItem(KEY);
+  apply(saved ? saved : 'dark');
+  btns.light.addEventListener('click', ()=> setMode('light'));
+  btns.dark.addEventListener('click', ()=> setMode('dark'));
+  btns.system.addEventListener('click', ()=> setMode('system'));
+  mql.addEventListener('change', ()=>{
+    const current = localStorage.getItem(KEY) || 'dark';
+    if(current === 'system') apply('system');
+  });
+})();
+
+/* ==========================================================================
+   PROGRESS BAR + SCROLLSPY + REVEAL ON SCROLL
+   ========================================================================== */
+(function scrollModule(){
+  const bar = document.getElementById('readProgress');
+  function updateProgress(){
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const height = h.scrollHeight - h.clientHeight;
+    const pct = height > 0 ? (scrolled/height)*100 : 0;
+    bar.style.setProperty('--progress', pct + '%');
+    bar.setAttribute('aria-valuenow', Math.round(pct));
+    document.getElementById('backToTop').classList.toggle('show', scrolled > 500);
+  }
+  document.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  const sections = document.querySelectorAll('main .section, main .hero');
+  const navlinks = document.querySelectorAll('.navlink');
+  const visited = new Set(JSON.parse(localStorage.getItem('akkusativ_visited') || '[]'));
+  visited.forEach(id => { const l = document.querySelector('.navlink[data-nav="'+id+'"]'); if(l) l.setAttribute('data-done','true'); });
+
+  const spy = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      const id = entry.target.id;
+      if(!id) return;
+      const link = document.querySelector('.navlink[data-nav="'+id+'"]');
+      if(entry.isIntersecting){
+        navlinks.forEach(l=>l.classList.remove('active'));
+        if(link) link.classList.add('active');
+        visited.add(id);
+        localStorage.setItem('akkusativ_visited', JSON.stringify([...visited]));
+        if(link) link.setAttribute('data-done','true');
+        if(window.AKK) window.AKK.updateOverallProgress();
+      }
+    });
+  }, {rootMargin:'-15% 0px -70% 0px', threshold:0});
+  sections.forEach(s=>spy.observe(s));
+
+  const reveals = document.querySelectorAll('.reveal, .reveal-stagger');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.15});
+  reveals.forEach(r=>io.observe(r));
+})();
+
+/* ==========================================================================
+   FULLSCREEN + SEARCH
+   ========================================================================== */
+(function uiModule(){
+  document.getElementById('fullscreenBtn').addEventListener('click', ()=>{
+    if(!document.fullscreenElement){ document.documentElement.requestFullscreen().catch(()=>{}); }
+    else{ document.exitFullscreen(); }
+  });
+  const searchBox = document.getElementById('searchBox');
+  const searchInput = document.getElementById('searchInput');
+  document.getElementById('searchToggle').addEventListener('click', ()=>{
+    searchBox.classList.toggle('open');
+    if(searchBox.classList.contains('open')) searchInput.focus();
+  });
+  let lastHit = null;
+  searchInput.addEventListener('keydown', (e)=>{
+    if(e.key !== 'Enter') return;
+    const q = searchInput.value.trim().toLowerCase();
+    if(!q) return;
+    const candidates = document.querySelectorAll('main .ex-de, main h2, main .section-desc, main p');
+    let found = null;
+    for(const el of candidates){ if(el === lastHit) continue; if(el.textContent.toLowerCase().includes(q)){ found = el; break; } }
+    if(!found){ for(const el of candidates){ if(el.textContent.toLowerCase().includes(q)){ found = el; break; } } }
+    if(found){
+      lastHit = found;
+      found.scrollIntoView({behavior:'smooth', block:'center'});
+      const old = found.style.background;
+      found.style.transition = 'background .3s';
+      found.style.background = 'var(--akk-soft)';
+      setTimeout(()=>{ found.style.background = old; }, 1400);
+    }
+  });
+})();
+</script>
+
+<script>
+/* ==========================================================================
+   SPEECH ENGINE — نطق ألماني (de-DE) عبر Web Speech API
+   طبقة تجريد: BrowserSpeechProvider هي المزوّد الوحيد المفعَّل حاليًا؛
+   الواجهة (getVoices / speak / stop) مصمّمة لتسمح بإضافة CloudTTSProvider
+   لاحقًا دون تعديل بقية النظام.
+   ========================================================================== */
+const TEST_SENTENCE = 'Hallo! Wie geht es dir? Ich lerne heute Deutsch.';
+
+const AudioService = (function(){
+  const hasSynth = 'speechSynthesis' in window;
+  const synth = hasSynth ? window.speechSynthesis : null;
+  const bar = document.getElementById('speechBar');
+  const novoiceBanner = document.getElementById('novoiceBanner');
+  const nowPlayingText = document.getElementById('nowPlayingText');
+  const voiceList = document.getElementById('voiceList');
+  const voiceLoading = document.getElementById('voiceLoading');
+  const speedChips = document.querySelectorAll('.speed-chip');
+  const playPauseBtn = document.getElementById('spPlayPause');
+  const playIcon = document.getElementById('spPlayIcon');
+  const RATE_KEY = 'akkusativ_rate';
+  const VOICE_KEY = 'akkusativ_voice';
+
+  const BrowserSpeechProvider = {
+    supported: hasSynth,
+    async getVoices(){
+      if(!hasSynth) return [];
+      const all = synth.getVoices();
+      return all.filter(v => v.lang && v.lang.toLowerCase().startsWith('de'));
+    },
+    speak(text, opts){
+      if(!hasSynth) return;
+      const utter = new SpeechSynthesisUtterance(text);
+      if(opts.voice) utter.voice = opts.voice;
+      utter.lang = (opts.voice && opts.voice.lang) || 'de-DE';
+      utter.rate = opts.rate || 1;
+      utter.onboundary = opts.onboundary;
+      utter.onstart = opts.onstart;
+      utter.onend = opts.onend;
+      utter.onerror = opts.onerror;
+      synth.cancel();
+      synth.speak(utter);
+      return utter;
+    },
+    stop(){ if(hasSynth) synth.cancel(); },
+    pause(){ if(hasSynth) synth.pause(); },
+    resume(){ if(hasSynth) synth.resume(); }
+  };
+  /* نقطة توسّع مستقبلية — واجهة TTSProvider نفسها تسمح بإضافة مزوّد سحابي
+     (CloudTTSProvider) لاحقًا عبر خادم آمن، دون تعديل بقية النظام أو
+     كشف أي مفتاح API في الواجهة الأمامية. */
+
+  const provider = BrowserSpeechProvider;
+
+  let deVoices = [];
+  let selectedVoiceIdx = 0;
+  let currentRate = parseFloat(localStorage.getItem(RATE_KEY) || '1');
+  let currentUtterance = null;
+  let currentText = '';
+  let currentHighlightEls = [];
+  let currentSentenceCard = null;
+  let isPaused = false;
+  let voicesEverFound = false;
+
+  setActiveChip(currentRate);
+  function setActiveChip(rate){
+    speedChips.forEach(c => c.classList.toggle('on', parseFloat(c.dataset.rate) === rate));
+  }
+  speedChips.forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      currentRate = parseFloat(chip.dataset.rate);
+      localStorage.setItem(RATE_KEY, currentRate);
+      setActiveChip(currentRate);
+    });
+  });
+
+  function voiceLabel(v){
+    const lang = (v.lang || '').toLowerCase();
+    let region = 'Deutsch';
+    if(lang.includes('at')) region = 'Deutsch — Österreich';
+    else if(lang.includes('ch')) region = 'Deutsch — Schweiz';
+    else if(lang.includes('de')) region = 'Deutsch — Deutschland';
+    return { name: v.name.replace(/^Google\s|^Microsoft\s/,''), region, lang: v.lang };
+  }
+
+  function renderVoiceList(){
+    voiceList.innerHTML = '';
+    if(deVoices.length === 0){
+      const p = document.createElement('p');
+      p.className = 'voice-loading';
+      p.textContent = 'لا يوجد أي صوت ألماني مثبَّت في هذا المتصفح حاليًا.';
+      voiceList.appendChild(p);
+      return;
+    }
+    deVoices.forEach((v,i)=>{
+      const info = voiceLabel(v);
+      const row = document.createElement('div');
+      row.className = 'voice-item' + (i === selectedVoiceIdx ? ' selected' : '');
+      row.setAttribute('role','radio');
+      row.setAttribute('aria-checked', i === selectedVoiceIdx ? 'true' : 'false');
+      row.tabIndex = 0;
+      row.innerHTML =
+        '<span class="radio-dot" aria-hidden="true"></span>' +
+        '<span class="voice-info"><span class="voice-name">'+info.name+'</span><span class="voice-meta">'+info.region+' · '+info.lang+'</span></span>' +
+        '<span class="voice-badge">'+(i === selectedVoiceIdx ? 'مُختار' : 'اختر')+'</span>' +
+        '<button type="button" class="voice-test-btn" data-test-idx="'+i+'" aria-label="اختبار هذا الصوت">'+
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>اختبار'+
+        '</button>';
+      row.addEventListener('click', (e)=>{
+        if(e.target.closest('.voice-test-btn')) return;
+        selectVoice(i);
+      });
+      row.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectVoice(i); }
+      });
+      row.querySelector('.voice-test-btn').addEventListener('click', (e)=>{
+        e.stopPropagation();
+        testVoice(i, e.currentTarget);
+      });
+      voiceList.appendChild(row);
+    });
+  }
+
+  function selectVoice(i){
+    selectedVoiceIdx = i;
+    localStorage.setItem(VOICE_KEY, i);
+    renderVoiceList();
+  }
+
+  function testVoice(i, btnEl){
+    const voice = deVoices[i];
+    if(!voice) return;
+    document.querySelectorAll('.voice-test-btn').forEach(b=>b.classList.remove('testing'));
+    if(btnEl) btnEl.classList.add('testing');
+    provider.speak(TEST_SENTENCE, {
+      voice: voice,
+      rate: currentRate,
+      onstart(){ bar.classList.add('show','playing'); document.body.classList.add('speech-active'); nowPlayingText.textContent = TEST_SENTENCE; },
+      onend(){ bar.classList.remove('playing'); if(btnEl) btnEl.classList.remove('testing'); },
+      onerror(){ bar.classList.remove('playing'); if(btnEl) btnEl.classList.remove('testing'); }
+    });
+  }
+
+  async function loadVoices(){
+    if(!provider.supported){
+      novoiceBanner.classList.add('show');
+      voiceLoading && (voiceLoading.textContent = 'متصفحك لا يدعم خاصية النطق الآلي (Web Speech API).');
+      return;
+    }
+    deVoices = await provider.getVoices();
+    if(deVoices.length === 0){
+      renderVoiceList();
+      novoiceBanner.classList.add('show');
+      return;
+    }
+    voicesEverFound = true;
+    novoiceBanner.classList.remove('show');
+    const savedVoice = parseInt(localStorage.getItem(VOICE_KEY), 10);
+    if(!isNaN(savedVoice) && deVoices[savedVoice]) selectedVoiceIdx = savedVoice;
+    else{
+      const preferredIdx = deVoices.findIndex(v => /de-DE/i.test(v.lang) && /google|natural|online/i.test(v.name));
+      selectedVoiceIdx = preferredIdx > -1 ? preferredIdx : 0;
+    }
+    renderVoiceList();
+  }
+  loadVoices();
+  if(hasSynth && synth.onvoiceschanged !== undefined){ synth.onvoiceschanged = loadVoices; }
+
+  function clearHighlights(){
+    currentHighlightEls.forEach(el => el.classList.remove('speaking'));
+    currentHighlightEls = [];
+    if(currentSentenceCard){ currentSentenceCard.classList.remove('sentence-speaking'); currentSentenceCard = null; }
+  }
+
+  function computeWordRanges(containerEl, fullText){
+    const spans = Array.from(containerEl.querySelectorAll('.w'));
+    let cursor = 0;
+    const ranges = [];
+    spans.forEach(span=>{
+      const t = span.textContent;
+      const idx = fullText.indexOf(t, cursor);
+      if(idx === -1) return;
+      ranges.push({start:idx, end:idx+t.length, el:span});
+      cursor = idx + t.length;
+    });
+    return ranges;
+  }
+
+  function speak(text, sourceEl){
+    if(!text) return;
+    if(!provider.supported){
+      novoiceBanner.classList.add('show');
+      novoiceBanner.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+    clearHighlights();
+    const voice = deVoices[selectedVoiceIdx];
+
+    let ranges = [];
+    const card = sourceEl && sourceEl.closest ? sourceEl.closest('.ex-de') : null;
+    if(card && card.querySelectorAll('.w').length){
+      ranges = computeWordRanges(card, text);
+      currentSentenceCard = card.closest('.ex-card');
+      if(currentSentenceCard) currentSentenceCard.classList.add('sentence-speaking');
+    } else if(sourceEl && sourceEl.classList && sourceEl.classList.contains('w')){
+      sourceEl.classList.add('speaking');
+      currentHighlightEls.push(sourceEl);
+    }
+
+    currentUtterance = provider.speak(text, {
+      voice: voice,
+      rate: currentRate,
+      onboundary(ev){
+        if(ev.name && ev.name !== 'word') return;
+        const hit = ranges.find(r => ev.charIndex >= r.start && ev.charIndex < r.end);
+        if(hit){
+          currentHighlightEls.forEach(el=>el.classList.remove('speaking'));
+          currentHighlightEls = [hit.el];
+          hit.el.classList.add('speaking');
+        }
+      },
+      onstart(){
+        bar.classList.add('show','playing');
+        document.body.classList.add('speech-active');
+        nowPlayingText.textContent = text;
+        playIcon.innerHTML = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+        isPaused = false;
+      },
+      onend(){ bar.classList.remove('playing'); clearHighlights(); },
+      onerror(){
+        bar.classList.remove('playing'); clearHighlights();
+        if(!voicesEverFound){
+          nowPlayingText.textContent = 'لا يتوفّر صوت في هذا المتصفح';
+          bar.classList.add('show');
+          document.body.classList.add('speech-active');
+          novoiceBanner.classList.add('show');
+        }
+      }
+    });
+    currentText = text;
+  }
+
+  playPauseBtn.addEventListener('click', ()=>{
+    if(!currentUtterance || !hasSynth) return;
+    if(synth.speaking && !isPaused){
+      provider.pause(); isPaused = true; bar.classList.remove('playing');
+      playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+    } else if(isPaused){
+      provider.resume(); isPaused = false; bar.classList.add('playing');
+      playIcon.innerHTML = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+    }
+  });
+  document.getElementById('spReplay').addEventListener('click', ()=>{
+    if(currentText) speak(currentText, currentSentenceCard ? currentSentenceCard.querySelector('.ex-de') : null);
+  });
+  document.getElementById('spGotoVoice').addEventListener('click', ()=>{
+    document.getElementById('voicePanel').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  document.addEventListener('click', function(e){
+    const wordEl = e.target.closest('.w');
+    if(wordEl){ speak(wordEl.textContent.trim().replace(/[.,!?—–]+$/,''), wordEl); return; }
+    const speakBtn = e.target.closest('[data-speak]');
+    if(speakBtn){
+      const card = speakBtn.closest('.ex-card');
+      speak(speakBtn.getAttribute('data-speak'), card ? card.querySelector('.ex-de') : speakBtn);
+      return;
+    }
+    const deEl = e.target.closest('.de, .de-cell');
+    if(deEl && !deEl.closest('.ex-de') && !deEl.closest('table') && !deEl.closest('.voice-item')){ speak(deEl.textContent.trim(), deEl); }
+  });
+
+  document.getElementById('heroSpeakDemo').addEventListener('click', ()=>{
+    const firstEx = document.querySelector('#overview .ex-de');
+    speak('Der Mann sieht den Hund.', firstEx);
+  });
+
+  return { speak };
+})();
+</script>
+
+<script>
+/* ==========================================================================
+   SENTENCE BUILDER — تمارين ترتيب الجمل
+   ========================================================================== */
+const SentenceBuilder = (function(){
+  const configs = {
+    artikel: {
+      tokens: ['Ich', 'sehe', 'den', 'Mann.'],
+      correct: ['Ich', 'sehe', 'den', 'Mann.'],
+      hintAr: 'الترجمة: أرى الرجل. — Mann مذكر ومفعول به مباشر ⇐ den (لا der).'
+    },
+    praep: {
+      tokens: ['Die', 'Katze', 'springt', 'durch', 'das', 'Fenster.'],
+      correct: ['Die', 'Katze', 'springt', 'durch', 'das', 'Fenster.'],
+      hintAr: 'الترجمة: القطة تقفز عبر النافذة. — durch تفرض Akkusativ دائمًا (das Fenster محايد فلا تغيير ظاهر، لكن القاعدة سارية).'
+    },
+    wechsel: {
+      tokens: ['Ich', 'stelle', 'die', 'Vase', 'auf', 'den', 'Tisch.'],
+      correct: ['Ich', 'stelle', 'die', 'Vase', 'auf', 'den', 'Tisch.'],
+      hintAr: 'الترجمة: أضع المزهرية على الطاولة. — stellen فعل حركة ⇐ wohin؟ ⇐ Akkusativ (den Tisch).'
+    },
+    zeit: {
+      tokens: ['Ich', 'gehe', 'jeden', 'Tag', 'joggen.'],
+      correct: ['Ich', 'gehe', 'jeden', 'Tag', 'joggen.'],
+      hintAr: 'الترجمة: أذهب للركض كل يوم. — jeden Tag: Akkusativ الزمن بلا حرف جر (der Tag مذكر ⇐ jeden).'
+    }
+  };
+
+  function shuffle(arr){
+    const a = [...arr];
+    for(let i=a.length-1; i>0; i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+    if(JSON.stringify(a) === JSON.stringify(arr) && a.length > 2){ [a[0],a[1]] = [a[1],a[0]]; }
+    return a;
+  }
+
+  function render(key){
+    const cfg = configs[key];
+    const target = document.getElementById(key+'Target');
+    const bank = document.getElementById(key+'Bank');
+    const feedback = document.getElementById(key+'Feedback');
+    if(!target || !bank || !feedback) return;
+    target.innerHTML = ''; target.classList.remove('correct','wrong');
+    feedback.textContent = ''; feedback.className = 'builder-feedback';
+    bank.innerHTML = '';
+    const shuffled = shuffle(cfg.tokens);
+    shuffled.forEach((word, idx)=>{
+      const chip = document.createElement('button');
+      chip.className = 'word-chip'; chip.type = 'button'; chip.textContent = word;
+      chip.dataset.word = word; chip.dataset.uid = key+'_'+idx;
+      chip.addEventListener('click', ()=>{
+        if(chip.classList.contains('placed')) return;
+        chip.classList.add('placed');
+        const placedChip = document.createElement('button');
+        placedChip.type = 'button'; placedChip.className = 'word-chip in-target'; placedChip.textContent = word;
+        placedChip.addEventListener('click', ()=>{
+          placedChip.remove(); chip.classList.remove('placed');
+          target.classList.remove('correct','wrong'); feedback.textContent='';
+        });
+        target.appendChild(placedChip);
+      });
+      bank.appendChild(chip);
+    });
+  }
+
+  function check(key){
+    const cfg = configs[key];
+    const target = document.getElementById(key+'Target');
+    const feedback = document.getElementById(key+'Feedback');
+    const placed = Array.from(target.children).map(c=>c.textContent);
+    const isCorrect = JSON.stringify(placed) === JSON.stringify(cfg.correct);
+    target.classList.remove('correct','wrong');
+    if(placed.length === 0) return;
+    if(isCorrect){
+      target.classList.add('correct');
+      feedback.textContent = '✓ صحيح تمامًا! ' + cfg.hintAr;
+      feedback.className = 'builder-feedback ok';
+      if(window.AKK) window.AKK.unlock(key);
+    } else {
+      target.classList.add('wrong');
+      feedback.textContent = '✗ ليس تمامًا — راجع القاعدة أعلاه.';
+      feedback.className = 'builder-feedback no';
+    }
+  }
+
+  document.addEventListener('click', (e)=>{
+    const checkBtn = e.target.closest('[data-builder-check]');
+    if(checkBtn){ check(checkBtn.dataset.builderCheck); return; }
+    const resetBtn = e.target.closest('[data-builder-reset]');
+    if(resetBtn){ render(resetBtn.dataset.builderReset); return; }
+  });
+
+  Object.keys(configs).forEach(render);
+  return { render, check };
+})();
+
+/* ==========================================================================
+   WECHSELPRÄPOSITIONEN — COMPARE TOGGLE (wohin/Akkusativ vs wo/Dativ)
+   ========================================================================== */
+(function compareToggle(){
+  const sentenceEl = document.getElementById('compareSentence');
+  const captionEl = document.getElementById('compareCaption');
+  const buttons = { akk: document.getElementById('btnModeAkk'), dat: document.getElementById('btnModeDat') };
+
+  const modes = {
+    akk: {
+      html: '<span class="slot s-main">Ich stelle die Vase</span><span class="slot s-conn" style="background:var(--akk); color:#fff">auf den Tisch.</span>',
+      caption: 'stellen فعل حركة (أضع شيئًا في مكان) ⇐ يسأل wohin؟ ⇐ Akkusativ (den Tisch).'
+    },
+    dat: {
+      html: '<span class="slot s-main">Die Vase steht</span><span class="slot s-conn" style="background:var(--dat); color:#fff">auf dem Tisch.</span>',
+      caption: 'stehen فعل موقع ثابت (تقف في مكانها) ⇐ يسأل wo؟ ⇐ Dativ (dem Tisch).'
+    }
+  };
+
+  function setMode(mode){
+    sentenceEl.innerHTML = modes[mode].html;
+    captionEl.textContent = modes[mode].caption;
+    Object.values(buttons).forEach(b=>b.classList.remove('on'));
+    buttons[mode].classList.add('on');
+  }
+  buttons.akk.addEventListener('click', ()=>setMode('akk'));
+  buttons.dat.addEventListener('click', ()=>setMode('dat'));
+})();
+</script>
+
+<script>
+/* ==========================================================================
+   ACHIEVEMENTS / PROGRESS MODULE
+   ========================================================================== */
+window.AKK = (function(){
+  const KEY = 'akkusativ_achievements';
+  const TOTAL_SECTIONS = 10;
+  const LABELS = {
+    start:['بداية الرحلة','🚀'], artikel:['خبير الأدوات','🎯'], praep:['خبير حروف الجر','🔗'],
+    wechsel:['خبير Wechsel','🧭'], quiz:['بطل الاختبار الختامي','🏆']
+  };
+  let achievements = {};
+  try{ achievements = JSON.parse(localStorage.getItem(KEY) || '{}'); }catch(e){ achievements = {}; }
+  function save(){ localStorage.setItem(KEY, JSON.stringify(achievements)); }
+
+  function showToast(title, emoji){
+    const host = document.getElementById('achToastHost');
+    const t = document.createElement('div');
+    t.className = 'ach-toast';
+    t.innerHTML = '<span class="emoji">'+emoji+'</span><div><b>شارة جديدة!</b><span>'+title+'</span></div>';
+    host.appendChild(t);
+    requestAnimationFrame(()=> t.classList.add('show'));
+    setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.remove(), 500); }, 3200);
+  }
+
+  function renderProgress(){
+    let visited = [];
+    try{ visited = JSON.parse(localStorage.getItem('akkusativ_visited') || '[]'); }catch(e){}
+    const achCount = Object.keys(LABELS).filter(k=>achievements[k]).length;
+    const pct = Math.round(((visited.length/TOTAL_SECTIONS)*0.5 + (achCount/Object.keys(LABELS).length)*0.5)*100);
+    const fill = document.getElementById('overallFill');
+    const label = document.getElementById('overallPct');
+    if(fill) fill.style.width = Math.min(pct,100)+'%';
+    if(label) label.textContent = Math.min(pct,100)+'%';
+  }
+
+  function unlock(key){
+    if(!achievements[key]){
+      achievements[key] = true; save();
+      const item = document.querySelector('.ach-item[data-ach="'+key+'"]');
+      if(item) item.classList.add('unlocked');
+      const meta = LABELS[key];
+      if(meta) showToast(meta[0], meta[1]);
+    }
+    renderProgress();
+  }
+
+  function checkStart(){
+    let visited = [];
+    try{ visited = JSON.parse(localStorage.getItem('akkusativ_visited') || '[]'); }catch(e){}
+    if(visited.length >= 1 && !achievements.start){ unlock('start'); }
+    else{ renderProgress(); }
+  }
+
+  Object.keys(achievements).forEach(key=>{
+    if(achievements[key]){
+      const item = document.querySelector('.ach-item[data-ach="'+key+'"]');
+      if(item) item.classList.add('unlocked');
+    }
+  });
+  renderProgress();
+
+  return { unlock, updateOverallProgress: checkStart };
+})();
+
+/* ==========================================================================
+   QUIZ ENGINE
+   ========================================================================== */
+function createQuiz(container, questions, opts){
+  opts = opts || {};
+  container.innerHTML = '';
+  let score = 0, answered = 0;
+  questions.forEach((q)=>{
+    const qDiv = document.createElement('div');
+    qDiv.className = 'quiz-q';
+    const qText = document.createElement('div');
+    qText.className = 'qtext';
+    qText.innerHTML = q.q + (q.de ? ' <br><span class="de">'+q.de+'</span>' : '');
+    qDiv.appendChild(qText);
+    const optsDiv = document.createElement('div');
+    optsDiv.className = 'qopts';
+    q.options.forEach((optText, oi)=>{
+      const btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'qopt';
+      const span = document.createElement('span');
+      span.className = 'de'; span.style.fontFamily = 'inherit'; span.textContent = optText;
+      btn.appendChild(span);
+      btn.addEventListener('click', ()=>{
+        if(qDiv.dataset.answered) return;
+        qDiv.dataset.answered = 'true'; answered++;
+        const correct = oi === q.correct;
+        if(correct){ score++; btn.classList.add('correct'); }
+        else{ btn.classList.add('incorrect'); optsDiv.children[q.correct].classList.add('correct'); }
+        Array.from(optsDiv.children).forEach(b=>b.disabled = true);
+        if(q.explain){
+          const ex = document.createElement('div');
+          ex.className = 'quiz-explain show'; ex.textContent = q.explain;
+          qDiv.appendChild(ex);
+        }
+        if(answered === questions.length && opts.onComplete) opts.onComplete(score, questions.length);
+      });
+      optsDiv.appendChild(btn);
+    });
+    qDiv.appendChild(optsDiv);
+    container.appendChild(qDiv);
+  });
+}
+
+/* ---- final combined quiz ---- */
+const finalQuestions = [
+  { q:'اختر الشكل الصحيح:', de:'Ich sehe ___ Lehrer. (der Lehrer، مذكر)', options:['der','den','dem'], correct:1, explain:'Lehrer مذكر ومفعول به مباشر (Akkusativ) ⇐ den.' },
+  { q:'اختر الشكل الصحيح:', de:'Ich kaufe ___ Tasche. (die Tasche، مؤنث)', options:['die','der','den'], correct:0, explain:'المؤنث لا يتغيّر بين Nominativ وAkkusativ ⇐ die تبقى كما هي.' },
+  { q:'اختر الشكل الصحيح:', de:'Er hat ___ Bruder. (ein، مذكر)', options:['ein','einen','einem'], correct:1, explain:'Bruder مذكر بعد ein في Akkusativ ⇐ einen.' },
+  { q:'اختر الضمير الصحيح:', de:'Ich liebe ___. (du)', options:['du','dich','dir'], correct:1, explain:'du تصبح dich في Akkusativ (المفعول به المباشر).' },
+  { q:'اختر الضمير الصحيح:', de:'Er ruft ___ an. (wir)', options:['wir','uns','unser'], correct:1, explain:'wir تصبح uns في Akkusativ.' },
+  { q:'صواب أم خطأ؟', de:'helfen فعل يتطلّب Akkusativ.', options:['صواب','خطأ'], correct:1, explain:'خطأ — helfen من الأفعال التي تتطلّب Dativ رغم أنها تبدو متعدّية.' },
+  { q:'أي جملة صحيحة نحويًا؟', options:['Ich helfe dich.','Ich helfe dir.'], correct:1, explain:'helfen يتطلّب Dativ للشخص ⇐ dir لا dich.' },
+  { q:'اختر حرف الجر الذي يفرض Akkusativ دائمًا:', options:['mit','für','von'], correct:1, explain:'für من حروف الجر الثابتة مع Akkusativ (مع durch, gegen, ohne, um, bis, entlang).' },
+  { q:'اختر الشكل الصحيح:', de:'Das Geschenk ist ___ dich. (für)', options:['du','dich','dir'], correct:1, explain:'für تفرض Akkusativ دائمًا ⇐ dich.' },
+  { q:'اختر الأداة الصحيحة (wohin؟):', de:'Ich gehe in ___ Schule. (die Schule)', options:['der','die','dem'], correct:1, explain:'gehen فعل حركة ⇐ wohin؟ ⇐ Akkusativ ⇐ die (مؤنث، بلا تغيير شكلًا لكنها في حالة Akkusativ).' },
+  { q:'اختر الأداة الصحيحة (wo؟):', de:'Ich bin in ___ Schule. (die Schule)', options:['die','der','das'], correct:1, explain:'sein فعل موقع ثابت ⇐ wo؟ ⇐ Dativ ⇐ der (مؤنث في Dativ).' },
+  { q:'أي فعل يدلّ على حركة (⇐ Akkusativ مع حرف الجر)؟', options:['stehen','stellen','liegen'], correct:1, explain:'stellen (يضع واقفًا) فعل حركة ⇐ Akkusativ. أما stehen وliegen ففعلا موقع ثابت ⇐ Dativ.' },
+  { q:'اختر نهاية الصفة الصحيحة:', de:'Ich sehe den gut___ Mann. (Akkusativ مذكر)', options:['-e','-en','-er'], correct:1, explain:'نهاية الصفة للمذكر في Akkusativ دائمًا -en، بصرف النظر عن نمط الأداة.' },
+  { q:'اختر التعبير الزمني الصحيح (Akkusativ بلا حرف جر):', options:['jeden Tag','jeder Tag','jedem Tag'], correct:0, explain:'Tag مذكر، وAkkusativ الزمن بلا حرف جر يتطلّب jeden Tag.' }
+];
+
+function renderFinalQuiz(){
+  const container = document.getElementById('finalQuizContainer');
+  const summary = document.getElementById('quizSummary');
+  summary.classList.remove('show');
+  container.style.display = '';
+  createQuiz(container, finalQuestions, { onComplete:(score,total)=>{
+    setTimeout(()=>{
+      container.style.display = 'none';
+      summary.classList.add('show');
+      const circumference = 2*Math.PI*52;
+      const ring = document.getElementById('scoreRingFill');
+      ring.setAttribute('stroke-dasharray', circumference.toFixed(0));
+      ring.style.transition = 'stroke-dashoffset 1s ease-out';
+      requestAnimationFrame(()=>{ ring.setAttribute('stroke-dashoffset', (circumference*(1-score/total)).toFixed(0)); });
+      document.getElementById('scoreRingNum').textContent = score+'/'+total;
+      const title = document.getElementById('quizResultTitle');
+      const desc = document.getElementById('quizResultDesc');
+      if(score >= 13){ title.textContent='🥇 ممتاز — أنت خبير حقيقي في Akkusativ!'; desc.textContent='أتقنت كل جوانب هذه الحالة بامتياز.'; ring.style.stroke='var(--gold)'; }
+      else if(score >= 9){ title.textContent='🥈 جيد جدًا!'; desc.textContent='أنت قريب من الإتقان الكامل — راجع الأسئلة التي أخطأت فيها.'; ring.style.stroke='var(--akk)'; }
+      else{ title.textContent='🥉 استمر في التدرّب'; desc.textContent='راجع أقسام الدرس التي تحتوي على النقطة التي أخطأت فيها، ثم أعد المحاولة.'; ring.style.stroke='var(--t4)'; }
+      if(score >= 10) window.AKK.unlock('quiz');
+    }, 400);
+  }});
+}
+renderFinalQuiz();
+document.getElementById('quizRetryBtn').addEventListener('click', renderFinalQuiz);
+
+/* ==========================================================================
+   FLIP CARDS
+   ========================================================================== */
+document.querySelectorAll('.flip-card').forEach(card=>{
+  function toggle(){
+    const flipped = card.classList.toggle('flipped');
+    card.setAttribute('aria-pressed', flipped ? 'true' : 'false');
+  }
+  card.addEventListener('click', toggle);
+  card.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); } });
+});
+
+/* ==========================================================================
+   PRINT
+   ========================================================================== */
+document.getElementById('printBtn').addEventListener('click', ()=> window.print());
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a1-grammar-09-akkusativ" data-category="a1-grammar" data-title="المفعول به المباشر — Akkusativ" data-root="../../" defer></script>
+</body>
+</html>

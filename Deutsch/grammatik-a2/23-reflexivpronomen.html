@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الضمائر الانعكاسية Reflexivpronomen — شرح شامل لمستوى A2: sich freuen وsich beeilen وmir وdir</title>
+<meta name="description" content="شرح تفاعلي شامل للضمائر الانعكاسية في الألمانية لمستوى A2: mich/dich/sich/uns/euch، الأفعال الانعكاسية الشائعة، الأفعال مع حروف الجر (sich freuen auf/über)، الانعكاسي في Dativ (Ich wasche mir die Hände)، وموقعه مع Perfekt والأفعال الناقصة والأمر — مع أمثلة صوتية وتمارين واختبار">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================================================
+   DESIGN TOKENS — تصريف الصفات: نفس مصطلحات الأفعال (schwach/stark/gemischt)
+   المفهوم البصري: نحاسي-كهرماني = schwache Deklination (بعد der/die/das)،
+   ذهبي = gemischte Deklination (بعد ein/eine/ein)، بنفسجي = starke
+   Deklination (بلا أداة تعريف إطلاقًا)، وسماوي = المقارنة الشاملة ودرجات
+   المقارنة (Steigerung). الوضع الداكن افتراضي مع دعم كامل للفاتح والنظام.
+   ========================================================================== */
+:root{
+  --bg:#F5F6F4;
+  --bg-soft:#FAFAF8;
+  --surface:#FFFFFF;
+  --surface-alt:#FBFBF9;
+  --ink:#1B1C1E;
+  --ink-soft:#5A5C61;
+  --ink-faint:#8D8F95;
+  --border:#E3E4E0;
+  --border-strong:#D2D3CD;
+  --path:#CBCCC5;
+
+  --schwach:#B2392E;    --schwach-soft:#F7E1DE;   --schwach-ink:#7E281F;
+  --modal:#166E7A;     --modal-soft:#DBEEF0;    --modal-ink:#0D4D56;
+  --stark:#6A3FA0;    --stark-soft:#EAE0F5;   --stark-ink:#4A2B70;
+  --ok:#3F7D4A;       --ok-soft:#DCEEDF;      --ok-ink:#2C5A34;
+
+  --gemischt:#A2740F;  --gemischt-soft:#F3E6C6;  --gemischt-ink:#75530C;   /* الأفعال المختلطة */
+
+  --danger:#B8302F;   --danger-soft:#F8DEDD;
+  --gold:#A2740F;
+
+  --shadow-sm:0 1px 2px rgba(20,20,18,.07), 0 1px 1px rgba(20,20,18,.05);
+  --shadow-md:0 8px 24px -8px rgba(20,20,18,.15), 0 2px 8px -2px rgba(20,20,18,.09);
+  --shadow-lg:0 24px 64px -16px rgba(20,20,18,.24), 0 8px 24px -8px rgba(20,20,18,.12);
+  --shadow-glow:0 0 0 4px rgba(106,63,160,.15);
+
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --radius-pill:999px;
+
+  --font-display:'Spectral', 'Noto Kufi Arabic', serif;
+  --font-body:'Inter', system-ui, sans-serif;
+  --font-ar-head:'Noto Kufi Arabic', 'Inter', sans-serif;
+  --font-ar-body:'Noto Naskh Arabic', 'Inter', sans-serif;
+  --font-mono:'IBM Plex Mono', ui-monospace, monospace;
+
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --dur-fast:.18s;
+  --dur-med:.42s;
+  --dur-slow:.7s;
+  color-scheme: light;
+}
+
+html.dark{
+  --bg:#0A0A0C;
+  --bg-soft:#101013;
+  --surface:#161619;
+  --surface-alt:#1B1B1F;
+  --ink:#EDEDF0;
+  --ink-soft:#AFAFB8;
+  --ink-faint:#75757D;
+  --border:#26262B;
+  --border-strong:#343439;
+  --path:#343439;
+
+  --schwach:#E88A7A;    --schwach-soft:#3A1D18;   --schwach-ink:#F5C3B8;
+  --modal:#5FCAD6;     --modal-soft:#0F2E33;    --modal-ink:#AEE9EF;
+  --stark:#B78EE2;    --stark-soft:#231A38;   --stark-ink:#DCC9F2;
+  --ok:#7FC98C;       --ok-soft:#17301C;      --ok-ink:#BFE8C5;
+
+  --gemischt:#E0B54E;  --gemischt-soft:#332609;  --gemischt-ink:#F3DA9C;
+
+  --danger:#E58B85;   --danger-soft:#3A1D1B;
+  --gold:#E0B54E;
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:0 8px 24px -8px rgba(0,0,0,.6), 0 2px 8px -2px rgba(0,0,0,.45);
+  --shadow-lg:0 24px 64px -16px rgba(0,0,0,.7), 0 8px 24px -8px rgba(0,0,0,.5);
+  --shadow-glow:0 0 0 4px rgba(183,142,226,.16);
+  color-scheme: dark;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important}
+}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--font-ar-body); line-height:1.85;
+  min-height:100vh; overflow-x:hidden; transition:background var(--dur-med) var(--ease-out), color var(--dur-med) var(--ease-out);
+}
+img,svg{display:block; max-width:100%}
+button{font:inherit; color:inherit; background:none; border:none; cursor:pointer}
+a{color:inherit}
+ul{list-style:none}
+[lang="de"]{font-family:var(--font-body); direction:ltr; unicode-bidi:isolate}
+.de{font-family:var(--font-body); direction:ltr; unicode-bidi:isolate}
+::selection{background:var(--stark); color:#fff}
+:focus-visible{outline:3px solid var(--stark); outline-offset:2px; border-radius:6px}
+button:focus-visible, a:focus-visible{outline-offset:3px}
+
+.container{max-width:1180px; margin-inline:auto; padding-inline:clamp(16px,4vw,40px)}
+.visually-hidden{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+.skip-link{position:fixed; top:-100px; right:16px; z-index:9999; background:var(--ink); color:var(--bg); padding:12px 20px; border-radius:var(--radius-sm); transition:top .2s}
+.skip-link:focus{top:16px}
+
+#readProgress{position:fixed; inset-inline:0; top:0; height:4px; z-index:1100; background:transparent}
+#readProgress::after{content:''; display:block; height:100%; width:var(--progress,0%); background:linear-gradient(90deg, var(--schwach), var(--stark), var(--modal)); transition:width .12s linear}
+
+.topnav{position:sticky; top:4px; z-index:1000; backdrop-filter:blur(16px) saturate(1.4); -webkit-backdrop-filter:blur(16px) saturate(1.4); background:color-mix(in srgb, var(--bg) 78%, transparent); border-bottom:1px solid var(--border)}
+.topnav-inner{display:flex; align-items:center; gap:16px; padding-block:12px}
+.brand{display:flex; align-items:center; gap:10px; font-family:var(--font-ar-head); font-weight:700; font-size:1.02rem; white-space:nowrap}
+.brand-mark{width:34px; height:34px; flex:none}
+.navlinks{display:flex; gap:4px; flex:1; min-width:0; overflow-x:auto; scrollbar-width:none; padding-inline:4px}
+.navlinks::-webkit-scrollbar{display:none}
+.navlink{position:relative; padding:9px 13px; border-radius:var(--radius-pill); font-size:.85rem; font-weight:600; color:var(--ink-soft); white-space:nowrap; transition:all var(--dur-fast) var(--ease-out); display:flex; align-items:center; gap:6px}
+.navlink:hover{background:var(--surface); color:var(--ink)}
+.navlink.active{background:var(--ink); color:var(--bg)}
+.navlink .dot{width:7px; height:7px; border-radius:50%; background:currentColor; opacity:.5}
+.navlink[data-done="true"] .dot{opacity:1; background:var(--stark)}
+.nav-tools{display:flex; align-items:center; gap:6px; flex:none}
+
+.icon-btn{display:grid; place-items:center; width:40px; height:40px; border-radius:var(--radius-pill); background:var(--surface); border:1px solid var(--border); color:var(--ink); transition:transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-fast), background var(--dur-fast)}
+.icon-btn:hover{transform:translateY(-2px); box-shadow:var(--shadow-md)}
+.icon-btn:active{transform:translateY(0) scale(.94)}
+.icon-btn svg{width:19px; height:19px}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 26px; border-radius:var(--radius-pill); font-weight:700; font-size:.95rem; font-family:var(--font-ar-head); cursor:pointer; transition:all var(--dur-fast) var(--ease-spring); border:1px solid transparent}
+.btn:active{transform:scale(.96)}
+.btn-primary{background:var(--ink); color:var(--bg); box-shadow:var(--shadow-sm)}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-md)}
+.btn-ghost{background:var(--surface); color:var(--ink); border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--border-strong); transform:translateY(-2px); box-shadow:var(--shadow-sm)}
+.btn-sm{padding:9px 18px; font-size:.85rem}
+.btn:disabled{opacity:.45; cursor:not-allowed; transform:none !important}
+
+.chip{display:inline-flex; align-items:center; gap:7px; padding:6px 14px; border-radius:var(--radius-pill); font-family:var(--font-mono); font-size:.76rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase}
+.chip-schwach{background:var(--schwach-soft); color:var(--schwach-ink)}
+.chip-modal{background:var(--modal-soft); color:var(--modal-ink)}
+.chip-stark{background:var(--stark-soft); color:var(--stark-ink)}
+.chip-gemischt{background:var(--gemischt-soft); color:var(--gemischt-ink)}
+
+.case-badge{display:inline-flex; align-items:center; gap:5px; padding:4px 11px; border-radius:var(--radius-pill); font-family:var(--font-mono); font-size:.68rem; font-weight:800; letter-spacing:.02em; direction:ltr; flex:none}
+.case-badge.schwach{background:var(--schwach-soft); color:var(--schwach-ink)}
+.case-badge.modal{background:var(--modal-soft); color:var(--modal-ink)}
+.case-badge.stark{background:var(--stark-soft); color:var(--stark-ink)}
+.case-badge.gemischt{background:var(--gemischt-soft); color:var(--gemischt-ink)}
+
+.theme-switch{display:inline-flex; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-pill); padding:3px; gap:2px}
+.theme-switch button{width:32px; height:32px; border-radius:50%; display:grid; place-items:center; color:var(--ink-faint); transition:all var(--dur-fast) var(--ease-spring)}
+.theme-switch button svg{width:16px; height:16px}
+.theme-switch button.on{background:var(--ink); color:var(--bg)}
+.theme-switch button:hover:not(.on){color:var(--ink)}
+
+#speechBar{position:fixed; bottom:18px; left:50%; transform:translateX(-50%) translateY(140%); z-index:1200; display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-lg); padding:10px 16px; border-radius:var(--radius-pill); max-width:calc(100vw - 24px); transition:transform var(--dur-med) var(--ease-spring)}
+#speechBar.show{transform:translateX(-50%) translateY(0)}
+#speechBar .now-playing{display:flex; flex-direction:column; max-width:220px; overflow:hidden}
+#speechBar .now-playing small{color:var(--ink-faint); font-size:.68rem; font-family:var(--font-ar-body)}
+#speechBar .now-playing span{font-family:var(--font-body); font-size:.85rem; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; direction:ltr; text-align:left}
+#speechBar .sp-controls{display:flex; align-items:center; gap:6px}
+#speechBar .sp-btn{width:36px; height:36px; border-radius:50%; background:var(--bg-soft); display:grid; place-items:center}
+#speechBar .sp-btn:hover{background:var(--stark-soft)}
+#speechBar .sp-btn svg{width:16px; height:16px}
+.speak-indicator{display:inline-flex; gap:2px; align-items:flex-end; height:14px}
+.speak-indicator i{display:block; width:3px; height:3px; background:var(--ink-faint); border-radius:2px; animation:speakbar 0.9s ease-in-out infinite; animation-play-state:paused}
+#speechBar.playing .speak-indicator i{background:var(--stark); animation-play-state:running}
+.ex-card.sentence-speaking{box-shadow:var(--shadow-glow), var(--shadow-md)}
+@keyframes speakbar{0%,100%{height:3px}50%{height:14px}}
+.novoice-banner{display:none; align-items:center; gap:10px; background:var(--danger-soft); color:var(--danger); border-radius:var(--radius-sm); padding:10px 14px; font-size:.84rem; margin-block:14px}
+.novoice-banner.show{display:flex}
+
+/* ==========================================================================
+   VOICE PANEL — VoiceSelector + VoiceTester + PlaybackSpeedControl
+   ========================================================================== */
+.voice-panel{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); padding:24px clamp(18px,4vw,30px); margin-block:30px}
+.voice-panel-head{display:flex; align-items:flex-start; gap:14px; margin-bottom:18px}
+.voice-panel-head h3{font-family:var(--font-ar-head); font-size:1.02rem; margin-bottom:6px}
+.voice-panel-head p{color:var(--ink-soft); font-size:.9rem}
+.voice-list{display:grid; gap:10px; margin-bottom:20px}
+.voice-loading{color:var(--ink-faint); font-size:.9rem; padding:8px 2px}
+.voice-item{display:flex; align-items:center; gap:12px; background:var(--bg-soft); border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:12px 14px; transition:all var(--dur-fast) var(--ease-spring); cursor:pointer}
+.voice-item:hover{border-color:var(--border-strong)}
+.voice-item.selected{border-color:var(--stark); background:var(--stark-soft)}
+.voice-item .radio-dot{flex:none; width:20px; height:20px; border-radius:50%; border:2px solid var(--border-strong); display:grid; place-items:center; background:var(--surface)}
+.voice-item.selected .radio-dot{border-color:var(--stark)}
+.voice-item .radio-dot::after{content:''; width:10px; height:10px; border-radius:50%; background:var(--stark); transform:scale(0); transition:transform var(--dur-fast) var(--ease-spring)}
+.voice-item.selected .radio-dot::after{transform:scale(1)}
+.voice-item .voice-info{flex:1; min-width:0}
+.voice-item .voice-name{font-family:var(--font-body); direction:ltr; text-align:left; font-weight:700; font-size:.94rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.voice-item .voice-meta{font-size:.76rem; color:var(--ink-faint); direction:ltr; text-align:left}
+.voice-item .voice-badge{flex:none; font-family:var(--font-mono); font-size:.68rem; font-weight:700; padding:3px 9px; border-radius:var(--radius-pill); background:var(--surface); border:1px solid var(--border); color:var(--ink-soft)}
+.voice-item.selected .voice-badge{background:var(--stark); color:#fff; border-color:transparent}
+.voice-test-btn{flex:none; display:inline-flex; align-items:center; gap:6px; padding:8px 14px; border-radius:var(--radius-pill); background:var(--surface); border:1px solid var(--border); font-family:var(--font-ar-head); font-size:.78rem; font-weight:700; transition:all var(--dur-fast) var(--ease-spring)}
+.voice-test-btn:hover{background:var(--stark); color:#fff; border-color:var(--stark); transform:scale(1.04)}
+.voice-test-btn.testing{background:var(--stark); color:#fff; border-color:var(--stark)}
+.voice-test-btn svg{width:14px; height:14px}
+.voice-panel-foot{display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding-top:16px; border-top:1px solid var(--border)}
+.speed-label{font-family:var(--font-ar-head); font-weight:700; font-size:.86rem; color:var(--ink-soft); flex:none}
+.speed-chips{display:inline-flex; flex-wrap:wrap; gap:6px}
+.speed-chip{padding:7px 13px; border-radius:var(--radius-pill); background:var(--bg-soft); border:1px solid var(--border); font-family:var(--font-mono); font-size:.78rem; font-weight:700; direction:ltr; color:var(--ink-soft); transition:all var(--dur-fast) var(--ease-spring)}
+.speed-chip:hover{border-color:var(--border-strong)}
+.speed-chip.on{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+@media (max-width:640px){
+  .voice-item{flex-wrap:wrap}
+  .voice-panel-head{flex-direction:column}
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero{position:relative; padding-block:56px 40px; overflow:hidden}
+.hero-bg{position:absolute; inset:0; z-index:-1; opacity:.5}
+.hero-bg svg{width:100%; height:100%}
+.hero-eyebrow{display:inline-flex; align-items:center; gap:10px; font-family:var(--font-ar-head); font-weight:700; font-size:.85rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); padding:8px 16px; border-radius:var(--radius-pill); margin-bottom:22px}
+.hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center}
+.hero h1{font-family:var(--font-display); font-weight:600; line-height:1.1; letter-spacing:-.01em; font-size:clamp(2rem, 4.2vw, 3.2rem); margin-bottom:22px; direction:ltr; text-align:right}
+.hero-sub{font-family:var(--font-ar-body); font-size:1.12rem; color:var(--ink-soft); max-width:60ch; margin-bottom:30px}
+.hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:34px}
+.hero-stats{display:flex; gap:28px; flex-wrap:wrap}
+.hero-stat b{display:block; font-family:var(--font-display); font-size:1.7rem; color:var(--ink)}
+.hero-stat span{font-size:.8rem; color:var(--ink-faint)}
+
+.path-wrap{position:relative; aspect-ratio:1/1; display:grid; place-items:center}
+.path-card{position:relative; width:100%; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); padding:26px 22px; overflow:hidden}
+.path-card::before{content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(120% 100% at 100% 0%, rgba(178,57,46,.10), transparent 55%), radial-gradient(120% 100% at 0% 100%, rgba(22,110,122,.10), transparent 55%)}
+.compass-row{position:relative; margin-block:6px}
+.compass-row svg{width:100%; height:auto}
+.legend-row{display:flex; flex-wrap:wrap; gap:9px; margin-block:18px 4px; font-size:.76rem; color:var(--ink-soft)}
+.legend-row span{display:inline-flex; align-items:center; gap:6px}
+.legend-row i{width:10px; height:10px; border-radius:3px; display:inline-block; flex:none}
+
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .7s var(--ease-out), transform .7s var(--ease-out)}
+.reveal.in{opacity:1; transform:translateY(0)}
+.reveal-stagger > *{opacity:0; transform:translateY(20px); transition:opacity .6s var(--ease-out), transform .6s var(--ease-out)}
+.reveal-stagger.in > *{opacity:1; transform:translateY(0)}
+.reveal-stagger.in > *:nth-child(1){transition-delay:.03s}
+.reveal-stagger.in > *:nth-child(2){transition-delay:.09s}
+.reveal-stagger.in > *:nth-child(3){transition-delay:.15s}
+.reveal-stagger.in > *:nth-child(4){transition-delay:.21s}
+.reveal-stagger.in > *:nth-child(5){transition-delay:.27s}
+.reveal-stagger.in > *:nth-child(6){transition-delay:.33s}
+
+/* ==========================================================================
+   SECTIONS
+   ========================================================================== */
+.section{padding-block:64px; scroll-margin-top:90px; position:relative}
+.section-head{max-width:760px; margin-bottom:38px}
+.kicker{font-family:var(--font-mono); font-weight:700; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; direction:ltr; display:block; margin-bottom:10px}
+.section h2{font-family:var(--font-ar-head); font-size:clamp(1.5rem,3vw,2.1rem); font-weight:700; margin-bottom:14px; line-height:1.3}
+.section h2 .de{font-family:var(--font-display); font-style:italic; direction:ltr; unicode-bidi:isolate}
+.section-desc{color:var(--ink-soft); font-size:1.04rem; max-width:66ch}
+.section.tone-schwach .kicker,.section.tone-schwach h2 .de{color:var(--schwach)}
+.section.tone-modal .kicker,.section.tone-modal h2 .de{color:var(--modal)}
+.section.tone-stark .kicker,.section.tone-stark h2 .de{color:var(--stark)}
+.section.tone-gemischt .kicker,.section.tone-gemischt h2 .de{color:var(--gemischt)}
+
+.rule-box{display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:flex-start; background:var(--surface); border:1px solid var(--border); border-inline-start:5px solid var(--tone,var(--stark)); border-radius:var(--radius-md); padding:22px 24px; box-shadow:var(--shadow-sm); margin-block:24px}
+.rule-box .icon{width:42px; height:42px; border-radius:var(--radius-sm); background:var(--tone-soft,var(--stark-soft)); color:var(--tone,var(--stark)); display:grid; place-items:center; flex:none; font-size:1.15rem}
+.rule-box .icon svg{width:22px; height:22px}
+.rule-box h3{font-family:var(--font-ar-head); font-size:1.06rem; margin-bottom:6px}
+.rule-box p{color:var(--ink-soft)}
+.rule-box.tone-schwach{--tone:var(--schwach); --tone-soft:var(--schwach-soft)}
+.rule-box.tone-modal{--tone:var(--modal); --tone-soft:var(--modal-soft)}
+.rule-box.tone-stark{--tone:var(--stark); --tone-soft:var(--stark-soft)}
+.rule-box.tone-gemischt{--tone:var(--gemischt); --tone-soft:var(--gemischt-soft)}
+.rule-box.tone-danger{--tone:var(--danger); --tone-soft:var(--danger-soft)}
+.rule-box.tone-ok{--tone:var(--ok); --tone-soft:var(--ok-soft)}
+
+.formula{display:flex; flex-wrap:wrap; gap:8px; align-items:center; font-family:var(--font-mono); font-weight:700; font-size:.9rem; direction:ltr; background:var(--bg-soft); border:1px dashed var(--border-strong); border-radius:var(--radius-sm); padding:16px 18px; margin-block:20px}
+.formula .f-tag{padding:5px 12px; border-radius:8px; font-size:.8rem}
+.formula .f-tag.main{background:var(--surface); border:1px solid var(--border); color:var(--ink-soft)}
+.formula .f-tag.mid{background:var(--surface); border:1px solid var(--border); color:var(--ink-soft)}
+.formula .f-tag.end{background:var(--stark-soft); color:var(--stark-ink); border:1px solid transparent}
+.formula .arrow{color:var(--ink-faint)}
+
+.clause-diagram{display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end; direction:ltr; background:var(--bg-soft); border:1px dashed var(--border-strong); border-radius:var(--radius-md); padding:20px 18px; margin-block:22px}
+.clause-diagram .arrow{color:var(--ink-faint); font-weight:400; align-self:center; padding-bottom:14px; font-size:1.1rem}
+
+.examples-grid{display:grid; gap:16px; margin-block:26px}
+.examples-grid.cols-2{grid-template-columns:1fr 1fr}
+.ex-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 22px; box-shadow:var(--shadow-sm); transition:box-shadow var(--dur-fast), transform var(--dur-fast)}
+.ex-card:hover{box-shadow:var(--shadow-md); transform:translateY(-2px)}
+.ex-top{display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; flex-wrap:wrap}
+.ex-num{flex:none; width:28px; height:28px; border-radius:50%; background:var(--bg-soft); color:var(--ink-faint); display:grid; place-items:center; font-family:var(--font-mono); font-weight:700; font-size:.78rem}
+.ex-de{font-family:var(--font-body); font-size:1.12rem; font-weight:600; direction:ltr; text-align:left; line-height:1.5; flex:1; min-width:200px}
+.ex-de .hl{padding:1px 5px; border-radius:5px; background:var(--schwach-soft); color:var(--schwach-ink); font-weight:800}
+.ex-de .hl-modal{background:var(--modal-soft); color:var(--modal-ink)}
+.ex-de .hl-stark{background:var(--stark-soft); color:var(--stark-ink)}
+.ex-de .hl-gemischt{background:var(--gemischt-soft); color:var(--gemischt-ink)}
+.speak-btn{flex:none; width:36px; height:36px; border-radius:50%; background:var(--bg-soft); border:1px solid var(--border); display:grid; place-items:center; transition:all var(--dur-fast) var(--ease-spring)}
+.speak-btn:hover{background:var(--stark-soft); border-color:var(--stark); color:var(--stark-ink); transform:scale(1.08)}
+.speak-btn svg{width:16px; height:16px}
+.ex-ar{color:var(--ink-soft); font-size:.96rem; margin-inline-start:40px; margin-bottom:6px}
+.ex-note{color:var(--ink-faint); font-size:.82rem; margin-inline-start:40px}
+
+.w{cursor:pointer; border-radius:5px; padding:1px 3px; margin:0 -3px; transition:background var(--dur-fast), color var(--dur-fast)}
+.w:hover{background:var(--stark-soft); color:var(--stark-ink)}
+.w.speaking{background:var(--stark); color:#fff}
+
+.slot{padding:7px 12px; border-radius:9px; font-size:.82rem; font-weight:700; line-height:1.3; background:var(--bg-soft); border:1px solid var(--border); color:var(--ink-soft); position:relative}
+.slot .lbl{display:block; font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; opacity:.62; margin-bottom:1px}
+.slot.s-main{background:var(--surface-alt)}
+.slot.s-mid{background:var(--surface)}
+.slot.s-conn{color:#fff; border-color:transparent}
+.slot.s-end{background:var(--stark-soft); color:var(--stark-ink); border-color:transparent}
+
+.mistake-box{display:grid; gap:10px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 22px; margin-block:26px; box-shadow:var(--shadow-sm)}
+.mistake-box h4{font-family:var(--font-ar-head); font-size:.98rem; margin-bottom:6px; display:flex; align-items:center; gap:8px}
+.mrow{display:flex; align-items:center; gap:12px; padding:11px 14px; border-radius:var(--radius-sm); font-family:var(--font-body); font-size:.98rem; direction:ltr; text-align:left}
+.mrow.bad{background:var(--danger-soft); color:var(--danger)}
+.mrow.good{background:var(--ok-soft); color:var(--ok-ink)}
+.mrow .mark{flex:none; font-weight:900; font-size:1.1rem}
+.mnote{font-family:var(--font-ar-body); color:var(--ink-soft); font-size:.92rem; direction:rtl; text-align:right; margin-top:4px}
+
+details.more{background:var(--bg-soft); border:1px solid var(--border); border-radius:var(--radius-md); padding:4px 20px; margin-block:22px}
+details.more summary{cursor:pointer; padding:14px 0; font-family:var(--font-ar-head); font-weight:700; font-size:.94rem; list-style:none; display:flex; align-items:center; gap:10px}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:'+'; width:22px; height:22px; border-radius:50%; background:var(--surface); border:1px solid var(--border); display:grid; place-items:center; font-size:1rem; flex:none; transition:transform var(--dur-fast)}
+details.more[open] summary::before{content:'−'}
+details.more .more-body{padding-bottom:18px; color:var(--ink-soft)}
+
+.compare-widget{background:linear-gradient(145deg, var(--surface), var(--surface-alt)); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px clamp(18px,4vw,32px); margin-block:28px; box-shadow:var(--shadow-md)}
+.compare-head{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; margin-bottom:20px}
+.compare-head h3{font-family:var(--font-ar-head); font-size:1.05rem}
+.toggle-switch{display:inline-flex; flex-wrap:wrap; justify-content:center; background:var(--bg-soft); border-radius:var(--radius-pill); padding:4px; border:1px solid var(--border)}
+.toggle-switch button{padding:9px 18px; border-radius:var(--radius-pill); font-weight:700; font-family:var(--font-mono); font-size:.82rem; direction:ltr; color:var(--ink-soft); transition:all var(--dur-fast) var(--ease-spring); position:relative; z-index:1}
+.toggle-switch button.on{background:var(--ink); color:var(--bg)}
+.compare-stage{min-height:150px; display:flex; align-items:center; justify-content:center; position:relative}
+.compare-sentence{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; direction:ltr; font-family:var(--font-mono); font-weight:700; font-size:clamp(.85rem,2.4vw,1.05rem)}
+.compare-sentence .slot{transition:all var(--dur-slow) var(--ease-spring)}
+.compare-caption{text-align:center; margin-top:18px; color:var(--ink-soft); font-size:.94rem; min-height:24px}
+
+.table-wrap{overflow-x:auto; border-radius:var(--radius-md); border:1px solid var(--border); box-shadow:var(--shadow-sm); margin-block:26px}
+table.cmp{width:100%; border-collapse:collapse; background:var(--surface); min-width:560px}
+table.cmp th,table.cmp td{padding:14px 18px; text-align:right; border-bottom:1px solid var(--border); vertical-align:top}
+table.cmp thead th{background:var(--bg-soft); font-family:var(--font-ar-head); font-size:.86rem; color:var(--ink-soft); position:sticky; top:0}
+table.cmp tbody tr:last-child td{border-bottom:none}
+table.cmp tbody tr:hover{background:var(--bg-soft)}
+table.cmp td.de-cell{direction:ltr; text-align:left; font-family:var(--font-body); font-weight:600}
+table.cmp td:first-child{font-family:var(--font-mono); font-weight:800; direction:ltr; text-align:left}
+table.cmp tbody tr[data-aux]{display:table-row}
+table.cmp tbody tr[data-aux].hide{display:none}
+table.decl td.hlcol{background:var(--stark-soft); color:var(--stark-ink); font-weight:800; border-radius:6px}
+.row-speak{display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; background:var(--bg-soft); border:1px solid var(--border); vertical-align:middle; margin-inline-start:6px}
+.row-speak:hover{background:var(--stark-soft); border-color:var(--stark)}
+.row-speak svg{width:12px; height:12px}
+
+.flow-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+
+.pattern-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-block:26px}
+.pattern-card{background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--tone,var(--schwach)); border-radius:var(--radius-md); padding:22px 20px 18px; box-shadow:var(--shadow-sm)}
+.pattern-card h4{font-family:var(--font-ar-head); font-size:1rem; margin-bottom:4px}
+.pattern-card .pattern-sub{color:var(--ink-faint); font-size:.8rem; margin-bottom:12px}
+.pattern-card .pattern-formula{font-family:var(--font-mono); font-weight:800; direction:ltr; font-size:1.05rem; color:var(--tone,var(--schwach)); margin-bottom:14px; padding:10px 12px; background:var(--tone-soft,var(--schwach-soft)); border-radius:8px; text-align:center}
+.pattern-card ul{display:grid; gap:2px}
+.pattern-card li{font-family:var(--font-body); direction:ltr; font-size:.88rem; display:flex; justify-content:space-between; gap:8px; padding:7px 0; border-bottom:1px dashed var(--border)}
+.pattern-card li:last-child{border-bottom:none}
+.pattern-card li b{color:var(--tone,var(--schwach)); font-weight:700}
+@media (max-width:900px){.pattern-grid{grid-template-columns:1fr}}
+
+.practice-panel{background:var(--bg-soft); border:1px solid var(--border); border-radius:var(--radius-lg); padding:26px clamp(18px,4vw,32px); margin-block:30px}
+.practice-head{display:flex; align-items:center; gap:12px; margin-bottom:18px}
+.practice-head .badge-icon{width:38px; height:38px; border-radius:12px; background:var(--surface); border:1px solid var(--border); display:grid; place-items:center; flex:none}
+.practice-head h3{font-family:var(--font-ar-head); font-size:1.02rem}
+.practice-head p{color:var(--ink-faint); font-size:.84rem}
+.practice-context{direction:ltr; text-align:left; font-family:var(--font-body); font-size:.98rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px 14px; margin-bottom:14px}
+
+.builder-target{min-height:58px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; direction:ltr; background:var(--surface); border:2px dashed var(--border-strong); border-radius:var(--radius-sm); padding:12px 14px; margin-bottom:14px; transition:border-color var(--dur-fast)}
+.builder-target.correct{border-color:var(--ok); border-style:solid; background:var(--ok-soft)}
+.builder-target.wrong{border-color:var(--danger); border-style:solid; background:var(--danger-soft); animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.builder-bank{display:flex; flex-wrap:wrap; gap:8px; direction:ltr; margin-bottom:16px}
+.word-chip{padding:9px 15px; border-radius:9px; background:var(--surface); border:1px solid var(--border); font-family:var(--font-body); font-weight:600; font-size:.92rem; cursor:grab; transition:all var(--dur-fast) var(--ease-spring); user-select:none}
+.word-chip:hover{transform:translateY(-2px); box-shadow:var(--shadow-sm); border-color:var(--border-strong)}
+.word-chip.placed{opacity:.35; cursor:not-allowed}
+.word-chip.in-target{cursor:pointer; background:var(--surface-alt)}
+.builder-actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.builder-feedback{font-size:.9rem; font-weight:600; min-height:20px}
+.builder-feedback.ok{color:var(--ok-ink)}
+.builder-feedback.no{color:var(--danger)}
+
+.quiz-q{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 22px; margin-bottom:14px; box-shadow:var(--shadow-sm)}
+.quiz-q .qtext{font-weight:700; margin-bottom:14px; font-family:var(--font-ar-head); font-size:.98rem}
+.quiz-q .qtext .de{font-family:var(--font-body); direction:ltr; unicode-bidi:isolate; font-weight:600}
+.qopts{display:grid; gap:9px}
+.qopt{text-align:right; padding:13px 16px; border-radius:var(--radius-sm); background:var(--bg-soft); border:1px solid var(--border); font-family:var(--font-body); direction:ltr; text-align:left; font-weight:600; font-size:.92rem; display:flex; align-items:center; justify-content:space-between; gap:10px; transition:all var(--dur-fast)}
+.qopt:hover:not(:disabled){border-color:var(--border-strong); background:var(--surface)}
+.qopt.correct{background:var(--ok-soft); border-color:var(--ok); color:var(--ok-ink)}
+.qopt.incorrect{background:var(--danger-soft); border-color:var(--danger); color:var(--danger)}
+.qopt:disabled{cursor:not-allowed}
+.quiz-explain{margin-top:12px; padding:12px 14px; background:var(--bg-soft); border-radius:var(--radius-sm); font-size:.88rem; color:var(--ink-soft)}
+
+.quiz-summary{text-align:center; padding:40px 24px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); display:none}
+.quiz-summary.show{display:block}
+.quiz-summary .score-ring{width:130px; height:130px; margin:0 auto 18px; position:relative}
+.quiz-summary .score-ring svg{width:100%; height:100%; transform:rotate(-90deg)}
+.quiz-summary .score-ring .num{position:absolute; inset:0; display:grid; place-items:center; font-family:var(--font-display); font-size:2.1rem; font-weight:600}
+.quiz-summary h3{font-family:var(--font-ar-head); font-size:1.3rem; margin-bottom:8px}
+.quiz-summary p{color:var(--ink-soft); margin-bottom:20px}
+.progressbar-track{height:8px; background:var(--bg-soft); border-radius:99px; overflow:hidden; margin-block:6px}
+.progressbar-fill{height:100%; background:linear-gradient(90deg,var(--schwach),var(--modal)); border-radius:99px; transition:width .6s var(--ease-out)}
+
+#achToastHost{position:fixed; top:70px; inset-inline-end:16px; z-index:1300; display:flex; flex-direction:column; gap:10px; pointer-events:none}
+.ach-toast{pointer-events:auto; display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-lg); border-radius:var(--radius-md); padding:14px 18px; min-width:260px; max-width:320px; transform:translateX(120%); transition:transform .5s var(--ease-spring)}
+[dir="rtl"] .ach-toast{transform:translateX(-120%)}
+.ach-toast.show{transform:translateX(0)}
+.ach-toast .emoji{font-size:1.6rem}
+.ach-toast b{display:block; font-family:var(--font-ar-head); font-size:.9rem}
+.ach-toast span{font-size:.78rem; color:var(--ink-faint)}
+.achievements-panel{display:flex; flex-wrap:wrap; gap:12px; margin-block:20px}
+.ach-item{display:flex; flex-direction:column; align-items:center; gap:6px; width:88px; text-align:center; opacity:.32; filter:grayscale(1); transition:all var(--dur-med) var(--ease-spring)}
+.ach-item.unlocked{opacity:1; filter:none}
+.ach-item .ach-circle{width:52px; height:52px; border-radius:50%; background:var(--bg-soft); border:1px solid var(--border); display:grid; place-items:center; font-size:1.4rem}
+.ach-item.unlocked .ach-circle{background:linear-gradient(150deg,var(--schwach-soft),var(--modal-soft)); box-shadow:var(--shadow-sm)}
+.ach-item small{font-size:.7rem; color:var(--ink-soft); line-height:1.3}
+
+.flip-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-block:28px}
+.flip-card{aspect-ratio:4/3; perspective:1200px}
+.flip-inner{position:relative; width:100%; height:100%; transition:transform .7s var(--ease-spring); transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-card:focus-visible .flip-inner{outline:3px solid var(--stark); outline-offset:4px}
+.flip-face{position:absolute; inset:0; backface-visibility:hidden; border-radius:var(--radius-md); padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:9px; border:1px solid var(--border); box-shadow:var(--shadow-md); cursor:pointer}
+.flip-front{background:var(--surface)}
+.flip-front .fw{font-family:var(--font-display); font-size:1.3rem; font-weight:600; direction:ltr}
+.flip-front .tap-hint{font-size:.7rem; color:var(--ink-faint); margin-top:auto}
+.flip-back{color:var(--tone-ink,var(--stark-ink)); background:var(--tone-soft,var(--stark-soft)); transform:rotateY(180deg)}
+.flip-back p{font-size:.82rem; line-height:1.65}
+.flip-back .ex{font-family:var(--font-body); direction:ltr; font-weight:700; font-size:.82rem; margin-top:6px; padding:8px 10px; background:rgba(255,255,255,.35); border-radius:8px}
+
+.fab-stack{position:fixed; bottom:18px; inset-inline-start:16px; z-index:1150; display:flex; flex-direction:column; gap:10px; transition:bottom var(--dur-med) var(--ease-spring)}
+body.speech-active .fab-stack{bottom:84px}
+.fab{width:48px; height:48px; border-radius:50%; background:var(--ink); color:var(--bg); display:grid; place-items:center; box-shadow:var(--shadow-lg); transition:all var(--dur-fast) var(--ease-spring); opacity:0; transform:translateY(20px) scale(.7); pointer-events:none}
+.fab.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto}
+.fab:hover{transform:translateY(-3px) scale(1.06)}
+.fab svg{width:20px; height:20px}
+
+.search-wrap{position:relative; flex:none}
+.search-box{display:flex; align-items:center; gap:6px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-pill); padding:8px 8px 8px 14px; transition:all var(--dur-fast); width:38px; overflow:hidden}
+.search-box.open{width:200px}
+.search-box input{border:none; background:none; outline:none; font-size:.86rem; color:var(--ink); width:100%; font-family:var(--font-ar-body)}
+.search-box svg{width:17px; height:17px; flex:none}
+
+footer{background:var(--surface-alt); border-top:1px solid var(--border); padding-block:56px 36px; margin-top:30px}
+.cheat-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:30px clamp(18px,4vw,36px); box-shadow:var(--shadow-md)}
+.cheat-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-block:20px}
+.cheat-item{padding:16px 18px; border-radius:var(--radius-sm); border-inline-start:4px solid var(--tone,var(--stark)); background:var(--bg-soft)}
+.cheat-item b{display:block; font-family:var(--font-mono); direction:ltr; font-size:1rem; margin-bottom:4px; color:var(--tone,var(--stark))}
+.cheat-item span{font-size:.86rem; color:var(--ink-soft)}
+footer .foot-bottom{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:30px; padding-top:20px; border-top:1px solid var(--border); color:var(--ink-faint); font-size:.82rem}
+
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .path-wrap{max-width:420px; margin-inline:auto; width:100%}
+  .flip-grid{grid-template-columns:1fr 1fr}
+  .cheat-grid{grid-template-columns:1fr}
+  .flow-grid{grid-template-columns:1fr !important}
+  .examples-grid.cols-2{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .brand span{display:none}
+  .navlinks{gap:2px}
+  .navlink{padding:8px 10px; font-size:.78rem}
+  .nav-tools .search-box.open{width:140px}
+  .hero{padding-block:32px 20px}
+  .hero-stats{gap:18px}
+  .ex-ar,.ex-note{margin-inline-start:0; margin-top:8px}
+  .ex-top{flex-wrap:wrap}
+  #speechBar{padding:8px 12px; gap:8px}
+  #speechBar .now-playing{max-width:100px}
+  .cheat-grid{grid-template-columns:1fr}
+  .toggle-switch button{padding:7px 12px; font-size:.74rem}
+  .flip-grid{grid-template-columns:1fr}
+  table.cmp{min-width:520px}
+}
+@media (min-width:1400px){ .container{max-width:1280px} }
+
+@media print{
+  .topnav,#speechBar,.fab-stack,#achToastHost,#readProgress,.practice-panel,.hero-actions,.skip-link,.no-print,.voice-panel{display:none !important}
+  body{background:#fff; color:#000}
+  .section{padding-block:18px; break-inside:avoid}
+  .ex-card,.rule-box,.cheat-card{box-shadow:none; border:1px solid #ccc}
+  a{text-decoration:none; color:#000}
+}
+</style>
+<body>
+<a href="#main" class="skip-link">تخطَّ إلى المحتوى الرئيسي</a>
+
+<div id="readProgress" role="progressbar" aria-label="نسبة التقدّم في قراءة الدرس" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+<header class="topnav">
+  <div class="container topnav-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="10" cy="20" r="6" fill="var(--schwach-soft)" stroke="var(--schwach)" stroke-width="2"/>
+        <circle cx="20" cy="20" r="6" fill="var(--gemischt-soft)" stroke="var(--gemischt)" stroke-width="2"/>
+        <circle cx="30" cy="20" r="6" fill="var(--stark-soft)" stroke="var(--stark)" stroke-width="2"/>
+      </svg>
+      <span>الانعكاسية Reflexiv</span>
+    </div>
+    <nav class="navlinks" id="navlinks" aria-label="التنقّل بين أقسام الدرس"><a href="#overview" class="navlink" data-nav="overview"><span class="dot"></span>نظرة عامة</a><a href="#formen" class="navlink" data-nav="formen"><span class="dot"></span>الأشكال</a><a href="#verben" class="navlink" data-nav="verben"><span class="dot"></span>الأفعال</a><a href="#dativ" class="navlink" data-nav="dativ"><span class="dot"></span>Dativ</a><a href="#satz" class="navlink" data-nav="satz"><span class="dot"></span>الترتيب</a><a href="#review" class="navlink" data-nav="review"><span class="dot"></span>المراجعة</a><a href="#quiz" class="navlink" data-nav="quiz"><span class="dot"></span>الاختبار</a></nav>
+    <div class="nav-tools">
+      <div class="search-wrap">
+        <div class="search-box" id="searchBox">
+          <button class="icon-btn" id="searchToggle" style="width:auto;height:auto;background:none;border:none" aria-label="بحث داخل الدرس" title="بحث">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </button>
+          <input type="text" id="searchInput" placeholder="ابحث في الدرس…" aria-label="نص البحث">
+        </div>
+      </div>
+      <button class="icon-btn" id="fullscreenBtn" aria-label="وضع ملء الشاشة" title="ملء الشاشة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      </button>
+      <div class="theme-switch" role="group" aria-label="اختيار المظهر: فاتح، داكن، أو النظام">
+        <button type="button" id="themeLight" title="فاتح" aria-label="المظهر الفاتح"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg></button>
+        <button type="button" id="themeDark" title="داكن" aria-label="المظهر الداكن"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button>
+        <button type="button" id="themeSystem" title="النظام" aria-label="حسب إعدادات النظام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero"><div class="hero-bg" aria-hidden="true"><svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice"><circle cx="1000" cy="80" r="260" fill="var(--modal)" opacity="0.05"/><circle cx="120" cy="420" r="220" fill="var(--stark)" opacity="0.05"/></svg></div><div class="container hero-grid"><div><span class="hero-eyebrow">📘 درس شامل لمستوى A2 — أغسل نفسي، أفرح، أسرع</span><h1>الضمائر الانعكاسية <span style="color:var(--modal)" lang="de" dir="ltr">Reflexivpronomen</span></h1><p class="hero-sub">عندما يقع الفعل على الفاعل نفسه نستخدم ضميرًا انعكاسيًا: <span class="de">Ich wasche mich</span> و<span class="de">Er freut sich</span>. نتعلم الأشكال في <b>Akkusativ</b> و<b>Dativ</b>، وأشهر الأفعال الانعكاسية، والأفعال مع حروف الجر مثل <span class="de">sich freuen auf</span>، وموقع الضمير مع Perfekt والأفعال الناقصة والأمر.</p><div class="hero-actions"><a href="#overview" class="btn btn-primary">ابدأ الدرس ↓</a><button class="btn btn-ghost" id="heroSpeakDemo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg> استمع لمثال</button></div><div class="hero-stats"><div class="hero-stat"><b>6</b><span>ضمائر انعكاسية</span></div><div class="hero-stat"><b>+25</b><span>فعلًا انعكاسيًا</span></div><div class="hero-stat"><b>+40</b><span>مثال صوتي وتمرين</span></div></div></div><div class="path-wrap reveal"><div class="path-card"><div class="legend-row" style="margin-top:0"><span><i style="background:var(--schwach)"></i>Akkusativ — mich · dich</span><span><i style="background:var(--stark)"></i>Dativ — mir · dir</span><span><i style="background:var(--modal)"></i>الغائب — sich</span></div><div class="compass-row"><svg viewBox="0 0 400 260" role="img" aria-label="الضمائر الانعكاسية"><circle cx="80" cy="110" r="58" fill="var(--schwach-soft)" stroke="var(--schwach)" stroke-width="2.5"/><text x="80" y="92" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--schwach-ink)" font-family="IBM Plex Mono,monospace">Akkusativ</text><text x="80" y="112" text-anchor="middle" font-size="12" fill="var(--schwach-ink)" font-family="Noto Kufi Arabic">Ich wasche …</text><text x="80" y="136" text-anchor="middle" font-size="16" font-weight="800" fill="var(--schwach-ink)" font-family="Inter,sans-serif">mich</text><circle cx="200" cy="110" r="58" fill="var(--stark-soft)" stroke="var(--stark)" stroke-width="2.5"/><text x="200" y="92" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--stark-ink)" font-family="IBM Plex Mono,monospace">Dativ</text><text x="200" y="112" text-anchor="middle" font-size="12" fill="var(--stark-ink)" font-family="Noto Kufi Arabic">… die Hände</text><text x="200" y="136" text-anchor="middle" font-size="16" font-weight="800" fill="var(--stark-ink)" font-family="Inter,sans-serif">mir</text><circle cx="320" cy="110" r="58" fill="var(--modal-soft)" stroke="var(--modal)" stroke-width="2.5"/><text x="320" y="92" text-anchor="middle" font-size="12.5" font-weight="800" fill="var(--modal-ink)" font-family="IBM Plex Mono,monospace">3. Person</text><text x="320" y="112" text-anchor="middle" font-size="12" fill="var(--modal-ink)" font-family="Noto Kufi Arabic">er · sie · es</text><text x="320" y="136" text-anchor="middle" font-size="16" font-weight="800" fill="var(--modal-ink)" font-family="Inter,sans-serif">sich</text><text x="200" y="215" text-anchor="middle" font-size="12.5" fill="var(--ink-soft)" font-family="Noto Kufi Arabic" font-weight="700">الضمير يعود على الفاعل</text></svg></div></div></div></div></section>
+<section class="section" id="overview"><div class="container"><div class="novoice-banner" id="novoiceBanner" role="status">
+      <span>🔇</span>
+      <span>لا يتوفّر حاليًا أي صوت ألماني في هذا المتصفح. الدرس يعمل بشكل كامل بدون صوت — جرّب متصفحًا آخر (مثل Chrome أو Edge) أو ثبّت حزمة صوت ألمانية في نظام التشغيل للاستماع إلى الأمثلة.</span>
+    </div><div class="section-head reveal"><span class="kicker">Überblick · نظرة عامة</span><h2>الفاعل والمفعول هما الشخص نفسه</h2><p class="section-desc">الضمير الانعكاسي <span class="de" lang="de">Reflexivpronomen</span> يعود على الفاعل نفسه: <span class="de" lang="de">Ich wasche mich.</span> (أغسل نفسي). الفرق بين <span class="de" lang="de">Ich wasche das Auto</span> و<span class="de" lang="de">Ich wasche mich</span>: في الثانية المفعول هو الفاعل. وفي العربية نعبّر عن ذلك بصيغ الفعل (اغتسل، انتظر)، أما الألمانية فتستخدم <b>ضميرًا</b>. ومعظمه مثل ضمائر Akkusativ، والفرق في الغائب: <span class="de" lang="de">sich</span>.</p></div><div class="table-wrap reveal"><table class="cmp"><thead><tr><th class="de-cell">الضمير</th><th class="de-cell">Akkusativ</th><th class="de-cell">Dativ</th><th>sich freuen</th></tr></thead><tbody><tr><td class="de-cell">ich</td><td class="de-cell">mich</td><td class="de-cell">mir</td><td class="de-cell">ich freue mich <button class="speak-btn" data-speak="ich freue mich" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">du</td><td class="de-cell">dich</td><td class="de-cell">dir</td><td class="de-cell">du freust dich <button class="speak-btn" data-speak="du freust dich" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">er / sie / es</td><td class="de-cell">sich</td><td class="de-cell">sich</td><td class="de-cell">er freut sich <button class="speak-btn" data-speak="er freut sich" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">wir</td><td class="de-cell">uns</td><td class="de-cell">uns</td><td class="de-cell">wir freuen uns <button class="speak-btn" data-speak="wir freuen uns" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">ihr</td><td class="de-cell">euch</td><td class="de-cell">euch</td><td class="de-cell">ihr freut euch <button class="speak-btn" data-speak="ihr freut euch" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sie / Sie</td><td class="de-cell">sich</td><td class="de-cell">sich</td><td class="de-cell">sie freuen sich <button class="speak-btn" data-speak="sie freuen sich" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr></tbody></table></div><div class="formula reveal"><span class="f-tag main">Ich</span><span class="arrow">→</span><span class="f-tag" style="background:var(--modal-soft);color:var(--modal-ink)">wasche</span><span class="arrow">→</span><span class="f-tag end">mich</span></div><div class="examples-grid cols-2 reveal-stagger"><div class="ex-card"><div class="ex-top"><span class="case-badge modal">sich freuen</span><p class="ex-de" lang="de"><span class="w"><span class="hl">Ich</span></span> <span class="w">freue</span> <span class="w"><span class="hl">mich</span></span> <span class="w">auf</span> <span class="w">das</span> <span class="w">Wochenende.</span></p><button class="speak-btn" data-speak="Ich freue mich auf das Wochenende." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">أنا مسرور بقدوم عطلة نهاية الأسبوع.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge modal">er ⇒ sich</span><p class="ex-de" lang="de"><span class="w"><span class="hl">Er</span></span> <span class="w">freut</span> <span class="w"><span class="hl">sich</span></span> <span class="w">über</span> <span class="w">das</span> <span class="w">Geschenk.</span></p><button class="speak-btn" data-speak="Er freut sich über das Geschenk." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">هو مسرور بالهدية.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge modal">wir ⇒ uns</span><p class="ex-de" lang="de"><span class="w">Wir</span> <span class="w">treffen</span> <span class="w"><span class="hl">uns</span></span> <span class="w">um</span> <span class="w">acht.</span></p><button class="speak-btn" data-speak="Wir treffen uns um acht." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">نلتقي في الثامنة.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge modal">أمر</span><p class="ex-de" lang="de"><span class="w"><span class="hl">Beeil</span></span> <span class="w"><span class="hl">dich!</span></span></p><button class="speak-btn" data-speak="Beeil dich!" aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">أسرع!</p></div></div><div class="rule-box tone-gemischt reveal"><div class="icon">💡</div><div><h3>ثلاث قواعد للبداية</h3><p>١) الضمير يطابق الفاعل: <span class="de" lang="de">ich … mich</span> · <span class="de" lang="de">du … dich</span> · <span class="de" lang="de">er … sich</span>. ٢) في Dativ يتغيّر <span class="de" lang="de">ich ⇒ mir</span> و<span class="de" lang="de">du ⇒ dir</span> فقط. ٣) كثير من الأفعال لا تُستعمل بدون <span class="de" lang="de">sich</span>: <span class="de" lang="de">sich freuen, sich beeilen</span>.</p></div></div><div class="voice-panel reveal" id="voicePanel">
+      <div class="voice-panel-head">
+        <div class="badge-icon" style="width:38px;height:38px;border-radius:12px;background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;flex:none">🎙️</div>
+        <div>
+          <h3>اختر صوتك الألماني وجرّبه قبل أن تقرر</h3>
+          <p>هذه الأصوات الألمانية المتاحة فعليًا الآن في متصفحك وجهازك (محلية عبر نظام التشغيل، أو شبكية إن وفّرها متصفحك) — لا نفترض وجود أي صوت غير موجود فعلًا. اضغط <b>«اختبار 🔊»</b> بجانب أي صوت لسماعه، ثم انقر عليه لاعتماده صوتًا افتراضيًا لبقية الدرس.</p>
+        </div>
+      </div>
+      <div class="voice-list" id="voiceList" role="radiogroup" aria-label="اختيار الصوت الألماني">
+        <p class="voice-loading" id="voiceLoading">⏳ جارٍ البحث عن الأصوات الألمانية المتاحة في متصفحك…</p>
+      </div>
+      <div class="voice-panel-foot">
+        <span class="speed-label">سرعة النطق</span>
+        <div class="speed-chips" id="speedChips" role="group" aria-label="اختيار سرعة النطق">
+          <button type="button" class="speed-chip" data-rate="0.5">0.5x</button>
+          <button type="button" class="speed-chip" data-rate="0.75">0.75x</button>
+          <button type="button" class="speed-chip on" data-rate="1">1x</button>
+          <button type="button" class="speed-chip" data-rate="1.25">1.25x</button>
+          <button type="button" class="speed-chip" data-rate="1.5">1.5x</button>
+          <button type="button" class="speed-chip" data-rate="2">2x</button>
+        </div>
+      </div>
+    </div>
+  </div></section>
+<section class="section tone-modal" id="formen"><div class="container"><div class="section-head reveal"><span class="chip chip-modal">Formen · الأشكال</span><span class="kicker" style="margin-top:14px">01 / Formen</span><h2>الضمائر الانعكاسية</h2><p class="section-desc">مثل Akkusativ إلا في الغائب والجمع الرسمي: <span class="de" lang="de">sich</span>.</p></div><div class="rule-box tone-modal reveal"><div class="icon">🔁</div><div><h3>الضمير الانعكاسي في Akkusativ: كضمير Akkusativ إلا في الغائب</h3><p><span class="de" lang="de">mich, dich, sich, uns, euch, sich</span> — وللمخاطب الرسمي <span class="de" lang="de">sich</span> بحرف صغير: <span class="de" lang="de">Freuen Sie sich?</span></p></div></div><div class="table-wrap reveal"><table class="cmp"><thead><tr><th class="de-cell">الضمير</th><th class="de-cell">waschen</th><th class="de-cell">anziehen</th><th class="de-cell">sich beeilen</th></tr></thead><tbody><tr><td class="de-cell">ich</td><td class="de-cell">wasche mich</td><td class="de-cell">ziehe mich an</td><td class="de-cell">beeile mich</td></tr><tr><td class="de-cell">du</td><td class="de-cell">wäschst dich</td><td class="de-cell">ziehst dich an</td><td class="de-cell">beeilst dich</td></tr><tr><td class="de-cell">er / sie / es</td><td class="de-cell">wäscht sich</td><td class="de-cell">zieht sich an</td><td class="de-cell">beeilt sich</td></tr><tr><td class="de-cell">wir</td><td class="de-cell">waschen uns</td><td class="de-cell">ziehen uns an</td><td class="de-cell">beeilen uns</td></tr><tr><td class="de-cell">ihr</td><td class="de-cell">wascht euch</td><td class="de-cell">zieht euch an</td><td class="de-cell">beeilt euch</td></tr><tr><td class="de-cell">sie / Sie</td><td class="de-cell">waschen sich</td><td class="de-cell">ziehen sich an</td><td class="de-cell">beeilen sich</td></tr></tbody></table></div><div class="rule-box tone-schwach reveal"><div class="icon">📍</div><div><h3>موقع الضمير الانعكاسي</h3><p>يأتي بعد الفعل المصرَّف مباشرة: <span class="de" lang="de">Ich freue mich.</span> وبعد الظرف في Inversion: <span class="de" lang="de">Heute freue ich mich.</span> وإذا كان الفاعل اسمًا فالانعكاسي بعده: <span class="de" lang="de">Anna freut sich.</span> لكن إذا كان الفاعل ضميرًا يسبق: <span class="de" lang="de">Heute beeilt sie sich.</span></p></div></div><div class="rule-box tone-stark reveal"><div class="icon">↔️</div><div><h3>الانعكاس المتبادل</h3><p>في الجمع نستخدم نفس الضمائر للدلالة على التبادل: <span class="de" lang="de">Wir sehen uns morgen.</span> · <span class="de" lang="de">Sie lieben sich.</span> · <span class="de" lang="de">Wir kennen uns schon lange.</span> (كل منا يعرف الآخر).</p></div></div><div class="examples-grid cols-2 reveal-stagger"><div class="ex-card"><div class="ex-top"><span class="case-badge modal">تبادل</span><p class="ex-de" lang="de"><span class="w">Wir</span> <span class="w">sehen</span> <span class="w"><span class="hl">uns</span></span> <span class="w">morgen.</span></p><button class="speak-btn" data-speak="Wir sehen uns morgen." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">نرى بعضنا غدًا.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge modal">تبادل</span><p class="ex-de" lang="de"><span class="w">Sie</span> <span class="w">lieben</span> <span class="w"><span class="hl">sich.</span></span></p><button class="speak-btn" data-speak="Sie lieben sich." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">يحبّ كل منهما الآخر.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge modal">اسم</span><p class="ex-de" lang="de"><span class="w">Anna</span> <span class="w">freut</span> <span class="w"><span class="hl">sich.</span></span></p><button class="speak-btn" data-speak="Anna freut sich." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">آنا مسرورة.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge modal">Inversion</span><p class="ex-de" lang="de"><span class="w">Heute</span> <span class="w">beeilt</span> <span class="w">sie</span> <span class="w"><span class="hl">sich.</span></span></p><button class="speak-btn" data-speak="Heute beeilt sie sich." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">اليوم تسرع.</p></div></div><div class="mistake-box reveal"><h4>⚠️ خطأ شائع: نسيان الضمير</h4><div class="mrow bad"><span class="mark">✗</span><span lang="de">Ich freue auf das Wochenende.</span></div><div class="mrow good"><span class="mark">✓</span><span lang="de">Ich freue mich auf das Wochenende.</span></div><p class="mnote">فعل انعكاسي ⇐ نحتاج إلى mich.</p></div><div class="mistake-box reveal"><h4>⚠️ خطأ شائع: ضمير غير مطابق</h4><div class="mrow bad"><span class="mark">✗</span><span lang="de">Er freut mich auf das Wochenende.</span></div><div class="mrow good"><span class="mark">✓</span><span lang="de">Er freut sich auf das Wochenende.</span></div><p class="mnote">الغائب ⇐ sich.</p></div><div class="mistake-box reveal"><h4>⚠️ خطأ شائع: الضمير الخطأ مع du</h4><div class="mrow bad"><span class="mark">✗</span><span lang="de">Du beeilst mich.</span></div><div class="mrow good"><span class="mark">✓</span><span lang="de">Du beeilst dich.</span></div><p class="mnote">du ⇐ dich.</p></div><div class="practice-panel reveal"><div class="practice-head"><div class="badge-icon">🧩</div><div><h3>تمرين: رتّب الجملة</h3><p>ich + freue + mich + auf + ...</p></div></div><div class="builder-target" id="formenTarget" aria-live="polite"></div><div class="builder-bank" id="formenBank"></div><div class="builder-actions"><button class="btn btn-primary btn-sm" data-builder-check="formen">تحقّق ✓</button><button class="btn btn-ghost btn-sm" data-builder-reset="formen">إعادة ترتيب 🔀</button><span class="builder-feedback" id="formenFeedback"></span></div></div></div></section>
+<section class="section tone-schwach" id="verben"><div class="container"><div class="section-head reveal"><span class="chip chip-schwach">Verben · الأفعال</span><span class="kicker" style="margin-top:14px">02 / Verben</span><h2>أفعال انعكاسية شائعة</h2><p class="section-desc">بعضها لا يُستعمل بدون sich، وبعضها يُستعمل بالوجهين.</p></div><div class="rule-box tone-schwach reveal"><div class="icon">🔤</div><div><h3>أفعال لا تُستعمل إلا مع sich</h3><p><span class="de" lang="de">sich freuen</span> · <span class="de" lang="de">sich beeilen</span> · <span class="de" lang="de">sich erholen</span> · <span class="de" lang="de">sich fühlen</span> · <span class="de" lang="de">sich setzen</span> · <span class="de" lang="de">sich entschuldigen</span> · <span class="de" lang="de">sich kümmern</span> · <span class="de" lang="de">sich verabschieden</span> · <span class="de" lang="de">sich bedanken</span>.</p></div></div><div class="table-wrap reveal"><table class="cmp"><thead><tr><th class="de-cell">الفعل</th><th>المعنى</th><th>مثال</th></tr></thead><tbody><tr><td class="de-cell">sich beeilen</td><td>يسرع</td><td class="de-cell">Ich muss mich beeilen. <button class="speak-btn" data-speak="Ich muss mich beeilen." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich erholen</td><td>يستريح / يتعافى</td><td class="de-cell">Er erholt sich im Urlaub. <button class="speak-btn" data-speak="Er erholt sich im Urlaub." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich fühlen</td><td>يشعر</td><td class="de-cell">Ich fühle mich gut. <button class="speak-btn" data-speak="Ich fühle mich gut." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich setzen</td><td>يجلس</td><td class="de-cell">Setzen Sie sich bitte. <button class="speak-btn" data-speak="Setzen Sie sich bitte." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich entschuldigen</td><td>يعتذر</td><td class="de-cell">Ich entschuldige mich. <button class="speak-btn" data-speak="Ich entschuldige mich." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich verabschieden</td><td>يودّع</td><td class="de-cell">Wir verabschieden uns. <button class="speak-btn" data-speak="Wir verabschieden uns." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich vorstellen</td><td>يقدّم نفسه</td><td class="de-cell">Darf ich mich vorstellen? <button class="speak-btn" data-speak="Darf ich mich vorstellen?" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich ausruhen</td><td>يرتاح</td><td class="de-cell">Du musst dich ausruhen. <button class="speak-btn" data-speak="Du musst dich ausruhen." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr></tbody></table></div><div class="rule-box tone-stark reveal"><div class="icon">🧼</div><div><h3>أفعال الروتين اليومي</h3><p><span class="de" lang="de">sich waschen, sich duschen, sich anziehen, sich kämmen, sich rasieren, sich hinlegen</span>. وهي أفعال عادية يمكن استعمالها بلا انعكاس: <span class="de" lang="de">Ich wasche das Auto.</span> لكن مع <span class="de" lang="de">mich</span> الفاعل هو المفعول.</p></div></div><div class="table-wrap reveal"><table class="cmp"><thead><tr><th class="de-cell">بدون انعكاس</th><th class="de-cell">مع انعكاس</th></tr></thead><tbody><tr><td class="de-cell">Ich wasche das Auto. <button class="speak-btn" data-speak="Ich wasche das Auto." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td class="de-cell">Ich wasche mich. <button class="speak-btn" data-speak="Ich wasche mich." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">Ich ziehe die Kinder an. <button class="speak-btn" data-speak="Ich ziehe die Kinder an." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td class="de-cell">Ich ziehe mich an. <button class="speak-btn" data-speak="Ich ziehe mich an." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">Ich lege das Kind hin. <button class="speak-btn" data-speak="Ich lege das Kind hin." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td class="de-cell">Ich lege mich hin. <button class="speak-btn" data-speak="Ich lege mich hin." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">Ich setze das Kind. <button class="speak-btn" data-speak="Ich setze das Kind." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td class="de-cell">Ich setze mich. <button class="speak-btn" data-speak="Ich setze mich." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr></tbody></table></div><div class="rule-box tone-gemischt reveal"><div class="icon">🔗</div><div><h3>أفعال انعكاسية مع حرف جر</h3><p>حرف الجر ثابت مع كل فعل: <span class="de" lang="de">sich freuen auf</span> (المستقبل) · <span class="de" lang="de">sich freuen über</span> (الحاضر أو الماضي) · <span class="de" lang="de">sich interessieren für</span> · <span class="de" lang="de">sich ärgern über</span> · <span class="de" lang="de">sich erinnern an</span> · <span class="de" lang="de">sich verlieben in</span> · <span class="de" lang="de">sich treffen mit</span> · <span class="de" lang="de">sich kümmern um</span>.</p></div></div><div class="table-wrap reveal"><table class="cmp"><thead><tr><th class="de-cell">الفعل + حرف الجر</th><th>المعنى</th><th>مثال</th></tr></thead><tbody><tr><td class="de-cell">sich freuen auf</td><td>يترقّب بسرور</td><td class="de-cell">Ich freue mich auf den Urlaub. <button class="speak-btn" data-speak="Ich freue mich auf den Urlaub." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich freuen über</td><td>يفرح بـ</td><td class="de-cell">Ich freue mich über das Geschenk. <button class="speak-btn" data-speak="Ich freue mich über das Geschenk." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich interessieren für</td><td>يهتم بـ</td><td class="de-cell">Er interessiert sich für Musik. <button class="speak-btn" data-speak="Er interessiert sich für Musik." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich ärgern über</td><td>ينزعج من</td><td class="de-cell">Sie ärgert sich über den Lärm. <button class="speak-btn" data-speak="Sie ärgert sich über den Lärm." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich erinnern an</td><td>يتذكر</td><td class="de-cell">Ich erinnere mich an dich. <button class="speak-btn" data-speak="Ich erinnere mich an dich." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich verlieben in</td><td>يقع في حب</td><td class="de-cell">Er verliebt sich in sie. <button class="speak-btn" data-speak="Er verliebt sich in sie." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich treffen mit</td><td>يلتقي بـ</td><td class="de-cell">Ich treffe mich mit Anna. <button class="speak-btn" data-speak="Ich treffe mich mit Anna." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td class="de-cell">sich kümmern um</td><td>يعتني بـ</td><td class="de-cell">Wir kümmern uns um die Katze. <button class="speak-btn" data-speak="Wir kümmern uns um die Katze." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr></tbody></table></div><div class="examples-grid cols-2 reveal-stagger"><div class="ex-card"><div class="ex-top"><span class="case-badge schwach">fühlen</span><p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">fühle</span> <span class="w"><span class="hl">mich</span></span> <span class="w">heute</span> <span class="w">nicht</span> <span class="w">gut.</span></p><button class="speak-btn" data-speak="Ich fühle mich heute nicht gut." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">لا أشعر بخير اليوم.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge schwach">für</span><p class="ex-de" lang="de"><span class="w">Er</span> <span class="w">interessiert</span> <span class="w"><span class="hl">sich</span></span> <span class="w">für</span> <span class="w">Fußball.</span></p><button class="speak-btn" data-speak="Er interessiert sich für Fußball." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">يهتم بكرة القدم.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge schwach">auf</span><p class="ex-de" lang="de"><span class="w">Wir</span> <span class="w">freuen</span> <span class="w"><span class="hl">uns</span></span> <span class="w">auf</span> <span class="w">die</span> <span class="w">Ferien.</span></p><button class="speak-btn" data-speak="Wir freuen uns auf die Ferien." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">نترقّب العطلة بسرور.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge schwach">über</span><p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">ärgere</span> <span class="w"><span class="hl">mich</span></span> <span class="w">über</span> <span class="w">den</span> <span class="w">Lärm.</span></p><button class="speak-btn" data-speak="Ich ärgere mich über den Lärm." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">أنزعج من الضجيج.</p></div></div><div class="mistake-box reveal"><h4>⚠️ خطأ شائع: حرف جر خاطئ</h4><div class="mrow bad"><span class="mark">✗</span><span lang="de">Ich interessiere mich an Musik.</span></div><div class="mrow good"><span class="mark">✓</span><span lang="de">Ich interessiere mich für Musik.</span></div><p class="mnote">sich interessieren ⇐ für.</p></div><div class="mistake-box reveal"><h4>⚠️ خطأ شائع: auf مكان über</h4><div class="mrow bad"><span class="mark">✗</span><span lang="de">Ich freue mich über den Urlaub. (لم يأتِ بعد)</span></div><div class="mrow good"><span class="mark">✓</span><span lang="de">Ich freue mich auf den Urlaub.</span></div><p class="mnote">للمستقبل ⇐ auf، ولما حدث ⇐ über.</p></div><div class="practice-panel reveal"><div class="practice-head"><div class="badge-icon">🧩</div><div><h3>تمرين: رتّب الجملة</h3><p>er + interessiert + sich + für + ...</p></div></div><div class="builder-target" id="verbenTarget" aria-live="polite"></div><div class="builder-bank" id="verbenBank"></div><div class="builder-actions"><button class="btn btn-primary btn-sm" data-builder-check="verben">تحقّق ✓</button><button class="btn btn-ghost btn-sm" data-builder-reset="verben">إعادة ترتيب 🔀</button><span class="builder-feedback" id="verbenFeedback"></span></div></div></div></section>
+<section class="section tone-stark" id="dativ"><div class="container"><div class="section-head reveal"><span class="chip chip-stark">Dativ · الانعكاسي</span><span class="kicker" style="margin-top:14px">03 / Dativ</span><h2>mir / dir: مع أجزاء الجسم والمنفعة</h2><p class="section-desc">يتغيّر الضمير الانعكاسي فقط في ich وdu.</p></div><div class="rule-box tone-stark reveal"><div class="icon">👐</div><div><h3>Dativ الانعكاسي: عندما يوجد مفعول مباشر آخر</h3><p>إذا كان في الجملة <span class="de" lang="de">Akkusativ</span> آخر (جزء من الجسم أو ملابس أو شيء) يصبح الضمير الانعكاسي <span class="de" lang="de">Dativ</span>: <span class="de" lang="de">Ich wasche mir die Hände.</span> (الأيدي = Akkusativ). ويختلف الشكل في <span class="de" lang="de">ich ⇒ mir</span> و<span class="de" lang="de">du ⇒ dir</span> فقط.</p></div></div><div class="table-wrap reveal"><table class="cmp"><thead><tr><th class="de-cell">Akkusativ</th><th class="de-cell">Dativ + مفعول</th><th>المعنى</th></tr></thead><tbody><tr><td class="de-cell">Ich wasche mich. <button class="speak-btn" data-speak="Ich wasche mich." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td class="de-cell">Ich wasche mir die Hände. <button class="speak-btn" data-speak="Ich wasche mir die Hände." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td>أغسل يديّ</td></tr><tr><td class="de-cell">Du kämmst dich. <button class="speak-btn" data-speak="Du kämmst dich." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td class="de-cell">Du kämmst dir die Haare. <button class="speak-btn" data-speak="Du kämmst dir die Haare." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td>تمشّط شعرك</td></tr><tr><td class="de-cell">Er putzt sich. <button class="speak-btn" data-speak="Er putzt sich." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td class="de-cell">Er putzt sich die Zähne. <button class="speak-btn" data-speak="Er putzt sich die Zähne." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td>ينظف أسنانه</td></tr><tr><td class="de-cell">Ich ziehe mich an. <button class="speak-btn" data-speak="Ich ziehe mich an." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td class="de-cell">Ich ziehe mir die Jacke an. <button class="speak-btn" data-speak="Ich ziehe mir die Jacke an." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td>أرتدي السترة</td></tr></tbody></table></div><div class="rule-box tone-gemischt reveal"><div class="icon">🛒</div><div><h3>Dativ للمنفعة: لنفسي</h3><p>نضيف <span class="de" lang="de">mir / dir / sich</span> للإشارة إلى أن الفعل لفائدة الفاعل: <span class="de" lang="de">Ich kaufe mir ein Auto.</span> · <span class="de" lang="de">Er bestellt sich einen Kaffee.</span> · <span class="de" lang="de">Ich sehe mir den Film an.</span> · <span class="de" lang="de">Das muss ich mir überlegen.</span></p></div></div><div class="table-wrap reveal"><table class="cmp"><thead><tr><th>الفعل</th><th>مثال</th><th>المعنى</th></tr></thead><tbody><tr><td>sich kaufen</td><td class="de-cell">Ich kaufe mir ein Eis. <button class="speak-btn" data-speak="Ich kaufe mir ein Eis." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td>أشتري لنفسي بوظة</td></tr><tr><td>sich bestellen</td><td class="de-cell">Er bestellt sich einen Tee. <button class="speak-btn" data-speak="Er bestellt sich einen Tee." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td>يطلب لنفسه شايًا</td></tr><tr><td>sich ansehen</td><td class="de-cell">Wir sehen uns den Film an. <button class="speak-btn" data-speak="Wir sehen uns den Film an." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td>نشاهد الفيلم</td></tr><tr><td>sich vorstellen</td><td class="de-cell">Ich stelle mir das vor. <button class="speak-btn" data-speak="Ich stelle mir das vor." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td>أتخيّل ذلك</td></tr><tr><td>sich merken</td><td class="de-cell">Das merke ich mir. <button class="speak-btn" data-speak="Das merke ich mir." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td>سأتذكر ذلك</td></tr><tr><td>sich wünschen</td><td class="de-cell">Ich wünsche mir ein Fahrrad. <button class="speak-btn" data-speak="Ich wünsche mir ein Fahrrad." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td><td>أتمنى دراجة</td></tr></tbody></table></div><div class="examples-grid cols-2 reveal-stagger"><div class="ex-card"><div class="ex-top"><span class="case-badge stark">Dativ</span><p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">wasche</span> <span class="w"><span class="hl hl-stark">mir</span></span> <span class="w">die</span> <span class="w">Hände.</span></p><button class="speak-btn" data-speak="Ich wasche mir die Hände." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">أغسل يديّ.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge stark">Dativ</span><p class="ex-de" lang="de"><span class="w">Du</span> <span class="w">putzt</span> <span class="w"><span class="hl hl-stark">dir</span></span> <span class="w">die</span> <span class="w">Zähne.</span></p><button class="speak-btn" data-speak="Du putzt dir die Zähne." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">تنظف أسنانك.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge stark">لنفسي</span><p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">kaufe</span> <span class="w"><span class="hl hl-stark">mir</span></span> <span class="w">ein</span> <span class="w">Auto.</span></p><button class="speak-btn" data-speak="Ich kaufe mir ein Auto." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">أشتري لنفسي سيارة.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge stark">ansehen</span><p class="ex-de" lang="de"><span class="w">Wir</span> <span class="w">sehen</span> <span class="w"><span class="hl hl-stark">uns</span></span> <span class="w">den</span> <span class="w">Film</span> <span class="w">an.</span></p><button class="speak-btn" data-speak="Wir sehen uns den Film an." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">نشاهد الفيلم. (uns = Dativ هنا)</p></div></div><div class="mistake-box reveal"><h4>⚠️ خطأ شائع: Akkusativ مع مفعول آخر</h4><div class="mrow bad"><span class="mark">✗</span><span lang="de">Ich wasche mich die Hände.</span></div><div class="mrow good"><span class="mark">✓</span><span lang="de">Ich wasche mir die Hände.</span></div><p class="mnote">عندما يوجد Akkusativ آخر ⇐ الانعكاسي Dativ.</p></div><div class="mistake-box reveal"><h4>⚠️ خطأ شائع: Dativ بدون مفعول</h4><div class="mrow bad"><span class="mark">✗</span><span lang="de">Ich wasche mir. (أغسل نفسي)</span></div><div class="mrow good"><span class="mark">✓</span><span lang="de">Ich wasche mich.</span></div><p class="mnote">بدون مفعول آخر ⇐ Akkusativ.</p></div><div class="practice-panel reveal"><div class="practice-head"><div class="badge-icon">🧩</div><div><h3>تمرين: رتّب الجملة</h3><p>ich + wasche + mir + die Hände.</p></div></div><div class="builder-target" id="dativTarget" aria-live="polite"></div><div class="builder-bank" id="dativBank"></div><div class="builder-actions"><button class="btn btn-primary btn-sm" data-builder-check="dativ">تحقّق ✓</button><button class="btn btn-ghost btn-sm" data-builder-reset="dativ">إعادة ترتيب 🔀</button><span class="builder-feedback" id="dativFeedback"></span></div></div></div></section>
+<section class="section tone-gemischt" id="satz"><div class="container"><div class="section-head reveal"><span class="chip chip-gemischt">Satz · الترتيب</span><span class="kicker" style="margin-top:14px">04 / Satz</span><h2>الضمير الانعكاسي في الجملة</h2><p class="section-desc">يتبع الفعل المصرَّف في كل الأزمنة والتراكيب.</p></div><div class="rule-box tone-gemischt reveal"><div class="icon">🧩</div><div><h3>الضمير الانعكاسي مع الأزمنة والأنماط</h3><p>في <span class="de" lang="de">Perfekt</span> نستخدم <span class="de" lang="de">haben</span> دائمًا: <span class="de" lang="de">Ich habe mich gefreut.</span> ومع الفعل الناقص: <span class="de" lang="de">Ich muss mich beeilen.</span> وفي الجملة الفرعية: <span class="de" lang="de">…, weil ich mich freue.</span> ومع الفعل القابل للفصل: <span class="de" lang="de">Ich ziehe mich an.</span></p></div></div><div class="table-wrap reveal"><table class="cmp"><thead><tr><th>الحالة</th><th>الترتيب</th><th>مثال</th></tr></thead><tbody><tr><td>مضارع</td><td>فاعل + فعل + ضمير</td><td class="de-cell">Ich freue mich. <button class="speak-btn" data-speak="Ich freue mich." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td>Inversion</td><td>ظرف + فعل + فاعل + ضمير</td><td class="de-cell">Heute freue ich mich. <button class="speak-btn" data-speak="Heute freue ich mich." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td>Perfekt</td><td>haben + ضمير + Partizip</td><td class="de-cell">Ich habe mich gefreut. <button class="speak-btn" data-speak="Ich habe mich gefreut." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td>ناقص</td><td>ناقص + ضمير … مصدر</td><td class="de-cell">Ich muss mich beeilen. <button class="speak-btn" data-speak="Ich muss mich beeilen." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td>جملة فرعية</td><td>weil + فاعل + ضمير + فعل</td><td class="de-cell">Ich lache, weil ich mich freue. <button class="speak-btn" data-speak="Ich lache, weil ich mich freue." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr><tr><td>قابل للفصل</td><td>فعل + ضمير … مقطع</td><td class="de-cell">Ich ziehe mich an. <button class="speak-btn" data-speak="Ich ziehe mich an." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></td></tr></tbody></table></div><div class="rule-box tone-stark reveal"><div class="icon">📣</div><div><h3>الأمر مع الانعكاسي</h3><p>الضمير يأتي بعد الفعل: <span class="de" lang="de">Beeil dich!</span> · <span class="de" lang="de">Setz dich!</span> · <span class="de" lang="de">Beeilt euch!</span> · <span class="de" lang="de">Beeilen Sie sich!</span> · <span class="de" lang="de">Entschuldigen Sie sich!</span></p></div></div><div class="examples-grid cols-2 reveal-stagger"><div class="ex-card"><div class="ex-top"><span class="case-badge gemischt">Perfekt</span><p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">habe</span> <span class="w"><span class="hl hl-gemischt">mich</span></span> <span class="w">sehr</span> <span class="w"><span class="hl hl-gemischt">gefreut.</span></span></p><button class="speak-btn" data-speak="Ich habe mich sehr gefreut." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">لقد سررتُ كثيرًا.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge gemischt">ناقص</span><p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">muss</span> <span class="w"><span class="hl hl-gemischt">mich</span></span> <span class="w"><span class="hl hl-gemischt">beeilen.</span></span></p><button class="speak-btn" data-speak="Ich muss mich beeilen." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">يجب أن أسرع.</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge gemischt">أمر</span><p class="ex-de" lang="de"><span class="w"><span class="hl hl-gemischt">Setz</span></span> <span class="w">dich</span> <span class="w">bitte!</span></p><button class="speak-btn" data-speak="Setz dich bitte!" aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">اجلس من فضلك!</p></div><div class="ex-card"><div class="ex-top"><span class="case-badge gemischt">weil + Perfekt</span><p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">bin</span> <span class="w">müde,</span> <span class="w">weil</span> <span class="w">ich</span> <span class="w"><span class="hl hl-gemischt">mich</span></span> <span class="w">nicht</span> <span class="w"><span class="hl hl-gemischt">erholt</span></span> <span class="w">habe.</span></p><button class="speak-btn" data-speak="Ich bin müde, weil ich mich nicht erholt habe." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button></div><p class="ex-ar">أنا متعب لأنني لم أستجمّ.</p></div></div><div class="mistake-box reveal"><h4>⚠️ خطأ شائع: ترتيب الضمير في Perfekt</h4><div class="mrow bad"><span class="mark">✗</span><span lang="de">Ich habe gefreut mich.</span></div><div class="mrow good"><span class="mark">✓</span><span lang="de">Ich habe mich gefreut.</span></div><p class="mnote">الضمير بعد haben وقبل Partizip.</p></div><div class="mistake-box reveal"><h4>⚠️ خطأ شائع: الضمير بعد المقطع</h4><div class="mrow bad"><span class="mark">✗</span><span lang="de">Ich ziehe an mich.</span></div><div class="mrow good"><span class="mark">✓</span><span lang="de">Ich ziehe mich an.</span></div><p class="mnote">الضمير بعد الفعل مباشرة والمقطع في النهاية.</p></div><div class="practice-panel reveal"><div class="practice-head"><div class="badge-icon">🧩</div><div><h3>تمرين: رتّب الجملة</h3><p>ich + habe + mich + ... + Partizip.</p></div></div><div class="builder-target" id="satzTarget" aria-live="polite"></div><div class="builder-bank" id="satzBank"></div><div class="builder-actions"><button class="btn btn-primary btn-sm" data-builder-check="satz">تحقّق ✓</button><button class="btn btn-ghost btn-sm" data-builder-reset="satz">إعادة ترتيب 🔀</button><span class="builder-feedback" id="satzFeedback"></span></div></div></div></section>
+<section class="section" id="review"><div class="container"><div class="section-head reveal"><span class="kicker">05 / Zusammenfassung</span><h2>مراجعة سريعة — انقر لقلب كل بطاقة</h2><p class="section-desc">ست بطاقات تلخّص الدرس.</p></div><div class="flip-grid reveal-stagger"><div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة mich · dich · sich"><div class="flip-inner"><div class="flip-face flip-front"><span class="fw" style="color:var(--modal)">mich · dich · sich</span><p style="font-size:.82rem;color:var(--ink-soft)">Akkusativ</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div><div class="flip-face flip-back" style="--tone-soft:var(--modal-soft);--tone-ink:var(--modal-ink)"><p>يطابق الفاعل.</p><div class="ex">Ich freue mich.</div></div></div></div><div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة mir · dir"><div class="flip-inner"><div class="flip-face flip-front"><span class="fw" style="color:var(--stark)">mir · dir</span><p style="font-size:.82rem;color:var(--ink-soft)">Dativ</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div><div class="flip-face flip-back" style="--tone-soft:var(--stark-soft);--tone-ink:var(--stark-ink)"><p>مع مفعول مباشر آخر.</p><div class="ex">Ich wasche mir die Hände.</div></div></div></div><div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة sich freuen"><div class="flip-inner"><div class="flip-face flip-front"><span class="fw" style="color:var(--schwach)">sich freuen</span><p style="font-size:.82rem;color:var(--ink-soft)">auf / über</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div><div class="flip-face flip-back" style="--tone-soft:var(--schwach-soft);--tone-ink:var(--schwach-ink)"><p>auf للمستقبل، über للحاضر.</p><div class="ex">Ich freue mich auf …</div></div></div></div><div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة sich interessieren"><div class="flip-inner"><div class="flip-face flip-front"><span class="fw" style="color:var(--schwach)">sich interessieren</span><p style="font-size:.82rem;color:var(--ink-soft)">für</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div><div class="flip-face flip-back" style="--tone-soft:var(--schwach-soft);--tone-ink:var(--schwach-ink)"><p>حرف جر ثابت.</p><div class="ex">Ich interessiere mich für Musik.</div></div></div></div><div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة Perfekt"><div class="flip-inner"><div class="flip-face flip-front"><span class="fw" style="color:var(--gemischt)">Perfekt</span><p style="font-size:.82rem;color:var(--ink-soft)">haben</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div><div class="flip-face flip-back" style="--tone-soft:var(--gemischt-soft);--tone-ink:var(--gemischt-ink)"><p>Ich habe mich gefreut.</p><div class="ex">Ich habe mich gefreut.</div></div></div></div><div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة الأمر"><div class="flip-inner"><div class="flip-face flip-front"><span class="fw" style="color:var(--gemischt)">الأمر</span><p style="font-size:.82rem;color:var(--ink-soft)">بعد الفعل</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div><div class="flip-face flip-back" style="--tone-soft:var(--gemischt-soft);--tone-ink:var(--gemischt-ink)"><p>Beeil dich!</p><div class="ex">Beeilen Sie sich!</div></div></div></div></div><div class="reveal" style="margin-top:40px"><h3 style="font-family:var(--font-ar-head);font-size:1.05rem;margin-bottom:6px">🏅 إنجازاتك في هذا الدرس</h3><div class="achievements-panel" id="achievementsPanel"><div class="ach-item" data-ach="start"><div class="ach-circle">🚀</div><small>بداية الرحلة</small></div><div class="ach-item" data-ach="formen"><div class="ach-circle">🔁</div><small>خبير الأشكال</small></div><div class="ach-item" data-ach="verben"><div class="ach-circle">🔤</div><small>خبير الأفعال</small></div><div class="ach-item" data-ach="dativ"><div class="ach-circle">👐</div><small>خبير Dativ</small></div><div class="ach-item" data-ach="satz"><div class="ach-circle">🧩</div><small>خبير الترتيب</small></div><div class="ach-item" data-ach="quiz"><div class="ach-circle">🏆</div><small>بطل الاختبار</small></div></div><div style="margin-top:18px"><div style="display:flex;justify-content:space-between;font-size:.82rem;color:var(--ink-soft);margin-bottom:4px"><span>تقدّمك الإجمالي</span><span id="overallPct">0%</span></div><div class="progressbar-track"><div class="progressbar-fill" id="overallFill" style="width:0%"></div></div></div></div></div></section>
+<section class="section" id="quiz"><div class="container"><div class="section-head reveal"><span class="kicker">06 / Abschlusstest</span><h2>الاختبار الختامي — الضمائر الانعكاسية</h2><p class="section-desc">خمسة عشر سؤالًا، منها سؤالان للاستماع.</p></div><div id="finalQuizContainer" class="reveal"></div><div class="quiz-summary" id="quizSummary"><div class="score-ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--border)" stroke-width="10"/><circle id="scoreRingFill" cx="60" cy="60" r="52" fill="none" stroke="var(--modal)" stroke-width="10" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="327"/></svg><div class="num" id="scoreRingNum">0/15</div></div><h3 id="quizResultTitle">نتيجتك</h3><p id="quizResultDesc"></p><button class="btn btn-primary" id="quizRetryBtn">أعد الاختبار 🔄</button></div></div></section>
+</main>
+<footer><div class="container"><div class="cheat-card reveal"><h2 style="font-family:var(--font-ar-head);font-size:1.2rem;margin-bottom:4px">📋 البطاقة المرجعية السريعة</h2><div class="cheat-grid"><div class="cheat-item" style="--tone:var(--modal)"><b>الأشكال</b><span>mich · dich · sich · uns · euch · sich</span></div><div class="cheat-item" style="--tone:var(--stark)"><b>Dativ</b><span>mir · dir (فقط ich وdu)</span></div><div class="cheat-item" style="--tone:var(--schwach)"><b>مع حرف جر</b><span>sich freuen auf/über · sich interessieren für</span></div><div class="cheat-item" style="--tone:var(--gemischt)"><b>Perfekt</b><span>Ich habe mich gefreut</span></div><div class="cheat-item" style="--tone:var(--gemischt)"><b>الأمر</b><span>Beeil dich! · Beeilen Sie sich!</span></div><div class="cheat-item" style="--tone:var(--stark)"><b>المنفعة</b><span>Ich kaufe mir ein Auto</span></div></div><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px"><button class="btn btn-ghost btn-sm" id="printBtn">طباعة البطاقة</button><a href="#overview" class="btn btn-ghost btn-sm">العودة إلى البداية ↑</a></div></div><div class="foot-bottom"><span>درس الضمائر الانعكاسية Reflexivpronomen لمستوى A2.</span></div></div></footer>
+<div class="fab-stack">
+  <button class="fab" id="backToTop" aria-label="العودة إلى الأعلى" title="العودة إلى الأعلى">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<div id="speechBar" role="region" aria-label="أدوات النطق الصوتي">
+  <div class="speak-indicator" id="speakIndicator" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="now-playing">
+    <small>الآن يُنطق</small>
+    <span id="nowPlayingText">—</span>
+  </div>
+  <div class="sp-controls">
+    <button class="sp-btn" id="spReplay" aria-label="إعادة النطق" title="إعادة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12a9 9 0 1 1 3 6.7"/><path d="M3 16v-4h4"/></svg></button>
+    <button class="sp-btn" id="spPlayPause" aria-label="إيقاف/تشغيل مؤقت" title="إيقاف مؤقت"><svg viewBox="0 0 24 24" fill="currentColor" id="spPlayIcon"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+    <button class="sp-btn" id="spGotoVoice" aria-label="الانتقال إلى إعدادات الصوت" title="إعدادات الصوت"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 1a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M9 22h6"/></svg></button>
+  </div>
+</div>
+
+<div id="achToastHost" aria-live="polite"></div>
+
+<script>
+const LS={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+</script>
+<script>
+/* ==========================================================================
+   THEME — ثلاثي: فاتح / داكن / النظام (الافتراضي: داكن)
+   ========================================================================== */
+(function themeModule(){
+  const root = document.documentElement;
+  const KEY = 'rf_theme';
+  const mql = window.matchMedia('(prefers-color-scheme: dark)');
+  const btns = {
+    light: document.getElementById('themeLight'),
+    dark: document.getElementById('themeDark'),
+    system: document.getElementById('themeSystem')
+  };
+  function resolvedIsDark(mode){
+    if(mode === 'dark') return true;
+    if(mode === 'light') return false;
+    return mql.matches;
+  }
+  function apply(mode){
+    root.classList.toggle('dark', resolvedIsDark(mode));
+    Object.keys(btns).forEach(k => btns[k].classList.toggle('on', k === mode));
+  }
+  function setMode(mode){ LS.set(KEY, mode); apply(mode); }
+  const saved = LS.get(KEY);
+  apply(saved ? saved : 'dark');
+  btns.light.addEventListener('click', ()=> setMode('light'));
+  btns.dark.addEventListener('click', ()=> setMode('dark'));
+  btns.system.addEventListener('click', ()=> setMode('system'));
+  mql.addEventListener('change', ()=>{
+    const current = LS.get(KEY) || 'dark';
+    if(current === 'system') apply('system');
+  });
+})();
+
+/* ==========================================================================
+   PROGRESS BAR + SCROLLSPY + REVEAL ON SCROLL
+   ========================================================================== */
+(function scrollModule(){
+  const bar = document.getElementById('readProgress');
+  function updateProgress(){
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const height = h.scrollHeight - h.clientHeight;
+    const pct = height > 0 ? (scrolled/height)*100 : 0;
+    bar.style.setProperty('--progress', pct + '%');
+    bar.setAttribute('aria-valuenow', Math.round(pct));
+    document.getElementById('backToTop').classList.toggle('show', scrolled > 500);
+  }
+  document.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  const sections = document.querySelectorAll('main .section, main .hero');
+  const navlinks = document.querySelectorAll('.navlink');
+  const visited = new Set(JSON.parse(LS.get('rf_visited') || '[]'));
+  visited.forEach(id => { const l = document.querySelector('.navlink[data-nav="'+id+'"]'); if(l) l.setAttribute('data-done','true'); });
+
+  const spy = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      const id = entry.target.id;
+      if(!id) return;
+      const link = document.querySelector('.navlink[data-nav="'+id+'"]');
+      if(entry.isIntersecting){
+        navlinks.forEach(l=>l.classList.remove('active'));
+        if(link) link.classList.add('active');
+        visited.add(id);
+        LS.set('rf_visited', JSON.stringify([...visited]));
+        if(link) link.setAttribute('data-done','true');
+        if(window.ADJ) window.ADJ.updateOverallProgress();
+      }
+    });
+  }, {rootMargin:'-15% 0px -70% 0px', threshold:0});
+  sections.forEach(s=>spy.observe(s));
+
+  const reveals = document.querySelectorAll('.reveal, .reveal-stagger');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.15});
+  reveals.forEach(r=>io.observe(r));
+})();
+
+/* ==========================================================================
+   FULLSCREEN + SEARCH
+   ========================================================================== */
+(function uiModule(){
+  document.getElementById('fullscreenBtn').addEventListener('click', ()=>{
+    if(!document.fullscreenElement){ document.documentElement.requestFullscreen().catch(()=>{}); }
+    else{ document.exitFullscreen(); }
+  });
+  const searchBox = document.getElementById('searchBox');
+  const searchInput = document.getElementById('searchInput');
+  document.getElementById('searchToggle').addEventListener('click', ()=>{
+    searchBox.classList.toggle('open');
+    if(searchBox.classList.contains('open')) searchInput.focus();
+  });
+  let lastHit = null;
+  searchInput.addEventListener('keydown', (e)=>{
+    if(e.key !== 'Enter') return;
+    const q = searchInput.value.trim().toLowerCase();
+    if(!q) return;
+    const candidates = document.querySelectorAll('main .ex-de, main h2, main .section-desc, main p');
+    let found = null;
+    for(const el of candidates){ if(el === lastHit) continue; if(el.textContent.toLowerCase().includes(q)){ found = el; break; } }
+    if(!found){ for(const el of candidates){ if(el.textContent.toLowerCase().includes(q)){ found = el; break; } } }
+    if(found){
+      lastHit = found;
+      found.scrollIntoView({behavior:'smooth', block:'center'});
+      const old = found.style.background;
+      found.style.transition = 'background .3s';
+      found.style.background = 'var(--both-soft)';
+      setTimeout(()=>{ found.style.background = old; }, 1400);
+    }
+  });
+})();
+</script>
+
+<script>
+/* ==========================================================================
+   SPEECH ENGINE — نطق ألماني (de-DE) عبر Web Speech API
+   طبقة تجريد: AudioService.provider هي BrowserSpeechProvider حاليًا؛ الواجهة
+   (getVoices / speak / stop) مصمّمة لتسمح بإضافة CloudTTSProvider لاحقًا عبر
+   خادم آمن (بدون أي مفتاح API في الواجهة الأمامية) دون تعديل بقية النظام.
+   ========================================================================== */
+const TEST_SENTENCE = 'Hallo! Wie geht es dir? Ich lerne heute Deutsch.';
+
+const AudioService = (function(){
+  const hasSynth = 'speechSynthesis' in window;
+  const synth = hasSynth ? window.speechSynthesis : null;
+  const bar = document.getElementById('speechBar');
+  const novoiceBanner = document.getElementById('novoiceBanner');
+  const nowPlayingText = document.getElementById('nowPlayingText');
+  const voiceList = document.getElementById('voiceList');
+  const voiceLoading = document.getElementById('voiceLoading');
+  const speedChips = document.querySelectorAll('.speed-chip');
+  const playPauseBtn = document.getElementById('spPlayPause');
+  const playIcon = document.getElementById('spPlayIcon');
+  const RATE_KEY = 'rf_rate';
+  const VOICE_KEY = 'rf_voice';
+
+  const BrowserSpeechProvider = {
+    supported: hasSynth,
+    async getVoices(){
+      if(!hasSynth) return [];
+      const all = synth.getVoices();
+      return all.filter(v => v.lang && v.lang.toLowerCase().startsWith('de'));
+    },
+    speak(text, opts){
+      if(!hasSynth) return;
+      const utter = new SpeechSynthesisUtterance(text);
+      if(opts.voice) utter.voice = opts.voice;
+      utter.lang = (opts.voice && opts.voice.lang) || 'de-DE';
+      utter.rate = opts.rate || 1;
+      utter.onboundary = opts.onboundary;
+      utter.onstart = opts.onstart;
+      utter.onend = opts.onend;
+      utter.onerror = opts.onerror;
+      synth.cancel();
+      synth.speak(utter);
+      return utter;
+    },
+    stop(){ if(hasSynth) synth.cancel(); },
+    pause(){ if(hasSynth) synth.pause(); },
+    resume(){ if(hasSynth) synth.resume(); }
+  };
+
+  /* نقطة توسّع مستقبلية — AudioProviderSelector:
+     واجهة TTSProvider (getVoices/speak/stop) تسمح بإضافة CloudTTSProvider
+     لاحقًا (يُستدعى عبر خادم آمن يحمل مفتاح API الخاص به، لا عبر الواجهة
+     الأمامية) دون تعديل بقية النظام. طالما لا يوجد مزوّد سحابي مُهيّأ فعليًا،
+     يبقى BrowserSpeechProvider هو المزوّد النشط الوحيد، ويستمر الدرس بالعمل
+     الكامل بدونه. */
+  const provider = BrowserSpeechProvider;
+
+  let deVoices = [];
+  let selectedVoiceIdx = 0;
+  let currentRate = parseFloat(LS.get(RATE_KEY) || '1');
+  let currentUtterance = null;
+  let currentText = '';
+  let currentHighlightEls = [];
+  let currentSentenceCard = null;
+  let isPaused = false;
+  let voicesEverFound = false;
+
+  setActiveChip(currentRate);
+  function setActiveChip(rate){
+    speedChips.forEach(c => c.classList.toggle('on', parseFloat(c.dataset.rate) === rate));
+  }
+  speedChips.forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      currentRate = parseFloat(chip.dataset.rate);
+      LS.set(RATE_KEY, currentRate);
+      setActiveChip(currentRate);
+    });
+  });
+
+  function voiceLabel(v){
+    const lang = (v.lang || '').toLowerCase();
+    let region = 'Deutsch';
+    if(lang.includes('at')) region = 'Deutsch — Österreich';
+    else if(lang.includes('ch')) region = 'Deutsch — Schweiz';
+    else if(lang.includes('de')) region = 'Deutsch — Deutschland';
+    return { name: v.name.replace(/^Google\s|^Microsoft\s/,''), region, lang: v.lang };
+  }
+
+  function renderVoiceList(){
+    voiceList.innerHTML = '';
+    if(deVoices.length === 0){
+      const p = document.createElement('p');
+      p.className = 'voice-loading';
+      p.textContent = 'لا يوجد أي صوت ألماني مثبَّت في هذا المتصفح حاليًا.';
+      voiceList.appendChild(p);
+      return;
+    }
+    deVoices.forEach((v,i)=>{
+      const info = voiceLabel(v);
+      const row = document.createElement('div');
+      row.className = 'voice-item' + (i === selectedVoiceIdx ? ' selected' : '');
+      row.setAttribute('role','radio');
+      row.setAttribute('aria-checked', i === selectedVoiceIdx ? 'true' : 'false');
+      row.tabIndex = 0;
+      row.innerHTML =
+        '<span class="radio-dot" aria-hidden="true"></span>' +
+        '<span class="voice-info"><span class="voice-name">'+info.name+'</span><span class="voice-meta">'+info.region+' · '+info.lang+'</span></span>' +
+        '<span class="voice-badge">'+(i === selectedVoiceIdx ? 'مُختار' : 'اختر')+'</span>' +
+        '<button type="button" class="voice-test-btn" data-test-idx="'+i+'" aria-label="اختبار هذا الصوت">'+
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>اختبار'+
+        '</button>';
+      row.addEventListener('click', (e)=>{
+        if(e.target.closest('.voice-test-btn')) return;
+        selectVoice(i);
+      });
+      row.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectVoice(i); }
+      });
+      row.querySelector('.voice-test-btn').addEventListener('click', (e)=>{
+        e.stopPropagation();
+        testVoice(i, e.currentTarget);
+      });
+      voiceList.appendChild(row);
+    });
+  }
+
+  function selectVoice(i){
+    selectedVoiceIdx = i;
+    LS.set(VOICE_KEY, i);
+    renderVoiceList();
+  }
+
+  function testVoice(i, btnEl){
+    const voice = deVoices[i];
+    if(!voice) return;
+    document.querySelectorAll('.voice-test-btn').forEach(b=>b.classList.remove('testing'));
+    if(btnEl) btnEl.classList.add('testing');
+    provider.speak(TEST_SENTENCE, {
+      voice: voice,
+      rate: currentRate,
+      onstart(){ bar.classList.add('show','playing'); document.body.classList.add('speech-active'); nowPlayingText.textContent = TEST_SENTENCE; },
+      onend(){ bar.classList.remove('playing'); if(btnEl) btnEl.classList.remove('testing'); },
+      onerror(){ bar.classList.remove('playing'); if(btnEl) btnEl.classList.remove('testing'); }
+    });
+  }
+
+  async function loadVoices(){
+    if(!provider.supported){
+      novoiceBanner.classList.add('show');
+      voiceLoading && (voiceLoading.textContent = 'متصفحك لا يدعم خاصية النطق الآلي (Web Speech API).');
+      return;
+    }
+    deVoices = await provider.getVoices();
+    if(deVoices.length === 0){
+      renderVoiceList();
+      novoiceBanner.classList.add('show');
+      return;
+    }
+    voicesEverFound = true;
+    novoiceBanner.classList.remove('show');
+    const savedVoice = parseInt(LS.get(VOICE_KEY), 10);
+    if(!isNaN(savedVoice) && deVoices[savedVoice]) selectedVoiceIdx = savedVoice;
+    else{
+      const preferredIdx = deVoices.findIndex(v => /de-DE/i.test(v.lang) && /google|natural|online/i.test(v.name));
+      selectedVoiceIdx = preferredIdx > -1 ? preferredIdx : 0;
+    }
+    renderVoiceList();
+  }
+  loadVoices();
+  if(hasSynth && synth.onvoiceschanged !== undefined){ synth.onvoiceschanged = loadVoices; }
+
+  function clearHighlights(){
+    currentHighlightEls.forEach(el => el.classList.remove('speaking'));
+    currentHighlightEls = [];
+    if(currentSentenceCard){ currentSentenceCard.classList.remove('sentence-speaking'); currentSentenceCard = null; }
+  }
+
+  function computeWordRanges(containerEl, fullText){
+    const spans = Array.from(containerEl.querySelectorAll('.w'));
+    let cursor = 0;
+    const ranges = [];
+    spans.forEach(span=>{
+      const t = span.textContent;
+      const idx = fullText.indexOf(t, cursor);
+      if(idx === -1) return;
+      ranges.push({start:idx, end:idx+t.length, el:span});
+      cursor = idx + t.length;
+    });
+    return ranges;
+  }
+
+  function speak(text, sourceEl){
+    if(!text) return;
+    if(!provider.supported){
+      novoiceBanner.classList.add('show');
+      novoiceBanner.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+    clearHighlights();
+    const voice = deVoices[selectedVoiceIdx];
+
+    let ranges = [];
+    const card = sourceEl && sourceEl.closest ? sourceEl.closest('.ex-de') : null;
+    if(card && card.querySelectorAll('.w').length){
+      ranges = computeWordRanges(card, text);
+      currentSentenceCard = card.closest('.ex-card');
+      if(currentSentenceCard) currentSentenceCard.classList.add('sentence-speaking');
+    } else if(sourceEl && sourceEl.classList && sourceEl.classList.contains('w')){
+      sourceEl.classList.add('speaking');
+      currentHighlightEls.push(sourceEl);
+    }
+
+    currentUtterance = provider.speak(text, {
+      voice: voice,
+      rate: currentRate,
+      onboundary(ev){
+        if(ev.name && ev.name !== 'word') return;
+        const hit = ranges.find(r => ev.charIndex >= r.start && ev.charIndex < r.end);
+        if(hit){
+          currentHighlightEls.forEach(el=>el.classList.remove('speaking'));
+          currentHighlightEls = [hit.el];
+          hit.el.classList.add('speaking');
+        }
+      },
+      onstart(){
+        bar.classList.add('show','playing');
+        document.body.classList.add('speech-active');
+        nowPlayingText.textContent = text;
+        playIcon.innerHTML = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+        isPaused = false;
+      },
+      onend(){ bar.classList.remove('playing'); clearHighlights(); },
+      onerror(){
+        bar.classList.remove('playing'); clearHighlights();
+        if(!voicesEverFound){
+          nowPlayingText.textContent = 'لا يتوفّر صوت في هذا المتصفح';
+          bar.classList.add('show');
+          document.body.classList.add('speech-active');
+          novoiceBanner.classList.add('show');
+        }
+      }
+    });
+    currentText = text;
+  }
+
+  playPauseBtn.addEventListener('click', ()=>{
+    if(!currentUtterance || !hasSynth) return;
+    if(synth.speaking && !isPaused){
+      provider.pause(); isPaused = true; bar.classList.remove('playing');
+      playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+    } else if(isPaused){
+      provider.resume(); isPaused = false; bar.classList.add('playing');
+      playIcon.innerHTML = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+    }
+  });
+  document.getElementById('spReplay').addEventListener('click', ()=>{
+    if(currentText) speak(currentText, currentSentenceCard ? currentSentenceCard.querySelector('.ex-de') : null);
+  });
+  document.getElementById('spGotoVoice').addEventListener('click', ()=>{
+    document.getElementById('voicePanel').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  document.addEventListener('click', function(e){
+    const wordEl = e.target.closest('.w');
+    if(wordEl){ speak(wordEl.textContent.trim().replace(/[.,!?—–]+$/,''), wordEl); return; }
+    const speakBtn = e.target.closest('[data-speak]');
+    if(speakBtn){
+      const card = speakBtn.closest('.ex-card');
+      speak(speakBtn.getAttribute('data-speak'), card ? card.querySelector('.ex-de') : speakBtn);
+      return;
+    }
+    const deEl = e.target.closest('.de, .de-cell');
+    if(deEl && !deEl.closest('.ex-de') && !deEl.closest('table') && !deEl.closest('.voice-item')){ speak(deEl.textContent.trim(), deEl); }
+  });
+
+  document.getElementById('heroSpeakDemo').addEventListener('click', ()=>{
+    const firstEx = document.querySelector('#overview .ex-de');
+    speak('Das Buch liegt auf dem Tisch.', firstEx);
+  });
+
+  return { speak };
+})();
+</script>
+
+<script>
+/* BUILDER — تمارين ترتيب الجمل */
+const SentenceBuilder=(function(){
+  const configs={"formen": {"tokens": ["Ich", "freue", "mich", "auf", "das", "Wochenende."], "hintAr": "الترجمة: أترقّب عطلة نهاية الأسبوع بسرور. — sich freuen auf."}, "verben": {"tokens": ["Er", "interessiert", "sich", "für", "Musik."], "hintAr": "الترجمة: يهتم بالموسيقى. — sich interessieren für."}, "dativ": {"tokens": ["Ich", "wasche", "mir", "die", "Hände."], "hintAr": "الترجمة: أغسل يديّ. — Akkusativ آخر ⇐ mir."}, "satz": {"tokens": ["Ich", "habe", "mich", "heute", "beeilt."], "hintAr": "الترجمة: أسرعتُ اليوم. — Perfekt بـ haben."}};
+  function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+    if(JSON.stringify(a)===JSON.stringify(arr)&&a.length>2){[a[0],a[1]]=[a[1],a[0]];}return a;}
+  function render(key){
+    const cfg=configs[key],target=document.getElementById(key+'Target'),bank=document.getElementById(key+'Bank'),fb=document.getElementById(key+'Feedback');
+    if(!target||!bank||!fb)return;
+    target.innerHTML='';target.classList.remove('correct','wrong');fb.textContent='';fb.className='builder-feedback';bank.innerHTML='';
+    shuffle(cfg.tokens).forEach(word=>{
+      const chip=document.createElement('button');chip.className='word-chip';chip.type='button';chip.textContent=word;
+      chip.addEventListener('click',()=>{
+        if(chip.classList.contains('placed'))return;
+        chip.classList.add('placed');
+        const p=document.createElement('button');p.type='button';p.className='word-chip in-target';p.textContent=word;
+        p.addEventListener('click',()=>{p.remove();chip.classList.remove('placed');target.classList.remove('correct','wrong');fb.textContent='';});
+        target.appendChild(p);
+      });
+      bank.appendChild(chip);
+    });
+  }
+  function check(key){
+    const cfg=configs[key],target=document.getElementById(key+'Target'),fb=document.getElementById(key+'Feedback');
+    const placed=Array.from(target.children).map(c=>c.textContent);
+    target.classList.remove('correct','wrong');
+    if(!placed.length)return;
+    if(JSON.stringify(placed)===JSON.stringify(cfg.tokens)){
+      target.classList.add('correct');fb.textContent='✓ صحيح تمامًا! '+cfg.hintAr;fb.className='builder-feedback ok';
+      if(window.ADJ)window.ADJ.unlock(key);
+    }else{target.classList.add('wrong');fb.textContent='✗ ليس تمامًا — راجع القاعدة أعلاه.';fb.className='builder-feedback no';}
+  }
+  document.addEventListener('click',e=>{
+    const c=e.target.closest('[data-builder-check]');if(c){check(c.dataset.builderCheck);return;}
+    const r=e.target.closest('[data-builder-reset]');if(r){render(r.dataset.builderReset);}
+  });
+  Object.keys(configs).forEach(render);
+})();
+
+</script>
+<script>
+/* ACHIEVEMENTS */
+window.ADJ=(function(){
+  const KEY='rf_achievements',TOTAL=7;
+  const LABELS={"start": ["بداية الرحلة", "🚀"], "formen": ["خبير الأشكال", "🔁"], "verben": ["خبير الأفعال", "🔤"], "dativ": ["خبير Dativ", "👐"], "satz": ["خبير الترتيب", "🧩"], "quiz": ["بطل الاختبار", "🏆"]};
+  let ach={};try{ach=JSON.parse(LS.get(KEY)||'{}');}catch(e){ach={};}
+  function save(){LS.set(KEY,JSON.stringify(ach));}
+  function toast(t,em){
+    const h=document.getElementById('achToastHost'),d=document.createElement('div');d.className='ach-toast';
+    d.innerHTML='<span class="emoji">'+em+'</span><div><b>شارة جديدة!</b><span>'+t+'</span></div>';
+    h.appendChild(d);requestAnimationFrame(()=>d.classList.add('show'));
+    setTimeout(()=>{d.classList.remove('show');setTimeout(()=>d.remove(),500);},3200);
+  }
+  function progress(){
+    let v=[];try{v=JSON.parse(LS.get('rf_visited')||'[]');}catch(e){}
+    const n=Object.keys(LABELS).filter(k=>ach[k]).length;
+    const pct=Math.min(100,Math.round(((v.length/TOTAL)*0.5+(n/Object.keys(LABELS).length)*0.5)*100));
+    const f=document.getElementById('overallFill'),l=document.getElementById('overallPct');
+    if(f)f.style.width=pct+'%';if(l)l.textContent=pct+'%';
+  }
+  function unlock(k){
+    if(!ach[k]){ach[k]=true;save();
+      const it=document.querySelector('.ach-item[data-ach="'+k+'"]');if(it)it.classList.add('unlocked');
+      if(LABELS[k])toast(LABELS[k][0],LABELS[k][1]);}
+    progress();
+  }
+  function checkStart(){
+    let v=[];try{v=JSON.parse(LS.get('rf_visited')||'[]');}catch(e){}
+    if(v.length>=1&&!ach.start)unlock('start');else progress();
+  }
+  Object.keys(ach).forEach(k=>{if(ach[k]){const it=document.querySelector('.ach-item[data-ach="'+k+'"]');if(it)it.classList.add('unlocked');}});
+  progress();
+  return {unlock,updateOverallProgress:checkStart};
+})();
+</script>
+
+<script>
+/* QUIZ ENGINE */
+function createQuiz(container,questions,opts){
+  opts=opts||{};container.innerHTML='';let score=0,answered=0;
+  questions.forEach(q=>{
+    const qd=document.createElement('div');qd.className='quiz-q';
+    const qt=document.createElement('div');qt.className='qtext';
+    qt.innerHTML=q.q+(q.de?' <br><span class="de">'+q.de+'</span>':'');qd.appendChild(qt);
+    const od=document.createElement('div');od.className='qopts';
+    q.options.forEach((txt,oi)=>{
+      const btn=document.createElement('button');btn.type='button';btn.className='qopt';
+      const sp=document.createElement('span');sp.className='de';sp.style.fontFamily='inherit';sp.textContent=txt;btn.appendChild(sp);
+      btn.addEventListener('click',()=>{
+        if(qd.dataset.answered)return;qd.dataset.answered='true';answered++;
+        if(oi===q.correct){score++;btn.classList.add('correct');}
+        else{btn.classList.add('incorrect');od.children[q.correct].classList.add('correct');}
+        Array.from(od.children).forEach(b=>b.disabled=true);
+        if(q.explain){const ex=document.createElement('div');ex.className='quiz-explain show';ex.textContent=q.explain;qd.appendChild(ex);}
+        if(answered===questions.length&&opts.onComplete)opts.onComplete(score,questions.length);
+      });
+      od.appendChild(btn);
+    });
+    qd.appendChild(od);container.appendChild(qd);
+  });
+}
+const finalQuestions=[
+ {q:'اختر الضمير:',de:'Ich freue ___.',options:['mir', 'mich'],correct:1,explain:'ich ⇐ mich.'},
+ {q:'اختر الضمير:',de:'Du beeilst ___.',options:['dich', 'dir'],correct:0,explain:'du ⇐ dich.'},
+ {q:'اختر الضمير:',de:'Er ärgert ___.',options:['ihn', 'sich'],correct:1,explain:'er ⇐ sich.'},
+ {q:'اختر الضمير:',de:'Wir treffen ___ morgen.',options:['uns', 'sich'],correct:0,explain:'wir ⇐ uns.'},
+ {q:'اختر الضمير:',de:'Ihr setzt ___.',options:['sich', 'euch'],correct:1,explain:'ihr ⇐ euch.'},
+ {q:'اختر الضمير:',de:'Sie (جمع) freuen ___.',options:['sich', 'sie'],correct:0,explain:'sie ⇐ sich.'},
+ {q:'Dativ:',de:'Ich wasche ___ die Hände.',options:['mir', 'mich'],correct:0,explain:'مفعول آخر ⇐ Dativ.'},
+ {q:'Dativ:',de:'Du putzt ___ die Zähne.',options:['dich', 'dir'],correct:1,explain:'مفعول آخر ⇐ Dativ.'},
+ {q:'حرف الجر:',de:'Ich interessiere mich ___ Musik.',options:['für', 'an'],correct:0,explain:'sich interessieren für.'},
+ {q:'حرف الجر:',de:'Ich freue mich ___ den Urlaub. (المستقبل)',options:['über', 'auf'],correct:1,explain:'للمستقبل ⇐ auf.'},
+ {q:'حرف الجر:',de:'Er ärgert sich ___ den Lärm.',options:['über', 'auf'],correct:0,explain:'sich ärgern über.'},
+ {q:'الترتيب:',de:'اختر الجملة الصحيحة',options:['Ich habe mich gefreut.', 'Ich habe gefreut mich.'],correct:0,explain:'الضمير بعد haben.'},
+ {q:'الأمر:',de:'___ dich!',options:['Beeilst', 'Beeil'],correct:1,explain:'أمر ⇐ Beeil dich.'},
+ {q:'استمع ثم اختر ما سمعته: <button type="button" class="speak-btn" data-speak="Ich freue mich auf den Urlaub." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>',options:['Ich freue mich über den Urlaub.', 'Ich freue mich auf den Urlaub.'],correct:1,explain:'سمعت auf.'},
+ {q:'استمع ثم اختر ما سمعته: <button type="button" class="speak-btn" data-speak="Wir treffen uns um acht." aria-label="استمع للجملة الألمانية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>',options:['Wir treffen uns um acht.', 'Wir treffen uns um neun.'],correct:0,explain:'سمعت acht.'}
+];
+function renderFinalQuiz(){
+  const c=document.getElementById('finalQuizContainer'),sm=document.getElementById('quizSummary');
+  sm.classList.remove('show');c.style.display='';
+  createQuiz(c,finalQuestions,{onComplete:(score,total)=>{setTimeout(()=>{
+    c.style.display='none';sm.classList.add('show');
+    const circ=2*Math.PI*52,ring=document.getElementById('scoreRingFill');
+    ring.setAttribute('stroke-dasharray',circ.toFixed(0));ring.style.transition='stroke-dashoffset 1s ease-out';
+    requestAnimationFrame(()=>ring.setAttribute('stroke-dashoffset',(circ*(1-score/total)).toFixed(0)));
+    document.getElementById('scoreRingNum').textContent=score+'/'+total;
+    const t=document.getElementById('quizResultTitle'),d=document.getElementById('quizResultDesc');
+    if(score>=13){t.textContent='🥇 ممتاز — أتقنت الضمائر الانعكاسية!';d.textContent='الضمائر الانعكاسية صارت في متناول يدك.';ring.style.stroke='var(--stark)';}
+    else if(score>=9){t.textContent='🥈 جيد جدًا!';d.textContent='أنت قريب من الإتقان — راجع الأسئلة التي أخطأت فيها.';ring.style.stroke='var(--gemischt)';}
+    else{t.textContent='🥉 استمر في التدرّب';d.textContent='راجع أقسام الدرس المتعلقة بأخطائك ثم أعد المحاولة.';ring.style.stroke='var(--schwach)';}
+    if(score>=10)window.ADJ.unlock('quiz');
+  },400);}});
+}
+renderFinalQuiz();
+document.getElementById('quizRetryBtn').addEventListener('click',renderFinalQuiz);
+document.querySelectorAll('.flip-card').forEach(card=>{
+  function tg(){const f=card.classList.toggle('flipped');card.setAttribute('aria-pressed',f?'true':'false');}
+  card.addEventListener('click',tg);
+  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tg();}});
+});
+document.getElementById('printBtn').addEventListener('click',()=>window.print());
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-grammar-23-reflexivpronomen" data-category="a2-grammar" data-title="الضمائر الانعكاسية — Reflexivpronomen" data-root="../../" defer></script>
+</body>
+</html>

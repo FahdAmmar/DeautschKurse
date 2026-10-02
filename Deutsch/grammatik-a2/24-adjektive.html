@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>الصفات الألمانية Adjektive — شرح شامل لمستوى A2: التصريف ودرجات المقارنة</title>
+<meta name="description" content="شرح تفاعلي شامل للصفات الألمانية لمستوى A2: الفرق بين الصفة المسندة (بلا نهاية) والصفة الموصوفة (بنهاية)، تصريف الصفات الثلاثة (schwach بعد der/die/das، gemischt بعد ein/eine/ein، stark بلا أداة تعريف)، القاعدة الموحّدة لفهم كل الأنماط، ودرجات المقارنة (Komparativ وSuperlativ) بما فيها الصفات الشاذة — مع عشرات الأمثلة الصوتية وتمارين واختبار ختامي">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================================================
+   DESIGN TOKENS — تصريف الصفات: نفس مصطلحات الأفعال (schwach/stark/gemischt)
+   المفهوم البصري: نحاسي-كهرماني = schwache Deklination (بعد der/die/das)،
+   ذهبي = gemischte Deklination (بعد ein/eine/ein)، بنفسجي = starke
+   Deklination (بلا أداة تعريف إطلاقًا)، وسماوي = المقارنة الشاملة ودرجات
+   المقارنة (Steigerung). الوضع الداكن افتراضي مع دعم كامل للفاتح والنظام.
+   ========================================================================== */
+:root{
+  --bg:#F5F6F4;
+  --bg-soft:#FAFAF8;
+  --surface:#FFFFFF;
+  --surface-alt:#FBFBF9;
+  --ink:#1B1C1E;
+  --ink-soft:#5A5C61;
+  --ink-faint:#8D8F95;
+  --border:#E3E4E0;
+  --border-strong:#D2D3CD;
+  --path:#CBCCC5;
+
+  --schwach:#B2392E;    --schwach-soft:#F7E1DE;   --schwach-ink:#7E281F;
+  --modal:#166E7A;     --modal-soft:#DBEEF0;    --modal-ink:#0D4D56;
+  --stark:#6A3FA0;    --stark-soft:#EAE0F5;   --stark-ink:#4A2B70;
+  --ok:#3F7D4A;       --ok-soft:#DCEEDF;      --ok-ink:#2C5A34;
+
+  --gemischt:#A2740F;  --gemischt-soft:#F3E6C6;  --gemischt-ink:#75530C;   /* الأفعال المختلطة */
+
+  --danger:#B8302F;   --danger-soft:#F8DEDD;
+  --gold:#A2740F;
+
+  --shadow-sm:0 1px 2px rgba(20,20,18,.07), 0 1px 1px rgba(20,20,18,.05);
+  --shadow-md:0 8px 24px -8px rgba(20,20,18,.15), 0 2px 8px -2px rgba(20,20,18,.09);
+  --shadow-lg:0 24px 64px -16px rgba(20,20,18,.24), 0 8px 24px -8px rgba(20,20,18,.12);
+  --shadow-glow:0 0 0 4px rgba(106,63,160,.15);
+
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --radius-pill:999px;
+
+  --font-display:'Spectral', 'Noto Kufi Arabic', serif;
+  --font-body:'Inter', system-ui, sans-serif;
+  --font-ar-head:'Noto Kufi Arabic', 'Inter', sans-serif;
+  --font-ar-body:'Noto Naskh Arabic', 'Inter', sans-serif;
+  --font-mono:'IBM Plex Mono', ui-monospace, monospace;
+
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --dur-fast:.18s;
+  --dur-med:.42s;
+  --dur-slow:.7s;
+  color-scheme: light;
+}
+
+html.dark{
+  --bg:#0A0A0C;
+  --bg-soft:#101013;
+  --surface:#161619;
+  --surface-alt:#1B1B1F;
+  --ink:#EDEDF0;
+  --ink-soft:#AFAFB8;
+  --ink-faint:#75757D;
+  --border:#26262B;
+  --border-strong:#343439;
+  --path:#343439;
+
+  --schwach:#E88A7A;    --schwach-soft:#3A1D18;   --schwach-ink:#F5C3B8;
+  --modal:#5FCAD6;     --modal-soft:#0F2E33;    --modal-ink:#AEE9EF;
+  --stark:#B78EE2;    --stark-soft:#231A38;   --stark-ink:#DCC9F2;
+  --ok:#7FC98C;       --ok-soft:#17301C;      --ok-ink:#BFE8C5;
+
+  --gemischt:#E0B54E;  --gemischt-soft:#332609;  --gemischt-ink:#F3DA9C;
+
+  --danger:#E58B85;   --danger-soft:#3A1D1B;
+  --gold:#E0B54E;
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:0 8px 24px -8px rgba(0,0,0,.6), 0 2px 8px -2px rgba(0,0,0,.45);
+  --shadow-lg:0 24px 64px -16px rgba(0,0,0,.7), 0 8px 24px -8px rgba(0,0,0,.5);
+  --shadow-glow:0 0 0 4px rgba(183,142,226,.16);
+  color-scheme: dark;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important}
+}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--font-ar-body); line-height:1.85;
+  min-height:100vh; overflow-x:hidden; transition:background var(--dur-med) var(--ease-out), color var(--dur-med) var(--ease-out);
+}
+img,svg{display:block; max-width:100%}
+button{font:inherit; color:inherit; background:none; border:none; cursor:pointer}
+a{color:inherit}
+ul{list-style:none}
+[lang="de"]{font-family:var(--font-body); direction:ltr; unicode-bidi:isolate}
+.de{font-family:var(--font-body); direction:ltr; unicode-bidi:isolate}
+::selection{background:var(--stark); color:#fff}
+:focus-visible{outline:3px solid var(--stark); outline-offset:2px; border-radius:6px}
+button:focus-visible, a:focus-visible{outline-offset:3px}
+
+.container{max-width:1180px; margin-inline:auto; padding-inline:clamp(16px,4vw,40px)}
+.visually-hidden{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+.skip-link{position:fixed; top:-100px; right:16px; z-index:9999; background:var(--ink); color:var(--bg); padding:12px 20px; border-radius:var(--radius-sm); transition:top .2s}
+.skip-link:focus{top:16px}
+
+#readProgress{position:fixed; inset-inline:0; top:0; height:4px; z-index:1100; background:transparent}
+#readProgress::after{content:''; display:block; height:100%; width:var(--progress,0%); background:linear-gradient(90deg, var(--schwach), var(--stark), var(--modal)); transition:width .12s linear}
+
+.topnav{position:sticky; top:4px; z-index:1000; backdrop-filter:blur(16px) saturate(1.4); -webkit-backdrop-filter:blur(16px) saturate(1.4); background:color-mix(in srgb, var(--bg) 78%, transparent); border-bottom:1px solid var(--border)}
+.topnav-inner{display:flex; align-items:center; gap:16px; padding-block:12px}
+.brand{display:flex; align-items:center; gap:10px; font-family:var(--font-ar-head); font-weight:700; font-size:1.02rem; white-space:nowrap}
+.brand-mark{width:34px; height:34px; flex:none}
+.navlinks{display:flex; gap:4px; flex:1; min-width:0; overflow-x:auto; scrollbar-width:none; padding-inline:4px}
+.navlinks::-webkit-scrollbar{display:none}
+.navlink{position:relative; padding:9px 13px; border-radius:var(--radius-pill); font-size:.85rem; font-weight:600; color:var(--ink-soft); white-space:nowrap; transition:all var(--dur-fast) var(--ease-out); display:flex; align-items:center; gap:6px}
+.navlink:hover{background:var(--surface); color:var(--ink)}
+.navlink.active{background:var(--ink); color:var(--bg)}
+.navlink .dot{width:7px; height:7px; border-radius:50%; background:currentColor; opacity:.5}
+.navlink[data-done="true"] .dot{opacity:1; background:var(--stark)}
+.nav-tools{display:flex; align-items:center; gap:6px; flex:none}
+
+.icon-btn{display:grid; place-items:center; width:40px; height:40px; border-radius:var(--radius-pill); background:var(--surface); border:1px solid var(--border); color:var(--ink); transition:transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-fast), background var(--dur-fast)}
+.icon-btn:hover{transform:translateY(-2px); box-shadow:var(--shadow-md)}
+.icon-btn:active{transform:translateY(0) scale(.94)}
+.icon-btn svg{width:19px; height:19px}
+
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 26px; border-radius:var(--radius-pill); font-weight:700; font-size:.95rem; font-family:var(--font-ar-head); cursor:pointer; transition:all var(--dur-fast) var(--ease-spring); border:1px solid transparent}
+.btn:active{transform:scale(.96)}
+.btn-primary{background:var(--ink); color:var(--bg); box-shadow:var(--shadow-sm)}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-md)}
+.btn-ghost{background:var(--surface); color:var(--ink); border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--border-strong); transform:translateY(-2px); box-shadow:var(--shadow-sm)}
+.btn-sm{padding:9px 18px; font-size:.85rem}
+.btn:disabled{opacity:.45; cursor:not-allowed; transform:none !important}
+
+.chip{display:inline-flex; align-items:center; gap:7px; padding:6px 14px; border-radius:var(--radius-pill); font-family:var(--font-mono); font-size:.76rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase}
+.chip-schwach{background:var(--schwach-soft); color:var(--schwach-ink)}
+.chip-modal{background:var(--modal-soft); color:var(--modal-ink)}
+.chip-stark{background:var(--stark-soft); color:var(--stark-ink)}
+.chip-gemischt{background:var(--gemischt-soft); color:var(--gemischt-ink)}
+
+.case-badge{display:inline-flex; align-items:center; gap:5px; padding:4px 11px; border-radius:var(--radius-pill); font-family:var(--font-mono); font-size:.68rem; font-weight:800; letter-spacing:.02em; direction:ltr; flex:none}
+.case-badge.schwach{background:var(--schwach-soft); color:var(--schwach-ink)}
+.case-badge.modal{background:var(--modal-soft); color:var(--modal-ink)}
+.case-badge.stark{background:var(--stark-soft); color:var(--stark-ink)}
+.case-badge.gemischt{background:var(--gemischt-soft); color:var(--gemischt-ink)}
+
+.theme-switch{display:inline-flex; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-pill); padding:3px; gap:2px}
+.theme-switch button{width:32px; height:32px; border-radius:50%; display:grid; place-items:center; color:var(--ink-faint); transition:all var(--dur-fast) var(--ease-spring)}
+.theme-switch button svg{width:16px; height:16px}
+.theme-switch button.on{background:var(--ink); color:var(--bg)}
+.theme-switch button:hover:not(.on){color:var(--ink)}
+
+#speechBar{position:fixed; bottom:18px; left:50%; transform:translateX(-50%) translateY(140%); z-index:1200; display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-lg); padding:10px 16px; border-radius:var(--radius-pill); max-width:calc(100vw - 24px); transition:transform var(--dur-med) var(--ease-spring)}
+#speechBar.show{transform:translateX(-50%) translateY(0)}
+#speechBar .now-playing{display:flex; flex-direction:column; max-width:220px; overflow:hidden}
+#speechBar .now-playing small{color:var(--ink-faint); font-size:.68rem; font-family:var(--font-ar-body)}
+#speechBar .now-playing span{font-family:var(--font-body); font-size:.85rem; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; direction:ltr; text-align:left}
+#speechBar .sp-controls{display:flex; align-items:center; gap:6px}
+#speechBar .sp-btn{width:36px; height:36px; border-radius:50%; background:var(--bg-soft); display:grid; place-items:center}
+#speechBar .sp-btn:hover{background:var(--stark-soft)}
+#speechBar .sp-btn svg{width:16px; height:16px}
+.speak-indicator{display:inline-flex; gap:2px; align-items:flex-end; height:14px}
+.speak-indicator i{display:block; width:3px; height:3px; background:var(--ink-faint); border-radius:2px; animation:speakbar 0.9s ease-in-out infinite; animation-play-state:paused}
+#speechBar.playing .speak-indicator i{background:var(--stark); animation-play-state:running}
+.ex-card.sentence-speaking{box-shadow:var(--shadow-glow), var(--shadow-md)}
+@keyframes speakbar{0%,100%{height:3px}50%{height:14px}}
+.novoice-banner{display:none; align-items:center; gap:10px; background:var(--danger-soft); color:var(--danger); border-radius:var(--radius-sm); padding:10px 14px; font-size:.84rem; margin-block:14px}
+.novoice-banner.show{display:flex}
+
+/* ==========================================================================
+   VOICE PANEL — VoiceSelector + VoiceTester + PlaybackSpeedControl
+   ========================================================================== */
+.voice-panel{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); padding:24px clamp(18px,4vw,30px); margin-block:30px}
+.voice-panel-head{display:flex; align-items:flex-start; gap:14px; margin-bottom:18px}
+.voice-panel-head h3{font-family:var(--font-ar-head); font-size:1.02rem; margin-bottom:6px}
+.voice-panel-head p{color:var(--ink-soft); font-size:.9rem}
+.voice-list{display:grid; gap:10px; margin-bottom:20px}
+.voice-loading{color:var(--ink-faint); font-size:.9rem; padding:8px 2px}
+.voice-item{display:flex; align-items:center; gap:12px; background:var(--bg-soft); border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:12px 14px; transition:all var(--dur-fast) var(--ease-spring); cursor:pointer}
+.voice-item:hover{border-color:var(--border-strong)}
+.voice-item.selected{border-color:var(--stark); background:var(--stark-soft)}
+.voice-item .radio-dot{flex:none; width:20px; height:20px; border-radius:50%; border:2px solid var(--border-strong); display:grid; place-items:center; background:var(--surface)}
+.voice-item.selected .radio-dot{border-color:var(--stark)}
+.voice-item .radio-dot::after{content:''; width:10px; height:10px; border-radius:50%; background:var(--stark); transform:scale(0); transition:transform var(--dur-fast) var(--ease-spring)}
+.voice-item.selected .radio-dot::after{transform:scale(1)}
+.voice-item .voice-info{flex:1; min-width:0}
+.voice-item .voice-name{font-family:var(--font-body); direction:ltr; text-align:left; font-weight:700; font-size:.94rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.voice-item .voice-meta{font-size:.76rem; color:var(--ink-faint); direction:ltr; text-align:left}
+.voice-item .voice-badge{flex:none; font-family:var(--font-mono); font-size:.68rem; font-weight:700; padding:3px 9px; border-radius:var(--radius-pill); background:var(--surface); border:1px solid var(--border); color:var(--ink-soft)}
+.voice-item.selected .voice-badge{background:var(--stark); color:#fff; border-color:transparent}
+.voice-test-btn{flex:none; display:inline-flex; align-items:center; gap:6px; padding:8px 14px; border-radius:var(--radius-pill); background:var(--surface); border:1px solid var(--border); font-family:var(--font-ar-head); font-size:.78rem; font-weight:700; transition:all var(--dur-fast) var(--ease-spring)}
+.voice-test-btn:hover{background:var(--stark); color:#fff; border-color:var(--stark); transform:scale(1.04)}
+.voice-test-btn.testing{background:var(--stark); color:#fff; border-color:var(--stark)}
+.voice-test-btn svg{width:14px; height:14px}
+.voice-panel-foot{display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding-top:16px; border-top:1px solid var(--border)}
+.speed-label{font-family:var(--font-ar-head); font-weight:700; font-size:.86rem; color:var(--ink-soft); flex:none}
+.speed-chips{display:inline-flex; flex-wrap:wrap; gap:6px}
+.speed-chip{padding:7px 13px; border-radius:var(--radius-pill); background:var(--bg-soft); border:1px solid var(--border); font-family:var(--font-mono); font-size:.78rem; font-weight:700; direction:ltr; color:var(--ink-soft); transition:all var(--dur-fast) var(--ease-spring)}
+.speed-chip:hover{border-color:var(--border-strong)}
+.speed-chip.on{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+@media (max-width:640px){
+  .voice-item{flex-wrap:wrap}
+  .voice-panel-head{flex-direction:column}
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero{position:relative; padding-block:56px 40px; overflow:hidden}
+.hero-bg{position:absolute; inset:0; z-index:-1; opacity:.5}
+.hero-bg svg{width:100%; height:100%}
+.hero-eyebrow{display:inline-flex; align-items:center; gap:10px; font-family:var(--font-ar-head); font-weight:700; font-size:.85rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); padding:8px 16px; border-radius:var(--radius-pill); margin-bottom:22px}
+.hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center}
+.hero h1{font-family:var(--font-display); font-weight:600; line-height:1.1; letter-spacing:-.01em; font-size:clamp(2rem, 4.2vw, 3.2rem); margin-bottom:22px; direction:ltr; text-align:right}
+.hero-sub{font-family:var(--font-ar-body); font-size:1.12rem; color:var(--ink-soft); max-width:60ch; margin-bottom:30px}
+.hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:34px}
+.hero-stats{display:flex; gap:28px; flex-wrap:wrap}
+.hero-stat b{display:block; font-family:var(--font-display); font-size:1.7rem; color:var(--ink)}
+.hero-stat span{font-size:.8rem; color:var(--ink-faint)}
+
+.path-wrap{position:relative; aspect-ratio:1/1; display:grid; place-items:center}
+.path-card{position:relative; width:100%; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); padding:26px 22px; overflow:hidden}
+.path-card::before{content:''; position:absolute; inset:0; pointer-events:none; background:radial-gradient(120% 100% at 100% 0%, rgba(178,57,46,.10), transparent 55%), radial-gradient(120% 100% at 0% 100%, rgba(22,110,122,.10), transparent 55%)}
+.compass-row{position:relative; margin-block:6px}
+.compass-row svg{width:100%; height:auto}
+.legend-row{display:flex; flex-wrap:wrap; gap:9px; margin-block:18px 4px; font-size:.76rem; color:var(--ink-soft)}
+.legend-row span{display:inline-flex; align-items:center; gap:6px}
+.legend-row i{width:10px; height:10px; border-radius:3px; display:inline-block; flex:none}
+
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .7s var(--ease-out), transform .7s var(--ease-out)}
+.reveal.in{opacity:1; transform:translateY(0)}
+.reveal-stagger > *{opacity:0; transform:translateY(20px); transition:opacity .6s var(--ease-out), transform .6s var(--ease-out)}
+.reveal-stagger.in > *{opacity:1; transform:translateY(0)}
+.reveal-stagger.in > *:nth-child(1){transition-delay:.03s}
+.reveal-stagger.in > *:nth-child(2){transition-delay:.09s}
+.reveal-stagger.in > *:nth-child(3){transition-delay:.15s}
+.reveal-stagger.in > *:nth-child(4){transition-delay:.21s}
+.reveal-stagger.in > *:nth-child(5){transition-delay:.27s}
+.reveal-stagger.in > *:nth-child(6){transition-delay:.33s}
+
+/* ==========================================================================
+   SECTIONS
+   ========================================================================== */
+.section{padding-block:64px; scroll-margin-top:90px; position:relative}
+.section-head{max-width:760px; margin-bottom:38px}
+.kicker{font-family:var(--font-mono); font-weight:700; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; direction:ltr; display:block; margin-bottom:10px}
+.section h2{font-family:var(--font-ar-head); font-size:clamp(1.5rem,3vw,2.1rem); font-weight:700; margin-bottom:14px; line-height:1.3}
+.section h2 .de{font-family:var(--font-display); font-style:italic; direction:ltr; unicode-bidi:isolate}
+.section-desc{color:var(--ink-soft); font-size:1.04rem; max-width:66ch}
+.section.tone-schwach .kicker,.section.tone-schwach h2 .de{color:var(--schwach)}
+.section.tone-modal .kicker,.section.tone-modal h2 .de{color:var(--modal)}
+.section.tone-stark .kicker,.section.tone-stark h2 .de{color:var(--stark)}
+.section.tone-gemischt .kicker,.section.tone-gemischt h2 .de{color:var(--gemischt)}
+
+.rule-box{display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:flex-start; background:var(--surface); border:1px solid var(--border); border-inline-start:5px solid var(--tone,var(--stark)); border-radius:var(--radius-md); padding:22px 24px; box-shadow:var(--shadow-sm); margin-block:24px}
+.rule-box .icon{width:42px; height:42px; border-radius:var(--radius-sm); background:var(--tone-soft,var(--stark-soft)); color:var(--tone,var(--stark)); display:grid; place-items:center; flex:none; font-size:1.15rem}
+.rule-box .icon svg{width:22px; height:22px}
+.rule-box h3{font-family:var(--font-ar-head); font-size:1.06rem; margin-bottom:6px}
+.rule-box p{color:var(--ink-soft)}
+.rule-box.tone-schwach{--tone:var(--schwach); --tone-soft:var(--schwach-soft)}
+.rule-box.tone-modal{--tone:var(--modal); --tone-soft:var(--modal-soft)}
+.rule-box.tone-stark{--tone:var(--stark); --tone-soft:var(--stark-soft)}
+.rule-box.tone-gemischt{--tone:var(--gemischt); --tone-soft:var(--gemischt-soft)}
+.rule-box.tone-danger{--tone:var(--danger); --tone-soft:var(--danger-soft)}
+.rule-box.tone-ok{--tone:var(--ok); --tone-soft:var(--ok-soft)}
+
+.formula{display:flex; flex-wrap:wrap; gap:8px; align-items:center; font-family:var(--font-mono); font-weight:700; font-size:.9rem; direction:ltr; background:var(--bg-soft); border:1px dashed var(--border-strong); border-radius:var(--radius-sm); padding:16px 18px; margin-block:20px}
+.formula .f-tag{padding:5px 12px; border-radius:8px; font-size:.8rem}
+.formula .f-tag.main{background:var(--surface); border:1px solid var(--border); color:var(--ink-soft)}
+.formula .f-tag.mid{background:var(--surface); border:1px solid var(--border); color:var(--ink-soft)}
+.formula .f-tag.end{background:var(--stark-soft); color:var(--stark-ink); border:1px solid transparent}
+.formula .arrow{color:var(--ink-faint)}
+
+.clause-diagram{display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end; direction:ltr; background:var(--bg-soft); border:1px dashed var(--border-strong); border-radius:var(--radius-md); padding:20px 18px; margin-block:22px}
+.clause-diagram .arrow{color:var(--ink-faint); font-weight:400; align-self:center; padding-bottom:14px; font-size:1.1rem}
+
+.examples-grid{display:grid; gap:16px; margin-block:26px}
+.examples-grid.cols-2{grid-template-columns:1fr 1fr}
+.ex-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 22px; box-shadow:var(--shadow-sm); transition:box-shadow var(--dur-fast), transform var(--dur-fast)}
+.ex-card:hover{box-shadow:var(--shadow-md); transform:translateY(-2px)}
+.ex-top{display:flex; align-items:flex-start; gap:12px; margin-bottom:12px; flex-wrap:wrap}
+.ex-num{flex:none; width:28px; height:28px; border-radius:50%; background:var(--bg-soft); color:var(--ink-faint); display:grid; place-items:center; font-family:var(--font-mono); font-weight:700; font-size:.78rem}
+.ex-de{font-family:var(--font-body); font-size:1.12rem; font-weight:600; direction:ltr; text-align:left; line-height:1.5; flex:1; min-width:200px}
+.ex-de .hl{padding:1px 5px; border-radius:5px; background:var(--schwach-soft); color:var(--schwach-ink); font-weight:800}
+.ex-de .hl-modal{background:var(--modal-soft); color:var(--modal-ink)}
+.ex-de .hl-stark{background:var(--stark-soft); color:var(--stark-ink)}
+.ex-de .hl-gemischt{background:var(--gemischt-soft); color:var(--gemischt-ink)}
+.speak-btn{flex:none; width:36px; height:36px; border-radius:50%; background:var(--bg-soft); border:1px solid var(--border); display:grid; place-items:center; transition:all var(--dur-fast) var(--ease-spring)}
+.speak-btn:hover{background:var(--stark-soft); border-color:var(--stark); color:var(--stark-ink); transform:scale(1.08)}
+.speak-btn svg{width:16px; height:16px}
+.ex-ar{color:var(--ink-soft); font-size:.96rem; margin-inline-start:40px; margin-bottom:6px}
+.ex-note{color:var(--ink-faint); font-size:.82rem; margin-inline-start:40px}
+
+.w{cursor:pointer; border-radius:5px; padding:1px 3px; margin:0 -3px; transition:background var(--dur-fast), color var(--dur-fast)}
+.w:hover{background:var(--stark-soft); color:var(--stark-ink)}
+.w.speaking{background:var(--stark); color:#fff}
+
+.slot{padding:7px 12px; border-radius:9px; font-size:.82rem; font-weight:700; line-height:1.3; background:var(--bg-soft); border:1px solid var(--border); color:var(--ink-soft); position:relative}
+.slot .lbl{display:block; font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; opacity:.62; margin-bottom:1px}
+.slot.s-main{background:var(--surface-alt)}
+.slot.s-mid{background:var(--surface)}
+.slot.s-conn{color:#fff; border-color:transparent}
+.slot.s-end{background:var(--stark-soft); color:var(--stark-ink); border-color:transparent}
+
+.mistake-box{display:grid; gap:10px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 22px; margin-block:26px; box-shadow:var(--shadow-sm)}
+.mistake-box h4{font-family:var(--font-ar-head); font-size:.98rem; margin-bottom:6px; display:flex; align-items:center; gap:8px}
+.mrow{display:flex; align-items:center; gap:12px; padding:11px 14px; border-radius:var(--radius-sm); font-family:var(--font-body); font-size:.98rem; direction:ltr; text-align:left}
+.mrow.bad{background:var(--danger-soft); color:var(--danger)}
+.mrow.good{background:var(--ok-soft); color:var(--ok-ink)}
+.mrow .mark{flex:none; font-weight:900; font-size:1.1rem}
+.mnote{font-family:var(--font-ar-body); color:var(--ink-soft); font-size:.92rem; direction:rtl; text-align:right; margin-top:4px}
+
+details.more{background:var(--bg-soft); border:1px solid var(--border); border-radius:var(--radius-md); padding:4px 20px; margin-block:22px}
+details.more summary{cursor:pointer; padding:14px 0; font-family:var(--font-ar-head); font-weight:700; font-size:.94rem; list-style:none; display:flex; align-items:center; gap:10px}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:'+'; width:22px; height:22px; border-radius:50%; background:var(--surface); border:1px solid var(--border); display:grid; place-items:center; font-size:1rem; flex:none; transition:transform var(--dur-fast)}
+details.more[open] summary::before{content:'−'}
+details.more .more-body{padding-bottom:18px; color:var(--ink-soft)}
+
+.compare-widget{background:linear-gradient(145deg, var(--surface), var(--surface-alt)); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px clamp(18px,4vw,32px); margin-block:28px; box-shadow:var(--shadow-md)}
+.compare-head{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; margin-bottom:20px}
+.compare-head h3{font-family:var(--font-ar-head); font-size:1.05rem}
+.toggle-switch{display:inline-flex; flex-wrap:wrap; justify-content:center; background:var(--bg-soft); border-radius:var(--radius-pill); padding:4px; border:1px solid var(--border)}
+.toggle-switch button{padding:9px 18px; border-radius:var(--radius-pill); font-weight:700; font-family:var(--font-mono); font-size:.82rem; direction:ltr; color:var(--ink-soft); transition:all var(--dur-fast) var(--ease-spring); position:relative; z-index:1}
+.toggle-switch button.on{background:var(--ink); color:var(--bg)}
+.compare-stage{min-height:150px; display:flex; align-items:center; justify-content:center; position:relative}
+.compare-sentence{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; direction:ltr; font-family:var(--font-mono); font-weight:700; font-size:clamp(.85rem,2.4vw,1.05rem)}
+.compare-sentence .slot{transition:all var(--dur-slow) var(--ease-spring)}
+.compare-caption{text-align:center; margin-top:18px; color:var(--ink-soft); font-size:.94rem; min-height:24px}
+
+.table-wrap{overflow-x:auto; border-radius:var(--radius-md); border:1px solid var(--border); box-shadow:var(--shadow-sm); margin-block:26px}
+table.cmp{width:100%; border-collapse:collapse; background:var(--surface); min-width:560px}
+table.cmp th,table.cmp td{padding:14px 18px; text-align:right; border-bottom:1px solid var(--border); vertical-align:top}
+table.cmp thead th{background:var(--bg-soft); font-family:var(--font-ar-head); font-size:.86rem; color:var(--ink-soft); position:sticky; top:0}
+table.cmp tbody tr:last-child td{border-bottom:none}
+table.cmp tbody tr:hover{background:var(--bg-soft)}
+table.cmp td.de-cell{direction:ltr; text-align:left; font-family:var(--font-body); font-weight:600}
+table.cmp td:first-child{font-family:var(--font-mono); font-weight:800; direction:ltr; text-align:left}
+table.cmp tbody tr[data-aux]{display:table-row}
+table.cmp tbody tr[data-aux].hide{display:none}
+table.decl td.hlcol{background:var(--stark-soft); color:var(--stark-ink); font-weight:800; border-radius:6px}
+.row-speak{display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; background:var(--bg-soft); border:1px solid var(--border); vertical-align:middle; margin-inline-start:6px}
+.row-speak:hover{background:var(--stark-soft); border-color:var(--stark)}
+.row-speak svg{width:12px; height:12px}
+
+.flow-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+
+.pattern-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-block:26px}
+.pattern-card{background:var(--surface); border:1px solid var(--border); border-top:5px solid var(--tone,var(--schwach)); border-radius:var(--radius-md); padding:22px 20px 18px; box-shadow:var(--shadow-sm)}
+.pattern-card h4{font-family:var(--font-ar-head); font-size:1rem; margin-bottom:4px}
+.pattern-card .pattern-sub{color:var(--ink-faint); font-size:.8rem; margin-bottom:12px}
+.pattern-card .pattern-formula{font-family:var(--font-mono); font-weight:800; direction:ltr; font-size:1.05rem; color:var(--tone,var(--schwach)); margin-bottom:14px; padding:10px 12px; background:var(--tone-soft,var(--schwach-soft)); border-radius:8px; text-align:center}
+.pattern-card ul{display:grid; gap:2px}
+.pattern-card li{font-family:var(--font-body); direction:ltr; font-size:.88rem; display:flex; justify-content:space-between; gap:8px; padding:7px 0; border-bottom:1px dashed var(--border)}
+.pattern-card li:last-child{border-bottom:none}
+.pattern-card li b{color:var(--tone,var(--schwach)); font-weight:700}
+@media (max-width:900px){.pattern-grid{grid-template-columns:1fr}}
+
+.practice-panel{background:var(--bg-soft); border:1px solid var(--border); border-radius:var(--radius-lg); padding:26px clamp(18px,4vw,32px); margin-block:30px}
+.practice-head{display:flex; align-items:center; gap:12px; margin-bottom:18px}
+.practice-head .badge-icon{width:38px; height:38px; border-radius:12px; background:var(--surface); border:1px solid var(--border); display:grid; place-items:center; flex:none}
+.practice-head h3{font-family:var(--font-ar-head); font-size:1.02rem}
+.practice-head p{color:var(--ink-faint); font-size:.84rem}
+.practice-context{direction:ltr; text-align:left; font-family:var(--font-body); font-size:.98rem; color:var(--ink-soft); background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:10px 14px; margin-bottom:14px}
+
+.builder-target{min-height:58px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; direction:ltr; background:var(--surface); border:2px dashed var(--border-strong); border-radius:var(--radius-sm); padding:12px 14px; margin-bottom:14px; transition:border-color var(--dur-fast)}
+.builder-target.correct{border-color:var(--ok); border-style:solid; background:var(--ok-soft)}
+.builder-target.wrong{border-color:var(--danger); border-style:solid; background:var(--danger-soft); animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.builder-bank{display:flex; flex-wrap:wrap; gap:8px; direction:ltr; margin-bottom:16px}
+.word-chip{padding:9px 15px; border-radius:9px; background:var(--surface); border:1px solid var(--border); font-family:var(--font-body); font-weight:600; font-size:.92rem; cursor:grab; transition:all var(--dur-fast) var(--ease-spring); user-select:none}
+.word-chip:hover{transform:translateY(-2px); box-shadow:var(--shadow-sm); border-color:var(--border-strong)}
+.word-chip.placed{opacity:.35; cursor:not-allowed}
+.word-chip.in-target{cursor:pointer; background:var(--surface-alt)}
+.builder-actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.builder-feedback{font-size:.9rem; font-weight:600; min-height:20px}
+.builder-feedback.ok{color:var(--ok-ink)}
+.builder-feedback.no{color:var(--danger)}
+
+.quiz-q{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:20px 22px; margin-bottom:14px; box-shadow:var(--shadow-sm)}
+.quiz-q .qtext{font-weight:700; margin-bottom:14px; font-family:var(--font-ar-head); font-size:.98rem}
+.quiz-q .qtext .de{font-family:var(--font-body); direction:ltr; unicode-bidi:isolate; font-weight:600}
+.qopts{display:grid; gap:9px}
+.qopt{text-align:right; padding:13px 16px; border-radius:var(--radius-sm); background:var(--bg-soft); border:1px solid var(--border); font-family:var(--font-body); direction:ltr; text-align:left; font-weight:600; font-size:.92rem; display:flex; align-items:center; justify-content:space-between; gap:10px; transition:all var(--dur-fast)}
+.qopt:hover:not(:disabled){border-color:var(--border-strong); background:var(--surface)}
+.qopt.correct{background:var(--ok-soft); border-color:var(--ok); color:var(--ok-ink)}
+.qopt.incorrect{background:var(--danger-soft); border-color:var(--danger); color:var(--danger)}
+.qopt:disabled{cursor:not-allowed}
+.quiz-explain{margin-top:12px; padding:12px 14px; background:var(--bg-soft); border-radius:var(--radius-sm); font-size:.88rem; color:var(--ink-soft)}
+
+.quiz-summary{text-align:center; padding:40px 24px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); display:none}
+.quiz-summary.show{display:block}
+.quiz-summary .score-ring{width:130px; height:130px; margin:0 auto 18px; position:relative}
+.quiz-summary .score-ring svg{width:100%; height:100%; transform:rotate(-90deg)}
+.quiz-summary .score-ring .num{position:absolute; inset:0; display:grid; place-items:center; font-family:var(--font-display); font-size:2.1rem; font-weight:600}
+.quiz-summary h3{font-family:var(--font-ar-head); font-size:1.3rem; margin-bottom:8px}
+.quiz-summary p{color:var(--ink-soft); margin-bottom:20px}
+.progressbar-track{height:8px; background:var(--bg-soft); border-radius:99px; overflow:hidden; margin-block:6px}
+.progressbar-fill{height:100%; background:linear-gradient(90deg,var(--schwach),var(--modal)); border-radius:99px; transition:width .6s var(--ease-out)}
+
+#achToastHost{position:fixed; top:70px; inset-inline-end:16px; z-index:1300; display:flex; flex-direction:column; gap:10px; pointer-events:none}
+.ach-toast{pointer-events:auto; display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); box-shadow:var(--shadow-lg); border-radius:var(--radius-md); padding:14px 18px; min-width:260px; max-width:320px; transform:translateX(120%); transition:transform .5s var(--ease-spring)}
+[dir="rtl"] .ach-toast{transform:translateX(-120%)}
+.ach-toast.show{transform:translateX(0)}
+.ach-toast .emoji{font-size:1.6rem}
+.ach-toast b{display:block; font-family:var(--font-ar-head); font-size:.9rem}
+.ach-toast span{font-size:.78rem; color:var(--ink-faint)}
+.achievements-panel{display:flex; flex-wrap:wrap; gap:12px; margin-block:20px}
+.ach-item{display:flex; flex-direction:column; align-items:center; gap:6px; width:88px; text-align:center; opacity:.32; filter:grayscale(1); transition:all var(--dur-med) var(--ease-spring)}
+.ach-item.unlocked{opacity:1; filter:none}
+.ach-item .ach-circle{width:52px; height:52px; border-radius:50%; background:var(--bg-soft); border:1px solid var(--border); display:grid; place-items:center; font-size:1.4rem}
+.ach-item.unlocked .ach-circle{background:linear-gradient(150deg,var(--schwach-soft),var(--modal-soft)); box-shadow:var(--shadow-sm)}
+.ach-item small{font-size:.7rem; color:var(--ink-soft); line-height:1.3}
+
+.flip-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-block:28px}
+.flip-card{aspect-ratio:4/3; perspective:1200px}
+.flip-inner{position:relative; width:100%; height:100%; transition:transform .7s var(--ease-spring); transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-card:focus-visible .flip-inner{outline:3px solid var(--stark); outline-offset:4px}
+.flip-face{position:absolute; inset:0; backface-visibility:hidden; border-radius:var(--radius-md); padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:9px; border:1px solid var(--border); box-shadow:var(--shadow-md); cursor:pointer}
+.flip-front{background:var(--surface)}
+.flip-front .fw{font-family:var(--font-display); font-size:1.3rem; font-weight:600; direction:ltr}
+.flip-front .tap-hint{font-size:.7rem; color:var(--ink-faint); margin-top:auto}
+.flip-back{color:var(--tone-ink,var(--stark-ink)); background:var(--tone-soft,var(--stark-soft)); transform:rotateY(180deg)}
+.flip-back p{font-size:.82rem; line-height:1.65}
+.flip-back .ex{font-family:var(--font-body); direction:ltr; font-weight:700; font-size:.82rem; margin-top:6px; padding:8px 10px; background:rgba(255,255,255,.35); border-radius:8px}
+
+.fab-stack{position:fixed; bottom:18px; inset-inline-start:16px; z-index:1150; display:flex; flex-direction:column; gap:10px; transition:bottom var(--dur-med) var(--ease-spring)}
+body.speech-active .fab-stack{bottom:84px}
+.fab{width:48px; height:48px; border-radius:50%; background:var(--ink); color:var(--bg); display:grid; place-items:center; box-shadow:var(--shadow-lg); transition:all var(--dur-fast) var(--ease-spring); opacity:0; transform:translateY(20px) scale(.7); pointer-events:none}
+.fab.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto}
+.fab:hover{transform:translateY(-3px) scale(1.06)}
+.fab svg{width:20px; height:20px}
+
+.search-wrap{position:relative; flex:none}
+.search-box{display:flex; align-items:center; gap:6px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-pill); padding:8px 8px 8px 14px; transition:all var(--dur-fast); width:38px; overflow:hidden}
+.search-box.open{width:200px}
+.search-box input{border:none; background:none; outline:none; font-size:.86rem; color:var(--ink); width:100%; font-family:var(--font-ar-body)}
+.search-box svg{width:17px; height:17px; flex:none}
+
+footer{background:var(--surface-alt); border-top:1px solid var(--border); padding-block:56px 36px; margin-top:30px}
+.cheat-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:30px clamp(18px,4vw,36px); box-shadow:var(--shadow-md)}
+.cheat-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-block:20px}
+.cheat-item{padding:16px 18px; border-radius:var(--radius-sm); border-inline-start:4px solid var(--tone,var(--stark)); background:var(--bg-soft)}
+.cheat-item b{display:block; font-family:var(--font-mono); direction:ltr; font-size:1rem; margin-bottom:4px; color:var(--tone,var(--stark))}
+.cheat-item span{font-size:.86rem; color:var(--ink-soft)}
+footer .foot-bottom{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:30px; padding-top:20px; border-top:1px solid var(--border); color:var(--ink-faint); font-size:.82rem}
+
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .path-wrap{max-width:420px; margin-inline:auto; width:100%}
+  .flip-grid{grid-template-columns:1fr 1fr}
+  .cheat-grid{grid-template-columns:1fr}
+  .flow-grid{grid-template-columns:1fr !important}
+  .examples-grid.cols-2{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .brand span{display:none}
+  .navlinks{gap:2px}
+  .navlink{padding:8px 10px; font-size:.78rem}
+  .nav-tools .search-box.open{width:140px}
+  .hero{padding-block:32px 20px}
+  .hero-stats{gap:18px}
+  .ex-ar,.ex-note{margin-inline-start:0; margin-top:8px}
+  .ex-top{flex-wrap:wrap}
+  #speechBar{padding:8px 12px; gap:8px}
+  #speechBar .now-playing{max-width:100px}
+  .cheat-grid{grid-template-columns:1fr}
+  .toggle-switch button{padding:7px 12px; font-size:.74rem}
+  .flip-grid{grid-template-columns:1fr}
+  table.cmp{min-width:520px}
+}
+@media (min-width:1400px){ .container{max-width:1280px} }
+
+@media print{
+  .topnav,#speechBar,.fab-stack,#achToastHost,#readProgress,.practice-panel,.hero-actions,.skip-link,.no-print,.voice-panel{display:none !important}
+  body{background:#fff; color:#000}
+  .section{padding-block:18px; break-inside:avoid}
+  .ex-card,.rule-box,.cheat-card{box-shadow:none; border:1px solid #ccc}
+  a{text-decoration:none; color:#000}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطَّ إلى المحتوى الرئيسي</a>
+
+<div id="readProgress" role="progressbar" aria-label="نسبة التقدّم في قراءة الدرس" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+<header class="topnav">
+  <div class="container topnav-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="10" cy="20" r="6" fill="var(--schwach-soft)" stroke="var(--schwach)" stroke-width="2"/>
+        <circle cx="20" cy="20" r="6" fill="var(--gemischt-soft)" stroke="var(--gemischt)" stroke-width="2"/>
+        <circle cx="30" cy="20" r="6" fill="var(--stark-soft)" stroke="var(--stark)" stroke-width="2"/>
+      </svg>
+      <span>الصفات Adjektive</span>
+    </div>
+    <nav class="navlinks" id="navlinks" aria-label="التنقّل بين أقسام الدرس">
+      <a href="#overview" class="navlink" data-nav="overview"><span class="dot"></span>نظرة عامة</a>
+      <a href="#schwach" class="navlink" data-nav="schwach"><span class="dot"></span>بعد der/die/das</a>
+      <a href="#gemischt" class="navlink" data-nav="gemischt"><span class="dot"></span>بعد ein/eine/ein</a>
+      <a href="#stark" class="navlink" data-nav="stark"><span class="dot"></span>بلا أداة تعريف</a>
+      <a href="#vergleich" class="navlink" data-nav="vergleich"><span class="dot"></span>المقارنة الشاملة</a>
+      <a href="#steigerung" class="navlink" data-nav="steigerung"><span class="dot"></span>درجات المقارنة</a>
+      <a href="#review" class="navlink" data-nav="review"><span class="dot"></span>المراجعة</a>
+      <a href="#quiz" class="navlink" data-nav="quiz"><span class="dot"></span>الاختبار</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="search-wrap">
+        <div class="search-box" id="searchBox">
+          <button class="icon-btn" id="searchToggle" style="width:auto;height:auto;background:none;border:none" aria-label="بحث داخل الدرس" title="بحث">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </button>
+          <input type="text" id="searchInput" placeholder="ابحث في الدرس…" aria-label="نص البحث">
+        </div>
+      </div>
+      <button class="icon-btn" id="fullscreenBtn" aria-label="وضع ملء الشاشة" title="ملء الشاشة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      </button>
+      <div class="theme-switch" role="group" aria-label="اختيار المظهر: فاتح، داكن، أو النظام">
+        <button type="button" id="themeLight" title="فاتح" aria-label="المظهر الفاتح"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg></button>
+        <button type="button" id="themeDark" title="داكن" aria-label="المظهر الداكن"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button>
+        <button type="button" id="themeSystem" title="النظام" aria-label="حسب إعدادات النظام"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+      <circle cx="1000" cy="80" r="260" fill="var(--stark)" opacity="0.05"/>
+      <circle cx="120" cy="420" r="220" fill="var(--schwach)" opacity="0.05"/>
+    </svg>
+  </div>
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-eyebrow">📘 درس شامل لمستوى A2 — أشهر نقطة "صعبة" في القواعد الألمانية</span>
+      <h1>الصفات <span style="color:var(--gemischt)">Adjektive</span></h1>
+      <p class="hero-sub">الخبر الجيد أولًا: نصف الصفات الألمانية <b>لا تتصرّف إطلاقًا</b>. الخبر الآخر: عندما تسبق الصفة اسمًا مباشرة، فإنها تأخذ نهاية تعتمد على ثلاثة عوامل معًا — الجنس، الحالة الإعرابية، ونوع الأداة التي تسبقها. هذا الدرس يفكّك هذا التعقيد إلى ثلاثة أنماط واضحة، ونظام واحد يفسّرها جميعًا.</p>
+      <div class="hero-actions">
+        <a href="#overview" class="btn btn-primary">ابدأ الدرس ↓</a>
+        <button class="btn btn-ghost" id="heroSpeakDemo">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>
+          استمع لمثال
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>3</b><span>أنماط تصريف: schwach، gemischt، stark</span></div>
+        <div class="hero-stat"><b>1</b><span>قاعدة موحّدة تفسّرها جميعًا</span></div>
+        <div class="hero-stat"><b>+45</b><span>مثال صوتي تطبيقي</span></div>
+      </div>
+    </div>
+
+    <div class="path-wrap reveal">
+      <div class="path-card">
+        <div class="legend-row" style="margin-top:0">
+          <span><i style="background:var(--schwach)"></i>schwach — بعد der/die/das</span>
+          <span><i style="background:var(--gemischt)"></i>gemischt — بعد ein/eine/ein</span>
+          <span><i style="background:var(--stark)"></i>stark — بلا أداة تعريف</span>
+        </div>
+        <div class="compass-row">
+          <svg viewBox="0 0 400 260" aria-hidden="true">
+            <circle cx="80" cy="110" r="58" fill="var(--schwach-soft)" stroke="var(--schwach)" stroke-width="2.5"/>
+            <text x="80" y="100" text-anchor="middle" font-size="13" font-weight="800" fill="var(--schwach-ink)" font-family="IBM Plex Mono, monospace">der/die/das</text>
+            <text x="80" y="120" text-anchor="middle" font-size="15" font-weight="800" fill="var(--schwach-ink)" font-family="IBM Plex Mono, monospace">-e / -en</text>
+
+            <circle cx="200" cy="110" r="58" fill="var(--gemischt-soft)" stroke="var(--gemischt)" stroke-width="2.5"/>
+            <text x="200" y="100" text-anchor="middle" font-size="13" font-weight="800" fill="var(--gemischt-ink)" font-family="IBM Plex Mono, monospace">ein/eine/ein</text>
+            <text x="200" y="120" text-anchor="middle" font-size="15" font-weight="800" fill="var(--gemischt-ink)" font-family="IBM Plex Mono, monospace">-er/-es/-e/-en</text>
+
+            <circle cx="320" cy="110" r="58" fill="var(--stark-soft)" stroke="var(--stark)" stroke-width="2.5"/>
+            <text x="320" y="100" text-anchor="middle" font-size="13" font-weight="800" fill="var(--stark-ink)" font-family="IBM Plex Mono, monospace">بلا أداة</text>
+            <text x="320" y="120" text-anchor="middle" font-size="15" font-weight="800" fill="var(--stark-ink)" font-family="IBM Plex Mono, monospace">-er/-es/-e/-en</text>
+
+            <text x="200" y="200" text-anchor="middle" font-size="12.5" fill="var(--ink-soft)" font-family="Noto Kufi Arabic" font-weight="700">إشارة الجنس والحالة تظهر مرّة واحدة فقط: إمّا على الأداة أو على الصفة</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== OVERVIEW ==================== -->
+<section class="section" id="overview">
+  <div class="container">
+    <div class="novoice-banner" id="novoiceBanner" role="status">
+      <span>🔇</span>
+      <span>لا يتوفّر حاليًا أي صوت ألماني في هذا المتصفح. الدرس يعمل بشكل كامل بدون صوت — جرّب متصفحًا آخر (مثل Chrome أو Edge) أو ثبّت حزمة صوت ألمانية في نظام التشغيل للاستماع إلى الأمثلة.</span>
+    </div>
+    <div class="section-head reveal">
+      <span class="kicker">Überblick · نظرة عامة</span>
+      <h2>نصف المعركة محسومة قبل أن تبدأ</h2>
+      <p class="section-desc">قبل الدخول في تفاصيل التصريف، إليك أهمّ معلومة في هذا الدرس بأكمله: الصفة الألمانية <b>لا تتصرّف إطلاقًا</b> في حالة واحدة شائعة جدًا. تعلّم هذه الحالة أولًا، ثم انتقل لما تبقّى.</p>
+    </div>
+
+    <div class="rule-box tone-schwach reveal">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <div>
+        <h3>Prädikativ: الصفة بعد sein / werden / bleiben — بلا نهاية أبدًا</h3>
+        <p>عندما تأتي الصفة بعد هذه الأفعال الثلاثة (لا قبل اسم مباشرة)، فهي تبقى في صورتها الأساسية دائمًا، بغضّ النظر عن جنس أو عدد أو حالة الاسم الذي تصفه: <span class="de" style="font-weight:700">Das Auto ist schnell.</span> — <span class="de" style="font-weight:700">Die Autos sind schnell.</span> — <span class="de" style="font-weight:700">Die Blume wird schön.</span> نفس الكلمة تمامًا في كل الحالات.</p>
+      </div>
+    </div>
+
+    <div class="formula reveal">
+      <span class="f-tag main">Attributiv <span style="opacity:.7">قبل الاسم مباشرة</span></span>
+      <span class="arrow">→</span>
+      <span class="f-tag" style="background:var(--gemischt-soft); color:var(--gemischt-ink)">تحتاج نهاية (Deklination)</span>
+      <span class="arrow" style="margin-inline-start:16px">|</span>
+      <span class="f-tag main">Prädikativ <span style="opacity:.7">بعد sein/werden/bleiben</span></span>
+      <span class="arrow">→</span>
+      <span class="f-tag" style="background:var(--schwach-soft); color:var(--schwach-ink)">بلا نهاية أبدًا</span>
+    </div>
+
+    <div class="compare-widget reveal" id="compareToggleWidget">
+      <div class="compare-head">
+        <h3>🎛️ جرّب بنفسك: نفس الصفة، موقعان مختلفان</h3>
+        <div class="toggle-switch">
+          <button id="btnModePred" class="on" type="button">Prädikativ (بلا نهاية)</button>
+          <button id="btnModeAttr" type="button">Attributiv (بنهاية)</button>
+        </div>
+      </div>
+      <div class="compare-stage">
+        <div class="compare-sentence" id="compareSentence">
+          <span class="slot s-main">Das Auto</span><span class="slot s-conn" style="background:var(--ink); color:#fff">ist</span><span class="slot s-end">schnell.</span>
+        </div>
+      </div>
+      <p class="compare-caption" id="compareCaption">الصفة بعد sein — بلا أي نهاية أبدًا، بغضّ النظر عن جنس أو حالة الاسم.</p>
+    </div>
+
+    <div class="rule-box tone-gemischt reveal">
+      <div class="icon">🧩</div>
+      <div>
+        <h3>لماذا تحتاج الصفة الموصوفة (Attributiv) نهاية أصلًا؟</h3>
+        <p>في كل عبارة اسمية، يجب أن تظهر "إشارة" الجنس والحالة الإعرابية <b>مرّة واحدة على الأقل</b> — إمّا على أداة التعريف (der/die/das)، أو على الصفة نفسها إن كانت الأداة غامضة أو غائبة. هذا المبدأ الواحد يُفسّر الأنماط الثلاثة التي سنشرحها بالتفصيل.</p>
+      </div>
+    </div>
+
+    <div class="examples-grid cols-2 reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge schwach">Prädikativ</span>
+          <p class="ex-de" lang="de"><span class="w">Die</span> <span class="w">Blumen</span> <span class="w">sind</span> <span class="w"><span class="hl">schön.</span></span></p>
+          <button class="speak-btn" data-speak="Die Blumen sind schön." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">الزهور جميلة. (بلا نهاية، رغم أن Blumen جمع)</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top">
+          <span class="case-badge gemischt">Attributiv</span>
+          <p class="ex-de" lang="de"><span class="w">Das</span> <span class="w">sind</span> <span class="w"><span class="hl hl-gemischt">schöne</span></span> <span class="w">Blumen.</span></p>
+          <button class="speak-btn" data-speak="Das sind schöne Blumen." aria-label="استمع للجملة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">هذه زهور جميلة. (نهاية -e لأنها قبل الاسم مباشرة بلا أداة)</p>
+      </div>
+    </div>
+
+    <details class="more reveal">
+      <summary>💡 هل هذا يعني أن نصف قواعد الصفات بسيطة فعلًا؟</summary>
+      <div class="more-body">
+        <p>نعم تمامًا. في كل جملة تستخدم فيها صفة بعد sein أو werden أو bleiben، لا داعي للتفكير في التصريف على الإطلاق. التحدّي الحقيقي يبدأ فقط عندما تريد وضع الصفة <b>مباشرة قبل الاسم</b> — وهذا ما ستتقنه بالكامل في الأقسام التالية.</p>
+      </div>
+    </details>
+
+    <div class="voice-panel reveal" id="voicePanel">
+      <div class="voice-panel-head">
+        <div class="badge-icon" style="width:38px;height:38px;border-radius:12px;background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;flex:none">🎙️</div>
+        <div>
+          <h3>اختر صوتك الألماني وجرّبه قبل أن تقرر</h3>
+          <p>هذه الأصوات الألمانية المتاحة فعليًا الآن في متصفحك وجهازك (محلية عبر نظام التشغيل، أو شبكية إن وفّرها متصفحك) — لا نفترض وجود أي صوت غير موجود فعلًا. اضغط <b>«اختبار 🔊»</b> بجانب أي صوت لسماعه، ثم انقر عليه لاعتماده صوتًا افتراضيًا لبقية الدرس.</p>
+        </div>
+      </div>
+      <div class="voice-list" id="voiceList" role="radiogroup" aria-label="اختيار الصوت الألماني">
+        <p class="voice-loading" id="voiceLoading">⏳ جارٍ البحث عن الأصوات الألمانية المتاحة في متصفحك…</p>
+      </div>
+      <div class="voice-panel-foot">
+        <span class="speed-label">سرعة النطق</span>
+        <div class="speed-chips" id="speedChips" role="group" aria-label="اختيار سرعة النطق">
+          <button type="button" class="speed-chip" data-rate="0.5">0.5x</button>
+          <button type="button" class="speed-chip" data-rate="0.75">0.75x</button>
+          <button type="button" class="speed-chip on" data-rate="1">1x</button>
+          <button type="button" class="speed-chip" data-rate="1.25">1.25x</button>
+          <button type="button" class="speed-chip" data-rate="1.5">1.5x</button>
+          <button type="button" class="speed-chip" data-rate="2">2x</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--SECTION:SCHWACH-->
+
+<!-- ==================== SCHWACH ==================== -->
+<section class="section tone-schwach" id="schwach">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-schwach">schwache Deklination · بعد der, die, das, dieser, jeder...</span>
+      <span class="kicker" style="margin-top:14px">01 / النمط الأبسط — الأداة تحمل الإشارة بالفعل</span>
+      <h2>تصريف الصفة بعد أداة التعريف</h2>
+      <p class="section-desc">بما أن der/die/das (وأخواتها dieser, jeder, welcher) تُظهر الجنس والحالة بوضوح، فإن الصفة لا تحتاج "تكرار" هذه المعلومة بقوة — تكتفي بنهاية بسيطة: <b>-e</b> في معظم صيغ Nominativ وAkkusativ، و<b>-en</b> في كل ما عداها.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp decl">
+        <thead><tr><th></th><th class="de-cell">Maskulin</th><th class="de-cell">Feminin</th><th class="de-cell">Neutrum</th><th class="de-cell">Plural</th></tr></thead>
+        <tbody>
+          <tr><td>Nominativ</td><td class="de-cell">der -e</td><td class="de-cell">die -e</td><td class="de-cell">das -e</td><td class="de-cell">die -en</td></tr>
+          <tr><td>Akkusativ</td><td class="de-cell hlcol">den -en</td><td class="de-cell">die -e</td><td class="de-cell">das -e</td><td class="de-cell">die -en</td></tr>
+          <tr><td>Dativ</td><td class="de-cell">dem -en</td><td class="de-cell">der -en</td><td class="de-cell">dem -en</td><td class="de-cell">den -en</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule-box tone-schwach reveal">
+      <div class="icon">⭐</div>
+      <div>
+        <h3>قاعدة مبسّطة يسهل حفظها</h3>
+        <p><b>-e</b> تظهر فقط في: Nominativ (كل الأجناس) وAkkusativ (المؤنث والمحايد فقط). <b>كل ما عدا ذلك -en</b>. هذا يعني أن معظم الجدول -en فعليًا، ولا تحتاج لحفظ سوى أربع خانات استثنائية بـ -e.</p>
+      </div>
+    </div>
+
+    <div class="examples-grid cols-2 reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge schwach">Nom. مذكر</span>
+          <p class="ex-de" lang="de"><span class="w">Der</span> <span class="w"><span class="hl">alte</span></span> <span class="w">Mann</span> <span class="w">liest.</span></p>
+          <button class="speak-btn" data-speak="Der alte Mann liest." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">الرجل العجوز يقرأ.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge schwach">Akk. مذكر</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">sehe</span> <span class="w">den</span> <span class="w"><span class="hl">alten</span></span> <span class="w">Mann.</span></p>
+          <button class="speak-btn" data-speak="Ich sehe den alten Mann." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أرى الرجل العجوز. (den ⇐ الصفة -en أيضًا)</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge schwach">Nom. مؤنث</span>
+          <p class="ex-de" lang="de"><span class="w">Die</span> <span class="w"><span class="hl">junge</span></span> <span class="w">Frau</span> <span class="w">lächelt.</span></p>
+          <button class="speak-btn" data-speak="Die junge Frau lächelt." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">المرأة الشابة تبتسم.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge schwach">Dat. جمع</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">helfe</span> <span class="w">den</span> <span class="w"><span class="hl">kleinen</span></span> <span class="w">Kindern.</span></p>
+          <button class="speak-btn" data-speak="Ich helfe den kleinen Kindern." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أساعد الأطفال الصغار.</p>
+      </div>
+    </div>
+
+    <div class="mistake-box reveal">
+      <h4>⚠️ خطأ شائع: استخدام -en بدل -e في Nominativ</h4>
+      <div class="mrow bad"><span class="mark">✗</span><span lang="de">Der alten Mann liest.</span></div>
+      <div class="mrow good"><span class="mark">✓</span><span lang="de">Der alte Mann liest.</span></div>
+      <p class="mnote">في Nominativ، تأخذ الصفة دائمًا -e بعد أداة التعريف، بغضّ النظر عن الجنس.</p>
+    </div>
+
+    <div class="practice-panel reveal">
+      <div class="practice-head">
+        <div class="badge-icon">🧩</div>
+        <div><h3>تمرين: رتّب جملة بصفة بعد أداة التعريف</h3><p>اختر الترتيب الصحيح.</p></div>
+      </div>
+      <div class="builder-target" id="schwachTarget" aria-live="polite"></div>
+      <div class="builder-bank" id="schwachBank"></div>
+      <div class="builder-actions">
+        <button class="btn btn-primary btn-sm" data-builder-check="schwach">تحقّق ✓</button>
+        <button class="btn btn-ghost btn-sm" data-builder-reset="schwach">إعادة ترتيب 🔀</button>
+        <span class="builder-feedback" id="schwachFeedback"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--SECTION:GEMISCHT-->
+
+<!-- ==================== GEMISCHT ==================== -->
+<section class="section tone-gemischt" id="gemischt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-gemischt">gemischte Deklination · بعد ein, eine, ein, kein, mein...</span>
+      <span class="kicker" style="margin-top:14px">02 / نفس نمط schwach، مع استثناءين فقط</span>
+      <h2>تصريف الصفة بعد أداة التنكير</h2>
+      <p class="section-desc">عائلة ein-Wörter (ein, kein, mein, dein, sein...) تتبع <b>نفس جدول schwach تمامًا</b> — باستثناء ثلاث خانات فقط، حيث تكون أداة التنكير نفسها "غامضة" ولا تُظهر الجنس بوضوح، فتضطر الصفة إلى "تعويض" تلك الإشارة الناقصة.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp decl">
+        <thead><tr><th></th><th class="de-cell">Maskulin</th><th class="de-cell">Feminin</th><th class="de-cell">Neutrum</th><th class="de-cell">Plural (kein-)</th></tr></thead>
+        <tbody>
+          <tr><td>Nominativ</td><td class="de-cell hlcol">ein -er</td><td class="de-cell">eine -e</td><td class="de-cell hlcol">ein -es</td><td class="de-cell">keine -en</td></tr>
+          <tr><td>Akkusativ</td><td class="de-cell">einen -en</td><td class="de-cell">eine -e</td><td class="de-cell hlcol">ein -es</td><td class="de-cell">keine -en</td></tr>
+          <tr><td>Dativ</td><td class="de-cell">einem -en</td><td class="de-cell">einer -en</td><td class="de-cell">einem -en</td><td class="de-cell">keinen -en</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule-box tone-gemischt reveal">
+      <div class="icon">🔍</div>
+      <div>
+        <h3>لماذا هذان الاستثناءان تحديدًا؟</h3>
+        <p>كلمة <span class="de">ein</span> تظهر بنفس الشكل تمامًا مع المذكر في Nominativ ومع المحايد في Nominativ وAkkusativ — فلا تكشف أيّ جنس هو. لذلك تتحمّل الصفة نفسها مهمة إظهار الجنس في هذه الخانات الثلاث: <span class="de" style="font-weight:700">-er</span> للمذكر (Nominativ)، و<span class="de" style="font-weight:700">-es</span> للمحايد (Nominativ وAkkusativ) — بدل -e العادية.</p>
+      </div>
+    </div>
+
+    <div class="examples-grid cols-2 reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge gemischt">Nom. مذكر — استثناء</span>
+          <p class="ex-de" lang="de"><span class="w">Das</span> <span class="w">ist</span> <span class="w">ein</span> <span class="w"><span class="hl hl-gemischt">schneller</span></span> <span class="w">Wagen.</span></p>
+          <button class="speak-btn" data-speak="Das ist ein schneller Wagen." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">هذه سيارة سريعة. (ein + er لأن Wagen مذكر Nominativ)</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge gemischt">Nom./Akk. محايد — استثناء</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">habe</span> <span class="w">ein</span> <span class="w"><span class="hl hl-gemischt">neues</span></span> <span class="w">Auto.</span></p>
+          <button class="speak-btn" data-speak="Ich habe ein neues Auto." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">لديّ سيارة جديدة. (ein + es لأن Auto محايد)</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge gemischt">Nom. مؤنث — نمط عادي</span>
+          <p class="ex-de" lang="de"><span class="w">Das</span> <span class="w">ist</span> <span class="w">eine</span> <span class="w"><span class="hl hl-gemischt">gute</span></span> <span class="w">Idee.</span></p>
+          <button class="speak-btn" data-speak="Das ist eine gute Idee." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">هذه فكرة جيدة. (eine مؤنثة واضحة ⇐ -e عادية)</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge gemischt">Plural — keine</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">habe</span> <span class="w">keine</span> <span class="w"><span class="hl hl-gemischt">neuen</span></span> <span class="w">Ideen.</span></p>
+          <button class="speak-btn" data-speak="Ich habe keine neuen Ideen." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">ليس لديّ أفكار جديدة. (kein لها جمع، بعكس ein)</p>
+      </div>
+    </div>
+
+    <div class="mistake-box reveal">
+      <h4>⚠️ خطأ شائع: معاملة ein-Wörter مثل der-Wörter دائمًا</h4>
+      <div class="mrow bad"><span class="mark">✗</span><span lang="de">Das ist ein schnelle Wagen.</span></div>
+      <div class="mrow good"><span class="mark">✓</span><span lang="de">Das ist ein schneller Wagen.</span></div>
+      <p class="mnote">بما أن ein لا تُظهر أن Wagen مذكر، يجب أن تحمل الصفة نفسها إشارة المذكر عبر -er.</p>
+    </div>
+
+    <div class="practice-panel reveal">
+      <div class="practice-head">
+        <div class="badge-icon">🔑</div>
+        <div><h3>تمرين: رتّب جملة بصفة بعد ein/einen</h3><p>Computer مذكر ⇐ einen ...en في Akkusativ.</p></div>
+      </div>
+      <div class="builder-target" id="gemischtTarget" aria-live="polite"></div>
+      <div class="builder-bank" id="gemischtBank"></div>
+      <div class="builder-actions">
+        <button class="btn btn-primary btn-sm" data-builder-check="gemischt">تحقّق ✓</button>
+        <button class="btn btn-ghost btn-sm" data-builder-reset="gemischt">إعادة ترتيب 🔀</button>
+        <span class="builder-feedback" id="gemischtFeedback"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--SECTION:STARK-->
+
+<!-- ==================== STARK ==================== -->
+<section class="section tone-stark" id="stark">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-stark">starke Deklination · بلا أداة تعريف إطلاقًا</span>
+      <span class="kicker" style="margin-top:14px">03 / الصفة وحدها تحمل كل الإشارة</span>
+      <h2>تصريف الصفة بلا أي أداة قبلها</h2>
+      <p class="section-desc">عندما لا توجد أداة إطلاقًا (لا der ولا ein) — كأن تتحدّث عن أشياء بشكل عام، أو بعد كلمات كمّية مثل <span class="de">viele, einige, manche, wenige</span> — يجب أن تحمل الصفة نفسها <b>كل</b> إشارة الجنس والحالة. لحسن الحظ، هذا يعني ببساطة أنها تأخذ نفس النهايات التي كانت لتظهر على der/die/das.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp decl">
+        <thead><tr><th></th><th class="de-cell">Maskulin</th><th class="de-cell">Feminin</th><th class="de-cell">Neutrum</th><th class="de-cell">Plural</th></tr></thead>
+        <tbody>
+          <tr><td>Nominativ</td><td class="de-cell hlcol">-er</td><td class="de-cell">-e</td><td class="de-cell hlcol">-es</td><td class="de-cell">-e</td></tr>
+          <tr><td>Akkusativ</td><td class="de-cell">-en</td><td class="de-cell">-e</td><td class="de-cell hlcol">-es</td><td class="de-cell">-e</td></tr>
+          <tr><td>Dativ</td><td class="de-cell">-em</td><td class="de-cell">-er</td><td class="de-cell">-em</td><td class="de-cell hlcol">-en</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule-box tone-stark reveal">
+      <div class="icon">🪞</div>
+      <div>
+        <h3>احفظها بسهولة: انظر إلى der/die/das/die</h3>
+        <p>قارن النهايات أعلاه بأداة التعريف نفسها: <span class="de">der → -er</span>، <span class="de">die → -e</span>، <span class="de">das → -es</span>، <span class="de">dem → -em</span>، <span class="de">den (جمع) → -en</span>. الصفة هنا تُقلّد شكل الأداة الغائبة تمامًا — إن كنت تتقن جدول der/die/das، فأنت تتقن هذا الجدول بالفعل.</p>
+      </div>
+    </div>
+
+    <div class="examples-grid cols-2 reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge stark">Nom. بلا أداة</span>
+          <p class="ex-de" lang="de"><span class="w"><span class="hl hl-stark">Frischer</span></span> <span class="w">Fisch</span> <span class="w">schmeckt</span> <span class="w">gut.</span></p>
+          <button class="speak-btn" data-speak="Frischer Fisch schmeckt gut." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">السمك الطازج طعمه جيد. (Fisch مذكر، بلا أداة ⇐ -er)</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge stark">Akk. بلا أداة</span>
+          <p class="ex-de" lang="de"><span class="w">Ich</span> <span class="w">trinke</span> <span class="w"><span class="hl hl-stark">kalten</span></span> <span class="w">Kaffee.</span></p>
+          <button class="speak-btn" data-speak="Ich trinke kalten Kaffee." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أشرب قهوة باردة.</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge stark">viele + Plural</span>
+          <p class="ex-de" lang="de"><span class="w">Viele</span> <span class="w"><span class="hl hl-stark">junge</span></span> <span class="w">Leute</span> <span class="w">reisen</span> <span class="w">gern.</span></p>
+          <button class="speak-btn" data-speak="Viele junge Leute reisen gern." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">كثير من الشباب يحبّون السفر. (viele نفسها بلا تصريف محدَّد، والصفة تتبع نمط stark)</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge stark">Dat. جمع</span>
+          <p class="ex-de" lang="de"><span class="w">Mit</span> <span class="w"><span class="hl hl-stark">herzlichen</span></span> <span class="w">Grüßen</span></p>
+          <button class="speak-btn" data-speak="Mit herzlichen Grüßen" aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">مع تحيّاتي الحارّة. (تعبير ثابت شائع في نهاية الرسائل)</p>
+      </div>
+    </div>
+
+    <div class="mistake-box reveal">
+      <h4>⚠️ خطأ شائع: ترك الصفة بلا أي نهاية عند غياب الأداة</h4>
+      <div class="mrow bad"><span class="mark">✗</span><span lang="de">Ich trinke kalt Kaffee.</span></div>
+      <div class="mrow good"><span class="mark">✓</span><span lang="de">Ich trinke kalten Kaffee.</span></div>
+      <p class="mnote">غياب الأداة لا يعني غياب النهاية — بل العكس: الصفة يجب أن تحمل النهاية كاملة لتعويض غياب الأداة تمامًا.</p>
+    </div>
+
+    <div class="practice-panel reveal">
+      <div class="practice-head">
+        <div class="badge-icon">🧱</div>
+        <div><h3>تمرين: رتّب جملة بصفة بلا أداة</h3><p>Fisch مذكر Nominativ بلا أداة ⇐ -er.</p></div>
+      </div>
+      <div class="builder-target" id="starkTarget" aria-live="polite"></div>
+      <div class="builder-bank" id="starkBank"></div>
+      <div class="builder-actions">
+        <button class="btn btn-primary btn-sm" data-builder-check="stark">تحقّق ✓</button>
+        <button class="btn btn-ghost btn-sm" data-builder-reset="stark">إعادة ترتيب 🔀</button>
+        <span class="builder-feedback" id="starkFeedback"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--SECTION:VERGLEICH-->
+
+<!-- ==================== VERGLEICH ==================== -->
+<section class="section tone-modal" id="vergleich">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-modal">Die drei Muster im Vergleich · نظرة موحّدة</span>
+      <span class="kicker" style="margin-top:14px">04 / قاعدة واحدة تربط الأنماط الثلاثة</span>
+      <h2>كل الجداول جنبًا إلى جنب</h2>
+      <p class="section-desc">إليك الأنماط الثلاثة معًا في جدول واحد لكل حالة إعرابية — لاحظ كيف تتشابه schwach وgemischt في كل شيء تقريبًا، وكيف تُطابق stark أداة التعريف الغائبة تمامًا.</p>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>Nominativ</th><th class="de-cell">schwach (der)</th><th class="de-cell">gemischt (ein)</th><th class="de-cell">stark (بلا أداة)</th></tr></thead>
+        <tbody>
+          <tr><td>Maskulin</td><td class="de-cell">der gute</td><td class="de-cell">ein guter</td><td class="de-cell">guter</td></tr>
+          <tr><td>Feminin</td><td class="de-cell">die gute</td><td class="de-cell">eine gute</td><td class="de-cell">gute</td></tr>
+          <tr><td>Neutrum</td><td class="de-cell">das gute</td><td class="de-cell">ein gutes</td><td class="de-cell">gutes</td></tr>
+          <tr><td>Plural</td><td class="de-cell">die guten</td><td class="de-cell">keine guten</td><td class="de-cell">gute</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>Akkusativ</th><th class="de-cell">schwach (der)</th><th class="de-cell">gemischt (ein)</th><th class="de-cell">stark (بلا أداة)</th></tr></thead>
+        <tbody>
+          <tr><td>Maskulin</td><td class="de-cell">den guten</td><td class="de-cell">einen guten</td><td class="de-cell">guten</td></tr>
+          <tr><td>Feminin</td><td class="de-cell">die gute</td><td class="de-cell">eine gute</td><td class="de-cell">gute</td></tr>
+          <tr><td>Neutrum</td><td class="de-cell">das gute</td><td class="de-cell">ein gutes</td><td class="de-cell">gutes</td></tr>
+          <tr><td>Plural</td><td class="de-cell">die guten</td><td class="de-cell">keine guten</td><td class="de-cell">gute</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>Dativ</th><th class="de-cell">schwach (der)</th><th class="de-cell">gemischt (ein)</th><th class="de-cell">stark (بلا أداة)</th></tr></thead>
+        <tbody>
+          <tr><td>Maskulin</td><td class="de-cell">dem guten</td><td class="de-cell">einem guten</td><td class="de-cell">gutem</td></tr>
+          <tr><td>Feminin</td><td class="de-cell">der guten</td><td class="de-cell">einer guten</td><td class="de-cell">guter</td></tr>
+          <tr><td>Neutrum</td><td class="de-cell">dem guten</td><td class="de-cell">einem guten</td><td class="de-cell">gutem</td></tr>
+          <tr><td>Plural</td><td class="de-cell">den guten</td><td class="de-cell">keinen guten</td><td class="de-cell">guten</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); padding:clamp(20px,4vw,36px); margin-top:30px">
+      <div style="text-align:center; margin-bottom:26px">
+        <span class="chip" style="background:var(--ink); color:var(--bg)">أي نمط أستخدم؟ — خريطة قرار سريعة</span>
+      </div>
+      <div class="flow-grid" style="grid-template-columns:1fr 1fr 1fr">
+        <div>
+          <div style="text-align:center; margin-bottom:16px; font-family:var(--font-ar-head); font-weight:700; color:var(--schwach)">① der-Wort؟</div>
+          <div class="rule-box tone-schwach" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">✓</div><div><h3 style="font-size:.92rem">der, die, das, dieser, jeder, welcher</h3><p style="font-size:.86rem">→ <b class="de" style="color:var(--schwach)">schwach</b> (-e / -en)</p></div></div>
+        </div>
+        <div>
+          <div style="text-align:center; margin-bottom:16px; font-family:var(--font-ar-head); font-weight:700; color:var(--gemischt)">② ein-Wort؟</div>
+          <div class="rule-box tone-gemischt" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">✓</div><div><h3 style="font-size:.92rem">ein, kein, mein, dein, sein...</h3><p style="font-size:.86rem">→ <b class="de" style="color:var(--gemischt)">gemischt</b> (استثناءان فقط)</p></div></div>
+        </div>
+        <div>
+          <div style="text-align:center; margin-bottom:16px; font-family:var(--font-ar-head); font-weight:700; color:var(--stark)">③ لا شيء؟</div>
+          <div class="rule-box tone-stark" style="margin:0; padding:14px 16px"><div class="icon" style="width:34px;height:34px">✓</div><div><h3 style="font-size:.92rem">بلا أداة، أو بعد viele/einige/manche</h3><p style="font-size:.86rem">→ <b class="de" style="color:var(--stark)">stark</b> (تُقلّد der/die/das)</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--SECTION:STEIGERUNG-->
+
+<!-- ==================== STEIGERUNG ==================== -->
+<section class="section tone-modal" id="steigerung">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="chip chip-modal">Steigerung · Positiv, Komparativ, Superlativ</span>
+      <span class="kicker" style="margin-top:14px">05 / +er للمقارنة، +(e)sten للتفضيل المطلق</span>
+      <h2>درجات المقارنة: أكثر، الأكثر</h2>
+      <p class="section-desc">مثل العربية (كبير، أكبر، الأكبر)، للصفة الألمانية ثلاث درجات: <span class="de" style="font-weight:700">Positiv</span> (الأساسية)، <span class="de" style="font-weight:700">Komparativ</span> (المقارنة: +er)، و<span class="de" style="font-weight:700">Superlativ</span> (التفضيل المطلق: am +(e)sten، أو der/die/das +(e)ste إن جاءت قبل اسم).</p>
+    </div>
+
+    <div class="formula reveal">
+      <span class="f-tag main">Positiv <span style="opacity:.7">schnell</span></span>
+      <span class="arrow">→</span>
+      <span class="f-tag" style="background:var(--modal-soft); color:var(--modal-ink)">Komparativ <span style="opacity:.7">schnell+er</span></span>
+      <span class="arrow">→</span>
+      <span class="f-tag" style="background:var(--gemischt-soft); color:var(--gemischt-ink)">Superlativ <span style="opacity:.7">am schnell+sten</span></span>
+    </div>
+
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th class="de-cell">Positiv</th><th class="de-cell">Komparativ</th><th class="de-cell">Superlativ</th></tr></thead>
+        <tbody>
+          <tr><td class="de-cell">schnell</td><td class="de-cell">schneller</td><td class="de-cell">am schnellsten</td></tr>
+          <tr><td class="de-cell">klein</td><td class="de-cell">kleiner</td><td class="de-cell">am kleinsten</td></tr>
+          <tr><td class="de-cell">alt</td><td class="de-cell hlcol">älter</td><td class="de-cell hlcol">am ältesten</td></tr>
+          <tr><td class="de-cell">groß</td><td class="de-cell hlcol">größer</td><td class="de-cell hlcol">am größten</td></tr>
+          <tr><td class="de-cell">gut</td><td class="de-cell hlcol">besser</td><td class="de-cell hlcol">am besten</td></tr>
+          <tr><td class="de-cell">viel</td><td class="de-cell hlcol">mehr</td><td class="de-cell hlcol">am meisten</td></tr>
+          <tr><td class="de-cell">gern</td><td class="de-cell hlcol">lieber</td><td class="de-cell hlcol">am liebsten</td></tr>
+          <tr><td class="de-cell">hoch</td><td class="de-cell hlcol">höher</td><td class="de-cell hlcol">am höchsten</td></tr>
+          <tr><td class="de-cell">nah</td><td class="de-cell hlcol">näher</td><td class="de-cell hlcol">am nächsten</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule-box tone-modal reveal">
+      <div class="icon">🔤</div>
+      <div>
+        <h3>ملاحظات صوتية مهمّة</h3>
+        <p>كثير من الصفات القصيرة (مقطع واحد) تأخذ <b>أملاوت</b> في Komparativ وSuperlativ: <span class="de">alt→älter, jung→jünger, groß→größer, kalt→kälter, warm→wärmer, lang→länger, kurz→kürzer, stark→stärker</span>. والصفات المنتهية بـ <span class="de">-t, -d, -s, -z, -sch</span> (مثل alt, laut) تضيف <span class="de" style="font-weight:700">-esten</span> بدل -sten في Superlativ لتسهيل النطق: <span class="de">am ältesten</span>، وليس *am ältsten.</p>
+      </div>
+    </div>
+
+    <div class="examples-grid cols-2 reveal-stagger">
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge modal">Komparativ + als</span>
+          <p class="ex-de" lang="de"><span class="w">Mein</span> <span class="w">Bruder</span> <span class="w">ist</span> <span class="w"><span class="hl">größer</span></span> <span class="w">als</span> <span class="w">ich.</span></p>
+          <button class="speak-btn" data-speak="Mein Bruder ist größer als ich." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">أخي أطول منّي. (als تُستخدم مع المقارنة التفاضلية "من")</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge modal">so...wie</span>
+          <p class="ex-de" lang="de"><span class="w">Er</span> <span class="w">ist</span> <span class="w">so</span> <span class="w"><span class="hl">groß</span></span> <span class="w">wie</span> <span class="w">sein Vater.</span></p>
+          <button class="speak-btn" data-speak="Er ist so groß wie sein Vater." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">هو بنفس طول أبيه. (so...wie تُستخدم للتساوي "مثل")</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge gemischt">Superlativ Attributiv</span>
+          <p class="ex-de" lang="de"><span class="w">Das</span> <span class="w">ist</span> <span class="w">das</span> <span class="w"><span class="hl hl-gemischt">schönste</span></span> <span class="w">Café</span> <span class="w">der Stadt.</span></p>
+          <button class="speak-btn" data-speak="Das ist das schönste Café der Stadt." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">هذا أجمل مقهى في المدينة. (Superlativ قبل اسم ⇐ يتصرّف مثل أي صفة أخرى)</p>
+      </div>
+      <div class="ex-card">
+        <div class="ex-top"><span class="case-badge modal">Superlativ Prädikativ</span>
+          <p class="ex-de" lang="de"><span class="w">Dieses</span> <span class="w">Café</span> <span class="w">ist</span> <span class="w"><span class="hl">am schönsten.</span></span></p>
+          <button class="speak-btn" data-speak="Dieses Café ist am schönsten." aria-label="استمع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>
+        </div>
+        <p class="ex-ar">هذا المقهى هو الأجمل. (Superlativ بعد sein بلا اسم بعده ⇐ صيغة am + sten الثابتة)</p>
+      </div>
+    </div>
+
+    <div class="mistake-box reveal">
+      <h4>⚠️ خطأ شائع: استخدام als بدل wie للتساوي</h4>
+      <div class="mrow bad"><span class="mark">✗</span><span lang="de">Er ist so groß als sein Vater.</span></div>
+      <div class="mrow good"><span class="mark">✓</span><span lang="de">Er ist so groß wie sein Vater.</span></div>
+      <p class="mnote">so...wie للتساوي ("مثل")، وgrößer als للتفاضل ("من") — لا تُستخدم als مع so.</p>
+    </div>
+
+    <div class="practice-panel reveal">
+      <div class="practice-head">
+        <div class="badge-icon">📈</div>
+        <div><h3>تمرين: رتّب جملة مقارنة</h3><p>groß → größer، مع als.</p></div>
+      </div>
+      <div class="builder-target" id="steigerungTarget" aria-live="polite"></div>
+      <div class="builder-bank" id="steigerungBank"></div>
+      <div class="builder-actions">
+        <button class="btn btn-primary btn-sm" data-builder-check="steigerung">تحقّق ✓</button>
+        <button class="btn btn-ghost btn-sm" data-builder-reset="steigerung">إعادة ترتيب 🔀</button>
+        <span class="builder-feedback" id="steigerungFeedback"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--SECTION:REVIEW-->
+
+<!-- ==================== REVIEW / SUMMARY ==================== -->
+<section class="section" id="review">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">06 / Zusammenfassung</span>
+      <h2>مراجعة سريعة — انقر لقلب كل بطاقة</h2>
+      <p class="section-desc">ست بطاقات تلخّص الدرس، وأخيرًا مرجع سريع لأشيع الصفات الشاذّة في المقارنة.</p>
+    </div>
+
+    <div class="flip-grid reveal-stagger">
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة Prädikativ">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--ink)">Prädikativ</span><p style="font-size:.82rem; color:var(--ink-soft)">بلا نهاية أبدًا</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--schwach-soft); --tone-ink:var(--schwach-ink)">
+            <p>بعد sein/werden/bleiben، الصفة لا تتصرّف إطلاقًا.</p>
+            <div class="ex">Das Auto ist schnell.</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة schwach">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--schwach)">schwach</span><p style="font-size:.82rem; color:var(--ink-soft)">بعد der/die/das</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--schwach-soft); --tone-ink:var(--schwach-ink)">
+            <p>-e في Nom. وAkk.(مؤنث/محايد)، و-en في كل ما عداها.</p>
+            <div class="ex">der gute Mann</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة gemischt">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--gemischt)">gemischt</span><p style="font-size:.82rem; color:var(--ink-soft)">بعد ein/eine/ein</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--gemischt-soft); --tone-ink:var(--gemischt-ink)">
+            <p>نفس schwach، إلا Nom. مذكر (-er) وNom./Akk. محايد (-es).</p>
+            <div class="ex">ein guter Mann / ein gutes Kind</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة stark">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--stark)">stark</span><p style="font-size:.82rem; color:var(--ink-soft)">بلا أداة إطلاقًا</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--stark-soft); --tone-ink:var(--stark-ink)">
+            <p>تُقلّد نهايات der/die/das تمامًا: -er, -e, -es, -en...</p>
+            <div class="ex">guter Wein, kalte Milch</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة مبدأ الإشارة">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--modal)">مبدأ الإشارة</span><p style="font-size:.82rem; color:var(--ink-soft)">مرّة واحدة، لا أكثر ولا أقل</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--modal-soft); --tone-ink:var(--modal-ink)">
+            <p>الجنس والحالة يظهران مرّة على الأداة أو على الصفة، أبدًا مرّتين.</p>
+            <div class="ex">der gute / ein guter / guter</div>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0" role="button" aria-pressed="false" aria-label="بطاقة Steigerung">
+        <div class="flip-inner">
+          <div class="flip-face flip-front"><span class="fw" style="color:var(--gemischt)">Steigerung</span><p style="font-size:.82rem; color:var(--ink-soft)">+er / am +sten</p><span class="tap-hint">👆 انقر لعرض القاعدة</span></div>
+          <div class="flip-face flip-back" style="--tone-soft:var(--gemischt-soft); --tone-ink:var(--gemischt-ink)">
+            <p>schnell → schneller → am schnellsten. احذر الشواذّ: gut→besser.</p>
+            <div class="ex">größer als / so groß wie</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-ar-head); font-size:1.1rem; margin-top:40px; margin-bottom:6px">📖 مرجع سريع: أشيع صفات المقارنة الشاذّة</h3>
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th class="de-cell">Positiv</th><th class="de-cell">Komparativ</th><th class="de-cell">Superlativ</th><th>ملاحظة</th></tr></thead>
+        <tbody>
+          <tr><td class="de-cell">gut</td><td class="de-cell">besser</td><td class="de-cell">am besten</td><td>شاذّة تمامًا</td></tr>
+          <tr><td class="de-cell">viel</td><td class="de-cell">mehr</td><td class="de-cell">am meisten</td><td>شاذّة تمامًا</td></tr>
+          <tr><td class="de-cell">gern</td><td class="de-cell">lieber</td><td class="de-cell">am liebsten</td><td>شاذّة تمامًا</td></tr>
+          <tr><td class="de-cell">hoch</td><td class="de-cell">höher</td><td class="de-cell">am höchsten</td><td>يفقد الـ c</td></tr>
+          <tr><td class="de-cell">nah</td><td class="de-cell">näher</td><td class="de-cell">am nächsten</td><td>تضيف ch</td></tr>
+          <tr><td class="de-cell">groß</td><td class="de-cell">größer</td><td class="de-cell">am größten</td><td>أملاوت</td></tr>
+          <tr><td class="de-cell">alt</td><td class="de-cell">älter</td><td class="de-cell">am ältesten</td><td>أملاوت + esten</td></tr>
+          <tr><td class="de-cell">dunkel</td><td class="de-cell">dunkler</td><td class="de-cell">am dunkelsten</td><td>تفقد e قبل l</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="reveal" style="margin-top:40px">
+      <h3 style="font-family:var(--font-ar-head); font-size:1.05rem; margin-bottom:6px">🏅 إنجازاتك في هذا الدرس</h3>
+      <p style="color:var(--ink-faint); font-size:.86rem">أكمل الأقسام والتمارين لتفتح كل شارة</p>
+      <div class="achievements-panel" id="achievementsPanel">
+        <div class="ach-item" data-ach="start"><div class="ach-circle">🚀</div><small>بداية الرحلة</small></div>
+        <div class="ach-item" data-ach="schwach"><div class="ach-circle">🧩</div><small>خبير schwach</small></div>
+        <div class="ach-item" data-ach="gemischt"><div class="ach-circle">🔑</div><small>خبير gemischt</small></div>
+        <div class="ach-item" data-ach="stark"><div class="ach-circle">🧱</div><small>خبير stark</small></div>
+        <div class="ach-item" data-ach="steigerung"><div class="ach-circle">📈</div><small>خبير المقارنة</small></div>
+        <div class="ach-item" data-ach="quiz"><div class="ach-circle">🏆</div><small>بطل الاختبار</small></div>
+      </div>
+      <div style="margin-top:18px">
+        <div style="display:flex; justify-content:space-between; font-size:.82rem; color:var(--ink-soft); margin-bottom:4px"><span>تقدّمك الإجمالي</span><span id="overallPct">0%</span></div>
+        <div class="progressbar-track"><div class="progressbar-fill" id="overallFill" style="width:0%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--SECTION:QUIZ-->
+
+<!-- ==================== FINAL QUIZ ==================== -->
+<section class="section" id="quiz">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">07 / Abschlusstest</span>
+      <h2>الاختبار الختامي — الصفات</h2>
+      <p class="section-desc">خمسة عشر سؤالًا تغطّي الأنماط الثلاثة، القاعدة الموحّدة، ودرجات المقارنة.</p>
+    </div>
+
+    <div id="finalQuizContainer" class="reveal"></div>
+
+    <div class="quiz-summary" id="quizSummary">
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="52" fill="none" stroke="var(--border)" stroke-width="10"/>
+          <circle id="scoreRingFill" cx="60" cy="60" r="52" fill="none" stroke="var(--modal)" stroke-width="10" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="327"/>
+        </svg>
+        <div class="num" id="scoreRingNum">0/15</div>
+      </div>
+      <h3 id="quizResultTitle">نتيجتك</h3>
+      <p id="quizResultDesc">استمر في التدرّب لتُتقن تصريف الصفات.</p>
+      <button class="btn btn-primary" id="quizRetryBtn">أعد الاختبار 🔄</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="cheat-card reveal">
+      <h2 style="font-family:var(--font-ar-head); font-size:1.2rem; margin-bottom:4px">📋 البطاقة المرجعية السريعة</h2>
+      <p style="color:var(--ink-faint); font-size:.86rem">مثالية للطباعة والمراجعة قبل الاختبار</p>
+      <div class="cheat-grid">
+        <div class="cheat-item" style="--tone:var(--ink-soft)"><b>Prädikativ</b><span>بعد sein / werden / bleiben: بلا نهاية أبدًا — Das Auto ist schnell.</span></div>
+        <div class="cheat-item" style="--tone:var(--schwach)"><b>der / die / das + Adjektiv</b><span>Nom: -e (كل الأجناس) · Akk: مذكر -en، والباقي -e · Dativ والجمع: -en.</span></div>
+        <div class="cheat-item" style="--tone:var(--gemischt)"><b>ein / kein / mein + Adjektiv</b><span>Nom: -er / -e / -es · Akk: -en / -e / -es · Dativ والجمع: -en.</span></div>
+        <div class="cheat-item" style="--tone:var(--stark)"><b>بلا أداة + Adjektiv</b><span>تحمل الصفة إشارة الأداة كاملة: -er / -e / -es، Akk مذكر -en، Dativ: -em / -er / -em.</span></div>
+        <div class="cheat-item" style="--tone:var(--modal)"><b>Steigerung</b><span>schnell → schneller → am schnellsten · مع als للتفاضل وso…wie للتساوي.</span></div>
+        <div class="cheat-item" style="--tone:var(--modal)"><b>شواذّ يجب حفظها</b><span>gut → besser → am besten · viel → mehr → am meisten · gern → lieber → am liebsten.</span></div>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px">
+        <button class="btn btn-ghost btn-sm" id="printBtn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+          طباعة البطاقة
+        </button>
+        <a href="#overview" class="btn btn-ghost btn-sm">العودة إلى البداية ↑</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>درس شامل عن الصفات الألمانية Adjektive لمستوى A2.</span>
+      <span>يغطّي Prädikativ، أنماط التصريف الثلاثة، القاعدة الموحّدة، ودرجات المقارنة.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="fab-stack">
+  <button class="fab" id="backToTop" aria-label="العودة إلى الأعلى" title="العودة إلى الأعلى">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<div id="speechBar" role="region" aria-label="أدوات النطق الصوتي">
+  <div class="speak-indicator" id="speakIndicator" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="now-playing">
+    <small>الآن يُنطق</small>
+    <span id="nowPlayingText">—</span>
+  </div>
+  <div class="sp-controls">
+    <button class="sp-btn" id="spReplay" aria-label="إعادة النطق" title="إعادة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12a9 9 0 1 1 3 6.7"/><path d="M3 16v-4h4"/></svg></button>
+    <button class="sp-btn" id="spPlayPause" aria-label="إيقاف/تشغيل مؤقت" title="إيقاف مؤقت"><svg viewBox="0 0 24 24" fill="currentColor" id="spPlayIcon"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+    <button class="sp-btn" id="spGotoVoice" aria-label="الانتقال إلى إعدادات الصوت" title="إعدادات الصوت"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 1a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M9 22h6"/></svg></button>
+  </div>
+</div>
+
+<div id="achToastHost" aria-live="polite"></div>
+
+<script>
+const LS={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+</script>
+<script>
+/* ==========================================================================
+   THEME — ثلاثي: فاتح / داكن / النظام (الافتراضي: داكن)
+   ========================================================================== */
+(function themeModule(){
+  const root = document.documentElement;
+  const KEY = 'adj_theme';
+  const mql = window.matchMedia('(prefers-color-scheme: dark)');
+  const btns = {
+    light: document.getElementById('themeLight'),
+    dark: document.getElementById('themeDark'),
+    system: document.getElementById('themeSystem')
+  };
+  function resolvedIsDark(mode){
+    if(mode === 'dark') return true;
+    if(mode === 'light') return false;
+    return mql.matches;
+  }
+  function apply(mode){
+    root.classList.toggle('dark', resolvedIsDark(mode));
+    Object.keys(btns).forEach(k => btns[k].classList.toggle('on', k === mode));
+  }
+  function setMode(mode){ LS.set(KEY, mode); apply(mode); }
+  const saved = LS.get(KEY);
+  apply(saved ? saved : 'dark');
+  btns.light.addEventListener('click', ()=> setMode('light'));
+  btns.dark.addEventListener('click', ()=> setMode('dark'));
+  btns.system.addEventListener('click', ()=> setMode('system'));
+  mql.addEventListener('change', ()=>{
+    const current = LS.get(KEY) || 'dark';
+    if(current === 'system') apply('system');
+  });
+})();
+
+/* ==========================================================================
+   PROGRESS BAR + SCROLLSPY + REVEAL ON SCROLL
+   ========================================================================== */
+(function scrollModule(){
+  const bar = document.getElementById('readProgress');
+  function updateProgress(){
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const height = h.scrollHeight - h.clientHeight;
+    const pct = height > 0 ? (scrolled/height)*100 : 0;
+    bar.style.setProperty('--progress', pct + '%');
+    bar.setAttribute('aria-valuenow', Math.round(pct));
+    document.getElementById('backToTop').classList.toggle('show', scrolled > 500);
+  }
+  document.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  const sections = document.querySelectorAll('main .section, main .hero');
+  const navlinks = document.querySelectorAll('.navlink');
+  const visited = new Set(JSON.parse(LS.get('adj_visited') || '[]'));
+  visited.forEach(id => { const l = document.querySelector('.navlink[data-nav="'+id+'"]'); if(l) l.setAttribute('data-done','true'); });
+
+  const spy = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      const id = entry.target.id;
+      if(!id) return;
+      const link = document.querySelector('.navlink[data-nav="'+id+'"]');
+      if(entry.isIntersecting){
+        navlinks.forEach(l=>l.classList.remove('active'));
+        if(link) link.classList.add('active');
+        visited.add(id);
+        LS.set('adj_visited', JSON.stringify([...visited]));
+        if(link) link.setAttribute('data-done','true');
+        if(window.ADJ) window.ADJ.updateOverallProgress();
+      }
+    });
+  }, {rootMargin:'-15% 0px -70% 0px', threshold:0});
+  sections.forEach(s=>spy.observe(s));
+
+  const reveals = document.querySelectorAll('.reveal, .reveal-stagger');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.15});
+  reveals.forEach(r=>io.observe(r));
+})();
+
+/* ==========================================================================
+   FULLSCREEN + SEARCH
+   ========================================================================== */
+(function uiModule(){
+  document.getElementById('fullscreenBtn').addEventListener('click', ()=>{
+    if(!document.fullscreenElement){ document.documentElement.requestFullscreen().catch(()=>{}); }
+    else{ document.exitFullscreen(); }
+  });
+  const searchBox = document.getElementById('searchBox');
+  const searchInput = document.getElementById('searchInput');
+  document.getElementById('searchToggle').addEventListener('click', ()=>{
+    searchBox.classList.toggle('open');
+    if(searchBox.classList.contains('open')) searchInput.focus();
+  });
+  let lastHit = null;
+  searchInput.addEventListener('keydown', (e)=>{
+    if(e.key !== 'Enter') return;
+    const q = searchInput.value.trim().toLowerCase();
+    if(!q) return;
+    const candidates = document.querySelectorAll('main .ex-de, main h2, main .section-desc, main p');
+    let found = null;
+    for(const el of candidates){ if(el === lastHit) continue; if(el.textContent.toLowerCase().includes(q)){ found = el; break; } }
+    if(!found){ for(const el of candidates){ if(el.textContent.toLowerCase().includes(q)){ found = el; break; } } }
+    if(found){
+      lastHit = found;
+      found.scrollIntoView({behavior:'smooth', block:'center'});
+      const old = found.style.background;
+      found.style.transition = 'background .3s';
+      found.style.background = 'var(--both-soft)';
+      setTimeout(()=>{ found.style.background = old; }, 1400);
+    }
+  });
+})();
+</script>
+
+<script>
+/* ==========================================================================
+   SPEECH ENGINE — نطق ألماني (de-DE) عبر Web Speech API
+   طبقة تجريد: AudioService.provider هي BrowserSpeechProvider حاليًا؛ الواجهة
+   (getVoices / speak / stop) مصمّمة لتسمح بإضافة CloudTTSProvider لاحقًا عبر
+   خادم آمن (بدون أي مفتاح API في الواجهة الأمامية) دون تعديل بقية النظام.
+   ========================================================================== */
+const TEST_SENTENCE = 'Hallo! Wie geht es dir? Ich lerne heute Deutsch.';
+
+const AudioService = (function(){
+  const hasSynth = 'speechSynthesis' in window;
+  const synth = hasSynth ? window.speechSynthesis : null;
+  const bar = document.getElementById('speechBar');
+  const novoiceBanner = document.getElementById('novoiceBanner');
+  const nowPlayingText = document.getElementById('nowPlayingText');
+  const voiceList = document.getElementById('voiceList');
+  const voiceLoading = document.getElementById('voiceLoading');
+  const speedChips = document.querySelectorAll('.speed-chip');
+  const playPauseBtn = document.getElementById('spPlayPause');
+  const playIcon = document.getElementById('spPlayIcon');
+  const RATE_KEY = 'adj_rate';
+  const VOICE_KEY = 'adj_voice';
+
+  const BrowserSpeechProvider = {
+    supported: hasSynth,
+    async getVoices(){
+      if(!hasSynth) return [];
+      const all = synth.getVoices();
+      return all.filter(v => v.lang && v.lang.toLowerCase().startsWith('de'));
+    },
+    speak(text, opts){
+      if(!hasSynth) return;
+      const utter = new SpeechSynthesisUtterance(text);
+      if(opts.voice) utter.voice = opts.voice;
+      utter.lang = (opts.voice && opts.voice.lang) || 'de-DE';
+      utter.rate = opts.rate || 1;
+      utter.onboundary = opts.onboundary;
+      utter.onstart = opts.onstart;
+      utter.onend = opts.onend;
+      utter.onerror = opts.onerror;
+      synth.cancel();
+      synth.speak(utter);
+      return utter;
+    },
+    stop(){ if(hasSynth) synth.cancel(); },
+    pause(){ if(hasSynth) synth.pause(); },
+    resume(){ if(hasSynth) synth.resume(); }
+  };
+
+  /* نقطة توسّع مستقبلية — AudioProviderSelector:
+     واجهة TTSProvider (getVoices/speak/stop) تسمح بإضافة CloudTTSProvider
+     لاحقًا (يُستدعى عبر خادم آمن يحمل مفتاح API الخاص به، لا عبر الواجهة
+     الأمامية) دون تعديل بقية النظام. طالما لا يوجد مزوّد سحابي مُهيّأ فعليًا،
+     يبقى BrowserSpeechProvider هو المزوّد النشط الوحيد، ويستمر الدرس بالعمل
+     الكامل بدونه. */
+  const provider = BrowserSpeechProvider;
+
+  let deVoices = [];
+  let selectedVoiceIdx = 0;
+  let currentRate = parseFloat(LS.get(RATE_KEY) || '1');
+  let currentUtterance = null;
+  let currentText = '';
+  let currentHighlightEls = [];
+  let currentSentenceCard = null;
+  let isPaused = false;
+  let voicesEverFound = false;
+
+  setActiveChip(currentRate);
+  function setActiveChip(rate){
+    speedChips.forEach(c => c.classList.toggle('on', parseFloat(c.dataset.rate) === rate));
+  }
+  speedChips.forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      currentRate = parseFloat(chip.dataset.rate);
+      LS.set(RATE_KEY, currentRate);
+      setActiveChip(currentRate);
+    });
+  });
+
+  function voiceLabel(v){
+    const lang = (v.lang || '').toLowerCase();
+    let region = 'Deutsch';
+    if(lang.includes('at')) region = 'Deutsch — Österreich';
+    else if(lang.includes('ch')) region = 'Deutsch — Schweiz';
+    else if(lang.includes('de')) region = 'Deutsch — Deutschland';
+    return { name: v.name.replace(/^Google\s|^Microsoft\s/,''), region, lang: v.lang };
+  }
+
+  function renderVoiceList(){
+    voiceList.innerHTML = '';
+    if(deVoices.length === 0){
+      const p = document.createElement('p');
+      p.className = 'voice-loading';
+      p.textContent = 'لا يوجد أي صوت ألماني مثبَّت في هذا المتصفح حاليًا.';
+      voiceList.appendChild(p);
+      return;
+    }
+    deVoices.forEach((v,i)=>{
+      const info = voiceLabel(v);
+      const row = document.createElement('div');
+      row.className = 'voice-item' + (i === selectedVoiceIdx ? ' selected' : '');
+      row.setAttribute('role','radio');
+      row.setAttribute('aria-checked', i === selectedVoiceIdx ? 'true' : 'false');
+      row.tabIndex = 0;
+      row.innerHTML =
+        '<span class="radio-dot" aria-hidden="true"></span>' +
+        '<span class="voice-info"><span class="voice-name">'+info.name+'</span><span class="voice-meta">'+info.region+' · '+info.lang+'</span></span>' +
+        '<span class="voice-badge">'+(i === selectedVoiceIdx ? 'مُختار' : 'اختر')+'</span>' +
+        '<button type="button" class="voice-test-btn" data-test-idx="'+i+'" aria-label="اختبار هذا الصوت">'+
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>اختبار'+
+        '</button>';
+      row.addEventListener('click', (e)=>{
+        if(e.target.closest('.voice-test-btn')) return;
+        selectVoice(i);
+      });
+      row.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectVoice(i); }
+      });
+      row.querySelector('.voice-test-btn').addEventListener('click', (e)=>{
+        e.stopPropagation();
+        testVoice(i, e.currentTarget);
+      });
+      voiceList.appendChild(row);
+    });
+  }
+
+  function selectVoice(i){
+    selectedVoiceIdx = i;
+    LS.set(VOICE_KEY, i);
+    renderVoiceList();
+  }
+
+  function testVoice(i, btnEl){
+    const voice = deVoices[i];
+    if(!voice) return;
+    document.querySelectorAll('.voice-test-btn').forEach(b=>b.classList.remove('testing'));
+    if(btnEl) btnEl.classList.add('testing');
+    provider.speak(TEST_SENTENCE, {
+      voice: voice,
+      rate: currentRate,
+      onstart(){ bar.classList.add('show','playing'); document.body.classList.add('speech-active'); nowPlayingText.textContent = TEST_SENTENCE; },
+      onend(){ bar.classList.remove('playing'); if(btnEl) btnEl.classList.remove('testing'); },
+      onerror(){ bar.classList.remove('playing'); if(btnEl) btnEl.classList.remove('testing'); }
+    });
+  }
+
+  async function loadVoices(){
+    if(!provider.supported){
+      novoiceBanner.classList.add('show');
+      voiceLoading && (voiceLoading.textContent = 'متصفحك لا يدعم خاصية النطق الآلي (Web Speech API).');
+      return;
+    }
+    deVoices = await provider.getVoices();
+    if(deVoices.length === 0){
+      renderVoiceList();
+      novoiceBanner.classList.add('show');
+      return;
+    }
+    voicesEverFound = true;
+    novoiceBanner.classList.remove('show');
+    const savedVoice = parseInt(LS.get(VOICE_KEY), 10);
+    if(!isNaN(savedVoice) && deVoices[savedVoice]) selectedVoiceIdx = savedVoice;
+    else{
+      const preferredIdx = deVoices.findIndex(v => /de-DE/i.test(v.lang) && /google|natural|online/i.test(v.name));
+      selectedVoiceIdx = preferredIdx > -1 ? preferredIdx : 0;
+    }
+    renderVoiceList();
+  }
+  loadVoices();
+  if(hasSynth && synth.onvoiceschanged !== undefined){ synth.onvoiceschanged = loadVoices; }
+
+  function clearHighlights(){
+    currentHighlightEls.forEach(el => el.classList.remove('speaking'));
+    currentHighlightEls = [];
+    if(currentSentenceCard){ currentSentenceCard.classList.remove('sentence-speaking'); currentSentenceCard = null; }
+  }
+
+  function computeWordRanges(containerEl, fullText){
+    const spans = Array.from(containerEl.querySelectorAll('.w'));
+    let cursor = 0;
+    const ranges = [];
+    spans.forEach(span=>{
+      const t = span.textContent;
+      const idx = fullText.indexOf(t, cursor);
+      if(idx === -1) return;
+      ranges.push({start:idx, end:idx+t.length, el:span});
+      cursor = idx + t.length;
+    });
+    return ranges;
+  }
+
+  function speak(text, sourceEl){
+    if(!text) return;
+    if(!provider.supported){
+      novoiceBanner.classList.add('show');
+      novoiceBanner.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+    clearHighlights();
+    const voice = deVoices[selectedVoiceIdx];
+
+    let ranges = [];
+    const card = sourceEl && sourceEl.closest ? sourceEl.closest('.ex-de') : null;
+    if(card && card.querySelectorAll('.w').length){
+      ranges = computeWordRanges(card, text);
+      currentSentenceCard = card.closest('.ex-card');
+      if(currentSentenceCard) currentSentenceCard.classList.add('sentence-speaking');
+    } else if(sourceEl && sourceEl.classList && sourceEl.classList.contains('w')){
+      sourceEl.classList.add('speaking');
+      currentHighlightEls.push(sourceEl);
+    }
+
+    currentUtterance = provider.speak(text, {
+      voice: voice,
+      rate: currentRate,
+      onboundary(ev){
+        if(ev.name && ev.name !== 'word') return;
+        const hit = ranges.find(r => ev.charIndex >= r.start && ev.charIndex < r.end);
+        if(hit){
+          currentHighlightEls.forEach(el=>el.classList.remove('speaking'));
+          currentHighlightEls = [hit.el];
+          hit.el.classList.add('speaking');
+        }
+      },
+      onstart(){
+        bar.classList.add('show','playing');
+        document.body.classList.add('speech-active');
+        nowPlayingText.textContent = text;
+        playIcon.innerHTML = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+        isPaused = false;
+      },
+      onend(){ bar.classList.remove('playing'); clearHighlights(); },
+      onerror(){
+        bar.classList.remove('playing'); clearHighlights();
+        if(!voicesEverFound){
+          nowPlayingText.textContent = 'لا يتوفّر صوت في هذا المتصفح';
+          bar.classList.add('show');
+          document.body.classList.add('speech-active');
+          novoiceBanner.classList.add('show');
+        }
+      }
+    });
+    currentText = text;
+  }
+
+  playPauseBtn.addEventListener('click', ()=>{
+    if(!currentUtterance || !hasSynth) return;
+    if(synth.speaking && !isPaused){
+      provider.pause(); isPaused = true; bar.classList.remove('playing');
+      playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+    } else if(isPaused){
+      provider.resume(); isPaused = false; bar.classList.add('playing');
+      playIcon.innerHTML = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+    }
+  });
+  document.getElementById('spReplay').addEventListener('click', ()=>{
+    if(currentText) speak(currentText, currentSentenceCard ? currentSentenceCard.querySelector('.ex-de') : null);
+  });
+  document.getElementById('spGotoVoice').addEventListener('click', ()=>{
+    document.getElementById('voicePanel').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  document.addEventListener('click', function(e){
+    const wordEl = e.target.closest('.w');
+    if(wordEl){ speak(wordEl.textContent.trim().replace(/[.,!?—–]+$/,''), wordEl); return; }
+    const speakBtn = e.target.closest('[data-speak]');
+    if(speakBtn){
+      const card = speakBtn.closest('.ex-card');
+      speak(speakBtn.getAttribute('data-speak'), card ? card.querySelector('.ex-de') : speakBtn);
+      return;
+    }
+    const deEl = e.target.closest('.de, .de-cell');
+    if(deEl && !deEl.closest('.ex-de') && !deEl.closest('table') && !deEl.closest('.voice-item')){ speak(deEl.textContent.trim(), deEl); }
+  });
+
+  document.getElementById('heroSpeakDemo').addEventListener('click', ()=>{
+    const firstEx = document.querySelector('#overview .ex-de');
+    speak('Das Buch liegt auf dem Tisch.', firstEx);
+  });
+
+  return { speak };
+})();
+</script>
+
+<script>
+/* BUILDER — تمارين ترتيب الجمل */
+const SentenceBuilder=(function(){
+  const configs={
+    schwach:{tokens:['Ich','sehe','den','alten','Mann.'],hintAr:'الترجمة: أرى الرجل العجوز. — Mann مذكر Akkusativ بعد den ⇐ -en.'},
+    gemischt:{tokens:['Er','kauft','einen','neuen','Computer.'],hintAr:'الترجمة: يشتري حاسوبًا جديدًا. — einen لا تكفي وحدها للدلالة على الجنس، فتظهر -en على الصفة.'},
+    stark:{tokens:['Frischer','Fisch','schmeckt','gut.'],hintAr:'الترجمة: السمك الطازج طعمه لذيذ. — بلا أداة، مذكر Nominativ ⇐ -er.'},
+    steigerung:{tokens:['Mein','Bruder','ist','größer','als','ich.'],hintAr:'الترجمة: أخي أطول منّي. — groß ⇐ größer (أوملاوت) مع als.'}
+  };
+  function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+    if(JSON.stringify(a)===JSON.stringify(arr)&&a.length>2){[a[0],a[1]]=[a[1],a[0]];}return a;}
+  function render(key){
+    const cfg=configs[key],target=document.getElementById(key+'Target'),bank=document.getElementById(key+'Bank'),fb=document.getElementById(key+'Feedback');
+    if(!target||!bank||!fb)return;
+    target.innerHTML='';target.classList.remove('correct','wrong');fb.textContent='';fb.className='builder-feedback';bank.innerHTML='';
+    shuffle(cfg.tokens).forEach(word=>{
+      const chip=document.createElement('button');chip.className='word-chip';chip.type='button';chip.textContent=word;
+      chip.addEventListener('click',()=>{
+        if(chip.classList.contains('placed'))return;
+        chip.classList.add('placed');
+        const p=document.createElement('button');p.type='button';p.className='word-chip in-target';p.textContent=word;
+        p.addEventListener('click',()=>{p.remove();chip.classList.remove('placed');target.classList.remove('correct','wrong');fb.textContent='';});
+        target.appendChild(p);
+      });
+      bank.appendChild(chip);
+    });
+  }
+  function check(key){
+    const cfg=configs[key],target=document.getElementById(key+'Target'),fb=document.getElementById(key+'Feedback');
+    const placed=Array.from(target.children).map(c=>c.textContent);
+    target.classList.remove('correct','wrong');
+    if(!placed.length)return;
+    if(JSON.stringify(placed)===JSON.stringify(cfg.tokens)){
+      target.classList.add('correct');fb.textContent='✓ صحيح تمامًا! '+cfg.hintAr;fb.className='builder-feedback ok';
+      if(window.ADJ)window.ADJ.unlock(key);
+    }else{target.classList.add('wrong');fb.textContent='✗ ليس تمامًا — راجع القاعدة أعلاه.';fb.className='builder-feedback no';}
+  }
+  document.addEventListener('click',e=>{
+    const c=e.target.closest('[data-builder-check]');if(c){check(c.dataset.builderCheck);return;}
+    const r=e.target.closest('[data-builder-reset]');if(r){render(r.dataset.builderReset);}
+  });
+  Object.keys(configs).forEach(render);
+})();
+
+/* COMPARE TOGGLE — Prädikativ مقابل Attributiv */
+(function(){
+  const s=document.getElementById('compareSentence'),c=document.getElementById('compareCaption');
+  const b={pred:document.getElementById('btnModePred'),attr:document.getElementById('btnModeAttr')};
+  const modes={
+    pred:{html:'<span class="slot s-main">Das Auto</span><span class="slot s-conn" style="background:var(--ink); color:#fff">ist</span><span class="slot s-end">schnell.</span>',
+      cap:'الصفة بعد sein — بلا أي نهاية أبدًا، بغضّ النظر عن جنس أو حالة الاسم.'},
+    attr:{html:'<span class="slot s-main">Das ist</span><span class="slot s-mid">ein</span><span class="slot s-end">schnelles</span><span class="slot s-main">Auto.</span>',
+      cap:'الصفة قبل الاسم — ein لا تُظهر أن Auto محايد، فتحمل الصفة الإشارة بنفسها: -es.'}
+  };
+  function set(m){s.innerHTML=modes[m].html;c.textContent=modes[m].cap;Object.values(b).forEach(x=>x.classList.remove('on'));b[m].classList.add('on');}
+  b.pred.addEventListener('click',()=>set('pred'));b.attr.addEventListener('click',()=>set('attr'));
+})();
+</script>
+
+<script>
+/* ACHIEVEMENTS */
+window.ADJ=(function(){
+  const KEY='adj_achievements',TOTAL=8;
+  const LABELS={start:['بداية الرحلة','🚀'],schwach:['خبير schwach','🧩'],gemischt:['خبير gemischt','🔑'],stark:['خبير stark','🧱'],steigerung:['خبير المقارنة','📈'],quiz:['بطل الاختبار','🏆']};
+  let ach={};try{ach=JSON.parse(LS.get(KEY)||'{}');}catch(e){ach={};}
+  function save(){LS.set(KEY,JSON.stringify(ach));}
+  function toast(t,em){
+    const h=document.getElementById('achToastHost'),d=document.createElement('div');d.className='ach-toast';
+    d.innerHTML='<span class="emoji">'+em+'</span><div><b>شارة جديدة!</b><span>'+t+'</span></div>';
+    h.appendChild(d);requestAnimationFrame(()=>d.classList.add('show'));
+    setTimeout(()=>{d.classList.remove('show');setTimeout(()=>d.remove(),500);},3200);
+  }
+  function progress(){
+    let v=[];try{v=JSON.parse(LS.get('adj_visited')||'[]');}catch(e){}
+    const n=Object.keys(LABELS).filter(k=>ach[k]).length;
+    const pct=Math.min(100,Math.round(((v.length/TOTAL)*0.5+(n/Object.keys(LABELS).length)*0.5)*100));
+    const f=document.getElementById('overallFill'),l=document.getElementById('overallPct');
+    if(f)f.style.width=pct+'%';if(l)l.textContent=pct+'%';
+  }
+  function unlock(k){
+    if(!ach[k]){ach[k]=true;save();
+      const it=document.querySelector('.ach-item[data-ach="'+k+'"]');if(it)it.classList.add('unlocked');
+      if(LABELS[k])toast(LABELS[k][0],LABELS[k][1]);}
+    progress();
+  }
+  function checkStart(){
+    let v=[];try{v=JSON.parse(LS.get('adj_visited')||'[]');}catch(e){}
+    if(v.length>=1&&!ach.start)unlock('start');else progress();
+  }
+  Object.keys(ach).forEach(k=>{if(ach[k]){const it=document.querySelector('.ach-item[data-ach="'+k+'"]');if(it)it.classList.add('unlocked');}});
+  progress();
+  return {unlock,updateOverallProgress:checkStart};
+})();
+</script>
+
+<script>
+/* QUIZ ENGINE */
+function createQuiz(container,questions,opts){
+  opts=opts||{};container.innerHTML='';let score=0,answered=0;
+  questions.forEach(q=>{
+    const qd=document.createElement('div');qd.className='quiz-q';
+    const qt=document.createElement('div');qt.className='qtext';
+    qt.innerHTML=q.q+(q.de?' <br><span class="de">'+q.de+'</span>':'');qd.appendChild(qt);
+    const od=document.createElement('div');od.className='qopts';
+    q.options.forEach((txt,oi)=>{
+      const btn=document.createElement('button');btn.type='button';btn.className='qopt';
+      const sp=document.createElement('span');sp.className='de';sp.style.fontFamily='inherit';sp.textContent=txt;btn.appendChild(sp);
+      btn.addEventListener('click',()=>{
+        if(qd.dataset.answered)return;qd.dataset.answered='true';answered++;
+        if(oi===q.correct){score++;btn.classList.add('correct');}
+        else{btn.classList.add('incorrect');od.children[q.correct].classList.add('correct');}
+        Array.from(od.children).forEach(b=>b.disabled=true);
+        if(q.explain){const ex=document.createElement('div');ex.className='quiz-explain show';ex.textContent=q.explain;qd.appendChild(ex);}
+        if(answered===questions.length&&opts.onComplete)opts.onComplete(score,questions.length);
+      });
+      od.appendChild(btn);
+    });
+    qd.appendChild(od);container.appendChild(qd);
+  });
+}
+const finalQuestions=[
+ {q:'Prädikativ — اختر الصيغة الصحيحة:',de:'Das Auto ist ___.',options:['schnell','schnelles'],correct:0,explain:'بعد sein تبقى الصفة بلا نهاية مهما كان جنس الاسم.'},
+ {q:'بعد أداة التعريف (Nominativ):',de:'Der ___ Mann liest.',options:['alte','alten'],correct:0,explain:'Nominativ بعد der/die/das ⇐ -e.'},
+ {q:'بعد أداة التعريف (Akkusativ مذكر):',de:'Ich sehe den ___ Mann.',options:['alte','alten'],correct:1,explain:'Akkusativ مذكر (den) ⇐ -en.'},
+ {q:'بعد أداة التعريف (Dativ جمع):',de:'Ich helfe den ___ Kindern.',options:['kleine','kleinen'],correct:1,explain:'Dativ ⇐ -en دائمًا بعد أداة التعريف.'},
+ {q:'اختر صيغة المقارنة الشاذّة:',de:'Pizza schmeckt ___ als Salat.',options:['besser','guter'],correct:0,explain:'gut → besser → am besten (تصريف شاذّ).'},
+ {q:'بعد ein (Nominativ مذكر):',de:'Das ist ein ___ Wagen.',options:['schnelle','schneller'],correct:1,explain:'ein لا تُظهر الجنس، فتحمل الصفة -er.'},
+ {q:'بعد ein (Akkusativ محايد):',de:'Ich habe ein ___ Auto.',options:['neues','neue'],correct:0,explain:'Auto محايد ⇐ ein neues Auto (-es).'},
+ {q:'بعد einen (Akkusativ مذكر):',de:'Er kauft einen ___ Computer.',options:['neuen','neuer'],correct:0,explain:'einen ⇐ الصفة -en في Akkusativ مذكر.'},
+ {q:'بعد kein في الجمع:',de:'Ich habe keine ___ Ideen.',options:['neue','neuen'],correct:1,explain:'بعد kein/mein في الجمع ⇐ -en.'},
+ {q:'بلا أداة (Akkusativ مذكر):',de:'Ich trinke ___ Kaffee.',options:['kalter','kalten'],correct:1,explain:'بلا أداة تحمل الصفة الإشارة: Akkusativ مذكر ⇐ -en.'},
+ {q:'بلا أداة (Nominativ مذكر):',de:'___ Fisch schmeckt gut.',options:['Frischer','Frischen'],correct:0,explain:'Nominativ مذكر بلا أداة ⇐ -er.'},
+ {q:'بلا أداة (Nominativ جمع):',de:'___ Leute reisen gern.',options:['Junge','Jungen'],correct:0,explain:'الجمع Nominativ بلا أداة ⇐ -e.'},
+ {q:'درجة المقارنة (Komparativ):',de:'Mein Bruder ist ___ als ich.',options:['größer','großer'],correct:0,explain:'groß → größer (أوملاوت) ثم als للمقارنة.'},
+ {q:'درجة التفضيل (Superlativ):',de:'Dieses Café ist am ___.',options:['schönsten','schöner'],correct:0,explain:'am + صفة + -sten ⇐ am schönsten.'},
+ {q:'للتساوي نستخدم:',de:'Er ist so groß ___ sein Vater.',options:['wie','als'],correct:0,explain:'so … wie للتساوي، أما als فللتفاضل بعد Komparativ.'}
+];
+function renderFinalQuiz(){
+  const c=document.getElementById('finalQuizContainer'),sm=document.getElementById('quizSummary');
+  sm.classList.remove('show');c.style.display='';
+  createQuiz(c,finalQuestions,{onComplete:(score,total)=>{setTimeout(()=>{
+    c.style.display='none';sm.classList.add('show');
+    const circ=2*Math.PI*52,ring=document.getElementById('scoreRingFill');
+    ring.setAttribute('stroke-dasharray',circ.toFixed(0));ring.style.transition='stroke-dashoffset 1s ease-out';
+    requestAnimationFrame(()=>ring.setAttribute('stroke-dashoffset',(circ*(1-score/total)).toFixed(0)));
+    document.getElementById('scoreRingNum').textContent=score+'/'+total;
+    const t=document.getElementById('quizResultTitle'),d=document.getElementById('quizResultDesc');
+    if(score>=13){t.textContent='🥇 ممتاز — أتقنت الصفات الألمانية!';d.textContent='أنماط التصريف الثلاثة ودرجات المقارنة صارت في متناول يدك.';ring.style.stroke='var(--stark)';}
+    else if(score>=9){t.textContent='🥈 جيد جدًا!';d.textContent='أنت قريب من الإتقان — راجع الأسئلة التي أخطأت فيها.';ring.style.stroke='var(--gemischt)';}
+    else{t.textContent='🥉 استمر في التدرّب';d.textContent='راجع أقسام الدرس المتعلقة بأخطائك ثم أعد المحاولة.';ring.style.stroke='var(--schwach)';}
+    if(score>=10)window.ADJ.unlock('quiz');
+  },400);}});
+}
+renderFinalQuiz();
+document.getElementById('quizRetryBtn').addEventListener('click',renderFinalQuiz);
+document.querySelectorAll('.flip-card').forEach(card=>{
+  function tg(){const f=card.classList.toggle('flipped');card.setAttribute('aria-pressed',f?'true':'false');}
+  card.addEventListener('click',tg);
+  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tg();}});
+});
+document.getElementById('printBtn').addEventListener('click',()=>window.print());
+</script>
+
+<script src="../../assets/js/lesson-bridge.js" data-lesson-id="a2-grammar-24-adjektive" data-category="a2-grammar" data-title="الصفات — Adjektive" data-root="../../" defer></script>
+</body>
+</html>

@@ -35,27 +35,27 @@
 window.DEUTSCH_CATALOG = {
   categories: [
   {
-    "title": "المرحلة A1 — نقطة الانطلاق",
+    "title": "A1 حياة يومية — مفردات ومواقف من الأبجدية حتى المهن",
     "order": 1,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
-    "subtitle": "من الأبجدية والتحيات إلى النفي والأفعال المنفصلة والمهن — ١٩ درسًا متكاملًا",
+    "subtitle": "الأبجدية والتحيات والأرقام والأسرة والاتجاهات والمهن، مع النفي والأفعال المنفصلة — ١٩ درسًا موضوعيًا",
     "level": "A1",
     "icon": "seed",
     "key": "a1",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
     "folder": "a1"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
   },
   {
-    "title": "Lektion A2",
+    "title": "A2 Lektion — مسار نحوي متكامل",
     "order": 2,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
-    "subtitle": "مسار نحوي متكامل من ١٥ درسًا شاملًا، من زمن Perfekt حتى الضمائر غير المحددة",
+    "subtitle": "١٥ درسًا شاملًا، من زمن Perfekt حتى الضمائر غير المحددة",
     "level": "A2",
     "icon": "stack",
     "key": "lektion-a2",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
     "folder": "lektion-a2"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
   },
   {
-    "title": "مسار A2 الكامل — دورة من ١٢ محطة",
+    "title": "A2 محطات — دورة موضوعية من ١٢ محطة",
     "order": 3,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
     "subtitle": "رحلة متسلسلة من التعارف حتى السفر، محطة تلو الأخرى",
@@ -75,7 +75,7 @@ window.DEUTSCH_CATALOG = {
     "folder": "grammatik"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
   },
   {
-    "title": "عائلات الأفعال",
+    "title": "عائلات الأفعال — أفعال محورية بأسلوب سردي",
     "order": 5,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
     "subtitle": "ثماني عائلات أفعال أساسية، بأسلوب سردي غني — بعضها بوضع ليلي أنيق",
@@ -85,7 +85,7 @@ window.DEUTSCH_CATALOG = {
     "folder": "family-verben"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
   },
   {
-    "title": "المفردات المصورة",
+    "title": "المفردات المصورة — مجموعات محورية بالرسوم والنطق",
     "order": 6,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
     "subtitle": "ثماني مجموعات مفردات محورية مع رسومات ونطق",
@@ -95,7 +95,7 @@ window.DEUTSCH_CATALOG = {
     "folder": "wortschatz"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
   },
   {
-    "title": "قصص ومحادثات حقيقية",
+    "title": "قصص ومحادثات — تطبيق عملي لما تعلّمته",
     "order": 7,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
     "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
     "subtitle": "طبّق ما تعلمته في محادثات يومية وأسئلة اختبار المحادثة",
@@ -103,6 +103,26 @@ window.DEUTSCH_CATALOG = {
     "icon": "chat",
     "key": "stories",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
     "folder": "stories"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
+  },
+  {
+    "title": "A1 قواعد — ١٦ قاعدة أساسية بالترتيب",
+    "order": 1.5,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
+    "subtitle": "من ضمائر الشخص وsein / haben حتى Dativ والضمائر في Akkusativ وDativ — ١٦ قاعدة بالترتيب المنهجي",
+    "level": "A1",
+    "icon": "compass",
+    "key": "a1-grammar",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
+    "folder": "grammatik-a1"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
+  },
+  {
+    "title": "A2 قواعد — ١٨ قاعدة بالترتيب",
+    "order": 2.5,          // رقم ترتيب هذا القسم بين الأقسام — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا القسم بالكامل من الموقع
+    "subtitle": "من Perfekt وPräteritum حتى Genitiv وIndefinitpronomen — ١٨ قاعدة بالترتيب المنهجي",
+    "level": "A2",
+    "icon": "book",
+    "key": "a2-grammar",            // (لا تُغيّر) معرّف داخلي تعتمد عليه الدروس
+    "folder": "grammatik-a2"       // (لا تُغيّر) اسم مجلد هذا القسم داخل Deutsch/
   }
   ],
 
@@ -1123,6 +1143,386 @@ window.DEUTSCH_CATALOG = {
     "category": "stories",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
     "path": "Deutsch/stories/deutsch-mit-mira.html",
     "thumb": "assets/thumbnails/stories-deutsch-mit-mira.jpg"
+  },
+  // ────────────────────────────────────────────────────────────
+  // قسم: قواعد A1  (category: "a1-grammar")
+  // ────────────────────────────────────────────────────────────,
+  {
+    "title": "الدرس 01 — ضمائر الشخص — Personalpronomen",
+    "order": 1,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "ich وdu وer وsie وwir وihr: الضمائر في Nominativ وAkkusativ وDativ مع أمثلة وتمارين.",
+    "badges": [],
+    "id": "a1-grammar-01-personalpronomen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/01-personalpronomen.html",
+    "thumb": "assets/thumbnails/a1-grammar-01-personalpronomen.jpg"
+  },
+  {
+    "title": "الدرس 02 — الفعلان الأساسيان — sein / haben",
+    "order": 2,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "تصريف sein وhaben في الحاضر والماضي والـ Perfekt، ومتى نستخدم كلًّا منهما.",
+    "badges": [],
+    "id": "a1-grammar-02-sein-haben",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/02-sein-haben.html",
+    "thumb": "assets/thumbnails/a1-grammar-02-sein-haben.jpg"
+  },
+  {
+    "title": "الدرس 03 — المضارع وتصريف الأفعال — Präsens",
+    "order": 3,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "تصريف الأفعال المنتظمة وغير المنتظمة والقابلة للفصل في المضارع.",
+    "badges": [],
+    "id": "a1-grammar-03-praesens",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/03-praesens.html",
+    "thumb": "assets/thumbnails/a1-grammar-03-praesens.jpg"
+  },
+  {
+    "title": "الدرس 04 — ترتيب الجملة — Satzbau",
+    "order": 4,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "موقع الفعل في الجملة الخبرية والاستفهامية، وترتيب الأجزاء بعد الحروف الرابطة.",
+    "badges": [],
+    "id": "a1-grammar-04-satzbau",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/04-satzbau.html",
+    "thumb": "assets/thumbnails/a1-grammar-04-satzbau.jpg"
+  },
+  {
+    "title": "الدرس 05 — أسئلة W وأسئلة نعم/لا — W-Fragen / Ja-Nein-Fragen",
+    "order": 5,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "أدوات الاستفهام wer وwas وwo وwann وwie، وبناء أسئلة نعم/لا.",
+    "badges": [],
+    "id": "a1-grammar-05-w-fragen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/05-w-fragen.html",
+    "thumb": "assets/thumbnails/a1-grammar-05-w-fragen.jpg"
+  },
+  {
+    "title": "الدرس 06 — حالة الفاعل — Nominativ",
+    "order": 6,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الأدوات والفاعل والصفات في حالة Nominativ مع أمثلة وتمارين.",
+    "badges": [],
+    "id": "a1-grammar-06-nominativ",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/06-nominativ.html",
+    "thumb": "assets/thumbnails/a1-grammar-06-nominativ.jpg"
+  },
+  {
+    "title": "الدرس 07 — أدوات التعريف والتنكير — Artikel",
+    "order": 7,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "der / die / das وein / eine وkein: الجنس والتصريف والاستخدام.",
+    "badges": [],
+    "id": "a1-grammar-07-artikel",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/07-artikel.html",
+    "thumb": "assets/thumbnails/a1-grammar-07-artikel.jpg"
+  },
+  {
+    "title": "الدرس 08 — النفي — Negation: nicht / kein",
+    "order": 8,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "nicht وkein، وأدوات النفي nie وniemand وnichts وnoch nicht وnicht mehr.",
+    "badges": [],
+    "id": "a1-grammar-08-negation",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/08-negation.html",
+    "thumb": "assets/thumbnails/a1-grammar-08-negation.jpg"
+  },
+  {
+    "title": "الدرس 09 — المفعول به المباشر — Akkusativ",
+    "order": 9,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "شرح شامل لحالة Akkusativ: الأدوات والأفعال وكل الاستخدامات.",
+    "badges": [],
+    "id": "a1-grammar-09-akkusativ",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/09-akkusativ.html",
+    "thumb": "assets/thumbnails/a1-grammar-09-akkusativ.jpg"
+  },
+  {
+    "title": "الدرس 10 — الملكية — Possessivartikel",
+    "order": 10,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "mein وdein وsein وihr وunser: ضمائر الملكية وتصريفها.",
+    "badges": [],
+    "id": "a1-grammar-10-possessivartikel",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/10-possessivartikel.html",
+    "thumb": "assets/thumbnails/a1-grammar-10-possessivartikel.jpg"
+  },
+  {
+    "title": "الدرس 11 — الأفعال الناقصة — Modalverben",
+    "order": 11,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "können وmüssen وwollen وdürfen: التصريف ومكان الفعل في الجملة.",
+    "badges": [],
+    "id": "a1-grammar-11-modalverben",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/11-modalverben.html",
+    "thumb": "assets/thumbnails/a1-grammar-11-modalverben.jpg"
+  },
+  {
+    "title": "الدرس 12 — الأفعال القابلة للانفصال — Trennbare Verben",
+    "order": 12,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "aufstehen وanrufen وeinkaufen: متى تنفصل البادئة وأين تقع.",
+    "badges": [],
+    "id": "a1-grammar-12-trennbare-verben",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/12-trennbare-verben.html",
+    "thumb": "assets/thumbnails/a1-grammar-12-trennbare-verben.jpg"
+  },
+  {
+    "title": "الدرس 13 — صيغة الأمر — Imperativ",
+    "order": 13,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "صيغ الأمر لـ du وihr وSie مع الأفعال المنتظمة وغير المنتظمة.",
+    "badges": [],
+    "id": "a1-grammar-13-imperativ",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/13-imperativ.html",
+    "thumb": "assets/thumbnails/a1-grammar-13-imperativ.jpg"
+  },
+  {
+    "title": "الدرس 14 — حروف الجر الأساسية — Präpositionen",
+    "order": 14,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "حروف الجر مع Akkusativ وDativ والمشتركة بينهما.",
+    "badges": [],
+    "id": "a1-grammar-14-praepositionen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/14-praepositionen.html",
+    "thumb": "assets/thumbnails/a1-grammar-14-praepositionen.jpg"
+  },
+  {
+    "title": "الدرس 15 — المفعول غير المباشر — Dativ",
+    "order": 15,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "شرح شامل لحالة Dativ: الأدوات والأفعال والاستخدامات بالتفصيل.",
+    "badges": [],
+    "id": "a1-grammar-15-dativ",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/15-dativ.html",
+    "thumb": "assets/thumbnails/a1-grammar-15-dativ.jpg"
+  },
+  {
+    "title": "الدرس 16 — الضمائر في Akkusativ / Dativ — Personalpronomen",
+    "order": 16,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "mich وdich وmir وdir وما يقابلها: الضمائر في حالتي المفعول.",
+    "badges": [],
+    "id": "a1-grammar-16-pronomen-akk-dativ",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a1-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a1/16-pronomen-akk-dativ.html",
+    "thumb": "assets/thumbnails/a1-grammar-16-pronomen-akk-dativ.jpg"
+  },
+  // ────────────────────────────────────────────────────────────
+  // قسم: قواعد A2  (category: "a2-grammar")
+  // ────────────────────────────────────────────────────────────,
+  {
+    "title": "الدرس 17 — الماضي المحادثي — Perfekt",
+    "order": 17,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "تكوين Perfekt، haben أم sein، وترتيب الجملة.",
+    "badges": [],
+    "id": "a2-grammar-17-perfekt",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/17-perfekt.html",
+    "thumb": "assets/thumbnails/a2-grammar-17-perfekt.jpg"
+  },
+  {
+    "title": "الدرس 18 — الماضي للأفعال الأساسية — Präteritum",
+    "order": 18,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "التكوين، وsein وhaben، والأفعال الناقصة في الماضي البسيط.",
+    "badges": [],
+    "id": "a2-grammar-18-praeteritum",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/18-praeteritum.html",
+    "thumb": "assets/thumbnails/a2-grammar-18-praeteritum.jpg"
+  },
+  {
+    "title": "الدرس 19 — الفرق بين Akkusativ وDativ — Akkusativ vs. Dativ",
+    "order": 19,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "التصريف والأفعال وحروف الجر: متى Akkusativ ومتى Dativ.",
+    "badges": [],
+    "id": "a2-grammar-19-akkusativ-vs-dativ",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/19-akkusativ-vs-dativ.html",
+    "thumb": "assets/thumbnails/a2-grammar-19-akkusativ-vs-dativ.jpg"
+  },
+  {
+    "title": "الدرس 20 — حروف الجر المتغيرة — Wechselpräpositionen",
+    "order": 20,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "حروف الجر التسعة المشتركة، واختيار Akkusativ أو Dativ حسب Wo / Wohin.",
+    "badges": [],
+    "id": "a2-grammar-20-wechselpraepositionen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/20-wechselpraepositionen.html",
+    "thumb": "assets/thumbnails/a2-grammar-20-wechselpraepositionen.jpg"
+  },
+  {
+    "title": "الدرس 21 — مكان ثابت أم اتجاه — Wo? / Wohin?",
+    "order": 21,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "التمييز بين Wo وWohin وWoher في الأسئلة والأجوبة.",
+    "badges": [],
+    "id": "a2-grammar-21-wo-wohin",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/21-wo-wohin.html",
+    "thumb": "assets/thumbnails/a2-grammar-21-wo-wohin.jpg"
+  },
+  {
+    "title": "الدرس 22 — الأفعال الانعكاسية — Reflexive Verben",
+    "order": 22,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "sich freuen وsich waschen وغيرها: الأفعال الانعكاسية واستخدامها.",
+    "badges": [],
+    "id": "a2-grammar-22-reflexive-verben",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/22-reflexive-verben.html",
+    "thumb": "assets/thumbnails/a2-grammar-22-reflexive-verben.jpg"
+  },
+  {
+    "title": "الدرس 23 — الضمائر الانعكاسية — Reflexivpronomen",
+    "order": 23,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "mich وdich وsich وmir وdir: الضمائر الانعكاسية في Akkusativ وDativ.",
+    "badges": [],
+    "id": "a2-grammar-23-reflexivpronomen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/23-reflexivpronomen.html",
+    "thumb": "assets/thumbnails/a2-grammar-23-reflexivpronomen.jpg"
+  },
+  {
+    "title": "الدرس 24 — الصفات — Adjektive",
+    "order": 24,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الصفات الألمانية: التصريف ودرجات المقارنة.",
+    "badges": [],
+    "id": "a2-grammar-24-adjektive",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/24-adjektive.html",
+    "thumb": "assets/thumbnails/a2-grammar-24-adjektive.jpg"
+  },
+  {
+    "title": "الدرس 25 — تصريف الصفات — Adjektivdeklination",
+    "order": 25,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "نهايات الصفات بعد الأداة المعرّفة والمنكّرة وبلا أداة.",
+    "badges": [],
+    "id": "a2-grammar-25-adjektivdeklination",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/25-adjektivdeklination.html",
+    "thumb": "assets/thumbnails/a2-grammar-25-adjektivdeklination.jpg"
+  },
+  {
+    "title": "الدرس 26 — المقارنة والتفضيل — Komparativ / Superlativ",
+    "order": 26,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "صيغ المقارنة والتفضيل، والشواذ، وso … wie وals.",
+    "badges": [],
+    "id": "a2-grammar-26-komparativ-superlativ",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/26-komparativ-superlativ.html",
+    "thumb": "assets/thumbnails/a2-grammar-26-komparativ-superlativ.jpg"
+  },
+  {
+    "title": "الدرس 27 — أدوات الربط — Konjunktionen",
+    "order": 27,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "und وaber وoder وdenn وsondern وغيرها: أدوات الربط وترتيب الجملة.",
+    "badges": [],
+    "id": "a2-grammar-27-konjunktionen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/27-konjunktionen.html",
+    "thumb": "assets/thumbnails/a2-grammar-27-konjunktionen.jpg"
+  },
+  {
+    "title": "الدرس 28 — الجمل الثانوية — Nebensätze",
+    "order": 28,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "بناء الجملة الثانوية ومكان الفعل في نهايتها.",
+    "badges": [],
+    "id": "a2-grammar-28-nebensaetze",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/28-nebensaetze.html",
+    "thumb": "assets/thumbnails/a2-grammar-28-nebensaetze.jpg"
+  },
+  {
+    "title": "الدرس 29 — weil / dass / wenn / obwohl — Subjunktionen",
+    "order": 29,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "الأدوات الرابطة الأربع واستخدام كلٍّ منها.",
+    "badges": [],
+    "id": "a2-grammar-29-subjunktionen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/29-subjunktionen.html",
+    "thumb": "assets/thumbnails/a2-grammar-29-subjunktionen.jpg"
+  },
+  {
+    "title": "الدرس 30 — ترتيب الكلمات في الجملة الثانوية — Satzstellung",
+    "order": 30,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "موقع الفعل والأجزاء الأخرى داخل الجملة الثانوية.",
+    "badges": [],
+    "id": "a2-grammar-30-satzstellung",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/30-satzstellung.html",
+    "thumb": "assets/thumbnails/a2-grammar-30-satzstellung.jpg"
+  },
+  {
+    "title": "الدرس 31 — Perfekt مقابل Präteritum — Vergangenheit",
+    "order": 31,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "متى نستخدم الماضي المحادثي ومتى الماضي البسيط.",
+    "badges": [],
+    "id": "a2-grammar-31-perfekt-vs-praeteritum",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/31-perfekt-vs-praeteritum.html",
+    "thumb": "assets/thumbnails/a2-grammar-31-perfekt-vs-praeteritum.jpg"
+  },
+  {
+    "title": "الدرس 32 — المستقبل — Futur I",
+    "order": 32,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "تكوين Futur I بـ werden + المصدر، وبدائله بالمضارع.",
+    "badges": [],
+    "id": "a2-grammar-32-futur-i",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/32-futur-i.html",
+    "thumb": "assets/thumbnails/a2-grammar-32-futur-i.jpg"
+  },
+  {
+    "title": "الدرس 33 — حالة الإضافة — Genitiv",
+    "order": 33,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "أدوات Genitiv ونهايات الأسماء وحروف الجر المرتبطة بها.",
+    "badges": [],
+    "id": "a2-grammar-33-genitiv",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/33-genitiv.html",
+    "thumb": "assets/thumbnails/a2-grammar-33-genitiv.jpg"
+  },
+  {
+    "title": "الدرس 34 — الضمائر غير المحددة — Indefinitpronomen",
+    "order": 34,          // ترتيب هذا الدرس داخل قسمه — الأصغر يظهر أولًا
+    "enabled": true,          // اجعلها false لإخفاء هذا الدرس من الموقع دون حذف ملفه
+    "desc": "man وjemand وniemand وetwas وnichts وalle: الضمائر غير المحددة وكيفية استخدامها مع أمثلة وتمارين.",
+    "badges": [],
+    "id": "a2-grammar-34-indefinitpronomen",            // (لا تُغيّر) معرّف فريد يُستخدم لتتبّع تقدّم المستخدم
+    "category": "a2-grammar",       // (لا تُغيّر) يجب أن يطابق "key" أحد الأقسام أعلاه
+    "path": "Deutsch/grammatik-a2/34-indefinitpronomen.html",
+    "thumb": "assets/thumbnails/a2-grammar-34-indefinitpronomen.jpg"
   }
   ]
 };
